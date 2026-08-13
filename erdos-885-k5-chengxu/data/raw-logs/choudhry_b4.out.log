@@ -1,0 +1,12 @@
+RECORD closure=2 params=(1, 1, 2, 1, 2, 3, 4)
+ROOTS=(180, 580, 1324, 1620, 2556)
+BASE_SHIFTS=(0, 724500, 3427200)
+EXACT_POSITIVE_SHIFT_CLOSURE=(724500, 3427200)
+STATUS=NO_5x5_CANDIDATE_IN_PARAMETER_BOX
+bound=4 signed=False
+total_parameter_tuples=16384
+valid_packets=2640
+unique_normalized_packets=251
+best_positive_shift_closure=2
+packets_with_at_least_3_positive_shifts=0
+normalized_packet_digest_sha256=e981283b6eedfab5914fc029cb0c04f20a3932aabcf2acc2cc3f8cf8a1cd5579

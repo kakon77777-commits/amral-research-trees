@@ -1,0 +1,5 @@
+record extra_count=1 anchor=[23, 4357] rows=[2006340, 39923310, 204446970] extra=[7613]
+record extra_count=2 anchor=[324, 4359] rows=[31918860, 47500992, 2021735052] extra=[16956, 62076]
+progress q=4400 range=[4357,4500] anchors=192654 eligible=178569
+record extra_count=3 anchor=[720, 4440] rows=[5440000, 61461504, 397274625] extra=[7320, 19728, 33840]
+progress q=4500 range=[4357,4500] anchors=637704 eligible=590950

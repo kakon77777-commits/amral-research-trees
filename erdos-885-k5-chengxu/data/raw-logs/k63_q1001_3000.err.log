@@ -1,0 +1,23 @@
+record extra_count=1 anchor=[0, 1001] rows=[54756, 2073600, 10458756] extra=[3024]
+record extra_count=2 anchor=[520, 1001] rows=[1014000, 2556800, 21834800] extra=[3080, 7670]
+progress q=1100 range=[1001,3000] anchors=105050 eligible=92699
+record extra_count=3 anchor=[432, 1134] rows=[1198800, 2695680, 22269520] extra=[2256, 3696, 10992]
+progress q=1200 range=[1001,3000] anchors=220100 eligible=194556
+progress q=1300 range=[1001,3000] anchors=345150 eligible=305833
+progress q=1400 range=[1001,3000] anchors=480200 eligible=426404
+progress q=1500 range=[1001,3000] anchors=625250 eligible=556258
+progress q=1600 range=[1001,3000] anchors=780300 eligible=695364
+progress q=1700 range=[1001,3000] anchors=945350 eligible=843891
+progress q=1800 range=[1001,3000] anchors=1120400 eligible=1001675
+progress q=1900 range=[1001,3000] anchors=1305450 eligible=1168913
+progress q=2000 range=[1001,3000] anchors=1500500 eligible=1345496
+progress q=2100 range=[1001,3000] anchors=1705550 eligible=1531421
+progress q=2200 range=[1001,3000] anchors=1920600 eligible=1726827
+progress q=2300 range=[1001,3000] anchors=2145650 eligible=1931509
+progress q=2400 range=[1001,3000] anchors=2380700 eligible=2145466
+progress q=2500 range=[1001,3000] anchors=2625750 eligible=2368972
+progress q=2600 range=[1001,3000] anchors=2880800 eligible=2601885
+progress q=2700 range=[1001,3000] anchors=3145850 eligible=2844032
+progress q=2800 range=[1001,3000] anchors=3420900 eligible=3095793
+progress q=2900 range=[1001,3000] anchors=3705950 eligible=3357040
+progress q=3000 range=[1001,3000] anchors=4001000 eligible=3627691

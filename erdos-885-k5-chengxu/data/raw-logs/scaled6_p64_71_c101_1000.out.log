@@ -1,0 +1,7 @@
+PROGRESS packet=64 scale_max=1000 multipliers=900
+PROGRESS packet=65 scale_max=1000 multipliers=1800
+PROGRESS packet=66 scale_max=1000 multipliers=2700
+PROGRESS packet=67 scale_max=1000 multipliers=3600
+PROGRESS packet=68 scale_max=1000 multipliers=4500
+PROGRESS packet=69 scale_max=1000 multipliers=5400
+PROGRESS packet=70 scale_max=1000 multipliers=6300

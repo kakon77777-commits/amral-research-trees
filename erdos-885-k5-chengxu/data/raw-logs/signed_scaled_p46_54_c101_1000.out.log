@@ -1,0 +1,16 @@
+PROGRESS packet=46 scale_max=1000 pairs=900
+PROGRESS packet=47 scale_max=1000 pairs=1800
+PROGRESS packet=48 scale_max=1000 pairs=2700
+PROGRESS packet=49 scale_max=1000 pairs=3600
+PROGRESS packet=50 scale_max=1000 pairs=4500
+PROGRESS packet=51 scale_max=1000 pairs=5400
+PROGRESS packet=52 scale_max=1000 pairs=6300
+PROGRESS packet=53 scale_max=1000 pairs=7200
+PROGRESS packet=54 scale_max=1000 pairs=8100
+STATUS=NO_SIGNED_SCALAR_INDUCED_ERDOS885_K5_IN_RANGE
+packet_range=[46,54]
+scale_range=[101,1000]
+packet_multiplier_pairs=8100
+factor_divisors_enumerated=68284948
+signed_closure_entries=32400
+expected_inherited_entries=32400

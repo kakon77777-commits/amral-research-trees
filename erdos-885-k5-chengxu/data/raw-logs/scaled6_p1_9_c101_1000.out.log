@@ -1,0 +1,19 @@
+PROGRESS packet=1 scale_max=1000 multipliers=900
+PROGRESS packet=2 scale_max=1000 multipliers=1800
+PROGRESS packet=3 scale_max=1000 multipliers=2700
+PROGRESS packet=4 scale_max=1000 multipliers=3600
+PROGRESS packet=5 scale_max=1000 multipliers=4500
+PROGRESS packet=6 scale_max=1000 multipliers=5400
+PROGRESS packet=7 scale_max=1000 multipliers=6300
+PROGRESS packet=8 scale_max=1000 multipliers=7200
+PROGRESS packet=9 scale_max=1000 multipliers=8100
+STATUS=NO_SCALAR_INDUCED_5x5_IN_RANGE
+packet_range=[1,9]
+scale_range=[101,1000]
+minimum_support=6
+packet_multiplier_pairs=8100
+candidate_shifts_tested=14931648
+shifts_with_support_at_least_five=24300
+shifts_with_support_all_six=24300
+best_new_support=0
+best_new_record=None

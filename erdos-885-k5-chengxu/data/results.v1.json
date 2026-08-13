@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "research_line_id": "erdos-885-k5-chengxu",
+  "researcher": {
+    "display_name": "數學戰士-澄序",
+    "agent_role": "MCDM Agent D",
+    "route": "independent extra route"
+  },
+  "date": "2026-08-13",
+  "problem": {
+    "id": "ERDOS-885",
+    "k": 5,
+    "url": "https://www.erdosproblems.com/885"
+  },
+  "global_status": {
+    "solved": false,
+    "literature_novelty_claimed": false,
+    "statement": "Exact reductions and certificates plus bounded exhaustive searches; no global k=5 witness or impossibility theorem."
+  },
+  "exact_reduction": {
+    "source_target": "K_(5,5)",
+    "dual_target": "K_(6,4)",
+    "bounded_implication_from_direct_search": "sqrt(d0^2 + 4*N_min) > 3000"
+  },
+  "exact_certificates": [
+    {
+      "type": "K_(6,3)",
+      "rows": [4148640, 34418880, 300736800],
+      "differences": [2988, 4356, 5787, 11164, 17046, 23948],
+      "novel": false
+    },
+    {
+      "type": "transposed_K_(4,5)",
+      "rows": [10046592, 24561225, 115706752, 281637972, 564578560],
+      "differences": [5976, 10104, 24216, 69624],
+      "target_shortfall": "one common difference"
+    },
+    {
+      "type": "K_(4,4)",
+      "rows": [472500, 6448000, 21285396, 59440500],
+      "differences": [120, 1185, 5160, 15720],
+      "novelty_claimed": false
+    }
+  ],
+  "bounded_searches": {
+    "direct_K_(6,4)": {
+      "domain": "every canonical anchor 0 <= p < q <= 6000, every compatible row, every four-row subset",
+      "exhaustive_within_domain": true,
+      "relative_to_implementation": true,
+      "anchors": 18003000,
+      "eligible_pair_fibers": 14040082,
+      "pair_fiber_rows": 209917507,
+      "retained_differences": 465004,
+      "four_row_support_updates": 767726,
+      "K_(5,4)_hits": 0,
+      "K_(6,4)_hits": 0
+    },
+    "public_4x6_closure": {
+      "dataset_packets": 71,
+      "dataset_repr_sha256": "4699a0379d41dc851722c0909cde6df59f293f3023142d112aaba78acdb3f57a",
+      "exact_root_to_positive_shift": 71,
+      "exact_positive_shift_to_root": 71,
+      "exact_signed_factor_difference": 71,
+      "five_root_subsets_checked": 426,
+      "largest_signed_shift_closure": 4,
+      "fifth_difference_hits": 0
+    },
+    "signed_scalar_closure": {
+      "packet_domain": "all 71 archived public packets",
+      "scale_domain": "1 <= c <= 1000",
+      "packet_multiplier_pairs": 71000,
+      "full_divisors_enumerated": 847896082,
+      "signed_closure_entries": 284000,
+      "expected_inherited_entries": 284000,
+      "new_fifth_differences": 0,
+      "extended_smallest_core_scale_domain": "1 <= c <= 10000",
+      "extended_smallest_core_closure_entries": 40000,
+      "extended_smallest_core_new_fifth_differences": 0
+    },
+    "choudhry_positive_parameter_box": {
+      "domain": "[1,6]^7",
+      "parameter_tuples": 279936,
+      "nondegenerate_packets": 116720,
+      "unique_exact_packets": 10777,
+      "maximum_positive_shift_closure": 2,
+      "candidate_hits": 0,
+      "normalized_packet_sha256": "a608ddd86568bcdfd303a2c1497935444a740b142446d641da6fc5729d9a0ae3"
+    }
+  },
+  "observed_environment": {
+    "os": "Windows 10 10.0.19045 x64",
+    "python": "3.14.5",
+    "sympy": "1.14.0",
+    "rustc": "1.96.0 (ac68faa20 2026-05-25)"
+  },
+  "principal_sha256": {
+    "reports/CHENGXU_DUALITY_ROUTE_REPORT.md": "76a17fefca115dda3f39be17faaa83ec3a27461ab391c1913db035324311b585",
+    "code/search_dual_k64.rs": "c16102ab05bd98a0b5c4768e4dbfb4b2b83741df1d3dee3340c5e2e5c3b9b379",
+    "code/verify_boundary_packets.py": "fc06139c661042657d414c205c88b6a8f5fd3cc7b36b97328f1aa9a6adec340e",
+    "code/audit_public_4x6.py": "f171b69f1ece22b6b879e0736ba55529cde8cf7710c7202897cd17f788061342",
+    "code/search_scaled_public_4x6.py": "580ef21c2a51d1dc613fc5ad812348d357ff6126c7d15124d53eb3fa39dafd55",
+    "code/search_signed_scaled_public_4x6.py": "f98bffc79cb537586585bf845f86589789c8762e6c8edd0dcc099de46b26da2c",
+    "code/search_choudhry_closure.py": "4e97bcac4dc2f7255b289e36401e10801fca34f38b1cccefbf442d4d7cdf2acb"
+  }
+}
