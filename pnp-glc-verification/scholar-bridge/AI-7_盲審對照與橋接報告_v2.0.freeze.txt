@@ -1,0 +1,14 @@
+AI-7 盲審對照與橋接報告 v2.0 freeze manifest
+freeze_date=2026-08-09
+timezone=Asia/Taipei
+artifact=AI-7_盲審對照與橋接報告_v2.0.md
+sha256=55A8204C89E79CD36DBFA12B93542FFD4C2A067FE04BC7A83BA33B911FBF38BD
+bytes=43777
+lines=533
+comparison_base=AI-7_跨範式映射報告_v1.0.md
+comparison_base_sha256=2DB3AAAF2D3603DD79D78E163575AA47C13A101CE4E6A70821E62883F7944959
+ai6_report_sha256=A8C364583EAA82BE459341A0955817E0EB415C625535FD0B7E9E70A3D31232E4
+scope=read-only comparison of AI-6 blind review against refreshed five-line status and direct deliveries
+explicit_nonclaims=no P=NP; no P!=NP; no four-layer equivalence theorem; no promotion claim for v0.2.2
+excluded=AI-6 thread continuation and any contact with AI-1..AI-5
+actions_not_taken=no messages to AI-1..AI-5; no Board publication; no source modification; v1.0 not overwritten

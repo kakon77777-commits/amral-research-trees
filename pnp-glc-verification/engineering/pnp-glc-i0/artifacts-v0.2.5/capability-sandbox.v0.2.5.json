@@ -1,0 +1,34 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "capability-sandbox",
+    "edges": [
+      {
+        "expected_type": "opaque-content",
+        "role": "legacy-policy-source",
+        "sha256": "sha256:0831bb70cb62daf1d3e1d5da9dbf9b6e6e0e261ae22c6cf75bf68c8bdd83eae4"
+      }
+    ],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.5",
+    "version": "0.2.5"
+  },
+  "candidate_denials": [
+    "read-correct-answer",
+    "write-admission-pass",
+    "write-final-completion",
+    "modify-validator-trace"
+  ],
+  "candidate_permissions": [
+    "read-instance-input",
+    "emit-step-events",
+    "emit-candidate-answer"
+  ],
+  "measurement_model": "authenticated-i0-single-worker-linear/0.2.5",
+  "producer": "pnp-glc-i0-capability-sandbox",
+  "resource_budget": {
+    "max_advice_bytes": 0,
+    "max_description_bytes": 10000000,
+    "max_peak_space_bytes": 10000000,
+    "max_total_time_ns": 1000000000,
+    "parallel_workers_peak": 1
+  }
+}

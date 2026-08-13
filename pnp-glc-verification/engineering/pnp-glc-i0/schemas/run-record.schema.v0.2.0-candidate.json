@@ -1,0 +1,2101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:evemisslab:pnp-glc:run-record:0.2.0-candidate",
+  "title": "P/NP GLC Observatory Run Record",
+  "description": "Candidate v0.2 transport schema with one-way fail-closed conditionals and a separate external validation receipt; semantic replay remains mandatory.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "recorded_at",
+    "track",
+    "ctcl",
+    "experiment",
+    "provenance",
+    "claims",
+    "problem",
+    "mechanism",
+    "ledger",
+    "events",
+    "candidate_result",
+    "validation_receipt",
+    "failure_frontier"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.2.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "track": {
+      "enum": [
+        "cognitive",
+        "algorithm"
+      ]
+    },
+    "ctcl": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "instant",
+        "role"
+      ],
+      "properties": {
+        "instant": {
+          "type": "string",
+          "pattern": "^ctcl:instant:[0-9a-fA-F-]{36}$"
+        },
+        "role": {
+          "const": "coordination-only"
+        }
+      }
+    },
+    "experiment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "phase",
+        "status",
+        "hypothesis_id",
+        "seed",
+        "series_semantics"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "phase": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "planned",
+            "running",
+            "completed",
+            "failed",
+            "rejected"
+          ]
+        },
+        "hypothesis_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "series_semantics": {
+          "enum": [
+            "single-instance",
+            "fixed-program-scaling",
+            "pointwise-envelope"
+          ]
+        },
+        "pre_registered_metrics": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "default": []
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sources",
+        "implementation"
+      ],
+      "properties": {
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        },
+        "implementation": {
+          "$ref": "#/$defs/implementation"
+        }
+      }
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/claim"
+      }
+    },
+    "problem": {
+      "$ref": "#/$defs/problem"
+    },
+    "mechanism": {
+      "$ref": "#/$defs/mechanism"
+    },
+    "ledger": {
+      "$ref": "#/$defs/ledger"
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "failure_frontier": {
+      "$ref": "#/$defs/failureFrontier"
+    },
+    "candidate_result": {
+      "$ref": "#/$defs/candidateResult"
+    },
+    "validation_receipt": {
+      "$ref": "#/$defs/validationReceipt"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mechanism": {
+            "properties": {
+              "run_quantifier": {
+                "const": "standard"
+              }
+            },
+            "required": [
+              "run_quantifier"
+            ]
+          }
+        },
+        "required": [
+          "mechanism"
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation_receipt": {
+            "properties": {
+              "maximal_run_spec_ref": {
+                "type": "null"
+              },
+              "fairness_spec_ref": {
+                "type": "null"
+              },
+              "gates": {
+                "properties": {
+                  "maximality_pass": {
+                    "const": "not-applicable"
+                  },
+                  "fairness_pass": {
+                    "const": "not-applicable"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mechanism": {
+            "properties": {
+              "run_quantifier": {
+                "const": "robust"
+              }
+            },
+            "required": [
+              "run_quantifier"
+            ]
+          }
+        },
+        "required": [
+          "mechanism"
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation_receipt": {
+            "properties": {
+              "maximal_run_spec_ref": {
+                "$ref": "#/$defs/hash"
+              },
+              "fairness_spec_ref": {
+                "$ref": "#/$defs/hash"
+              },
+              "gates": {
+                "properties": {
+                  "maximality_pass": {
+                    "enum": [
+                      "pass",
+                      "fail",
+                      "unknown"
+                    ]
+                  },
+                  "fairness_pass": {
+                    "enum": [
+                      "pass",
+                      "fail",
+                      "unknown"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mechanism": {
+            "properties": {
+              "resource_regime": {
+                "const": "resource-neutral"
+              }
+            },
+            "required": [
+              "resource_regime"
+            ]
+          }
+        },
+        "required": [
+          "mechanism"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "gates": {
+                    "properties": {
+                      "resource_budget_pass": {
+                        "const": "not-applicable"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "correctness": {
+                    "properties": {
+                      "budget_pass": {
+                        "const": "not-applicable"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mechanism": {
+            "properties": {
+              "resource_regime": {
+                "const": "resource-bounded"
+              }
+            },
+            "required": [
+              "resource_regime"
+            ]
+          }
+        },
+        "required": [
+          "mechanism"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "gates": {
+                    "properties": {
+                      "resource_budget_pass": {
+                        "enum": [
+                          "pass",
+                          "fail",
+                          "unknown"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "correctness": {
+                    "properties": {
+                      "budget_pass": {
+                        "enum": [
+                          "pass",
+                          "fail",
+                          "unknown"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "validation_receipt": {
+            "properties": {
+              "admission_pass": {
+                "const": true
+              }
+            },
+            "required": [
+              "admission_pass"
+            ]
+          }
+        },
+        "required": [
+          "validation_receipt"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "gates": {
+                    "properties": {
+                      "uniformity_pass": {
+                        "const": "pass"
+                      },
+                      "provenance_pass": {
+                        "const": "pass"
+                      },
+                      "refs_resolved_pass": {
+                        "const": "pass"
+                      },
+                      "builder_execution_pass": {
+                        "const": "pass"
+                      },
+                      "advice_budget_pass": {
+                        "const": "pass"
+                      },
+                      "answer_access_pass": {
+                        "const": "pass"
+                      },
+                      "oracle_free_pass": {
+                        "const": "pass"
+                      },
+                      "replay_pass": {
+                        "const": "pass"
+                      },
+                      "run_class_nonempty": {
+                        "const": "pass"
+                      },
+                      "resource_account_pass": {
+                        "const": "pass"
+                      },
+                      "advice_generation_pass": {
+                        "enum": [
+                          "pass",
+                          "not-applicable"
+                        ]
+                      },
+                      "proof_verification_pass": {
+                        "enum": [
+                          "pass",
+                          "not-applicable"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "ledger": {
+                "properties": {
+                  "resource_account_complete": {
+                    "const": true
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "allOf": [
+          {
+            "properties": {
+              "mechanism": {
+                "properties": {
+                  "run_quantifier": {
+                    "const": "robust"
+                  }
+                },
+                "required": [
+                  "run_quantifier"
+                ]
+              }
+            },
+            "required": [
+              "mechanism"
+            ]
+          },
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "admission_pass": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "admission_pass"
+                ]
+              }
+            },
+            "required": [
+              "validation_receipt"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation_receipt": {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "maximality_pass": {
+                    "const": "pass"
+                  },
+                  "fairness_pass": {
+                    "const": "pass"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "allOf": [
+          {
+            "properties": {
+              "mechanism": {
+                "properties": {
+                  "resource_regime": {
+                    "const": "resource-bounded"
+                  }
+                },
+                "required": [
+                  "resource_regime"
+                ]
+              }
+            },
+            "required": [
+              "mechanism"
+            ]
+          },
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "admission_pass": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "admission_pass"
+                ]
+              }
+            },
+            "required": [
+              "validation_receipt"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation_receipt": {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "resource_budget_pass": {
+                    "const": "pass"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "allOf": [
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "admission_pass": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "admission_pass"
+                ]
+              }
+            },
+            "required": [
+              "validation_receipt"
+            ]
+          },
+          {
+            "anyOf": [
+              {
+                "properties": {
+                  "mechanism": {
+                    "properties": {
+                      "admissibility": {
+                        "properties": {
+                          "advice_generator_ref": {
+                            "$ref": "#/$defs/hash"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "ledger": {
+                    "properties": {
+                      "description_bytes": {
+                        "anyOf": [
+                          {
+                            "properties": {
+                              "advice": {
+                                "minimum": 1
+                              }
+                            }
+                          },
+                          {
+                            "properties": {
+                              "generated_tables": {
+                                "minimum": 1
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation_receipt": {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "advice_generation_pass": {
+                    "const": "pass"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "allOf": [
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "admission_pass": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "admission_pass"
+                ]
+              }
+            },
+            "required": [
+              "validation_receipt"
+            ]
+          },
+          {
+            "anyOf": [
+              {
+                "properties": {
+                  "mechanism": {
+                    "properties": {
+                      "admissibility": {
+                        "properties": {
+                          "local_invariant_ref": {
+                            "$ref": "#/$defs/hash"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "properties": {
+                  "ledger": {
+                    "properties": {
+                      "description_bytes": {
+                        "properties": {
+                          "proof": {
+                            "minimum": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "then": {
+        "properties": {
+          "validation_receipt": {
+            "properties": {
+              "gates": {
+                "properties": {
+                  "proof_verification_pass": {
+                    "const": "pass"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "validation_receipt": {
+            "properties": {
+              "final_completion": {
+                "const": true
+              }
+            },
+            "required": [
+              "final_completion"
+            ]
+          }
+        },
+        "required": [
+          "validation_receipt"
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "admission_pass": {
+                    "const": true
+                  },
+                  "final_completion": {
+                    "const": true
+                  },
+                  "gates": {
+                    "properties": {
+                      "resource_account_pass": {
+                        "const": "pass"
+                      }
+                    }
+                  },
+                  "correctness": {
+                    "properties": {
+                      "oracle_pass": {
+                        "const": "pass"
+                      },
+                      "contract_pass": {
+                        "const": "pass"
+                      },
+                      "complete_pass": {
+                        "const": "pass"
+                      },
+                      "outstanding_loss_debt": {
+                        "const": 0
+                      }
+                    }
+                  }
+                }
+              },
+              "candidate_result": {
+                "properties": {
+                  "status": {
+                    "enum": [
+                      "sat",
+                      "unsat",
+                      "complete"
+                    ]
+                  }
+                }
+              },
+              "ledger": {
+                "properties": {
+                  "resource_account_complete": {
+                    "const": true
+                  },
+                  "semantic_loss_debt": {
+                    "properties": {
+                      "outstanding": {
+                        "const": 0
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "allOf": [
+          {
+            "properties": {
+              "mechanism": {
+                "properties": {
+                  "resource_regime": {
+                    "const": "resource-bounded"
+                  }
+                },
+                "required": [
+                  "resource_regime"
+                ]
+              }
+            },
+            "required": [
+              "mechanism"
+            ]
+          },
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "final_completion": {
+                    "const": true
+                  }
+                },
+                "required": [
+                  "final_completion"
+                ]
+              }
+            },
+            "required": [
+              "validation_receipt"
+            ]
+          }
+        ]
+      },
+      "then": {
+        "allOf": [
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "gates": {
+                    "properties": {
+                      "resource_budget_pass": {
+                        "const": "pass"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "properties": {
+              "validation_receipt": {
+                "properties": {
+                  "correctness": {
+                    "properties": {
+                      "budget_pass": {
+                        "const": "pass"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^(sha256:)?[A-Fa-f0-9]{64}$"
+    },
+    "nullableHash": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/hash"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "nonNegativeInteger": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "gateStatus": {
+      "enum": [
+        "pass",
+        "fail",
+        "unknown",
+        "not-applicable"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "locator",
+        "version",
+        "sha256",
+        "applicable_domain",
+        "accessed_at",
+        "visibility"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "file",
+            "bundle",
+            "web",
+            "generated",
+            "implementation"
+          ]
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "applicable_domain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accessed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "visibility": {
+          "enum": [
+            "private",
+            "shared",
+            "public"
+          ]
+        }
+      }
+    },
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version",
+        "revision",
+        "dirty",
+        "runtime",
+        "dependencies"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "dirty": {
+          "type": "boolean"
+        },
+        "runtime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "binary_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "version"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1
+              },
+              "sha256": {
+                "$ref": "#/$defs/hash"
+              }
+            }
+          }
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "label",
+        "statement",
+        "status",
+        "source_refs",
+        "domain",
+        "quantifiers",
+        "assumptions",
+        "failure_conditions"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "enum": [
+            "Definition",
+            "Observation",
+            "Lemma",
+            "Conditional",
+            "Conjecture",
+            "Counterexample",
+            "Experiment",
+            "Open Problem"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "active",
+            "superseded",
+            "rejected",
+            "inconclusive"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "domain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quantifiers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "failure_conditions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "problem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "family",
+        "instance_id",
+        "input_sha256",
+        "generator",
+        "size",
+        "contract"
+      ],
+      "properties": {
+        "family": {
+          "enum": [
+            "claim-ledger-repair",
+            "PARITY",
+            "2-SAT",
+            "Horn-SAT",
+            "XOR-SAT",
+            "bounded-treewidth-SAT",
+            "general-3-SAT",
+            "other"
+          ]
+        },
+        "instance_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "generator": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "version",
+            "seed",
+            "parameters"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "seed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "parameters": {
+              "type": "object"
+            }
+          }
+        },
+        "size": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "integer",
+              "number",
+              "string",
+              "boolean",
+              "null"
+            ]
+          }
+        },
+        "contract": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "version",
+            "sha256",
+            "completion_requirements"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "completion_requirements": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "mechanism": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "version",
+        "role",
+        "resource_regime",
+        "run_quantifier",
+        "baseline_id",
+        "operations",
+        "admissibility",
+        "oracle"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "enum": [
+            "baseline",
+            "candidate"
+          ]
+        },
+        "resource_regime": {
+          "enum": [
+            "resource-neutral",
+            "resource-bounded"
+          ]
+        },
+        "run_quantifier": {
+          "enum": [
+            "standard",
+            "robust"
+          ]
+        },
+        "baseline_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "operations": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "state-switch",
+              "representation-rewrite",
+              "build",
+              "step",
+              "rollback",
+              "reroute",
+              "self-correct",
+              "refine",
+              "lift",
+              "verify",
+              "restart",
+              "decode",
+              "commit",
+              "solve"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "admissibility": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "uniform",
+            "oracle_free",
+            "finite_precision",
+            "program_quantifiers",
+            "builder_ref",
+            "step_ref",
+            "decode_ref",
+            "declared_answer_access",
+            "advice_generator_ref",
+            "local_invariant_ref",
+            "randomness",
+            "interaction",
+            "advice",
+            "parallelism",
+            "hardware"
+          ],
+          "properties": {
+            "uniform": {
+              "type": "boolean"
+            },
+            "oracle_free": {
+              "type": "boolean"
+            },
+            "finite_precision": {
+              "type": "boolean"
+            },
+            "program_quantifiers": {
+              "enum": [
+                "exists-one-program-for-all-input-lengths",
+                "for-all-lengths-exists-program",
+                "other"
+              ]
+            },
+            "builder_ref": {
+              "$ref": "#/$defs/hash"
+            },
+            "step_ref": {
+              "$ref": "#/$defs/hash"
+            },
+            "decode_ref": {
+              "$ref": "#/$defs/hash"
+            },
+            "declared_answer_access": {
+              "enum": [
+                "none",
+                "truth-table",
+                "answer-oracle",
+                "unknown"
+              ]
+            },
+            "advice_generator_ref": {
+              "$ref": "#/$defs/nullableHash"
+            },
+            "local_invariant_ref": {
+              "$ref": "#/$defs/nullableHash"
+            },
+            "randomness": {
+              "enum": [
+                "none",
+                "seeded",
+                "unseeded"
+              ]
+            },
+            "interaction": {
+              "type": "string"
+            },
+            "advice": {
+              "type": "string"
+            },
+            "parallelism": {
+              "type": "string"
+            },
+            "hardware": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "oracle": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "version",
+            "independent",
+            "checks",
+            "sha256"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "independent": {
+              "type": "boolean"
+            },
+            "checks": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "sha256": {
+              "$ref": "#/$defs/hash"
+            }
+          }
+        }
+      }
+    },
+    "costs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "construction",
+        "generation",
+        "update",
+        "decode",
+        "lift",
+        "verify",
+        "recovery",
+        "restart",
+        "parallel_work",
+        "oracle",
+        "total"
+      ],
+      "properties": {
+        "construction": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "generation": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "update": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "decode": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "lift": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "verify": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "recovery": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "restart": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "parallel_work": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "oracle": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "total": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        }
+      }
+    },
+    "debtItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "description",
+        "introduced_event",
+        "contract_requirement",
+        "status",
+        "retirement_condition",
+        "retirement_evidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "introduced_event": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "contract_requirement": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "open",
+            "retired",
+            "waived"
+          ]
+        },
+        "retirement_condition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "retirement_evidence": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "phaseAccount": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "time_ns",
+        "peak_space_bytes",
+        "peak_output_bytes"
+      ],
+      "properties": {
+        "time_ns": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "peak_space_bytes": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "peak_output_bytes": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        }
+      }
+    },
+    "ledger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "time_ns",
+        "space_bytes",
+        "description_bytes",
+        "admission_costs",
+        "precision",
+        "counts",
+        "semantic_loss_debt",
+        "resource_account_complete"
+      ],
+      "properties": {
+        "time_ns": {
+          "$ref": "#/$defs/costs"
+        },
+        "space_bytes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "peak",
+            "final",
+            "artifacts"
+          ],
+          "properties": {
+            "peak": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "final": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "artifacts": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "description_bytes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "program_code",
+            "advice",
+            "builder_artifacts",
+            "generated_tables",
+            "proof"
+          ],
+          "properties": {
+            "program_code": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "advice": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "builder_artifacts": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "generated_tables": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "proof": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "admission_costs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "builder",
+            "advice_generation",
+            "proof_verification"
+          ],
+          "properties": {
+            "builder": {
+              "$ref": "#/$defs/phaseAccount"
+            },
+            "advice_generation": {
+              "$ref": "#/$defs/phaseAccount"
+            },
+            "proof_verification": {
+              "$ref": "#/$defs/phaseAccount"
+            }
+          }
+        },
+        "precision": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "model",
+            "peak_bits"
+          ],
+          "properties": {
+            "model": {
+              "type": "string",
+              "minLength": 1
+            },
+            "peak_bits": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "counts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "states",
+            "branches",
+            "switches",
+            "rollbacks",
+            "reroutes",
+            "refinements",
+            "restarts",
+            "parallel_workers_peak"
+          ],
+          "properties": {
+            "states": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "branches": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "switches": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "rollbacks": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "reroutes": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "refinements": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "restarts": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "parallel_workers_peak": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "semantic_loss_debt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "registered",
+            "peak_open",
+            "outstanding"
+          ],
+          "properties": {
+            "registered": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/debtItem"
+              }
+            },
+            "peak_open": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            },
+            "outstanding": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "resource_account_complete": {
+          "type": "boolean"
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "seq",
+        "kind",
+        "from_state",
+        "to_state",
+        "representation_before",
+        "representation_after",
+        "input_sha256",
+        "output_sha256",
+        "transition_rule_ref",
+        "invariant_ref",
+        "time_ns",
+        "debt_added",
+        "debt_retired",
+        "status"
+      ],
+      "properties": {
+        "seq": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "enum": [
+            "observe",
+            "classify",
+            "state-switch",
+            "build",
+            "step",
+            "rewrite",
+            "solve",
+            "verify",
+            "self-correct",
+            "refine",
+            "checkpoint",
+            "rollback",
+            "reroute",
+            "restart",
+            "lift",
+            "decode",
+            "commit",
+            "stop"
+          ]
+        },
+        "from_state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "to_state": {
+          "type": "string",
+          "minLength": 1
+        },
+        "representation_before": {
+          "type": "string",
+          "minLength": 1
+        },
+        "representation_after": {
+          "type": "string",
+          "minLength": 1
+        },
+        "input_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "output_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "transition_rule_ref": {
+          "$ref": "#/$defs/nullableHash"
+        },
+        "invariant_ref": {
+          "$ref": "#/$defs/nullableHash"
+        },
+        "time_ns": {
+          "$ref": "#/$defs/costs"
+        },
+        "debt_added": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "debt_retired": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "failed",
+            "rolled-back",
+            "skipped"
+          ]
+        },
+        "failure": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "failureFrontier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "axes",
+        "first_observed_failure",
+        "censored",
+        "interpretation"
+      ],
+      "properties": {
+        "axes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "value",
+              "unit"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": [
+                  "integer",
+                  "number",
+                  "string",
+                  "boolean",
+                  "null"
+                ]
+              },
+              "unit": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "first_observed_failure": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "censored": {
+          "type": "boolean"
+        },
+        "interpretation": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "validationReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "receipt_version",
+        "decision_source",
+        "gate_version",
+        "schema_sha256",
+        "validator_sha256",
+        "validator_independent",
+        "projection_spec_id",
+        "projection_spec_sha256",
+        "candidate_projection_sha256",
+        "capability_sandbox_ref",
+        "run_spec_ref",
+        "maximal_run_spec_ref",
+        "fairness_spec_ref",
+        "trace_sha256",
+        "resolved_evidence_hashes",
+        "observed_answer_access",
+        "gates",
+        "admission_pass",
+        "correctness",
+        "final_completion",
+        "reasons"
+      ],
+      "properties": {
+        "receipt_version": {
+          "const": "0.2.0"
+        },
+        "decision_source": {
+          "const": "external-validator"
+        },
+        "gate_version": {
+          "const": "i0-admission-gate/0.2.0"
+        },
+        "schema_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "validator_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "validator_independent": {
+          "type": "boolean"
+        },
+        "projection_spec_id": {
+          "const": "urn:evemisslab:pnp-glc:candidate-projection:0.2.0"
+        },
+        "projection_spec_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "candidate_projection_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "capability_sandbox_ref": {
+          "$ref": "#/$defs/hash"
+        },
+        "run_spec_ref": {
+          "$ref": "#/$defs/hash"
+        },
+        "maximal_run_spec_ref": {
+          "$ref": "#/$defs/nullableHash"
+        },
+        "fairness_spec_ref": {
+          "$ref": "#/$defs/nullableHash"
+        },
+        "trace_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "resolved_evidence_hashes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/hash"
+          },
+          "uniqueItems": true
+        },
+        "observed_answer_access": {
+          "enum": [
+            "none",
+            "truth-table",
+            "answer-oracle",
+            "unknown"
+          ]
+        },
+        "gates": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "uniformity_pass",
+            "provenance_pass",
+            "refs_resolved_pass",
+            "builder_execution_pass",
+            "advice_generation_pass",
+            "proof_verification_pass",
+            "advice_budget_pass",
+            "answer_access_pass",
+            "resource_budget_pass",
+            "resource_account_pass",
+            "oracle_free_pass",
+            "replay_pass",
+            "run_class_nonempty",
+            "maximality_pass",
+            "fairness_pass"
+          ],
+          "properties": {
+            "uniformity_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "provenance_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "refs_resolved_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "builder_execution_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "advice_generation_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "proof_verification_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "advice_budget_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "answer_access_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "resource_budget_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "resource_account_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "oracle_free_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "replay_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "run_class_nonempty": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "maximality_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "fairness_pass": {
+              "$ref": "#/$defs/gateStatus"
+            }
+          }
+        },
+        "admission_pass": {
+          "type": "boolean"
+        },
+        "correctness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "oracle_pass",
+            "contract_pass",
+            "complete_pass",
+            "budget_pass",
+            "outstanding_loss_debt"
+          ],
+          "properties": {
+            "oracle_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "contract_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "complete_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "budget_pass": {
+              "$ref": "#/$defs/gateStatus"
+            },
+            "outstanding_loss_debt": {
+              "$ref": "#/$defs/nonNegativeInteger"
+            }
+          }
+        },
+        "final_completion": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "candidateResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "answer",
+        "certificate_refs"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "sat",
+            "unsat",
+            "complete",
+            "incomplete",
+            "unknown",
+            "timeout",
+            "error"
+          ]
+        },
+        "answer": {},
+        "certificate_refs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/hash"
+          },
+          "uniqueItems": true
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

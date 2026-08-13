@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pnp-glc-i0"
+version = "0.2.0"
+description = "Minimal semantic admission validator and PARITY/2-SAT reality tests"
+requires-python = ">=3.11"
+dependencies = ["jsonschema>=4.20"]
+
+[project.scripts]
+pnp-glc-i0 = "pnp_glc_i0.__main__:main"
+pnp-glc-i0-experiment = "pnp_glc_i0.experiment:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,10 @@
+{
+  "contract_id": "I0-PARITY",
+  "version": "0.2.0",
+  "requirements": [
+    "answer equals XOR of every input bit",
+    "prefix invariant verifies for every step",
+    "admission is externally derived",
+    "outstanding semantic-loss debt is zero"
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "candidate_result": {
+    "answer": 1,
+    "certificate_refs": [
+      "sha256:57df1799834067179fb78bbbb5350cadbb402fbe0c78d8cfae6df246947eb34f"
+    ],
+    "notes": "Experiment only; no P/NP conclusion.",
+    "status": "complete"
+  },
+  "claims": [
+    {
+      "assumptions": [
+        "test trace signer private key remained outside published artifacts",
+        "pinned I0 transition semantics"
+      ],
+      "domain": "bounded materialized I0 fixtures",
+      "failure_conditions": [
+        "unresolved evidence",
+        "nonuniform quantifier",
+        "answer access",
+        "invalid trace signature",
+        "unreconstructible transition or resource fold",
+        "role/type-safe evidence closure failure",
+        "role/type-safe evidence closure failure"
+      ],
+      "id": "PARITY-0",
+      "label": "Experiment",
+      "quantifiers": [
+        "legit: exists one program for all input lengths",
+        "cheat: for all lengths exists a program"
+      ],
+      "source_refs": [
+        "run-record-v0.2.6-candidate"
+      ],
+      "statement": "Terminal-only parity reports do not establish uniform provenance.",
+      "status": "active"
+    }
+  ],
+  "ctcl": {
+    "instant": "ctcl:instant:b8ce3d5a-9369-4c60-8436-737ecd818ac7",
+    "role": "coordination-only"
+  },
+  "events": [
+    {
+      "debt_added": [],
+      "debt_retired": [],
+      "failure": null,
+      "from_state": "start",
+      "input_sha256": "sha256:4184e85a36b0be747d96fde315e1d92ced742babb301d36307be6a90af4779db",
+      "invariant_ref": "sha256:57df1799834067179fb78bbbb5350cadbb402fbe0c78d8cfae6df246947eb34f",
+      "kind": "solve",
+      "output_sha256": "sha256:a06432c224237825b58750b5c218ed397750b74612118c1c8819fdad9a4f74a4",
+      "representation_after": "parity-state",
+      "representation_before": "bit-vector",
+      "seq": 0,
+      "status": "ok",
+      "time_ns": {
+        "construction": 11,
+        "decode": 0,
+        "generation": 0,
+        "lift": 0,
+        "oracle": 0,
+        "parallel_work": 0,
+        "recovery": 0,
+        "restart": 0,
+        "total": 28,
+        "update": 17,
+        "verify": 0
+      },
+      "to_state": "computed",
+      "transition_rule_ref": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef"
+    },
+    {
+      "debt_added": [],
+      "debt_retired": [],
+      "failure": null,
+      "from_state": "computed",
+      "input_sha256": "sha256:a06432c224237825b58750b5c218ed397750b74612118c1c8819fdad9a4f74a4",
+      "invariant_ref": "sha256:57df1799834067179fb78bbbb5350cadbb402fbe0c78d8cfae6df246947eb34f",
+      "kind": "stop",
+      "output_sha256": "sha256:3a012eab8b0fbee2944a77a8695907762540cce77ba0b7fe4b5375cc312d3990",
+      "representation_after": "answer-bit",
+      "representation_before": "parity-state",
+      "seq": 1,
+      "status": "ok",
+      "time_ns": {
+        "construction": 0,
+        "decode": 7,
+        "generation": 0,
+        "lift": 0,
+        "oracle": 0,
+        "parallel_work": 0,
+        "recovery": 0,
+        "restart": 0,
+        "total": 20,
+        "update": 0,
+        "verify": 13
+      },
+      "to_state": "terminal",
+      "transition_rule_ref": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef"
+    }
+  ],
+  "experiment": {
+    "hypothesis_id": "terminal-only-is-insufficient",
+    "id": "I0-declared-answer-access-mismatch",
+    "phase": "I0",
+    "pre_registered_metrics": [
+      "admission_pass",
+      "construction",
+      "generation",
+      "advice_bytes"
+    ],
+    "seed": 0,
+    "series_semantics": "fixed-program-scaling",
+    "status": "completed"
+  },
+  "failure_frontier": {
+    "axes": [
+      {
+        "name": "n",
+        "unit": "bits",
+        "value": 4
+      },
+      {
+        "name": "advice",
+        "unit": "bytes",
+        "value": 0
+      }
+    ],
+    "censored": false,
+    "first_observed_failure": null,
+    "interpretation": "Experiment only; no P=NP or P!=NP inference."
+  },
+  "ledger": {
+    "admission_costs": {
+      "advice_generation": {
+        "peak_output_bytes": 0,
+        "peak_space_bytes": 0,
+        "time_ns": 0
+      },
+      "builder": {
+        "peak_output_bytes": 3602,
+        "peak_space_bytes": 256,
+        "time_ns": 11
+      },
+      "proof_verification": {
+        "peak_output_bytes": 0,
+        "peak_space_bytes": 512,
+        "time_ns": 13
+      }
+    },
+    "counts": {
+      "branches": 1,
+      "parallel_workers_peak": 1,
+      "refinements": 0,
+      "reroutes": 0,
+      "restarts": 0,
+      "rollbacks": 0,
+      "states": 3,
+      "switches": 0
+    },
+    "description_bytes": {
+      "advice": 0,
+      "builder_artifacts": 3602,
+      "generated_tables": 0,
+      "program_code": 3602,
+      "proof": 242
+    },
+    "precision": {
+      "model": "finite exact bit/integer",
+      "peak_bits": 64
+    },
+    "resource_account_complete": true,
+    "semantic_loss_debt": {
+      "outstanding": 0,
+      "peak_open": 0,
+      "registered": []
+    },
+    "space_bytes": {
+      "artifacts": 7446,
+      "final": 1,
+      "peak": 1024
+    },
+    "time_ns": {
+      "construction": 11,
+      "decode": 7,
+      "generation": 0,
+      "lift": 0,
+      "oracle": 0,
+      "parallel_work": 0,
+      "recovery": 0,
+      "restart": 0,
+      "total": 48,
+      "update": 17,
+      "verify": 13
+    }
+  },
+  "mechanism": {
+    "admissibility": {
+      "advice_generator_ref": null,
+      "advice_mode": "none",
+      "builder_ref": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef",
+      "declared_answer_access": "truth-table",
+      "decode_ref": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef",
+      "finite_precision": true,
+      "hardware": "abstract deterministic machine",
+      "interaction": "none",
+      "local_invariant_ref": "sha256:57df1799834067179fb78bbbb5350cadbb402fbe0c78d8cfae6df246947eb34f",
+      "oracle_free": true,
+      "parallelism": "single worker",
+      "program_quantifiers": "exists-one-program-for-all-input-lengths",
+      "randomness": "none",
+      "step_ref": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef",
+      "uniform": true
+    },
+    "baseline_id": null,
+    "id": "parity-stream",
+    "name": "Uniform streaming PARITY",
+    "operations": [
+      "build",
+      "step",
+      "decode",
+      "verify"
+    ],
+    "oracle": {
+      "checks": [
+        "answer",
+        "prefix invariant"
+      ],
+      "entrypoint": "pnp_glc_i0.oracles:parity_oracle",
+      "independent": true,
+      "name": "independent parity oracle",
+      "obligations": [
+        "answer",
+        "prefix-invariant"
+      ],
+      "oracle_id": "i0-parity-oracle",
+      "sha256": "sha256:c8c5f6a0c132b11c56fd7964b737c1eb4f0b6a8674c7de8adcda50ca4b54efce",
+      "version": "0.2.6"
+    },
+    "resource_regime": "resource-bounded",
+    "role": "baseline",
+    "run_quantifier": "standard",
+    "version": "0.2.6"
+  },
+  "problem": {
+    "contract": {
+      "completion_requirements": [
+        "correct parity",
+        "executed prefix invariant when applicable",
+        "typed and authenticated evidence binding",
+        "transition/resource derivation",
+        "zero outstanding semantic-loss debt"
+      ],
+      "id": "I0-PARITY",
+      "sha256": "sha256:94c03095cbd3e17ed4389f5df9a153b8e369db3784239e943630327430206fc2",
+      "version": "0.2.6"
+    },
+    "family": "PARITY",
+    "generator": {
+      "name": "fixed-fixture",
+      "parameters": {
+        "bits": [
+          1,
+          0,
+          1,
+          1
+        ]
+      },
+      "seed": 0,
+      "version": "0.2.6"
+    },
+    "input_sha256": "sha256:4184e85a36b0be747d96fde315e1d92ced742babb301d36307be6a90af4779db",
+    "instance_id": "parity-n4",
+    "size": {
+      "n": 4
+    }
+  },
+  "provenance": {
+    "implementation": {
+      "dependencies": [
+        {
+          "name": "jsonschema",
+          "version": "4.26.0"
+        },
+        {
+          "name": "cryptography",
+          "version": "49.0.0"
+        }
+      ],
+      "dirty": false,
+      "name": "pnp-glc-i0",
+      "revision": "candidate",
+      "runtime": "CPython >=3.11",
+      "version": "0.2.6"
+    },
+    "sources": [
+      {
+        "accessed_at": "2026-08-09T06:00:00Z",
+        "applicable_domain": "I0 engineering records",
+        "id": "run-record-v0.2.6-candidate",
+        "kind": "implementation",
+        "locator": "schemas/run-record.schema.v0.2.6-candidate.json",
+        "sha256": "sha256:eb22cb899869b2a43dcd2dbbd3f4c9f7c0a8921ae361ef2207db1039b1c875ee",
+        "version": "0.2.6-candidate",
+        "visibility": "shared"
+      }
+    ]
+  },
+  "recorded_at": "2026-08-10T09:00:00Z",
+  "run_id": "declared-answer-access-mismatch",
+  "schema_version": "0.2.6",
+  "track": "algorithm",
+  "validation_receipt": {
+    "admission_pass": true,
+    "artifact_closure_spec_ref": "sha256:b635e86cb5fbdb89865ed4343f052247e98a245dd2194726066aef01489f758f",
+    "candidate_projection_sha256": "218ae8734207ee6f4325263d43a82e5d41f9dd5cf8ff1701a9f75d056cf63f8f",
+    "capability_sandbox_ref": "sha256:6916a2fce0b0c45ac9ba81d2090aedaf51c8c11aa861816a03d65ee7b857609b",
+    "correctness": {
+      "budget_pass": "pass",
+      "complete_pass": "pass",
+      "contract_pass": "pass",
+      "oracle_pass": "pass",
+      "outstanding_loss_debt": 0
+    },
+    "decision_source": "external-validator",
+    "evidence_role_spec_ref": "sha256:3147f9767711fb46b5d35929b8b9db7219146c5a0d3c15efbd1759bc7dd35109",
+    "fairness_spec_ref": null,
+    "final_completion": true,
+    "gate_version": "i0-admission-gate/0.2.6",
+    "gates": {
+      "advice_budget_pass": "pass",
+      "advice_generation_pass": "not-applicable",
+      "answer_access_pass": "pass",
+      "builder_execution_pass": "pass",
+      "fairness_pass": "not-applicable",
+      "maximality_pass": "not-applicable",
+      "oracle_free_pass": "pass",
+      "proof_verification_pass": "pass",
+      "provenance_pass": "pass",
+      "refs_resolved_pass": "pass",
+      "replay_pass": "pass",
+      "resource_account_pass": "pass",
+      "resource_budget_pass": "pass",
+      "resource_derivation_pass": "pass",
+      "run_class_nonempty": "pass",
+      "trace_authenticity_pass": "pass",
+      "transition_execution_pass": "pass",
+      "uniformity_pass": "pass"
+    },
+    "maximal_run_spec_ref": null,
+    "observed_answer_access": "none",
+    "operational_reference_map_sha256": "5a84d1a082e17ce64d7420adf96ee54b5b8e03964c9aeb945d0f09cf9861566a",
+    "projection_spec_id": "urn:evemisslab:pnp-glc:candidate-projection:0.2.6",
+    "projection_spec_sha256": "sha256:1257968aec544720393b02c9017ac44321dba6521336d6d5a28268045e345c17",
+    "reasons": [],
+    "receipt_version": "0.2.6",
+    "resolved_evidence_hashes": [
+      "sha256:0001ca06a93745efa3452a8b0e626ae9a3361411ae40f2e6e54c29ebff7795d0",
+      "sha256:03ceec52a930415354bc748a0b065f5ff5dc40cfcef6a37ac1e716704addfbaf",
+      "sha256:0831bb70cb62daf1d3e1d5da9dbf9b6e6e0e261ae22c6cf75bf68c8bdd83eae4",
+      "sha256:1257968aec544720393b02c9017ac44321dba6521336d6d5a28268045e345c17",
+      "sha256:3147f9767711fb46b5d35929b8b9db7219146c5a0d3c15efbd1759bc7dd35109",
+      "sha256:3762468940fa821652b7410c1004014f0100d3c8fb610f2d168e67a75741e102",
+      "sha256:3a635317859752a0bf56ca9928e2313096506df2d75c94d5cd51ce7814d93ecc",
+      "sha256:3f87207f26a21ca1b750b70170ebe28090f97c0670fb6f0ca88ed04296244d72",
+      "sha256:57df1799834067179fb78bbbb5350cadbb402fbe0c78d8cfae6df246947eb34f",
+      "sha256:6916a2fce0b0c45ac9ba81d2090aedaf51c8c11aa861816a03d65ee7b857609b",
+      "sha256:850454875011352fa66d67e1815e225712f85c4fec9205a8b052f28e9c055b8b",
+      "sha256:94c03095cbd3e17ed4389f5df9a153b8e369db3784239e943630327430206fc2",
+      "sha256:b635e86cb5fbdb89865ed4343f052247e98a245dd2194726066aef01489f758f",
+      "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef",
+      "sha256:c8c5f6a0c132b11c56fd7964b737c1eb4f0b6a8674c7de8adcda50ca4b54efce",
+      "sha256:d587ac4fb13464c8a5699dc4402ff07335c36221100ea06bb4c46ad07a15b7a4",
+      "sha256:eb22cb899869b2a43dcd2dbbd3f4c9f7c0a8921ae361ef2207db1039b1c875ee"
+    ],
+    "run_spec_ref": "sha256:850454875011352fa66d67e1815e225712f85c4fec9205a8b052f28e9c055b8b",
+    "schema_sha256": "sha256:eb22cb899869b2a43dcd2dbbd3f4c9f7c0a8921ae361ef2207db1039b1c875ee",
+    "trace_authenticity_ref": "sha256:0001ca06a93745efa3452a8b0e626ae9a3361411ae40f2e6e54c29ebff7795d0",
+    "trace_public_key_ref": "sha256:03ceec52a930415354bc748a0b065f5ff5dc40cfcef6a37ac1e716704addfbaf",
+    "trace_sha256": "sha256:3762468940fa821652b7410c1004014f0100d3c8fb610f2d168e67a75741e102",
+    "trace_signer_id": "i0-test-trace-signer-20260809",
+    "validator_independent": true,
+    "validator_sha256": "sha256:3f87207f26a21ca1b750b70170ebe28090f97c0670fb6f0ca88ed04296244d72"
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "answer_access": "none",
+  "artifact_envelope": {
+    "artifact_type": "capability-trace",
+    "edges": [],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.2",
+    "version": "0.2.2"
+  },
+  "candidate_output": {
+    "answer": 1,
+    "certificate_refs": [
+      "sha256:3fabffd25262ef86bbfabf3a34b8b0dad5e75b4677e1c3ff635feff544f49016"
+    ],
+    "notes": "Experiment only; no P/NP conclusion.",
+    "status": "complete"
+  },
+  "candidate_projection_sha256": "9a23d44e62d81a7971aa268d77fc927dfa321c584ec556f79144010bea9521b2",
+  "certificate_refs": [
+    "sha256:3fabffd25262ef86bbfabf3a34b8b0dad5e75b4677e1c3ff635feff544f49016"
+  ],
+  "events": [
+    {
+      "debt_added": [],
+      "debt_retired": [],
+      "failure": null,
+      "from_state": "start",
+      "input_sha256": "sha256:4184e85a36b0be747d96fde315e1d92ced742babb301d36307be6a90af4779db",
+      "invariant_ref": "sha256:3fabffd25262ef86bbfabf3a34b8b0dad5e75b4677e1c3ff635feff544f49016",
+      "kind": "solve",
+      "output_sha256": "sha256:a06432c224237825b58750b5c218ed397750b74612118c1c8819fdad9a4f74a4",
+      "representation_after": "parity-state",
+      "representation_before": "bit-vector",
+      "seq": 0,
+      "status": "ok",
+      "time_ns": {
+        "construction": 11,
+        "decode": 0,
+        "generation": 0,
+        "lift": 0,
+        "oracle": 0,
+        "parallel_work": 0,
+        "recovery": 0,
+        "restart": 0,
+        "total": 28,
+        "update": 17,
+        "verify": 0
+      },
+      "to_state": "computed",
+      "transition_rule_ref": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef"
+    },
+    {
+      "debt_added": [],
+      "debt_retired": [],
+      "failure": null,
+      "from_state": "computed",
+      "input_sha256": "sha256:a06432c224237825b58750b5c218ed397750b74612118c1c8819fdad9a4f74a4",
+      "invariant_ref": "sha256:3fabffd25262ef86bbfabf3a34b8b0dad5e75b4677e1c3ff635feff544f49016",
+      "kind": "stop",
+      "output_sha256": "sha256:c03872df000c48ca0d0480dd9267ef6537b2069c34368f5dab9c959993c72af9",
+      "representation_after": "answer-bit",
+      "representation_before": "parity-state",
+      "seq": 1,
+      "status": "ok",
+      "time_ns": {
+        "construction": 0,
+        "decode": 7,
+        "generation": 0,
+        "lift": 0,
+        "oracle": 0,
+        "parallel_work": 0,
+        "recovery": 0,
+        "restart": 0,
+        "total": 20,
+        "update": 0,
+        "verify": 13
+      },
+      "to_state": "terminal",
+      "transition_rule_ref": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef"
+    }
+  ],
+  "gate_evidence": {
+    "advice_budget_pass": true,
+    "advice_generation_pass": true,
+    "budget_pass": true,
+    "builder_execution_pass": true,
+    "complete_pass": true,
+    "contract_pass": true,
+    "fairness_pass": "unknown",
+    "maximality_pass": "unknown",
+    "oracle_pass": true,
+    "proof_verification_pass": true,
+    "provenance_pass": true,
+    "resource_budget_pass": true,
+    "run_class_nonempty": true
+  },
+  "gate_version": "i0-admission-gate/0.2.2",
+  "measurement_model": "authenticated-i0-single-worker-linear/0.2.2",
+  "operational_reference_map": {
+    "builder": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef",
+    "capability-sandbox": "sha256:79776e16c722822af13603750a7618460c5bbb3473c4ebd016025d8b45632a28",
+    "certificate:0": "sha256:3fabffd25262ef86bbfabf3a34b8b0dad5e75b4677e1c3ff635feff544f49016",
+    "closure-spec": "sha256:11f6cb511adfcf9528d11390e59ce1b52d8f709053ff5aa7295230f5b3e604eb",
+    "contract": "sha256:b5bf37414f310fb376ec4c0a12407893a01d5377d19be0d9dbf25b13b38d078b",
+    "decode": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef",
+    "event:0:invariant": "sha256:3fabffd25262ef86bbfabf3a34b8b0dad5e75b4677e1c3ff635feff544f49016",
+    "event:0:transition-rule": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef",
+    "event:1:invariant": "sha256:3fabffd25262ef86bbfabf3a34b8b0dad5e75b4677e1c3ff635feff544f49016",
+    "event:1:transition-rule": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef",
+    "local-invariant": "sha256:3fabffd25262ef86bbfabf3a34b8b0dad5e75b4677e1c3ff635feff544f49016",
+    "oracle": "sha256:c8c5f6a0c132b11c56fd7964b737c1eb4f0b6a8674c7de8adcda50ca4b54efce",
+    "projection-spec": "sha256:7860aa7a741fae5dcc6846b614c16450d29d17573563d6373a243931b9b51e57",
+    "role-spec": "sha256:2fefa7aacb9b6d914c3b78cdb2c187262d12a35bd56b14fd5882a71b84991a3f",
+    "run-spec": "sha256:93d78838b22c3a722ddacc6d3ff8356e0a8f1e7492d52ede5434487b99ef4454",
+    "schema": "sha256:bdbb386ce7eaab5377344bf29762ccbe45ea6371ac72742de509467cb70bb556",
+    "step": "sha256:bdfb4cd28a8730aa99b058dd6567027b98f0125fbf503a42e0fb895c686aedef",
+    "trace-public-key": "sha256:0536bc7b976fc2770a90d52e011eb4c1cdc51e476cb8b4a572fbed699bc4536c",
+    "validator": "sha256:7da459e8ad9fb3f8a49faa312a612f05484588143f36ff0918d090d6b1965ae5"
+  },
+  "producer": "pnp-glc-i0-capability-sandbox",
+  "projection_spec_id": "urn:evemisslab:pnp-glc:candidate-projection:0.2.2",
+  "resource_samples": {
+    "admission_costs": {
+      "advice_generation": {
+        "peak_output_bytes": 0,
+        "peak_space_bytes": 0,
+        "time_ns": 0
+      },
+      "builder": {
+        "peak_output_bytes": 3602,
+        "peak_space_bytes": 256,
+        "time_ns": 11
+      },
+      "proof_verification": {
+        "peak_output_bytes": 0,
+        "peak_space_bytes": 512,
+        "time_ns": 13
+      }
+    },
+    "counts": {
+      "branches": 1,
+      "parallel_workers_peak": 1,
+      "refinements": 0,
+      "reroutes": 0,
+      "restarts": 0,
+      "rollbacks": 0,
+      "states": 3,
+      "switches": 0
+    },
+    "description_bytes": {
+      "advice": 0,
+      "builder_artifacts": 3602,
+      "generated_tables": 0,
+      "program_code": 3602,
+      "proof": 242
+    },
+    "precision": {
+      "model": "finite exact bit/integer",
+      "peak_bits": 64
+    },
+    "space_bytes": {
+      "artifacts": 7446,
+      "final": 1,
+      "peak": 1024
+    }
+  },
+  "run_id": "fabricated-problem-size",
+  "trace_version": "0.2.2"
+}

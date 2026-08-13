@@ -1,0 +1,16 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "fairness-spec",
+    "edges": [
+      {
+        "expected_type": "opaque-content",
+        "role": "legacy-fairness-source",
+        "sha256": "sha256:61e47d77d9fd10c1b492970060e56ff016048c4d85e82690e36152afc1d15bbd"
+      }
+    ],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.5",
+    "version": "0.2.5"
+  },
+  "bounded_i0_semantics": "the finite singleton deterministic run is fair because every continuously enabled pinned transition is executed before terminal",
+  "mode": "robust"
+}

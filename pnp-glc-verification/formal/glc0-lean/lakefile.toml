@@ -1,0 +1,6 @@
+name = "glc0_formal"
+version = "0.1.0"
+defaultTargets = ["GLC0"]
+
+[[lean_lib]]
+name = "GLC0"

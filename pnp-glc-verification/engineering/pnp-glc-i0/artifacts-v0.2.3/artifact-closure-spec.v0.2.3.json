@@ -1,0 +1,49 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "artifact-closure-spec",
+    "edges": [],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.3",
+    "version": "0.2.3"
+  },
+  "base_envelope_shape": {
+    "edges": "must be a list of generic role-bearing edge objects before spec_id dispatch",
+    "ordering": "base shape validation precedes supported/unsupported spec_id classification",
+    "required_members": [
+      "spec_id",
+      "artifact_type",
+      "version",
+      "edges"
+    ],
+    "string_members": "spec_id, artifact_type, and version must be nonempty strings"
+  },
+  "closure_algorithm": [
+    "derive the direct operational role map from record mode/family and pinned validator configuration",
+    "require the signed trace operational_reference_map to equal that derived map",
+    "resolve each hash from the immutable ArtifactIndex snapshot",
+    "validate every direct field role against expected type, version and semantic discriminator",
+    "walk role-bearing edges breadth-first with cycle detection",
+    "validate parent type plus edge role plus declared child type against the pinned relation",
+    "validate the resolved child envelope type when expected_type is not opaque-content",
+    "require resolved_evidence_hashes to equal the fixed-point closure"
+  ],
+  "edge_shape": {
+    "expected_type": "must equal the pinned parent-type/role relation",
+    "required_members": [
+      "role",
+      "expected_type",
+      "sha256"
+    ],
+    "role": "unique within one parent envelope",
+    "sha256": "content address of the child artifact"
+  },
+  "envelope_classification_order": [
+    "artifact without artifact_envelope is an opaque leaf",
+    "validate the complete generic EnvelopeShape before inspecting whether spec_id is supported",
+    "artifact_envelope missing or mistyping any required member or generic edge member is malformed and fails",
+    "shape-valid envelope with unsupported spec_id is unknown and blocks admission",
+    "supported well-typed envelope is traversed"
+  ],
+  "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.3",
+  "status": "Definition-interface-candidate",
+  "version": "0.2.3"
+}

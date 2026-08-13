@@ -1,0 +1,5 @@
+{
+  "scheduler": "weakly fair",
+  "rule": "a transition continuously enabled from some point is eventually scheduled",
+  "fault_budget": "declared separately by the run record"
+}

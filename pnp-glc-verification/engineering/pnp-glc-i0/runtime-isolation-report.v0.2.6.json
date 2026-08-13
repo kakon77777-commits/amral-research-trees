@@ -1,0 +1,115 @@
+{
+  "all_pass": true,
+  "candidate_root_source_dependency": false,
+  "classification": "Manifest-only isolated acceptance replay",
+  "commands": [
+    {
+      "args": [
+        "python",
+        "-I",
+        "-B",
+        "scripts/verify_runtime_closure_v026.py",
+        "."
+      ],
+      "exit_code": 0,
+      "name": "runtime-closure-self-check",
+      "original_root_reference": false,
+      "passed": true,
+      "stderr_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "stdout_sha256": "745276003F84C219C51BD0002E605BA1944C51EF9F7FBB68E7ECD063693CEDF9"
+    },
+    {
+      "args": [
+        "python",
+        "-I",
+        "-B",
+        "scripts/reproduce_closure_class_v026.py",
+        "."
+      ],
+      "exit_code": 0,
+      "name": "closure-reproducer",
+      "original_root_reference": false,
+      "passed": true,
+      "stderr_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "stdout_sha256": "24509CA9D3131137D0D152659C58931E518C1022B88F9EA41716036A850D87CF"
+    },
+    {
+      "args": [
+        "python",
+        "-I",
+        "-B",
+        "scripts/reproduce_advice_decl_ledger_v026.py",
+        "."
+      ],
+      "exit_code": 0,
+      "name": "advice-reproducer",
+      "original_root_reference": false,
+      "passed": true,
+      "stderr_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "stdout_sha256": "6015FBB27C45AD9BF25150F47FCB130FA6E42BC920514BA0BE8B0FB2638A187B"
+    },
+    {
+      "args": [
+        "python",
+        "-I",
+        "-B",
+        "scripts/reproduce_oracle_decl_family_v026.py",
+        "."
+      ],
+      "exit_code": 0,
+      "name": "oracle-reproducer",
+      "original_root_reference": false,
+      "passed": true,
+      "stderr_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "stdout_sha256": "D65C1F47D7E82D9E886FC1B86644C24622188CF447592BAE3B512E4D3003FA0C"
+    },
+    {
+      "args": [
+        "python",
+        "-I",
+        "-B",
+        "scripts/reproduce_live_report_scope_v026.py",
+        "."
+      ],
+      "exit_code": 0,
+      "name": "live-report-scope-reproducer",
+      "original_root_reference": false,
+      "passed": true,
+      "stderr_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "stdout_sha256": "AC36A065513514EC24B769DF900FD6B9AA089282F11D3E19EFC35F768E1A4959"
+    },
+    {
+      "args": [
+        "python",
+        "-I",
+        "-B",
+        "scripts/validate_fixture_v026.py",
+        ".",
+        "legit"
+      ],
+      "exit_code": 0,
+      "name": "minimal-cli-legit",
+      "original_root_reference": false,
+      "passed": true,
+      "stderr_sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+      "stdout_sha256": "A72F98A347F5AAAAC375117F432267CF62CC5C4A5787C4F59E1602ABE2F93D99"
+    }
+  ],
+  "guard": {
+    "dont_write_bytecode": true,
+    "isolated": true,
+    "pythonpath_absent": true,
+    "sitecustomize_absent": true,
+    "usercustomize_absent": true
+  },
+  "guard_pass": true,
+  "manifest_entry_count": 216,
+  "manifest_issues": [],
+  "manifest_path_set_sha256": "2BC452701854A3FB46818B9969D49AB24CADBAB165CABAF706D94D554157C94D",
+  "required_paths_missing_from_manifest": [],
+  "snapshot_changed_files": [],
+  "snapshot_extra_files": [],
+  "snapshot_missing_files": [],
+  "snapshot_policy": "fresh temporary directory; copy exactly top-level manifest paths; sanitized environment; python -I -B; no original root references",
+  "version": "0.2.6"
+}

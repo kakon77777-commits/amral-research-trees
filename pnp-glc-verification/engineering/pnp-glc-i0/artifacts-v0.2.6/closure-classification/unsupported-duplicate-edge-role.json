@@ -1,0 +1,19 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "run-spec",
+    "edges": [
+      {
+        "expected_type": "opaque-content",
+        "role": "future-edge",
+        "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "expected_type": "opaque-content",
+        "role": "future-edge",
+        "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ],
+    "spec_id": "urn:unsupported:closure:9",
+    "version": "9.0.0"
+  }
+}

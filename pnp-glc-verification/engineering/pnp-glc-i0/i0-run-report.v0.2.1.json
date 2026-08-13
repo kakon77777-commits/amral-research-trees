@@ -1,0 +1,836 @@
+{
+  "admission": {
+    "2sat-sat": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "2sat-unsat": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "bad-trace-signature": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "canonicalization-variant": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "candidate-projection-mismatch",
+        "canonical-unicode-nfc",
+        "completion-postcondition-mismatch",
+        "trace-record-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "cheat": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [],
+      "record_accepted": false,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "circular-field": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "fabricated-states-999": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "fabricated-transition-digest": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "failed-gate-admission": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "false-final-completion": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "missing-transitive-ref": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "derived-gate-mismatch",
+        "unresolved-ref"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "neutral-legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "robust-legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "robust-neutral-legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "robust-null-spec": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "self-report": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "tampered-record": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "candidate-projection-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "replay-output-hash",
+        "replay-result-mismatch",
+        "trace-record-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "tampered-trace": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "replay-events-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "unknown-final": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "unknown-gate": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [],
+      "record_accepted": false,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "unresolved-event-ref": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "unresolved-ref"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    }
+  },
+  "environment": {
+    "parallel_workers": 1,
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "experiment_id": "I0-v0.2.1-20260809",
+  "formal_reference": {
+    "artifact": "AI-3 GLC0/Admission.lean Phase 1 ZIP",
+    "scope": "four-valued gate matrix only; not replay or validator proof",
+    "sha256": "712D331E7000F59DDE83569F78175F2B09306CBB312CD69F5B3839D79BD932F4"
+  },
+  "nonclaims": [
+    "experimental acceleration does not imply P=NP",
+    "experimental failure does not imply P!=NP",
+    "the AI-3 admission kernel does not prove this validator",
+    "the test signing key is not a production measurement authority"
+  ],
+  "parity": {
+    "baseline": "one uniform streaming program",
+    "correctness_oracle": "independent parity plus prefix invariant",
+    "failure_frontier": {
+      "admission_boundary": "uniformity, provenance, advice, answer-access and derivation gates",
+      "dominant_hidden_cost": "2^n table/advice generation",
+      "table_materialization_limit": 12
+    },
+    "nonuniform_pointwise_envelope": [
+      {
+        "advice_bytes": 1,
+        "answer": 0,
+        "build_generation_time_ns": 10400,
+        "decode_time_ns": 4100,
+        "n": 0,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 1
+      },
+      {
+        "advice_bytes": 2,
+        "answer": 0,
+        "build_generation_time_ns": 5100,
+        "decode_time_ns": 2600,
+        "n": 1,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 2
+      },
+      {
+        "advice_bytes": 4,
+        "answer": 1,
+        "build_generation_time_ns": 5000,
+        "decode_time_ns": 2700,
+        "n": 2,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 4
+      },
+      {
+        "advice_bytes": 8,
+        "answer": 0,
+        "build_generation_time_ns": 7000,
+        "decode_time_ns": 3300,
+        "n": 3,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 8
+      },
+      {
+        "advice_bytes": 16,
+        "answer": 0,
+        "build_generation_time_ns": 7100,
+        "decode_time_ns": 3000,
+        "n": 4,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 16
+      },
+      {
+        "advice_bytes": 32,
+        "answer": 0,
+        "build_generation_time_ns": 10800,
+        "decode_time_ns": 2900,
+        "n": 5,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 32
+      },
+      {
+        "advice_bytes": 64,
+        "answer": 0,
+        "build_generation_time_ns": 30100,
+        "decode_time_ns": 6400,
+        "n": 6,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 64
+      },
+      {
+        "advice_bytes": 128,
+        "answer": 0,
+        "build_generation_time_ns": 49200,
+        "decode_time_ns": 5300,
+        "n": 7,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 128
+      },
+      {
+        "advice_bytes": 256,
+        "answer": 0,
+        "build_generation_time_ns": 112400,
+        "decode_time_ns": 7400,
+        "n": 8,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 256
+      },
+      {
+        "advice_bytes": 512,
+        "answer": 1,
+        "build_generation_time_ns": 263000,
+        "decode_time_ns": 8500,
+        "n": 9,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 512
+      },
+      {
+        "advice_bytes": 1024,
+        "answer": 1,
+        "build_generation_time_ns": 573200,
+        "decode_time_ns": 14300,
+        "n": 10,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 1024
+      },
+      {
+        "advice_bytes": 2048,
+        "answer": 0,
+        "build_generation_time_ns": 1140500,
+        "decode_time_ns": 16600,
+        "n": 11,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 2048
+      },
+      {
+        "advice_bytes": 4096,
+        "answer": 0,
+        "build_generation_time_ns": 1261500,
+        "decode_time_ns": 12000,
+        "n": 12,
+        "oracle_pass": true,
+        "program_quantifiers": "for-all-lengths-exists-program",
+        "programs_for_length": 1,
+        "series_semantics": "pointwise-envelope",
+        "table_entries": 4096
+      }
+    ],
+    "uniform_fixed_program_scaling": [
+      {
+        "advice_bytes": 0,
+        "answer": 0,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 0,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 5100
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 0,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 1,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 6300
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 1,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 2,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 6000
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 0,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 3,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 15500
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 0,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 4,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 8100
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 0,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 5,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 8100
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 0,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 6,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 18400
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 0,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 7,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 22000
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 0,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 8,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 23300
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 1,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 9,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 20100
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 1,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 10,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 22900
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 0,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 11,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 29100
+      },
+      {
+        "advice_bytes": 0,
+        "answer": 0,
+        "construction_time_ns": 0,
+        "generation_time_ns": 0,
+        "invariant_pass": true,
+        "n": 12,
+        "oracle_pass": true,
+        "program_family_count": 1,
+        "series_semantics": "fixed-program-scaling",
+        "update_decode_time_ns": 26900
+      }
+    ]
+  },
+  "prov_derive_reality_tests": {
+    "fabricated-states-999": {
+      "failed_gate": "resource_derivation_pass",
+      "observation": "mirror consistency alone remains insufficient",
+      "record_accepted": false,
+      "resource_derivation": "fail",
+      "structural_replay": "pass",
+      "trace_authenticity": "pass",
+      "transition_execution": "pass"
+    },
+    "fabricated-transition-digest": {
+      "failed_gate": "transition_execution_pass",
+      "observation": "mirror consistency alone remains insufficient",
+      "record_accepted": false,
+      "resource_derivation": "pass",
+      "structural_replay": "pass",
+      "trace_authenticity": "pass",
+      "transition_execution": "fail"
+    }
+  },
+  "resource_ledger_columns": [
+    "construction",
+    "generation",
+    "update",
+    "decode",
+    "lift",
+    "verify",
+    "recovery",
+    "restart",
+    "parallel_work",
+    "oracle",
+    "space",
+    "description",
+    "admission",
+    "precision",
+    "counts",
+    "semantic_loss_debt"
+  ],
+  "seed": 20260809,
+  "status": "Experiment",
+  "terminal_only_projection": {
+    "cheat": {
+      "C": 1,
+      "Y": 1,
+      "decode": "O(n)",
+      "outstanding_debt": 0
+    },
+    "excludes": [
+      "admission_pass",
+      "final_completion",
+      "provenance",
+      "construction",
+      "advice"
+    ],
+    "legit": {
+      "C": 1,
+      "Y": 1,
+      "decode": "O(n)",
+      "outstanding_debt": 0
+    },
+    "observation": "terminal-only fields are intentionally indistinguishable"
+  },
+  "two_sat": {
+    "baseline": "implication-graph-plus-Kosaraju-SCC",
+    "cases": [
+      {
+        "baseline": "implication-graph-plus-Kosaraju-SCC",
+        "certificate_kind": "assignment",
+        "certificate_oracle_pass": true,
+        "clauses": [
+          [
+            1,
+            2
+          ],
+          [
+            -1,
+            3
+          ],
+          [
+            -2,
+            -3
+          ]
+        ],
+        "end_to_end_record_accepted": true,
+        "exhaustive_crosscheck_pass": true,
+        "id": "sat-basic",
+        "oracle_time_ns": 16500,
+        "record_fixture": "2sat-sat",
+        "resource_ledger": {
+          "admission_costs": {
+            "advice_generation": {
+              "peak_output_bytes": 0,
+              "peak_space_bytes": 0,
+              "time_ns": 0
+            },
+            "builder": {
+              "peak_output_bytes": 5209,
+              "peak_space_bytes": 1024,
+              "time_ns": 19
+            },
+            "proof_verification": {
+              "peak_output_bytes": 0,
+              "peak_space_bytes": 0,
+              "time_ns": 0
+            }
+          },
+          "counts": {
+            "branches": 1,
+            "parallel_workers_peak": 1,
+            "refinements": 0,
+            "reroutes": 0,
+            "restarts": 0,
+            "rollbacks": 0,
+            "states": 3,
+            "switches": 0
+          },
+          "description_bytes": {
+            "advice": 0,
+            "builder_artifacts": 5209,
+            "generated_tables": 0,
+            "program_code": 5209,
+            "proof": 0
+          },
+          "precision": {
+            "model": "finite exact bit/integer",
+            "peak_bits": 64
+          },
+          "resource_account_complete": true,
+          "semantic_loss_debt": {
+            "outstanding": 0,
+            "peak_open": 0,
+            "registered": []
+          },
+          "space_bytes": {
+            "artifacts": 10418,
+            "final": 139,
+            "peak": 2048
+          },
+          "time_ns": {
+            "construction": 19,
+            "decode": 11,
+            "generation": 0,
+            "lift": 0,
+            "oracle": 0,
+            "parallel_work": 0,
+            "recovery": 0,
+            "restart": 0,
+            "total": 78,
+            "update": 31,
+            "verify": 17
+          }
+        },
+        "solve_time_ns": 56100,
+        "status": "sat",
+        "variables": 3
+      },
+      {
+        "baseline": "implication-graph-plus-Kosaraju-SCC",
+        "certificate_kind": "mutual-implication-paths",
+        "certificate_oracle_pass": true,
+        "clauses": [
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            -1
+          ]
+        ],
+        "end_to_end_record_accepted": true,
+        "exhaustive_crosscheck_pass": true,
+        "id": "unsat-unit-pair",
+        "oracle_time_ns": 9200,
+        "record_fixture": "2sat-unsat",
+        "resource_ledger": {
+          "admission_costs": {
+            "advice_generation": {
+              "peak_output_bytes": 0,
+              "peak_space_bytes": 0,
+              "time_ns": 0
+            },
+            "builder": {
+              "peak_output_bytes": 5209,
+              "peak_space_bytes": 1024,
+              "time_ns": 19
+            },
+            "proof_verification": {
+              "peak_output_bytes": 0,
+              "peak_space_bytes": 0,
+              "time_ns": 0
+            }
+          },
+          "counts": {
+            "branches": 1,
+            "parallel_workers_peak": 1,
+            "refinements": 0,
+            "reroutes": 0,
+            "restarts": 0,
+            "rollbacks": 0,
+            "states": 3,
+            "switches": 0
+          },
+          "description_bytes": {
+            "advice": 0,
+            "builder_artifacts": 5209,
+            "generated_tables": 0,
+            "program_code": 5209,
+            "proof": 0
+          },
+          "precision": {
+            "model": "finite exact bit/integer",
+            "peak_bits": 64
+          },
+          "resource_account_complete": true,
+          "semantic_loss_debt": {
+            "outstanding": 0,
+            "peak_open": 0,
+            "registered": []
+          },
+          "space_bytes": {
+            "artifacts": 10418,
+            "final": 177,
+            "peak": 2048
+          },
+          "time_ns": {
+            "construction": 19,
+            "decode": 11,
+            "generation": 0,
+            "lift": 0,
+            "oracle": 0,
+            "parallel_work": 0,
+            "recovery": 0,
+            "restart": 0,
+            "total": 78,
+            "update": 31,
+            "verify": 17
+          }
+        },
+        "solve_time_ns": 46900,
+        "status": "unsat",
+        "variables": 1
+      }
+    ],
+    "correctness_oracles": [
+      "SAT assignment checker",
+      "UNSAT mutual implication path checker",
+      "small-instance exhaustive crosscheck"
+    ],
+    "failure_frontier": [
+      "clauses wider than two literals",
+      "general CNF cannot be converted to 2-CNF for free",
+      "incremental update bounds are not claimed"
+    ]
+  }
+}

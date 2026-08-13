@@ -1,0 +1,21 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "run-spec",
+    "edges": [
+      {
+        "expected_type": "ed25519-public-key",
+        "role": "fairness-spec",
+        "sha256": "sha256:0536bc7b976fc2770a90d52e011eb4c1cdc51e476cb8b4a572fbed699bc4536c"
+      },
+      {
+        "expected_type": "opaque-content",
+        "role": "legacy-run-source",
+        "sha256": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      }
+    ],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.2",
+    "version": "0.2.2"
+  },
+  "mode": "standard",
+  "nonempty_witness": "successful start-to-terminal executable trace"
+}

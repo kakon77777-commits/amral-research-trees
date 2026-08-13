@@ -1,0 +1,54 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "candidate-projection-spec",
+    "edges": [],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.4",
+    "version": "0.2.4"
+  },
+  "artifact_snapshot_rule": "hash, parse and use operate on one immutable in-memory byte snapshot; paths are never reopened",
+  "canonical_serialization": {
+    "arrays": "preserve order",
+    "encoding": "UTF-8 without BOM",
+    "ensure_ascii": false,
+    "equivalent_input_escapes": "input spellings such as \\n and \\u000a parse to the same string and must serialize only as \\n",
+    "numbers": "integers only in [-9007199254740991,9007199254740991], canonical base-10 decimal; floats and negative zero are forbidden",
+    "objects": "unique keys sorted by Unicode scalar-value lexicographic order",
+    "other_controls": "U+0000..U+001F not listed above use exactly lowercase \\u00xx",
+    "short_escapes": {
+      "U+0008": "\\b",
+      "U+0009": "\\t",
+      "U+000A": "\\n",
+      "U+000C": "\\f",
+      "U+000D": "\\r",
+      "quotation_mark": "\\\"",
+      "reverse_solidus": "\\\\"
+    },
+    "solidus": "never escaped",
+    "unicode": "all keys and string values must contain Unicode scalar values only and already be NFC",
+    "whitespace": "none outside strings; comma and colon separators only"
+  },
+  "formal_reference": {
+    "artifact": "AI-3 GLC0/Admission.lean Phase 1 ZIP",
+    "scope": "gate matrix only; not a proof of replay or validator soundness",
+    "sha256": "712D331E7000F59DDE83569F78175F2B09306CBB312CD69F5B3839D79BD932F4"
+  },
+  "hash_equality_is_not_replay": true,
+  "projection": {
+    "exclude": [
+      "validation_receipt",
+      "all external-validator derived fields",
+      "all receipt hashes including candidate_projection_sha256"
+    ],
+    "include": "every root field except validation_receipt",
+    "purpose": "bind candidate-controlled input, declarations, events, ledger and candidate_result without a self-hash cycle"
+  },
+  "raw_parse_domain": {
+    "duplicate_keys": "reject before constructing an object",
+    "negative_zero": "reject the exact JSON integer token -0 before conversion to an integer object",
+    "non_finite_numbers": "reject",
+    "unpaired_surrogates": "parse may expose the code unit only so the explicit Unicode-scalar domain check can reject it"
+  },
+  "spec_id": "urn:evemisslab:pnp-glc:candidate-projection:0.2.4",
+  "status": "Definition-interface-candidate",
+  "version": "0.2.4"
+}

@@ -1,0 +1,53 @@
+{
+  "allowed_edges": {
+    "capability-sandbox": {
+      "legacy-policy-source": "opaque-content"
+    },
+    "correctness-contract": {
+      "invariant-spec": "invariant-spec",
+      "oracle-source": "opaque-content"
+    },
+    "fairness-spec": {
+      "legacy-fairness-source": "opaque-content"
+    },
+    "invariant-spec": {
+      "legacy-invariant-source": "opaque-content"
+    },
+    "maximal-run-spec": {
+      "legacy-maximal-source": "opaque-content"
+    },
+    "run-spec": {
+      "fairness-spec": "fairness-spec",
+      "legacy-run-source": "opaque-content",
+      "maximality-spec": "maximal-run-spec"
+    },
+    "trace-authenticity-receipt": {
+      "public-key": "ed25519-public-key",
+      "trace": "capability-trace"
+    }
+  },
+  "artifact_envelope": {
+    "artifact_type": "evidence-role-spec",
+    "edges": [],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.5",
+    "version": "0.2.5"
+  },
+  "direct_roles": {
+    "capability-sandbox": "capability-sandbox",
+    "closure-spec": "artifact-closure-spec",
+    "contract": "correctness-contract with family equal to record family",
+    "fairness-spec": "fairness-spec when robust",
+    "local-invariant": "invariant-spec for uniform PARITY",
+    "maximal-run-spec": "maximal-run-spec when robust",
+    "projection-spec": "candidate-projection-spec",
+    "role-spec": "evidence-role-spec",
+    "rule/builder/step/decode/oracle": "exact pinned opaque source hashes",
+    "run-spec": "run-spec with mode equal to record run_quantifier",
+    "trace": "capability-trace",
+    "trace-authenticity": "trace-authenticity-receipt",
+    "trace-public-key": "ed25519-public-key"
+  },
+  "spec_id": "urn:evemisslab:pnp-glc:evidence-roles:0.2.5",
+  "status": "Definition-interface-candidate",
+  "version": "0.2.5"
+}

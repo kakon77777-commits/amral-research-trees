@@ -1,0 +1,119 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "artifact-closure-spec",
+    "edges": [],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.5",
+    "version": "0.2.5"
+  },
+  "base_envelope_shape": {
+    "derived_from": "judgments.GenericEnvelopeShape",
+    "edges": "must be a list and every element must satisfy judgments.GenericEdgeShape",
+    "normative_status": "derived-view-only",
+    "ordering": "judgments.GenericEnvelopeShape is decided before supported/unsupported spec_id dispatch",
+    "quantifier": "for every object containing artifact_envelope",
+    "required_members": [
+      "spec_id",
+      "artifact_type",
+      "version",
+      "edges"
+    ],
+    "string_members": "spec_id, artifact_type, and version must be nonempty strings"
+  },
+  "closure_algorithm": [
+    "derive the direct operational role map from record mode/family and pinned validator configuration",
+    "require the signed trace operational_reference_map to equal that derived map",
+    "resolve each hash from the immutable ArtifactIndex snapshot",
+    "apply judgments.OpaqueLeaf or judgments.GenericEnvelopeShape before spec_id dispatch",
+    "return UNKNOWN without traversal for a complete unsupported envelope",
+    "for supported envelopes only, validate direct field roles, version, semantic discriminator and SupportedEdgeRelation",
+    "walk supported role-bearing edges breadth-first with cycle detection",
+    "validate resolved supported child envelope type when expected_type is not opaque-content",
+    "require resolved_evidence_hashes to equal the fixed-point closure"
+  ],
+  "edge_shape": {
+    "generic_syntax": "defined by judgments.GenericEdgeShape and applicable to all envelopes",
+    "supported_relation": "defined by judgments.SupportedEdgeRelation and applicable iff spec_id is supported"
+  },
+  "envelope_classification_order": [
+    "judgments.OpaqueLeaf handles an artifact without artifact_envelope",
+    "if judgments.GenericEnvelopeShape fails, classify Malformed/FAIL",
+    "if judgments.GenericEnvelopeShape holds and spec_id is unsupported, classify Unsupported/UNKNOWN without judgments.SupportedEdgeRelation",
+    "if spec_id is supported, require judgments.SupportedEnvelopeHeader then apply judgments.SupportedEdgeRelation",
+    "traverse only a supported well-typed envelope"
+  ],
+  "judgments": {
+    "GenericEdgeShape": {
+      "constraints": [
+        "role is a nonempty string",
+        "expected_type is a nonempty string",
+        "sha256 is a syntactically valid SHA-256 content address",
+        "role is unique within the parent envelope"
+      ],
+      "does_not_require": [
+        "artifact_type is present in the current EDGE_RELATIONS domain",
+        "role is present in a current parent-type relation",
+        "expected_type equals a current parent-role target type"
+      ],
+      "depends_on": [],
+      "quantifier": "for every edge in every artifact_envelope before spec_id dispatch",
+      "required_exact_members": [
+        "role",
+        "expected_type",
+        "sha256"
+      ]
+    },
+    "GenericEnvelopeShape": {
+      "applicable_when": "an artifact object contains artifact_envelope",
+      "depends_on": [
+        "judgments.GenericEdgeShape"
+      ],
+      "false_result": {
+        "classification": "Malformed",
+        "gate_result": "FAIL",
+        "traversal": "do not traverse"
+      },
+      "predicate": [
+        "artifact_envelope is an object",
+        "spec_id, artifact_type, version, and edges are present",
+        "spec_id, artifact_type, and version are nonempty strings",
+        "edges is a list",
+        "every edge satisfies judgments.GenericEdgeShape"
+      ],
+      "quantifier": "for every artifact object containing artifact_envelope before spec_id dispatch"
+    },
+    "OpaqueLeaf": {
+      "applicable_when": "an artifact object does not contain artifact_envelope",
+      "depends_on": [],
+      "result": "opaque leaf; envelope classification is not applied",
+      "traversal": "do not traverse"
+    },
+    "SupportedEnvelopeHeader": {
+      "applicable_when": "judgments.GenericEnvelopeShape holds and envelope.spec_id equals urn:evemisslab:pnp-glc:artifact-closure:0.2.5",
+      "depends_on": [
+        "judgments.GenericEnvelopeShape"
+      ],
+      "predicate": "envelope.version equals 0.2.5 and envelope.artifact_type is in the current EDGE_RELATIONS domain",
+      "failure_result": "FAIL before judgments.SupportedEdgeRelation is evaluated"
+    },
+    "SupportedEdgeRelation": {
+      "applicable_iff": "judgments.SupportedEnvelopeHeader holds",
+      "depends_on": [
+        "judgments.SupportedEnvelopeHeader"
+      ],
+      "not_applicable_when": "the complete generic envelope has an unsupported spec_id or judgments.SupportedEnvelopeHeader fails",
+      "predicate": "EDGE_RELATIONS[artifact_type][role] equals expected_type for every edge"
+    },
+    "UnsupportedEnvelope": {
+      "depends_on": [
+        "judgments.GenericEnvelopeShape"
+      ],
+      "predicate": "judgments.GenericEnvelopeShape holds and spec_id is not the supported closure spec_id",
+      "result": "UNKNOWN",
+      "traversal": "do not traverse edges because their semantics are outside this validator version"
+    }
+  },
+  "normative_precedence": "The complete normative classification graph is the judgments object. Every symbolic dependency in judgments must be a fully qualified judgments.<name> reference that resolves to a key in the same object. Top-level base_envelope_shape, closure_algorithm, edge_shape, and envelope_classification_order are derived views with no independent normative force.",
+  "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.5",
+  "status": "Definition-interface-candidate",
+  "version": "0.2.5"
+}

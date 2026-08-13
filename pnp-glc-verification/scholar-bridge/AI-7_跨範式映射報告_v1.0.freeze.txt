@@ -1,0 +1,11 @@
+AI-7 跨範式映射報告 v1.0 freeze manifest
+freeze_date=2026-08-09
+timezone=Asia/Taipei
+artifact=AI-7_跨範式映射報告_v1.0.md
+sha256=2DB3AAAF2D3603DD79D78E163575AA47C13A101CE4E6A70821E62883F7944959
+bytes=28721
+lines=284
+scope=read-only cross-paradigm reconstruction of GCC USRT USEG GLC
+explicit_nonclaims=no P=NP; no P!=NP; no P/NP solution; no theorem-equivalence claim
+excluded=AI-6 actual response
+actions_not_taken=no messages to AI-1..AI-5; no Board publication; no source modification

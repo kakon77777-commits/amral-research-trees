@@ -1,0 +1,16 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "maximal-run-spec",
+    "edges": [
+      {
+        "expected_type": "opaque-content",
+        "role": "legacy-maximal-source",
+        "sha256": "sha256:c186db5d3fe434e1a6963de926c634581cb497145138932f81f6fa76e3b841de"
+      }
+    ],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.5",
+    "version": "0.2.5"
+  },
+  "bounded_i0_semantics": "the singleton deterministic run is maximal iff its final event reaches terminal with no enabled pinned transition",
+  "mode": "robust"
+}

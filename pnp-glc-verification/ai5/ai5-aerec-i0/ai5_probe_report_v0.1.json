@@ -1,0 +1,619 @@
+{
+  "aggregate_timing_ns": {
+    "median_fixture": 100628150,
+    "sum_of_fixture_medians": 1682700700
+  },
+  "all_manifest_expectations_match": true,
+  "candidate_root": "C:\\Users\\kakon\\Documents\\Codex\\2026-08-09\\pnp-glc-ai5\\work\\ai4_v021_candidate_C777BC63",
+  "candidate_validator_sha256": "C777BC631303E977F025FC17AAB455CFEE3CDFA2B5C1A23166A51EC5E9E99CD4",
+  "environment": {
+    "pid": 28708,
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "epistemic_status": "unpromoted-candidate",
+  "execution_model": "isolated-rescan-per-record",
+  "fixture_order": [
+    "legit",
+    "fabricated-states-999",
+    "fabricated-transition-digest",
+    "2sat-sat",
+    "2sat-unsat",
+    "bad-trace-signature",
+    "missing-transitive-ref",
+    "tampered-record",
+    "tampered-trace",
+    "unresolved-event-ref",
+    "canonicalization-variant",
+    "cheat",
+    "circular-field",
+    "failed-gate-admission",
+    "false-final-completion",
+    "neutral-legit",
+    "robust-legit",
+    "robust-neutral-legit",
+    "robust-null-spec",
+    "self-report",
+    "unknown-final",
+    "unknown-gate"
+  ],
+  "fixtures": {
+    "2sat-sat": {
+      "issue_codes": [],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": true,
+        "final_completion": true,
+        "record_accepted": true,
+        "semantic_ok": true,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 100497900,
+        "median": 98042300,
+        "minimum": 97698000,
+        "p95_nearest_rank": 100497900,
+        "repetitions": 9
+      }
+    },
+    "2sat-unsat": {
+      "issue_codes": [],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": true,
+        "final_completion": true,
+        "record_accepted": true,
+        "semantic_ok": true,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 98942300,
+        "median": 96352300,
+        "minimum": 94026500,
+        "p95_nearest_rank": 98942300,
+        "repetitions": 9
+      }
+    },
+    "bad-trace-signature": {
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": false,
+        "final_completion": false,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 113569100,
+        "median": 102099300,
+        "minimum": 93732100,
+        "p95_nearest_rank": 113569100,
+        "repetitions": 9
+      }
+    },
+    "canonicalization-variant": {
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "candidate-projection-mismatch",
+        "canonical-unicode-nfc",
+        "completion-postcondition-mismatch",
+        "trace-record-binding"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": false,
+        "final_completion": false,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 111375900,
+        "median": 101502600,
+        "minimum": 99097600,
+        "p95_nearest_rank": 111375900,
+        "repetitions": 9
+      }
+    },
+    "cheat": {
+      "issue_codes": [],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": false,
+        "final_completion": false,
+        "record_accepted": false,
+        "semantic_ok": true,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 107117400,
+        "median": 101894400,
+        "minimum": 98569700,
+        "p95_nearest_rank": 107117400,
+        "repetitions": 9
+      }
+    },
+    "circular-field": {
+      "issue_codes": [
+        "schema"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": null,
+        "final_completion": null,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": false
+      },
+      "timing_ns": {
+        "maximum": 10735700,
+        "median": 9724300,
+        "minimum": 9478000,
+        "p95_nearest_rank": 10735700,
+        "repetitions": 9
+      }
+    },
+    "fabricated-states-999": {
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": false,
+        "final_completion": false,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 103832300,
+        "median": 100041700,
+        "minimum": 97867700,
+        "p95_nearest_rank": 103832300,
+        "repetitions": 9
+      }
+    },
+    "fabricated-transition-digest": {
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": false,
+        "final_completion": false,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 112422200,
+        "median": 99618100,
+        "minimum": 97821900,
+        "p95_nearest_rank": 112422200,
+        "repetitions": 9
+      }
+    },
+    "failed-gate-admission": {
+      "issue_codes": [
+        "schema"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": null,
+        "final_completion": null,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": false
+      },
+      "timing_ns": {
+        "maximum": 10940300,
+        "median": 10113500,
+        "minimum": 9535700,
+        "p95_nearest_rank": 10940300,
+        "repetitions": 9
+      }
+    },
+    "false-final-completion": {
+      "issue_codes": [
+        "schema"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": null,
+        "final_completion": null,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": false
+      },
+      "timing_ns": {
+        "maximum": 10850700,
+        "median": 10074400,
+        "minimum": 9700700,
+        "p95_nearest_rank": 10850700,
+        "repetitions": 9
+      }
+    },
+    "legit": {
+      "issue_codes": [],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": true,
+        "final_completion": true,
+        "record_accepted": true,
+        "semantic_ok": true,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 108362700,
+        "median": 99370400,
+        "minimum": 97473900,
+        "p95_nearest_rank": 108362700,
+        "repetitions": 9
+      }
+    },
+    "missing-transitive-ref": {
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "derived-gate-mismatch",
+        "unresolved-ref"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": false,
+        "final_completion": false,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 103946000,
+        "median": 102807800,
+        "minimum": 100466500,
+        "p95_nearest_rank": 103946000,
+        "repetitions": 9
+      }
+    },
+    "neutral-legit": {
+      "issue_codes": [],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": true,
+        "final_completion": true,
+        "record_accepted": true,
+        "semantic_ok": true,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 109909100,
+        "median": 103163100,
+        "minimum": 99104500,
+        "p95_nearest_rank": 109909100,
+        "repetitions": 9
+      }
+    },
+    "robust-legit": {
+      "issue_codes": [],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": true,
+        "final_completion": true,
+        "record_accepted": true,
+        "semantic_ok": true,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 119897200,
+        "median": 106880500,
+        "minimum": 100036800,
+        "p95_nearest_rank": 119897200,
+        "repetitions": 9
+      }
+    },
+    "robust-neutral-legit": {
+      "issue_codes": [],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": true,
+        "final_completion": true,
+        "record_accepted": true,
+        "semantic_ok": true,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 107075100,
+        "median": 102289500,
+        "minimum": 99555800,
+        "p95_nearest_rank": 107075100,
+        "repetitions": 9
+      }
+    },
+    "robust-null-spec": {
+      "issue_codes": [
+        "schema"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": null,
+        "final_completion": null,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": false
+      },
+      "timing_ns": {
+        "maximum": 10540900,
+        "median": 10168500,
+        "minimum": 9724300,
+        "p95_nearest_rank": 10540900,
+        "repetitions": 9
+      }
+    },
+    "self-report": {
+      "issue_codes": [
+        "schema"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": null,
+        "final_completion": null,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": false
+      },
+      "timing_ns": {
+        "maximum": 10330600,
+        "median": 9848800,
+        "minimum": 9602100,
+        "p95_nearest_rank": 10330600,
+        "repetitions": 9
+      }
+    },
+    "tampered-record": {
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "candidate-projection-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "replay-output-hash",
+        "replay-result-mismatch",
+        "trace-record-binding"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": false,
+        "final_completion": false,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 109129500,
+        "median": 102902000,
+        "minimum": 99293600,
+        "p95_nearest_rank": 109129500,
+        "repetitions": 9
+      }
+    },
+    "tampered-trace": {
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "replay-events-mismatch"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": false,
+        "final_completion": false,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 109844200,
+        "median": 102204400,
+        "minimum": 100190900,
+        "p95_nearest_rank": 109844200,
+        "repetitions": 9
+      }
+    },
+    "unknown-final": {
+      "issue_codes": [
+        "schema"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": null,
+        "final_completion": null,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": false
+      },
+      "timing_ns": {
+        "maximum": 11882300,
+        "median": 10227000,
+        "minimum": 9756800,
+        "p95_nearest_rank": 11882300,
+        "repetitions": 9
+      }
+    },
+    "unknown-gate": {
+      "issue_codes": [],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": false,
+        "final_completion": false,
+        "record_accepted": false,
+        "semantic_ok": true,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 103868000,
+        "median": 101214600,
+        "minimum": 97721500,
+        "p95_nearest_rank": 103868000,
+        "repetitions": 9
+      }
+    },
+    "unresolved-event-ref": {
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "unresolved-ref"
+      ],
+      "matches_expectation": true,
+      "mismatches": [],
+      "observed": {
+        "admission_pass": false,
+        "final_completion": false,
+        "record_accepted": false,
+        "semantic_ok": false,
+        "structural_ok": true
+      },
+      "timing_ns": {
+        "maximum": 103498200,
+        "median": 102161200,
+        "minimum": 100542900,
+        "p95_nearest_rank": 103498200,
+        "repetitions": 9
+      }
+    }
+  },
+  "mode": "full",
+  "nonclaims": [
+    "local validation is not independent acceptance",
+    "timing is empirical wall time, not an asymptotic complexity claim",
+    "experimental success or failure has no P versus NP implication"
+  ],
+  "packaging": {
+    "candidate_is_self_contained_for_predecessor_test": false,
+    "explicit_v01_matches": true,
+    "explicit_v01_schema": "C:\\Users\\kakon\\Documents\\Codex\\2026-08-09\\pnp-glc-ai5\\work\\run-record.schema.json",
+    "explicit_v01_sha256": "3B50247DED1B21B4962A5ADD19DA2263AFB77358D8837D14B4B58EDA7883CAF4",
+    "observation": "The shipped candidate root does not contain v0.1; both test suites resolve it from ROOT.parent/run-record.schema.json. A relocated candidate therefore needs an external compatibility layout.",
+    "test_expected_parent_path": "C:\\Users\\kakon\\Documents\\Codex\\2026-08-09\\pnp-glc-ai5\\work\\run-record.schema.json",
+    "test_expected_parent_present": true
+  },
+  "pins_after": {
+    "all_match": true,
+    "entries": {
+      "artifacts-v0.2.1/artifact-closure-spec.v0.2.1.json": {
+        "expected_sha256": "B466BF8D630BAC4B1A42A28F534C5D20A0713D418CCB3826ED69FF71D7585C94",
+        "matches": true,
+        "observed_sha256": "B466BF8D630BAC4B1A42A28F534C5D20A0713D418CCB3826ED69FF71D7585C94"
+      },
+      "artifacts-v0.2.1/candidate-projection-spec.v0.2.1.json": {
+        "expected_sha256": "70CAAE9973A3A02AD8F45364BE2175A51BA62C6C0D75B6C807B7B8DFB5BBD115",
+        "matches": true,
+        "observed_sha256": "70CAAE9973A3A02AD8F45364BE2175A51BA62C6C0D75B6C807B7B8DFB5BBD115"
+      },
+      "artifacts-v0.2.1/trace-public-key.v0.2.1.json": {
+        "expected_sha256": "27D25EBF48C59E9AFF166D32970C3444DC78E25C352F012B3998B0626DFB2A3D",
+        "matches": true,
+        "observed_sha256": "27D25EBF48C59E9AFF166D32970C3444DC78E25C352F012B3998B0626DFB2A3D"
+      },
+      "fixtures-v0.2.1/manifest.json": {
+        "expected_sha256": "6081A4839BB75C2D80E8B856F7018CD2887ACCCBFD8067BCFDC417B53F4A79B3",
+        "matches": true,
+        "observed_sha256": "6081A4839BB75C2D80E8B856F7018CD2887ACCCBFD8067BCFDC417B53F4A79B3"
+      },
+      "i0-run-report.v0.2.1.json": {
+        "expected_sha256": "3D7851B23F4F41905E76DEEA7CD54839C4DACBBEA4D50D8F92B124AAB20A6A55",
+        "matches": true,
+        "observed_sha256": "3D7851B23F4F41905E76DEEA7CD54839C4DACBBEA4D50D8F92B124AAB20A6A55"
+      },
+      "schemas/run-record.schema.v0.2.1-candidate.json": {
+        "expected_sha256": "567417A82EA82C8C2CE7EC81DF1B4BEC5876044F54213446E4CE298CEADE6C2B",
+        "matches": true,
+        "observed_sha256": "567417A82EA82C8C2CE7EC81DF1B4BEC5876044F54213446E4CE298CEADE6C2B"
+      },
+      "src/pnp_glc_i0/semantic_validator_v021.py": {
+        "expected_sha256": "C777BC631303E977F025FC17AAB455CFEE3CDFA2B5C1A23166A51EC5E9E99CD4",
+        "matches": true,
+        "observed_sha256": "C777BC631303E977F025FC17AAB455CFEE3CDFA2B5C1A23166A51EC5E9E99CD4"
+      }
+    }
+  },
+  "pins_before": {
+    "all_match": true,
+    "entries": {
+      "artifacts-v0.2.1/artifact-closure-spec.v0.2.1.json": {
+        "expected_sha256": "B466BF8D630BAC4B1A42A28F534C5D20A0713D418CCB3826ED69FF71D7585C94",
+        "matches": true,
+        "observed_sha256": "B466BF8D630BAC4B1A42A28F534C5D20A0713D418CCB3826ED69FF71D7585C94"
+      },
+      "artifacts-v0.2.1/candidate-projection-spec.v0.2.1.json": {
+        "expected_sha256": "70CAAE9973A3A02AD8F45364BE2175A51BA62C6C0D75B6C807B7B8DFB5BBD115",
+        "matches": true,
+        "observed_sha256": "70CAAE9973A3A02AD8F45364BE2175A51BA62C6C0D75B6C807B7B8DFB5BBD115"
+      },
+      "artifacts-v0.2.1/trace-public-key.v0.2.1.json": {
+        "expected_sha256": "27D25EBF48C59E9AFF166D32970C3444DC78E25C352F012B3998B0626DFB2A3D",
+        "matches": true,
+        "observed_sha256": "27D25EBF48C59E9AFF166D32970C3444DC78E25C352F012B3998B0626DFB2A3D"
+      },
+      "fixtures-v0.2.1/manifest.json": {
+        "expected_sha256": "6081A4839BB75C2D80E8B856F7018CD2887ACCCBFD8067BCFDC417B53F4A79B3",
+        "matches": true,
+        "observed_sha256": "6081A4839BB75C2D80E8B856F7018CD2887ACCCBFD8067BCFDC417B53F4A79B3"
+      },
+      "i0-run-report.v0.2.1.json": {
+        "expected_sha256": "3D7851B23F4F41905E76DEEA7CD54839C4DACBBEA4D50D8F92B124AAB20A6A55",
+        "matches": true,
+        "observed_sha256": "3D7851B23F4F41905E76DEEA7CD54839C4DACBBEA4D50D8F92B124AAB20A6A55"
+      },
+      "schemas/run-record.schema.v0.2.1-candidate.json": {
+        "expected_sha256": "567417A82EA82C8C2CE7EC81DF1B4BEC5876044F54213446E4CE298CEADE6C2B",
+        "matches": true,
+        "observed_sha256": "567417A82EA82C8C2CE7EC81DF1B4BEC5876044F54213446E4CE298CEADE6C2B"
+      },
+      "src/pnp_glc_i0/semantic_validator_v021.py": {
+        "expected_sha256": "C777BC631303E977F025FC17AAB455CFEE3CDFA2B5C1A23166A51EC5E9E99CD4",
+        "matches": true,
+        "observed_sha256": "C777BC631303E977F025FC17AAB455CFEE3CDFA2B5C1A23166A51EC5E9E99CD4"
+      }
+    }
+  },
+  "selection": "candidate-remains-unpromoted-pending-independent-acceptance",
+  "snapshot_byte_count": null,
+  "snapshot_file_count": null,
+  "snapshot_stable_during_probe": true,
+  "status": "experiment"
+}

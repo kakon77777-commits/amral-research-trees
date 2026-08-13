@@ -1,0 +1,188 @@
+{
+  "fixtures": {
+    "2sat-sat": {
+      "admission_pass": true,
+      "final_completion": true,
+      "record_accepted": true,
+      "record_valid": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "2sat-unsat": {
+      "admission_pass": true,
+      "final_completion": true,
+      "record_accepted": true,
+      "record_valid": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "bad-trace-signature": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "canonicalization-variant": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "cheat": {
+      "admission_pass": false,
+      "final_completion": false,
+      "record_accepted": false,
+      "record_valid": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "circular-field": {
+      "structural_ok": false
+    },
+    "cross-role-contract-invariant": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "declared-answer-access-mismatch": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "fabricated-failure-frontier": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "fabricated-problem-size": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "fabricated-states-999": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "fabricated-transition-digest": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "failed-gate-admission": {
+      "structural_ok": false
+    },
+    "false-final-completion": {
+      "structural_ok": false
+    },
+    "legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "record_accepted": true,
+      "record_valid": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "malformed-role-edge": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "missing-envelope-spec-id": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "negative-zero": {
+      "structural_ok": false
+    },
+    "neutral-legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "record_accepted": true,
+      "record_valid": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "receipt-ref-substitution": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "robust-legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "record_accepted": true,
+      "record_valid": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "robust-neutral-legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "record_accepted": true,
+      "record_valid": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "robust-null-spec": {
+      "structural_ok": false
+    },
+    "robust-ref-type-confusion": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "self-report": {
+      "structural_ok": false
+    },
+    "tampered-record": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "tampered-trace": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "unknown-final": {
+      "structural_ok": false
+    },
+    "unknown-gate": {
+      "admission_pass": false,
+      "final_completion": false,
+      "record_accepted": false,
+      "record_valid": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "unpaired-surrogate": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "unresolved-event-ref": {
+      "record_accepted": false,
+      "record_valid": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    }
+  },
+  "schema": "schemas/run-record.schema.v0.2.2-candidate.json",
+  "status": "Experiment fixtures; no P/NP conclusion",
+  "validator": "src/pnp_glc_i0/semantic_validator_v022.py"
+}

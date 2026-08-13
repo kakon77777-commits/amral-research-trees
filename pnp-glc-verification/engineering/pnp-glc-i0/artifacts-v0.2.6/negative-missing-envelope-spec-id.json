@@ -1,0 +1,9 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "run-spec",
+    "edges": [],
+    "version": "0.2.6"
+  },
+  "mode": "standard",
+  "nonempty_witness": "successful start-to-terminal executable trace"
+}

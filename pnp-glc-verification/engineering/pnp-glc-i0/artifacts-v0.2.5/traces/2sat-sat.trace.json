@@ -1,0 +1,166 @@
+{
+  "answer_access": "none",
+  "artifact_envelope": {
+    "artifact_type": "capability-trace",
+    "edges": [],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.5",
+    "version": "0.2.5"
+  },
+  "candidate_output": {
+    "answer": {
+      "assignment": {
+        "1": true,
+        "2": false,
+        "3": true
+      }
+    },
+    "certificate_refs": [],
+    "notes": "Experiment only; no P/NP conclusion.",
+    "status": "sat"
+  },
+  "candidate_projection_sha256": "fe88f569563b8d2c1ab2b9defe7fc761e9b54b2e58481d3a665ab75179af67a7",
+  "certificate_refs": [],
+  "events": [
+    {
+      "debt_added": [],
+      "debt_retired": [],
+      "failure": null,
+      "from_state": "start",
+      "input_sha256": "sha256:3ab68671846fd91b7a3d9c6a7cc12a7915c501980db1ac19f8ec4e7a480b9b8e",
+      "invariant_ref": null,
+      "kind": "solve",
+      "output_sha256": "sha256:22a26b4af5cf2d1b8fb5c2e29251b84551b2dad10a2e3ddfaeb1f8ab12b45613",
+      "representation_after": "scc-result",
+      "representation_before": "2cnf",
+      "seq": 0,
+      "status": "ok",
+      "time_ns": {
+        "construction": 19,
+        "decode": 0,
+        "generation": 0,
+        "lift": 0,
+        "oracle": 0,
+        "parallel_work": 0,
+        "recovery": 0,
+        "restart": 0,
+        "total": 50,
+        "update": 31,
+        "verify": 0
+      },
+      "to_state": "computed",
+      "transition_rule_ref": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971"
+    },
+    {
+      "debt_added": [],
+      "debt_retired": [],
+      "failure": null,
+      "from_state": "computed",
+      "input_sha256": "sha256:22a26b4af5cf2d1b8fb5c2e29251b84551b2dad10a2e3ddfaeb1f8ab12b45613",
+      "invariant_ref": null,
+      "kind": "stop",
+      "output_sha256": "sha256:6d6b2b765f733f37ffd62f3c4a9f709b4928f15e9185154f923f5d0316203947",
+      "representation_after": "decision-certificate",
+      "representation_before": "scc-result",
+      "seq": 1,
+      "status": "ok",
+      "time_ns": {
+        "construction": 0,
+        "decode": 11,
+        "generation": 0,
+        "lift": 0,
+        "oracle": 0,
+        "parallel_work": 0,
+        "recovery": 0,
+        "restart": 0,
+        "total": 28,
+        "update": 0,
+        "verify": 17
+      },
+      "to_state": "terminal",
+      "transition_rule_ref": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971"
+    }
+  ],
+  "gate_evidence": {
+    "advice_budget_pass": true,
+    "advice_generation_pass": true,
+    "budget_pass": true,
+    "builder_execution_pass": true,
+    "complete_pass": true,
+    "contract_pass": true,
+    "fairness_pass": "unknown",
+    "maximality_pass": "unknown",
+    "oracle_pass": true,
+    "proof_verification_pass": true,
+    "provenance_pass": true,
+    "resource_budget_pass": true,
+    "run_class_nonempty": true
+  },
+  "gate_version": "i0-admission-gate/0.2.5",
+  "measurement_model": "authenticated-i0-single-worker-linear/0.2.5",
+  "operational_reference_map": {
+    "builder": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971",
+    "capability-sandbox": "sha256:c4d79688d00fe868c90f74171d4e3fab4fdb27e5d4d0e750e1b9707f4018fce6",
+    "closure-spec": "sha256:dfc5a11cf6296f4d83b054b7f4f903e509b0982f9c61d231d423e7f78b5ff71d",
+    "contract": "sha256:78f96b2e8fd7c207c8eada2853382a93354b685ea0e8fe89215512c76a009d71",
+    "decode": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971",
+    "event:0:transition-rule": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971",
+    "event:1:transition-rule": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971",
+    "oracle": "sha256:c8c5f6a0c132b11c56fd7964b737c1eb4f0b6a8674c7de8adcda50ca4b54efce",
+    "projection-spec": "sha256:42348657bd0475442b266385d0c88e8685f21334d78a49ecb0cf64d2d3977e18",
+    "role-spec": "sha256:6b49d3907209d5edeed839fe698a25ea96451cdcf7534f2383125e9f3f98c088",
+    "run-spec": "sha256:c6a725ba5e0c73b24b9cb648aac30ec5f262f862d525e7f9a499280d232a392b",
+    "schema": "sha256:8a799a869cf6cdd17d1191a9d859ab25899ff9e651b454725814e4b458b92596",
+    "step": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971",
+    "trace-public-key": "sha256:ac0724dff856910dba024c75810bae1a34573d65353843d98d27015a392e2757",
+    "validator": "sha256:2571b418612414948a80967b868b910b3714d1fb63f3c79387bf77ec5ca71c5a"
+  },
+  "producer": "pnp-glc-i0-capability-sandbox",
+  "projection_spec_id": "urn:evemisslab:pnp-glc:candidate-projection:0.2.5",
+  "resource_samples": {
+    "admission_costs": {
+      "advice_generation": {
+        "peak_output_bytes": 0,
+        "peak_space_bytes": 0,
+        "time_ns": 0
+      },
+      "builder": {
+        "peak_output_bytes": 5209,
+        "peak_space_bytes": 1024,
+        "time_ns": 19
+      },
+      "proof_verification": {
+        "peak_output_bytes": 0,
+        "peak_space_bytes": 0,
+        "time_ns": 0
+      }
+    },
+    "counts": {
+      "branches": 1,
+      "parallel_workers_peak": 1,
+      "refinements": 0,
+      "reroutes": 0,
+      "restarts": 0,
+      "rollbacks": 0,
+      "states": 3,
+      "switches": 0
+    },
+    "description_bytes": {
+      "advice": 0,
+      "builder_artifacts": 5209,
+      "generated_tables": 0,
+      "program_code": 5209,
+      "proof": 0
+    },
+    "precision": {
+      "model": "finite exact bit/integer",
+      "peak_bits": 64
+    },
+    "space_bytes": {
+      "artifacts": 10418,
+      "final": 139,
+      "peak": 2048
+    }
+  },
+  "run_id": "2sat-sat",
+  "trace_version": "0.2.5"
+}

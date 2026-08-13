@@ -1,0 +1,379 @@
+{
+  "candidate_result": {
+    "answer": {
+      "negative_to_positive": [
+        -1,
+        1
+      ],
+      "positive_to_negative": [
+        1,
+        -1
+      ],
+      "unsat_variable": 1
+    },
+    "certificate_refs": [],
+    "notes": "Experiment only; no P/NP conclusion.",
+    "status": "unsat"
+  },
+  "claims": [
+    {
+      "assumptions": [
+        "test trace signer private key remained outside published artifacts",
+        "pinned deterministic Kosaraju implementation"
+      ],
+      "domain": "bounded 2-SAT I0 fixtures",
+      "failure_conditions": [
+        "invalid assignment or UNSAT path certificate",
+        "invalid trace signature",
+        "transition/resource derivation mismatch"
+      ],
+      "id": "2SAT-I0-END-TO-END",
+      "label": "Experiment",
+      "quantifiers": [
+        "one fixed solver for all encoded 2-SAT instances"
+      ],
+      "source_refs": [
+        "run-record-v0.2.1-candidate"
+      ],
+      "statement": "The pinned SCC baseline result is replayed and independently checked on this fixture.",
+      "status": "active"
+    }
+  ],
+  "ctcl": {
+    "instant": "ctcl:instant:b8ce3d5a-9369-4c60-8436-737ecd818ac7",
+    "role": "coordination-only"
+  },
+  "events": [
+    {
+      "debt_added": [],
+      "debt_retired": [],
+      "failure": null,
+      "from_state": "start",
+      "input_sha256": "sha256:202d7bb6371f87998b35644e6aabd35232773bdcd257a93d966d62c2a0fd0cec",
+      "invariant_ref": null,
+      "kind": "solve",
+      "output_sha256": "sha256:ed0d5367ff296f5b9cd30cb08f2ade122d3cebae042177ccf1392d75bbe8f38a",
+      "representation_after": "scc-result",
+      "representation_before": "2cnf",
+      "seq": 0,
+      "status": "ok",
+      "time_ns": {
+        "construction": 19,
+        "decode": 0,
+        "generation": 0,
+        "lift": 0,
+        "oracle": 0,
+        "parallel_work": 0,
+        "recovery": 0,
+        "restart": 0,
+        "total": 50,
+        "update": 31,
+        "verify": 0
+      },
+      "to_state": "computed",
+      "transition_rule_ref": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971"
+    },
+    {
+      "debt_added": [],
+      "debt_retired": [],
+      "failure": null,
+      "from_state": "computed",
+      "input_sha256": "sha256:ed0d5367ff296f5b9cd30cb08f2ade122d3cebae042177ccf1392d75bbe8f38a",
+      "invariant_ref": null,
+      "kind": "stop",
+      "output_sha256": "sha256:f6c65964c8c573d8b1dc46f44c182e7232c4e3aa65244dd59c15397099117519",
+      "representation_after": "decision-certificate",
+      "representation_before": "scc-result",
+      "seq": 1,
+      "status": "ok",
+      "time_ns": {
+        "construction": 0,
+        "decode": 11,
+        "generation": 0,
+        "lift": 0,
+        "oracle": 0,
+        "parallel_work": 0,
+        "recovery": 0,
+        "restart": 0,
+        "total": 28,
+        "update": 0,
+        "verify": 17
+      },
+      "to_state": "terminal",
+      "transition_rule_ref": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971"
+    }
+  ],
+  "experiment": {
+    "hypothesis_id": "pinned-2sat-end-to-end-certificate",
+    "id": "2SAT-I0-unsat",
+    "phase": "I0",
+    "pre_registered_metrics": [
+      "admission_pass",
+      "construction",
+      "generation",
+      "advice_bytes"
+    ],
+    "seed": 0,
+    "series_semantics": "fixed-program-scaling",
+    "status": "completed"
+  },
+  "failure_frontier": {
+    "axes": [
+      {
+        "name": "variables",
+        "unit": "variables",
+        "value": 1
+      },
+      {
+        "name": "clauses",
+        "unit": "clauses",
+        "value": 2
+      }
+    ],
+    "censored": false,
+    "first_observed_failure": null,
+    "interpretation": "Experiment only; no P=NP or P!=NP inference."
+  },
+  "ledger": {
+    "admission_costs": {
+      "advice_generation": {
+        "peak_output_bytes": 0,
+        "peak_space_bytes": 0,
+        "time_ns": 0
+      },
+      "builder": {
+        "peak_output_bytes": 5209,
+        "peak_space_bytes": 1024,
+        "time_ns": 19
+      },
+      "proof_verification": {
+        "peak_output_bytes": 0,
+        "peak_space_bytes": 0,
+        "time_ns": 0
+      }
+    },
+    "counts": {
+      "branches": 1,
+      "parallel_workers_peak": 1,
+      "refinements": 0,
+      "reroutes": 0,
+      "restarts": 0,
+      "rollbacks": 0,
+      "states": 3,
+      "switches": 0
+    },
+    "description_bytes": {
+      "advice": 0,
+      "builder_artifacts": 5209,
+      "generated_tables": 0,
+      "program_code": 5209,
+      "proof": 0
+    },
+    "precision": {
+      "model": "finite exact bit/integer",
+      "peak_bits": 64
+    },
+    "resource_account_complete": true,
+    "semantic_loss_debt": {
+      "outstanding": 0,
+      "peak_open": 0,
+      "registered": []
+    },
+    "space_bytes": {
+      "artifacts": 10418,
+      "final": 177,
+      "peak": 2048
+    },
+    "time_ns": {
+      "construction": 19,
+      "decode": 11,
+      "generation": 0,
+      "lift": 0,
+      "oracle": 0,
+      "parallel_work": 0,
+      "recovery": 0,
+      "restart": 0,
+      "total": 78,
+      "update": 31,
+      "verify": 17
+    }
+  },
+  "mechanism": {
+    "admissibility": {
+      "advice": "none",
+      "advice_generator_ref": null,
+      "builder_ref": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971",
+      "declared_answer_access": "none",
+      "decode_ref": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971",
+      "finite_precision": true,
+      "hardware": "abstract deterministic machine",
+      "interaction": "none",
+      "local_invariant_ref": null,
+      "oracle_free": true,
+      "parallelism": "single worker",
+      "program_quantifiers": "exists-one-program-for-all-input-lengths",
+      "randomness": "none",
+      "step_ref": "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971",
+      "uniform": true
+    },
+    "baseline_id": null,
+    "id": "2sat-kosaraju",
+    "name": "Deterministic implication graph plus Kosaraju SCC",
+    "operations": [
+      "build",
+      "solve",
+      "decode",
+      "verify"
+    ],
+    "oracle": {
+      "checks": [
+        "mutual implication paths"
+      ],
+      "independent": true,
+      "name": "independent 2-SAT certificate oracle",
+      "sha256": "sha256:c8c5f6a0c132b11c56fd7964b737c1eb4f0b6a8674c7de8adcda50ca4b54efce",
+      "version": "0.2.1"
+    },
+    "resource_regime": "resource-bounded",
+    "role": "baseline",
+    "run_quantifier": "standard",
+    "version": "0.2.1"
+  },
+  "problem": {
+    "contract": {
+      "completion_requirements": [
+        "SAT assignment or UNSAT mutual implication paths verify",
+        "authenticated transition and resource derivation",
+        "zero outstanding semantic-loss debt"
+      ],
+      "id": "I0-2SAT",
+      "sha256": "sha256:cb957f2647544904ca8dd973181dd75afaf792c0f35768317baf1e645893eded",
+      "version": "0.2.1"
+    },
+    "family": "2-SAT",
+    "generator": {
+      "name": "fixed-fixture",
+      "parameters": {
+        "clauses": [
+          [
+            1,
+            1
+          ],
+          [
+            -1,
+            -1
+          ]
+        ],
+        "variable_count": 1
+      },
+      "seed": 0,
+      "version": "0.2.1"
+    },
+    "input_sha256": "sha256:202d7bb6371f87998b35644e6aabd35232773bdcd257a93d966d62c2a0fd0cec",
+    "instance_id": "2sat-unsat-2sat-unsat",
+    "size": {
+      "m": 2,
+      "n": 1
+    }
+  },
+  "provenance": {
+    "implementation": {
+      "dependencies": [
+        {
+          "name": "jsonschema",
+          "version": "4.26.0"
+        },
+        {
+          "name": "cryptography",
+          "version": "49.0.0"
+        }
+      ],
+      "dirty": false,
+      "name": "pnp-glc-i0",
+      "revision": "candidate",
+      "runtime": "CPython >=3.11",
+      "version": "0.2.1"
+    },
+    "sources": [
+      {
+        "accessed_at": "2026-08-09T06:00:00Z",
+        "applicable_domain": "I0 engineering records",
+        "id": "run-record-v0.2.1-candidate",
+        "kind": "implementation",
+        "locator": "schemas/run-record.schema.v0.2.1-candidate.json",
+        "sha256": "sha256:567417a82ea82c8c2ce7ec81df1b4bec5876044f54213446e4ce298ceade6c2b",
+        "version": "0.2.1-candidate",
+        "visibility": "shared"
+      }
+    ]
+  },
+  "recorded_at": "2026-08-09T07:30:00Z",
+  "run_id": "2sat-unsat",
+  "schema_version": "0.2.1",
+  "track": "algorithm",
+  "validation_receipt": {
+    "admission_pass": true,
+    "artifact_closure_spec_ref": "sha256:b466bf8d630bac4b1a42a28f534c5d20a0713d418ccb3826ed69ff71d7585c94",
+    "candidate_projection_sha256": "b31139d16971fdf40695c926723816a0c3f88a7a198769155e7c3bc95e0ef963",
+    "capability_sandbox_ref": "sha256:0831bb70cb62daf1d3e1d5da9dbf9b6e6e0e261ae22c6cf75bf68c8bdd83eae4",
+    "correctness": {
+      "budget_pass": "pass",
+      "complete_pass": "pass",
+      "contract_pass": "pass",
+      "oracle_pass": "pass",
+      "outstanding_loss_debt": 0
+    },
+    "decision_source": "external-validator",
+    "fairness_spec_ref": null,
+    "final_completion": true,
+    "gate_version": "i0-admission-gate/0.2.1",
+    "gates": {
+      "advice_budget_pass": "pass",
+      "advice_generation_pass": "not-applicable",
+      "answer_access_pass": "pass",
+      "builder_execution_pass": "pass",
+      "fairness_pass": "not-applicable",
+      "maximality_pass": "not-applicable",
+      "oracle_free_pass": "pass",
+      "proof_verification_pass": "not-applicable",
+      "provenance_pass": "pass",
+      "refs_resolved_pass": "pass",
+      "replay_pass": "pass",
+      "resource_account_pass": "pass",
+      "resource_budget_pass": "pass",
+      "resource_derivation_pass": "pass",
+      "run_class_nonempty": "pass",
+      "trace_authenticity_pass": "pass",
+      "transition_execution_pass": "pass",
+      "uniformity_pass": "pass"
+    },
+    "maximal_run_spec_ref": null,
+    "observed_answer_access": "none",
+    "projection_spec_id": "urn:evemisslab:pnp-glc:candidate-projection:0.2.1",
+    "projection_spec_sha256": "sha256:70caae9973a3a02ad8f45364be2175a51ba62c6c0d75b6c807b7b8dfb5bbd115",
+    "reasons": [],
+    "receipt_version": "0.2.1",
+    "resolved_evidence_hashes": [
+      "sha256:0831bb70cb62daf1d3e1d5da9dbf9b6e6e0e261ae22c6cf75bf68c8bdd83eae4",
+      "sha256:27d25ebf48c59e9aff166d32970c3444dc78e25c352f012b3998b0626dfb2a3d",
+      "sha256:43b0eb24cbf6adaef62a2b2f505f8fa586b1c9bf78e84964a7b6470b4dfbff90",
+      "sha256:567417a82ea82c8c2ce7ec81df1b4bec5876044f54213446e4ce298ceade6c2b",
+      "sha256:5ec91eaa7c20b1810fb82062ce59d43f938426fb5a36b4c430ecf8e6fbb89b26",
+      "sha256:70caae9973a3a02ad8f45364be2175a51ba62c6c0d75b6c807b7b8dfb5bbd115",
+      "sha256:b466bf8d630bac4b1a42a28f534c5d20a0713d418ccb3826ed69ff71d7585c94",
+      "sha256:c777bc631303e977f025fc17aab455cfee3cdfa2b5c1a23166a51ec5e9e99cd4",
+      "sha256:c8c5f6a0c132b11c56fd7964b737c1eb4f0b6a8674c7de8adcda50ca4b54efce",
+      "sha256:cb957f2647544904ca8dd973181dd75afaf792c0f35768317baf1e645893eded",
+      "sha256:d587ac4fb13464c8a5699dc4402ff07335c36221100ea06bb4c46ad07a15b7a4",
+      "sha256:ed1028c0263dc5a69864fb42d02ada9756b40ee51149d9dd376dd206622a8971"
+    ],
+    "run_spec_ref": "sha256:d587ac4fb13464c8a5699dc4402ff07335c36221100ea06bb4c46ad07a15b7a4",
+    "schema_sha256": "sha256:567417a82ea82c8c2ce7ec81df1b4bec5876044f54213446e4ce298ceade6c2b",
+    "trace_authenticity_ref": "sha256:5ec91eaa7c20b1810fb82062ce59d43f938426fb5a36b4c430ecf8e6fbb89b26",
+    "trace_public_key_ref": "sha256:27d25ebf48c59e9aff166d32970c3444dc78e25c352f012b3998b0626dfb2a3d",
+    "trace_sha256": "sha256:43b0eb24cbf6adaef62a2b2f505f8fa586b1c9bf78e84964a7b6470b4dfbff90",
+    "trace_signer_id": "i0-test-trace-signer-20260809",
+    "validator_independent": true,
+    "validator_sha256": "sha256:c777bc631303e977f025fc17aab455cfee3cdfa2b5c1a23166a51ec5e9e99cd4"
+  }
+}

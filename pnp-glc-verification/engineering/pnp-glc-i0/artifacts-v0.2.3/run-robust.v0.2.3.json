@@ -1,0 +1,30 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "run-spec",
+    "edges": [
+      {
+        "expected_type": "opaque-content",
+        "role": "legacy-run-source",
+        "sha256": "sha256:c85403f76b2bdc95d1da4533b614a26035a5867e0c8073b4b05743f85b44cdf1"
+      },
+      {
+        "expected_type": "maximal-run-spec",
+        "role": "maximality-spec",
+        "sha256": "sha256:36b26d735437e6b88e24d083e1a1e31d6249029c72ab82cc00cc9a4de6192efa"
+      },
+      {
+        "expected_type": "fairness-spec",
+        "role": "fairness-spec",
+        "sha256": "sha256:b8eac472f05307e55a594b637b0a9d7bcdbcc8d1744df4ee01b480b556c1ce6d"
+      }
+    ],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.3",
+    "version": "0.2.3"
+  },
+  "bounded_scope": "no scheduler or fault nondeterminism is admitted in I0",
+  "fairness_spec_required": true,
+  "maximality_spec_required": true,
+  "mode": "robust",
+  "nonempty_witness": "successful start-to-terminal executable trace",
+  "run_family": "the singleton deterministic I0 run derived by pinned transition execution"
+}

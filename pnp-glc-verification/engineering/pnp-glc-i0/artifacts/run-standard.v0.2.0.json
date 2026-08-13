@@ -1,0 +1,7 @@
+{
+  "run_quantifier": "standard",
+  "admissible_run_class": "the single deterministic run induced by fixed input, program, version, seed and configuration",
+  "nonempty_requirement": true,
+  "maximality": "not-applicable",
+  "fairness": "not-applicable"
+}

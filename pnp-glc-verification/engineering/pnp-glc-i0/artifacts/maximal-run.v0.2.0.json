@@ -1,0 +1,4 @@
+{
+  "definition": "a run is maximal iff it is terminal or has no enabled admissible transition",
+  "finite_prefix_rule": "a finite prefix with an enabled transition is not maximal"
+}

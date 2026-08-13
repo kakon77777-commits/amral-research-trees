@@ -1,0 +1,941 @@
+{
+  "admission": {
+    "2sat-sat": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "2sat-sat-with-unsat-oracle-declaration": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "oracle-declaration-family-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "2sat-unsat": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "2sat-unsat-with-sat-oracle-declaration": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "oracle-declaration-family-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "2sat-with-parity-oracle-declaration": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "oracle-declaration-family-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "advice-none-with-table-generator-ledger": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "advice-table-with-null-generator-zero-ledger": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "bad-trace-signature": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "canonicalization-variant": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "candidate-projection-mismatch",
+        "canonical-unicode-nfc",
+        "completion-postcondition-mismatch",
+        "trace-record-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "cheat": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [],
+      "record_accepted": false,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "circular-field": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "cross-role-contract-invariant": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "direct-role-type",
+        "operational-map-hash-mismatch",
+        "operational-role-binding",
+        "signed-operational-map-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "declared-answer-access-mismatch": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "fabricated-failure-frontier": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "failure-frontier-derivation"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "fabricated-problem-size": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "problem-size-derivation"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "fabricated-states-999": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "fabricated-transition-digest": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "failed-gate-admission": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "false-final-completion": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "malformed-role-edge": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "operational-map-hash-mismatch",
+        "operational-role-binding",
+        "signed-operational-map-mismatch",
+        "unresolved-ref"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "malformed-unsupported-envelope": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "direct-role-type",
+        "operational-map-hash-mismatch",
+        "operational-role-binding",
+        "signed-operational-map-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "missing-envelope-spec-id": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "direct-role-type",
+        "operational-map-hash-mismatch",
+        "operational-role-binding",
+        "signed-operational-map-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "negative-zero": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "record-parse"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "neutral-legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "parity-stream-with-coherent-table-advice": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "advice-declaration-ledger-binding",
+        "answer-access-family-binding",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "failure-frontier-derivation",
+        "operational-map-hash-mismatch",
+        "operational-role-binding",
+        "signed-operational-map-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "parity-table-with-coherent-none-advice": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "advice-declaration-ledger-binding",
+        "answer-access-family-binding",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "failure-frontier-derivation",
+        "operational-map-hash-mismatch",
+        "operational-role-binding",
+        "signed-operational-map-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "parity-with-2sat-oracle-checks-only": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "oracle-declaration-family-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "parity-with-2sat-oracle-declaration": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "oracle-declaration-family-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "parity-with-2sat-oracle-entrypoint-only": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "oracle-declaration-family-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "parity-with-2sat-oracle-name-only": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "oracle-declaration-family-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "parity-with-2sat-oracle-obligations-only": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "oracle-declaration-family-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "parity-with-2sat-oracle-oracle_id-only": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "oracle-declaration-family-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "receipt-ref-substitution": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "operational-role-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "robust-legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "robust-neutral-legit": {
+      "admission_pass": true,
+      "final_completion": true,
+      "issue_codes": [],
+      "record_accepted": true,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "robust-null-spec": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "robust-ref-type-confusion": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "direct-role-type",
+        "operational-role-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "self-report": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "shape-valid-unsupported-envelope": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "direct-role-type",
+        "operational-map-hash-mismatch",
+        "operational-role-binding",
+        "signed-operational-map-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "tampered-record": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "candidate-projection-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "replay-output-hash",
+        "replay-result-mismatch",
+        "trace-record-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "tampered-trace": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "replay-events-mismatch"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "unknown-final": {
+      "admission_pass": null,
+      "final_completion": null,
+      "issue_codes": [
+        "schema"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": false
+    },
+    "unknown-gate": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [],
+      "record_accepted": false,
+      "semantic_ok": true,
+      "structural_ok": true
+    },
+    "unpaired-surrogate": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "candidate-projection-mismatch",
+        "canonical-unicode-scalar",
+        "completion-postcondition-mismatch",
+        "trace-record-binding"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    },
+    "unresolved-event-ref": {
+      "admission_pass": false,
+      "final_completion": false,
+      "issue_codes": [
+        "admission-postcondition-mismatch",
+        "completion-postcondition-mismatch",
+        "correctness-receipt-mismatch",
+        "derived-gate-mismatch",
+        "direct-role-type",
+        "operational-map-hash-mismatch",
+        "operational-role-binding",
+        "signed-operational-map-mismatch",
+        "unresolved-ref"
+      ],
+      "record_accepted": false,
+      "semantic_ok": false,
+      "structural_ok": true
+    }
+  },
+  "advice_declaration_reality_tests": {
+    "advice-none-with-table-generator-ledger": {
+      "direct_advice_match": false,
+      "record_accepted": false,
+      "structural_ok": false,
+      "trace_authenticity": "pass"
+    },
+    "advice-table-with-null-generator-zero-ledger": {
+      "direct_advice_match": false,
+      "record_accepted": false,
+      "structural_ok": false,
+      "trace_authenticity": "pass"
+    },
+    "parity-stream-with-coherent-table-advice": {
+      "direct_advice_match": false,
+      "record_accepted": false,
+      "structural_ok": true,
+      "trace_authenticity": "pass"
+    },
+    "parity-table-with-coherent-none-advice": {
+      "direct_advice_match": false,
+      "record_accepted": false,
+      "structural_ok": true,
+      "trace_authenticity": "pass"
+    }
+  },
+  "candidate_scope": {
+    "advice_decl_ledger_closed_bounded": true,
+    "closure_judgment_dependency_closed": true,
+    "closure_supported_relation_total": true,
+    "independent_acceptance": "pending",
+    "manifest_runtime_closure": "tested separately in frozen isolation report"
+  },
+  "classification": "Experiment; no P/NP conclusion",
+  "closure_classification_reality_test": {
+    "all_conformant": true,
+    "cases": {
+      "shape-valid-unsupported-future-type": {
+        "actual": "unknown",
+        "conformant": true,
+        "expected": "unknown"
+      },
+      "shape-valid-unsupported-known-type": {
+        "actual": "unknown",
+        "conformant": true,
+        "expected": "unknown"
+      },
+      "supported-future-artifact-type": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "supported-invalid-edge-relation": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "supported-wrong-version": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-duplicate-edge-role": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-empty-artifact-type": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-empty-spec-id": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-empty-version": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-ill-typed-artifact-type": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-ill-typed-edges": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-ill-typed-spec-id": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-ill-typed-version": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-malformed-edge-hash": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-malformed-edge-member": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-missing-artifact-type": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-missing-edges": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-missing-spec-id": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      },
+      "unsupported-missing-version": {
+        "actual": "fail",
+        "conformant": true,
+        "expected": "fail"
+      }
+    }
+  },
+  "closure_supported_relation_totality": {
+    "all_conformant": true,
+    "checks": {
+      "false_terminal_fail": true,
+      "fixed_point_terminal_trichotomy": true,
+      "true_unique_transition": true
+    }
+  },
+  "experiment_id": "I0-v0.2.6-candidate-20260810",
+  "frozen_evidence_scope": {
+    "generation_command": "python -I -B scripts/run_experiment_v026.py . --seed 20260810 --two-sat-crosscheck-seed 20260809 --max-parity-n 12 --output i0-run-report.v0.2.6-candidate.json",
+    "report_location": "i0-run-report.v0.2.6-candidate.json",
+    "two_sat_crosscheck_json_pointer": "/two_sat/deterministic_crosscheck",
+    "two_sat_crosscheck_replay_command": "python -I -B scripts/reproduce_live_report_scope_v026.py ."
+  },
+  "nonclaims": [
+    "the candidate is unpromoted pending independent acceptance",
+    "bounded experiments do not generalize to general SAT or P=NP",
+    "a failed engineering gate would not imply P!=NP"
+  ],
+  "oracle_declaration_reality_tests": {
+    "2sat-sat-with-unsat-oracle-declaration": {
+      "actual_family_oracle_status": "pass",
+      "record_accepted": false
+    },
+    "2sat-unsat-with-sat-oracle-declaration": {
+      "actual_family_oracle_status": "pass",
+      "record_accepted": false
+    },
+    "2sat-with-parity-oracle-declaration": {
+      "actual_family_oracle_status": "pass",
+      "record_accepted": false
+    },
+    "parity-with-2sat-oracle-checks-only": {
+      "actual_family_oracle_status": "pass",
+      "record_accepted": false
+    },
+    "parity-with-2sat-oracle-declaration": {
+      "actual_family_oracle_status": "pass",
+      "record_accepted": false
+    },
+    "parity-with-2sat-oracle-entrypoint-only": {
+      "actual_family_oracle_status": "pass",
+      "record_accepted": false
+    },
+    "parity-with-2sat-oracle-name-only": {
+      "actual_family_oracle_status": "pass",
+      "record_accepted": false
+    },
+    "parity-with-2sat-oracle-obligations-only": {
+      "actual_family_oracle_status": "pass",
+      "record_accepted": false
+    },
+    "parity-with-2sat-oracle-oracle_id-only": {
+      "actual_family_oracle_status": "pass",
+      "record_accepted": false
+    }
+  },
+  "parameters": {
+    "max_parity_n": 12,
+    "seed": 20260810,
+    "two_sat_crosscheck_seed": 20260809
+  },
+  "parity": {
+    "all_pass": true,
+    "cases": [
+      {
+        "answer_pass": true,
+        "bit_count": 0,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 1,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 2,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 3,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 4,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 5,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 6,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 7,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 8,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 9,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 10,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 11,
+        "invariant_pass": true
+      },
+      {
+        "answer_pass": true,
+        "bit_count": 12,
+        "invariant_pass": true
+      }
+    ]
+  },
+  "status": "CANDIDATE_UNPROMOTED / pending AI-1 managed bounded acceptance",
+  "two_sat": {
+    "deterministic_crosscheck": {
+      "algorithm": "deterministic implication graph plus SCC",
+      "all_pass": true,
+      "case_generation": "one Random(seed) stream; variable_count ascending; each case has randrange(0,3*n+1) clauses and two choice(literals) draws per clause",
+      "cases_per_variable_count": 250,
+      "certificate_failure_total": 0,
+      "evidence_digest_sha256": "2F472DB6486459BC6502AA0ABDF1B79FD361D274F41DFE461E14C197F414EBEF",
+      "mismatch_total": 0,
+      "oracle": "exhaustive_2sat plus assignment/certificate verification",
+      "seed": 20260809,
+      "strata": [
+        {
+          "cases": 250,
+          "certificate_failures": 0,
+          "mismatches": 0,
+          "sat": 227,
+          "unsat": 23,
+          "variable_count": 1
+        },
+        {
+          "cases": 250,
+          "certificate_failures": 0,
+          "mismatches": 0,
+          "sat": 219,
+          "unsat": 31,
+          "variable_count": 2
+        },
+        {
+          "cases": 250,
+          "certificate_failures": 0,
+          "mismatches": 0,
+          "sat": 214,
+          "unsat": 36,
+          "variable_count": 3
+        },
+        {
+          "cases": 250,
+          "certificate_failures": 0,
+          "mismatches": 0,
+          "sat": 198,
+          "unsat": 52,
+          "variable_count": 4
+        },
+        {
+          "cases": 250,
+          "certificate_failures": 0,
+          "mismatches": 0,
+          "sat": 194,
+          "unsat": 56,
+          "variable_count": 5
+        },
+        {
+          "cases": 250,
+          "certificate_failures": 0,
+          "mismatches": 0,
+          "sat": 171,
+          "unsat": 79,
+          "variable_count": 6
+        }
+      ],
+      "total_cases": 1500,
+      "variable_counts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "representative_cases": [
+      {
+        "fixture": "2sat-sat",
+        "oracle_pass": true,
+        "record_accepted": true,
+        "status": "sat"
+      },
+      {
+        "fixture": "2sat-unsat",
+        "oracle_pass": true,
+        "record_accepted": true,
+        "status": "unsat"
+      }
+    ]
+  },
+  "version": "0.2.6"
+}

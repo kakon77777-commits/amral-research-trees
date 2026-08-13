@@ -1,0 +1,25 @@
+{
+  "classification": "Experiment fixtures for CLOSURE-CLASS-01; no P/NP conclusion",
+  "expected_status": {
+    "shape-valid-unsupported-future-type": "unknown",
+    "shape-valid-unsupported-known-type": "unknown",
+    "supported-future-artifact-type": "fail",
+    "supported-invalid-edge-relation": "fail",
+    "supported-wrong-version": "fail",
+    "unsupported-duplicate-edge-role": "fail",
+    "unsupported-empty-artifact-type": "fail",
+    "unsupported-empty-spec-id": "fail",
+    "unsupported-empty-version": "fail",
+    "unsupported-ill-typed-artifact-type": "fail",
+    "unsupported-ill-typed-edges": "fail",
+    "unsupported-ill-typed-spec-id": "fail",
+    "unsupported-ill-typed-version": "fail",
+    "unsupported-malformed-edge-hash": "fail",
+    "unsupported-malformed-edge-member": "fail",
+    "unsupported-missing-artifact-type": "fail",
+    "unsupported-missing-edges": "fail",
+    "unsupported-missing-spec-id": "fail",
+    "unsupported-missing-version": "fail"
+  },
+  "policy": "complete generic EnvelopeShape is validated before supported/unsupported spec dispatch"
+}

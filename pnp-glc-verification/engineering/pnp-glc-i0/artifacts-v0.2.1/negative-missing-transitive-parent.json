@@ -1,0 +1,11 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "run-spec",
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.1",
+    "typed_refs": [
+      "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    ]
+  },
+  "mode": "standard",
+  "version": "0.2.1-negative-fixture"
+}

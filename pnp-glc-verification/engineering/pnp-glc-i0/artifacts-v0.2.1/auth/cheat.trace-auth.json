@@ -1,0 +1,16 @@
+{
+  "algorithm": "Ed25519",
+  "artifact_envelope": {
+    "artifact_type": "trace-authenticity-receipt",
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.1",
+    "typed_refs": [
+      "sha256:27d25ebf48c59e9aff166d32970c3444dc78e25c352f012b3998b0626dfb2a3d",
+      "sha256:a7fe38f05cc3ac01d263c0240294764976887422071be6f4595d2e25f7376075"
+    ]
+  },
+  "public_key_ref": "sha256:27d25ebf48c59e9aff166d32970c3444dc78e25c352f012b3998b0626dfb2a3d",
+  "receipt_version": "0.2.1",
+  "signature_base64": "Rze7F7CIoTLcM+S69WVmEON+KUvwldMj5Fnm722Y6v7zcoYK3J9mQnUr+d3X+Hue8D0/1iK6emmORJejrHjGAw==",
+  "signer_id": "i0-test-trace-signer-20260809",
+  "trace_sha256": "sha256:a7fe38f05cc3ac01d263c0240294764976887422071be6f4595d2e25f7376075"
+}

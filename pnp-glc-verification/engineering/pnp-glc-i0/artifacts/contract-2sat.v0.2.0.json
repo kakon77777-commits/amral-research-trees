@@ -1,0 +1,9 @@
+{
+  "contract_id": "I0-2-SAT",
+  "version": "0.2.0",
+  "requirements": [
+    "SAT output includes an assignment satisfying every clause",
+    "UNSAT output includes mutually reachable literal paths inside one SCC",
+    "small instances agree with exhaustive enumeration"
+  ]
+}

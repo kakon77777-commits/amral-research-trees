@@ -1,0 +1,21 @@
+{
+  "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.1",
+  "version": "0.2.1",
+  "status": "Definition-interface-candidate",
+  "typed_json_envelope": {
+    "required_field": "artifact_envelope",
+    "required_members": ["spec_id", "artifact_type", "typed_refs"],
+    "typed_refs": "an array of unique SHA-256 content references",
+    "non_enveloped_artifact": "leaf",
+    "malformed_envelope": "fail",
+    "unknown_spec_id": "unknown"
+  },
+  "closure_algorithm": [
+    "start from every direct operational reference in validation_receipt",
+    "resolve each hash to the already pinned immutable byte snapshot",
+    "if the artifact is a typed JSON envelope, add every typed_ref",
+    "continue breadth-first with cycle detection until a fixed point",
+    "any unresolved member makes refs_resolved_pass fail",
+    "resolved_evidence_hashes must equal the complete fixed-point closure"
+  ]
+}

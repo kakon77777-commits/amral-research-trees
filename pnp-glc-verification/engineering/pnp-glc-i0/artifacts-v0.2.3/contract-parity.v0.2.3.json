@@ -1,0 +1,28 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "correctness-contract",
+    "edges": [
+      {
+        "expected_type": "opaque-content",
+        "role": "oracle-source",
+        "sha256": "sha256:c8c5f6a0c132b11c56fd7964b737c1eb4f0b6a8674c7de8adcda50ca4b54efce"
+      },
+      {
+        "expected_type": "invariant-spec",
+        "role": "invariant-spec",
+        "sha256": "sha256:969f90f5a64434e9260915d974f33592aaf08445ba5646e9b763dfde4ca86162"
+      }
+    ],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.3",
+    "version": "0.2.3"
+  },
+  "completion_requirements": [
+    "correct parity",
+    "executed prefix invariant when applicable",
+    "typed and authenticated evidence binding",
+    "transition/resource derivation",
+    "zero outstanding semantic-loss debt"
+  ],
+  "contract_id": "I0-PARITY",
+  "family": "PARITY"
+}

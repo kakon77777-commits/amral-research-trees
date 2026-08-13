@@ -1,0 +1,12 @@
+{
+  "algorithm": "Ed25519",
+  "artifact_envelope": {
+    "artifact_type": "ed25519-public-key",
+    "edges": [],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.3",
+    "version": "0.2.3"
+  },
+  "key_id": "i0-test-trace-signer-20260809",
+  "public_key_base64": "xXTvrVK19K0wrie42mA5u3zKB2IfmkEmbOxZWi2e8GA=",
+  "usage": "test fixture trace authenticity only; production requires a separately protected signing service"
+}

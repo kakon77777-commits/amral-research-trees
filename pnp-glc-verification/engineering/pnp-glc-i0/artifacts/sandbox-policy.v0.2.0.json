@@ -1,0 +1,21 @@
+{
+  "policy_version": "0.2.0",
+  "producer": "pnp-glc-i0-capability-sandbox",
+  "candidate_permissions": [
+    "read-instance-input",
+    "emit-step-events",
+    "emit-candidate-answer"
+  ],
+  "candidate_denials": [
+    "read-correct-answer",
+    "write-admission-pass",
+    "write-final-completion",
+    "modify-validator-trace"
+  ],
+  "trace_requirements": [
+    "content-addressed",
+    "run-id-bound",
+    "gate-version-bound",
+    "answer-access-observed"
+  ]
+}

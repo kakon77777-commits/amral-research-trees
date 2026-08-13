@@ -1,0 +1,14 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "run-spec",
+    "edges": [
+      {
+        "expected_type": "opaque-content",
+        "role": "future-edge",
+        "sha256": "sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    ],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.5",
+    "version": "0.2.5"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "artifact_envelope": {
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.2",
+    "artifact_type": "artifact-closure-spec",
+    "version": "0.2.2",
+    "edges": []
+  },
+  "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.2",
+  "version": "0.2.2",
+  "status": "Definition-interface-candidate",
+  "edge_shape": {
+    "required_members": ["role", "expected_type", "sha256"],
+    "role": "unique within one parent envelope",
+    "expected_type": "must equal the pinned parent-type/role relation",
+    "sha256": "content address of the child artifact"
+  },
+  "closure_algorithm": [
+    "derive the direct operational role map from record mode/family and pinned validator configuration",
+    "require the signed trace operational_reference_map to equal that derived map",
+    "resolve each hash from the immutable ArtifactIndex snapshot",
+    "validate every direct field role against expected type, version and semantic discriminator",
+    "walk role-bearing edges breadth-first with cycle detection",
+    "validate parent type plus edge role plus declared child type against the pinned relation",
+    "validate the resolved child envelope type when expected_type is not opaque-content",
+    "require resolved_evidence_hashes to equal the fixed-point closure"
+  ],
+  "envelope_classification_order": [
+    "artifact without artifact_envelope is an opaque leaf",
+    "artifact_envelope missing or mistyping any required member is malformed and fails",
+    "shape-valid envelope with unsupported spec_id is unknown and blocks admission",
+    "supported well-typed envelope is traversed"
+  ]
+}

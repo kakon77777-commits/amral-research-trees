@@ -1,0 +1,19 @@
+{
+  "artifact_envelope": {
+    "artifact_type": "run-spec",
+    "edges": [
+      {
+        "expected_type": "opaque-content",
+        "role": "legacy-run-source",
+        "sha256": "sha256:d587ac4fb13464c8a5699dc4402ff07335c36221100ea06bb4c46ad07a15b7a4"
+      }
+    ],
+    "spec_id": "urn:evemisslab:pnp-glc:artifact-closure:0.2.5",
+    "version": "0.2.5"
+  },
+  "fairness": "not-applicable",
+  "maximality": "not-applicable",
+  "mode": "standard",
+  "nonempty_witness": "successful start-to-terminal executable trace",
+  "run_family": "the singleton deterministic run derived by pinned transition execution"
+}
