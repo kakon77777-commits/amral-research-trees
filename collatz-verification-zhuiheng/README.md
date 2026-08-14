@@ -58,11 +58,9 @@ describe it that way.
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
-[`CITATION.md`](./CITATION.md). The state below is registered as CTCL instant
-`ctcl:instant:69790ea7-a6e6-4181-beed-5de98ec024ba`
-([shareable](https://commoninstant.org/i/69790ea7-a6e6-4181-beed-5de98ec024ba)),
-Ed25519-signed, with the git commit and tree hash carried in the instant's own
-metadata — so the timestamp is checkable against the repository rather than
+[`CITATION.md`](./CITATION.md). States are timestamped by appended CTCL instants — most recently
+[`06f0de0a`](https://commoninstant.org/i/06f0de0a-a6ed-4383-9dfa-5447e30ed099) —
+each Ed25519-signed, with the git commit carried in the instant's own metadata — so the timestamp is checkable against the repository rather than
 asserted beside it. It timestamps *when this state existed*; it does not review
 whether any of it is correct.
 

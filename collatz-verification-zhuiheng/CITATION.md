@@ -22,7 +22,19 @@ The subject series this tree verifies is **Neo.K's own work** and is cited
 separately — see [`../collatz-ot-series-neok/`](../collatz-ot-series-neok/). This
 tree's conclusions are its own and do not amend anything in that package.
 
-## Timestamp
+## Timestamps
+
+Instants are **appended, never edited**. Each certifies the state at its own
+commit; a later one does not invalidate an earlier one.
+
+| Instant | UTC | Commit | State |
+|---|---|---|---|
+| [`06f0de0a`](https://commoninstant.org/i/06f0de0a-a6ed-4383-9dfa-5447e30ed099) | `2026-08-14T09:30:48.131Z` | `ce5220f` | every core paper with arithmetic content rechecked — 02, 03, 04, 05, 06, 07, 08, 09; 61/61 drill defects caught across 8 rechecks |
+| [`69790ea7`](https://commoninstant.org/i/69790ea7-a6e6-4181-beed-5de98ec024ba) | `2026-08-14T08:43:05.868Z` | `26e6d90` | `[3, 2^40]` verified, `K(2^40)=550`, Papers 02–07 and 09 rechecked |
+
+Full record of the first instant follows; the same fields apply to each.
+
+## The first instant, in full
 
 The state of this work is timestamped through **CTCL**
 ([commoninstant.org](https://commoninstant.org/)), Neo.K's common temporal
