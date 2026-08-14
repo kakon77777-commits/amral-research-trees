@@ -10,6 +10,8 @@
 | `verify_run_logs.py` | Reads only the archived chunk logs and decides whether they actually tile `[3, N]`. Refuses to aggregate logs with a gap, an overlap, or a bad count. |
 | `build_results.py` | Assembles `../data/results.v1.json` from archived gate logs only. Fails rather than emit a summary with a hole in it. |
 | `run_verification.sh` | Drives a full run as disjoint, separately logged chunks. |
+| `build_source_manifest.py` | Reads Neo.K's source folder and writes a chronological, hashed manifest of every item with its research line and processing status. Reads only — never extracts. |
+| `hz_route_probe.py` | First bridge to the Hard-Zeta route map: measures the coefficient stopping time `tau_c` against `sigma`, and splits the hard set `E_k` into `C_k` and `R_k`. |
 | `ot_paper01_recheck.py` | Paper 01 (Claim Ledger). Checks the ledger's `T`-class entries as arithmetic, and verifies every cited reference against arXiv and Crossref — snapshots archived in `../data/external/bibliography/`. |
 | `ot_paper02_recheck.py` | Independent re-derivation of Paper 02 of Neo.K's Operation Translation Series, written from the paper's theorem statements. Its referee route assumes no theorem of the paper at all. |
 | `ot_paper06_recheck.py` | The same for Paper 06 (valuation language). Referee is direct iteration of the accelerated odd map on genuine odd integers, so every valuation word tested is one an actual integer produced. Also verifies §14's bridge back to Paper 02. |

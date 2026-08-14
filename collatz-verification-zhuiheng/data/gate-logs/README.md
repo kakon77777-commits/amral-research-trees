@@ -13,6 +13,7 @@ said at the time rather than only that they were said to pass.
 | `mutation-drill.progress.txt` | the same run's stderr, one line per mutation as it was decided |
 | `coverage.json` | `code/verify_run_logs.py` |
 | `coverage-refusal-drill.json` | a manual drill showing the aggregator refusing a run with a deleted chunk, and a run with one chunk's count reduced by one; the tampered log was restored byte-identical afterwards |
+| `hz-route-probe.json` | `code/hz_route_probe.py` — the first bridge to the Hard-Zeta route map: measures `tau_c` against `sigma` and splits `E_k` into `C_k` and `R_k`. |
 | `ot-package-integrity.txt` | the subject package's *own* `tools/verify_series.py`, run against the copy archived at `../../../collatz-ot-series-neok/`. Not this arm's verifier — the author's, run on the committed bytes. |
 | `ot-paper01-recheck.json` | `code/ot_paper01_recheck.py` — Paper 01's Claim Ledger arithmetic, plus external verification of the cited bibliography against arXiv and Crossref. |
 | `ot-paper02-recheck.json` | `code/ot_paper02_recheck.py 16` — independent re-derivation of Paper 02 of Neo.K's Operation Translation Series |

@@ -1,0 +1,1298 @@
+{
+  "tool": "build_source_manifest.py",
+  "source_folder": "D:\\我的研究\\學術討論\\論文\\數學\\考拉茲猜想\\最新\\Collatz_OT_Series_Paper",
+  "generated_from": "file modification times and names; nothing was extracted",
+  "item_count": 64,
+  "total_bytes": 27373203,
+  "earliest": "2026-08-10T14:47:18",
+  "latest": "2026-08-14T18:51:39",
+  "items_per_line": {
+    "nine-paper series": 13,
+    "early experiments": 5,
+    "Hard-Zeta": 44,
+    "other project": 2
+  },
+  "processed_count": 1,
+  "items": [
+    {
+      "name": "Collatz_OT_Series_INDEX_v0.1.md",
+      "mtime_local": "2026-08-10T14:47:18",
+      "bytes": 1281,
+      "sha256": "cfc6191f27f64e511d19e18efa6d4f592cc8a9b0da43f620e502f2a845a5a042",
+      "line": "nine-paper series",
+      "role": "loose manuscript or index",
+      "processed_by_this_tree": null
+    },
+    {
+      "name": "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
+      "mtime_local": "2026-08-10T14:47:18",
+      "bytes": 27202,
+      "sha256": "e5e26511f01a7e4c34e5980886d9833e89df530940220191d65a291e3a60ba51",
+      "line": "nine-paper series",
+      "role": "loose manuscript or index",
+      "processed_by_this_tree": null
+    },
+    {
+      "name": "finite_collatz_additive_coordinate_mvp_bundle.zip",
+      "mtime_local": "2026-08-10T15:08:28",
+      "bytes": 5285,
+      "sha256": "b487b7b62331173d5ea314c0b9d9186a6e17809a9541485d721cae22dfb1ad70",
+      "line": "early experiments",
+      "role": "prototype / benchmark",
+      "processed_by_this_tree": null,
+      "zip_entries": 3,
+      "zip_uncompressed_bytes": 14441,
+      "zip_top_level": [
+        "README_finite_collatz_additive_coordinates.md",
+        "finite_collatz_additive_coordinates.py",
+        "topological_log_coordinate_mvp.py"
+      ]
+    },
+    {
+      "name": "dimension_aware_log_physics_stress_bundle.zip",
+      "mtime_local": "2026-08-10T15:15:38",
+      "bytes": 5030,
+      "sha256": "0cd798b16691095bd1022fb12720022f200616c684bdb62fcf1517e39953a53c",
+      "line": "early experiments",
+      "role": "prototype / benchmark",
+      "processed_by_this_tree": null,
+      "zip_entries": 3,
+      "zip_uncompressed_bytes": 11816,
+      "zip_top_level": [
+        "README_dimension_aware_log_physics.md",
+        "dimension_aware_log_physics_stress.py",
+        "physics_stress_results.txt"
+      ]
+    },
+    {
+      "name": "collatz_operation_translation_finite_verification_prototype.zip",
+      "mtime_local": "2026-08-10T22:07:49",
+      "bytes": 229458,
+      "sha256": "49dd20eb9d3b4af5f728492d62585bb2ae68cc91b69fea28c53f860cc852c07f",
+      "line": "early experiments",
+      "role": "prototype / benchmark",
+      "processed_by_this_tree": null,
+      "zip_entries": 7,
+      "zip_uncompressed_bytes": 1399614,
+      "zip_top_level": [
+        "README_collatz_operation_translation_benchmark.md",
+        "collatz_cylinder_certificates_k16.csv",
+        "collatz_k16_scaling_benchmark.csv",
+        "collatz_operation_translation_benchmark.csv",
+        "collatz_operation_translation_benchmark_summary.json",
+        "collatz_operation_translation_verifier.py"
+      ]
+    },
+    {
+      "name": "collatz_ot_v3_threshold_benchmark.csv",
+      "mtime_local": "2026-08-10T22:16:55",
+      "bytes": 3026,
+      "sha256": "3c536f05ddbc7abcc19c3c08415879a50eda88265aef42d74feff4855b4e0e51",
+      "line": "early experiments",
+      "role": "prototype / benchmark",
+      "processed_by_this_tree": null
+    },
+    {
+      "name": "collatz_operation_translation_v3_threshold_bundle.zip",
+      "mtime_local": "2026-08-10T22:16:59",
+      "bytes": 3051,
+      "sha256": "f86ba9534e311a98fcc143a9a22ea25db33d8cac8ae1879b29557dc82eb57bf8",
+      "line": "early experiments",
+      "role": "prototype / benchmark",
+      "processed_by_this_tree": null,
+      "zip_entries": 4,
+      "zip_uncompressed_bytes": 4847,
+      "zip_top_level": [
+        "README_collatz_ot_v3_threshold.md",
+        "collatz_operation_translation_v3_threshold.py",
+        "collatz_ot_v3_threshold_benchmark.csv",
+        "collatz_ot_v3_threshold_summary.json"
+      ]
+    },
+    {
+      "name": "Collatz_OT_Series_Paper_01_v0.1_bundle.zip",
+      "mtime_local": "2026-08-10T22:58:09",
+      "bytes": 12730,
+      "sha256": "43ad09147b6c7d126223893f87b7b38e9bc36d992e345f288e0e1228342a11ba",
+      "line": "nine-paper series",
+      "role": "incremental bundle, superseded by SSSP v1.0",
+      "processed_by_this_tree": null,
+      "zip_entries": 2,
+      "zip_uncompressed_bytes": 28483,
+      "zip_top_level": [
+        "Collatz_OT_Series_INDEX_v0.1.md",
+        "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md"
+      ]
+    },
+    {
+      "name": "Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md",
+      "mtime_local": "2026-08-10T23:23:32",
+      "bytes": 20301,
+      "sha256": "d7dcd08a4334007d93448ac3484414ef9a9cea13e4c58bed225d3b1954dfcd61",
+      "line": "nine-paper series",
+      "role": "loose manuscript or index",
+      "processed_by_this_tree": null
+    },
+    {
+      "name": "Collatz_OT_Series_Papers_01_02_v0.2_bundle.zip",
+      "mtime_local": "2026-08-10T23:23:36",
+      "bytes": 21123,
+      "sha256": "1110eba94b13408bd54d0c91cfd3de129408329c4a3dc2e6495f57e77355a8e9",
+      "line": "nine-paper series",
+      "role": "incremental bundle, superseded by SSSP v1.0",
+      "processed_by_this_tree": null,
+      "zip_entries": 3,
+      "zip_uncompressed_bytes": 48778,
+      "zip_top_level": [
+        "Collatz_OT_Series_INDEX_v0.2.md",
+        "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
+        "Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md"
+      ]
+    },
+    {
+      "name": "Collatz_OT_Series_Papers_01_03_v0.3_bundle.zip",
+      "mtime_local": "2026-08-10T23:31:22",
+      "bytes": 29810,
+      "sha256": "45b97e92d9474a1a30f29bc0ee7dfc73a067dddad89d8d23f88c766825d08a86",
+      "line": "nine-paper series",
+      "role": "incremental bundle, superseded by SSSP v1.0",
+      "processed_by_this_tree": null,
+      "zip_entries": 4,
+      "zip_uncompressed_bytes": 71558,
+      "zip_top_level": [
+        "Collatz_OT_Series_INDEX_v0.3.md",
+        "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
+        "Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md",
+        "Collatz_OT_Series_Paper_03_Parity_Word_Residue_Cylinder_Identity_v0.1.md"
+      ]
+    },
+    {
+      "name": "Collatz_OT_Series_Papers_01_04_v0.4_bundle.zip",
+      "mtime_local": "2026-08-10T23:35:06",
+      "bytes": 39195,
+      "sha256": "398bac15176e1b437c042b631697cda74fb1ca72597225e1b6b89a061cea3cd5",
+      "line": "nine-paper series",
+      "role": "incremental bundle, superseded by SSSP v1.0",
+      "processed_by_this_tree": null,
+      "zip_entries": 5,
+      "zip_uncompressed_bytes": 96189,
+      "zip_top_level": [
+        "Collatz_OT_Series_INDEX_v0.4.md",
+        "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
+        "Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md",
+        "Collatz_OT_Series_Paper_03_Parity_Word_Residue_Cylinder_Identity_v0.1.md",
+        "Collatz_OT_Series_Paper_04_Bidirectional_Residue_Transport_v0.1.md"
+      ]
+    },
+    {
+      "name": "Collatz_OT_Series_Papers_01_05_v0.5_bundle.zip",
+      "mtime_local": "2026-08-10T23:40:51",
+      "bytes": 49271,
+      "sha256": "493dc91fece66a1cdb085bb6ccbf4781ccac1d0b4419b0318cd01a581a6a28a4",
+      "line": "nine-paper series",
+      "role": "incremental bundle, superseded by SSSP v1.0",
+      "processed_by_this_tree": null,
+      "zip_entries": 6,
+      "zip_uncompressed_bytes": 121612,
+      "zip_top_level": [
+        "Collatz_OT_Series_INDEX_v0.5.md",
+        "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
+        "Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md",
+        "Collatz_OT_Series_Paper_03_Parity_Word_Residue_Cylinder_Identity_v0.1.md",
+        "Collatz_OT_Series_Paper_04_Bidirectional_Residue_Transport_v0.1.md",
+        "Collatz_OT_Series_Paper_05_Contraction_Boundary_Binomial_Cylinder_Law_v0.1.md"
+      ]
+    },
+    {
+      "name": "Collatz_OT_Series_Papers_01_06_v0.6_bundle.zip",
+      "mtime_local": "2026-08-10T23:47:51",
+      "bytes": 59042,
+      "sha256": "254050fb6441fb8de7a6dc79ead538bcbf3ed2f23ec0700ff379fbc484688565",
+      "line": "nine-paper series",
+      "role": "incremental bundle, superseded by SSSP v1.0",
+      "processed_by_this_tree": null,
+      "zip_entries": 7,
+      "zip_uncompressed_bytes": 148000,
+      "zip_top_level": [
+        "Collatz_OT_Series_INDEX_v0.6.md",
+        "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
+        "Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md",
+        "Collatz_OT_Series_Paper_03_Parity_Word_Residue_Cylinder_Identity_v0.1.md",
+        "Collatz_OT_Series_Paper_04_Bidirectional_Residue_Transport_v0.1.md",
+        "Collatz_OT_Series_Paper_05_Contraction_Boundary_Binomial_Cylinder_Law_v0.1.md"
+      ]
+    },
+    {
+      "name": "Collatz_OT_Series_Papers_01_07_v0.7_bundle.zip",
+      "mtime_local": "2026-08-10T23:53:10",
+      "bytes": 69110,
+      "sha256": "77bae3e8ac2a8547f5372c58631ee78d250d7e7129d0cd00c23105e8566c4ee4",
+      "line": "nine-paper series",
+      "role": "incremental bundle, superseded by SSSP v1.0",
+      "processed_by_this_tree": null,
+      "zip_entries": 8,
+      "zip_uncompressed_bytes": 174019,
+      "zip_top_level": [
+        "Collatz_OT_Series_INDEX_v0.7.md",
+        "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
+        "Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md",
+        "Collatz_OT_Series_Paper_03_Parity_Word_Residue_Cylinder_Identity_v0.1.md",
+        "Collatz_OT_Series_Paper_04_Bidirectional_Residue_Transport_v0.1.md",
+        "Collatz_OT_Series_Paper_05_Contraction_Boundary_Binomial_Cylinder_Law_v0.1.md"
+      ]
+    },
+    {
+      "name": "Collatz_OT_Series_Papers_01_08_v0.8_bundle.zip",
+      "mtime_local": "2026-08-11T00:02:34",
+      "bytes": 81818,
+      "sha256": "51e323a2ef79a1acc817599807f4098ff3785c3b95c78208ee90f5212be93fec",
+      "line": "nine-paper series",
+      "role": "incremental bundle, superseded by SSSP v1.0",
+      "processed_by_this_tree": null,
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 207866,
+      "zip_top_level": [
+        "Collatz_OT_Series_INDEX_v0.8.md",
+        "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
+        "Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md",
+        "Collatz_OT_Series_Paper_03_Parity_Word_Residue_Cylinder_Identity_v0.1.md",
+        "Collatz_OT_Series_Paper_04_Bidirectional_Residue_Transport_v0.1.md",
+        "Collatz_OT_Series_Paper_05_Contraction_Boundary_Binomial_Cylinder_Law_v0.1.md"
+      ]
+    },
+    {
+      "name": "Faithful_Global_Quantifier_Compression_Proof_Route_v0.1_bundle.zip",
+      "mtime_local": "2026-08-11T11:40:30",
+      "bytes": 13669,
+      "sha256": "cc20d83fa7c57e7a3813d6fdb111d935f0302e1f1131376bc791dbe9d266e571",
+      "line": "Hard-Zeta",
+      "role": "proof-route origin",
+      "processed_by_this_tree": null,
+      "zip_entries": 2,
+      "zip_uncompressed_bytes": 30667,
+      "zip_top_level": [
+        "Faithful_Global_Quantifier_Compression_Proof_Route_v0.1.md",
+        "Faithful_Global_Quantifier_Compression_ROUTE_MAP_v0.1.md"
+      ]
+    },
+    {
+      "name": "Faithful_Global_Quantifier_Compression_Proof_Route_v0.1.1.md",
+      "mtime_local": "2026-08-11T13:11:54",
+      "bytes": 29897,
+      "sha256": "fe8ea2204b0a04f7e543a0e438ea45bc5c55f672913a28ae1d1e509787654333",
+      "line": "Hard-Zeta",
+      "role": "proof-route origin",
+      "processed_by_this_tree": null
+    },
+    {
+      "name": "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",
+      "mtime_local": "2026-08-11T13:12:00",
+      "bytes": 12990,
+      "sha256": "47efa6e5b26b149c63fd1791a40c7fb47333ad4f3007759ab24d7c368658b358",
+      "line": "Hard-Zeta",
+      "role": "Phase I round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "",
+        1,
+        "",
+        -1
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_I_Round_01_bundle.zip",
+      "mtime_local": "2026-08-11T13:12:05",
+      "bytes": 18214,
+      "sha256": "6e4231fdcec33cb0bb63e1b4e0ff82c6eb2c45b4f656d2a2cc3ae4024457bbb7",
+      "line": "Hard-Zeta",
+      "role": "Phase I round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "",
+        1,
+        "",
+        -1
+      ],
+      "zip_entries": 2,
+      "zip_uncompressed_bytes": 42887,
+      "zip_top_level": [
+        "Faithful_Global_Quantifier_Compression_Proof_Route_v0.1.1.md",
+        "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md",
+      "mtime_local": "2026-08-11T13:27:31",
+      "bytes": 18742,
+      "sha256": "6a78a5b3fac0428e1787f372e53bca39a5f0ae02b47819b4a8ccbe512a534d47",
+      "line": "Hard-Zeta",
+      "role": "Phase I round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "",
+        2,
+        "",
+        -1
+      ]
+    },
+    {
+      "name": "Hard_Zeta_ROUTE_MAP_v0.2.md",
+      "mtime_local": "2026-08-11T13:27:37",
+      "bytes": 975,
+      "sha256": "963aa2dd1631c3a1a6e882c4bec65b522e8d4fba7967317e9ae013cfe7052bc6",
+      "line": "Hard-Zeta",
+      "role": "route map",
+      "processed_by_this_tree": null
+    },
+    {
+      "name": "Hard_Zeta_Phase_I_Round_02_bundle.zip",
+      "mtime_local": "2026-08-11T13:27:41",
+      "bytes": 13226,
+      "sha256": "3d27f66f5f6f67ed9335d098aefb3cb4d3d80a9626701f6f98d6b5a7d2f055d6",
+      "line": "Hard-Zeta",
+      "role": "Phase I round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "",
+        2,
+        "",
+        -1
+      ],
+      "zip_entries": 3,
+      "zip_uncompressed_bytes": 32707,
+      "zip_top_level": [
+        "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md",
+        "Hard_Zeta_ROUTE_MAP_v0.2.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_I_Round_03A_bundle.zip",
+      "mtime_local": "2026-08-11T14:17:14",
+      "bytes": 21964,
+      "sha256": "e0ba61375f4a9f36f64000fb697da92abfcf308278363eccbfcd9f66beb40ec7",
+      "line": "Hard-Zeta",
+      "role": "Phase I round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "",
+        3,
+        "a",
+        -1
+      ],
+      "zip_entries": 4,
+      "zip_uncompressed_bytes": 56204,
+      "zip_top_level": [
+        "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A_Coefficient_Frontier_v0.1.md",
+        "Hard_Zeta_ROUTE_MAP_v0.3.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_I_Round_03A1_bundle.zip",
+      "mtime_local": "2026-08-11T16:13:41",
+      "bytes": 30660,
+      "sha256": "cc24d512c067ccddd65a983371ec97c84d76f4887505bf11d565eb654f97f7d4",
+      "line": "Hard-Zeta",
+      "role": "Phase I round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "",
+        3,
+        "a",
+        1
+      ],
+      "zip_entries": 5,
+      "zip_uncompressed_bytes": 80308,
+      "zip_top_level": [
+        "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A1_Small_Anchor_Event_Arithmetic_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A_Coefficient_Frontier_v0.1.md",
+        "Hard_Zeta_ROUTE_MAP_v0.4.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_I_Round_03A2_bundle.zip",
+      "mtime_local": "2026-08-11T16:43:39",
+      "bytes": 39277,
+      "sha256": "119b3545cfc73df44dc46ed0cd8c60c68364b3629370bedebce3ce1064b855b7",
+      "line": "Hard-Zeta",
+      "role": "Phase I round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "",
+        3,
+        "a",
+        2
+      ],
+      "zip_entries": 6,
+      "zip_uncompressed_bytes": 106016,
+      "zip_top_level": [
+        "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A1_Small_Anchor_Event_Arithmetic_v0.1.1.md",
+        "Hard_Zeta_Phase_I_Round_03A2_2_3_Infinity_Anchor_Compatibility_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A_Coefficient_Frontier_v0.1.md",
+        "Hard_Zeta_ROUTE_MAP_v0.5.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_I_Round_03A3_bundle.zip",
+      "mtime_local": "2026-08-11T21:37:48",
+      "bytes": 48247,
+      "sha256": "91c70e13829dc3230eded4b9a0341a064166214379ae8ad15773c695b7411b72",
+      "line": "Hard-Zeta",
+      "role": "Phase I round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "",
+        3,
+        "a",
+        3
+      ],
+      "zip_entries": 7,
+      "zip_uncompressed_bytes": 130817,
+      "zip_top_level": [
+        "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A1_Small_Anchor_Event_Arithmetic_v0.1.1.md",
+        "Hard_Zeta_Phase_I_Round_03A2_2_3_Infinity_Anchor_Compatibility_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A3_Endpoint_Parity_Dynamics_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A_Coefficient_Frontier_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_I_Round_03A4_bundle.zip",
+      "mtime_local": "2026-08-11T21:52:09",
+      "bytes": 57033,
+      "sha256": "c6764d7a2796a2a07faa1d8c60e4c4a68dae6d2c74526fafcbad003ec214c04b",
+      "line": "Hard-Zeta",
+      "role": "Phase I round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "",
+        3,
+        "a",
+        4
+      ],
+      "zip_entries": 8,
+      "zip_uncompressed_bytes": 154653,
+      "zip_top_level": [
+        "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A1_Small_Anchor_Event_Arithmetic_v0.1.1.md",
+        "Hard_Zeta_Phase_I_Round_03A2_2_3_Infinity_Anchor_Compatibility_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A3_Endpoint_Parity_Dynamics_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A4_Spine_Valuation_Rigidity_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_B_Line_Handoff_v0.1.md",
+      "mtime_local": "2026-08-11T21:57:37",
+      "bytes": 20265,
+      "sha256": "03edbbc0ebba0f9641c01d92c9ff1be0168888bc7cdafc90cb31f52364c400ff",
+      "line": "Hard-Zeta",
+      "role": "handoff",
+      "processed_by_this_tree": null
+    },
+    {
+      "name": "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip",
+      "mtime_local": "2026-08-11T22:06:55",
+      "bytes": 67518,
+      "sha256": "b2fd005c0e08e54b2cf91ac1d4d54a68602b6cf00be8b18b1554e97d84b20c47",
+      "line": "Hard-Zeta",
+      "role": "Phase I A-line consolidation",
+      "processed_by_this_tree": null,
+      "zip_entries": 10,
+      "zip_uncompressed_bytes": 180513,
+      "zip_top_level": [
+        "Hard_Zeta_A_Line_Closure_v1.0.md",
+        "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A1_Small_Anchor_Event_Arithmetic_v0.1.1.md",
+        "Hard_Zeta_Phase_I_Round_03A2_2_3_Infinity_Anchor_Compatibility_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A3_Endpoint_Parity_Dynamics_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU1_bundle.zip",
+      "mtime_local": "2026-08-11T22:33:33",
+      "bytes": 19506,
+      "sha256": "1282c2f082e922cc36b7da3a321e3eecad10428f693b8d2246c6bd94c62d0b0e",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        1,
+        "",
+        -1
+      ],
+      "zip_entries": 4,
+      "zip_uncompressed_bytes": 48433,
+      "zip_top_level": [
+        "Hard_Zeta_A_Line_Closure_v1.0.md",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v0.9_AU1.md",
+        "Hard_Zeta_Phase_II_Round_AU1_Critical_Occupation_Anchor_Erasure_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A5_Exceptional_Occupancy_Rigidity_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2a_bundle.zip",
+      "mtime_local": "2026-08-11T23:11:17",
+      "bytes": 19350,
+      "sha256": "323ca2bb053b3b554116f92d121c1dd3b3a2299812ce6d378a0093da25125c50",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "a",
+        -1
+      ],
+      "zip_entries": 4,
+      "zip_uncompressed_bytes": 50148,
+      "zip_top_level": [
+        "Hard_Zeta_A_Line_Closure_v1.0.md",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.0_AU2a.md",
+        "Hard_Zeta_Phase_II_Round_AU1_Critical_Occupation_Anchor_Erasure_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2a_Lift_Occupation_Coupling_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2b_bundle.zip",
+      "mtime_local": "2026-08-11T23:45:06",
+      "bytes": 26929,
+      "sha256": "19fa51f88695e115ea21d84fa7f0ed50e217813dad3d3078700453c5de9602d9",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "b",
+        -1
+      ],
+      "zip_entries": 5,
+      "zip_uncompressed_bytes": 71602,
+      "zip_top_level": [
+        "Hard_Zeta_A_Line_Closure_v1.0.md",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.1_AU2b.md",
+        "Hard_Zeta_Phase_II_Round_AU1_Critical_Occupation_Anchor_Erasure_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2a_Lift_Occupation_Coupling_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2b_Sparse_Lift_Rigidity_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2b1_bundle.zip",
+      "mtime_local": "2026-08-12T00:14:27",
+      "bytes": 156322,
+      "sha256": "53d7a5bc07dded8d9c0e2deae0f04e6850d0b14e386d6f6ccfe45f203021de2b",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "b",
+        1
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 233563,
+      "zip_top_level": [
+        "Hard_Zeta_AU2b1_entropy_root.png",
+        "Hard_Zeta_AU2b1_packing_entropy_constants.json",
+        "Hard_Zeta_AU2b1_variational_constant.png",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.2_AU2b1.md",
+        "Hard_Zeta_Phase_II_Round_AU1_Critical_Occupation_Anchor_Erasure_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2a_Lift_Occupation_Coupling_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip",
+      "mtime_local": "2026-08-12T00:47:34",
+      "bytes": 225177,
+      "sha256": "aa31499dc5d7bf8dbf3b9a2f9c0e26c3b24b78b3e17b7d77ab81fe4a96959e86",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "b",
+        2
+      ],
+      "zip_entries": 11,
+      "zip_uncompressed_bytes": 326653,
+      "zip_top_level": [
+        "Hard_Zeta_AU2b2_centered_queue_gap.png",
+        "Hard_Zeta_AU2b2_constants_and_queue.json",
+        "Hard_Zeta_AU2b2_queue_entropy_convergence.png",
+        "Hard_Zeta_AU2b2_second_order_margin.png",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.3_AU2b2.md",
+        "Hard_Zeta_Phase_II_Round_AU1_Critical_Occupation_Anchor_Erasure_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2b3_bundle.zip",
+      "mtime_local": "2026-08-12T11:08:38",
+      "bytes": 250659,
+      "sha256": "4f7b78eeaa33d87fc0ef2b2b689921705373f45037d21665110057b3c80d51ab",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "b",
+        3
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 322538,
+      "zip_top_level": [
+        "Hard_Zeta_AU2b3_centered_prefactors.png",
+        "Hard_Zeta_AU2b3_pointing_multiplicity.png",
+        "Hard_Zeta_AU2b3_queue_prefactor_diagnostics.json",
+        "Hard_Zeta_AU2b3_queue_to_composition_ratios.png",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.4_AU2b3.md",
+        "Hard_Zeta_Phase_II_Round_AU2b1_Sharp_Packing_Entropy_Threshold_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2e_bundle.zip",
+      "mtime_local": "2026-08-12T11:52:41",
+      "bytes": 28563,
+      "sha256": "7b62580f762efb9111e9969156b36f5de9700b34a9b003216e8211d0ea4fe59a",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "e",
+        -1
+      ],
+      "zip_entries": 5,
+      "zip_uncompressed_bytes": 72275,
+      "zip_top_level": [
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.5_AU2e.md",
+        "Hard_Zeta_Phase_II_Round_AU2b1_Sharp_Packing_Entropy_Threshold_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2b2_Queue_Entropy_Second_Order_Barrier_v0.1.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2b3_Queue_Prefactor_Saturation_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e_Multiscale_Return_Arithmetic_v0.1.md"
+      ]
+    },
+    {
+      "name": "NeoK_Crypto_Semiotics_Theory_Compiler_v0.8.zip",
+      "mtime_local": "2026-08-12T11:55:48",
+      "bytes": 3467925,
+      "sha256": "b0a7ae85f94c2e9ee748ad96bb4f7585295770d7c6e338d43b24be6867a54e47",
+      "line": "other project",
+      "role": "not Collatz; parked here",
+      "processed_by_this_tree": null,
+      "zip_entries": 290,
+      "zip_uncompressed_bytes": 25088868,
+      "zip_top_level": [
+        "NeoK_Crypto_Semiotics_Theory_Compiler_v0.8"
+      ]
+    },
+    {
+      "name": "NeoK_Crypto_Semiotics_Theory_Compiler_v0.9.zip",
+      "mtime_local": "2026-08-12T12:44:06",
+      "bytes": 3481122,
+      "sha256": "96aa7e9eb4f3eeb6cc5923e24fd13f3e7015d906aa6c66f49bacdc834ac73bbf",
+      "line": "other project",
+      "role": "not Collatz; parked here",
+      "processed_by_this_tree": null,
+      "zip_entries": 306,
+      "zip_uncompressed_bytes": 25109231,
+      "zip_top_level": [
+        "NeoK_Crypto_Semiotics_Theory_Compiler_v0.9"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2e1_bundle.zip",
+      "mtime_local": "2026-08-12T15:05:57",
+      "bytes": 18802,
+      "sha256": "87ebfb93f05c64fd1c81307dd3dcdeedd45eaaa53c342508cd39cfce33a4ffde",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "e",
+        1
+      ],
+      "zip_entries": 4,
+      "zip_uncompressed_bytes": 44248,
+      "zip_top_level": [
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.6_AU2e1.md",
+        "Hard_Zeta_Phase_II_Round_AU2b3_Queue_Prefactor_Saturation_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e1_Reset_Block_Arithmetic_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e_Multiscale_Return_Arithmetic_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2e2_bundle.zip",
+      "mtime_local": "2026-08-12T18:51:48",
+      "bytes": 17152,
+      "sha256": "29c6cac193ed2966e6bf2a9c8535b40532e43ee642f48dd1e0d8f3369dc4fa47",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "e",
+        2
+      ],
+      "zip_entries": 4,
+      "zip_uncompressed_bytes": 39287,
+      "zip_top_level": [
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.7_AU2e2.md",
+        "Hard_Zeta_Phase_II_Round_AU2e1_Reset_Block_Arithmetic_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e2_Reset_Survival_AB_Atomic_Multiplication_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e_Multiscale_Return_Arithmetic_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2e3_bundle.zip",
+      "mtime_local": "2026-08-12T21:19:48",
+      "bytes": 17731,
+      "sha256": "48ef7e50c5d84542be2c67ae4983dfe277c94eeabaf2894af4a25d190142577c",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "e",
+        3
+      ],
+      "zip_entries": 5,
+      "zip_uncompressed_bytes": 40381,
+      "zip_top_level": [
+        "Hard_Zeta_AU2e2_Terminology_Corrigendum_v0.1.1.md",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.8_AU2e3.md",
+        "Hard_Zeta_Phase_II_Round_AU2e1_Reset_Block_Arithmetic_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e2_Reset_Survival_AB_Atomic_Multiplication_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e3_Infinite_Support_Degeneration_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2e4_bundle.zip",
+      "mtime_local": "2026-08-12T21:30:15",
+      "bytes": 17359,
+      "sha256": "6a4736ee36eff2b69780e61b41f85c3da5c3106927f10c061755b82f80ab6712",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "e",
+        4
+      ],
+      "zip_entries": 5,
+      "zip_uncompressed_bytes": 39910,
+      "zip_top_level": [
+        "Hard_Zeta_AU2e2_Terminology_Corrigendum_v0.1.1.md",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.9_AU2e4.md",
+        "Hard_Zeta_Phase_II_Round_AU2e2_Reset_Survival_AB_Atomic_Multiplication_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e3_Infinite_Support_Degeneration_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e4_Renewal_Diophantine_Rigidity_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d_bundle.zip",
+      "mtime_local": "2026-08-12T22:02:37",
+      "bytes": 27908,
+      "sha256": "218d74d18dd543cd45b1ae46fb76bd7e884d86864221b4c1afcfd8d7d920fabe",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        -1
+      ],
+      "zip_entries": 6,
+      "zip_uncompressed_bytes": 70132,
+      "zip_top_level": [
+        "Hard_Zeta_AU2d_Literature_Notes_v0.1.md",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.0_AU2d.md",
+        "Hard_Zeta_Phase_II_Round_AU2a_Lift_Occupation_Coupling_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2d_Transducer_Rationality_Source_Freeze_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e3_Infinite_Support_Degeneration_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e4_Renewal_Diophantine_Rigidity_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d1_bundle.zip",
+      "mtime_local": "2026-08-12T22:25:38",
+      "bytes": 24812,
+      "sha256": "c77b3582354aa5ec7ec88ef038c4d2abf0441cb503ce4ab5f1ab1325af14ba01",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        1
+      ],
+      "zip_entries": 7,
+      "zip_uncompressed_bytes": 58547,
+      "zip_top_level": [
+        "Hard_Zeta_AU2d1_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d1_rotation_constants.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.1_AU2d1.md",
+        "Hard_Zeta_Phase_II_Round_AU2d1_Bi_Exact_Rotation_Correction_Rigidity_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2d_Transducer_Rationality_Source_Freeze_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e4_Renewal_Diophantine_Rigidity_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d2_bundle.zip",
+      "mtime_local": "2026-08-13T11:00:34",
+      "bytes": 20628,
+      "sha256": "0953f398ecf77d3d9aa08ad75452bf5ecb180e7cd74ee907aabe0db96f9cf011",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        2
+      ],
+      "zip_entries": 7,
+      "zip_uncompressed_bytes": 49992,
+      "zip_top_level": [
+        "Hard_Zeta_AU2d2_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d2_attainability_constants.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.2_AU2d2.md",
+        "Hard_Zeta_Phase_II_Round_AU2d1_Bi_Exact_Rotation_Correction_Rigidity_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2d2_Rotation_Envelope_Attainability_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2e4_Renewal_Diophantine_Rigidity_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d3_bundle.zip",
+      "mtime_local": "2026-08-13T14:03:03",
+      "bytes": 30385,
+      "sha256": "d3c4f818bb7bb39fa2ddc4b65339ece8d17f37b01effc96fc26dd5eca2b8b0b4",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        3
+      ],
+      "zip_entries": 8,
+      "zip_uncompressed_bytes": 73095,
+      "zip_top_level": [
+        "Hard_Zeta_AU2d3_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d3_survival_closure_constants.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.3_AU2d3.md",
+        "Hard_Zeta_Phase_II_Round_AU2d1_Bi_Exact_Rotation_Correction_Rigidity_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2d2_Rotation_Envelope_Attainability_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2d3_Second_Order_Survival_Closure_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip",
+      "mtime_local": "2026-08-13T14:08:51",
+      "bytes": 35324,
+      "sha256": "799fad5e0614c598157b4748e0b1033585f11194d80824051ac12e3a5730acdd",
+      "line": "Hard-Zeta",
+      "role": "handoff",
+      "processed_by_this_tree": null,
+      "zip_entries": 8,
+      "zip_uncompressed_bytes": 80981,
+      "zip_top_level": [
+        "Hard_Zeta_AU2d3_Literature_Notes_v0.1.md",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.3_AU2d3.md",
+        "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.md",
+        "Hard_Zeta_Collatz_New_Chat_Start_Prompt_v1.0.md",
+        "Hard_Zeta_Phase_II_Round_AU2d1_Bi_Exact_Rotation_Correction_Rigidity_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2d2_Rotation_Envelope_Attainability_v0.1.md"
+      ]
+    },
+    {
+      "name": "Collatz_OT_Series_Paper.zip",
+      "mtime_local": "2026-08-13T14:09:24",
+      "bytes": 17533734,
+      "sha256": "d7394cce7b6a877112446d5d4616339bf2b2eda4241f3d6a9010128c288f0d2d",
+      "line": "nine-paper series",
+      "role": "large consolidated archive",
+      "processed_by_this_tree": null,
+      "zip_entries": 50,
+      "zip_uncompressed_bytes": 17812870,
+      "zip_top_level": [
+        "CPL_Claude_67_25_Research_Pack_2026-08-11.zip",
+        "CPL_Claude_67_25_Research_Pack_v2_2026-08-11.zip",
+        "CPL_Claude_Research_Pack_v11_2026-08-11.zip",
+        "Collatz_OT_Series_INDEX_v0.1.md",
+        "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
+        "Collatz_OT_Series_Paper_01_v0.1_bundle.zip"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d4_Renewal_Congestion_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-13T14:34:14",
+      "bytes": 27615,
+      "sha256": "900f40b19b049f50aa43b2274746de5733099ba7d5681f2867b817f9a614cf47",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        4
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 70891,
+      "zip_top_level": [
+        "Hard_Zeta_AU2d4_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d4_checker_report.json",
+        "Hard_Zeta_AU2d4_congestion_rigidity_constants.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.4_AU2d4.md",
+        "Hard_Zeta_Phase_II_Round_AU2d4_Renewal_Congestion_Rigidity_v0.1.md",
+        "README_AU2d4_bundle.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d5_Annular_Farey_Residue_Coupling_bundle_v0.1.zip",
+      "mtime_local": "2026-08-13T15:13:20",
+      "bytes": 26521,
+      "sha256": "fc35593c2c1b011cbc0d1c39a05b75c57d42f5a9b577b73eb635e33291d8a44f",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        5
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 65337,
+      "zip_top_level": [
+        "Hard_Zeta_AU2d5_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d5_checker_report.json",
+        "Hard_Zeta_AU2d5_constants_frontier.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.5_AU2d5.md",
+        "Hard_Zeta_Phase_II_Round_AU2d5_Annular_Farey_Residue_Coupling_v0.1.md",
+        "README_AU2d5_bundle.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d6_Farey_Order_Entropy_Collision_bundle_v0.1.zip",
+      "mtime_local": "2026-08-13T16:06:36",
+      "bytes": 30921,
+      "sha256": "5148fdfda532e2fdf76f087f11727aa442befaf3713a4cc1db294481c3058f71",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        6
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 80085,
+      "zip_top_level": [
+        "Hard_Zeta_AU2d6_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d6_checker_report.json",
+        "Hard_Zeta_AU2d6_constants_frontier.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.6_AU2d6.md",
+        "Hard_Zeta_Phase_II_Round_AU2d6_Farey_Order_Entropy_Collision_v0.1.md",
+        "README_AU2d6_bundle.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d7_Plateau_Reset_Quantization_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-13T16:51:40",
+      "bytes": 33135,
+      "sha256": "41d3fb11ac53d90c812d6a0292d360aabb4f8cca0ab29700985025cb89d684d5",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        7
+      ],
+      "zip_entries": 10,
+      "zip_uncompressed_bytes": 87973,
+      "zip_top_level": [
+        "Hard_Zeta_AU2d7_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d7_checker_report.json",
+        "Hard_Zeta_AU2d7_constants_frontier.json",
+        "Hard_Zeta_AU2d7_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.7_AU2d7.md",
+        "Hard_Zeta_Phase_II_Round_AU2d7_Plateau_Reset_Quantization_Rigidity_v0.1.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d8_Quadratic_Low_Source_Corridor_Saturation_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T12:06:25",
+      "bytes": 26538,
+      "sha256": "1b7fe89302cb98319ccc0ed487ecb195d87ce686890c445d5d2c42c89ba1910c",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        8
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 67419,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d8_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d8_checker_report.json",
+        "Hard_Zeta_AU2d8_constants_frontier.json",
+        "Hard_Zeta_AU2d8_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.8_AU2d8.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d9_Orbit_Packing_Deficit_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T12:30:12",
+      "bytes": 24755,
+      "sha256": "0680d614159e52d79a27ac286d43da199723d116550fab1efea0e1785b2c2a55",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        9
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 58122,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d9_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d9_checker_report.json",
+        "Hard_Zeta_AU2d9_constants_frontier.json",
+        "Hard_Zeta_AU2d9_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.9_AU2d9.md"
+      ]
+    },
+    {
+      "name": "Collatz_Operation_Translation_Series_SSSP_Repaired_v1.0.zip",
+      "mtime_local": "2026-08-14T13:14:22",
+      "bytes": 509564,
+      "sha256": "15a07c5e62228e602a15371ce67359f9f923a85a3f626fc293a7c62eb1f998d4",
+      "line": "nine-paper series",
+      "role": "final repaired package",
+      "processed_by_this_tree": "archived as ../collatz-ot-series-neok/ and fully rechecked; see reports/RUN-002-OT-SERIES.md",
+      "zip_entries": 50,
+      "zip_uncompressed_bytes": 1659888,
+      "zip_top_level": [
+        "Collatz_Operation_Translation_Series_SSSP_Repaired_v1.0"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d10_Valuation_Class_Harmonic_Deficit_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T13:34:06",
+      "bytes": 26282,
+      "sha256": "4116305d00886a1569146ceb8e5254886135e556b0981f86d2ff527c06be9045",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        10
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 64104,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d10_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d10_checker_report.json",
+        "Hard_Zeta_AU2d10_constants_frontier.json",
+        "Hard_Zeta_AU2d10_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.10_AU2d10.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d11_Multi_Step_Reciprocal_Transport_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T14:24:21",
+      "bytes": 34077,
+      "sha256": "3dd23e969a2ca0517738c7878e1f25bbdff77eb487e7120d944135914235e7d5",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        11
+      ],
+      "zip_entries": 11,
+      "zip_uncompressed_bytes": 83467,
+      "zip_top_level": [
+        "collatz_hardzeta_work"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d12_3Adic_Transport_Hierarchy_Closure_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T14:55:25",
+      "bytes": 49462,
+      "sha256": "53cd7c2fcf5954cfe1ff684b807ace463eba64d032e32d1d405af662a961ba9b",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        12
+      ],
+      "zip_entries": 11,
+      "zip_uncompressed_bytes": 134049,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d12_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d12_block_hierarchy_data.json",
+        "Hard_Zeta_AU2d12_checker_report.json",
+        "Hard_Zeta_AU2d12_constants_frontier.json",
+        "Hard_Zeta_AU2d12_theorem_ledger.json"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d13_Dense_Source_Depth_Exponent_Collision_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T15:20:48",
+      "bytes": 20875,
+      "sha256": "1f02613b3e73b47d3fab42185f6e0ccd296ea2e7ab023cab0617429166a5d427",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        13
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 46068,
+      "zip_top_level": [
+        "collatz_hardzeta_work"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d14_Sparse_B_Support_Exhaustion_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T15:44:39",
+      "bytes": 21829,
+      "sha256": "2089742a1daf745794e3df331eae504ba91372393eb5d32f6d7770f4fa24613c",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        14
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 51690,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d14_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d14_checker_report.json",
+        "Hard_Zeta_AU2d14_constants_frontier.json",
+        "Hard_Zeta_AU2d14_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.14_AU2d14.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d15_Suffix_Minimum_Record_Sparsity_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T16:19:02",
+      "bytes": 22828,
+      "sha256": "a3062bad6f642d44556ff7c2bb9d749d2509e20fd36803864d521501642f245a",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        15
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 53439,
+      "zip_top_level": [
+        "collatz_hardzeta_work"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d16_Critical_Record_Gap_Transport_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T16:57:42",
+      "bytes": 24462,
+      "sha256": "72fb061204e1bd3e0125d4fe3b9e59f82cdea41029f9b984aaed377d27554ebe",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        16
+      ],
+      "zip_entries": 11,
+      "zip_uncompressed_bytes": 61524,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d16_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d16_checker_report.json",
+        "Hard_Zeta_AU2d16_constants_frontier.json",
+        "Hard_Zeta_AU2d16_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.16_AU2d16.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d17_Small_Endpoint_Critical_Bridge_Cylinder_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T18:51:39",
+      "bytes": 25541,
+      "sha256": "ec15c779b6ba88f2649016e2b867521e046681e51d14bd2c5a1d5f61c826a6b4",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        17
+      ],
+      "zip_entries": 11,
+      "zip_uncompressed_bytes": 64475,
+      "zip_top_level": [
+        "CHECKER_STDOUT_AU2d17.txt",
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d17_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d17_checker_report.json",
+        "Hard_Zeta_AU2d17_constants_frontier.json",
+        "Hard_Zeta_AU2d17_theorem_ledger.json"
+      ]
+    }
+  ]
+}

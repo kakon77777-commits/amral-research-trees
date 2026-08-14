@@ -1,0 +1,67 @@
+{
+  "tool": "hz_route_probe.py",
+  "subject": "Neo.K, Hard-Zeta Route Map v0.2 — the E_k = C_k + R_k decomposition",
+  "scope": "a finite measurement of the route map's own quantities. R_k empty on a finite range is NOT evidence for the coefficient-stopping conjecture; it is the bound at which this arm checked it.",
+  "domain": "odd 3 <= n < 400000",
+  "checks": {
+    "HZ_tau_c_never_exceeds_sigma": {
+      "pass": true
+    },
+    "HZ_both_stopping_times_are_defined_on_the_range": {
+      "pass": true
+    },
+    "HZ_R_k_is_empty_on_this_range_i_e_sigma_equals_tau_c": {
+      "pass": true
+    }
+  },
+  "measured": {
+    "coefficient_stopping": {
+      "odd_starts": 199999,
+      "sigma_equals_tau_c": 199999,
+      "sigma_exceeds_tau_c": 0,
+      "first_strict_witnesses": [],
+      "max_sigma": {
+        "value": 173,
+        "at": 381727
+      },
+      "max_tau_c": {
+        "value": 173,
+        "at": 381727
+      },
+      "terras_note": "sigma = tau_c for all n > 1 is Terras's coefficient-stopping conjecture, which is open. Equality across this range means R_k is empty here and nothing about larger n."
+    },
+    "E_k_split": {
+      "domain": "odd 3 <= n < 200001",
+      "by_depth": {
+        "5": {
+          "C_k_tau_c_gt_k": 25000,
+          "R_k_tau_c_le_k_lt_sigma": 0,
+          "certified_sigma_le_k": 74999
+        },
+        "10": {
+          "C_k_tau_c_gt_k": 12502,
+          "R_k_tau_c_le_k_lt_sigma": 0,
+          "certified_sigma_le_k": 87497
+        },
+        "20": {
+          "C_k_tau_c_gt_k": 5179,
+          "R_k_tau_c_le_k_lt_sigma": 0,
+          "certified_sigma_le_k": 94820
+        },
+        "40": {
+          "C_k_tau_c_gt_k": 1130,
+          "R_k_tau_c_le_k_lt_sigma": 0,
+          "certified_sigma_le_k": 98869
+        },
+        "80": {
+          "C_k_tau_c_gt_k": 104,
+          "R_k_tau_c_le_k_lt_sigma": 0,
+          "certified_sigma_le_k": 99895
+        }
+      },
+      "note": "E_k = C_k disjoint-union R_k is the route map's decomposition of the hard set. R_k is empty at every depth here, which is the same fact as the coefficient-stopping measurement above viewed depth by depth."
+    }
+  },
+  "failures": [],
+  "ok": true
+}
