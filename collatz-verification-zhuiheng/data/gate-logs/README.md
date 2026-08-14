@@ -13,9 +13,15 @@ said at the time rather than only that they were said to pass.
 | `mutation-drill.progress.txt` | the same run's stderr, one line per mutation as it was decided |
 | `coverage.json` | `code/verify_run_logs.py` |
 | `ot-paper02-recheck.json` | `code/ot_paper02_recheck.py 16` — independent re-derivation of Paper 02 of Neo.K's Operation Translation Series |
-| `ot-paper02-drill.json` | `code/ot_recheck_drill.py` — the falsifiability drill for that recheck |
-| `ot-paper02-drill.progress.txt` | the same run's stderr, one line per planted defect |
+| `ot-paper06-recheck.json` | `code/ot_paper06_recheck.py 20001` — the same for Paper 06, on real admissible orbits |
+| `ot-recheck-drill.json` | `code/ot_recheck_drill.py` — the falsifiability drill for both rechecks |
+| `ot-recheck-drill.progress.txt` | the same run's stderr, one line per planted defect |
 | `ot-paper05-block-benchmark.json` | `collatz_verify.exe --block 16 --to 1048576` — independent reproduction of the series' Paper 05 `k=16` descent counts |
+
+An earlier, narrower drill log pair (`ot-paper02-drill.json` and its progress
+file) covered Paper 02 only and was superseded by `ot-recheck-drill.json` when
+Paper 06 was added. It is not deleted history — it remains in the repository at
+commit `aa0c02a`.
 | `coverage-refusal-drill.json` | a manual drill showing the aggregator refusing a run with a deleted chunk, and a run with one chunk's count reduced by one; the tampered log was restored byte-identical afterwards |
 
 `build_results.py` reads these and refuses to write a summary if any of them is

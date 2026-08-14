@@ -32,6 +32,7 @@ CODE_FILES = [
     "code/build_results.py",
     "code/run_verification.sh",
     "code/ot_paper02_recheck.py",
+    "code/ot_paper06_recheck.py",
     "code/ot_recheck_drill.py",
 ]
 
@@ -67,7 +68,8 @@ def main() -> int:
     selftest = load_gate("self-test.json")
     reference = load_gate("reference-crosscheck.json")
     ot_recheck = load_gate("ot-paper02-recheck.json")
-    ot_drill = load_gate("ot-paper02-drill.json")
+    ot_p06 = load_gate("ot-paper06-recheck.json")
+    ot_drill = load_gate("ot-recheck-drill.json")
     ot_block = load_gate("ot-paper05-block-benchmark.json")
 
     if not anchors.get("all_match"):
@@ -80,7 +82,8 @@ def main() -> int:
         raise SystemExit("reference cross-check did not agree; refusing to emit a summary")
     for name, gate, key in (
         ("Paper 02 recheck", ot_recheck, "ok"),
-        ("Paper 02 recheck drill", ot_drill, "ok"),
+        ("Paper 06 recheck", ot_p06, "ok"),
+        ("recheck drill", ot_drill, "ok"),
         ("Paper 05 block benchmark", ot_block, "ok"),
     ):
         if not gate.get(key):
@@ -222,22 +225,57 @@ def main() -> int:
                     "Theorems B, D and E and the §25 width formula are not exercised by the "
                     "subject's own regression suite; the subject checks k <= 9, this checks k <= 16"
                 ),
-                "drill": {
-                    "defects_planted": ot_drill["defects_planted"],
-                    "defects_caught_by_the_named_check": ot_drill["defects_caught_by_the_named_check"],
-                    "controls_planted": ot_drill["controls_planted"],
-                    "controls_undisturbed": ot_drill["controls_undisturbed"],
-                    "anomalies": ot_drill["anomalies"],
-                    "note": (
-                        "each planted defect had to be caught by the check named for it, not "
-                        "merely by some check"
-                    ),
-                },
                 "known_insensitivity": (
                     "Theorem D held under a mutation that changed the +1 injection to +2. That "
                     "is correct rather than a gap: the concatenation law is structural across "
                     "the whole (mx+r) family and does not pin r. Theorem D alone therefore "
                     "cannot detect a wrong injection constant."
+                ),
+            },
+            "paper_06_theorems": {
+                "odd_starts_upper_limit": ot_p06["odd_starts_upper_limit"],
+                "counts": ot_p06["counts"],
+                "checks": {k: v["pass"] for k, v in ot_p06["checks"].items()},
+                "all_pass": ot_p06["ok"],
+                "referee": (
+                    "direct iteration of the accelerated odd map S(n)=(3n+1)/2^{v2(3n+1)} on "
+                    "genuine odd integers, assuming no theorem of the paper"
+                ),
+                "coverage_beyond_subject_suite": (
+                    "the subject's test_p06 checks only the formal affine identity, for formal "
+                    "valuation tuples, m <= 5, kappa in 1..4, and only at n = 1. It never "
+                    "checks admissibility, and never touches Theorems D through H, the section "
+                    "19 descent threshold, or the section 14 bridge back to Paper 02."
+                ),
+                "cross_paper_bridge_verified": (
+                    "section 14's claim B_kappa = b_{E(kappa)} is checked against the Paper 02 "
+                    "referee route, so the two papers' corrections are confirmed to be the same "
+                    "quantity rather than merely analogous"
+                ),
+                "float_hazard_recorded": {
+                    "claim": "Theorem E, 2^K > 3^m iff K/m > log2 3",
+                    "decided_by": "exact integers, and independently by 80-digit Decimal",
+                    "closest_ratio_in_range": ot_p06["counts"]["closest_ratio_to_log2_3"],
+                    "margin_exceeds_double_epsilon": ot_p06["counts"][
+                        "closest_ratio_margin_exceeds_float_epsilon"],
+                    "note": (
+                        "K/m runs through the convergents of log2 3, so a naive float test is "
+                        "not safe in general. On the tested range it happened to agree, and the "
+                        "closest ratio's margin is recorded so that agreement is not mistaken "
+                        "for a guarantee."
+                    ),
+                },
+            },
+            "drill": {
+                "targets": ot_drill["targets"],
+                "defects_planted": ot_drill["defects_planted"],
+                "defects_caught_by_the_named_check": ot_drill["defects_caught_by_the_named_check"],
+                "controls_planted": ot_drill["controls_planted"],
+                "controls_undisturbed": ot_drill["controls_undisturbed"],
+                "anomalies": ot_drill["anomalies"],
+                "note": (
+                    "each planted defect had to be caught by the check named for it, not "
+                    "merely by some check"
                 ),
             },
         },

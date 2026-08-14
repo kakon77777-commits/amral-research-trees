@@ -11,7 +11,8 @@
 | `build_results.py` | Assembles `../data/results.v1.json` from archived gate logs only. Fails rather than emit a summary with a hole in it. |
 | `run_verification.sh` | Drives a full run as disjoint, separately logged chunks. |
 | `ot_paper02_recheck.py` | Independent re-derivation of Paper 02 of Neo.K's Operation Translation Series, written from the paper's theorem statements. Its referee route assumes no theorem of the paper at all. |
-| `ot_recheck_drill.py` | Falsifiability drill for the above: perturbs each asserted formula and requires the check *named for that formula* to fail. |
+| `ot_paper06_recheck.py` | The same for Paper 06 (valuation language). Referee is direct iteration of the accelerated odd map on genuine odd integers, so every valuation word tested is one an actual integer produced. Also verifies §14's bridge back to Paper 02. |
+| `ot_recheck_drill.py` | Falsifiability drill for both rechecks: perturbs each asserted formula and requires the check *named for that formula* to fail. |
 
 No third-party dependencies. `requirements.txt` is empty on purpose — the
 Python here is standard library only, so there is no version of a numeric
@@ -51,6 +52,7 @@ python code/verify_run_logs.py --tag t40 --expect-to 1099511627776
 python code/build_results.py --tag t40 --expect-to 1099511627776
 
 python code/ot_paper02_recheck.py 16
+python code/ot_paper06_recheck.py 20001
 python code/ot_recheck_drill.py
 ./build/collatz_verify.exe --block 16 --to 1048576
 ```

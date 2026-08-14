@@ -1,0 +1,79 @@
+{
+  "tool": "ot_paper06_recheck.py",
+  "subject": "Collatz Operation Translation Series — Paper 06 v0.1 (Neo.K)",
+  "scope": "exact finite arithmetic and exact residue counting; not a Collatz proof",
+  "odd_starts_upper_limit": 20001,
+  "checks": {
+    "P06_ThmA_run_length_expansion_is_the_parity_word": {
+      "pass": true
+    },
+    "P06_ThmBC_accelerated_affine_closure_on_real_orbits": {
+      "pass": true
+    },
+    "P06_ThmC_recurrence_matches_closed_form": {
+      "pass": true
+    },
+    "P06_S14_bridge_B_kappa_equals_b_of_expanded_word": {
+      "pass": true
+    },
+    "P06_ThmD_exact_log_drift_as_rational_identity": {
+      "pass": true
+    },
+    "P06_S19_descent_threshold_theta_is_exact_iff": {
+      "pass": true
+    },
+    "P06_S20_uniform_expansion_when_2K_lt_3m": {
+      "pass": true
+    },
+    "P06_ThmF_exactly_one_odd_residue_class_per_valuation": {
+      "pass": true
+    },
+    "P06_ThmF_stated_representative_is_correct": {
+      "pass": true
+    },
+    "P06_ThmF_density_partial_sum_closed_form": {
+      "pass": true
+    },
+    "P06_ThmF_mean_valuation_partial_sum_closed_form": {
+      "pass": true
+    },
+    "P06_ThmG_adjacent_valuation_swap_formula": {
+      "pass": true
+    },
+    "P06_S31_ascending_order_minimises_correction": {
+      "pass": true
+    },
+    "P06_S31_descending_order_maximises_correction": {
+      "pass": true
+    },
+    "P06_ThmH_closed_reverse_recovery": {
+      "pass": true
+    },
+    "P06_S35_S38_stepwise_reverse_legality": {
+      "pass": true
+    },
+    "P06_S39_terminal_fiber_of_1": {
+      "pass": true
+    },
+    "P06_ThmE_integer_form_matches_the_real_inequality": {
+      "pass": true
+    },
+    "P06_ThmE_float_log2_3_test_agrees_on_tested_range": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "orbit_prefixes_checked": 120000,
+    "contracting_skeleton_cases": 86863,
+    "expanding_skeleton_cases": 33137,
+    "series_terms": 64,
+    "adjacent_swaps": 25488,
+    "valuation_multisets": 456,
+    "reverse_recoveries": 16000,
+    "thmE_pairs_tested": 1599,
+    "closest_ratio_to_log2_3": "K/m = 569/359",
+    "closest_ratio_margin_exceeds_float_epsilon": true
+  },
+  "failures": [],
+  "ok": true
+}

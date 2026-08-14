@@ -45,7 +45,8 @@ describe it that way.
    re-derivation of the finite claims of Neo.K's *Collatz Operation Translation
    Series*: package integrity (and the defect that stops its own verifier on the
    author's platform), Paper 05's `k=16` benchmark reproduced, and every theorem
-   of Paper 02 rechecked against a referee that assumes none of them.
+   of Papers 02 and 06 rechecked against referees that assume none of them —
+   including the §14 bridge that ties the two papers' correction terms together.
 3. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.

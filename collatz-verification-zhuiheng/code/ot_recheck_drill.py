@@ -1,4 +1,4 @@
-"""Falsifiability drill for ot_paper02_recheck.py.
+"""Falsifiability drill for the Operation Translation rechecks.
 
 數學戰士「墜衡」 / AMRAL Research Lab.
 
@@ -27,11 +27,11 @@ import sys
 import tempfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "code" / "ot_paper02_recheck.py"
 DRILL_K = 8
+DRILL_ODD_LIMIT = 601
 
 # (id, description, old, new, checks expected to fail)
-MUTATIONS = [
+P02_MUTATIONS = [
     ("D01-thmC-exponent", "Theorem C closed form uses 3^(u-t+1)",
      "return sum(2 ** (jt - 1) * 3 ** (u - t) for t, jt in enumerate(positions, start=1))",
      "return sum(2 ** (jt - 1) * 3 ** (u - t + 1) for t, jt in enumerate(positions, start=1))",
@@ -74,14 +74,67 @@ MUTATIONS = [
      []),
 ]
 
+P06_MUTATIONS = [
+    ("E01-thmC-exponent", "Theorem C uses 3^{m-i+1}",
+     "        total += 3 ** (m - i) * 2 ** Kprev",
+     "        total += 3 ** (m - i + 1) * 2 ** Kprev",
+     ["P06_ThmBC_accelerated_affine_closure_on_real_orbits"]),
+    ("E02-recurrence-prefix", "the recurrence adds 2^{K_j} instead of 2^{K_{j-1}}",
+     "    for k in kappas:\n        B = 3 * B + 2 ** K\n        K += k",
+     "    for k in kappas:\n        K += k\n        B = 3 * B + 2 ** K",
+     ["P06_ThmC_recurrence_matches_closed_form"]),
+    ("E03-expansion-shape", "run-length expansion emits D^kappa instead of D^{kappa-1}",
+     "    return \"\".join(\"U\" + \"D\" * (k - 1) for k in kappas)",
+     "    return \"\".join(\"U\" + \"D\" * k for k in kappas)",
+     ["P06_ThmA_run_length_expansion_is_the_parity_word"]),
+    ("E04-swap-exponent", "Theorem G uses 3^{m-i-1} in 0-indexed form",
+     "                if lhs != 3 ** (m - i - 2) * 2 ** P * (2 ** a - 2 ** b):",
+     "                if lhs != 3 ** (m - i - 1) * 2 ** P * (2 ** a - 2 ** b):",
+     ["P06_ThmG_adjacent_valuation_swap_formula"]),
+    ("E05-theta-off-by-one", "the section 19 threshold drops the +1",
+     "                theta = B // (2 ** K - 3 ** m) + 1",
+     "                theta = B // (2 ** K - 3 ** m)",
+     ["P06_S19_descent_threshold_theta_is_exact_iff"]),
+    ("E06-reverse-formula", "Theorem H divides by 3^{m-1}",
+     "            if Fraction(2 ** K * states[m] - B, 3 ** m) != n0:",
+     "            if Fraction(2 ** K * states[m] - B, 3 ** (m - 1)) != n0:",
+     ["P06_ThmH_closed_reverse_recovery"]),
+    ("E07-reverse-step", "the reverse step uses 2^kappa t + 1",
+     "    return Fraction(2 ** kappa * t - 1, 3)",
+     "    return Fraction(2 ** kappa * t + 1, 3)",
+     ["P06_S35_S38_stepwise_reverse_legality"]),
+    ("E08-density-modulus", "the valuation density is counted modulo 2^j, not 2^{j+1}",
+     "        mod = 2 ** (j + 1)",
+     "        mod = 2 ** j",
+     ["P06_ThmF_exactly_one_odd_residue_class_per_valuation"]),
+    ("E09-mean-series", "the mean-valuation closed partial sum drops the +2",
+     "          s2 == 2 - Fraction(J + 2, 2 ** J))",
+     "          s2 == 2 - Fraction(J, 2 ** J))",
+     ["P06_ThmF_mean_valuation_partial_sum_closed_form"]),
+    ("E10-referee-broken", "the referee itself: S divides by 2^{kappa-1}",
+     "    return (3 * n + 1) // 2 ** k, k",
+     "    return (3 * n + 1) // 2 ** max(k - 1, 1), k",
+     ["P06_ThmA_run_length_expansion_is_the_parity_word",
+      "P06_ThmBC_accelerated_affine_closure_on_real_orbits"]),
+    ("NULL-02", "control: a comment is added",
+     "def B_closed(kappas: list[int]) -> int:",
+     "# control mutation, no behavioural change\ndef B_closed(kappas: list[int]) -> int:",
+     []),
+]
 
-def run(path: pathlib.Path) -> dict | None:
+TARGETS = [
+    ("code/ot_paper02_recheck.py", P02_MUTATIONS, [str(DRILL_K)]),
+    ("code/ot_paper06_recheck.py", P06_MUTATIONS, [str(DRILL_ODD_LIMIT)]),
+]
+
+
+def run(path: pathlib.Path, args: list[str]) -> dict | None:
     import os
     env = dict(os.environ, PYTHONUTF8="1", PYTHONDONTWRITEBYTECODE="1")
     proc = subprocess.run(
-        [sys.executable, str(path), str(DRILL_K)],
+        [sys.executable, str(path), *args],
         capture_output=True, text=True, encoding="utf-8", errors="replace",
-        timeout=600, env=env,
+        timeout=900, env=env,
     )
     try:
         return json.loads(proc.stdout)
@@ -90,46 +143,61 @@ def run(path: pathlib.Path) -> dict | None:
 
 
 def main() -> int:
-    original = SOURCE.read_text(encoding="utf-8")
     results = []
+    baselines = {}
     with tempfile.TemporaryDirectory(prefix="ot-drill-", ignore_cleanup_errors=True) as tmp:
         tmpdir = pathlib.Path(tmp)
 
-        base = tmpdir / "baseline.py"
-        base.write_text(original, encoding="utf-8")
-        baseline = run(base)
-        if baseline is None or not baseline["ok"]:
-            print(json.dumps({"error": "baseline did not pass", "baseline": baseline}))
-            return 2
-        print(f"baseline passes all {len(baseline['checks'])} checks at k={DRILL_K}", file=sys.stderr)
+        for target, mutations, args in TARGETS:
+            source = ROOT / target
+            original = source.read_text(encoding="utf-8")
+            stem = pathlib.Path(target).stem
 
-        for mid, desc, old, new, expected in MUTATIONS:
-            if original.count(old) != 1:
-                results.append({"id": mid, "error": f"anchor occurs {original.count(old)} times"})
-                print(f"  {mid}: ANCHOR NOT UNIQUE", file=sys.stderr)
-                continue
-            path = tmpdir / (re.sub(r"[^A-Za-z0-9_]", "_", mid) + ".py")
-            path.write_text(original.replace(old, new), encoding="utf-8")
-            out = run(path)
-            if out is None:
-                failed_checks = ["<crashed>"]
-            else:
-                failed_checks = [n for n, c in out["checks"].items() if not c["pass"]]
+            # Paper 06's recheck imports the Paper 02 referee, so every mutant
+            # needs that module beside it in the scratch directory.
+            for dep in ("ot_paper02_recheck.py",):
+                (tmpdir / dep).write_text(
+                    (ROOT / "code" / dep).read_text(encoding="utf-8"), encoding="utf-8")
 
-            if expected:
-                caught = all(e in failed_checks for e in expected)
-                verdict = "caught" if caught else "SURVIVED / WRONG CHECK"
-            else:
-                caught = not failed_checks
-                verdict = "clean (control)" if caught else "CONTROL DISTURBED"
+            base = tmpdir / f"baseline_{stem}.py"
+            base.write_text(original, encoding="utf-8")
+            baseline = run(base, args)
+            if baseline is None or not baseline["ok"]:
+                print(json.dumps({"error": f"baseline did not pass for {target}",
+                                  "baseline": baseline}))
+                return 2
+            baselines[target] = len(baseline["checks"])
+            print(f"{target}: baseline passes all {len(baseline['checks'])} checks",
+                  file=sys.stderr)
 
-            results.append({
-                "id": mid, "description": desc,
-                "expected_failing_checks": expected,
-                "observed_failing_checks": failed_checks,
-                "as_expected": caught,
-            })
-            print(f"  {mid}: {verdict}  -> {failed_checks}", file=sys.stderr)
+            for mid, desc, old, new, expected in mutations:
+                if original.count(old) != 1:
+                    results.append({"id": mid, "target": target,
+                                    "error": f"anchor occurs {original.count(old)} times"})
+                    print(f"  {mid}: ANCHOR NOT UNIQUE", file=sys.stderr)
+                    continue
+                path = tmpdir / (re.sub(r"[^A-Za-z0-9_]", "_", mid) + ".py")
+                path.write_text(original.replace(old, new), encoding="utf-8")
+                out = run(path, args)
+                if out is None:
+                    failed_checks = ["<crashed>"]
+                else:
+                    failed_checks = [n for n, c in out["checks"].items() if not c["pass"]]
+
+                if expected:
+                    caught = all(e in failed_checks for e in expected)
+                    verdict = "caught" if caught else "SURVIVED / WRONG CHECK"
+                else:
+                    caught = not failed_checks
+                    verdict = "clean (control)" if caught else "CONTROL DISTURBED"
+
+                results.append({
+                    "id": mid, "target": target, "description": desc,
+                    "expected_failing_checks": expected,
+                    "observed_failing_checks": failed_checks,
+                    "as_expected": caught,
+                })
+                print(f"  {mid}: {verdict}  -> {failed_checks}", file=sys.stderr)
 
     # Defects and controls are counted separately. A single "as_expected" tally
     # across both makes the summary read as though more defects passed than were
@@ -139,8 +207,10 @@ def main() -> int:
                 and not r["expected_failing_checks"]]
     report = {
         "tool": "ot_recheck_drill.py",
-        "target": "code/ot_paper02_recheck.py",
+        "targets": {t: {"baseline_checks": baselines.get(t), "args": a}
+                    for t, _, a in TARGETS},
         "drill_word_length": DRILL_K,
+        "drill_odd_limit": DRILL_ODD_LIMIT,
         "mutations": results,
         "defects_planted": len(defects),
         "defects_caught_by_the_named_check": len([r for r in defects if r["as_expected"]]),

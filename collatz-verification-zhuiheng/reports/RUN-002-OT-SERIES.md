@@ -137,12 +137,75 @@ concatenation pairs, 196,582 cylinder-transport cases.
   the all-`D` cylinder does have canonical `r_w = 0`, the positive
   representative `r_w + 2^k` is admissible, and `T^k` of it is exactly 1.
 
-## 4. The recheck was drilled
+## 4. Paper 06 — valuation language, all eight theorems
+
+`code/ot_paper06_recheck.py`. Referee: direct iteration of the accelerated odd
+map `S(n) = (3n+1)/2^{v₂(3n+1)}` on genuine odd integers, assuming no theorem of
+the paper.
+
+**All 19 checks pass**: every odd start below 20,001, twelve orbit prefixes each
+— **120,000 admissible orbit prefixes** (86,863 on the contracting side, 33,137
+expanding), 25,488 adjacent valuation swaps, 456 valuation multisets, 16,000
+reverse recoveries.
+
+| Check | Claim |
+|---|---|
+| run-length expansion is the genuine parity word, `\|E\|=K`, `u(E)=m` | A |
+| accelerated affine closure `S^m(n)=(3^m n + B_κ)/2^K` **on real orbits** | B |
+| the `B_j = 3B_{j−1} + 2^{K_{j−1}}` recurrence matches the closed form | C |
+| exact log drift, verified as the equivalent rational identity | D |
+| `2^K > 3^m ⟺ K/m > log₂3` | E |
+| exactly one odd residue class mod `2^{j+1}` per valuation, and it is `3^{−1}(2^j−1)` | F |
+| adjacent valuation swap `ΔB = 3^{m−i−1} 2^{K_{i−1}} (2^a − 2^b)` | G |
+| closed reverse recovery `n₀ = (2^K n_m − B_κ)/3^m` | H |
+| ascending order minimises, descending maximises the correction | §31 |
+| the `θ_κ` descent threshold, both directions of the iff | §19 |
+| uniform expansion when `2^K < 3^m` | §20 |
+| stepwise reverse legality, not just the closed fraction | §35, §38 |
+| terminal fiber `R_{2j}(1) = (4^j−1)/3`, odd | §39 |
+
+### What this adds over the subject's own suite
+
+The subject's `test_p06` checks **only** that the closed affine form agrees with
+iterated `Fraction` arithmetic — for *formal* valuation tuples, `m ≤ 5`,
+`κ ∈ 1..4`, and **only at `n = 1`**. It never checks admissibility, and it never
+touches Theorems D through H, the §19 threshold, or §14.
+
+Three things were worth doing that the subject's suite does not:
+
+- **Admissibility.** Every orbit here is a real one: the valuation word is what
+  `S` actually produced from a real odd `n`, not a tuple chosen on paper. A
+  formal-tuple identity can hold while no integer realises the word.
+- **The §14 bridge, verified across papers.** The claim `B_κ = b_{E(κ)}` — that
+  the accelerated correction *is* the Paper 02 correction of the expanded parity
+  word — is checked against the Paper 02 referee route. So the two papers'
+  corrections are confirmed to be the same quantity, not merely analogous. This
+  is the load-bearing joint between the two papers and it holds.
+- **Theorem D without floating logarithms.** The paper states the drift in `ln`
+  form. Rather than compare floats, the equivalent multiplicative identity is
+  checked exactly over `ℚ`. Same content, no rounding.
+
+### A float hazard recorded rather than glossed
+
+Theorem E is exact over the integers. Deciding it with a `float` `log₂3` is not
+safe in general, because `K/m` runs through the convergents of `log₂3`. The
+check therefore decides it two ways — exact integers and 80-digit `Decimal` —
+and additionally records what a naive float test would have said.
+
+On `m ≤ 400` the float test happened to agree, and the closest ratio in range is
+`K/m = 569/359` (a semiconvergent, mediant of `485/306` and `84/53`), whose
+margin comfortably exceeds double epsilon. **That agreement is a fact about this
+range, not a guarantee**, and it is recorded as such in `results.v1.json`. Push
+`m` past 665 and the margin shrinks.
+
+## 5. Both rechecks were drilled
 
 A recheck that passed everything is worth what it could have caught.
 `code/ot_recheck_drill.py` perturbs each asserted formula by one term and
 requires the run to fail **the check named for that formula** — not merely some
 check.
+
+Paper 02 target:
 
 | Planted defect | Checks that failed |
 |---|---|
@@ -157,7 +220,30 @@ check.
 | **the referee itself**: `U` injects `2·Dn` | eight checks cascade |
 | control: comment added | none |
 
-9 defects planted, 9 caught by the check named for them, 1 control undisturbed.
+Paper 06 target:
+
+| Planted defect | Checks that failed |
+|---|---|
+| Theorem C exponent `3^{m−i+1}` | seven checks cascade — `B_closed` is what everything references |
+| recurrence uses `2^{K_j}` not `2^{K_{j−1}}` | recurrence check only |
+| expansion emits `D^κ` not `D^{κ−1}` | Theorem A and the §14 bridge |
+| Theorem G exponent off by one | Theorem G only |
+| §19 threshold drops the `+1` | §19 only |
+| Theorem H divides by `3^{m−1}` | Theorem H only |
+| reverse step uses `2^κ t + 1` | stepwise legality and the terminal fiber |
+| density counted mod `2^j` not `2^{j+1}` | Theorem F residue count only |
+| mean-valuation partial sum drops the `+2` | that series check only |
+| **the referee itself**: `S` divides by `2^{κ−1}` | seven checks cascade |
+| control: comment added | none |
+
+**19 defects planted across both papers, 19 caught by the check named for them,
+2 controls undisturbed.**
+
+Two cascades are worth reading correctly. Breaking either referee brings down
+most of that paper's checks — which is the point of having a referee. And the
+Paper 06 Theorem C mutation cascades because `B_closed` is the single claimed
+formula the other checks are written against; the recurrence check is the one
+that isolates it, and it fired alone when the recurrence itself was perturbed.
 
 ### One honest insensitivity
 
@@ -171,22 +257,24 @@ Breaking the referee's `+1` injection did **not** break Theorem A or Theorem D.
   not a hole in the check — but it means **Theorem D alone cannot detect a wrong
   injection constant**, and should not be leaned on for that.
 
-## 5. Not yet done
+## 6. Not yet done
 
-Of the six finite claim groups in the subject's `validation.json`, two are now
-independently re-derived:
+Of the six finite claim groups in the subject's `validation.json`:
 
 | Group | Cases claimed | Status |
 |---|---|---|
 | `p02_p03_affine_residue_transport` | 4,079 | **re-derived**, and extended past it |
-| `p05_binomial_and_k16_benchmark` | — | **re-derived** (`k=16` block counts) |
 | `p02_correction_extrema` | 54 | **re-derived** (Theorem F, §21, §25) |
-| `p05` binomial counts and KL constant | — | not yet |
-| `p06_accelerated_affine_formula` | 1,364 | not yet |
+| `p05_binomial_and_k16_benchmark` | — | **`k=16` block counts re-derived** |
+| `p06_accelerated_affine_formula` | 1,364 | **re-derived**, on real orbits rather than formal tuples |
+| `p05` binomial counts and the KL constant | — | not yet |
 | `p07_generalized_mxr` | 11,325 | not yet |
 | `p09_hard_height` | 8,167 | not yet |
 
-Papers 06, 07 and 09 come next, each read first and then re-derived from its own
-statements. Paper 09's hard-height prediction is the most interesting of the
-three from this arm's side, because it is a claim about when descent *cannot*
-happen within `k` steps, which is exactly what the `[3, 2^40]` engine measures.
+Papers 07 and 09 come next, each read first and then re-derived from its own
+statements. Paper 09's hard-height prediction is the more interesting of the two
+from this arm's side, because it is a claim about when descent *cannot* happen
+within `k` steps — which is exactly the quantity the `[3, 2^40]` engine measures
+for every start. The two should be able to bite on each other: the engine's
+`σ(n)` is the first `j` with `T^j(n) < n`, and Paper 09's hard height predicts
+when that `j` exceeds `k`.

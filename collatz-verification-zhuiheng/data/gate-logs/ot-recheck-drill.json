@@ -1,0 +1,297 @@
+{
+  "tool": "ot_recheck_drill.py",
+  "targets": {
+    "code/ot_paper02_recheck.py": {
+      "baseline_checks": 13,
+      "args": [
+        "8"
+      ]
+    },
+    "code/ot_paper06_recheck.py": {
+      "baseline_checks": 19,
+      "args": [
+        "601"
+      ]
+    }
+  },
+  "drill_word_length": 8,
+  "drill_odd_limit": 601,
+  "mutations": [
+    {
+      "id": "D01-thmC-exponent",
+      "target": "code/ot_paper02_recheck.py",
+      "description": "Theorem C closed form uses 3^(u-t+1)",
+      "expected_failing_checks": [
+        "ThmC_closed_form_of_b"
+      ],
+      "observed_failing_checks": [
+        "ThmC_closed_form_of_b"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "D02-thmE-matrix-entry",
+      "target": "code/ot_paper02_recheck.py",
+      "description": "Theorem E uses M_U = [[3,2],[0,2]]",
+      "expected_failing_checks": [
+        "ThmE_matrix_representation"
+      ],
+      "observed_failing_checks": [
+        "ThmE_matrix_representation"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "D03-thmB-recurrence",
+      "target": "code/ot_paper02_recheck.py",
+      "description": "Theorem B recurrence adds 2^k instead of 2^|w|",
+      "expected_failing_checks": [
+        "ThmB_correction_recurrence"
+      ],
+      "observed_failing_checks": [
+        "ThmB_correction_recurrence"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "D04-thmD-wrong-power",
+      "target": "code/ot_paper02_recheck.py",
+      "description": "Theorem D concatenation uses 2^|v| instead of 2^|w|",
+      "expected_failing_checks": [
+        "ThmD_concatenation_law"
+      ],
+      "observed_failing_checks": [
+        "ThmD_concatenation_law"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "D05-thmF-lower-bound",
+      "target": "code/ot_paper02_recheck.py",
+      "description": "Theorem F lower bound off by one",
+      "expected_failing_checks": [
+        "ThmF_order_extremal_bounds"
+      ],
+      "observed_failing_checks": [
+        "ThmF_order_extremal_bounds"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "D06-width-formula",
+      "target": "code/ot_paper02_recheck.py",
+      "description": "§25 width drops the -1",
+      "expected_failing_checks": [
+        "S25_correction_width_formula"
+      ],
+      "observed_failing_checks": [
+        "S25_correction_width_formula"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "D07-extremes-swapped",
+      "target": "code/ot_paper02_recheck.py",
+      "description": "§21 argmin and argmax words swapped",
+      "expected_failing_checks": [
+        "S21_extremes_attained_at_stated_words"
+      ],
+      "observed_failing_checks": [
+        "S21_extremes_attained_at_stated_words"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "D08-residue-sign",
+      "target": "code/ot_paper02_recheck.py",
+      "description": "residue formula uses 3^{+u} instead of 3^{-u}",
+      "expected_failing_checks": [
+        "P03_residue_cylinder_is_the_admissible_domain"
+      ],
+      "observed_failing_checks": [
+        "P03_parity_word_to_residue_is_a_bijection",
+        "P03_residue_cylinder_is_the_admissible_domain",
+        "P03_m_w_is_an_integer",
+        "P03_exact_cylinder_transport"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "D09-referee-broken",
+      "target": "code/ot_paper02_recheck.py",
+      "description": "the referee itself: U injects 2*Dn instead of Dn",
+      "expected_failing_checks": [
+        "ThmC_closed_form_of_b",
+        "ThmE_matrix_representation"
+      ],
+      "observed_failing_checks": [
+        "ThmB_correction_recurrence",
+        "ThmC_closed_form_of_b",
+        "ThmE_matrix_representation",
+        "ThmF_order_extremal_bounds",
+        "S25_correction_width_formula",
+        "P03_parity_word_to_residue_is_a_bijection",
+        "P03_residue_cylinder_is_the_admissible_domain",
+        "P03_exact_cylinder_transport"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "NULL-01",
+      "target": "code/ot_paper02_recheck.py",
+      "description": "control: a comment is added",
+      "expected_failing_checks": [],
+      "observed_failing_checks": [],
+      "as_expected": true
+    },
+    {
+      "id": "E01-thmC-exponent",
+      "target": "code/ot_paper06_recheck.py",
+      "description": "Theorem C uses 3^{m-i+1}",
+      "expected_failing_checks": [
+        "P06_ThmBC_accelerated_affine_closure_on_real_orbits"
+      ],
+      "observed_failing_checks": [
+        "P06_ThmBC_accelerated_affine_closure_on_real_orbits",
+        "P06_ThmC_recurrence_matches_closed_form",
+        "P06_S14_bridge_B_kappa_equals_b_of_expanded_word",
+        "P06_ThmD_exact_log_drift_as_rational_identity",
+        "P06_S19_descent_threshold_theta_is_exact_iff",
+        "P06_ThmG_adjacent_valuation_swap_formula",
+        "P06_ThmH_closed_reverse_recovery"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "E02-recurrence-prefix",
+      "target": "code/ot_paper06_recheck.py",
+      "description": "the recurrence adds 2^{K_j} instead of 2^{K_{j-1}}",
+      "expected_failing_checks": [
+        "P06_ThmC_recurrence_matches_closed_form"
+      ],
+      "observed_failing_checks": [
+        "P06_ThmC_recurrence_matches_closed_form"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "E03-expansion-shape",
+      "target": "code/ot_paper06_recheck.py",
+      "description": "run-length expansion emits D^kappa instead of D^{kappa-1}",
+      "expected_failing_checks": [
+        "P06_ThmA_run_length_expansion_is_the_parity_word"
+      ],
+      "observed_failing_checks": [
+        "P06_ThmA_run_length_expansion_is_the_parity_word",
+        "P06_S14_bridge_B_kappa_equals_b_of_expanded_word"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "E04-swap-exponent",
+      "target": "code/ot_paper06_recheck.py",
+      "description": "Theorem G uses 3^{m-i-1} in 0-indexed form",
+      "expected_failing_checks": [
+        "P06_ThmG_adjacent_valuation_swap_formula"
+      ],
+      "observed_failing_checks": [
+        "P06_ThmG_adjacent_valuation_swap_formula"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "E05-theta-off-by-one",
+      "target": "code/ot_paper06_recheck.py",
+      "description": "the section 19 threshold drops the +1",
+      "expected_failing_checks": [
+        "P06_S19_descent_threshold_theta_is_exact_iff"
+      ],
+      "observed_failing_checks": [
+        "P06_S19_descent_threshold_theta_is_exact_iff"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "E06-reverse-formula",
+      "target": "code/ot_paper06_recheck.py",
+      "description": "Theorem H divides by 3^{m-1}",
+      "expected_failing_checks": [
+        "P06_ThmH_closed_reverse_recovery"
+      ],
+      "observed_failing_checks": [
+        "P06_ThmH_closed_reverse_recovery"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "E07-reverse-step",
+      "target": "code/ot_paper06_recheck.py",
+      "description": "the reverse step uses 2^kappa t + 1",
+      "expected_failing_checks": [
+        "P06_S35_S38_stepwise_reverse_legality"
+      ],
+      "observed_failing_checks": [
+        "P06_S35_S38_stepwise_reverse_legality",
+        "P06_S39_terminal_fiber_of_1"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "E08-density-modulus",
+      "target": "code/ot_paper06_recheck.py",
+      "description": "the valuation density is counted modulo 2^j, not 2^{j+1}",
+      "expected_failing_checks": [
+        "P06_ThmF_exactly_one_odd_residue_class_per_valuation"
+      ],
+      "observed_failing_checks": [
+        "P06_ThmF_exactly_one_odd_residue_class_per_valuation"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "E09-mean-series",
+      "target": "code/ot_paper06_recheck.py",
+      "description": "the mean-valuation closed partial sum drops the +2",
+      "expected_failing_checks": [
+        "P06_ThmF_mean_valuation_partial_sum_closed_form"
+      ],
+      "observed_failing_checks": [
+        "P06_ThmF_mean_valuation_partial_sum_closed_form"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "E10-referee-broken",
+      "target": "code/ot_paper06_recheck.py",
+      "description": "the referee itself: S divides by 2^{kappa-1}",
+      "expected_failing_checks": [
+        "P06_ThmA_run_length_expansion_is_the_parity_word",
+        "P06_ThmBC_accelerated_affine_closure_on_real_orbits"
+      ],
+      "observed_failing_checks": [
+        "P06_ThmA_run_length_expansion_is_the_parity_word",
+        "P06_ThmBC_accelerated_affine_closure_on_real_orbits",
+        "P06_S14_bridge_B_kappa_equals_b_of_expanded_word",
+        "P06_ThmD_exact_log_drift_as_rational_identity",
+        "P06_S19_descent_threshold_theta_is_exact_iff",
+        "P06_ThmH_closed_reverse_recovery",
+        "P06_S35_S38_stepwise_reverse_legality"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "NULL-02",
+      "target": "code/ot_paper06_recheck.py",
+      "description": "control: a comment is added",
+      "expected_failing_checks": [],
+      "observed_failing_checks": [],
+      "as_expected": true
+    }
+  ],
+  "defects_planted": 19,
+  "defects_caught_by_the_named_check": 19,
+  "controls_planted": 2,
+  "controls_undisturbed": 2,
+  "anomalies": [],
+  "ok": true
+}

@@ -345,15 +345,76 @@
       "all_pass": true,
       "referee": "symbolic composition of D(x)=x/2 and U(x)=(3x+1)/2 on an affine form, assuming no theorem of the paper; claimed formulas are compared against it",
       "coverage_beyond_subject_suite": "Theorems B, D and E and the §25 width formula are not exercised by the subject's own regression suite; the subject checks k <= 9, this checks k <= 16",
-      "drill": {
-        "defects_planted": 9,
-        "defects_caught_by_the_named_check": 9,
-        "controls_planted": 1,
-        "controls_undisturbed": 1,
-        "anomalies": [],
-        "note": "each planted defect had to be caught by the check named for it, not merely by some check"
-      },
       "known_insensitivity": "Theorem D held under a mutation that changed the +1 injection to +2. That is correct rather than a gap: the concatenation law is structural across the whole (mx+r) family and does not pin r. Theorem D alone therefore cannot detect a wrong injection constant."
+    },
+    "paper_06_theorems": {
+      "odd_starts_upper_limit": 20001,
+      "counts": {
+        "orbit_prefixes_checked": 120000,
+        "contracting_skeleton_cases": 86863,
+        "expanding_skeleton_cases": 33137,
+        "series_terms": 64,
+        "adjacent_swaps": 25488,
+        "valuation_multisets": 456,
+        "reverse_recoveries": 16000,
+        "thmE_pairs_tested": 1599,
+        "closest_ratio_to_log2_3": "K/m = 569/359",
+        "closest_ratio_margin_exceeds_float_epsilon": true
+      },
+      "checks": {
+        "P06_ThmA_run_length_expansion_is_the_parity_word": true,
+        "P06_ThmBC_accelerated_affine_closure_on_real_orbits": true,
+        "P06_ThmC_recurrence_matches_closed_form": true,
+        "P06_S14_bridge_B_kappa_equals_b_of_expanded_word": true,
+        "P06_ThmD_exact_log_drift_as_rational_identity": true,
+        "P06_S19_descent_threshold_theta_is_exact_iff": true,
+        "P06_S20_uniform_expansion_when_2K_lt_3m": true,
+        "P06_ThmF_exactly_one_odd_residue_class_per_valuation": true,
+        "P06_ThmF_stated_representative_is_correct": true,
+        "P06_ThmF_density_partial_sum_closed_form": true,
+        "P06_ThmF_mean_valuation_partial_sum_closed_form": true,
+        "P06_ThmG_adjacent_valuation_swap_formula": true,
+        "P06_S31_ascending_order_minimises_correction": true,
+        "P06_S31_descending_order_maximises_correction": true,
+        "P06_ThmH_closed_reverse_recovery": true,
+        "P06_S35_S38_stepwise_reverse_legality": true,
+        "P06_S39_terminal_fiber_of_1": true,
+        "P06_ThmE_integer_form_matches_the_real_inequality": true,
+        "P06_ThmE_float_log2_3_test_agrees_on_tested_range": true
+      },
+      "all_pass": true,
+      "referee": "direct iteration of the accelerated odd map S(n)=(3n+1)/2^{v2(3n+1)} on genuine odd integers, assuming no theorem of the paper",
+      "coverage_beyond_subject_suite": "the subject's test_p06 checks only the formal affine identity, for formal valuation tuples, m <= 5, kappa in 1..4, and only at n = 1. It never checks admissibility, and never touches Theorems D through H, the section 19 descent threshold, or the section 14 bridge back to Paper 02.",
+      "cross_paper_bridge_verified": "section 14's claim B_kappa = b_{E(kappa)} is checked against the Paper 02 referee route, so the two papers' corrections are confirmed to be the same quantity rather than merely analogous",
+      "float_hazard_recorded": {
+        "claim": "Theorem E, 2^K > 3^m iff K/m > log2 3",
+        "decided_by": "exact integers, and independently by 80-digit Decimal",
+        "closest_ratio_in_range": "K/m = 569/359",
+        "margin_exceeds_double_epsilon": true,
+        "note": "K/m runs through the convergents of log2 3, so a naive float test is not safe in general. On the tested range it happened to agree, and the closest ratio's margin is recorded so that agreement is not mistaken for a guarantee."
+      }
+    },
+    "drill": {
+      "targets": {
+        "code/ot_paper02_recheck.py": {
+          "baseline_checks": 13,
+          "args": [
+            "8"
+          ]
+        },
+        "code/ot_paper06_recheck.py": {
+          "baseline_checks": 19,
+          "args": [
+            "601"
+          ]
+        }
+      },
+      "defects_planted": 19,
+      "defects_caught_by_the_named_check": 19,
+      "controls_planted": 2,
+      "controls_undisturbed": 2,
+      "anomalies": [],
+      "note": "each planted defect had to be caught by the check named for it, not merely by some check"
     }
   },
   "environment": {
@@ -369,9 +430,10 @@
     "code/mutation_drill.py": "8d381dc10c5da83dc0049b96d629ce6d108e4de471d64d10fbdde50786131825",
     "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
     "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
-    "code/build_results.py": "b1b0609fedce24cdec4112db092b9075b8a0e186589d13e20bb82a17e51c37ad",
+    "code/build_results.py": "93b11ba85638987d94f915304726134082fef5b0dd7533c99652f91983c1938e",
     "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab",
     "code/ot_paper02_recheck.py": "50b3b733ced47a25078b16a71f7c120696d0ce60d43822b464abbc2f0010591d",
-    "code/ot_recheck_drill.py": "f52ee719cc87e3c7e2d56631786d09044c687ca916a38812dc10043c3d24603a"
+    "code/ot_paper06_recheck.py": "82851076cec9f416dc100fefe8bc5d5b6e635d97e9b791df23dccf804906d077",
+    "code/ot_recheck_drill.py": "581d56ac2d3d2727249bd59dfca90b2e32650652e44957eb8bd95ae199e6156c"
   }
 }
