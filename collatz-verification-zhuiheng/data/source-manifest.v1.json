@@ -12,7 +12,7 @@
     "Hard-Zeta": 44,
     "other project": 2
   },
-  "processed_count": 6,
+  "processed_count": 17,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -21,7 +21,7 @@
       "sha256": "cfc6191f27f64e511d19e18efa6d4f592cc8a9b0da43f620e502f2a845a5a042",
       "line": "nine-paper series",
       "role": "loose manuscript or index",
-      "processed_by_this_tree": null
+      "processed_by_this_tree": "loose series index beside the bundles; confirmed byte-identical to the bundled copy by code/src05_provenance_chain_recheck.py"
     },
     {
       "name": "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
@@ -30,7 +30,7 @@
       "sha256": "e5e26511f01a7e4c34e5980886d9833e89df530940220191d65a291e3a60ba51",
       "line": "nine-paper series",
       "role": "loose manuscript or index",
-      "processed_by_this_tree": null
+      "processed_by_this_tree": "loose Paper 01 beside the bundles; confirmed byte-identical to the bundled copy by code/src05_provenance_chain_recheck.py"
     },
     {
       "name": "finite_collatz_additive_coordinate_mvp_bundle.zip",
@@ -116,7 +116,7 @@
       "sha256": "43ad09147b6c7d126223893f87b7b38e9bc36d992e345f288e0e1228342a11ba",
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
       "zip_entries": 2,
       "zip_uncompressed_bytes": 28483,
       "zip_top_level": [
@@ -131,7 +131,7 @@
       "sha256": "d7dcd08a4334007d93448ac3484414ef9a9cea13e4c58bed225d3b1954dfcd61",
       "line": "nine-paper series",
       "role": "loose manuscript or index",
-      "processed_by_this_tree": null
+      "processed_by_this_tree": "loose Paper 02 beside the bundles; confirmed byte-identical to the bundled copy by code/src05_provenance_chain_recheck.py"
     },
     {
       "name": "Collatz_OT_Series_Papers_01_02_v0.2_bundle.zip",
@@ -140,7 +140,7 @@
       "sha256": "1110eba94b13408bd54d0c91cfd3de129408329c4a3dc2e6495f57e77355a8e9",
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
       "zip_entries": 3,
       "zip_uncompressed_bytes": 48778,
       "zip_top_level": [
@@ -156,7 +156,7 @@
       "sha256": "45b97e92d9474a1a30f29bc0ee7dfc73a067dddad89d8d23f88c766825d08a86",
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
       "zip_entries": 4,
       "zip_uncompressed_bytes": 71558,
       "zip_top_level": [
@@ -173,7 +173,7 @@
       "sha256": "398bac15176e1b437c042b631697cda74fb1ca72597225e1b6b89a061cea3cd5",
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
       "zip_entries": 5,
       "zip_uncompressed_bytes": 96189,
       "zip_top_level": [
@@ -191,7 +191,7 @@
       "sha256": "493dc91fece66a1cdb085bb6ccbf4781ccac1d0b4419b0318cd01a581a6a28a4",
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
       "zip_entries": 6,
       "zip_uncompressed_bytes": 121612,
       "zip_top_level": [
@@ -210,7 +210,7 @@
       "sha256": "254050fb6441fb8de7a6dc79ead538bcbf3ed2f23ec0700ff379fbc484688565",
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
       "zip_entries": 7,
       "zip_uncompressed_bytes": 148000,
       "zip_top_level": [
@@ -229,7 +229,7 @@
       "sha256": "77bae3e8ac2a8547f5372c58631ee78d250d7e7129d0cd00c23105e8566c4ee4",
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
       "zip_entries": 8,
       "zip_uncompressed_bytes": 174019,
       "zip_top_level": [
@@ -248,7 +248,7 @@
       "sha256": "51e323a2ef79a1acc817599807f4098ff3785c3b95c78208ee90f5212be93fec",
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
       "zip_entries": 9,
       "zip_uncompressed_bytes": 207866,
       "zip_top_level": [

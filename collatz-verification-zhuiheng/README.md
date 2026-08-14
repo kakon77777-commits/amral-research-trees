@@ -56,11 +56,19 @@ describe it that way.
    Includes the §14 bridge tying two papers' correction terms together, and
    `K(2^40) = 550` — Paper 09's frontier function evaluated at the scale the
    engine actually measured.
-4. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+4. [`reports/RUN-003-PROVENANCE-CHAIN.md`](./reports/RUN-003-PROVENANCE-CHAIN.md) —
+   a different question, asked of the draft chain that preceded the series:
+   **is the repair's account of itself complete?** Every one of the ten published
+   diffs applies to its published original under an applier that demands exact
+   context, and reproduces the repaired file byte for byte — 276 hunks — so no
+   edit escapes the correction ledger. The pre-repair text is attested by drafts
+   archived three days earlier. Includes the two checks of my own that turned out
+   to be vacuous, and how the drill found them.
+5. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-5. [`code/`](./code/) — the engine, the independent reference, and the gates.
-6. [`data/gate-logs/`](./data/gate-logs/) and
+6. [`code/`](./code/) — the engine, the independent reference, and the gates.
+7. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

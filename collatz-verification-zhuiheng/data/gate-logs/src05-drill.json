@@ -1,0 +1,187 @@
+{
+  "tool": "src05_drill.py",
+  "subject": "src05_provenance_chain_recheck.py",
+  "why": "the recheck passed 21/21 on first run; this establishes that it is capable of failing, and that each defect is caught by the check named for it rather than by a bystander",
+  "defects": {
+    "D01_byte_preserved_paper_01_altered": {
+      "target_check": "SRC05_papers_claimed_byte_preserved_really_are",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly",
+        "SRC05_no_paper_changed_that_the_audit_did_not_declare"
+      ]
+    },
+    "D02_undeclared_change_to_paper_05": {
+      "target_check": "SRC05_no_paper_changed_that_the_audit_did_not_declare",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly",
+        "SRC05_papers_claimed_byte_preserved_really_are"
+      ]
+    },
+    "D03_one_added_line_shortened_in_diff_07": {
+      "target_check": "SRC05_every_published_diff_reproduces_the_repaired_file_exactly",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte"
+      ]
+    },
+    "D04_P07_summary_m_equals_1_statement_removed": {
+      "target_check": "SRC05_P07_summary_records_the_m_equals_1_case_separately",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    },
+    "D05_P08_quotient_typo_reinstated": {
+      "target_check": "SRC05_P08_quotient_typo_is_corrected",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    },
+    "D06_legacy_delimiter_reintroduced_into_paper_09": {
+      "target_check": "SRC05_no_legacy_tex_delimiters_remain_in_the_repaired_sources",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    },
+    "D07_empty_diff_for_byte_preserved_paper_04_filled_in": {
+      "target_check": "SRC05_diff_files_are_empty_exactly_for_the_byte_preserved_papers",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    },
+    "D08_checksum_entry_corrupted": {
+      "target_check": "SRC05_checksums_file_matches_every_shipped_byte",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D09_HZ_main_body_reverted_to_the_unrestricted_union": {
+      "target_check": "SRC05_HZ_main_body_no_longer_uses_the_unrestricted_union",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    },
+    "D10_replacement_character_planted_in_paper_06": {
+      "target_check": "SRC05_repaired_sources_decode_as_strict_utf8_without_replacement_chars",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly",
+        "SRC05_no_paper_changed_that_the_audit_did_not_declare",
+        "SRC05_papers_claimed_byte_preserved_really_are"
+      ]
+    },
+    "D11_provenance_original_02_no_longer_matches_the_draft": {
+      "target_check": "SRC05_v08_drafts_are_byte_identical_to_the_sssp_provenance_originals",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    },
+    "D12_P03_positive_representative_replaced": {
+      "target_check": "SRC05_P03_induction_uses_the_always_positive_representative",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    },
+    "D13_P07_odd_m_greater_than_1_restriction_weakened": {
+      "target_check": "SRC05_P07_summary_restricts_the_log_formulas_to_odd_m_greater_than_1",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    },
+    "D14_P02_ambiguous_cylinder_preview_reinstated": {
+      "target_check": "SRC05_P02_positive_integer_cylinder_replaces_the_ambiguous_preview",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    },
+    "D15_P08_ring_unit_condition_altered": {
+      "target_check": "SRC05_P08_states_the_ring_level_unit_condition",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    },
+    "D16_P03_canonical_representative_bound_loosened": {
+      "target_check": "SRC05_P03_fixes_the_canonical_representative_explicitly",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    },
+    "D17_P07_summary_statement_was_never_new": {
+      "target_check": "SRC05_P07_summary_records_the_m_equals_1_case_separately",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly",
+        "SRC05_v08_drafts_are_byte_identical_to_the_sssp_provenance_originals"
+      ]
+    },
+    "D18_HZ_restricted_chart_demoted_out_of_the_main_argument": {
+      "target_check": "SRC05_HZ_hoists_the_n_at_least_2_chart_into_the_main_argument",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC05_checksums_file_matches_every_shipped_byte",
+        "SRC05_every_published_diff_reproduces_the_repaired_file_exactly"
+      ]
+    }
+  },
+  "controls": {
+    "N01_unrelated_file_added_outside_the_checksum_manifest": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_no_change_at_all": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "counts": {
+    "defects_planted": 18,
+    "defects_caught_by_the_named_check": 18,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

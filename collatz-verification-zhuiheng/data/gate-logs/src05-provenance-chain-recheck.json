@@ -1,0 +1,136 @@
+{
+  "tool": "src05_provenance_chain_recheck.py",
+  "subject": "Neo.K, Collatz OT Series draft bundles v0.1..v0.8 (2026-08-10 22:58 .. 08-11 00:02), against the SSSP Repaired v1.0 provenance tree",
+  "source_items": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "scope": "provenance, not mathematics. The mathematics of Papers 01-09 was rechecked on the final text in reports/RUN-002-OT-SERIES.md; this asks instead whether the repair's account of itself is complete.",
+  "checks": {
+    "SRC05_draft_chain_carries_earlier_papers_byte_identical": {
+      "pass": true
+    },
+    "SRC05_each_draft_step_adds_exactly_one_paper": {
+      "pass": true
+    },
+    "SRC05_the_series_index_is_rewritten_at_every_step": {
+      "pass": true
+    },
+    "SRC05_loose_markdown_files_match_their_bundled_copies": {
+      "pass": true
+    },
+    "SRC05_v08_drafts_are_byte_identical_to_the_sssp_provenance_originals": {
+      "pass": true
+    },
+    "SRC05_checksums_file_matches_every_shipped_byte": {
+      "pass": true
+    },
+    "SRC05_papers_claimed_byte_preserved_really_are": {
+      "pass": true
+    },
+    "SRC05_papers_claimed_corrected_really_do_differ": {
+      "pass": true
+    },
+    "SRC05_no_paper_changed_that_the_audit_did_not_declare": {
+      "pass": true
+    },
+    "SRC05_diff_files_are_empty_exactly_for_the_byte_preserved_papers": {
+      "pass": true
+    },
+    "SRC05_every_published_diff_reproduces_the_repaired_file_exactly": {
+      "pass": true
+    },
+    "SRC05_the_patch_applier_rejects_text_it_should_reject": {
+      "pass": true
+    },
+    "SRC05_P02_positive_integer_cylinder_replaces_the_ambiguous_preview": {
+      "pass": true
+    },
+    "SRC05_P03_induction_uses_the_always_positive_representative": {
+      "pass": true
+    },
+    "SRC05_P03_fixes_the_canonical_representative_explicitly": {
+      "pass": true
+    },
+    "SRC05_P07_summary_records_the_m_equals_1_case_separately": {
+      "pass": true
+    },
+    "SRC05_P07_summary_restricts_the_log_formulas_to_odd_m_greater_than_1": {
+      "pass": true
+    },
+    "SRC05_P08_quotient_typo_is_corrected": {
+      "pass": true
+    },
+    "SRC05_P08_states_the_ring_level_unit_condition": {
+      "pass": true
+    },
+    "SRC05_P09_language_typo_is_corrected": {
+      "pass": true
+    },
+    "SRC05_HZ_main_body_no_longer_uses_the_unrestricted_union": {
+      "pass": true
+    },
+    "SRC05_HZ_hoists_the_n_at_least_2_chart_into_the_main_argument": {
+      "pass": true
+    },
+    "SRC05_no_legacy_tex_delimiters_remain_in_the_repaired_sources": {
+      "pass": true
+    },
+    "SRC05_legacy_delimiters_actually_existed_in_the_originals": {
+      "pass": true
+    },
+    "SRC05_repaired_sources_decode_as_strict_utf8_without_replacement_chars": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "draft_bundles_read": 8,
+    "draft_papers_compared_to_provenance": 8,
+    "sha256_entries_verified": 49,
+    "diffs_applied": 10,
+    "diff_hunks_applied": 276,
+    "papers_byte_preserved": [
+      "01",
+      "04",
+      "05",
+      "06"
+    ],
+    "papers_corrected": [
+      "02",
+      "03",
+      "07",
+      "08",
+      "09",
+      "HZ"
+    ],
+    "legacy_delimiters_in_originals": {
+      "01": 0,
+      "02": 0,
+      "03": 0,
+      "04": 0,
+      "05": 0,
+      "06": 0,
+      "07": 720,
+      "08": 634,
+      "09": 740,
+      "HZ": 532
+    }
+  },
+  "measured": {
+    "assessment": {
+      "what_it_establishes": "The correction ledger is complete and load-bearing. Every one of the ten published diffs applies to its published original under an applier that demands exact context, and reproduces the repaired file byte for byte - so the repair contains no edit that AUDIT_AND_CORRECTIONS.md does not declare. Exactly the four papers it calls byte-preserved are byte-preserved, exactly the six it calls corrected differ, and no seventh source changed.",
+      "why_the_drafts_matter": "Papers 01-08 inside the v0.8 draft bundle, archived on 2026-08-11, are byte-identical to provenance/original/. The pre-repair text is therefore attested by an archive that predates the repair by three days, rather than only by the repaired package's own account of what it started from.",
+      "on_the_draft_chain_itself": "v0.1 through v0.8 is strictly additive: each step appends exactly one paper and rewrites the index, and never touches a paper already written. So there is no hidden revision history inside the chain - the revisions all happen later, at the repair, and are the ones listed.",
+      "what_it_does_not_establish": "nothing mathematical. That every declared correction is present in the repaired text says the ledger is honest, not that the corrected statements are true. Their truth was checked separately, on the final text, in reports/RUN-002-OT-SERIES.md."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

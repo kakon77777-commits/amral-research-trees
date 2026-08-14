@@ -43,6 +43,50 @@ PROCESSED = {
         "rechecked by code/src03_finite_prototype_recheck.py, scaling cross-checked "
         "against the Rust engine"
     ),
+    "Collatz_OT_Series_Paper_01_v0.1_bundle.zip": (
+        "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — "
+        "strictly additive, and byte-identical to the SSSP provenance/original text"
+    ),
+    "Collatz_OT_Series_Papers_01_02_v0.2_bundle.zip": (
+        "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — "
+        "strictly additive, and byte-identical to the SSSP provenance/original text"
+    ),
+    "Collatz_OT_Series_Papers_01_03_v0.3_bundle.zip": (
+        "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — "
+        "strictly additive, and byte-identical to the SSSP provenance/original text"
+    ),
+    "Collatz_OT_Series_Papers_01_04_v0.4_bundle.zip": (
+        "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — "
+        "strictly additive, and byte-identical to the SSSP provenance/original text"
+    ),
+    "Collatz_OT_Series_Papers_01_05_v0.5_bundle.zip": (
+        "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — "
+        "strictly additive, and byte-identical to the SSSP provenance/original text"
+    ),
+    "Collatz_OT_Series_Papers_01_06_v0.6_bundle.zip": (
+        "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — "
+        "strictly additive, and byte-identical to the SSSP provenance/original text"
+    ),
+    "Collatz_OT_Series_Papers_01_07_v0.7_bundle.zip": (
+        "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — "
+        "strictly additive, and byte-identical to the SSSP provenance/original text"
+    ),
+    "Collatz_OT_Series_Papers_01_08_v0.8_bundle.zip": (
+        "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — "
+        "strictly additive, and byte-identical to the SSSP provenance/original text"
+    ),
+    "Collatz_OT_Series_INDEX_v0.1.md": (
+        "loose series index beside the bundles; confirmed byte-identical to the "
+        "bundled copy by code/src05_provenance_chain_recheck.py"
+    ),
+    "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md": (
+        "loose Paper 01 beside the bundles; confirmed byte-identical to the "
+        "bundled copy by code/src05_provenance_chain_recheck.py"
+    ),
+    "Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md": (
+        "loose Paper 02 beside the bundles; confirmed byte-identical to the "
+        "bundled copy by code/src05_provenance_chain_recheck.py"
+    ),
     "collatz_ot_v3_threshold_benchmark.csv": (
         "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
         "all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, "
