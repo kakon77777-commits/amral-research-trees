@@ -134,6 +134,15 @@ PROCESSED = {
         "from 23 tau_c records on [2, 2^32), giving rigorous upper bounds on the "
         "true C_k(s); see reports/RUN-007-HARD-ZETA-ROUND-03A.md"
     ),
+    "Hard_Zeta_Phase_I_Round_03A1_bundle.zip": (
+        "item 25. Rechecked by code/src10_hardzeta_round03a1_recheck.py against "
+        "direct iteration: the accelerated exact code, affine endpoint formula, "
+        "source congruence, nested lift digits, monotonicity, residue-rate gap, "
+        "mechanical code and both §30-§31 counterexamples all hold. §34's table "
+        "reproduced exactly and extended from m=8 to m=60; a_m shown to be the "
+        "same anchor sequence RUN-007 measured for m_k, switching at k = K_m; "
+        "see reports/RUN-008-HARD-ZETA-ROUND-03A1.md"
+    ),
     "collatz_ot_v3_threshold_benchmark.csv": (
         "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
         "all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, "

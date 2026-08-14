@@ -12,7 +12,7 @@
     "Hard-Zeta": 44,
     "other project": 2
   },
-  "processed_count": 25,
+  "processed_count": 26,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -396,7 +396,7 @@
       "sha256": "cc24d512c067ccddd65a983371ec97c84d76f4887505bf11d565eb654f97f7d4",
       "line": "Hard-Zeta",
       "role": "Phase I round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 25. Rechecked by code/src10_hardzeta_round03a1_recheck.py against direct iteration: the accelerated exact code, affine endpoint formula, source congruence, nested lift digits, monotonicity, residue-rate gap, mechanical code and both §30-§31 counterexamples all hold. §34's table reproduced exactly and extended from m=8 to m=60; a_m shown to be the same anchor sequence RUN-007 measured for m_k, switching at k = K_m; see reports/RUN-008-HARD-ZETA-ROUND-03A1.md",
       "round_sort_key": [
         "",
         3,

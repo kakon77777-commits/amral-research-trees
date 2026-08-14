@@ -94,11 +94,18 @@ describe it that way.
    — `C_447(2) ≤ 2.3e-10`. Escaping 23 times is not evidence of escaping forever,
    and the report says so. Also a circular check and a tautological one, found by
    the drill in my own work.
-9. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+9. [`reports/RUN-008-HARD-ZETA-ROUND-03A1.md`](./reports/RUN-008-HARD-ZETA-ROUND-03A1.md) —
+   Round 03-A.1 re-coordinates the frontier by accelerated exponent codes. Its
+   §34 diagnostic table reproduces exactly and is **extended from m = 8 to
+   m = 60** under a prune that validates itself. And the anchor sequence it
+   defines turns out to be RUN-007's, switching at exactly `k = K_m` — two
+   coordinate systems, two independent computations, one sequence. Measured
+   agreement, not the theorem, which the paper is right to withhold.
+10. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-10. [`code/`](./code/) — the engine, the independent reference, and the gates.
-11. [`data/gate-logs/`](./data/gate-logs/) and
+11. [`code/`](./code/) — the engine, the independent reference, and the gates.
+12. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

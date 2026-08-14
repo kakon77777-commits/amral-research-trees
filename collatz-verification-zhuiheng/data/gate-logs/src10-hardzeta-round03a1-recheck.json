@@ -1,0 +1,810 @@
+{
+  "tool": "src10_hardzeta_round03a1_recheck.py",
+  "subject": "Neo.K + Aletheia, Hard-Zeta Phase I / Round 03-A.1 Small-Anchor Event Arithmetic v0.1 (2026-08-11)",
+  "source_items": [
+    25
+  ],
+  "scope": "the accelerated exact code and its subcritical cone (§1-§5), the affine formula and exact source congruence (§6-§10), the nested lift-digit recurrence and anchor equivalence (§11-§17), the Residue-Rate Gap (§18-§23), the mechanical code and its extremality trap (§27-§33), and §34-§35's diagnostics.",
+  "checks": {
+    "SRC10_bundle_carries_the_earlier_rounds_and_the_v04_map": {
+      "pass": true
+    },
+    "SRC10_paper_keeps_an_explicit_proved_and_unproved_ledger": {
+      "pass": true
+    },
+    "SRC10_the_accelerated_code_reproduces_direct_iteration": {
+      "pass": true
+    },
+    "SRC10_cumulative_valuation_matches_the_walk": {
+      "pass": true
+    },
+    "SRC10_the_affine_endpoint_formula_reproduces_the_walk": {
+      "pass": true
+    },
+    "SRC10_subcritical_means_the_coefficient_has_not_crossed": {
+      "pass": true
+    },
+    "SRC10_the_strict_and_floor_forms_of_subcriticality_agree": {
+      "pass": true
+    },
+    "SRC10_that_comparison_saw_both_outcomes": {
+      "pass": true
+    },
+    "SRC10_every_canonical_source_is_odd": {
+      "pass": true
+    },
+    "SRC10_every_canonical_source_lies_in_its_stated_range": {
+      "pass": true
+    },
+    "SRC10_source_classes_are_nested_across_the_extension": {
+      "pass": true
+    },
+    "SRC10_the_canonical_source_is_nondecreasing_along_an_extension": {
+      "pass": true
+    },
+    "SRC10_the_lift_digit_lies_in_its_stated_range": {
+      "pass": true
+    },
+    "SRC10_each_canonical_source_really_realizes_its_own_code": {
+      "pass": true
+    },
+    "SRC10_integrality_alone_does_not_pin_the_code": {
+      "pass": true
+    },
+    "SRC10_a_nonzero_lift_always_spikes_the_rate_above_alpha": {
+      "pass": true
+    },
+    "SRC10_no_code_sits_strictly_inside_the_forbidden_rate_gap": {
+      "pass": true
+    },
+    "SRC10_both_zero_and_nonzero_lifts_were_seen": {
+      "pass": true
+    },
+    "SRC10_the_mechanical_code_has_increments_one_or_two": {
+      "pass": true
+    },
+    "SRC10_the_mechanical_code_is_the_maximal_subcritical_path": {
+      "pass": true
+    },
+    "SRC10_the_two_step_counterexample_reproduces": {
+      "pass": true
+    },
+    "SRC10_the_same_skeleton_counterexample_reproduces": {
+      "pass": true
+    },
+    "SRC10_those_sources_really_have_those_codes": {
+      "pass": true
+    },
+    "SRC10_section_34s_diagnostic_table_reproduces_exactly": {
+      "pass": true
+    },
+    "SRC10_the_mechanical_code_is_never_the_minimizer_past_m_1": {
+      "pass": true
+    },
+    "SRC10_the_branch_and_bound_prune_is_exact_on_this_run": {
+      "pass": true
+    },
+    "SRC10_the_deep_anchor_agrees_with_the_full_enumeration": {
+      "pass": true
+    },
+    "SRC10_the_minimum_anchor_is_nondecreasing_in_m": {
+      "pass": true
+    },
+    "SRC10_the_accelerated_anchors_are_a_prefix_of_the_classical_ones": {
+      "pass": true
+    },
+    "SRC10_each_anchor_leaves_exactly_at_the_beatty_depth_of_its_own_tau_c": {
+      "pass": true
+    },
+    "SRC10_subcritical_code_count_equals_round_03As_first_crossing_count": {
+      "pass": true
+    },
+    "SRC10_the_accelerated_code_algebra_evaluates_without_error": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "integral_but_illegal_starts_found": 3,
+    "nonzero_lifts": 57016,
+    "zero_lifts": 24100,
+    "codes_enumerated_to": 14,
+    "codes_per_length": {
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 7,
+      "5": 12,
+      "6": 30,
+      "7": 85,
+      "8": 173,
+      "9": 476,
+      "10": 961,
+      "11": 2652,
+      "12": 8045,
+      "13": 17637,
+      "14": 51033
+    },
+    "minimum_anchor_computed_to": 60,
+    "source_realizations_checked": 81117
+  },
+  "measured": {
+    "counterexamples": {
+      "(1,1)": 7,
+      "(1,2)": 11,
+      "(1,1,2)": 7,
+      "(1,2,1)": 27
+    },
+    "section_34_table": [
+      {
+        "m": 1,
+        "a_m": 3,
+        "mechanical": 3,
+        "paper_a_m": 3,
+        "paper_mechanical": 3
+      },
+      {
+        "m": 2,
+        "a_m": 7,
+        "mechanical": 11,
+        "paper_a_m": 7,
+        "paper_mechanical": 11
+      },
+      {
+        "m": 3,
+        "a_m": 7,
+        "mechanical": 27,
+        "paper_a_m": 7,
+        "paper_mechanical": 27
+      },
+      {
+        "m": 4,
+        "a_m": 27,
+        "mechanical": 123,
+        "paper_a_m": 27,
+        "paper_mechanical": 123
+      },
+      {
+        "m": 5,
+        "a_m": 27,
+        "mechanical": 251,
+        "paper_a_m": 27,
+        "paper_mechanical": 251
+      },
+      {
+        "m": 6,
+        "a_m": 27,
+        "mechanical": 1019,
+        "paper_a_m": 27,
+        "paper_mechanical": 1019
+      },
+      {
+        "m": 7,
+        "a_m": 27,
+        "mechanical": 3067,
+        "paper_a_m": 27,
+        "paper_mechanical": 3067
+      },
+      {
+        "m": 8,
+        "a_m": 27,
+        "mechanical": 7163,
+        "paper_a_m": 27,
+        "paper_mechanical": 7163
+      }
+    ],
+    "extremality_trap": [
+      {
+        "m": 1,
+        "a_m": 3,
+        "mechanical": 3
+      },
+      {
+        "m": 2,
+        "a_m": 7,
+        "mechanical": 11
+      },
+      {
+        "m": 3,
+        "a_m": 7,
+        "mechanical": 27
+      },
+      {
+        "m": 4,
+        "a_m": 27,
+        "mechanical": 123
+      },
+      {
+        "m": 5,
+        "a_m": 27,
+        "mechanical": 251
+      },
+      {
+        "m": 6,
+        "a_m": 27,
+        "mechanical": 1019
+      },
+      {
+        "m": 7,
+        "a_m": 27,
+        "mechanical": 3067
+      },
+      {
+        "m": 8,
+        "a_m": 27,
+        "mechanical": 7163
+      },
+      {
+        "m": 9,
+        "a_m": 27,
+        "mechanical": 23547
+      },
+      {
+        "m": 10,
+        "a_m": 27,
+        "mechanical": 23547
+      },
+      {
+        "m": 11,
+        "a_m": 27,
+        "mechanical": 154619
+      },
+      {
+        "m": 12,
+        "a_m": 27,
+        "mechanical": 941051
+      },
+      {
+        "m": 13,
+        "a_m": 27,
+        "mechanical": 1989627
+      },
+      {
+        "m": 14,
+        "a_m": 27,
+        "mechanical": 4086779
+      }
+    ],
+    "minimum_anchor_by_m": [
+      {
+        "m": 1,
+        "a_m": 3,
+        "codes_kept": 1,
+        "K_cap": 1,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 2,
+        "a_m": 7,
+        "codes_kept": 2,
+        "K_cap": 3,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 3,
+        "a_m": 7,
+        "codes_kept": 3,
+        "K_cap": 4,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 4,
+        "a_m": 27,
+        "codes_kept": 7,
+        "K_cap": 6,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 5,
+        "a_m": 27,
+        "codes_kept": 12,
+        "K_cap": 7,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 6,
+        "a_m": 27,
+        "codes_kept": 30,
+        "K_cap": 9,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 7,
+        "a_m": 27,
+        "codes_kept": 85,
+        "K_cap": 11,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 8,
+        "a_m": 27,
+        "codes_kept": 173,
+        "K_cap": 12,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 9,
+        "a_m": 27,
+        "codes_kept": 476,
+        "K_cap": 14,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 10,
+        "a_m": 27,
+        "codes_kept": 961,
+        "K_cap": 15,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 11,
+        "a_m": 27,
+        "codes_kept": 2652,
+        "K_cap": 17,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 12,
+        "a_m": 27,
+        "codes_kept": 8045,
+        "K_cap": 19,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 13,
+        "a_m": 27,
+        "codes_kept": 17637,
+        "K_cap": 20,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 14,
+        "a_m": 27,
+        "codes_kept": 51033,
+        "K_cap": 22,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 15,
+        "a_m": 27,
+        "codes_kept": 88453,
+        "K_cap": 23,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 16,
+        "a_m": 27,
+        "codes_kept": 120206,
+        "K_cap": 25,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 17,
+        "a_m": 27,
+        "codes_kept": 120181,
+        "K_cap": 26,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 18,
+        "a_m": 27,
+        "codes_kept": 116198,
+        "K_cap": 28,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 19,
+        "a_m": 27,
+        "codes_kept": 109629,
+        "K_cap": 30,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 20,
+        "a_m": 27,
+        "codes_kept": 96144,
+        "K_cap": 31,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 21,
+        "a_m": 27,
+        "codes_kept": 88356,
+        "K_cap": 33,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 22,
+        "a_m": 27,
+        "codes_kept": 76502,
+        "K_cap": 34,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 23,
+        "a_m": 27,
+        "codes_kept": 70103,
+        "K_cap": 36,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 24,
+        "a_m": 27,
+        "codes_kept": 65362,
+        "K_cap": 38,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 25,
+        "a_m": 27,
+        "codes_kept": 57883,
+        "K_cap": 39,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 26,
+        "a_m": 27,
+        "codes_kept": 53601,
+        "K_cap": 41,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 27,
+        "a_m": 27,
+        "codes_kept": 47023,
+        "K_cap": 42,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 28,
+        "a_m": 27,
+        "codes_kept": 43440,
+        "K_cap": 44,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 29,
+        "a_m": 27,
+        "codes_kept": 38044,
+        "K_cap": 45,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 30,
+        "a_m": 27,
+        "codes_kept": 35134,
+        "K_cap": 47,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 31,
+        "a_m": 27,
+        "codes_kept": 32939,
+        "K_cap": 49,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 32,
+        "a_m": 27,
+        "codes_kept": 29345,
+        "K_cap": 50,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 33,
+        "a_m": 27,
+        "codes_kept": 27323,
+        "K_cap": 52,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 34,
+        "a_m": 27,
+        "codes_kept": 24161,
+        "K_cap": 53,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 35,
+        "a_m": 27,
+        "codes_kept": 22385,
+        "K_cap": 55,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 36,
+        "a_m": 27,
+        "codes_kept": 21109,
+        "K_cap": 57,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 37,
+        "a_m": 703,
+        "codes_kept": 18991,
+        "K_cap": 58,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 38,
+        "a_m": 703,
+        "codes_kept": 17745,
+        "K_cap": 60,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 39,
+        "a_m": 703,
+        "codes_kept": 15781,
+        "K_cap": 61,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 40,
+        "a_m": 703,
+        "codes_kept": 14698,
+        "K_cap": 63,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 41,
+        "a_m": 703,
+        "codes_kept": 13079,
+        "K_cap": 64,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 42,
+        "a_m": 703,
+        "codes_kept": 12140,
+        "K_cap": 66,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 43,
+        "a_m": 703,
+        "codes_kept": 11429,
+        "K_cap": 68,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 44,
+        "a_m": 703,
+        "codes_kept": 10307,
+        "K_cap": 69,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 45,
+        "a_m": 703,
+        "codes_kept": 9564,
+        "K_cap": 71,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 46,
+        "a_m": 703,
+        "codes_kept": 8576,
+        "K_cap": 72,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 47,
+        "a_m": 703,
+        "codes_kept": 7996,
+        "K_cap": 74,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 48,
+        "a_m": 703,
+        "codes_kept": 7576,
+        "K_cap": 76,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 49,
+        "a_m": 703,
+        "codes_kept": 6849,
+        "K_cap": 77,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 50,
+        "a_m": 703,
+        "codes_kept": 6426,
+        "K_cap": 79,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 51,
+        "a_m": 10087,
+        "codes_kept": 5756,
+        "K_cap": 80,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 52,
+        "a_m": 10087,
+        "codes_kept": 5384,
+        "K_cap": 82,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 53,
+        "a_m": 10087,
+        "codes_kept": 5104,
+        "K_cap": 84,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 54,
+        "a_m": 10087,
+        "codes_kept": 4639,
+        "K_cap": 85,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 55,
+        "a_m": 10087,
+        "codes_kept": 4361,
+        "K_cap": 87,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 56,
+        "a_m": 10087,
+        "codes_kept": 3940,
+        "K_cap": 88,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 57,
+        "a_m": 10087,
+        "codes_kept": 3679,
+        "K_cap": 90,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 58,
+        "a_m": 10087,
+        "codes_kept": 3286,
+        "K_cap": 91,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 59,
+        "a_m": 10087,
+        "codes_kept": 3070,
+        "K_cap": 93,
+        "prune_cap": 10000000
+      },
+      {
+        "m": 60,
+        "a_m": 10087,
+        "codes_kept": 2898,
+        "K_cap": 95,
+        "prune_cap": 10000000
+      }
+    ],
+    "anchor_switches": [
+      {
+        "m": 2,
+        "leaving": 3,
+        "tau_c": 4,
+        "K_m": 4
+      },
+      {
+        "m": 4,
+        "leaving": 7,
+        "tau_c": 7,
+        "K_m": 7
+      },
+      {
+        "m": 37,
+        "leaving": 27,
+        "tau_c": 59,
+        "K_m": 59
+      },
+      {
+        "m": 51,
+        "leaving": 703,
+        "tau_c": 81,
+        "K_m": 81
+      }
+    ],
+    "count_bridge": [
+      {
+        "m": 1,
+        "K_m_plus_1": 4,
+        "codes": 1,
+        "round_03A_first_crossing_count": 1
+      },
+      {
+        "m": 2,
+        "K_m_plus_1": 5,
+        "codes": 2,
+        "round_03A_first_crossing_count": 2
+      },
+      {
+        "m": 3,
+        "K_m_plus_1": 7,
+        "codes": 3,
+        "round_03A_first_crossing_count": 3
+      },
+      {
+        "m": 4,
+        "K_m_plus_1": 8,
+        "codes": 7,
+        "round_03A_first_crossing_count": 7
+      },
+      {
+        "m": 5,
+        "K_m_plus_1": 10,
+        "codes": 12,
+        "round_03A_first_crossing_count": 12
+      },
+      {
+        "m": 6,
+        "K_m_plus_1": 12,
+        "codes": 30,
+        "round_03A_first_crossing_count": 30
+      },
+      {
+        "m": 7,
+        "K_m_plus_1": 13,
+        "codes": 85,
+        "round_03A_first_crossing_count": 85
+      },
+      {
+        "m": 8,
+        "K_m_plus_1": 15,
+        "codes": 173,
+        "round_03A_first_crossing_count": 173
+      },
+      {
+        "m": 9,
+        "K_m_plus_1": 16,
+        "codes": 476,
+        "round_03A_first_crossing_count": 476
+      },
+      {
+        "m": 10,
+        "K_m_plus_1": 18,
+        "codes": 961,
+        "round_03A_first_crossing_count": 961
+      },
+      {
+        "m": 11,
+        "K_m_plus_1": 20,
+        "codes": 2652,
+        "round_03A_first_crossing_count": 2652
+      },
+      {
+        "m": 12,
+        "K_m_plus_1": 21,
+        "codes": 8045,
+        "round_03A_first_crossing_count": 8045
+      },
+      {
+        "m": 13,
+        "K_m_plus_1": 23,
+        "codes": 17637,
+        "round_03A_first_crossing_count": 17637
+      },
+      {
+        "m": 14,
+        "K_m_plus_1": 24,
+        "codes": 51033,
+        "round_03A_first_crossing_count": 51033
+      }
+    ],
+    "assessment": {
+      "what_round_03a1_gets_right": "All of it, within finite reach. The accelerated code reproduces direct iteration; the affine endpoint formula and the B recurrence hold; the source congruence pins an odd canonical representative in its stated range; the classes nest, the lift digit sits in its stated range and the source is nondecreasing along extensions; a nonzero lift always spikes the rate above alpha and nothing sits inside the forbidden gap; the mechanical code is the maximal subcritical path with increments in {1,2}; and both of §30-§31's counterexamples reproduce, with the sources really having those codes.",
+      "section_34_extended": "The paper's diagnostic table for m <= 8 reproduces exactly - 3, 7, 7, 27, 27, 27, 27, 27 against mechanical 3, 11, 27, 123, 251, 1019, 3067, 7163. Extended here to m = 60 by branch and bound, which §13's monotonicity makes exact provided the answer stays under the prune cap; this run checks that it does rather than assuming it. a_m stays at 27 through m = 36, then 703 through m = 50, then 10087. Meanwhile the mechanical source passes 29 million by m = 16, so the extremality trap is not marginal - it is six orders of magnitude wide.",
+      "the_bridge_to_RUN_007": "§35 introduces a_m as the accelerated-code minimum anchor and declines to assume it agrees with the classical one, since that would involve CST. On everything measured it agrees exactly: a_m takes the same values RUN-007 measured for m_k - 3, 7, 27, 703, 10087 - and each anchor leaves at precisely the odd-step count whose Beatty depth is its own tau_c. Two coordinate systems, two independent computations, one sequence. That is a measured agreement on this range, not the theorem.",
+      "what_it_does_not_establish": "nothing about Collatz, and nothing about §41's unproved list. In particular 'every infinite subcritical code has infinitely many nonzero lifts' is untouched: this run sees only finite codes, and a_m sitting at 27 for thirty-three consecutive m is exactly what a bounded anchor would look like too."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

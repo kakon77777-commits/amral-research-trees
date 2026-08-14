@@ -1,0 +1,170 @@
+{
+  "tool": "src10_drill.py",
+  "subject": "src10_hardzeta_round03a1_recheck.py and hz_accel_code.py",
+  "defects": {
+    "A01_valuation_read_one_bit_short": {
+      "target_check": "SRC10_the_accelerated_code_reproduces_direct_iteration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC10_each_canonical_source_really_realizes_its_own_code",
+        "SRC10_subcritical_means_the_coefficient_has_not_crossed",
+        "SRC10_those_sources_really_have_those_codes"
+      ]
+    },
+    "A02_offset_recurrence_loses_its_power_of_two": {
+      "target_check": "SRC10_the_affine_endpoint_formula_reproduces_the_walk",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC10_the_accelerated_code_algebra_evaluates_without_error"
+      ]
+    },
+    "A03_source_modulus_drops_the_extra_digit": {
+      "target_check": "SRC10_each_canonical_source_really_realizes_its_own_code",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC10_section_34s_diagnostic_table_reproduces_exactly",
+        "SRC10_source_classes_are_nested_across_the_extension",
+        "SRC10_the_deep_anchor_agrees_with_the_full_enumeration",
+        "SRC10_the_mechanical_code_is_never_the_minimizer_past_m_1",
+        "SRC10_the_same_skeleton_counterexample_reproduces",
+        "SRC10_the_two_step_counterexample_reproduces",
+        "SRC10_those_sources_really_have_those_codes"
+      ]
+    },
+    "A04_source_congruence_loses_its_inverse": {
+      "target_check": "SRC10_each_canonical_source_really_realizes_its_own_code",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC10_section_34s_diagnostic_table_reproduces_exactly",
+        "SRC10_source_classes_are_nested_across_the_extension",
+        "SRC10_the_canonical_source_is_nondecreasing_along_an_extension",
+        "SRC10_the_deep_anchor_agrees_with_the_full_enumeration",
+        "SRC10_the_lift_digit_lies_in_its_stated_range",
+        "SRC10_the_mechanical_code_is_never_the_minimizer_past_m_1",
+        "SRC10_the_same_skeleton_counterexample_reproduces",
+        "SRC10_those_sources_really_have_those_codes"
+      ]
+    },
+    "A05_floor_beta_off_by_one": {
+      "target_check": "SRC10_the_strict_and_floor_forms_of_subcriticality_agree",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC10_each_anchor_leaves_exactly_at_the_beatty_depth_of_its_own_tau_c",
+        "SRC10_section_34s_diagnostic_table_reproduces_exactly",
+        "SRC10_subcritical_code_count_equals_round_03As_first_crossing_count",
+        "SRC10_subcritical_means_the_coefficient_has_not_crossed",
+        "SRC10_the_accelerated_anchors_are_a_prefix_of_the_classical_ones",
+        "SRC10_the_mechanical_code_is_the_maximal_subcritical_path"
+      ]
+    },
+    "A06_subcritical_test_uses_the_wrong_index": {
+      "target_check": "SRC10_subcritical_means_the_coefficient_has_not_crossed",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_mechanical_code_increments_shifted": {
+      "target_check": "SRC10_the_mechanical_code_is_the_maximal_subcritical_path",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC10_section_34s_diagnostic_table_reproduces_exactly"
+      ]
+    },
+    "A08_code_enumeration_admits_supercritical_codes": {
+      "target_check": "SRC10_section_34s_diagnostic_table_reproduces_exactly",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC10_subcritical_code_count_equals_round_03As_first_crossing_count",
+        "SRC10_the_deep_anchor_agrees_with_the_full_enumeration"
+      ]
+    },
+    "A09_endpoint_formula_uses_the_wrong_exponent": {
+      "target_check": "SRC10_the_affine_endpoint_formula_reproduces_the_walk",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A10_residue_rate_normalized_by_the_wrong_quantity": {
+      "target_check": "SRC10_a_nonzero_lift_always_spikes_the_rate_above_alpha",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC10_no_code_sits_strictly_inside_the_forbidden_rate_gap"
+      ]
+    },
+    "P01_prune_cap_lowered_below_the_answer": {
+      "target_check": "SRC10_the_branch_and_bound_prune_is_exact_on_this_run",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC10_the_accelerated_anchors_are_a_prefix_of_the_classical_ones",
+        "SRC10_the_deep_anchor_agrees_with_the_full_enumeration"
+      ]
+    },
+    "P02_prune_drops_codes_it_should_keep": {
+      "target_check": "SRC10_the_deep_anchor_agrees_with_the_full_enumeration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC10_each_anchor_leaves_exactly_at_the_beatty_depth_of_its_own_tau_c",
+        "SRC10_the_accelerated_anchors_are_a_prefix_of_the_classical_ones"
+      ]
+    },
+    "T01_the_papers_table_is_transcribed_wrong": {
+      "target_check": "SRC10_section_34s_diagnostic_table_reproduces_exactly",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_the_anchor_bridge_uses_the_wrong_beatty_depth": {
+      "target_check": "SRC10_each_anchor_leaves_exactly_at_the_beatty_depth_of_its_own_tau_c",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_the_count_bridge_is_shifted": {
+      "target_check": "SRC10_subcritical_code_count_equals_round_03As_first_crossing_count",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_paper_loses_its_ledger": {
+      "target_check": "SRC10_paper_keeps_an_explicit_proved_and_unproved_ledger",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_bundle_loses_the_v04_route_map": {
+      "target_check": "SRC10_bundle_carries_the_earlier_rounds_and_the_v04_map",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_bundle": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "counts": {
+    "defects_planted": 17,
+    "defects_caught_by_the_named_check": 17,
+    "defects_in_the_accelerated_code_arithmetic": 10,
+    "defects_in_the_branch_and_bound_prune": 2,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
