@@ -1,0 +1,151 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fouquet-Wan H2 local certificate",
+  "type": "object",
+  "required": [
+    "curve",
+    "p",
+    "profile",
+    "global_abs_irreducible",
+    "local_reducibility_Fp",
+    "h2_status"
+  ],
+  "properties": {
+    "curve": {
+      "type": "string"
+    },
+    "p": {
+      "type": "integer",
+      "minimum": 3
+    },
+    "profile": {
+      "enum": [
+        "FW17_EXACT",
+        "FW11_SIMPLE"
+      ]
+    },
+    "global_abs_irreducible": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "reduction_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "potential_reduction": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "potentially_multiplicative": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "local_reducibility_Fp": {
+      "enum": [
+        "IRREDUCIBLE",
+        "REDUCIBLE",
+        "UNKNOWN"
+      ]
+    },
+    "phi": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "defined_over_Qp": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "kernel_polynomial": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kernel_linear_factor_Qp": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "kernel_character_quadratic": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "dual_phi": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "kernel_polynomial": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kernel_linear_factor_Qp": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "kernel_character_quadratic": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "equal_constituent_characters": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "h2_status": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "LOCAL_IRREDUCIBLE",
+          "POTENTIALLY_MULTIPLICATIVE_FORBIDDEN",
+          "P3_REDUCIBLE_FORBIDDEN",
+          "PHI_KERNEL_QUADRATIC",
+          "DUAL_KERNEL_QUADRATIC",
+          "FW11_EQUAL_CHARACTERS",
+          "INSUFFICIENT_LOCAL_DATA"
+        ]
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

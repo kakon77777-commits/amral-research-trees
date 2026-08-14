@@ -1,0 +1,51 @@
+{
+  "retrieved_at": "2026-08-14",
+  "sources": [
+    {
+      "id": "BCS2405",
+      "title": "Base change and Iwasawa Main Conjectures for GL2",
+      "authors": ["Ashay Burungale", "Francesc Castella", "Christopher Skinner"],
+      "arxiv": "2405.00270",
+      "url": "https://arxiv.org/abs/2405.00270",
+      "role": "full cyclotomic Iwasawa Main Conjecture at good ordinary irreducible primes; condition (im)"
+    },
+    {
+      "id": "BKS1910",
+      "title": "On derivatives of Kato's Euler system for elliptic curves",
+      "authors": ["David Burns", "Masato Kurihara", "Takamichi Sano"],
+      "arxiv": "1910.07404",
+      "url": "https://arxiv.org/abs/1910.07404",
+      "role": "Bockstein regulator, Generalized Perrin-Riou comparison, IMC-to-p-adic/classical BSD route"
+    },
+    {
+      "id": "KP2505",
+      "title": "The refined Tamagawa number conjectures for GL2",
+      "authors": ["Chan-Ho Kim", "Robert Pollack"],
+      "arxiv": "2505.09121",
+      "url": "https://arxiv.org/abs/2505.09121",
+      "role": "discrete Kurihara/Selmer structure; discrete-versus-analytic separation"
+    },
+    {
+      "id": "BH2511",
+      "title": "On the refined Birch--Swinnerton-Dyer type conjectures of Mazur and Tate",
+      "authors": ["Dominik Bullach", "Matthew H. L. Honnor"],
+      "arxiv": "2511.07203",
+      "url": "https://arxiv.org/abs/2511.07203",
+      "role": "finite-layer Mazur-Tate theorem input and positive-rank frontier"
+    },
+    {
+      "id": "SANO2308",
+      "title": "Derived Bockstein regulators and anticyclotomic p-adic Birch and Swinnerton-Dyer conjectures",
+      "authors": ["Takamichi Sano"],
+      "arxiv": "2308.08875",
+      "url": "https://arxiv.org/abs/2308.08875",
+      "role": "derived Bockstein/base-change route audit"
+    },
+    {
+      "id": "LMFDB389a1",
+      "title": "Elliptic curve 389.a1",
+      "url": "https://www.lmfdb.org/EllipticCurve/Q/389/a/1",
+      "role": "curve, local, modular, Galois-image and Iwasawa database inputs"
+    }
+  ]
+}

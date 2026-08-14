@@ -1,0 +1,32 @@
+{
+  "scope": "predicate-level semantic regression only; not claims that these are theorem-eligible twists of actual curves",
+  "cases": [
+    {
+      "id": "GCD_3N_SHRINK",
+      "N": 46,
+      "M": 3,
+      "old_predicate": "gcd(M,N)==1",
+      "old_result": true,
+      "new_predicate": "gcd(M,3*N)==1",
+      "new_result": false,
+      "purpose": "Forces detection of the new factor-3 coprimality restriction."
+    },
+    {
+      "id": "REMOVED_DISC_VALUATION_GATE_EXPAND",
+      "primes_dividing_M": [
+        3
+      ],
+      "conductor_primes": [
+        2,
+        5
+      ],
+      "disc_valuations": {
+        "2": 3,
+        "5": 6
+      },
+      "old_disc_valuation_condition": false,
+      "new_status": "NO_SUCH_GATE",
+      "purpose": "Forces detection that the old twist-side ramification-style gate was deleted."
+    }
+  ]
+}

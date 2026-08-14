@@ -1,0 +1,32 @@
+{
+  "scope": "LMFDB elliptic curves over Q with conductor < 500000",
+  "total_curves": 3064705,
+  "optimal_semistable_analytic_rank0_composite_conductor_candidates": 178364,
+  "current_commit": "31fae20c8df3f1f0383f41112b914d4995d5809d",
+  "old_commit": "1a0489c3c3099dd0c248624e6621df73ae8f0d43",
+  "commit_distance": 1,
+  "current_accepted_direct_paper": 36687,
+  "ec_labels_500k_diff": {
+    "additions": 2,
+    "deletions": 4064
+  },
+  "metadata_line_replacements": 2,
+  "removed_curve_rows_reconstructed": 4062,
+  "old_accepted_reconstructed": 40749,
+  "epistemic_status": {
+    "current_accepted": "DIRECT_PRIMARY_SOURCE",
+    "diff_stats": "DIRECT_GITHUB_COMMIT",
+    "removed_curve_rows": "EXACT_RECONSTRUCTION_FROM_MONOTONE_CODE_DIFF_AND_WRITER_INVARIANCE",
+    "old_accepted": "EXACT_RECONSTRUCTION_FROM_CURRENT_COUNT_PLUS_REMOVED_ROWS"
+  },
+  "rates": {
+    "current_over_old": 0.9003165721858205,
+    "removed_over_old": 0.09968342781417949,
+    "current_over_total": 0.011970809588524834,
+    "old_over_total": 0.013296222638067939,
+    "removed_over_total": 0.0013254130495431045,
+    "current_over_pre_candidates": 0.20568612500280326,
+    "old_over_pre_candidates": 0.228459778879146,
+    "removed_over_pre_candidates": 0.02277365387634276
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BSD Phase 2 LMFDB Census Candidate",
+  "type": "object",
+  "required": [
+    "lmfdb_label",
+    "numeric_2part_parity_pass",
+    "base_bsd2_status",
+    "odd_additive_primes",
+    "multiplicative_primes",
+    "nonsplit_multiplicative_primes",
+    "leave_one_out_all_pass",
+    "fixed_additive_h3_all_pass",
+    "structural_status",
+    "theorem_status"
+  ],
+  "properties": {
+    "lmfdb_label": {
+      "type": "string"
+    },
+    "conductor": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "numeric_2part_parity_pass": {
+      "type": "boolean"
+    },
+    "base_bsd2_status": {
+      "enum": [
+        "PENDING",
+        "PROVED",
+        "FAIL"
+      ]
+    },
+    "odd_additive_primes": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "edixhoven_safe_all_odd_additive": {
+      "type": "boolean"
+    },
+    "fixed_additive_h2_status": {
+      "type": "object"
+    },
+    "multiplicative_primes": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "nonsplit_multiplicative_primes": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "g_mult": {
+      "type": "integer"
+    },
+    "g_minus": {
+      "type": "integer"
+    },
+    "R_mult": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "R_minus": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "leave_one_out": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "leave_one_out_all_pass": {
+      "type": "boolean"
+    },
+    "fixed_additive_h3": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "fixed_additive_h3_all_pass": {
+      "type": "boolean"
+    },
+    "ultra_clean_nonsplit_v1": {
+      "type": "boolean"
+    },
+    "finite_ordinary_exception_status": {
+      "type": "object"
+    },
+    "finite_supersingular_exception_status": {
+      "type": "object"
+    },
+    "structural_status": {
+      "enum": [
+        "STRUCTURAL_PASS",
+        "STRUCTURAL_FAIL"
+      ]
+    },
+    "theorem_status": {
+      "enum": [
+        "PENDING_BSD2_AND_LOCAL_H2",
+        "PENDING_FINITE_EXCEPTIONS",
+        "PROVED_FAMILY",
+        "NOT_READY"
+      ]
+    }
+  }
+}

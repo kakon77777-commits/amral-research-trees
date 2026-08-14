@@ -1,0 +1,26 @@
+{
+  "curve": "389.a1",
+  "prime": 11,
+  "audits": [
+    {
+      "route": "Fouquet 2025 pointwise ETNC specialization",
+      "status": "NO_DIRECT_CENTRAL_RANK2_ESCAPE",
+      "reason": "the manuscript explicitly assumes L(f,r) is nonzero for the pointwise special-value setup; rank-2 central specialization has L(E,1)=0"
+    },
+    {
+      "route": "Bullach-Honnor 2025 refined Mazur-Tate",
+      "status": "RANK_SENSITIVE_COEFFICIENT_STILL_OPEN",
+      "reason": "positive-rank finer augmentation congruence is stated as requiring BSD, generalized Perrin-Riou, or an extended height comparison"
+    },
+    {
+      "route": "Perrin-Riou-Schneider high-rank p-adic BSD",
+      "status": "P_ADIC_ANALYTIC_OBJECT_ONLY",
+      "reason": "controls the cyclotomic p-adic L-function leading coefficient, not the complex s-derivative"
+    },
+    {
+      "route": "numerical strong BSD for 389a",
+      "status": "EVIDENCE_ONLY",
+      "reason": "the displayed rank-2 analytic Sha/leading-term quotient is numerical and its rationality is not generally proved"
+    }
+  ]
+}

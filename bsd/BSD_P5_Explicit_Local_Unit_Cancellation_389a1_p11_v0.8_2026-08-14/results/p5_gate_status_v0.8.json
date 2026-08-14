@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.8",
+  "curve": "389.a1",
+  "prime": 11,
+  "inherited": {
+    "sha_11_primary": "CLOSED_PROJECT_THEOREM_CHAIN",
+    "cyclotomic_imc_11": "CLOSED",
+    "bockstein_nonvanishing_11": "CLOSED",
+    "arithmetic_line": "CANONICAL_FRAMEWORK_AVAILABLE"
+  },
+  "v08_exact": {
+    "a_11": -4,
+    "E_F11_order": 16,
+    "v11_log_omega_P": 1,
+    "log_omega_P_over_11_mod_11": 4,
+    "minimal_S_euler_product_v11": -1,
+    "local_unit_v11": 0,
+    "local_unit_mod_11": 4,
+    "local_denominator_cancellation": "CLOSED_EXACT"
+  },
+  "open": {
+    "P5_DESC_reduced_11": "beta_xi in Q_11",
+    "P5_VAL0_reduced_11": "v_11(beta_xi)=0"
+  },
+  "claim_boundary": "This does not prove beta_xi descent, valuation zero, P5-LAT_11, or BSD."
+}

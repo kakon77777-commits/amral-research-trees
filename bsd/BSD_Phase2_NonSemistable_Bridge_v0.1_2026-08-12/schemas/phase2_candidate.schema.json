@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BSD Phase2 non-semistable candidate",
+  "type": "object",
+  "required": [
+    "curve",
+    "analytic_rank",
+    "semistable",
+    "torsion_2_type",
+    "status"
+  ],
+  "properties": {
+    "curve": {
+      "type": "string"
+    },
+    "analytic_rank": {
+      "type": "integer"
+    },
+    "semistable": {
+      "type": "boolean"
+    },
+    "torsion_2_type": {
+      "enum": [
+        "none",
+        "Z2",
+        "full_Z2xZ2",
+        "other",
+        "unknown"
+      ]
+    },
+    "bsd2_base": {
+      "enum": [
+        "PROVED",
+        "UNKNOWN",
+        "FAIL"
+      ]
+    },
+    "fw_exceptional_primes": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "fw_all_odd_primes_status": {
+      "enum": [
+        "PROVED",
+        "PARTIAL",
+        "UNKNOWN"
+      ]
+    },
+    "status": {
+      "enum": [
+        "CANDIDATE",
+        "REJECT",
+        "UNKNOWN"
+      ]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+﻿gate,status,source_basis,application
+Base full BSD,PASS,Creutz–Miller Thm 1.1: all Q-curves with conductor <5000 and analytic rank <=1,E has conductor 696 and rank 0
+BH Theorem 2.14 base hypotheses,PASS,"Optimal, odd Manin, rank0, BSD(E,2), E(Q)[2]=0, Delta<0, v2(Lalg)=0",LMFDB + Creutz–Miller + exact Sha_an=1/Tamagawa/torsion data
+Support q: conductor primes split,PASS,q≡1 mod24 and (q/29)=1,"2,3,29 split in Q(sqrt(q))"
+Support q: 2-division inert,PASS,f2 mod q irreducible,exactly BH no-2-torsion support condition
+Support q ordinary,PASS,3-cycle on E[2] => a_q odd; q>=5 supersingular would force a_q=0,derived elementary lemma
+p=q additive twist,PASS,BSTW Thm 9.21(c) + BH Prop 2.9/Remark 2.10,"q∤6N, ordinary, residual irreducible, ramK witness ell=29"
+good ordinary p,PASS,Skinner Thm C,"p>=3, E_q[p] irreducible, ramified multiplicative witness ell=29"
+fixed multiplicative p=3,PASS,Skinner Thm C explicitly allows p>=3,witness ell=29
+fixed multiplicative p=29,PASS,Skinner Thm C,witness ell=3
+good supersingular p,PASS,Fouquet–Wan Thm 1.7 / Cor 1.10,absolute irreducibility; local supersingular excludes H2; ell=29 satisfies nonsplit Steinberg+ramified H3
+FW period / Manin,PASS WITH CITATION,Manin constant prime support lies at additive reduction primes,"FW p is good supersingular, hence not additive; twist is optimal because no rational isogenies"
+Chebotarev infinitude/density,PASS,"L∩K=Q(sqrt(-174)), [LK:Q]=48, compatible 3-cycle class size2",density 1/24
+Exact-label novelty search,NO HIT,"arXiv/web searches for 696b1, 696.e1 and equation",negative evidence only; not a proof of novelty

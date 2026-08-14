@@ -1,0 +1,53 @@
+{
+  "old_fixture_date": "2026-05-22",
+  "current_fixture_date": "2026-06-03",
+  "old_count": 25,
+  "current_count": 12,
+  "stable_count": 12,
+  "removed_count": 13,
+  "added_count": 0,
+  "stable": [
+    "106d1",
+    "114b1",
+    "115a1",
+    "118c1",
+    "118d1",
+    "141b1",
+    "141e1",
+    "142c1",
+    "46a1",
+    "69a1",
+    "77c1",
+    "94a1"
+  ],
+  "removed": [
+    "106a1",
+    "110b1",
+    "110c1",
+    "142d1",
+    "142e1",
+    "14a1",
+    "26a1",
+    "26b1",
+    "34a1",
+    "35a1",
+    "38a1",
+    "38b1",
+    "66c1"
+  ],
+  "added": [],
+  "current_is_subset_of_old": true,
+  "branch_counts": {
+    "old": {
+      "CLZ20": 10,
+      "Zha16_no_2_tors": 15,
+      "total": 25
+    },
+    "current": {
+      "CLZ20": 7,
+      "Zha16_no_2_tors": 5,
+      "total": 12
+    }
+  },
+  "warning": "Version regression records membership changes only. It does not assign a mathematical rejection reason to each removed curve without replaying the relevant code/version."
+}

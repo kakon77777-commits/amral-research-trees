@@ -1,0 +1,25 @@
+{
+  "purpose": "regression/near-miss labels from manual Phase 2 exploration; exact final status should be recomputed from the SQL mirror",
+  "curves": [
+    {
+      "label": "696.e1",
+      "expected_role": "explicit previously derived theorem candidate; no odd additive prime, so not in the new odd-additive strict pool"
+    },
+    {
+      "label": "360640.r1",
+      "expected_role": "small-additive period-wall benchmark (p=7); should fail Edixhoven-safe strict pool"
+    },
+    {
+      "label": "467024.f1",
+      "expected_role": "safe odd-additive near miss; only one odd multiplicative reservoir, should fail leave-one-out graph"
+    },
+    {
+      "label": "117740.a1",
+      "expected_role": "safe odd-additive near miss; fixed multiplicative p=5 should fail leave-one-out witness"
+    },
+    {
+      "label": "253253.j1",
+      "expected_role": "witness graph rich but even Tamagawa product; should fail numeric 2-part parity prefilter"
+    }
+  ]
+}

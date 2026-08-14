@@ -1,0 +1,13 @@
+{
+  "README.md": "6607fec74e81f1e75d67ef4caeafda3d8574920f67b091d4fb8a89c8f3f7dbe7",
+  "docs/15_Fresh_Algorithm2_Semantic_Replay.md": "bdccb3f0671b549b71f4c3375fdbfe82d044cee421c806a8902de647735150ee",
+  "docs/16_Phase1_Closure_and_Phase2_Interface.md": "d952cfcd22fae936e18c2db74f52fa7df8f4ed15f4e129ada0934e95fcf618c0",
+  "prior/BSD_Phase1_Banwait_Huang_Exact_Census_v0.5_2026-08-12.zip": "ebd5b7de9e2220c0c00de926c7cd13e4b10b660b32ec39aad8954fb999910bbf",
+  "results/current_only_twists_added_by_disc_gate_deletion.csv": "50a5a6f49e0d1fb324738440af135a0a03efa39440eed5d1c0fd003eb0e7d2a9",
+  "results/hidden_interaction_twists.csv": "50a5a6f49e0d1fb324738440af135a0a03efa39440eed5d1c0fd003eb0e7d2a9",
+  "results/old_only_twists_removed_by_new_gcd.csv": "132f4a303872b7ceffb4489f33cb0947691d25745cd9d0bbe9b059471ae2ef0c",
+  "results/semantic_partition_by_source.csv": "c7b623b875a03c4c8da524df32306428191d040f4db26b177f95b245b6dcca92",
+  "results/semantic_replay_summary.json": "09944cc1573e2d1d167039b44151937910f6c5022815b7cdc7333924b66515a1",
+  "results/stable_curve_semantic_census.csv": "cdc36ceb5cdb9b81d6b104ad93cba00b19f25285028cdc087216cac9232e6d03",
+  "scripts/verify_semantic_replay.py": "2c9a67338e50f00c65499089ea6d0830b282248315da000c505b0dcecc3367aa"
+}

@@ -1,0 +1,15 @@
+{
+  "README.md": "93ece2c4fc7e69465c7a469c3d9c74a9ab33015347c6446e8b16fd35a29a3be9",
+  "docs/11_Census_Gate_Definitions.md": "2b5092d72ff0ee6be347a985e39504a84ea09f1676016beff2131ebdac6ef300",
+  "prior/BSD_Fixed_Additive_Period_Compiler_v0.4_2026-08-14.zip": "7ae4435e8dade12223df8f1833e4c4c501850a9a84d4e6a2f2ed5efa9e0d6fe2",
+  "results/manual_benchmarks.json": "06968b107aa0a46b445cbe80fc2320a0f578ca21c71276b46256df3f5ae387f2",
+  "results/status.json": "30e0b0f5f5091b991dee869aeb45f0e912a8603c3624db7c399cb21eb43e0646",
+  "schemas/census_candidate.schema.json": "bd8fc253dacca7a493ed619feb67e3b896a42c6ad0e35452395ad504a7cead92",
+  "scripts/postprocess_witness_network.py": "b2873e690c56bb8634bf7eaacb8193606a363ad27b4ad23d34a5a8b5cbd4e775",
+  "scripts/run_census.sh": "5798d33f0e083fb66cfe15a0e95f5cc25a5947cdf5822030b36139814c3eaefd",
+  "sources/SOURCES.md": "dd712041c3cf4d2146f220b2351aa5443ce63c77842fc95dc4e1a8a67cce421e",
+  "sql/00_candidate_universe.sql": "5d86cada4e3f3c6afab82d40eb6d6c9d66ce2269340b1a1ea49befd96f725009",
+  "sql/01_edixhoven_safe_structural_pool.sql": "c9bb0e083941742153e92e24bd5fc15cd44f7239bce1c647d2b237a6563eb620",
+  "sql/02_local_rows_for_structural_pool.sql": "f6cecf759f17dacf8bf2fa4d897b0f6747728177edef8fe3ed1ab053f924a72f",
+  "sql/03_ultra_clean_nonsplit_v1_pool.sql": "56b945942bd675a1c14dca4a49720e15b16dedded59dc761a48bc4bf17bfb1ad"
+}

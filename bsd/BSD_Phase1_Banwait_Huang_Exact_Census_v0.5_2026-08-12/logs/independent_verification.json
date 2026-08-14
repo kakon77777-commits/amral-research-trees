@@ -1,0 +1,71 @@
+{
+  "checks": {
+    "algorithm1_core_summary_recomputed": true,
+    "algorithm1_metadata_classes_recomputed": true,
+    "base_csv_membership_exact": true,
+    "base_partitions_recomputed": true,
+    "generator_base_equals_old_twist_keys": true,
+    "global_accounting_identity_recomputed": true,
+    "manifest_git_blobs_recomputed": true,
+    "manifest_sha256_recomputed": true,
+    "missing_old_key_csv_exact": true,
+    "newbase_pair_csv_exact": true,
+    "no_orphan_twist_keys": true,
+    "old_missing_keys_equal_isogeny_gate_labels": true,
+    "old_missing_keys_exactly_later_base_additions": true,
+    "required_files_present": true,
+    "result_hashes_recomputed": true,
+    "stable_added_pair_csv_exact": true,
+    "stable_current_equals_old_filtered_by_3": true,
+    "stable_curve_census_exact": true,
+    "stable_domain_twist_keys_complete": true,
+    "stable_removed_all_divisible_by_3": true,
+    "stable_removed_pair_csv_exact": true,
+    "summary_base_counts_recomputed": true,
+    "summary_internal_checks_all_true": true,
+    "summary_stable_classes_recomputed": true,
+    "summary_status_complete": true,
+    "summary_twist_counts_recomputed": true,
+    "upstream_pair_csv_exact": true
+  },
+  "details": {
+    "algorithm1_core": {
+      "a3_only": 2707,
+      "both": 2,
+      "isogeny_only": 1353,
+      "unexplained": 0
+    },
+    "algorithm2_curve_classes": {
+      "expand_only": 0,
+      "mixed": 0,
+      "shrink_only": 5437,
+      "unchanged": 31250
+    },
+    "base": {
+      "added": 0,
+      "new": 36687,
+      "old": 40749,
+      "removed": 4062,
+      "stable": 36687
+    },
+    "check_count": 27,
+    "passed_check_count": 27,
+    "twists": {
+      "lhs": 46091,
+      "new_total_pairs": 247391,
+      "new_twist_key_count": 36687,
+      "newbase_added": 0,
+      "old_base_curves_without_materialized_twist_entry": 1355,
+      "old_total_pairs": 293482,
+      "old_twist_key_count": 39394,
+      "rhs": 46091,
+      "stable_added": 0,
+      "stable_filter_mismatch_count": 0,
+      "stable_removed": 21306,
+      "upstream_removed": 24785
+    }
+  },
+  "method": "independent raw-input reparse and output/hash cross-check",
+  "schema_version": "1.0",
+  "status": "PASS"
+}

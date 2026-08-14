@@ -1,0 +1,32 @@
+[
+  {
+    "change": "Strict BSD(E,2) verification gate",
+    "current_semantics": "Reject if analytic Sha 2-valuation is nonzero; accept zero valuation only when 2-descent pins Sha[2]=0.",
+    "impact": "Prevents dim Sha[2] from being overread as ord_2 #Sha.",
+    "classification": "soundness_hardening"
+  },
+  {
+    "change": "E' Sha[2] verification",
+    "current_semantics": "Analytic Sha(E') is only an input gate; descent supplies the algebraic zero-2-torsion conclusion.",
+    "impact": "Separates BSD-inferred data from actual descent evidence.",
+    "classification": "soundness_hardening"
+  },
+  {
+    "change": "Deterministic S-nonempty filter",
+    "current_semantics": "Algebraic criterion is default; bounded prime search is secondary.",
+    "impact": "Removes dependence on a finite witness-search cutoff for the theorem gate.",
+    "classification": "certificate_hardening"
+  },
+  {
+    "change": "Twist coprimality",
+    "current_semantics": "Algorithm2 requires gcd(d,3N)=1.",
+    "impact": "Tightens theorem predicate versus looser gcd(d,N)=1 implementations.",
+    "classification": "predicate_hardening"
+  },
+  {
+    "change": "Testing flags are watermarked",
+    "current_semantics": "skip_filter_S / skip_BSD_at_2_check explicitly downgrade theorem qualification.",
+    "impact": "Prevents performance/debug runs from being confused with certified output.",
+    "classification": "provenance_hardening"
+  }
+]

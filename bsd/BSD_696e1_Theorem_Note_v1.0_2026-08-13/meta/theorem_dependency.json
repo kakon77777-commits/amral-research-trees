@@ -1,0 +1,60 @@
+{
+  "main_claim": "For every q in P, strong BSD holds for E^(q), where E=696.e1 and P is the explicit prime family.",
+  "claim_status": "derived theorem note; novelty/priority not asserted",
+  "base_curve": {
+    "label": "696.e1",
+    "cremona": "696b1",
+    "equation": "y^2 = x^3 + x^2 + 8x - 16",
+    "conductor": 696,
+    "discriminant": -178176
+  },
+  "prime_family": {
+    "conditions": [
+      "q prime",
+      "q ≡ 1 mod 24",
+      "Legendre(q,29)=+1",
+      "x^3+x^2+8x-16 irreducible mod q"
+    ],
+    "density": "1/24"
+  },
+  "dependencies": [
+    {
+      "branch": "base full BSD / BSD(E,2)",
+      "source": "Creutz–Miller 2012 + finite curve data"
+    },
+    {
+      "branch": "twist 2-part + L-nonvanishing",
+      "source": "Banwait–Huang 2026, Theorem 2.14"
+    },
+    {
+      "branch": "p=q additive twist",
+      "source": "BSTW Theorem 9.21(c), via Banwait–Huang Proposition 2.9(1) and Remark 2.10"
+    },
+    {
+      "branch": "good ordinary p",
+      "source": "Skinner Theorem C"
+    },
+    {
+      "branch": "multiplicative p=3,29",
+      "source": "Skinner Theorem C"
+    },
+    {
+      "branch": "good supersingular p",
+      "source": "Fouquet–Wan Theorem 1.7 and Corollary 1.10"
+    },
+    {
+      "branch": "period comparison",
+      "source": "Česnavičius–Neururer–Saha 2024"
+    },
+    {
+      "branch": "prime-family density",
+      "source": "Chebotarev + explicit field intersection computation"
+    }
+  ],
+  "remaining_submission_gates": [
+    "independent expert/referee replay",
+    "strong novelty search / citation chaining",
+    "re-run finite arithmetic certificate in SageMath and Magma",
+    "check latest versions of cited preprints before submission"
+  ]
+}

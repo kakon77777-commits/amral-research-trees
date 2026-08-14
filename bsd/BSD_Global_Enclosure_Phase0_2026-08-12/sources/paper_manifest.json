@@ -1,0 +1,42 @@
+{
+  "created_at": "2026-08-12",
+  "download_status": "links_only_runtime_external_bytes_not_materialized",
+  "papers": [
+    {
+      "id": "clay-wiles-bsd",
+      "title": "Official BSD problem description",
+      "url": "https://www.claymath.org/resource/book-title-the-millennium-prize-problems/mppc/",
+      "role": "formal statement and classical status"
+    },
+    {
+      "id": "bstw-2024",
+      "title": "Zeta elements for elliptic curves and applications",
+      "url": "https://arxiv.org/pdf/2409.01350",
+      "role": "p-adic zeta elements, p-part BSD, infinite non-CM strong-BSD families"
+    },
+    {
+      "id": "banwait-huang-2026",
+      "title": "On the Identification of Elliptic Curves That Admit Infinitely Many Twists Satisfying BSD",
+      "url": "https://arxiv.org/pdf/2601.16044",
+      "role": "Phase 1 algorithm reproduction"
+    },
+    {
+      "id": "keller-stoll-2023",
+      "title": "Complete verification of strong BSD for many modular abelian surfaces over Q",
+      "url": "https://arxiv.org/pdf/2312.07307",
+      "role": "exact verification engineering blueprint"
+    },
+    {
+      "id": "skinner-converse",
+      "title": "A converse to a theorem of Gross, Zagier, and Kolyvagin",
+      "url": "https://arxiv.org/pdf/1405.7294",
+      "role": "rank 0/1 converse theorem line"
+    },
+    {
+      "id": "kim-higher-gz",
+      "title": "A higher Gross-Zagier formula and the structure of Selmer groups",
+      "url": "https://arxiv.org/pdf/2203.12161",
+      "role": "high-rank structural route"
+    }
+  ]
+}

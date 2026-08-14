@@ -1,0 +1,11 @@
+{
+  "closed": {
+    "P5-KUR-SEMILOC_11^(2)": "THEOREM_ALIGNED_CLOSED",
+    "P5-FIN-BocDET_11^(2)": "CLOSED_EXACT",
+    "P5-MIXEDLINE_11^(2)": "CLOSED_UP_TO_UNITS"
+  },
+  "open": {
+    "P5-CANON-BocID_11^(2)": "identify finite norm-Bockstein determinant with canonical Selmer-complex/BKS Bockstein specialization",
+    "P5-CPLX-GPR_11^(2)": "compare derived arithmetic determinant with complex rank-2 BSD leading scalar"
+  }
+}

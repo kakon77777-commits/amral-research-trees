@@ -1,0 +1,13 @@
+{
+  "BSD_RUGZPB_P2_P4_389a1_p11_v0.2.md": "a7a78822bcda701f465d097d1c30e3a96f92aaedcb312a53cb7cd9293f89a130",
+  "NEXT_P5_HANDOFF.md": "d8afb985c9f33213330293167ae039b43ea2aadb06fa93d56dec998feb7e858e",
+  "README.md": "36366ea901c7a695685bfd4a43f777163ec24dcab31e3f14f16788ec6a258c1a",
+  "requirements.txt": "e09f656c130b9c08b2c5ab7187c891295e449ed77febea2a6ceee9cc98ccb0fc",
+  "results/389a1_p11_kurihara_certificate.json": "d42310022db1e5c104ec7477002e166a4c60f46446ac476363c1db1b05ac36a9",
+  "results/389a1_p11_kurihara_certificate.replay.json": "d42310022db1e5c104ec7477002e166a4c60f46446ac476363c1db1b05ac36a9",
+  "results/compute_stdout.txt": "d42310022db1e5c104ec7477002e166a4c60f46446ac476363c1db1b05ac36a9",
+  "scripts/compute_389a1_kurihara_mod11.py": "1273161878c9f784a04745a13a73d22b90a242096dedf138d0a4345e07d6961c",
+  "scripts/replay_389a1_kurihara_sage.sage": "73289ffe7f4bce4b45c61200c07eb083366c6083a80bd82e8f5c9da4be637b76",
+  "source/BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md": "2091bae0d2b03e365cd4b92b2acdb2a3ea935739ef4fd441d8fa92a95897ba68",
+  "validate_source.py": "1e4c3efa6c0720bf7ff38939ecc8179b416faba66ade2c8d435d4581266d8ab5"
+}

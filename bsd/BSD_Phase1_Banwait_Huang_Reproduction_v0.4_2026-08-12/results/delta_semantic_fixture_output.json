@@ -1,0 +1,82 @@
+{
+  "input_count": 6,
+  "pass_count": 2,
+  "fail_count": 4,
+  "rows": [
+    {
+      "cremona_label": "46a1",
+      "decision": "PASS",
+      "first_failure": null,
+      "all_failures": [],
+      "a3": 0,
+      "isogeny_degrees": [
+        1,
+        2
+      ]
+    },
+    {
+      "cremona_label": "106d1",
+      "decision": "PASS",
+      "first_failure": null,
+      "all_failures": [],
+      "a3": 2,
+      "isogeny_degrees": [
+        1
+      ]
+    },
+    {
+      "cremona_label": "34a1",
+      "decision": "FAIL",
+      "first_failure": "P_ISOGENY_3",
+      "all_failures": [
+        "P_ISOGENY_3"
+      ],
+      "a3": 0,
+      "isogeny_degrees": [
+        1,
+        2,
+        3,
+        6
+      ]
+    },
+    {
+      "cremona_label": "38b1",
+      "decision": "FAIL",
+      "first_failure": "P_ISOGENY_5",
+      "all_failures": [
+        "P_ISOGENY_5"
+      ],
+      "a3": -1,
+      "isogeny_degrees": [
+        1,
+        5
+      ]
+    },
+    {
+      "cremona_label": "26b1",
+      "decision": "FAIL",
+      "first_failure": "P_ISOGENY_7",
+      "all_failures": [
+        "P_ISOGENY_7",
+        "A3_ABS_3"
+      ],
+      "a3": -3,
+      "isogeny_degrees": [
+        1,
+        7
+      ]
+    },
+    {
+      "cremona_label": "142e1",
+      "decision": "FAIL",
+      "first_failure": "A3_ABS_3",
+      "all_failures": [
+        "A3_ABS_3"
+      ],
+      "a3": 3,
+      "isogeny_degrees": [
+        1
+      ]
+    }
+  ]
+}

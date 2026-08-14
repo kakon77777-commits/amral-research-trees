@@ -1,0 +1,58 @@
+{
+  "curve": "389.a1",
+  "dependency": "Sha[11]=0 and v1.1 localization matrix",
+  "exact_sequence": "0 -> Sel_11(E/Q) -> L_397 (+) L_991 -> 0 via localization isomorphism",
+  "gate_status": {
+    "P5_ANOM_BocCOMP_11_rank2": "OPEN",
+    "P5_NORM_COREVERTEX_11_rank2": "CLOSED_EXACT_UNDER_INHERITED_SHA11_ZERO"
+  },
+  "localization_determinant_mod11": 2,
+  "localization_matrix": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      4
+    ]
+  ],
+  "norm_selmer": {
+    "397": {
+      "basis": "Q-2P",
+      "basis_vector_coordinates_P_Q": [
+        -2,
+        1
+      ],
+      "dimension": 1
+    },
+    "397_991": {
+      "basis": [],
+      "dimension": 0
+    },
+    "991": {
+      "basis": "Q-4P",
+      "basis_vector_coordinates_P_Q": [
+        -4,
+        1
+      ],
+      "dimension": 1
+    },
+    "empty": {
+      "basis": [
+        "P",
+        "Q"
+      ],
+      "dimension": 2
+    }
+  },
+  "p": 11,
+  "schema_version": "1.2",
+  "selmer_dimension": 2,
+  "transversality": {
+    "intersection_single_norm_lines_dimension": 0,
+    "status": "PRIMITIVE_TRANSVERSE",
+    "sum_single_norm_lines_dimension": 2,
+    "wedge_coefficient_mod11": 2
+  }
+}

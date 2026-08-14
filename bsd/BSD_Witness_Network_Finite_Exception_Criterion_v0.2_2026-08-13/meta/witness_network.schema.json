@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BSD Witness Network Certificate",
+  "type": "object",
+  "required": [
+    "curve",
+    "multiplicative_primes",
+    "nonsplit_multiplicative_primes",
+    "g_mult",
+    "g_minus",
+    "fixed_multiplicative",
+    "odd_additive"
+  ],
+  "properties": {
+    "curve": {
+      "type": "string"
+    },
+    "multiplicative_primes": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "nonsplit_multiplicative_primes": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "valuations": {
+      "type": "object"
+    },
+    "g_mult": {
+      "type": "integer"
+    },
+    "g_minus": {
+      "type": "integer"
+    },
+    "R_mult": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "R_minus": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "fixed_multiplicative": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "p": {
+            "type": "integer"
+          },
+          "leave_one_out": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          },
+          "witness": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "ordinary_exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "supersingular_exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "odd_additive": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "p": {
+            "type": "integer"
+          },
+          "FW_H1": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          },
+          "FW_H2": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          },
+          "FW_H3": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          },
+          "period": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    },
+    "final_status": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.5",
+  "curve": "389.a1",
+  "prime": 11,
+  "gates": {
+    "P4_SHA11": {
+      "status": "CLOSED_IMPORTED",
+      "dependency": "dependencies/389a1_p11_kurihara_certificate.json"
+    },
+    "P5_GOOD_ORD11": {"status": "CLOSED"},
+    "P5_RESIDUAL_IRR11": {"status": "CLOSED"},
+    "P5_BCS_IM": {"status": "CLOSED", "certificate": "results/imc_hypothesis_certificate.json"},
+    "P5_IMC11": {"status": "CLOSED"},
+    "P5_BKS_HYP11": {"status": "CLOSED"},
+    "P5_ALG11": {"status": "CLOSED_UP_TO_Z11_UNIT"},
+    "P5_PADIC_BSD11": {"status": "CLOSED_UP_TO_Z11_UNIT"},
+    "P5_DISCRETE_SELMER11": {"status": "CLOSED"},
+    "P5_MAZUR_TATE_WEAK11": {"status": "CLOSED_EXTERNAL_THEOREM"},
+    "P5_BOC_NZ11": {"status": "PENDING_LOCAL_SAGE_REPLAY", "script": "scripts/replay_padic_regulator_11.sage"},
+    "P5_GPR11": {"status": "OPEN_CONCEPTUAL_GATE"},
+    "P5_LAT11": {"status": "BLOCKED", "requires": ["P5_BOC_NZ11", "P5_GPR11"]},
+    "FULL_BSD": {"status": "NOT_CLAIMED"}
+  },
+  "minimal_classical_11part_target": "L^*(E,1) Z_11 = Omega_E Reg_NT(E) Z_11",
+  "principal_frontier": "rank-2 Generalized Perrin-Riou comparison at (389.a1,11)"
+}

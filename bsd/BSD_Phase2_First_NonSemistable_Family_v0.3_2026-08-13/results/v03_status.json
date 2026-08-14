@@ -1,0 +1,56 @@
+{
+  "phase": "BSD Phase2",
+  "version": "0.3",
+  "primary_curve": "696.e1",
+  "explicit_prime_family": {
+    "conditions": [
+      "q prime",
+      "q ≡ 1 mod 24",
+      "Legendre(q,29)=1",
+      "x^3+x^2+8x-16 irreducible mod q"
+    ],
+    "predicted_density": "1/24",
+    "first_prime": 241,
+    "first20": [
+      241,
+      313,
+      457,
+      673,
+      937,
+      1009,
+      1153,
+      1753,
+      2017,
+      2089,
+      2113,
+      2137,
+      2617,
+      2713,
+      3049,
+      3457,
+      3529,
+      3769,
+      3793,
+      4201
+    ]
+  },
+  "claim": "For every q in the explicit prime family, strong BSD for the quadratic twist E_q.",
+  "claim_status": "PROVISIONAL_DERIVED_THEOREM",
+  "closed_gates": [
+    "base arithmetic",
+    "base BSD(E,2) literature anchor",
+    "Theorem2.14 structural conditions",
+    "Chebotarev compatibility",
+    "support-prime ordinarity",
+    "odd-prime branch exhaustion",
+    "explicit ramified witnesses",
+    "FW supersingular bridge"
+  ],
+  "required_before_upgrade": [
+    "independent FW convention audit",
+    "published Manin-period citation audit",
+    "ordinary/additive/multiplicative citation chain audit",
+    "independent proof replay",
+    "novelty search"
+  ]
+}

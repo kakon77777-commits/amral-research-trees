@@ -1,0 +1,19 @@
+{
+  "file": "twists_of_ec_labels_500k.json",
+  "github_diff": {
+    "additions": 1899,
+    "deletions": 53404
+  },
+  "base_curve_direction": "MONOTONE_SHRINK under Algorithm1 semantic change",
+  "small_fixture_fact": "For all 12 surviving conductor<150 base curves, old and current twist arrays are exactly identical.",
+  "global_inference": [
+    "The +1899 lines cannot be explained by deletion-only of base-curve JSON blocks.",
+    "Therefore the Algorithm2 semantic change is active somewhere in the 500K output, or serialization/order changed. The code diff shows unchanged JSON-output style but changed predicates, so predicate-level twist changes are the supported interpretation.",
+    "The exact number of added/removed twist integers cannot be recovered safely from Git diff line statistics alone because structural JSON lines and deletions of whole base-curve blocks are mixed in."
+  ],
+  "algorithm2_semantics": {
+    "shrink": "gcd(M,N)=1 -> gcd(M,3N)=1",
+    "expand": "old twist-side disc_valuation_condition deleted"
+  },
+  "status": "GLOBAL_OUTPUT_EFFECT_DETECTED; ENTRY_LEVEL CENSUS PENDING FULL FILE MATERIALIZATION"
+}

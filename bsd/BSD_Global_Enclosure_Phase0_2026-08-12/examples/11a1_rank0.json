@@ -1,0 +1,110 @@
+{
+  "schema_version": "0.1",
+  "identity": {
+    "lmfdb_label": "11.a1",
+    "cremona_label": "11a2",
+    "isogeny_class": "11.a",
+    "conductor": 11,
+    "ainvs": [
+      0,
+      -1,
+      1,
+      -7820,
+      -263580
+    ],
+    "cm": false
+  },
+  "rank": {
+    "algebraic": {
+      "value": 0,
+      "evidence_type": "rigorous_computation",
+      "status": "proved",
+      "method": "Mordell-Weil computation / rank 0 theorem context",
+      "certificate_ref": null
+    },
+    "analytic": {
+      "value": 0,
+      "evidence_type": "rigorous_computation",
+      "status": "proved",
+      "method": "LMFDB analytic rank; low-rank theorem context",
+      "certificate_ref": null
+    },
+    "weak_bsd_status": "proved"
+  },
+  "strong_bsd": {
+    "special_value": {
+      "value": "0.25384186085591068433775892335",
+      "evidence_type": "numerical",
+      "status": "evidence",
+      "method": "LMFDB L(E,1)",
+      "certificate_ref": null
+    },
+    "real_period": {
+      "value": "0.25384186085591068433775892335",
+      "evidence_type": "numerical",
+      "status": "evidence",
+      "method": "LMFDB",
+      "certificate_ref": null
+    },
+    "regulator": {
+      "value": "1",
+      "evidence_type": "exact",
+      "status": "proved",
+      "method": "rank 0 convention",
+      "certificate_ref": null
+    },
+    "tamagawa_product": {
+      "value": 1,
+      "evidence_type": "exact",
+      "status": "proved",
+      "method": "local reduction",
+      "certificate_ref": null
+    },
+    "torsion_order": {
+      "value": 1,
+      "evidence_type": "exact",
+      "status": "proved",
+      "method": "torsion computation",
+      "certificate_ref": null
+    },
+    "sha": {
+      "analytic_prediction": {
+        "value": 1,
+        "evidence_type": "BSD_inferred",
+        "status": "evidence",
+        "method": "BSD quotient shown by LMFDB",
+        "certificate_ref": null
+      },
+      "proved_order": {
+        "value": null,
+        "evidence_type": "unknown",
+        "status": "unknown",
+        "method": null,
+        "certificate_ref": null
+      },
+      "finiteness_status": "proved",
+      "proved_p_parts": []
+    },
+    "formula_status": "numerical"
+  },
+  "certificate": {
+    "level": 6,
+    "claims": [
+      "weak BSD rank equality",
+      "rank 0 low-rank closure"
+    ],
+    "open_obligations": [
+      "attach primary theorem applicability record",
+      "separate proved Sha order from analytic prediction",
+      "audit all prime parts before upgrading strong BSD"
+    ],
+    "theorem_applicability": []
+  },
+  "provenance": {
+    "sources": [
+      "https://www.lmfdb.org/EllipticCurve/Q/11/a/1"
+    ],
+    "retrieved_at": "2026-08-12",
+    "database_completeness": "complete_range"
+  }
+}

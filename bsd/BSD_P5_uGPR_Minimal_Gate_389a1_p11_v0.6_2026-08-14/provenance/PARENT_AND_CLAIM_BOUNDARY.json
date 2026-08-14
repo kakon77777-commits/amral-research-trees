@@ -1,0 +1,16 @@
+{
+  "parent_package": "BSD_P5_IMC_Closure_and_GPR_Bridge_389a1_p11_v0.5_2026-08-14.zip",
+  "parent_zip_sha256": "8fd689d90c5eb594ca7855a66ce14a43c8f513599dc15fd42b398f2dffbf8fe8",
+  "imported_claims": [
+    "SHA_11_INFINITY closed",
+    "P5_IMC11 closed",
+    "BKS standing hypotheses closed",
+    "Iwasawa-to-Bockstein relation up to unit"
+  ],
+  "new_claims": [
+    "P5_BOC_NZ11 closed by published computation",
+    "P5_LAT11 iff uGPR11 under imported state",
+    "uGPR11 iff INT11 and PRIM11"
+  ],
+  "claim_boundary": "No proof of uGPR11, P5_LAT11, or BSD is asserted."
+}

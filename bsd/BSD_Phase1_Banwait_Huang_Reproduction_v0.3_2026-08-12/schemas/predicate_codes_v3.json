@@ -1,0 +1,9 @@
+{
+  "P_ISOGENY_3": "New global Algorithm1 gate rejects a rational 3-isogeny.",
+  "P_ISOGENY_5": "New global Algorithm1 gate rejects a rational 5-isogeny.",
+  "P_ISOGENY_7": "New global Algorithm1 gate rejects a rational 7-isogeny.",
+  "A3_ABS_3": "New independent Algorithm1 gate rejects a3(E)=+3 or -3.",
+  "TWIST_GCD_3N": "Algorithm2 requires gcd(M,3N)=1.",
+  "TWIST_DISC_VAL_GATE_REMOVED": "Old Algorithm2 discriminant-valuation ramification-style gate no longer exists.",
+  "SEMANTIC_LATENT_IN_FIXTURE": "Code semantics changed but the selected positive fixture shows no output delta."
+}

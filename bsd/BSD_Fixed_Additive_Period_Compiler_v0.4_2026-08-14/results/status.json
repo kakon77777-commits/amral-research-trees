@@ -1,0 +1,16 @@
+{
+  "version": "0.4",
+  "date": "2026-08-14",
+  "main_result": "fixed additive period certificate hierarchy",
+  "gate_change": {
+    "before": "period ambiguity unresolved",
+    "after": "uniform Edixhoven-safe branch plus exact per-twist CNS/direct branches"
+  },
+  "critical_scope_correction": "Per-twist modular-degree decidability is not an infinite-family proof. Local triviality at p does not imply Manin-constant invariance.",
+  "uniform_family_closed_class": "fixed additive p>=11, not additive potentially ordinary Kodaira II/III/IV, with twist local triviality and optimality conventions closed",
+  "remaining_frontier": [
+    "p=3,5,7 fixed additive primes without uniform Manin theorem",
+    "p>=11 in Edixhoven-excluded potentially ordinary Kodaira II/III/IV",
+    "family-uniform period control for those exceptional primes"
+  ]
+}

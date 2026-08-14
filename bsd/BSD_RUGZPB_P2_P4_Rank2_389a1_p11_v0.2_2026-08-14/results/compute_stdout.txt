@@ -1,0 +1,126 @@
+{
+  "canonical_bridge": {
+    "external_theorem_input": "Chan-Ho Kim, arXiv:2203.12159v6, Corollary 1.6 and Theorem 1.8",
+    "reason": "Kim Corollary 1.6 gives nonvanishing of the canonical Kurihara collection at good ordinary p=11 under surjectivity and Manin p-unit hypotheses. Hence the canonical mod-11 plus modular-symbol vector is nonzero. The computed relevant plus Hecke eigenspace is one-dimensional, so the canonical vector differs from lambda by a unit in F_11.",
+    "status": "closed_via_Kim_Corollary_1_6_plus_1D_eigenline"
+  },
+  "curve": {
+    "algebraic_rank_external": 2,
+    "conductor": 389,
+    "cremona_label": "389a1",
+    "equation": "y^2 + y = x^3 + x^2 - 2*x",
+    "lmfdb_label": "389.a1",
+    "torsion_order_external": 1
+  },
+  "finite_field": "F_11",
+  "hecke_validation": {
+    "13": {
+      "a_q": -3,
+      "bad": [],
+      "pass": true
+    },
+    "17": {
+      "a_q": -6,
+      "bad": [],
+      "pass": true
+    },
+    "19": {
+      "a_q": 5,
+      "bad": [],
+      "pass": true
+    },
+    "2": {
+      "a_q": -2,
+      "bad": [],
+      "pass": true
+    },
+    "3": {
+      "a_q": -2,
+      "bad": [],
+      "pass": true
+    },
+    "5": {
+      "a_q": -3,
+      "bad": [],
+      "pass": true
+    },
+    "7": {
+      "a_q": -5,
+      "bad": [],
+      "pass": true
+    }
+  },
+  "kolyvagin_primes": [
+    {
+      "a_ell": 24,
+      "a_ell_minus_ell_minus_1_mod_11": 0,
+      "condition_pass": true,
+      "ell": 397,
+      "ell_minus_1_mod_11": 0,
+      "primitive_root": 5
+    },
+    {
+      "a_ell": -53,
+      "a_ell_minus_ell_minus_1_mod_11": 0,
+      "condition_pass": true,
+      "ell": 991,
+      "ell_minus_1_mod_11": 0,
+      "primitive_root": 6
+    },
+    {
+      "a_ell": 2,
+      "a_ell_minus_ell_minus_1_mod_11": 0,
+      "condition_pass": true,
+      "ell": 1321,
+      "ell_minus_1_mod_11": 0,
+      "primitive_root": 13
+    }
+  ],
+  "manin_symbol_line": {
+    "hecke_eigenspace_nullity_before_plus": 2,
+    "lambda_at_infinity": 0,
+    "lambda_nonzero_count": 228,
+    "manin_quotient_dimension_mod_11": 65,
+    "manin_relation_rank_mod_11": 325,
+    "normalizing_free_index": 384,
+    "plus_hecke_eigenspace_dimension": 1
+  },
+  "point_count_coefficients": {
+    "13": -3,
+    "17": -6,
+    "19": 5,
+    "2": -2,
+    "3": -2,
+    "5": -3,
+    "7": -5
+  },
+  "prime": 11,
+  "proof_critical_arithmetic": "exact_integer_and_finite_field_only",
+  "schema_version": "0.2",
+  "theorem_chain_conclusion": {
+    "kim_order_upper_bound_from_witness": 2,
+    "mordell_weil_rank_lower_bound_external": 2,
+    "partial_2": 0,
+    "partial_infinity": 0,
+    "scope": "one-prime p=11 Sha closure only; not full BSD and not by itself the p=11 leading-term identity",
+    "selmer_corank": 2,
+    "selmer_is_divisible_corank_2": true,
+    "selmer_mod_div_length": 0,
+    "sha_11_infinity_finite": true,
+    "sha_11_infinity_length": 0,
+    "sha_11_infinity_trivial": true,
+    "sha_specific_conditional_clause_used": false
+  },
+  "witness": {
+    "delta_lambda_mod_11": 6,
+    "ell_1": 397,
+    "ell_2": 991,
+    "invariant_nonzero": true,
+    "n": 393427,
+    "normalization_note": "The exact residue depends on the nonzero scalar chosen for the one-dimensional plus Hecke eigenline and on primitive generators; vanishing/nonvanishing is invariant.",
+    "primitive_roots": [
+      5,
+      6
+    ]
+  }
+}

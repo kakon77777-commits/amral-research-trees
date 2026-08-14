@@ -1,0 +1,6 @@
+{"cremona_label": "46a1", "a3": 0, "isogeny_degrees": [1, 2], "expected": "PASS"}
+{"cremona_label": "106d1", "a3": 2, "isogeny_degrees": [1], "expected": "PASS"}
+{"cremona_label": "34a1", "a3": 0, "isogeny_degrees": [1, 2, 3, 6], "expected": "FAIL"}
+{"cremona_label": "38b1", "a3": -1, "isogeny_degrees": [1, 5], "expected": "FAIL"}
+{"cremona_label": "26b1", "a3": -3, "isogeny_degrees": [1, 7], "expected": "FAIL"}
+{"cremona_label": "142e1", "a3": 3, "isogeny_degrees": [1], "expected": "FAIL"}

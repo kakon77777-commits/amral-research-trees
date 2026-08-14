@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "removed_exactly_13": true,
+    "unique_removed_labels": true,
+    "histogram_exact": true,
+    "only_142e1_first_fails_a3": true,
+    "26b1_secondary_a3": true,
+    "stable_twists_exact": true,
+    "stable_count_12": true
+  },
+  "pass": true,
+  "computed_histogram": {
+    "P_ISOGENY_3": 9,
+    "P_ISOGENY_5": 2,
+    "P_ISOGENY_7": 1,
+    "A3_ABS_3": 1
+  }
+}

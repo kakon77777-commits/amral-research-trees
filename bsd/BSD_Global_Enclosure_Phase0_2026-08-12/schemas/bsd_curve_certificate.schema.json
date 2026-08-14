@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BSD Curve Certificate",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "identity",
+    "rank",
+    "strong_bsd",
+    "certificate",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "identity": {
+      "type": "object",
+      "required": [
+        "lmfdb_label",
+        "conductor",
+        "ainvs",
+        "isogeny_class"
+      ],
+      "properties": {
+        "lmfdb_label": {
+          "type": "string"
+        },
+        "cremona_label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "isogeny_class": {
+          "type": "string"
+        },
+        "conductor": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ainvs": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 5,
+          "maxItems": 5
+        },
+        "cm": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "rank": {
+      "type": "object",
+      "required": [
+        "algebraic",
+        "analytic"
+      ],
+      "properties": {
+        "algebraic": {
+          "$ref": "#/$defs/claim"
+        },
+        "analytic": {
+          "$ref": "#/$defs/claim"
+        },
+        "weak_bsd_status": {
+          "enum": [
+            "unknown",
+            "numerical",
+            "conditional",
+            "proved"
+          ]
+        }
+      }
+    },
+    "strong_bsd": {
+      "type": "object",
+      "properties": {
+        "special_value": {
+          "$ref": "#/$defs/claim"
+        },
+        "real_period": {
+          "$ref": "#/$defs/claim"
+        },
+        "regulator": {
+          "$ref": "#/$defs/claim"
+        },
+        "tamagawa_product": {
+          "$ref": "#/$defs/claim"
+        },
+        "torsion_order": {
+          "$ref": "#/$defs/claim"
+        },
+        "sha": {
+          "type": "object",
+          "properties": {
+            "analytic_prediction": {
+              "$ref": "#/$defs/claim"
+            },
+            "proved_order": {
+              "$ref": "#/$defs/claim"
+            },
+            "finiteness_status": {
+              "enum": [
+                "unknown",
+                "conditional",
+                "proved"
+              ]
+            },
+            "proved_p_parts": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "formula_status": {
+          "enum": [
+            "unknown",
+            "numerical",
+            "conditional",
+            "p_part_proved",
+            "proved"
+          ]
+        }
+      }
+    },
+    "certificate": {
+      "type": "object",
+      "required": [
+        "level",
+        "claims",
+        "open_obligations"
+      ],
+      "properties": {
+        "level": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "claims": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "open_obligations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "theorem_applicability": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "sources",
+        "retrieved_at"
+      ],
+      "properties": {
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "retrieved_at": {
+          "type": "string"
+        },
+        "database_completeness": {
+          "enum": [
+            "complete_range",
+            "partial",
+            "unknown"
+          ]
+        }
+      }
+    }
+  },
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "required": [
+        "value",
+        "evidence_type",
+        "status"
+      ],
+      "properties": {
+        "value": {},
+        "evidence_type": {
+          "enum": [
+            "exact",
+            "rigorous_computation",
+            "numerical",
+            "BSD_inferred",
+            "external_theorem",
+            "unknown"
+          ]
+        },
+        "status": {
+          "enum": [
+            "unknown",
+            "evidence",
+            "conditional",
+            "proved"
+          ]
+        },
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "certificate_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

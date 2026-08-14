@@ -1,0 +1,11 @@
+{
+  "README.md": "22aed0c31cee069a2fa033fb19af514d412c1e1fb6c99da966b0bfffe362dda1",
+  "docs/08_Period_Compiler_Logic.md": "e9f1375f483cbe9bbd29c6d95862cdb113656fd2af8a02ed8fc40ba7cbe2e8c3",
+  "docs/09_Family_Uniformity_Audit.md": "8db9f913d59f5c246db87cbb5c4985401277a8477a10ab4be10d1f38864c8709",
+  "docs/10_Revised_Witness_Network_Theorem_Schema.md": "7a337ad0a40c8357f4d9114c56129c6cc060c443d847d44f99277606acce5e65",
+  "prior/BSD_FW_H2_Local_Isogeny_Compiler_v0.3_2026-08-13.zip": "c8c37edc252f24231a11c26587e567e86eded86e7dcd878d2f5cff234bc866b4",
+  "results/status.json": "49be1926465db399fd861626b9ed951d07f5e2e056ad0c50a0ebaaa3f45928da",
+  "schemas/fixed_additive_period_certificate.schema.json": "68eb68f1609ab5a58670f62897f923e2fe545f6a132af8f25d13e5fe5e2f5f58",
+  "scripts/period_router_skeleton.py": "59abc14fca686c991533a1612ef143fe269c256a063f0cec8c81b30694127a7c",
+  "sources/SOURCES.md": "96632c64fd6665d4a584e9d12579c177678ef99030a092480aa0834e3223512d"
+}

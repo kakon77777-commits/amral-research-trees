@@ -1,0 +1,182 @@
+[
+  {
+    "q": 241,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": -7,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 313,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": -21,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 457,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 27,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 673,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": -5,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 937,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 7,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 1009,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 21,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 1153,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 47,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 1753,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 63,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 2017,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 41,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 2089,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 29,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 2113,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": -37,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 2137,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 79,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 2617,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 21,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 2713,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": -31,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 3049,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 79,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 3457,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 33,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 3529,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 1,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 3769,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": -91,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 3793,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 45,
+    "a_q_odd": true,
+    "ordinary": true
+  },
+  {
+    "q": 4201,
+    "q_mod_24": 1,
+    "legendre_q_29": 1,
+    "two_division_cubic_irreducible": true,
+    "a_q": 61,
+    "a_q_odd": true,
+    "ordinary": true
+  }
+]

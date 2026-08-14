@@ -1,0 +1,105 @@
+{
+  "algorithm": "SHA256",
+  "files": [
+    {
+      "bytes": 5716,
+      "path": "V0_5_EXACT_CENSUS_REPORT.md",
+      "sha256": "9208f041d6b40e3d2b1fde57ea0d9216581aa6f59811f39a75f28d6ac8d83576"
+    },
+    {
+      "bytes": 371209,
+      "path": "algorithm1_removed_census.csv",
+      "sha256": "534f2f9e3c3be39114c494470a4de8884b87983fd2ad8475040dd28e9705752a"
+    },
+    {
+      "bytes": 255,
+      "path": "algorithm1_unexplained_removed.csv",
+      "sha256": "bb29286daec96727260848809a8972c46b4f9921d560a75e5ccd47a9a98ae3c2"
+    },
+    {
+      "bytes": 54,
+      "path": "algorithm2_added_twists.csv",
+      "sha256": "521ca3188bfecf2d7a46718e6d594cd1eef510ccd5e3f2018819b05474c10ffb"
+    },
+    {
+      "bytes": 80,
+      "path": "algorithm2_additions_by_conductor_band.csv",
+      "sha256": "817167b5b10ec16c3a00c2584e8e74a9f853b65c6bdf772effe0ea971a229055"
+    },
+    {
+      "bytes": 47,
+      "path": "algorithm2_additions_by_source.csv",
+      "sha256": "67c8529d1a40bca30b509173ad3ac3ea2f6803b6b0fc472dcc46dcdd30969ba1"
+    },
+    {
+      "bytes": 138,
+      "path": "algorithm2_mixed_curves.csv",
+      "sha256": "19c14a52696b94511b035cc6aa70fe247c9c7f56b87c16ad4c4c2b034e0e046d"
+    },
+    {
+      "bytes": 1619017,
+      "path": "algorithm2_removed_twists.csv",
+      "sha256": "cda0f3fa36c415fd488dabf01e69d213a79fa96be02ed2839255fe0b85e982c0"
+    },
+    {
+      "bytes": 2239001,
+      "path": "algorithm2_stable_curve_census.csv",
+      "sha256": "ca91ff40880de6c080895783a7877399b58da775184be79112c96a80f28456cd"
+    },
+    {
+      "bytes": 139,
+      "path": "algorithm2_stable_filter_mismatches.csv",
+      "sha256": "5f92fb9240c52ad8f7b779ac6b4fccbd0a186b9b6c9f3ffb030890178b7ab3ef"
+    },
+    {
+      "bytes": 138,
+      "path": "algorithm2_top50_expand.csv",
+      "sha256": "19c14a52696b94511b035cc6aa70fe247c9c7f56b87c16ad4c4c2b034e0e046d"
+    },
+    {
+      "bytes": 3534,
+      "path": "algorithm2_top50_shrink.csv",
+      "sha256": "b0c265aab69eea9782de6bddffa36fb7d19ea8c567686d66b77461931b32d1bd"
+    },
+    {
+      "bytes": 93,
+      "path": "base_added.csv",
+      "sha256": "4dc0d4c5290455de7322f7b339cf0bc593eadf3fee6e5ac7f325dd5809ae1aff"
+    },
+    {
+      "bytes": 207129,
+      "path": "base_removed.csv",
+      "sha256": "e8e6baef94c22a8a5a16a8645c733b1fc771b2180362fbec2a2a054156043add"
+    },
+    {
+      "bytes": 2805813,
+      "path": "base_stable.csv",
+      "sha256": "5dc3048db3b2f8dae55c9d338ad9a0ff0d088ac69ebc09a06bf5e1e0b282fde5"
+    },
+    {
+      "bytes": 54,
+      "path": "new_base_twists.csv",
+      "sha256": "521ca3188bfecf2d7a46718e6d594cd1eef510ccd5e3f2018819b05474c10ffb"
+    },
+    {
+      "bytes": 174809,
+      "path": "old_base_curves_missing_from_old_twist_map.csv",
+      "sha256": "6e9cb2199ef675ef14e9c482cd29dfb35271c2758d7155012194ec2a237aade6"
+    },
+    {
+      "bytes": 2888,
+      "path": "raw_file_manifest.json",
+      "sha256": "46438ebb3bd9be40fc42b565d9b1e400d2de9a20b8c0a181fc3385aa71e403ef"
+    },
+    {
+      "bytes": 67878,
+      "path": "summary.json",
+      "sha256": "4d1364fd8a1539de874470e9e5abce68eabfce36a5978deb3db5328af1874bc2"
+    },
+    {
+      "bytes": 1048989,
+      "path": "twists_removed_by_upstream_base_deletion.csv",
+      "sha256": "b1f943af7c1633d94e9a41c0fea0847bcb170ff46124138d6dea3cf447410a96"
+    }
+  ]
+}

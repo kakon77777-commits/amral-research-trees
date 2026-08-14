@@ -1,0 +1,28 @@
+{
+  "version": "0.3",
+  "date": "2026-08-13",
+  "main_result": "FW17-H2 exact local isogeny compiler",
+  "gate_change": {
+    "before": "fixed odd additive H2 = theoretical UNKNOWN",
+    "after": "fixed odd additive H2 = finite exact local p-isogeny/kernel certificate"
+  },
+  "corrections": [
+    "Distinguish Fouquet-Wan Theorem 1.1 from Theorem 1.7 local hypotheses.",
+    "Do not use potentially supersingular => H2 PASS for fixed additive primes.",
+    "Do not use Kodaira type alone as H2 proof.",
+    "No local rational p-torsion only rules out the trivial constituent, not every quadratic constituent."
+  ],
+  "closed": [
+    "FW17 Jordan-Hölder criterion",
+    "local p-isogeny/dual-kernel criterion",
+    "p=3 reducible shortcut",
+    "potentially multiplicative no-go",
+    "backend-neutral certificate schema"
+  ],
+  "open": [
+    "certified Sage/Magma local p-isogeny backend",
+    "fixed additive period compiler",
+    "database census after both compilers are available"
+  ],
+  "next_mainline": "fixed additive Manin/modular-period compiler"
+}

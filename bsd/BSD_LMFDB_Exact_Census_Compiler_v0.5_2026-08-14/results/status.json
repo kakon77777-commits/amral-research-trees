@@ -1,0 +1,30 @@
+{
+  "version": "0.5",
+  "date": "2026-08-14",
+  "execution_status": "NOT_RUN_IN_THIS_ENVIRONMENT",
+  "reason": "The deliverable is a local SQL-mirror census compiler; no census counts are invented.",
+  "primary_goal": "replace manual curve discovery by exact full-database structural sieve",
+  "strict_pool": [
+    "rank=analytic_rank=0",
+    "torsion=1",
+    "optimal",
+    "non-semistable",
+    "sha_an=1",
+    "odd Tamagawa product",
+    "odd Manin constant",
+    "singleton isogeny class",
+    "no odd nonmax primes",
+    "at least one odd additive prime",
+    "all odd additive primes conservatively Edixhoven-safe",
+    "at least two odd multiplicative primes",
+    "at least one nonsplit multiplicative prime",
+    "fixed multiplicative leave-one-out graph passes",
+    "fixed additive H3 nonsplit witness passes"
+  ],
+  "still_pending_after_sql": [
+    "rigorous BSD(E,2)",
+    "fixed-additive FW-H2 local p-isogeny certificate",
+    "finite R_mult ordinary exceptions if nonempty in expanded pool",
+    "finite R_minus supersingular exceptions if nonempty in expanded pool"
+  ]
+}

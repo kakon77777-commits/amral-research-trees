@@ -1,0 +1,294 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Q}{\mathbf Q}
+\newcommand{\F}{\mathbf F}
+\newcommand{\BSD}{\operatorname{BSD}}
+
+\title{An Explicit Non-Semistable Quadratic-Twist Family\\
+Satisfying the Strong Birch--Swinnerton--Dyer Conjecture}
+\author{Neo.K}
+\date{13 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let
+\[
+E/\Q:\qquad y^2=x^3+x^2+8x-16,
+\]
+the elliptic curve with LMFDB label \(696.e1\) (Cremona label \(696b1\)).
+Its conductor is \(696=2^3\cdot3\cdot29\), so \(E\) is not semistable.
+Put \(f_2(x)=x^3+x^2+8x-16\), and let \(\mathcal P\) be the set of primes
+\(q\) satisfying
+\[
+q\equiv1\pmod{24},\qquad
+\left(\frac q{29}\right)=1,\qquad
+f_2(x)\text{ irreducible in }\F_q[x].
+\]
+By combining the \(2\)-primary quadratic-twist theorem collected by
+Banwait--Huang, Skinner's ordinary/multiplicative \(p\)-part theorem, the
+additive-twist argument of Burungale--Skinner--Tian--Wan, and the
+arbitrary-reduction theorem of Fouquet--Wan, we derive that every
+\(E^{(q)}\), \(q\in\mathcal P\), satisfies the strong BSD conjecture.
+Chebotarev gives \(\delta(\mathcal P)=1/24\).
+\end{abstract}
+
+\paragraph{Status.}
+This note records a derived consequence of the cited theorem statements and
+does not assert priority over all published or unpublished literature.
+
+\section{Main theorem}
+
+\begin{theorem}\label{thm:main}
+Let
+\[
+E:\quad y^2=x^3+x^2+8x-16
+\]
+and
+\[
+\mathcal P=\left\{
+q\text{ prime}:q\equiv1\pmod{24},\
+\left(\frac q{29}\right)=1,\
+x^3+x^2+8x-16\text{ irreducible mod }q
+\right\}.
+\]
+Then \(\mathcal P\) has natural prime density \(1/24\), and for every
+\(q\in\mathcal P\),
+\[
+L(E^{(q)},1)\ne0
+\qquad\text{and}\qquad
+\BSD(E^{(q)})
+\]
+holds.
+\end{theorem}
+
+\section{Arithmetic of the base curve}
+
+The base curve has
+\[
+N_E=696=2^3\cdot3\cdot29,\qquad
+\Delta_E=-2^{11}\cdot3\cdot29.
+\]
+It has rank \(0\), trivial rational torsion, singleton rational isogeny
+class, Manin constant \(1\), and local reduction
+\[
+2:\ II^*\text{ additive},\qquad
+3:\ I_1\text{ split multiplicative},\qquad
+29:\ I_1\text{ nonsplit multiplicative},
+\]
+with \(v_3(\Delta_E)=v_{29}(\Delta_E)=1\).
+LMFDB records maximal residual image at every odd prime.  The full BSD
+formula for the base curve is covered by Creutz--Miller since
+\(N_E<5000\) and the analytic rank is \(0\).
+A modular-symbol computation gives
+\[
+L(E,1)/\Omega_E=1.
+\]
+
+The \(2\)-division cubic is
+\[
+f_2(x)=x^3+x^2+8x-16,
+\]
+which is irreducible over \(\Q\), with
+\[
+\operatorname{disc}(f_2)=-11136=-2^7\cdot3\cdot29.
+\]
+Hence its Galois closure \(L/\Q\) has group \(S_3\) and quadratic resolvent
+\[
+F_0=\Q(\sqrt{-174}).
+\]
+
+\section{Support primes}
+
+\begin{lemma}\label{lem:split}
+If \(q\in\mathcal P\), then \(2,3,29\) split in \(\Q(\sqrt q)\).
+\end{lemma}
+
+\begin{proof}
+The congruence \(q\equiv1\pmod{24}\) gives splitting at \(2\) and \(3\),
+while \((q/29)=1\) gives splitting at \(29\).
+\end{proof}
+
+\begin{lemma}\label{lem:ordinary}
+Every \(q\in\mathcal P\) is a good ordinary prime for \(E\).
+\end{lemma}
+
+\begin{proof}
+Irreducibility of \(f_2\bmod q\) gives a \(3\)-cycle on \(E[2]\).
+Its trace in \(\mathrm{GL}_2(\F_2)\) is \(1\), so \(a_q(E)\) is odd.
+For \(q\ge5\), supersingularity would imply \(q\mid a_q(E)\); the Hasse
+bound then forces \(a_q(E)=0\), contradiction.
+\end{proof}
+
+\section{Chebotarev density}
+
+\begin{proposition}\label{prop:density}
+The set \(\mathcal P\) has natural prime density \(1/24\).
+\end{proposition}
+
+\begin{proof}
+Put \(K=\Q(\zeta_{24},\sqrt{29})\). Then \([K:\Q]=16\), and
+\[
+F_0=\Q(\sqrt{-174})\subset K
+\]
+because \(\sqrt{-174}=\sqrt{-6}\sqrt{29}\) and
+\(\Q(\sqrt{-6})\subset\Q(\zeta_{24})\).
+Since \(K/\Q\) is abelian and \(F_0\) is the unique nontrivial proper
+normal subfield of the \(S_3\)-extension \(L/\Q\),
+\[
+L\cap K=F_0,\qquad [LK:\Q]=48.
+\]
+The congruence and Legendre conditions specify the identity on \(K\), while
+irreducibility of \(f_2\bmod q\) specifies the \(3\)-cycle class on \(L\).
+These restrictions agree on \(F_0\).  The class has two elements in a group
+of order \(48\), so Chebotarev gives \(2/48=1/24\).
+\end{proof}
+
+\section{The \(2\)-part}
+
+\begin{proposition}\label{prop:2part}
+For every \(q\in\mathcal P\),
+\[
+L(E^{(q)},1)\ne0,\qquad \BSD(E^{(q)},2).
+\]
+\end{proposition}
+
+\begin{proof}
+Apply Banwait--Huang, Theorem 2.14, in the branch
+\(E(\Q)[2]=0\), \(\Delta_E<0\).  The base curve is optimal of rank \(0\),
+has odd Manin constant and known \(\BSD(E,2)\), and
+\[
+v_2(L(E,1)/\Omega_E)=0.
+\]
+For \(d=q\), Lemma~\ref{lem:split} gives splitting of every prime dividing
+\(N_E\), and irreducibility of \(f_2\bmod q\) is the required inertness in
+the cubic \(2\)-division field.
+\end{proof}
+
+\section{Odd primes}
+
+Fix \(q\in\mathcal P\) and put \(A=E^{(q)}\).
+Quadratic twisting preserves absolute irreducibility of residual
+representations, so \(A[p]\) is absolutely irreducible for every odd \(p\).
+
+\begin{lemma}\label{lem:qpart}
+\(\BSD(A,q)\) holds.
+\end{lemma}
+
+\begin{proof}
+The prime \(q\) is good ordinary for \(E\).  Use the additive-twist clause
+of Burungale--Skinner--Tian--Wan exactly as in the proof of
+Banwait--Huang Proposition 2.9(1).  Banwait--Huang Remark 2.10 states that
+semistability is used there only to produce the ramified-prime condition.
+Here \(\ell=29\) supplies it directly:
+\(v_{29}(\Delta_E)=1\), so \(E[q]\) is ramified at \(29\), and
+\(29\nmid\operatorname{disc}\Q(\sqrt q)\).
+\end{proof}
+
+\begin{lemma}\label{lem:ordinaryp}
+If \(p\) is an odd good ordinary prime for \(A\), then \(\BSD(A,p)\).
+\end{lemma}
+
+\begin{proof}
+Apply Skinner's Theorem C.  The representation \(A[p]\) is irreducible, and
+the multiplicative prime \(29\ne p\) is a ramified auxiliary prime since
+\(v_{29}(\Delta_A)=1\).
+\end{proof}
+
+\begin{lemma}\label{lem:mult}
+\(\BSD(A,3)\) and \(\BSD(A,29)\) hold.
+\end{lemma}
+
+\begin{proof}
+Skinner's Theorem C allows \(p\ge3\).  At \(p=3\), use \(29\) as the
+distinct ramified multiplicative prime; at \(p=29\), use \(3\).
+Both discriminant valuations equal \(1\).
+\end{proof}
+
+\begin{lemma}\label{lem:ss}
+If \(p\) is an odd good supersingular prime for \(A\), then \(\BSD(A,p)\).
+\end{lemma}
+
+\begin{proof}
+Apply Fouquet--Wan Theorem 1.7.  Absolute irreducibility is already known.
+At a good supersingular prime \(p\ge5\), the local residual representation
+is irreducible, so the forbidden semisimplified character sum cannot occur.
+At \(\ell=29\), nonsplit multiplicative reduction supplies the nontrivial
+unramified quadratic Steinberg twist, while
+\(p\nmid v_{29}(\Delta_A)=1\) gives residual ramification.  Thus
+Fouquet--Wan Corollary 1.10 gives the \(p\)-part.
+
+The period in that corollary is the modular-form period.  The isogeny class
+of \(A\) is singleton because the same is true of \(E\) and quadratic
+twisting preserves rational isogenies.  Hence \(A\) is optimal.  By
+Česnavičius--Neururer--Saha, prime divisors of its Manin constant are
+supported at additive reduction primes.  Those are \(2\) and \(q\), whereas
+the present \(p\) is good; hence \(p\) does not affect the period comparison.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Proposition~\ref{prop:density} gives the density.  Proposition~\ref{prop:2part}
+gives nonvanishing and the \(2\)-part of BSD.  Every odd prime is either
+\(q\), one of \(3,29\), good ordinary, or good supersingular; the four lemmas
+above give the corresponding \(p\)-parts.  Gross--Zagier--Kolyvagin and the
+local-to-global form of the strong BSD formula in analytic rank \(0\) then
+give \(\BSD(A)\).
+\end{proof}
+
+\section*{Remark on status}
+This note is intended as a source-audited derived corollary.  No claim of
+priority is made without a separate literature and expert-referee audit.
+
+\begin{thebibliography}{99}
+
+\bibitem{BH}
+B.~S. Banwait and X.~Huang,
+\emph{On the identification of elliptic curves that admit infinitely many
+twists satisfying the Birch--Swinnerton--Dyer conjecture},
+arXiv:2601.16044v3 (2026).
+
+\bibitem{BSTW}
+A.~A. Burungale, C.~Skinner, Y.~Tian and X.~Wan,
+\emph{Zeta elements for elliptic curves and applications},
+arXiv:2409.01350v2 (2024).
+
+\bibitem{CM}
+B.~Creutz and R.~L. Miller,
+\emph{Second isogeny descents and the Birch and Swinnerton--Dyer
+conjectural formula},
+J. Algebra 372 (2012), 673--701.
+
+\bibitem{CNS}
+K.~Česnavičius, M.~Neururer and A.~Saha,
+\emph{The Manin constant and the modular degree},
+J. Eur. Math. Soc. 26 (2024), 573--637.
+
+\bibitem{FW}
+O.~Fouquet and X.~Wan,
+\emph{The Iwasawa Main Conjecture for universal families of modular motives},
+arXiv:2107.13726v3.
+
+\bibitem{Skinner}
+C.~Skinner,
+\emph{Multiplicative reduction and the cyclotomic main conjecture for
+\(\mathrm{GL}_2\)},
+arXiv:1407.1093.
+
+\bibitem{LMFDB}
+The L-functions and Modular Forms Database,
+elliptic curve \(696.e1\) (Cremona \(696b1\)).
+
+\end{thebibliography}
+
+\end{document}

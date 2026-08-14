@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "date": "2026-08-13",
+  "main_result": "Two-Witness Non-Semistable Criterion",
+  "claim_status": "derived sufficient criterion; novelty not asserted",
+  "key_generalization": {
+    "from": "single explicit curve 696.e1",
+    "to": "finite certificate class of curves with additive reduction only at 2 and two odd multiplicative witnesses"
+  },
+  "density_formula": "[L_E ∩ K_E : Q] / (3 [K_E : Q])",
+  "next_extensions": [
+    "replace valuation-one witnesses by gcd witness sets",
+    "allow fixed odd additive primes via exact Fouquet-Wan local compiler",
+    "database census of curves satisfying T1-T7"
+  ]
+}

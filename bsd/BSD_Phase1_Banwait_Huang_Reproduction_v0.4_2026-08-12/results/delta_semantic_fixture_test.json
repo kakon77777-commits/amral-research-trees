@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "runner_returncode_zero": true,
+    "decisions_match": true,
+    "46a1_survives": true,
+    "106d1_survives": true,
+    "34a1_dies_strict_3": true,
+    "38b1_dies_strict_5": true,
+    "26b1_order_is_7_then_a3": true,
+    "142e1_dies_a3": true
+  },
+  "pass": true,
+  "actual": {
+    "46a1": "PASS",
+    "106d1": "PASS",
+    "34a1": "FAIL",
+    "38b1": "FAIL",
+    "26b1": "FAIL",
+    "142e1": "FAIL"
+  }
+}

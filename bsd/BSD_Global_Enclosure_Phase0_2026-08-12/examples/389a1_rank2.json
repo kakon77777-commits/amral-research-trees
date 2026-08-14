@@ -1,0 +1,113 @@
+{
+  "schema_version": "0.1",
+  "identity": {
+    "lmfdb_label": "389.a1",
+    "cremona_label": "389a1",
+    "isogeny_class": "389.a",
+    "conductor": 389,
+    "ainvs": [
+      0,
+      1,
+      1,
+      -2,
+      0
+    ],
+    "cm": false
+  },
+  "rank": {
+    "algebraic": {
+      "value": 2,
+      "evidence_type": "rigorous_computation",
+      "status": "proved",
+      "method": "LMFDB Mordell-Weil rank data",
+      "certificate_ref": null
+    },
+    "analytic": {
+      "value": 2,
+      "evidence_type": "rigorous_computation",
+      "status": "evidence",
+      "method": "LMFDB analytic rank data; attach independent rigorous certificate",
+      "certificate_ref": null
+    },
+    "weak_bsd_status": "numerical"
+  },
+  "strong_bsd": {
+    "special_value": {
+      "value": "0.75931650028842677023019260790",
+      "evidence_type": "numerical",
+      "status": "evidence",
+      "method": "LMFDB L^(2)(E,1)/2!",
+      "certificate_ref": null
+    },
+    "real_period": {
+      "value": "4.9804251217101101506427155839",
+      "evidence_type": "numerical",
+      "status": "evidence",
+      "method": "LMFDB",
+      "certificate_ref": null
+    },
+    "regulator": {
+      "value": "0.15246017794314375162432475705",
+      "evidence_type": "rigorous_computation",
+      "status": "evidence",
+      "method": "LMFDB height pairing",
+      "certificate_ref": null
+    },
+    "tamagawa_product": {
+      "value": 1,
+      "evidence_type": "exact",
+      "status": "proved",
+      "method": "local reduction",
+      "certificate_ref": null
+    },
+    "torsion_order": {
+      "value": 1,
+      "evidence_type": "exact",
+      "status": "proved",
+      "method": "torsion computation",
+      "certificate_ref": null
+    },
+    "sha": {
+      "analytic_prediction": {
+        "value": 1,
+        "evidence_type": "BSD_inferred",
+        "status": "evidence",
+        "method": "LMFDB analytic Sha quotient",
+        "certificate_ref": null
+      },
+      "proved_order": {
+        "value": null,
+        "evidence_type": "unknown",
+        "status": "unknown",
+        "method": null,
+        "certificate_ref": null
+      },
+      "finiteness_status": "unknown",
+      "proved_p_parts": []
+    },
+    "formula_status": "numerical"
+  },
+  "certificate": {
+    "level": 5,
+    "claims": [
+      "algebraic rank data",
+      "numerical analytic-rank match",
+      "numerical strong-BSD identity"
+    ],
+    "open_obligations": [
+      "rigorous analytic-rank certificate",
+      "theorem proving weak BSD in rank 2",
+      "Sha finiteness",
+      "actual Sha order",
+      "all-prime leading coefficient proof"
+    ],
+    "theorem_applicability": []
+  },
+  "provenance": {
+    "sources": [
+      "https://www.lmfdb.org/EllipticCurve/Q/389/a/1"
+    ],
+    "retrieved_at": "2026-08-12",
+    "database_completeness": "complete_range"
+  }
+}

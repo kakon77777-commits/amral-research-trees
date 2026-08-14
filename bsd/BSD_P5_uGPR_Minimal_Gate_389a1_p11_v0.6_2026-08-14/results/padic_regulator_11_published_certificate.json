@@ -1,0 +1,29 @@
+{
+  "curve": "389.a1",
+  "cremona_label": "389a1/389A",
+  "prime": 11,
+  "source": {
+    "authors": [
+      "Barry Mazur",
+      "William Stein",
+      "John Tate"
+    ],
+    "title": "Computation of p-adic heights and log convergence",
+    "doi": "10.4171/DMS/4/17",
+    "table_location": "Section 4.3, rank 2, p-adic regulator of 389A"
+  },
+  "expansion_coefficients_base_11": [
+    4,
+    7,
+    6,
+    1,
+    9,
+    10,
+    3
+  ],
+  "precision": "O(11^7)",
+  "residue_mod_11": 4,
+  "valuation_11_in_source_normalization": 0,
+  "nonzero": true,
+  "project_use": "closes Bockstein-regulator nonvanishing gate only; unit normalization is not transported without an explicit normalization audit"
+}

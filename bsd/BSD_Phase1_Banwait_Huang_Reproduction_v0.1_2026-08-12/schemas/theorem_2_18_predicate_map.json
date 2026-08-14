@@ -1,0 +1,84 @@
+{
+  "schema_version": "0.1",
+  "theorem": "Banwait-Huang Theorem 2.18",
+  "base_curve_conditions": [
+    {
+      "id": "E1",
+      "name": "semistable",
+      "automation": "LMFDB_or_Sage_exact"
+    },
+    {
+      "id": "E2",
+      "name": "a3_in_minus2_to_2",
+      "automation": "finite_field_exact"
+    },
+    {
+      "id": "E3",
+      "name": "no_rational_isogeny_3_5_7",
+      "automation": "LMFDB_or_Sage_exact"
+    },
+    {
+      "id": "E4",
+      "name": "ramification_at_other_multiplicative_prime",
+      "automation": "local_discriminant_exact"
+    },
+    {
+      "id": "E5",
+      "name": "optimal_curve",
+      "automation": "LMFDB_exact"
+    },
+    {
+      "id": "E6",
+      "name": "analytic_rank_zero",
+      "automation": "rigorous_L_function_or_database_certificate"
+    },
+    {
+      "id": "E7",
+      "name": "BSD_E_2",
+      "automation": "2_descent_certificate",
+      "soundness_warning": "2-descent alone is sufficient here only when analytic Sha 2-valuation is zero"
+    },
+    {
+      "id": "E8a",
+      "name": "no_rational_2_torsion_and_Lalg_v2_zero",
+      "branch": "Zha16"
+    },
+    {
+      "id": "E8b",
+      "name": "one_rational_2_torsion_CLZ_conditions",
+      "branch": "CLZ20"
+    }
+  ],
+  "twist_conditions": [
+    {
+      "id": "D1",
+      "name": "squarefree"
+    },
+    {
+      "id": "D2",
+      "name": "gcd_d_3N_one"
+    },
+    {
+      "id": "D3",
+      "name": "d_mod_4_one"
+    },
+    {
+      "id": "D4",
+      "name": "ordinary_at_prime_divisors"
+    },
+    {
+      "id": "D5a",
+      "name": "inert_in_2_division_field_and_conductor_splitting",
+      "branch": "Zha16"
+    },
+    {
+      "id": "D5b",
+      "name": "p_mod4_and_v2_point_count_and_2N_splitting",
+      "branch": "CLZ20"
+    }
+  ],
+  "claim_scope": {
+    "accepted": "The cited external theorems imply strong BSD for the corresponding twist.",
+    "rejected": "Unknown; rejection does not imply BSD is false."
+  }
+}

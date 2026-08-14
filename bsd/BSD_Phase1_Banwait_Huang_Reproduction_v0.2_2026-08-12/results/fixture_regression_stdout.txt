@@ -1,0 +1,27 @@
+{
+  "checks": {
+    "old_count_25": true,
+    "current_count_12": true,
+    "current_subset_of_old": true,
+    "removed_exactly_13": true,
+    "removed_set_exact": true,
+    "no_added_curves": true
+  },
+  "pass": true,
+  "removed": [
+    "106a1",
+    "110b1",
+    "110c1",
+    "142d1",
+    "142e1",
+    "14a1",
+    "26a1",
+    "26b1",
+    "34a1",
+    "35a1",
+    "38a1",
+    "38b1",
+    "66c1"
+  ],
+  "added": []
+}

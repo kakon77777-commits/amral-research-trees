@@ -1,0 +1,98 @@
+{
+  "curve": "389.a1",
+  "full_reduction": {
+    "cokernel_order_J_S": 1,
+    "cyclic_coordinates": {
+      "397": "a + 244*b mod 374",
+      "991": "a + 356*b mod 1045"
+    },
+    "dlog_difference_mod_gcd": 2,
+    "gcd_moduli": 11,
+    "index_E_over_E_S": 390830,
+    "kernel_basis": [
+      [
+        5742,
+        -22
+      ],
+      [
+        -254980,
+        1045
+      ]
+    ],
+    "kernel_basis_determinant": 390830,
+    "surjective": true,
+    "target_order": 390830,
+    "v11_index_E_over_E_S": 2
+  },
+  "local": {
+    "397": {
+      "P_order": 374,
+      "Q_discrete_log_base_P": 244,
+      "Q_order": 187,
+      "cofactor_to_11_primary": 34,
+      "mP": [
+        281,
+        236
+      ],
+      "mQ": [
+        11,
+        334
+      ],
+      "norm_quotient_dimension_F11": 1,
+      "norm_quotient_slope_Q_over_P": 2,
+      "point_count": 374,
+      "v11_point_count": 1
+    },
+    "991": {
+      "P_order": 1045,
+      "Q_discrete_log_base_P": 356,
+      "Q_order": 1045,
+      "cofactor_to_11_primary": 95,
+      "mP": [
+        39,
+        97
+      ],
+      "mQ": [
+        865,
+        243
+      ],
+      "norm_quotient_dimension_F11": 1,
+      "norm_quotient_slope_Q_over_P": 4,
+      "point_count": 1045,
+      "v11_point_count": 1
+    }
+  },
+  "localization_det_mod11": 2,
+  "localization_matrix_mod11": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      4
+    ]
+  ],
+  "mw_mod11_to_two_norm_quotients": "ISOMORPHISM",
+  "prime": 11,
+  "schema_version": "1.1",
+  "short_model": {
+    "A": -3024,
+    "B": 46224,
+    "P": [
+      12,
+      108
+    ],
+    "Q": [
+      48,
+      108
+    ]
+  },
+  "status": {
+    "anomalous_bockstein_comparison": "OPEN",
+    "anomalous_collision": "CLOSED_EXACT",
+    "classical_nonanomalous_MT_height_backend": "NOT_APPLICABLE_TO_THESE_RAMIFIED_PRIMES",
+    "full_reduction_surjectivity": "CLOSED_EXACT",
+    "local_norm_localization": "CLOSED_EXACT"
+  }
+}

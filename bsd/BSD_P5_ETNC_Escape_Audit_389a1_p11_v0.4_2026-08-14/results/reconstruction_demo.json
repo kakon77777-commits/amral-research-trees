@@ -1,0 +1,12 @@
+{
+  "conclusion_if_rationality_and_bound_are_proved": "x = 1",
+  "denominator_bound": 10,
+  "half_separation_threshold": "0.005",
+  "hi": "1.000001",
+  "lo": "0.999999",
+  "target_interval": [
+    "0.995",
+    "1.005"
+  ],
+  "uniqueness_gate_pass": true
+}

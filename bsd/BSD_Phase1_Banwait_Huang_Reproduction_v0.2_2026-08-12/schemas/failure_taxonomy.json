@@ -1,0 +1,14 @@
+{
+  "VERSION_REGRESSION_REMOVED": "Present in an older official fixture but absent from current fixture; mathematical reason must be recovered by version replay.",
+  "UPSTREAM_LIST_REJECTED": "A curve from an external/older candidate list is explicitly rejected by current theorem criteria.",
+  "LALG_V2_MISMATCH": "2-adic valuation of algebraic L-value does not match branch requirement.",
+  "EPRIME_2TORSION_MISMATCH": "2-isogenous quotient E' has the wrong rational 2-torsion structure.",
+  "SQUARE_CONDITION_FAILED": "One of the required nonsquare quantities is actually a rational square.",
+  "S_EMPTY": "Required set S is empty under deterministic criterion / confirmed search.",
+  "BSD2_UNCERTIFIED": "Current 2-descent machinery cannot certify BSD(E,2).",
+  "POSITIVE_ANALYTIC_SHA_V2_UNRESOLVED": "Positive predicted 2-adic Sha valuation requires higher 2-power descent; current safe gate rejects.",
+  "DESCENT_TIMEOUT_UNKNOWN": "A descent backend timed out; treat as unknown, never as theorem failure.",
+  "TEST_FLAG_UNSOUND": "Run used a testing flag that skips a theorem condition; output is not theorem-qualified.",
+  "GCD_3N_HARDENED": "Twist filter requires gcd(d,3N)=1; older/looser logic may differ.",
+  "SEMANTIC_VERSION_DRIFT": "Paper pseudocode and current repository implementation differ in proof-strength or output semantics."
+}

@@ -1,0 +1,14 @@
+python=3.14.5
+platform=Windows-10-10.0.19045-SP0
+old_commit=1a0489c3c3099dd0c248624e6621df73ae8f0d43
+new_commit=31fae20c8df3f1f0383f41112b914d4995d5809d
+old_twist_file_generator_commit=72867942accf94b9513857a2c0bae3895af8e9bc
+status=v0.5 EXACT ARTIFACT CENSUS COMPLETE
+base_old=40749
+base_new=36687
+base_removed=4062
+base_added=0
+old_twist_keys=39394
+old_missing_twist_keys=1355
+twist_lhs=46091
+twist_rhs=46091

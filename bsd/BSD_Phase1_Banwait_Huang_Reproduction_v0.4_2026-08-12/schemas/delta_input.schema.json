@@ -1,0 +1,35 @@
+{
+  "title": "Algorithm1 Delta-Only Input Row",
+  "type": "object",
+  "required": [
+    "cremona_label",
+    "a3",
+    "isogeny_degrees"
+  ],
+  "properties": {
+    "cremona_label": {
+      "type": "string"
+    },
+    "lmfdb_label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "a3": {
+      "type": "integer"
+    },
+    "isogeny_degrees": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "old_pass_provenance": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

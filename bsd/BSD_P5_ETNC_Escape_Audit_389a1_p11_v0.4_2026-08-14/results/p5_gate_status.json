@@ -1,0 +1,55 @@
+{
+  "ETNC_escape_audit": {
+    "derived_trivial_character_specialization": "NOT_CLOSED_FOR_CLASSICAL_RANK2_TARGET",
+    "fundamental_line": "THEOREM_TECHNOLOGY_AVAILABLE",
+    "ordinary_specialization": "THEOREM_TECHNOLOGY_AVAILABLE",
+    "verdict": "NO_DIRECT_ETNC_ESCAPE_FROM_DERIVED_ARCHIMEDEAN_GATE"
+  },
+  "curve": "389.a1",
+  "date": "2026-08-14",
+  "gates": {
+    "P5_DERPER": {
+      "statement": "Derived determinant specialization has an archimedean comparison identifying L^(2)(E,1)/2! with the Neron-Tate determinant lattice",
+      "status": "OPEN_DERIVED_ARCHIMEDEAN_PERIOD_COMPARISON"
+    },
+    "P5_RAT": {
+      "statement": "B_infty(E) lies canonically in Q^x",
+      "status": "BLOCKED_BY_P5_DERPER"
+    },
+    "P5_VAL11": {
+      "arithmetic_target": 0,
+      "statement": "v_11(B_infty(E)) = 0",
+      "status": "BLOCKED_BY_P5_RAT"
+    }
+  },
+  "imported_state": {
+    "dependency": "dependencies/389a1_p11_kurihara_certificate.json",
+    "sha_11_primary": "TRIVIAL"
+  },
+  "overall_status": "P5_REDUCED_TO_DERIVED_ARCHIMEDEAN_PERIOD_COMPARISON",
+  "prime": 11,
+  "route_audit": {
+    "Burns_Kurihara_Sano_GPR": {
+      "leading_term_for_current_goal": "CIRCULAR_WITH_BSD",
+      "order_of_vanishing": "EXTERNAL_THEOREM_INPUT"
+    },
+    "Castella_Hsieh_rank2": {
+      "archimedean_bridge": "TYPE_MISMATCH_NOT_CLOSED",
+      "rank2_padic_height": "EXTERNAL_THEOREM_INPUT"
+    },
+    "Kim_Pollack_refined_TNC": {
+      "archimedean_bridge": "NOT_PROVIDED",
+      "discrete_selmer_structure": "EXTERNAL_THEOREM_INPUT"
+    },
+    "Kim_higher_Gross_Zagier": {
+      "archimedean_bridge": "NOT_PROVIDED",
+      "selmer_structure": "CLOSED_ENOUGH_FOR_P4"
+    }
+  },
+  "scalar": {
+    "definition": "(L^(2)(E,1)/2!)/(Omega_E * Reg_NT(E))",
+    "displayed_numeric_candidate": "1",
+    "evidence_status": "NUMERICAL_ONLY"
+  },
+  "schema_version": "0.4"
+}

@@ -1,0 +1,54 @@
+{
+  "lmfdb_label": "696.e1",
+  "cremona_label": "696b1",
+  "ainvs": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "equation": "y^2 = x^3 + x^2 + 8x - 16",
+  "conductor": 696,
+  "conductor_factorization": "2^3 * 3 * 29",
+  "minimal_discriminant": -178176,
+  "minimal_discriminant_factorization": "-2^11 * 3 * 29",
+  "rank": 0,
+  "analytic_rank": 0,
+  "torsion": "trivial",
+  "optimal": true,
+  "manin_constant": 1,
+  "analytic_sha": 1,
+  "tamagawa_product": 1,
+  "L_alg": "1 (from L(E,1)=Omega and rank/torsion/Tamagawa data)",
+  "v2_L_alg": 0,
+  "bad_local_data": [
+    {
+      "p": 2,
+      "reduction": "additive",
+      "kodaira": "II*",
+      "ord_N": 3,
+      "ord_Delta": 11
+    },
+    {
+      "p": 3,
+      "reduction": "split_multiplicative",
+      "kodaira": "I1",
+      "ord_N": 1,
+      "ord_Delta": 1
+    },
+    {
+      "p": 29,
+      "reduction": "nonsplit_multiplicative",
+      "kodaira": "I1",
+      "ord_N": 1,
+      "ord_Delta": 1
+    }
+  ],
+  "mod_l_images": "maximal for all primes (LMFDB)",
+  "rational_isogenies": "none",
+  "two_division_polynomial": "4*(x^3+x^2+8x-16)",
+  "two_division_cubic_discriminant": -11136,
+  "two_division_galois_group": "S3 (irreducible cubic + nonsquare discriminant)",
+  "quadratic_resolvent": "Q(sqrt(-174))"
+}

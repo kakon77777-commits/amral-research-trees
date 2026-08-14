@@ -1,0 +1,22 @@
+{
+  "version": "v0.4",
+  "date": "2026-08-13",
+  "curve": "696.e1 / 696b1",
+  "verdict": "DERIVED_THEOREM_CANDIDATE",
+  "proof_gate_status": "all identified mathematical routing gates passed in source audit",
+  "corrections_to_v0_3": [
+    "Do not cite Miller alone / 'most' as universal base-BSD coverage.",
+    "Use Creutz–Miller Theorem 1.1, which completes full BSD for all rank<=1 curves of conductor <5000.",
+    "Skinner Theorem C explicitly permits p=3.",
+    "Use Banwait–Huang's exact explanation of BSTW 9.21(c) for p|d and explicit ramK in the non-semistable replacement.",
+    "Use Fouquet–Wan's own automorphic equivalence for H3 rather than an independently guessed Galois convention."
+  ],
+  "remaining_nonproof_tasks": [
+    "independent external referee replay",
+    "formal bibliography/citation polishing",
+    "stronger novelty/literature search before public priority claim",
+    "optionally formalize the derived theorem in Lean/structured proof"
+  ],
+  "novelty_status": "not established; exact-label and broad searches found no prior explicit 696b1 family",
+  "preprint_status": "ready for theorem-style drafting, but title/abstract should say derived corollary until novelty is established"
+}

@@ -1,0 +1,105 @@
+{
+  "title": "Two-Witness BSD Certificate",
+  "type": "object",
+  "required": [
+    "curve",
+    "T1",
+    "T2",
+    "T3",
+    "T4",
+    "T5",
+    "T6",
+    "T7"
+  ],
+  "properties": {
+    "curve": {
+      "type": "string"
+    },
+    "T1": {
+      "description": "2-primary anchor",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "T2": {
+      "description": "S3 two-division field",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "T3": {
+      "description": "only additive prime is 2",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "T4": {
+      "description": "3 multiplicative with v3(Delta)=1",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "T5": {
+      "description": "nonsplit odd lambda with v_lambda(Delta)=1",
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNKNOWN"
+          ]
+        },
+        "lambda": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      }
+    },
+    "T6": {
+      "description": "absolute irreducibility for all odd residual primes",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "T7": {
+      "description": "singleton rational isogeny class",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "K_degree": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "LK_intersection_degree": {
+      "enum": [
+        1,
+        2,
+        null
+      ]
+    },
+    "predicted_prime_density": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

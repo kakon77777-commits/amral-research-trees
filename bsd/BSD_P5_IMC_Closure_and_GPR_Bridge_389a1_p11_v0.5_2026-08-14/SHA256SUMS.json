@@ -1,0 +1,20 @@
+{
+  "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md": "bcd8d06b42add4b7dc3ecc2df2050af31d541678b48800cf53bb36090313f45e",
+  "NEXT_HANDOFF.md": "744ee1c68d463f84d04aad76c86f390402398eb2e19e59fb5147fb69afb9dcf2",
+  "README.md": "da72a8d5d06d8491ff947eb697d75b7a82437b260be6d6f86dc06208f0e72f96",
+  "dependencies/389a1_p11_kurihara_certificate.json": "d42310022db1e5c104ec7477002e166a4c60f46446ac476363c1db1b05ac36a9",
+  "results/condition_im_replay.json": "5a840326caba870b28cff0b47a19a23de5022312a1fd13fca2912133407195e1",
+  "results/condition_im_stdout.txt": "80e687ad72ba91d8494c2dee157951d519ab6f397a13531850db956f019442be",
+  "results/gate_logic_stdout.txt": "3dd6828a7203022a5a2b11996465614d6f8609243a7565edbf41092f9e2b6aae",
+  "results/imc_hypothesis_certificate.json": "f46b5f48f22803dcb60ea82990c3ee1a317aad4b8bd53131cd7bde2fb5039448",
+  "results/p5_gate_status_v0.5.json": "7081f397238a2e99c058803c7787381d427eb800c61648064ec4e690980b6c4f",
+  "results/route_no_go.json": "9dc95ace50a80fd319d542b5a5df19f1df413e5fcce0e18f2c696bc59a7e819d",
+  "results/validation.txt": "9abe15c4c4cdc923eeabc0b892ae9d962afb11e326a393612ea208496f8341a5",
+  "results/validation_final.txt": "9abe15c4c4cdc923eeabc0b892ae9d962afb11e326a393612ea208496f8341a5",
+  "scripts/check_condition_im.py": "25ed54510824c6481c47e9b7b0d777b7b8578c342da2a8699eed407c15552c7a",
+  "scripts/check_gate_logic.py": "4ce96922c7355e8e7528138a13404b56705c5cbc149bcbc980c6180b529d3eb8",
+  "scripts/replay_padic_regulator_11.sage": "ef1716a3643ba11f4d0909ce45c13ff49207981ad5071f84b4fb7d211b5f26a6",
+  "scripts/validate_package.py": "b67f58ee7224d121e84a99c618e923e700852d48b7c88be562aefe71fffca5a8",
+  "source/P5_v0.5_canonical_source.md": "bcd8d06b42add4b7dc3ecc2df2050af31d541678b48800cf53bb36090313f45e",
+  "sources/SOURCE_MANIFEST.json": "833af3cf5cdd7302014eec0eace5b89d6a82577d737bc8b1436e719e7d970970"
+}

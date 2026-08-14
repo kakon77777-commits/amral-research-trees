@@ -1,0 +1,49 @@
+{
+  "schema_version": "0.6",
+  "curve": "389.a1",
+  "prime": 11,
+  "inherited": {
+    "SHA_11_INFINITY": {
+      "status": "CLOSED_IN_PROJECT_THEOREM_CHAIN"
+    },
+    "P5_IMC11": {
+      "status": "CLOSED"
+    },
+    "P5_BKS_HYP": {
+      "status": "CLOSED"
+    },
+    "P5_IWASAWA_TO_BOC11": {
+      "status": "CLOSED_UP_TO_UNIT"
+    }
+  },
+  "new": {
+    "P5_BOC_NZ11": {
+      "status": "CLOSED_BY_PUBLISHED_COMPUTATION",
+      "source": "Mazur-Stein-Tate"
+    },
+    "P5_FULL_GPR11": {
+      "status": "OPEN_STRONGER_THAN_NEEDED"
+    },
+    "P5_uGPR11": {
+      "status": "OPEN_MINIMAL_CONCEPTUAL_GATE"
+    },
+    "P5_INT11": {
+      "status": "OPEN",
+      "meaning": "BSD determinant vector lies in the integral comparison lattice"
+    },
+    "P5_PRIM11": {
+      "status": "OPEN",
+      "meaning": "integral BSD determinant vector is nonzero modulo 11"
+    },
+    "P5_LAT11": {
+      "status": "BLOCKED_ONLY_BY_uGPR11",
+      "equivalent_to": [
+        "P5_uGPR11"
+      ],
+      "decomposition": [
+        "P5_INT11",
+        "P5_PRIM11"
+      ]
+    }
+  }
+}

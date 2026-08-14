@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fixed additive period certificate",
+  "type": "object",
+  "required": [
+    "curve",
+    "p",
+    "scope",
+    "status"
+  ],
+  "properties": {
+    "curve": {
+      "type": "string"
+    },
+    "p": {
+      "type": "integer",
+      "minimum": 3
+    },
+    "scope": {
+      "enum": [
+        "UNIFORM_FAMILY",
+        "THIS_CURVE"
+      ]
+    },
+    "method": {
+      "enum": [
+        "EDIXHOVEN_LOCAL",
+        "DIRECT_MANIN",
+        "CNS_MODULAR_DEGREE",
+        "VERIFIED_DATABASE_RANGE",
+        "OTHER_THEOREM",
+        "NONE"
+      ]
+    },
+    "kodaira_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "potentially_ordinary": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "local_twist_trivial": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "optimality_closed": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "manin_constant": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "modular_degree": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "v_p_conductor": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "cns_p3_aux_prime": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "rational_singularity_certificate": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "PERIOD_PASS_UNIFORM_FAMILY",
+        "PERIOD_PASS_THIS_CURVE",
+        "PERIOD_UNKNOWN",
+        "PERIOD_FAIL"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

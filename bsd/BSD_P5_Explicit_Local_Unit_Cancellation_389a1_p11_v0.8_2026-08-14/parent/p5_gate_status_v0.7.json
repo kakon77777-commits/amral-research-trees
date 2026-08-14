@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.7",
+  "curve": "389.a1",
+  "prime": 11,
+  "claim_boundary": "reduction_not_BSD_proof",
+  "inherited": {
+    "sha_11_primary": "PROJECT_CLOSED_ZERO",
+    "P5_IMC_11": "CLOSED",
+    "P5_BOC_NZ_11": "CLOSED"
+  },
+  "framework": {
+    "P5_ARITH_LINE_11": "CANONICAL_FRAMEWORK_AVAILABLE",
+    "basis": "Lambda_11 = Z_11 * kappa_infty, kappa_infty primitive up to Z_11^x"
+  },
+  "coefficient": {
+    "definition": "b_BSD = c_11 * kappa_infty in the scalar-extended one-dimensional line",
+    "ambient": "C_11"
+  },
+  "gates": {
+    "P5_INT_11": {
+      "status": "OPEN",
+      "literature_id": "BKS_GPR_II",
+      "equivalent_to": [
+        "P5_DESC_11",
+        "P5_VALINT_11"
+      ]
+    },
+    "P5_DESC_11": {
+      "status": "OPEN",
+      "statement": "c_11 in Q_11",
+      "literature_relation": "local rationality/descent shadow of the p-TNC special element in BKS Proposition 2.6 after project determinant-line transport"
+    },
+    "P5_VALINT_11": {
+      "status": "OPEN_AFTER_DESC",
+      "statement": "v_11(c_11) >= 0"
+    },
+    "P5_PRIM_11": {
+      "status": "OPEN",
+      "statement": "under integrality, v_11(c_11)=0",
+      "literature_relation": "mod-11/unit shadow of BKS GPR_III"
+    },
+    "P5_VAL0_11": {
+      "status": "OPEN",
+      "statement": "c_11 in Q_11^x and v_11(c_11)=0"
+    },
+    "uGPR_11": {
+      "status": "OPEN",
+      "equivalent_to": [
+        "P5_DESC_11",
+        "P5_VAL0_11"
+      ]
+    },
+    "P5_LAT_11": {
+      "status": "BLOCKED_BY_uGPR_11"
+    }
+  },
+  "next_priority": "P5_DESC_11"
+}

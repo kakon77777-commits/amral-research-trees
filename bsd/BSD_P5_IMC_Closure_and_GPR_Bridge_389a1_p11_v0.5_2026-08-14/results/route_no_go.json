@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.5",
+  "no_go_frontiers": [
+    {
+      "route": "identify discrete Kurihara/Mazur-Tate derivatives directly with complex s-derivative",
+      "status": "INVALID_WITHOUT_COMPARISON_THEOREM",
+      "reason": "the derivative directions and parameter spaces are different; the Generalized Perrin-Riou comparison is the missing bridge"
+    },
+    {
+      "route": "use full cyclotomic IMC alone to prove the classical rank-2 11-part leading term",
+      "status": "INSUFFICIENT",
+      "reason": "IMC closes the p-adic/Iwasawa side up to a unit; the complex leading term and Neron-Tate regulator still require GPR/period comparison"
+    },
+    {
+      "route": "quadratic base change plus anticyclotomic derived Bockstein formula",
+      "status": "DOES_NOT_REMOVE_COMPARISON_GATE",
+      "reason": "the derived arithmetic formula still needs an additional complex-leading-term equality to recover classical BSD"
+    },
+    {
+      "route": "prove global rationality of the displayed real scalar before doing a one-prime closure",
+      "status": "VALID_BUT_STRONGER_THAN_NECESSARY",
+      "reason": "for the 11-part, a one-dimensional Z_11 lattice equality is the minimal typed target"
+    }
+  ]
+}

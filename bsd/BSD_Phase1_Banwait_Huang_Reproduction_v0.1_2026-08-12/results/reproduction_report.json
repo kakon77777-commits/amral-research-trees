@@ -1,0 +1,90 @@
+{
+  "bound": 1000,
+  "cases": [
+    {
+      "label": "46a1",
+      "lmfdb_label": "46.a2",
+      "branch": "CLZ20",
+      "expected_count": 7,
+      "actual_count": 7,
+      "exact_match": true,
+      "expected": [
+        1,
+        185,
+        265,
+        305,
+        745,
+        785,
+        905
+      ],
+      "actual": [
+        1,
+        185,
+        265,
+        305,
+        745,
+        785,
+        905
+      ],
+      "missing": [],
+      "extra": []
+    },
+    {
+      "label": "106d1",
+      "lmfdb_label": "106.b1",
+      "branch": "Zha16_no_2_tors",
+      "expected_count": 21,
+      "actual_count": 21,
+      "exact_match": true,
+      "expected": [
+        1,
+        17,
+        89,
+        97,
+        113,
+        241,
+        281,
+        409,
+        473,
+        505,
+        521,
+        545,
+        577,
+        649,
+        673,
+        713,
+        785,
+        857,
+        865,
+        929,
+        937
+      ],
+      "actual": [
+        1,
+        17,
+        89,
+        97,
+        113,
+        241,
+        281,
+        409,
+        473,
+        505,
+        521,
+        545,
+        577,
+        649,
+        673,
+        713,
+        785,
+        857,
+        865,
+        929,
+        937
+      ],
+      "missing": [],
+      "extra": []
+    }
+  ],
+  "all_pass": true
+}

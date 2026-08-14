@@ -1,0 +1,16 @@
+[
+  {
+    "label": "11.a1",
+    "lhs": "0.25384186085591068433775892335",
+    "rhs_using_analytic_sha": "0.25384186085591068433775892335",
+    "absolute_error": "0E-29",
+    "warning": "Arithmetic consistency only; not a proof of actual Sha or strong BSD."
+  },
+  {
+    "label": "389.a1",
+    "lhs": "0.75931650028842677023019260790",
+    "rhs_using_analytic_sha": "0.75931650028842677023019260789977938725435351717062",
+    "absolute_error": "2.2061274564648282938E-31",
+    "warning": "Arithmetic consistency only; not a proof of actual Sha or strong BSD."
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "version": "v0.6",
+  "date": "2026-08-12",
+  "scope": "Fresh semantic replay over all materialized generator outputs, with exact old-vs-current replay on the 36,687 stable base curves.",
+  "provenance": {
+    "generator_commit": "72867942accf94b9513857a2c0bae3895af8e9bc",
+    "old_commit": "1a0489c3c3099dd0c248624e6621df73ae8f0d43",
+    "current_commit": "31fae20c8df3f1f0383f41112b914d4995d5809d",
+    "input_v0_5_zip": "BSD_Phase1_Banwait_Huang_Exact_Census_v0.5_2026-08-12.zip"
+  },
+  "generator_to_old_disc_gate": {
+    "materialized_curve_keys": 39394,
+    "materialized_twist_pairs": 293482,
+    "disc_condition_failed_pairs": 0,
+    "disc_condition_failed_curves": 0,
+    "conclusion": "Applying the OLD-added disc_valuation_condition to every materialized generator twist pair removes zero pairs."
+  },
+  "stable_semantic_partition": {
+    "stable_curves": 36687,
+    "generator_pairs": 268697,
+    "D1_G1_common": 247391,
+    "D1_G0_old_only_new_gcd_removal": 21306,
+    "D0_G1_current_only_disc_deletion_addition": 0,
+    "D0_G0_hidden_interaction": 0
+  },
+  "fresh_old_source_replay": {
+    "old_source_replayed_pairs": 268697,
+    "current_actual_pairs": 247391,
+    "current_predicted_pairs": 247391,
+    "current_prediction_mismatches": 0
+  },
+  "curve_classes": {
+    "UNCHANGED": 31250,
+    "SHRINK_ONLY": 5437
+  },
+  "source_partition": {
+    "Zha16_no_2_tors": {
+      "D1_G1": 241542,
+      "D1_G0": 21306
+    },
+    "CLZ20": {
+      "D1_G1": 5849
+    }
+  },
+  "main_conclusion": "On the fully observed stable domain, OLD->CURRENT Algorithm2 changes are exactly 21,306 removals caused by the strengthened gcd(M,3N)=1 condition; deletion of disc_valuation_condition causes 0 additions and there are 0 hidden interaction pairs.",
+  "epistemic_boundary": "The 1,355 OLD base curves added after the generator JSON have no archived generator twists. Their hypothetical OLD-source Algorithm2 outputs are not reconstructed here."
+}

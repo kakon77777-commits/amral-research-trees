@@ -1,0 +1,13 @@
+{
+  "README.md": "6ce959e023820f87f2862aa6ef5a433fe9ac26a68d35c644043910652f306719",
+  "docs/03_FW_H2_Jordan_Holder_Lemma.md": "6d45f2526cf006e88930132bd687d6a08f0951d71f495031cc4a54216b862e06",
+  "docs/04_Local_p_Isogeny_Kernel_Criterion.md": "7e20cdf55c9691637c0bc22cae8984cd60370c8f678ad1353d745e39e02a7043",
+  "docs/05_Kodaira_Prefilters_and_NoGo.md": "29547965f7d5833a71432e96ba24ff41c781f965fd6f4da46abc0a625bbbdc50",
+  "docs/06_Witness_Network_v03_Integration.md": "a885508c63f5e8aee970a02618393837127bae0aa7b69cfa196ae15a62fd46c6",
+  "docs/07_Local_Agent_Implementation_Spec.md": "05d05346a6ac83d4a1b7320f71935de698a867b0c545bb2653c16c1becda8c42",
+  "prior/BSD_Witness_Network_Finite_Exception_Criterion_v0.2_2026-08-13.zip": "e76902afe474df344c7a9f923b1e89b3d8b032e000dc392f4b1baf68e45f021e",
+  "results/status.json": "9a2c927079e64851d2e46698a2574324210d8ca5705e9efee6e4c40911bd52b9",
+  "schemas/fw_h2_local_certificate.schema.json": "e3906b4d0c04ded349a1ab0d05d62f8e27e712751e95b16558cf1a817e1192f6",
+  "scripts/fw_h2_router_skeleton.py": "540742d134d93ee588282fcae8a334a9b173b6a739b05c560b65b13bcca80de8",
+  "sources/SOURCES.md": "a8f00b2d2924e0fa516c937cd17e456fb1267137ad0ec194d156c026a08d5b30"
+}

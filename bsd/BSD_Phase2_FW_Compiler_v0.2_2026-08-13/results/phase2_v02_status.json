@@ -1,0 +1,20 @@
+{
+  "version": "0.2",
+  "date": "2026-08-13",
+  "solved_or_reduced": {
+    "FW_H3": "exact elliptic-curve compiler derived",
+    "FW_H2_generic": "exact character-ratio predicate derived",
+    "FW_H2_supersingular": "automatic PASS",
+    "FW_H2_ordinary": "cheap criterion derived; rejected as global route",
+    "prime_quantifier": "reduced to hybrid router",
+    "uniform_supersingular_H3": "finite gcd certificate derived"
+  },
+  "remaining": [
+    "exact H1/H2 backend at fixed additive primes",
+    "fixed multiplicative theorem/certificate table",
+    "Manin period compatibility",
+    "Chebotarev/CRT simultaneous support compatibility",
+    "first concrete non-semistable curve with closed router"
+  ],
+  "claim_status": "derived bridge/proof schema; no full new BSD theorem claimed"
+}

@@ -1,0 +1,15 @@
+{
+  "version": "0.2",
+  "date": "2026-08-13",
+  "main_upgrade": "power-of-two gcd condition replaced by finite exceptional-prime routing",
+  "odd_additive_status": "allowed conditionally through finite FW H1/H2/H3 + period certificate",
+  "published_period_safe_subclass": "p>=11 and not additive potentially ordinary Kodaira II/III/IV, for optimal twists",
+  "new_family_scope": "all positive squarefree d supported on the positive-density Chebotarev prime set after finite exclusions",
+  "remaining_bottlenecks": [
+    "exact local FW-H2 compiler for fixed additive primes",
+    "period compiler outside published safe subclass",
+    "BCS (im) compiler for finite ordinary exceptions",
+    "database census only after compiler closure"
+  ],
+  "claim_status": "derived theorem schema; no novelty claim"
+}

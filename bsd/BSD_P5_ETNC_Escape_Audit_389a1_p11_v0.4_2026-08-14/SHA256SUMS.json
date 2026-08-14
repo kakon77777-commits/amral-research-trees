@@ -1,0 +1,15 @@
+{
+  "BSD_P5_Rank2_Scalar_Collapse_389a1_p11_v0.3.md": "ae98403e4ffb1f46c9112d2cd6a96b8bd3c405a9666419bc9c495c8b2a590a81",
+  "NEXT_HANDOFF.md": "159fd37b3c2cb138f9f17f0e1eb37259f470b97569d6091cf37debedb6411ba2",
+  "P5_E1_ETNC_ESCAPE_AUDIT.md": "1acc029331eee53f29d1f38821fea865b17f2298e77e370010d43b69931de261",
+  "README.md": "2f28a46504cd3571612f7960a0a8fd7ba5240a1fb63b002f15a2459baa324a47",
+  "dependencies/389a1_p11_kurihara_certificate.json": "d42310022db1e5c104ec7477002e166a4c60f46446ac476363c1db1b05ac36a9",
+  "results/displayed_scalar.json": "ce82bd8b1384b9c8271369782148b41ced6fa46e0db9abda79900b90ddc89f48",
+  "results/p5_gate_status.json": "ba98121267127ff355d1e7cc84f1784328dd077e83db41dd1440ef157ddffac5",
+  "results/reconstruction_demo.json": "c7c7eae33f454f9eae04c64e0a41568f1e803811f65b6c6788ef866e65322abf",
+  "results/validation.txt": "a0c4cb4a9808c55a3739507f8b210dfe131a410f6196cf294344c2bf59961b2c",
+  "scripts/compute_displayed_scalar.py": "b9a32e96e380b20617b50e2337db8706e0c0ec1d1fa3461c3b6c5cc8d039f6a4",
+  "scripts/p5_rational_reconstruction_gate.py": "1455cd2195f9c15c04363c74c43da965f30ac352e8fcedb829eb65ed18de9eab",
+  "scripts/validate_package.py": "bca0611f1241f4d27b5069e9172494d146f4dbbad2850f451e12e3994edf27f5",
+  "source/P5_canonical_source.md": "835cc0da245184163593df739078bf175bade06c2378a5b1ce484a537901222a"
+}

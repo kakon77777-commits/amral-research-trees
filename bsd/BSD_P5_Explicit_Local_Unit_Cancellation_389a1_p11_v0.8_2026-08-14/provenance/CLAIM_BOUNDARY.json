@@ -1,0 +1,18 @@
+{
+  "version": "v0.8",
+  "date": "2026-08-14",
+  "theorem_claims": [
+    "exact local Euler/logarithm valuation cancellation",
+    "local factor is a Z_11 unit"
+  ],
+  "reduction_claims": [
+    "P5-DESC reduces past explicit local factors to beta_xi local descent"
+  ],
+  "not_claimed": [
+    "BSD",
+    "P5-LAT_11",
+    "beta_xi in Q_11",
+    "v_11(beta_xi)=0",
+    "full generalized Perrin-Riou"
+  ]
+}

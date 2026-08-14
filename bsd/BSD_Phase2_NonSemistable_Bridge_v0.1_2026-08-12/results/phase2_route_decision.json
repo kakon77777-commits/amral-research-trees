@@ -1,0 +1,19 @@
+{
+  "phase": "BSD Phase 2",
+  "version": "0.1",
+  "primary_route": "non-semistable via Fouquet-Wan hypothesis compiler",
+  "stopped_main_routes": [
+    "positive analytic v2(Sha) higher-descent expansion"
+  ],
+  "held_routes": [
+    "full rational 2-torsion",
+    "analytic rank 1"
+  ],
+  "first_math_obligations": [
+    "specialize FW-H2 to weight-2 elliptic curves",
+    "specialize FW-H3 to exact local elliptic-curve data",
+    "prove quadratic-twist invariance bridge",
+    "derive finite exceptional-prime reduction"
+  ],
+  "claim_status": "research program only; no new BSD theorem claimed"
+}

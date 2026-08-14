@@ -1,0 +1,44 @@
+{
+  "retrieved_at": "2026-08-14",
+  "sources": [
+    {
+      "id": "MST06",
+      "title": "Computation of p-adic heights and log convergence",
+      "authors": "Barry Mazur; William Stein; John Tate",
+      "doi": "10.4171/DMS/4/17",
+      "url": "https://ems.press/books/dms/254/5044",
+      "role": "published p-adic regulator computation for 389A at p=11"
+    },
+    {
+      "id": "BKS24",
+      "title": "On derivatives of Kato's Euler system for elliptic curves",
+      "authors": "David Burns; Masato Kurihara; Takamichi Sano",
+      "arxiv": "1910.07404",
+      "url": "https://arxiv.org/abs/1910.07404",
+      "role": "GPR and Bockstein determinant comparison architecture"
+    },
+    {
+      "id": "Fouquet25",
+      "title": "The Equivariant Tamagawa Number Conjectures for modular motives with coefficients in Hecke algebra",
+      "authors": "Olivier Fouquet",
+      "arxiv": "2501.07105",
+      "doi": "10.2140/tunis.2025.7.791",
+      "url": "https://arxiv.org/abs/2501.07105",
+      "role": "ETNC specialization no-go audit: pointwise setup assumes nonzero L(f,r)"
+    },
+    {
+      "id": "BH25",
+      "title": "On the refined `Birch--Swinnerton-Dyer type' conjectures of Mazur and Tate",
+      "authors": "Dominik Bullach; Matthew H. L. Honnor",
+      "arxiv": "2511.07203",
+      "url": "https://arxiv.org/abs/2511.07203",
+      "role": "finite-layer Mazur-Tate audit and explicit positive-rank GPR/height-comparison boundary"
+    },
+    {
+      "id": "SageBSD",
+      "title": "SageMath elliptic-curve BSD documentation",
+      "url": "https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/BSD.html",
+      "role": "curve-specific computational status audit"
+    }
+  ]
+}

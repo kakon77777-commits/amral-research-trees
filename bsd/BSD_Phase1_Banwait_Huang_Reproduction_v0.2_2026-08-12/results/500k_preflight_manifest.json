@@ -1,0 +1,24 @@
+{
+  "status": "official_reference_only_not_independently_rerun",
+  "current_official_outputs": {
+    "ec_labels_500k.txt": {
+      "sha": "6f2cce03973009223a7679fecad3c0c5b141ca52",
+      "size_bytes": 1298147
+    },
+    "twists_of_ec_labels_500k.json": {
+      "sha": "2135e1dd979fbcfb643923e5a11e0bf7e50fd244",
+      "size_bytes": 3991957
+    }
+  },
+  "required_before_claiming_reproduction": [
+    "SageMath environment locked",
+    "LMFDB local database/release locked",
+    "Algorithm1 current file SHA locked",
+    "All filter-stage counts recorded",
+    "2-descent backend outputs retained",
+    "Small-range current fixture exact match",
+    "No testing-only flags enabled",
+    "Current output SHA/count compared independently"
+  ],
+  "warning": "Repository file existence and SHA are reference facts, not evidence that this runtime independently reproduced the 500k computation."
+}

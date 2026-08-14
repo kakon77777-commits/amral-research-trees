@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Phase2 hybrid base certificate",
+  "type": "object",
+  "required": [
+    "curve",
+    "local_data",
+    "certificates"
+  ],
+  "properties": {
+    "curve": {
+      "type": "string"
+    },
+    "manin_constant": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "local_data": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "prime",
+          "conductor_exponent",
+          "reduction",
+          "disc_valuation"
+        ],
+        "properties": {
+          "prime": {
+            "type": "integer"
+          },
+          "conductor_exponent": {
+            "type": "integer"
+          },
+          "reduction": {
+            "type": "string"
+          },
+          "disc_valuation": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "certificates": {
+      "type": "object",
+      "properties": {
+        "uniform_ordinary_ramification": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNKNOWN"
+          ]
+        },
+        "uniform_fw_h3": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "UNKNOWN"
+          ]
+        },
+        "fixed_additive_fw": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "fixed_multiplicative": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

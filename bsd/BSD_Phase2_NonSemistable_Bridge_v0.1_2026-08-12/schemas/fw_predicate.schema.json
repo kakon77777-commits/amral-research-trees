@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fouquet-Wan prime applicability certificate",
+  "type": "object",
+  "required": [
+    "curve",
+    "prime",
+    "H1",
+    "H2",
+    "H3",
+    "decision"
+  ],
+  "properties": {
+    "curve": {
+      "type": "string"
+    },
+    "prime": {
+      "type": "integer",
+      "minimum": 3
+    },
+    "H1": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "H2": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "H3": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "UNKNOWN"
+      ]
+    },
+    "witness_ell": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "decision": {
+      "enum": [
+        "FW_APPLICABLE",
+        "FW_NOT_APPLICABLE",
+        "UNKNOWN"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "theorem_version": {
+      "type": "string"
+    }
+  }
+}

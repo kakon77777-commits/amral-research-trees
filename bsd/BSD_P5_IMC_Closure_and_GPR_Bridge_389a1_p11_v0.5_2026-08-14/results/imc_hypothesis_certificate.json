@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.5",
+  "curve": "389.a1",
+  "prime": 11,
+  "inputs": {
+    "conductor": 389,
+    "a_11": -4,
+    "good_reduction_at_11": true,
+    "ordinary_at_11": true,
+    "ell_adic_image_at_11": "maximal",
+    "residual_irreducible": true
+  },
+  "bcs_theorem": {
+    "paper": "Burungale-Castella-Skinner, arXiv:2405.00270",
+    "theorem": "Theorem 1.1.2",
+    "required": [
+      "p > 3",
+      "good ordinary reduction",
+      "E[p] irreducible",
+      "condition (im) for integral equality"
+    ]
+  },
+  "condition_im_certificate": {
+    "matrix_u": [[1, 1], [0, 1]],
+    "determinant": 1,
+    "u_minus_1": [[0, 1], [0, 0]],
+    "image_rank": 1,
+    "image_is_primitive_direct_summand": true,
+    "quotient": "Z_11",
+    "cyclotomic_character_value": 1,
+    "reason_cyclotomic": "det(rho_E,11)=chi_11 by Weil pairing; det(u)=1",
+    "status": "PASS"
+  },
+  "conclusion": {
+    "gate": "P5-IMC11",
+    "status": "CLOSED_EXTERNAL_THEOREM_PLUS_EXACT_HYPOTHESIS_CERTIFICATE"
+  }
+}

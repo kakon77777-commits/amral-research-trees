@@ -1,0 +1,6 @@
+FINITE_NORM_BOCKSTEIN_EXACT
+det_M_loc_mod_11=2
+finite_Bockstein= 2 * X_397*X_991
+Mazur_Tate_initial= 6 * X_397*X_991
+deterministic_unit_ratio=3
+MIXED_LINE_COINCIDENCE_OK

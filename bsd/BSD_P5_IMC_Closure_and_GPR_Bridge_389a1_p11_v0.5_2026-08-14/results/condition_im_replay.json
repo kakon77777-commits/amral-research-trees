@@ -1,0 +1,30 @@
+{
+  "matrix_u": [
+    [
+      1,
+      1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "determinant": 1,
+  "u_minus_1": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "image_generator": [
+    1,
+    0
+  ],
+  "quotient_free_rank": 1,
+  "quotient_torsion": 0,
+  "condition_im_linear_algebra": "PASS"
+}
