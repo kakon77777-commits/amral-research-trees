@@ -1,0 +1,3047 @@
+--- original/08__代數判定域與結構斷裂定理.md
++++ corrected/08
+@@ -6,14 +6,15 @@
+ **作者：** Neo.K  
+ **機構：** 一言諾科技有限公司（EveMissLab）  
+ **系列：** Collatz Operation Translation Series — Paper 08  
+-**版本：** v0.1  
+-**日期：** 2026-08-10
++**版本：** v0.1.1  
++**日期：** 2026-08-10  
++**修訂日期：** 2026-08-14
+ 
+ ---
+ 
+ ## 摘要
+ 
+-前七篇從 modified Collatz map 出發，建立了 finite-word affine closure、parity-word/residue-cylinder bijection、local identity trivialization、exact inverse recovery、finite contraction law、valuation language 與 generalized odd-\(m,r\) family。這些結果顯示：Collatz 並不是孤立案例，而落在一個更大的 **Residue-Class Operation Translation (RCOT)** 局部仿射類別中。
++前七篇從 modified Collatz map 出發，建立了 finite-word affine closure、parity-word/residue-cylinder bijection、local identity trivialization、exact inverse recovery、finite contraction law、valuation language 與 generalized odd-$m,r$ family。這些結果顯示：Collatz 並不是孤立案例，而落在一個更大的 **Residue-Class Operation Translation (RCOT)** 局部仿射類別中。
+ 
+ 本文回答本系列最重要的判定域問題之一：
+ 
+@@ -21,9 +22,9 @@
+ 
+ 本文以一般交換標量仿射 word operator
+ 
+-\[
++$$
+ F_w(x)=\frac{A_wx+B_w}{D_w}
+-\]
++$$
+ 
+ 為起點，區分五種彼此獨立的結構需求：
+ 
+@@ -35,29 +36,29 @@
+ 
+ 本文首先證明：在交換係數環中，finite affine composition 保持仿射 closure。若每個 branch 為
+ 
+-\[
++$$
+ F_i(x)=\frac{a_ix+b_i}{d_i},
+-\]
+-
+-則對 word \(w=i_1\cdots i_k\)：
+-
+-\[
++$$
++
++則對 word $w=i_1\cdots i_k$：
++
++$$
+ \boxed{
+ F_w(x)=\frac{A_wx+B_w}{D_w},
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ A_w=\prod_{j=1}^{k}a_{i_j},
+ \qquad
+ D_w=\prod_{j=1}^{k}d_{i_j},
+-\]
++$$
+ 
+ 而：
+ 
+-\[
++$$
+ \boxed{
+ B_w=
+ \sum_{j=1}^{k}
+@@ -65,25 +66,25 @@
+ \left(\prod_{\ell=j+1}^{k}a_{i_\ell}\right)
+ \left(\prod_{\ell=1}^{j-1}d_{i_\ell}\right).
+ }
+-\]
+-
+-在交換環中，\(A_w,D_w\) 只依 branch counts；真正的 word order 進入 \(B_w\)。因此前七篇的「counts determine multiplicative skeleton; order determines affine correction」具有一個清楚的交換性判定域。
++$$
++
++在交換環中，$A_w,D_w$ 只依 branch counts；真正的 word order 進入 $B_w$。因此前七篇的「counts determine multiplicative skeleton; order determines affine correction」具有一個清楚的交換性判定域。
+ 
+ 對 residue equation：
+ 
+-\[
++$$
+ A_wx+B_w\equiv0\pmod I,
+-\]
++$$
+ 
+ 本文證明其唯一解條件的抽象形式為：
+ 
+-\[
++$$
+ \boxed{
+ [A_w]\in(R/I)^\times.
+ }
+-\]
+-
+-即 \(A_w\) 在 quotient ring \(R/I\) 中必須是 unit。若不是 unit，word-to-residue chart 可能出現三種情況：
++$$
++
++即 $A_w$ 在 quotient ring $R/I$ 中必須是 unit。若不是 unit，word-to-residue chart 可能出現三種情況：
+ 
+ - 無解；
+ - 唯一解（在特殊右端下偶然出現）；
+@@ -91,125 +92,125 @@
+ 
+ 例如在：
+ 
+-\[
++$$
+ \mathbb Z/6\mathbb Z
+-\]
++$$
+ 
+ 中：
+ 
+-\[
++$$
+ 2x\equiv2\pmod6
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ x\equiv1,4\pmod6,
+-\]
++$$
+ 
+ 而：
+ 
+-\[
++$$
+ 2x\equiv1\pmod6
+-\]
++$$
+ 
+ 無解。這說明：
+ 
+-\[
++$$
+ \boxed{
+ \text{affine closure survives while unique residue coding fails}.
+ }
+-\]
++$$
+ 
+ 若底層環含 zero divisors，exact inverse recovery 亦可失敗。例如：
+ 
+-\[
++$$
+ 2\cdot1\equiv2\cdot4\pmod6,
+-\]
+-
+-所以乘法 \(x\mapsto2x\) 不是 injective。本文因此將第二個結構斷裂點定位為：
+-
+-\[
++$$
++
++所以乘法 $x\mapsto2x$ 不是 injective。本文因此將第二個結構斷裂點定位為：
++
++$$
+ \boxed{
+ \text{zero divisor / non-regular multiplier}
+ \Rightarrow
+ \text{lossless recovery may fail}.
+ }
+-\]
++$$
+ 
+ 另一方面，若係數位於 integral domain 或 field，非零 scalar multiplication 仍 injective；因此「non-unit modulo a lattice」與「zero divisor in the state algebra」必須分開，不能混成同一種失效。
+ 
+-本文接著研究 order / metric semantics。進入 \(\mathbb C\) 後，affine closure 與 exact inversion均可保留，但不存在與 field operations 相容的 total order，因此原始：
+-
+-\[
++本文接著研究 order / metric semantics。進入 $\mathbb C$ 後，affine closure 與 exact inversion均可保留，但不存在與 field operations 相容的 total order，因此原始：
++
++$$
+ F(n)<n
+-\]
++$$
+ 
+ 型 descent theorem 失去自然意義。若選定 norm，則 contraction 應改為：
+ 
+-\[
++$$
+ \|F(x)-F(y)\|
+ <
+ \|x-y\|.
+-\]
++$$
+ 
+ 更一般地，對 affine operator：
+ 
+-\[
++$$
+ F(x)=\lambda x+c,
+-\]
++$$
+ 
+ 其 Lipschitz factor 是：
+ 
+-\[
++$$
+ |\lambda|_v
+-\]
+-
+-相對於所選 absolute value / valuation \(v\)。
++$$
++
++相對於所選 absolute value / valuation $v$。
+ 
+ 本文以 Collatz word：
+ 
+-\[
++$$
+ w=UUDD
+-\]
++$$
+ 
+ 為例：
+ 
+-\[
++$$
+ F_w(x)=\frac{9x+5}{16},
+ \qquad
+ \lambda=\frac9{16}.
+-\]
++$$
+ 
+ 在不同幾何中：
+ 
+-\[
++$$
+ \boxed{
+ |\lambda|_\infty=\frac9{16}<1,
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ |\lambda|_2=16>1,
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ |\lambda|_3=\frac19<1.
+ }
+-\]
++$$
+ 
+ 因此同一個 operator 同時是：
+ 
+ - real contraction；
+-- \(2\)-adic expansion；
+-- \(3\)-adic strong contraction。
++- $2$-adic expansion；
++- $3$-adic strong contraction。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{contraction}
+ =
+@@ -217,35 +218,35 @@
+ +
+ \text{chosen valuation / norm}.
+ }
+-\]
+-
+-這把 Series A 中「判定域決定定理語義」具體化到 Collatz affine charts。既有 \(2\)-adic Collatz 研究確實將 parity sequences 與 \(2\)-adic integers 建立一一對應並研究其 induced dynamics；本文的作用不是重新發明 \(2\)-adic Collatz，而是用它作為 RCOT contraction semantics 的邊界案例。
++$$
++
++這把 Series A 中「判定域決定定理語義」具體化到 Collatz affine charts。既有 $2$-adic Collatz 研究確實將 parity sequences 與 $2$-adic integers 建立一一對應並研究其 induced dynamics；本文的作用不是重新發明 $2$-adic Collatz，而是用它作為 RCOT contraction semantics 的邊界案例。
+ 
+ 真正的第一個**乘法骨架級大斷裂**發生在非交換代數。若 branch 為：
+ 
+-\[
++$$
+ F_i(x)=A_ix+b_i
+-\]
+-
+-而 \(A_i\) 為矩陣或非交換 algebra 元素，則：
+-
+-\[
++$$
++
++而 $A_i$ 為矩陣或非交換 algebra 元素，則：
++
++$$
+ \boxed{
+ F_w(x)
+ =
+ A_{i_k}\cdots A_{i_1}x+B_w.
+ }
+-\]
++$$
+ 
+ 一般：
+ 
+-\[
++$$
+ A_iA_j\neq A_jA_i.
+-\]
++$$
+ 
+ 因此即使兩個 words 有完全相同 branch counts，也可能有不同 leading operator。本文給出：
+ 
+-\[
++$$
+ A=
+ \begin{pmatrix}
+ 1&1\\
+@@ -257,11 +258,11 @@
+ 1&0\\
+ 1&1
+ \end{pmatrix},
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ AB=
+ \begin{pmatrix}
+ 2&1\\
+@@ -273,138 +274,138 @@
+ 1&2
+ \end{pmatrix}
+ =BA.
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{commutative scalar RCOT: order affects correction only;}
+ }
+-\]
++$$
+ 
+ 但：
+ 
+-\[
++$$
+ \boxed{
+ \text{noncommutative RCOT: order affects leading drift and correction}.
+ }
+-\]
+-
+-這直接破壞 Paper 05–07 中僅以 \((k,u)\) 或 branch counts 計算 cylinder phase 的二項式壓縮。若 matrices 彼此 commute，尤其可 simultaneous diagonalize 時，則部分 count-based structure 可以在各 eigendirection 中恢復；因此真正邊界是「commutativity of the leading multipliers」，而非「dimension \(>1\)」本身。
++$$
++
++這直接破壞 Paper 05–07 中僅以 $(k,u)$ 或 branch counts 計算 cylinder phase 的二項式壓縮。若 matrices 彼此 commute，尤其可 simultaneous diagonalize 時，則部分 count-based structure 可以在各 eigendirection 中恢復；因此真正邊界是「commutativity of the leading multipliers」，而非「dimension $>1$」本身。
+ 
+ 本文再推至 Möbius / projective transformations：
+ 
+-\[
++$$
+ F(x)=\frac{ax+b}{cx+d}.
+-\]
++$$
+ 
+ 此類映射仍由：
+ 
+-\[
++$$
+ \begin{pmatrix}
+ a&b\\
+ c&d
+ \end{pmatrix}
+-\]
++$$
+ 
+ 表示，composition 仍等於 matrix multiplication，所以保持固定四參數 projective closure：
+ 
+-\[
++$$
+ \boxed{
+ \text{finite-dimensional operator closure survives}.
+ }
+-\]
++$$
+ 
+ 然而 arithmetic progression 一般不再送到 arithmetic progression；因此前七篇的：
+ 
+-\[
++$$
+ r+D\mathbb Z
+ \longleftrightarrow
+ m+A\mathbb Z
+-\]
++$$
+ 
+ 型 linear cylinder transport 失效。這形成另一級邊界：
+ 
+-\[
++$$
+ \boxed{
+ \text{projective closure survives while affine lattice transport fails}.
+ }
+-\]
+-
+-最後，若 branch 進入 degree \(>1\) polynomial maps，一般 composition degree 依：
+-
+-\[
++$$
++
++最後，若 branch 進入 degree $>1$ polynomial maps，一般 composition degree 依：
++
++$$
+ \boxed{
+ \deg(f\circ g)=\deg f\cdot\deg g
+ }
+-\]
++$$
+ 
+ 增長（在 integral-domain、非退化 leading coefficient 條件下）。因此 degree 至少 2 的 repeated iteration 通常產生：
+ 
+-\[
++$$
+ 2,4,8,\ldots
+-\]
++$$
+ 
+ 或一般乘法式 degree growth。這意味不存在一個固定 degree bound 的 polynomial family 能容納全部 word compositions。已有 polynomial dynamical systems 文獻專門研究 iteration 下的 degree growth；本文則將其作為 RCOT「固定 affine/projective operator class closure」之外的結構斷裂點。
+ 
+ 綜合以上，本文提出 **Algebraic Breakage Ladder**：
+ 
+-\[
++$$
+ \boxed{
+ \text{unique affine atlas}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \downarrow\quad\text{non-unit modulo quotient}
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{branched / missing residue atlas}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \downarrow\quad\text{zero divisor / non-regular multiplier}
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{non-faithful recovery}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \downarrow\quad\text{noncommutative leading multipliers}
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{order-sensitive leading drift}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \downarrow\quad\text{projective non-affinity}
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{finite closure without lattice transport}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \downarrow\quad\text{degree}>1\text{ nonlinear composition}
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{loss of fixed-degree affine/projective closure}.
+ }
+-\]
++$$
+ 
+ 因此 RCOT 的核心域不是「任何可以寫公式的動力系統」，而是一個精確的代數判定域：
+ 
+@@ -412,7 +413,7 @@
+ 
+ Collatz 恰好位於這個判定域的一個極為乾淨的位置：
+ 
+-\[
++$$
+ \boxed{
+ \text{scalar}
+ +
+@@ -424,11 +425,11 @@
+ +
+ \text{ordered positive-integer domain}.
+ }
+-\]
++$$
+ 
+ 所以它的局部算術幾乎可以完全平凡化，而全域困難集中在 chart itinerary。這也解釋了 Collatz 的特殊困難型態：它不是局部 operator 很複雜，而是**局部高度可解、全域選圖仍非平凡**。
+ 
+-**關鍵詞：** Residue-Class Operation Translation、commutative ring、zero divisor、unit、\(p\)-adic norm、noncommutative algebra、Möbius transformation、polynomial dynamics、Collatz conjecture、algebraic boundary
++**關鍵詞：** Residue-Class Operation Translation、commutative ring、zero divisor、unit、$p$-adic norm、noncommutative algebra、Möbius transformation、polynomial dynamics、Collatz conjecture、algebraic boundary
+ 
+ ---
+ 
+@@ -436,15 +437,15 @@
+ 
+ 前七篇在：
+ 
+-\[
++$$
+ \mathbb Z_{>0}
+-\]
++$$
+ 
+ 與：
+ 
+-\[
++$$
+ \mathbb Q
+-\]
++$$
+ 
+ 上反覆使用以下結構：
+ 
+@@ -469,43 +470,43 @@
+ 
+ 而問：
+ 
+-\[
++$$
+ \boxed{
+ \text{Which algebraic property supports which theorem?}
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 2. 一般交換標量仿射 Branch
+ 
+-令 \(R\) 為交換環或其適當 localization。
++令 $R$ 為交換環或其適當 localization。
+ 
+ 每個 branch：
+ 
+-\[
++$$
+ \boxed{
+ F_i(x)
+ =
+ \frac{a_ix+b_i}{d_i}.
+ }
+-\]
++$$
+ 
+ 形式上可記成 triple：
+ 
+-\[
++$$
+ \boxed{
+ (a_i,b_i,d_i).
+ }
+-\]
++$$
+ 
+ 若 denominator 在所選 localization 中可逆，
+ 
+ 則：
+ 
+-\[
++$$
+ F_i:R'\to R'
+-\]
++$$
+ 
+ 為合法 affine map。
+ 
+@@ -515,19 +516,19 @@
+ 
+ 先：
+ 
+-\[
++$$
+ F_1(x)=\frac{a_1x+b_1}{d_1},
+-\]
++$$
+ 
+ 再：
+ 
+-\[
++$$
+ F_2(x)=\frac{a_2x+b_2}{d_2}.
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ F_2(F_1(x))
+ =
+ \frac{
+@@ -535,11 +536,11 @@
+ }{
+ d_2d_1
+ }.
+-\]
++$$
+ 
+ 所以 triple composition：
+ 
+-\[
++$$
+ \boxed{
+ (a_2,b_2,d_2)\circ(a_1,b_1,d_1)
+ =
+@@ -547,7 +548,7 @@
+ a_2b_1+b_2d_1,\,
+ d_2d_1).
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -555,43 +556,43 @@
+ 
+ 對 word：
+ 
+-\[
++$$
+ w=i_1\cdots i_k
+-\]
++$$
+ 
+ （由左到右執行），
+ 
+ 有：
+ 
+-\[
++$$
+ \boxed{
+ F_w(x)
+ =
+ \frac{A_wx+B_w}{D_w},
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ \boxed{
+ A_w
+ =
+ \prod_{j=1}^{k}a_{i_j},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ D_w
+ =
+ \prod_{j=1}^{k}d_{i_j},
+ }
+-\]
++$$
+ 
+ 以及：
+ 
+-\[
++$$
+ \boxed{
+ B_w
+ =
+@@ -604,7 +605,7 @@
+ \prod_{\ell=1}^{j-1}d_{i_\ell}
+ \right).
+ }
+-\]
++$$
+ 
+ 這是 RCOT 的一般 affine mother formula。
+ 
+@@ -612,41 +613,41 @@
+ 
+ # 5. 第一個關鍵：交換性
+ 
+-若 \(R\) commutative，
++若 $R$ commutative，
+ 
+ 則：
+ 
+-\[
++$$
+ A_w
+-\]
+-
+-只看每種 \(a_i\) 出現幾次。
++$$
++
++只看每種 $a_i$ 出現幾次。
+ 
+ 同理：
+ 
+-\[
++$$
+ D_w
+-\]
++$$
+ 
+ 只看每種 denominator 的 counts。
+ 
+ 但是：
+ 
+-\[
++$$
+ B_w
+-\]
++$$
+ 
+ 仍依賴各 branch 的位置。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{commutative leading multipliers}
+ \Rightarrow
+ \text{counts determine skeleton}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -656,47 +657,47 @@
+ 
+ ### L1 — Operator Closure
+ 
+-\[
++$$
+ \text{finite word}
+ \to
+ \text{same operator class}.
+-\]
++$$
+ 
+ ### L2 — Count/Order Split
+ 
+-\[
++$$
+ \text{counts}\to\text{leading skeleton},
+ \qquad
+ \text{order}\to\text{correction}.
+-\]
++$$
+ 
+ ### L3 — Unique Residue Chart
+ 
+-\[
++$$
+ \text{word}
+ \leftrightarrow
+ \text{one residue class}.
+-\]
++$$
+ 
+ ### L4 — Exact Recovery
+ 
+-\[
++$$
+ \text{target coordinate}
+ \to
+ \text{unique source}.
+-\]
++$$
+ 
+ ### L5 — Contraction Semantics
+ 
+-\[
++$$
+ F(x)<x
+-\]
++$$
+ 
+ 或：
+ 
+-\[
++$$
+ \|F(x)-F(y)\|<\|x-y\|.
+-\]
++$$
+ 
+ 這五層不是同一個條件。
+ 
+@@ -706,33 +707,33 @@
+ 
+ 在整數 Collatz 中：
+ 
+-\[
+-A_wr+B_w
++$$
++A_wx+B_w
+ \equiv0
+ \pmod{D_w}.
+-\]
+-
+-一般化到環 \(R\) 與 ideal \(I\)：
+-
+-\[
++$$
++
++一般化到環 $R$ 與 ideal $I$：
++
++$$
+ \boxed{
+ A_wx+B_w
+ \equiv0
+ \pmod I.
+ }
+-\]
++$$
+ 
+ 在 quotient：
+ 
+-\[
++$$
+ R/I
+-\]
++$$
+ 
+ 中即：
+ 
+-\[
++$$
+ [A_w][x]=-[B_w].
+-\]
++$$
+ 
+ ---
+ 
+@@ -740,23 +741,23 @@
+ 
+ 如果：
+ 
+-\[
++$$
+ \boxed{
+ [A_w]\in(R/I)^\times,
+ }
+-\]
+-
+-即 \(A_w\) 在 quotient ring 中為 unit，
++$$
++
++即 $A_w$ 在 quotient ring 中為 unit，
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ [x]
+ =
+ -[A_w]^{-1}[B_w]
+ }
+-\]
++$$
+ 
+ 唯一。
+ 
+@@ -764,27 +765,27 @@
+ 
+ ## Theorem 8.1 — Quotient-Unit Criterion
+ 
+-\[
++$$
+ \boxed{
+ [A_w]\text{ unit in }R/I
+ \Rightarrow
+ \text{unique residue chart}.
+ }
+-\]
++$$
+ 
+ Collatz：
+ 
+-\[
++$$
+ A_w=3^u,
+ \qquad
+ I=(2^k),
+-\]
++$$
+ 
+ 而：
+ 
+-\[
++$$
+ \gcd(3^u,2^k)=1,
+-\]
++$$
+ 
+ 所以條件自動成立。
+ 
+@@ -794,25 +795,25 @@
+ 
+ 若：
+ 
+-\[
++$$
+ [A_w]
+-\]
++$$
+ 
+ 不是 unit，
+ 
+ 則 multiplication map：
+ 
+-\[
++$$
+ M_{A_w}:R/I\to R/I
+-\]
++$$
+ 
+ 不再保證 bijective。
+ 
+ 所以：
+ 
+-\[
++$$
+ A_wx=-B_w
+-\]
++$$
+ 
+ 可能：
+ 
+@@ -822,13 +823,13 @@
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{one word}
+ \leftrightarrow
+ \text{one residue}
+ }
+-\]
++$$
+ 
+ 不再是結構定理。
+ 
+@@ -838,81 +839,81 @@
+ 
+ 在：
+ 
+-\[
++$$
+ \mathbb Z/6\mathbb Z,
+-\]
++$$
+ 
+ 考慮：
+ 
+-\[
++$$
+ 2x\equiv2\pmod6.
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ x\equiv1,
+-\]
++$$
+ 
+ 亦有：
+ 
+-\[
++$$
+ x\equiv4.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{one equation has multiple residue charts}.
+ }
+-\]
++$$
+ 
+ 另一方面：
+ 
+-\[
++$$
+ 2x\equiv1\pmod6
+-\]
++$$
+ 
+ 無解。
+ 
+ 因此 non-unit 使 atlas 變成：
+ 
+-\[
++$$
+ \boxed{
+ \text{zero / one / multiple charts}.
+ }
+-\]
+-
+----
+-
+-# 11. 第一個斷裂：Unique Atlas \(\to\) Branched Atlas
++$$
++
++---
++
++# 11. 第一個斷裂：Unique Atlas $\to$ Branched Atlas
+ 
+ 注意這時：
+ 
+-\[
++$$
+ F_w(x)
+ =
+ \frac{A_wx+B_w}{D_w}
+-\]
++$$
+ 
+ 的 affine formula 完全沒有壞。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{operator closure survives}.
+ }
+-\]
++$$
+ 
+ 真正壞的是：
+ 
+-\[
++$$
+ \boxed{
+ \text{residue uniqueness}.
+ }
+-\]
++$$
+ 
+ 這是 RCOT 第一級結構斷裂。
+ 
+@@ -922,42 +923,42 @@
+ 
+ 現在看：
+ 
+-\[
++$$
+ R=\mathbb Z/6\mathbb Z.
+-\]
++$$
+ 
+ 乘法：
+ 
+-\[
++$$
+ x\mapsto2x.
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ 2\cdot1
+ =
+ 2
+ \pmod6,
+-\]
+-
+-\[
++$$
++
++$$
+ 2\cdot4
+ =
+ 8
+ \equiv2
+ \pmod6.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ 1\neq4
+ \quad\text{but}\quad
+ 2\cdot1=2\cdot4.
+ }
+-\]
++$$
+ 
+ 此 map 非 injective。
+ 
+@@ -965,50 +966,50 @@
+ 
+ # 13. Regular Multiplier Criterion
+ 
+-對一般 ring \(R\)，
++對一般 ring $R$，
+ 
+ 若：
+ 
+-\[
++$$
+ Ax=Ay,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ A(x-y)=0.
+-\]
++$$
+ 
+ 要推出：
+ 
+-\[
++$$
+ x=y,
+-\]
+-
+-需要 multiplication by \(A\) 沒有非零 kernel。
++$$
++
++需要 multiplication by $A$ 沒有非零 kernel。
+ 
+ 也就是：
+ 
+-\[
++$$
+ \boxed{
+ A\text{ is regular / non-zero-divisor on the relevant module}.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+ ## Theorem 13.1 — Recovery Criterion
+ 
+-\[
++$$
+ \boxed{
+ A\text{ regular}
+ \Rightarrow
+ x\mapsto Ax+B
+ \text{ injective}.
+ }
+-\]
+-
+-若 \(A\) 是 zero divisor，
++$$
++
++若 $A$ 是 zero divisor，
+ 
+ lossless recovery 可失敗。
+ 
+@@ -1018,37 +1019,37 @@
+ 
+ 例如在：
+ 
+-\[
++$$
+ R=\mathbb Z,
+-\]
+-
+-\(2\) 不是 unit，
++$$
++
++$2$ 不是 unit，
+ 
+ 但：
+ 
+-\[
++$$
+ 2x=2y
+ \Rightarrow
+ x=y.
+-\]
++$$
+ 
+ 因：
+ 
+-\[
++$$
+ \mathbb Z
+-\]
++$$
+ 
+ 是 integral domain。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{non-unit}
+ \not\Rightarrow
+ \text{non-injective}.
+ }
+-\]
++$$
+ 
+ 真正要分：
+ 
+@@ -1059,35 +1060,35 @@
+ 
+ # 15. Integral Domain 的位置
+ 
+-若 \(R\) 為 integral domain，
++若 $R$ 為 integral domain，
+ 
+ 則任何：
+ 
+-\[
++$$
+ A\neq0
+-\]
++$$
+ 
+ 都不是 zero divisor。
+ 
+ 所以：
+ 
+-\[
++$$
+ x\mapsto Ax+B
+-\]
++$$
+ 
+ injective。
+ 
+ 若再進入 fraction field：
+ 
+-\[
++$$
+ \operatorname{Frac}(R),
+-\]
++$$
+ 
+ 所有：
+ 
+-\[
++$$
+ A\neq0
+-\]
++$$
+ 
+ 皆可逆。
+ 
+@@ -1099,37 +1100,37 @@
+ 
+ 現在從 algebraic invertibility 轉到 order semantics。
+ 
+-\[
++$$
+ \mathbb Q,\mathbb R
+-\]
++$$
+ 
+ 可以用：
+ 
+-\[
++$$
+ <
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ F(n)<n.
+-\]
++$$
+ 
+ 但：
+ 
+-\[
++$$
+ \mathbb C
+-\]
++$$
+ 
+ 不存在與 field addition/multiplication 相容的 total order。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ F(z)<z
+ }
+-\]
++$$
+ 
+ 沒有自然 field-theoretic 意義。
+ 
+@@ -1139,41 +1140,41 @@
+ 
+ 對：
+ 
+-\[
++$$
+ F(x)=\lambda x+c,
+-\]
++$$
+ 
+ 任意兩點：
+ 
+-\[
++$$
+ F(x)-F(y)
+ =
+ \lambda(x-y).
+-\]
++$$
+ 
+ 因此在 multiplicative absolute value：
+ 
+-\[
++$$
+ |\cdot|_v
+-\]
++$$
+ 
+ 下：
+ 
+-\[
++$$
+ \boxed{
+ |F(x)-F(y)|_v
+ =
+ |\lambda|_v|x-y|_v.
+ }
+-\]
++$$
+ 
+ 所以 contraction 的真正 metric criterion：
+ 
+-\[
++$$
+ \boxed{
+ |\lambda|_v<1.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1181,67 +1182,67 @@
+ 
+ 取 Collatz word：
+ 
+-\[
++$$
+ w=UUDD.
+-\]
++$$
+ 
+ Paper 02：
+ 
+-\[
++$$
+ \boxed{
+ F_w(x)
+ =
+ \frac{9x+5}{16}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \lambda=\frac9{16}.
+-\]
++$$
+ 
+ ---
+ 
+ # 19. Real Absolute Value
+ 
+-\[
++$$
+ \boxed{
+ \left|\frac9{16}\right|_\infty
+ =
+ \frac9{16}<1.
+ }
+-\]
++$$
+ 
+ 因此它是 real contraction。
+ 
+ ---
+ 
+-# 20. \(2\)-adic Absolute Value
++# 20. $2$-adic Absolute Value
+ 
+ 標準 normalization：
+ 
+-\[
++$$
+ |2|_2=\frac12.
+-\]
++$$
+ 
+ 因：
+ 
+-\[
++$$
+ v_2(9)=0,
+ \qquad
+ v_2(16)=4,
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ v_2(9/16)=-4.
+-\]
++$$
+ 
+ 故：
+ 
+-\[
++$$
+ \boxed{
+ \left|\frac9{16}\right|_2
+ =
+@@ -1249,21 +1250,21 @@
+ =
+ 16>1.
+ }
+-\]
+-
+-同一 operator 是 \(2\)-adic expansion。
+-
+----
+-
+-# 21. \(3\)-adic Absolute Value
+-
+-\[
++$$
++
++同一 operator 是 $2$-adic expansion。
++
++---
++
++# 21. $3$-adic Absolute Value
++
++$$
+ v_3(9/16)=2.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \left|\frac9{16}\right|_3
+ =
+@@ -1271,9 +1272,9 @@
+ =
+ \frac19<1.
+ }
+-\]
+-
+-因此是 \(3\)-adic strong contraction。
++$$
++
++因此是 $3$-adic strong contraction。
+ 
+ ---
+ 
+@@ -1281,23 +1282,23 @@
+ 
+ 所以不能只寫：
+ 
+-\[
++$$
+ \text{word }w\text{ is contracting}.
+-\]
++$$
+ 
+ 更完整應寫：
+ 
+-\[
++$$
+ \boxed{
+ (w,v)\text{ is contracting}
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ v
+-\]
++$$
+ 
+ 指定 valuation / norm。
+ 
+@@ -1305,11 +1306,11 @@
+ 
+ 選的是：
+ 
+-\[
++$$
+ \boxed{
+ \text{Archimedean order / absolute value}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1317,79 +1318,79 @@
+ 
+ 主 multiplier：
+ 
+-\[
++$$
+ \lambda_w=\frac{3^u}{2^k}.
+-\]
++$$
+ 
+ 所以：
+ 
+ ### Archimedean
+ 
+-\[
++$$
+ \boxed{
+ |\lambda_w|_\infty
+ =
+ 3^u/2^k.
+ }
+-\]
+-
+-### \(2\)-adic
+-
+-\[
++$$
++
++### $2$-adic
++
++$$
+ \boxed{
+ |\lambda_w|_2
+ =
+ 2^k.
+ }
+-\]
+-
+-### \(3\)-adic
+-
+-\[
++$$
++
++### $3$-adic
++
++$$
+ \boxed{
+ |\lambda_w|_3
+ =
+ 3^{-u}.
+ }
+-\]
++$$
+ 
+ 因此只要：
+ 
+-\[
++$$
+ k>0,
+-\]
+-
+-固定 finite Collatz word 在 \(2\)-adic metric 的 difference dynamics 是 expansion；
++$$
++
++固定 finite Collatz word 在 $2$-adic metric 的 difference dynamics 是 expansion；
+ 
+ 只要：
+ 
+-\[
++$$
+ u>0,
+-\]
+-
+-在 \(3\)-adic metric 則是 contraction。
+-
+----
+-
+-# 24. 這與 \(2\)-adic Collatz 文獻的關係
++$$
++
++在 $3$-adic metric 則是 contraction。
++
++---
++
++# 24. 這與 $2$-adic Collatz 文獻的關係
+ 
+ 既有研究已建立：
+ 
+-\[
++$$
+ \mathbb Z_2
+-\]
++$$
+ 
+ 與 Collatz parity sequences 的 one-to-one coding，並研究 induced automorphism / conjugacy dynamics。
+ 
+-本文不宣稱 \(2\)-adic Collatz 是新結果。
++本文不宣稱 $2$-adic Collatz 是新結果。
+ 
+ 本文使用：
+ 
+-\[
++$$
+ \boxed{
+ |\lambda_w|_2
+ }
+-\]
++$$
+ 
+ 來指出一件 RCOT 的一般原則：
+ 
+@@ -1401,41 +1402,41 @@
+ 
+ 現在令 state：
+ 
+-\[
++$$
+ x\in V
+-\]
++$$
+ 
+ 為向量，
+ 
+ branch：
+ 
+-\[
++$$
+ \boxed{
+ F_i(x)=A_ix+b_i.
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ A_i\in\operatorname{End}(V).
+-\]
++$$
+ 
+ 對 word：
+ 
+-\[
++$$
+ w=i_1\cdots i_k,
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ \boxed{
+ F_w(x)
+ =
+ A_{i_k}\cdots A_{i_1}x+B_w.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1443,7 +1444,7 @@
+ 
+ 取：
+ 
+-\[
++$$
+ A=
+ \begin{pmatrix}
+ 1&1\\
+@@ -1455,37 +1456,37 @@
+ 1&0\\
+ 1&1
+ \end{pmatrix}.
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ AB
+ =
+ \begin{pmatrix}
+ 2&1\\
+ 1&1
+ \end{pmatrix},
+-\]
++$$
+ 
+ 但：
+ 
+-\[
++$$
+ BA
+ =
+ \begin{pmatrix}
+ 1&1\\
+ 1&2
+ \end{pmatrix}.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ AB\neq BA.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1493,38 +1494,38 @@
+ 
+ words：
+ 
+-\[
++$$
+ AB
+-\]
++$$
+ 
+ 與：
+ 
+-\[
++$$
+ BA
+-\]
++$$
+ 
+ 都含：
+ 
+-- 一個 \(A\)；
+-- 一個 \(B\)。
++- 一個 $A$；
++- 一個 $B$。
+ 
+ branch counts 完全相同。
+ 
+ 但：
+ 
+-\[
++$$
+ \boxed{
+ L_{AB}\neq L_{BA}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{counts no longer determine the leading drift}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1532,22 +1533,22 @@
+ 
+ 交換標量：
+ 
+-\[
++$$
+ \boxed{
+ \text{order}\to\text{correction only}.
+ }
+-\]
++$$
+ 
+ 非交換：
+ 
+-\[
++$$
+ \boxed{
+ \text{order}\to
+ \text{leading operator}
+ +
+ \text{correction}.
+ }
+-\]
++$$
+ 
+ 這是比 residue branching 更深的結構斷裂。
+ 
+@@ -1559,21 +1560,21 @@
+ 
+ 固定：
+ 
+-\[
++$$
+ k,u
+-\]
++$$
+ 
+ 就知道：
+ 
+-\[
++$$
+ \lambda_w=\frac{3^u}{2^k}.
+-\]
++$$
+ 
+ 因此所有：
+ 
+-\[
++$$
+ \binom ku
+-\]
++$$
+ 
+ 個 words 共用同一 skeleton side。
+ 
+@@ -1583,15 +1584,15 @@
+ 
+ 不同排列仍有不同 product：
+ 
+-\[
++$$
+ A_{i_k}\cdots A_{i_1}.
+-\]
++$$
+ 
+ 所以不能再用：
+ 
+-\[
++$$
+ \binom ku
+-\]
++$$
+ 
+ 一次分類整族 words。
+ 
+@@ -1601,17 +1602,17 @@
+ 
+ scalar：
+ 
+-\[
++$$
+ \lambda_w\in\mathbb R.
+-\]
++$$
+ 
+ matrix：
+ 
+-\[
++$$
+ \boxed{
+ L_w=A_{i_k}\cdots A_{i_1}.
+ }
+-\]
++$$
+ 
+ 若要談 contraction，
+ 
+@@ -1625,13 +1626,13 @@
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{one-dimensional phase boundary}
+ \to
+ \text{spectral/operator phase structure}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1639,75 +1640,77 @@
+ 
+ 若所有：
+ 
+-\[
++$$
+ A_iA_j=A_jA_i,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ L_w
+-\]
++$$
+ 
+ 仍只看 counts。
+ 
+ 若還能 simultaneous diagonalize：
+ 
+-\[
++$$
+ A_i=P\Lambda_iP^{-1},
+-\]
+-
+-則每個 eigendirection \(q\) 都有 scalar-like multiplier：
+-
+-\[
++$$
++
++則每個 eigendirection $q$ 都有 scalar-like multiplier：
++
++$$
+ \boxed{
+ \lambda_{w,q}
+ =
+ \prod_i
+ \lambda_{i,q}^{\,c_i(w)}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{dimension}>1
+ \text{ does not itself kill count/order decomposition}.
+ }
+-\]
++$$
+ 
+ 真正的斷裂條件是：
+ 
+-\[
++$$
+ \boxed{
+ \text{noncommutativity of leading multipliers}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 32. Möbius / Projective Layer
+ 
+-考慮：
+-
+-\[
++本節先令係數位於一個 field $K$。考慮：
++
++$$
+ \boxed{
+ F(x)
+ =
+ \frac{ax+b}{cx+d},
+ }
+-\]
+-
+-其中：
+-
+-\[
++$$
++
++其中 $a,b,c,d\in K$，且：
++
++$$
+ ad-bc\neq0.
+-\]
++$$
++
++在 field 上這正是 matrix invertibility 的條件。若改在一般 commutative ring $R$ 上工作，則應把條件改成 $ad-bc\in R^\times$，projective rescaling 也只允許乘以 units。
+ 
+ 它對應 matrix：
+ 
+-\[
++$$
+ \boxed{
+ M_F=
+ \begin{pmatrix}
+@@ -1715,9 +1718,9 @@
+ c&d
+ \end{pmatrix}
+ }
+-\]
+-
+-up to nonzero scalar multiple。
++$$
++
++up to nonzero scalar multiple in $K$。
+ 
+ ---
+ 
+@@ -1725,39 +1728,39 @@
+ 
+ 若：
+ 
+-\[
++$$
+ F\leftrightarrow M_F,
+ \qquad
+ G\leftrightarrow M_G,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ G\circ F
+ \leftrightarrow
+ M_GM_F.
+ }
+-\]
++$$
+ 
+ 因此任意 finite word 仍由四個 projective coefficients 描述：
+ 
+-\[
++$$
+ \boxed{
+ F_w(x)
+ =
+ \frac{A_wx+B_w}{C_wx+D_w}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{fixed-dimensional closure survives}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1765,29 +1768,29 @@
+ 
+ affine：
+ 
+-\[
++$$
+ x=r+qa
+-\]
++$$
+ 
+ 代入：
+ 
+-\[
++$$
+ F(x)=\alpha x+\beta
+-\]
++$$
+ 
+ 仍得到：
+ 
+-\[
++$$
+ F(r+qa)
+ =
+ r'+q'a.
+-\]
+-
+-所以 quotient label \(a\) 線性保留。
++$$
++
++所以 quotient label $a$ 線性保留。
+ 
+ Möbius：
+ 
+-\[
++$$
+ F(r+qa)
+ =
+ \frac{
+@@ -1795,29 +1798,29 @@
+ }{
+ c_0(r+qa)+d_0
+ },
+-\]
++$$
+ 
+ 分母本身依賴：
+ 
+-\[
++$$
+ a.
+-\]
++$$
+ 
+ 一般不能整理成：
+ 
+-\[
++$$
+ s+pa.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{arithmetic progression}
+ \not\to
+ \text{arithmetic progression}
+ }
+-\]
++$$
+ 
+ 一般成立。
+ 
+@@ -1831,15 +1834,15 @@
+ - matrix representation：✓
+ - exact inversion（away from poles）：✓
+ - simple affine lattice transport：✗
+-- quotient-label identity \(a\mapsto a\)：一般 ✗
++- quotient-label identity $a\mapsto a$：一般 ✗
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{operator closure can survive after RCOT lattice geometry dies}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1847,9 +1850,9 @@
+ 
+ 任何 invertible local map 都可以透過把 target coordinate 定義成：
+ 
+-\[
++$$
+ F^{-1}
+-\]
++$$
+ 
+ 而形式上 trivialize。
+ 
+@@ -1857,59 +1860,59 @@
+ 
+ RCOT 更強的地方是：
+ 
+-\[
++$$
+ \boxed{
+ \text{source and target charts are simple arithmetic quotient coordinates}.
+ }
+-\]
++$$
+ 
+ 即：
+ 
+-\[
++$$
+ \frac{x-r}{D}
+ \quad\leftrightarrow\quad
+ \frac{y-s}{A}.
+-\]
++$$
+ 
+ Möbius 一般失去這個簡單 lattice-coordinate structure。
+ 
+ ---
+ 
+-# 37. Degree \(>1\) Polynomial Layer
++# 37. Degree $>1$ Polynomial Layer
+ 
+ 考慮：
+ 
+-\[
++$$
+ f(x)=x^2+1.
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ f^{\circ2}(x)
+ =
+ (x^2+1)^2+1
+-\]
++$$
+ 
+ degree：
+ 
+-\[
++$$
+ 4.
+-\]
++$$
+ 
+ 再 iteration：
+ 
+-\[
++$$
+ \deg f^{\circ3}=8.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \deg f^{\circ k}=2^k.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1917,35 +1920,35 @@
+ 
+ 對 nonconstant polynomials over an integral domain：
+ 
+-\[
++$$
+ \boxed{
+ \deg(f\circ g)
+ =
+ \deg f\cdot\deg g.
+ }
+-\]
++$$
+ 
+ 因此若 branch degrees：
+ 
+-\[
++$$
+ d_i\ge1,
+-\]
++$$
+ 
+ word degree：
+ 
+-\[
++$$
+ \boxed{
+ \deg F_w
+ =
+ \prod_jd_{i_j}.
+ }
+-\]
++$$
+ 
+ 只要反覆出現某個：
+ 
+-\[
++$$
+ d_i>1,
+-\]
++$$
+ 
+ degree 可無界增長。
+ 
+@@ -1955,15 +1958,15 @@
+ 
+ affine：
+ 
+-\[
++$$
+ \deg=1
+-\]
++$$
+ 
+ composition 後仍：
+ 
+-\[
++$$
+ \deg=1.
+-\]
++$$
+ 
+ Möbius：
+ 
+@@ -1973,23 +1976,23 @@
+ 
+ 一般 polynomial：
+ 
+-\[
++$$
+ \deg>1
+-\]
++$$
+ 
+ composition 後 degree 乘法增長。
+ 
+ 所以不存在固定：
+ 
+-\[
++$$
+ D<\infty
+-\]
++$$
+ 
+ 使所有 finite words 都落在：
+ 
+-\[
++$$
+ \{\deg f\le D\}
+-\]
++$$
+ 
+ 之內，除非系統有特殊退化。
+ 
+@@ -1999,21 +2002,21 @@
+ 
+ 例如單一：
+ 
+-\[
++$$
+ x\mapsto x^2
+-\]
+-
+-的第 \(k\) 次 iteration：
+-
+-\[
++$$
++
++的第 $k$ 次 iteration：
++
++$$
+ x^{2^k}
+-\]
++$$
+ 
+ 仍可用：
+ 
+-\[
++$$
+ k
+-\]
++$$
+ 
+ 簡短描述。
+ 
+@@ -2023,13 +2026,13 @@
+ 
+ 本文只主張：
+ 
+-\[
++$$
+ \boxed{
+ \text{generic degree}>1
+ \Rightarrow
+ \text{fixed affine/projective coefficient class is not closed}.
+ }
+-\]
++$$
+ 
+ 這是嚴格且足夠的判定域邊界。
+ 
+@@ -2051,17 +2054,17 @@
+ 
+ | Algebra / Operator Class | Finite Closure | Count→Leading Skeleton | Unique Residue | Exact Recovery | Natural Descent |
+ |---|---:|---:|---:|---:|---:|
+-| \(\mathbb Z,\mathbb Q\) scalar affine | ✓ | ✓ | unit/gcd 下 ✓ | ✓ | ✓ |
++| $\mathbb Z,\mathbb Q$ scalar affine | ✓ | ✓ | unit/gcd 下 ✓ | ✓ | ✓ |
+ | commutative integral domain affine | ✓ | ✓ | quotient-unit 下 ✓ | ✓ for nonzero multiplier | 若可排序 |
+ | quotient / non-unit multiplier | ✓ | ✓ | ✗ / branched | 可局部保留 | 視結構 |
+ | zero-divisor ring | ✓ | ✓ | 不保證 | ✗ 可失敗 | 通常無自然序 |
+-| \(\mathbb C\) affine | ✓ | ✓ | 視 quotient | ✓ | \(<\) 無；可用 norm |
+-| \(p\)-adic field affine | ✓ | ✓ | 視 lattice | ✓ | valuation-relative |
++| $\mathbb C$ affine | ✓ | ✓ | 視 quotient | ✓ | $<$ 無；可用 norm |
++| $p$-adic field affine | ✓ | ✓ | 視 lattice | ✓ | valuation-relative |
+ | commuting matrices affine | ✓ | 部分 ✓ | 不再是 scalar residue 問題 | invertibility 下 ✓ | norm/spectral |
+ | noncommuting matrices affine | ✓ | ✗ | scalar cylinder law失效 | invertibility 下 ✓ | norm/spectral |
+ | Möbius / projective | ✓ | matrix-order dependent | affine residue law一般失效 | away from poles ✓ | projective/norm dependent |
+-| degree \(>1\) polynomial | polynomial class ✓ but degree grows | 一般 ✗ | affine cylinder law ✗ | map-dependent | map-dependent |
+-| fixed-degree affine/projective class | degree \(>1\) 後 ✗ | — | — | — | — |
++| degree $>1$ polynomial | polynomial class ✓ but degree grows | 一般 ✗ | affine cylinder law ✗ | map-dependent | map-dependent |
++| fixed-degree affine/projective class | degree $>1$ 後 ✗ | — | — | — | — |
+ 
+ ---
+ 
+@@ -2081,11 +2084,11 @@
+ 
+ 得到：
+ 
+-\[
++$$
+ \boxed{
+ \text{closure + unique residue + recovery + count/order split}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2093,19 +2096,19 @@
+ 
+ 當：
+ 
+-\[
++$$
+ [A_w]
+-\]
++$$
+ 
+ 不是 quotient unit。
+ 
+ 失去：
+ 
+-\[
++$$
+ \boxed{
+ \text{unique residue coding}.
+ }
+-\]
++$$
+ 
+ 但 affine closure 還在。
+ 
+@@ -2117,11 +2120,11 @@
+ 
+ 失去：
+ 
+-\[
++$$
+ \boxed{
+ \text{exact inverse recovery}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2129,17 +2132,17 @@
+ 
+ 當：
+ 
+-\[
++$$
+ A_iA_j\neq A_jA_i.
+-\]
++$$
+ 
+ 失去：
+ 
+-\[
++$$
+ \boxed{
+ \text{counts determine leading skeleton}.
+ }
+-\]
++$$
+ 
+ order 進入主 operator。
+ 
+@@ -2151,25 +2154,25 @@
+ 
+ 但失去：
+ 
+-\[
++$$
+ \boxed{
+ \text{arithmetic-progression transport}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ ## Level 5 — Nonlinear Growing Operator Space
+ 
+-degree \(>1\) composition 導致 degree growth。
++degree $>1$ composition 導致 degree growth。
+ 
+ 失去：
+ 
+-\[
++$$
+ \boxed{
+ \text{fixed affine/projective operator-family closure}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2181,7 +2184,7 @@
+ 
+ 形式上：
+ 
+-\[
++$$
+ \boxed{
+ \text{RCOT Core}
+ =
+@@ -2191,7 +2194,7 @@
+ +
+ \text{regular recovery multiplier}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2205,41 +2208,41 @@
+ 
+ state domain 具有與 algebra 相容的 order：
+ 
+-\[
++$$
+ <
+-\]
++$$
+ 
+ 可比較：
+ 
+-\[
++$$
+ F(n)<n.
+-\]
++$$
+ 
+ ### Metric RCOT
+ 
+ 或指定：
+ 
+-\[
++$$
+ |\cdot|_v,\quad\|\cdot\|
+-\]
++$$
+ 
+ 再以：
+ 
+-\[
++$$
+ |\lambda|_v<1
+-\]
++$$
+ 
+ 定義 contraction。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{algebraic RCOT}
+ \neq
+ \text{ordered/metric RCOT}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2247,43 +2250,43 @@
+ 
+ Collatz：
+ 
+-\[
++$$
+ D(x)=x/2,
+ \qquad
+ U(x)=(3x+1)/2.
+-\]
++$$
+ 
+ 具有：
+ 
+-\[
++$$
+ \boxed{
+ \text{scalar}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{affine}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{commutative}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ 3^u\in(\mathbb Z/2^k\mathbb Z)^\times
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ 3^u\neq0
+ }
+-\]
++$$
+ 
+ 以及 positive-integer order。
+ 
+@@ -2309,21 +2312,21 @@
+ 
+ 固定 finite word 時：
+ 
+-\[
++$$
+ \boxed{
+ \text{local arithmetic is almost maximally simple}.
+ }
+-\]
++$$
+ 
+ 甚至：
+ 
+-\[
++$$
+ \boxed{
+ \psi_wT^k\phi_w^{-1}
+ =
+ \operatorname{id}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2331,9 +2334,9 @@
+ 
+ 不在：
+ 
+-\[
++$$
+ 3n+1
+-\]
++$$
+ 
+ 單步公式。
+ 
+@@ -2343,7 +2346,7 @@
+ 
+ 而在：
+ 
+-\[
++$$
+ \boxed{
+ \mathcal A_{w_0}
+ \to
+@@ -2352,15 +2355,15 @@
+ \mathcal A_{w_2}
+ \to\cdots.
+ }
+-\]
++$$
+ 
+ 也就是：
+ 
+-\[
++$$
+ \boxed{
+ \text{global chart itinerary}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2368,19 +2371,19 @@
+ 
+ 一個系統可以：
+ 
+-\[
++$$
+ \boxed{
+ \text{locally exactly trivializable}
+ }
+-\]
++$$
+ 
+ 但：
+ 
+-\[
++$$
+ \boxed{
+ \text{global transition law remains nontrivial}.
+ }
+-\]
++$$
+ 
+ Collatz 正是這種 case。
+ 
+@@ -2398,16 +2401,16 @@
+ - 所有 noncommutative systems 都不可分析；
+ - Möbius systems 無法 local trivialize；
+ - nonlinear systems 無法壓縮；
+-- \(p\)-adic contraction 可以替代正整數 Collatz descent；
++- $p$-adic contraction 可以替代正整數 Collatz descent；
+ - RCOT 是 generalized Collatz literature 的替代品。
+ 
+ 本文只建立：
+ 
+-\[
++$$
+ \boxed{
+ \text{which specific RCOT theorem depends on which algebraic property}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2415,50 +2418,50 @@
+ 
+ ## Theorem A — Commutative Affine Closure
+ 
+-\[
++$$
+ \boxed{
+ F_w(x)=\frac{A_wx+B_w}{D_w}.
+ }
+-\]
++$$
+ 
+ ## Theorem B — Quotient-Unit Residue Criterion
+ 
+-\[
++$$
+ \boxed{
+ [A_w]\in(R/I)^\times
+ \Rightarrow
+ \text{unique residue}.
+ }
+-\]
++$$
+ 
+ ## Theorem C — Regular-Multiplier Recovery Criterion
+ 
+-\[
++$$
+ \boxed{
+ A_w\text{ regular}
+ \Rightarrow
+ x\mapsto A_wx+B_w
+ \text{ injective}.
+ }
+-\]
++$$
+ 
+ ## Theorem D — Geometry-Relative Contraction
+ 
+-\[
++$$
+ \boxed{
+ |F(x)-F(y)|_v
+ =
+ |\lambda|_v|x-y|_v.
+ }
+-\]
++$$
+ 
+ ## Theorem E — Noncommutative Skeleton Breakage
+ 
+ 若：
+ 
+-\[
++$$
+ A_iA_j\neq A_jA_i,
+-\]
++$$
+ 
+ 則 equal branch counts 不足以決定 leading word operator。
+ 
+@@ -2470,13 +2473,13 @@
+ 
+ 對 nonconstant polynomials over an integral domain：
+ 
+-\[
++$$
+ \boxed{
+ \deg(f\circ g)=\deg f\,\deg g.
+ }
+-\]
+-
+-所以 degree \(>1\) iteration 一般離開所有固定-degree affine/projective classes。
++$$
++
++所以 degree $>1$ iteration 一般離開所有固定-degree affine/projective classes。
+ 
+ ---
+ 
+@@ -2490,69 +2493,69 @@
+ 
+ 而是：
+ 
+-\[
++$$
+ \boxed{
+ \text{the theorem breaks when a supporting algebraic property disappears}.
+ }
+-\]
++$$
+ 
+ 具體而言：
+ 
+-\[
++$$
+ \boxed{
+ \text{non-unit}
+ \Rightarrow
+ \text{residue uniqueness breaks},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{zero divisor}
+ \Rightarrow
+ \text{faithful recovery may break},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{loss of order}
+ \Rightarrow
+ \text{descent semantics changes},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{noncommutativity}
+ \Rightarrow
+ \text{leading drift becomes order-sensitive},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{projective non-affinity}
+ \Rightarrow
+ \text{lattice transport breaks},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{nonlinear degree growth}
+ \Rightarrow
+ \text{fixed affine/projective closure breaks}.
+ }
+-\]
++$$
+ 
+ 因此前七篇的 Collatz local atlas 應被定位在：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{commuting scalar affine residue-class dynamics}
+ }
+-\]
++$$
+ 
+ 這一非常精確的數學區域中。
+ 
+@@ -2564,13 +2567,13 @@
+ 
+ Paper 09 將回答這個問題，建立 **Finite Certificate Frontier**，將本系列所有 local results 統合成 finite exact coverage objects，並正式標出：
+ 
+-\[
++$$
+ \boxed{
+ \text{finite coverage completeness}
+ \quad\text{與}\quad
+ \text{infinite universal convergence}
+ }
+-\]
++$$
+ 
+ 之間最後不能被偷渡的量詞鴻溝。
+ 
+@@ -2594,14 +2597,14 @@
+ 核心任務：
+ 
+ 1. 定義 finite chart certificate；
+-2. 定義 finite certificate family \(\mathcal C_N\)；
++2. 定義 finite certificate family $\mathcal C_N$；
+ 3. 定義 exact coverage completeness：
+-   \[
++   $$
+    [1,N]\subseteq\bigcup_{\gamma\in\mathcal C_N}D_\gamma;
+-   \]
++   $$
+ 4. 將 descent、merge、terminal、inverse-fiber certificates 統一；
+ 5. 形式化 strong-induction closure；
+-6. 把先前 \(k=16\) threshold certificates 放入統一 proof-object schema；
++6. 把先前 $k=16$ threshold certificates 放入統一 proof-object schema；
+ 7. 定義 certificate frontier / hard-cylinder frontier；
+-8. 證明 finite \(N\) 的 certificate completeness 不等於 infinite universal frontier；
++8. 證明 finite $N$ 的 certificate completeness 不等於 infinite universal frontier；
+ 9. 最終把 Collatz 全域困難壓縮為 itinerary well-foundedness / absence of infinite uncertified branch 的形式。

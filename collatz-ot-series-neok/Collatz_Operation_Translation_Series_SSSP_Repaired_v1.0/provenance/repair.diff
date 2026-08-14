@@ -1,0 +1,11347 @@
+### BEGIN DIFF 01 ###
+### END DIFF 01 ###
+
+### BEGIN DIFF 02 ###
+--- original/02__Collatz Local Affine Atlas：有限奇偶字的精確仿射化.md
++++ corrected/02
+@@ -6,8 +6,9 @@
+ **作者：** Neo.K  
+ **機構：** 一言諾科技有限公司（EveMissLab）  
+ **系列：** Collatz Operation Translation Series — Paper 02  
+-**版本：** v0.1  
+-**日期：** 2026-08-10
++**版本：** v0.1.1  
++**日期：** 2026-08-10  
++**修訂日期：** 2026-08-14
+ 
+ ---
+ 
+@@ -1645,11 +1646,11 @@
+ \boxed{
+ \Omega_w
+ =
+-r_w+2^k\mathbb Z_{\ge0}
+-}
+-$$
+-
+-在正整數域中的相應截取，
++(r_w+2^k\mathbb Z)\cap\mathbb Z_{>0}
++}
++$$
++
++其中 $r_w$ 取模 $2^k$ 的 canonical representative $0\le r_w<2^k$，
+ 
+ 且：
+ 
+### END DIFF 02 ###
+
+### BEGIN DIFF 03 ###
+--- original/03__Parity Word、Residue Cylinder 與局部 Identity 化.md
++++ corrected/03
+@@ -6,8 +6,9 @@
+ **作者：** Neo.K  
+ **機構：** 一言諾科技有限公司（EveMissLab）  
+ **系列：** Collatz Operation Translation Series — Paper 03  
+-**版本：** v0.1  
+-**日期：** 2026-08-10
++**版本：** v0.1.1  
++**日期：** 2026-08-10  
++**修訂日期：** 2026-08-14
+ 
+ ---
+ 
+@@ -308,10 +309,16 @@
+ 
+ 假設對某個長度 $k$ 的字 $w$，
+ 
+-已存在唯一：
+-
+-$$
+-r_w\pmod{2^k}
++已存在唯一 residue class：
++
++$$
++r_w\pmod{2^k},
++$$
++
++並取其 canonical representative：
++
++$$
++0\le r_w<2^k.
+ $$
+ 
+ 使：
+@@ -338,13 +345,22 @@
+ \frac{3^ur_w+b_w}{2^k}.
+ $$
+ 
+-因：
+-
+-$$
+-r_w\in\Omega_w,
+-$$
+-
+-故：
++由 cylinder hypothesis，無論 $r_w$ 是否為 $0$，都有：
++
++$$
++r_w+2^k\in\Omega_w.
++$$
++
++因此 $F_w$ 在這個正整數 admissible input 上等於真正的 $T^k$，故：
++
++$$
++F_w(r_w+2^k)
++=
++m_w+3^u
++\in\mathbb Z.
++$$
++
++因 $3^u\in\mathbb Z$，遂得：
+ 
+ $$
+ m_w\in\mathbb Z.
+### END DIFF 03 ###
+
+### BEGIN DIFF 04 ###
+### END DIFF 04 ###
+
+### BEGIN DIFF 05 ###
+### END DIFF 05 ###
+
+### BEGIN DIFF 06 ###
+### END DIFF 06 ###
+
+### BEGIN DIFF 07 ###
+--- original/07__廣義 (mx+r) 系統與 Residue-Class Operation Translation.md
++++ corrected/07
+@@ -1,13 +1,14 @@
+-# 廣義 \(mx+r\) 系統與 Residue-Class Operation Translation
++# 廣義 $mx+r$ 系統與 Residue-Class Operation Translation
+ ## ——從 Collatz 特例到交換標量仿射動力、相變邊界與一般化局部圖冊
+ 
+-**English Title:** *Generalized \(mx+r\) Systems and Residue-Class Operation Translation: Affine Word Closure, Local Atlases, and a Cylinder Phase Boundary*
++**English Title:** *Generalized $mx+r$ Systems and Residue-Class Operation Translation: Affine Word Closure, Local Atlases, and a Cylinder Phase Boundary*
+ 
+ **作者：** Neo.K  
+ **機構：** 一言諾科技有限公司（EveMissLab）  
+ **系列：** Collatz Operation Translation Series — Paper 07  
+-**版本：** v0.1  
+-**日期：** 2026-08-10
++**版本：** v0.1.1  
++**日期：** 2026-08-10  
++**修訂日期：** 2026-08-14
+ 
+ ---
+ 
+@@ -15,25 +16,25 @@
+ 
+ 前六篇以 modified Collatz map
+ 
+-\[
++$$
+ T(n)=
+ \begin{cases}
+ n/2,&n\text{ even},\\[2mm]
+ (3n+1)/2,&n\text{ odd}
+ \end{cases}
+-\]
+-
+-建立 finite-word affine closure、parity-word/residue-cylinder 對應、局部 identity 化、雙向 \(2^k\leftrightarrow3^u\) 殘餘類轉譯、有限字收縮邊界與 valuation language。
+-
+-本文拔除 Collatz 特有的 \(3,1\)，考察正奇整數參數
+-
+-\[
++$$
++
++建立 finite-word affine closure、parity-word/residue-cylinder 對應、局部 identity 化、雙向 $2^k\leftrightarrow3^u$ 殘餘類轉譯、有限字收縮邊界與 valuation language。
++
++本文拔除 Collatz 特有的 $3,1$，考察正奇整數參數
++
++$$
+ m\ge1,\qquad r\ge1,\qquad m,r\text{ odd}
+-\]
++$$
+ 
+ 所定義的 parity-preserving generalized system
+ 
+-\[
++$$
+ \boxed{
+ T_{m,r}(n)
+ =
+@@ -42,111 +43,111 @@
+ \dfrac{mn+r}{2},&n\equiv1\pmod2.
+ \end{cases}
+ }
+-\]
++$$
+ 
+ 令
+ 
+-\[
++$$
+ D(x)=\frac x2,
+ \qquad
+ U_{m,r}(x)=\frac{mx+r}{2}.
+-\]
+-
+-本文證明，對任意長度 \(k\) 的 finite parity word \(w\in\{D,U\}^k\)，若 \(u=u(w)\)，則形式 composition 恆有 exact affine closure：
+-
+-\[
++$$
++
++本文證明，對任意長度 $k$ 的 finite parity word $w\in\{D,U\}^k$，若 $u=u(w)$，則形式 composition 恆有 exact affine closure：
++
++$$
+ \boxed{
+ F_w^{(m,r)}(x)
+ =
+ \frac{m^u x+b_w^{(m,r)}}{2^k},
+ }
+-\]
++$$
+ 
+ 其中
+ 
+-\[
++$$
+ \boxed{
+ b_w^{(m,r)}
+ =
+ r\sum_{t=1}^{u}
+ 2^{j_t-1}m^{u-t},
+ }
+-\]
+-
+-而 \(j_t\) 是第 \(t\) 個 \(U\) 的位置。
++$$
++
++而 $j_t$ 是第 $t$ 個 $U$ 的位置。
+ 
+ 因此 generalized system 保留：
+ 
+-\[
++$$
+ \boxed{
+ \text{branch counts determine the multiplicative skeleton;}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{branch order determines the affine correction.}
+ }
+-\]
+-
+-更重要的是，因 \(m\) 為奇數，
+-
+-\[
++$$
++
++更重要的是，因 $m$ 為奇數，
++
++$$
+ \gcd(m^u,2^k)=1,
+-\]
+-
+-所以每個 finite parity word 仍對應唯一 residue cylinder modulo \(2^k\)：
+-
+-\[
++$$
++
++所以每個 finite parity word 仍對應唯一 residue cylinder modulo $2^k$：
++
++$$
+ \boxed{
+ \Omega_w^{(m,r)}
+ =
+ (r_w+2^k\mathbb Z)\cap\mathbb Z_{>0},
+ }
+-\]
++$$
+ 
+ 且
+ 
+-\[
++$$
+ \boxed{
+ r_w
+ \equiv
+ -b_w^{(m,r)}m^{-u}
+ \pmod{2^k}.
+ }
+-\]
++$$
+ 
+ 若
+ 
+-\[
++$$
+ s_w
+ =
+ F_w^{(m,r)}(r_w),
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ T_{m,r}^k(r_w+2^ka)
+ =
+ s_w+m^ua.
+ }
+-\]
+-
+-因此 source \(2^k\)-cylinder 被 exact 送往 target \(m^u\)-progression：
+-
+-\[
++$$
++
++因此 source $2^k$-cylinder 被 exact 送往 target $m^u$-progression：
++
++$$
+ \boxed{
+ r_w+2^k\mathbb Z
+ \longleftrightarrow
+ s_w+m^u\mathbb Z,
+ }
+-\]
++$$
+ 
+ 並在 source/target quotient coordinates 中再次 identity 化：
+ 
+-\[
++$$
+ \boxed{
+ \psi_w
+ \circ
+@@ -156,13 +157,13 @@
+ =
+ \operatorname{id}.
+ }
+-\]
+-
+-這證明前六篇最核心的 local-affine/identity structure 並非 \(3x+1\) 特有，而屬於更廣泛的 odd-\(m\), odd-\(r\) residue-class affine family。
+-
+-對固定 \((k,u)\)，當 \(r>0\) 時，order correction 有 exact bounds：
+-
+-\[
++$$
++
++這證明前六篇最核心的 local-affine/identity structure 並非 $3x+1$ 特有，而屬於更廣泛的 odd-$m$, odd-$r$ residue-class affine family。
++
++對固定 $(k,u)$，當 $r>0$ 時，order correction 有 exact bounds：
++
++$$
+ \boxed{
+ r\,\frac{m^u-2^u}{m-2}
+ \le
+@@ -170,158 +171,158 @@
+ \le
+ r\,2^{k-u}\frac{m^u-2^u}{m-2}
+ }
+-\]
+-
+-（\(m\neq2\)，而本文 \(m\) 為 odd）。最小值由
+-
+-\[
++$$
++
++（$m\neq2$，而本文 $m$ 為 odd）。最小值由
++
++$$
+ U^uD^{k-u}
+-\]
++$$
+ 
+ 取得，最大值由
+ 
+-\[
++$$
+ D^{k-u}U^u
+-\]
++$$
+ 
+ 取得。
+ 
+ finite-word drift 則由：
+ 
+-\[
++$$
+ \boxed{
+ m^u\lessgtr2^k
+ }
+-\]
++$$
+ 
+ 完全決定其 skeleton side。若
+ 
+-\[
++$$
+ m^u<2^k,
+-\]
++$$
+ 
+ 存在 finite threshold 使整個 chart 最終 strict descent；若
+ 
+-\[
++$$
+ m^u>2^k,
+-\]
+-
+-則整張 positive admissible cylinder 在該 \(k\)-block 上 strict expansion。
+-
+-對 \(m>1\)，定義：
+-
+-\[
++$$
++
++則整張 positive admissible cylinder 在該 $k$-block 上 strict expansion。
++
++對 $m>1$，定義：
++
++$$
+ \boxed{
+ \alpha_m
+ =
+ \frac{\ln2}{\ln m}.
+ }
+-\]
++$$
+ 
+ 則 contracting condition 為：
+ 
+-\[
++$$
+ \boxed{
+ \frac uk<\alpha_m.
+ }
+-\]
+-
+-因 odd \(m>1\) 不可能是 2 的冪，\(\alpha_m\) 無理，所以 length-\(k\) contracting cylinder count 為：
+-
+-\[
++$$
++
++因 odd $m>1$ 不可能是 2 的冪，$\alpha_m$ 無理，所以 length-$k$ contracting cylinder count 為：
++
++$$
+ \boxed{
+ A_k(m)
+ =
+ \sum_{u=0}^{\lfloor\alpha_m k\rfloor}
+ \binom ku.
+ }
+-\]
++$$
+ 
+ 比例：
+ 
+-\[
++$$
+ \boxed{
+ P_k(m)
+ =
+ \frac{A_k(m)}{2^k}.
+ }
+-\]
++$$
+ 
+ 這導致一條 generalized cylinder phase theorem：
+ 
+-- \(m=1\)：所有 nonempty finite words 均位於 contracting-skeleton side；
+-- \(m=3\)：\(\alpha_3>1/2\)，故
+-  \[
++- $m=1$：所有 nonempty finite words 均位於 contracting-skeleton side；
++- $m=3$：$\alpha_3>1/2$，故
++  $$
+   \boxed{P_k(3)\to1;}
+-  \]
+-- odd \(m\ge5\)：\(\alpha_m<1/2\)，故
+-  \[
++  $$
++- odd $m\ge5$：$\alpha_m<1/2$，故
++  $$
+   \boxed{P_k(m)\to0.}
+-  \]
++  $$
+ 
+ 連續參數意義下的臨界值恰為：
+ 
+-\[
++$$
+ \boxed{
+ m_c=4.
+ }
+-\]
++$$
+ 
+ 這個臨界來自：
+ 
+-\[
++$$
+ \frac{\ln2}{\ln m}
+ =
+ \frac12
+ \iff
+ m=4.
+-\]
+-
+-值得注意的是，Gonçalves–Greenfeld–Madrid 對更一般 \(p,q,r\) Collatz-like maps 的 almost-all theorem 使用條件：
+-
+-\[
++$$
++
++值得注意的是，Gonçalves–Greenfeld–Madrid 對更一般 $p,q,r$ Collatz-like maps 的 almost-all theorem 使用條件：
++
++$$
+ q<p^{p/(p-1)}.
+-\]
+-
+-當 \(p=2\) 時恰為：
+-
+-\[
++$$
++
++當 $p=2$ 時恰為：
++
++$$
+ \boxed{
+ q<4.
+ }
+-\]
+-
+-因此本文由 finite-word/residue-cylinder 組合計數得到的 parity-family phase boundary，與既有更深 almost-all analytic theory 在 \(p=2\) 截面上出現同一臨界常數。本文不把兩者視為同一定理：前者是 deterministic finite chart density，後者是 actual orbit 的 logarithmic-density theorem；其吻合應被理解為一個重要的結構交叉驗證。
+-
+-本文亦證明 additive parameter \(r\) 不改變 asymptotic skeleton boundary：
+-
+-\[
++$$
++
++因此本文由 finite-word/residue-cylinder 組合計數得到的 parity-family phase boundary，與既有更深 almost-all analytic theory 在 $p=2$ 截面上出現同一臨界常數。本文不把兩者視為同一定理：前者是 deterministic finite chart density，後者是 actual orbit 的 logarithmic-density theorem；其吻合應被理解為一個重要的結構交叉驗證。
++
++本文亦證明 additive parameter $r$ 不改變 asymptotic skeleton boundary：
++
++$$
+ m^u\lessgtr2^k
+-\]
+-
+-只依賴 \(m,k,u\)。\(r\) 線性縮放 correction，因而主要控制 finite-size threshold、fixed-point位置與局部 orbit geometry，而不移動 cylinder-density phase boundary。
++$$
++
++只依賴 $m,k,u$。$r$ 線性縮放 correction，因而主要控制 finite-size threshold、fixed-point位置與局部 orbit geometry，而不移動 cylinder-density phase boundary。
+ 
+ 本文最後把這一類結構定義為 **Residue-Class Operation Translation (RCOT) parity kernel**：只要 branch maps 為交換標量仿射算子，且 odd multiplier 對 binary denominator 為 unit，則 finite-word closure、unique residue chart、local identityization、exact recovery 與 count/order decomposition 全部成立。
+ 
+ 下一篇將進一步把係數所在代數逐層擴張至有零因子的交換環、無序域、矩陣／非交換代數、Möbius transformation 與高次 polynomial dynamics，以確定 RCOT 的真正代數判定域與第一個結構斷裂點。
+ 
+-**關鍵詞：** generalized Collatz、\(mx+r\)、residue-class affine map、operation translation、local affine atlas、phase boundary、parity word、binomial cylinder law、exact recovery
+-
+----
+-
+-# 1. 從 Collatz 特例拔除 \(3,1\)
++**關鍵詞：** generalized Collatz、$mx+r$、residue-class affine map、operation translation、local affine atlas、phase boundary、parity word、binomial cylinder law、exact recovery
++
++---
++
++# 1. 從 Collatz 特例拔除 $3,1$
+ 
+ Collatz modified branches：
+ 
+-\[
++$$
+ D(x)=\frac x2,
+ \qquad
+ U(x)=\frac{3x+1}{2}.
+-\]
++$$
+ 
+ 其中真正使用到的局部代數條件其實是：
+ 
+-1. \(D,U\) 都是 affine；
++1. $D,U$ 都是 affine；
+ 2. odd branch 的 multiplier 為 odd；
+ 3. translation term 也是 odd，使 odd input 映到 integer；
+ 4. denominator 為 2；
+@@ -329,68 +330,68 @@
+ 
+ 所以考慮：
+ 
+-\[
++$$
+ \boxed{
+ D(x)=\frac x2,
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ U_{m,r}(x)=\frac{mx+r}{2},
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ m,r\in2\mathbb Z+1,
+ \qquad
+ m,r>0.
+-\]
+-
+----
+-
+-# 2. 為什麼 \(m,r\) 必須 odd？
++$$
++
++---
++
++# 2. 為什麼 $m,r$ 必須 odd？
+ 
+ 若：
+ 
+-\[
++$$
+ n\text{ odd},
+-\]
++$$
+ 
+ 且：
+ 
+-\[
++$$
+ m,r\text{ odd},
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ mn+r
+ =
+ \text{odd}+\text{odd}
+ =
+ \text{even}.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ U_{m,r}(n)
+ =
+ \frac{mn+r}{2}
+ \in\mathbb Z.
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{odd branch legality is automatic on odd inputs}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -398,35 +399,35 @@
+ 
+ 取：
+ 
+-\[
++$$
+ w=\sigma_1\cdots\sigma_k,
+ \qquad
+ \sigma_i\in\{D,U\}.
+-\]
++$$
+ 
+ 令：
+ 
+-\[
++$$
+ u(w)=u
+-\]
+-
+-為 \(U\) 次數。
++$$
++
++為 $U$ 次數。
+ 
+ 形式 composition：
+ 
+-\[
++$$
+ F_w^{(m,r)}
+ =
+ \sigma_k\circ\cdots\circ\sigma_1.
+-\]
++$$
+ 
+ 與 Collatz 一樣：
+ 
+-\[
++$$
+ F_w^{(m,r)}
+-\]
+-
+-可在 \(\mathbb Q\) 上形式計算；
++$$
++
++可在 $\mathbb Q$ 上形式計算；
+ 
+ 真正 dynamics 還需 branch admissibility。
+ 
+@@ -438,25 +439,25 @@
+ 
+ 對任意：
+ 
+-\[
++$$
+ w\in\{D,U\}^k,
+-\]
++$$
+ 
+ 存在唯一：
+ 
+-\[
++$$
+ b_w^{(m,r)}\in\mathbb Z_{\ge0}
+-\]
++$$
+ 
+ 使：
+ 
+-\[
++$$
+ \boxed{
+ F_w^{(m,r)}(x)
+ =
+ \frac{m^u x+b_w^{(m,r)}}{2^k}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -464,21 +465,21 @@
+ 
+ 空字：
+ 
+-\[
++$$
+ b_\varepsilon=0.
+-\]
+-
+-若 append \(D\)：
+-
+-\[
++$$
++
++若 append $D$：
++
++$$
+ \boxed{
+ b_{wD}=b_w.
+ }
+-\]
+-
+-若 append \(U\)：
+-
+-\[
++$$
++
++若 append $U$：
++
++$$
+ U\left(
+ \frac{m^u x+b_w}{2^k}
+ \right)
+@@ -492,58 +493,58 @@
+ }{
+ 2^{k+1}
+ }.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ b_{wU}
+ =
+ m b_w+r2^k.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 6. Closed Form
+ 
+-若 \(U\) 出現在：
+-
+-\[
++若 $U$ 出現在：
++
++$$
+ 1\le j_1<\cdots<j_u\le k,
+-\]
+-
+-則第 \(t\) 個 \(U\) 注入：
+-
+-\[
++$$
++
++則第 $t$ 個 $U$ 注入：
++
++$$
+ r2^{j_t-1},
+-\]
++$$
+ 
+ 且後面剩：
+ 
+-\[
++$$
+ u-t
+-\]
+-
+-個 \(U\)，每個再乘 \(m\)。
++$$
++
++個 $U$，每個再乘 $m$。
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ b_w^{(m,r)}
+ =
+ r\sum_{t=1}^{u}
+ 2^{j_t-1}m^{u-t}.
+ }
+-\]
++$$
+ 
+ Collatz：
+ 
+-\[
++$$
+ (m,r)=(3,1)
+-\]
++$$
+ 
+ 立即恢復 Paper 02。
+ 
+@@ -553,45 +554,45 @@
+ 
+ 固定：
+ 
+-\[
++$$
+ k,u,
+-\]
++$$
+ 
+ leading multiplier 永遠：
+ 
+-\[
++$$
+ \boxed{
+ \lambda_w
+ =
+ \frac{m^u}{2^k}.
+ }
+-\]
+-
+-不依賴 \(U,D\) 排列。
++$$
++
++不依賴 $U,D$ 排列。
+ 
+ 全部 order information 進入：
+ 
+-\[
++$$
+ \boxed{
+ b_w^{(m,r)}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{counts determine slope;}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{order determines offset.}
+ }
+-\]
+-
+-不是 \(3x+1\) 特例。
++$$
++
++不是 $3x+1$ 特例。
+ 
+ ---
+ 
+@@ -599,7 +600,7 @@
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ M_D
+ =
+@@ -608,9 +609,9 @@
+ 0&2
+ \end{pmatrix},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ M_U
+ =
+@@ -619,11 +620,11 @@
+ 0&2
+ \end{pmatrix}.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ M_w
+ =
+@@ -632,7 +633,7 @@
+ 0&2^k
+ \end{pmatrix}.
+ }
+-\]
++$$
+ 
+ finite-word composition 仍轉為 upper-triangular matrix multiplication。
+ 
+@@ -640,9 +641,9 @@
+ 
+ # 9. Concatenation Law
+ 
+-若先執行 \(w\)，再執行 \(v\)，則：
+-
+-\[
++若先執行 $w$，再執行 $v$，則：
++
++$$
+ \boxed{
+ b_{wv}
+ =
+@@ -650,25 +651,25 @@
+ +
+ 2^{|w|}b_v.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \Omega(w)
+ =
+ (k,u,b)
+-\]
++$$
+ 
+ 的 generalized composition：
+ 
+-\[
++$$
+ \boxed{
+ (k_w,u_w,b_w)
+ \circ
+ (k_v,u_v,b_v)
+ }
+-\]
++$$
+ 
+ 仍具有 semidirect-type structure。
+ 
+@@ -676,33 +677,33 @@
+ 
+ # 10. Residue Cylinder 仍然唯一
+ 
+-真正的關鍵不是 \(m=3\)。
++真正的關鍵不是 $m=3$。
+ 
+ 而是：
+ 
+-\[
++$$
+ \boxed{
+ m\text{ odd}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \gcd(m^u,2^k)=1.
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ m^u
+-\]
++$$
+ 
+ 在：
+ 
+-\[
++$$
+ \mathbb Z/2^k\mathbb Z
+-\]
++$$
+ 
+ 中為 unit。
+ 
+@@ -710,26 +711,26 @@
+ 
+ # 11. Closed Residue Formula
+ 
+-若 \(w\) admissible，
++若 $w$ admissible，
+ 
+ 必須：
+ 
+-\[
++$$
+ m^u n+b_w
+ \equiv0
+ \pmod{2^k}.
+-\]
++$$
+ 
+ 所以唯一：
+ 
+-\[
++$$
+ \boxed{
+ r_w
+ \equiv
+ -b_wm^{-u}
+ \pmod{2^k}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -739,53 +740,53 @@
+ 
+ 假設：
+ 
+-\[
++$$
+ n=r_w+2^ka.
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ T_{m,r}^k(n)
+ =
+ s_w+m^ua.
+-\]
++$$
+ 
+ 因：
+ 
+-\[
++$$
+ m^u
+-\]
++$$
+ 
+ 為 odd，
+ 
+ 所以：
+ 
+-\[
++$$
+ T_{m,r}^k(n)\pmod2
+ =
+ s_w+a\pmod2.
+-\]
+-
+-因此下一個 \(D/U\) branch 再次只由：
+-
+-\[
++$$
++
++因此下一個 $D/U$ branch 再次只由：
++
++$$
+ a\bmod2
+-\]
++$$
+ 
+ 決定。
+ 
+-每個 parent cylinder 唯一分裂成兩個 modulo \(2^{k+1}\) child cylinders。
++每個 parent cylinder 唯一分裂成兩個 modulo $2^{k+1}$ child cylinders。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \{D,U\}^k
+ \longleftrightarrow
+ \mathbb Z/2^k\mathbb Z
+ }
+-\]
++$$
+ 
+ 仍成立。
+ 
+@@ -795,39 +796,39 @@
+ 
+ 定義：
+ 
+-\[
++$$
+ \Omega_w^{(m,r)}
+ =
+ (r_w+2^k\mathbb Z)\cap\mathbb Z_{>0}.
+-\]
++$$
+ 
+ 令：
+ 
+-\[
++$$
+ s_w
+ =
+ F_w^{(m,r)}(r_w).
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ T_{m,r}^k(r_w+2^ka)
+ =
+ s_w+m^ua.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ r_w+2^k\mathbb Z
+ \longleftrightarrow
+ s_w+m^u\mathbb Z.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -835,23 +836,23 @@
+ 
+ source chart：
+ 
+-\[
++$$
+ \phi_w(n)
+ =
+ \frac{n-r_w}{2^k}.
+-\]
++$$
+ 
+ target chart：
+ 
+-\[
++$$
+ \psi_w(y)
+ =
+ \frac{y-s_w}{m^u}.
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ \psi_w
+ \circ
+@@ -861,15 +862,15 @@
+ =
+ \operatorname{id}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{local identity trivialization survives for all positive odd }m,r.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -877,20 +878,20 @@
+ 
+ 若：
+ 
+-\[
++$$
+ y\equiv s_w\pmod{m^u},
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ a=
+ \frac{y-s_w}{m^u}.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ n
+ =
+@@ -899,100 +900,100 @@
+ 2^k
+ \frac{y-s_w}{m^u}.
+ }
+-\]
++$$
+ 
+ 因此 fixed chart transport 仍然 lossless。
+ 
+ ---
+ 
+-# 16. Fixed \((k,u)\) Order Extremes
++# 16. Fixed $(k,u)$ Order Extremes
+ 
+ 對：
+ 
+-\[
++$$
+ r>0,
+-\]
+-
+-把某個 \(U\) 向右交換過一個 \(D\)：
+-
+-\[
++$$
++
++把某個 $U$ 向右交換過一個 $D$：
++
++$$
+ UD(x)
+ =
+ \frac{mx+r}{4},
+-\]
++$$
+ 
+ 而：
+ 
+-\[
++$$
+ DU(x)
+ =
+ \frac{mx+2r}{4}.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ DU(x)-UD(x)
+ =
+ \frac r4>0.
+-\]
+-
+-因此 moving \(U\) right increases correction。
++$$
++
++因此 moving $U$ right increases correction。
+ 
+ ---
+ 
+ # 17. Minimum Correction
+ 
+-所有 \(U\) 最左：
+-
+-\[
++所有 $U$ 最左：
++
++$$
+ U^uD^{k-u}.
+-\]
++$$
+ 
+ 其 correction：
+ 
+-\[
++$$
+ b_{\min}
+ =
+ r
+ \sum_{t=1}^{u}
+ 2^{t-1}m^{u-t}.
+-\]
++$$
+ 
+ 有限等比和：
+ 
+-\[
++$$
+ \boxed{
+ b_{\min}
+ =
+ r\frac{m^u-2^u}{m-2}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 18. Maximum Correction
+ 
+-所有 \(U\) 最右：
+-
+-\[
++所有 $U$ 最右：
++
++$$
+ D^{k-u}U^u.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ b_{\max}
+ =
+ r\,2^{k-u}
+ \frac{m^u-2^u}{m-2}.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ r\frac{m^u-2^u}{m-2}
+ \le
+@@ -1000,49 +1001,49 @@
+ \le
+ r2^{k-u}\frac{m^u-2^u}{m-2}.
+ }
+-\]
+-
+----
+-
+-# 19. \(m=1\) 需要單獨理解
++$$
++
++---
++
++# 19. $m=1$ 需要單獨理解
+ 
+ 當：
+ 
+-\[
++$$
+ m=1,
+-\]
++$$
+ 
+ 公式：
+ 
+-\[
++$$
+ \frac{m^u-2^u}{m-2}
+-\]
++$$
+ 
+ 仍可直接代入：
+ 
+-\[
++$$
+ \frac{1-2^u}{-1}
+ =
+ 2^u-1.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ b_{\min}
+ =
+ r(2^u-1).
+-\]
++$$
+ 
+ 沒有奇點。
+ 
+ 只是此時 skeleton：
+ 
+-\[
++$$
+ \lambda_w=\frac1{2^k}
+-\]
+-
+-與 \(u\) 無關。
++$$
++
++與 $u$ 無關。
+ 
+ ---
+ 
+@@ -1050,25 +1051,25 @@
+ 
+ 由：
+ 
+-\[
++$$
+ T_{m,r}^k(n)
+ =
+ \frac{m^un+b_w}{2^k},
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ T_{m,r}^k(n)<n
+-\]
++$$
+ 
+ iff：
+ 
+-\[
++$$
+ \boxed{
+ b_w<(2^k-m^u)n.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1076,15 +1077,15 @@
+ 
+ 若：
+ 
+-\[
++$$
+ \boxed{
+ m^u<2^k,
+ }
+-\]
++$$
+ 
+ 則存在 finite threshold：
+ 
+-\[
++$$
+ \boxed{
+ \theta_w
+ =
+@@ -1092,21 +1093,21 @@
+ \frac{b_w}{2^k-m^u}
+ \right\rfloor+1
+ }
+-\]
++$$
+ 
+ 使：
+ 
+-\[
++$$
+ n\ge\theta_w
+-\]
++$$
+ 
+ 時：
+ 
+-\[
++$$
+ \boxed{
+ T_{m,r}^k(n)<n.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1114,56 +1115,56 @@
+ 
+ 若：
+ 
+-\[
++$$
+ m^u>2^k,
+-\]
++$$
+ 
+ 因：
+ 
+-\[
++$$
+ b_w\ge0,
+-\]
++$$
+ 
+ 對任何 positive admissible：
+ 
+-\[
++$$
+ n,
+-\]
++$$
+ 
+ 都有：
+ 
+-\[
++$$
+ \boxed{
+ T_{m,r}^k(n)>n.
+ }
+-\]
++$$
+ 
+ 因此 generalized family 仍有 strict finite-word two-sided classification。
+ 
+ ---
+ 
+-# 23. \(r\) 不移動 Skeleton Boundary
++# 23. $r$ 不移動 Skeleton Boundary
+ 
+ 注意：
+ 
+-\[
++$$
+ m^u\lessgtr2^k
+-\]
++$$
+ 
+ 完全沒有：
+ 
+-\[
++$$
+ r.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ r
+ \text{ controls correction and finite thresholds, not the asymptotic skeleton side}.
+ }
+-\]
++$$
+ 
+ 這是 generalized family 很重要的參數分工。
+ 
+@@ -1173,56 +1174,56 @@
+ 
+ 對：
+ 
+-\[
++$$
+ m>1,
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ \alpha_m
+ =
+ \frac{\ln2}{\ln m}.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ m^u<2^k
+-\]
++$$
+ 
+ iff：
+ 
+-\[
++$$
+ \boxed{
+ \frac uk<\alpha_m.
+ }
+-\]
+-
+----
+-
+-# 25. \(\alpha_m\) 的無理性
++$$
++
++---
++
++# 25. $\alpha_m$ 的無理性
+ 
+ 若 odd：
+ 
+-\[
++$$
+ m>1
+-\]
++$$
+ 
+ 且：
+ 
+-\[
++$$
+ \alpha_m=\frac pq
+ \in\mathbb Q,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ m^p=2^q.
+-\]
++$$
+ 
+ 左側為 odd，
+ 
+@@ -1232,13 +1233,13 @@
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \alpha_m\notin\mathbb Q
+ }
+-\]
+-
+-對所有 odd \(m>1\)。
++$$
++
++對所有 odd $m>1$。
+ 
+ 所以不存在 nonempty neutral-slope word。
+ 
+@@ -1246,152 +1247,152 @@
+ 
+ # 26. Generalized Binomial Cylinder Law
+ 
+-length-\(k\) words 中，
+-
+-恰含 \(u\) 個 \(U\) 的數量：
+-
+-\[
++length-$k$ words 中，
++
++恰含 $u$ 個 $U$ 的數量：
++
++$$
+ \binom ku.
+-\]
++$$
+ 
+ 所以 contracting cylinder count：
+ 
+-\[
++$$
+ \boxed{
+ A_k(m)
+ =
+ \sum_{u=0}^{\lfloor\alpha_mk\rfloor}
+ \binom ku.
+ }
+-\]
++$$
+ 
+ 比例：
+ 
+-\[
++$$
+ \boxed{
+ P_k(m)
+ =
+ \frac{A_k(m)}{2^k}.
+ }
+-\]
+-
+----
+-
+-# 27. \(m=1\)：完全 Contracting Skeleton
++$$
++
++---
++
++# 27. $m=1$：完全 Contracting Skeleton
+ 
+ 若：
+ 
+-\[
++$$
+ m=1,
+-\]
++$$
+ 
+ 則對任意 nonempty word：
+ 
+-\[
++$$
+ 1=m^u<2^k.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ P_k(1)=1
+ }
+-\]
++$$
+ 
+ 對所有：
+ 
+-\[
++$$
+ k\ge1.
+-\]
++$$
+ 
+ 注意這只說 finite-word skeleton。
+ 
+-不同 \(r\) 仍可造成 finite correction、cycles 或其他 global structure。
+-
+----
+-
+-# 28. \(m=3\)：Collatz Regime
+-
+-\[
++不同 $r$ 仍可造成 finite correction、cycles 或其他 global structure。
++
++---
++
++# 28. $m=3$：Collatz Regime
++
++$$
+ \alpha_3
+ =
+ \frac{\ln2}{\ln3}
+ \approx0.63093
+ >
+ \frac12.
+-\]
++$$
+ 
+ 因此由二項分布大數律：
+ 
+-\[
++$$
+ \boxed{
+ P_k(3)\to1.
+ }
+-\]
++$$
+ 
+ 這就是 Paper 05 的 Collatz cylinder law。
+ 
+ ---
+ 
+-# 29. \(m=5\)
+-
+-\[
++# 29. $m=5$
++
++$$
+ \alpha_5
+ =
+ \frac{\ln2}{\ln5}
+ \approx0.43068
+ <
+ \frac12.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ P_k(5)\to0.
+ }
+-\]
+-
+-也就是 length-\(k\) words 中，contracting-skeleton cylinders 的比例反而趨零。
+-
+----
+-
+-# 30. odd \(m\ge5\)
++$$
++
++也就是 length-$k$ words 中，contracting-skeleton cylinders 的比例反而趨零。
++
++---
++
++# 30. odd $m\ge5$
+ 
+ 對：
+ 
+-\[
++$$
+ m\ge5,
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ \ln m>\ln4=2\ln2.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \frac{\ln2}{\ln m}
+ <
+ \frac12.
+-\]
++$$
+ 
+ 故：
+ 
+-\[
++$$
+ \boxed{
+ P_k(m)\to0
+ }
+-\]
++$$
+ 
+ 對所有 odd：
+ 
+-\[
++$$
+ m\ge5.
+-\]
++$$
+ 
+ ---
+ 
+@@ -1399,160 +1400,160 @@
+ 
+ 考察：
+ 
+-\[
++$$
+ \alpha_m=\frac12.
+-\]
++$$
+ 
+ 解：
+ 
+-\[
++$$
+ \frac{\ln2}{\ln m}
+ =
+ \frac12.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \ln m=2\ln2=\ln4.
+-\]
++$$
+ 
+ 得到：
+ 
+-\[
++$$
+ \boxed{
+ m_c=4.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ m<4
+ \Rightarrow
+ \text{typical word lies on contracting side},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ m>4
+ \Rightarrow
+ \text{typical word lies on expanding side}.
+ }
+-\]
++$$
+ 
+ 在 odd integer family 中：
+ 
+-- \(m=3\) 位於 contraction regime；
+-- 下一個 \(m=5\) 已跨到 expansion regime。
+-
+----
+-
+-# 32. 為什麼 \(3\) 特別？
++- $m=3$ 位於 contraction regime；
++- 下一個 $m=5$ 已跨到 expansion regime。
++
++---
++
++# 32. 為什麼 $3$ 特別？
+ 
+ 這不需要神秘化。
+ 
+ binomial center：
+ 
+-\[
++$$
+ u/k\approx1/2.
+-\]
++$$
+ 
+ 典型 skeleton multiplier：
+ 
+-\[
++$$
+ \left(
+ \frac{\sqrt m}{2}
+ \right)^k.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \frac{\sqrt m}{2}<1
+ \iff
+ m<4.
+ }
+-\]
++$$
+ 
+ 對：
+ 
+-\[
++$$
+ m=3,
+-\]
++$$
+ 
+ 典型 factor：
+ 
+-\[
++$$
+ \frac{\sqrt3}{2}<1.
+-\]
++$$
+ 
+ 對：
+ 
+-\[
++$$
+ m=5,
+-\]
+-
+-\[
++$$
++
++$$
+ \frac{\sqrt5}{2}>1.
+-\]
+-
+-所以 \(3\) 恰好是 odd multipliers 中最後一個落在典型 contraction side 的非平凡值。
+-
+----
+-
+-# 33. \(r\) 只改 Finite Geometry
++$$
++
++所以 $3$ 恰好是 odd multipliers 中最後一個落在典型 contraction side 的非平凡值。
++
++---
++
++# 33. $r$ 只改 Finite Geometry
+ 
+ 對 fixed：
+ 
+-\[
++$$
+ m,k,u,w,
+-\]
++$$
+ 
+ correction：
+ 
+-\[
++$$
+ b_w^{(m,r)}
+-\]
+-
+-對 \(r\) 線性：
+-
+-\[
++$$
++
++對 $r$ 線性：
++
++$$
+ \boxed{
+ b_w^{(m,r)}
+ =
+ r\,b_w^{(m,1)}.
+ }
+-\]
++$$
+ 
+ 所以 threshold：
+ 
+-\[
++$$
+ \theta_w
+-\]
+-
+-大致隨 \(r\) 線性移動。
++$$
++
++大致隨 $r$ 線性移動。
+ 
+ 但：
+ 
+-\[
++$$
+ \alpha_m
+-\]
++$$
+ 
+ 完全不變。
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ m=\text{phase parameter},
+ \qquad
+ r=\text{finite correction parameter}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1560,19 +1561,19 @@
+ 
+ 對：
+ 
+-\[
++$$
+ n>0,
+-\]
+-
+-\[
++$$
++
++$$
+ T_{m,r}^k(n)
+ =
+ \frac{m^un+b_w}{2^k}.
+-\]
++$$
+ 
+ 取 log：
+ 
+-\[
++$$
+ \boxed{
+ \ln\frac{T_{m,r}^k(n)}{n}
+ =
+@@ -1584,17 +1585,17 @@
+ 1+\frac{b_w}{m^un}
+ \right).
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{additive core}=u\ln m-k\ln2,
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{correction}
+ =
+@@ -1602,64 +1603,64 @@
+ 1+\frac{b_w}{m^un}
+ \right).
+ }
+-\]
++$$
+ 
+ Series A 的 corrected additivization 在 generalized Collatz family 中仍完整成立。
+ 
+ ---
+ 
+-# 35. Accelerated \(mx+r\) Map
+-
+-對 odd \(n\) 可定義：
+-
+-\[
++# 35. Accelerated $mx+r$ Map
++
++對 odd $n$ 可定義：
++
++$$
+ \boxed{
+ S_{m,r}(n)
+ =
+ \frac{mn+r}
+ {2^{v_2(mn+r)}}.
+ }
+-\]
+-
+-因 \(m,r,n\) 都 odd，
++$$
++
++因 $m,r,n$ 都 odd，
+ 
+ numerator even。
+ 
+ 因此 generalized valuation language 亦自然存在：
+ 
+-\[
++$$
+ \kappa_i
+ =
+ v_2(mn_{i-1}+r).
+-\]
++$$
+ 
+ ---
+ 
+ # 36. Generalized Valuation Skeleton
+ 
+-經 \(q\) 個 odd-to-odd cycles，
++經 $q$ 個 odd-to-odd cycles，
+ 
+ leading multiplier 變成：
+ 
+-\[
++$$
+ \boxed{
+ \frac{m^q}{2^K}.
+ }
+-\]
++$$
+ 
+ 所以 valuation boundary：
+ 
+-\[
++$$
+ \boxed{
+ K/q>\log_2 m.
+ }
+-\]
++$$
+ 
+ 這是 Paper 06：
+ 
+-\[
++$$
+ K/q>\log_2 3
+-\]
++$$
+ 
+ 的直接一般化。
+ 
+@@ -1667,43 +1668,43 @@
+ 
+ # 37. One-Step Valuation Density 仍有幾何結構
+ 
+-因 odd \(m\) 在：
+-
+-\[
++因 odd $m$ 在：
++
++$$
+ \mathbb Z/2^{j+1}\mathbb Z
+-\]
++$$
+ 
+ 中是 unit。
+ 
+ 要求：
+ 
+-\[
++$$
+ v_2(mn+r)=j
+-\]
++$$
+ 
+ 等價於一條唯一 odd residue congruence modulo：
+ 
+-\[
++$$
+ 2^{j+1}.
+-\]
++$$
+ 
+ 所以在 odd residue classes 中仍有：
+ 
+-\[
++$$
+ \boxed{
+ \delta(\kappa=j)=2^{-j}.
+ }
+-\]
++$$
+ 
+ 因此 one-step residue mean：
+ 
+-\[
++$$
+ \boxed{
+ \mathbb E_{\mathrm{res}}\kappa=2
+ }
+-\]
+-
+-與 \(m,r\) 無關，只要二者 odd。
++$$
++
++與 $m,r$ 無關，只要二者 odd。
+ 
+ ---
+ 
+@@ -1711,27 +1712,27 @@
+ 
+ one-step accelerated skeleton：
+ 
+-\[
++$$
+ \ln m-\kappa\ln2.
+-\]
++$$
+ 
+ residue ensemble mean：
+ 
+-\[
++$$
+ \boxed{
+ \ln m-2\ln2
+ =
+ \ln\frac m4.
+ }
+-\]
++$$
+ 
+ 所以平均 skeleton sign 也在：
+ 
+-\[
++$$
+ \boxed{
+ m=4
+ }
+-\]
++$$
+ 
+ 翻轉。
+ 
+@@ -1743,95 +1744,95 @@
+ 
+ ### Finite parity-word combinatorics：
+ 
+-\[
++$$
+ u/k\approx1/2
+-\]
++$$
+ 
+ 導致：
+ 
+-\[
++$$
+ \frac{\sqrt m}{2}\lessgtr1.
+-\]
++$$
+ 
+ ### Accelerated valuation residue mean：
+ 
+-\[
++$$
+ \mathbb E\kappa=2
+-\]
++$$
+ 
+ 導致：
+ 
+-\[
++$$
+ \frac m4\lessgtr1.
+-\]
++$$
+ 
+ 兩者都給：
+ 
+-\[
++$$
+ \boxed{
+ m_c=4.
+ }
+-\]
++$$
+ 
+ 這是一個內部交叉驗證。
+ 
+ ---
+ 
+-# 40. 與更一般 \(p,q,r\) 文獻的交叉
++# 40. 與更一般 $p,q,r$ 文獻的交叉
+ 
+ Gonçalves–Greenfeld–Madrid 研究一類更一般的 Collatz-like maps：
+ 
+-- divisible by \(p\) 時除以 \(p\)；
+-- 其他 residue classes 使用 \(qN+r(j)\)；
++- divisible by $p$ 時除以 $p$；
++- 其他 residue classes 使用 $qN+r(j)$；
+ - 再研究其 Syracuse acceleration。
+ 
+ 其 almost-all theorem 的重要條件之一：
+ 
+-\[
++$$
+ \boxed{
+ q<p^{p/(p-1)}.
+ }
+-\]
++$$
+ 
+ 對 parity case：
+ 
+-\[
++$$
+ p=2,
+-\]
++$$
+ 
+ 變成：
+ 
+-\[
++$$
+ \boxed{
+ q<4.
+ }
+-\]
++$$
+ 
+ 若把本文：
+ 
+-\[
++$$
+ q=m,
+-\]
++$$
+ 
+ 則恰好得到同一臨界：
+ 
+-\[
++$$
+ \boxed{
+ m<4.
+ }
+-\]
+-
+----
+-
+-# 41. 但兩個 \(m<4\) 不是同一定理
++$$
++
++---
++
++# 41. 但兩個 $m<4$ 不是同一定理
+ 
+ 本文證：
+ 
+-\[
++$$
+ \boxed{
+ P_k(m)\to1
+ }
+-\]
++$$
+ 
+ 只是一個 finite-word / residue-cylinder combinatorial theorem。
+ 
+@@ -1839,13 +1840,13 @@
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{same critical constant}
+ \neq
+ \text{same mathematical result}.
+ }
+-\]
++$$
+ 
+ 其吻合應視為 structural consistency check。
+ 
+@@ -1855,15 +1856,15 @@
+ 
+ 一般 Collatz-like map 可寫：
+ 
+-\[
++$$
+ T(N)=a_NN+b_N
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ a_N,b_N
+-\]
++$$
+ 
+ 週期性依賴 residue class。
+ 
+@@ -1871,11 +1872,11 @@
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{不能期待 RCOT 的局部簡化自動產生所有 Collatz-like systems 的 global classification}.
+ }
+-\]
++$$
+ 
+ 這也再次說明本文必須限制在特定 affine parity kernel。
+ 
+@@ -1889,47 +1890,47 @@
+ 2. branch domain由 parity 決定；
+ 3. branch maps 為 scalar affine maps；
+ 4. common denominator 為 2；
+-5. odd multiplier \(m\) 是 modulo \(2^k\) 的 unit；
+-6. translation \(r\) 保持 odd branch integer-valued；
++5. odd multiplier $m$ 是 modulo $2^k$ 的 unit；
++6. translation $r$ 保持 odd branch integer-valued；
+ 7. scalar coefficient multiplication commutative。
+ 
+ 在此 domain 中，以下全部成立：
+ 
+-\[
++$$
+ \boxed{
+ \text{finite affine closure},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{count/order decomposition},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{unique residue cylinder},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{local identityization},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{exact inverse recovery},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{binomial cylinder law}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1937,29 +1938,29 @@
+ 
+ Collatz-specific：
+ 
+-\[
++$$
+ m=3,\qquad r=1.
+-\]
++$$
+ 
+ 因此具體：
+ 
+-\[
++$$
+ \alpha=\frac{\ln2}{\ln3},
+-\]
+-
+-\[
++$$
++
++$$
+ 2^k\leftrightarrow3^u,
+-\]
+-
+-\[
++$$
++
++$$
+ R_\kappa(t)=\frac{2^\kappa t-1}{3},
+-\]
++$$
+ 
+ 以及：
+ 
+-\[
++$$
+ \frac{4^j-1}{3}
+-\]
++$$
+ 
+ 等 family。
+ 
+@@ -1967,16 +1968,16 @@
+ 
+ # 45. 哪些不是 Collatz-specific？
+ 
+-以下全部其實屬於 generalized odd-\(m,r\) RCOT：
++以下全部其實屬於 generalized odd-$m,r$ RCOT：
+ 
+ - finite-word affine closure；
+ - upper-triangular matrix representation；
+-- word/residue bijection mod \(2^k\)；
+-- source cylinder ↔ target \(m^u\)-progression；
++- word/residue bijection mod $2^k$；
++- source cylinder ↔ target $m^u$-progression；
+ - quotient-label identityization；
+ - exact recovery；
+ - branch-order correction；
+-- \(m^u\lessgtr2^k\) finite-word phase boundary；
++- $m^u\lessgtr2^k$ finite-word phase boundary；
+ - generalized binomial cylinder law；
+ - valuation run-length compression。
+ 
+@@ -1988,15 +1989,15 @@
+ 
+ 由：
+ 
+-\[
++$$
+ b_{\max}
+ =
+ 2^{k-u}b_{\min},
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ \boxed{
+ W_{k,u}^{(m,r)}
+ =
+@@ -2004,13 +2005,13 @@
+ \left(2^{k-u}-1\right)
+ \frac{m^u-2^u}{m-2}.
+ }
+-\]
++$$
+ 
+ 所以 branch-order sensitivity：
+ 
+-- 隨 \(r\) 線性放大；
+-- 隨 \(k-u\) 增長；
+-- 受 \(m^u-2^u\) 控制。
++- 隨 $r$ 線性放大；
++- 隨 $k-u$ 增長；
++- 受 $m^u-2^u$ 控制。
+ 
+ 這提供 generalized affine correction 的 exact finite width。
+ 
+@@ -2020,21 +2021,21 @@
+ 
+ contracting：
+ 
+-\[
++$$
+ m^u<2^k.
+-\]
++$$
+ 
+ 使用最大 correction：
+ 
+-\[
++$$
+ b_{\max}
+ =
+ r2^{k-u}\frac{m^u-2^u}{m-2},
+-\]
++$$
+ 
+ 得到：
+ 
+-\[
++$$
+ \boxed{
+ \Theta_{k,u}^{(m,r)}
+ =
+@@ -2046,75 +2047,75 @@
+ }
+ \right\rfloor+1.
+ }
+-\]
+-
+-則所有 fixed \((k,u)\) words：
+-
+-\[
++$$
++
++則所有 fixed $(k,u)$ words：
++
++$$
+ n\ge\Theta_{k,u}^{(m,r)}
+-\]
++$$
+ 
+ 時都 strict descent。
+ 
+-所以 generalized family 同樣可以把完整 word 壓成 conservative \((k,u)\) certificate。
+-
+----
+-
+-# 48. \(m=3\) 為何是特殊但不是神秘
++所以 generalized family 同樣可以把完整 word 壓成 conservative $(k,u)$ certificate。
++
++---
++
++# 48. $m=3$ 為何是特殊但不是神秘
+ 
+ 在 odd multiplier family：
+ 
+-\[
++$$
+ 1,3,5,7,\ldots,
+-\]
+-
+-\(m=1\) 是近乎純 contraction 的退化情況。
++$$
++
++$m=1$ 是近乎純 contraction 的退化情況。
+ 
+ 真正第一個具有 multiplicative growth 的 nontrivial odd multiplier：
+ 
+-\[
++$$
+ m=3
+-\]
++$$
+ 
+ 仍位於：
+ 
+-\[
++$$
+ m<4.
+-\]
++$$
+ 
+ 下一個：
+ 
+-\[
++$$
+ m=5
+-\]
++$$
+ 
+ 已跨越 phase boundary。
+ 
+-所以 Collatz 的 \(3\) 位於一個非常窄的參數窗口：
+-
+-\[
++所以 Collatz 的 $3$ 位於一個非常窄的參數窗口：
++
++$$
+ \boxed{
+ \text{nontrivial growth}
+ +
+ \text{typical finite-word contraction}.
+ }
+-\]
+-
+-這可能是 \(3x+1\) 系統既簡單又長期呈現下降傾向的重要結構原因之一。
+-
+----
+-
+-# 49. 但 \(m=3\) 的 Cylinder Density 仍不是 Convergence
++$$
++
++這可能是 $3x+1$ 系統既簡單又長期呈現下降傾向的重要結構原因之一。
++
++---
++
++# 49. 但 $m=3$ 的 Cylinder Density 仍不是 Convergence
+ 
+ 即使：
+ 
+-\[
++$$
+ P_k(3)\to1,
+-\]
+-
+-仍然不能推出所有 \(3x+r\) systems global bounded。
+-
+-不同 \(r\) 可以改變：
++$$
++
++仍然不能推出所有 $3x+r$ systems global bounded。
++
++不同 $r$ 可以改變：
+ 
+ - periodic points；
+ - cycles；
+@@ -2124,13 +2125,13 @@
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{skeleton phase}
+ \neq
+ \text{complete global dynamics}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2138,69 +2139,75 @@
+ 
+ ## Theorem A — Generalized Affine Closure
+ 
+-\[
++$$
+ \boxed{
+ F_w^{(m,r)}(x)
+ =
+ \frac{m^ux+b_w^{(m,r)}}{2^k}.
+ }
+-\]
++$$
+ 
+ ## Theorem B — Correction Closed Form
+ 
+-\[
++$$
+ \boxed{
+ b_w^{(m,r)}
+ =
+ r\sum_{t=1}^{u}
+ 2^{j_t-1}m^{u-t}.
+ }
+-\]
++$$
+ 
+ ## Theorem C — Unique Residue Cylinder
+ 
+-\[
++$$
+ \boxed{
+ r_w
+ \equiv
+ -b_wm^{-u}
+ \pmod{2^k}.
+ }
+-\]
++$$
+ 
+ ## Theorem D — Local Identityization
+ 
+-\[
++$$
+ \boxed{
+ T_{m,r}^k(r_w+2^ka)
+ =
+ s_w+m^ua,
+ }
+-\]
++$$
+ 
+ hence：
+ 
+-\[
++$$
+ \boxed{
+ \psi_wT_{m,r}^k\phi_w^{-1}
+ =
+ \operatorname{id}.
+ }
+-\]
++$$
+ 
+ ## Theorem E — Generalized Contraction Boundary
+ 
+-\[
++對 odd $m>1$：
++
++$$
+ \boxed{
+ m^u<2^k
+ \iff
+ u/k<\ln2/\ln m.
+ }
+-\]
++$$
++
++對 $m=1$，任意 nonempty word 都滿足 $m^u=1<2^k$，須獨立處理而不能代入 $\ln m$ 分母。
+ 
+ ## Theorem F — Generalized Binomial Cylinder Law
+ 
+-\[
++對 odd $m>1$：
++
++$$
+ \boxed{
+ P_k(m)
+ =
+@@ -2208,33 +2215,39 @@
+ \sum_{u=0}^{\lfloor k\ln2/\ln m\rfloor}
+ \binom ku.
+ }
+-\]
++$$
++
++而：
++
++$$
++\boxed{P_k(1)=1.}
++$$
+ 
+ ## Theorem G — Cylinder Phase Classification
+ 
+-\[
++$$
+ \boxed{
+ P_k(3)\to1,
+ }
+-\]
++$$
+ 
+ 而對 odd：
+ 
+-\[
++$$
+ \boxed{
+ m\ge5
+ \Rightarrow
+ P_k(m)\to0.
+ }
+-\]
++$$
+ 
+ ## Theorem H — Critical Parameter
+ 
+-\[
++$$
+ \boxed{
+ m_c=4.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2242,7 +2255,7 @@
+ 
+ 前六篇從 Collatz 出發建立：
+ 
+-\[
++$$
+ \text{finite word}
+ \to
+ \text{affine operator}
+@@ -2254,61 +2267,61 @@
+ \text{contraction law}
+ \to
+ \text{valuation language}.
+-\]
++$$
+ 
+ 本文顯示這條鏈的核心部分並不依賴：
+ 
+-\[
++$$
+ 3,\qquad1.
+-\]
++$$
+ 
+ 只要：
+ 
+-\[
++$$
+ m,r
+-\]
++$$
+ 
+ 為正奇整數，
+ 
+ 整個 local RCOT structure 仍然成立：
+ 
+-\[
++$$
+ \boxed{
+ T_{m,r}^k(r_w+2^ka)
+ =
+ s_w+m^ua.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz is one member of a larger residue-class affine translation family}.
+ }
+-\]
+-
+-而真正由 \(m\) 控制的 phase boundary：
+-
+-\[
++$$
++
++而真正由 $m$ 控制的 phase boundary：
++
++$$
+ \boxed{
+ m_c=4
+ }
+-\]
++$$
+ 
+ 在三種不同層次中同時出現：
+ 
+ 1. binomial parity-cylinder majority；
+ 2. accelerated one-step valuation mean；
+-3. 更一般 \(p,q,r\) almost-all theory 在 \(p=2\) 時的已知 analytic condition。
++3. 更一般 $p,q,r$ almost-all theory 在 $p=2$ 時的已知 analytic condition。
+ 
+ 這種一致性不等於全域證明，但清楚指出：
+ 
+-\[
++$$
+ \boxed{
+ m=3
+ }
+-\]
++$$
+ 
+ 位於 generalized family 中一個特殊的 subcritical regime。
+ 
+@@ -2316,7 +2329,7 @@
+ 
+ 我們將真正換**代數**：
+ 
+-\[
++$$
+ \mathbb Z
+ \to
+ \text{commutative rings}
+@@ -2330,7 +2343,7 @@
+ \text{Möbius maps}
+ \to
+ \text{nonlinear polynomials}.
+-\]
++$$
+ 
+ 目標是回答：
+ 
+@@ -2355,10 +2368,10 @@
+ 
+ 核心任務：
+ 
+-1. 從 \(\mathbb Z/\mathbb Q\) 推到一般交換整域；
++1. 從 $\mathbb Z/\mathbb Q$ 推到一般交換整域；
+ 2. 檢查 multiplier 非 unit 時 residue uniqueness 如何分裂；
+ 3. 檢查 zero divisor 如何破壞 exact inverse recovery；
+-4. 檢查 \(\mathbb C\)、\(p\)-adic domain 中「下降」語義如何改變；
++4. 檢查 $\mathbb C$、$p$-adic domain 中「下降」語義如何改變；
+ 5. 進入 matrix / noncommutative algebra，證明 order dependence 進入 leading operator；
+ 6. 推到 Möbius transformations，辨認 finite-dimensional closure 尚存但 progression transport 消失；
+-7. 推到 degree \(>1\) polynomial maps，辨認 fixed-dimensional affine closure 的斷裂。
++7. 推到 degree $>1$ polynomial maps，辨認 fixed-dimensional affine closure 的斷裂。
+### END DIFF 07 ###
+
+### BEGIN DIFF 08 ###
+--- original/08__代數判定域與結構斷裂定理.md
++++ corrected/08
+@@ -6,14 +6,15 @@
+ **作者：** Neo.K  
+ **機構：** 一言諾科技有限公司（EveMissLab）  
+ **系列：** Collatz Operation Translation Series — Paper 08  
+-**版本：** v0.1  
+-**日期：** 2026-08-10
++**版本：** v0.1.1  
++**日期：** 2026-08-10  
++**修訂日期：** 2026-08-14
+ 
+ ---
+ 
+ ## 摘要
+ 
+-前七篇從 modified Collatz map 出發，建立了 finite-word affine closure、parity-word/residue-cylinder bijection、local identity trivialization、exact inverse recovery、finite contraction law、valuation language 與 generalized odd-\(m,r\) family。這些結果顯示：Collatz 並不是孤立案例，而落在一個更大的 **Residue-Class Operation Translation (RCOT)** 局部仿射類別中。
++前七篇從 modified Collatz map 出發，建立了 finite-word affine closure、parity-word/residue-cylinder bijection、local identity trivialization、exact inverse recovery、finite contraction law、valuation language 與 generalized odd-$m,r$ family。這些結果顯示：Collatz 並不是孤立案例，而落在一個更大的 **Residue-Class Operation Translation (RCOT)** 局部仿射類別中。
+ 
+ 本文回答本系列最重要的判定域問題之一：
+ 
+@@ -21,9 +22,9 @@
+ 
+ 本文以一般交換標量仿射 word operator
+ 
+-\[
++$$
+ F_w(x)=\frac{A_wx+B_w}{D_w}
+-\]
++$$
+ 
+ 為起點，區分五種彼此獨立的結構需求：
+ 
+@@ -35,29 +36,29 @@
+ 
+ 本文首先證明：在交換係數環中，finite affine composition 保持仿射 closure。若每個 branch 為
+ 
+-\[
++$$
+ F_i(x)=\frac{a_ix+b_i}{d_i},
+-\]
+-
+-則對 word \(w=i_1\cdots i_k\)：
+-
+-\[
++$$
++
++則對 word $w=i_1\cdots i_k$：
++
++$$
+ \boxed{
+ F_w(x)=\frac{A_wx+B_w}{D_w},
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ A_w=\prod_{j=1}^{k}a_{i_j},
+ \qquad
+ D_w=\prod_{j=1}^{k}d_{i_j},
+-\]
++$$
+ 
+ 而：
+ 
+-\[
++$$
+ \boxed{
+ B_w=
+ \sum_{j=1}^{k}
+@@ -65,25 +66,25 @@
+ \left(\prod_{\ell=j+1}^{k}a_{i_\ell}\right)
+ \left(\prod_{\ell=1}^{j-1}d_{i_\ell}\right).
+ }
+-\]
+-
+-在交換環中，\(A_w,D_w\) 只依 branch counts；真正的 word order 進入 \(B_w\)。因此前七篇的「counts determine multiplicative skeleton; order determines affine correction」具有一個清楚的交換性判定域。
++$$
++
++在交換環中，$A_w,D_w$ 只依 branch counts；真正的 word order 進入 $B_w$。因此前七篇的「counts determine multiplicative skeleton; order determines affine correction」具有一個清楚的交換性判定域。
+ 
+ 對 residue equation：
+ 
+-\[
++$$
+ A_wx+B_w\equiv0\pmod I,
+-\]
++$$
+ 
+ 本文證明其唯一解條件的抽象形式為：
+ 
+-\[
++$$
+ \boxed{
+ [A_w]\in(R/I)^\times.
+ }
+-\]
+-
+-即 \(A_w\) 在 quotient ring \(R/I\) 中必須是 unit。若不是 unit，word-to-residue chart 可能出現三種情況：
++$$
++
++即 $A_w$ 在 quotient ring $R/I$ 中必須是 unit。若不是 unit，word-to-residue chart 可能出現三種情況：
+ 
+ - 無解；
+ - 唯一解（在特殊右端下偶然出現）；
+@@ -91,125 +92,125 @@
+ 
+ 例如在：
+ 
+-\[
++$$
+ \mathbb Z/6\mathbb Z
+-\]
++$$
+ 
+ 中：
+ 
+-\[
++$$
+ 2x\equiv2\pmod6
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ x\equiv1,4\pmod6,
+-\]
++$$
+ 
+ 而：
+ 
+-\[
++$$
+ 2x\equiv1\pmod6
+-\]
++$$
+ 
+ 無解。這說明：
+ 
+-\[
++$$
+ \boxed{
+ \text{affine closure survives while unique residue coding fails}.
+ }
+-\]
++$$
+ 
+ 若底層環含 zero divisors，exact inverse recovery 亦可失敗。例如：
+ 
+-\[
++$$
+ 2\cdot1\equiv2\cdot4\pmod6,
+-\]
+-
+-所以乘法 \(x\mapsto2x\) 不是 injective。本文因此將第二個結構斷裂點定位為：
+-
+-\[
++$$
++
++所以乘法 $x\mapsto2x$ 不是 injective。本文因此將第二個結構斷裂點定位為：
++
++$$
+ \boxed{
+ \text{zero divisor / non-regular multiplier}
+ \Rightarrow
+ \text{lossless recovery may fail}.
+ }
+-\]
++$$
+ 
+ 另一方面，若係數位於 integral domain 或 field，非零 scalar multiplication 仍 injective；因此「non-unit modulo a lattice」與「zero divisor in the state algebra」必須分開，不能混成同一種失效。
+ 
+-本文接著研究 order / metric semantics。進入 \(\mathbb C\) 後，affine closure 與 exact inversion均可保留，但不存在與 field operations 相容的 total order，因此原始：
+-
+-\[
++本文接著研究 order / metric semantics。進入 $\mathbb C$ 後，affine closure 與 exact inversion均可保留，但不存在與 field operations 相容的 total order，因此原始：
++
++$$
+ F(n)<n
+-\]
++$$
+ 
+ 型 descent theorem 失去自然意義。若選定 norm，則 contraction 應改為：
+ 
+-\[
++$$
+ \|F(x)-F(y)\|
+ <
+ \|x-y\|.
+-\]
++$$
+ 
+ 更一般地，對 affine operator：
+ 
+-\[
++$$
+ F(x)=\lambda x+c,
+-\]
++$$
+ 
+ 其 Lipschitz factor 是：
+ 
+-\[
++$$
+ |\lambda|_v
+-\]
+-
+-相對於所選 absolute value / valuation \(v\)。
++$$
++
++相對於所選 absolute value / valuation $v$。
+ 
+ 本文以 Collatz word：
+ 
+-\[
++$$
+ w=UUDD
+-\]
++$$
+ 
+ 為例：
+ 
+-\[
++$$
+ F_w(x)=\frac{9x+5}{16},
+ \qquad
+ \lambda=\frac9{16}.
+-\]
++$$
+ 
+ 在不同幾何中：
+ 
+-\[
++$$
+ \boxed{
+ |\lambda|_\infty=\frac9{16}<1,
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ |\lambda|_2=16>1,
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ |\lambda|_3=\frac19<1.
+ }
+-\]
++$$
+ 
+ 因此同一個 operator 同時是：
+ 
+ - real contraction；
+-- \(2\)-adic expansion；
+-- \(3\)-adic strong contraction。
++- $2$-adic expansion；
++- $3$-adic strong contraction。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{contraction}
+ =
+@@ -217,35 +218,35 @@
+ +
+ \text{chosen valuation / norm}.
+ }
+-\]
+-
+-這把 Series A 中「判定域決定定理語義」具體化到 Collatz affine charts。既有 \(2\)-adic Collatz 研究確實將 parity sequences 與 \(2\)-adic integers 建立一一對應並研究其 induced dynamics；本文的作用不是重新發明 \(2\)-adic Collatz，而是用它作為 RCOT contraction semantics 的邊界案例。
++$$
++
++這把 Series A 中「判定域決定定理語義」具體化到 Collatz affine charts。既有 $2$-adic Collatz 研究確實將 parity sequences 與 $2$-adic integers 建立一一對應並研究其 induced dynamics；本文的作用不是重新發明 $2$-adic Collatz，而是用它作為 RCOT contraction semantics 的邊界案例。
+ 
+ 真正的第一個**乘法骨架級大斷裂**發生在非交換代數。若 branch 為：
+ 
+-\[
++$$
+ F_i(x)=A_ix+b_i
+-\]
+-
+-而 \(A_i\) 為矩陣或非交換 algebra 元素，則：
+-
+-\[
++$$
++
++而 $A_i$ 為矩陣或非交換 algebra 元素，則：
++
++$$
+ \boxed{
+ F_w(x)
+ =
+ A_{i_k}\cdots A_{i_1}x+B_w.
+ }
+-\]
++$$
+ 
+ 一般：
+ 
+-\[
++$$
+ A_iA_j\neq A_jA_i.
+-\]
++$$
+ 
+ 因此即使兩個 words 有完全相同 branch counts，也可能有不同 leading operator。本文給出：
+ 
+-\[
++$$
+ A=
+ \begin{pmatrix}
+ 1&1\\
+@@ -257,11 +258,11 @@
+ 1&0\\
+ 1&1
+ \end{pmatrix},
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ AB=
+ \begin{pmatrix}
+ 2&1\\
+@@ -273,138 +274,138 @@
+ 1&2
+ \end{pmatrix}
+ =BA.
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{commutative scalar RCOT: order affects correction only;}
+ }
+-\]
++$$
+ 
+ 但：
+ 
+-\[
++$$
+ \boxed{
+ \text{noncommutative RCOT: order affects leading drift and correction}.
+ }
+-\]
+-
+-這直接破壞 Paper 05–07 中僅以 \((k,u)\) 或 branch counts 計算 cylinder phase 的二項式壓縮。若 matrices 彼此 commute，尤其可 simultaneous diagonalize 時，則部分 count-based structure 可以在各 eigendirection 中恢復；因此真正邊界是「commutativity of the leading multipliers」，而非「dimension \(>1\)」本身。
++$$
++
++這直接破壞 Paper 05–07 中僅以 $(k,u)$ 或 branch counts 計算 cylinder phase 的二項式壓縮。若 matrices 彼此 commute，尤其可 simultaneous diagonalize 時，則部分 count-based structure 可以在各 eigendirection 中恢復；因此真正邊界是「commutativity of the leading multipliers」，而非「dimension $>1$」本身。
+ 
+ 本文再推至 Möbius / projective transformations：
+ 
+-\[
++$$
+ F(x)=\frac{ax+b}{cx+d}.
+-\]
++$$
+ 
+ 此類映射仍由：
+ 
+-\[
++$$
+ \begin{pmatrix}
+ a&b\\
+ c&d
+ \end{pmatrix}
+-\]
++$$
+ 
+ 表示，composition 仍等於 matrix multiplication，所以保持固定四參數 projective closure：
+ 
+-\[
++$$
+ \boxed{
+ \text{finite-dimensional operator closure survives}.
+ }
+-\]
++$$
+ 
+ 然而 arithmetic progression 一般不再送到 arithmetic progression；因此前七篇的：
+ 
+-\[
++$$
+ r+D\mathbb Z
+ \longleftrightarrow
+ m+A\mathbb Z
+-\]
++$$
+ 
+ 型 linear cylinder transport 失效。這形成另一級邊界：
+ 
+-\[
++$$
+ \boxed{
+ \text{projective closure survives while affine lattice transport fails}.
+ }
+-\]
+-
+-最後，若 branch 進入 degree \(>1\) polynomial maps，一般 composition degree 依：
+-
+-\[
++$$
++
++最後，若 branch 進入 degree $>1$ polynomial maps，一般 composition degree 依：
++
++$$
+ \boxed{
+ \deg(f\circ g)=\deg f\cdot\deg g
+ }
+-\]
++$$
+ 
+ 增長（在 integral-domain、非退化 leading coefficient 條件下）。因此 degree 至少 2 的 repeated iteration 通常產生：
+ 
+-\[
++$$
+ 2,4,8,\ldots
+-\]
++$$
+ 
+ 或一般乘法式 degree growth。這意味不存在一個固定 degree bound 的 polynomial family 能容納全部 word compositions。已有 polynomial dynamical systems 文獻專門研究 iteration 下的 degree growth；本文則將其作為 RCOT「固定 affine/projective operator class closure」之外的結構斷裂點。
+ 
+ 綜合以上，本文提出 **Algebraic Breakage Ladder**：
+ 
+-\[
++$$
+ \boxed{
+ \text{unique affine atlas}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \downarrow\quad\text{non-unit modulo quotient}
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{branched / missing residue atlas}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \downarrow\quad\text{zero divisor / non-regular multiplier}
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{non-faithful recovery}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \downarrow\quad\text{noncommutative leading multipliers}
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{order-sensitive leading drift}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \downarrow\quad\text{projective non-affinity}
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{finite closure without lattice transport}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \downarrow\quad\text{degree}>1\text{ nonlinear composition}
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{loss of fixed-degree affine/projective closure}.
+ }
+-\]
++$$
+ 
+ 因此 RCOT 的核心域不是「任何可以寫公式的動力系統」，而是一個精確的代數判定域：
+ 
+@@ -412,7 +413,7 @@
+ 
+ Collatz 恰好位於這個判定域的一個極為乾淨的位置：
+ 
+-\[
++$$
+ \boxed{
+ \text{scalar}
+ +
+@@ -424,11 +425,11 @@
+ +
+ \text{ordered positive-integer domain}.
+ }
+-\]
++$$
+ 
+ 所以它的局部算術幾乎可以完全平凡化，而全域困難集中在 chart itinerary。這也解釋了 Collatz 的特殊困難型態：它不是局部 operator 很複雜，而是**局部高度可解、全域選圖仍非平凡**。
+ 
+-**關鍵詞：** Residue-Class Operation Translation、commutative ring、zero divisor、unit、\(p\)-adic norm、noncommutative algebra、Möbius transformation、polynomial dynamics、Collatz conjecture、algebraic boundary
++**關鍵詞：** Residue-Class Operation Translation、commutative ring、zero divisor、unit、$p$-adic norm、noncommutative algebra、Möbius transformation、polynomial dynamics、Collatz conjecture、algebraic boundary
+ 
+ ---
+ 
+@@ -436,15 +437,15 @@
+ 
+ 前七篇在：
+ 
+-\[
++$$
+ \mathbb Z_{>0}
+-\]
++$$
+ 
+ 與：
+ 
+-\[
++$$
+ \mathbb Q
+-\]
++$$
+ 
+ 上反覆使用以下結構：
+ 
+@@ -469,43 +470,43 @@
+ 
+ 而問：
+ 
+-\[
++$$
+ \boxed{
+ \text{Which algebraic property supports which theorem?}
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 2. 一般交換標量仿射 Branch
+ 
+-令 \(R\) 為交換環或其適當 localization。
++令 $R$ 為交換環或其適當 localization。
+ 
+ 每個 branch：
+ 
+-\[
++$$
+ \boxed{
+ F_i(x)
+ =
+ \frac{a_ix+b_i}{d_i}.
+ }
+-\]
++$$
+ 
+ 形式上可記成 triple：
+ 
+-\[
++$$
+ \boxed{
+ (a_i,b_i,d_i).
+ }
+-\]
++$$
+ 
+ 若 denominator 在所選 localization 中可逆，
+ 
+ 則：
+ 
+-\[
++$$
+ F_i:R'\to R'
+-\]
++$$
+ 
+ 為合法 affine map。
+ 
+@@ -515,19 +516,19 @@
+ 
+ 先：
+ 
+-\[
++$$
+ F_1(x)=\frac{a_1x+b_1}{d_1},
+-\]
++$$
+ 
+ 再：
+ 
+-\[
++$$
+ F_2(x)=\frac{a_2x+b_2}{d_2}.
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ F_2(F_1(x))
+ =
+ \frac{
+@@ -535,11 +536,11 @@
+ }{
+ d_2d_1
+ }.
+-\]
++$$
+ 
+ 所以 triple composition：
+ 
+-\[
++$$
+ \boxed{
+ (a_2,b_2,d_2)\circ(a_1,b_1,d_1)
+ =
+@@ -547,7 +548,7 @@
+ a_2b_1+b_2d_1,\,
+ d_2d_1).
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -555,43 +556,43 @@
+ 
+ 對 word：
+ 
+-\[
++$$
+ w=i_1\cdots i_k
+-\]
++$$
+ 
+ （由左到右執行），
+ 
+ 有：
+ 
+-\[
++$$
+ \boxed{
+ F_w(x)
+ =
+ \frac{A_wx+B_w}{D_w},
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ \boxed{
+ A_w
+ =
+ \prod_{j=1}^{k}a_{i_j},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ D_w
+ =
+ \prod_{j=1}^{k}d_{i_j},
+ }
+-\]
++$$
+ 
+ 以及：
+ 
+-\[
++$$
+ \boxed{
+ B_w
+ =
+@@ -604,7 +605,7 @@
+ \prod_{\ell=1}^{j-1}d_{i_\ell}
+ \right).
+ }
+-\]
++$$
+ 
+ 這是 RCOT 的一般 affine mother formula。
+ 
+@@ -612,41 +613,41 @@
+ 
+ # 5. 第一個關鍵：交換性
+ 
+-若 \(R\) commutative，
++若 $R$ commutative，
+ 
+ 則：
+ 
+-\[
++$$
+ A_w
+-\]
+-
+-只看每種 \(a_i\) 出現幾次。
++$$
++
++只看每種 $a_i$ 出現幾次。
+ 
+ 同理：
+ 
+-\[
++$$
+ D_w
+-\]
++$$
+ 
+ 只看每種 denominator 的 counts。
+ 
+ 但是：
+ 
+-\[
++$$
+ B_w
+-\]
++$$
+ 
+ 仍依賴各 branch 的位置。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{commutative leading multipliers}
+ \Rightarrow
+ \text{counts determine skeleton}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -656,47 +657,47 @@
+ 
+ ### L1 — Operator Closure
+ 
+-\[
++$$
+ \text{finite word}
+ \to
+ \text{same operator class}.
+-\]
++$$
+ 
+ ### L2 — Count/Order Split
+ 
+-\[
++$$
+ \text{counts}\to\text{leading skeleton},
+ \qquad
+ \text{order}\to\text{correction}.
+-\]
++$$
+ 
+ ### L3 — Unique Residue Chart
+ 
+-\[
++$$
+ \text{word}
+ \leftrightarrow
+ \text{one residue class}.
+-\]
++$$
+ 
+ ### L4 — Exact Recovery
+ 
+-\[
++$$
+ \text{target coordinate}
+ \to
+ \text{unique source}.
+-\]
++$$
+ 
+ ### L5 — Contraction Semantics
+ 
+-\[
++$$
+ F(x)<x
+-\]
++$$
+ 
+ 或：
+ 
+-\[
++$$
+ \|F(x)-F(y)\|<\|x-y\|.
+-\]
++$$
+ 
+ 這五層不是同一個條件。
+ 
+@@ -706,33 +707,33 @@
+ 
+ 在整數 Collatz 中：
+ 
+-\[
+-A_wr+B_w
++$$
++A_wx+B_w
+ \equiv0
+ \pmod{D_w}.
+-\]
+-
+-一般化到環 \(R\) 與 ideal \(I\)：
+-
+-\[
++$$
++
++一般化到環 $R$ 與 ideal $I$：
++
++$$
+ \boxed{
+ A_wx+B_w
+ \equiv0
+ \pmod I.
+ }
+-\]
++$$
+ 
+ 在 quotient：
+ 
+-\[
++$$
+ R/I
+-\]
++$$
+ 
+ 中即：
+ 
+-\[
++$$
+ [A_w][x]=-[B_w].
+-\]
++$$
+ 
+ ---
+ 
+@@ -740,23 +741,23 @@
+ 
+ 如果：
+ 
+-\[
++$$
+ \boxed{
+ [A_w]\in(R/I)^\times,
+ }
+-\]
+-
+-即 \(A_w\) 在 quotient ring 中為 unit，
++$$
++
++即 $A_w$ 在 quotient ring 中為 unit，
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ [x]
+ =
+ -[A_w]^{-1}[B_w]
+ }
+-\]
++$$
+ 
+ 唯一。
+ 
+@@ -764,27 +765,27 @@
+ 
+ ## Theorem 8.1 — Quotient-Unit Criterion
+ 
+-\[
++$$
+ \boxed{
+ [A_w]\text{ unit in }R/I
+ \Rightarrow
+ \text{unique residue chart}.
+ }
+-\]
++$$
+ 
+ Collatz：
+ 
+-\[
++$$
+ A_w=3^u,
+ \qquad
+ I=(2^k),
+-\]
++$$
+ 
+ 而：
+ 
+-\[
++$$
+ \gcd(3^u,2^k)=1,
+-\]
++$$
+ 
+ 所以條件自動成立。
+ 
+@@ -794,25 +795,25 @@
+ 
+ 若：
+ 
+-\[
++$$
+ [A_w]
+-\]
++$$
+ 
+ 不是 unit，
+ 
+ 則 multiplication map：
+ 
+-\[
++$$
+ M_{A_w}:R/I\to R/I
+-\]
++$$
+ 
+ 不再保證 bijective。
+ 
+ 所以：
+ 
+-\[
++$$
+ A_wx=-B_w
+-\]
++$$
+ 
+ 可能：
+ 
+@@ -822,13 +823,13 @@
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{one word}
+ \leftrightarrow
+ \text{one residue}
+ }
+-\]
++$$
+ 
+ 不再是結構定理。
+ 
+@@ -838,81 +839,81 @@
+ 
+ 在：
+ 
+-\[
++$$
+ \mathbb Z/6\mathbb Z,
+-\]
++$$
+ 
+ 考慮：
+ 
+-\[
++$$
+ 2x\equiv2\pmod6.
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ x\equiv1,
+-\]
++$$
+ 
+ 亦有：
+ 
+-\[
++$$
+ x\equiv4.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{one equation has multiple residue charts}.
+ }
+-\]
++$$
+ 
+ 另一方面：
+ 
+-\[
++$$
+ 2x\equiv1\pmod6
+-\]
++$$
+ 
+ 無解。
+ 
+ 因此 non-unit 使 atlas 變成：
+ 
+-\[
++$$
+ \boxed{
+ \text{zero / one / multiple charts}.
+ }
+-\]
+-
+----
+-
+-# 11. 第一個斷裂：Unique Atlas \(\to\) Branched Atlas
++$$
++
++---
++
++# 11. 第一個斷裂：Unique Atlas $\to$ Branched Atlas
+ 
+ 注意這時：
+ 
+-\[
++$$
+ F_w(x)
+ =
+ \frac{A_wx+B_w}{D_w}
+-\]
++$$
+ 
+ 的 affine formula 完全沒有壞。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{operator closure survives}.
+ }
+-\]
++$$
+ 
+ 真正壞的是：
+ 
+-\[
++$$
+ \boxed{
+ \text{residue uniqueness}.
+ }
+-\]
++$$
+ 
+ 這是 RCOT 第一級結構斷裂。
+ 
+@@ -922,42 +923,42 @@
+ 
+ 現在看：
+ 
+-\[
++$$
+ R=\mathbb Z/6\mathbb Z.
+-\]
++$$
+ 
+ 乘法：
+ 
+-\[
++$$
+ x\mapsto2x.
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ 2\cdot1
+ =
+ 2
+ \pmod6,
+-\]
+-
+-\[
++$$
++
++$$
+ 2\cdot4
+ =
+ 8
+ \equiv2
+ \pmod6.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ 1\neq4
+ \quad\text{but}\quad
+ 2\cdot1=2\cdot4.
+ }
+-\]
++$$
+ 
+ 此 map 非 injective。
+ 
+@@ -965,50 +966,50 @@
+ 
+ # 13. Regular Multiplier Criterion
+ 
+-對一般 ring \(R\)，
++對一般 ring $R$，
+ 
+ 若：
+ 
+-\[
++$$
+ Ax=Ay,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ A(x-y)=0.
+-\]
++$$
+ 
+ 要推出：
+ 
+-\[
++$$
+ x=y,
+-\]
+-
+-需要 multiplication by \(A\) 沒有非零 kernel。
++$$
++
++需要 multiplication by $A$ 沒有非零 kernel。
+ 
+ 也就是：
+ 
+-\[
++$$
+ \boxed{
+ A\text{ is regular / non-zero-divisor on the relevant module}.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+ ## Theorem 13.1 — Recovery Criterion
+ 
+-\[
++$$
+ \boxed{
+ A\text{ regular}
+ \Rightarrow
+ x\mapsto Ax+B
+ \text{ injective}.
+ }
+-\]
+-
+-若 \(A\) 是 zero divisor，
++$$
++
++若 $A$ 是 zero divisor，
+ 
+ lossless recovery 可失敗。
+ 
+@@ -1018,37 +1019,37 @@
+ 
+ 例如在：
+ 
+-\[
++$$
+ R=\mathbb Z,
+-\]
+-
+-\(2\) 不是 unit，
++$$
++
++$2$ 不是 unit，
+ 
+ 但：
+ 
+-\[
++$$
+ 2x=2y
+ \Rightarrow
+ x=y.
+-\]
++$$
+ 
+ 因：
+ 
+-\[
++$$
+ \mathbb Z
+-\]
++$$
+ 
+ 是 integral domain。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{non-unit}
+ \not\Rightarrow
+ \text{non-injective}.
+ }
+-\]
++$$
+ 
+ 真正要分：
+ 
+@@ -1059,35 +1060,35 @@
+ 
+ # 15. Integral Domain 的位置
+ 
+-若 \(R\) 為 integral domain，
++若 $R$ 為 integral domain，
+ 
+ 則任何：
+ 
+-\[
++$$
+ A\neq0
+-\]
++$$
+ 
+ 都不是 zero divisor。
+ 
+ 所以：
+ 
+-\[
++$$
+ x\mapsto Ax+B
+-\]
++$$
+ 
+ injective。
+ 
+ 若再進入 fraction field：
+ 
+-\[
++$$
+ \operatorname{Frac}(R),
+-\]
++$$
+ 
+ 所有：
+ 
+-\[
++$$
+ A\neq0
+-\]
++$$
+ 
+ 皆可逆。
+ 
+@@ -1099,37 +1100,37 @@
+ 
+ 現在從 algebraic invertibility 轉到 order semantics。
+ 
+-\[
++$$
+ \mathbb Q,\mathbb R
+-\]
++$$
+ 
+ 可以用：
+ 
+-\[
++$$
+ <
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ F(n)<n.
+-\]
++$$
+ 
+ 但：
+ 
+-\[
++$$
+ \mathbb C
+-\]
++$$
+ 
+ 不存在與 field addition/multiplication 相容的 total order。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ F(z)<z
+ }
+-\]
++$$
+ 
+ 沒有自然 field-theoretic 意義。
+ 
+@@ -1139,41 +1140,41 @@
+ 
+ 對：
+ 
+-\[
++$$
+ F(x)=\lambda x+c,
+-\]
++$$
+ 
+ 任意兩點：
+ 
+-\[
++$$
+ F(x)-F(y)
+ =
+ \lambda(x-y).
+-\]
++$$
+ 
+ 因此在 multiplicative absolute value：
+ 
+-\[
++$$
+ |\cdot|_v
+-\]
++$$
+ 
+ 下：
+ 
+-\[
++$$
+ \boxed{
+ |F(x)-F(y)|_v
+ =
+ |\lambda|_v|x-y|_v.
+ }
+-\]
++$$
+ 
+ 所以 contraction 的真正 metric criterion：
+ 
+-\[
++$$
+ \boxed{
+ |\lambda|_v<1.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1181,67 +1182,67 @@
+ 
+ 取 Collatz word：
+ 
+-\[
++$$
+ w=UUDD.
+-\]
++$$
+ 
+ Paper 02：
+ 
+-\[
++$$
+ \boxed{
+ F_w(x)
+ =
+ \frac{9x+5}{16}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \lambda=\frac9{16}.
+-\]
++$$
+ 
+ ---
+ 
+ # 19. Real Absolute Value
+ 
+-\[
++$$
+ \boxed{
+ \left|\frac9{16}\right|_\infty
+ =
+ \frac9{16}<1.
+ }
+-\]
++$$
+ 
+ 因此它是 real contraction。
+ 
+ ---
+ 
+-# 20. \(2\)-adic Absolute Value
++# 20. $2$-adic Absolute Value
+ 
+ 標準 normalization：
+ 
+-\[
++$$
+ |2|_2=\frac12.
+-\]
++$$
+ 
+ 因：
+ 
+-\[
++$$
+ v_2(9)=0,
+ \qquad
+ v_2(16)=4,
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ v_2(9/16)=-4.
+-\]
++$$
+ 
+ 故：
+ 
+-\[
++$$
+ \boxed{
+ \left|\frac9{16}\right|_2
+ =
+@@ -1249,21 +1250,21 @@
+ =
+ 16>1.
+ }
+-\]
+-
+-同一 operator 是 \(2\)-adic expansion。
+-
+----
+-
+-# 21. \(3\)-adic Absolute Value
+-
+-\[
++$$
++
++同一 operator 是 $2$-adic expansion。
++
++---
++
++# 21. $3$-adic Absolute Value
++
++$$
+ v_3(9/16)=2.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \left|\frac9{16}\right|_3
+ =
+@@ -1271,9 +1272,9 @@
+ =
+ \frac19<1.
+ }
+-\]
+-
+-因此是 \(3\)-adic strong contraction。
++$$
++
++因此是 $3$-adic strong contraction。
+ 
+ ---
+ 
+@@ -1281,23 +1282,23 @@
+ 
+ 所以不能只寫：
+ 
+-\[
++$$
+ \text{word }w\text{ is contracting}.
+-\]
++$$
+ 
+ 更完整應寫：
+ 
+-\[
++$$
+ \boxed{
+ (w,v)\text{ is contracting}
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ v
+-\]
++$$
+ 
+ 指定 valuation / norm。
+ 
+@@ -1305,11 +1306,11 @@
+ 
+ 選的是：
+ 
+-\[
++$$
+ \boxed{
+ \text{Archimedean order / absolute value}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1317,79 +1318,79 @@
+ 
+ 主 multiplier：
+ 
+-\[
++$$
+ \lambda_w=\frac{3^u}{2^k}.
+-\]
++$$
+ 
+ 所以：
+ 
+ ### Archimedean
+ 
+-\[
++$$
+ \boxed{
+ |\lambda_w|_\infty
+ =
+ 3^u/2^k.
+ }
+-\]
+-
+-### \(2\)-adic
+-
+-\[
++$$
++
++### $2$-adic
++
++$$
+ \boxed{
+ |\lambda_w|_2
+ =
+ 2^k.
+ }
+-\]
+-
+-### \(3\)-adic
+-
+-\[
++$$
++
++### $3$-adic
++
++$$
+ \boxed{
+ |\lambda_w|_3
+ =
+ 3^{-u}.
+ }
+-\]
++$$
+ 
+ 因此只要：
+ 
+-\[
++$$
+ k>0,
+-\]
+-
+-固定 finite Collatz word 在 \(2\)-adic metric 的 difference dynamics 是 expansion；
++$$
++
++固定 finite Collatz word 在 $2$-adic metric 的 difference dynamics 是 expansion；
+ 
+ 只要：
+ 
+-\[
++$$
+ u>0,
+-\]
+-
+-在 \(3\)-adic metric 則是 contraction。
+-
+----
+-
+-# 24. 這與 \(2\)-adic Collatz 文獻的關係
++$$
++
++在 $3$-adic metric 則是 contraction。
++
++---
++
++# 24. 這與 $2$-adic Collatz 文獻的關係
+ 
+ 既有研究已建立：
+ 
+-\[
++$$
+ \mathbb Z_2
+-\]
++$$
+ 
+ 與 Collatz parity sequences 的 one-to-one coding，並研究 induced automorphism / conjugacy dynamics。
+ 
+-本文不宣稱 \(2\)-adic Collatz 是新結果。
++本文不宣稱 $2$-adic Collatz 是新結果。
+ 
+ 本文使用：
+ 
+-\[
++$$
+ \boxed{
+ |\lambda_w|_2
+ }
+-\]
++$$
+ 
+ 來指出一件 RCOT 的一般原則：
+ 
+@@ -1401,41 +1402,41 @@
+ 
+ 現在令 state：
+ 
+-\[
++$$
+ x\in V
+-\]
++$$
+ 
+ 為向量，
+ 
+ branch：
+ 
+-\[
++$$
+ \boxed{
+ F_i(x)=A_ix+b_i.
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ A_i\in\operatorname{End}(V).
+-\]
++$$
+ 
+ 對 word：
+ 
+-\[
++$$
+ w=i_1\cdots i_k,
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ \boxed{
+ F_w(x)
+ =
+ A_{i_k}\cdots A_{i_1}x+B_w.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1443,7 +1444,7 @@
+ 
+ 取：
+ 
+-\[
++$$
+ A=
+ \begin{pmatrix}
+ 1&1\\
+@@ -1455,37 +1456,37 @@
+ 1&0\\
+ 1&1
+ \end{pmatrix}.
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ AB
+ =
+ \begin{pmatrix}
+ 2&1\\
+ 1&1
+ \end{pmatrix},
+-\]
++$$
+ 
+ 但：
+ 
+-\[
++$$
+ BA
+ =
+ \begin{pmatrix}
+ 1&1\\
+ 1&2
+ \end{pmatrix}.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ AB\neq BA.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1493,38 +1494,38 @@
+ 
+ words：
+ 
+-\[
++$$
+ AB
+-\]
++$$
+ 
+ 與：
+ 
+-\[
++$$
+ BA
+-\]
++$$
+ 
+ 都含：
+ 
+-- 一個 \(A\)；
+-- 一個 \(B\)。
++- 一個 $A$；
++- 一個 $B$。
+ 
+ branch counts 完全相同。
+ 
+ 但：
+ 
+-\[
++$$
+ \boxed{
+ L_{AB}\neq L_{BA}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{counts no longer determine the leading drift}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1532,22 +1533,22 @@
+ 
+ 交換標量：
+ 
+-\[
++$$
+ \boxed{
+ \text{order}\to\text{correction only}.
+ }
+-\]
++$$
+ 
+ 非交換：
+ 
+-\[
++$$
+ \boxed{
+ \text{order}\to
+ \text{leading operator}
+ +
+ \text{correction}.
+ }
+-\]
++$$
+ 
+ 這是比 residue branching 更深的結構斷裂。
+ 
+@@ -1559,21 +1560,21 @@
+ 
+ 固定：
+ 
+-\[
++$$
+ k,u
+-\]
++$$
+ 
+ 就知道：
+ 
+-\[
++$$
+ \lambda_w=\frac{3^u}{2^k}.
+-\]
++$$
+ 
+ 因此所有：
+ 
+-\[
++$$
+ \binom ku
+-\]
++$$
+ 
+ 個 words 共用同一 skeleton side。
+ 
+@@ -1583,15 +1584,15 @@
+ 
+ 不同排列仍有不同 product：
+ 
+-\[
++$$
+ A_{i_k}\cdots A_{i_1}.
+-\]
++$$
+ 
+ 所以不能再用：
+ 
+-\[
++$$
+ \binom ku
+-\]
++$$
+ 
+ 一次分類整族 words。
+ 
+@@ -1601,17 +1602,17 @@
+ 
+ scalar：
+ 
+-\[
++$$
+ \lambda_w\in\mathbb R.
+-\]
++$$
+ 
+ matrix：
+ 
+-\[
++$$
+ \boxed{
+ L_w=A_{i_k}\cdots A_{i_1}.
+ }
+-\]
++$$
+ 
+ 若要談 contraction，
+ 
+@@ -1625,13 +1626,13 @@
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{one-dimensional phase boundary}
+ \to
+ \text{spectral/operator phase structure}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1639,75 +1640,77 @@
+ 
+ 若所有：
+ 
+-\[
++$$
+ A_iA_j=A_jA_i,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ L_w
+-\]
++$$
+ 
+ 仍只看 counts。
+ 
+ 若還能 simultaneous diagonalize：
+ 
+-\[
++$$
+ A_i=P\Lambda_iP^{-1},
+-\]
+-
+-則每個 eigendirection \(q\) 都有 scalar-like multiplier：
+-
+-\[
++$$
++
++則每個 eigendirection $q$ 都有 scalar-like multiplier：
++
++$$
+ \boxed{
+ \lambda_{w,q}
+ =
+ \prod_i
+ \lambda_{i,q}^{\,c_i(w)}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{dimension}>1
+ \text{ does not itself kill count/order decomposition}.
+ }
+-\]
++$$
+ 
+ 真正的斷裂條件是：
+ 
+-\[
++$$
+ \boxed{
+ \text{noncommutativity of leading multipliers}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 32. Möbius / Projective Layer
+ 
+-考慮：
+-
+-\[
++本節先令係數位於一個 field $K$。考慮：
++
++$$
+ \boxed{
+ F(x)
+ =
+ \frac{ax+b}{cx+d},
+ }
+-\]
+-
+-其中：
+-
+-\[
++$$
++
++其中 $a,b,c,d\in K$，且：
++
++$$
+ ad-bc\neq0.
+-\]
++$$
++
++在 field 上這正是 matrix invertibility 的條件。若改在一般 commutative ring $R$ 上工作，則應把條件改成 $ad-bc\in R^\times$，projective rescaling 也只允許乘以 units。
+ 
+ 它對應 matrix：
+ 
+-\[
++$$
+ \boxed{
+ M_F=
+ \begin{pmatrix}
+@@ -1715,9 +1718,9 @@
+ c&d
+ \end{pmatrix}
+ }
+-\]
+-
+-up to nonzero scalar multiple。
++$$
++
++up to nonzero scalar multiple in $K$。
+ 
+ ---
+ 
+@@ -1725,39 +1728,39 @@
+ 
+ 若：
+ 
+-\[
++$$
+ F\leftrightarrow M_F,
+ \qquad
+ G\leftrightarrow M_G,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ G\circ F
+ \leftrightarrow
+ M_GM_F.
+ }
+-\]
++$$
+ 
+ 因此任意 finite word 仍由四個 projective coefficients 描述：
+ 
+-\[
++$$
+ \boxed{
+ F_w(x)
+ =
+ \frac{A_wx+B_w}{C_wx+D_w}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{fixed-dimensional closure survives}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1765,29 +1768,29 @@
+ 
+ affine：
+ 
+-\[
++$$
+ x=r+qa
+-\]
++$$
+ 
+ 代入：
+ 
+-\[
++$$
+ F(x)=\alpha x+\beta
+-\]
++$$
+ 
+ 仍得到：
+ 
+-\[
++$$
+ F(r+qa)
+ =
+ r'+q'a.
+-\]
+-
+-所以 quotient label \(a\) 線性保留。
++$$
++
++所以 quotient label $a$ 線性保留。
+ 
+ Möbius：
+ 
+-\[
++$$
+ F(r+qa)
+ =
+ \frac{
+@@ -1795,29 +1798,29 @@
+ }{
+ c_0(r+qa)+d_0
+ },
+-\]
++$$
+ 
+ 分母本身依賴：
+ 
+-\[
++$$
+ a.
+-\]
++$$
+ 
+ 一般不能整理成：
+ 
+-\[
++$$
+ s+pa.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{arithmetic progression}
+ \not\to
+ \text{arithmetic progression}
+ }
+-\]
++$$
+ 
+ 一般成立。
+ 
+@@ -1831,15 +1834,15 @@
+ - matrix representation：✓
+ - exact inversion（away from poles）：✓
+ - simple affine lattice transport：✗
+-- quotient-label identity \(a\mapsto a\)：一般 ✗
++- quotient-label identity $a\mapsto a$：一般 ✗
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{operator closure can survive after RCOT lattice geometry dies}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1847,9 +1850,9 @@
+ 
+ 任何 invertible local map 都可以透過把 target coordinate 定義成：
+ 
+-\[
++$$
+ F^{-1}
+-\]
++$$
+ 
+ 而形式上 trivialize。
+ 
+@@ -1857,59 +1860,59 @@
+ 
+ RCOT 更強的地方是：
+ 
+-\[
++$$
+ \boxed{
+ \text{source and target charts are simple arithmetic quotient coordinates}.
+ }
+-\]
++$$
+ 
+ 即：
+ 
+-\[
++$$
+ \frac{x-r}{D}
+ \quad\leftrightarrow\quad
+ \frac{y-s}{A}.
+-\]
++$$
+ 
+ Möbius 一般失去這個簡單 lattice-coordinate structure。
+ 
+ ---
+ 
+-# 37. Degree \(>1\) Polynomial Layer
++# 37. Degree $>1$ Polynomial Layer
+ 
+ 考慮：
+ 
+-\[
++$$
+ f(x)=x^2+1.
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ f^{\circ2}(x)
+ =
+ (x^2+1)^2+1
+-\]
++$$
+ 
+ degree：
+ 
+-\[
++$$
+ 4.
+-\]
++$$
+ 
+ 再 iteration：
+ 
+-\[
++$$
+ \deg f^{\circ3}=8.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \deg f^{\circ k}=2^k.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1917,35 +1920,35 @@
+ 
+ 對 nonconstant polynomials over an integral domain：
+ 
+-\[
++$$
+ \boxed{
+ \deg(f\circ g)
+ =
+ \deg f\cdot\deg g.
+ }
+-\]
++$$
+ 
+ 因此若 branch degrees：
+ 
+-\[
++$$
+ d_i\ge1,
+-\]
++$$
+ 
+ word degree：
+ 
+-\[
++$$
+ \boxed{
+ \deg F_w
+ =
+ \prod_jd_{i_j}.
+ }
+-\]
++$$
+ 
+ 只要反覆出現某個：
+ 
+-\[
++$$
+ d_i>1,
+-\]
++$$
+ 
+ degree 可無界增長。
+ 
+@@ -1955,15 +1958,15 @@
+ 
+ affine：
+ 
+-\[
++$$
+ \deg=1
+-\]
++$$
+ 
+ composition 後仍：
+ 
+-\[
++$$
+ \deg=1.
+-\]
++$$
+ 
+ Möbius：
+ 
+@@ -1973,23 +1976,23 @@
+ 
+ 一般 polynomial：
+ 
+-\[
++$$
+ \deg>1
+-\]
++$$
+ 
+ composition 後 degree 乘法增長。
+ 
+ 所以不存在固定：
+ 
+-\[
++$$
+ D<\infty
+-\]
++$$
+ 
+ 使所有 finite words 都落在：
+ 
+-\[
++$$
+ \{\deg f\le D\}
+-\]
++$$
+ 
+ 之內，除非系統有特殊退化。
+ 
+@@ -1999,21 +2002,21 @@
+ 
+ 例如單一：
+ 
+-\[
++$$
+ x\mapsto x^2
+-\]
+-
+-的第 \(k\) 次 iteration：
+-
+-\[
++$$
++
++的第 $k$ 次 iteration：
++
++$$
+ x^{2^k}
+-\]
++$$
+ 
+ 仍可用：
+ 
+-\[
++$$
+ k
+-\]
++$$
+ 
+ 簡短描述。
+ 
+@@ -2023,13 +2026,13 @@
+ 
+ 本文只主張：
+ 
+-\[
++$$
+ \boxed{
+ \text{generic degree}>1
+ \Rightarrow
+ \text{fixed affine/projective coefficient class is not closed}.
+ }
+-\]
++$$
+ 
+ 這是嚴格且足夠的判定域邊界。
+ 
+@@ -2051,17 +2054,17 @@
+ 
+ | Algebra / Operator Class | Finite Closure | Count→Leading Skeleton | Unique Residue | Exact Recovery | Natural Descent |
+ |---|---:|---:|---:|---:|---:|
+-| \(\mathbb Z,\mathbb Q\) scalar affine | ✓ | ✓ | unit/gcd 下 ✓ | ✓ | ✓ |
++| $\mathbb Z,\mathbb Q$ scalar affine | ✓ | ✓ | unit/gcd 下 ✓ | ✓ | ✓ |
+ | commutative integral domain affine | ✓ | ✓ | quotient-unit 下 ✓ | ✓ for nonzero multiplier | 若可排序 |
+ | quotient / non-unit multiplier | ✓ | ✓ | ✗ / branched | 可局部保留 | 視結構 |
+ | zero-divisor ring | ✓ | ✓ | 不保證 | ✗ 可失敗 | 通常無自然序 |
+-| \(\mathbb C\) affine | ✓ | ✓ | 視 quotient | ✓ | \(<\) 無；可用 norm |
+-| \(p\)-adic field affine | ✓ | ✓ | 視 lattice | ✓ | valuation-relative |
++| $\mathbb C$ affine | ✓ | ✓ | 視 quotient | ✓ | $<$ 無；可用 norm |
++| $p$-adic field affine | ✓ | ✓ | 視 lattice | ✓ | valuation-relative |
+ | commuting matrices affine | ✓ | 部分 ✓ | 不再是 scalar residue 問題 | invertibility 下 ✓ | norm/spectral |
+ | noncommuting matrices affine | ✓ | ✗ | scalar cylinder law失效 | invertibility 下 ✓ | norm/spectral |
+ | Möbius / projective | ✓ | matrix-order dependent | affine residue law一般失效 | away from poles ✓ | projective/norm dependent |
+-| degree \(>1\) polynomial | polynomial class ✓ but degree grows | 一般 ✗ | affine cylinder law ✗ | map-dependent | map-dependent |
+-| fixed-degree affine/projective class | degree \(>1\) 後 ✗ | — | — | — | — |
++| degree $>1$ polynomial | polynomial class ✓ but degree grows | 一般 ✗ | affine cylinder law ✗ | map-dependent | map-dependent |
++| fixed-degree affine/projective class | degree $>1$ 後 ✗ | — | — | — | — |
+ 
+ ---
+ 
+@@ -2081,11 +2084,11 @@
+ 
+ 得到：
+ 
+-\[
++$$
+ \boxed{
+ \text{closure + unique residue + recovery + count/order split}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2093,19 +2096,19 @@
+ 
+ 當：
+ 
+-\[
++$$
+ [A_w]
+-\]
++$$
+ 
+ 不是 quotient unit。
+ 
+ 失去：
+ 
+-\[
++$$
+ \boxed{
+ \text{unique residue coding}.
+ }
+-\]
++$$
+ 
+ 但 affine closure 還在。
+ 
+@@ -2117,11 +2120,11 @@
+ 
+ 失去：
+ 
+-\[
++$$
+ \boxed{
+ \text{exact inverse recovery}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2129,17 +2132,17 @@
+ 
+ 當：
+ 
+-\[
++$$
+ A_iA_j\neq A_jA_i.
+-\]
++$$
+ 
+ 失去：
+ 
+-\[
++$$
+ \boxed{
+ \text{counts determine leading skeleton}.
+ }
+-\]
++$$
+ 
+ order 進入主 operator。
+ 
+@@ -2151,25 +2154,25 @@
+ 
+ 但失去：
+ 
+-\[
++$$
+ \boxed{
+ \text{arithmetic-progression transport}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ ## Level 5 — Nonlinear Growing Operator Space
+ 
+-degree \(>1\) composition 導致 degree growth。
++degree $>1$ composition 導致 degree growth。
+ 
+ 失去：
+ 
+-\[
++$$
+ \boxed{
+ \text{fixed affine/projective operator-family closure}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2181,7 +2184,7 @@
+ 
+ 形式上：
+ 
+-\[
++$$
+ \boxed{
+ \text{RCOT Core}
+ =
+@@ -2191,7 +2194,7 @@
+ +
+ \text{regular recovery multiplier}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2205,41 +2208,41 @@
+ 
+ state domain 具有與 algebra 相容的 order：
+ 
+-\[
++$$
+ <
+-\]
++$$
+ 
+ 可比較：
+ 
+-\[
++$$
+ F(n)<n.
+-\]
++$$
+ 
+ ### Metric RCOT
+ 
+ 或指定：
+ 
+-\[
++$$
+ |\cdot|_v,\quad\|\cdot\|
+-\]
++$$
+ 
+ 再以：
+ 
+-\[
++$$
+ |\lambda|_v<1
+-\]
++$$
+ 
+ 定義 contraction。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{algebraic RCOT}
+ \neq
+ \text{ordered/metric RCOT}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2247,43 +2250,43 @@
+ 
+ Collatz：
+ 
+-\[
++$$
+ D(x)=x/2,
+ \qquad
+ U(x)=(3x+1)/2.
+-\]
++$$
+ 
+ 具有：
+ 
+-\[
++$$
+ \boxed{
+ \text{scalar}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{affine}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{commutative}
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ 3^u\in(\mathbb Z/2^k\mathbb Z)^\times
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ 3^u\neq0
+ }
+-\]
++$$
+ 
+ 以及 positive-integer order。
+ 
+@@ -2309,21 +2312,21 @@
+ 
+ 固定 finite word 時：
+ 
+-\[
++$$
+ \boxed{
+ \text{local arithmetic is almost maximally simple}.
+ }
+-\]
++$$
+ 
+ 甚至：
+ 
+-\[
++$$
+ \boxed{
+ \psi_wT^k\phi_w^{-1}
+ =
+ \operatorname{id}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2331,9 +2334,9 @@
+ 
+ 不在：
+ 
+-\[
++$$
+ 3n+1
+-\]
++$$
+ 
+ 單步公式。
+ 
+@@ -2343,7 +2346,7 @@
+ 
+ 而在：
+ 
+-\[
++$$
+ \boxed{
+ \mathcal A_{w_0}
+ \to
+@@ -2352,15 +2355,15 @@
+ \mathcal A_{w_2}
+ \to\cdots.
+ }
+-\]
++$$
+ 
+ 也就是：
+ 
+-\[
++$$
+ \boxed{
+ \text{global chart itinerary}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2368,19 +2371,19 @@
+ 
+ 一個系統可以：
+ 
+-\[
++$$
+ \boxed{
+ \text{locally exactly trivializable}
+ }
+-\]
++$$
+ 
+ 但：
+ 
+-\[
++$$
+ \boxed{
+ \text{global transition law remains nontrivial}.
+ }
+-\]
++$$
+ 
+ Collatz 正是這種 case。
+ 
+@@ -2398,16 +2401,16 @@
+ - 所有 noncommutative systems 都不可分析；
+ - Möbius systems 無法 local trivialize；
+ - nonlinear systems 無法壓縮；
+-- \(p\)-adic contraction 可以替代正整數 Collatz descent；
++- $p$-adic contraction 可以替代正整數 Collatz descent；
+ - RCOT 是 generalized Collatz literature 的替代品。
+ 
+ 本文只建立：
+ 
+-\[
++$$
+ \boxed{
+ \text{which specific RCOT theorem depends on which algebraic property}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2415,50 +2418,50 @@
+ 
+ ## Theorem A — Commutative Affine Closure
+ 
+-\[
++$$
+ \boxed{
+ F_w(x)=\frac{A_wx+B_w}{D_w}.
+ }
+-\]
++$$
+ 
+ ## Theorem B — Quotient-Unit Residue Criterion
+ 
+-\[
++$$
+ \boxed{
+ [A_w]\in(R/I)^\times
+ \Rightarrow
+ \text{unique residue}.
+ }
+-\]
++$$
+ 
+ ## Theorem C — Regular-Multiplier Recovery Criterion
+ 
+-\[
++$$
+ \boxed{
+ A_w\text{ regular}
+ \Rightarrow
+ x\mapsto A_wx+B_w
+ \text{ injective}.
+ }
+-\]
++$$
+ 
+ ## Theorem D — Geometry-Relative Contraction
+ 
+-\[
++$$
+ \boxed{
+ |F(x)-F(y)|_v
+ =
+ |\lambda|_v|x-y|_v.
+ }
+-\]
++$$
+ 
+ ## Theorem E — Noncommutative Skeleton Breakage
+ 
+ 若：
+ 
+-\[
++$$
+ A_iA_j\neq A_jA_i,
+-\]
++$$
+ 
+ 則 equal branch counts 不足以決定 leading word operator。
+ 
+@@ -2470,13 +2473,13 @@
+ 
+ 對 nonconstant polynomials over an integral domain：
+ 
+-\[
++$$
+ \boxed{
+ \deg(f\circ g)=\deg f\,\deg g.
+ }
+-\]
+-
+-所以 degree \(>1\) iteration 一般離開所有固定-degree affine/projective classes。
++$$
++
++所以 degree $>1$ iteration 一般離開所有固定-degree affine/projective classes。
+ 
+ ---
+ 
+@@ -2490,69 +2493,69 @@
+ 
+ 而是：
+ 
+-\[
++$$
+ \boxed{
+ \text{the theorem breaks when a supporting algebraic property disappears}.
+ }
+-\]
++$$
+ 
+ 具體而言：
+ 
+-\[
++$$
+ \boxed{
+ \text{non-unit}
+ \Rightarrow
+ \text{residue uniqueness breaks},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{zero divisor}
+ \Rightarrow
+ \text{faithful recovery may break},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{loss of order}
+ \Rightarrow
+ \text{descent semantics changes},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{noncommutativity}
+ \Rightarrow
+ \text{leading drift becomes order-sensitive},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{projective non-affinity}
+ \Rightarrow
+ \text{lattice transport breaks},
+ }
+-\]
+-
+-\[
++$$
++
++$$
+ \boxed{
+ \text{nonlinear degree growth}
+ \Rightarrow
+ \text{fixed affine/projective closure breaks}.
+ }
+-\]
++$$
+ 
+ 因此前七篇的 Collatz local atlas 應被定位在：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{commuting scalar affine residue-class dynamics}
+ }
+-\]
++$$
+ 
+ 這一非常精確的數學區域中。
+ 
+@@ -2564,13 +2567,13 @@
+ 
+ Paper 09 將回答這個問題，建立 **Finite Certificate Frontier**，將本系列所有 local results 統合成 finite exact coverage objects，並正式標出：
+ 
+-\[
++$$
+ \boxed{
+ \text{finite coverage completeness}
+ \quad\text{與}\quad
+ \text{infinite universal convergence}
+ }
+-\]
++$$
+ 
+ 之間最後不能被偷渡的量詞鴻溝。
+ 
+@@ -2594,14 +2597,14 @@
+ 核心任務：
+ 
+ 1. 定義 finite chart certificate；
+-2. 定義 finite certificate family \(\mathcal C_N\)；
++2. 定義 finite certificate family $\mathcal C_N$；
+ 3. 定義 exact coverage completeness：
+-   \[
++   $$
+    [1,N]\subseteq\bigcup_{\gamma\in\mathcal C_N}D_\gamma;
+-   \]
++   $$
+ 4. 將 descent、merge、terminal、inverse-fiber certificates 統一；
+ 5. 形式化 strong-induction closure；
+-6. 把先前 \(k=16\) threshold certificates 放入統一 proof-object schema；
++6. 把先前 $k=16$ threshold certificates 放入統一 proof-object schema；
+ 7. 定義 certificate frontier / hard-cylinder frontier；
+-8. 證明 finite \(N\) 的 certificate completeness 不等於 infinite universal frontier；
++8. 證明 finite $N$ 的 certificate completeness 不等於 infinite universal frontier；
+ 9. 最終把 Collatz 全域困難壓縮為 itinerary well-foundedness / absence of infinite uncertified branch 的形式。
+### END DIFF 08 ###
+
+### BEGIN DIFF 09 ###
+--- original/09__Collatz_OT_Series_Paper_09_Finite_Certificate_Frontier_v0.1.md
++++ corrected/09
+@@ -6,8 +6,9 @@
+ **作者：** Neo.K  
+ **機構：** 一言諾科技有限公司（EveMissLab）  
+ **系列：** Collatz Operation Translation Series — Paper 09  
+-**版本：** v0.1  
+-**日期：** 2026-08-11
++**版本：** v0.1.1  
++**日期：** 2026-08-11  
++**修訂日期：** 2026-08-14
+ 
+ ---
+ 
+@@ -15,17 +16,17 @@
+ 
+ 本系列前八篇已將 modified Collatz map
+ 
+-\[
++$$
+ T(n)=
+ \begin{cases}
+ n/2,&n\equiv0\pmod2,\\[2mm]
+ (3n+1)/2,&n\equiv1\pmod2
+ \end{cases}
+-\]
++$$
+ 
+ 的有限局部動力分解為：
+ 
+-\[
++$$
+ \boxed{
+ \text{finite parity word}
+ \longleftrightarrow
+@@ -35,71 +36,71 @@
+ \longrightarrow
+ \text{local identity chart}
+ }
+-\]
++$$
+ 
+ 並建立：
+ 
+-\[
++$$
+ T^k(r_w+2^ka)=m_w+3^{u(w)}a,
+-\]
+-
+-\[
++$$
++
++$$
+ T^k(n)<n
+ \iff
+ b_w<(2^k-3^{u(w)})n,
+-\]
+-
+-以及 exact inverse recovery、valuation language、generalized \(mx+r\) 與 RCOT algebraic boundary。
++$$
++
++以及 exact inverse recovery、valuation language、generalized $mx+r$ 與 RCOT algebraic boundary。
+ 
+ 本文完成最後一步：將上述局部結構整理為**有限精確證書系統**，並明確標示 finite verification 與 Collatz 全域猜想之間最後不能被跨越的量詞鴻溝。
+ 
+-本文首先採用 coefficient stopping-time 形式。對 \(n>1\)，定義：
+-
+-\[
++本文首先採用 coefficient stopping-time 形式。對 $n>1$，定義：
++
++$$
+ \boxed{
+ \sigma(n)
+ =
+ \inf\{j\ge1:T^j(n)<n\}.
+ }
+-\]
+-
+-若所有 \(n>1\) 都有有限 \(\sigma(n)\)，則由 strong induction 可推出所有正整數最終進入 \(1\leftrightarrow2\) cycle。因此：
+-
+-\[
++$$
++
++若所有 $n>1$ 都有有限 $\sigma(n)$，則由 strong induction 可推出所有正整數最終進入 $1\leftrightarrow2$ cycle。因此：
++
++$$
+ \boxed{
+ \text{Collatz conjecture}
+ \iff
+ \forall n>1,\ \sigma(n)<\infty.
+ }
+-\]
++$$
+ 
+ 對 finite parity word
+ 
+-\[
++$$
+ w=w_1\cdots w_k
+-\]
+-
+-及其每個 prefix \(w_{\le j}\)，令：
+-
+-\[
++$$
++
++及其每個 prefix $w_{\le j}$，令：
++
++$$
+ u_j=u(w_{\le j}),
+ \qquad
+ b_j=b_{w_{\le j}},
+ \qquad
+ \Delta_j=2^j-3^{u_j}.
+-\]
++$$
+ 
+ 由前文 exact affine formula：
+ 
+-\[
++$$
+ T^j(n)-n
+ =
+ \frac{b_j-\Delta_jn}{2^j}.
+-\]
+-
+-因此一個輸入在前 \(k\) 步內**尚未下降**的條件可以完全 exact 化。定義 hard-prefix domain：
+-
+-\[
++$$
++
++因此一個輸入在前 $k$ 步內**尚未下降**的條件可以完全 exact 化。定義 hard-prefix domain：
++
++$$
+ \boxed{
+ H_w
+ =
+@@ -108,36 +109,36 @@
+ T^j(n)\ge n,\ 1\le j\le k
+ \right\}.
+ }
+-\]
+-
+-若 prefix \(w_{\le j}\) 為 expanding-skeleton：
+-
+-\[
++$$
++
++若 prefix $w_{\le j}$ 為 expanding-skeleton：
++
++$$
+ \Delta_j<0,
+-\]
+-
+-則 \(T^j(n)>n\) 對所有 positive admissible \(n\) 自動成立，不對 hard domain 加任何上界。
++$$
++
++則 $T^j(n)>n$ 對所有 positive admissible $n$ 自動成立，不對 hard domain 加任何上界。
+ 
+ 若：
+ 
+-\[
++$$
+ \Delta_j>0,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ T^j(n)\ge n
+ \iff
+ n\le
+ \left\lfloor
+ \frac{b_j}{\Delta_j}
+ \right\rfloor.
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ H_w
+ =
+@@ -145,11 +146,11 @@
+ \cap
+ [1,h(w)]
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ \boxed{
+ h(w)
+ =
+@@ -160,25 +161,25 @@
+ \frac{b_j}{\Delta_j}
+ \right\rfloor
+ }
+-\]
++$$
+ 
+ 若沒有 contracting prefix，定義：
+ 
+-\[
++$$
+ h(w)=+\infty.
+-\]
++$$
+ 
+ 這是本文的第一個核心結果：**一個有限 parity prefix 的「尚未下降集合」不是模糊的動力集合，而是 unique residue cylinder 與一個 exact integer height bound 的交集。**
+ 
+ 接著對有限驗證域：
+ 
+-\[
++$$
+ I_N=[2,N]\cap\mathbb Z
+-\]
+-
+-定義 depth-\(k\) hard frontier：
+-
+-\[
++$$
++
++定義 depth-$k$ hard frontier：
++
++$$
+ \boxed{
+ \mathfrak F_k(N)
+ =
+@@ -187,27 +188,27 @@
+ H_w\cap I_N\neq\varnothing
+ \}.
+ }
+-\]
++$$
+ 
+ 本文證明：
+ 
+-\[
++$$
+ \boxed{
+ \mathfrak F_k(N)=\varnothing
+ }
+-\]
++$$
+ 
+ 當且僅當：
+ 
+-\[
++$$
+ \boxed{
+ \sigma(n)\le k
+ \quad
+ \forall\,2\le n\le N.
+ }
+-\]
+-
+-因此，對固定有限 \(N\)，Collatz verification 可完全重寫為：
++$$
++
++因此，對固定有限 $N$，Collatz verification 可完全重寫為：
+ 
+ > 持續 refine residue cylinders，直到 finite hard frontier 為空。
+ 
+@@ -215,220 +216,220 @@
+ 
+ 本文定義五類 finite certificates：
+ 
+-1. **Terminal Certificate**：直接到達 \(1\) 或 \(2\)；
+-2. **Descent Certificate**：某 finite prefix 滿足 \(T^j(n)<n\)；
++1. **Terminal Certificate**：直接到達 $1$ 或 $2$；
++2. **Descent Certificate**：某 finite prefix 滿足 $T^j(n)<n$；
+ 3. **Cylinder Threshold Certificate**：一整個 residue cylinder 在某 exact threshold 以上都下降；
+ 4. **Merge Certificate**：軌跡在有限時間與一個已由較小起點證明的 trajectory 合流；
+ 5. **Inverse/Preimage Certificate**：利用 exact inverse fiber 證明某 state 位於已證明較小起點的 path 上。
+ 
+ 一個 finite certificate family：
+ 
+-\[
++$$
+ \boxed{
+ \mathcal C_N
+ }
+-\]
++$$
+ 
+ 稱為 coverage-complete，若：
+ 
+-\[
++$$
+ \boxed{
+ I_N
+ \subseteq
+ \bigcup_{\gamma\in\mathcal C_N}D_\gamma
+ }
+-\]
++$$
+ 
+ 且每個 certificate 都可由有限整數算術、有限 word recurrence、congruence、transport identity 或明確 dependency graph 檢查。
+ 
+ 在最簡 strong-induction 版本中，只需 descent / terminal certificates。若：
+ 
+-\[
++$$
+ T^j(n)<n,
+-\]
+-
+-則 \(T^j(n)\) 已由較小起點假設證明收斂，所以 \(n\) 收斂。Merge / preimage certificates 則進一步允許：
+-
+-\[
++$$
++
++則 $T^j(n)$ 已由較小起點假設證明收斂，所以 $n$ 收斂。Merge / preimage certificates 則進一步允許：
++
++$$
+ T^j(n)=T^\ell(n_0),
+ \qquad
+ n_0<n,
+-\]
+-
+-即使共同 merge state 本身未小於 \(n\)，仍可由 \(n_0\) 的已知軌跡繼承收斂。
++$$
++
++即使共同 merge state 本身未小於 $n$，仍可由 $n_0$ 的已知軌跡繼承收斂。
+ 
+ 本文把早期 BCCP 修正成：
+ 
+-\[
++$$
+ \boxed{
+ \text{finite bidirectional coverage-complete certification}.
+ }
+-\]
+-
+-其合理目標不是直接宣稱「全體自然數已被雙向構造覆蓋」，而是對每個有限 \(N\) 建立一個 exact proof-object family：
+-
+-\[
++$$
++
++其合理目標不是直接宣稱「全體自然數已被雙向構造覆蓋」，而是對每個有限 $N$ 建立一個 exact proof-object family：
++
++$$
+ \mathcal C_N.
+-\]
++$$
+ 
+ 本文亦將先前實驗中的 residue threshold compiler 納入純數學框架。對：
+ 
+-\[
++$$
+ n=r+2^ka,
+-\]
++$$
+ 
+ 若：
+ 
+-\[
++$$
+ T^k(n)=m_r+3^ua,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ T^k(n)<n
+-\]
++$$
+ 
+ 等價於：
+ 
+-\[
++$$
+ \boxed{
+ (2^k-3^u)a>m_r-r.
+ }
+-\]
++$$
+ 
+ 所以每張 contracting chart 可預先編譯成 exact integer quotient threshold：
+ 
+-\[
++$$
+ \boxed{
+ a>
+ \frac{m_r-r}{2^k-3^u}.
+ }
+-\]
+-
+-這就是 earlier \(k=16\) threshold certificates 的數學本體。先前對 \(1\le n<2^{20}\) 的 prototype 中，\(k=16\) 直接 strict-descent certificate 數為：
+-
+-\[
++$$
++
++這就是 earlier $k=16$ threshold certificates 的數學本體。先前對 $1\le n<2^{20}$ 的 prototype 中，$k=16$ 直接 strict-descent certificate 數為：
++
++$$
+ 938413,
+-\]
+-
+-並可由 Paper 05 的 \(58651\) 個 contracting residue classes 加 finite boundary corrections 完整解釋。
++$$
++
++並可由 Paper 05 的 $58651$ 個 contracting residue classes 加 finite boundary corrections 完整解釋。
+ 
+ 本文進一步處理最容易被誤用的「無限 hard tree」。對每個 formal infinite parity sequence，其 nested residues：
+ 
+-\[
++$$
+ r_k\bmod2^k
+-\]
+-
+-自然定義一個 \(2\)-adic integer；但該 \(2\)-adic integer 不一定是 ordinary positive integer。因此：
+-
+-\[
++$$
++
++自然定義一個 $2$-adic integer；但該 $2$-adic integer 不一定是 ordinary positive integer。因此：
++
++$$
+ \boxed{
+ \text{infinite formal hard branch}
+ \not\Rightarrow
+ \text{positive-integer Collatz counterexample}.
+ }
+-\]
++$$
+ 
+ 為了精確對應普通正整數，本文定義 **integer-anchored branch**。若一條 nested branch 的 canonical residues：
+ 
+-\[
++$$
+ 0\le r_k<2^k
+-\]
++$$
+ 
+ 存在某個固定：
+ 
+-\[
++$$
+ n\in\mathbb Z_{>0}
+-\]
++$$
+ 
+ 使：
+ 
+-\[
++$$
+ \boxed{
+ r_k=n
+ }
+-\]
+-
+-對所有 sufficiently large \(k\) 成立，則稱該 branch anchored at \(n\)。這一 eventual stabilization 條件恰好刻畫 ordinary positive integer embedded in \(\mathbb Z_2\)。
++$$
++
++對所有 sufficiently large $k$ 成立，則稱該 branch anchored at $n$。這一 eventual stabilization 條件恰好刻畫 ordinary positive integer embedded in $\mathbb Z_2$。
+ 
+ 本文證明：
+ 
+-\[
++$$
+ \boxed{
+ \sigma(n)=\infty
+ }
+-\]
+-
+-當且僅當 \(n\) 的 parity-prefix chain 構成一條 anchored hard branch，亦即：
+-
+-\[
++$$
++
++當且僅當 $n$ 的 parity-prefix chain 構成一條 anchored hard branch，亦即：
++
++$$
+ \boxed{
+ n\in H_{w_{\le k}(n)}
+ \quad
+ \forall k.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz conjecture}
+ \iff
+ \text{there exists no integer-anchored infinite hard branch for }n>1.
+ }
+-\]
+-
+-這個表述比「hard-prefix tree well-founded」更精確。若要求**所有 formal \(2\)-adic hard branches** 都消失，則會得到一個過強條件；Collatz 只需排除由 ordinary positive integer anchor 的無限 obstruction。
++$$
++
++這個表述比「hard-prefix tree well-founded」更精確。若要求**所有 formal $2$-adic hard branches** 都消失，則會得到一個過強條件；Collatz 只需排除由 ordinary positive integer anchor 的無限 obstruction。
+ 
+ 本文同時得到另一個 exact 全域形式：
+ 
+-\[
++$$
+ \boxed{
+ \forall N\ge2,\ \exists K(N)<\infty:
+ \mathfrak F_{K(N)}(N)=\varnothing.
+ }
+-\]
++$$
+ 
+ 這與：
+ 
+-\[
++$$
+ \forall n>1,\ \sigma(n)<\infty
+-\]
++$$
+ 
+ 等價，但不能一般交換成：
+ 
+-\[
++$$
+ \boxed{
+ \exists K\ \forall N:
+ \mathfrak F_K(N)=\varnothing.
+ }
+-\]
++$$
+ 
+ 後者等價於所有 stopping times 有一個全域 uniform bound，遠強於 Collatz，而且與已知／觀察到的 unbounded stopping-time behavior 不相容。
+ 
+ 這正是本系列最後的量詞邊界：
+ 
+-\[
++$$
+ \boxed{
+ \forall N\,\exists K(N)
+ \not\Rightarrow
+ \exists K\,\forall N.
+ }
+-\]
+-
+-2026 年 Angeltveit 的 finite verification algorithm 與本文的 certificate viewpoint 高度一致：其演算法按最低 \(k\) bits 遞迴分裂，使用 descent sieve、preimage sieve 與 path-merging sieve，且明確指出需要 explicit checking 的比例可趨近 0，但實際待檢整數數量仍趨向無限。Barina 的公開驗證則已將完整 verification frontier 推進至 \(2^{71}\)。這些成果都支持本文最後的定位：**有限 residue-class pruning 可以極強，甚至讓 survivor density 趨零，但 finite computational completeness 與 infinite universal proof 仍是不同命題。**
++$$
++
++2026 年 Angeltveit 的 finite verification algorithm 與本文的 certificate viewpoint 高度一致：其演算法按最低 $k$ bits 遞迴分裂，使用 descent sieve、preimage sieve 與 path-merging sieve，且明確指出需要 explicit checking 的比例可趨近 0，但實際待檢整數數量仍趨向無限。Barina 的公開驗證則已將完整 verification frontier 推進至 $2^{71}$。這些成果都支持本文最後的定位：**有限 residue-class pruning 可以極強，甚至讓 survivor density 趨零，但 finite computational completeness 與 infinite universal proof 仍是不同命題。**
+ 
+ 本文因此以以下句子封頂整個九篇系列：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{Collatz dynamics is locally affine-trivializable,
+ finitely certificate-compressible,
+ but globally itinerary-unresolved.}
+ }
+-\]
++$$
+ 
+ 中文：
+ 
+@@ -444,12 +445,12 @@
+ 
+ Collatz 猜想可以寫成：
+ 
+-\[
++$$
+ \forall n>0,\quad
+ T^j(n)\in\{1,2\}
+-\]
+-
+-對某個 \(j\)。
++$$
++
++對某個 $j$。
+ 
+ 但對 strong induction，更方便使用 stopping-time form。
+ 
+@@ -459,121 +460,121 @@
+ 
+ 對：
+ 
+-\[
++$$
+ n>1,
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ \sigma(n)
+ =
+ \inf\{j\ge1:T^j(n)<n\}.
+ }
+-\]
++$$
+ 
+ 若不存在，令：
+ 
+-\[
++$$
+ \sigma(n)=\infty.
+-\]
++$$
+ 
+ 注意：
+ 
+-\[
++$$
+ \sigma(1)
+-\]
+-
+-不需要定義成 finite，因 \(1\) 是 induction base / terminal cycle 成員。
+-
+----
+-
+-# 3. Finite Stopping Time \(\Rightarrow\) Collatz
++$$
++
++不需要定義成 finite，因 $1$ 是 induction base / terminal cycle 成員。
++
++---
++
++# 3. Finite Stopping Time $\Rightarrow$ Collatz
+ 
+ ## Theorem 3.1
+ 
+ 若：
+ 
+-\[
++$$
+ \boxed{
+ \sigma(n)<\infty
+ \quad
+ \forall n>1,
+ }
+-\]
++$$
+ 
+ 則 Collatz conjecture 成立。
+ 
+ ### 證明
+ 
+-對 \(n\) strong induction。
++對 $n$ strong induction。
+ 
+ base：
+ 
+-\[
++$$
+ 1
+-\]
++$$
+ 
+ 已在 terminal cycle。
+ 
+ 對：
+ 
+-\[
++$$
+ n>1,
+-\]
++$$
+ 
+ 存在：
+ 
+-\[
++$$
+ j
+-\]
++$$
+ 
+ 使：
+ 
+-\[
++$$
+ T^j(n)<n.
+-\]
++$$
+ 
+ 由 induction hypothesis：
+ 
+-\[
++$$
+ T^j(n)
+-\]
++$$
+ 
+ 最終到 1。
+ 
+-故 \(n\) 亦最終到 1。
++故 $n$ 亦最終到 1。
+ 
+ 證畢。
+ 
+ ---
+ 
+-# 4. Collatz \(\Rightarrow\) Finite Stopping Time
+-
+-若 \(n>1\) 最終到：
+-
+-\[
++# 4. Collatz $\Rightarrow$ Finite Stopping Time
++
++若 $n>1$ 最終到：
++
++$$
+ 1<n,
+-\]
+-
+-則沿途第一次落到 \(n\) 以下即給：
+-
+-\[
++$$
++
++則沿途第一次落到 $n$ 以下即給：
++
++$$
+ \sigma(n)<\infty.
+-\]
++$$
+ 
+ 所以：
+ 
+ ## Theorem 4.1
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz}
+ \iff
+ \forall n>1,\ \sigma(n)<\infty.
+ }
+-\]
++$$
+ 
+ 這是本文 global equivalence 的基礎。
+ 
+@@ -581,49 +582,49 @@
+ 
+ # 5. Prefix Affine Data
+ 
+-對 length-\(k\) word：
+-
+-\[
++對 length-$k$ word：
++
++$$
+ w=w_1\cdots w_k,
+-\]
++$$
+ 
+ 令 prefix：
+ 
+-\[
++$$
+ w_{\le j}=w_1\cdots w_j.
+-\]
++$$
+ 
+ 記：
+ 
+-\[
++$$
+ u_j=u(w_{\le j}),
+-\]
+-
+-\[
++$$
++
++$$
+ b_j=b_{w_{\le j}}.
+-\]
++$$
+ 
+ 則 Paper 02：
+ 
+-\[
++$$
+ \boxed{
+ T^j(n)
+ =
+ \frac{3^{u_j}n+b_j}{2^j}
+ }
+-\]
++$$
+ 
+ 對：
+ 
+-\[
++$$
+ n\in\Omega_w
+-\]
++$$
+ 
+ 及：
+ 
+-\[
++$$
+ 1\le j\le k
+-\]
++$$
+ 
+ 成立。
+ 
+@@ -633,23 +634,23 @@
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ \Delta_j
+ =
+ 2^j-3^{u_j}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ T^j(n)-n
+ =
+ \frac{b_j-\Delta_jn}{2^j}.
+ }
+-\]
++$$
+ 
+ 每個 prefix 是否已經 strict descent 因而是一個 exact linear inequality。
+ 
+@@ -659,7 +660,7 @@
+ 
+ ## Definition 7.1
+ 
+-\[
++$$
+ \boxed{
+ H_w
+ =
+@@ -670,11 +671,11 @@
+ \forall\,1\le j\le k
+ \right\}.
+ }
+-\]
++$$
+ 
+ 也就是：
+ 
+-> 所有具有 prefix \(w\)，但到 depth \(k\) 仍沒有取得 strong-induction descent certificate 的正整數。
++> 所有具有 prefix $w$，但到 depth $k$ 仍沒有取得 strong-induction descent certificate 的正整數。
+ 
+ ---
+ 
+@@ -682,33 +683,33 @@
+ 
+ 若：
+ 
+-\[
++$$
+ \Delta_j<0,
+-\]
++$$
+ 
+ 即：
+ 
+-\[
++$$
+ 3^{u_j}>2^j,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ b_j-\Delta_jn
+ =
+ b_j+(3^{u_j}-2^j)n>0.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ T^j(n)>n
+ }
+-\]
+-
+-對所有 positive admissible \(n\)。
++$$
++
++對所有 positive admissible $n$。
+ 
+ 因此此 prefix 不可能提供 descent certificate。
+ 
+@@ -718,25 +719,25 @@
+ 
+ 若：
+ 
+-\[
++$$
+ \Delta_j>0,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ T^j(n)\ge n
+-\]
++$$
+ 
+ iff：
+ 
+-\[
++$$
+ b_j\ge\Delta_jn.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ n
+ \le
+@@ -744,7 +745,7 @@
+ \frac{b_j}{\Delta_j}
+ \right\rfloor.
+ }
+-\]
++$$
+ 
+ 因此 contracting prefix 對仍未下降者產生一個 exact upper bound。
+ 
+@@ -754,7 +755,7 @@
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ h(w)
+ =
+@@ -765,25 +766,25 @@
+ \frac{b_j}{\Delta_j}
+ \right\rfloor
+ }
+-\]
++$$
+ 
+ 若沒有：
+ 
+-\[
++$$
+ \Delta_j>0,
+-\]
++$$
+ 
+ 令：
+ 
+-\[
++$$
+ h(w)=+\infty.
+-\]
++$$
+ 
+ 則：
+ 
+ ## Theorem 10.1
+ 
+-\[
++$$
+ \boxed{
+ H_w
+ =
+@@ -791,38 +792,38 @@
+ \cap
+ [1,h(w)].
+ }
+-\]
++$$
+ 
+ 若：
+ 
+-\[
++$$
+ h(w)=+\infty,
+-\]
++$$
+ 
+ 即：
+ 
+-\[
++$$
+ H_w=\Omega_w.
+-\]
++$$
+ 
+ ---
+ 
+ # 11. 證明
+ 
+-\(n\in H_w\) iff 對所有 prefix：
+-
+-\[
++$n\in H_w$ iff 對所有 prefix：
++
++$$
+ T^j(n)\ge n.
+-\]
++$$
+ 
+ expanding prefix 自動成立。
+ 
+ contracting prefix 要求：
+ 
+-\[
++$$
+ n\le
+ \left\lfloor b_j/\Delta_j\right\rfloor.
+-\]
++$$
+ 
+ 所以全部條件的交集就是最小 upper bound。
+ 
+@@ -834,29 +835,29 @@
+ 
+ 一個 hard domain 不需要保存：
+ 
+-\[
++$$
+ T(n),T^2(n),\ldots,T^k(n)
+-\]
++$$
+ 
+ 的整條 numerical path。
+ 
+ 只需保存：
+ 
+-\[
++$$
+ \boxed{
+ (r_w,2^k,h(w)).
+ }
+-\]
++$$
+ 
+ 即：
+ 
+-\[
++$$
+ \boxed{
+ \text{one residue cylinder}
+ \cap
+ \text{one height cap}.
+ }
+-\]
++$$
+ 
+ 這是 finite obstruction 的高度壓縮形式。
+ 
+@@ -866,29 +867,29 @@
+ 
+ 若 word 到目前為止至少出現一個 contracting prefix：
+ 
+-\[
++$$
+ h(w)<\infty,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ H_w
+-\]
++$$
+ 
+ 是 finite set。
+ 
+ 若所有 prefixes 都在 expanding-skeleton side：
+ 
+-\[
++$$
+ h(w)=\infty,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ H_w=\Omega_w
+-\]
++$$
+ 
+ 仍是一個 infinite arithmetic progression。
+ 
+@@ -903,31 +904,31 @@
+ 
+ 固定：
+ 
+-\[
++$$
+ N\ge2.
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ I_N
+ =
+ \{2,3,\ldots,N\}.
+ }
+-\]
++$$
+ 
+ 我們只問：
+ 
+-> \(I_N\) 內每個 starting value 是否已取得 finite stopping-time certificate？
+-
+----
+-
+-# 15. Depth-\(k\) Hard Frontier
++> $I_N$ 內每個 starting value 是否已取得 finite stopping-time certificate？
++
++---
++
++# 15. Depth-$k$ Hard Frontier
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ \mathfrak F_k(N)
+ =
+@@ -936,11 +937,11 @@
+ H_w\cap I_N\neq\varnothing
+ \right\}.
+ }
+-\]
++$$
+ 
+ 每個 element 是：
+ 
+-> 到 depth \(k\) 仍至少含一個未下降 starting value 的 parity cylinder。
++> 到 depth $k$ 仍至少含一個未下降 starting value 的 parity cylinder。
+ 
+ ---
+ 
+@@ -948,31 +949,31 @@
+ 
+ ## Theorem 16.1
+ 
+-\[
++$$
+ \boxed{
+ \mathfrak F_k(N)=\varnothing
+ }
+-\]
++$$
+ 
+ iff：
+ 
+-\[
++$$
+ \boxed{
+ \sigma(n)\le k
+ \quad
+ \forall n\in I_N.
+ }
+-\]
++$$
+ 
+ ### 證明
+ 
+-如果 frontier 為空，則任意 \(n\le N\) 的 length-\(k\) parity word \(w_k(n)\) 不含 \(n\) 於 \(H_w\)，所以存在 \(j\le k\)：
+-
+-\[
++如果 frontier 為空，則任意 $n\le N$ 的 length-$k$ parity word $w_k(n)$ 不含 $n$ 於 $H_w$，所以存在 $j\le k$：
++
++$$
+ T^j(n)<n.
+-\]
+-
+-反之，若所有 \(n\le N\) 在 \(k\) 步內下降，則沒有任何 hard domain 能和 \(I_N\) 相交。
++$$
++
++反之，若所有 $n\le N$ 在 $k$ 步內下降，則沒有任何 hard domain 能和 $I_N$ 相交。
+ 
+ 證畢。
+ 
+@@ -980,21 +981,21 @@
+ 
+ # 17. Finite Verification 的 Frontier Form
+ 
+-所以對 fixed \(N\)：
+-
+-\[
++所以對 fixed $N$：
++
++$$
+ \boxed{
+ \text{verify Collatz on }[2,N]
+ }
+-\]
++$$
+ 
+ 等價於：
+ 
+-\[
++$$
+ \boxed{
+ \text{refine hard cylinders until }\mathfrak F_k(N)=\varnothing.
+ }
+-\]
++$$
+ 
+ 這不是 heuristic。
+ 
+@@ -1006,13 +1007,13 @@
+ 
+ 一個 finite certificate：
+ 
+-\[
++$$
+ \gamma
+-\]
++$$
+ 
+ 包含：
+ 
+-1. source domain \(D_\gamma\)；
++1. source domain $D_\gamma$；
+ 2. finite word / affine data；
+ 3. claim type；
+ 4. exact target relation；
+@@ -1020,11 +1021,11 @@
+ 
+ 並要求：
+ 
+-\[
++$$
+ \boxed{
+ \text{all checks terminate in finite exact arithmetic}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1032,17 +1033,17 @@
+ 
+ 若：
+ 
+-\[
++$$
+ T^j(n)\in\{1,2\},
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ \gamma_T(n,j)
+ }
+-\]
++$$
+ 
+ 直接證明收斂。
+ 
+@@ -1054,19 +1055,19 @@
+ 
+ 若：
+ 
+-\[
++$$
+ T^j(n)<n,
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ \gamma_D(n,j)
+ }
+-\]
+-
+-透過 strong induction 證明 \(n\) 收斂。
++$$
++
++透過 strong induction 證明 $n$ 收斂。
+ 
+ 這是最基本 finite certificate。
+ 
+@@ -1074,33 +1075,33 @@
+ 
+ # 21. Cylinder Threshold Certificate
+ 
+-對 word \(w\)：
+-
+-\[
++對 word $w$：
++
++$$
+ T^k(n)
+ =
+ \frac{3^un+b_w}{2^k}.
+-\]
++$$
+ 
+ 若：
+ 
+-\[
++$$
+ 3^u<2^k,
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \theta_w
+ =
+ \left\lfloor
+ \frac{b_w}{2^k-3^u}
+ \right\rfloor+1.
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ D_{\gamma_w}
+ =
+@@ -1108,7 +1109,7 @@
+ n\in\Omega_w:n\ge\theta_w
+ \}
+ }
+-\]
++$$
+ 
+ 中的全部 starting values 共享同一 descent proof。
+ 
+@@ -1120,55 +1121,55 @@
+ 
+ 寫：
+ 
+-\[
++$$
+ n=r_w+2^ka,
+-\]
++$$
+ 
+ 以及：
+ 
+-\[
++$$
+ T^k(n)=m_w+3^ua.
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ T^k(n)<n
+-\]
++$$
+ 
+ iff：
+ 
+-\[
++$$
+ m_w+3^ua
+ <
+ r_w+2^ka.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ (2^k-3^u)a
+ >
+ m_w-r_w.
+ }
+-\]
++$$
+ 
+ 若：
+ 
+-\[
++$$
+ 2^k>3^u,
+-\]
++$$
+ 
+ 可以預先編譯：
+ 
+-\[
++$$
+ \boxed{
+ a
+ >
+ \frac{m_w-r_w}{2^k-3^u}.
+ }
+-\]
++$$
+ 
+ 這是 integer hot-loop certificate，而不是 floating log approximation。
+ 
+@@ -1178,7 +1179,7 @@
+ 
+ 可定義：
+ 
+-\[
++$$
+ \boxed{
+ q_w
+ =
+@@ -1187,11 +1188,11 @@
+ {2^k-3^u}
+ \right\rfloor+1.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ a\ge q_w
+ \Rightarrow
+@@ -1199,39 +1200,39 @@
+ <
+ r_w+2^ka.
+ }
+-\]
++$$
+ 
+ 所以 certificate payload 可縮成：
+ 
+-\[
++$$
+ \boxed{
+ (r_w,k,u,m_w,q_w).
+ }
+-\]
+-
+----
+-
+-# 24. 與 Earlier \(k=16\) Prototype 的對接
++$$
++
++---
++
++# 24. 與 Earlier $k=16$ Prototype 的對接
+ 
+ 先前 prototype 對：
+ 
+-\[
++$$
+ 1\le n<2^{20}
+-\]
++$$
+ 
+ 使用：
+ 
+-\[
++$$
+ k=16.
+-\]
++$$
+ 
+ Paper 05 已證 length-16 contracting residue classes：
+ 
+-\[
++$$
+ \boxed{
+ 58651
+ }
+-\]
++$$
+ 
+ 個。
+ 
+@@ -1239,21 +1240,21 @@
+ 
+ 實際 direct strict-descent certificate：
+ 
+-\[
++$$
+ \boxed{
+ 938413
+ }
+-\]
++$$
+ 
+ 個 starting values。
+ 
+ 因此早期 benchmark 的「pruning」可以完全重新解讀為：
+ 
+-\[
++$$
+ \boxed{
+ \text{finite certificate coverage ratio}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1263,63 +1264,63 @@
+ 
+ 若：
+ 
+-\[
++$$
+ T^j(n)
+ =
+ T^\ell(n_0)
+-\]
++$$
+ 
+ 且：
+ 
+-\[
++$$
+ n_0<n,
+-\]
++$$
+ 
+ 則由 induction hypothesis：
+ 
+-\[
++$$
+ n_0
+-\]
++$$
+ 
+ 收斂。
+ 
+ 因此其後續 state：
+ 
+-\[
++$$
+ T^\ell(n_0)
+-\]
++$$
+ 
+ 收斂。
+ 
+-所以 \(n\) 也收斂。
++所以 $n$ 也收斂。
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ \gamma_M
+ =
+ (n,n_0,j,\ell)
+ }
+-\]
++$$
+ 
+ 為 merge certificate。
+ 
+ ---
+ 
+-# 26. Path Merging 不要求 Merge State 小於 \(n\)
++# 26. Path Merging 不要求 Merge State 小於 $n$
+ 
+ 重要的是：
+ 
+-\[
++$$
+ n_0<n,
+-\]
++$$
+ 
+ 而不是：
+ 
+-\[
++$$
+ T^j(n)<n.
+-\]
++$$
+ 
+ 所以 merge sieve 可以比單純 descent sieve 排除更多 starting values。
+ 
+@@ -1331,37 +1332,37 @@
+ 
+ 如果可證：
+ 
+-\[
++$$
+ n=T^\ell(n_0)
+-\]
++$$
+ 
+ 對某：
+ 
+-\[
++$$
+ n_0<n,
+-\]
+-
+-則 \(n\) 本身位於已證明較小 starting value 的 trajectory 上。
++$$
++
++則 $n$ 本身位於已證明較小 starting value 的 trajectory 上。
+ 
+ 例如 modified inverse：
+ 
+-\[
++$$
+ n\equiv2\pmod3
+-\]
++$$
+ 
+ 時：
+ 
+-\[
++$$
+ n=T\left(\frac{2n-1}{3}\right).
+-\]
++$$
+ 
+ 若：
+ 
+-\[
++$$
+ \frac{2n-1}{3}<n,
+-\]
+-
+-則可直接排除 \(n\) 作為新 starting case。
++$$
++
++則可直接排除 $n$ 作為新 starting case。
+ 
+ 這是 preimage certificate。
+ 
+@@ -1371,19 +1372,19 @@
+ 
+ accelerated odd map：
+ 
+-\[
++$$
+ R_\kappa(t)
+ =
+ \frac{2^\kappa t-1}{3}.
+-\]
++$$
+ 
+ 若：
+ 
+-\[
++$$
+ 2^\kappa t\equiv1\pmod3,
+-\]
+-
+-則 \(R_\kappa(t)\) 是 \(t\) 的 exact odd predecessor。
++$$
++
++則 $R_\kappa(t)$ 是 $t$ 的 exact odd predecessor。
+ 
+ 所以 inverse-fiber data 可以作：
+ 
+@@ -1399,31 +1400,31 @@
+ 
+ strong induction 本身提供 dependency：
+ 
+-\[
++$$
+ n\to m<n.
+-\]
++$$
+ 
+ 如果加入 merge / preimage，
+ 
+ 可建立 directed dependency graph：
+ 
+-\[
++$$
+ \gamma_i\to\gamma_j.
+-\]
++$$
+ 
+ 要求存在 rank：
+ 
+-\[
++$$
+ \rho:\mathcal C_N\to\mathbb N
+-\]
++$$
+ 
+ 使每條 dependency edge：
+ 
+-\[
++$$
+ \boxed{
+ \rho(\gamma_j)<\rho(\gamma_i).
+ }
+-\]
++$$
+ 
+ 則 finite dependency graph 無 cycle，
+ 
+@@ -1437,36 +1438,36 @@
+ 
+ 對：
+ 
+-\[
++$$
+ I_N=[2,N],
+-\]
++$$
+ 
+ finite family：
+ 
+-\[
++$$
+ \mathcal C_N
+-\]
++$$
+ 
+ 若滿足：
+ 
+-\[
++$$
+ \boxed{
+ I_N
+ \subseteq
+ \bigcup_{\gamma\in\mathcal C_N}D_\gamma
+ }
+-\]
++$$
+ 
+ 且所有 certificate claims / dependencies 都 exact-valid，
+ 
+ 則稱：
+ 
+-\[
++$$
+ \boxed{
+ \mathcal C_N
+ \text{ coverage-complete}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1474,9 +1475,9 @@
+ 
+ 若：
+ 
+-\[
++$$
+ \mathcal C_N
+-\]
++$$
+ 
+ coverage-complete，
+ 
+@@ -1484,11 +1485,11 @@
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz is verified for every }2\le n\le N.
+ }
+-\]
++$$
+ 
+ 這是 finite theorem。
+ 
+@@ -1498,13 +1499,13 @@
+ 
+ 舊 BCCP：
+ 
+-\[
++$$
+ \text{Forward}
+ +
+ \text{Backward}
+ +
+ \text{Coverage}.
+-\]
++$$
+ 
+ 現在可以重寫為：
+ 
+@@ -1518,21 +1519,21 @@
+ 
+ ### Coverage completeness
+ 
+-\[
++$$
+ I_N
+ \subseteq
+ \cup D_\gamma.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{BCCP}_{\mathrm{finite}}
+ =
+ \text{bidirectional finite proof-object coverage}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1540,9 +1541,9 @@
+ 
+ 因為對固定：
+ 
+-\[
++$$
+ N,
+-\]
++$$
+ 
+ 所有：
+ 
+@@ -1568,7 +1569,7 @@
+ 
+ 概念上，一個 chart certificate 可以保存：
+ 
+-\[
++$$
+ \boxed{
+ \gamma=
+ (
+@@ -1579,31 +1580,31 @@
+ \text{dependencies}
+ ).
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-- \(w\)：parity word；
+-- \(k\)：depth；
+-- \(u\)：odd-step count；
+-- \(b\)：affine correction；
+-- \(r\)：source residue；
+-- \(m\)：target base；
+-- \([L,U]\)：有限 coverage range；
+-- \(\theta\)：descent threshold；
++- $w$：parity word；
++- $k$：depth；
++- $u$：odd-step count；
++- $b$：affine correction；
++- $r$：source residue；
++- $m$：target base；
++- $[L,U]$：有限 coverage range；
++- $\theta$：descent threshold；
+ - dependencies：merge/preimage reference。
+ 
+ checker 只需驗：
+ 
+-\[
++$$
+ F_w(x)
+ =
+ \frac{3^ux+b}{2^k},
+-\]
+-
+-\[
++$$
++
++$$
+ r\equiv-b3^{-u}\pmod{2^k},
+-\]
++$$
+ 
+ 及對應 inequality / merge identity。
+ 
+@@ -1613,27 +1614,27 @@
+ 
+ trajectory log 保存：
+ 
+-\[
++$$
+ n,T(n),T^2(n),\ldots.
+-\]
++$$
+ 
+ certificate 保存：
+ 
+-\[
++$$
+ \boxed{
+ \text{an entire congruence family plus a finite proof rule}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{trajectory enumeration}
+ \to
+ \text{structural proof compression}.
+ }
+-\]
++$$
+ 
+ 這是 operation translation 對 finite verification 的核心價值。
+ 
+@@ -1646,13 +1647,13 @@
+ 1. 按 least significant bits recursive split；
+ 2. 對同 residue family 同時處理；
+ 3. 使用 descent sieve；
+-4. 使用 mod-\(9\) preimage sieve；
++4. 使用 mod-$9$ preimage sieve；
+ 5. 使用 path-merging sieve；
+ 6. 對剩餘 survivors 再 explicit iterate。
+ 
+ 這與本文：
+ 
+-\[
++$$
+ \boxed{
+ \text{residue frontier}
+ +
+@@ -1660,7 +1661,7 @@
+ +
+ \text{inverse/merge certificates}
+ }
+-\]
++$$
+ 
+ 高度一致。
+ 
+@@ -1674,11 +1675,11 @@
+ 
+ 本文的工作是：
+ 
+-\[
++$$
+ \boxed{
+ \text{把前八篇 local algebra 統一成 certificate semantics}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1686,27 +1687,27 @@
+ 
+ Barina 已公開報告：
+ 
+-\[
++$$
+ \boxed{
+ n<2^{71}
+ }
+-\]
++$$
+ 
+ 的完整 convergence verification。
+ 
+ Angeltveit 2026 則提出：
+ 
+-> 從 \(2^N\) 擴張到 \(2^{N+1}\) 所需時間成長可壓到小於 factor 2，
++> 從 $2^N$ 擴張到 $2^{N+1}$ 所需時間成長可壓到小於 factor 2，
+ 
+ 並估計其方法可能用近似資源推到更高範圍。
+ 
+ 這些都是：
+ 
+-\[
++$$
+ \boxed{
+ \text{finite certificate / computation frontier}
+ }
+-\]
++$$
+ 
+ 的進展，
+ 
+@@ -1714,29 +1715,29 @@
+ 
+ ---
+ 
+-# 39. Survivor Fraction \(\to0\) 仍不等於 Proof
++# 39. Survivor Fraction $\to0$ 仍不等於 Proof
+ 
+ Angeltveit 指出：
+ 
+ 隨：
+ 
+-\[
++$$
+ N\to\infty,
+-\]
++$$
+ 
+ 需要 explicit checking 的 fraction 可趨近：
+ 
+-\[
++$$
+ 0.
+-\]
++$$
+ 
+ 但他同時明確指出：
+ 
+-\[
++$$
+ \boxed{
+ \text{the number of integers to check still goes to infinity}.
+ }
+-\]
++$$
+ 
+ 這一句幾乎就是本文 global quantifier gap 的 computational version。
+ 
+@@ -1746,49 +1747,49 @@
+ 
+ 因為：
+ 
+-\[
++$$
+ \boxed{
+ \frac{|E_N|}{N}\to0
+ }
+-\]
++$$
+ 
+ 不代表：
+ 
+-\[
++$$
+ \boxed{
+ E_N=\varnothing
+ }
+-\]
+-
+-對 sufficiently large \(N\)。
++$$
++
++對 sufficiently large $N$。
+ 
+ 甚至可能：
+ 
+-\[
++$$
+ |E_N|\to\infty
+-\]
++$$
+ 
+ 同時：
+ 
+-\[
++$$
+ |E_N|/N\to0.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{density-zero survivors}
+ \neq
+ \text{no survivors}.
+ }
+-\]
++$$
+ 
+ 這和 Paper 05：
+ 
+-\[
++$$
+ P_k\to1
+-\]
++$$
+ 
+ 的量詞警告完全一致。
+ 
+@@ -1804,51 +1805,51 @@
+ 
+ 但若把它當成 equivalent condition，會過強。
+ 
+-原因在 \(2\)-adic completion。
+-
+----
+-
+-# 42. Infinite Parity Prefix Defines a \(2\)-adic Integer
++原因在 $2$-adic completion。
++
++---
++
++# 42. Infinite Parity Prefix Defines a $2$-adic Integer
+ 
+ Paper 03：
+ 
+ 每個 finite parity prefix對應：
+ 
+-\[
++$$
+ r_k\bmod2^k.
+-\]
++$$
+ 
+ nested prefixes：
+ 
+-\[
++$$
+ r_{k+1}\equiv r_k\pmod{2^k}.
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ (r_k)
+-\]
++$$
+ 
+ 定義一個 inverse-limit point：
+ 
+-\[
++$$
+ \boxed{
+ x\in\mathbb Z_2.
+ }
+-\]
++$$
+ 
+ 但：
+ 
+-\[
++$$
+ x
+-\]
++$$
+ 
+ 未必在：
+ 
+-\[
++$$
+ \mathbb Z_{>0}.
+-\]
++$$
+ 
+ ---
+ 
+@@ -1856,33 +1857,33 @@
+ 
+ 因此可能存在：
+ 
+-\[
++$$
+ \boxed{
+ \text{an infinite formal parity/hard branch}
+ }
+-\]
+-
+-但其 \(2\)-adic limit：
+-
+-\[
++$$
++
++但其 $2$-adic limit：
++
++$$
+ x
+-\]
++$$
+ 
+ 是：
+ 
+ - negative integer；
+-- nonordinary \(2\)-adic integer；
++- nonordinary $2$-adic integer；
+ - 或其他不在 positive naturals 的點。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{formal branch existence}
+ \not\Rightarrow
+ \text{positive-integer counterexample}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1890,33 +1891,33 @@
+ 
+ 每個 modulo：
+ 
+-\[
++$$
+ 2^k
+-\]
++$$
+ 
+ class 選 canonical representative：
+ 
+-\[
++$$
+ \boxed{
+ 0\le r_k<2^k.
+ }
+-\]
+-
+-若 branch 來自固定普通正整數 \(n\)，
++$$
++
++若 branch 來自固定普通正整數 $n$，
+ 
+ 則當：
+ 
+-\[
++$$
+ 2^k>n,
+-\]
++$$
+ 
+ 有：
+ 
+-\[
++$$
+ \boxed{
+ r_k=n.
+ }
+-\]
++$$
+ 
+ 所以 canonical residues 會 eventually stabilize。
+ 
+@@ -1928,59 +1929,59 @@
+ 
+ 一條 infinite nested parity branch：
+ 
+-\[
++$$
+ w_1\prec w_2\prec\cdots
+-\]
++$$
+ 
+ 稱為 anchored at：
+ 
+-\[
++$$
+ n\in\mathbb Z_{>0}
+-\]
++$$
+ 
+ 若存在：
+ 
+-\[
++$$
+ K
+-\]
++$$
+ 
+ 使：
+ 
+-\[
++$$
+ \boxed{
+ r_{w_k}=n
+ \quad
+ \forall k\ge K.
+ }
+-\]
+-
+-這等價於其 \(2\)-adic point正好是 ordinary positive integer \(n\)。
++$$
++
++這等價於其 $2$-adic point正好是 ordinary positive integer $n$。
+ 
+ ---
+ 
+ # 46. Anchored Hard Branch
+ 
+-若さらに：
+-
+-\[
++若進一步：
++
++$$
+ \boxed{
+ n\in H_{w_k}
+ \quad
+ \forall k,
+ }
+-\]
++$$
+ 
+ 則稱為：
+ 
+-\[
++$$
+ \boxed{
+ \text{integer-anchored infinite hard branch}.
+ }
+-\]
++$$
+ 
+ 也就是：
+ 
+-> 同一個 ordinary positive integer \(n\) 在所有 finite depths 都沒有取得 descent certificate。
++> 同一個 ordinary positive integer $n$ 在所有 finite depths 都沒有取得 descent certificate。
+ 
+ ---
+ 
+@@ -1990,28 +1991,28 @@
+ 
+ 對：
+ 
+-\[
++$$
+ n>1,
+-\]
++$$
+ 
+ 以下等價：
+ 
+-1. \(\sigma(n)=\infty\)；
+-2. 對所有 \(k\)：
+-   \[
++1. $\sigma(n)=\infty$；
++2. 對所有 $k$：
++   $$
+    T^j(n)\ge n
+    \quad
+    1\le j\le k;
+-   \]
+-3. \(n\) 的 parity-prefix chain 是 integer-anchored infinite hard branch。
++   $$
++3. $n$ 的 parity-prefix chain 是 integer-anchored infinite hard branch。
+ 
+ ### 證明
+ 
+-(1)\(\Rightarrow\)(2)：stopping time infinite 的定義。
+-
+-(2)\(\Rightarrow\)(3)：\(n\) 的 canonical residue 在 \(2^k>n\) 後等於 \(n\)，且每個 prefix hard。
+-
+-(3)\(\Rightarrow\)(1)：若某 finite \(j\) descent，則所有更長 prefix 不再 hard，矛盾。
++(1)$\Rightarrow$(2)：stopping time infinite 的定義。
++
++(2)$\Rightarrow$(3)：$n$ 的 canonical residue 在 $2^k>n$ 後等於 $n$，且每個 prefix hard。
++
++(3)$\Rightarrow$(1)：若某 finite $j$ descent，則所有更長 prefix 不再 hard，矛盾。
+ 
+ 證畢。
+ 
+@@ -2023,20 +2024,20 @@
+ 
+ ## Theorem 48.1
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz conjecture}
+ }
+-\]
++$$
+ 
+ 等價於：
+ 
+-\[
++$$
+ \boxed{
+ \text{不存在 anchored at }n>1
+ \text{ 的 infinite hard branch}.
+ }
+-\]
++$$
+ 
+ 這是本文認為最乾淨的 global remainder statement。
+ 
+@@ -2046,33 +2047,33 @@
+ 
+ 如果要求：
+ 
+-\[
++$$
+ \boxed{
+ \text{no infinite formal hard branch in }\mathbb Z_2,
+ }
+-\]
+-
+-那會排除所有 nonordinary \(2\)-adic obstruction。
++$$
++
++那會排除所有 nonordinary $2$-adic obstruction。
+ 
+ Collatz 猜想本身沒有要求這一點。
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{2-adic global well-foundedness}
+ }
+-\]
++$$
+ 
+ 是更強命題。
+ 
+ 本文只保留：
+ 
+-\[
++$$
+ \boxed{
+ \text{positive-integer anchored well-foundedness}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2080,15 +2081,15 @@
+ 
+ 若 Collatz 對：
+ 
+-\[
++$$
+ [2,N]
+-\]
++$$
+ 
+ 已驗證，
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ K(N)
+ =
+@@ -2098,15 +2099,15 @@
+ \mathfrak F_k(N)=\varnothing
+ \}.
+ }
+-\]
++$$
+ 
+ 它就是：
+ 
+-\[
++$$
+ \boxed{
+ K(N)=\max_{2\le n\le N}\sigma(n)
+ }
+-\]
++$$
+ 
+ 在 strict stopping-time 定義下。
+ 
+@@ -2118,20 +2119,20 @@
+ 
+ Collatz 等價：
+ 
+-\[
++$$
+ \boxed{
+ \forall N\ge2,\ \exists K(N)<\infty:
+ \mathfrak F_{K(N)}(N)=\varnothing.
+ }
+-\]
++$$
+ 
+ 注意量詞順序：
+ 
+-\[
++$$
+ \boxed{
+ \forall N\,\exists K(N).
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2139,20 +2140,20 @@
+ 
+ 更強命題：
+ 
+-\[
++$$
+ \exists K\ \forall N:
+ \mathfrak F_K(N)=\varnothing.
+-\]
++$$
+ 
+ 等價於：
+ 
+-\[
++$$
+ \boxed{
+ \sigma(n)\le K
+ \quad
+ \forall n>1.
+ }
+-\]
++$$
+ 
+ 即所有 stopping times 有 uniform global bound。
+ 
+@@ -2160,13 +2161,13 @@
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \forall N\,\exists K(N)
+ \not\equiv
+ \exists K\,\forall N.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2174,30 +2175,30 @@
+ 
+ 前八篇可以：
+ 
+-- 對 fixed \(w\) exact；
+-- 對 fixed \(k\) exact；
+-- 對 fixed \(N\) exact；
++- 對 fixed $w$ exact；
++- 對 fixed $k$ exact；
++- 對 fixed $N$ exact；
+ - 對 finite family exact。
+ 
+ 但 Collatz 是：
+ 
+-\[
++$$
+ \boxed{
+ \forall n
+ }
+-\]
++$$
+ 
+ 的無界 statement。
+ 
+ 因此任何 finite certificate framework 若沒有額外 theorem 控制：
+ 
+-\[
++$$
+ K(N)
+-\]
++$$
+ 
+ 或 anchored hard branches，
+ 
+-都不能單靠「對每個已測 \(N\) 成功」升級成 global proof。
++都不能單靠「對每個已測 $N$ 成功」升級成 global proof。
+ 
+ ---
+ 
+@@ -2205,11 +2206,11 @@
+ 
+ 本文最終把：
+ 
+-\[
++$$
+ \boxed{
+ \mathfrak F_k(N)
+ }
+-\]
++$$
+ 
+ 稱為 **Finite Certificate Frontier** 的 hard side。
+ 
+@@ -2224,7 +2225,7 @@
+ 
+ 因此：
+ 
+-\[
++$$
+ I_N
+ =
+ \boxed{
+@@ -2232,7 +2233,7 @@
+ \sqcup
+ \text{Hard Frontier}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2240,21 +2241,21 @@
+ 
+ 從 depth：
+ 
+-\[
++$$
+ k
+-\]
++$$
+ 
+ 到：
+ 
+-\[
++$$
+ k+1,
+-\]
++$$
+ 
+ 只需展開：
+ 
+-\[
++$$
+ \mathfrak F_k(N)
+-\]
++$$
+ 
+ 中的 cylinders。
+ 
+@@ -2262,11 +2263,11 @@
+ 
+ 所以 algorithmic search tree 是：
+ 
+-\[
++$$
+ \boxed{
+ \text{expand only surviving proof obligations}.
+ }
+-\]
++$$
+ 
+ 這是 certificate-oriented computation 的自然形式。
+ 
+@@ -2274,40 +2275,40 @@
+ 
+ # 56. Hard Frontier 的 Monotonicity
+ 
+-對 fixed \(N\)，考慮未證明 starting-value set：
+-
+-\[
++對 fixed $N$，考慮未證明 starting-value set：
++
++$$
+ E_k(N)
+ =
+ \{
+ n\in I_N:
+ \sigma(n)>k
+ \}.
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ E_{k+1}(N)\subseteq E_k(N).
+ }
+-\]
++$$
+ 
+ 而：
+ 
+-\[
++$$
+ \mathfrak F_k(N)
+-\]
+-
+-只是 \(E_k(N)\) 在 level-\(k\) residue atlas 中的 compressed representation。
++$$
++
++只是 $E_k(N)$ 在 level-$k$ residue atlas 中的 compressed representation。
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{frontier refinement is monotone in obligations}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2315,39 +2316,39 @@
+ 
+ 可定義：
+ 
+-\[
++$$
+ \boxed{
+ \eta_k(N)
+ =
+ 1-
+ \frac{|E_k(N)|}{N-1}.
+ }
+-\]
+-
+-表示 depth-\(k\) 已取得 descent certificate 的 starting-value fraction。
++$$
++
++表示 depth-$k$ 已取得 descent certificate 的 starting-value fraction。
+ 
+ 也可定義 chart-level：
+ 
+-\[
++$$
+ \boxed{
+ \eta_k^{\mathrm{chart}}
+ =
+ 1-
+ \frac{|\mathfrak F_k(N)|}{2^k}
+ }
+-\]
++$$
+ 
+ 但兩者不應混淆。
+ 
+ Paper 05 已展示：
+ 
+-\[
++$$
+ \boxed{
+ \text{chart density}
+ \neq
+ \text{finite strict certificate density}
+ }
+-\]
++$$
+ 
+ 在 finite boundary 下會有小差異。
+ 
+@@ -2357,9 +2358,9 @@
+ 
+ 一個 finite range 可能有很多不同 certificate families：
+ 
+-\[
++$$
+ \mathcal C_N.
+-\]
++$$
+ 
+ 可以追求：
+ 
+@@ -2379,9 +2380,9 @@
+ 
+ Collatz 對：
+ 
+-\[
++$$
+ [2,N]
+-\]
++$$
+ 
+ 為真，
+ 
+@@ -2389,21 +2390,21 @@
+ 
+ RCOT certificate framework 關心的是：
+ 
+-\[
++$$
+ \boxed{
+ \text{能否用更結構化、更小、更可重用的 proof objects 表達}.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{verification complexity}
+ \neq
+ \text{mathematical truth}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2411,55 +2412,55 @@
+ 
+ Paper 01：
+ 
+-\[
++$$
+ \text{舊研究證據校正}.
+-\]
++$$
+ 
+ Paper 02：
+ 
+-\[
++$$
+ \text{finite word}\to\text{affine operator}.
+-\]
++$$
+ 
+ Paper 03：
+ 
+-\[
++$$
+ \text{word}\leftrightarrow2^k\text{ cylinder}\to\text{identity chart}.
+-\]
++$$
+ 
+ Paper 04：
+ 
+-\[
++$$
+ 2^k\text{ source}\leftrightarrow3^u\text{ target}.
+-\]
++$$
+ 
+ Paper 05：
+ 
+-\[
++$$
+ \text{exact contraction boundary}.
+-\]
++$$
+ 
+ Paper 06：
+ 
+-\[
++$$
+ \text{valuation-language compression}.
+-\]
++$$
+ 
+ Paper 07：
+ 
+-\[
++$$
+ mx+r\text{ generalization}.
+-\]
++$$
+ 
+ Paper 08：
+ 
+-\[
++$$
+ \text{algebraic domain / breakage ladder}.
+-\]
++$$
+ 
+ Paper 09：
+ 
+-\[
++$$
+ \boxed{
+ \text{all local results}
+ \to
+@@ -2467,7 +2468,7 @@
+ \to
+ \text{global quantifier boundary}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2475,77 +2476,77 @@
+ 
+ ## Theorem A — Collatz / Finite Stopping-Time Equivalence
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz}
+ \iff
+ \forall n>1,\sigma(n)<\infty.
+ }
+-\]
++$$
+ 
+ ## Theorem B — Hard Height Formula
+ 
+-\[
++$$
+ \boxed{
+ H_w
+ =
+ \Omega_w\cap[1,h(w)].
+ }
+-\]
++$$
+ 
+ ## Theorem C — Frontier Extinction
+ 
+-\[
++$$
+ \boxed{
+ \mathfrak F_k(N)=\varnothing
+ \iff
+ \sigma(n)\le k
+ \quad\forall2\le n\le N.
+ }
+-\]
++$$
+ 
+ ## Theorem D — Cylinder Quotient Certificate
+ 
+-\[
++$$
+ \boxed{
+ (2^k-3^u)a>m_w-r_w
+ \Rightarrow
+ T^k(n)<n.
+ }
+-\]
++$$
+ 
+ ## Theorem E — Finite Coverage Completeness
+ 
+-\[
++$$
+ \boxed{
+ I_N
+ \subseteq
+ \bigcup_{\gamma\in\mathcal C_N}D_\gamma
+ }
+-\]
+-
+-plus valid ranked dependencies implies convergence for all \(n\le N\).
++$$
++
++plus valid ranked dependencies implies convergence for all $n\le N$.
+ 
+ ## Theorem F — Anchored Hard Branch Equivalence
+ 
+-\[
++$$
+ \boxed{
+ \sigma(n)=\infty
+ \iff
+ n\text{ anchors an infinite hard branch}.
+ }
+-\]
++$$
+ 
+ ## Theorem G — Global Frontier Form
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz}
+ \iff
+ \forall N\ge2,\exists K(N):
+ \mathfrak F_{K(N)}(N)=\varnothing.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -2553,17 +2554,17 @@
+ 
+ 本文沒有證明：
+ 
+-\[
++$$
+ \mathfrak F_k(N)
+-\]
+-
+-對所有 \(N\) 具有 uniform extinction depth。
++$$
++
++對所有 $N$ 具有 uniform extinction depth。
+ 
+ 沒有證明：
+ 
+-\[
++$$
+ K(N)
+-\]
++$$
+ 
+ 的 closed asymptotic upper bound。
+ 
+@@ -2571,13 +2572,13 @@
+ 
+ 沒有把：
+ 
+-\[
++$$
+ P_k\to1
+-\]
+-
+-或 survivor density \(\to0\) 轉換成 emptiness。
+-
+-沒有因為 finite verification 已達 \(2^{71}\) 就推斷 infinite domain。
++$$
++
++或 survivor density $\to0$ 轉換成 emptiness。
++
++沒有因為 finite verification 已達 $2^{71}$ 就推斷 infinite domain。
+ 
+ 因此本文不是 Collatz proof。
+ 
+@@ -2589,61 +2590,61 @@
+ 
+ ### 已完成
+ 
+-\[
++$$
+ \boxed{
+ \text{finite-word arithmetic}
+ }
+-\]
++$$
+ 
+ 可 exact affine compression。
+ 
+-\[
++$$
+ \boxed{
+ \text{finite itinerary legality}
+ }
+-\]
++$$
+ 
+ 可 exact residue coding。
+ 
+-\[
++$$
+ \boxed{
+ \text{fixed-chart dynamics}
+ }
+-\]
++$$
+ 
+ 可 identity trivialization。
+ 
+-\[
++$$
+ \boxed{
+ \text{forward / inverse local transport}
+ }
+-\]
++$$
+ 
+ 可 exact recovery。
+ 
+-\[
++$$
+ \boxed{
+ \text{finite contraction}
+ }
+-\]
++$$
+ 
+ 有 exact threshold。
+ 
+-\[
++$$
+ \boxed{
+ \text{finite range verification}
+ }
+-\]
++$$
+ 
+ 可重寫成 certificate coverage / frontier extinction。
+ 
+ ### 尚未完成
+ 
+-\[
++$$
+ \boxed{
+ \text{all ordinary positive-integer itineraries}
+ }
+-\]
++$$
+ 
+ 是否都在有限時間取得 descent / merge / terminal certificate。
+ 
+@@ -2653,13 +2654,13 @@
+ 
+ 本系列最終核心句為：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{Collatz dynamics is locally affine-trivializable,
+ finitely certificate-compressible,
+ but globally itinerary-unresolved.}
+ }
+-\]
++$$
+ 
+ 中文：
+ 
+@@ -2667,19 +2668,19 @@
+ 
+ 因此真正未解的不是：
+ 
+-\[
++$$
+ \boxed{
+ \text{how to compute one finite Collatz block}.
+ }
+-\]
++$$
+ 
+ 而是：
+ 
+-\[
++$$
+ \boxed{
+ \text{whether every positive-integer anchored itinerary eventually leaves the hard frontier}.
+ }
+-\]
++$$
+ 
+ 至此，本系列封頂。
+ 
+@@ -2687,13 +2688,13 @@
+ 
+ # 參考文獻
+ 
+-1. Vigleik Angeltveit, *An improved algorithm for checking the Collatz conjecture for all \(n<2^N\)*, arXiv:2602.10466 (2026).
++1. Vigleik Angeltveit, *An improved algorithm for checking the Collatz conjecture for all $n<2^N$*, arXiv:2602.10466 (2026).
+ 2. David Barina, *Improved verification limit for the convergence of the Collatz conjecture*, The Journal of Supercomputing 81, 810 (2025).
+ 3. David Barina, *Convergence verification of the Collatz problem*, The Journal of Supercomputing 77 (2021).
+ 4. Terence Tao, *Almost all orbits of the Collatz map attain almost bounded values*, Forum of Mathematics, Pi 10 (2022), arXiv:1909.03562.
+ 5. Olivier Rozier, Claude Terracol, *Paradoxical behavior in Collatz sequences*, arXiv:2502.00948.
+ 6. Tong Niu, *Parity vectors and paradoxical sequences in the accelerated Collatz map*, arXiv:2605.13886.
+-7. Mike Winkler, *Deterministic Structures in the Stopping Time Dynamics of the \(3x+1\) Problem* (2026 preprint).
++7. Mike Winkler, *Deterministic Structures in the Stopping Time Dynamics of the $3x+1$ Problem* (2026 preprint).
+ 8. Collatz Operation Translation Series — Papers 01–08.
+ 9. Operation Translation Series A — Papers 01–07.
+ 
+@@ -2711,7 +2712,7 @@
+ - certificate minimization complexity；
+ - formal proof assistant verification；
+ - accelerated valuation-code frontier；
+-- generalized \(mx+r\) certificate phase diagrams；
++- generalized $mx+r$ certificate phase diagrams；
+ - RCOT in noncommutative/state-machine systems。
+ 
+ 上述皆屬新系列，而非本文未完成章節。
+### END DIFF 09 ###
+
+### BEGIN DIFF HZ ###
+--- original/HZ__忠實全域量詞壓縮：從猜想難度 v0.2 到 Collatz Hard-Zeta Frontier 的證明研究綱領.md
++++ corrected/HZ
+@@ -7,8 +7,9 @@
+ **協作整理：** Aletheia  
+ **機構：** 一言諾科技有限公司（EveMissLab）  
+ **文件性質：** Proof-Route / Research Program Paper  
+-**版本：** v0.1.1  
+-**日期：** 2026-08-11
++**版本：** v0.1.2  
++**日期：** 2026-08-11  
++**修訂日期：** 2026-08-14
+ 
+ ---
+ 
+@@ -25,165 +26,165 @@
+ 
+ 本文提出一個共同母問題：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{如何將無界量詞族轉譯為一個既可分析、又不會吞掉單一例外的全域數學物件？}
+ }
+-\]
++$$
+ 
+ 本文將這類物件稱為 **Faithful Globalizer／忠實全域化器**，並提出「例外忠實性」作為全域證明壓縮器的必要設計條件之一：
+ 
+-\[
++$$
+ \boxed{
+ \text{存在一個真正反例}
+ \Longrightarrow
+ \text{全域缺陷量必須保持非零}.
+ }
+-\]
++$$
+ 
+ 對一大類具有形式
+ 
+-\[
++$$
+ \forall x\in D,\ \exists k<\infty:\ C_k(x)
+-\]
+-
+-且 certificate predicate 隨 \(k\) 單調累積的猜想，本文證明一條一般結果。若 \(D=\{x_1,x_2,\dots\}\) 可數，取任意嚴格正且可求和的權重：
+-
+-\[
++$$
++
++且 certificate predicate 隨 $k$ 單調累積的猜想，本文證明一條一般結果。若 $D=\{x_1,x_2,\dots\}$ 可數，取任意嚴格正且可求和的權重：
++
++$$
+ \omega_i>0,
+ \qquad
+ \sum_i\omega_i<\infty,
+-\]
++$$
+ 
+ 並令：
+ 
+-\[
++$$
+ E_k=\{x_i:\neg C_k(x_i)\}
+-\]
+-
+-為 depth-\(k\) 尚未被證明的 frontier，定義：
+-
+-\[
++$$
++
++為 depth-$k$ 尚未被證明的 frontier，定義：
++
++$$
+ \boxed{
+ \mathcal Q_k=\sum_{x_i\in E_k}\omega_i.
+ }
+-\]
+-
+-由 \(E_{k+1}\subseteq E_k\) 及有限測度的上連續性：
+-
+-\[
++$$
++
++由 $E_{k+1}\subseteq E_k$ 及有限測度的上連續性：
++
++$$
+ \boxed{
+ \lim_{k\to\infty}\mathcal Q_k
+ =
+ \sum_{x_i\in\cap_kE_k}\omega_i.
+ }
+-\]
++$$
+ 
+ 由於每個原子權重皆嚴格正：
+ 
+-\[
++$$
+ \boxed{
+ \lim_{k\to\infty}\mathcal Q_k=0
+ \iff
+ \bigcap_kE_k=\varnothing.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \forall x\in D\ \exists k\,C_k(x)
+ \iff
+ \lim_{k\to\infty}\mathcal Q_k=0.
+ }
+-\]
++$$
+ 
+ 本文將此稱為 **Strictly Positive Atomic Frontier Theorem／嚴格正原子前沿定理**。它不是對任何特定猜想的證明，而是一個 exception-faithful 的量詞轉譯介面：與自然密度、平均值或 almost-all 結論不同，任何固定反例都會留下正的全域缺陷質量，因此不能消失在零密度 exceptional set 中。
+ 
+ 對 Collatz，令 modified map：
+ 
+-\[
++$$
+ T(n)=
+ \begin{cases}
+ n/2,&n\text{ even},\\[2mm]
+ (3n+1)/2,&n\text{ odd},
+ \end{cases}
+-\]
+-
+-並對 \(n>1\) 定義 coefficient stopping time：
+-
+-\[
++$$
++
++並對 $n>1$ 定義 coefficient stopping time：
++
++$$
+ \sigma(n)=\inf\{j\ge1:T^j(n)<n\}.
+-\]
++$$
+ 
+ Collatz 猜想等價於：
+ 
+-\[
++$$
+ \forall n>1,\quad \sigma(n)<\infty.
+-\]
++$$
+ 
+ 令：
+ 
+-\[
++$$
+ E_k=\{n\ge2:\sigma(n)>k\}.
+-\]
+-
+-對任意固定 \(s>1\)，定義：
+-
+-\[
++$$
++
++對任意固定 $s>1$，定義：
++
++$$
+ \boxed{
+ Z_k(s)=
+ \sum_{\substack{n\ge2\\\sigma(n)>k}}n^{-s}.
+ }
+-\]
++$$
+ 
+ 本文稱其為 **Collatz Hard-Zeta Frontier** 或 **Survivor Dirichlet Functional**。由一般原子前沿定理：
+ 
+-\[
++$$
+ \boxed{
+ \lim_{k\to\infty}Z_k(s)
+ =
+ \sum_{\sigma(n)=\infty}n^{-s},
+ }
+-\]
++$$
+ 
+ 從而：
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz conjecture}
+ \iff
+ \lim_{k\to\infty}Z_k(s)=0
+ }
+-\]
+-
+-對任意固定 \(s>1\) 成立。
+-
+-這個 reformulation 比 \(P_k\to1\) 型 contracting-cylinder density 更強地忠實於全稱命題：即使只有一個反例 \(n^\ast\)，它仍永久留下：
+-
+-\[
++$$
++
++對任意固定 $s>1$ 成立。
++
++這個 reformulation 比 $P_k\to1$ 型 contracting-cylinder density 更強地忠實於全稱命題：即使只有一個反例 $n^\ast$，它仍永久留下：
++
++$$
+ (n^\ast)^{-s}>0.
+-\]
++$$
+ 
+ 利用 Collatz Operation Translation Series 已證得的 hard-prefix decomposition：
+ 
+-\[
++$$
+ E_k=
+ \bigsqcup_{|w|=k}\widetilde H_w,
+ \qquad
+ \widetilde H_w:=H_w\cap[2,\infty),
+-\]
++$$
+ 
+ 以及：
+ 
+-\[
++$$
+ H_w=\Omega_w\cap[1,h(w)],
+-\]
++$$
+ 
+ 本文得到：
+ 
+-\[
++$$
+ \boxed{
+ Z_k(s)=
+ \sum_{|w|=k}
+@@ -191,16 +192,16 @@
+ \qquad
+ \widetilde H_w:=H_w\cap[2,\infty).
+ }
+-\]
+-
+-每一張 hard chart 均可由 exact residue \(r_w\)、depth \(k\)、affine correction \(b_w\)、hard height \(h(w)\) 表示，因此 Hard-Zeta 不只是抽象全域和，而是可被 Local Affine Atlas 分解的 exact global functional。
++$$
++
++每一張 hard chart 均可由 exact residue $r_w$、depth $k$、affine correction $b_w$、hard height $h(w)$ 表示，因此 Hard-Zeta 不只是抽象全域和，而是可被 Local Affine Atlas 分解的 exact global functional。
+ 
+ 本文據此提出六條並行證明路線：
+ 
+ 1. **Hard-Zeta / Atomic Frontier Transfer Route**：證明 hard mass 的不可逆衰減；
+ 2. **Global Bellman–Lyapunov Route**：構造 residue/valuation-dependent 全域勢函數；
+ 3. **Diophantine Rigidity Route**：假設最小反例，逼出臨界比率的不可持續逼近；
+-4. **Forbidden Language / Integer-Anchor Elimination Route**：允許 formal \(2\)-adic hard branches 存在，但證其不能被普通正整數錨定；
++4. **Forbidden Language / Integer-Anchor Elimination Route**：允許 formal $2$-adic hard branches 存在，但證其不能被普通正整數錨定；
+ 5. **Well-Quasi-Order / Finite Obstruction Basis Route**：尋找 hard certificates 的有限 minimal basis；
+ 6. **Exceptional Invariant Measure Route**：由假設反例構造 invariant/empirical object，再證其與 arithmetic constraints 衝突。
+ 
+@@ -208,12 +209,12 @@
+ 
+ 本文特別不宣稱 Hard-Zeta reformulation 已證明 Collatz。真正的證明義務被重新定位為：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{能否由每張 hard affine chart 的 exact refinement law，
+ 推出 exception-faithful atomic hard mass 必然趨零？}
+ }
+-\]
++$$
+ 
+ 這是本文之後正式研究的起點。
+ 
+@@ -225,8 +226,8 @@
+ 
+ 數學研究常產生以下類型的進展：
+ 
+-- 對所有 \(n<N\) 已驗證；
+-- 對幾乎所有 \(n\) 成立；
++- 對所有 $n<N$ 已驗證；
++- 對幾乎所有 $n$ 成立；
+ - 失敗集合密度趨零；
+ - 平均漂移為負；
+ - 每個局部模組可獨立求解；
+@@ -238,15 +239,15 @@
+ 
+ 但若原命題具有：
+ 
+-\[
++$$
+ \forall x
+-\]
++$$
+ 
+ 或：
+ 
+-\[
++$$
+ \forall x\exists y
+-\]
++$$
+ 
+ 甚至更多交替量詞，則不能僅由「局部覆蓋很多」自動升級為全域結論。
+ 
+@@ -264,21 +265,21 @@
+ 
+ 既有 MCDM 使用難度向量：
+ 
+-\[
++$$
+ \mathfrak D(C)=(B,I,E,F,V,R,G,U).
+-\]
+-
+-其中 \(G\) 表示 Global Coupling／全域耦合。
+-
+-高 \(G\) 問題的典型特徵不是「沒有局部結果」，而是：
+-
+-\[
++$$
++
++其中 $G$ 表示 Global Coupling／全域耦合。
++
++高 $G$ 問題的典型特徵不是「沒有局部結果」，而是：
++
++$$
+ \boxed{
+ \text{many local advances}
+ \longrightarrow
+ \text{same global closure bottleneck}.
+ }
+-\]
++$$
+ 
+ 因此，一個猜想可以累積大量新引理而仍停在同一個最終量詞障礙前。
+ 
+@@ -301,11 +302,11 @@
+ 
+ 這使猜想難度不只是一組研究成本，而開始描述：
+ 
+-\[
++$$
+ \boxed{
+ \text{證明究竟必須閉合哪一個量詞堆疊？}
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -315,73 +316,73 @@
+ 
+ 例如：
+ 
+-\[
++$$
+ \forall\varepsilon>0:
+ \operatorname{Density}(S_\varepsilon)=1.
+-\]
+-
+-單一 \(n\notin S_\varepsilon\) 不一定否定 density 1，因為 density predicate 自己還包含 asymptotic quantifiers。
++$$
++
++單一 $n\notin S_\varepsilon$ 不一定否定 density 1，因為 density predicate 自己還包含 asymptotic quantifiers。
+ 
+ ## 4.2 Universal–Existential Extension
+ 
+ 例如：
+ 
+-\[
++$$
+ \forall A\ \exists B:R(A,B).
+-\]
++$$
+ 
+ 其否定為：
+ 
+-\[
++$$
+ \exists A^\ast\ \forall B:\neg R(A^\ast,B).
+-\]
+-
+-因此即使找到了 \(A^\ast\)，仍然需要一個 nested universal non-extension certificate。
++$$
++
++因此即使找到了 $A^\ast$，仍然需要一個 nested universal non-extension certificate。
+ 
+ ## 4.3 Nonuniform Asymptotic Limit
+ 
+ 例如：
+ 
+-\[
++$$
+ \forall k,\quad f_k(\ell)\to1.
+-\]
+-
+-其 \(\varepsilon\)-\(N\) 展開允許 \(N=N(k,\varepsilon)\)。若證明策略誤要求 \(\exists N\forall k\) 型 uniformity，可能把原猜想不必要地強化。
++$$
++
++其 $\varepsilon$-$N$ 展開允許 $N=N(k,\varepsilon)$。若證明策略誤要求 $\exists N\forall k$ 型 uniformity，可能把原猜想不必要地強化。
+ 
+ ## 4.4 Universal Set → Existential Witness
+ 
+ 例如：
+ 
+-\[
++$$
+ \forall A,\quad
+ \mu(A)>\tau
+ \Rightarrow
+ \exists x,y,z\in A:R(x,y,z).
+-\]
+-
+-此類猜想的成功證法通常不是枚舉所有 \(A\)，而是找到一條對所有 admissible \(A\) 同時成立的 structural extremal inequality。
++$$
++
++此類猜想的成功證法通常不是枚舉所有 $A$，而是找到一條對所有 admissible $A$ 同時成立的 structural extremal inequality。
+ 
+ ---
+ 
+ # 5. Green Problem 3 作為成功全域化案例
+ 
+-Ben Green Open Problem 3 問：若 \(A\subset(0,1)\) 為 open 且 \(\mu(A)>1/3\)，是否必存在 \(x,y,z\in A\) 使 \(xy=z\)？
++Ben Green Open Problem 3 問：若 $A\subset(0,1)$ 為 open 且 $\mu(A)>1/3$，是否必存在 $x,y,z\in A$ 使 $xy=z$？
+ 
+ 2026 年 Franchi、Gowers、Yip 已給出肯定答案。
+ 
+ 重要的不是它「終於被算完」，而是：
+ 
+-\[
++$$
+ \boxed{
+ \text{all admissible sets}
+ }
+-\]
++$$
+ 
+ 被一個新的 sumset/difference-set structural estimate 同時控制。
+ 
+ 這提供一個關鍵模式：
+ 
+-\[
++$$
+ \boxed{
+ \text{global domain}
+ \to
+@@ -391,37 +392,37 @@
+ \to
+ \text{universal closure}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 6. P/NP：存在量詞壓縮與 Existential Reappearance
+ 
+-對 verification relation \(V(x,w)\in\{0,1\}\)，定義：
+-
+-\[
++對 verification relation $V(x,w)\in\{0,1\}$，定義：
++
++$$
+ \operatorname{EX}_V(x)=\bigvee_wV(x,w).
+-\]
+-
+-P/NP 對偶研究可被重寫為：是否存在一個有限、精確、多項式資源的全域數學結構，直接壓縮 \(\exists w\) 而不必顯式展開全部 witness？
+-
+-後續模組化研究則發現，\(\exists Y_i\) 可在各局部 solver 中消去，但共享邊界仍留下 \(\exists B\)。亦即：
+-
+-\[
++$$
++
++P/NP 對偶研究可被重寫為：是否存在一個有限、精確、多項式資源的全域數學結構，直接壓縮 $\exists w$ 而不必顯式展開全部 witness？
++
++後續模組化研究則發現，$\exists Y_i$ 可在各局部 solver 中消去，但共享邊界仍留下 $\exists B$。亦即：
++
++$$
+ \boxed{
+ \text{Existential Reappearance}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{local quantifier elimination}
+ \not\Rightarrow
+ \text{global quantifier elimination}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -429,29 +430,29 @@
+ 
+ Collatz 在九篇 Operation Translation Series 後已被壓縮成：
+ 
+-\[
++$$
+ \boxed{
+ \forall n>1,\quad
+ \exists k(n)<\infty:
+ T^{k(n)}(n)<n.
+ }
+-\]
++$$
+ 
+ 而我們已經知道：
+ 
+ - fixed word 可 exact affine 化；
+ - fixed cylinder 可 identity 化；
+-- fixed \(N\) 可 finite certificate；
+-- contracting cylinders density \(\to1\)；
++- fixed $N$ 可 finite certificate；
++- contracting cylinders density $\to1$；
+ - finite survivor density 可很小。
+ 
+ 但以上仍不能自動消掉：
+ 
+-\[
++$$
+ \boxed{
+ \forall n\exists k(n).
+ }
+-\]
++$$
+ 
+ 因此 Collatz 是「局部幾乎完全可解，但全域量詞仍存活」的標準模型。
+ 
+@@ -461,85 +462,85 @@
+ 
+ 本文提出五項結構：
+ 
+-\[
++$$
+ \boxed{
+ \mathcal G(C)=(Q,D,W,B,X)
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-- \(Q\)：Quantifier Breadth，量詞廣度；
+-- \(D\)：Domain Closure，域閉包責任；
+-- \(W\)：Witness Dependency，見證依賴；
+-- \(B\)：Boundary Recoupling，邊界重耦合；
+-- \(X\)：Exception Fidelity，例外忠實性。
+-
+-其中 \(X\) 是本文特別強調的新軸。
++- $Q$：Quantifier Breadth，量詞廣度；
++- $D$：Domain Closure，域閉包責任；
++- $W$：Witness Dependency，見證依賴；
++- $B$：Boundary Recoupling，邊界重耦合；
++- $X$：Exception Fidelity，例外忠實性。
++
++其中 $X$ 是本文特別強調的新軸。
+ 
+ ---
+ 
+ # 9. Exception Fidelity／例外忠實性
+ 
+-一個全域 summary \(G(E)\) 若要用於證明 \(E=\varnothing\)，最好滿足：
+-
+-\[
++一個全域 summary $G(E)$ 若要用於證明 $E=\varnothing$，最好滿足：
++
++$$
+ \boxed{
+ E\neq\varnothing
+ \Rightarrow
+ G(E)>0.
+ }
+-\]
+-
+-如果存在 \(E\neq\varnothing\) 但 \(G(E)=0\)，則該 summary 會把真正例外吞掉。
+-
+-自然密度就是典型例子：singleton \(E=\{n^\ast\}\) 具有 density 0，因此：
+-
+-\[
++$$
++
++如果存在 $E\neq\varnothing$ 但 $G(E)=0$，則該 summary 會把真正例外吞掉。
++
++自然密度就是典型例子：singleton $E=\{n^\ast\}$ 具有 density 0，因此：
++
++$$
+ \boxed{
+ \text{density-zero}
+ \not\Rightarrow
+ \text{empty}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 10. Faithful Globalizer
+ 
+-對某類 obstruction sets \(\mathcal E\)，若 functional：
+-
+-\[
++對某類 obstruction sets $\mathcal E$，若 functional：
++
++$$
+ \mathfrak G:\mathcal E\to[0,\infty]
+-\]
++$$
+ 
+ 滿足：
+ 
+-\[
++$$
+ \boxed{
+ \mathfrak G(E)=0
+ \iff
+ E=\varnothing,
+ }
+-\]
+-
+-則稱 \(\mathfrak G\) 為該 obstruction class 上的 **Faithful Globalizer**。
++$$
++
++則稱 $\mathfrak G$ 為該 obstruction class 上的 **Faithful Globalizer**。
+ 
+ ---
+ 
+ # 11. Compression 不等於計算加速
+ 
+-即使 \(E=\varnothing\iff\mathfrak G(E)=0\)，也不代表 \(\mathfrak G(E)\) 容易估計。
++即使 $E=\varnothing\iff\mathfrak G(E)=0$，也不代表 $\mathfrak G(E)$ 容易估計。
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{logical compression}
+ \neq
+ \text{proof complexity collapse}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -547,97 +548,97 @@
+ 
+ 考慮可數 domain：
+ 
+-\[
++$$
+ D=\{x_1,x_2,\ldots\}.
+-\]
+-
+-對 \(k=0,1,2,\ldots\) 有 certificate predicate \(C_k(x)\)，要求：
+-
+-\[
++$$
++
++對 $k=0,1,2,\ldots$ 有 certificate predicate $C_k(x)$，要求：
++
++$$
+ \boxed{
+ C_k(x)\Rightarrow C_{k+1}(x).
+ }
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ E_k=\{x\in D:\neg C_k(x)\}.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ E_{k+1}\subseteq E_k.
+-\]
++$$
+ 
+ 全域猜想：
+ 
+-\[
++$$
+ \forall x\exists k:C_k(x)
+-\]
++$$
+ 
+ 等價於：
+ 
+-\[
++$$
+ \boxed{
+ \bigcap_{k=0}^{\infty}E_k=\varnothing.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 13. Strictly Positive Atomic Frontier Theorem
+ 
+-選 \(\omega_i>0\) 使：
+-
+-\[
++選 $\omega_i>0$ 使：
++
++$$
+ \sum_{i=1}^{\infty}\omega_i<\infty.
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ \mathcal Q_k=\sum_{x_i\in E_k}\omega_i.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ \lim_{k\to\infty}\mathcal Q_k
+ =
+ \sum_{x_i\in\cap_kE_k}\omega_i.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \lim_{k\to\infty}\mathcal Q_k=0
+ \iff
+ \cap_kE_k=\varnothing.
+ }
+-\]
+-
+-**證明。** 令 atomic measure \(\mu(\{x_i\})=\omega_i\)。因 \(\mu(D)<\infty\) 且 \(E_k\downarrow E_\infty\)，由 measure continuity from above：
+-
+-\[
++$$
++
++**證明。** 令 atomic measure $\mu(\{x_i\})=\omega_i$。因 $\mu(D)<\infty$ 且 $E_k\downarrow E_\infty$，由 measure continuity from above：
++
++$$
+ \lim_k\mu(E_k)=\mu(E_\infty).
+-\]
++$$
+ 
+ 每個 atomic weight 嚴格正，因此：
+ 
+-\[
++$$
+ \mu(E_\infty)=0
+ \iff
+ E_\infty=\varnothing.
+-\]
++$$
+ 
+ 證畢。
+ 
+@@ -647,13 +648,13 @@
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \forall x\in D\ \exists k:C_k(x)
+ \iff
+ \lim_{k\to\infty}\mathcal Q_k=0.
+ }
+-\]
++$$
+ 
+ 這是一個 exact logical translation。
+ 
+@@ -661,79 +662,79 @@
+ 
+ # 15. Collatz Stopping-Time Form
+ 
+-對 \(n>1\)，定義：
+-
+-\[
++對 $n>1$，定義：
++
++$$
+ \boxed{
+ \sigma(n)=\inf\{j\ge1:T^j(n)<n\}.
+ }
+-\]
++$$
+ 
+ strong induction 給：
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz}
+ \iff
+ \forall n>1:\sigma(n)<\infty.
+ }
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ E_k^{C}=\{n\ge2:\sigma(n)>k\}.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \bigcap_kE_k^{C}
+ =
+ \{n\ge2:\sigma(n)=\infty\}.
+-\]
++$$
+ 
+ ---
+ 
+ # 16. Collatz Hard-Zeta Frontier
+ 
+-對 \(s>1\)，取：
+-
+-\[
++對 $s>1$，取：
++
++$$
+ \omega_n=n^{-s}.
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ Z_k(s)=\sum_{n\in E_k^C}n^{-s}.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ \lim_{k\to\infty}Z_k(s)
+ =
+ \sum_{\sigma(n)=\infty}n^{-s}.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz}
+ \iff
+ Z_k(s)\to0
+ }
+-\]
+-
+-對任意固定 \(s>1\) 成立。
++$$
++
++對任意固定 $s>1$ 成立。
+ 
+ 這是已證的量詞轉譯，不是 Collatz 證明。
+ 
+@@ -741,13 +742,13 @@
+ 
+ # 17. 單一反例無法藏掉
+ 
+-若只有一個 \(n^\ast\) 滿足 \(\sigma(n^\ast)=\infty\)，則：
+-
+-\[
++若只有一個 $n^\ast$ 滿足 $\sigma(n^\ast)=\infty$，則：
++
++$$
+ Z_k(s)\ge(n^\ast)^{-s}>0
+-\]
+-
+-對所有 \(k\)。
++$$
++
++對所有 $k$。
+ 
+ 因此 Hard-Zeta 對 isolated exception 忠實。
+ 
+@@ -757,81 +758,105 @@
+ 
+ Paper 09 已定義：
+ 
+-\[
++$$
+ H_w=\{n\in\Omega_w:T^j(n)\ge n,\ 1\le j\le k\}.
+-\]
+-
+-固定 depth \(k\)：
+-
+-\[
++$$
++
++固定 depth $k$，先定義真正對應 stopping-time domain $n\ge2$ 的 chart：
++
++$$
++\boxed{
++\widetilde H_w:=H_w\cap[2,\infty).
++}
++$$
++
++則：
++
++$$
+ \boxed{
+ E_k^C=
+-\bigsqcup_{|w|=k}H_w.
+-}
+-\]
++\bigsqcup_{|w|=k}\widetilde H_w.
++}
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ Z_k(s)=
+ \sum_{|w|=k}Z_w(s),
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ \boxed{
+ Z_w(s)=
+-\sum_{n\in \widetilde H_w}n^{-s},
+-\qquad
+-\widetilde H_w:=H_w\cap[2,\infty).
+-}
+-\]
++\sum_{n\in \widetilde H_w}n^{-s}.
++}
++$$
+ 
+ Paper 09：
+ 
+-\[
++$$
+ H_w=\Omega_w\cap[1,h(w)],
+ \qquad
+ \Omega_w=(r_w+2^k\mathbb Z)\cap\mathbb Z_{>0}.
+-\]
+-
+-因此：
+-
+-\[
+-H_w=
++$$
++
++取 canonical representative $0\le r_w<2^k$。對 $\widetilde H_w$ 定義 exact quotient bounds：
++
++$$
++\widetilde a_{\min}(w)
++=
++\min\{a\in\mathbb Z:r_w+2^ka\ge2\},
++$$
++
++以及（當 $h(w)<\infty$）：
++
++$$
++\widetilde a_{\max}(w)
++=
++\max\{a\in\mathbb Z:r_w+2^ka\le h(w)\};
++$$
++
++若 $h(w)=\infty$，令 $\widetilde a_{\max}(w)=\infty$。因此：
++
++$$
++\boxed{
++\widetilde H_w=
+ \{
+ r_w+2^ka:
+-a_{\min}\le a\le a_{\max}(w)
++\widetilde a_{\min}(w)\le a\le\widetilde a_{\max}(w)
+ \}.
+-\]
++}
++$$
+ 
+ ---
+ 
+ # 19. Chart Dirichlet Mass
+ 
+-\[
++$$
+ \boxed{
+ Z_w(s)=
+-\sum_{a=a_{\min}}^{a_{\max}}
++\sum_{a=\widetilde a_{\min}(w)}^{\widetilde a_{\max}(w)}
+ (r_w+2^ka)^{-s}.
+ }
+-\]
+-
+-若 \(a_{\max}=\infty\)，可寫：
+-
+-\[
++$$
++
++若 $\widetilde a_{\max}(w)=\infty$，可寫：
++
++$$
+ \boxed{
+ Z_w(s)=
+ 2^{-ks}
+ \zeta\left(
+ s,
+-a_{\min}+\frac{r_w}{2^k}
++\widetilde a_{\min}(w)+\frac{r_w}{2^k}
+ \right).
+ }
+-\]
++$$
+ 
+ 這只是一個 closed representation，不代表其全域和已自動易估。
+ 
+@@ -839,34 +864,34 @@
+ 
+ # 20. Hard Refinement Law
+ 
+-每張 parity cylinder 分裂成 \(\Omega_{wD}\sqcup\Omega_{wU}\)，而 hard sets 滿足：
+-
+-\[
++每張 parity cylinder 分裂成 $\Omega_{wD}\sqcup\Omega_{wU}$，而 hard sets 滿足：
++
++$$
+ \boxed{
+ H_{wD}\sqcup H_{wU}\subseteq H_w.
+ }
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ L_w(s)
+ =
+ Z_w(s)-Z_{wD}(s)-Z_{wU}(s)
+ \ge0.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ Z_k(s)-Z_{k+1}(s)
+ =
+ \sum_{|w|=k}L_w(s).
+ }
+-\]
++$$
+ 
+ Hard-Zeta 因而是一個 exact monotone decreasing functional。
+ 
+@@ -876,21 +901,21 @@
+ 
+ 最強 sufficient theorem：
+ 
+-存在 \(L\ge1\)、\(0<q<1\)、\(k_0\)，使：
+-
+-\[
++存在 $L\ge1$、$0<q<1$、$k_0$，使：
++
++$$
+ \boxed{
+ Z_{k+L}(s)\le qZ_k(s)
+ }
+-\]
+-
+-對所有 \(k\ge k_0\) 成立。
++$$
++
++對所有 $k\ge k_0$ 成立。
+ 
+ 則：
+ 
+-\[
++$$
+ Z_{k_0+jL}(s)\le q^jZ_{k_0}(s)\to0,
+-\]
++$$
+ 
+ 所以 Collatz 成立。
+ 
+@@ -898,34 +923,34 @@
+ 
+ # 22. 更弱的 Cumulative-Loss Route
+ 
+-uniform \(q\) 可能過強。
+-
+-只需存在 \(\varepsilon_j\in(0,1)\) 使：
+-
+-\[
++uniform $q$ 可能過強。
++
++只需存在 $\varepsilon_j\in(0,1)$ 使：
++
++$$
+ \boxed{
+ Z_{(j+1)L}(s)
+ \le
+ (1-\varepsilon_j)Z_{jL}(s)
+ }
+-\]
++$$
+ 
+ 且：
+ 
+-\[
++$$
+ \boxed{
+ \sum_j\varepsilon_j=\infty.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ Z_{jL}(s)
+ \le
+ Z_0(s)\prod_{i<j}(1-\varepsilon_i)
+ \to0.
+-\]
++$$
+ 
+ 這也完成 Collatz。
+ 
+@@ -935,49 +960,49 @@
+ 
+ 令：
+ 
+-\[
++$$
+ \mathbf z_k=(Z_w(s))_{|w|=k}.
+-\]
++$$
+ 
+ refinement 可看成 level-dependent positive sub-Markov operator／cocycle：
+ 
+-\[
++$$
+ \boxed{
+ \mathbf z_{k+1}
+ =
+ \mathcal L_{s,k}\mathbf z_k
+ }
+-\]
++$$
+ 
+ 加上由 hard-height truncation 造成的 certificate loss。
+ 
+ 其總質量：
+ 
+-\[
++$$
+ \|\mathbf z_k\|_1=Z_k(s).
+-\]
++$$
+ 
+ 主問題變成：
+ 
+-\[
++$$
+ \boxed{
+ \text{Does the hard-frontier transfer cocycle lose all atomic mass?}
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 24. 為何暫不假設固定單一 Transfer Operator？
+ 
+-hard height \(h(w)\) 依完整 prefix data 變化，因此 refinement 未必由一個 stationary finite matrix 描述。
+-
+-過早寫 \(\mathcal L^k\) 可能把非平穩性藏掉。
++hard height $h(w)$ 依完整 prefix data 變化，因此 refinement 未必由一個 stationary finite matrix 描述。
++
++過早寫 $\mathcal L^k$ 可能把非平穩性藏掉。
+ 
+ 所以第一階段採：
+ 
+-\[
++$$
+ \mathcal L_{s,0},\mathcal L_{s,1},\ldots
+-\]
++$$
+ 
+ 的 cocycle / nonstationary operator view。
+ 
+@@ -989,29 +1014,29 @@
+ 
+ **目標：**
+ 
+-\[
++$$
+ Z_k(s)\to0.
+-\]
++$$
+ 
+ **子問題：**
+ 
+ 1. 每張 hard chart 的最低 mass-loss bound；
+ 2. consecutive expanding prefixes 能維持多少 atomic mass；
+-3. 將 \(b_w,h(w)\) 轉成 child-loss inequality；
++3. 將 $b_w,h(w)$ 轉成 child-loss inequality；
+ 4. 尋找 block-level drift-minorization；
+ 5. 建立 renewal decomposition；
+-6. 優化 \(s\)，而非固定 \(s=2\)。
++6. 優化 $s$，而非固定 $s=2$。
+ 
+ 任何足以推出：
+ 
+-\[
++$$
+ \boxed{
+ \sum_k
+ \frac{Z_k-Z_{k+1}}{Z_k}
+ =
+ \infty
+ }
+-\]
++$$
+ 
+ 的 lower bound 都可能完成主線。
+ 
+@@ -1019,73 +1044,73 @@
+ 
+ # 26. Route II：Global Bellman–Lyapunov Potential
+ 
+-傳統 \(V(n)=\log n\) 不能 pointwise monotone。
++傳統 $V(n)=\log n$ 不能 pointwise monotone。
+ 
+ 因此尋找：
+ 
+-\[
++$$
+ \boxed{
+ V(n)=\log n+\Phi(\operatorname{state}(n)).
+ }
+-\]
++$$
+ 
+ state 可取 residue、parity prefix、valuation word、affine chart、finite automaton state 或 multi-scale phase state。
+ 
+-目標是找到 finite return time \(\tau(n)\) 使：
+-
+-\[
++目標是找到 finite return time $\tau(n)$ 使：
++
++$$
+ \boxed{
+ V(T^{\tau(n)}n)<V(n)
+ }
+-\]
+-
+-對所有 \(n>2\) 成立。
+-
+-可先在 \(\mathbb Z/2^k\mathbb Z\) 上用 LP、動態規劃、SAT/SMT 搜索 \(\Phi_k\)，但真正 proof obligation 是從有限候選抽取 compatible symbolic rule 或 projective-limit potential。
++$$
++
++對所有 $n>2$ 成立。
++
++可先在 $\mathbb Z/2^k\mathbb Z$ 上用 LP、動態規劃、SAT/SMT 搜索 $\Phi_k$，但真正 proof obligation 是從有限候選抽取 compatible symbolic rule 或 projective-limit potential。
+ 
+ ---
+ 
+ # 27. Route III：Diophantine Rigidity
+ 
+-假設存在最小反例 \(n^\ast>1\)，即 \(\sigma(n^\ast)=\infty\)。
+-
+-對其每個 prefix \(w_{\le j}\)：
+-
+-\[
++假設存在最小反例 $n^\ast>1$，即 $\sigma(n^\ast)=\infty$。
++
++對其每個 prefix $w_{\le j}$：
++
++$$
+ T^j(n^\ast)\ge n^\ast.
+-\]
++$$
+ 
+ 若：
+ 
+-\[
++$$
+ 2^j>3^{u_j},
+-\]
++$$
+ 
+ 則必須：
+ 
+-\[
++$$
+ \boxed{
+ b_j\ge(2^j-3^{u_j})n^\ast.
+ }
+-\]
++$$
+ 
+ accelerated form：
+ 
+-\[
++$$
+ \boxed{
+ B_m\ge(2^{K_m}-3^m)n^\ast.
+ }
+-\]
++$$
+ 
+ 因此反例必須讓 skeleton drift 與 correction 長期極細緻抵銷。
+ 
+ 主問題：能否證明這迫使：
+ 
+-\[
++$$
+ |K_m\ln2-m\ln3|
+-\]
+-
+-在無限 subsequence 上小到違反 continued fractions、linear forms in logarithms、\(S\)-unit 或 Baker-type bounds？
++$$
++
++在無限 subsequence 上小到違反 continued fractions、linear forms in logarithms、$S$-unit 或 Baker-type bounds？
+ 
+ 這條路目前是 proposal。
+ 
+@@ -1093,29 +1118,29 @@
+ 
+ # 28. Route IV：Forbidden Language / Integer-Anchor Elimination
+ 
+-Paper 09 已指出 infinite formal parity branch 只一定對應 \(x\in\mathbb Z_2\)，不一定是普通正整數。
+-
+-因此不需要消滅所有 \(2\)-adic hard branches，只需證：
+-
+-\[
++Paper 09 已指出 infinite formal parity branch 只一定對應 $x\in\mathbb Z_2$，不一定是普通正整數。
++
++因此不需要消滅所有 $2$-adic hard branches，只需證：
++
++$$
+ \boxed{
+ \text{no infinite hard branch is integer-anchored at }n>1.
+ }
+-\]
+-
+-令 \(\mathcal H\subseteq\{D,U\}^{\mathbb N}\) 為所有 infinite hard formal words，\(r_k(\omega)\in[0,2^k)\) 為 canonical residues。
++$$
++
++令 $\mathcal H\subseteq\{D,U\}^{\mathbb N}$ 為所有 infinite hard formal words，$r_k(\omega)\in[0,2^k)$ 為 canonical residues。
+ 
+ 普通正整數 anchor 要求：
+ 
+-\[
++$$
+ r_k(\omega)
+-\]
++$$
+ 
+ eventually stabilizes。
+ 
+ 所以目標：
+ 
+-\[
++$$
+ \boxed{
+ \text{hard language}
+ \cap
+@@ -1123,36 +1148,36 @@
+ =
+ \varnothing.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 29. Route V：Well-Quasi-Order / Finite Obstruction Basis
+ 
+-尋找 partial order \(\preceq\)，使：
+-
+-\[
++尋找 partial order $\preceq$，使：
++
++$$
+ x\preceq y
+ \quad\text{且}\quad
+ x\text{ certified}
+ \Rightarrow
+ y\text{ certified}.
+-\]
++$$
+ 
+ 若 state space 是 well-quasi-ordered，則 upward-closed certified set 有 finite minimal basis。
+ 
+ 夢想結論：
+ 
+-\[
++$$
+ \boxed{
+ \operatorname{MinHard}=
+ \{h_1,\ldots,h_r\}.
+ }
+-\]
+-
+-若能逐一消滅 \(h_i\)，即全域 closure。
+-
+-最大風險不是缺 Higman/Dickson lemma，而是找不到同時保留 arithmetic information 與 certification monotonicity 的 \(\preceq\)。
++$$
++
++若能逐一消滅 $h_i$，即全域 closure。
++
++最大風險不是缺 Higman/Dickson lemma，而是找不到同時保留 arithmetic information 與 certification monotonicity 的 $\preceq$。
+ 
+ ---
+ 
+@@ -1162,23 +1187,23 @@
+ 
+ 考察其 parity empirical distribution、valuation distribution、residue occupation、logarithmic drift 與 projective state occupation。
+ 
+-若有 subsequential empirical limit \(\nu\)，反例必生成某種 invariant / quasi-invariant object。
+-
+-目標不是證 typical orbit 下降，而是證：
+-
+-\[
++若先指定適當的 compactification / state space，並能建立 empirical measures 的 tightness 與足以傳遞 dynamics 的 continuity／measurability 條件，則 subsequential weak limit $\nu$ 才可進一步作為 invariant / quasi-invariant object 的候選。沒有這些額外條件時，本文不從「存在 subsequential empirical limit」直接斷言 invariance。
++
++目標不是證 typical orbit 下降，而是在上述分析框架成立時研究：
++
++$$
+ \boxed{
+ \text{任何能支撐 non-descending anchored orbit 的 invariant object 都不存在}.
+ }
+-\]
++$$
+ 
+ 例如把：
+ 
+-\[
++$$
+ \int(\ln3-\kappa\ln2)\,d\nu\ge0
+-\]
+-
+-與 mod-\(2^k\) consistency、mod-\(3^r\) constraints、valuation legality、recurrence、correction budget 聯立，尋找矛盾。
++$$
++
++與 mod-$2^k$ consistency、mod-$3^r$ constraints、valuation legality、recurrence、correction budget 聯立，尋找矛盾。
+ 
+ ---
+ 
+@@ -1198,31 +1223,31 @@
+ 
+ **Primary Route：**
+ 
+-\[
++$$
+ \boxed{
+ \text{Hard-Zeta / Atomic Frontier Transfer}
+ }
+-\]
++$$
+ 
+ **Secondary Bridge Routes：**
+ 
+-\[
++$$
+ \boxed{
+ \text{Bellman–Lyapunov}
+ }
+-\]
++$$
+ 
+ 與：
+ 
+-\[
++$$
+ \boxed{
+ \text{Diophantine Rigidity}.
+ }
+-\]
++$$
+ 
+ **Structural Backup Routes：**
+ 
+-\[
++$$
+ \boxed{
+ \text{Forbidden Language},
+ \quad
+@@ -1230,11 +1255,11 @@
+ \quad
+ \text{Invariant Measure}.
+ }
+-\]
+-
+----
+-
+-# 33. 為何先研究 \(Z_k(s)\)？
++$$
++
++---
++
++# 33. 為何先研究 $Z_k(s)$？
+ 
+ 因為它同時具備：
+ 
+@@ -1248,7 +1273,7 @@
+ 
+ 它是目前第一個同時兼顧：
+ 
+-\[
++$$
+ \boxed{
+ \text{global}
+ +
+@@ -1256,39 +1281,39 @@
+ +
+ \text{local-decomposable}
+ }
+-\]
++$$
+ 
+ 的 Collatz obstruction functional。
+ 
+ ---
+ 
+-# 34. \(s\) 是 Proof Parameter
+-
+-所有 \(s>1\) 都有 logical equivalence，但 proof geometry 可能不同。
+-
+-- \(s\downarrow1\)：更重視 large integers；
+-- 大 \(s\)：質量過度集中小整數；
+-- 中間 \(s\) 可能讓 residue refinement 最易估計。
+-
+-所以 \(s\) 應保留為可優化參數。
++# 34. $s$ 是 Proof Parameter
++
++所有 $s>1$ 都有 logical equivalence，但 proof geometry 可能不同。
++
++- $s\downarrow1$：更重視 large integers；
++- 大 $s$：質量過度集中小整數；
++- 中間 $s$ 可能讓 residue refinement 最易估計。
++
++所以 $s$ 應保留為可優化參數。
+ 
+ ---
+ 
+ # 35. Local Loss Ratio
+ 
+-對 hard chart \(w\)，定義：
+-
+-\[
++對 hard chart $w$，定義：
++
++$$
+ \boxed{
+ \ell_w(s)=
+ 1-
+ \frac{Z_{wD}(s)+Z_{wU}(s)}{Z_w(s)}
+ }
+-\]
+-
+-當 \(Z_w(s)>0\)。
+-
+-某些 chart 可能多步 \(\ell_w=0\)，因此不應要求 one-step pointwise uniform drift。
++$$
++
++當 $Z_w(s)>0$。
++
++某些 chart 可能多步 $\ell_w=0$，因此不應要求 one-step pointwise uniform drift。
+ 
+ 更合理的是研究：
+ 
+@@ -1306,11 +1331,11 @@
+ 
+ ## Logical Globalizer
+ 
+-\[
++$$
+ \mathfrak G(E)=0
+ \iff
+ E=\varnothing.
+-\]
++$$
+ 
+ Hard-Zeta 已完成這一層。
+ 
+@@ -1318,41 +1343,41 @@
+ 
+ 還需存在可證 dynamical inequality：
+ 
+-\[
++$$
+ \mathfrak G(E_{k+1})
+ \le
+ \Psi_k(\mathfrak G(E_k))
+-\]
++$$
+ 
+ 足以推出：
+ 
+-\[
++$$
+ \mathfrak G(E_k)\to0.
+-\]
++$$
+ 
+ Collatz 尚缺的是第二層。
+ 
+ ---
+ 
+-# 37. MCDM v0.2 新建議：加入 \(X\) 軸
++# 37. MCDM v0.2 新建議：加入 $X$ 軸
+ 
+ 建議新增：
+ 
+-\[
++$$
+ \boxed{
+ X=\text{Exception Fidelity Barrier}.
+ }
+-\]
++$$
+ 
+ 暫定：
+ 
+-- \(X0\)：有限域完整枚舉；
+-- \(X1\)：已有 exact faithful invariant；
+-- \(X2\)：faithful invariant 已知但難估；
+-- \(X3\)：主方法只能控制 density / expectation；
+-- \(X4\)：例外可跨尺度、跨表示逃逸；
+-- \(X5\)：沒有可信 exception-faithful globalizer；
+-- \(X6\)：obstruction domain 本身未閉合。
++- $X0$：有限域完整枚舉；
++- $X1$：已有 exact faithful invariant；
++- $X2$：faithful invariant 已知但難估；
++- $X3$：主方法只能控制 density / expectation；
++- $X4$：例外可跨尺度、跨表示逃逸；
++- $X5$：沒有可信 exception-faithful globalizer；
++- $X6$：obstruction domain 本身未閉合。
+ 
+ Collatz 在 Hard-Zeta 提出後，問題可被描述成：
+ 
+@@ -1362,11 +1387,11 @@
+ 
+ # 38. 正反證明張力
+ 
+-定義正證 route \(K_+\) 與反證 route \(K_-\)。
++定義正證 route $K_+$ 與反證 route $K_-$。
+ 
+ 不強迫壓成單一難度，而記：
+ 
+-\[
++$$
+ \boxed{
+ T(C)=
+ (
+@@ -1374,15 +1399,15 @@
+ Q_-,D_-,W_-,X_-
+ ).
+ }
+-\]
++$$
+ 
+ Collatz 正證需：
+ 
+-\[
++$$
+ Z_k(s)\to0.
+-\]
+-
+-反證則需找到 \(n^\ast>1\) 並證 \(\sigma(n^\ast)=\infty\)，但「跑很久沒下降」並不是 infinite certificate，因此 negative route 也不簡單。
++$$
++
++反證則需找到 $n^\ast>1$ 並證 $\sigma(n^\ast)=\infty$，但「跑很久沒下降」並不是 infinite certificate，因此 negative route 也不簡單。
+ 
+ ---
+ 
+@@ -1390,9 +1415,9 @@
+ 
+ 每一條 route 都需經：
+ 
+-1. **Quantifier Audit**：是否偷換 \(\forall N\exists K(N)\) 成 \(\exists K\forall N\)；
++1. **Quantifier Audit**：是否偷換 $\forall N\exists K(N)$ 成 $\exists K\forall N$；
+ 2. **Density Audit**：是否從 density zero 偷換 empty；
+-3. **Completion Audit**：是否把 nonordinary \(2\)-adic branch 當正整數；
++3. **Completion Audit**：是否把 nonordinary $2$-adic branch 當正整數；
+ 4. **Uniformity Audit**：是否要求不必要 uniform witness；
+ 5. **Certificate Audit**：正反證書是否忠實；
+ 6. **Representation Audit**：轉譯是否保留 domain 與例外。
+@@ -1403,14 +1428,14 @@
+ 
+ 本文之後正式展開時，第一批純數學任務：
+ 
+-1. 推導 \(Z_w(s)\) 在 child refinement 下的 exact relation；
++1. 推導 $Z_w(s)$ 在 child refinement 下的 exact relation；
+ 2. 找 hard-height truncation 的 mass-loss closed form；
+-3. 比較 contracting / expanding skeleton 對 \(Z_w(s)\) 的不同貢獻；
+-4. 研究 \(s\) 對 worst-case child ratio 的影響；
++3. 比較 contracting / expanding skeleton 對 $Z_w(s)$ 的不同貢獻；
++4. 研究 $s$ 對 worst-case child ratio 的影響；
+ 5. 對 valuation language 建立 atomic functional；
+ 6. 建立 block-level return decomposition；
+-7. 嘗試證第一個非平凡 \(\varepsilon_k\) lower bound；
+-8. 若失敗，抽取造成 \(\varepsilon_k\to0\) 的 hard word families，交給 Diophantine／language route。
++7. 嘗試證第一個非平凡 $\varepsilon_k$ lower bound；
++8. 若失敗，抽取造成 $\varepsilon_k\to0$ 的 hard word families，交給 Diophantine／language route。
+ 
+ ---
+ 
+@@ -1418,26 +1443,26 @@
+ 
+ 若直接 decay 難證，尋找：
+ 
+-\[
++$$
+ \boxed{
+ w_k^\ast
+ \in
+ \arg\max_{|w|=k}
+ \frac{Z_{wD}+Z_{wU}}{Z_w}.
+ }
+-\]
++$$
+ 
+ 分析其：
+ 
+ - odd-step ratio；
+-- \(b_w\)；
++- $b_w$；
+ - hard height；
+ - continued-fraction relation；
+ - valuation order；
+ - residue growth；
+ - anchor behavior。
+ 
+-若 \(w_k^\ast\) 收斂成有限 pattern family，可嘗試 automaton、substitution system、morphic word、continued-fraction grammar 或 finite-state quotient。
++若 $w_k^\ast$ 收斂成有限 pattern family，可嘗試 automaton、substitution system、morphic word、continued-fraction grammar 或 finite-state quotient。
+ 
+ ---
+ 
+@@ -1452,11 +1477,11 @@
+ 
+ 避免：
+ 
+-\[
++$$
+ \text{floating evidence}
+ \to
+ \text{exact theorem}.
+-\]
++$$
+ 
+ ---
+ 
+@@ -1465,8 +1490,8 @@
+ ## 已證／邏輯直接成立
+ 
+ 1. 嚴格正原子前沿定理；
+-2. \(\forall x\exists k\) 與 atomic frontier mass \(\to0\) 的 equivalence；
+-3. Collatz 與 \(Z_k(s)\to0\) 的 equivalence；
++2. $\forall x\exists k$ 與 atomic frontier mass $\to0$ 的 equivalence；
++3. Collatz 與 $Z_k(s)\to0$ 的 equivalence；
+ 4. Hard-Zeta monotonicity；
+ 5. fixed-depth hard-chart decomposition；
+ 6. 固定反例必留下 nonzero Hard-Zeta lower bound。
+@@ -1488,25 +1513,25 @@
+ 
+ 本文之後正式研究的第一問不是「Collatz 到底對不對？」而是：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{
+ Can exact hard-chart refinement force
+ exception-faithful atomic frontier mass to vanish?
+ }
+ }
+-\]
++$$
+ 
+ 中文：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{
+ 每張 hard affine chart 的精確分裂與證書損失，
+ 能否共同迫使忠實原子前沿質量歸零？
+ }
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1516,15 +1541,15 @@
+ 
+ 本文把其中一種重要困難定位為：
+ 
+-\[
++$$
+ \boxed{
+ \text{局部結果缺少一個忠實的全域重耦合介面}.
+ }
+-\]
++$$
+ 
+ MCDM 的 Global Coupling、v0.2 的量詞／證書審計、P/NP 的 Existential Reappearance、全域資格的 Domain Closure，以及 Collatz certificate frontier，可以放進同一張圖：
+ 
+-\[
++$$
+ \boxed{
+ \text{Local Resolution}
+ \to
+@@ -1534,64 +1559,64 @@
+ \to
+ \text{Global Closure}.
+ }
+-\]
++$$
+ 
+ 其中最危險的錯誤是：
+ 
+-\[
++$$
+ \boxed{
+ \text{almost all}\to\text{all}
+ }
+-\]
++$$
+ 
+ 或：
+ 
+-\[
++$$
+ \boxed{
+ \text{density zero}\to\text{empty}.
+ }
+-\]
++$$
+ 
+ 因此本文提出 exception fidelity 作為全域量詞壓縮器的必要設計軸。
+ 
+ 對 Collatz：
+ 
+-\[
++$$
+ \boxed{
+ Z_k(s)=
+ \sum_{\sigma(n)>k}n^{-s}
+ }
+-\]
++$$
+ 
+ 提供一個簡單而完全忠實的 global obstruction functional：
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz}
+ \iff
+ Z_k(s)\to0.
+ }
+-\]
++$$
+ 
+ 真正尚待完成的不是這個 equivalence，而是：
+ 
+-\[
++$$
+ \boxed{
+ \text{Hard-Zeta Decay Theorem}.
+ }
+-\]
++$$
+ 
+ 本文之後將以 Hard-Zeta / Atomic Frontier Transfer 為主線，並同步使用 Bellman–Lyapunov、Diophantine rigidity、forbidden language、WQO finite basis 與 exceptional invariant measure 五條橋接路線。
+ 
+ 最終目標不是增加更多局部真命題，而是第一次真正跨越：
+ 
+-\[
++$$
+ \boxed{
+ \text{finite/local/almost-all}
+ \quad\longrightarrow\quad
+ \forall.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1600,8 +1625,8 @@
+ 1. Terence Tao, *Almost all orbits of the Collatz map attain almost bounded values*, Forum of Mathematics, Pi 10 (2022), arXiv:1909.03562.
+ 2. Olivier Rozier, Claude Terracol, *Paradoxical behavior in Collatz sequences*, arXiv:2502.00948.
+ 3. Tong Niu, *Parity vectors and paradoxical sequences in the accelerated Collatz map*, arXiv:2605.13886.
+-4. Vigleik Angeltveit, *An improved algorithm for checking the Collatz conjecture for all \(n<2^N\)*, arXiv:2602.10466.
+-5. Leonardo Franchi, W. T. Gowers, Fredy Yip, *Product-free subsets of \((0,1)\)*, arXiv:2607.06073.
++4. Vigleik Angeltveit, *An improved algorithm for checking the Collatz conjecture for all $n<2^N$*, arXiv:2602.10466.
++5. Leonardo Franchi, W. T. Gowers, Fredy Yip, *Product-free subsets of $(0,1)$*, arXiv:2607.06073.
+ 6. Neo.K × Aletheia, *數學猜想難度矩陣 MCDM*.
+ 7. Neo.K × Aletheia, *P/NP 對偶證明預演研究區：存在量詞狀態坍縮與後續全域橋接系列*.
+ 8. Neo.K × Aletheia, *Collatz Operation Translation Series*, Papers 01–09.
+@@ -1628,13 +1653,9 @@
+ 
+ ---
+ 
+-## v0.1.1 Domain Corrigendum
+-
+-Hard-Zeta 的 stopping-time domain 為 \(n\ge2\)。因此所有與 \(E_k\) 及 \(Z_k\) 的 chart decomposition 應使用
+-\[
+-\widetilde H_w=H_w\cap[2,\infty)
+-\]
+-而不是未截去 \(n=1\) 的 \(H_w\)。此修正不改變 Atomic Frontier Theorem 或 Hard-Zeta equivalence。
++## v0.1.2 Integrated Domain Revision
++
++v0.1.1 的 domain corrigendum 已正式整合進第 18–19 節：Hard-Zeta 的 stopping-time domain 固定為 $n\ge2$，$E_k^C$ 的 chart decomposition 使用 $\widetilde H_w=H_w\cap[2,\infty)$，而 $Z_w(s)$ 的 quotient bounds 也直接以 $\widetilde H_w$ 定義。此整合消除了正文與附錄 corrigendum 並存時的語義不一致；Atomic Frontier Theorem 與 Hard-Zeta equivalence 本身不因此改變。
+ 
+ ---
+ 
+### END DIFF HZ ###

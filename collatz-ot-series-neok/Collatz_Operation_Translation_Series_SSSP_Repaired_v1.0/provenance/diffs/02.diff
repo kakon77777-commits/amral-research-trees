@@ -1,0 +1,31 @@
+--- original/02__Collatz Local Affine Atlas：有限奇偶字的精確仿射化.md
++++ corrected/02
+@@ -6,8 +6,9 @@
+ **作者：** Neo.K  
+ **機構：** 一言諾科技有限公司（EveMissLab）  
+ **系列：** Collatz Operation Translation Series — Paper 02  
+-**版本：** v0.1  
+-**日期：** 2026-08-10
++**版本：** v0.1.1  
++**日期：** 2026-08-10  
++**修訂日期：** 2026-08-14
+ 
+ ---
+ 
+@@ -1645,11 +1646,11 @@
+ \boxed{
+ \Omega_w
+ =
+-r_w+2^k\mathbb Z_{\ge0}
+-}
+-$$
+-
+-在正整數域中的相應截取，
++(r_w+2^k\mathbb Z)\cap\mathbb Z_{>0}
++}
++$$
++
++其中 $r_w$ 取模 $2^k$ 的 canonical representative $0\le r_w<2^k$，
+ 
+ 且：
+ 

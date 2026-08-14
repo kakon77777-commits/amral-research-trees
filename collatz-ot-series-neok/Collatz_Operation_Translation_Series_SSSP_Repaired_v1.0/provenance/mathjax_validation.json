@@ -1,0 +1,80 @@
+{
+  "renderer": "MathJax mathjax-full",
+  "files": [
+    {
+      "file": "core_series/Collatz Local Affine Atlas：有限奇偶字的精確仿射化.md",
+      "formulas": 269,
+      "display": 204,
+      "inline": 65,
+      "rendered_ok": 269
+    },
+    {
+      "file": "core_series/Collatz_OT_Series_Paper_09_Finite_Certificate_Frontier_v0.1.1.md",
+      "formulas": 370,
+      "display": 254,
+      "inline": 116,
+      "rendered_ok": 370
+    },
+    {
+      "file": "core_series/Parity Word、Residue Cylinder 與局部 Identity 化.md",
+      "formulas": 314,
+      "display": 235,
+      "inline": 79,
+      "rendered_ok": 314
+    },
+    {
+      "file": "core_series/Valuation Language 與 Accelerated Collatz.md",
+      "formulas": 306,
+      "display": 254,
+      "inline": 52,
+      "rendered_ok": 306
+    },
+    {
+      "file": "core_series/代數判定域與結構斷裂定理.md",
+      "formulas": 322,
+      "display": 257,
+      "inline": 65,
+      "rendered_ok": 322
+    },
+    {
+      "file": "core_series/廣義 (mx+r) 系統與 Residue-Class Operation Translation.md",
+      "formulas": 366,
+      "display": 239,
+      "inline": 127,
+      "rendered_ok": 366
+    },
+    {
+      "file": "core_series/有限字收縮邊界與二項式 Cylinder Law.md",
+      "formulas": 327,
+      "display": 252,
+      "inline": 75,
+      "rendered_ok": 327
+    },
+    {
+      "file": "core_series/考拉茲猜想既有研究的重新分類與校正.md",
+      "formulas": 181,
+      "display": 152,
+      "inline": 29,
+      "rendered_ok": 181
+    },
+    {
+      "file": "core_series/雙向殘餘類轉譯：$2^k$ Cylinder 與 $3^u$ Progression.md",
+      "formulas": 298,
+      "display": 227,
+      "inline": 71,
+      "rendered_ok": 298
+    },
+    {
+      "file": "research_program/Faithful_Global_Quantifier_Compression_Hard_Zeta_v0.1.2.md",
+      "formulas": 274,
+      "display": 130,
+      "inline": 144,
+      "rendered_ok": 274
+    }
+  ],
+  "total_formulas": 3027,
+  "total_display": 2204,
+  "total_inline": 823,
+  "errors": [],
+  "status": "PASS"
+}

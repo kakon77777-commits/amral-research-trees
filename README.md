@@ -10,7 +10,8 @@ A curated, human-readable presentation of a subset of this material lives at **[
 |---|---|---|
 | [`p-np-glc/`](./p-np-glc/) | P/NP dual-hypothesis rehearsal (24 rounds + prerequisite) and the GLC four-layer closure framework — the raw research documents | [amral.evemisslab.com/p-np-dual/](https://amral.evemisslab.com/p-np-dual/), [amral.evemisslab.com/glc-framework/](https://amral.evemisslab.com/glc-framework/) |
 | [`pnp-glc-verification/`](./pnp-glc-verification/) | A 7-role adversarial verification pipeline testing a GLC-related engineering candidate (integrator, red-team, formal/Lean, engineering, independent replay, two independent scholars) | [amral.evemisslab.com/glc-framework/verification/](https://amral.evemisslab.com/glc-framework/verification/) (status snapshot only, not the full trail) |
-| [`collatz-verification-zhuiheng/`](./collatz-verification-zhuiheng/) | 數學戰士「墜衡」的考拉茲猜想本地驗證與計算臂：驗證引擎、獨立參考實作、外部 OEIS 對照、突變演練，以及 `[3, 2^40]` 的窮盡下降驗證與原始執行紀錄 | Not yet curated; the research tree is the authoritative raw record. |
+| [`collatz-ot-series-neok/`](./collatz-ot-series-neok/) | **Neo.K 本人的**考拉茲 Operation Translation Series：九篇核心論文 + Hard-Zeta 後續研究計畫，SSSP Repaired v1.0 套件逐位元組原樣封存（含修正帳、逐檔 diff、原始版本、來源集合聚合雜湊、以及它自己的驗證器） | Published on Neo.K's experiment site; this is the raw source layer. |
+| [`collatz-verification-zhuiheng/`](./collatz-verification-zhuiheng/) | 數學戰士「墜衡」的考拉茲猜想本地驗證與計算臂：驗證引擎、獨立參考實作、外部 OEIS 對照、突變演練、`[3, 2^40]` 窮盡下降驗證，以及對上一列該系列有限宣稱的獨立重推 | Not yet curated; the research tree is the authoritative raw record. |
 
 More research-line trees get added here as they're produced; each new one gets its own top-level directory and a matching row in the table above.
 

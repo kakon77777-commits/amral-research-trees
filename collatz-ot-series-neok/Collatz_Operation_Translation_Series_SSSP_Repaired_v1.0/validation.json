@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "source_validation": {
+    "object": "10 repaired UTF-8 Markdown scholarly sources",
+    "utf8_strict": true,
+    "canonical_math_delimiter_policy": "PASS",
+    "legacy_inline_delimiters_detected": 0,
+    "legacy_line_display_delimiters_detected": 0
+  },
+  "renderer_validation": {
+    "object": "all extracted math spans from repaired Markdown sources",
+    "renderer": "MathJax mathjax-full",
+    "status": "PASS",
+    "formulas_rendered": 3027,
+    "display_formulas": 2204,
+    "inline_formulas": 823,
+    "errors": 0
+  },
+  "finite_regression_validation": {
+    "status": "PASS",
+    "scope": "finite algebraic/regression checks only; not a global Collatz proof",
+    "tests": {
+      "p02_p03_affine_residue_transport": {
+        "status": "PASS",
+        "cases": 4079
+      },
+      "p02_correction_extrema": {
+        "status": "PASS",
+        "cases": 54
+      },
+      "p05_binomial_and_k16_benchmark": {
+        "status": "PASS",
+        "alpha": 0.6309297535714574,
+        "KL": 0.03468818523201744,
+        "k16_strict": 938413,
+        "k16_equality": 2
+      },
+      "p06_accelerated_affine_formula": {
+        "status": "PASS",
+        "cases": 1364
+      },
+      "p07_generalized_mxr": {
+        "status": "PASS",
+        "cases": 11325
+      },
+      "p09_hard_height": {
+        "status": "PASS",
+        "cases": 8167
+      }
+    }
+  },
+  "sssp_validation": {
+    "document_id": "Collatz_OT_Series_Repair_Audit_2026_08_14_v1",
+    "revision": 8,
+    "document_hash": "sha256:5c38f568dc4bf377c5029f8edd1a52e02b3a480226c4fe1503b5f2ac695984a9",
+    "snapshot_uri": "sssp://Collatz_OT_Series_Repair_Audit_2026_08_14_v1/versions/r000008-5c38f568dc4b",
+    "label": "v1.0-full-series-repair",
+    "validation_status": "PASS",
+    "key_math_blocks_checked": 5
+  },
+  "scope_warning": "PASS does not assert a global proof of the Collatz conjecture.",
+  "artifact_math_inventory": {
+    "object": "10 repaired Markdown source files",
+    "generation": "mechanical source scan independent of renderer metadata",
+    "status": "PASS",
+    "display_math_blocks": 2204,
+    "inline_math_spans": 823,
+    "all_math_spans": 3027,
+    "reproducible": true
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "algorithm": "sha256",
+  "aggregate_definition": "sha256(canonical-json of sorted source file path/hash/bytes entries)",
+  "aggregate_sha256": "96b1b9ccb64a62a0d4fc3942d6cdf7af63c5ffe2ae3369799b7c20d1fe24f155",
+  "files": [
+    {
+      "path": "core_series/Collatz Local Affine Atlas：有限奇偶字的精確仿射化.md",
+      "sha256": "294d74590b9ab1700d35a7aae1227c93febac1931c10b1f440a70bff014b631b",
+      "bytes": 20385
+    },
+    {
+      "path": "core_series/Collatz_OT_Series_Paper_09_Finite_Certificate_Frontier_v0.1.1.md",
+      "sha256": "e45d913b840cc9783b32666d4b4c6965a9af6f159bcc74b2abbf2bbb1fb7df54",
+      "bytes": 34719
+    },
+    {
+      "path": "core_series/Parity Word、Residue Cylinder 與局部 Identity 化.md",
+      "sha256": "5b15a6e7a349269fe34fadb2e8b87da5fc27dd7d14d875f7ed2ec250b8acb9f7",
+      "bytes": 23108
+    },
+    {
+      "path": "core_series/Valuation Language 與 Accelerated Collatz.md",
+      "sha256": "6564438d397c1d076086daf03d8e08367c911dd9aa7601f53209133d00d2e4e9",
+      "bytes": 26294
+    },
+    {
+      "path": "core_series/代數判定域與結構斷裂定理.md",
+      "sha256": "32a3cd20c05b17013a624423f094f9d7be07cbb8dd2792d465d66eeab178fcfb",
+      "bytes": 33758
+    },
+    {
+      "path": "core_series/廣義 (mx+r) 系統與 Residue-Class Operation Translation.md",
+      "sha256": "3b1ec34b6cdf1876bf7e59edcc351702d1bf6f2fd5e91c8f3b12e23e1a7861b4",
+      "bytes": 25978
+    },
+    {
+      "path": "core_series/有限字收縮邊界與二項式 Cylinder Law.md",
+      "sha256": "2b12d96d019d73460fb0714aecbf278b3b0f96d7ed2e7962544e6f892577b92f",
+      "bytes": 25268
+    },
+    {
+      "path": "core_series/考拉茲猜想既有研究的重新分類與校正.md",
+      "sha256": "e5e26511f01a7e4c34e5980886d9833e89df530940220191d65a291e3a60ba51",
+      "bytes": 27202
+    },
+    {
+      "path": "core_series/雙向殘餘類轉譯：$2^k$ Cylinder 與 $3^u$ Progression.md",
+      "sha256": "25a97b54d9c78eba8671269e483b7685c0db3ecec0d7102862471e0cd649b1b6",
+      "bytes": 24721
+    },
+    {
+      "path": "research_program/Faithful_Global_Quantifier_Compression_Hard_Zeta_v0.1.2.md",
+      "sha256": "da507c9ae2efa3d6ab1d865a516704e15d1eeafaebf26e2364acedfea68f84fd",
+      "bytes": 30653
+    }
+  ]
+}

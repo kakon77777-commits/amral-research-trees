@@ -1,0 +1,65 @@
+--- original/03__Parity Word、Residue Cylinder 與局部 Identity 化.md
++++ corrected/03
+@@ -6,8 +6,9 @@
+ **作者：** Neo.K  
+ **機構：** 一言諾科技有限公司（EveMissLab）  
+ **系列：** Collatz Operation Translation Series — Paper 03  
+-**版本：** v0.1  
+-**日期：** 2026-08-10
++**版本：** v0.1.1  
++**日期：** 2026-08-10  
++**修訂日期：** 2026-08-14
+ 
+ ---
+ 
+@@ -308,10 +309,16 @@
+ 
+ 假設對某個長度 $k$ 的字 $w$，
+ 
+-已存在唯一：
+-
+-$$
+-r_w\pmod{2^k}
++已存在唯一 residue class：
++
++$$
++r_w\pmod{2^k},
++$$
++
++並取其 canonical representative：
++
++$$
++0\le r_w<2^k.
+ $$
+ 
+ 使：
+@@ -338,13 +345,22 @@
+ \frac{3^ur_w+b_w}{2^k}.
+ $$
+ 
+-因：
+-
+-$$
+-r_w\in\Omega_w,
+-$$
+-
+-故：
++由 cylinder hypothesis，無論 $r_w$ 是否為 $0$，都有：
++
++$$
++r_w+2^k\in\Omega_w.
++$$
++
++因此 $F_w$ 在這個正整數 admissible input 上等於真正的 $T^k$，故：
++
++$$
++F_w(r_w+2^k)
++=
++m_w+3^u
++\in\mathbb Z.
++$$
++
++因 $3^u\in\mathbb Z$，遂得：
+ 
+ $$
+ m_w\in\mathbb Z.

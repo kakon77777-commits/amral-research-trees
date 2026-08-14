@@ -20,6 +20,14 @@ it is correct to.
 The package was **not modified**. Its `AI_HANDOFF.md` forbids editing provenance
 in place, and that rule was followed.
 
+The subject package is now archived in this repository as its own top-level tree,
+[`../../collatz-ot-series-neok/`](../../collatz-ot-series-neok/), byte-exact and
+under Neo.K's authorship. It is a separate research tree from this one, and its
+presence beside this report is not agreement between the two — the archived copy
+still passes the package's own verifier, and
+`../data/gate-logs/ot-package-integrity.txt` is that run against the committed
+bytes.
+
 ## 1. Package integrity — PASS, with a defect
 
 Run as the handoff instructs:

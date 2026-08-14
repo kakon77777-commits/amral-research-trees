@@ -1,0 +1,199 @@
+{
+  "schema": "sssp-repair-corrections/1.0",
+  "corrections": [
+    {
+      "id": "P02-DOMAIN-01",
+      "file": "Collatz Local Affine Atlas：有限奇偶字的精確仿射化.md",
+      "category": "domain-correction",
+      "note": "Replaced the ambiguous r_w+2^k Z_{>=0} preview by the exact positive-integer residue cylinder; fixes the r_w=0 boundary."
+    },
+    {
+      "id": "P03-REP-01",
+      "file": "Parity Word、Residue Cylinder 與局部 Identity 化.md",
+      "category": "proof-boundary-correction",
+      "note": "Makes the representative used in F_w(r_w) explicit."
+    },
+    {
+      "id": "P03-INDUCTION-01",
+      "file": "Parity Word、Residue Cylinder 與局部 Identity 化.md",
+      "category": "proof-correction",
+      "note": "Repairs the false inference r_w in Omega_w when canonical r_w=0; uses r_w+2^k instead."
+    },
+    {
+      "id": "P07-M1-01",
+      "file": "廣義 (mx+r) 系統與 Residue-Class Operation Translation.md",
+      "category": "parameter-domain-correction",
+      "note": "Restricts logarithmic formulas to odd m>1 and states the m=1 case separately, avoiding division by ln(1)=0."
+    },
+    {
+      "id": "P08-TYPO-01",
+      "file": "代數判定域與結構斷裂定理.md",
+      "category": "formula-typo",
+      "note": "Corrects A_wr+B_w to A_wx+B_w in quotient-ring legality formula."
+    },
+    {
+      "id": "P08-MOBIUS-01",
+      "file": "代數判定域與結構斷裂定理.md",
+      "category": "algebraic-domain-correction",
+      "note": "Scopes ad-bc != 0 to a field and records the unit-determinant condition over a general commutative ring."
+    },
+    {
+      "id": "P08-MOBIUS-02",
+      "file": "代數判定域與結構斷裂定理.md",
+      "category": "algebraic-domain-correction",
+      "note": "Makes projective scalar equivalence field-scoped."
+    },
+    {
+      "id": "P09-TYPO-01",
+      "file": "Collatz_OT_Series_Paper_09_Finite_Certificate_Frontier_v0.1.md",
+      "category": "language-typo",
+      "note": "Removes accidental Japanese token in Chinese prose."
+    },
+    {
+      "id": "HZ-DOMAIN-01",
+      "file": "忠實全域量詞壓縮：從猜想難度 v0.2 到 Collatz Hard-Zeta Frontier 的證明研究綱領.md",
+      "category": "domain-correction",
+      "note": "Integrates the v0.1.1 corrigendum into the main chart decomposition: E_k^C uses H_w intersect [2,infinity)."
+    },
+    {
+      "id": "HZ-DOMAIN-02",
+      "file": "忠實全域量詞壓縮：從猜想難度 v0.2 到 Collatz Hard-Zeta Frontier 的證明研究綱領.md",
+      "category": "domain-correction",
+      "note": "Removes duplicate late definition after moving tilde H_w before E_k^C decomposition."
+    },
+    {
+      "id": "HZ-DOMAIN-03",
+      "file": "忠實全域量詞壓縮：從猜想難度 v0.2 到 Collatz Hard-Zeta Frontier 的證明研究綱領.md",
+      "category": "domain-correction",
+      "note": "Makes chart Dirichlet mass use exact quotient bounds for H_w with n=1 removed, including the r_w=0 and r_w=1 boundaries."
+    },
+    {
+      "id": "HZ-MEASURE-01",
+      "file": "忠實全域量詞壓縮：從猜想難度 v0.2 到 Collatz Hard-Zeta Frontier 的證明研究綱領.md",
+      "category": "logical-qualification",
+      "note": "Qualifies the exceptional invariant-measure route with the compactness/tightness/dynamical assumptions needed before claiming invariance."
+    },
+    {
+      "id": "HZ-CORRIGENDUM-01",
+      "file": "忠實全域量詞壓縮：從猜想難度 v0.2 到 Collatz Hard-Zeta Frontier 的證明研究綱領.md",
+      "category": "integration-correction",
+      "note": "Replaces dangling corrigendum with a statement that the n>=2 correction is now integrated into the body."
+    },
+    {
+      "id": "DELIM-廣義 (mx+r) 系統與 Residue-Class Operation Translation.md",
+      "file": "廣義 (mx+r) 系統與 Residue-Class Operation Translation.md",
+      "category": "canonical-source-normalization",
+      "note": "Converted 122 inline \\(...\\) pairs and 239 display \\[...\\] blocks to canonical $...$ / $$...$$ delimiters."
+    },
+    {
+      "id": "DELIM-代數判定域與結構斷裂定理.md",
+      "file": "代數判定域與結構斷裂定理.md",
+      "category": "canonical-source-normalization",
+      "note": "Converted 60 inline \\(...\\) pairs and 257 display \\[...\\] blocks to canonical $...$ / $$...$$ delimiters."
+    },
+    {
+      "id": "DELIM-Collatz_OT_Series_Paper_09_Finite_Certificate_Frontier_v0.1.md",
+      "file": "Collatz_OT_Series_Paper_09_Finite_Certificate_Frontier_v0.1.md",
+      "category": "canonical-source-normalization",
+      "note": "Converted 116 inline \\(...\\) pairs and 254 display \\[...\\] blocks to canonical $...$ / $$...$$ delimiters."
+    },
+    {
+      "id": "DELIM-忠實全域量詞壓縮：從猜想難度 v0.2 到 Collatz Hard-Zeta Frontier 的證明研究綱領.md",
+      "file": "忠實全域量詞壓縮：從猜想難度 v0.2 到 Collatz Hard-Zeta Frontier 的證明研究綱領.md",
+      "category": "canonical-source-normalization",
+      "note": "Converted 131 inline \\(...\\) pairs and 130 display \\[...\\] blocks to canonical $...$ / $$...$$ delimiters."
+    }
+  ],
+  "files": [
+    {
+      "key": "01",
+      "diff_path": "provenance/diffs/01.diff",
+      "changed": false,
+      "original_sha256": "e5e26511f01a7e4c34e5980886d9833e89df530940220191d65a291e3a60ba51",
+      "corrected_sha256": "e5e26511f01a7e4c34e5980886d9833e89df530940220191d65a291e3a60ba51",
+      "original_path": "provenance/original/01__考拉茲猜想既有研究的重新分類與校正.md",
+      "corrected_path": "core_series/考拉茲猜想既有研究的重新分類與校正.md"
+    },
+    {
+      "key": "02",
+      "diff_path": "provenance/diffs/02.diff",
+      "changed": true,
+      "original_sha256": "d7dcd08a4334007d93448ac3484414ef9a9cea13e4c58bed225d3b1954dfcd61",
+      "corrected_sha256": "294d74590b9ab1700d35a7aae1227c93febac1931c10b1f440a70bff014b631b",
+      "original_path": "provenance/original/02__Collatz Local Affine Atlas：有限奇偶字的精確仿射化.md",
+      "corrected_path": "core_series/Collatz Local Affine Atlas：有限奇偶字的精確仿射化.md"
+    },
+    {
+      "key": "03",
+      "diff_path": "provenance/diffs/03.diff",
+      "changed": true,
+      "original_sha256": "b380d85df0fecfe443c35dd4a82cbbf45770c00050669417d4b732b24f38c3d2",
+      "corrected_sha256": "5b15a6e7a349269fe34fadb2e8b87da5fc27dd7d14d875f7ed2ec250b8acb9f7",
+      "original_path": "provenance/original/03__Parity Word、Residue Cylinder 與局部 Identity 化.md",
+      "corrected_path": "core_series/Parity Word、Residue Cylinder 與局部 Identity 化.md"
+    },
+    {
+      "key": "04",
+      "diff_path": "provenance/diffs/04.diff",
+      "changed": false,
+      "original_sha256": "25a97b54d9c78eba8671269e483b7685c0db3ecec0d7102862471e0cd649b1b6",
+      "corrected_sha256": "25a97b54d9c78eba8671269e483b7685c0db3ecec0d7102862471e0cd649b1b6",
+      "original_path": "provenance/original/04__雙向殘餘類轉譯：$2^k$ Cylinder 與 $3^u$ Progression.md",
+      "corrected_path": "core_series/雙向殘餘類轉譯：$2^k$ Cylinder 與 $3^u$ Progression.md"
+    },
+    {
+      "key": "05",
+      "diff_path": "provenance/diffs/05.diff",
+      "changed": false,
+      "original_sha256": "2b12d96d019d73460fb0714aecbf278b3b0f96d7ed2e7962544e6f892577b92f",
+      "corrected_sha256": "2b12d96d019d73460fb0714aecbf278b3b0f96d7ed2e7962544e6f892577b92f",
+      "original_path": "provenance/original/05__有限字收縮邊界與二項式 Cylinder Law.md",
+      "corrected_path": "core_series/有限字收縮邊界與二項式 Cylinder Law.md"
+    },
+    {
+      "key": "06",
+      "diff_path": "provenance/diffs/06.diff",
+      "changed": false,
+      "original_sha256": "6564438d397c1d076086daf03d8e08367c911dd9aa7601f53209133d00d2e4e9",
+      "corrected_sha256": "6564438d397c1d076086daf03d8e08367c911dd9aa7601f53209133d00d2e4e9",
+      "original_path": "provenance/original/06__Valuation Language 與 Accelerated Collatz.md",
+      "corrected_path": "core_series/Valuation Language 與 Accelerated Collatz.md"
+    },
+    {
+      "key": "07",
+      "diff_path": "provenance/diffs/07.diff",
+      "changed": true,
+      "original_sha256": "90dfd6ffc01612b13cfbe39631bb2a9c675d5b2848dec2f81bbf56ccf9ff2759",
+      "corrected_sha256": "3b1ec34b6cdf1876bf7e59edcc351702d1bf6f2fd5e91c8f3b12e23e1a7861b4",
+      "original_path": "provenance/original/07__廣義 (mx+r) 系統與 Residue-Class Operation Translation.md",
+      "corrected_path": "core_series/廣義 (mx+r) 系統與 Residue-Class Operation Translation.md"
+    },
+    {
+      "key": "08",
+      "diff_path": "provenance/diffs/08.diff",
+      "changed": true,
+      "original_sha256": "70ed5b133c670584d521d0aea4bbde48599ba0caac3830092d737bdf18f618aa",
+      "corrected_sha256": "32a3cd20c05b17013a624423f094f9d7be07cbb8dd2792d465d66eeab178fcfb",
+      "original_path": "provenance/original/08__代數判定域與結構斷裂定理.md",
+      "corrected_path": "core_series/代數判定域與結構斷裂定理.md"
+    },
+    {
+      "key": "09",
+      "diff_path": "provenance/diffs/09.diff",
+      "changed": true,
+      "original_sha256": "290969df3440f44b3991c6ab750088263aaee5cffea7a7604d691221c17740ef",
+      "corrected_sha256": "e45d913b840cc9783b32666d4b4c6965a9af6f159bcc74b2abbf2bbb1fb7df54",
+      "original_path": "provenance/original/09__Collatz_OT_Series_Paper_09_Finite_Certificate_Frontier_v0.1.md",
+      "corrected_path": "core_series/Collatz_OT_Series_Paper_09_Finite_Certificate_Frontier_v0.1.1.md"
+    },
+    {
+      "key": "HZ",
+      "diff_path": "provenance/diffs/HZ.diff",
+      "changed": true,
+      "original_sha256": "fe8ea2204b0a04f7e543a0e438ea45bc5c55f672913a28ae1d1e509787654333",
+      "corrected_sha256": "da507c9ae2efa3d6ab1d865a516704e15d1eeafaebf26e2364acedfea68f84fd",
+      "original_path": "provenance/original/HZ__忠實全域量詞壓縮：從猜想難度 v0.2 到 Collatz Hard-Zeta Frontier 的證明研究綱領.md",
+      "corrected_path": "research_program/Faithful_Global_Quantifier_Compression_Hard_Zeta_v0.1.2.md"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "scope": "finite algebraic/regression checks only; not a global Collatz proof",
+  "tests": {
+    "p02_p03_affine_residue_transport": {
+      "status": "PASS",
+      "cases": 4079
+    },
+    "p02_correction_extrema": {
+      "status": "PASS",
+      "cases": 54
+    },
+    "p05_binomial_and_k16_benchmark": {
+      "status": "PASS",
+      "alpha": 0.6309297535714574,
+      "KL": 0.03468818523201744,
+      "k16_strict": 938413,
+      "k16_equality": 2
+    },
+    "p06_accelerated_affine_formula": {
+      "status": "PASS",
+      "cases": 1364
+    },
+    "p07_generalized_mxr": {
+      "status": "PASS",
+      "cases": 11325
+    },
+    "p09_hard_height": {
+      "status": "PASS",
+      "cases": 8167
+    }
+  }
+}

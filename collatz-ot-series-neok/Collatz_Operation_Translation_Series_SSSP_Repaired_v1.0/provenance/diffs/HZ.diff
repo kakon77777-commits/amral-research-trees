@@ -1,0 +1,1973 @@
+--- original/HZ__忠實全域量詞壓縮：從猜想難度 v0.2 到 Collatz Hard-Zeta Frontier 的證明研究綱領.md
++++ corrected/HZ
+@@ -7,8 +7,9 @@
+ **協作整理：** Aletheia  
+ **機構：** 一言諾科技有限公司（EveMissLab）  
+ **文件性質：** Proof-Route / Research Program Paper  
+-**版本：** v0.1.1  
+-**日期：** 2026-08-11
++**版本：** v0.1.2  
++**日期：** 2026-08-11  
++**修訂日期：** 2026-08-14
+ 
+ ---
+ 
+@@ -25,165 +26,165 @@
+ 
+ 本文提出一個共同母問題：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{如何將無界量詞族轉譯為一個既可分析、又不會吞掉單一例外的全域數學物件？}
+ }
+-\]
++$$
+ 
+ 本文將這類物件稱為 **Faithful Globalizer／忠實全域化器**，並提出「例外忠實性」作為全域證明壓縮器的必要設計條件之一：
+ 
+-\[
++$$
+ \boxed{
+ \text{存在一個真正反例}
+ \Longrightarrow
+ \text{全域缺陷量必須保持非零}.
+ }
+-\]
++$$
+ 
+ 對一大類具有形式
+ 
+-\[
++$$
+ \forall x\in D,\ \exists k<\infty:\ C_k(x)
+-\]
+-
+-且 certificate predicate 隨 \(k\) 單調累積的猜想，本文證明一條一般結果。若 \(D=\{x_1,x_2,\dots\}\) 可數，取任意嚴格正且可求和的權重：
+-
+-\[
++$$
++
++且 certificate predicate 隨 $k$ 單調累積的猜想，本文證明一條一般結果。若 $D=\{x_1,x_2,\dots\}$ 可數，取任意嚴格正且可求和的權重：
++
++$$
+ \omega_i>0,
+ \qquad
+ \sum_i\omega_i<\infty,
+-\]
++$$
+ 
+ 並令：
+ 
+-\[
++$$
+ E_k=\{x_i:\neg C_k(x_i)\}
+-\]
+-
+-為 depth-\(k\) 尚未被證明的 frontier，定義：
+-
+-\[
++$$
++
++為 depth-$k$ 尚未被證明的 frontier，定義：
++
++$$
+ \boxed{
+ \mathcal Q_k=\sum_{x_i\in E_k}\omega_i.
+ }
+-\]
+-
+-由 \(E_{k+1}\subseteq E_k\) 及有限測度的上連續性：
+-
+-\[
++$$
++
++由 $E_{k+1}\subseteq E_k$ 及有限測度的上連續性：
++
++$$
+ \boxed{
+ \lim_{k\to\infty}\mathcal Q_k
+ =
+ \sum_{x_i\in\cap_kE_k}\omega_i.
+ }
+-\]
++$$
+ 
+ 由於每個原子權重皆嚴格正：
+ 
+-\[
++$$
+ \boxed{
+ \lim_{k\to\infty}\mathcal Q_k=0
+ \iff
+ \bigcap_kE_k=\varnothing.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \forall x\in D\ \exists k\,C_k(x)
+ \iff
+ \lim_{k\to\infty}\mathcal Q_k=0.
+ }
+-\]
++$$
+ 
+ 本文將此稱為 **Strictly Positive Atomic Frontier Theorem／嚴格正原子前沿定理**。它不是對任何特定猜想的證明，而是一個 exception-faithful 的量詞轉譯介面：與自然密度、平均值或 almost-all 結論不同，任何固定反例都會留下正的全域缺陷質量，因此不能消失在零密度 exceptional set 中。
+ 
+ 對 Collatz，令 modified map：
+ 
+-\[
++$$
+ T(n)=
+ \begin{cases}
+ n/2,&n\text{ even},\\[2mm]
+ (3n+1)/2,&n\text{ odd},
+ \end{cases}
+-\]
+-
+-並對 \(n>1\) 定義 coefficient stopping time：
+-
+-\[
++$$
++
++並對 $n>1$ 定義 coefficient stopping time：
++
++$$
+ \sigma(n)=\inf\{j\ge1:T^j(n)<n\}.
+-\]
++$$
+ 
+ Collatz 猜想等價於：
+ 
+-\[
++$$
+ \forall n>1,\quad \sigma(n)<\infty.
+-\]
++$$
+ 
+ 令：
+ 
+-\[
++$$
+ E_k=\{n\ge2:\sigma(n)>k\}.
+-\]
+-
+-對任意固定 \(s>1\)，定義：
+-
+-\[
++$$
++
++對任意固定 $s>1$，定義：
++
++$$
+ \boxed{
+ Z_k(s)=
+ \sum_{\substack{n\ge2\\\sigma(n)>k}}n^{-s}.
+ }
+-\]
++$$
+ 
+ 本文稱其為 **Collatz Hard-Zeta Frontier** 或 **Survivor Dirichlet Functional**。由一般原子前沿定理：
+ 
+-\[
++$$
+ \boxed{
+ \lim_{k\to\infty}Z_k(s)
+ =
+ \sum_{\sigma(n)=\infty}n^{-s},
+ }
+-\]
++$$
+ 
+ 從而：
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz conjecture}
+ \iff
+ \lim_{k\to\infty}Z_k(s)=0
+ }
+-\]
+-
+-對任意固定 \(s>1\) 成立。
+-
+-這個 reformulation 比 \(P_k\to1\) 型 contracting-cylinder density 更強地忠實於全稱命題：即使只有一個反例 \(n^\ast\)，它仍永久留下：
+-
+-\[
++$$
++
++對任意固定 $s>1$ 成立。
++
++這個 reformulation 比 $P_k\to1$ 型 contracting-cylinder density 更強地忠實於全稱命題：即使只有一個反例 $n^\ast$，它仍永久留下：
++
++$$
+ (n^\ast)^{-s}>0.
+-\]
++$$
+ 
+ 利用 Collatz Operation Translation Series 已證得的 hard-prefix decomposition：
+ 
+-\[
++$$
+ E_k=
+ \bigsqcup_{|w|=k}\widetilde H_w,
+ \qquad
+ \widetilde H_w:=H_w\cap[2,\infty),
+-\]
++$$
+ 
+ 以及：
+ 
+-\[
++$$
+ H_w=\Omega_w\cap[1,h(w)],
+-\]
++$$
+ 
+ 本文得到：
+ 
+-\[
++$$
+ \boxed{
+ Z_k(s)=
+ \sum_{|w|=k}
+@@ -191,16 +192,16 @@
+ \qquad
+ \widetilde H_w:=H_w\cap[2,\infty).
+ }
+-\]
+-
+-每一張 hard chart 均可由 exact residue \(r_w\)、depth \(k\)、affine correction \(b_w\)、hard height \(h(w)\) 表示，因此 Hard-Zeta 不只是抽象全域和，而是可被 Local Affine Atlas 分解的 exact global functional。
++$$
++
++每一張 hard chart 均可由 exact residue $r_w$、depth $k$、affine correction $b_w$、hard height $h(w)$ 表示，因此 Hard-Zeta 不只是抽象全域和，而是可被 Local Affine Atlas 分解的 exact global functional。
+ 
+ 本文據此提出六條並行證明路線：
+ 
+ 1. **Hard-Zeta / Atomic Frontier Transfer Route**：證明 hard mass 的不可逆衰減；
+ 2. **Global Bellman–Lyapunov Route**：構造 residue/valuation-dependent 全域勢函數；
+ 3. **Diophantine Rigidity Route**：假設最小反例，逼出臨界比率的不可持續逼近；
+-4. **Forbidden Language / Integer-Anchor Elimination Route**：允許 formal \(2\)-adic hard branches 存在，但證其不能被普通正整數錨定；
++4. **Forbidden Language / Integer-Anchor Elimination Route**：允許 formal $2$-adic hard branches 存在，但證其不能被普通正整數錨定；
+ 5. **Well-Quasi-Order / Finite Obstruction Basis Route**：尋找 hard certificates 的有限 minimal basis；
+ 6. **Exceptional Invariant Measure Route**：由假設反例構造 invariant/empirical object，再證其與 arithmetic constraints 衝突。
+ 
+@@ -208,12 +209,12 @@
+ 
+ 本文特別不宣稱 Hard-Zeta reformulation 已證明 Collatz。真正的證明義務被重新定位為：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{能否由每張 hard affine chart 的 exact refinement law，
+ 推出 exception-faithful atomic hard mass 必然趨零？}
+ }
+-\]
++$$
+ 
+ 這是本文之後正式研究的起點。
+ 
+@@ -225,8 +226,8 @@
+ 
+ 數學研究常產生以下類型的進展：
+ 
+-- 對所有 \(n<N\) 已驗證；
+-- 對幾乎所有 \(n\) 成立；
++- 對所有 $n<N$ 已驗證；
++- 對幾乎所有 $n$ 成立；
+ - 失敗集合密度趨零；
+ - 平均漂移為負；
+ - 每個局部模組可獨立求解；
+@@ -238,15 +239,15 @@
+ 
+ 但若原命題具有：
+ 
+-\[
++$$
+ \forall x
+-\]
++$$
+ 
+ 或：
+ 
+-\[
++$$
+ \forall x\exists y
+-\]
++$$
+ 
+ 甚至更多交替量詞，則不能僅由「局部覆蓋很多」自動升級為全域結論。
+ 
+@@ -264,21 +265,21 @@
+ 
+ 既有 MCDM 使用難度向量：
+ 
+-\[
++$$
+ \mathfrak D(C)=(B,I,E,F,V,R,G,U).
+-\]
+-
+-其中 \(G\) 表示 Global Coupling／全域耦合。
+-
+-高 \(G\) 問題的典型特徵不是「沒有局部結果」，而是：
+-
+-\[
++$$
++
++其中 $G$ 表示 Global Coupling／全域耦合。
++
++高 $G$ 問題的典型特徵不是「沒有局部結果」，而是：
++
++$$
+ \boxed{
+ \text{many local advances}
+ \longrightarrow
+ \text{same global closure bottleneck}.
+ }
+-\]
++$$
+ 
+ 因此，一個猜想可以累積大量新引理而仍停在同一個最終量詞障礙前。
+ 
+@@ -301,11 +302,11 @@
+ 
+ 這使猜想難度不只是一組研究成本，而開始描述：
+ 
+-\[
++$$
+ \boxed{
+ \text{證明究竟必須閉合哪一個量詞堆疊？}
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -315,73 +316,73 @@
+ 
+ 例如：
+ 
+-\[
++$$
+ \forall\varepsilon>0:
+ \operatorname{Density}(S_\varepsilon)=1.
+-\]
+-
+-單一 \(n\notin S_\varepsilon\) 不一定否定 density 1，因為 density predicate 自己還包含 asymptotic quantifiers。
++$$
++
++單一 $n\notin S_\varepsilon$ 不一定否定 density 1，因為 density predicate 自己還包含 asymptotic quantifiers。
+ 
+ ## 4.2 Universal–Existential Extension
+ 
+ 例如：
+ 
+-\[
++$$
+ \forall A\ \exists B:R(A,B).
+-\]
++$$
+ 
+ 其否定為：
+ 
+-\[
++$$
+ \exists A^\ast\ \forall B:\neg R(A^\ast,B).
+-\]
+-
+-因此即使找到了 \(A^\ast\)，仍然需要一個 nested universal non-extension certificate。
++$$
++
++因此即使找到了 $A^\ast$，仍然需要一個 nested universal non-extension certificate。
+ 
+ ## 4.3 Nonuniform Asymptotic Limit
+ 
+ 例如：
+ 
+-\[
++$$
+ \forall k,\quad f_k(\ell)\to1.
+-\]
+-
+-其 \(\varepsilon\)-\(N\) 展開允許 \(N=N(k,\varepsilon)\)。若證明策略誤要求 \(\exists N\forall k\) 型 uniformity，可能把原猜想不必要地強化。
++$$
++
++其 $\varepsilon$-$N$ 展開允許 $N=N(k,\varepsilon)$。若證明策略誤要求 $\exists N\forall k$ 型 uniformity，可能把原猜想不必要地強化。
+ 
+ ## 4.4 Universal Set → Existential Witness
+ 
+ 例如：
+ 
+-\[
++$$
+ \forall A,\quad
+ \mu(A)>\tau
+ \Rightarrow
+ \exists x,y,z\in A:R(x,y,z).
+-\]
+-
+-此類猜想的成功證法通常不是枚舉所有 \(A\)，而是找到一條對所有 admissible \(A\) 同時成立的 structural extremal inequality。
++$$
++
++此類猜想的成功證法通常不是枚舉所有 $A$，而是找到一條對所有 admissible $A$ 同時成立的 structural extremal inequality。
+ 
+ ---
+ 
+ # 5. Green Problem 3 作為成功全域化案例
+ 
+-Ben Green Open Problem 3 問：若 \(A\subset(0,1)\) 為 open 且 \(\mu(A)>1/3\)，是否必存在 \(x,y,z\in A\) 使 \(xy=z\)？
++Ben Green Open Problem 3 問：若 $A\subset(0,1)$ 為 open 且 $\mu(A)>1/3$，是否必存在 $x,y,z\in A$ 使 $xy=z$？
+ 
+ 2026 年 Franchi、Gowers、Yip 已給出肯定答案。
+ 
+ 重要的不是它「終於被算完」，而是：
+ 
+-\[
++$$
+ \boxed{
+ \text{all admissible sets}
+ }
+-\]
++$$
+ 
+ 被一個新的 sumset/difference-set structural estimate 同時控制。
+ 
+ 這提供一個關鍵模式：
+ 
+-\[
++$$
+ \boxed{
+ \text{global domain}
+ \to
+@@ -391,37 +392,37 @@
+ \to
+ \text{universal closure}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 6. P/NP：存在量詞壓縮與 Existential Reappearance
+ 
+-對 verification relation \(V(x,w)\in\{0,1\}\)，定義：
+-
+-\[
++對 verification relation $V(x,w)\in\{0,1\}$，定義：
++
++$$
+ \operatorname{EX}_V(x)=\bigvee_wV(x,w).
+-\]
+-
+-P/NP 對偶研究可被重寫為：是否存在一個有限、精確、多項式資源的全域數學結構，直接壓縮 \(\exists w\) 而不必顯式展開全部 witness？
+-
+-後續模組化研究則發現，\(\exists Y_i\) 可在各局部 solver 中消去，但共享邊界仍留下 \(\exists B\)。亦即：
+-
+-\[
++$$
++
++P/NP 對偶研究可被重寫為：是否存在一個有限、精確、多項式資源的全域數學結構，直接壓縮 $\exists w$ 而不必顯式展開全部 witness？
++
++後續模組化研究則發現，$\exists Y_i$ 可在各局部 solver 中消去，但共享邊界仍留下 $\exists B$。亦即：
++
++$$
+ \boxed{
+ \text{Existential Reappearance}.
+ }
+-\]
++$$
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \text{local quantifier elimination}
+ \not\Rightarrow
+ \text{global quantifier elimination}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -429,29 +430,29 @@
+ 
+ Collatz 在九篇 Operation Translation Series 後已被壓縮成：
+ 
+-\[
++$$
+ \boxed{
+ \forall n>1,\quad
+ \exists k(n)<\infty:
+ T^{k(n)}(n)<n.
+ }
+-\]
++$$
+ 
+ 而我們已經知道：
+ 
+ - fixed word 可 exact affine 化；
+ - fixed cylinder 可 identity 化；
+-- fixed \(N\) 可 finite certificate；
+-- contracting cylinders density \(\to1\)；
++- fixed $N$ 可 finite certificate；
++- contracting cylinders density $\to1$；
+ - finite survivor density 可很小。
+ 
+ 但以上仍不能自動消掉：
+ 
+-\[
++$$
+ \boxed{
+ \forall n\exists k(n).
+ }
+-\]
++$$
+ 
+ 因此 Collatz 是「局部幾乎完全可解，但全域量詞仍存活」的標準模型。
+ 
+@@ -461,85 +462,85 @@
+ 
+ 本文提出五項結構：
+ 
+-\[
++$$
+ \boxed{
+ \mathcal G(C)=(Q,D,W,B,X)
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-- \(Q\)：Quantifier Breadth，量詞廣度；
+-- \(D\)：Domain Closure，域閉包責任；
+-- \(W\)：Witness Dependency，見證依賴；
+-- \(B\)：Boundary Recoupling，邊界重耦合；
+-- \(X\)：Exception Fidelity，例外忠實性。
+-
+-其中 \(X\) 是本文特別強調的新軸。
++- $Q$：Quantifier Breadth，量詞廣度；
++- $D$：Domain Closure，域閉包責任；
++- $W$：Witness Dependency，見證依賴；
++- $B$：Boundary Recoupling，邊界重耦合；
++- $X$：Exception Fidelity，例外忠實性。
++
++其中 $X$ 是本文特別強調的新軸。
+ 
+ ---
+ 
+ # 9. Exception Fidelity／例外忠實性
+ 
+-一個全域 summary \(G(E)\) 若要用於證明 \(E=\varnothing\)，最好滿足：
+-
+-\[
++一個全域 summary $G(E)$ 若要用於證明 $E=\varnothing$，最好滿足：
++
++$$
+ \boxed{
+ E\neq\varnothing
+ \Rightarrow
+ G(E)>0.
+ }
+-\]
+-
+-如果存在 \(E\neq\varnothing\) 但 \(G(E)=0\)，則該 summary 會把真正例外吞掉。
+-
+-自然密度就是典型例子：singleton \(E=\{n^\ast\}\) 具有 density 0，因此：
+-
+-\[
++$$
++
++如果存在 $E\neq\varnothing$ 但 $G(E)=0$，則該 summary 會把真正例外吞掉。
++
++自然密度就是典型例子：singleton $E=\{n^\ast\}$ 具有 density 0，因此：
++
++$$
+ \boxed{
+ \text{density-zero}
+ \not\Rightarrow
+ \text{empty}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 10. Faithful Globalizer
+ 
+-對某類 obstruction sets \(\mathcal E\)，若 functional：
+-
+-\[
++對某類 obstruction sets $\mathcal E$，若 functional：
++
++$$
+ \mathfrak G:\mathcal E\to[0,\infty]
+-\]
++$$
+ 
+ 滿足：
+ 
+-\[
++$$
+ \boxed{
+ \mathfrak G(E)=0
+ \iff
+ E=\varnothing,
+ }
+-\]
+-
+-則稱 \(\mathfrak G\) 為該 obstruction class 上的 **Faithful Globalizer**。
++$$
++
++則稱 $\mathfrak G$ 為該 obstruction class 上的 **Faithful Globalizer**。
+ 
+ ---
+ 
+ # 11. Compression 不等於計算加速
+ 
+-即使 \(E=\varnothing\iff\mathfrak G(E)=0\)，也不代表 \(\mathfrak G(E)\) 容易估計。
++即使 $E=\varnothing\iff\mathfrak G(E)=0$，也不代表 $\mathfrak G(E)$ 容易估計。
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{logical compression}
+ \neq
+ \text{proof complexity collapse}.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -547,97 +548,97 @@
+ 
+ 考慮可數 domain：
+ 
+-\[
++$$
+ D=\{x_1,x_2,\ldots\}.
+-\]
+-
+-對 \(k=0,1,2,\ldots\) 有 certificate predicate \(C_k(x)\)，要求：
+-
+-\[
++$$
++
++對 $k=0,1,2,\ldots$ 有 certificate predicate $C_k(x)$，要求：
++
++$$
+ \boxed{
+ C_k(x)\Rightarrow C_{k+1}(x).
+ }
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ E_k=\{x\in D:\neg C_k(x)\}.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ E_{k+1}\subseteq E_k.
+-\]
++$$
+ 
+ 全域猜想：
+ 
+-\[
++$$
+ \forall x\exists k:C_k(x)
+-\]
++$$
+ 
+ 等價於：
+ 
+-\[
++$$
+ \boxed{
+ \bigcap_{k=0}^{\infty}E_k=\varnothing.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 13. Strictly Positive Atomic Frontier Theorem
+ 
+-選 \(\omega_i>0\) 使：
+-
+-\[
++選 $\omega_i>0$ 使：
++
++$$
+ \sum_{i=1}^{\infty}\omega_i<\infty.
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ \mathcal Q_k=\sum_{x_i\in E_k}\omega_i.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ \lim_{k\to\infty}\mathcal Q_k
+ =
+ \sum_{x_i\in\cap_kE_k}\omega_i.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \lim_{k\to\infty}\mathcal Q_k=0
+ \iff
+ \cap_kE_k=\varnothing.
+ }
+-\]
+-
+-**證明。** 令 atomic measure \(\mu(\{x_i\})=\omega_i\)。因 \(\mu(D)<\infty\) 且 \(E_k\downarrow E_\infty\)，由 measure continuity from above：
+-
+-\[
++$$
++
++**證明。** 令 atomic measure $\mu(\{x_i\})=\omega_i$。因 $\mu(D)<\infty$ 且 $E_k\downarrow E_\infty$，由 measure continuity from above：
++
++$$
+ \lim_k\mu(E_k)=\mu(E_\infty).
+-\]
++$$
+ 
+ 每個 atomic weight 嚴格正，因此：
+ 
+-\[
++$$
+ \mu(E_\infty)=0
+ \iff
+ E_\infty=\varnothing.
+-\]
++$$
+ 
+ 證畢。
+ 
+@@ -647,13 +648,13 @@
+ 
+ 所以：
+ 
+-\[
++$$
+ \boxed{
+ \forall x\in D\ \exists k:C_k(x)
+ \iff
+ \lim_{k\to\infty}\mathcal Q_k=0.
+ }
+-\]
++$$
+ 
+ 這是一個 exact logical translation。
+ 
+@@ -661,79 +662,79 @@
+ 
+ # 15. Collatz Stopping-Time Form
+ 
+-對 \(n>1\)，定義：
+-
+-\[
++對 $n>1$，定義：
++
++$$
+ \boxed{
+ \sigma(n)=\inf\{j\ge1:T^j(n)<n\}.
+ }
+-\]
++$$
+ 
+ strong induction 給：
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz}
+ \iff
+ \forall n>1:\sigma(n)<\infty.
+ }
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ E_k^{C}=\{n\ge2:\sigma(n)>k\}.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \bigcap_kE_k^{C}
+ =
+ \{n\ge2:\sigma(n)=\infty\}.
+-\]
++$$
+ 
+ ---
+ 
+ # 16. Collatz Hard-Zeta Frontier
+ 
+-對 \(s>1\)，取：
+-
+-\[
++對 $s>1$，取：
++
++$$
+ \omega_n=n^{-s}.
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ Z_k(s)=\sum_{n\in E_k^C}n^{-s}.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ \lim_{k\to\infty}Z_k(s)
+ =
+ \sum_{\sigma(n)=\infty}n^{-s}.
+ }
+-\]
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz}
+ \iff
+ Z_k(s)\to0
+ }
+-\]
+-
+-對任意固定 \(s>1\) 成立。
++$$
++
++對任意固定 $s>1$ 成立。
+ 
+ 這是已證的量詞轉譯，不是 Collatz 證明。
+ 
+@@ -741,13 +742,13 @@
+ 
+ # 17. 單一反例無法藏掉
+ 
+-若只有一個 \(n^\ast\) 滿足 \(\sigma(n^\ast)=\infty\)，則：
+-
+-\[
++若只有一個 $n^\ast$ 滿足 $\sigma(n^\ast)=\infty$，則：
++
++$$
+ Z_k(s)\ge(n^\ast)^{-s}>0
+-\]
+-
+-對所有 \(k\)。
++$$
++
++對所有 $k$。
+ 
+ 因此 Hard-Zeta 對 isolated exception 忠實。
+ 
+@@ -757,81 +758,105 @@
+ 
+ Paper 09 已定義：
+ 
+-\[
++$$
+ H_w=\{n\in\Omega_w:T^j(n)\ge n,\ 1\le j\le k\}.
+-\]
+-
+-固定 depth \(k\)：
+-
+-\[
++$$
++
++固定 depth $k$，先定義真正對應 stopping-time domain $n\ge2$ 的 chart：
++
++$$
++\boxed{
++\widetilde H_w:=H_w\cap[2,\infty).
++}
++$$
++
++則：
++
++$$
+ \boxed{
+ E_k^C=
+-\bigsqcup_{|w|=k}H_w.
+-}
+-\]
++\bigsqcup_{|w|=k}\widetilde H_w.
++}
++$$
+ 
+ 因此：
+ 
+-\[
++$$
+ \boxed{
+ Z_k(s)=
+ \sum_{|w|=k}Z_w(s),
+ }
+-\]
++$$
+ 
+ 其中：
+ 
+-\[
++$$
+ \boxed{
+ Z_w(s)=
+-\sum_{n\in \widetilde H_w}n^{-s},
+-\qquad
+-\widetilde H_w:=H_w\cap[2,\infty).
+-}
+-\]
++\sum_{n\in \widetilde H_w}n^{-s}.
++}
++$$
+ 
+ Paper 09：
+ 
+-\[
++$$
+ H_w=\Omega_w\cap[1,h(w)],
+ \qquad
+ \Omega_w=(r_w+2^k\mathbb Z)\cap\mathbb Z_{>0}.
+-\]
+-
+-因此：
+-
+-\[
+-H_w=
++$$
++
++取 canonical representative $0\le r_w<2^k$。對 $\widetilde H_w$ 定義 exact quotient bounds：
++
++$$
++\widetilde a_{\min}(w)
++=
++\min\{a\in\mathbb Z:r_w+2^ka\ge2\},
++$$
++
++以及（當 $h(w)<\infty$）：
++
++$$
++\widetilde a_{\max}(w)
++=
++\max\{a\in\mathbb Z:r_w+2^ka\le h(w)\};
++$$
++
++若 $h(w)=\infty$，令 $\widetilde a_{\max}(w)=\infty$。因此：
++
++$$
++\boxed{
++\widetilde H_w=
+ \{
+ r_w+2^ka:
+-a_{\min}\le a\le a_{\max}(w)
++\widetilde a_{\min}(w)\le a\le\widetilde a_{\max}(w)
+ \}.
+-\]
++}
++$$
+ 
+ ---
+ 
+ # 19. Chart Dirichlet Mass
+ 
+-\[
++$$
+ \boxed{
+ Z_w(s)=
+-\sum_{a=a_{\min}}^{a_{\max}}
++\sum_{a=\widetilde a_{\min}(w)}^{\widetilde a_{\max}(w)}
+ (r_w+2^ka)^{-s}.
+ }
+-\]
+-
+-若 \(a_{\max}=\infty\)，可寫：
+-
+-\[
++$$
++
++若 $\widetilde a_{\max}(w)=\infty$，可寫：
++
++$$
+ \boxed{
+ Z_w(s)=
+ 2^{-ks}
+ \zeta\left(
+ s,
+-a_{\min}+\frac{r_w}{2^k}
++\widetilde a_{\min}(w)+\frac{r_w}{2^k}
+ \right).
+ }
+-\]
++$$
+ 
+ 這只是一個 closed representation，不代表其全域和已自動易估。
+ 
+@@ -839,34 +864,34 @@
+ 
+ # 20. Hard Refinement Law
+ 
+-每張 parity cylinder 分裂成 \(\Omega_{wD}\sqcup\Omega_{wU}\)，而 hard sets 滿足：
+-
+-\[
++每張 parity cylinder 分裂成 $\Omega_{wD}\sqcup\Omega_{wU}$，而 hard sets 滿足：
++
++$$
+ \boxed{
+ H_{wD}\sqcup H_{wU}\subseteq H_w.
+ }
+-\]
++$$
+ 
+ 定義：
+ 
+-\[
++$$
+ \boxed{
+ L_w(s)
+ =
+ Z_w(s)-Z_{wD}(s)-Z_{wU}(s)
+ \ge0.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ \boxed{
+ Z_k(s)-Z_{k+1}(s)
+ =
+ \sum_{|w|=k}L_w(s).
+ }
+-\]
++$$
+ 
+ Hard-Zeta 因而是一個 exact monotone decreasing functional。
+ 
+@@ -876,21 +901,21 @@
+ 
+ 最強 sufficient theorem：
+ 
+-存在 \(L\ge1\)、\(0<q<1\)、\(k_0\)，使：
+-
+-\[
++存在 $L\ge1$、$0<q<1$、$k_0$，使：
++
++$$
+ \boxed{
+ Z_{k+L}(s)\le qZ_k(s)
+ }
+-\]
+-
+-對所有 \(k\ge k_0\) 成立。
++$$
++
++對所有 $k\ge k_0$ 成立。
+ 
+ 則：
+ 
+-\[
++$$
+ Z_{k_0+jL}(s)\le q^jZ_{k_0}(s)\to0,
+-\]
++$$
+ 
+ 所以 Collatz 成立。
+ 
+@@ -898,34 +923,34 @@
+ 
+ # 22. 更弱的 Cumulative-Loss Route
+ 
+-uniform \(q\) 可能過強。
+-
+-只需存在 \(\varepsilon_j\in(0,1)\) 使：
+-
+-\[
++uniform $q$ 可能過強。
++
++只需存在 $\varepsilon_j\in(0,1)$ 使：
++
++$$
+ \boxed{
+ Z_{(j+1)L}(s)
+ \le
+ (1-\varepsilon_j)Z_{jL}(s)
+ }
+-\]
++$$
+ 
+ 且：
+ 
+-\[
++$$
+ \boxed{
+ \sum_j\varepsilon_j=\infty.
+ }
+-\]
++$$
+ 
+ 則：
+ 
+-\[
++$$
+ Z_{jL}(s)
+ \le
+ Z_0(s)\prod_{i<j}(1-\varepsilon_i)
+ \to0.
+-\]
++$$
+ 
+ 這也完成 Collatz。
+ 
+@@ -935,49 +960,49 @@
+ 
+ 令：
+ 
+-\[
++$$
+ \mathbf z_k=(Z_w(s))_{|w|=k}.
+-\]
++$$
+ 
+ refinement 可看成 level-dependent positive sub-Markov operator／cocycle：
+ 
+-\[
++$$
+ \boxed{
+ \mathbf z_{k+1}
+ =
+ \mathcal L_{s,k}\mathbf z_k
+ }
+-\]
++$$
+ 
+ 加上由 hard-height truncation 造成的 certificate loss。
+ 
+ 其總質量：
+ 
+-\[
++$$
+ \|\mathbf z_k\|_1=Z_k(s).
+-\]
++$$
+ 
+ 主問題變成：
+ 
+-\[
++$$
+ \boxed{
+ \text{Does the hard-frontier transfer cocycle lose all atomic mass?}
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 24. 為何暫不假設固定單一 Transfer Operator？
+ 
+-hard height \(h(w)\) 依完整 prefix data 變化，因此 refinement 未必由一個 stationary finite matrix 描述。
+-
+-過早寫 \(\mathcal L^k\) 可能把非平穩性藏掉。
++hard height $h(w)$ 依完整 prefix data 變化，因此 refinement 未必由一個 stationary finite matrix 描述。
++
++過早寫 $\mathcal L^k$ 可能把非平穩性藏掉。
+ 
+ 所以第一階段採：
+ 
+-\[
++$$
+ \mathcal L_{s,0},\mathcal L_{s,1},\ldots
+-\]
++$$
+ 
+ 的 cocycle / nonstationary operator view。
+ 
+@@ -989,29 +1014,29 @@
+ 
+ **目標：**
+ 
+-\[
++$$
+ Z_k(s)\to0.
+-\]
++$$
+ 
+ **子問題：**
+ 
+ 1. 每張 hard chart 的最低 mass-loss bound；
+ 2. consecutive expanding prefixes 能維持多少 atomic mass；
+-3. 將 \(b_w,h(w)\) 轉成 child-loss inequality；
++3. 將 $b_w,h(w)$ 轉成 child-loss inequality；
+ 4. 尋找 block-level drift-minorization；
+ 5. 建立 renewal decomposition；
+-6. 優化 \(s\)，而非固定 \(s=2\)。
++6. 優化 $s$，而非固定 $s=2$。
+ 
+ 任何足以推出：
+ 
+-\[
++$$
+ \boxed{
+ \sum_k
+ \frac{Z_k-Z_{k+1}}{Z_k}
+ =
+ \infty
+ }
+-\]
++$$
+ 
+ 的 lower bound 都可能完成主線。
+ 
+@@ -1019,73 +1044,73 @@
+ 
+ # 26. Route II：Global Bellman–Lyapunov Potential
+ 
+-傳統 \(V(n)=\log n\) 不能 pointwise monotone。
++傳統 $V(n)=\log n$ 不能 pointwise monotone。
+ 
+ 因此尋找：
+ 
+-\[
++$$
+ \boxed{
+ V(n)=\log n+\Phi(\operatorname{state}(n)).
+ }
+-\]
++$$
+ 
+ state 可取 residue、parity prefix、valuation word、affine chart、finite automaton state 或 multi-scale phase state。
+ 
+-目標是找到 finite return time \(\tau(n)\) 使：
+-
+-\[
++目標是找到 finite return time $\tau(n)$ 使：
++
++$$
+ \boxed{
+ V(T^{\tau(n)}n)<V(n)
+ }
+-\]
+-
+-對所有 \(n>2\) 成立。
+-
+-可先在 \(\mathbb Z/2^k\mathbb Z\) 上用 LP、動態規劃、SAT/SMT 搜索 \(\Phi_k\)，但真正 proof obligation 是從有限候選抽取 compatible symbolic rule 或 projective-limit potential。
++$$
++
++對所有 $n>2$ 成立。
++
++可先在 $\mathbb Z/2^k\mathbb Z$ 上用 LP、動態規劃、SAT/SMT 搜索 $\Phi_k$，但真正 proof obligation 是從有限候選抽取 compatible symbolic rule 或 projective-limit potential。
+ 
+ ---
+ 
+ # 27. Route III：Diophantine Rigidity
+ 
+-假設存在最小反例 \(n^\ast>1\)，即 \(\sigma(n^\ast)=\infty\)。
+-
+-對其每個 prefix \(w_{\le j}\)：
+-
+-\[
++假設存在最小反例 $n^\ast>1$，即 $\sigma(n^\ast)=\infty$。
++
++對其每個 prefix $w_{\le j}$：
++
++$$
+ T^j(n^\ast)\ge n^\ast.
+-\]
++$$
+ 
+ 若：
+ 
+-\[
++$$
+ 2^j>3^{u_j},
+-\]
++$$
+ 
+ 則必須：
+ 
+-\[
++$$
+ \boxed{
+ b_j\ge(2^j-3^{u_j})n^\ast.
+ }
+-\]
++$$
+ 
+ accelerated form：
+ 
+-\[
++$$
+ \boxed{
+ B_m\ge(2^{K_m}-3^m)n^\ast.
+ }
+-\]
++$$
+ 
+ 因此反例必須讓 skeleton drift 與 correction 長期極細緻抵銷。
+ 
+ 主問題：能否證明這迫使：
+ 
+-\[
++$$
+ |K_m\ln2-m\ln3|
+-\]
+-
+-在無限 subsequence 上小到違反 continued fractions、linear forms in logarithms、\(S\)-unit 或 Baker-type bounds？
++$$
++
++在無限 subsequence 上小到違反 continued fractions、linear forms in logarithms、$S$-unit 或 Baker-type bounds？
+ 
+ 這條路目前是 proposal。
+ 
+@@ -1093,29 +1118,29 @@
+ 
+ # 28. Route IV：Forbidden Language / Integer-Anchor Elimination
+ 
+-Paper 09 已指出 infinite formal parity branch 只一定對應 \(x\in\mathbb Z_2\)，不一定是普通正整數。
+-
+-因此不需要消滅所有 \(2\)-adic hard branches，只需證：
+-
+-\[
++Paper 09 已指出 infinite formal parity branch 只一定對應 $x\in\mathbb Z_2$，不一定是普通正整數。
++
++因此不需要消滅所有 $2$-adic hard branches，只需證：
++
++$$
+ \boxed{
+ \text{no infinite hard branch is integer-anchored at }n>1.
+ }
+-\]
+-
+-令 \(\mathcal H\subseteq\{D,U\}^{\mathbb N}\) 為所有 infinite hard formal words，\(r_k(\omega)\in[0,2^k)\) 為 canonical residues。
++$$
++
++令 $\mathcal H\subseteq\{D,U\}^{\mathbb N}$ 為所有 infinite hard formal words，$r_k(\omega)\in[0,2^k)$ 為 canonical residues。
+ 
+ 普通正整數 anchor 要求：
+ 
+-\[
++$$
+ r_k(\omega)
+-\]
++$$
+ 
+ eventually stabilizes。
+ 
+ 所以目標：
+ 
+-\[
++$$
+ \boxed{
+ \text{hard language}
+ \cap
+@@ -1123,36 +1148,36 @@
+ =
+ \varnothing.
+ }
+-\]
++$$
+ 
+ ---
+ 
+ # 29. Route V：Well-Quasi-Order / Finite Obstruction Basis
+ 
+-尋找 partial order \(\preceq\)，使：
+-
+-\[
++尋找 partial order $\preceq$，使：
++
++$$
+ x\preceq y
+ \quad\text{且}\quad
+ x\text{ certified}
+ \Rightarrow
+ y\text{ certified}.
+-\]
++$$
+ 
+ 若 state space 是 well-quasi-ordered，則 upward-closed certified set 有 finite minimal basis。
+ 
+ 夢想結論：
+ 
+-\[
++$$
+ \boxed{
+ \operatorname{MinHard}=
+ \{h_1,\ldots,h_r\}.
+ }
+-\]
+-
+-若能逐一消滅 \(h_i\)，即全域 closure。
+-
+-最大風險不是缺 Higman/Dickson lemma，而是找不到同時保留 arithmetic information 與 certification monotonicity 的 \(\preceq\)。
++$$
++
++若能逐一消滅 $h_i$，即全域 closure。
++
++最大風險不是缺 Higman/Dickson lemma，而是找不到同時保留 arithmetic information 與 certification monotonicity 的 $\preceq$。
+ 
+ ---
+ 
+@@ -1162,23 +1187,23 @@
+ 
+ 考察其 parity empirical distribution、valuation distribution、residue occupation、logarithmic drift 與 projective state occupation。
+ 
+-若有 subsequential empirical limit \(\nu\)，反例必生成某種 invariant / quasi-invariant object。
+-
+-目標不是證 typical orbit 下降，而是證：
+-
+-\[
++若先指定適當的 compactification / state space，並能建立 empirical measures 的 tightness 與足以傳遞 dynamics 的 continuity／measurability 條件，則 subsequential weak limit $\nu$ 才可進一步作為 invariant / quasi-invariant object 的候選。沒有這些額外條件時，本文不從「存在 subsequential empirical limit」直接斷言 invariance。
++
++目標不是證 typical orbit 下降，而是在上述分析框架成立時研究：
++
++$$
+ \boxed{
+ \text{任何能支撐 non-descending anchored orbit 的 invariant object 都不存在}.
+ }
+-\]
++$$
+ 
+ 例如把：
+ 
+-\[
++$$
+ \int(\ln3-\kappa\ln2)\,d\nu\ge0
+-\]
+-
+-與 mod-\(2^k\) consistency、mod-\(3^r\) constraints、valuation legality、recurrence、correction budget 聯立，尋找矛盾。
++$$
++
++與 mod-$2^k$ consistency、mod-$3^r$ constraints、valuation legality、recurrence、correction budget 聯立，尋找矛盾。
+ 
+ ---
+ 
+@@ -1198,31 +1223,31 @@
+ 
+ **Primary Route：**
+ 
+-\[
++$$
+ \boxed{
+ \text{Hard-Zeta / Atomic Frontier Transfer}
+ }
+-\]
++$$
+ 
+ **Secondary Bridge Routes：**
+ 
+-\[
++$$
+ \boxed{
+ \text{Bellman–Lyapunov}
+ }
+-\]
++$$
+ 
+ 與：
+ 
+-\[
++$$
+ \boxed{
+ \text{Diophantine Rigidity}.
+ }
+-\]
++$$
+ 
+ **Structural Backup Routes：**
+ 
+-\[
++$$
+ \boxed{
+ \text{Forbidden Language},
+ \quad
+@@ -1230,11 +1255,11 @@
+ \quad
+ \text{Invariant Measure}.
+ }
+-\]
+-
+----
+-
+-# 33. 為何先研究 \(Z_k(s)\)？
++$$
++
++---
++
++# 33. 為何先研究 $Z_k(s)$？
+ 
+ 因為它同時具備：
+ 
+@@ -1248,7 +1273,7 @@
+ 
+ 它是目前第一個同時兼顧：
+ 
+-\[
++$$
+ \boxed{
+ \text{global}
+ +
+@@ -1256,39 +1281,39 @@
+ +
+ \text{local-decomposable}
+ }
+-\]
++$$
+ 
+ 的 Collatz obstruction functional。
+ 
+ ---
+ 
+-# 34. \(s\) 是 Proof Parameter
+-
+-所有 \(s>1\) 都有 logical equivalence，但 proof geometry 可能不同。
+-
+-- \(s\downarrow1\)：更重視 large integers；
+-- 大 \(s\)：質量過度集中小整數；
+-- 中間 \(s\) 可能讓 residue refinement 最易估計。
+-
+-所以 \(s\) 應保留為可優化參數。
++# 34. $s$ 是 Proof Parameter
++
++所有 $s>1$ 都有 logical equivalence，但 proof geometry 可能不同。
++
++- $s\downarrow1$：更重視 large integers；
++- 大 $s$：質量過度集中小整數；
++- 中間 $s$ 可能讓 residue refinement 最易估計。
++
++所以 $s$ 應保留為可優化參數。
+ 
+ ---
+ 
+ # 35. Local Loss Ratio
+ 
+-對 hard chart \(w\)，定義：
+-
+-\[
++對 hard chart $w$，定義：
++
++$$
+ \boxed{
+ \ell_w(s)=
+ 1-
+ \frac{Z_{wD}(s)+Z_{wU}(s)}{Z_w(s)}
+ }
+-\]
+-
+-當 \(Z_w(s)>0\)。
+-
+-某些 chart 可能多步 \(\ell_w=0\)，因此不應要求 one-step pointwise uniform drift。
++$$
++
++當 $Z_w(s)>0$。
++
++某些 chart 可能多步 $\ell_w=0$，因此不應要求 one-step pointwise uniform drift。
+ 
+ 更合理的是研究：
+ 
+@@ -1306,11 +1331,11 @@
+ 
+ ## Logical Globalizer
+ 
+-\[
++$$
+ \mathfrak G(E)=0
+ \iff
+ E=\varnothing.
+-\]
++$$
+ 
+ Hard-Zeta 已完成這一層。
+ 
+@@ -1318,41 +1343,41 @@
+ 
+ 還需存在可證 dynamical inequality：
+ 
+-\[
++$$
+ \mathfrak G(E_{k+1})
+ \le
+ \Psi_k(\mathfrak G(E_k))
+-\]
++$$
+ 
+ 足以推出：
+ 
+-\[
++$$
+ \mathfrak G(E_k)\to0.
+-\]
++$$
+ 
+ Collatz 尚缺的是第二層。
+ 
+ ---
+ 
+-# 37. MCDM v0.2 新建議：加入 \(X\) 軸
++# 37. MCDM v0.2 新建議：加入 $X$ 軸
+ 
+ 建議新增：
+ 
+-\[
++$$
+ \boxed{
+ X=\text{Exception Fidelity Barrier}.
+ }
+-\]
++$$
+ 
+ 暫定：
+ 
+-- \(X0\)：有限域完整枚舉；
+-- \(X1\)：已有 exact faithful invariant；
+-- \(X2\)：faithful invariant 已知但難估；
+-- \(X3\)：主方法只能控制 density / expectation；
+-- \(X4\)：例外可跨尺度、跨表示逃逸；
+-- \(X5\)：沒有可信 exception-faithful globalizer；
+-- \(X6\)：obstruction domain 本身未閉合。
++- $X0$：有限域完整枚舉；
++- $X1$：已有 exact faithful invariant；
++- $X2$：faithful invariant 已知但難估；
++- $X3$：主方法只能控制 density / expectation；
++- $X4$：例外可跨尺度、跨表示逃逸；
++- $X5$：沒有可信 exception-faithful globalizer；
++- $X6$：obstruction domain 本身未閉合。
+ 
+ Collatz 在 Hard-Zeta 提出後，問題可被描述成：
+ 
+@@ -1362,11 +1387,11 @@
+ 
+ # 38. 正反證明張力
+ 
+-定義正證 route \(K_+\) 與反證 route \(K_-\)。
++定義正證 route $K_+$ 與反證 route $K_-$。
+ 
+ 不強迫壓成單一難度，而記：
+ 
+-\[
++$$
+ \boxed{
+ T(C)=
+ (
+@@ -1374,15 +1399,15 @@
+ Q_-,D_-,W_-,X_-
+ ).
+ }
+-\]
++$$
+ 
+ Collatz 正證需：
+ 
+-\[
++$$
+ Z_k(s)\to0.
+-\]
+-
+-反證則需找到 \(n^\ast>1\) 並證 \(\sigma(n^\ast)=\infty\)，但「跑很久沒下降」並不是 infinite certificate，因此 negative route 也不簡單。
++$$
++
++反證則需找到 $n^\ast>1$ 並證 $\sigma(n^\ast)=\infty$，但「跑很久沒下降」並不是 infinite certificate，因此 negative route 也不簡單。
+ 
+ ---
+ 
+@@ -1390,9 +1415,9 @@
+ 
+ 每一條 route 都需經：
+ 
+-1. **Quantifier Audit**：是否偷換 \(\forall N\exists K(N)\) 成 \(\exists K\forall N\)；
++1. **Quantifier Audit**：是否偷換 $\forall N\exists K(N)$ 成 $\exists K\forall N$；
+ 2. **Density Audit**：是否從 density zero 偷換 empty；
+-3. **Completion Audit**：是否把 nonordinary \(2\)-adic branch 當正整數；
++3. **Completion Audit**：是否把 nonordinary $2$-adic branch 當正整數；
+ 4. **Uniformity Audit**：是否要求不必要 uniform witness；
+ 5. **Certificate Audit**：正反證書是否忠實；
+ 6. **Representation Audit**：轉譯是否保留 domain 與例外。
+@@ -1403,14 +1428,14 @@
+ 
+ 本文之後正式展開時，第一批純數學任務：
+ 
+-1. 推導 \(Z_w(s)\) 在 child refinement 下的 exact relation；
++1. 推導 $Z_w(s)$ 在 child refinement 下的 exact relation；
+ 2. 找 hard-height truncation 的 mass-loss closed form；
+-3. 比較 contracting / expanding skeleton 對 \(Z_w(s)\) 的不同貢獻；
+-4. 研究 \(s\) 對 worst-case child ratio 的影響；
++3. 比較 contracting / expanding skeleton 對 $Z_w(s)$ 的不同貢獻；
++4. 研究 $s$ 對 worst-case child ratio 的影響；
+ 5. 對 valuation language 建立 atomic functional；
+ 6. 建立 block-level return decomposition；
+-7. 嘗試證第一個非平凡 \(\varepsilon_k\) lower bound；
+-8. 若失敗，抽取造成 \(\varepsilon_k\to0\) 的 hard word families，交給 Diophantine／language route。
++7. 嘗試證第一個非平凡 $\varepsilon_k$ lower bound；
++8. 若失敗，抽取造成 $\varepsilon_k\to0$ 的 hard word families，交給 Diophantine／language route。
+ 
+ ---
+ 
+@@ -1418,26 +1443,26 @@
+ 
+ 若直接 decay 難證，尋找：
+ 
+-\[
++$$
+ \boxed{
+ w_k^\ast
+ \in
+ \arg\max_{|w|=k}
+ \frac{Z_{wD}+Z_{wU}}{Z_w}.
+ }
+-\]
++$$
+ 
+ 分析其：
+ 
+ - odd-step ratio；
+-- \(b_w\)；
++- $b_w$；
+ - hard height；
+ - continued-fraction relation；
+ - valuation order；
+ - residue growth；
+ - anchor behavior。
+ 
+-若 \(w_k^\ast\) 收斂成有限 pattern family，可嘗試 automaton、substitution system、morphic word、continued-fraction grammar 或 finite-state quotient。
++若 $w_k^\ast$ 收斂成有限 pattern family，可嘗試 automaton、substitution system、morphic word、continued-fraction grammar 或 finite-state quotient。
+ 
+ ---
+ 
+@@ -1452,11 +1477,11 @@
+ 
+ 避免：
+ 
+-\[
++$$
+ \text{floating evidence}
+ \to
+ \text{exact theorem}.
+-\]
++$$
+ 
+ ---
+ 
+@@ -1465,8 +1490,8 @@
+ ## 已證／邏輯直接成立
+ 
+ 1. 嚴格正原子前沿定理；
+-2. \(\forall x\exists k\) 與 atomic frontier mass \(\to0\) 的 equivalence；
+-3. Collatz 與 \(Z_k(s)\to0\) 的 equivalence；
++2. $\forall x\exists k$ 與 atomic frontier mass $\to0$ 的 equivalence；
++3. Collatz 與 $Z_k(s)\to0$ 的 equivalence；
+ 4. Hard-Zeta monotonicity；
+ 5. fixed-depth hard-chart decomposition；
+ 6. 固定反例必留下 nonzero Hard-Zeta lower bound。
+@@ -1488,25 +1513,25 @@
+ 
+ 本文之後正式研究的第一問不是「Collatz 到底對不對？」而是：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{
+ Can exact hard-chart refinement force
+ exception-faithful atomic frontier mass to vanish?
+ }
+ }
+-\]
++$$
+ 
+ 中文：
+ 
+-\[
++$$
+ \boxed{
+ \textbf{
+ 每張 hard affine chart 的精確分裂與證書損失，
+ 能否共同迫使忠實原子前沿質量歸零？
+ }
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1516,15 +1541,15 @@
+ 
+ 本文把其中一種重要困難定位為：
+ 
+-\[
++$$
+ \boxed{
+ \text{局部結果缺少一個忠實的全域重耦合介面}.
+ }
+-\]
++$$
+ 
+ MCDM 的 Global Coupling、v0.2 的量詞／證書審計、P/NP 的 Existential Reappearance、全域資格的 Domain Closure，以及 Collatz certificate frontier，可以放進同一張圖：
+ 
+-\[
++$$
+ \boxed{
+ \text{Local Resolution}
+ \to
+@@ -1534,64 +1559,64 @@
+ \to
+ \text{Global Closure}.
+ }
+-\]
++$$
+ 
+ 其中最危險的錯誤是：
+ 
+-\[
++$$
+ \boxed{
+ \text{almost all}\to\text{all}
+ }
+-\]
++$$
+ 
+ 或：
+ 
+-\[
++$$
+ \boxed{
+ \text{density zero}\to\text{empty}.
+ }
+-\]
++$$
+ 
+ 因此本文提出 exception fidelity 作為全域量詞壓縮器的必要設計軸。
+ 
+ 對 Collatz：
+ 
+-\[
++$$
+ \boxed{
+ Z_k(s)=
+ \sum_{\sigma(n)>k}n^{-s}
+ }
+-\]
++$$
+ 
+ 提供一個簡單而完全忠實的 global obstruction functional：
+ 
+-\[
++$$
+ \boxed{
+ \text{Collatz}
+ \iff
+ Z_k(s)\to0.
+ }
+-\]
++$$
+ 
+ 真正尚待完成的不是這個 equivalence，而是：
+ 
+-\[
++$$
+ \boxed{
+ \text{Hard-Zeta Decay Theorem}.
+ }
+-\]
++$$
+ 
+ 本文之後將以 Hard-Zeta / Atomic Frontier Transfer 為主線，並同步使用 Bellman–Lyapunov、Diophantine rigidity、forbidden language、WQO finite basis 與 exceptional invariant measure 五條橋接路線。
+ 
+ 最終目標不是增加更多局部真命題，而是第一次真正跨越：
+ 
+-\[
++$$
+ \boxed{
+ \text{finite/local/almost-all}
+ \quad\longrightarrow\quad
+ \forall.
+ }
+-\]
++$$
+ 
+ ---
+ 
+@@ -1600,8 +1625,8 @@
+ 1. Terence Tao, *Almost all orbits of the Collatz map attain almost bounded values*, Forum of Mathematics, Pi 10 (2022), arXiv:1909.03562.
+ 2. Olivier Rozier, Claude Terracol, *Paradoxical behavior in Collatz sequences*, arXiv:2502.00948.
+ 3. Tong Niu, *Parity vectors and paradoxical sequences in the accelerated Collatz map*, arXiv:2605.13886.
+-4. Vigleik Angeltveit, *An improved algorithm for checking the Collatz conjecture for all \(n<2^N\)*, arXiv:2602.10466.
+-5. Leonardo Franchi, W. T. Gowers, Fredy Yip, *Product-free subsets of \((0,1)\)*, arXiv:2607.06073.
++4. Vigleik Angeltveit, *An improved algorithm for checking the Collatz conjecture for all $n<2^N$*, arXiv:2602.10466.
++5. Leonardo Franchi, W. T. Gowers, Fredy Yip, *Product-free subsets of $(0,1)$*, arXiv:2607.06073.
+ 6. Neo.K × Aletheia, *數學猜想難度矩陣 MCDM*.
+ 7. Neo.K × Aletheia, *P/NP 對偶證明預演研究區：存在量詞狀態坍縮與後續全域橋接系列*.
+ 8. Neo.K × Aletheia, *Collatz Operation Translation Series*, Papers 01–09.
+@@ -1628,13 +1653,9 @@
+ 
+ ---
+ 
+-## v0.1.1 Domain Corrigendum
+-
+-Hard-Zeta 的 stopping-time domain 為 \(n\ge2\)。因此所有與 \(E_k\) 及 \(Z_k\) 的 chart decomposition 應使用
+-\[
+-\widetilde H_w=H_w\cap[2,\infty)
+-\]
+-而不是未截去 \(n=1\) 的 \(H_w\)。此修正不改變 Atomic Frontier Theorem 或 Hard-Zeta equivalence。
++## v0.1.2 Integrated Domain Revision
++
++v0.1.1 的 domain corrigendum 已正式整合進第 18–19 節：Hard-Zeta 的 stopping-time domain 固定為 $n\ge2$，$E_k^C$ 的 chart decomposition 使用 $\widetilde H_w=H_w\cap[2,\infty)$，而 $Z_w(s)$ 的 quotient bounds 也直接以 $\widetilde H_w$ 定義。此整合消除了正文與附錄 corrigendum 並存時的語義不一致；Atomic Frontier Theorem 與 Hard-Zeta equivalence 本身不因此改變。
+ 
+ ---
+ 

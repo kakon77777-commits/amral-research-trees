@@ -12,6 +12,7 @@ said at the time rather than only that they were said to pass.
 | `mutation-drill.json` | `code/mutation_drill.py` |
 | `mutation-drill.progress.txt` | the same run's stderr, one line per mutation as it was decided |
 | `coverage.json` | `code/verify_run_logs.py` |
+| `ot-package-integrity.txt` | the subject package's *own* `tools/verify_series.py`, run against the copy archived at `../../../collatz-ot-series-neok/`. Not this arm's verifier — the author's, run on the committed bytes. |
 | `ot-paper02-recheck.json` | `code/ot_paper02_recheck.py 16` — independent re-derivation of Paper 02 of Neo.K's Operation Translation Series |
 | `ot-paper06-recheck.json` | `code/ot_paper06_recheck.py 20001` — the same for Paper 06, on real admissible orbits |
 | `ot-recheck-drill.json` | `code/ot_recheck_drill.py` — the falsifiability drill for both rechecks |

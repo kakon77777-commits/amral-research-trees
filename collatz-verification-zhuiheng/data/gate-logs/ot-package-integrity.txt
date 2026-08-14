@@ -1,0 +1,10 @@
+PASS: required package files present
+PASS: checksums verified for complete payload (49 files)
+PASS: strict UTF-8 and canonical $ / $$ delimiter policy verified for 10 sources
+PASS: source-set aggregate matches SSSP-anchored digest
+PASS: all per-file diffs and aggregate repair.diff reproduce byte-for-byte
+PASS: finite/algebraic theorem regression evidence reproduced exactly
+PASS: source-derived math inventory reproduced exactly (3027 formula hashes)
+SKIP: local Node mathjax-full dependency unavailable; stored renderer evidence remains checksum-protected
+PASS: manifest and validation scopes consistent
+PASS: PACKAGE VERIFIED
