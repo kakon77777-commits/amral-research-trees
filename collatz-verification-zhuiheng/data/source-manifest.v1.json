@@ -90,7 +90,7 @@
       "sha256": "3c536f05ddbc7abcc19c3c08415879a50eda88265aef42d74feff4855b4e0e51",
       "line": "early experiments",
       "role": "prototype / benchmark",
-      "processed_by_this_tree": "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; RECHECK PENDING"
+      "processed_by_this_tree": "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, each cross-checked against the Rust engine; prune ratios confirmed to be Paper 05's P_k = A_k/2^k, and the non-monotonicity in k reproduced from the closed form"
     },
     {
       "name": "collatz_operation_translation_v3_threshold_bundle.zip",
@@ -99,7 +99,7 @@
       "sha256": "f86ba9534e311a98fcc143a9a22ea25db33d8cac8ae1879b29557dc82eb57bf8",
       "line": "early experiments",
       "role": "prototype / benchmark",
-      "processed_by_this_tree": "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; RECHECK PENDING",
+      "processed_by_this_tree": "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; rechecked with the benchmark by code/src04_v3_threshold_recheck.py",
       "zip_entries": 4,
       "zip_uncompressed_bytes": 4847,
       "zip_top_level": [

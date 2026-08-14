@@ -1,0 +1,230 @@
+{
+  "tool": "src04_v3_threshold_recheck.py",
+  "subject": "Neo.K, collatz_ot_v3_threshold bundle and benchmark (2026-08-10 22:16)",
+  "source_items": [
+    4,
+    5
+  ],
+  "scope": "the arithmetic content of the k-sweep. Timings are machine-specific and are deliberately not reproduced; nothing here depends on them.",
+  "checks": {
+    "SRC04_certified_and_fallback_match_the_rust_engine": {
+      "pass": true
+    },
+    "SRC04_prune_ratios_equal_certified_over_total": {
+      "pass": true
+    },
+    "SRC04_every_domain_total_is_2e_minus_2": {
+      "pass": true
+    },
+    "SRC04_prune_ratios_are_Paper_05_cylinder_densities": {
+      "pass": true
+    },
+    "SRC04_finite_domain_deviation_shrinks_as_the_domain_grows": {
+      "pass": true
+    },
+    "SRC04_prune_ratio_is_not_monotone_in_k": {
+      "pass": true
+    },
+    "SRC04_the_closed_form_P_k_reproduces_the_same_non_monotone_shape": {
+      "pass": true
+    },
+    "SRC04_k16_has_the_best_prune_ratio_at_2_24": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "benchmark_rows": 15,
+    "engine_cross_checks": 15
+  },
+  "measured": {
+    "sweep": [
+      {
+        "exp": 20,
+        "k": 8,
+        "certified": 897016,
+        "engine_certified": 897016,
+        "fallback": 151558,
+        "engine_fallback": 151558,
+        "prune_ratio": 0.8554627522711797,
+        "paper05_P_k": 0.85546875,
+        "deviation_from_P_k": -5.997728820283547e-06
+      },
+      {
+        "exp": 20,
+        "k": 12,
+        "certified": 845309,
+        "engine_certified": 845309,
+        "fallback": 203265,
+        "engine_fallback": 203265,
+        "prune_ratio": 0.8061510203380973,
+        "paper05_P_k": 0.80615234375,
+        "deviation_from_P_k": -1.3234119027364783e-06
+      },
+      {
+        "exp": 20,
+        "k": 16,
+        "certified": 938413,
+        "engine_certified": 938413,
+        "fallback": 110161,
+        "engine_fallback": 110161,
+        "prune_ratio": 0.8949420832482972,
+        "paper05_P_k": 0.8949432373046875,
+        "deviation_from_P_k": -1.1540563902887399e-06
+      },
+      {
+        "exp": 20,
+        "k": 18,
+        "certified": 923853,
+        "engine_certified": 923853,
+        "fallback": 124721,
+        "engine_fallback": 124721,
+        "prune_ratio": 0.8810565587168859,
+        "paper05_P_k": 0.8810577392578125,
+        "deviation_from_P_k": -1.1805409265196115e-06
+      },
+      {
+        "exp": 20,
+        "k": 20,
+        "certified": 910593,
+        "engine_certified": 910593,
+        "fallback": 137981,
+        "engine_fallback": 137981,
+        "prune_ratio": 0.8684108131614936,
+        "paper05_P_k": 0.8684120178222656,
+        "deviation_from_P_k": -1.2046607720155838e-06
+      },
+      {
+        "exp": 22,
+        "k": 8,
+        "certified": 3588088,
+        "engine_certified": 3588088,
+        "fallback": 606214,
+        "engine_fallback": 606214,
+        "prune_ratio": 0.8554672505699399,
+        "paper05_P_k": 0.85546875,
+        "deviation_from_P_k": -1.4994300601148892e-06
+      },
+      {
+        "exp": 22,
+        "k": 12,
+        "certified": 3381245,
+        "engine_certified": 3381245,
+        "fallback": 813057,
+        "engine_fallback": 813057,
+        "prune_ratio": 0.8061520128974976,
+        "paper05_P_k": 0.80615234375,
+        "deviation_from_P_k": -3.3085250239491577e-07
+      },
+      {
+        "exp": 22,
+        "k": 16,
+        "certified": 3753661,
+        "engine_certified": 3753661,
+        "fallback": 440641,
+        "engine_fallback": 440641,
+        "prune_ratio": 0.8949429487910027,
+        "paper05_P_k": 0.8949432373046875,
+        "deviation_from_P_k": -2.8851368484926097e-07
+      },
+      {
+        "exp": 22,
+        "k": 18,
+        "certified": 3695421,
+        "engine_certified": 3695421,
+        "fallback": 498881,
+        "engine_fallback": 498881,
+        "prune_ratio": 0.881057444123003,
+        "paper05_P_k": 0.8810577392578125,
+        "deviation_from_P_k": -2.9513480943536614e-07
+      },
+      {
+        "exp": 22,
+        "k": 20,
+        "certified": 3642381,
+        "engine_certified": 3642381,
+        "fallback": 551921,
+        "engine_fallback": 551921,
+        "prune_ratio": 0.8684117166575035,
+        "paper05_P_k": 0.8684120178222656,
+        "deviation_from_P_k": -3.0116476218342614e-07
+      },
+      {
+        "exp": 24,
+        "k": 8,
+        "certified": 14352376,
+        "engine_certified": 14352376,
+        "fallback": 2424838,
+        "engine_fallback": 2424838,
+        "prune_ratio": 0.855468375142619,
+        "paper05_P_k": 0.85546875,
+        "deviation_from_P_k": -3.748573809692122e-07
+      },
+      {
+        "exp": 24,
+        "k": 12,
+        "certified": 13524989,
+        "engine_certified": 13524989,
+        "fallback": 3252225,
+        "engine_fallback": 3252225,
+        "prune_ratio": 0.806152261036904,
+        "paper05_P_k": 0.80615234375,
+        "deviation_from_P_k": -8.27130960182066e-08
+      },
+      {
+        "exp": 24,
+        "k": 16,
+        "certified": 15014653,
+        "engine_certified": 15014653,
+        "fallback": 1762561,
+        "engine_fallback": 1762561,
+        "prune_ratio": 0.8949431651762921,
+        "paper05_P_k": 0.8949432373046875,
+        "deviation_from_P_k": -7.212839541717862e-08
+      },
+      {
+        "exp": 24,
+        "k": 18,
+        "certified": 14781693,
+        "engine_certified": 14781693,
+        "fallback": 1995521,
+        "engine_fallback": 1995521,
+        "prune_ratio": 0.8810576654741366,
+        "paper05_P_k": 0.8810577392578125,
+        "deviation_from_P_k": -7.378367597173017e-08
+      },
+      {
+        "exp": 24,
+        "k": 20,
+        "certified": 14569533,
+        "engine_certified": 14569533,
+        "fallback": 2207681,
+        "engine_fallback": 2207681,
+        "prune_ratio": 0.868411942531102,
+        "paper05_P_k": 0.8684120178222656,
+        "deviation_from_P_k": -7.529116361962533e-08
+      }
+    ],
+    "P_k_closed_form": {
+      "8": 0.85546875,
+      "12": 0.80615234375,
+      "16": 0.8949432373046875,
+      "18": 0.8810577392578125,
+      "20": 0.8684120178222656
+    },
+    "floor_alpha_k": {
+      "8": 5,
+      "12": 7,
+      "16": 10,
+      "18": 11,
+      "20": 12
+    },
+    "assessment": {
+      "what_it_establishes": "the descent test compiles to a residue-indexed integer threshold, and the resulting prune ratio is exactly Paper 05's cylinder density P_k = A_k/2^k up to a finite-domain correction that shrinks as the domain grows. The sweep is therefore measuring a theoretical quantity, and it measures it correctly.",
+      "the_non_monotonicity": "Prune ratio rises to k = 16 and then FALLS at 18 and 20. That is not noise and not a defect: floor(k ln2/ln3) advances by 0 or 1 as k increments, so P_k oscillates on its way to 1. k = 16 sits at a favourable step of that staircase. Choosing a larger k costs table-build time AND gives a worse prune ratio, which is worth knowing before anyone assumes deeper is better.",
+      "reading_the_README_precisely": "The bundle's 'best measured configuration at n < 2^24: k = 18' is a claim about SPEEDUP, and it is correct on its own numbers. k = 16 has the better PRUNE RATIO - 0.89494 against 0.88106. Both statements are true of different quantities, and the README lists the k = 18 ratio right beside the word 'best', where it could be read as claiming the ratio too.",
+      "not_reproduced": "every timing column. They are machine-specific, and no check here depends on one."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

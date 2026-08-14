@@ -19,13 +19,13 @@ trail, including the routes that were later replaced.
 | `finite_collatz_additive_coordinate_mvp_bundle.zip` | 08-10 15:08 | Log-coordinate encoding where the Collatz branches become additive, with an exact finite-domain recovery criterion | **rechecked** — [`src01`](../../collatz-verification-zhuiheng/data/gate-logs/src01-additive-coordinate-recheck.json), 7/7 |
 | `dimension_aware_log_physics_stress_bundle.zip` | 08-10 15:15 | The same coordinate carried off Collatz entirely: SI dimension vectors plus log magnitude, stress-tested on real physics | **rechecked** — [`src02`](../../collatz-verification-zhuiheng/data/gate-logs/src02-log-physics-recheck.json), 10/10 |
 | `collatz_operation_translation_finite_verification_prototype.zip` | 08-10 22:07 | The finite verification prototype: the `k`-block identity, and a table of 58,651 cylinder certificates | **rechecked** — [`src03`](../../collatz-verification-zhuiheng/data/gate-logs/src03-finite-prototype-recheck.json) 11/11, plus a [scaling cross-check](../../collatz-verification-zhuiheng/data/gate-logs/src03-scaling-crosscheck.json) |
-| `collatz_ot_v3_threshold_benchmark.csv` | 08-10 22:16 | v3 threshold benchmark | **archived only — recheck pending** |
-| `collatz_operation_translation_v3_threshold_bundle.zip` | 08-10 22:16 | v3 threshold bundle | **archived only — recheck pending** |
+| `collatz_ot_v3_threshold_benchmark.csv` | 08-10 22:16 | The k-sweep: `k ∈ {8,12,16,18,20}` at three domain sizes | **rechecked** — [`src04`](../../collatz-verification-zhuiheng/data/gate-logs/src04-v3-threshold-recheck.json), 8/8 |
+| `collatz_operation_translation_v3_threshold_bundle.zip` | 08-10 22:16 | The descent test compiled to a residue-indexed integer threshold | **rechecked** — same log |
 
-**"Archived only" means exactly that.** The bytes are here and hashed against the
-source manifest, and nothing has been verified about their contents. Presence in
-this directory is not a verification claim — that is the repository protocol's
-rule, and it is worth restating wherever a status column could be misread.
+Presence in this directory is **not** a verification claim — that is the
+repository protocol's rule, and worth restating wherever a status column could be
+misread. Where an item is marked *archived only*, the bytes are here and hashed
+against the source manifest and nothing has been checked about their contents.
 
 ## What item 01 establishes, stated at its actual strength
 
@@ -160,3 +160,54 @@ recording: the engine uses the `k`-step jump **only as a filter** and re-walks f
 `n` and rise again inside the first `k` steps. The prototype's certificates avoid
 that issue by only ever claiming descent *at* the `k`-th step — a narrower claim,
 and a sound one.
+
+## Items 04–05 — the k-sweep, and why bigger k is not better
+
+Nine minutes after item 03. The descent test is compiled into a residue-indexed
+integer threshold — the hot loop becomes a mask, a shift, a lookup and one integer
+comparison — and `k` is swept over `{8, 12, 16, 18, 20}` at three domain sizes.
+
+**8/8 checks pass**, including all **15 `(k, domain)` pairs cross-checked against
+this arm's Rust engine**, a separate implementation. Every `certified` and
+`fallback` count matches exactly, every prune ratio equals `certified/total`
+exactly, and every domain total is `2^e − 2` on the `[2, 2^e)` convention.
+
+### The prune ratio is not monotone in `k`
+
+| `k` | measured at `2^24` | Paper 05's `P_k = A_k/2^k` | `⌊αk⌋` |
+|---|---|---|---|
+| 8 | 0.855468375 | 0.855468750 | 5 |
+| 12 | 0.806152261 | 0.806152344 | 7 |
+| **16** | **0.894943165** | **0.894943237** | **10** |
+| 18 | 0.881057665 | 0.881057739 | 11 |
+| 20 | 0.868411943 | 0.868412018 | 12 |
+
+It rises to `k = 16`, then **falls** at 18 and 20. That is not noise and not a
+defect — the measured ratios *are* Paper 05's cylinder density, agreeing to about
+`7×10⁻⁸`, with the residual being the finite-domain boundary correction that
+shrinks as the domain grows (verified).
+
+The mechanism is the staircase. `P_k = P(Bin(k,½) ≤ ⌊αk⌋)` with `α = ln2/ln3 ≈
+0.63093`, and `⌊αk⌋` advances by 0 or 1 per step, so the *ratio* `⌊αk⌋/k` moves:
+`10/16 = 0.625`, `11/18 = 0.611`, `12/20 = 0.600`. It drifts further below `α` as
+`k` goes 16 → 20, and the prune ratio drops with it. `P_k → 1` only in the limit,
+and not from below at every step.
+
+**Practical consequence worth stating plainly:** choosing a larger `k` costs more
+table-build time *and* can give a worse prune ratio. `k = 16` is a favourable step
+of that staircase.
+
+### Reading the bundle's "best configuration" precisely
+
+The README says *"Best measured configuration at `n < 2^24`: k = 18, prune ratio =
+88.106%"*. Both numbers are correct on the bundle's own data — `k = 18` **is** best
+by amortized speedup, and 88.106% **is** its prune ratio.
+
+But `k = 16` has the better prune **ratio**, 89.494%. The two are claims about
+different quantities, and the README places the `k = 18` ratio directly beside the
+word "best", where it can be read as claiming that too. Separating them costs
+nothing and prevents the misreading.
+
+### Not reproduced
+
+Every timing column. They are machine-specific, and no check here depends on one.

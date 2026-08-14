@@ -45,11 +45,14 @@ PROCESSED = {
     ),
     "collatz_ot_v3_threshold_benchmark.csv": (
         "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
-        "RECHECK PENDING"
+        "all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, "
+        "each cross-checked against the Rust engine; prune ratios confirmed to be "
+        "Paper 05's P_k = A_k/2^k, and the non-monotonicity in k reproduced from "
+        "the closed form"
     ),
     "collatz_operation_translation_v3_threshold_bundle.zip": (
         "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
-        "RECHECK PENDING"
+        "rechecked with the benchmark by code/src04_v3_threshold_recheck.py"
     ),
     "dimension_aware_log_physics_stress_bundle.zip": (
         "item 02. archived byte-exact at "
