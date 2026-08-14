@@ -1,0 +1,28 @@
+{
+  "status": "exact-rational finite certificate",
+  "scope": "N=4 continuous-position toy marked-configuration model",
+  "statement": "If E[S1]=1/4, E[S2]=1/2, E[S3]=3/4 and E[S4]<=B, then expected simple fraction >=0.70 for every B<=11254781/3068556.",
+  "B70_exact": "11254781/3068556",
+  "B70_decimal": 3.667777612662112,
+  "patterns": {
+    "22": {
+      "internal_nodes": 7,
+      "terminal_boxes": 8,
+      "max_depth": 7,
+      "min_terminal_bernstein": "46501207/1638400000000"
+    },
+    "211": {
+      "internal_nodes": 61,
+      "terminal_boxes": 62,
+      "max_depth": 12,
+      "min_terminal_bernstein": "10973215641/734003200000000"
+    },
+    "1111": {
+      "domain_superset": "u in [0,16], t in [-1,1], B=e2 in [-6,6]",
+      "internal_nodes": 179,
+      "terminal_boxes": 180,
+      "max_depth": 13,
+      "min_terminal_bernstein": "1/20000"
+    }
+  }
+}

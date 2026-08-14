@@ -1,0 +1,14 @@
+=== exact boundary P70 toy certificate ===
+base objective without boundary term: 81254781/100000000
+mu = -767139/25000000
+certified B_70 threshold = 11254781/3068556 = 3.667777612662112
+objective at B70 = 7/10
+
+(2,2) certificate: (7, 8, 6, Fraction(46501207, 1638400000000))
+(2,1,1) certificate: (61, 62, 12, Fraction(10973215641, 734003200000000))
+(1,1,1,1) certificate: (179, 180, 13, Fraction(1, 20000))
+
+Conclusion:
+For every B <= B70, dual objective >= 0.7 and all configuration patterns satisfy
+the exact rational configuration-wise inequality.
+Therefore p_min(B) >= 0.70 in this N=4 toy model.

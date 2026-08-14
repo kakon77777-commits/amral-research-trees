@@ -10,7 +10,7 @@ A curated, human-readable presentation of a subset of this material lives at **[
 |---|---|---|
 | [`p-np-glc/`](./p-np-glc/) | P/NP dual-hypothesis rehearsal (24 rounds + prerequisite) and the GLC four-layer closure framework — the raw research documents | [amral.evemisslab.com/p-np-dual/](https://amral.evemisslab.com/p-np-dual/), [amral.evemisslab.com/glc-framework/](https://amral.evemisslab.com/glc-framework/) |
 | [`pnp-glc-verification/`](./pnp-glc-verification/) | A 7-role adversarial verification pipeline testing a GLC-related engineering candidate (integrator, red-team, formal/Lean, engineering, independent replay, two independent scholars) | [amral.evemisslab.com/glc-framework/verification/](https://amral.evemisslab.com/glc-framework/verification/) (status snapshot only, not the full trail) |
-| [`cpl/`](./cpl/) | Critical-Line Proportion Ladder — 10 packages, single-thread version progression (v1–v11, v6 absent) extending a real published paper on Riemann zeta zero proportions | [amral.evemisslab.com/cpl/](https://amral.evemisslab.com/cpl/) (v1 only; v2–v11 not yet curated) |
+| [`cpl/`](./cpl/) | Critical-Line Proportion Ladder — 11 packages, single-thread version progression (v1–v11; v6 recovered from a nested zip, see `cpl/README.md`) extending a real published paper on Riemann zeta zero proportions | [amral.evemisslab.com/cpl/](https://amral.evemisslab.com/cpl/) (v1 only; v2–v11 not yet curated) |
 
 More research-line trees get added here as they're produced; each new one gets its own top-level directory and a matching row in the table above. See [`RESEARCH-TREE-PROTOCOL.md`](./RESEARCH-TREE-PROTOCOL.md) for the persistence contract every tree here follows.
 
