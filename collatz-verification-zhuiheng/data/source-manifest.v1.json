@@ -12,7 +12,7 @@
     "Hard-Zeta": 44,
     "other project": 2
   },
-  "processed_count": 3,
+  "processed_count": 6,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -71,7 +71,7 @@
       "sha256": "49dd20eb9d3b4af5f728492d62585bb2ae68cc91b69fea28c53f860cc852c07f",
       "line": "early experiments",
       "role": "prototype / benchmark",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 03. archived byte-exact at ../collatz-ot-series-neok/early-experiments/; all 58651 certificate rows rechecked by code/src03_finite_prototype_recheck.py, scaling cross-checked against the Rust engine",
       "zip_entries": 7,
       "zip_uncompressed_bytes": 1399614,
       "zip_top_level": [
@@ -90,7 +90,7 @@
       "sha256": "3c536f05ddbc7abcc19c3c08415879a50eda88265aef42d74feff4855b4e0e51",
       "line": "early experiments",
       "role": "prototype / benchmark",
-      "processed_by_this_tree": null
+      "processed_by_this_tree": "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; RECHECK PENDING"
     },
     {
       "name": "collatz_operation_translation_v3_threshold_bundle.zip",
@@ -99,7 +99,7 @@
       "sha256": "f86ba9534e311a98fcc143a9a22ea25db33d8cac8ae1879b29557dc82eb57bf8",
       "line": "early experiments",
       "role": "prototype / benchmark",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; RECHECK PENDING",
       "zip_entries": 4,
       "zip_uncompressed_bytes": 4847,
       "zip_top_level": [

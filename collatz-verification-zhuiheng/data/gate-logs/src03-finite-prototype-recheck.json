@@ -1,0 +1,64 @@
+{
+  "tool": "src03_finite_prototype_recheck.py",
+  "subject": "Neo.K, collatz_operation_translation_finite_verification_prototype.zip (2026-08-10)",
+  "source_item": 3,
+  "scope": "row-by-row verification of the published k=16 certificate table",
+  "checks": {
+    "SRC03_certificate_base_values_match_direct_iteration": {
+      "pass": true
+    },
+    "SRC03_certificate_odd_step_counts_match": {
+      "pass": true
+    },
+    "SRC03_certificate_multipliers_are_3_to_the_s": {
+      "pass": true
+    },
+    "SRC03_certificate_domain_bounds_are_correct": {
+      "pass": true
+    },
+    "SRC03_table_contains_only_contracting_residues": {
+      "pass": true
+    },
+    "SRC03_every_certificate_actually_certifies_descent": {
+      "pass": true
+    },
+    "SRC03_threshold_is_exact_not_merely_safe": {
+      "pass": true
+    },
+    "SRC03_threshold_derivation_is_anchored_to_direct_iteration": {
+      "pass": true
+    },
+    "SRC03_residues_are_distinct": {
+      "pass": true
+    },
+    "SRC03_table_size_is_Paper_05_A_16_equals_58651": {
+      "pass": true
+    },
+    "SRC03_reported_rule_counts_follow_the_binomial_law": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "certificate_rows": 58651,
+    "descent_cases_verified": 234604,
+    "rows_with_threshold_derived_and_compared": 58651,
+    "rows_also_probed_by_direct_iteration_below_a_min": 2,
+    "A_16": 58651,
+    "rule_counts_recomputed": {
+      "8": 219,
+      "10": 848,
+      "12": 3302,
+      "14": 12911,
+      "16": 58651
+    }
+  },
+  "measured": {
+    "assessment": {
+      "what_it_establishes": "a published, row-by-row checkable certificate table: 58651 contracting residues at k = 16, each with its exact descent threshold, and every row reproduces under direct iteration. The bulk-certified count of 938413 on [1, 2^20) is the same figure Paper 05 and Paper 09 §24 later report.",
+      "what_it_does_not": "it is a finite-range accelerator, and the bundle says so itself: 'not a proof of the Collatz conjecture'. Certifying 89.494% of a range faster leaves the other 10.506% to explicit iteration and says nothing beyond the range.",
+      "relation_to_this_arm": "This is the direct ancestor of the engine in code/collatz_verify.rs. The block identity it states is the engine's congruence sieve, and the engine reached [3, 2^40] with the same idea. Where they differ: the engine uses the k-step jump ONLY as a filter and re-walks from n whenever it does not settle the question, because a trajectory can dip below n and rise again inside the first k steps. The prototype's certificates avoid that issue by only ever claiming descent at the k-th step, which is a narrower and sounder claim."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

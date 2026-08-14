@@ -14,10 +14,18 @@ They are archived because the working record is part of the research, not
 scaffolding around it — the process is the result, and a relay needs the whole
 trail, including the routes that were later replaced.
 
-| Item | Date | What it is | Independent recheck |
+| Item | Date | What it is | Status |
 |---|---|---|---|
-| `finite_collatz_additive_coordinate_mvp_bundle.zip` | 2026-08-10 15:08 | Log-coordinate encoding where the Collatz branches become additive, with a precomputable per-state correction and an exact finite-domain recovery criterion | [`src01-additive-coordinate-recheck.json`](../../collatz-verification-zhuiheng/data/gate-logs/src01-additive-coordinate-recheck.json) |
-| `dimension_aware_log_physics_stress_bundle.zip` | 2026-08-10 15:15 | The same coordinate carried off Collatz entirely: SI dimension vectors plus log magnitude, stress-tested on real physics formulas including severe cancellation | [`src02-log-physics-recheck.json`](../../collatz-verification-zhuiheng/data/gate-logs/src02-log-physics-recheck.json) |
+| `finite_collatz_additive_coordinate_mvp_bundle.zip` | 08-10 15:08 | Log-coordinate encoding where the Collatz branches become additive, with an exact finite-domain recovery criterion | **rechecked** — [`src01`](../../collatz-verification-zhuiheng/data/gate-logs/src01-additive-coordinate-recheck.json), 7/7 |
+| `dimension_aware_log_physics_stress_bundle.zip` | 08-10 15:15 | The same coordinate carried off Collatz entirely: SI dimension vectors plus log magnitude, stress-tested on real physics | **rechecked** — [`src02`](../../collatz-verification-zhuiheng/data/gate-logs/src02-log-physics-recheck.json), 10/10 |
+| `collatz_operation_translation_finite_verification_prototype.zip` | 08-10 22:07 | The finite verification prototype: the `k`-block identity, and a table of 58,651 cylinder certificates | **rechecked** — [`src03`](../../collatz-verification-zhuiheng/data/gate-logs/src03-finite-prototype-recheck.json) 11/11, plus a [scaling cross-check](../../collatz-verification-zhuiheng/data/gate-logs/src03-scaling-crosscheck.json) |
+| `collatz_ot_v3_threshold_benchmark.csv` | 08-10 22:16 | v3 threshold benchmark | **archived only — recheck pending** |
+| `collatz_operation_translation_v3_threshold_bundle.zip` | 08-10 22:16 | v3 threshold bundle | **archived only — recheck pending** |
+
+**"Archived only" means exactly that.** The bytes are here and hashed against the
+source manifest, and nothing has been verified about their contents. Presence in
+this directory is not a verification claim — that is the repository protocol's
+rule, and it is worth restating wherever a status column could be misread.
 
 ## What item 01 establishes, stated at its actual strength
 
@@ -83,3 +91,72 @@ So this branch is not an ancestor of the series' method. It is kept because it
 shows the alternative was actually tried, and how far it genuinely goes: quite
 far, and exactly reproducibly, which is why abandoning it was a choice rather
 than a retreat.
+
+## Item 03 — the ancestor of this arm's engine
+
+Items 01 and 02 were representation experiments the series later set aside. **This
+one is different.** It states the block identity
+
+```
+T^k(r + a·2^k) = T^k(r) + a·3^s
+```
+
+that the verification engine's congruence sieve is built on, picks `k = 16`, and
+reports 938,413 bulk-certified values on `[1, 2^20)` — the same figure Paper 05
+and Paper 09 §24 later carry.
+
+And it ships a **dataset**, not just a claim: 58,651 cylinder certificates, one
+per contracting residue, each with its own descent threshold. That is the best
+thing anyone can hand a verification arm, because every row can be confronted
+with direct iteration instead of trusted.
+
+**11/11 checks pass, every row verified.** Base values, odd-step counts,
+multipliers and domain bounds all reproduce under direct iteration; the table
+holds exactly the contracting residues; its size is exactly Paper 05's
+`A₁₆ = 58651`; and the reported rule counts at `k = 8, 10, 12, 14` — 219, 848,
+3302, 12911 — all follow the same binomial law.
+
+The thresholds are **exact, not merely safe**: `a_min` equals
+`⌊(T^k(r) − r)/(2^k − 3^s)⌋ + 1` clamped to the domain floor, on all 58,651 rows.
+
+### A weakness in my own check, caught and fixed
+
+The first version tested threshold exactness by probing `a_min − 1` directly. That
+point only lands inside the positive domain for **2 of the 58,651 rows** — so the
+check passed on two observations and would have read as though it had verified all
+of them. It now derives the threshold independently for every row and compares,
+with those 2 rows still probed by iteration so the derivation stays anchored to
+something outside itself.
+
+### Scaling, against a separate implementation
+
+The bundle's scaling table was cross-checked with this arm's Rust engine:
+
+| | certified | fallback | prune ratio |
+|---|---|---|---|
+| `2^20` | 938,413 ✓ | 110,161 ✓ | `0.8949420832482972` ✓ |
+| `2^22` | 3,753,661 ✓ | 440,641 ✓ | `0.8949429487910027` ✓ |
+| `2^24` | 15,014,653 ✓ | 1,762,561 ✓ | `0.8949431651762921` ✓ |
+
+Every column, to sixteen decimal places.
+
+That agreement needed one thing resolved first. The ratios disagreed in the 7th
+decimal until the denominators were compared: the bundle's is `2^e − 2`, one short
+of the `2^e − 1` integers in `[1, 2^e)`. The missing value is `n = 1` — the
+terminal state, which needs no verification — so the bundle's domain is `[2, 2^e)`.
+Excluding `n = 1` reconciles every column exactly. Neither side was wrong; the
+domains were stated differently, and that is the sort of thing worth pinning down
+rather than rounding away.
+
+### What it does and does not give
+
+It is a **finite-range accelerator**, and the bundle says so itself: *"not a proof
+of the Collatz conjecture."* Certifying 89.494% of a range faster leaves the rest
+to explicit iteration and says nothing beyond the range.
+
+Its relation to this arm's engine is direct ancestry, with one difference worth
+recording: the engine uses the `k`-step jump **only as a filter** and re-walks from
+`n` whenever it does not settle the question, because a trajectory can dip below
+`n` and rise again inside the first `k` steps. The prototype's certificates avoid
+that issue by only ever claiming descent *at* the `k`-th step — a narrower claim,
+and a sound one.

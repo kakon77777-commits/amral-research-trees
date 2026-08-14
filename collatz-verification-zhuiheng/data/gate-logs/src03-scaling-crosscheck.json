@@ -1,0 +1,55 @@
+{
+  "tool": "src03 scaling cross-check",
+  "engine": "code/collatz_verify.rs (Rust, independent implementation)",
+  "subject": "the prototype's collatz_k16_scaling_benchmark.csv",
+  "domain_reconciliation": "The bundle's denominator is certified + fallback = 2^e - 2, one short of the 2^e - 1 integers in [1, 2^e). The missing value is n = 1: it is the terminal state and needs no verification, so the bundle's domain is [2, 2^e). Excluding n = 1 from this engine's own tallies reconciles every column exactly.",
+  "rows": [
+    {
+      "exponent": 20,
+      "engine_certified": 938413,
+      "bundle_certified": 938413,
+      "certified_match": true,
+      "engine_fallback_excluding_n1": 110161,
+      "bundle_fallback": 110161,
+      "fallback_match": true,
+      "engine_domain_size": 1048574,
+      "expected_2e_minus_2": 1048574,
+      "engine_prune_ratio": 0.8949420832482972,
+      "bundle_prune_ratio": 0.8949420832482972,
+      "ratio_match": true,
+      "elapsed_s": 0.008
+    },
+    {
+      "exponent": 22,
+      "engine_certified": 3753661,
+      "bundle_certified": 3753661,
+      "certified_match": true,
+      "engine_fallback_excluding_n1": 440641,
+      "bundle_fallback": 440641,
+      "fallback_match": true,
+      "engine_domain_size": 4194302,
+      "expected_2e_minus_2": 4194302,
+      "engine_prune_ratio": 0.8949429487910027,
+      "bundle_prune_ratio": 0.8949429487910027,
+      "ratio_match": true,
+      "elapsed_s": 0.016
+    },
+    {
+      "exponent": 24,
+      "engine_certified": 15014653,
+      "bundle_certified": 15014653,
+      "certified_match": true,
+      "engine_fallback_excluding_n1": 1762561,
+      "bundle_fallback": 1762561,
+      "fallback_match": true,
+      "engine_domain_size": 16777214,
+      "expected_2e_minus_2": 16777214,
+      "engine_prune_ratio": 0.8949431651762921,
+      "bundle_prune_ratio": 0.8949431651762921,
+      "ratio_match": true,
+      "elapsed_s": 0.048
+    }
+  ],
+  "failures": [],
+  "ok": true
+}

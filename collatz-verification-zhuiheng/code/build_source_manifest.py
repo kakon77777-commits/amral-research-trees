@@ -37,6 +37,20 @@ PROCESSED = {
         "archived as ../collatz-ot-series-neok/ and fully rechecked; "
         "see reports/RUN-002-OT-SERIES.md"
     ),
+    "collatz_operation_translation_finite_verification_prototype.zip": (
+        "item 03. archived byte-exact at "
+        "../collatz-ot-series-neok/early-experiments/; all 58651 certificate rows "
+        "rechecked by code/src03_finite_prototype_recheck.py, scaling cross-checked "
+        "against the Rust engine"
+    ),
+    "collatz_ot_v3_threshold_benchmark.csv": (
+        "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
+        "RECHECK PENDING"
+    ),
+    "collatz_operation_translation_v3_threshold_bundle.zip": (
+        "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
+        "RECHECK PENDING"
+    ),
     "dimension_aware_log_physics_stress_bundle.zip": (
         "item 02. archived byte-exact at "
         "../collatz-ot-series-neok/early-experiments/; rechecked by "
