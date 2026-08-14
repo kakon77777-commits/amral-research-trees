@@ -56,6 +56,15 @@ describe it that way.
 6. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
+How to cite this tree, and its CTCL timestamp, are in
+[`CITATION.md`](./CITATION.md). The state below is registered as CTCL instant
+`ctcl:instant:69790ea7-a6e6-4181-beed-5de98ec024ba`
+([shareable](https://commoninstant.org/i/69790ea7-a6e6-4181-beed-5de98ec024ba)),
+Ed25519-signed, with the git commit and tree hash carried in the instant's own
+metadata — so the timestamp is checkable against the repository rather than
+asserted beside it. It timestamps *when this state existed*; it does not review
+whether any of it is correct.
+
 Held separately: [`reports/LEAN-QUEUE.md`](./reports/LEAN-QUEUE.md) — the claims
 this arm structurally cannot settle, because they are `forall`-quantified over
 infinite or non-integer domains rather than finite. Collected, scoped and ordered,

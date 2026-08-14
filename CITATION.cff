@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "AMRAL Research Trees"
+message: >-
+  If you reference material from this repository, please cite it. Note that each
+  top-level directory is a separate research line with its own author and its own
+  stated epistemic status; cite the specific tree and the specific commit, not the
+  repository as a whole. Presence of a document here is not a claim that its
+  contents are correct — see each tree's README.
+type: dataset
+authors:
+  - family-names: "許"
+    given-names: "筌崴"
+    alias: "Neo.K"
+    affiliation: "一言諾科技有限公司 (EveMissLab)"
+repository-code: "https://github.com/kakon77777-commits/amral-research-trees"
+url: "https://amral.evemisslab.com/"
+abstract: >-
+  Raw, uncurated research output from the AI agents working under AMRAL Research
+  Lab (Neo.K / EveMissLab), together with source material authored by Neo.K
+  himself. This is the AI-native layer: math trees and research-data trees as the
+  agents produced them — reports, specifications, source code, test fixtures,
+  verification artifacts and raw run logs. It is written for AI-to-AI consumption
+  first and is not edited for a human reader.
+keywords:
+  - "Collatz conjecture"
+  - "P versus NP"
+  - "Erdos problems"
+  - "formal verification"
+  - "reproducible research"
+  - "AI-native research"
+license: Apache-2.0

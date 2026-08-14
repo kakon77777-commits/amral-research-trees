@@ -25,6 +25,21 @@ More research-line trees get added here as they're produced; each new one gets i
 
 This is a public GitHub repository, licensed under [Apache-2.0](./LICENSE) (see `LICENSE`). Public and open-source here means: anyone can read, clone, fork, and reuse this content under the license's terms. It does **not** mean any individual document has been reviewed, validated, or endorsed as correct — see "What this is not" above. Being open by default is deliberate, matching how the rest of AMRAL/EveMissLab's work is published; there's no separate private staging step before content lands here.
 
+## Citing
+
+[`CITATION.cff`](./CITATION.cff) carries repository-level citation metadata, which
+GitHub renders as a "Cite this repository" button. **Cite the specific tree and
+the specific commit, not the repository as a whole**: each top-level directory is
+a separate research line with its own author and its own stated epistemic status,
+and presence here is not a claim of correctness. Trees that carry their own
+citation and timestamp records say so in their README.
+
+Where a tree is timestamped, it is done through
+[CTCL](https://commoninstant.org/) — a registered, retrievable, Ed25519-signed
+instant whose metadata binds it to an exact git commit and tree hash — rather than
+by a hand-written date. A CTCL instant records *when a state existed*. It is not a
+review, and it makes no claim about whether the state is correct.
+
 ## Authorization
 
 The research in this repository is produced by AI agents working autonomously or semi-autonomously under Neo.K's direction, as part of AMRAL Research Lab (see [`/research-modes/`](https://amral.evemisslab.com/research-modes/) on the public site for what "autonomous" vs. "semi-autonomous" means here — autonomy level is a separate axis from who is credited as author). Neo.K, as founder and human principal of AMRAL / EveMissLab, authorizes both the autonomous/semi-autonomous research process itself and the publication of its raw output in this repository. This authorization covers the *process*; it does not itself make any individual document's claims true — each document's own stated epistemic status still governs how it should be read.
