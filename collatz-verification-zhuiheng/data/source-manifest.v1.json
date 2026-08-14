@@ -12,7 +12,7 @@
     "Hard-Zeta": 44,
     "other project": 2
   },
-  "processed_count": 17,
+  "processed_count": 19,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -267,7 +267,7 @@
       "sha256": "cc20d83fa7c57e7a3813d6fdb111d935f0302e1f1131376bc791dbe9d266e571",
       "line": "Hard-Zeta",
       "role": "proof-route origin",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 17, the Hard-Zeta origin. Rechecked by code/src06_hardzeta_origin_recheck.py: Z_k(s) measured on [2, 2^32) with two-sided bounds, the L = 1 uniform route refuted, and the ROUTE MAP's missing monotonicity hypothesis reported; see reports/RUN-004-HARD-ZETA-ORIGIN.md",
       "zip_entries": 2,
       "zip_uncompressed_bytes": 30667,
       "zip_top_level": [
@@ -282,7 +282,7 @@
       "sha256": "fe8ea2204b0a04f7e543a0e438ea45bc5c55f672913a28ae1d1e509787654333",
       "line": "Hard-Zeta",
       "role": "proof-route origin",
-      "processed_by_this_tree": null
+      "processed_by_this_tree": "item 18. Rechecked with item 17: byte-identical to the SSSP package's archived HZ original, and the v0.1 -> v0.1.1 -> v0.1.2 chain counted — v0.1.1 fixed one of the two unrestricted unions, the E_k^C one survived"
     },
     {
       "name": "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",

@@ -1,0 +1,196 @@
+{
+  "tool": "src06_drill.py",
+  "subject": "src06_hardzeta_origin_recheck.py",
+  "surfaces": [
+    "the measurement JSON",
+    "the source and SSSP documents",
+    "the recheck's own inline arguments"
+  ],
+  "defects": {
+    "M01_E_k_counts_rise_with_k": {
+      "target_check": "SRC06_E_k_counts_are_non_increasing_in_k",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC06_derived_sigma_histogram_is_non_negative",
+        "SRC06_gaps_between_occurring_stopping_times_are_at_most_2",
+        "SRC06_occurring_stopping_times_are_exactly_the_admissible_ones"
+      ]
+    },
+    "M02_Z_k_rises_with_k": {
+      "target_check": "SRC06_Z_k_is_non_increasing_in_k_for_every_s",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "M03_sigma_equal_to_3_starts_occurring": {
+      "target_check": "SRC06_sigma_equals_3_occurs_for_no_n_on_the_range",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC06_occurring_stopping_times_are_exactly_the_admissible_ones"
+      ]
+    },
+    "M04_Z_2_and_Z_3_differ_by_one_ulp": {
+      "target_check": "SRC06_Z_2_equals_Z_3_exactly_so_L_equals_1_admits_no_q_below_1",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "M05_max_sigma_off_by_one": {
+      "target_check": "SRC06_measurer_max_sigma_agrees_with_the_engine",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC06_argmax_sigma_reproduces_under_exact_python_iteration"
+      ]
+    },
+    "M06_argmax_sigma_points_at_3": {
+      "target_check": "SRC06_argmax_sigma_reproduces_under_exact_python_iteration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC06_measurer_max_sigma_agrees_with_the_engine"
+      ]
+    },
+    "M07_min_E_k_is_not_hard_at_that_depth": {
+      "target_check": "SRC06_reported_minima_of_E_k_are_really_minimal",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC06_the_exact_lower_bound_sits_inside_the_measured_bracket"
+      ]
+    },
+    "M08_a_gap_of_3_between_occurring_stopping_times": {
+      "target_check": "SRC06_gaps_between_occurring_stopping_times_are_at_most_2",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC06_occurring_stopping_times_are_exactly_the_admissible_ones"
+      ]
+    },
+    "M09_an_inadmissible_stopping_time_occurs": {
+      "target_check": "SRC06_occurring_stopping_times_are_exactly_the_admissible_ones",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "M10_measured_sum_drops_below_its_exact_floor": {
+      "target_check": "SRC06_the_exact_lower_bound_sits_inside_the_measured_bracket",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC06_Z_k_is_non_increasing_in_k_for_every_s"
+      ]
+    },
+    "M11_no_step_decreases_strictly": {
+      "target_check": "SRC06_most_steps_do_strictly_decrease_so_the_route_is_not_dead",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "S01_kahan_sum_perturbed_in_the_cross_check_range": {
+      "target_check": "SRC06_kahan_sums_match_exactly_rounded_python_fsum",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_v01_body_loses_the_monotonicity_hypothesis": {
+      "target_check": "SRC06_the_paper_body_states_the_monotonicity_hypothesis",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC06_the_route_map_omits_the_hypothesis_the_body_carries"
+      ]
+    },
+    "D02_route_map_carries_the_hypothesis_after_all": {
+      "target_check": "SRC06_the_route_map_omits_the_hypothesis_the_body_carries",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_v01_already_uses_the_restricted_union": {
+      "target_check": "SRC06_v01_carries_the_unrestricted_union_twice",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D04_v011_corrigendum_section_removed": {
+      "target_check": "SRC06_v011_adds_the_corrigendum_and_the_restricted_chart",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC06_v011_is_the_hz_original_inside_the_sssp_package",
+        "SRC06_v012_dissolves_the_corrigendum_into_the_body"
+      ]
+    },
+    "D05_v011_fixed_both_unions": {
+      "target_check": "SRC06_v011_fixed_only_one_of_the_two_unrestricted_unions",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC06_v011_is_the_hz_original_inside_the_sssp_package",
+        "SRC06_v012_removes_the_last_unrestricted_union"
+      ]
+    },
+    "D06_v011_no_longer_matches_the_sssp_original": {
+      "target_check": "SRC06_v011_is_the_hz_original_inside_the_sssp_package",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D07_v012_keeps_a_bare_union": {
+      "target_check": "SRC06_v012_removes_the_last_unrestricted_union",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D08_v012_still_appends_the_corrigendum": {
+      "target_check": "SRC06_v012_dissolves_the_corrigendum_into_the_body",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T01_the_two_case_proof_is_misstated": {
+      "target_check": "SRC06_the_two_case_proof_that_sigma_never_equals_3_holds_pointwise",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_the_counterexample_is_made_monotone": {
+      "target_check": "SRC06_without_monotonicity_the_bridge_is_false",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_admissible_boundary_off_by_one": {
+      "target_check": "SRC06_occurring_stopping_times_are_exactly_the_admissible_ones",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "X01_a_measurer_reporting_more_hard_starts_than_fallbacks": {
+      "target_check": "SRC06_E_k_is_contained_in_the_Paper_05_k_block_fallback_set",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_measurement_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_added_beside_the_documents": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "counts": {
+    "defects_planted": 24,
+    "defects_caught_by_the_named_check": 24,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

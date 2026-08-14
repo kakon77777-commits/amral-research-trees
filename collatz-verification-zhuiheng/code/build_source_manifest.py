@@ -87,6 +87,17 @@ PROCESSED = {
         "loose Paper 02 beside the bundles; confirmed byte-identical to the "
         "bundled copy by code/src05_provenance_chain_recheck.py"
     ),
+    "Faithful_Global_Quantifier_Compression_Proof_Route_v0.1_bundle.zip": (
+        "item 17, the Hard-Zeta origin. Rechecked by "
+        "code/src06_hardzeta_origin_recheck.py: Z_k(s) measured on [2, 2^32) with "
+        "two-sided bounds, the L = 1 uniform route refuted, and the ROUTE MAP's "
+        "missing monotonicity hypothesis reported; see reports/RUN-004-HARD-ZETA-ORIGIN.md"
+    ),
+    "Faithful_Global_Quantifier_Compression_Proof_Route_v0.1.1.md": (
+        "item 18. Rechecked with item 17: byte-identical to the SSSP package's "
+        "archived HZ original, and the v0.1 -> v0.1.1 -> v0.1.2 chain counted — "
+        "v0.1.1 fixed one of the two unrestricted unions, the E_k^C one survived"
+    ),
     "collatz_ot_v3_threshold_benchmark.csv": (
         "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
         "all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, "

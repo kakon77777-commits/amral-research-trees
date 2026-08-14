@@ -64,11 +64,18 @@ describe it that way.
    edit escapes the correction ledger. The pre-repair text is attested by drafts
    archived three days earlier. Includes the two checks of my own that turned out
    to be vacuous, and how the drill found them.
-5. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+5. [`reports/RUN-004-HARD-ZETA-ORIGIN.md`](./reports/RUN-004-HARD-ZETA-ORIGIN.md) —
+   the origin of the Hard-Zeta line, and the first **measured** values of its
+   central quantity `Z_k(s)`, on `[2, 2^32)` with rigorous two-sided bounds. Also
+   a result rather than a reproduction: `sigma(n) = 3` is impossible for every
+   `n`, so `E_2 = E_3` exactly and the `L = 1` form of the route's uniform decay
+   obligation is **false**. Plus a hypothesis its ROUTE MAP drops, a defect in my
+   own measurer, and a claim of mine the drill deleted.
+6. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-6. [`code/`](./code/) — the engine, the independent reference, and the gates.
-7. [`data/gate-logs/`](./data/gate-logs/) and
+7. [`code/`](./code/) — the engine, the independent reference, and the gates.
+8. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
