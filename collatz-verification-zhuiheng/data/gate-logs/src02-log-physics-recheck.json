@@ -1,0 +1,67 @@
+{
+  "tool": "src02_log_physics_recheck.py",
+  "subject": "Neo.K, dimension_aware_log_physics_stress_bundle.zip (2026-08-10)",
+  "source_item": 2,
+  "scope": "exact dimensional algebra, an external anchor for Stefan-Boltzmann, and cancellation-free routes to the hard cases. Not about Collatz.",
+  "checks": {
+    "SRC02_pi_agrees_between_two_unrelated_series": {
+      "pass": true
+    },
+    "SRC02_dimension_vectors_match_the_reported_values": {
+      "pass": true
+    },
+    "SRC02_addition_across_unequal_dimensions_is_illegal": {
+      "pass": true
+    },
+    "SRC02_phase_cell_equals_h_cubed_with_pi_cancelling": {
+      "pass": true
+    },
+    "SRC02_phase_cell_matches_the_reported_value": {
+      "pass": true
+    },
+    "SRC02_stefan_boltzmann_matches_the_SI_exact_CODATA_value": {
+      "pass": true
+    },
+    "SRC02_stefan_boltzmann_matches_the_bundles_own_digits": {
+      "pass": true
+    },
+    "SRC02_binary64_cannot_represent_the_test_beta": {
+      "pass": true
+    },
+    "SRC02_lorentz_gamma_matches_via_the_factored_route": {
+      "pass": true
+    },
+    "SRC02_factored_and_naive_routes_agree_at_this_precision": {
+      "pass": true
+    }
+  },
+  "measured": {
+    "pi_first_40_digits": "3.1415926535897932384626433832795028841971",
+    "phase_cell": {
+      "h_cubed": "2.90916322044524630464728375E-100",
+      "reported": "2.90916322044524630464728375e-100",
+      "note": "hbar = h/(2 pi) makes (2 pi hbar)^3 = h^3 identically; no pi survives."
+    },
+    "stefan_boltzmann": {
+      "computed": "5.670374419184429453970996732E-8",
+      "codata_si_exact": "5.670374419184429453970996731E-8",
+      "relative_difference": "1.568204866387E-28",
+      "why_this_is_an_external_anchor": "k_B, h and c are exact defined constants since the 2019 SI revision, so sigma is exactly determined by the formula and CODATA's digits are an expectation this arm did not author."
+    },
+    "lorentz_gamma": {
+      "beta": "1 - 1e-40",
+      "gamma_by_factored_route": "7.0710678118654752440084436210E+19",
+      "reported_by_bundle": "70710678118654752440.08443621",
+      "relative_difference": "6.857577121120E-30",
+      "binary64_beta": "1.0",
+      "note": "1 - beta^2 = (1-beta)(1+beta) removes the cancellation entirely, so gamma needs no log-difference trick at all - only enough precision to hold 1e-40. The bundle's log-diff-exp path gets the same number by a different method, which is what makes the agreement worth something."
+    },
+    "assessment": {
+      "what_it_establishes": "the additive-coordinate representation survives contact with real formulas: products become sums, SI dimensions compose as integer vectors, illegal additions are rejected structurally, and severe cancellation is handled at working precision. Every benchmark reproduces its reference value.",
+      "what_it_does_not": "nothing about Collatz. This is a representation stress test, and its Collatz relevance is only that item 01 used the same coordinate.",
+      "relation_to_the_line": "A branch rather than a continuation. Item 01 applied log coordinates to Collatz; item 02 applies the same coordinate to dimensional physics. The nine-paper series then goes the other way entirely, replacing logarithms with exact affine operators over the integers - Paper 02 §28 says an exact certificate need not depend on a floating logarithm. So this branch is not an ancestor of the series' method; it is the road not taken, and it is worth keeping precisely because it shows the alternative was tried and how far it actually goes."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

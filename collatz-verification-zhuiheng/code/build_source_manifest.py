@@ -37,6 +37,11 @@ PROCESSED = {
         "archived as ../collatz-ot-series-neok/ and fully rechecked; "
         "see reports/RUN-002-OT-SERIES.md"
     ),
+    "dimension_aware_log_physics_stress_bundle.zip": (
+        "item 02. archived byte-exact at "
+        "../collatz-ot-series-neok/early-experiments/; rechecked by "
+        "code/src02_log_physics_recheck.py. Not a Collatz item."
+    ),
     "finite_collatz_additive_coordinate_mvp_bundle.zip": (
         "item 01. archived byte-exact at "
         "../collatz-ot-series-neok/early-experiments/; rechecked by "
