@@ -29,6 +29,9 @@ import tempfile
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DRILL_K = 8
 DRILL_ODD_LIMIT = 601
+# The slowest legitimate baseline runs well under a minute; 900s only ever gave a
+# runaway mutant more rope.
+TIMEOUT_S = 300
 
 # (id, description, old, new, checks expected to fail)
 P02_MUTATIONS = [
@@ -215,6 +218,45 @@ P07_MUTATIONS = [
      []),
 ]
 
+P08_MUTATIONS = [
+    ("K01-composition-rule", "§3's composition rule uses b2*d2 instead of b2*d1",
+     "        A, B, D = a * A, a * B + b * D, d * D",
+     "        A, B, D = a * A, a * B + b * d, d * D",
+     ["P08_S4_mother_formula_for_B_w"]),
+    ("K02-mother-formula-swap", "§4's mother formula swaps the a and d products",
+     "        total += triples[j][1] * after * before",
+     "        total += triples[j][1] * before * after * 2",
+     ["P08_S4_mother_formula_for_B_w"]),
+    ("K03-unit-test", "the unit test looks for A*y = 0 instead of 1",
+     "            is_unit = any((A * y) % n == 1 % n for y in range(n))",
+     "            is_unit = any((A * y) % n == 0 for y in range(n))",
+     ["P08_ThmB_quotient_unit_gives_exactly_one_residue_for_every_rhs"]),
+    ("K04-regular-test", "the regularity test includes x = 0, so nothing is regular",
+     "            regular = all((A * x) % n != 0 for x in range(1, n))",
+     "            regular = all((A * x) % n != 0 for x in range(0, n))",
+     ["P08_ThmC_regular_multiplier_iff_injective"]),
+    ("K05-matrix-multiply", "matrix multiplication transposes one factor",
+     "    return (X[0] * Y[0] + X[1] * Y[2], X[0] * Y[1] + X[1] * Y[3],\n"
+     "            X[2] * Y[0] + X[3] * Y[2], X[2] * Y[1] + X[3] * Y[3])",
+     "    return (X[0] * Y[0] + X[2] * Y[2], X[0] * Y[1] + X[2] * Y[3],\n"
+     "            X[1] * Y[0] + X[3] * Y[2], X[1] * Y[1] + X[3] * Y[3])",
+     ["P08_S26_matrix_products_are_as_stated"]),
+    ("K06-degree-additive", "Theorem G is tested as additive instead of multiplicative",
+     "            if deg(poly_compose(p, q)) != deg(p) * deg(q):",
+     "            if deg(poly_compose(p, q)) != deg(p) + deg(q):",
+     ["P08_ThmG_degree_of_composition_multiplies"]),
+    # Searching for a UNIT determinant that fails to be invertible finds nothing,
+    # so the witness comes back None and the repair check has nothing to stand on.
+    ("K07-determinant-search", "the §32 witness search looks for unit determinants",
+     "            if is_unit:\n                continue",
+     "            if not is_unit:\n                continue",
+     ["P08_S32_repair_nonzero_determinant_is_not_enough_over_a_ring"]),
+    ("NULL-08", "control: a comment is added",
+     "def closed_form_B(triples: list[tuple[int, int, int]]) -> int:",
+     "# control mutation, no behavioural change\ndef closed_form_B(triples: list[tuple[int, int, int]]) -> int:",
+     []),
+]
+
 P03_MUTATIONS = [
     # The whole point of Paper 03's recheck is that r_w is derived twice. These
     # perturb each route separately: breaking either must break the agreement.
@@ -336,6 +378,7 @@ TARGETS = [
     ("code/ot_paper07_recheck.py", P07_MUTATIONS, ["6", "300"]),
     ("code/ot_paper09_recheck.py", P09_MUTATIONS, ["7", "20"]),
     ("code/ot_paper03_recheck.py", P03_MUTATIONS, ["8"]),
+    ("code/ot_paper08_recheck.py", P08_MUTATIONS, []),
     ("code/ot_paper04_recheck.py", P04_MUTATIONS, ["6"]),
     ("code/ot_paper05_kl_recheck.py", P05KL_MUTATIONS, []),
 ]
@@ -345,11 +388,18 @@ def run(path: pathlib.Path, args: list[str]) -> dict | None:
     import os
     env = dict(os.environ, PYTHONUTF8="1", PYTHONDONTWRITEBYTECODE="1",
                COLLATZ_TREE_ROOT=str(ROOT))
-    proc = subprocess.run(
-        [sys.executable, str(path), *args],
-        capture_output=True, text=True, encoding="utf-8", errors="replace",
-        timeout=900, env=env,
-    )
+    # A mutant that cannot answer in bounded time has been detected. Without
+    # this handler the TimeoutExpired escapes and takes the whole drill with it,
+    # discarding every verdict already earned - which is exactly what happened
+    # the first time a mutation made a search pathologically slow.
+    try:
+        proc = subprocess.run(
+            [sys.executable, str(path), *args],
+            capture_output=True, text=True, encoding="utf-8", errors="replace",
+            timeout=TIMEOUT_S, env=env,
+        )
+    except subprocess.TimeoutExpired:
+        return {"timed_out": True}
     try:
         return json.loads(proc.stdout)
     except json.JSONDecodeError:
@@ -393,7 +443,9 @@ def main() -> int:
                 path = tmpdir / (re.sub(r"[^A-Za-z0-9_]", "_", mid) + ".py")
                 path.write_text(original.replace(old, new), encoding="utf-8")
                 out = run(path, args)
-                if out is None:
+                if out is not None and out.get("timed_out"):
+                    failed_checks = ["<timed out>"]
+                elif out is None:
                     failed_checks = ["<crashed>"]
                 else:
                     # Only entries carrying a "pass" key are the recheck's own
@@ -408,9 +460,9 @@ def main() -> int:
                 if expected:
                     # A mutant that cannot produce a result at all has been
                     # detected, though less informatively than by a named check.
-                    crashed = failed_checks == ["<crashed>"]
+                    crashed = failed_checks in (["<crashed>"], ["<timed out>"])
                     caught = crashed or all(e in failed_checks for e in expected)
-                    verdict = ("caught (crashed, not by a named check)" if crashed
+                    verdict = (f"caught ({failed_checks[0]}, not by a named check)" if crashed
                                else "caught" if caught else "SURVIVED / WRONG CHECK")
                 else:
                     caught = not failed_checks

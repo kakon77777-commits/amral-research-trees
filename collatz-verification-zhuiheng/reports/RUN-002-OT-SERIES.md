@@ -413,7 +413,103 @@ properly. Across the whole drill only one mutation still detects by crashing, an
 that one legitimately: inverting `α` to `ln3/ln2` makes `1 − α` negative, and
 there is no meaningful check to route `ln` of a negative through.
 
-## 8. Paper 04 — bidirectional transport, never machine-checked before
+## 8. Paper 08 — the breakage ladder, one witness per rung
+
+`code/ot_paper08_recheck.py`. **All 19 checks pass.**
+
+### Correcting an earlier judgement of mine
+
+An earlier version of this report wrote Paper 08 off as out of instrument range,
+because it is about general commutative rings, zero divisors, noncommutative
+algebras, Möbius maps and higher-degree polynomials. **That was too quick.**
+
+A *structural breakage theorem* does not need a general proof to be tested. It
+needs an explicit **witness** that the property really does fail there, and
+confirmation that the properties *above* it in the ladder really do survive. Both
+are finite, and both are squarely this instrument's range.
+
+What still needs a proof assistant is only the universally quantified form — "for
+*every* commutative ring and *every* ideal" — and that is what stays in
+`LEAN-QUEUE.md`, whose Paper 08 entry has shrunk accordingly.
+
+### One witness per rung of §43's ladder
+
+| Level | What breaks | Witness |
+|---|---|---|
+| 1 | unique residue coding | `ℤ/6ℤ`, multiplier 2: `2x ≡ 2` has **two** solutions `{1,4}`; `2x ≡ 1` has **none** |
+| 2 | faithful recovery | `2·1 ≡ 2·4 ≡ 2 (mod 6)` while `1 ≠ 4` |
+| 3 | counts fix the leading drift | `A=[[1,1],[0,1]]`, `B=[[1,0],[1,1]]`: `AB=[[2,1],[1,1]] ≠ [[1,1],[1,2]]=BA`, identical branch counts |
+| 4 | arithmetic-progression transport | Möbius `x ↦ (x+1)/x` on `1+a`: image `2, 3/2, 4/3, 5/4`, differences `−1/2, −1/6, −1/12` |
+| 5 | fixed-degree closure | `x²+1` iterates have degree `2, 4, 8, 16` |
+
+Every stated number in §10, §12, §26 and §37 matches exactly.
+
+### Each rung checked in both directions
+
+The paper's real content is not "it breaks" but *what survives when it breaks*, so
+both halves are checked:
+
+- **§11** — at the very same `ℤ/6ℤ` witness where residue uniqueness fails, the
+  affine closure is **untouched**: the operator still composes by §3's rule and
+  §4's mother formula still gives `B_w`. "Closure survives while unique residue
+  coding fails" is verified at one witness, not two.
+- **§14** — the two failure modes are kept apart with a witness each. `2` in `ℤ`
+  is a **non-unit but injective**; `2` in `ℤ/6ℤ` is **both**. So "non-unit" and
+  "zero divisor" are confirmed to be genuinely different conditions, controlling
+  residue uniqueness and exact recovery respectively.
+- **§31** — dimension is confirmed **not** to be the breakage point. Commuting
+  (here diagonal) matrix families keep the count law: the product is
+  order-independent, and each eigendirection carries a scalar-like multiplier
+  exactly as stated. The boundary really is noncommutativity, not `dim > 1`.
+
+Theorems B and C are also checked exhaustively over `ℤ/nℤ` for `n ≤ 40`: a unit
+multiplier gives exactly one solution for **every** right-hand side, a non-unit
+admits both a right-hand side with none and one with several, and "regular
+multiplier" and "injective" are confirmed equivalent on every `(n, A)` pair.
+
+### The §32 repair, with a minimal witness
+
+The repair ledger records that Paper 08's Möbius subsection wrote `ad − bc ≠ 0`
+without stating the coefficient domain, and that over a general commutative ring
+the condition must be `ad − bc ∈ R^×`.
+
+That correction is exactly the kind of thing a witness settles:
+
+```
+ℤ/4ℤ,  M = [[0, 1], [2, 0]],  det = 2
+    determinant is nonzero      ✓
+    determinant is a unit       ✗
+    matrix is invertible        ✗
+```
+
+`det ≠ 0` holds and invertibility still fails — so the unrepaired condition would
+have admitted this matrix. The repaired one does not.
+
+### Collatz's own position
+
+§46 claims Collatz sits at Level 0 of the ladder. All six conditions were checked
+rather than assumed: scalar, affine, commutative, `3^u ∈ (ℤ/2^kℤ)^×` for every
+`k ≤ 8` and every `u ≤ k`, `3^u` regular, and the state domain ordered.
+
+Which is the paper's point, and worth restating because it is the one conclusion
+of this whole series that bears on where the difficulty actually lives: **Collatz
+is not hard because its local operator is complicated.** Its local arithmetic sits
+in the cleanest interior of the RCOT domain, and can be trivialised to the
+identity. The difficulty is entirely in which chart comes next.
+
+### One more drill defect of mine
+
+`K07` — the mutation aimed at the §32 witness search — made that search
+pathologically slow rather than wrong. The drill's `run()` had **no timeout
+handler** (only the engine's separate drill did), so the `TimeoutExpired` escaped
+and took the whole run with it, discarding every verdict already earned. Fixed:
+timeouts are caught, reported as `<timed out>`, and counted as a detection. The
+per-target budget also came down from 900s to 300s, since the slowest legitimate
+baseline runs well under a minute and the old figure only ever gave a runaway
+mutant more rope. The same pass removed a redundant `n⁴` scan in the recheck whose
+result was computed and never used.
+
+## 9. Paper 04 — bidirectional transport, never machine-checked before
 
 `code/ot_paper04_recheck.py`. **All 21 checks pass** at `k ≤ 10`: 22,506
 transport triples and 112,530 negative controls.
@@ -484,7 +580,7 @@ arithmetic identity rather than by the checks — after `3^u ≤ 2^k` versus
 `3^u < 2^k` in Paper 09, and `<` versus `<=` in Paper 07. Re-aimed at the family
 index, it is caught by three checks at once.
 
-## 9. Paper 05's KL constant, and a finding
+## 10. Paper 05's KL constant, and a finding
 
 `code/ot_paper05_kl_recheck.py`. The last remaining numeric claim in the six
 finite groups.
@@ -569,7 +665,7 @@ subject is not the instrument breaking.** The KL ULP result is recorded under
 real defect in the subject would be indistinguishable from a broken checker — and
 `build_results.py` would refuse to archive the very finding worth keeping.
 
-## 10. All seven rechecks were drilled
+## 11. All eight rechecks were drilled
 
 A recheck that passed everything is worth what it could have caught.
 `code/ot_recheck_drill.py` perturbs each asserted formula by one term and
@@ -627,7 +723,7 @@ geometric sum, §33's factor of `r`, the §21 threshold, the Theorem C residue
 sign, §47 using the minimum correction where the maximum is required, and the
 referee itself (which cascades into thirteen checks).
 
-**54 defects planted across the seven rechecks, 54 caught, 7 controls
+**61 defects planted across the eight rechecks, 61 caught, 8 controls
 undisturbed.** One was caught by crashing rather than by a named check, which is
 recorded as such rather than counted as a clean hit.
 
@@ -670,7 +766,7 @@ Breaking the referee's `+1` injection did **not** break Theorem A or Theorem D.
   not a hole in the check — but it means **Theorem D alone cannot detect a wrong
   injection constant**, and should not be leaned on for that.
 
-## 11. Where this stands
+## 12. Where this stands
 
 | Group | Cases claimed | Status |
 |---|---|---|
@@ -694,13 +790,14 @@ Remaining, in order of what this arm can usefully do next:
 - **Paper 04 is now complete** (§7 above), and it was the largest untested gap in
   the series: the subject's suite had no Paper 04 test at all.
 - **Paper 03 is now complete** (§7 above), with `r_w` derived independently twice.
-- **Papers 01 and 08 remain.** Paper 01 is a reclassification of prior literature,
-  so its checkable content is bibliographic rather than arithmetic. Paper 08's
-  algebraic ladder is the real remainder — and an earlier assessment here that it was
-  entirely out of instrument range was too quick: its *general* claims need a
-  proof assistant, but a "structural breakage theorem" needs explicit failure
-  **witnesses**, and witnesses in `ℤ/nℤ`, `M₂(ℤ)` or over a finite field are
-  exactly this instrument's range.
+- **Paper 08 is now complete** (§8 above), with one explicit witness per rung of
+  its ladder and each rung checked in both directions. Only its universally
+  quantified forms remain, in `LEAN-QUEUE.md`.
+- **Paper 01 remains.** It is a reclassification and correction of prior
+  literature, so its checkable content is bibliographic — citation accuracy,
+  attribution, whether a corrected claim is stated as the sources state it —
+  rather than arithmetic. That is a different instrument again, and worth being
+  honest about: this arm can check numbers, not literature.
 - **Hard-Zeta's invariant-measure route** is `∀`-quantified over function spaces,
   which this instrument cannot address at all. Those are collected, scoped and ordered in
   [`LEAN-QUEUE.md`](./LEAN-QUEUE.md), and deliberately not started: Lean is

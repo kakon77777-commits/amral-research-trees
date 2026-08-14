@@ -1,0 +1,179 @@
+{
+  "tool": "ot_paper08_recheck.py",
+  "subject": "Collatz Operation Translation Series — Paper 08 v0.1.1 (Neo.K)",
+  "scope": "finite witnesses for each rung of the algebraic breakage ladder, plus confirmation of what survives at each rung. The universally quantified forms stay in LEAN-QUEUE.md.",
+  "note": "the subject's regression suite contains no Paper 08 test",
+  "checks": {
+    "P08_ThmA_commutative_affine_closure_counts_fix_A_and_D": {
+      "pass": true
+    },
+    "P08_S4_mother_formula_for_B_w": {
+      "pass": true
+    },
+    "P08_S18_UUDD_recovers_9x_plus_5_over_16": {
+      "pass": true
+    },
+    "P08_ThmB_quotient_unit_gives_exactly_one_residue_for_every_rhs": {
+      "pass": true
+    },
+    "P08_S9_non_unit_admits_both_no_solution_and_several": {
+      "pass": true
+    },
+    "P08_S10_mod6_witnesses_are_as_stated": {
+      "pass": true
+    },
+    "P08_S11_affine_closure_survives_where_residue_uniqueness_fails": {
+      "pass": true
+    },
+    "P08_ThmC_regular_multiplier_iff_injective": {
+      "pass": true
+    },
+    "P08_S12_zero_divisor_witness_is_as_stated": {
+      "pass": true
+    },
+    "P08_S14_non_unit_does_not_imply_non_injective": {
+      "pass": true
+    },
+    "P08_S26_matrix_products_are_as_stated": {
+      "pass": true
+    },
+    "P08_ThmE_equal_counts_different_leading_operator": {
+      "pass": true
+    },
+    "P08_S31_commuting_matrices_keep_the_count_law": {
+      "pass": true
+    },
+    "P08_ThmF_mobius_composition_is_matrix_multiplication": {
+      "pass": true
+    },
+    "P08_S34_arithmetic_progression_transport_fails_witness": {
+      "pass": true
+    },
+    "P08_S32_repair_nonzero_determinant_is_not_enough_over_a_ring": {
+      "pass": true
+    },
+    "P08_S37_iterates_of_x2_plus_1_have_degree_2_to_the_k": {
+      "pass": true
+    },
+    "P08_ThmG_degree_of_composition_multiplies": {
+      "pass": true
+    },
+    "P08_S46_collatz_satisfies_every_level_0_condition": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "generic_words_composed": 6678,
+    "polynomial_pairs": 25
+  },
+  "witnesses": {
+    "level_1_branched_atlas": {
+      "ring": "Z/6Z",
+      "multiplier": 2,
+      "two_solutions": {
+        "equation": "2x = 2 (mod 6)",
+        "solutions": [
+          1,
+          4
+        ]
+      },
+      "no_solution": {
+        "equation": "2x = 1 (mod 6)",
+        "solutions": []
+      }
+    },
+    "level_2_non_faithful_recovery": {
+      "ring": "Z/6Z",
+      "multiplier": 2,
+      "collision": "2*1 = 2*4 = 2 (mod 6), yet 1 != 4"
+    },
+    "s14_two_failure_modes_are_distinct": {
+      "non_unit_but_injective": "2 in Z (integral domain)",
+      "non_unit_and_non_injective": "2 in Z/6Z (zero divisor)"
+    },
+    "level_3_order_sensitive_leading_drift": {
+      "A": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "B": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "AB": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "BA": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "same_branch_counts": true
+    },
+    "level_4_lattice_transport_breakage": {
+      "mobius": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "progression": "1 + 1a",
+      "image": [
+        "2",
+        "3/2",
+        "4/3",
+        "5/4"
+      ],
+      "successive_differences": [
+        "-1/2",
+        "-1/6",
+        "-1/12"
+      ]
+    },
+    "s32_repair_determinant_must_be_a_unit": {
+      "ring": "Z/4Z",
+      "matrix": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "determinant": 2,
+      "determinant_is_zero": false,
+      "determinant_is_unit": false,
+      "matrix_is_invertible": false
+    },
+    "level_5_degree_growth": {
+      "map": "x^2 + 1",
+      "iterate_degrees": [
+        2,
+        4,
+        8,
+        16
+      ],
+      "affine_stays_degree_1": true
+    },
+    "collatz_position_on_the_ladder": {
+      "level": 0,
+      "conditions": {
+        "scalar": true,
+        "affine": true,
+        "commutative": true,
+        "leading_multiplier_is_a_quotient_unit": true,
+        "leading_multiplier_is_regular": true,
+        "state_domain_is_ordered": true
+      },
+      "consequence": "local arithmetic is almost maximally simple, so the difficulty is not the branch operator but the global chart itinerary — §48"
+    }
+  },
+  "failures": [],
+  "ok": true
+}

@@ -108,22 +108,29 @@ would make precise what the bound *is a bound on*.
   tightness, and the regularity needed to pass dynamics to a weak limit.
   Formalising the *hypotheses* is the value here, not the conclusion.
 
-### 7. Paper 08 — the algebraic breakage ladder. Last, and possibly not worth it.
+### 7. Paper 08 — only the universally quantified half remains
 
 Paper 08 walks the coefficient algebra from `ℤ` outward: general commutative
 rings, zero divisors, unordered fields, matrices and noncommutative algebras,
 Möbius transformations, degree `> 1` polynomial maps — asking where RCOT first
 breaks.
 
-**Integers cannot express most of this**, so this arm has touched Paper 08 only
-where Papers 02/05/06/07/09 depend on it. But it is also the item where Lean
-costs the most: each rung is a different algebraic setting, so it is closer to a
-formalisation project than a verification task.
+**This entry has shrunk.** An earlier version of it wrote Paper 08 off entirely,
+on the grounds that integers cannot express general rings, noncommutative algebras
+or Möbius maps. That was wrong about what the paper needs. A *structural breakage
+theorem* is tested by an explicit **witness** that the property fails, plus
+confirmation that the properties above it survive — and both are finite. All of
+that is now done: see `RUN-002-OT-SERIES.md` §8 and
+`../data/gate-logs/ot-paper08-recheck.json`, which carries a concrete witness for
+every rung of §43's ladder.
 
-Honest recommendation: **do not start here**, and consider not doing it at all
-unless the ladder turns out to be load-bearing for something else. The paper's
-own conclusions there are structural claims about where theorems stop applying,
-which a careful reader can check by hand more cheaply than a formalisation can.
+What genuinely remains for Lean is only the **universally quantified** half: "for
+*every* commutative ring `R` and *every* ideal `I`, `[A_w] ∈ (R/I)^×` implies a
+unique residue chart", and the same for the regular-multiplier and degree-growth
+theorems. Those are clean statements and mathlib has the algebra for them, so this
+is no longer the worst item in the queue — but it is still the one with the least
+leverage, because the finite witnesses already tell a reader where each theorem
+stops applying.
 
 ## Practical notes for when the drive arrives
 

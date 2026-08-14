@@ -672,6 +672,145 @@
         }
       }
     },
+    "paper_08_breakage_ladder": {
+      "counts": {
+        "generic_words_composed": 6678,
+        "polynomial_pairs": 25
+      },
+      "checks": {
+        "P08_ThmA_commutative_affine_closure_counts_fix_A_and_D": true,
+        "P08_S4_mother_formula_for_B_w": true,
+        "P08_S18_UUDD_recovers_9x_plus_5_over_16": true,
+        "P08_ThmB_quotient_unit_gives_exactly_one_residue_for_every_rhs": true,
+        "P08_S9_non_unit_admits_both_no_solution_and_several": true,
+        "P08_S10_mod6_witnesses_are_as_stated": true,
+        "P08_S11_affine_closure_survives_where_residue_uniqueness_fails": true,
+        "P08_ThmC_regular_multiplier_iff_injective": true,
+        "P08_S12_zero_divisor_witness_is_as_stated": true,
+        "P08_S14_non_unit_does_not_imply_non_injective": true,
+        "P08_S26_matrix_products_are_as_stated": true,
+        "P08_ThmE_equal_counts_different_leading_operator": true,
+        "P08_S31_commuting_matrices_keep_the_count_law": true,
+        "P08_ThmF_mobius_composition_is_matrix_multiplication": true,
+        "P08_S34_arithmetic_progression_transport_fails_witness": true,
+        "P08_S32_repair_nonzero_determinant_is_not_enough_over_a_ring": true,
+        "P08_S37_iterates_of_x2_plus_1_have_degree_2_to_the_k": true,
+        "P08_ThmG_degree_of_composition_multiplies": true,
+        "P08_S46_collatz_satisfies_every_level_0_condition": true
+      },
+      "all_pass": true,
+      "corrected_earlier_judgement": "An earlier note in this tree wrote Paper 08 off as out of instrument range. That was too quick. A structural breakage theorem does not need a general proof to be tested - it needs an explicit WITNESS that the property fails there, plus confirmation that the properties above it survive, and both are finite.",
+      "what_still_needs_lean": "the universally quantified forms - 'for every commutative ring and every ideal' - remain in LEAN-QUEUE.md. What is settled here is every claim of the form 'here it holds / here it fails'.",
+      "witnesses": {
+        "level_1_branched_atlas": {
+          "ring": "Z/6Z",
+          "multiplier": 2,
+          "two_solutions": {
+            "equation": "2x = 2 (mod 6)",
+            "solutions": [
+              1,
+              4
+            ]
+          },
+          "no_solution": {
+            "equation": "2x = 1 (mod 6)",
+            "solutions": []
+          }
+        },
+        "level_2_non_faithful_recovery": {
+          "ring": "Z/6Z",
+          "multiplier": 2,
+          "collision": "2*1 = 2*4 = 2 (mod 6), yet 1 != 4"
+        },
+        "s14_two_failure_modes_are_distinct": {
+          "non_unit_but_injective": "2 in Z (integral domain)",
+          "non_unit_and_non_injective": "2 in Z/6Z (zero divisor)"
+        },
+        "level_3_order_sensitive_leading_drift": {
+          "A": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "B": [
+            1,
+            0,
+            1,
+            1
+          ],
+          "AB": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "BA": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "same_branch_counts": true
+        },
+        "level_4_lattice_transport_breakage": {
+          "mobius": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "progression": "1 + 1a",
+          "image": [
+            "2",
+            "3/2",
+            "4/3",
+            "5/4"
+          ],
+          "successive_differences": [
+            "-1/2",
+            "-1/6",
+            "-1/12"
+          ]
+        },
+        "s32_repair_determinant_must_be_a_unit": {
+          "ring": "Z/4Z",
+          "matrix": [
+            0,
+            1,
+            2,
+            0
+          ],
+          "determinant": 2,
+          "determinant_is_zero": false,
+          "determinant_is_unit": false,
+          "matrix_is_invertible": false
+        },
+        "level_5_degree_growth": {
+          "map": "x^2 + 1",
+          "iterate_degrees": [
+            2,
+            4,
+            8,
+            16
+          ],
+          "affine_stays_degree_1": true
+        },
+        "collatz_position_on_the_ladder": {
+          "level": 0,
+          "conditions": {
+            "scalar": true,
+            "affine": true,
+            "commutative": true,
+            "leading_multiplier_is_a_quotient_unit": true,
+            "leading_multiplier_is_regular": true,
+            "state_domain_is_ordered": true
+          },
+          "consequence": "local arithmetic is almost maximally simple, so the difficulty is not the branch operator but the global chart itinerary — §48"
+        }
+      },
+      "ladder_verified_in_both_directions": "each rung is checked for what BREAKS and for what SURVIVES: at the mod-6 witness the residue uniqueness fails while the affine closure is untouched, and dimension alone is confirmed NOT to be the breakage point because commuting matrices keep the count law."
+    },
     "paper_09_theorems": {
       "max_word_length": 11,
       "counts": {
@@ -781,6 +920,10 @@
             "8"
           ]
         },
+        "code/ot_paper08_recheck.py": {
+          "baseline_checks": 19,
+          "args": []
+        },
         "code/ot_paper04_recheck.py": {
           "baseline_checks": 21,
           "args": [
@@ -792,10 +935,10 @@
           "args": []
         }
       },
-      "defects_planted": 54,
-      "defects_caught_by_the_named_check": 54,
-      "controls_planted": 7,
-      "controls_undisturbed": 7,
+      "defects_planted": 61,
+      "defects_caught_by_the_named_check": 61,
+      "controls_planted": 8,
+      "controls_undisturbed": 8,
       "anomalies": [],
       "note": "each planted defect had to be caught by the check named for it, not merely by some check"
     }
@@ -813,7 +956,7 @@
     "code/mutation_drill.py": "45e4f84a668c5e57e0ec2b7b116dcd0f0bf419bb64e38ff4685f3ff7cfeae7a7",
     "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
     "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
-    "code/build_results.py": "b230b6e2cfbe4fedcb4fa45f1201516ee8d7dc7b05fc710d10ac01af2c25048e",
+    "code/build_results.py": "bb9b368177d004244198eaa48ea9ecbbcd9f97c733034fc6bdbb138426e15932",
     "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab",
     "code/ot_paper02_recheck.py": "50b3b733ced47a25078b16a71f7c120696d0ce60d43822b464abbc2f0010591d",
     "code/ot_paper06_recheck.py": "82851076cec9f416dc100fefe8bc5d5b6e635d97e9b791df23dccf804906d077",
@@ -821,7 +964,8 @@
     "code/ot_paper04_recheck.py": "70b4b8e0654b9578b31caae85243328e8ec0324594565d720c420c399d75d216",
     "code/ot_paper05_kl_recheck.py": "97ed0a1b0e2c133b087aca698dc11e5fa14bf9b526222942b83b08b2cae0c6b9",
     "code/ot_paper07_recheck.py": "0e438242e202d6027317ce50eb1964577b2ecd982e960151af4fcd2c066c5e7f",
+    "code/ot_paper08_recheck.py": "80055c5b6331131f4eef34e0bfa2597fbe4b386ff4e18c31d4026a4faf631cf9",
     "code/ot_paper09_recheck.py": "69d8b6225bf14447758a415dd6b4350b157c4f603fb9140105817d4787f41c88",
-    "code/ot_recheck_drill.py": "bba088d058d8511c848d9c61b0a1279c6dac73faf67061f4478a7b1a084f455a"
+    "code/ot_recheck_drill.py": "9ef85a6f014ccf3de10787fc030d37a6adacd4876c8045ce979ba3f174c8bb66"
   }
 }

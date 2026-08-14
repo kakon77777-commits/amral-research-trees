@@ -37,6 +37,7 @@ CODE_FILES = [
     "code/ot_paper04_recheck.py",
     "code/ot_paper05_kl_recheck.py",
     "code/ot_paper07_recheck.py",
+    "code/ot_paper08_recheck.py",
     "code/ot_paper09_recheck.py",
     "code/ot_recheck_drill.py",
 ]
@@ -78,6 +79,7 @@ def main() -> int:
     ot_p04 = load_gate("ot-paper04-recheck.json")
     ot_kl = load_gate("ot-paper05-kl-recheck.json")
     ot_p07 = load_gate("ot-paper07-recheck.json")
+    ot_p08 = load_gate("ot-paper08-recheck.json")
     ot_p09 = load_gate("ot-paper09-recheck.json")
     ot_drill = load_gate("ot-recheck-drill.json")
     ot_block = load_gate("ot-paper05-block-benchmark.json")
@@ -97,6 +99,7 @@ def main() -> int:
         ("Paper 04 recheck", ot_p04, "ok"),
         ("Paper 05 KL recheck", ot_kl, "ok"),
         ("Paper 07 recheck", ot_p07, "ok"),
+        ("Paper 08 recheck", ot_p08, "ok"),
         ("Paper 09 recheck", ot_p09, "ok"),
         ("recheck drill", ot_drill, "ok"),
         ("Paper 05 block benchmark", ot_block, "ok"),
@@ -393,6 +396,30 @@ def main() -> int:
                     ),
                 },
                 "cylinder_density_measured": ot_p07["measured"]["cylinder_density_P_k_m"],
+            },
+            "paper_08_breakage_ladder": {
+                "counts": ot_p08["counts"],
+                "checks": {k: v["pass"] for k, v in ot_p08["checks"].items()},
+                "all_pass": ot_p08["ok"],
+                "corrected_earlier_judgement": (
+                    "An earlier note in this tree wrote Paper 08 off as out of instrument "
+                    "range. That was too quick. A structural breakage theorem does not need a "
+                    "general proof to be tested - it needs an explicit WITNESS that the "
+                    "property fails there, plus confirmation that the properties above it "
+                    "survive, and both are finite."
+                ),
+                "what_still_needs_lean": (
+                    "the universally quantified forms - 'for every commutative ring and every "
+                    "ideal' - remain in LEAN-QUEUE.md. What is settled here is every claim of "
+                    "the form 'here it holds / here it fails'."
+                ),
+                "witnesses": ot_p08["witnesses"],
+                "ladder_verified_in_both_directions": (
+                    "each rung is checked for what BREAKS and for what SURVIVES: at the mod-6 "
+                    "witness the residue uniqueness fails while the affine closure is "
+                    "untouched, and dimension alone is confirmed NOT to be the breakage point "
+                    "because commuting matrices keep the count law."
+                ),
             },
             "paper_09_theorems": {
                 "max_word_length": ot_p09["max_word_length"],

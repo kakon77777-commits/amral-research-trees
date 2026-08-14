@@ -51,6 +51,15 @@ code/ot_paper03_recheck.py: baseline passes all 13 checks
   J06-recovery-multiplier: caught  -> ['P03_ThmF_exact_recovery']
   J07-referee-broken: caught  -> ['P03_ThmA_cylinder_is_exactly_the_admissible_domain', 'P03_ThmD_exact_cylinder_transport', 'P03_ThmE_local_identity_trivialization', 'P03_ThmF_exact_recovery', 'P03_S29_next_branch_decided_by_the_quotient_bit', 'P03_S9_level_k_atlas_partitions_the_positive_integers', 'P03_S20_S24_worked_examples_match_the_stated_numbers']
   NULL-07: clean (control)  -> []
+code/ot_paper08_recheck.py: baseline passes all 19 checks
+  K01-composition-rule: caught  -> ['P08_S4_mother_formula_for_B_w', 'P08_S18_UUDD_recovers_9x_plus_5_over_16']
+  K02-mother-formula-swap: caught  -> ['P08_S4_mother_formula_for_B_w', 'P08_S11_affine_closure_survives_where_residue_uniqueness_fails']
+  K03-unit-test: caught  -> ['P08_ThmB_quotient_unit_gives_exactly_one_residue_for_every_rhs']
+  K04-regular-test: caught  -> ['P08_ThmC_regular_multiplier_iff_injective']
+  K05-matrix-multiply: caught  -> ['P08_S26_matrix_products_are_as_stated', 'P08_ThmF_mobius_composition_is_matrix_multiplication']
+  K06-degree-additive: caught  -> ['P08_ThmG_degree_of_composition_multiplies']
+  K07-determinant-search: caught (<timed out>, not by a named check)  -> ['<timed out>']
+  NULL-08: clean (control)  -> []
 code/ot_paper04_recheck.py: baseline passes all 21 checks
   I01-inverse-multiplier: caught  -> ['P04_ThmB_exact_inverse']
   I02-cross-multiplied-swap: caught  -> ['P04_S8_division_free_cross_multiplied_relation']
@@ -64,5 +73,5 @@ code/ot_paper05_kl_recheck.py: baseline passes all 12 checks
   H01-kl-formula: caught  -> ['P05_published_KL_agrees_with_the_real_value_to_16_significant_digits', 'P05_KL_is_strictly_positive_because_alpha_exceeds_one_half', 'P05_KL_vanishes_exactly_at_alpha_one_half', 'P05_KL_is_the_actual_decay_rate_of_the_non_contracting_fraction', 'P05_KL_rate_offset_does_not_drift_with_k']
   H02-u-max-exponent: caught  -> ['P05_exact_class_boundary_agrees_with_the_independent_float_route']
   H03-tail-start: caught  -> ['P05_contracting_fraction_and_tail_are_exact_complements']
-  H04-alpha-inverted: caught (crashed, not by a named check)  -> ['<crashed>']
+  H04-alpha-inverted: caught (<crashed>, not by a named check)  -> ['<crashed>']
   NULL-05: clean (control)  -> []

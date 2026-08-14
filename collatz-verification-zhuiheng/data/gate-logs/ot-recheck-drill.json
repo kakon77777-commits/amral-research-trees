@@ -33,6 +33,10 @@
         "8"
       ]
     },
+    "code/ot_paper08_recheck.py": {
+      "baseline_checks": 19,
+      "args": []
+    },
     "code/ot_paper04_recheck.py": {
       "baseline_checks": 21,
       "args": [
@@ -686,6 +690,101 @@
       "as_expected": true
     },
     {
+      "id": "K01-composition-rule",
+      "target": "code/ot_paper08_recheck.py",
+      "description": "§3's composition rule uses b2*d2 instead of b2*d1",
+      "expected_failing_checks": [
+        "P08_S4_mother_formula_for_B_w"
+      ],
+      "observed_failing_checks": [
+        "P08_S4_mother_formula_for_B_w",
+        "P08_S18_UUDD_recovers_9x_plus_5_over_16"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "K02-mother-formula-swap",
+      "target": "code/ot_paper08_recheck.py",
+      "description": "§4's mother formula swaps the a and d products",
+      "expected_failing_checks": [
+        "P08_S4_mother_formula_for_B_w"
+      ],
+      "observed_failing_checks": [
+        "P08_S4_mother_formula_for_B_w",
+        "P08_S11_affine_closure_survives_where_residue_uniqueness_fails"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "K03-unit-test",
+      "target": "code/ot_paper08_recheck.py",
+      "description": "the unit test looks for A*y = 0 instead of 1",
+      "expected_failing_checks": [
+        "P08_ThmB_quotient_unit_gives_exactly_one_residue_for_every_rhs"
+      ],
+      "observed_failing_checks": [
+        "P08_ThmB_quotient_unit_gives_exactly_one_residue_for_every_rhs"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "K04-regular-test",
+      "target": "code/ot_paper08_recheck.py",
+      "description": "the regularity test includes x = 0, so nothing is regular",
+      "expected_failing_checks": [
+        "P08_ThmC_regular_multiplier_iff_injective"
+      ],
+      "observed_failing_checks": [
+        "P08_ThmC_regular_multiplier_iff_injective"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "K05-matrix-multiply",
+      "target": "code/ot_paper08_recheck.py",
+      "description": "matrix multiplication transposes one factor",
+      "expected_failing_checks": [
+        "P08_S26_matrix_products_are_as_stated"
+      ],
+      "observed_failing_checks": [
+        "P08_S26_matrix_products_are_as_stated",
+        "P08_ThmF_mobius_composition_is_matrix_multiplication"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "K06-degree-additive",
+      "target": "code/ot_paper08_recheck.py",
+      "description": "Theorem G is tested as additive instead of multiplicative",
+      "expected_failing_checks": [
+        "P08_ThmG_degree_of_composition_multiplies"
+      ],
+      "observed_failing_checks": [
+        "P08_ThmG_degree_of_composition_multiplies"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "K07-determinant-search",
+      "target": "code/ot_paper08_recheck.py",
+      "description": "the §32 witness search looks for unit determinants",
+      "expected_failing_checks": [
+        "P08_S32_repair_nonzero_determinant_is_not_enough_over_a_ring"
+      ],
+      "observed_failing_checks": [
+        "<timed out>"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "NULL-08",
+      "target": "code/ot_paper08_recheck.py",
+      "description": "control: a comment is added",
+      "expected_failing_checks": [],
+      "observed_failing_checks": [],
+      "as_expected": true
+    },
+    {
       "id": "I01-inverse-multiplier",
       "target": "code/ot_paper04_recheck.py",
       "description": "Theorem B's inverse scales by 3^u instead of 2^k",
@@ -843,10 +942,10 @@
       "as_expected": true
     }
   ],
-  "defects_planted": 54,
-  "defects_caught_by_the_named_check": 54,
-  "controls_planted": 7,
-  "controls_undisturbed": 7,
+  "defects_planted": 61,
+  "defects_caught_by_the_named_check": 61,
+  "controls_planted": 8,
+  "controls_undisturbed": 8,
   "anomalies": [],
   "ok": true
 }

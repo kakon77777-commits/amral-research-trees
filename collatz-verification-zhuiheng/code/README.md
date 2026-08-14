@@ -16,8 +16,9 @@
 | `ot_paper04_recheck.py` | Paper 04 (bidirectional `2^k` ↔ `3^u` transport). Checks the §38 certificate in both directions — it must reject perturbed triples, not merely accept legal ones — and finds an explicit witness for §33's non-claim that local bijectivity is not global injectivity. |
 | `ot_paper05_kl_recheck.py` | The Paper 05 KL constant, recomputed at 60 digits and verified in its *role* as the decay rate of the non-contracting fraction, on exact binomial tails. Reports subject defects separately from its own soundness, and states how sharp the rate test actually is. |
 | `ot_paper07_recheck.py` | The same for Paper 07 (generalized `(mx+r)`), over 24 `(m, r)` pairs. Evaluates the §17 geometric sum without ever dividing by `(m-2)`, so the `m = 1` case is reached with no singularity, and measures the Diophantine margin that makes the paper's floating floor safe. |
+| `ot_paper08_recheck.py` | Paper 08 (algebraic breakage ladder). Produces an explicit finite witness for each rung — `Z/6Z`, `2x2` integer matrices, Möbius over a quotient ring, polynomial degree — and confirms at each rung both what breaks and what survives. |
 | `ot_paper09_recheck.py` | The same for Paper 09 (finite certificate frontier). Its sigma is the same definition the engine measures, so it links the archived `[3, 2^40]` run to the paper's K(N), and it reconciles §24's boundary corrections exactly. |
-| `ot_recheck_drill.py` | Falsifiability drill for all seven rechecks: perturbs each asserted formula and requires the check *named for that formula* to fail. |
+| `ot_recheck_drill.py` | Falsifiability drill for all eight rechecks: perturbs each asserted formula and requires the check *named for that formula* to fail. |
 
 No third-party dependencies. `requirements.txt` is empty on purpose — the
 Python here is standard library only, so there is no version of a numeric
@@ -62,6 +63,7 @@ python code/ot_paper03_recheck.py 13
 python code/ot_paper04_recheck.py 10
 python code/ot_paper05_kl_recheck.py
 python code/ot_paper07_recheck.py 8 3000
+python code/ot_paper08_recheck.py
 python code/ot_paper09_recheck.py 11 20
 python code/ot_recheck_drill.py
 ./build/collatz_verify.exe --block 16 --to 1048576
