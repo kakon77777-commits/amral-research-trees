@@ -1,0 +1,114 @@
+{
+  "tool": "src08_drill.py",
+  "subject": "src08_hardzeta_round02_recheck.py and Round 02's additions to hz_chart_algebra.py",
+  "defects": {
+    "A01_q_D_numerator_drops_the_factor_two": {
+      "target_check": "SRC08_quotient_thresholds_agree_with_round_01s_caps",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A02_q_U_numerator_loses_the_plus_one": {
+      "target_check": "SRC08_quotient_thresholds_agree_with_round_01s_caps",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A03_beta_uses_the_wrong_exponent": {
+      "target_check": "SRC08_beta_k_zones_agree_with_round_01s_power_zones",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC08_hazard_is_localized_to_zones_A_and_B"
+      ]
+    },
+    "A04_zone_boundary_shifted_by_one": {
+      "target_check": "SRC08_beta_k_zones_agree_with_round_01s_power_zones",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A05_parity_restricted_sum_ignores_the_parity_offset": {
+      "target_check": "SRC08_parity_restricted_sums_reproduce_round_01_chart_masses",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A06_nu_drops_the_n_at_least_2_domain_guard": {
+      "target_check": "SRC08_first_crossing_residue_separation_holds_on_every_word_checked",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_first_crossing_enumeration_admits_non_crossing_words": {
+      "target_check": "SRC08_first_crossing_depths_are_exactly_the_bit_lengths_of_powers_of_3",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC08_every_first_crossing_word_ends_in_D",
+        "SRC08_first_crossing_depths_match_RUN_004s_admissible_stopping_times",
+        "SRC08_first_crossing_hard_height_is_set_by_the_final_prefix_alone"
+      ]
+    },
+    "A08_terras_cap_off_by_one": {
+      "target_check": "SRC08_first_crossing_hard_height_is_set_by_the_final_prefix_alone",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T01_coefficient_stopping_time_condition_inverted": {
+      "target_check": "SRC08_coefficient_stopping_time_never_exceeds_the_classical_one",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_correction_compartment_boundary_shifted": {
+      "target_check": "SRC08_the_split_identity_is_implemented_correctly_where_R_is_nonempty",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_step_count_used_for_legality_is_off_by_one": {
+      "target_check": "SRC08_child_legality_holds_in_the_quotient_coordinate",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_loose_round02_diverges_from_the_bundled_copy": {
+      "target_check": "SRC08_loose_files_match_the_bundled_copies",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_bundle_no_longer_carries_round_01": {
+      "target_check": "SRC08_bundle_carries_round_01_alongside_round_02",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_route_map_v02_restates_the_weighted_general_bridge": {
+      "target_check": "SRC08_route_map_v02_does_not_restate_the_general_bridge",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_algebra_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_documents": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "counts": {
+    "defects_planted": 14,
+    "defects_caught_by_the_named_check": 14,
+    "defects_in_round_02s_own_formulas": 8,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

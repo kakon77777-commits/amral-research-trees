@@ -12,7 +12,7 @@
     "Hard-Zeta": 44,
     "other project": 2
   },
-  "processed_count": 21,
+  "processed_count": 24,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -327,7 +327,7 @@
       "sha256": "6a78a5b3fac0428e1787f372e53bca39a5f0ae02b47819b4a8ccbe512a534d47",
       "line": "Hard-Zeta",
       "role": "Phase I round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 21. Rechecked by code/src08_hardzeta_round02_recheck.py: the quotient-coordinate thresholds, beta_k zones and parity-restricted sums all agree with Round 01; the mass-weighted hazard is the right object by up to 94x; Terras's RCOT reformulation holds on all 81,119 first-crossing words to length 24; see reports/RUN-006-HARD-ZETA-ROUND-02.md",
       "round_sort_key": [
         "",
         2,
@@ -342,7 +342,7 @@
       "sha256": "963aa2dd1631c3a1a6e882c4bec65b522e8d4fba7967317e9ae013cfe7052bc6",
       "line": "Hard-Zeta",
       "role": "route map",
-      "processed_by_this_tree": null
+      "processed_by_this_tree": "item 22. Rechecked with item 21. Unlike v0.1's map this one states the C/R split rather than the general weighted bridge, so RUN-004's finding about the missing monotonicity hypothesis does not carry over"
     },
     {
       "name": "Hard_Zeta_Phase_I_Round_02_bundle.zip",
@@ -351,7 +351,7 @@
       "sha256": "3d27f66f5f6f67ed9335d098aefb3cb4d3d80a9626701f6f98d6b5a7d2f055d6",
       "line": "Hard-Zeta",
       "role": "Phase I round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 23. Rechecked with items 21-22; both loose files are byte-identical to the bundled copies, and the bundle also carries Round 01",
       "round_sort_key": [
         "",
         2,

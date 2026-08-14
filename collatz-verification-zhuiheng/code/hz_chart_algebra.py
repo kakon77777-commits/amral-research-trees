@@ -247,3 +247,106 @@ if __name__ == "__main__":
     print("\n".join(failures) if failures
           else "hz_chart_algebra self-test ok (14 anchors)")
     raise SystemExit(1 if failures else 0)
+
+
+# ============================================================================
+# Round 02 additions — the quotient-coordinate form, and first-crossing words.
+#
+# Round 02 restates Round 01's thresholds in the parent's quotient coordinate
+# `a` (where n = r_w + 2^k a) rather than in n. The two must agree, and
+# `src08` checks that they do rather than taking it on the paper's word.
+# ============================================================================
+
+
+def q_D(w: "Chart") -> int | None:
+    """§3: the D-child survivor cap in the parent's quotient coordinate."""
+    delta = 2 ** (w.k + 1) - 3 ** w.u
+    if delta <= 0:
+        return None                      # uniformly expanding: q = +infinity
+    return (w.m - 2 * w.r) // delta
+
+
+def q_U(w: "Chart") -> int | None:
+    """§4: the U-child survivor cap in the parent's quotient coordinate."""
+    delta = 2 ** (w.k + 1) - 3 ** (w.u + 1)
+    if delta <= 0:
+        return None
+    return (3 * w.m + 1 - 2 * w.r) // delta
+
+
+def parity_zeta(s: float, r: int, k: int, A_lo: int, B_hi: int | None,
+                e: int) -> float:
+    """§5: sum of (r + 2^k a)^{-s} over A <= a <= B with a = e (mod 2).
+
+    Those a form an arithmetic progression of step 2, so the n they produce form
+    one modulo 2^(k+1) — which is what makes this the child cylinder's mass.
+    """
+    first = A_lo if (A_lo - e) % 2 == 0 else A_lo + 1
+    n_lo = r + 2 ** k * first
+    n_hi = None if B_hi is None else r + 2 ** k * B_hi
+    if n_hi is not None and n_hi < n_lo:
+        return 0.0
+    return ap_dirichlet_mass(s, 2 ** (k + 1), n_lo % 2 ** (k + 1), n_lo, n_hi)
+
+
+def beta(k: int) -> int:
+    """§7: floor((k+1) * ln2/ln3), by integer powers rather than a logarithm.
+
+    beta_k is the largest u with 3^u < 2^(k+1), which is exactly
+    (2^(k+1)).bit_length() read through powers of 3 — no rounding involved.
+    """
+    u, p = 0, 1
+    while p * 3 < 2 ** (k + 1):
+        p *= 3
+        u += 1
+    return u
+
+
+def zone_round02(k: int, u: int) -> str:
+    """§7's trichotomy, stated through beta_k instead of through the powers."""
+    b = beta(k)
+    if u <= b - 1:
+        return "A"
+    if u == b:
+        return "B"
+    return "C"
+
+
+def nu(w: "Chart") -> int:
+    """§16: the least member of Omega_w that lies in the Hard-Zeta domain."""
+    return w.r if w.r >= 2 else w.r + 2 ** w.k
+
+
+def is_first_crossing(w: "Chart") -> bool:
+    """§15: every proper prefix expanding, and this one contracting."""
+    return 3 ** w.u < 2 ** w.k
+
+
+def first_crossing_words(maxlen: int) -> list["Chart"]:
+    """§15's set W_fc, up to a given length.
+
+    Pruned by the defining condition itself: a word is only extended while it is
+    still uniformly expanding, so the search never enters a subtree that cannot
+    contain a first-crossing word.
+    """
+    out, stack = [], [ROOT]
+    while stack:
+        w = stack.pop()
+        for c in children(w):
+            if 3 ** c.u < 2 ** c.k:
+                out.append(c)
+            elif 3 ** c.u > 2 ** c.k and c.k < maxlen:
+                stack.append(c)
+    return out
+
+
+def terras_margin(w: "Chart") -> tuple[int, int, int]:
+    """§16-§17: (nu(w), c_w, nu(w) - c_w) for a first-crossing word.
+
+    The First-Crossing Residue Separation form of the Terras conjecture says the
+    third entry is positive for every w in W_fc.
+    """
+    delta = 2 ** w.k - 3 ** w.u
+    c = w.b // delta
+    n = nu(w)
+    return n, c, n - c

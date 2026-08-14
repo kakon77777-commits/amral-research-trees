@@ -110,6 +110,22 @@ PROCESSED = {
         "to the loose copy, and the exact Z_k(s) from this chart algebra lands "
         "inside RUN-004's independently measured bracket at all 22 depths"
     ),
+    "Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md": (
+        "item 21. Rechecked by code/src08_hardzeta_round02_recheck.py: the "
+        "quotient-coordinate thresholds, beta_k zones and parity-restricted sums "
+        "all agree with Round 01; the mass-weighted hazard is the right object by "
+        "up to 94x; Terras's RCOT reformulation holds on all 81,119 first-crossing "
+        "words to length 24; see reports/RUN-006-HARD-ZETA-ROUND-02.md"
+    ),
+    "Hard_Zeta_ROUTE_MAP_v0.2.md": (
+        "item 22. Rechecked with item 21. Unlike v0.1's map this one states the "
+        "C/R split rather than the general weighted bridge, so RUN-004's finding "
+        "about the missing monotonicity hypothesis does not carry over"
+    ),
+    "Hard_Zeta_Phase_I_Round_02_bundle.zip": (
+        "item 23. Rechecked with items 21-22; both loose files are byte-identical "
+        "to the bundled copies, and the bundle also carries Round 01"
+    ),
     "collatz_ot_v3_threshold_benchmark.csv": (
         "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
         "all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, "
