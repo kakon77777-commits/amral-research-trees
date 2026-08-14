@@ -1,0 +1,6 @@
+certificate_or_target,multiplicity_constant_C,simple_fraction_2_minus_C,assumption
+Montgomery–Taylor / Claude D,1.327499296321,0.672500703679,unconditional Claude matrix route
+CGdL SDP,1.3208,0.6792,RH in the published scalar zero-side argument
+Bandwidth-one configuration-wise ceiling,1.31815,0.68185,"ceiling value, not an attained certificate"
+CGdL GRH comparison,1.3155,0.6845,GRH and extra outside-band lower information
+P70 target,1.3,0.7,target only

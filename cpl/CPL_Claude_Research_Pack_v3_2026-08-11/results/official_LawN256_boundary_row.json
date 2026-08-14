@@ -1,0 +1,10 @@
+{
+  "source": "Anthropic zeta-23-lean / Zeta23/PairCeiling/LawN256.lean",
+  "scale_K": 1393796574908163946345982392040522594123776,
+  "row_256_enclosure_integer_lo": 294693210168748317632180492755635579620342098,
+  "row_256_enclosure_integer_hi": 294693210168748317632180492755635579620342099,
+  "S_256_lo": 211.4320091424858,
+  "S_256_hi": 211.4320091424858,
+  "derived_D1_if_rows_1_to_255_are_exact_j_over_256": 0.8239531607128352,
+  "kernel_checked_D1_abs_bound": 0.82395317
+}

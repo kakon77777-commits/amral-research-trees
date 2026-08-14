@@ -1,0 +1,6 @@
+route,available_information,support_or_shift_range,statistic_strength,verdict_for_unconditional_P70
+Claude absolute O1 bound,|O1| << L^2 X,sigma <= 1,sufficient for diagonal domination,No; any fixed sigma>1 leaves this regime
+Classical unconditional Selberg integral,"J(X,H)=o(X H^2) in a recorded range",H >= X^(1/6-o(1)) in the cited survey,"PNT/almost-all interval scale, not the conjectural variance constant",Does not imply the required weighted second-trace asymptotic at H~X^0.0409
+2026 short-interval higher uniformity for Lambda,nilsequence/Gowers control and short-averaged HL consequences,H >= X^(1/3+epsilon) for Lambda in the cited result,different statistic and much longer intervals,Not sufficient for the present WPPH kernel
+CGdL tail-sign SDP,"hat f <= 0 outside [-1,1] and pair form-factor nonnegativity",uses sign outside the known band rather than an asymptotic,under RH gives multiplicity constant 1.3208 / simple 67.92%,"Prime-side sign is now unconditional, but the scalar zero-side lower bound still uses RH"
+Matrix Majorant-Inertia hybrid,BGSTB unconditional F>=0 + Claude off-axis signature blocks + SDP majorants,potentially bandwidth-one plus tail sign,open research programme,Not yet a theorem; currently the most plausible unconditional improvement route identified here

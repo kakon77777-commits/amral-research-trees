@@ -1,0 +1,6 @@
+target_simple_fraction,target_percent,support_sigma_numerical,paper_rough_value,status
+0.7,70.0,1.0426278254173857,1.04,our numerical reconstruction of generalized one-delta extremal
+0.8,80.0,1.2578478247108817,1.26,our numerical reconstruction of generalized one-delta extremal
+0.9,90.0,1.7014550738728862,1.7,our numerical reconstruction of generalized one-delta extremal
+0.95,95.0,2.260789997277527,,our numerical reconstruction of generalized one-delta extremal
+0.99,99.0,4.187214954349197,,our numerical extension; n=2000 midpoint discretization

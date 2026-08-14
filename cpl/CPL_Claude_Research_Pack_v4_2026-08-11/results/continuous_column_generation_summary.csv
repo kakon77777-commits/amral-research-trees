@@ -1,0 +1,5 @@
+N,candidate_floor,candidate_percent,gap_to_official_N256_percent_points,pricing_status
+4,0.6982310959203413,69.82310959203413,1.6402408456509754,multi-seed numerical pricing; residual ~5e-8
+5,0.6922045781915015,69.22045781915016,1.0375890727669979,multi-seed numerical pricing; residual ~6e-8
+6,0.6889345880481733,68.89345880481733,0.7105900584341796,multi-seed numerical pricing; residual ~7e-8
+7,0.687144228044309,68.7144228044309,0.5315540580477451,numerical pricing; residual ~5e-9 in last search

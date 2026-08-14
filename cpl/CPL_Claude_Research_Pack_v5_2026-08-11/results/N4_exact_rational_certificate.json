@@ -1,0 +1,46 @@
+{
+  "model": "N=4 continuous-position toy marked configurations",
+  "marks_allowed": [
+    1,
+    2
+  ],
+  "total_multiplicity": 4,
+  "open_band_rows": [
+    1,
+    2,
+    3
+  ],
+  "target_rows": {
+    "S1": "1/4",
+    "S2": "1/2",
+    "S3": "3/4"
+  },
+  "dual": {
+    "c0": "49999/50000",
+    "y1": "-21381867/50000000",
+    "y2": "-25119857/100000000",
+    "y3": "-1846941/20000000"
+  },
+  "exact_dual_objective": "279284437/400000000",
+  "dual_objective_decimal": 0.6982110925,
+  "dual_objective_percent": 69.82110925,
+  "patterns": {
+    "1111": {
+      "proof": "trivial because p=1, c0<1 and y1,y2,y3<0 while S_j>=0"
+    },
+    "22": {
+      "bernstein_internal_nodes": 3,
+      "bernstein_leaves": 4,
+      "max_depth": 3,
+      "smallest_terminal_bernstein_coefficient": "120357/25000000",
+      "smallest_terminal_decimal": 0.00481428
+    },
+    "211": {
+      "bernstein_internal_nodes": 77,
+      "bernstein_leaves": 78,
+      "max_depth": 16,
+      "smallest_terminal_bernstein_coefficient": "195858711475181/34359738368000000000",
+      "smallest_terminal_decimal": 5.700238732247991e-06
+    }
+  }
+}

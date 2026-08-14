@@ -1,0 +1,54 @@
+{
+  "created": "2026-08-11",
+  "papers": [
+    {
+      "file": "00_Claude_More_Than_Two_Thirds_Riemann_Zeta_2026-08-10.pdf",
+      "url": "https://www-cdn.anthropic.com/564f962e60643842f5fcb4a17c9dbc8f608f1c37.pdf",
+      "bytes": 631785,
+      "sha256": "6792988e6cd0e17690621ce898abd5d534f98407741bc7cb14bbe7d07c77d72f"
+    },
+    {
+      "file": "01_BGSTB24_Unconditional_Montgomery_Theorem.pdf",
+      "url": "https://arxiv.org/pdf/2306.04799",
+      "bytes": 210602,
+      "sha256": "133071c4d85c875fe9b1a7d4001f22d7174270ab8f1fa8e6cee6178d20276ee9"
+    },
+    {
+      "file": "02_BGSTB25_Pair_Correlation_Proportions.pdf",
+      "url": "https://arxiv.org/pdf/2501.14545",
+      "bytes": 421275,
+      "sha256": "a615cac75b57445eb434881cde2e3ec4e016b5f977928bae2dafbdb906b1ae58"
+    },
+    {
+      "file": "03_GLSS25_PCC_Simple_Critical_Zeros.pdf",
+      "url": "https://arxiv.org/pdf/2503.15449",
+      "bytes": 339013,
+      "sha256": "9b9f3c66c24a1a923e84150cd35e1e45613c59aa5ed894d7a71d84fc440e4c91"
+    },
+    {
+      "file": "04_GS25_Zeta_Zeros_on_Critical_Line.pdf",
+      "url": "https://arxiv.org/pdf/2511.20059",
+      "bytes": 345194,
+      "sha256": "7b4f638cbd0438123b7a54869fc998fc3d4dee9b74572c04cef9da0463ed4c6f"
+    },
+    {
+      "file": "05_GS26_Zeta_Zeros_Narrow_Vertical_Box.pdf",
+      "url": "https://arxiv.org/pdf/2603.28104",
+      "bytes": 339445,
+      "sha256": "67866b1ee3f9999c4673e78d4a0e81fcb97584a5e4221af8d4b02b10d3ce01c4"
+    },
+    {
+      "file": "06_CGdL20_Pair_Correlation_SDP.pdf",
+      "url": "https://arxiv.org/pdf/1810.08843",
+      "bytes": 264978,
+      "sha256": "1f39a719a01801939740fb3647f2a7aa848fc7ee1587f3b40e9236caf304a035"
+    },
+    {
+      "file": "07_CCLM17_Hilbert_Spaces_Pair_Correlation.pdf",
+      "url": "https://arxiv.org/pdf/1406.5462",
+      "bytes": 1010094,
+      "sha256": "3bf439fac51cc74803ba6a60c8eba5cb714db044fc773f42a7b37cb816c2ceb2"
+    }
+  ],
+  "lean_repo": "https://github.com/anthropics/zeta-23-lean"
+}

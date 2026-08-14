@@ -1,0 +1,10 @@
+{
+  "numerical_bracket": {
+    "B_low": 3.65,
+    "B_high": 3.67
+  },
+  "floor_at_B_low": 0.7005955135759483,
+  "floor_at_B_high": 0.6999819729734039,
+  "local_linear_interpolation_B_for_70_percent": 3.669412360762392,
+  "warning": "Interpolation is exploratory; not a theorem or certified threshold."
+}

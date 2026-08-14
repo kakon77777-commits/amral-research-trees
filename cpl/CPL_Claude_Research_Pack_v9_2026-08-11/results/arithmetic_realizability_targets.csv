@@ -1,0 +1,6 @@
+target,proportion_q,support_sigma,X_scale_if_X=T^sigma,near_diagonal_shift_H_in_T_scale_exponent,near_diagonal_shift_H_in_X_scale_exponent,covered_by_strong_HL_pair_conjecture_implication_to_alpha_lt_2,arithmetic_regime
+P70,0.7,1.042628,T^1.042628,0.04262800000000011,0.040885147914692554,True,HL sqrt-error pair hypothesis potentially sufficient
+P80,0.8,1.257848,T^1.257848,0.2578480000000001,0.20499138210658208,True,HL sqrt-error pair hypothesis potentially sufficient
+P90,0.9,1.701455,T^1.701455,0.7014549999999999,0.4122677355557449,True,HL sqrt-error pair hypothesis potentially sufficient
+P95,0.95,2.26079,T^2.260790,1.26079,0.5576767413160886,False,requires beyond classical alpha<2 implication / stronger SPC or short-interval variance input
+P99,0.99,4.187215,T^4.187215,3.187215,0.7611777756814494,False,requires beyond classical alpha<2 implication / stronger SPC or short-interval variance input

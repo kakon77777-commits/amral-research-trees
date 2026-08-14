@@ -1,0 +1,41 @@
+{
+  "scope": "N=4 continuous-position toy marked-configuration PairCeiling",
+  "status": "exact-rational refined certificate",
+  "dual": {
+    "c0": "350856924975709/312500000000000",
+    "y1": "-38437941/100000000",
+    "y2": "-25114540/100000000",
+    "y3": "-11796917/100000000",
+    "mu4": "-3068556/100000000"
+  },
+  "rationalization_safety_delta": "25024291/312500000000000",
+  "rationalization_safety_delta_decimal": 8.00777312e-08,
+  "certified_B70_exact": "35186790600709/9589237500000",
+  "certified_B70_decimal": 3.669404433950979,
+  "patterns": {
+    "22": {
+      "internal_nodes": 27,
+      "terminal_intervals": 28,
+      "max_depth": "recomputed exact subdivision; see note",
+      "minimum_terminal_coefficient_positive": true
+    },
+    "211": {
+      "internal_nodes": 131,
+      "terminal_boxes": 132,
+      "minimum_terminal_coefficient_positive": true
+    },
+    "1111": {
+      "internal_nodes": 179,
+      "terminal_boxes": 180,
+      "max_depth": 13,
+      "minimum_terminal_coefficient": "25024291/312500000000000",
+      "domain_superset": "u∈[0,16], t∈[-1,1], e2∈[-6,6]"
+    }
+  },
+  "comparison": {
+    "previous_exact_B70": 3.667777612662112,
+    "refined_exact_B70": 3.669404433950979,
+    "numerical_crossing_estimate": 3.66941,
+    "gap_to_numerical_crossing_approx": 5.566049021243913e-06
+  }
+}
