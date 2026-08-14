@@ -12,7 +12,7 @@
     "Hard-Zeta": 44,
     "other project": 2
   },
-  "processed_count": 19,
+  "processed_count": 21,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -291,7 +291,7 @@
       "sha256": "47efa6e5b26b149c63fd1791a40c7fb47333ad4f3007759ab24d7c368658b358",
       "line": "Hard-Zeta",
       "role": "Phase I round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 19. Rechecked by code/src07_hardzeta_round01_recheck.py against direct iteration: the child recursion, recursive hard height, four-way refinement identity, exact mass conservation, trichotomy, zero-loss zone, the per-chart No-Go construction and the U^k closed form all hold; see reports/RUN-005-HARD-ZETA-ROUND-01.md",
       "round_sort_key": [
         "",
         1,
@@ -306,7 +306,7 @@
       "sha256": "6e4231fdcec33cb0bb63e1b4e0ff82c6eb2c45b4f656d2a2cc3ae4024457bbb7",
       "line": "Hard-Zeta",
       "role": "Phase I round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 20. Rechecked with item 19; the bundled Round 01 is byte-identical to the loose copy, and the exact Z_k(s) from this chart algebra lands inside RUN-004's independently measured bracket at all 22 depths",
       "round_sort_key": [
         "",
         1,

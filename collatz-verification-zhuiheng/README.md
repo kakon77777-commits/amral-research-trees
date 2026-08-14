@@ -71,11 +71,19 @@ describe it that way.
    `n`, so `E_2 = E_3` exactly and the `L = 1` form of the route's uniform decay
    obligation is **false**. Plus a hypothesis its ROUTE MAP drops, a defect in my
    own measurer, and a claim of mine the drill deleted.
-6. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+6. [`reports/RUN-005-HARD-ZETA-ROUND-01.md`](./reports/RUN-005-HARD-ZETA-ROUND-01.md) —
+   Round 01's exact refinement algebra, rendered executable and confronted with
+   direct iteration: the child recursion, the recursive hard height, the four-way
+   identity, exact mass conservation, the trichotomy and the `U^k` closed form all
+   hold. The algebra computes `Z_k(s)` **exactly**, and it lands inside RUN-004's
+   independently measured bracket at every depth — two routes, no shared code.
+   Adds a **hazard budget**: fifty levels share 1.12 nats while `n = 27` stays
+   hard. Includes three real gaps the drill found in my own checks.
+7. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-7. [`code/`](./code/) — the engine, the independent reference, and the gates.
-8. [`data/gate-logs/`](./data/gate-logs/) and
+8. [`code/`](./code/) — the engine, the independent reference, and the gates.
+9. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

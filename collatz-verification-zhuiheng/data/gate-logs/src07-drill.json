@@ -1,0 +1,210 @@
+{
+  "tool": "src07_drill.py",
+  "subject": "src07_hardzeta_round01_recheck.py and hz_chart_algebra.py",
+  "why": "hz_chart_algebra.py is Round 01's formulas rendered executable, so damaging one formula at a time asks whether the brute-force confrontation would notice if the paper's recursion were wrong",
+  "defects": {
+    "A01_U_child_residue_uses_the_wrong_parity": {
+      "target_check": "SRC07_cylinders_are_exactly_the_starts_with_that_parity_word",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC07_U_k_residue_and_closed_form_mass_are_as_stated",
+        "SRC07_block_identity_holds_with_the_charts_own_m_and_u",
+        "SRC07_cumulative_hazard_equals_the_log_ratio_of_Z",
+        "SRC07_exact_Z_k_lands_inside_RUN_004s_measured_bracket",
+        "SRC07_exact_mass_conservation_holds_chart_by_chart",
+        "SRC07_first_descent_stratum_is_exactly_sigma_equals_k_plus_1",
+        "SRC07_four_way_refinement_identity_partitions_the_parent",
+        "SRC07_hazard_accumulation_respects_the_single_hard_value_budget",
+        "SRC07_hazard_vanishes_exactly_at_inadmissible_stopping_times",
+        "SRC07_layer_identity_matches_the_stopping_time_strata_within_the_tail",
+        "SRC07_layer_loss_is_exactly_zero_precisely_at_inadmissible_depths",
+        "SRC07_new_prefix_hard_cap_is_exactly_the_descent_boundary",
+        "SRC07_recursive_hard_height_reproduces_the_hard_set_exactly",
+        "SRC07_the_drop_in_Z_k_equals_the_layers_total_first_descent_mass",
+        "SRC07_the_four_pieces_are_pairwise_disjoint",
+        "SRC07_the_no_go_construction_really_conserves_all_mass"
+      ]
+    },
+    "A02_U_child_affine_offset_off_by_a_factor": {
+      "target_check": "SRC07_new_prefix_hard_cap_is_exactly_the_descent_boundary",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A03_U_child_forgets_to_count_the_up_step": {
+      "target_check": "SRC07_the_chart_algebra_evaluates_without_error",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC07_block_identity_holds_with_the_charts_own_m_and_u",
+        "SRC07_cylinders_are_exactly_the_starts_with_that_parity_word",
+        "SRC07_first_descent_stratum_is_exactly_sigma_equals_k_plus_1",
+        "SRC07_new_prefix_hard_cap_is_exactly_the_descent_boundary",
+        "SRC07_recursive_hard_height_reproduces_the_hard_set_exactly"
+      ]
+    },
+    "A04_U_child_target_base_numerator_wrong": {
+      "target_check": "SRC07_block_identity_holds_with_the_charts_own_m_and_u",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC07_U_k_residue_and_closed_form_mass_are_as_stated",
+        "SRC07_cylinders_are_exactly_the_starts_with_that_parity_word",
+        "SRC07_exact_Z_k_lands_inside_RUN_004s_measured_bracket",
+        "SRC07_first_descent_stratum_is_exactly_sigma_equals_k_plus_1",
+        "SRC07_hazard_accumulation_respects_the_single_hard_value_budget",
+        "SRC07_layer_identity_matches_the_stopping_time_strata_within_the_tail",
+        "SRC07_new_prefix_hard_cap_is_exactly_the_descent_boundary",
+        "SRC07_recursive_hard_height_reproduces_the_hard_set_exactly"
+      ]
+    },
+    "A05_hard_height_drops_the_parents_constraint": {
+      "target_check": "SRC07_recursive_hard_height_reproduces_the_hard_set_exactly",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC07_first_descent_stratum_is_exactly_sigma_equals_k_plus_1"
+      ]
+    },
+    "A06_hard_cap_boundary_off_by_one": {
+      "target_check": "SRC07_the_cap_is_exactly_the_floor_of_b_over_delta",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_first_descent_stratum_ignores_the_parents_hard_height": {
+      "target_check": "SRC07_first_descent_stratum_is_exactly_sigma_equals_k_plus_1",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A08_drift_gap_sign_flipped": {
+      "target_check": "SRC07_the_chart_algebra_evaluates_without_error",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC07_delta_U_is_always_below_delta_D",
+        "SRC07_every_chart_falls_in_exactly_one_zone",
+        "SRC07_exact_mass_conservation_holds_chart_by_chart",
+        "SRC07_first_descent_stratum_is_exactly_sigma_equals_k_plus_1",
+        "SRC07_four_way_refinement_identity_partitions_the_parent",
+        "SRC07_hazard_vanishes_exactly_at_inadmissible_stopping_times",
+        "SRC07_lambda_2_is_exactly_zero_confirming_RUN_004_from_the_algebra",
+        "SRC07_layer_identity_matches_the_stopping_time_strata_within_the_tail",
+        "SRC07_layer_loss_is_exactly_zero_precisely_at_inadmissible_depths",
+        "SRC07_new_prefix_hard_cap_is_exactly_the_descent_boundary",
+        "SRC07_the_drop_in_Z_k_equals_the_layers_total_first_descent_mass",
+        "SRC07_the_four_pieces_are_pairwise_disjoint",
+        "SRC07_the_no_go_construction_really_conserves_all_mass",
+        "SRC07_zone_C_loses_no_mass"
+      ]
+    },
+    "A09_zone_A_threshold_loosened": {
+      "target_check": "SRC07_every_chart_falls_in_exactly_one_zone",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A10_AP_mass_forgets_to_skip_n_equals_zero": {
+      "target_check": "SRC07_hurwitz_zeta_and_AP_mass_anchors_hold",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A11_hurwitz_euler_maclaurin_corrections_dropped": {
+      "target_check": "SRC07_hurwitz_zeta_and_AP_mass_anchors_hold",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC07_cumulative_hazard_equals_the_log_ratio_of_Z",
+        "SRC07_exact_Z_k_lands_inside_RUN_004s_measured_bracket",
+        "SRC07_exact_mass_conservation_holds_chart_by_chart",
+        "SRC07_layer_identity_matches_the_stopping_time_strata_within_the_tail",
+        "SRC07_the_drop_in_Z_k_equals_the_layers_total_first_descent_mass",
+        "SRC07_the_no_go_construction_really_conserves_all_mass"
+      ]
+    },
+    "A12_chart_mass_includes_n_equals_1": {
+      "target_check": "SRC07_chart_mass_formula_matches_direct_summation",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC07_cumulative_hazard_equals_the_log_ratio_of_Z",
+        "SRC07_exact_Z_k_lands_inside_RUN_004s_measured_bracket",
+        "SRC07_the_drop_in_Z_k_equals_the_layers_total_first_descent_mass"
+      ]
+    },
+    "A13_U_k_chart_wrongly_given_a_finite_height": {
+      "target_check": "SRC07_U_k_residue_and_closed_form_mass_are_as_stated",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC07_exact_Z_k_lands_inside_RUN_004s_measured_bracket",
+        "SRC07_exact_mass_conservation_holds_chart_by_chart"
+      ]
+    },
+    "D01_loose_file_diverges_from_the_bundled_copy": {
+      "target_check": "SRC07_loose_round01_matches_the_bundled_copy",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_paper_loses_the_scope_limit_on_its_own_no_go": {
+      "target_check": "SRC07_paper_states_the_no_go_is_per_chart_not_global",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_paper_loses_the_domain_correction": {
+      "target_check": "SRC07_paper_carries_the_n_at_least_2_domain_correction",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D04_bundle_no_longer_carries_the_route_paper": {
+      "target_check": "SRC07_bundle_also_carries_the_v011_route_paper",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T01_admissible_stopping_times_shifted": {
+      "target_check": "SRC07_hazard_vanishes_exactly_at_inadmissible_stopping_times",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC07_layer_loss_is_exactly_zero_precisely_at_inadmissible_depths"
+      ]
+    },
+    "T02_hazard_budget_asserted_tighter_than_it_is": {
+      "target_check": "SRC07_hazard_accumulation_respects_the_single_hard_value_budget",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_cumulative_hazard_compared_against_the_wrong_ratio": {
+      "target_check": "SRC07_cumulative_hazard_equals_the_log_ratio_of_Z",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_algebra_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_documents": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "counts": {
+    "defects_planted": 20,
+    "defects_caught_by_the_named_check": 20,
+    "defects_in_the_papers_own_formulas": 13,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

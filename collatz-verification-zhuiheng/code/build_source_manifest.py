@@ -98,6 +98,18 @@ PROCESSED = {
         "archived HZ original, and the v0.1 -> v0.1.1 -> v0.1.2 chain counted — "
         "v0.1.1 fixed one of the two unrestricted unions, the E_k^C one survived"
     ),
+    "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md": (
+        "item 19. Rechecked by code/src07_hardzeta_round01_recheck.py against "
+        "direct iteration: the child recursion, recursive hard height, four-way "
+        "refinement identity, exact mass conservation, trichotomy, zero-loss zone, "
+        "the per-chart No-Go construction and the U^k closed form all hold; "
+        "see reports/RUN-005-HARD-ZETA-ROUND-01.md"
+    ),
+    "Hard_Zeta_Phase_I_Round_01_bundle.zip": (
+        "item 20. Rechecked with item 19; the bundled Round 01 is byte-identical "
+        "to the loose copy, and the exact Z_k(s) from this chart algebra lands "
+        "inside RUN-004's independently measured bracket at all 22 depths"
+    ),
     "collatz_ot_v3_threshold_benchmark.csv": (
         "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
         "all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, "

@@ -1,0 +1,705 @@
+{
+  "tool": "src07_hardzeta_round01_recheck.py",
+  "subject": "Neo.K + Aletheia, Hard-Zeta Phase I / Round 01 Exact Refinement Algebra v0.1 (2026-08-11)",
+  "source_items": [
+    19,
+    20
+  ],
+  "scope": "the finite content of Round 01: the child recursion (§2-§6), the four-way refinement identity (§9), the exact mass conservation law (§10-§13), the trichotomy and zero-loss zone (§19-§20), the per-chart No-Go construction (§21), and the U^k closed form (§23-§24).",
+  "checks": {
+    "SRC07_hurwitz_zeta_and_AP_mass_anchors_hold": {
+      "pass": true
+    },
+    "SRC07_loose_round01_matches_the_bundled_copy": {
+      "pass": true
+    },
+    "SRC07_bundle_also_carries_the_v011_route_paper": {
+      "pass": true
+    },
+    "SRC07_cylinders_are_exactly_the_starts_with_that_parity_word": {
+      "pass": true
+    },
+    "SRC07_block_identity_holds_with_the_charts_own_m_and_u": {
+      "pass": true
+    },
+    "SRC07_recursive_hard_height_reproduces_the_hard_set_exactly": {
+      "pass": true
+    },
+    "SRC07_new_prefix_hard_cap_is_exactly_the_descent_boundary": {
+      "pass": true
+    },
+    "SRC07_the_cap_boundary_was_actually_decided_somewhere": {
+      "pass": true
+    },
+    "SRC07_the_cap_is_exactly_the_floor_of_b_over_delta": {
+      "pass": true
+    },
+    "SRC07_drift_gap_is_never_zero": {
+      "pass": true
+    },
+    "SRC07_four_way_refinement_identity_partitions_the_parent": {
+      "pass": true
+    },
+    "SRC07_the_four_pieces_are_pairwise_disjoint": {
+      "pass": true
+    },
+    "SRC07_first_descent_stratum_is_exactly_sigma_equals_k_plus_1": {
+      "pass": true
+    },
+    "SRC07_first_descent_stratum_starts_strictly_above_the_cap": {
+      "pass": true
+    },
+    "SRC07_exact_mass_conservation_holds_chart_by_chart": {
+      "pass": true
+    },
+    "SRC07_chart_mass_formula_matches_direct_summation": {
+      "pass": true
+    },
+    "SRC07_every_chart_falls_in_exactly_one_zone": {
+      "pass": true
+    },
+    "SRC07_delta_U_is_always_below_delta_D": {
+      "pass": true
+    },
+    "SRC07_zone_C_loses_no_mass": {
+      "pass": true
+    },
+    "SRC07_the_no_go_construction_really_conserves_all_mass": {
+      "pass": true
+    },
+    "SRC07_U_k_residue_and_closed_form_mass_are_as_stated": {
+      "pass": true
+    },
+    "SRC07_the_drop_in_Z_k_equals_the_layers_total_first_descent_mass": {
+      "pass": true
+    },
+    "SRC07_layer_identity_matches_the_stopping_time_strata_within_the_tail": {
+      "pass": true
+    },
+    "SRC07_layer_loss_is_exactly_zero_precisely_at_inadmissible_depths": {
+      "pass": true
+    },
+    "SRC07_exact_Z_k_lands_inside_RUN_004s_measured_bracket": {
+      "pass": true
+    },
+    "SRC07_hazard_vanishes_exactly_at_inadmissible_stopping_times": {
+      "pass": true
+    },
+    "SRC07_lambda_2_is_exactly_zero_confirming_RUN_004_from_the_algebra": {
+      "pass": true
+    },
+    "SRC07_the_hazard_is_substantial_where_it_does_not_vanish": {
+      "pass": true
+    },
+    "SRC07_cumulative_hazard_equals_the_log_ratio_of_Z": {
+      "pass": true
+    },
+    "SRC07_hazard_accumulation_respects_the_single_hard_value_budget": {
+      "pass": true
+    },
+    "SRC07_paper_states_the_no_go_is_per_chart_not_global": {
+      "pass": true
+    },
+    "SRC07_paper_carries_the_n_at_least_2_domain_correction": {
+      "pass": true
+    },
+    "SRC07_the_chart_algebra_evaluates_without_error": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "charts_with_a_member_at_or_below_the_cap": 10,
+    "charts_alive_at_depth_22": 157625,
+    "depths_with_exactly_zero_layer_loss": [
+      3,
+      6,
+      9,
+      11,
+      14,
+      17,
+      19,
+      22
+    ],
+    "depths_with_zero_hazard": [
+      2,
+      5,
+      8,
+      10,
+      13,
+      16,
+      18,
+      21
+    ],
+    "depths_with_positive_hazard": 13,
+    "charts_confronted_with_iteration": 2046,
+    "parity_word_cases": 655350,
+    "block_identity_cases": 655350,
+    "hard_height_charts_checked": 2046,
+    "hard_cap_cases": 2878,
+    "four_way_partitions_checked": 90,
+    "first_descent_cases": 60,
+    "zone_counts": {
+      "A": 719,
+      "B": 197,
+      "C": 107
+    },
+    "brute_force_range": "[2, 65536)",
+    "exact_depth": 22
+  },
+  "measured": {
+    "exact_vs_measured_Z_k": [
+      {
+        "k": 1,
+        "measured_lower": 0.2337005500197545,
+        "exact_from_chart_algebra": 0.23370055013616983,
+        "measured_upper": 0.23370055025258515,
+        "inside": true
+      },
+      {
+        "k": 2,
+        "measured_lower": 0.15886747792126774,
+        "exact_from_chart_algebra": 0.15886747797947537,
+        "measured_upper": 0.15886747815409838,
+        "inside": true
+      },
+      {
+        "k": 3,
+        "measured_lower": 0.15886747792126774,
+        "exact_from_chart_algebra": 0.1588674779794754,
+        "measured_upper": 0.15886747815409838,
+        "inside": true
+      },
+      {
+        "k": 4,
+        "measured_lower": 0.04273250143764615,
+        "exact_from_chart_algebra": 0.0427325014813019,
+        "measured_upper": 0.04273250167047679,
+        "inside": true
+      },
+      {
+        "k": 5,
+        "measured_lower": 0.030755329725071768,
+        "exact_from_chart_algebra": 0.030755329754175595,
+        "measured_upper": 0.03075532995790241,
+        "inside": true
+      },
+      {
+        "k": 6,
+        "measured_lower": 0.030755329725071768,
+        "exact_from_chart_algebra": 0.030755329754175595,
+        "measured_upper": 0.03075532995790241,
+        "inside": true
+      },
+      {
+        "k": 7,
+        "measured_lower": 0.00537785175667797,
+        "exact_from_chart_algebra": 0.005377851780324832,
+        "measured_upper": 0.005377851989508613,
+        "inside": true
+      },
+      {
+        "k": 8,
+        "measured_lower": 0.004201764475988827,
+        "exact_from_chart_algebra": 0.004201764493269226,
+        "measured_upper": 0.00420176470881947,
+        "inside": true
+      },
+      {
+        "k": 9,
+        "measured_lower": 0.004201764475988827,
+        "exact_from_chart_algebra": 0.004201764493269227,
+        "measured_upper": 0.00420176470881947,
+        "inside": true
+      },
+      {
+        "k": 10,
+        "measured_lower": 0.004141790453339669,
+        "exact_from_chart_algebra": 0.004141790467891584,
+        "measured_upper": 0.004141790686170313,
+        "inside": true
+      },
+      {
+        "k": 11,
+        "measured_lower": 0.004141790453339669,
+        "exact_from_chart_algebra": 0.004141790467891584,
+        "measured_upper": 0.004141790686170313,
+        "inside": true
+      },
+      {
+        "k": 12,
+        "measured_lower": 0.004098217131550294,
+        "exact_from_chart_algebra": 0.004098217144396906,
+        "measured_upper": 0.004098217364380937,
+        "inside": true
+      },
+      {
+        "k": 13,
+        "measured_lower": 0.003995168287141761,
+        "exact_from_chart_algebra": 0.003995168297572529,
+        "measured_upper": 0.003995168519972405,
+        "inside": true
+      },
+      {
+        "k": 14,
+        "measured_lower": 0.003995168287141761,
+        "exact_from_chart_algebra": 0.003995168297572529,
+        "measured_upper": 0.003995168519972405,
+        "inside": true
+      },
+      {
+        "k": 15,
+        "measured_lower": 0.00391256171306045,
+        "exact_from_chart_algebra": 0.003912561722261979,
+        "measured_upper": 0.003912561945891094,
+        "inside": true
+      },
+      {
+        "k": 16,
+        "measured_lower": 0.003884713210675431,
+        "exact_from_chart_algebra": 0.0038847132181858684,
+        "measured_upper": 0.0038847134435060745,
+        "inside": true
+      },
+      {
+        "k": 17,
+        "measured_lower": 0.003884713210675431,
+        "exact_from_chart_algebra": 0.003884713218185868,
+        "measured_upper": 0.0038847134435060745,
+        "inside": true
+      },
+      {
+        "k": 18,
+        "measured_lower": 0.003876585521261905,
+        "exact_from_chart_algebra": 0.0038765855279188017,
+        "measured_upper": 0.0038765857540925485,
+        "inside": true
+      },
+      {
+        "k": 19,
+        "measured_lower": 0.003876585521261905,
+        "exact_from_chart_algebra": 0.0038765855279188012,
+        "measured_upper": 0.0038765857540925485,
+        "inside": true
+      },
+      {
+        "k": 20,
+        "measured_lower": 0.003848802174471032,
+        "exact_from_chart_algebra": 0.0038488021805390656,
+        "measured_upper": 0.0038488024073016756,
+        "inside": true
+      },
+      {
+        "k": 21,
+        "measured_lower": 0.0037839135633916878,
+        "exact_from_chart_algebra": 0.003783913568566547,
+        "measured_upper": 0.0037839137962223314,
+        "inside": true
+      },
+      {
+        "k": 22,
+        "measured_lower": 0.0037839135633916878,
+        "exact_from_chart_algebra": 0.0037839135685665474,
+        "measured_upper": 0.0037839137962223314,
+        "inside": true
+      }
+    ],
+    "atomic_hazard": [
+      {
+        "k": 1,
+        "lambda": 0.3202092254942985,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 2,
+        "lambda": 0.0,
+        "k_plus_1_admissible": false
+      },
+      {
+        "k": 3,
+        "lambda": 0.7310179400794502,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 4,
+        "lambda": 0.28028248550736146,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 5,
+        "lambda": 0.0,
+        "k_plus_1_admissible": false
+      },
+      {
+        "k": 6,
+        "lambda": 0.8251408187358263,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 7,
+        "lambda": 0.21869090765171062,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 8,
+        "lambda": 0.0,
+        "k_plus_1_admissible": false
+      },
+      {
+        "k": 9,
+        "lambda": 0.014273533291481264,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 10,
+        "lambda": 0.0,
+        "k_plus_1_admissible": false
+      },
+      {
+        "k": 11,
+        "lambda": 0.010520407498271957,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 12,
+        "lambda": 0.025144799114723882,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 13,
+        "lambda": 0.0,
+        "k_plus_1_admissible": false
+      },
+      {
+        "k": 14,
+        "lambda": 0.020676619645971343,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 15,
+        "lambda": 0.007117716231198693,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 16,
+        "lambda": 0.0,
+        "k_plus_1_admissible": false
+      },
+      {
+        "k": 17,
+        "lambda": 0.002092224010003508,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 18,
+        "lambda": 0.0,
+        "k_plus_1_admissible": false
+      },
+      {
+        "k": 19,
+        "lambda": 0.007166963602284215,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 20,
+        "lambda": 0.016859430266543452,
+        "k_plus_1_admissible": true
+      },
+      {
+        "k": 21,
+        "lambda": 0.0,
+        "k_plus_1_admissible": false
+      }
+    ],
+    "hazard_budget": [
+      {
+        "n0": 27,
+        "sigma_n0": 59,
+        "from_depth": 1,
+        "levels_in_the_whole_window": 57,
+        "levels_measured": 21,
+        "hazard_spent_over_measured_levels": 4.1232817859284445,
+        "budget_for_the_whole_window": 5.137959048595819,
+        "fraction_of_budget_used": 0.802513555855475
+      },
+      {
+        "n0": 27,
+        "sigma_n0": 59,
+        "from_depth": 8,
+        "levels_in_the_whole_window": 50,
+        "levels_measured": 14,
+        "hazard_spent_over_measured_levels": 0.10474574486889644,
+        "budget_for_the_whole_window": 1.1194230075362728,
+        "fraction_of_budget_used": 0.09357119173334692
+      },
+      {
+        "n0": 27,
+        "sigma_n0": 59,
+        "from_depth": 16,
+        "levels_in_the_whole_window": 42,
+        "levels_measured": 6,
+        "hazard_spent_over_measured_levels": 0.02629035374131879,
+        "budget_for_the_whole_window": 1.0409676164086952,
+        "fraction_of_budget_used": 0.025255688387329153
+      },
+      {
+        "n0": 703,
+        "sigma_n0": 81,
+        "from_depth": 1,
+        "levels_in_the_whole_window": 79,
+        "levels_measured": 21,
+        "hazard_spent_over_measured_levels": 4.1232817859284445,
+        "budget_for_the_whole_window": 11.656999100208491,
+        "fraction_of_budget_used": 0.3537172603757598
+      },
+      {
+        "n0": 703,
+        "sigma_n0": 81,
+        "from_depth": 8,
+        "levels_in_the_whole_window": 72,
+        "levels_measured": 14,
+        "hazard_spent_over_measured_levels": 0.10474574486889644,
+        "budget_for_the_whole_window": 7.638463059148944,
+        "fraction_of_budget_used": 0.01371293466470818
+      },
+      {
+        "n0": 703,
+        "sigma_n0": 81,
+        "from_depth": 16,
+        "levels_in_the_whole_window": 64,
+        "levels_measured": 6,
+        "hazard_spent_over_measured_levels": 0.02629035374131879,
+        "budget_for_the_whole_window": 7.560007668021367,
+        "fraction_of_budget_used": 0.0034775564914472632
+      },
+      {
+        "n0": 10087,
+        "sigma_n0": 105,
+        "from_depth": 1,
+        "levels_in_the_whole_window": 103,
+        "levels_measured": 21,
+        "hazard_spent_over_measured_levels": 4.1232817859284445,
+        "budget_for_the_whole_window": 16.984290806696833,
+        "fraction_of_budget_used": 0.24277032422823638
+      },
+      {
+        "n0": 10087,
+        "sigma_n0": 105,
+        "from_depth": 8,
+        "levels_in_the_whole_window": 96,
+        "levels_measured": 14,
+        "hazard_spent_over_measured_levels": 0.10474574486889644,
+        "budget_for_the_whole_window": 12.965754765637286,
+        "fraction_of_budget_used": 0.008078646153828287
+      },
+      {
+        "n0": 10087,
+        "sigma_n0": 105,
+        "from_depth": 16,
+        "levels_in_the_whole_window": 88,
+        "levels_measured": 6,
+        "hazard_spent_over_measured_levels": 0.02629035374131879,
+        "budget_for_the_whole_window": 12.887299374509707,
+        "fraction_of_budget_used": 0.00204002040903306
+      },
+      {
+        "n0": 35655,
+        "sigma_n0": 135,
+        "from_depth": 1,
+        "levels_in_the_whole_window": 133,
+        "levels_measured": 21,
+        "hazard_spent_over_measured_levels": 4.1232817859284445,
+        "budget_for_the_whole_window": 19.50957465351197,
+        "fraction_of_budget_used": 0.2113465751641183
+      },
+      {
+        "n0": 35655,
+        "sigma_n0": 135,
+        "from_depth": 8,
+        "levels_in_the_whole_window": 126,
+        "levels_measured": 14,
+        "hazard_spent_over_measured_levels": 0.10474574486889644,
+        "budget_for_the_whole_window": 15.491038612452423,
+        "fraction_of_budget_used": 0.006761699295274941
+      },
+      {
+        "n0": 35655,
+        "sigma_n0": 135,
+        "from_depth": 16,
+        "levels_in_the_whole_window": 118,
+        "levels_measured": 6,
+        "hazard_spent_over_measured_levels": 0.02629035374131879,
+        "budget_for_the_whole_window": 15.412583221324844,
+        "fraction_of_budget_used": 0.0017057720541578953
+      }
+    ],
+    "exact_Z_k": {
+      "1": {
+        "2.0": 0.23370055013616983,
+        "3.0": 0.051799790264645,
+        "4.0": 0.014678031604192055
+      },
+      "2": {
+        "2.0": 0.15886747797947537,
+        "3.0": 0.04142682200263781,
+        "4.0": 0.012866739931543358
+      },
+      "3": {
+        "2.0": 0.1588674779794754,
+        "3.0": 0.04142682200263781,
+        "4.0": 0.012866739931543358
+      },
+      "4": {
+        "2.0": 0.0427325014813019,
+        "3.0": 0.004204310101648535,
+        "4.0": 0.0005124754284962617
+      },
+      "5": {
+        "2.0": 0.030755329754175595,
+        "3.0": 0.0033450574433174446,
+        "4.0": 0.0004401276283127603
+      },
+      "6": {
+        "2.0": 0.030755329754175595,
+        "3.0": 0.003345057443317445,
+        "4.0": 0.0004401276283127603
+      },
+      "7": {
+        "2.0": 0.005377851780324832,
+        "3.0": 0.00012730631987414696,
+        "4.0": 3.791992444700521e-06
+      },
+      "8": {
+        "2.0": 0.004201764493269226,
+        "3.0": 0.00010611782840032136,
+        "4.0": 3.314815388388309e-06
+      },
+      "9": {
+        "2.0": 0.004201764493269227,
+        "3.0": 0.00010611782840032138,
+        "4.0": 3.3148153883883095e-06
+      },
+      "10": {
+        "2.0": 0.004141790467891584,
+        "3.0": 0.00010598819836531415,
+        "4.0": 3.314468187276989e-06
+      },
+      "11": {
+        "2.0": 0.004141790467891584,
+        "3.0": 0.00010598819836531417,
+        "4.0": 3.3144681872769896e-06
+      },
+      "12": {
+        "2.0": 0.004098217144396906,
+        "3.0": 0.00010586773081779137,
+        "4.0": 3.3140356110252044e-06
+      },
+      "13": {
+        "2.0": 0.003995168297572529,
+        "3.0": 0.00010548477882496255,
+        "4.0": 3.31233947663558e-06
+      },
+      "14": {
+        "2.0": 0.003995168297572529,
+        "3.0": 0.00010548477882496255,
+        "4.0": 3.31233947663558e-06
+      },
+      "15": {
+        "2.0": 0.003912561722261979,
+        "3.0": 0.00010496164034478874,
+        "4.0": 3.308420452074933e-06
+      },
+      "16": {
+        "2.0": 0.0038847132181858684,
+        "3.0": 0.0001049136112834019,
+        "4.0": 3.3083166299660527e-06
+      },
+      "17": {
+        "2.0": 0.003884713218185868,
+        "3.0": 0.0001049136112834019,
+        "4.0": 3.3083166299660523e-06
+      },
+      "18": {
+        "2.0": 0.0038765855279188017,
+        "3.0": 0.00010490398500564243,
+        "4.0": 3.3083005158686213e-06
+      },
+      "19": {
+        "2.0": 0.0038765855279188012,
+        "3.0": 0.00010490398500564245,
+        "4.0": 3.3083005158686213e-06
+      },
+      "20": {
+        "2.0": 0.0038488021805390656,
+        "3.0": 0.00010481741887836771,
+        "4.0": 3.3079716428701317e-06
+      },
+      "21": {
+        "2.0": 0.003783913568566547,
+        "3.0": 0.0001045039039502014,
+        "4.0": 3.306217248049817e-06
+      },
+      "22": {
+        "2.0": 0.0037839135685665474,
+        "3.0": 0.0001045039039502014,
+        "4.0": 3.306217248049817e-06
+      }
+    },
+    "no_go_construction": [
+      {
+        "L": 1,
+        "minimal_k": 2,
+        "word": "U^2",
+        "parent_mass": 0.15886747797947537,
+        "subtree_mass": 0.1588674779794754,
+        "first_descent_mass": 0.0,
+        "relative_gap": 1.7470898366759968e-16
+      },
+      {
+        "L": 2,
+        "minimal_k": 4,
+        "word": "U^4",
+        "parent_mass": 0.0070662934292409305,
+        "subtree_mass": 0.0070662934292409305,
+        "first_descent_mass": 0.0,
+        "relative_gap": 0.0
+      },
+      {
+        "L": 3,
+        "minimal_k": 6,
+        "word": "U^6",
+        "parent_mass": 0.00041096367028237965,
+        "subtree_mass": 0.0004109636702823796,
+        "first_descent_mass": 0.0,
+        "relative_gap": 1.3190973447124072e-16
+      },
+      {
+        "L": 4,
+        "minimal_k": 7,
+        "word": "U^7",
+        "parent_mass": 0.00010155739637286766,
+        "subtree_mass": 0.00010155739637286766,
+        "first_descent_mass": 0.0,
+        "relative_gap": 0.0
+      },
+      {
+        "L": 5,
+        "minimal_k": 9,
+        "word": "U^9",
+        "parent_mass": 6.292884898413403e-06,
+        "subtree_mass": 6.292884898413404e-06,
+        "first_descent_mass": 0.0,
+        "relative_gap": 1.3460169078698053e-16
+      }
+    ],
+    "assessment": {
+      "what_round_01_gets_right": "All of it, within the finite reach of this check. The child recursion reproduces direct iteration exactly; the recursive hard height reproduces the hard set of every chart to depth 10 without rescanning prefixes; the four-way identity partitions every parent; the mass conservation law holds chart by chart; the trichotomy is exhaustive; Zone C loses no mass; and the U^k closed form is exact.",
+      "the_strongest_check_here": "The chart algebra computes Z_k(s) EXACTLY - a finite sum where h(w) is finite, a Hurwitz zeta where it is not. RUN-004 measured the same quantity by brute force on [2, 2^32) and bracketed it. The two share no code and no method, and the exact value lands inside the measured bracket at every depth checked. That tests Round 01's algebra and RUN-004's bracket at the same time.",
+      "how_this_relates_to_the_no_go": "§21's No-Go is PER-CHART, and §22 says so: it does not exclude global total contraction. RUN-004's result is about the global total, at L = 1, and is unrelated to §21's U^k construction. In Round 01's own language it is lambda_2(s) = 0, and more generally lambda_k(s) = 0 whenever k+1 is not an admissible stopping time. Confirmed here from the chart algebra rather than from the brute-force measurement.",
+      "the_hazard_budget": "§17 makes Collatz equivalent to H_K(s) -> oo, and Round 01's own §16 caps how fast H_K can grow. Z_K = Z_k prod(1 - lambda_j), and Z_K >= n0^{-s} for any n0 still hard at depth K, so the TOTAL hazard spent over a window in which one value survives is at most log(Z_k n0^s). n = 27 has sigma = 59, so levels 8 through 58 - fifty of them - share a single budget of about 1.12 nats at s = 2. This is not a no-go: infinitely many bounded windows can still sum to infinity. It is a rate obstruction, and it is what any proof of H_K -> oo must survive.",
+      "what_it_sharpens": "§26 asks whether a non-summable lower bound on lambda_k(s) can be established. A UNIFORM POSITIVE lower bound cannot: lambda_k vanishes identically at infinitely many k. The cumulative form sum lambda_k = oo that §17 already prefers is untouched - zero terms cost a sum nothing while being fatal to a per-step bound.",
+      "not_established": "nothing about Collatz, and nothing about whether the hazard sum diverges. Round 01 is an exact bookkeeping layer; this run confirms the bookkeeping."
+    }
+  },
+  "failures": [],
+  "ok": true
+}
