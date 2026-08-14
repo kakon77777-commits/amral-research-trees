@@ -3,3 +3,4 @@ __pycache__/
 .lake/build/
 .DS_Store
 Thumbs.db
+collatz-verification-zhuiheng/build/

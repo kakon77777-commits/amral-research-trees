@@ -1,0 +1,24 @@
+{
+  "tool": "coverage gap drill (manual, reproducible)",
+  "purpose": "demonstrate that verify_run_logs.py refuses rather than averages over a bad run",
+  "drills": {
+    "missing_chunk": {
+      "exit_code": 1,
+      "ok": false,
+      "problems": [
+        "gap between t40_chunk08.out.log (to 549755813888) and t40_chunk10.out.log (from 618475290625)",
+        "total odd starts 515396075519 != 549755813887 for [3, 1099511627776]"
+      ]
+    },
+    "tampered_count": {
+      "exit_code": 1,
+      "ok": false,
+      "problems": [
+        "t40_chunk09.out.log: sieve/iteration split does not sum to the total",
+        "t40_chunk09.out.log: checked 34359738367 odd starts, but [549755813889, 618475290624] contains 34359738368",
+        "total odd starts 549755813886 != 549755813887 for [3, 1099511627776]"
+      ]
+    }
+  },
+  "restored_intact": true
+}

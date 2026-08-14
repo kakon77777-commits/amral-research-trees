@@ -1,0 +1,14 @@
+computing the Python reference expectation once ...
+baseline passes all gates
+  M01-descent-3x+3: caught by self-test,reference
+  M02-trajectory-halve-twice: caught by self-test,anchors (timeout)
+  M03-descent-not-strict: caught by self-test,reference
+  M04-table-shift: caught by self-test,reference
+  M05-table-pow2: caught by self-test
+  M06-guard-disabled: caught by self-test
+  M07-delay-double-count: caught by self-test,anchors
+  M08-verify-even-starts: caught by self-test,reference
+  M09-skip-half-the-starts: caught by reference
+  M10-drop-peak-candidates: caught by anchors
+  NULL-01-comment: clean (control)
+  NULL-02-chunk-size: clean (control)

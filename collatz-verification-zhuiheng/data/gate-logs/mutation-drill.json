@@ -1,0 +1,151 @@
+{
+  "tool": "mutation_drill.py",
+  "reference_range": [
+    3,
+    300000
+  ],
+  "reference_expectation": {
+    "odd_starts_checked": 149999,
+    "max_sigma": 164,
+    "max_sigma_at": 270271,
+    "max_expansion_peak": 8601188876,
+    "max_expansion_at": 159487
+  },
+  "anchor_bound": 1000000,
+  "baseline_gates": {
+    "self-test": "pass",
+    "reference": "pass",
+    "anchors": "pass"
+  },
+  "mutations": [
+    {
+      "id": "M01-descent-3x+3",
+      "description": "descent iteration computes 3x+3 instead of 3x+1",
+      "expected_to_be_caught": true,
+      "caught_by": [
+        "self-test",
+        "reference"
+      ],
+      "survived": false,
+      "control_disturbed": false
+    },
+    {
+      "id": "M02-trajectory-halve-twice",
+      "description": "standard map halves twice on even values",
+      "expected_to_be_caught": true,
+      "caught_by": [
+        "self-test",
+        "anchors (timeout)"
+      ],
+      "survived": false,
+      "control_disturbed": false
+    },
+    {
+      "id": "M03-descent-not-strict",
+      "description": "descent accepts equality instead of strictly below n",
+      "expected_to_be_caught": true,
+      "caught_by": [
+        "self-test",
+        "reference"
+      ],
+      "survived": false,
+      "control_disturbed": false
+    },
+    {
+      "id": "M04-table-shift",
+      "description": "k-step table shifts by 2 on odd steps",
+      "expected_to_be_caught": true,
+      "caught_by": [
+        "self-test",
+        "reference"
+      ],
+      "survived": false,
+      "control_disturbed": false
+    },
+    {
+      "id": "M05-table-pow2",
+      "description": "k-step table stores 2^a instead of 3^a",
+      "expected_to_be_caught": true,
+      "caught_by": [
+        "self-test"
+      ],
+      "survived": false,
+      "control_disturbed": false
+    },
+    {
+      "id": "M06-guard-disabled",
+      "description": "the overflow guard can no longer trip",
+      "expected_to_be_caught": true,
+      "caught_by": [
+        "self-test"
+      ],
+      "survived": false,
+      "control_disturbed": false
+    },
+    {
+      "id": "M07-delay-double-count",
+      "description": "standard-map step counter increments by 2",
+      "expected_to_be_caught": true,
+      "caught_by": [
+        "self-test",
+        "anchors"
+      ],
+      "survived": false,
+      "control_disturbed": false
+    },
+    {
+      "id": "M08-verify-even-starts",
+      "description": "verification walks the even starts, which descend trivially",
+      "expected_to_be_caught": true,
+      "caught_by": [
+        "self-test",
+        "reference"
+      ],
+      "survived": false,
+      "control_disturbed": false
+    },
+    {
+      "id": "M09-skip-half-the-starts",
+      "description": "verification steps by 4, silently covering half the odd starts",
+      "expected_to_be_caught": true,
+      "caught_by": [
+        "reference"
+      ],
+      "survived": false,
+      "control_disturbed": false
+    },
+    {
+      "id": "M10-drop-peak-candidates",
+      "description": "record scan stops nominating peak candidates",
+      "expected_to_be_caught": true,
+      "caught_by": [
+        "anchors"
+      ],
+      "survived": false,
+      "control_disturbed": false
+    },
+    {
+      "id": "NULL-01-comment",
+      "description": "control: a comment is added and nothing else",
+      "expected_to_be_caught": false,
+      "caught_by": [],
+      "survived": false,
+      "control_disturbed": false
+    },
+    {
+      "id": "NULL-02-chunk-size",
+      "description": "control: work is split into 8-wide chunks instead of 2^22-wide, which reorders how threads interleave and merge but must change nothing reported",
+      "expected_to_be_caught": false,
+      "caught_by": [],
+      "survived": false,
+      "control_disturbed": false
+    }
+  ],
+  "defects_planted": 10,
+  "defects_caught": 10,
+  "defects_survived": [],
+  "controls_planted": 2,
+  "controls_disturbed": [],
+  "errors": [],
+  "ok": true
+}

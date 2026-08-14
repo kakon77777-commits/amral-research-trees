@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "research_line_id": "collatz-verification-zhuiheng",
+  "researcher": {
+    "display_name": "數學戰士-墜衡",
+    "model": "Claude Opus 5",
+    "agent_role": "local verification and computation arm",
+    "route": "instrument, not theory"
+  },
+  "date": "2026-08-14",
+  "problem": {
+    "id": "COLLATZ",
+    "name": "Collatz conjecture (3x+1 problem)",
+    "statement": "every positive integer's Collatz trajectory reaches 1"
+  },
+  "global_status": {
+    "solved": false,
+    "literature_novelty_claimed": false,
+    "record_attempt": false,
+    "statement": "A bounded exhaustive verification and a falsifiability-drilled instrument. Nothing here bears on the conjecture itself, and the bound reached is far below the published frontier.",
+    "published_frontier_note": "Convergence is published as verified to at least 2^68 (Barina, J. Supercomputing, 2021), with further distributed progress since. That claim was not independently checked here and is not restated as this arm's own result."
+  },
+  "verified_claims": [
+    {
+      "id": "V1",
+      "claim": "every integer n with 1 <= n <= 1099511627776 has a Collatz trajectory reaching 1",
+      "method": "exhaustive descent below n under the shortcut map, plus strong induction",
+      "exhaustive_within_domain": true,
+      "relative_to_implementation": true,
+      "domain_upper_bound": 1099511627776,
+      "domain_upper_bound_as_power_of_two": "2^40"
+    },
+    {
+      "id": "V2",
+      "claim": "no nontrivial Collatz cycle has all of its elements <= 1099511627776",
+      "method": "free corollary of V1: the least element of such a cycle would never reach 1",
+      "separate_computation": false,
+      "domain_upper_bound": 1099511627776
+    }
+  ],
+  "explicit_non_claims": [
+    "nothing about any n > the domain upper bound",
+    "nothing about cycles containing an element above the domain upper bound",
+    "no support, evidence, or suggestion regarding the conjecture itself",
+    "no independent confirmation of the published 2^68 frontier"
+  ],
+  "coverage": {
+    "tool": "verify_run_logs.py",
+    "tag": "t40",
+    "chunks": 16,
+    "covered_interval": [
+      3,
+      1099511627776
+    ],
+    "tiles_without_gap_or_overlap": true,
+    "odd_starts_checked": 549755813887,
+    "odd_starts_expected": 549755813887,
+    "resolved_by_one_k_step_jump": 450996731903,
+    "needed_iteration": 98759081984,
+    "sieve_k_values_used": [
+      20
+    ],
+    "total_engine_seconds": 981.508,
+    "max_sigma": {
+      "value": 550,
+      "at": 898696369947
+    },
+    "max_expansion": {
+      "peak": 200279370410625061016864,
+      "at": 871673828443,
+      "ratio_approx": 229764120334.28583
+    },
+    "log_sha256": {
+      "t40_chunk01.out.log": "69659933b6325f3c8efa164774fc6c71ed71a9d8f18add622e7b543dfbe95966",
+      "t40_chunk02.out.log": "ced14a7e3f998f26a5b5d8fd81fc597296b1178a6cd2f07db0f4737e7ecb2714",
+      "t40_chunk03.out.log": "45c652ed81d953c5c566d629a73aeaf4877ce7890e58ffe0ce9e3217e78b0187",
+      "t40_chunk04.out.log": "9ae557d9d79d9398c47b652c9fa6bcc174938502e7c7d4716edc9729a5c108c9",
+      "t40_chunk05.out.log": "020ae3106b9848504d60ed35c66e1594680c3c2083f7bf4ef8e3078a0c8fc7f0",
+      "t40_chunk06.out.log": "805f8ee5a858b5e3022e970b42c55e5c920308dce8b98826c43996f93a236d07",
+      "t40_chunk07.out.log": "864e4e32a4b55375012e72581f89e10b564e4643c3289cd204a9d6c0cb876e88",
+      "t40_chunk08.out.log": "579b5fbf33ea35d2496004dd4c2264b02468125538c963c47dde2aba4b2318b7",
+      "t40_chunk09.out.log": "5eb4b2478b274407b5ec3f3d15cde79d8a10c66ccf45549ed5b6720ee1409c5a",
+      "t40_chunk10.out.log": "b9475355916a5ec53c68c7dd4b7513c373d87466f4cc3b3bcdfa0d9dc23231b1",
+      "t40_chunk11.out.log": "23ad9211aac989781e9335813eb08ab537015635c9e1c410dc0353ad36ffdf16",
+      "t40_chunk12.out.log": "b34a0a36493ac73b7a8298579b842bd7c7ff47abc8cd3336917bd91818f7a60e",
+      "t40_chunk13.out.log": "c89191343aec7b5e555d70c056f8239d83cfaa830fb0baa84cc4d85e1dc9bc97",
+      "t40_chunk14.out.log": "d01045591ed1813a165b1f60ba6bc63c44c3b81710afbd935845a2e0fde13a64",
+      "t40_chunk15.out.log": "7e9eb9458e47831d72e7d41a81c20267ecc9234c980e42f84f77a18389e1aefc",
+      "t40_chunk16.out.log": "f1b0c68fc253d4092871301484b0379bf63a2be26d3bfe7afdfa95949d4a344f"
+    },
+    "problems": [],
+    "ok": true
+  },
+  "gates": {
+    "self_test": {
+      "ok": true
+    },
+    "reference_cross_check": {
+      "tool": "reference_crosscheck.py",
+      "interval": [
+        3,
+        300000
+      ],
+      "reference_implementation": "collatz_ref.py (CPython arbitrary-precision, no sieve)",
+      "engine_implementation": "collatz_verify.rs (u128, congruence sieve, 4 threads)",
+      "quantities_compared": [
+        "odd_starts_checked",
+        "max_sigma",
+        "max_sigma_at",
+        "max_expansion_peak",
+        "max_expansion_at"
+      ],
+      "reference_result": {
+        "odd_starts_checked": 149999,
+        "max_sigma": 164,
+        "max_sigma_at": 270271,
+        "max_expansion_peak": 8601188876,
+        "max_expansion_at": 159487
+      },
+      "runs": [
+        {
+          "sieve_k": 1,
+          "resolved_by_one_k_step_jump": 0,
+          "needed_iteration": 149999,
+          "disagreements": {},
+          "agree": true
+        },
+        {
+          "sieve_k": 6,
+          "resolved_by_one_k_step_jump": 75001,
+          "needed_iteration": 74998,
+          "disagreements": {},
+          "agree": true
+        },
+        {
+          "sieve_k": 14,
+          "resolved_by_one_k_step_jump": 106421,
+          "needed_iteration": 43578,
+          "disagreements": {},
+          "agree": true
+        },
+        {
+          "sieve_k": 20,
+          "resolved_by_one_k_step_jump": 123124,
+          "needed_iteration": 26875,
+          "disagreements": {},
+          "agree": true
+        },
+        {
+          "sieve_k": 24,
+          "resolved_by_one_k_step_jump": 134336,
+          "needed_iteration": 15663,
+          "disagreements": {},
+          "agree": true
+        }
+      ],
+      "iterative_path_exercised_at_every_k": true,
+      "interval_is_nontrivial": true,
+      "agree": true
+    },
+    "external_anchors": {
+      "ok": true,
+      "bound": 100000000,
+      "sources": {
+        "A006877": "https://oeis.org/A006877/b006877.txt",
+        "A006878": "https://oeis.org/A006878/b006878.txt",
+        "A006884": "https://oeis.org/A006884/b006884.txt",
+        "A006885": "https://oeis.org/A006885/b006885.txt"
+      },
+      "snapshot_sha256": {
+        "A006877": "4bdd9c264ffb33f6252adad6716f8f0ad55c84687d4300a9bfbe646a1a81327f",
+        "A006878": "1aebb537ac7cbb0290e8614b8e58e879efa24843277c0c437a72672f965233ac",
+        "A006884": "657ec2fbc0ade279ce052005ae11234ea795c47b0fdaf9add6fff5d4f214de86",
+        "A006885": "7007b273e50fc2d51afba6e740b201ae61e3ae4f8b5898e3880bb6c5156bf053"
+      },
+      "checks": [
+        {
+          "kind": "delay_records",
+          "published_compared": 60,
+          "engine_produced": 60,
+          "largest_compared_start": 63728127,
+          "match": true
+        },
+        {
+          "kind": "peak_records",
+          "published_compared": 41,
+          "engine_produced": 41,
+          "largest_compared_start": 80049391,
+          "match": true
+        }
+      ]
+    },
+    "mutation_drill": {
+      "ok": true,
+      "defects_planted": 10,
+      "defects_caught": 10,
+      "defects_survived": [],
+      "controls_planted": 2,
+      "controls_disturbed": [],
+      "per_mutation": [
+        {
+          "id": "M01-descent-3x+3",
+          "description": "descent iteration computes 3x+3 instead of 3x+1",
+          "expected_to_be_caught": true,
+          "caught_by": [
+            "self-test",
+            "reference"
+          ]
+        },
+        {
+          "id": "M02-trajectory-halve-twice",
+          "description": "standard map halves twice on even values",
+          "expected_to_be_caught": true,
+          "caught_by": [
+            "self-test",
+            "anchors (timeout)"
+          ]
+        },
+        {
+          "id": "M03-descent-not-strict",
+          "description": "descent accepts equality instead of strictly below n",
+          "expected_to_be_caught": true,
+          "caught_by": [
+            "self-test",
+            "reference"
+          ]
+        },
+        {
+          "id": "M04-table-shift",
+          "description": "k-step table shifts by 2 on odd steps",
+          "expected_to_be_caught": true,
+          "caught_by": [
+            "self-test",
+            "reference"
+          ]
+        },
+        {
+          "id": "M05-table-pow2",
+          "description": "k-step table stores 2^a instead of 3^a",
+          "expected_to_be_caught": true,
+          "caught_by": [
+            "self-test"
+          ]
+        },
+        {
+          "id": "M06-guard-disabled",
+          "description": "the overflow guard can no longer trip",
+          "expected_to_be_caught": true,
+          "caught_by": [
+            "self-test"
+          ]
+        },
+        {
+          "id": "M07-delay-double-count",
+          "description": "standard-map step counter increments by 2",
+          "expected_to_be_caught": true,
+          "caught_by": [
+            "self-test",
+            "anchors"
+          ]
+        },
+        {
+          "id": "M08-verify-even-starts",
+          "description": "verification walks the even starts, which descend trivially",
+          "expected_to_be_caught": true,
+          "caught_by": [
+            "self-test",
+            "reference"
+          ]
+        },
+        {
+          "id": "M09-skip-half-the-starts",
+          "description": "verification steps by 4, silently covering half the odd starts",
+          "expected_to_be_caught": true,
+          "caught_by": [
+            "reference"
+          ]
+        },
+        {
+          "id": "M10-drop-peak-candidates",
+          "description": "record scan stops nominating peak candidates",
+          "expected_to_be_caught": true,
+          "caught_by": [
+            "anchors"
+          ]
+        },
+        {
+          "id": "NULL-01-comment",
+          "description": "control: a comment is added and nothing else",
+          "expected_to_be_caught": false,
+          "caught_by": []
+        },
+        {
+          "id": "NULL-02-chunk-size",
+          "description": "control: work is split into 8-wide chunks instead of 2^22-wide, which reorders how threads interleave and merge but must change nothing reported",
+          "expected_to_be_caught": false,
+          "caught_by": []
+        }
+      ]
+    }
+  },
+  "environment": {
+    "os": "Windows 10 x64",
+    "python": "3.14.5",
+    "rustc": "1.96.0 (ac68faa20 2026-05-25)",
+    "logical_cpus": 16
+  },
+  "source_sha256": {
+    "code/collatz_verify.rs": "f309ac571b85120a29255e817bf07b294e853bbd41012585e21a2e7c91167050",
+    "code/collatz_ref.py": "729e58fe3fd0b7dccdc1ba6b15c4e809ccda6e95e97bbf821d82f1f261c20e56",
+    "code/anchors.py": "2dbcb7ab71616b622eee58cb90af512a85a8e6edffb310744f6060d53b50aae9",
+    "code/mutation_drill.py": "8d381dc10c5da83dc0049b96d629ce6d108e4de471d64d10fbdde50786131825",
+    "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
+    "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
+    "code/build_results.py": "764344d09cd411384a66cf2582f27450d2f544da5b3e0b31b9818e013d4ada6f",
+    "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab"
+  }
+}

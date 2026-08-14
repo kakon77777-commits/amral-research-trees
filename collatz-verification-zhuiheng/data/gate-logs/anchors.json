@@ -1,0 +1,50 @@
+{
+  "tool": "anchors.py",
+  "bound": 100000000,
+  "engine_elapsed_s": 6.091,
+  "sources": {
+    "A006877": "https://oeis.org/A006877/b006877.txt",
+    "A006878": "https://oeis.org/A006878/b006878.txt",
+    "A006884": "https://oeis.org/A006884/b006884.txt",
+    "A006885": "https://oeis.org/A006885/b006885.txt"
+  },
+  "snapshot_sha256": {
+    "A006877": "4bdd9c264ffb33f6252adad6716f8f0ad55c84687d4300a9bfbe646a1a81327f",
+    "A006878": "1aebb537ac7cbb0290e8614b8e58e879efa24843277c0c437a72672f965233ac",
+    "A006884": "657ec2fbc0ade279ce052005ae11234ea795c47b0fdaf9add6fff5d4f214de86",
+    "A006885": "7007b273e50fc2d51afba6e740b201ae61e3ae4f8b5898e3880bb6c5156bf053"
+  },
+  "checks": [
+    {
+      "kind": "delay_records",
+      "bound": 100000000,
+      "snapshot_terms": {
+        "starts": 148,
+        "values": 148,
+        "paired_used": 148
+      },
+      "published_compared": 60,
+      "engine_produced": 60,
+      "largest_compared_start": 63728127,
+      "missing_from_engine": [],
+      "not_in_published_list": [],
+      "match": true
+    },
+    {
+      "kind": "peak_records",
+      "bound": 100000000,
+      "snapshot_terms": {
+        "starts": 98,
+        "values": 97,
+        "paired_used": 97
+      },
+      "published_compared": 41,
+      "engine_produced": 41,
+      "largest_compared_start": 80049391,
+      "missing_from_engine": [],
+      "not_in_published_list": [],
+      "match": true
+    }
+  ],
+  "all_match": true
+}

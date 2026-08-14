@@ -1,0 +1,8 @@
+# Intentionally empty.
+#
+# Every Python file in this directory uses only the standard library, and the
+# Rust engine uses no external crates. A numeric result here cannot change
+# because a dependency was upgraded, because there are no dependencies.
+#
+# Observed environment for the archived runs: Windows 10 x64, Python 3.14.5,
+# rustc 1.96.0 (ac68faa20 2026-05-25).

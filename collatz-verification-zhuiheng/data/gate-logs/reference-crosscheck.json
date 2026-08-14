@@ -1,0 +1,63 @@
+{
+  "tool": "reference_crosscheck.py",
+  "interval": [
+    3,
+    300000
+  ],
+  "reference_implementation": "collatz_ref.py (CPython arbitrary-precision, no sieve)",
+  "engine_implementation": "collatz_verify.rs (u128, congruence sieve, 4 threads)",
+  "quantities_compared": [
+    "odd_starts_checked",
+    "max_sigma",
+    "max_sigma_at",
+    "max_expansion_peak",
+    "max_expansion_at"
+  ],
+  "reference_result": {
+    "odd_starts_checked": 149999,
+    "max_sigma": 164,
+    "max_sigma_at": 270271,
+    "max_expansion_peak": 8601188876,
+    "max_expansion_at": 159487
+  },
+  "runs": [
+    {
+      "sieve_k": 1,
+      "resolved_by_one_k_step_jump": 0,
+      "needed_iteration": 149999,
+      "disagreements": {},
+      "agree": true
+    },
+    {
+      "sieve_k": 6,
+      "resolved_by_one_k_step_jump": 75001,
+      "needed_iteration": 74998,
+      "disagreements": {},
+      "agree": true
+    },
+    {
+      "sieve_k": 14,
+      "resolved_by_one_k_step_jump": 106421,
+      "needed_iteration": 43578,
+      "disagreements": {},
+      "agree": true
+    },
+    {
+      "sieve_k": 20,
+      "resolved_by_one_k_step_jump": 123124,
+      "needed_iteration": 26875,
+      "disagreements": {},
+      "agree": true
+    },
+    {
+      "sieve_k": 24,
+      "resolved_by_one_k_step_jump": 134336,
+      "needed_iteration": 15663,
+      "disagreements": {},
+      "agree": true
+    }
+  ],
+  "iterative_path_exercised_at_every_k": true,
+  "interval_is_nontrivial": true,
+  "agree": true
+}

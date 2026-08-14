@@ -1,0 +1,47 @@
+{
+  "tool": "verify_run_logs.py",
+  "tag": "t40",
+  "chunks": 16,
+  "covered_interval": [
+    3,
+    1099511627776
+  ],
+  "tiles_without_gap_or_overlap": true,
+  "odd_starts_checked": 549755813887,
+  "odd_starts_expected": 549755813887,
+  "resolved_by_one_k_step_jump": 450996731903,
+  "needed_iteration": 98759081984,
+  "sieve_k_values_used": [
+    20
+  ],
+  "total_engine_seconds": 981.508,
+  "max_sigma": {
+    "value": 550,
+    "at": 898696369947
+  },
+  "max_expansion": {
+    "peak": 200279370410625061016864,
+    "at": 871673828443,
+    "ratio_approx": 229764120334.28583
+  },
+  "log_sha256": {
+    "t40_chunk01.out.log": "69659933b6325f3c8efa164774fc6c71ed71a9d8f18add622e7b543dfbe95966",
+    "t40_chunk02.out.log": "ced14a7e3f998f26a5b5d8fd81fc597296b1178a6cd2f07db0f4737e7ecb2714",
+    "t40_chunk03.out.log": "45c652ed81d953c5c566d629a73aeaf4877ce7890e58ffe0ce9e3217e78b0187",
+    "t40_chunk04.out.log": "9ae557d9d79d9398c47b652c9fa6bcc174938502e7c7d4716edc9729a5c108c9",
+    "t40_chunk05.out.log": "020ae3106b9848504d60ed35c66e1594680c3c2083f7bf4ef8e3078a0c8fc7f0",
+    "t40_chunk06.out.log": "805f8ee5a858b5e3022e970b42c55e5c920308dce8b98826c43996f93a236d07",
+    "t40_chunk07.out.log": "864e4e32a4b55375012e72581f89e10b564e4643c3289cd204a9d6c0cb876e88",
+    "t40_chunk08.out.log": "579b5fbf33ea35d2496004dd4c2264b02468125538c963c47dde2aba4b2318b7",
+    "t40_chunk09.out.log": "5eb4b2478b274407b5ec3f3d15cde79d8a10c66ccf45549ed5b6720ee1409c5a",
+    "t40_chunk10.out.log": "b9475355916a5ec53c68c7dd4b7513c373d87466f4cc3b3bcdfa0d9dc23231b1",
+    "t40_chunk11.out.log": "23ad9211aac989781e9335813eb08ab537015635c9e1c410dc0353ad36ffdf16",
+    "t40_chunk12.out.log": "b34a0a36493ac73b7a8298579b842bd7c7ff47abc8cd3336917bd91818f7a60e",
+    "t40_chunk13.out.log": "c89191343aec7b5e555d70c056f8239d83cfaa830fb0baa84cc4d85e1dc9bc97",
+    "t40_chunk14.out.log": "d01045591ed1813a165b1f60ba6bc63c44c3b81710afbd935845a2e0fde13a64",
+    "t40_chunk15.out.log": "7e9eb9458e47831d72e7d41a81c20267ecc9234c980e42f84f77a18389e1aefc",
+    "t40_chunk16.out.log": "f1b0c68fc253d4092871301484b0379bf63a2be26d3bfe7afdfa95949d4a344f"
+  },
+  "problems": [],
+  "ok": true
+}
