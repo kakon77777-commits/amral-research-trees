@@ -60,6 +60,20 @@ of about 5 ms, and its `ns`/`µs` fields are zero-padded from a millisecond sour
 — the service says so itself, and precision is not accuracy. For a provenance
 timestamp that is far more resolution than the claim needs.
 
+### Why the instant names an earlier commit than the one it lives in
+
+The instant binds to commit `26e6d909`, but this file was added in a later commit.
+That is not a slip — it is unavoidable. **A commit cannot contain its own hash**,
+so a timestamp that binds to a commit must always be recorded in a subsequent one,
+and the record necessarily trails the state it certifies by exactly one step.
+
+The consequence is worth being precise about: the instant certifies the *research
+state* — the engine, the gates, the archived runs, the reports — and does **not**
+certify this citation record itself, which describes it from outside. If the
+citation record needed to be certified too, that would take a further instant, and
+that one would in turn not certify its own record. The regress is real; it stops
+where the useful claim is already made.
+
 ### State certified by this instant
 
 - exhaustive descent verification of `[3, 2^40]` — 549,755,813,887 odd starts,
