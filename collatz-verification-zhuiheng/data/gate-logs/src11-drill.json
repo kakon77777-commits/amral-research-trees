@@ -1,0 +1,151 @@
+{
+  "tool": "src11_drill.py",
+  "subject": "src11_hardzeta_round03a2_recheck.py and the 2-3 bridge layer of hz_accel_code.py",
+  "defects": {
+    "A01_canonical_endpoint_uses_the_wrong_inverse": {
+      "target_check": "SRC11_the_exact_2_3_bridge_identity_holds",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC11_the_bridge_arithmetic_evaluates_without_error"
+      ]
+    },
+    "A02_canonical_endpoint_reduced_by_the_wrong_modulus": {
+      "target_check": "SRC11_the_canonical_endpoint_lies_in_its_stated_range",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC11_anchoring_forces_the_sync_bit_to_zero_once_2K_exceeds_the_anchor",
+        "SRC11_the_coarse_source_is_strictly_inside_its_binary_range",
+        "SRC11_the_endpoint_and_code_reproduce_under_plain_iteration",
+        "SRC11_the_exact_source_is_the_coarse_one_plus_the_sync_bit",
+        "SRC11_the_exact_source_really_reaches_that_endpoint",
+        "SRC11_the_longest_odd_M_runs_are_held_by_anchored_sources",
+        "SRC11_wrap_count_high_bit_and_parity_are_the_same_bit"
+      ]
+    },
+    "A03_bridge_numerator_sign_flipped": {
+      "target_check": "SRC11_the_coarse_source_is_strictly_inside_its_binary_range",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC11_section_30s_finite_diagnostic_reproduces_exactly",
+        "SRC11_the_canonical_endpoint_lies_in_its_stated_range",
+        "SRC11_the_exact_2_3_bridge_identity_holds",
+        "SRC11_the_exact_source_is_the_coarse_one_plus_the_sync_bit"
+      ]
+    },
+    "A04_sync_bit_is_the_parity_rather_than_its_complement": {
+      "target_check": "SRC11_the_sync_bit_is_the_complement_of_endpoint_parity",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC11_anchoring_forces_the_sync_bit_to_zero_once_2K_exceeds_the_anchor",
+        "SRC11_section_30s_finite_diagnostic_reproduces_exactly",
+        "SRC11_the_endpoint_and_code_reproduce_under_plain_iteration",
+        "SRC11_the_exact_source_is_the_coarse_one_plus_the_sync_bit",
+        "SRC11_the_exact_source_really_reaches_that_endpoint",
+        "SRC11_the_longest_odd_M_runs_are_held_by_anchored_sources",
+        "SRC11_wrap_count_high_bit_and_parity_are_the_same_bit"
+      ]
+    },
+    "A05_exact_endpoint_wraps_by_the_wrong_power": {
+      "target_check": "SRC11_the_exact_source_really_reaches_that_endpoint",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC11_section_30s_finite_diagnostic_reproduces_exactly",
+        "SRC11_the_endpoint_and_code_reproduce_under_plain_iteration",
+        "SRC11_the_synchronization_identity_holds",
+        "SRC11_wrap_count_high_bit_and_parity_are_the_same_bit"
+      ]
+    },
+    "A06_source_residue_modulus_reduced": {
+      "target_check": "SRC11_the_exact_source_is_the_coarse_one_plus_the_sync_bit",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC11_section_30s_finite_diagnostic_reproduces_exactly",
+        "SRC11_the_coarse_and_exact_sources_really_differ_there",
+        "SRC11_the_endpoint_and_code_reproduce_under_plain_iteration",
+        "SRC11_the_exact_source_really_reaches_that_endpoint",
+        "SRC11_wrap_count_high_bit_and_parity_are_the_same_bit"
+      ]
+    },
+    "A07_offset_recurrence_damaged": {
+      "target_check": "SRC11_the_endpoint_and_code_reproduce_under_plain_iteration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC11_section_30s_finite_diagnostic_reproduces_exactly",
+        "SRC11_the_bridge_arithmetic_evaluates_without_error",
+        "SRC11_the_coarse_source_is_strictly_inside_its_binary_range"
+      ]
+    },
+    "A08_subcritical_cone_widened": {
+      "target_check": "SRC11_the_subcritical_cone_is_exactly_where_the_coefficient_survives",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A09_accel_code_valuation_truncated": {
+      "target_check": "SRC11_the_modules_code_reader_matches_the_independent_walk",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC11_that_comparison_saw_valuations_above_two"
+      ]
+    },
+    "T01_the_papers_diagnostic_is_transcribed_wrong": {
+      "target_check": "SRC11_section_30s_finite_diagnostic_reproduces_exactly",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_the_odd_run_search_keeps_only_one_candidate": {
+      "target_check": "SRC11_the_longest_odd_run_grows_with_depth",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC11_the_longest_odd_M_runs_are_held_by_anchored_sources"
+      ]
+    },
+    "T03_the_run_holder_is_read_from_the_wrong_code": {
+      "target_check": "SRC11_the_longest_odd_M_runs_are_held_by_anchored_sources",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_paper_loses_its_ledger": {
+      "target_check": "SRC11_paper_keeps_an_explicit_proved_and_unproved_ledger",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_bundle_reverts_03A1_to_v0_1": {
+      "target_check": "SRC11_this_bundle_carries_the_upgraded_03A1",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_bundle": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "counts": {
+    "defects_planted": 14,
+    "defects_caught_by_the_named_check": 14,
+    "defects_in_the_bridge_arithmetic": 9,
+    "defects_in_this_runs_own_finding": 3,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

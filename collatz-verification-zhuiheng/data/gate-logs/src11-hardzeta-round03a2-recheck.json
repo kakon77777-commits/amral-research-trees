@@ -1,0 +1,349 @@
+{
+  "tool": "src11_hardzeta_round03a2_recheck.py",
+  "subject": "Neo.K + Aletheia, Hard-Zeta Phase I / Round 03-A.2 2-3-infinity Anchor Compatibility v0.1 (2026-08-11)",
+  "source_items": [
+    26
+  ],
+  "scope": "the coarse/exact source distinction (§2-§3), the canonical endpoint and exact 2-3 bridge with its positivity (§4-§8), the synchronization bit and the three equivalent bits (§9-§12), the anchoring/redundancy boundary (§17-§22), §24's endpoint-parity route and §30's finite diagnostic.",
+  "checks": {
+    "SRC11_bundle_carries_the_earlier_rounds_and_the_v05_map": {
+      "pass": true
+    },
+    "SRC11_paper_keeps_an_explicit_proved_and_unproved_ledger": {
+      "pass": true
+    },
+    "SRC11_this_bundle_carries_the_upgraded_03A1": {
+      "pass": true
+    },
+    "SRC11_the_exact_2_3_bridge_identity_holds": {
+      "pass": true
+    },
+    "SRC11_the_coarse_source_is_strictly_inside_its_binary_range": {
+      "pass": true
+    },
+    "SRC11_the_canonical_endpoint_lies_in_its_stated_range": {
+      "pass": true
+    },
+    "SRC11_the_exact_source_is_the_coarse_one_plus_the_sync_bit": {
+      "pass": true
+    },
+    "SRC11_the_synchronization_identity_holds": {
+      "pass": true
+    },
+    "SRC11_the_exact_source_really_reaches_that_endpoint": {
+      "pass": true
+    },
+    "SRC11_the_sync_bit_is_the_complement_of_endpoint_parity": {
+      "pass": true
+    },
+    "SRC11_wrap_count_high_bit_and_parity_are_the_same_bit": {
+      "pass": true
+    },
+    "SRC11_the_endpoint_and_code_reproduce_under_plain_iteration": {
+      "pass": true
+    },
+    "SRC11_the_subcritical_cone_is_exactly_where_the_coefficient_survives": {
+      "pass": true
+    },
+    "SRC11_the_cone_comparison_saw_both_outcomes": {
+      "pass": true
+    },
+    "SRC11_the_modules_code_reader_matches_the_independent_walk": {
+      "pass": true
+    },
+    "SRC11_that_comparison_saw_valuations_above_two": {
+      "pass": true
+    },
+    "SRC11_the_offset_is_never_divisible_by_three": {
+      "pass": true
+    },
+    "SRC11_both_values_of_the_synchronization_bit_occur": {
+      "pass": true
+    },
+    "SRC11_section_30s_finite_diagnostic_reproduces_exactly": {
+      "pass": true
+    },
+    "SRC11_that_diagnostic_code_really_is_subcritical": {
+      "pass": true
+    },
+    "SRC11_the_coarse_and_exact_sources_really_differ_there": {
+      "pass": true
+    },
+    "SRC11_anchoring_forces_the_sync_bit_to_zero_once_2K_exceeds_the_anchor": {
+      "pass": true
+    },
+    "SRC11_the_endpoint_parity_is_close_to_balanced": {
+      "pass": true
+    },
+    "SRC11_the_longest_odd_M_runs_are_held_by_anchored_sources": {
+      "pass": true
+    },
+    "SRC11_the_longest_odd_run_grows_with_depth": {
+      "pass": true
+    },
+    "SRC11_the_bridge_arithmetic_evaluates_without_error": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "codes_checked": 30084,
+    "codes_enumerated_to": 13,
+    "odd_run_search_depth": 30,
+    "longest_odd_run_found": 27
+  },
+  "measured": {
+    "section_30": {
+      "m": 10,
+      "K": 13,
+      "coarse": 27,
+      "M": 206,
+      "eps": 1,
+      "r_hat": 8219,
+      "Y_hat": 59255
+    },
+    "anchored_codes": [
+      {
+        "n": 27,
+        "anchored_from_m": 3,
+        "subcritical_to_m": 36,
+        "violations": []
+      },
+      {
+        "n": 703,
+        "anchored_from_m": 7,
+        "subcritical_to_m": 50,
+        "violations": []
+      },
+      {
+        "n": 10087,
+        "anchored_from_m": 11,
+        "subcritical_to_m": 59,
+        "violations": []
+      }
+    ],
+    "endpoint_parity": [
+      {
+        "m": 1,
+        "considered": 1,
+        "M_even": 1,
+        "longest_odd_run": 0,
+        "run_holder_source": 3
+      },
+      {
+        "m": 2,
+        "considered": 2,
+        "M_even": 2,
+        "longest_odd_run": 0,
+        "run_holder_source": 7
+      },
+      {
+        "m": 3,
+        "considered": 3,
+        "M_even": 2,
+        "longest_odd_run": 1,
+        "run_holder_source": 7
+      },
+      {
+        "m": 4,
+        "considered": 7,
+        "M_even": 6,
+        "longest_odd_run": 1,
+        "run_holder_source": 27
+      },
+      {
+        "m": 5,
+        "considered": 12,
+        "M_even": 7,
+        "longest_odd_run": 2,
+        "run_holder_source": 27
+      },
+      {
+        "m": 6,
+        "considered": 30,
+        "M_even": 12,
+        "longest_odd_run": 3,
+        "run_holder_source": 27
+      },
+      {
+        "m": 7,
+        "considered": 85,
+        "M_even": 40,
+        "longest_odd_run": 4,
+        "run_holder_source": 27
+      },
+      {
+        "m": 8,
+        "considered": 173,
+        "M_even": 87,
+        "longest_odd_run": 5,
+        "run_holder_source": 27
+      },
+      {
+        "m": 9,
+        "considered": 476,
+        "M_even": 243,
+        "longest_odd_run": 6,
+        "run_holder_source": 27
+      },
+      {
+        "m": 10,
+        "considered": 961,
+        "M_even": 479,
+        "longest_odd_run": 7,
+        "run_holder_source": 27
+      },
+      {
+        "m": 11,
+        "considered": 2652,
+        "M_even": 1347,
+        "longest_odd_run": 8,
+        "run_holder_source": 27
+      },
+      {
+        "m": 12,
+        "considered": 8045,
+        "M_even": 4070,
+        "longest_odd_run": 9,
+        "run_holder_source": 27
+      },
+      {
+        "m": 13,
+        "considered": 17637,
+        "M_even": 8842,
+        "longest_odd_run": 10,
+        "run_holder_source": 27
+      },
+      {
+        "m": 14,
+        "considered": 51033,
+        "M_even": 25588,
+        "longest_odd_run": 11,
+        "run_holder_source": 27
+      },
+      {
+        "m": 15,
+        "considered": 42762,
+        "M_even": 21411,
+        "longest_odd_run": 12,
+        "run_holder_source": 27
+      },
+      {
+        "m": 16,
+        "considered": 57244,
+        "M_even": 28391,
+        "longest_odd_run": 13,
+        "run_holder_source": 27
+      },
+      {
+        "m": 17,
+        "considered": 42241,
+        "M_even": 21201,
+        "longest_odd_run": 14,
+        "run_holder_source": 27
+      },
+      {
+        "m": 18,
+        "considered": 56838,
+        "M_even": 28385,
+        "longest_odd_run": 15,
+        "run_holder_source": 27
+      },
+      {
+        "m": 19,
+        "considered": 62008,
+        "M_even": 31100,
+        "longest_odd_run": 16,
+        "run_holder_source": 27
+      },
+      {
+        "m": 20,
+        "considered": 45004,
+        "M_even": 22566,
+        "longest_odd_run": 17,
+        "run_holder_source": 27
+      },
+      {
+        "m": 21,
+        "considered": 58808,
+        "M_even": 29270,
+        "longest_odd_run": 18,
+        "run_holder_source": 27
+      },
+      {
+        "m": 22,
+        "considered": 43522,
+        "M_even": 21763,
+        "longest_odd_run": 19,
+        "run_holder_source": 27
+      },
+      {
+        "m": 23,
+        "considered": 58281,
+        "M_even": 29145,
+        "longest_odd_run": 20,
+        "run_holder_source": 27
+      },
+      {
+        "m": 24,
+        "considered": 62990,
+        "M_even": 31651,
+        "longest_odd_run": 21,
+        "run_holder_source": 27
+      },
+      {
+        "m": 25,
+        "considered": 45775,
+        "M_even": 23013,
+        "longest_odd_run": 22,
+        "run_holder_source": 27
+      },
+      {
+        "m": 26,
+        "considered": 59749,
+        "M_even": 30179,
+        "longest_odd_run": 23,
+        "run_holder_source": 27
+      },
+      {
+        "m": 27,
+        "considered": 44171,
+        "M_even": 21938,
+        "longest_odd_run": 24,
+        "run_holder_source": 27
+      },
+      {
+        "m": 28,
+        "considered": 58947,
+        "M_even": 29474,
+        "longest_odd_run": 25,
+        "run_holder_source": 27
+      },
+      {
+        "m": 29,
+        "considered": 43950,
+        "M_even": 21999,
+        "longest_odd_run": 26,
+        "run_holder_source": 27
+      },
+      {
+        "m": 30,
+        "considered": 58573,
+        "M_even": 29268,
+        "longest_odd_run": 27,
+        "run_holder_source": 27
+      }
+    ],
+    "redundancy_boundary": {
+      "what_22_says": "once a code is anchored, 3-adic compatibility holds automatically, so a 3-adic argument adds nothing after anchoring.",
+      "measured_here": "confirmed on all three anchors: the synchronization bit is zero at every depth where 2^K exceeds the anchor, with no exceptions."
+    },
+    "assessment": {
+      "what_round_03a2_gets_right": "All of it. The exact 2-3 bridge holds identically on every subcritical code to depth 13; Q_m sits strictly inside (0, 2^K) as §7 argues; the exact source is the coarse one plus the synchronization bit; that bit is simultaneously the source's high bit, the endpoint's ternary wrap count and the complement of the endpoint's parity; the exact source really reaches the predicted endpoint under direct iteration; and §30's finite diagnostic reproduces to the digit.",
+      "the_finding_about_24s_route": "§39 sends the next round to find 'even-parity recurrence or counterfamily extraction'. The extraction was done here. The longest run of consecutive odd M grows linearly in m, and the codes achieving it are the ANCHORED ones - their source is constant, so eps = 0 at every depth past 2^K > n, and the run breaks only when the code leaves the subcritical cone. A subcritical code with an unbounded odd-M run is therefore exactly a start with tau_c = infinity. §24's route is sound and equivalent, but it is not cheaper: the counterfamily it asks for is the CST counterexample itself.",
+      "why_that_is_worth_saying": "§24 offers the route as 'more discrete than a rate lower bound', which is true and is a real change of shape. What the measurement adds is the price: the discreteness does not buy a smaller object. Knowing that before spending a round on it is the point of measuring.",
+      "what_it_does_not_establish": "nothing about Collatz and nothing on §38's unproved list. The odd-run measurement is a beam search to depth 30, not a proof that anchored codes are the only long runs."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

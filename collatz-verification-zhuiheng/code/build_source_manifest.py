@@ -143,6 +143,15 @@ PROCESSED = {
         "same anchor sequence RUN-007 measured for m_k, switching at k = K_m; "
         "see reports/RUN-008-HARD-ZETA-ROUND-03A1.md"
     ),
+    "Hard_Zeta_Phase_I_Round_03A2_bundle.zip": (
+        "item 26. Rechecked by code/src11_hardzeta_round03a2_recheck.py: the exact "
+        "2-3 bridge, Q_m positivity, coarse/exact split, synchronization bit and "
+        "§12's three equivalent bits all hold; §30's finite diagnostic reproduces "
+        "to the digit; §22's redundancy boundary confirmed on all three anchors. "
+        "Finding: §24's endpoint-parity route is equivalent to CST, not cheaper - "
+        "the longest odd-M runs are held by the ANCHORED codes; "
+        "see reports/RUN-009-HARD-ZETA-ROUND-03A2.md"
+    ),
     "collatz_ot_v3_threshold_benchmark.csv": (
         "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
         "all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, "

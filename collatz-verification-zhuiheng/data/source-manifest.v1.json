@@ -2,17 +2,17 @@
   "tool": "build_source_manifest.py",
   "source_folder": "D:\\我的研究\\學術討論\\論文\\數學\\考拉茲猜想\\最新\\Collatz_OT_Series_Paper",
   "generated_from": "file modification times and names; nothing was extracted",
-  "item_count": 64,
-  "total_bytes": 27373203,
+  "item_count": 73,
+  "total_bytes": 27599657,
   "earliest": "2026-08-10T14:47:18",
-  "latest": "2026-08-14T18:51:39",
+  "latest": "2026-08-15T00:56:18",
   "items_per_line": {
     "nine-paper series": 13,
     "early experiments": 5,
-    "Hard-Zeta": 44,
+    "Hard-Zeta": 53,
     "other project": 2
   },
-  "processed_count": 26,
+  "processed_count": 27,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -420,7 +420,7 @@
       "sha256": "119b3545cfc73df44dc46ed0cd8c60c68364b3629370bedebce3ce1064b855b7",
       "line": "Hard-Zeta",
       "role": "Phase I round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 26. Rechecked by code/src11_hardzeta_round03a2_recheck.py: the exact 2-3 bridge, Q_m positivity, coarse/exact split, synchronization bit and §12's three equivalent bits all hold; §30's finite diagnostic reproduces to the digit; §22's redundancy boundary confirmed on all three anchors. Finding: §24's endpoint-parity route is equivalent to CST, not cheaper - the longest odd-M runs are held by the ANCHORED codes; see reports/RUN-009-HARD-ZETA-ROUND-03A2.md",
       "round_sort_key": [
         "",
         3,
@@ -1292,6 +1292,231 @@
         "Hard_Zeta_AU2d17_checker_report.json",
         "Hard_Zeta_AU2d17_constants_frontier.json",
         "Hard_Zeta_AU2d17_theorem_ledger.json"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d18_Double_Canonical_Critical_Cylinder_Spectral_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T20:54:31",
+      "bytes": 25146,
+      "sha256": "686ade47d6aa17dd1a8fd813309170bbffcdda7b1f9c51163ede0afaf1c491cb",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        18
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 63397,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d18_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d18_checker_report.json",
+        "Hard_Zeta_AU2d18_constants_frontier.json",
+        "Hard_Zeta_AU2d18_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.18_AU2d18.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d19_Zero_Lift_Mechanical_Cocycle_Discrepancy_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T21:27:43",
+      "bytes": 21740,
+      "sha256": "f2baa17dfa595ddf405d1c667000a6dfe35d928cc4fe1dd87a5cd725da1b0a8d",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        19
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 53395,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d19_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d19_checker_report.json",
+        "Hard_Zeta_AU2d19_constants_frontier.json",
+        "Hard_Zeta_AU2d19_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.19_AU2d19.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d20_Mesoscopic_Ternary_Return_Discrepancy_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T22:19:55",
+      "bytes": 25301,
+      "sha256": "c8ac2b9ecc8345acc3794b37bffd5967ce4ea631bfbcd145dd8cfff597c06426",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        20
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 66452,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d20_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d20_checker_report.json",
+        "Hard_Zeta_AU2d20_constants_frontier.json",
+        "Hard_Zeta_AU2d20_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.20_AU2d20.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d21_Faithful_Return_Loop_Boundary_Layer_Coupling_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T22:48:37",
+      "bytes": 25397,
+      "sha256": "f7dabb16001d82e9d9b9f856501f1ea45017a5edc43ccce9a2f6d6663005bda2",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        21
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 64162,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d21_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d21_checker_report.json",
+        "Hard_Zeta_AU2d21_constants_frontier.json",
+        "Hard_Zeta_AU2d21_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.21_AU2d21.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d22_Loop_Tree_Defect_Renormalization_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T23:28:49",
+      "bytes": 24536,
+      "sha256": "fea2a56786b683e79dfcd5aa6be3a60bbb91a8779640f38c21bdf5905bd4e66a",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        22
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 68739,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d22_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d22_checker_report.json",
+        "Hard_Zeta_AU2d22_constants_frontier.json",
+        "Hard_Zeta_AU2d22_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.22_AU2d22.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d23_Quotient_State_Resonance_and_Defect_Carry_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-14T23:51:31",
+      "bytes": 24926,
+      "sha256": "13c20b1f7f015bab2ed01cb952d1e1f9ef3a519fa4657ce278f5a7d8ee78fad3",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        23
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 73550,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d23_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d23_checker_report.json",
+        "Hard_Zeta_AU2d23_constants_frontier.json",
+        "Hard_Zeta_AU2d23_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.23_AU2d23.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d24_Binary_Replenishment_Ternary_Reset_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-15T00:12:59",
+      "bytes": 37304,
+      "sha256": "5a2f3d2f83485d336c8e8031bf433b8374a55087bcac051d6cedc20fba043bb2",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        24
+      ],
+      "zip_entries": 10,
+      "zip_uncompressed_bytes": 109744,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d24_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d24_checker_report.json",
+        "Hard_Zeta_AU2d24_constants_frontier.json",
+        "Hard_Zeta_AU2d24_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.24_AU2d24.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d25_Primitive_Defect_Cylinder_Compensation_Seesaw_Discrepancy_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-15T00:36:35",
+      "bytes": 21629,
+      "sha256": "a672808bc79c046d3eb2afc02d355cbaf7138fb33e7b693517f2b2228a5a06eb",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        25
+      ],
+      "zip_entries": 9,
+      "zip_uncompressed_bytes": 61684,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d25_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d25_checker_report.json",
+        "Hard_Zeta_AU2d25_constants_frontier.json",
+        "Hard_Zeta_AU2d25_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.25_AU2d25.md"
+      ]
+    },
+    {
+      "name": "Hard_Zeta_Phase_II_Round_AU2d26_Primitive_Unit_Oscillation_Critical_Slope_Synchronization_Rigidity_bundle_v0.1.zip",
+      "mtime_local": "2026-08-15T00:56:18",
+      "bytes": 20475,
+      "sha256": "b40fff78db994737961158e48fc7d9c59a4da13f9647024e78e64bb3bd85cff2",
+      "line": "Hard-Zeta",
+      "role": "Phase II round",
+      "processed_by_this_tree": null,
+      "round_sort_key": [
+        "au",
+        2,
+        "d",
+        26
+      ],
+      "zip_entries": 10,
+      "zip_uncompressed_bytes": 50583,
+      "zip_top_level": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d26_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d26_checker_report.json",
+        "Hard_Zeta_AU2d26_constants_frontier.json",
+        "Hard_Zeta_AU2d26_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.26_AU2d26.md"
       ]
     }
   ]

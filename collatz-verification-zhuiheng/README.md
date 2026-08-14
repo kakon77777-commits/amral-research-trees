@@ -101,11 +101,18 @@ describe it that way.
    defines turns out to be RUN-007's, switching at exactly `k = K_m` — two
    coordinate systems, two independent computations, one sequence. Measured
    agreement, not the theorem, which the paper is right to withhold.
-10. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+10. [`reports/RUN-009-HARD-ZETA-ROUND-03A2.md`](./reports/RUN-009-HARD-ZETA-ROUND-03A2.md) —
+    Round 03-A.2's exact 2–3 bridge, which holds everywhere checked, §30's
+    diagnostic reproduced to the digit, and a **priced route**: §39 asks the next
+    round to extract a counterfamily for §24's endpoint-parity target, and the
+    extraction shows the longest odd-`M` runs belong to the **anchored** codes.
+    So that counterfamily is the CST counterexample itself — the route is
+    equivalent, not cheaper. Worth knowing before spending a round on it.
+11. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-11. [`code/`](./code/) — the engine, the independent reference, and the gates.
-12. [`data/gate-logs/`](./data/gate-logs/) and
+12. [`code/`](./code/) — the engine, the independent reference, and the gates.
+13. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

@@ -162,3 +162,45 @@ def minimum_anchor(maxlen: int, cap: int = 10 ** 7) -> list[dict]:
         if not level:
             break
     return rows
+
+
+# ============================================================================
+# Round 03-A.2 additions — the exact 2–3 bridge.
+#
+# Round 03-A.1 worked mod 2^{K_m+1}. Round 03-A.2 separates that into a COARSE
+# residue mod 2^{K_m} (endpoint merely integral, §2) and one extra bit ε_m that
+# makes the endpoint odd (§3), then shows that same bit also governs the ternary
+# side: it is the endpoint's wrap count and the complement of its parity.
+# ============================================================================
+
+
+def canonical_endpoint(kappa: tuple[int, ...]) -> int:
+    """§4: M_m ≡ 2^{−K_m}·B_m (mod 3^m), taken in 1 ≤ M_m ≤ 3^m."""
+    m = len(kappa)
+    K = cumulative(kappa)[-1]
+    M = (pow(2, -K, 3 ** m) * offset(kappa)) % 3 ** m
+    return 3 ** m if M == 0 else M
+
+
+def coarse_source(kappa: tuple[int, ...]) -> int:
+    """§5-§8: Q_m = (2^{K_m}·M_m − B_m)/3^m, which §7 places in (0, 2^{K_m}).
+
+    This is the coarse residue of §2 — the start that only makes the endpoint an
+    integer, without requiring it odd.
+    """
+    m = len(kappa)
+    K = cumulative(kappa)[-1]
+    num = 2 ** K * canonical_endpoint(kappa) - offset(kappa)
+    if num % 3 ** m:
+        raise ArithmeticError("§5's Q_m is not an integer for this code")
+    return num // 3 ** m
+
+
+def sync_bit(kappa: tuple[int, ...]) -> int:
+    """§10: ε_m = 1 − (M_m mod 2)."""
+    return 1 - (canonical_endpoint(kappa) % 2)
+
+
+def exact_endpoint(kappa: tuple[int, ...]) -> int:
+    """§9: Ŷ_m = M_m + ε_m·3^m, the endpoint the exact source actually reaches."""
+    return canonical_endpoint(kappa) + sync_bit(kappa) * 3 ** len(kappa)
