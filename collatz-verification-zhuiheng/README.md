@@ -56,6 +56,16 @@ describe it that way.
 6. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
+Held separately: [`reports/LEAN-QUEUE.md`](./reports/LEAN-QUEUE.md) — the claims
+this arm structurally cannot settle, because they are `forall`-quantified over
+infinite or non-integer domains rather than finite. Collected, scoped and ordered,
+and deliberately **not started**: a mathlib-backed development is heavy on CPU and
+disk, and that hardware comes later.
+
+This tree is portable across drives. Nothing hardcodes an absolute path, the one
+path input defaults to the tree's own location, and every archived log is
+relative — so moving it does not require re-running anything.
+
 The subject series itself is archived separately as its own tree at
 [`../collatz-ot-series-neok/`](../collatz-ot-series-neok/), under Neo.K's
 authorship. Its presence beside this one is not agreement between the two.

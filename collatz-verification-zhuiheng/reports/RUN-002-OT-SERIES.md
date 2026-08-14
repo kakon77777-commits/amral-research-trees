@@ -553,15 +553,15 @@ checks could have failed.
 
 Remaining, in order of what this arm can usefully do next:
 
-- **Papers 01, 03, 04, 08** — touched only where Papers 02/05/06/07/09 depend on
-  them. Paper 03's cylinder statements are already covered as a by-product;
-  Paper 08's algebraic breakage ladder is the substantial one, and much of it is
-  about domains (zero divisors, noncommutative algebras, Möbius maps) where
-  "check it on integers" is not the right instrument.
-- **The Hard-Zeta research program** — the repair ledger's two content
-  corrections there (the `n ≥ 2` stopping domain integrated into the main
-  argument, and the invariant-measure route qualified) are the natural targets,
-  and both are statements this arm can check.
+- **Hard-Zeta's `n ≥ 2` stopping domain** — that `E_k^C = ⊔_{|w|=k} (H_w ∩ [2,∞))`
+  is a genuine disjoint partition of the hard set with `n = 1` excluded is a finite
+  statement per `k`, and it connects directly to the `H_w` and `σ` machinery
+  already built for Paper 09. **This is the next non-Lean task.**
+- **Everything else** — Papers 01, 03, 04, 08 and Hard-Zeta's invariant-measure
+  route — is `∀`-quantified over infinite or non-integer domains, which this
+  instrument cannot address at all. Those are collected, scoped and ordered in
+  [`LEAN-QUEUE.md`](./LEAN-QUEUE.md), and deliberately not started: Lean is
+  available but the hardware for a mathlib-backed development comes later.
 
 Nothing in this report bears on the Collatz conjecture. Paper 09 §62 lists its
 own non-claims, and they stand: no uniform extinction depth, no closed bound on

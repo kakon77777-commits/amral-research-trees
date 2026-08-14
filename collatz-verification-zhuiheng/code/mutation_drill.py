@@ -211,6 +211,13 @@ def main() -> int:
     # ignore_cleanup_errors: a mutant killed by a gate timeout can still hold a
     # lock on its own .exe for a moment on Windows, and a failure to delete a
     # scratch file must not destroy the report that has already been earned.
+    #
+    # But "must not crash" is not the same as "may leak". Each run of this drill
+    # builds a dozen binaries, so silently abandoning the directory left tens of
+    # megabytes per run in the user's Temp. The retry sweep below waits for the
+    # killed process to be reaped and then removes the directory properly;
+    # ignore_cleanup_errors stays only as the last-resort backstop.
+    leaked: str | None = None
     with tempfile.TemporaryDirectory(prefix="collatz-drill-",
                                      ignore_cleanup_errors=True) as tmp:
         tmpdir = pathlib.Path(tmp)
@@ -286,6 +293,21 @@ def main() -> int:
                                                         if caught_by else "clean (control)"))
             print(f"  {mid}: {verdict}", file=sys.stderr)
 
+    # Best-effort second pass at the scratch directory. A mutant killed by a
+    # timeout releases its lock once the OS reaps it, which takes well under a
+    # second; without this the directory is abandoned with a dozen binaries in it.
+    import shutil
+    import time
+
+    if tmp and pathlib.Path(tmp).exists():
+        for delay in (0.2, 0.5, 1.0, 2.0):
+            time.sleep(delay)
+            shutil.rmtree(tmp, ignore_errors=True)
+            if not pathlib.Path(tmp).exists():
+                break
+        if pathlib.Path(tmp).exists():
+            leaked = tmp
+
     defects = [r for r in results if r.get("expected_to_be_caught")]
     controls = [r for r in results if r.get("expected_to_be_caught") is False]
     report = {
@@ -301,6 +323,7 @@ def main() -> int:
         "controls_planted": len(controls),
         "controls_disturbed": [r["id"] for r in controls if r.get("control_disturbed")],
         "errors": [r["id"] for r in results if "error" in r],
+        "scratch_directory_leaked": leaked,
     }
     report["ok"] = (
         not report["defects_survived"]
