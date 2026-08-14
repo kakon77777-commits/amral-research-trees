@@ -433,7 +433,7 @@ Breaking the referee's `+1` injection did **not** break Theorem A or Theorem D.
   not a hole in the check — but it means **Theorem D alone cannot detect a wrong
   injection constant**, and should not be leaned on for that.
 
-## 7. Where this stands
+## 8. Where this stands
 
 All six finite claim groups in the subject's `validation.json` are now
 independently re-derived:
