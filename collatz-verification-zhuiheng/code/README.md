@@ -10,6 +10,8 @@
 | `verify_run_logs.py` | Reads only the archived chunk logs and decides whether they actually tile `[3, N]`. Refuses to aggregate logs with a gap, an overlap, or a bad count. |
 | `build_results.py` | Assembles `../data/results.v1.json` from archived gate logs only. Fails rather than emit a summary with a hole in it. |
 | `run_verification.sh` | Drives a full run as disjoint, separately logged chunks. |
+| `ot_paper02_recheck.py` | Independent re-derivation of Paper 02 of Neo.K's Operation Translation Series, written from the paper's theorem statements. Its referee route assumes no theorem of the paper at all. |
+| `ot_recheck_drill.py` | Falsifiability drill for the above: perturbs each asserted formula and requires the check *named for that formula* to fail. |
 
 No third-party dependencies. `requirements.txt` is empty on purpose — the
 Python here is standard library only, so there is no version of a numeric
@@ -47,7 +49,16 @@ python code/anchors.py 100000000
 python code/mutation_drill.py
 python code/verify_run_logs.py --tag t40 --expect-to 1099511627776
 python code/build_results.py --tag t40 --expect-to 1099511627776
+
+python code/ot_paper02_recheck.py 16
+python code/ot_recheck_drill.py
+./build/collatz_verify.exe --block 16 --to 1048576
 ```
+
+On a cp950 Windows host, prefix the Python commands with `PYTHONUTF8=1` — these
+scripts print UTF-8 JSON containing CJK, and the default console encoding cannot
+carry it. (The same class of defect was found in the subject package's own
+verifier; see `../reports/RUN-002-OT-SERIES.md`.)
 
 The gate scripts write their JSON to stdout; the archived copies used to build
 `results.v1.json` live in `../data/gate-logs/`.

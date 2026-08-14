@@ -39,8 +39,13 @@ describe it that way.
    will never certify, and how it keeps itself falsifiable. Read this before any
    number.
 2. [`reports/RUN-001-T40.md`](./reports/RUN-001-T40.md) — the `[3, 2^40]` run:
-   method, numbers, all five gates, the two defects found in the harness, and
+   method, numbers, all five gates, the three defects found in the harness, and
    the weaknesses that remain.
+3. [`reports/RUN-002-OT-SERIES.md`](./reports/RUN-002-OT-SERIES.md) — independent
+   re-derivation of the finite claims of Neo.K's *Collatz Operation Translation
+   Series*: package integrity (and the defect that stops its own verifier on the
+   author's platform), Paper 05's `k=16` benchmark reproduced, and every theorem
+   of Paper 02 rechecked against a referee that assumes none of them.
 3. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.

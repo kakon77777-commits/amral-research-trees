@@ -12,6 +12,10 @@ said at the time rather than only that they were said to pass.
 | `mutation-drill.json` | `code/mutation_drill.py` |
 | `mutation-drill.progress.txt` | the same run's stderr, one line per mutation as it was decided |
 | `coverage.json` | `code/verify_run_logs.py` |
+| `ot-paper02-recheck.json` | `code/ot_paper02_recheck.py 16` — independent re-derivation of Paper 02 of Neo.K's Operation Translation Series |
+| `ot-paper02-drill.json` | `code/ot_recheck_drill.py` — the falsifiability drill for that recheck |
+| `ot-paper02-drill.progress.txt` | the same run's stderr, one line per planted defect |
+| `ot-paper05-block-benchmark.json` | `collatz_verify.exe --block 16 --to 1048576` — independent reproduction of the series' Paper 05 `k=16` descent counts |
 | `coverage-refusal-drill.json` | a manual drill showing the aggregator refusing a run with a deleted chunk, and a run with one chunk's count reduced by one; the tampered log was restored byte-identical afterwards |
 
 `build_results.py` reads these and refuses to write a summary if any of them is

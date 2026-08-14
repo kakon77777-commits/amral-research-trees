@@ -299,6 +299,63 @@
       ]
     }
   },
+  "subject_verification": {
+    "subject": "Neo.K, Collatz Operation Translation Series — SSSP Repaired v1.0 (9 core papers + Hard-Zeta research program), repair date 2026-08-14",
+    "role": "This arm re-derives the series' finite claims independently. It does not co-author the series, and re-derivation of a finite claim says nothing about the global conjecture the series is aimed at.",
+    "package_integrity": {
+      "verifier": "the package's own tools/verify_series.py",
+      "result": "PASS on all nine steps once run under PYTHONUTF8=1",
+      "defect_found": "tools/generate_math_inventory.py writes UTF-8 JSON to stdout, so on a cp950 Windows host the verifier aborts with UnicodeEncodeError on the 'ö' of 'Möbius' (Papers 07 and 08). The package cannot be verified end-to-end on the author's own platform without PYTHONUTF8=1.",
+      "package_not_modified": true
+    },
+    "paper_05_k16_block_benchmark": {
+      "claim_source": "validation.json: k16_strict=938413, k16_equality=2",
+      "domain": "1 <= n < 1048576",
+      "reproduced_strict_descent": 938413,
+      "reproduced_equality": 2,
+      "reproduced_ascent": 110160,
+      "agrees_with_claim": true,
+      "independence": "computed in Rust from this arm's k-step congruence tables, a single table lookup per n, versus the subject's Python step-by-step iteration",
+      "equality_witnesses_explained": "the two equality cases are n=1 and n=2, the elements of the trivial cycle; T has period 2 there and 16 is even, so they are forced"
+    },
+    "paper_02_theorems": {
+      "max_word_length": 16,
+      "counts": {
+        "words_checked": 131070,
+        "concatenation_pairs": 260100,
+        "(k,u)_cases": 152,
+        "transport_cases": 196582,
+        "residue_max_k": 14
+      },
+      "checks": {
+        "ThmA_finite_word_affine_closure": true,
+        "ThmB_correction_recurrence": true,
+        "ThmC_closed_form_of_b": true,
+        "ThmE_matrix_representation": true,
+        "ThmD_concatenation_law": true,
+        "ThmF_order_extremal_bounds": true,
+        "S21_extremes_attained_at_stated_words": true,
+        "S25_correction_width_formula": true,
+        "P03_parity_word_to_residue_is_a_bijection": true,
+        "P03_residue_cylinder_is_the_admissible_domain": true,
+        "P03_m_w_is_an_integer": true,
+        "P03_exact_cylinder_transport": true,
+        "P02_repair_allD_cylinder_needs_the_r_plus_2k_representative": true
+      },
+      "all_pass": true,
+      "referee": "symbolic composition of D(x)=x/2 and U(x)=(3x+1)/2 on an affine form, assuming no theorem of the paper; claimed formulas are compared against it",
+      "coverage_beyond_subject_suite": "Theorems B, D and E and the §25 width formula are not exercised by the subject's own regression suite; the subject checks k <= 9, this checks k <= 16",
+      "drill": {
+        "defects_planted": 9,
+        "defects_caught_by_the_named_check": 9,
+        "controls_planted": 1,
+        "controls_undisturbed": 1,
+        "anomalies": [],
+        "note": "each planted defect had to be caught by the check named for it, not merely by some check"
+      },
+      "known_insensitivity": "Theorem D held under a mutation that changed the +1 injection to +2. That is correct rather than a gap: the concatenation law is structural across the whole (mx+r) family and does not pin r. Theorem D alone therefore cannot detect a wrong injection constant."
+    }
+  },
   "environment": {
     "os": "Windows 10 x64",
     "python": "3.14.5",
@@ -306,13 +363,15 @@
     "logical_cpus": 16
   },
   "source_sha256": {
-    "code/collatz_verify.rs": "f309ac571b85120a29255e817bf07b294e853bbd41012585e21a2e7c91167050",
+    "code/collatz_verify.rs": "ec7926fbed0819f05b2fe1be1a551de0f1899025a6200c753247512fa7b7a4bc",
     "code/collatz_ref.py": "729e58fe3fd0b7dccdc1ba6b15c4e809ccda6e95e97bbf821d82f1f261c20e56",
     "code/anchors.py": "2dbcb7ab71616b622eee58cb90af512a85a8e6edffb310744f6060d53b50aae9",
     "code/mutation_drill.py": "8d381dc10c5da83dc0049b96d629ce6d108e4de471d64d10fbdde50786131825",
     "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
     "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
-    "code/build_results.py": "764344d09cd411384a66cf2582f27450d2f544da5b3e0b31b9818e013d4ada6f",
-    "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab"
+    "code/build_results.py": "b1b0609fedce24cdec4112db092b9075b8a0e186589d13e20bb82a17e51c37ad",
+    "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab",
+    "code/ot_paper02_recheck.py": "50b3b733ced47a25078b16a71f7c120696d0ce60d43822b464abbc2f0010591d",
+    "code/ot_recheck_drill.py": "f52ee719cc87e3c7e2d56631786d09044c687ca916a38812dc10043c3d24603a"
   }
 }

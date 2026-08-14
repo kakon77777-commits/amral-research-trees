@@ -31,6 +31,8 @@ CODE_FILES = [
     "code/verify_run_logs.py",
     "code/build_results.py",
     "code/run_verification.sh",
+    "code/ot_paper02_recheck.py",
+    "code/ot_recheck_drill.py",
 ]
 
 
@@ -64,6 +66,9 @@ def main() -> int:
     drill = load_gate("mutation-drill.json")
     selftest = load_gate("self-test.json")
     reference = load_gate("reference-crosscheck.json")
+    ot_recheck = load_gate("ot-paper02-recheck.json")
+    ot_drill = load_gate("ot-paper02-drill.json")
+    ot_block = load_gate("ot-paper05-block-benchmark.json")
 
     if not anchors.get("all_match"):
         raise SystemExit("anchor gate did not match; refusing to emit a summary")
@@ -73,6 +78,13 @@ def main() -> int:
         raise SystemExit("self-test did not pass; refusing to emit a summary")
     if not reference.get("agree"):
         raise SystemExit("reference cross-check did not agree; refusing to emit a summary")
+    for name, gate, key in (
+        ("Paper 02 recheck", ot_recheck, "ok"),
+        ("Paper 02 recheck drill", ot_drill, "ok"),
+        ("Paper 05 block benchmark", ot_block, "ok"),
+    ):
+        if not gate.get(key):
+            raise SystemExit(f"{name} did not pass; refusing to emit a summary")
 
     n = coverage["covered_interval"][1]
     results = {
@@ -156,6 +168,77 @@ def main() -> int:
                     {k: m.get(k) for k in ("id", "description", "expected_to_be_caught", "caught_by")}
                     for m in drill["mutations"]
                 ],
+            },
+        },
+        "subject_verification": {
+            "subject": (
+                "Neo.K, Collatz Operation Translation Series — SSSP Repaired v1.0 "
+                "(9 core papers + Hard-Zeta research program), repair date 2026-08-14"
+            ),
+            "role": (
+                "This arm re-derives the series' finite claims independently. It does not "
+                "co-author the series, and re-derivation of a finite claim says nothing "
+                "about the global conjecture the series is aimed at."
+            ),
+            "package_integrity": {
+                "verifier": "the package's own tools/verify_series.py",
+                "result": "PASS on all nine steps once run under PYTHONUTF8=1",
+                "defect_found": (
+                    "tools/generate_math_inventory.py writes UTF-8 JSON to stdout, so on a "
+                    "cp950 Windows host the verifier aborts with UnicodeEncodeError on the "
+                    "'ö' of 'Möbius' (Papers 07 and 08). The package cannot be verified "
+                    "end-to-end on the author's own platform without PYTHONUTF8=1."
+                ),
+                "package_not_modified": True,
+            },
+            "paper_05_k16_block_benchmark": {
+                "claim_source": "validation.json: k16_strict=938413, k16_equality=2",
+                "domain": ot_block["domain"],
+                "reproduced_strict_descent": ot_block["strict_descent"],
+                "reproduced_equality": ot_block["equality"],
+                "reproduced_ascent": ot_block["ascent"],
+                "agrees_with_claim": (
+                    ot_block["strict_descent"] == 938413 and ot_block["equality"] == 2
+                ),
+                "independence": (
+                    "computed in Rust from this arm's k-step congruence tables, a single "
+                    "table lookup per n, versus the subject's Python step-by-step iteration"
+                ),
+                "equality_witnesses_explained": (
+                    "the two equality cases are n=1 and n=2, the elements of the trivial "
+                    "cycle; T has period 2 there and 16 is even, so they are forced"
+                ),
+            },
+            "paper_02_theorems": {
+                "max_word_length": ot_recheck["max_word_length"],
+                "counts": ot_recheck["counts"],
+                "checks": {k: v["pass"] for k, v in ot_recheck["checks"].items()},
+                "all_pass": ot_recheck["ok"],
+                "referee": (
+                    "symbolic composition of D(x)=x/2 and U(x)=(3x+1)/2 on an affine form, "
+                    "assuming no theorem of the paper; claimed formulas are compared against it"
+                ),
+                "coverage_beyond_subject_suite": (
+                    "Theorems B, D and E and the §25 width formula are not exercised by the "
+                    "subject's own regression suite; the subject checks k <= 9, this checks k <= 16"
+                ),
+                "drill": {
+                    "defects_planted": ot_drill["defects_planted"],
+                    "defects_caught_by_the_named_check": ot_drill["defects_caught_by_the_named_check"],
+                    "controls_planted": ot_drill["controls_planted"],
+                    "controls_undisturbed": ot_drill["controls_undisturbed"],
+                    "anomalies": ot_drill["anomalies"],
+                    "note": (
+                        "each planted defect had to be caught by the check named for it, not "
+                        "merely by some check"
+                    ),
+                },
+                "known_insensitivity": (
+                    "Theorem D held under a mutation that changed the +1 injection to +2. That "
+                    "is correct rather than a gap: the concatenation law is structural across "
+                    "the whole (mx+r) family and does not pin r. Theorem D alone therefore "
+                    "cannot detect a wrong injection constant."
+                ),
             },
         },
         "environment": {

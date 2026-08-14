@@ -1,0 +1,56 @@
+{
+  "tool": "ot_paper02_recheck.py",
+  "subject": "Collatz Operation Translation Series — Paper 02 v0.1.1 (Neo.K)",
+  "scope": "exact finite algebra only; says nothing about the Collatz conjecture",
+  "max_word_length": 16,
+  "checks": {
+    "ThmA_finite_word_affine_closure": {
+      "pass": true
+    },
+    "ThmB_correction_recurrence": {
+      "pass": true
+    },
+    "ThmC_closed_form_of_b": {
+      "pass": true
+    },
+    "ThmE_matrix_representation": {
+      "pass": true
+    },
+    "ThmD_concatenation_law": {
+      "pass": true
+    },
+    "ThmF_order_extremal_bounds": {
+      "pass": true
+    },
+    "S21_extremes_attained_at_stated_words": {
+      "pass": true
+    },
+    "S25_correction_width_formula": {
+      "pass": true
+    },
+    "P03_parity_word_to_residue_is_a_bijection": {
+      "pass": true
+    },
+    "P03_residue_cylinder_is_the_admissible_domain": {
+      "pass": true
+    },
+    "P03_m_w_is_an_integer": {
+      "pass": true
+    },
+    "P03_exact_cylinder_transport": {
+      "pass": true
+    },
+    "P02_repair_allD_cylinder_needs_the_r_plus_2k_representative": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "words_checked": 131070,
+    "concatenation_pairs": 260100,
+    "(k,u)_cases": 152,
+    "transport_cases": 196582,
+    "residue_max_k": 14
+  },
+  "failures": [],
+  "ok": true
+}

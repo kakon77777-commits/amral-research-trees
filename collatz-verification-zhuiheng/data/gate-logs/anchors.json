@@ -1,7 +1,7 @@
 {
   "tool": "anchors.py",
   "bound": 100000000,
-  "engine_elapsed_s": 6.091,
+  "engine_elapsed_s": 6.255,
   "sources": {
     "A006877": "https://oeis.org/A006877/b006877.txt",
     "A006878": "https://oeis.org/A006878/b006878.txt",

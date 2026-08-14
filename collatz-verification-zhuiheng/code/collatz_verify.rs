@@ -417,6 +417,13 @@ fn main() {
         return;
     }
 
+    if kv.contains_key("block") {
+        let k = arg_u64(&kv, "block", 16) as u32;
+        let hi = arg_u64(&kv, "to", 1 << 20);
+        run_block(k, hi);
+        return;
+    }
+
     if kv.contains_key("records") {
         let hi = arg_u64(&kv, "records", 1_000_000);
         let threads = arg_u64(&kv, "threads", 16).max(1) as usize;
@@ -489,6 +496,43 @@ fn run_verify(from: u64, to: u64, k: u32, threads: usize) {
     if !ok {
         std::process::exit(1);
     }
+}
+
+/// Classify every 1 <= n < hi by the sign of T^k(n) - n.
+///
+/// This is the "k-block descent" statistic used in the Operation Translation
+/// series (Paper 05). It is computed here from this engine's own k-step
+/// congruence tables, which are derived by simulation and checked against
+/// direct iteration in `--self-test`, so it shares no code with any other
+/// implementation of the same count.
+fn run_block(k: u32, hi: u64) {
+    let t0 = Instant::now();
+    let t = build_tables(k);
+    let (mut strict, mut equal, mut ascent) = (0u64, 0u64, 0u64);
+    let mut equalities: Vec<u64> = Vec::new();
+    for n in 1..hi {
+        let r = (n & t.mask) as usize;
+        let jump = (n >> k) as u128 * t.pow3[r] as u128 + t.tail[r] as u128;
+        let n128 = n as u128;
+        if jump < n128 {
+            strict += 1;
+        } else if jump == n128 {
+            equal += 1;
+            if equalities.len() < 32 {
+                equalities.push(n);
+            }
+        } else {
+            ascent += 1;
+        }
+    }
+    println!(
+        "{{\"mode\":\"block\",\"ok\":true,\"k\":{k},\"domain\":\"1 <= n < {hi}\",\
+\"strict_descent\":{strict},\"equality\":{equal},\"ascent\":{ascent},\
+\"equality_witnesses\":{:?},\"total\":{},\"elapsed_s\":{:.3}}}",
+        equalities,
+        strict + equal + ascent,
+        t0.elapsed().as_secs_f64()
+    );
 }
 
 fn run_records(hi: u64, threads: usize) {
