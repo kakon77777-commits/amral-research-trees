@@ -14,6 +14,7 @@ said at the time rather than only that they were said to pass.
 | `coverage.json` | `code/verify_run_logs.py` |
 | `coverage-refusal-drill.json` | a manual drill showing the aggregator refusing a run with a deleted chunk, and a run with one chunk's count reduced by one; the tampered log was restored byte-identical afterwards |
 | `ot-package-integrity.txt` | the subject package's *own* `tools/verify_series.py`, run against the copy archived at `../../../collatz-ot-series-neok/`. Not this arm's verifier — the author's, run on the committed bytes. |
+| `ot-paper01-recheck.json` | `code/ot_paper01_recheck.py` — Paper 01's Claim Ledger arithmetic, plus external verification of the cited bibliography against arXiv and Crossref. |
 | `ot-paper02-recheck.json` | `code/ot_paper02_recheck.py 16` — independent re-derivation of Paper 02 of Neo.K's Operation Translation Series |
 | `ot-paper06-recheck.json` | `code/ot_paper06_recheck.py 20001` — the same for Paper 06, on real admissible orbits |
 | `ot-paper03-recheck.json` | `code/ot_paper03_recheck.py 13` — Paper 03, with `r_w` derived twice: once by the closed congruence, once by refinement induction that never uses it. |
@@ -22,7 +23,7 @@ said at the time rather than only that they were said to pass.
 | `ot-paper07-recheck.json` | `code/ot_paper07_recheck.py 8 3000` — the same for Paper 07, over 24 (m, r) parameter pairs, including the floating-floor margin analysis |
 | `ot-paper08-recheck.json` | `code/ot_paper08_recheck.py` — Paper 08's algebraic breakage ladder, one explicit witness per rung. |
 | `ot-paper09-recheck.json` | `code/ot_paper09_recheck.py 11 20` — the same for Paper 09, including K(2^40) linked to the archived exhaustive run |
-| `ot-recheck-drill.json` | `code/ot_recheck_drill.py` — the falsifiability drill for all eight rechecks |
+| `ot-recheck-drill.json` | `code/ot_recheck_drill.py` — the falsifiability drill for all nine rechecks |
 | `ot-recheck-drill.progress.txt` | the same run's stderr, one line per planted defect |
 | `ot-paper05-block-benchmark.json` | `collatz_verify.exe --block 16 --to 1048576` — independent reproduction of the series' Paper 05 `k=16` descent counts |
 

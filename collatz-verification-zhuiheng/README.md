@@ -22,11 +22,17 @@ it worth believing:
 - as a free corollary at the same bound, no nontrivial cycle has all of its
   elements `≤ 2^40`.
 
-`2^40` is far below the published frontier, which stands at **at least `2^68`**
-(Barina, *Convergence verification of the Collatz problem*, The Journal of
-Supercomputing, 2021), with distributed work reporting further progress since.
-That literature claim was not independently checked here and is not restated as
-this arm's own result. A local run is never a record attempt; a bound this arm
+`2^40` is far below the published frontier, which stands at **all `n` below
+`2075 × 2^60 ≈ 2^71.02`** (Barina, *Improved verification limit for the
+convergence of the Collatz conjecture*, The Journal of Supercomputing **81**:810,
+2025), with the project page reporting progress beyond it. This arm did not re-run
+that verification. It did verify, while rechecking Paper 01, that the DOI resolves
+to the stated journal, volume and article, and that the project page states that
+figure.
+
+*Correction:* until 2026-08-14 this section said `2^68`, citing Barina 2021. That
+understated the frontier by three doublings and cited a superseded milestone. It
+was found by verifying Neo.K's own reference audit, which had the current figure. A local run is never a record attempt; a bound this arm
 can finish and fully archive is preferred over one that sounds impressive.
 
 A finite verification to any `N`, however large, says something about `[1, N]`
@@ -45,8 +51,8 @@ describe it that way.
    re-derivation of the finite claims of Neo.K's *Collatz Operation Translation
    Series*: package integrity (and the defect that stops its own verifier on the
    author's platform), Paper 05's `k=16` benchmark reproduced, and every theorem
-   of Papers 02, 03, 04, 06, 07, 08 and 09 rechecked against referees that assume
-   none of them — every core paper of the series with arithmetic content.
+   of **all nine core papers** rechecked against referees that assume none of
+   them, including Paper 01's bibliography verified against arXiv and Crossref.
    Includes the §14 bridge tying two papers' correction terms together, and
    `K(2^40) = 550` — Paper 09's frontier function evaluated at the scale the
    engine actually measured.

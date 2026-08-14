@@ -96,10 +96,14 @@ not known to work.
 ## Standing position on scale
 
 The published verification frontier is far above anything this arm produces
-locally. Convergence has been verified to at least `2^68` (Barina, *Convergence
-verification of the Collatz problem*, The Journal of Supercomputing, 2021),
-with the distributed effort reporting further progress since. This arm has not
-independently checked that literature claim and does not restate it as its own.
+locally. Convergence has been verified for all `n` below `2075 × 2^60 ≈ 2^71.02`
+(Barina, *Improved verification limit for the convergence of the Collatz
+conjecture*, The Journal of Supercomputing **81**:810, 2025,
+doi:10.1007/s11227-025-07337-0), with the project page reporting progress beyond
+it. This arm has not re-run that verification and does not restate it as its own
+result — but it has checked the citation: the DOI resolves to the stated journal,
+volume and article, and the project page states the figure. See
+`../data/gate-logs/ot-paper01-recheck.json`.
 
 Local runs here are therefore **never** a record attempt. Their purpose is to
 have an instrument whose behaviour is known, on hardware we control, that can

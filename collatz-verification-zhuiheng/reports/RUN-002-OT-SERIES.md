@@ -509,7 +509,86 @@ baseline runs well under a minute and the old figure only ever gave a runaway
 mutant more rope. The same pass removed a redundant `n⁴` scan in the recheck whose
 result was computed and never used.
 
-## 9. Paper 04 — bidirectional transport, never machine-checked before
+## 9. Paper 01 — the ledger's arithmetic, and the bibliography
+
+`code/ot_paper01_recheck.py`. **All 12 checks pass.**
+
+### Correcting a second judgement of mine
+
+An earlier version of this report said Paper 01's content is "bibliographic
+rather than arithmetic — a different instrument again: this arm can check
+numbers, not literature." **Wrong twice over.**
+
+**Citations are externally checkable.** An arXiv identifier either resolves to a
+record with the stated title, authors and date, or it does not. A DOI either
+resolves to the stated journal, volume and article, or it does not. That is an
+external anchor of exactly the kind this tree values most — the expectations are
+not authored here.
+
+**And Paper 01 is not only bibliographic.** Its Claim Ledger sorts old results
+into `T`/`E`/`C`/`H`/`N`/`S` by evidence strength, and every `T` entry is a
+concrete arithmetic statement. A merely heuristic claim filed as `T` would be
+precisely the defect the ledger exists to prevent, so those labels are worth
+checking.
+
+### The ledger's arithmetic
+
+| Check | Ledger entry |
+|---|---|
+| `n` has a legal odd predecessor iff `n ≡ 4 (mod 6)` | §4.1, `T` |
+| that class has natural density `1/6` | §4.2, `T` |
+| unique odd-core decomposition `n = 2^{v₂(n)} · oddcore(n)` | §4.3, `T` |
+| coverage of `ℤ_{>0}` reduces to coverage of the odd integers | §4.3, `E` |
+| a trajectory reaches 1 iff it meets a power of two | §5, `E` |
+| exactly `v₂(n)` halvings precede the odd core | §6.1, `T` |
+| binary tree rotation preserves the node set | the rotation no-go, `N` |
+| the Barina milestone ladder is monotone and ends at `2^71` | §7.1, `C` |
+| the GGM threshold `q < p^{p/(p−1)}` is exactly `q < 4` at `p = 2` | the Paper 07 calibration |
+
+Each was checked against a brute-force referee rather than against the paper's
+own reasoning — the odd-predecessor rule, for instance, against an actual search
+for an odd `m` with `3m + 1 = n`. The rotation no-go is checked on concrete trees
+by comparing node multisets before and after, rather than argued.
+
+### The bibliography, against the sources
+
+Every load-bearing reference was fetched and compared, with the records
+snapshotted under `../data/external/bibliography/` and digested on every run:
+
+| Reference | Verified |
+|---|---|
+| Rozier, arXiv:1805.00133 | title, author, *Integers* 19 (2019) A8 |
+| Tao, arXiv:1909.03562 | title, author, *Forum Math. Pi* 10 (2022) |
+| Gonçalves–Greenfeld–Madrid, arXiv:2111.06170 | title, all three authors |
+| Angeltveit, arXiv:2602.10466 | title, author, 2026-02-11 |
+| Niu, arXiv:2605.13886 | title, author, 2026-05-11 |
+| Applegate–Lagarias, arXiv:math/0411140 | title, authors, *J. Number Theory* 117 (2006) |
+| Barina 2025, doi:10.1007/s11227-025-07337-0 | title, author, *J. Supercomputing* **81**:810, 2025-05-02 |
+| Barina project page | states convergence verified below `2075 × 2^60 ≈ 2^71.02` |
+
+All match. The package's own `EXTERNAL_REFERENCE_AUDIT.md` is therefore
+independently confirmed on every item it spot-checked.
+
+### And it corrected *this* tree
+
+This is the part worth reporting plainly, because verifying someone else's work
+turned up an error in mine.
+
+Until 2026-08-14 this tree's charter and README said the published frontier was
+**"at least `2^68`"**, citing Barina 2021. The current figure is all `n` below
+`2075 × 2^60 ≈ 2^71.02`, from Barina 2025.
+
+The old statement was *literally true* — `2^71` is at least `2^68` — which is
+exactly why it survived unexamined. But it understated the frontier by three
+doublings and cited a superseded milestone, in the one place this tree insists on
+being precise: how far below the real frontier its own `2^40` sits. It is now
+corrected in `CHARTER.md`, `README.md` and `RUN-001-T40.md`, each carrying a note
+of what it previously said.
+
+Neo.K's reference audit had the current figure all along. The error was mine, and
+the only reason it surfaced is that his paper was checked rather than assumed.
+
+## 10. Paper 04 — bidirectional transport, never machine-checked before
 
 `code/ot_paper04_recheck.py`. **All 21 checks pass** at `k ≤ 10`: 22,506
 transport triples and 112,530 negative controls.
@@ -580,7 +659,7 @@ arithmetic identity rather than by the checks — after `3^u ≤ 2^k` versus
 `3^u < 2^k` in Paper 09, and `<` versus `<=` in Paper 07. Re-aimed at the family
 index, it is caught by three checks at once.
 
-## 10. Paper 05's KL constant, and a finding
+## 11. Paper 05's KL constant, and a finding
 
 `code/ot_paper05_kl_recheck.py`. The last remaining numeric claim in the six
 finite groups.
@@ -665,7 +744,7 @@ subject is not the instrument breaking.** The KL ULP result is recorded under
 real defect in the subject would be indistinguishable from a broken checker — and
 `build_results.py` would refuse to archive the very finding worth keeping.
 
-## 11. All eight rechecks were drilled
+## 12. All nine rechecks were drilled
 
 A recheck that passed everything is worth what it could have caught.
 `code/ot_recheck_drill.py` perturbs each asserted formula by one term and
@@ -723,7 +802,7 @@ geometric sum, §33's factor of `r`, the §21 threshold, the Theorem C residue
 sign, §47 using the minimum correction where the maximum is required, and the
 referee itself (which cascades into thirteen checks).
 
-**61 defects planted across the eight rechecks, 61 caught, 8 controls
+**68 defects planted across the nine rechecks, 68 caught, 9 controls
 undisturbed.** One was caught by crashing rather than by a named check, which is
 recorded as such rather than counted as a clean hit.
 
@@ -766,7 +845,7 @@ Breaking the referee's `+1` injection did **not** break Theorem A or Theorem D.
   not a hole in the check — but it means **Theorem D alone cannot detect a wrong
   injection constant**, and should not be leaned on for that.
 
-## 12. Where this stands
+## 13. Where this stands
 
 | Group | Cases claimed | Status |
 |---|---|---|
@@ -793,11 +872,13 @@ Remaining, in order of what this arm can usefully do next:
 - **Paper 08 is now complete** (§8 above), with one explicit witness per rung of
   its ladder and each rung checked in both directions. Only its universally
   quantified forms remain, in `LEAN-QUEUE.md`.
-- **Paper 01 remains.** It is a reclassification and correction of prior
-  literature, so its checkable content is bibliographic — citation accuracy,
-  attribution, whether a corrected claim is stated as the sources state it —
-  rather than arithmetic. That is a different instrument again, and worth being
-  honest about: this arm can check numbers, not literature.
+- **Paper 01 is now complete** (§9 above) — both halves of it, and it corrected
+  this tree's own understated frontier along the way.
+
+**Every core paper of the series has now been independently rechecked.** What
+remains is the Hard-Zeta research program: its `n ≥ 2` stopping-domain correction
+is finite per `k` and checkable here; its invariant-measure route is
+`∀`-quantified over function spaces and is not.
 - **Hard-Zeta's invariant-measure route** is `∀`-quantified over function spaces,
   which this instrument cannot address at all. Those are collected, scoped and ordered in
   [`LEAN-QUEUE.md`](./LEAN-QUEUE.md), and deliberately not started: Lean is

@@ -60,6 +60,15 @@ code/ot_paper08_recheck.py: baseline passes all 19 checks
   K06-degree-additive: caught  -> ['P08_ThmG_degree_of_composition_multiplies']
   K07-determinant-search: caught (<timed out>, not by a named check)  -> ['<timed out>']
   NULL-08: clean (control)  -> []
+code/ot_paper01_recheck.py: baseline passes all 12 checks
+  L01-predecessor-modulus: caught  -> ['P01_S4_1_odd_predecessor_iff_n_is_4_mod_6']
+  L02-density: caught  -> ['P01_S4_2_branch_point_density_is_one_sixth']
+  L03-power-of-two-test: caught  -> ['P01_S5_reaching_one_iff_meeting_a_power_of_two']
+  L04-rotation: caught  -> ['P01_S111_tree_rotation_preserves_the_node_set']
+  L05-ggm-threshold: caught  -> ['P01_GGM_threshold_at_p_equals_2_is_exactly_4']
+  L06-citation-title: caught  -> ['P01_all_cited_arxiv_records_match_title_authors_and_journal']
+  L07-doi: caught  -> ['P01_barina_2025_doi_matches_the_stated_journal_volume_and_article']
+  NULL-09: clean (control)  -> []
 code/ot_paper04_recheck.py: baseline passes all 21 checks
   I01-inverse-multiplier: caught  -> ['P04_ThmB_exact_inverse']
   I02-cross-multiplied-swap: caught  -> ['P04_S8_division_free_cross_multiplied_relation']

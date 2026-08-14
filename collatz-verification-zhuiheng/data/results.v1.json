@@ -18,7 +18,7 @@
     "literature_novelty_claimed": false,
     "record_attempt": false,
     "statement": "A bounded exhaustive verification and a falsifiability-drilled instrument. Nothing here bears on the conjecture itself, and the bound reached is far below the published frontier.",
-    "published_frontier_note": "Convergence is published as verified to at least 2^68 (Barina, J. Supercomputing, 2021), with further distributed progress since. That claim was not independently checked here and is not restated as this arm's own result."
+    "published_frontier_note": "Convergence is published as verified for all n below 2075 * 2^60, about 2^71.02 (Barina, Improved verification limit for the convergence of the Collatz conjecture, The Journal of Supercomputing 81:810, 2025, doi 10.1007/s11227-025-07337-0), with the project page reporting progress beyond it. This arm did not re-run that verification; what it did check, while rechecking Paper 01, is that the DOI resolves to the stated journal, volume and article and that the project page states the 2^71 figure - see ot-paper01-recheck.json. An earlier version of this note said 2^68 citing Barina 2021, which understated the frontier by three doublings and cited a superseded milestone."
   },
   "verified_claims": [
     {
@@ -42,7 +42,7 @@
     "nothing about any n > the domain upper bound",
     "nothing about cycles containing an element above the domain upper bound",
     "no support, evidence, or suggestion regarding the conjecture itself",
-    "no independent confirmation of the published 2^68 frontier"
+    "no independent confirmation of the published 2^71 frontier - only that the citation for it resolves correctly"
   ],
   "coverage": {
     "tool": "verify_run_logs.py",
@@ -317,6 +317,129 @@
       "agrees_with_claim": true,
       "independence": "computed in Rust from this arm's k-step congruence tables, a single table lookup per n, versus the subject's Python step-by-step iteration",
       "equality_witnesses_explained": "the two equality cases are n=1 and n=2, the elements of the trivial cycle; T has period 2 there and 16 is even, so they are forced"
+    },
+    "paper_01_ledger_and_bibliography": {
+      "checks": {
+        "P01_S4_1_odd_predecessor_iff_n_is_4_mod_6": true,
+        "P01_S4_2_branch_point_density_is_one_sixth": true,
+        "P01_S4_3_unique_odd_core_decomposition": true,
+        "P01_S4_3_coverage_reduces_to_the_odd_integers": true,
+        "P01_S5_reaching_one_iff_meeting_a_power_of_two": true,
+        "P01_S6_1_v2_reduction_gives_exactly_v2_halvings": true,
+        "P01_S111_tree_rotation_preserves_the_node_set": true,
+        "P01_S7_1_barina_ladder_is_monotone_and_ends_at_2_71": true,
+        "P01_GGM_threshold_at_p_equals_2_is_exactly_4": true,
+        "P01_all_cited_arxiv_records_match_title_authors_and_journal": true,
+        "P01_barina_2025_doi_matches_the_stated_journal_volume_and_article": true,
+        "P01_S7_1_project_page_supports_the_2_71_calibration": true
+      },
+      "all_pass": true,
+      "corrected_earlier_judgement": "An earlier note here said Paper 01's content is bibliographic rather than arithmetic, and that this arm 'can check numbers, not literature'. Wrong twice: citations ARE externally checkable against arXiv and Crossref - an external anchor whose expectations this arm did not author - and the Claim Ledger's T-class entries are concrete arithmetic, where a mislabelled entry would be exactly the defect the ledger exists to prevent.",
+      "bibliography_verified": {
+        "1805.00133": {
+          "url": "https://arxiv.org/abs/1805.00133",
+          "snapshot_sha256": "b9a6bf87511294ce1444e7f61b69f998",
+          "title_matches": true,
+          "authors_match": true,
+          "journal_matches": true,
+          "record_title": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding",
+          "record_authors": [
+            "Olivier Rozier"
+          ],
+          "record_published": "2018-04-30",
+          "record_journal": "Integers 19 (2019), article A8"
+        },
+        "1909.03562": {
+          "url": "https://arxiv.org/abs/1909.03562",
+          "snapshot_sha256": "3085487a0b6c910549412f5851b25918",
+          "title_matches": true,
+          "authors_match": true,
+          "journal_matches": true,
+          "record_title": "Almost all orbits of the Collatz map attain almost bounded values",
+          "record_authors": [
+            "Terence Tao"
+          ],
+          "record_published": "2019-09-08",
+          "record_journal": "Forum Math. Pi 10 (2022), Paper No. e12, 56 pp"
+        },
+        "2111.06170": {
+          "url": "https://arxiv.org/abs/2111.06170",
+          "snapshot_sha256": "6f48317cc38d7ef4455e68a03c435b9d",
+          "title_matches": true,
+          "authors_match": true,
+          "journal_matches": true,
+          "record_title": "Generalized Collatz Maps with Almost Bounded Orbits",
+          "record_authors": [
+            "Felipe Gonçalves",
+            "Rachel Greenfeld",
+            "Jose Madrid"
+          ],
+          "record_published": "2021-11-11",
+          "record_journal": null
+        },
+        "2602.10466": {
+          "url": "https://arxiv.org/abs/2602.10466",
+          "snapshot_sha256": "8040d9a5e18d6815a64b4005711b45ed",
+          "title_matches": true,
+          "authors_match": true,
+          "journal_matches": true,
+          "record_title": "An improved algorithm for checking the Collatz conjecture for all n < 2^N",
+          "record_authors": [
+            "Vigleik Angeltveit"
+          ],
+          "record_published": "2026-02-11",
+          "record_journal": null
+        },
+        "2605.13886": {
+          "url": "https://arxiv.org/abs/2605.13886",
+          "snapshot_sha256": "66b19f092071d1f59b48b6d72e26703b",
+          "title_matches": true,
+          "authors_match": true,
+          "journal_matches": true,
+          "record_title": "Parity vectors and paradoxical sequences in the accelerated Collatz map",
+          "record_authors": [
+            "Tong Niu"
+          ],
+          "record_published": "2026-05-11",
+          "record_journal": null
+        },
+        "math/0411140": {
+          "url": "https://arxiv.org/abs/math/0411140",
+          "snapshot_sha256": "44c8a150806a89d079c3918ba8d9455b",
+          "title_matches": true,
+          "authors_match": true,
+          "journal_matches": true,
+          "record_title": "The 3x+1 Semigroup",
+          "record_authors": [
+            "David Applegate",
+            "Jeffrey C. Lagarias"
+          ],
+          "record_published": "2004-11-07",
+          "record_journal": "Journal of Number Theory 117 (2006), 147--159."
+        }
+      },
+      "barina_2025": {
+        "doi": "10.1007/s11227-025-07337-0",
+        "title": "Improved verification limit for the convergence of the Collatz conjecture",
+        "journal": "The Journal of Supercomputing",
+        "volume": "81",
+        "article": "810",
+        "issued": [
+          [
+            2025,
+            5,
+            2
+          ]
+        ],
+        "url": "https://doi.org/10.1007/s11227-025-07337-0"
+      },
+      "verification_frontier": {
+        "source": "https://pcbarina.fit.vut.cz/",
+        "snapshot_sha256": "19f7d699d266370c3f5039cb0de5e91e",
+        "statement": "2075 &times; 2 60 (&asymp; 2 71",
+        "supports_2_71": true
+      },
+      "correction_to_this_arm": "Verifying Neo.K's reference audit corrected THIS tree. Until 2026-08-14 the charter and README said the published frontier was 'at least 2^68' citing Barina 2021. The current figure is all n below 2075 * 2^60, about 2^71.02, from Barina 2025 (J. Supercomputing 81:810). The old statement was literally true but understated the frontier by three doublings and cited a superseded milestone. Corrected in CHARTER.md, README.md and RUN-001-T40.md, each carrying a note of what it used to say."
     },
     "paper_03_theorems": {
       "max_word_length": 13,
@@ -924,6 +1047,10 @@
           "baseline_checks": 19,
           "args": []
         },
+        "code/ot_paper01_recheck.py": {
+          "baseline_checks": 12,
+          "args": []
+        },
         "code/ot_paper04_recheck.py": {
           "baseline_checks": 21,
           "args": [
@@ -935,10 +1062,10 @@
           "args": []
         }
       },
-      "defects_planted": 61,
-      "defects_caught_by_the_named_check": 61,
-      "controls_planted": 8,
-      "controls_undisturbed": 8,
+      "defects_planted": 68,
+      "defects_caught_by_the_named_check": 68,
+      "controls_planted": 9,
+      "controls_undisturbed": 9,
       "anomalies": [],
       "note": "each planted defect had to be caught by the check named for it, not merely by some check"
     }
@@ -956,8 +1083,9 @@
     "code/mutation_drill.py": "45e4f84a668c5e57e0ec2b7b116dcd0f0bf419bb64e38ff4685f3ff7cfeae7a7",
     "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
     "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
-    "code/build_results.py": "bb9b368177d004244198eaa48ea9ecbbcd9f97c733034fc6bdbb138426e15932",
+    "code/build_results.py": "8125bf8527a43a4d4c49161a9cb61eef5efa8a3dc0a6df1ddc975888c1c757b0",
     "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab",
+    "code/ot_paper01_recheck.py": "66074146e8de77d6949b2a81d44add031b39f1b1fe825c98ef5068c7beb25355",
     "code/ot_paper02_recheck.py": "50b3b733ced47a25078b16a71f7c120696d0ce60d43822b464abbc2f0010591d",
     "code/ot_paper06_recheck.py": "82851076cec9f416dc100fefe8bc5d5b6e635d97e9b791df23dccf804906d077",
     "code/ot_paper03_recheck.py": "96128f754d6a3ac4198037a638ac9e617c1d9667f670a7e1519740c8d15244ca",
@@ -966,6 +1094,6 @@
     "code/ot_paper07_recheck.py": "0e438242e202d6027317ce50eb1964577b2ecd982e960151af4fcd2c066c5e7f",
     "code/ot_paper08_recheck.py": "80055c5b6331131f4eef34e0bfa2597fbe4b386ff4e18c31d4026a4faf631cf9",
     "code/ot_paper09_recheck.py": "69d8b6225bf14447758a415dd6b4350b157c4f603fb9140105817d4787f41c88",
-    "code/ot_recheck_drill.py": "9ef85a6f014ccf3de10787fc030d37a6adacd4876c8045ce979ba3f174c8bb66"
+    "code/ot_recheck_drill.py": "fb0a6b910f961e7baea7fe50c2cd4e83c85fa7459aa55d19ddf13e23e4e78acc"
   }
 }

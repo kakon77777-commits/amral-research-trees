@@ -1,0 +1,158 @@
+{
+  "tool": "ot_paper01_recheck.py",
+  "subject": "Collatz Operation Translation Series — Paper 01 v0.1 (Neo.K)",
+  "scope": "the Claim Ledger's T-class arithmetic, plus external verification of the cited bibliography against arXiv and Crossref. Not a Collatz proof.",
+  "note": "the subject's regression suite contains no Paper 01 test",
+  "checks": {
+    "P01_S4_1_odd_predecessor_iff_n_is_4_mod_6": {
+      "pass": true
+    },
+    "P01_S4_2_branch_point_density_is_one_sixth": {
+      "pass": true
+    },
+    "P01_S4_3_unique_odd_core_decomposition": {
+      "pass": true
+    },
+    "P01_S4_3_coverage_reduces_to_the_odd_integers": {
+      "pass": true
+    },
+    "P01_S5_reaching_one_iff_meeting_a_power_of_two": {
+      "pass": true
+    },
+    "P01_S6_1_v2_reduction_gives_exactly_v2_halvings": {
+      "pass": true
+    },
+    "P01_S111_tree_rotation_preserves_the_node_set": {
+      "pass": true
+    },
+    "P01_S7_1_barina_ladder_is_monotone_and_ends_at_2_71": {
+      "pass": true
+    },
+    "P01_GGM_threshold_at_p_equals_2_is_exactly_4": {
+      "pass": true
+    },
+    "P01_all_cited_arxiv_records_match_title_authors_and_journal": {
+      "pass": true
+    },
+    "P01_barina_2025_doi_matches_the_stated_journal_volume_and_article": {
+      "pass": true
+    },
+    "P01_S7_1_project_page_supports_the_2_71_calibration": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "arithmetic_domain": {
+      "predecessor_scan": 30000,
+      "orbit_scan": 20000
+    }
+  },
+  "measured": {
+    "arxiv_records": {
+      "1805.00133": {
+        "url": "https://arxiv.org/abs/1805.00133",
+        "snapshot_sha256": "b9a6bf87511294ce1444e7f61b69f998",
+        "title_matches": true,
+        "authors_match": true,
+        "journal_matches": true,
+        "record_title": "Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding",
+        "record_authors": [
+          "Olivier Rozier"
+        ],
+        "record_published": "2018-04-30",
+        "record_journal": "Integers 19 (2019), article A8"
+      },
+      "1909.03562": {
+        "url": "https://arxiv.org/abs/1909.03562",
+        "snapshot_sha256": "3085487a0b6c910549412f5851b25918",
+        "title_matches": true,
+        "authors_match": true,
+        "journal_matches": true,
+        "record_title": "Almost all orbits of the Collatz map attain almost bounded values",
+        "record_authors": [
+          "Terence Tao"
+        ],
+        "record_published": "2019-09-08",
+        "record_journal": "Forum Math. Pi 10 (2022), Paper No. e12, 56 pp"
+      },
+      "2111.06170": {
+        "url": "https://arxiv.org/abs/2111.06170",
+        "snapshot_sha256": "6f48317cc38d7ef4455e68a03c435b9d",
+        "title_matches": true,
+        "authors_match": true,
+        "journal_matches": true,
+        "record_title": "Generalized Collatz Maps with Almost Bounded Orbits",
+        "record_authors": [
+          "Felipe Gonçalves",
+          "Rachel Greenfeld",
+          "Jose Madrid"
+        ],
+        "record_published": "2021-11-11",
+        "record_journal": null
+      },
+      "2602.10466": {
+        "url": "https://arxiv.org/abs/2602.10466",
+        "snapshot_sha256": "8040d9a5e18d6815a64b4005711b45ed",
+        "title_matches": true,
+        "authors_match": true,
+        "journal_matches": true,
+        "record_title": "An improved algorithm for checking the Collatz conjecture for all n < 2^N",
+        "record_authors": [
+          "Vigleik Angeltveit"
+        ],
+        "record_published": "2026-02-11",
+        "record_journal": null
+      },
+      "2605.13886": {
+        "url": "https://arxiv.org/abs/2605.13886",
+        "snapshot_sha256": "66b19f092071d1f59b48b6d72e26703b",
+        "title_matches": true,
+        "authors_match": true,
+        "journal_matches": true,
+        "record_title": "Parity vectors and paradoxical sequences in the accelerated Collatz map",
+        "record_authors": [
+          "Tong Niu"
+        ],
+        "record_published": "2026-05-11",
+        "record_journal": null
+      },
+      "math/0411140": {
+        "url": "https://arxiv.org/abs/math/0411140",
+        "snapshot_sha256": "44c8a150806a89d079c3918ba8d9455b",
+        "title_matches": true,
+        "authors_match": true,
+        "journal_matches": true,
+        "record_title": "The 3x+1 Semigroup",
+        "record_authors": [
+          "David Applegate",
+          "Jeffrey C. Lagarias"
+        ],
+        "record_published": "2004-11-07",
+        "record_journal": "Journal of Number Theory 117 (2006), 147--159."
+      }
+    },
+    "barina_2025": {
+      "doi": "10.1007/s11227-025-07337-0",
+      "title": "Improved verification limit for the convergence of the Collatz conjecture",
+      "journal": "The Journal of Supercomputing",
+      "volume": "81",
+      "article": "810",
+      "issued": [
+        [
+          2025,
+          5,
+          2
+        ]
+      ],
+      "url": "https://doi.org/10.1007/s11227-025-07337-0"
+    },
+    "verification_frontier": {
+      "source": "https://pcbarina.fit.vut.cz/",
+      "snapshot_sha256": "19f7d699d266370c3f5039cb0de5e91e",
+      "statement": "2075 &times; 2 60 (&asymp; 2 71",
+      "supports_2_71": true
+    }
+  },
+  "failures": [],
+  "ok": true
+}

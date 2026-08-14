@@ -28,3 +28,15 @@ A006877/A006878 are paired and consistent at 148 terms each.
 
 These files are third-party data included for verification purposes. They are
 not covered by this repository's own licence grant; see OEIS's terms.
+
+## `bibliography/`
+
+Snapshots of the bibliographic records for every external reference the
+Operation Translation Series cites in a load-bearing way — six arXiv Atom
+records, the Crossref entry for Barina 2025, and Barina's own project page.
+Fetched 2026-08-14; digests are printed by `code/ot_paper01_recheck.py` on every
+run, and the live URLs are recorded beside each check.
+
+These are third-party records included so that a citation claim can be checked
+against the source rather than against the citing document. They are not covered
+by this repository's licence grant.

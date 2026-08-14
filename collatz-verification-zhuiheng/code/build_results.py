@@ -31,6 +31,7 @@ CODE_FILES = [
     "code/verify_run_logs.py",
     "code/build_results.py",
     "code/run_verification.sh",
+    "code/ot_paper01_recheck.py",
     "code/ot_paper02_recheck.py",
     "code/ot_paper06_recheck.py",
     "code/ot_paper03_recheck.py",
@@ -75,6 +76,7 @@ def main() -> int:
     reference = load_gate("reference-crosscheck.json")
     ot_recheck = load_gate("ot-paper02-recheck.json")
     ot_p06 = load_gate("ot-paper06-recheck.json")
+    ot_p01 = load_gate("ot-paper01-recheck.json")
     ot_p03 = load_gate("ot-paper03-recheck.json")
     ot_p04 = load_gate("ot-paper04-recheck.json")
     ot_kl = load_gate("ot-paper05-kl-recheck.json")
@@ -95,6 +97,7 @@ def main() -> int:
     for name, gate, key in (
         ("Paper 02 recheck", ot_recheck, "ok"),
         ("Paper 06 recheck", ot_p06, "ok"),
+        ("Paper 01 recheck", ot_p01, "ok"),
         ("Paper 03 recheck", ot_p03, "ok"),
         ("Paper 04 recheck", ot_p04, "ok"),
         ("Paper 05 KL recheck", ot_kl, "ok"),
@@ -133,10 +136,16 @@ def main() -> int:
                 "bound reached is far below the published frontier."
             ),
             "published_frontier_note": (
-                "Convergence is published as verified to at least 2^68 (Barina, "
-                "J. Supercomputing, 2021), with further distributed progress since. "
-                "That claim was not independently checked here and is not restated "
-                "as this arm's own result."
+                "Convergence is published as verified for all n below 2075 * 2^60, "
+                "about 2^71.02 (Barina, Improved verification limit for the convergence "
+                "of the Collatz conjecture, The Journal of Supercomputing 81:810, 2025, "
+                "doi 10.1007/s11227-025-07337-0), with the project page reporting "
+                "progress beyond it. This arm did not re-run that verification; what it "
+                "did check, while rechecking Paper 01, is that the DOI resolves to the "
+                "stated journal, volume and article and that the project page states the "
+                "2^71 figure - see ot-paper01-recheck.json. An earlier version of this "
+                "note said 2^68 citing Barina 2021, which understated the frontier by "
+                "three doublings and cited a superseded milestone."
             ),
         },
         "verified_claims": [
@@ -161,7 +170,7 @@ def main() -> int:
             "nothing about any n > the domain upper bound",
             "nothing about cycles containing an element above the domain upper bound",
             "no support, evidence, or suggestion regarding the conjecture itself",
-            "no independent confirmation of the published 2^68 frontier",
+            "no independent confirmation of the published 2^71 frontier - only that the citation for it resolves correctly",
         ],
         "coverage": coverage,
         "gates": {
@@ -228,6 +237,31 @@ def main() -> int:
                 "equality_witnesses_explained": (
                     "the two equality cases are n=1 and n=2, the elements of the trivial "
                     "cycle; T has period 2 there and 16 is even, so they are forced"
+                ),
+            },
+            "paper_01_ledger_and_bibliography": {
+                "checks": {k: v["pass"] for k, v in ot_p01["checks"].items()},
+                "all_pass": ot_p01["ok"],
+                "corrected_earlier_judgement": (
+                    "An earlier note here said Paper 01's content is bibliographic rather "
+                    "than arithmetic, and that this arm 'can check numbers, not literature'. "
+                    "Wrong twice: citations ARE externally checkable against arXiv and "
+                    "Crossref - an external anchor whose expectations this arm did not author "
+                    "- and the Claim Ledger's T-class entries are concrete arithmetic, where "
+                    "a mislabelled entry would be exactly the defect the ledger exists to "
+                    "prevent."
+                ),
+                "bibliography_verified": ot_p01["measured"]["arxiv_records"],
+                "barina_2025": ot_p01["measured"]["barina_2025"],
+                "verification_frontier": ot_p01["measured"]["verification_frontier"],
+                "correction_to_this_arm": (
+                    "Verifying Neo.K's reference audit corrected THIS tree. Until 2026-08-14 "
+                    "the charter and README said the published frontier was 'at least 2^68' "
+                    "citing Barina 2021. The current figure is all n below 2075 * 2^60, about "
+                    "2^71.02, from Barina 2025 (J. Supercomputing 81:810). The old statement "
+                    "was literally true but understated the frontier by three doublings and "
+                    "cited a superseded milestone. Corrected in CHARTER.md, README.md and "
+                    "RUN-001-T40.md, each carrying a note of what it used to say."
                 ),
             },
             "paper_03_theorems": {
