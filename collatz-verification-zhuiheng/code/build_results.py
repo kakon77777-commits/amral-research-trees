@@ -33,6 +33,7 @@ CODE_FILES = [
     "code/run_verification.sh",
     "code/ot_paper02_recheck.py",
     "code/ot_paper06_recheck.py",
+    "code/ot_paper07_recheck.py",
     "code/ot_paper09_recheck.py",
     "code/ot_recheck_drill.py",
 ]
@@ -70,6 +71,7 @@ def main() -> int:
     reference = load_gate("reference-crosscheck.json")
     ot_recheck = load_gate("ot-paper02-recheck.json")
     ot_p06 = load_gate("ot-paper06-recheck.json")
+    ot_p07 = load_gate("ot-paper07-recheck.json")
     ot_p09 = load_gate("ot-paper09-recheck.json")
     ot_drill = load_gate("ot-recheck-drill.json")
     ot_block = load_gate("ot-paper05-block-benchmark.json")
@@ -85,6 +87,7 @@ def main() -> int:
     for name, gate, key in (
         ("Paper 02 recheck", ot_recheck, "ok"),
         ("Paper 06 recheck", ot_p06, "ok"),
+        ("Paper 07 recheck", ot_p07, "ok"),
         ("Paper 09 recheck", ot_p09, "ok"),
         ("recheck drill", ot_drill, "ok"),
         ("Paper 05 block benchmark", ot_block, "ok"),
@@ -268,6 +271,46 @@ def main() -> int:
                         "for a guarantee."
                     ),
                 },
+            },
+            "paper_07_theorems": {
+                "parameters": ot_p07["parameters"],
+                "counts": ot_p07["counts"],
+                "checks": {k: v["pass"] for k, v in ot_p07["checks"].items()},
+                "all_pass": ot_p07["ok"],
+                "referee": (
+                    "symbolic composition of D(x)=x/2 and U(x)=(mx+r)/2 on an affine form, "
+                    "assuming no theorem of the paper"
+                ),
+                "coverage_beyond_subject_suite": (
+                    "the subject's test_p07 covers affine data, residue coding and transport "
+                    "for m in {1,3,5,7,9}, r in {1,3,5}, k <= 7. It does not touch the matrix "
+                    "representation, the concatenation law, the closed geometric-sum bounds of "
+                    "§17/§18, the m=1 form of §19, the §21 threshold, §22 uniform expansion, "
+                    "Theorems E through H, §33's linearity in r, §46's width, §47's "
+                    "order-uniform threshold, or §37's valuation density for general (m, r)."
+                ),
+                "m_equals_1_repair_verified": (
+                    "The repair ledger records that Paper 07's theorem summary used ln m "
+                    "without restricting m > 1, and now states the logarithmic forms for odd "
+                    "m > 1 with P_k(1) = 1 recorded separately. Both halves are checked: the "
+                    "geometric sum is evaluated without ever dividing by (m-2), so m = 1 is "
+                    "reached with no singularity, and P_k(1) = 1 exactly."
+                ),
+                "float_floor_hazard": {
+                    "claim": "Theorems E and F use floor(k * ln2/ln m); the subject's p05 counter computes it in double precision",
+                    "reference": "the exact integer predicate m^u < 2^k",
+                    "disagreements_found": ot_p07["measured"]["float_floor_disagreements"],
+                    "margin": ot_p07["measured"]["float_floor_margin"],
+                    "conclusion": (
+                        "The float floor is safe over the scanned range, and safe for a reason "
+                        "rather than by luck: the closest k*alpha_m ever comes to an integer is "
+                        "bounded below by a Diophantine margin that exceeds the accumulated "
+                        "double-precision error by many orders of magnitude. For m = 3 the "
+                        "worst case in range lands exactly at k = 1054, the convergent "
+                        "denominator of ln2/ln3."
+                    ),
+                },
+                "cylinder_density_measured": ot_p07["measured"]["cylinder_density_P_k_m"],
             },
             "paper_09_theorems": {
                 "max_word_length": ot_p09["max_word_length"],

@@ -45,7 +45,7 @@ describe it that way.
    re-derivation of the finite claims of Neo.K's *Collatz Operation Translation
    Series*: package integrity (and the defect that stops its own verifier on the
    author's platform), Paper 05's `k=16` benchmark reproduced, and every theorem
-   of Papers 02, 06 and 09 rechecked against referees that assume none of them.
+   of Papers 02, 06, 07 and 09 rechecked against referees that assume none of them.
    Includes the §14 bridge tying two papers' correction terms together, and
    `K(2^40) = 550` — Paper 09's frontier function evaluated at the scale the
    engine actually measured.

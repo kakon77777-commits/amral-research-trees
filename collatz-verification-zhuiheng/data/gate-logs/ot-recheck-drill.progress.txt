@@ -21,6 +21,17 @@ code/ot_paper06_recheck.py: baseline passes all 19 checks
   E09-mean-series: caught  -> ['P06_ThmF_mean_valuation_partial_sum_closed_form']
   E10-referee-broken: caught  -> ['P06_ThmA_run_length_expansion_is_the_parity_word', 'P06_ThmBC_accelerated_affine_closure_on_real_orbits', 'P06_S14_bridge_B_kappa_equals_b_of_expanded_word', 'P06_ThmD_exact_log_drift_as_rational_identity', 'P06_S19_descent_threshold_theta_is_exact_iff', 'P06_ThmH_closed_reverse_recovery', 'P06_S35_S38_stepwise_reverse_legality']
   NULL-02: clean (control)  -> []
+code/ot_paper07_recheck.py: baseline passes all 27 checks
+  G01-thmB-exponent: caught  -> ['P07_ThmB_correction_closed_form']
+  G02-recurrence: caught  -> ['P07_S5_correction_recurrence']
+  G03-matrix-entry: caught  -> ['P07_S8_matrix_representation']
+  G04-geometric-sum: caught  -> ['P07_S17_minimum_correction_closed_geometric_form', 'P07_S18_maximum_correction_closed_form', 'P07_S46_generalized_order_correction_width']
+  G05-r-linearity: caught  -> ['P07_S33_correction_is_linear_in_r']
+  G06-threshold: caught  -> ['P07_S21_contracting_threshold_is_an_exact_iff']
+  G07-residue-sign: caught  -> ['P07_ThmC_unique_residue_cylinder', 'P07_ThmD_transport_and_identityization', 'P07_S12_word_residue_bijection_survives', 'P07_S15_exact_recovery', 'P07_S20_exact_descent_criterion', 'P07_S21_contracting_threshold_is_an_exact_iff', 'P07_S22_uniform_expansion']
+  G08-order-threshold: caught  -> ['P07_S47_order_uniform_threshold_covers_every_word']
+  G09-referee-broken: caught  -> ['P07_ThmB_correction_closed_form', 'P07_S5_correction_recurrence', 'P07_S8_matrix_representation', 'P07_ThmD_transport_and_identityization', 'P07_S12_word_residue_bijection_survives', 'P07_S15_exact_recovery', 'P07_S17_minimum_correction_closed_geometric_form', 'P07_S18_maximum_correction_closed_form', 'P07_S19_m_equals_1_has_no_singularity', 'P07_S20_exact_descent_criterion', 'P07_S21_contracting_threshold_is_an_exact_iff', 'P07_S22_uniform_expansion', 'P07_S46_generalized_order_correction_width']
+  NULL-04: clean (control)  -> []
 code/ot_paper09_recheck.py: baseline passes all 13 checks
   F01-hard-height-max: caught  -> ['P09_ThmB_hard_height_characterises_the_hard_domain']
   F02-hard-height-sign: caught  -> ['P09_ThmB_hard_height_characterises_the_hard_domain']

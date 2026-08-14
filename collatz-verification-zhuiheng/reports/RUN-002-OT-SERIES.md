@@ -268,7 +268,72 @@ So the "corrections" are two named integers and one excluded residue, and
 nothing else. The class-based count and the certificate count are now reconciled
 term by term rather than approximately.
 
-## 6. All three rechecks were drilled
+## 6. Paper 07 — the generalization, and a floating floor worth attacking
+
+`code/ot_paper07_recheck.py`. **All 27 checks pass** across **24 `(m, r)`
+parameter pairs** (`m ∈ {1,3,5,7,9,11}`, `r ∈ {1,3,5,7}`), 73,248 transport
+cases and 30,752 concatenation pairs.
+
+Theorems A–D and §5, §8, §9, §12, §15, §17–§22, §25, §33, §37, §46, §47 all hold.
+The subject's `test_p07` covers the affine data, residue coding and transport for
+`m ∈ {1,3,5,7,9}`, `r ∈ {1,3,5}`, `k ≤ 7`. It does **not** touch the matrix
+representation, the concatenation law, the closed geometric-sum bounds, the §21
+threshold, §22, Theorems E–H, §33's linearity in `r`, §46's width, or §47's
+order-uniform threshold. Those are all now checked.
+
+### The `m = 1` repair, verified on its own terms
+
+The repair ledger records that Paper 07's theorem summary used `ln m` without
+restricting `m > 1`, and now states the logarithmic forms for odd `m > 1` while
+recording `P_k(1) = 1` separately.
+
+Both halves check out — and the recheck is written so that it *could* have caught
+a residual singularity: the §17/§18 bounds are stated with an `(m−2)` denominator,
+but this recheck evaluates the underlying geometric sum
+`Σ 2^t m^{u−1−t}` **directly, never dividing**, and then confirms
+`geo·(m−2) = m^u − 2^u` separately. So `m = 1` is reached by the same code path as
+every other `m`, with no special case and no division by anything that could
+vanish. `b_min = r(2^u − 1)` at `m = 1` confirmed, and `P_k(1) = 1` exactly.
+
+### Theorems E–H, and the hazard in the paper's own counting code
+
+Theorems E and F are stated with `α_m = ln2/ln m` and a floor. `α_m` is
+irrational for odd `m > 1` — the paper's §25 proof is one line and correct — so
+the floor is well defined. But **the subject's own p05 counting code computes that
+floor in double precision**, and `k·α_m` runs arbitrarily close to integers.
+
+This recheck takes the exact integer predicate `m^u < 2^k` as the reference and
+reports every `k` where the float disagrees. Over `m ∈ {3,5,7,9,11,13}` and
+`k ≤ 3000`: **no disagreements**.
+
+Agreement over a range is weak on its own, so the margin was measured too, in
+60-digit arithmetic:
+
+| `m` | closest `k·α_m` comes to an integer | at `k` | double-error bound over the range | safety factor |
+|---|---|---|---|---|
+| 3 | `3.974 × 10⁻⁵` | **1054** | `4.203 × 10⁻¹³` | `9.45 × 10⁷` |
+
+`k = 1054` is not a coincidence: it is the convergent denominator of `ln2/ln3`
+(`665/1054`), exactly where a Diophantine near-miss is expected. The float floor
+is therefore safe **for a reason**, not by luck — and the reason comes with a
+number. Push `k` far enough that the Diophantine margin `~1/k` drops below
+`k·2⁻⁵³` and it would stop being safe; that is around `k ~ 10^8`, well outside
+anything the series computes.
+
+Theorems G and H measured on the exact boundary:
+
+| `m` | `P_10` | `P_40` | `P_160` | `P_640` |
+|---|---|---|---|---|
+| 1 | 1 | 1 | 1 | 1 |
+| 3 | 0.828 | 0.960 | 0.99944 | 0.99999999998 |
+| 5 | 0.377 | 0.215 | 0.0343 | 0.000213 |
+| 7 | 0.172 | 0.0403 | 9.15×10⁻⁵ | 8.90×10⁻¹⁴ |
+
+`P_k(3) → 1`, `P_k(5), P_k(7) → 0`, and `α_m = 1/2` exactly at `m = 4`. §37's
+claim that the one-step valuation density `2^{−j}` is independent of `(m, r)` for
+odd parameters is confirmed across all 20 pairs tested.
+
+## 7. All four rechecks were drilled
 
 A recheck that passed everything is worth what it could have caught.
 `code/ot_recheck_drill.py` perturbs each asserted formula by one term and
@@ -320,8 +385,14 @@ Paper 09 target:
 | **the referee itself**: `T` halves odd values too | nine checks cascade |
 | control: comment added | none |
 
-**27 defects planted across the three papers, 27 caught by the check named for
-them, 3 controls undisturbed.**
+Paper 07 target: all nine planted defects caught by the check named for each —
+the Theorem B exponent, the §5 recurrence, the `M_U` matrix entry, the §17
+geometric sum, §33's factor of `r`, the §21 threshold, the Theorem C residue
+sign, §47 using the minimum correction where the maximum is required, and the
+referee itself (which cascades into thirteen checks).
+
+**36 defects planted across the four papers, 36 caught by the check named for
+them, 4 controls undisturbed.**
 
 ### A gap the drill found, and what was done about it
 
@@ -374,11 +445,26 @@ independently re-derived:
 | `p05_binomial_and_k16_benchmark` | — | **re-derived** — block counts, class counts, and §24 reconciled term by term |
 | `p06_accelerated_affine_formula` | 1,364 | **re-derived**, on real orbits rather than formal tuples |
 | `p09_hard_height` | 8,167 | **re-derived**, plus Theorems B–D, §8, §44, §50, §56 |
-| `p07_generalized_mxr` | 11,325 | **not yet** |
+| `p07_generalized_mxr` | 11,325 | **re-derived**, over 24 `(m, r)` pairs, plus Theorems E–H |
 
-Remaining: Paper 07 (generalized `(mx+r)`), the Paper 05 KL constant, and Papers
-01, 03, 04, 08 and the Hard-Zeta program, whose content this arm has touched only
-where Papers 02/05/06/09 depend on it.
+**All six finite claim groups in the subject's `validation.json` are now
+independently re-derived**, each from the paper's own theorem statements rather
+than by re-running the subject's suite, and each drilled to confirm the checks
+could have failed.
+
+Remaining, in order of what this arm can usefully do next:
+
+- **Paper 05's KL constant** — the only numeric claim in the six groups not yet
+  re-derived from its own statement; small.
+- **Papers 01, 03, 04, 08** — touched only where Papers 02/05/06/07/09 depend on
+  them. Paper 03's cylinder statements are already covered as a by-product;
+  Paper 08's algebraic breakage ladder is the substantial one, and much of it is
+  about domains (zero divisors, noncommutative algebras, Möbius maps) where
+  "check it on integers" is not the right instrument.
+- **The Hard-Zeta research program** — the repair ledger's two content
+  corrections there (the `n ≥ 2` stopping domain integrated into the main
+  argument, and the invariant-measure route qualified) are the natural targets,
+  and both are statements this arm can check.
 
 Nothing in this report bears on the Collatz conjecture. Paper 09 §62 lists its
 own non-claims, and they stand: no uniform extinction depth, no closed bound on

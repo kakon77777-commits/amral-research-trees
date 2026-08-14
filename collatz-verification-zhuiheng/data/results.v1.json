@@ -394,6 +394,135 @@
         "note": "K/m runs through the convergents of log2 3, so a naive float test is not safe in general. On the tested range it happened to agree, and the closest ratio's margin is recorded so that agreement is not mistaken for a guarantee."
       }
     },
+    "paper_07_theorems": {
+      "parameters": {
+        "m": [
+          1,
+          3,
+          5,
+          7,
+          9,
+          11
+        ],
+        "r": [
+          1,
+          3,
+          5,
+          7
+        ],
+        "max_word_length": 8
+      },
+      "counts": {
+        "parameter_pairs": 24,
+        "transport_cases": 73248,
+        "concatenation_pairs": 30752,
+        "float_scan_k_max": 3000,
+        "float_scan_points": 18000
+      },
+      "checks": {
+        "P07_ThmA_generalized_affine_closure": true,
+        "P07_ThmB_correction_closed_form": true,
+        "P07_S5_correction_recurrence": true,
+        "P07_S8_matrix_representation": true,
+        "P07_ThmC_unique_residue_cylinder": true,
+        "P07_ThmD_transport_and_identityization": true,
+        "P07_S12_word_residue_bijection_survives": true,
+        "P07_S15_exact_recovery": true,
+        "P07_S17_minimum_correction_closed_geometric_form": true,
+        "P07_S18_maximum_correction_closed_form": true,
+        "P07_S19_m_equals_1_has_no_singularity": true,
+        "P07_S20_exact_descent_criterion": true,
+        "P07_S21_contracting_threshold_is_an_exact_iff": true,
+        "P07_S22_uniform_expansion": true,
+        "P07_S33_correction_is_linear_in_r": true,
+        "P07_S46_generalized_order_correction_width": true,
+        "P07_S47_order_uniform_threshold_covers_every_word": true,
+        "P07_S9_concatenation_law": true,
+        "P07_S25_no_word_has_neutral_slope": true,
+        "P07_ThmE_exact_contraction_boundary": true,
+        "P07_ThmEF_float_floor_agrees_with_the_exact_boundary": true,
+        "P07_ThmEF_float_floor_has_margin_not_luck": true,
+        "P07_ThmF_P_k_of_1_is_exactly_1": true,
+        "P07_ThmG_P_k_of_3_increases_towards_1": true,
+        "P07_ThmG_P_k_of_5_and_7_decrease_towards_0": true,
+        "P07_ThmH_critical_multiplier_is_4": true,
+        "P07_S37_valuation_density_independent_of_m_and_r": true
+      },
+      "all_pass": true,
+      "referee": "symbolic composition of D(x)=x/2 and U(x)=(mx+r)/2 on an affine form, assuming no theorem of the paper",
+      "coverage_beyond_subject_suite": "the subject's test_p07 covers affine data, residue coding and transport for m in {1,3,5,7,9}, r in {1,3,5}, k <= 7. It does not touch the matrix representation, the concatenation law, the closed geometric-sum bounds of §17/§18, the m=1 form of §19, the §21 threshold, §22 uniform expansion, Theorems E through H, §33's linearity in r, §46's width, §47's order-uniform threshold, or §37's valuation density for general (m, r).",
+      "m_equals_1_repair_verified": "The repair ledger records that Paper 07's theorem summary used ln m without restricting m > 1, and now states the logarithmic forms for odd m > 1 with P_k(1) = 1 recorded separately. Both halves are checked: the geometric sum is evaluated without ever dividing by (m-2), so m = 1 is reached with no singularity, and P_k(1) = 1 exactly.",
+      "float_floor_hazard": {
+        "claim": "Theorems E and F use floor(k * ln2/ln m); the subject's p05 counter computes it in double precision",
+        "reference": "the exact integer predicate m^u < 2^k",
+        "disagreements_found": [],
+        "margin": {
+          "3": {
+            "closest_k_alpha_to_an_integer": "3.974e-5",
+            "at_k": 1054,
+            "double_error_bound_over_range": "4.203e-13",
+            "margin_exceeds_error_bound_by": "9.454e+7"
+          },
+          "5": {
+            "closest_k_alpha_to_an_integer": "1.012e-4",
+            "at_k": 1493,
+            "double_error_bound_over_range": "2.869e-13",
+            "margin_exceeds_error_bound_by": "3.528e+8"
+          },
+          "7": {
+            "closest_k_alpha_to_an_integer": "1.209e-4",
+            "at_k": 1603,
+            "double_error_bound_over_range": "2.373e-13",
+            "margin_exceeds_error_bound_by": "5.097e+8"
+          },
+          "9": {
+            "closest_k_alpha_to_an_integer": "3.974e-5",
+            "at_k": 2108,
+            "double_error_bound_over_range": "2.101e-13",
+            "margin_exceeds_error_bound_by": "1.891e+8"
+          },
+          "11": {
+            "closest_k_alpha_to_an_integer": "2.978e-4",
+            "at_k": 128,
+            "double_error_bound_over_range": "1.926e-13",
+            "margin_exceeds_error_bound_by": "1.546e+9"
+          },
+          "13": {
+            "closest_k_alpha_to_an_integer": "4.972e-5",
+            "at_k": 840,
+            "double_error_bound_over_range": "1.800e-13",
+            "margin_exceeds_error_bound_by": "2.762e+8"
+          }
+        },
+        "conclusion": "The float floor is safe over the scanned range, and safe for a reason rather than by luck: the closest k*alpha_m ever comes to an integer is bounded below by a Diophantine margin that exceeds the accumulated double-precision error by many orders of magnitude. For m = 3 the worst case in range lands exactly at k = 1054, the convergent denominator of ln2/ln3."
+      },
+      "cylinder_density_measured": {
+        "1": {
+          "10": 1.0,
+          "40": 1.0,
+          "160": 1.0,
+          "640": 1.0
+        },
+        "3": {
+          "10": 0.828125,
+          "40": 0.9596547661240038,
+          "160": 0.999438547401883,
+          "640": 0.9999999999841857
+        },
+        "5": {
+          "10": 0.376953125,
+          "40": 0.21479525392169307,
+          "160": 0.03434114602060316,
+          "640": 0.00021311895390923946
+        },
+        "7": {
+          "10": 0.171875,
+          "40": 0.0403452338759962,
+          "160": 9.154824725682481e-05,
+          "640": 8.903510778709253e-14
+        }
+      }
+    },
     "paper_09_theorems": {
       "max_word_length": 11,
       "counts": {
@@ -483,6 +612,13 @@
             "601"
           ]
         },
+        "code/ot_paper07_recheck.py": {
+          "baseline_checks": 27,
+          "args": [
+            "6",
+            "300"
+          ]
+        },
         "code/ot_paper09_recheck.py": {
           "baseline_checks": 13,
           "args": [
@@ -491,10 +627,10 @@
           ]
         }
       },
-      "defects_planted": 27,
-      "defects_caught_by_the_named_check": 27,
-      "controls_planted": 3,
-      "controls_undisturbed": 3,
+      "defects_planted": 36,
+      "defects_caught_by_the_named_check": 36,
+      "controls_planted": 4,
+      "controls_undisturbed": 4,
       "anomalies": [],
       "note": "each planted defect had to be caught by the check named for it, not merely by some check"
     }
@@ -512,11 +648,12 @@
     "code/mutation_drill.py": "8d381dc10c5da83dc0049b96d629ce6d108e4de471d64d10fbdde50786131825",
     "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
     "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
-    "code/build_results.py": "f3410c7b8e5f0ca5053452dab9ddf41f85e583192b7abeea0776a2c8fbec876b",
+    "code/build_results.py": "94a1c0d9d8f1e3108f860165d256c85781c0f3cd967aad3c2b02eed27ea062fb",
     "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab",
     "code/ot_paper02_recheck.py": "50b3b733ced47a25078b16a71f7c120696d0ce60d43822b464abbc2f0010591d",
     "code/ot_paper06_recheck.py": "82851076cec9f416dc100fefe8bc5d5b6e635d97e9b791df23dccf804906d077",
+    "code/ot_paper07_recheck.py": "0e438242e202d6027317ce50eb1964577b2ecd982e960151af4fcd2c066c5e7f",
     "code/ot_paper09_recheck.py": "69d8b6225bf14447758a415dd6b4350b157c4f603fb9140105817d4787f41c88",
-    "code/ot_recheck_drill.py": "da9f71310b44720deab98fa79da267774e8214276eff8af4bbc02af7ff2401ef"
+    "code/ot_recheck_drill.py": "b68615f98b711da16746280d65860ae2a69add39a9fb830ac7bc29e44bdd0a8c"
   }
 }

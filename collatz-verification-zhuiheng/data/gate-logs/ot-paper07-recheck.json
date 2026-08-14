@@ -1,0 +1,181 @@
+{
+  "tool": "ot_paper07_recheck.py",
+  "subject": "Collatz Operation Translation Series — Paper 07 v0.1.1 (Neo.K)",
+  "scope": "exact finite algebra and exact integer counting; not a Collatz proof",
+  "parameters": {
+    "m": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "r": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "max_word_length": 8
+  },
+  "checks": {
+    "P07_ThmA_generalized_affine_closure": {
+      "pass": true
+    },
+    "P07_ThmB_correction_closed_form": {
+      "pass": true
+    },
+    "P07_S5_correction_recurrence": {
+      "pass": true
+    },
+    "P07_S8_matrix_representation": {
+      "pass": true
+    },
+    "P07_ThmC_unique_residue_cylinder": {
+      "pass": true
+    },
+    "P07_ThmD_transport_and_identityization": {
+      "pass": true
+    },
+    "P07_S12_word_residue_bijection_survives": {
+      "pass": true
+    },
+    "P07_S15_exact_recovery": {
+      "pass": true
+    },
+    "P07_S17_minimum_correction_closed_geometric_form": {
+      "pass": true
+    },
+    "P07_S18_maximum_correction_closed_form": {
+      "pass": true
+    },
+    "P07_S19_m_equals_1_has_no_singularity": {
+      "pass": true
+    },
+    "P07_S20_exact_descent_criterion": {
+      "pass": true
+    },
+    "P07_S21_contracting_threshold_is_an_exact_iff": {
+      "pass": true
+    },
+    "P07_S22_uniform_expansion": {
+      "pass": true
+    },
+    "P07_S33_correction_is_linear_in_r": {
+      "pass": true
+    },
+    "P07_S46_generalized_order_correction_width": {
+      "pass": true
+    },
+    "P07_S47_order_uniform_threshold_covers_every_word": {
+      "pass": true
+    },
+    "P07_S9_concatenation_law": {
+      "pass": true
+    },
+    "P07_S25_no_word_has_neutral_slope": {
+      "pass": true
+    },
+    "P07_ThmE_exact_contraction_boundary": {
+      "pass": true
+    },
+    "P07_ThmEF_float_floor_agrees_with_the_exact_boundary": {
+      "pass": true
+    },
+    "P07_ThmEF_float_floor_has_margin_not_luck": {
+      "pass": true
+    },
+    "P07_ThmF_P_k_of_1_is_exactly_1": {
+      "pass": true
+    },
+    "P07_ThmG_P_k_of_3_increases_towards_1": {
+      "pass": true
+    },
+    "P07_ThmG_P_k_of_5_and_7_decrease_towards_0": {
+      "pass": true
+    },
+    "P07_ThmH_critical_multiplier_is_4": {
+      "pass": true
+    },
+    "P07_S37_valuation_density_independent_of_m_and_r": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "parameter_pairs": 24,
+    "transport_cases": 73248,
+    "concatenation_pairs": 30752,
+    "float_scan_k_max": 3000,
+    "float_scan_points": 18000
+  },
+  "measured": {
+    "float_floor_disagreements": [],
+    "float_floor_margin": {
+      "3": {
+        "closest_k_alpha_to_an_integer": "3.974e-5",
+        "at_k": 1054,
+        "double_error_bound_over_range": "4.203e-13",
+        "margin_exceeds_error_bound_by": "9.454e+7"
+      },
+      "5": {
+        "closest_k_alpha_to_an_integer": "1.012e-4",
+        "at_k": 1493,
+        "double_error_bound_over_range": "2.869e-13",
+        "margin_exceeds_error_bound_by": "3.528e+8"
+      },
+      "7": {
+        "closest_k_alpha_to_an_integer": "1.209e-4",
+        "at_k": 1603,
+        "double_error_bound_over_range": "2.373e-13",
+        "margin_exceeds_error_bound_by": "5.097e+8"
+      },
+      "9": {
+        "closest_k_alpha_to_an_integer": "3.974e-5",
+        "at_k": 2108,
+        "double_error_bound_over_range": "2.101e-13",
+        "margin_exceeds_error_bound_by": "1.891e+8"
+      },
+      "11": {
+        "closest_k_alpha_to_an_integer": "2.978e-4",
+        "at_k": 128,
+        "double_error_bound_over_range": "1.926e-13",
+        "margin_exceeds_error_bound_by": "1.546e+9"
+      },
+      "13": {
+        "closest_k_alpha_to_an_integer": "4.972e-5",
+        "at_k": 840,
+        "double_error_bound_over_range": "1.800e-13",
+        "margin_exceeds_error_bound_by": "2.762e+8"
+      }
+    },
+    "cylinder_density_P_k_m": {
+      "1": {
+        "10": 1.0,
+        "40": 1.0,
+        "160": 1.0,
+        "640": 1.0
+      },
+      "3": {
+        "10": 0.828125,
+        "40": 0.9596547661240038,
+        "160": 0.999438547401883,
+        "640": 0.9999999999841857
+      },
+      "5": {
+        "10": 0.376953125,
+        "40": 0.21479525392169307,
+        "160": 0.03434114602060316,
+        "640": 0.00021311895390923946
+      },
+      "7": {
+        "10": 0.171875,
+        "40": 0.0403452338759962,
+        "160": 9.154824725682481e-05,
+        "640": 8.903510778709253e-14
+      }
+    }
+  },
+  "failures": [],
+  "ok": true
+}

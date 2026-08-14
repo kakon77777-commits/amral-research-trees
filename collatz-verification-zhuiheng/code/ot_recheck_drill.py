@@ -168,11 +168,59 @@ P09_MUTATIONS = [
      []),
 ]
 
+P07_MUTATIONS = [
+    ("G01-thmB-exponent", "Theorem B closed form uses m^{u-t+1}",
+     "    return r * sum(2 ** (jt - 1) * m ** (u - t) for t, jt in enumerate(pos, start=1))",
+     "    return r * sum(2 ** (jt - 1) * m ** (u - t + 1) for t, jt in enumerate(pos, start=1))",
+     ["P07_ThmB_correction_closed_form"]),
+    ("G02-recurrence", "the §5 recurrence injects r*2^k instead of r*2^{|w|}",
+     "                    if (bh if w[-1] == \"D\" else m * bh + r * 2 ** (k - 1)) != B:",
+     "                    if (bh if w[-1] == \"D\" else m * bh + r * 2 ** k) != B:",
+     ["P07_S5_correction_recurrence"]),
+    ("G03-matrix-entry", "§8 uses M_U = [[m, 2r], [0, 2]]",
+     "        n00, n01, n11 = (1, 0, 2) if c == \"D\" else (m, r, 2)",
+     "        n00, n01, n11 = (1, 0, 2) if c == \"D\" else (m, 2 * r, 2)",
+     ["P07_S8_matrix_representation"]),
+    ("G04-geometric-sum", "the §17 geometric sum starts one power of two too high",
+     "                geo = sum(2 ** t * m ** (u - 1 - t) for t in range(u))  # exact, no division",
+     "                geo = sum(2 ** (t + 1) * m ** (u - 1 - t) for t in range(u))",
+     ["P07_S17_minimum_correction_closed_geometric_form"]),
+    ("G05-r-linearity", "§33 drops the factor of r",
+     "                if B != r * compose(w, m, 1)[1]:",
+     "                if B != compose(w, m, 1)[1]:",
+     ["P07_S33_correction_is_linear_in_r"]),
+    ("G06-threshold", "the §21 threshold drops the +1",
+     "                        theta = B // (2 ** k - m ** u) + 1",
+     "                        theta = B // (2 ** k - m ** u)",
+     ["P07_S21_contracting_threshold_is_an_exact_iff"]),
+    # The residue line appears twice in the target (main loop and the §47
+    # block), so the anchor carries its following line to stay unique.
+    ("G07-residue-sign", "Theorem C uses m^{+u} instead of m^{-u}",
+     "                rw = (-B * pow(m, -u, 2 ** k)) % 2 ** k\n"
+     "                sw = Fraction(m ** u * rw + B, 2 ** k)",
+     "                rw = (-B * pow(m, u, 2 ** k)) % 2 ** k\n"
+     "                sw = Fraction(m ** u * rw + B, 2 ** k)",
+     ["P07_S12_word_residue_bijection_survives"]),
+    ("G08-order-threshold", "§47 uses the minimum correction instead of the maximum",
+     "                    Theta = (r * 2 ** (k - u) * geo) // (2 ** k - m ** u) + 1",
+     "                    Theta = (r * geo) // (2 ** k - m ** u) + 1",
+     ["P07_S47_order_uniform_threshold_covers_every_word"]),
+    ("G09-referee-broken", "the referee itself: U injects 2r instead of r",
+     "            A, B, Dn = m * A, m * B + r * Dn, 2 * Dn",
+     "            A, B, Dn = m * A, m * B + 2 * r * Dn, 2 * Dn",
+     ["P07_ThmB_correction_closed_form", "P07_S8_matrix_representation"]),
+    ("NULL-04", "control: a comment is added",
+     "def b_closed(word: str, m: int, r: int) -> int:",
+     "# control mutation, no behavioural change\ndef b_closed(word: str, m: int, r: int) -> int:",
+     []),
+]
+
 TARGETS = [
     ("code/ot_paper02_recheck.py", P02_MUTATIONS, [str(DRILL_K)]),
     ("code/ot_paper06_recheck.py", P06_MUTATIONS, [str(DRILL_ODD_LIMIT)]),
     # block_exp must stay 20: the section 24 accounting checks are about
     # 1 <= n < 2^20 specifically, and would be vacuous at any other width.
+    ("code/ot_paper07_recheck.py", P07_MUTATIONS, ["6", "300"]),
     ("code/ot_paper09_recheck.py", P09_MUTATIONS, ["7", "20"]),
 ]
 

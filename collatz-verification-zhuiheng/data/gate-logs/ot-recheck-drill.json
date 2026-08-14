@@ -13,6 +13,13 @@
         "601"
       ]
     },
+    "code/ot_paper07_recheck.py": {
+      "baseline_checks": 27,
+      "args": [
+        "6",
+        "300"
+      ]
+    },
     "code/ot_paper09_recheck.py": {
       "baseline_checks": 13,
       "args": [
@@ -295,6 +302,143 @@
       "as_expected": true
     },
     {
+      "id": "G01-thmB-exponent",
+      "target": "code/ot_paper07_recheck.py",
+      "description": "Theorem B closed form uses m^{u-t+1}",
+      "expected_failing_checks": [
+        "P07_ThmB_correction_closed_form"
+      ],
+      "observed_failing_checks": [
+        "P07_ThmB_correction_closed_form"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "G02-recurrence",
+      "target": "code/ot_paper07_recheck.py",
+      "description": "the §5 recurrence injects r*2^k instead of r*2^{|w|}",
+      "expected_failing_checks": [
+        "P07_S5_correction_recurrence"
+      ],
+      "observed_failing_checks": [
+        "P07_S5_correction_recurrence"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "G03-matrix-entry",
+      "target": "code/ot_paper07_recheck.py",
+      "description": "§8 uses M_U = [[m, 2r], [0, 2]]",
+      "expected_failing_checks": [
+        "P07_S8_matrix_representation"
+      ],
+      "observed_failing_checks": [
+        "P07_S8_matrix_representation"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "G04-geometric-sum",
+      "target": "code/ot_paper07_recheck.py",
+      "description": "the §17 geometric sum starts one power of two too high",
+      "expected_failing_checks": [
+        "P07_S17_minimum_correction_closed_geometric_form"
+      ],
+      "observed_failing_checks": [
+        "P07_S17_minimum_correction_closed_geometric_form",
+        "P07_S18_maximum_correction_closed_form",
+        "P07_S46_generalized_order_correction_width"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "G05-r-linearity",
+      "target": "code/ot_paper07_recheck.py",
+      "description": "§33 drops the factor of r",
+      "expected_failing_checks": [
+        "P07_S33_correction_is_linear_in_r"
+      ],
+      "observed_failing_checks": [
+        "P07_S33_correction_is_linear_in_r"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "G06-threshold",
+      "target": "code/ot_paper07_recheck.py",
+      "description": "the §21 threshold drops the +1",
+      "expected_failing_checks": [
+        "P07_S21_contracting_threshold_is_an_exact_iff"
+      ],
+      "observed_failing_checks": [
+        "P07_S21_contracting_threshold_is_an_exact_iff"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "G07-residue-sign",
+      "target": "code/ot_paper07_recheck.py",
+      "description": "Theorem C uses m^{+u} instead of m^{-u}",
+      "expected_failing_checks": [
+        "P07_S12_word_residue_bijection_survives"
+      ],
+      "observed_failing_checks": [
+        "P07_ThmC_unique_residue_cylinder",
+        "P07_ThmD_transport_and_identityization",
+        "P07_S12_word_residue_bijection_survives",
+        "P07_S15_exact_recovery",
+        "P07_S20_exact_descent_criterion",
+        "P07_S21_contracting_threshold_is_an_exact_iff",
+        "P07_S22_uniform_expansion"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "G08-order-threshold",
+      "target": "code/ot_paper07_recheck.py",
+      "description": "§47 uses the minimum correction instead of the maximum",
+      "expected_failing_checks": [
+        "P07_S47_order_uniform_threshold_covers_every_word"
+      ],
+      "observed_failing_checks": [
+        "P07_S47_order_uniform_threshold_covers_every_word"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "G09-referee-broken",
+      "target": "code/ot_paper07_recheck.py",
+      "description": "the referee itself: U injects 2r instead of r",
+      "expected_failing_checks": [
+        "P07_ThmB_correction_closed_form",
+        "P07_S8_matrix_representation"
+      ],
+      "observed_failing_checks": [
+        "P07_ThmB_correction_closed_form",
+        "P07_S5_correction_recurrence",
+        "P07_S8_matrix_representation",
+        "P07_ThmD_transport_and_identityization",
+        "P07_S12_word_residue_bijection_survives",
+        "P07_S15_exact_recovery",
+        "P07_S17_minimum_correction_closed_geometric_form",
+        "P07_S18_maximum_correction_closed_form",
+        "P07_S19_m_equals_1_has_no_singularity",
+        "P07_S20_exact_descent_criterion",
+        "P07_S21_contracting_threshold_is_an_exact_iff",
+        "P07_S22_uniform_expansion",
+        "P07_S46_generalized_order_correction_width"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "NULL-04",
+      "target": "code/ot_paper07_recheck.py",
+      "description": "control: a comment is added",
+      "expected_failing_checks": [],
+      "observed_failing_checks": [],
+      "as_expected": true
+    },
+    {
       "id": "F01-hard-height-max",
       "target": "code/ot_paper09_recheck.py",
       "description": "hard height takes the max over contracting prefixes, not the min",
@@ -409,10 +553,10 @@
       "as_expected": true
     }
   ],
-  "defects_planted": 27,
-  "defects_caught_by_the_named_check": 27,
-  "controls_planted": 3,
-  "controls_undisturbed": 3,
+  "defects_planted": 36,
+  "defects_caught_by_the_named_check": 36,
+  "controls_planted": 4,
+  "controls_undisturbed": 4,
   "anomalies": [],
   "ok": true
 }
