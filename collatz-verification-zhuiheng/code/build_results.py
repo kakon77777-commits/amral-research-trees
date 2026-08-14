@@ -33,6 +33,7 @@ CODE_FILES = [
     "code/run_verification.sh",
     "code/ot_paper02_recheck.py",
     "code/ot_paper06_recheck.py",
+    "code/ot_paper05_kl_recheck.py",
     "code/ot_paper07_recheck.py",
     "code/ot_paper09_recheck.py",
     "code/ot_recheck_drill.py",
@@ -71,6 +72,7 @@ def main() -> int:
     reference = load_gate("reference-crosscheck.json")
     ot_recheck = load_gate("ot-paper02-recheck.json")
     ot_p06 = load_gate("ot-paper06-recheck.json")
+    ot_kl = load_gate("ot-paper05-kl-recheck.json")
     ot_p07 = load_gate("ot-paper07-recheck.json")
     ot_p09 = load_gate("ot-paper09-recheck.json")
     ot_drill = load_gate("ot-recheck-drill.json")
@@ -87,6 +89,7 @@ def main() -> int:
     for name, gate, key in (
         ("Paper 02 recheck", ot_recheck, "ok"),
         ("Paper 06 recheck", ot_p06, "ok"),
+        ("Paper 05 KL recheck", ot_kl, "ok"),
         ("Paper 07 recheck", ot_p07, "ok"),
         ("Paper 09 recheck", ot_p09, "ok"),
         ("recheck drill", ot_drill, "ok"),
@@ -216,6 +219,30 @@ def main() -> int:
                 "equality_witnesses_explained": (
                     "the two equality cases are n=1 and n=2, the elements of the trivial "
                     "cycle; T has period 2 there and 16 is even, so they are forced"
+                ),
+            },
+            "paper_05_kl_constant": {
+                "checks": {k: (v.get("pass") if "pass" in v else v.get("subject_claim_holds"))
+                           for k, v in ot_kl["checks"].items()},
+                "instrument_sound": ot_kl["ok"],
+                "subject_findings": ot_kl["subject_findings"],
+                "stated_limits": ot_kl["stated_limits"],
+                "high_precision": ot_kl["measured"]["high_precision"],
+                "what_was_added": (
+                    "The subject asserts |D - 0.03468818523201744| < 1e-14 where D is "
+                    "computed by the same float expression the literal came from — a "
+                    "self-comparison that cannot fail. Here the constant is recomputed at 60 "
+                    "digits and compared against the real value, and its ROLE is verified on "
+                    "exact binomial tails: 1 - P_k <= exp(-kD) holds at every k tested, and "
+                    "-(ln(1-P_k) + kD) - (1/2)ln k stays bounded instead of drifting linearly, "
+                    "which is what would happen if D were the wrong rate."
+                ),
+                "finding_summary": (
+                    "The published KL literal is 2.79 ULP from the real value. It is exactly "
+                    "what the stated float expression emits, so it is accumulated rounding "
+                    "rather than a typo, but it is not the nearest double: the 17th "
+                    "significant digit reads ...744 where the real value rounds to ...746. "
+                    "Nothing in the series depends on that digit."
                 ),
             },
             "paper_02_theorems": {

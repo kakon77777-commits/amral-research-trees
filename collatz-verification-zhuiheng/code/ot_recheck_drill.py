@@ -215,6 +215,34 @@ P07_MUTATIONS = [
      []),
 ]
 
+P05KL_MUTATIONS = [
+    # The relative-error check divided by D unguarded, so a mutation that made D
+    # negative slipped past it. Guarded now, and this mutation re-aimed at it.
+    ("H01-kl-formula", "the KL divergence divides by 2 instead of by 1/2",
+     '    return a * (a / Decimal("0.5")).ln() + (1 - a) * ((1 - a) / Decimal("0.5")).ln()',
+     '    return a * (a / Decimal("2")).ln() + (1 - a) * ((1 - a) / Decimal("2")).ln()',
+     ["P05_published_KL_agrees_with_the_real_value_to_16_significant_digits"]),
+    ("H02-u-max-exponent", "the exact class boundary is one power of two too low",
+     "    while p * 3 < 2 ** k:",
+     "    while p * 3 < 2 ** (k - 1):",
+     ["P05_exact_class_boundary_agrees_with_the_independent_float_route"]),
+    # The complementarity check used to re-derive the tail inline, so mutating
+    # the tail function left it untouched. It now goes through exact_tail_count,
+    # which is what this mutation perturbs.
+    ("H03-tail-start", "the upper tail starts at u_max instead of u_max + 1",
+     "    return sum(comb(k, u) for u in range(u_max + 1, k + 1))",
+     "    return sum(comb(k, u) for u in range(u_max, k + 1))",
+     ["P05_contracting_fraction_and_tail_are_exact_complements"]),
+    ("H04-alpha-inverted", "alpha is computed as ln3/ln2",
+     "    return Decimal(2).ln() / Decimal(3).ln()",
+     "    return Decimal(3).ln() / Decimal(2).ln()",
+     ["P05_published_alpha_is_the_nearest_double_to_the_real_value"]),
+    ("NULL-05", "control: a comment is added",
+     "def hp_kl(a: Decimal) -> Decimal:",
+     "# control mutation, no behavioural change\ndef hp_kl(a: Decimal) -> Decimal:",
+     []),
+]
+
 TARGETS = [
     ("code/ot_paper02_recheck.py", P02_MUTATIONS, [str(DRILL_K)]),
     ("code/ot_paper06_recheck.py", P06_MUTATIONS, [str(DRILL_ODD_LIMIT)]),
@@ -222,6 +250,7 @@ TARGETS = [
     # 1 <= n < 2^20 specifically, and would be vacuous at any other width.
     ("code/ot_paper07_recheck.py", P07_MUTATIONS, ["6", "300"]),
     ("code/ot_paper09_recheck.py", P09_MUTATIONS, ["7", "20"]),
+    ("code/ot_paper05_kl_recheck.py", P05KL_MUTATIONS, []),
 ]
 
 
@@ -280,11 +309,22 @@ def main() -> int:
                 if out is None:
                     failed_checks = ["<crashed>"]
                 else:
-                    failed_checks = [n for n, c in out["checks"].items() if not c["pass"]]
+                    # Only entries carrying a "pass" key are the recheck's own
+                    # checks. Some rechecks also record `subject_claim_holds`
+                    # entries — findings about the subject, which are meant to be
+                    # false when the subject has a defect and must not be counted
+                    # as the instrument failing, or every control would look
+                    # disturbed.
+                    failed_checks = [n for n, c in out["checks"].items()
+                                     if "pass" in c and not c["pass"]]
 
                 if expected:
-                    caught = all(e in failed_checks for e in expected)
-                    verdict = "caught" if caught else "SURVIVED / WRONG CHECK"
+                    # A mutant that cannot produce a result at all has been
+                    # detected, though less informatively than by a named check.
+                    crashed = failed_checks == ["<crashed>"]
+                    caught = crashed or all(e in failed_checks for e in expected)
+                    verdict = ("caught (crashed, not by a named check)" if crashed
+                               else "caught" if caught else "SURVIVED / WRONG CHECK")
                 else:
                     caught = not failed_checks
                     verdict = "clean (control)" if caught else "CONTROL DISTURBED"

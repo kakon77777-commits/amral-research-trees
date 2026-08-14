@@ -16,9 +16,10 @@ said at the time rather than only that they were said to pass.
 | `ot-package-integrity.txt` | the subject package's *own* `tools/verify_series.py`, run against the copy archived at `../../../collatz-ot-series-neok/`. Not this arm's verifier — the author's, run on the committed bytes. |
 | `ot-paper02-recheck.json` | `code/ot_paper02_recheck.py 16` — independent re-derivation of Paper 02 of Neo.K's Operation Translation Series |
 | `ot-paper06-recheck.json` | `code/ot_paper06_recheck.py 20001` — the same for Paper 06, on real admissible orbits |
+| `ot-paper05-kl-recheck.json` | `code/ot_paper05_kl_recheck.py` — the KL constant, at 60 digits and on exact binomial tails. Separates instrument soundness from subject findings. |
 | `ot-paper07-recheck.json` | `code/ot_paper07_recheck.py 8 3000` — the same for Paper 07, over 24 (m, r) parameter pairs, including the floating-floor margin analysis |
 | `ot-paper09-recheck.json` | `code/ot_paper09_recheck.py 11 20` — the same for Paper 09, including K(2^40) linked to the archived exhaustive run |
-| `ot-recheck-drill.json` | `code/ot_recheck_drill.py` — the falsifiability drill for all four rechecks |
+| `ot-recheck-drill.json` | `code/ot_recheck_drill.py` — the falsifiability drill for all five rechecks |
 | `ot-recheck-drill.progress.txt` | the same run's stderr, one line per planted defect |
 | `ot-paper05-block-benchmark.json` | `collatz_verify.exe --block 16 --to 1048576` — independent reproduction of the series' Paper 05 `k=16` descent counts |
 

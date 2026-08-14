@@ -318,6 +318,53 @@
       "independence": "computed in Rust from this arm's k-step congruence tables, a single table lookup per n, versus the subject's Python step-by-step iteration",
       "equality_witnesses_explained": "the two equality cases are n=1 and n=2, the elements of the trivial cycle; T has period 2 there and 16 is even, so they are forced"
     },
+    "paper_05_kl_constant": {
+      "checks": {
+        "P05_published_literals_are_the_faithful_double_output_of_the_stated_expression": true,
+        "P05_published_KL_agrees_with_the_real_value_to_16_significant_digits": true,
+        "P05_published_KL_is_the_nearest_double_to_the_real_value": false,
+        "P05_published_alpha_is_the_nearest_double_to_the_real_value": true,
+        "P05_KL_is_strictly_positive_because_alpha_exceeds_one_half": true,
+        "P05_KL_vanishes_exactly_at_alpha_one_half": true,
+        "P05_KL_upper_bound_holds_on_every_exact_tail": true,
+        "P05_exact_class_boundary_agrees_with_the_independent_float_route": true,
+        "P05_contracting_fraction_and_tail_are_exact_complements": true,
+        "P05_KL_is_the_actual_decay_rate_of_the_non_contracting_fraction": true,
+        "P05_KL_rate_offset_does_not_drift_with_k": true,
+        "P05_KL_rate_test_rejects_a_one_percent_wrong_constant": true
+      },
+      "instrument_sound": true,
+      "subject_findings": [
+        {
+          "claim": "P05_published_KL_is_the_nearest_double_to_the_real_value",
+          "detail": "published 0.03468818523201744 is 2.79 ULP from the real value; the nearest double is 0.03468818523201746. The literal is the faithful output of the stated float expression, so this is accumulated rounding rather than a typo, and only the 17th significant digit is affected."
+        }
+      ],
+      "stated_limits": [
+        {
+          "limit": "sensitivity of the KL rate test",
+          "at_k": 8000,
+          "smallest_relative_error_in_D_this_resolves": "0.72%",
+          "formula": "a relative error eps needs k of order 2/(eps*D) to clear the O(1) window",
+          "measured_non_detection": "a 0.1% wrong D gives offset -0.663 at k=8000, inside the window, so it is not rejected — as the formula predicts",
+          "consequence": "the rate test confirms D is the decay rate to about one part in a hundred; the 60-digit digit comparison is what pins it further"
+        }
+      ],
+      "high_precision": {
+        "alpha_30_digits": "0.630929753571457437099527114342",
+        "KL_30_digits": "0.034688185232017459384287451545",
+        "published_alpha": "0.6309297535714574",
+        "published_KL": "0.03468818523201744",
+        "KL_abs_error": "1.9384e-17",
+        "KL_rel_error": "5.5882e-16",
+        "KL_error_in_ULP": "2.79",
+        "KL_nearest_double_to_real_value": "0.03468818523201746",
+        "KL_last_reliable_significant_digit": 16,
+        "note": "The published KL literal is exactly what the stated float expression produces, so it is not a typo. It is 2.79 ULP from the real value because the expression accumulates rounding, so its 17th significant digit is wrong: the real value continues ...45938, the literal states ...44. The subject's own assertion cannot detect this, because it compares that same float computation against the literal with a 1e-14 tolerance — a self-comparison. Nothing in the series depends on the 17th digit; this is a precision-reporting defect, not a mathematical one."
+      },
+      "what_was_added": "The subject asserts |D - 0.03468818523201744| < 1e-14 where D is computed by the same float expression the literal came from — a self-comparison that cannot fail. Here the constant is recomputed at 60 digits and compared against the real value, and its ROLE is verified on exact binomial tails: 1 - P_k <= exp(-kD) holds at every k tested, and -(ln(1-P_k) + kD) - (1/2)ln k stays bounded instead of drifting linearly, which is what would happen if D were the wrong rate.",
+      "finding_summary": "The published KL literal is 2.79 ULP from the real value. It is exactly what the stated float expression emits, so it is accumulated rounding rather than a typo, but it is not the nearest double: the 17th significant digit reads ...744 where the real value rounds to ...746. Nothing in the series depends on that digit."
+    },
     "paper_02_theorems": {
       "max_word_length": 16,
       "counts": {
@@ -625,12 +672,16 @@
             "7",
             "20"
           ]
+        },
+        "code/ot_paper05_kl_recheck.py": {
+          "baseline_checks": 12,
+          "args": []
         }
       },
-      "defects_planted": 36,
-      "defects_caught_by_the_named_check": 36,
-      "controls_planted": 4,
-      "controls_undisturbed": 4,
+      "defects_planted": 40,
+      "defects_caught_by_the_named_check": 40,
+      "controls_planted": 5,
+      "controls_undisturbed": 5,
       "anomalies": [],
       "note": "each planted defect had to be caught by the check named for it, not merely by some check"
     }
@@ -648,12 +699,13 @@
     "code/mutation_drill.py": "8d381dc10c5da83dc0049b96d629ce6d108e4de471d64d10fbdde50786131825",
     "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
     "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
-    "code/build_results.py": "94a1c0d9d8f1e3108f860165d256c85781c0f3cd967aad3c2b02eed27ea062fb",
+    "code/build_results.py": "11149551dcf46a1b85a51215e78a9b556044fbfe3349b619088c808bd99fe53e",
     "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab",
     "code/ot_paper02_recheck.py": "50b3b733ced47a25078b16a71f7c120696d0ce60d43822b464abbc2f0010591d",
     "code/ot_paper06_recheck.py": "82851076cec9f416dc100fefe8bc5d5b6e635d97e9b791df23dccf804906d077",
+    "code/ot_paper05_kl_recheck.py": "97ed0a1b0e2c133b087aca698dc11e5fa14bf9b526222942b83b08b2cae0c6b9",
     "code/ot_paper07_recheck.py": "0e438242e202d6027317ce50eb1964577b2ecd982e960151af4fcd2c066c5e7f",
     "code/ot_paper09_recheck.py": "69d8b6225bf14447758a415dd6b4350b157c4f603fb9140105817d4787f41c88",
-    "code/ot_recheck_drill.py": "b68615f98b711da16746280d65860ae2a69add39a9fb830ac7bc29e44bdd0a8c"
+    "code/ot_recheck_drill.py": "9398eb693a14a1fd250a739587941505235a72e0247a56fa87565380e5827e57"
   }
 }

@@ -1,0 +1,177 @@
+{
+  "tool": "ot_paper05_kl_recheck.py",
+  "subject": "Collatz Operation Translation Series — Paper 05 / validation.json (Neo.K)",
+  "scope": "exact binomial tails and 60-digit arithmetic; not a Collatz proof",
+  "checks": {
+    "P05_published_literals_are_the_faithful_double_output_of_the_stated_expression": {
+      "pass": true
+    },
+    "P05_published_KL_agrees_with_the_real_value_to_16_significant_digits": {
+      "pass": true,
+      "detail": "relative error 5.588e-16, D = 3.468819e-2"
+    },
+    "P05_published_KL_is_the_nearest_double_to_the_real_value": {
+      "subject_claim_holds": false,
+      "detail": "published 0.03468818523201744 is 2.79 ULP from the real value; the nearest double is 0.03468818523201746. The literal is the faithful output of the stated float expression, so this is accumulated rounding rather than a typo, and only the 17th significant digit is affected."
+    },
+    "P05_published_alpha_is_the_nearest_double_to_the_real_value": {
+      "pass": true,
+      "detail": "|alpha - published| = 3.710e-17"
+    },
+    "P05_KL_is_strictly_positive_because_alpha_exceeds_one_half": {
+      "pass": true
+    },
+    "P05_KL_vanishes_exactly_at_alpha_one_half": {
+      "pass": true
+    },
+    "P05_KL_upper_bound_holds_on_every_exact_tail": {
+      "pass": true
+    },
+    "P05_exact_class_boundary_agrees_with_the_independent_float_route": {
+      "pass": true
+    },
+    "P05_contracting_fraction_and_tail_are_exact_complements": {
+      "pass": true
+    },
+    "P05_KL_is_the_actual_decay_rate_of_the_non_contracting_fraction": {
+      "pass": true,
+      "detail": "offsets ['-0.262', '-0.063', '-0.501', '-0.375', '-0.640', '-0.608', '-0.535', '-0.386']"
+    },
+    "P05_KL_rate_offset_does_not_drift_with_k": {
+      "pass": true,
+      "detail": "offset moved 0.123 between k=50 and k=8000"
+    },
+    "P05_KL_rate_test_rejects_a_one_percent_wrong_constant": {
+      "pass": true,
+      "detail": "offsets under wrong D: {'1.02': {'1000': '-1.334', '8000': '-5.936', 'rejected_at_k_max': True}, '1.01': {'1000': '-0.987', '8000': '-3.161', 'rejected_at_k_max': True}, '1.001': {'1000': '-0.675', '8000': '-0.663', 'rejected_at_k_max': False}, '0.999': {'1000': '-0.606', '8000': '-0.108', 'rejected_at_k_max': False}}"
+    }
+  },
+  "subject_findings": [
+    {
+      "claim": "P05_published_KL_is_the_nearest_double_to_the_real_value",
+      "detail": "published 0.03468818523201744 is 2.79 ULP from the real value; the nearest double is 0.03468818523201746. The literal is the faithful output of the stated float expression, so this is accumulated rounding rather than a typo, and only the 17th significant digit is affected."
+    }
+  ],
+  "stated_limits": [
+    {
+      "limit": "sensitivity of the KL rate test",
+      "at_k": 8000,
+      "smallest_relative_error_in_D_this_resolves": "0.72%",
+      "formula": "a relative error eps needs k of order 2/(eps*D) to clear the O(1) window",
+      "measured_non_detection": "a 0.1% wrong D gives offset -0.663 at k=8000, inside the window, so it is not rejected — as the formula predicts",
+      "consequence": "the rate test confirms D is the decay rate to about one part in a hundred; the 60-digit digit comparison is what pins it further"
+    }
+  ],
+  "measured": {
+    "high_precision": {
+      "alpha_30_digits": "0.630929753571457437099527114342",
+      "KL_30_digits": "0.034688185232017459384287451545",
+      "published_alpha": "0.6309297535714574",
+      "published_KL": "0.03468818523201744",
+      "KL_abs_error": "1.9384e-17",
+      "KL_rel_error": "5.5882e-16",
+      "KL_error_in_ULP": "2.79",
+      "KL_nearest_double_to_real_value": "0.03468818523201746",
+      "KL_last_reliable_significant_digit": 16,
+      "note": "The published KL literal is exactly what the stated float expression produces, so it is not a typo. It is 2.79 ULP from the real value because the expression accumulates rounding, so its 17th significant digit is wrong: the real value continues ...45938, the literal states ...44. The subject's own assertion cannot detect this, because it compares that same float computation against the literal with a 1e-14 tolerance — a self-comparison. Nothing in the series depends on the 17th digit; this is a precision-reporting defect, not a mathematical one."
+    },
+    "exact_tail_rate": [
+      {
+        "k": 50,
+        "exact_u_max": 31,
+        "one_minus_P_k": "3.245432e-2",
+        "exp_minus_kD": "1.765044e-1",
+        "residual": "1.693512",
+        "residual_over_ln_k": "0.432899",
+        "residual_minus_half_ln_k": "-0.2625"
+      },
+      {
+        "k": 100,
+        "exact_u_max": 63,
+        "one_minus_P_k": "3.318560e-3",
+        "exp_minus_kD": "3.115382e-2",
+        "residual": "2.239406",
+        "residual_over_ln_k": "0.486281",
+        "residual_minus_half_ln_k": "-0.0632"
+      },
+      {
+        "k": 250,
+        "exact_u_max": 157,
+        "one_minus_P_k": "1.787960e-5",
+        "exp_minus_kD": "1.713082e-4",
+        "residual": "2.259804",
+        "residual_over_ln_k": "0.409276",
+        "residual_minus_half_ln_k": "-0.5009"
+      },
+      {
+        "k": 500,
+        "exact_u_max": 315,
+        "one_minus_P_k": "1.909250e-9",
+        "exp_minus_kD": "2.934650e-8",
+        "residual": "2.732463",
+        "residual_over_ln_k": "0.439684",
+        "residual_minus_half_ln_k": "-0.3748"
+      },
+      {
+        "k": 1000,
+        "exact_u_max": 630,
+        "one_minus_P_k": "5.167004e-17",
+        "exp_minus_kD": "8.612169e-16",
+        "residual": "2.813468",
+        "residual_over_ln_k": "0.407291",
+        "residual_minus_half_ln_k": "-0.6404"
+      },
+      {
+        "k": 2000,
+        "exact_u_max": 1261,
+        "one_minus_P_k": "3.046095e-32",
+        "exp_minus_kD": "7.416946e-31",
+        "residual": "3.192492",
+        "residual_over_ln_k": "0.420015",
+        "residual_minus_half_ln_k": "-0.6080"
+      },
+      {
+        "k": 4000,
+        "exact_u_max": 2523,
+        "one_minus_P_k": "1.485567e-62",
+        "exp_minus_kD": "5.501109e-61",
+        "residual": "3.611738",
+        "residual_over_ln_k": "0.435461",
+        "residual_minus_half_ln_k": "-0.5353"
+      },
+      {
+        "k": 8000,
+        "exact_u_max": 5047,
+        "one_minus_P_k": "4.976979e-123",
+        "exp_minus_kD": "3.026220e-121",
+        "residual": "4.107661",
+        "residual_over_ln_k": "0.457057",
+        "residual_minus_half_ln_k": "-0.3859"
+      }
+    ],
+    "wrong_D_controls": {
+      "1.02": {
+        "1000": "-1.334",
+        "8000": "-5.936",
+        "rejected_at_k_max": true
+      },
+      "1.01": {
+        "1000": "-0.987",
+        "8000": "-3.161",
+        "rejected_at_k_max": true
+      },
+      "1.001": {
+        "1000": "-0.675",
+        "8000": "-0.663",
+        "rejected_at_k_max": false
+      },
+      "0.999": {
+        "1000": "-0.606",
+        "8000": "-0.108",
+        "rejected_at_k_max": false
+      }
+    }
+  },
+  "failures": [],
+  "ok": true
+}

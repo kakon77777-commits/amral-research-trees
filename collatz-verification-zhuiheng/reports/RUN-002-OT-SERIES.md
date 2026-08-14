@@ -28,6 +28,23 @@ still passes the package's own verifier, and
 `../data/gate-logs/ot-package-integrity.txt` is that run against the committed
 bytes.
 
+## The two findings, up front
+
+Everything mathematical in the six finite claim groups holds. Two defects are
+worth the author's attention, neither of them mathematical:
+
+1. **The package's own verifier cannot run to completion on the author's
+   platform.** `tools/generate_math_inventory.py` writes UTF-8 JSON to stdout, so
+   on a cp950 Windows host it aborts at step 7 of 9 on the `ö` of "Möbius". One
+   line fixes it. §1.
+2. **The published KL constant is 2.79 ULP from the real value** — it is the
+   faithful output of the stated float expression, but not the nearest double, so
+   its 17th significant digit is wrong. The subject's own assertion cannot detect
+   this because it compares that float computation against itself. §7.
+
+Both are reported, neither is fixed here: the package's `AI_HANDOFF.md` forbids
+editing provenance in place, and patching it would change its hashes.
+
 ## 1. Package integrity — PASS, with a defect
 
 Run as the handoff instructs:
@@ -333,7 +350,92 @@ Theorems G and H measured on the exact boundary:
 claim that the one-step valuation density `2^{−j}` is independent of `(m, r)` for
 odd parameters is confirmed across all 20 pairs tested.
 
-## 7. All four rechecks were drilled
+## 7. Paper 05's KL constant, and a finding
+
+`code/ot_paper05_kl_recheck.py`. The last remaining numeric claim in the six
+finite groups.
+
+`validation.json` records `KL = 0.03468818523201744`, and the subject's suite
+asserts it to within `1e-14` of `α·ln(α/0.5) + (1−α)·ln((1−α)/0.5)` — where that
+expression is evaluated by the same float code the literal came from. **That
+assertion cannot fail.** It compares a double against itself with a tolerance
+eleven orders of magnitude wider than the quantity's precision.
+
+Two things were done instead.
+
+### The digits, against the real value
+
+Recomputed at 60 digits:
+
+```
+true value  0.034688185232017459384287451545…
+published   0.03468818523201744
+```
+
+**Finding.** The published literal is exactly what the stated float expression
+emits — so it is not a typo — but it is **2.79 ULP from the real value**, and it
+is not the nearest double. The nearest double is `0.03468818523201746`. The 17th
+significant digit reads `…744` where the true value rounds to `…746`; the first 16
+are correct.
+
+This is a precision-reporting defect, not a mathematical one. Nothing in the
+series depends on the 17th digit, and `α` itself *is* correctly rounded. But it is
+the kind of thing that only shows up when the constant is compared against the
+real number rather than against its own float computation.
+
+### The constant's role, on exact binomial tails
+
+The digits are the small half. `D` is the Kullback–Leibler divergence of
+Bernoulli(α) from Bernoulli(1/2), and the reason it appears in Paper 05 is that it
+governs how fast the non-contracting fraction decays. That has consequences, and
+consequences can be measured:
+
+| `k` | `1 − P_k` (exact) | `exp(−kD)` | `−(ln(1−P_k) + kD) − ½ln k` |
+|---|---|---|---|
+| 50 | 3.245×10⁻² | 1.765×10⁻¹ | −0.26 |
+| 500 | 1.909×10⁻⁹ | 2.935×10⁻⁸ | −0.37 |
+| 2000 | 3.046×10⁻³² | 7.417×10⁻³¹ | −0.61 |
+| 8000 | 4.977×10⁻¹²³ | 3.026×10⁻¹²¹ | −0.39 |
+
+The Chernoff bound holds at every `k`. The sharp column is the last one: if `D`
+were the wrong rate, it would drift **linearly** in `k` instead of staying inside
+a fixed window. It stays between −0.65 and −0.06 across a 160-fold range of `k`.
+The residual wobble is expected — the tail starts at `u_max + 1` and the
+fractional part of `αk` oscillates — so boundedness is the claim, not smoothness.
+
+### How sharp that is, stated rather than implied
+
+A relative error `ε` in `D` displaces that column by `ε·D·k`, so it clears the
+`O(1)` window only once `k ≳ 2/(ε·D)`. At `k = 8000` that resolves about **0.72%**.
+Measured: a 1% wrong `D` is rejected; **a 0.1% wrong `D` is not** — it gives
+`−0.663`, still inside the window, exactly as the formula predicts. So the rate
+test pins `D` to about one part in a hundred, and the 60-digit comparison is what
+pins it further. Both are recorded; neither is asked to do the other's job.
+
+### What the drill did to this file
+
+This recheck was the most heavily corrected of the five, and every correction came
+from the drill rather than from reading it again:
+
+- The relative-error check divided by `D` **without guarding its sign**, so a
+  mutation that made `D` negative passed it — a negative ratio is less than
+  `1e-15`. Guarded.
+- The Chernoff bound carries several-fold headroom, so it could not notice a
+  one-step shift in the class boundary. A direct check was added, pinning the
+  exact boundary against the independent floating route `floor(k·ln2/ln3)`.
+- Nor could it notice a tail that double-counts one term. A complementarity check
+  was added: head and tail must sum to exactly `2^k`.
+- That new complementarity check then **re-derived the tail inline**, so mutating
+  the tail function left it untouched — a check that did not exercise the code it
+  was named for. Routed through the function.
+
+The gate also had to learn a distinction it did not have: **a finding about the
+subject is not the instrument breaking.** The KL ULP result is recorded under
+`subject_findings` and does not set the run's exit status, because otherwise a
+real defect in the subject would be indistinguishable from a broken checker — and
+`build_results.py` would refuse to archive the very finding worth keeping.
+
+## 8. All five rechecks were drilled
 
 A recheck that passed everything is worth what it could have caught.
 `code/ot_recheck_drill.py` perturbs each asserted formula by one term and
@@ -391,8 +493,9 @@ geometric sum, §33's factor of `r`, the §21 threshold, the Theorem C residue
 sign, §47 using the minimum correction where the maximum is required, and the
 referee itself (which cascades into thirteen checks).
 
-**36 defects planted across the four papers, 36 caught by the check named for
-them, 4 controls undisturbed.**
+**40 defects planted across the five rechecks, 40 caught, 5 controls
+undisturbed.** One was caught by crashing rather than by a named check, which is
+recorded as such rather than counted as a clean hit.
 
 ### A gap the drill found, and what was done about it
 
@@ -433,10 +536,7 @@ Breaking the referee's `+1` injection did **not** break Theorem A or Theorem D.
   not a hole in the check — but it means **Theorem D alone cannot detect a wrong
   injection constant**, and should not be leaned on for that.
 
-## 8. Where this stands
-
-All six finite claim groups in the subject's `validation.json` are now
-independently re-derived:
+## 9. Where this stands
 
 | Group | Cases claimed | Status |
 |---|---|---|
@@ -447,15 +547,12 @@ independently re-derived:
 | `p09_hard_height` | 8,167 | **re-derived**, plus Theorems B–D, §8, §44, §50, §56 |
 | `p07_generalized_mxr` | 11,325 | **re-derived**, over 24 `(m, r)` pairs, plus Theorems E–H |
 
-**All six finite claim groups in the subject's `validation.json` are now
-independently re-derived**, each from the paper's own theorem statements rather
-than by re-running the subject's suite, and each drilled to confirm the checks
-could have failed.
+**All six groups re-derived**, each from the paper's own theorem statements
+rather than by re-running the subject's suite, and each drilled to confirm the
+checks could have failed.
 
 Remaining, in order of what this arm can usefully do next:
 
-- **Paper 05's KL constant** — the only numeric claim in the six groups not yet
-  re-derived from its own statement; small.
 - **Papers 01, 03, 04, 08** — touched only where Papers 02/05/06/07/09 depend on
   them. Paper 03's cylinder statements are already covered as a by-product;
   Paper 08's algebraic breakage ladder is the substantial one, and much of it is

@@ -26,6 +26,10 @@
         "7",
         "20"
       ]
+    },
+    "code/ot_paper05_kl_recheck.py": {
+      "baseline_checks": 12,
+      "args": []
     }
   },
   "drill_word_length": 8,
@@ -551,12 +555,72 @@
       "expected_failing_checks": [],
       "observed_failing_checks": [],
       "as_expected": true
+    },
+    {
+      "id": "H01-kl-formula",
+      "target": "code/ot_paper05_kl_recheck.py",
+      "description": "the KL divergence divides by 2 instead of by 1/2",
+      "expected_failing_checks": [
+        "P05_published_KL_agrees_with_the_real_value_to_16_significant_digits"
+      ],
+      "observed_failing_checks": [
+        "P05_published_KL_agrees_with_the_real_value_to_16_significant_digits",
+        "P05_KL_is_strictly_positive_because_alpha_exceeds_one_half",
+        "P05_KL_vanishes_exactly_at_alpha_one_half",
+        "P05_KL_is_the_actual_decay_rate_of_the_non_contracting_fraction",
+        "P05_KL_rate_offset_does_not_drift_with_k"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "H02-u-max-exponent",
+      "target": "code/ot_paper05_kl_recheck.py",
+      "description": "the exact class boundary is one power of two too low",
+      "expected_failing_checks": [
+        "P05_exact_class_boundary_agrees_with_the_independent_float_route"
+      ],
+      "observed_failing_checks": [
+        "P05_exact_class_boundary_agrees_with_the_independent_float_route"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "H03-tail-start",
+      "target": "code/ot_paper05_kl_recheck.py",
+      "description": "the upper tail starts at u_max instead of u_max + 1",
+      "expected_failing_checks": [
+        "P05_contracting_fraction_and_tail_are_exact_complements"
+      ],
+      "observed_failing_checks": [
+        "P05_contracting_fraction_and_tail_are_exact_complements"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "H04-alpha-inverted",
+      "target": "code/ot_paper05_kl_recheck.py",
+      "description": "alpha is computed as ln3/ln2",
+      "expected_failing_checks": [
+        "P05_published_alpha_is_the_nearest_double_to_the_real_value"
+      ],
+      "observed_failing_checks": [
+        "<crashed>"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "NULL-05",
+      "target": "code/ot_paper05_kl_recheck.py",
+      "description": "control: a comment is added",
+      "expected_failing_checks": [],
+      "observed_failing_checks": [],
+      "as_expected": true
     }
   ],
-  "defects_planted": 36,
-  "defects_caught_by_the_named_check": 36,
-  "controls_planted": 4,
-  "controls_undisturbed": 4,
+  "defects_planted": 40,
+  "defects_caught_by_the_named_check": 40,
+  "controls_planted": 5,
+  "controls_undisturbed": 5,
   "anomalies": [],
   "ok": true
 }
