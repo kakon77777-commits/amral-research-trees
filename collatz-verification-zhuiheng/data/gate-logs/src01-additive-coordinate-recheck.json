@@ -1,0 +1,56 @@
+{
+  "tool": "src01_additive_coordinate_recheck.py",
+  "subject": "Neo.K, finite_collatz_additive_coordinate_mvp_bundle.zip (2026-08-10)",
+  "source_item": 1,
+  "scope": "exact rational identity, exact state counting, and the recovery criterion",
+  "N": 100000,
+  "checks": {
+    "SRC01_odd_branch_identity_holds_exactly_over_the_rationals": {
+      "pass": true
+    },
+    "SRC01_even_branch_identity_holds_exactly": {
+      "pass": true
+    },
+    "SRC01_valid_state_count_matches_the_reported_66667": {
+      "pass": true
+    },
+    "SRC01_states_partition_the_domain": {
+      "pass": true
+    },
+    "SRC01_recovery_criterion_is_sufficient": {
+      "pass": true
+    },
+    "SRC01_recovery_criterion_is_tight_not_merely_safe": {
+      "pass": true
+    },
+    "SRC01_decoding_actually_fails_just_past_the_margin": {
+      "pass": true
+    }
+  },
+  "measured": {
+    "state_counts": {
+      "N": 100000,
+      "valid": 66667,
+      "even_branch": 50000,
+      "odd_branch": 16667,
+      "boundary_undefined": 33333,
+      "valid_plus_boundary": 100000,
+      "equals_N": true
+    },
+    "recovery_criterion": {
+      "margin_ln_1_plus_1_over_2N": "0.000004999987500041666510417291",
+      "worst_case_decode_error_at_margin": "0.500000000000000000000000000000",
+      "is_sufficient": true,
+      "is_tight": true,
+      "fails_just_past_the_margin": true,
+      "note": "The bound is not conservative: N*(exp(eps)-1) = 1/2 exactly at eps = ln(1+1/(2N)), so the stated margin IS the failure threshold for the worst state m = N. Stating it as merely sufficient would understate it."
+    },
+    "assessment": {
+      "what_it_establishes": "an exact finite-domain encoding: on {1..N} the Collatz branches are additive in log coordinates with a precomputable per-state correction, and nearest-integer decoding is exactly recoverable under a tight, explicit error margin.",
+      "what_it_does_not": "nothing about unbounded n. The margin ln(1+1/(2N)) shrinks like 1/(2N), so the precision needed to keep decoding exact grows without bound as the domain grows. This is a finite-domain representation result, and the bundle presents it as one.",
+      "relation_to_the_nine_papers": "This is the log-coordinate ancestor of what Paper 02 later replaces with exact affine operators. Paper 02 §28 makes the same judgement explicitly - 'exact certificate 不必依賴 floating logarithm' - and Paper 01 files decimal/representation-dependent descriptions under class S. So this item is superseded BY DESIGN, and reading it as an early experiment rather than a load-bearing result is the series' own position, not a demotion imposed here."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

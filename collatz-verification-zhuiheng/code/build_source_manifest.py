@@ -37,6 +37,11 @@ PROCESSED = {
         "archived as ../collatz-ot-series-neok/ and fully rechecked; "
         "see reports/RUN-002-OT-SERIES.md"
     ),
+    "finite_collatz_additive_coordinate_mvp_bundle.zip": (
+        "item 01. archived byte-exact at "
+        "../collatz-ot-series-neok/early-experiments/; rechecked by "
+        "code/src01_additive_coordinate_recheck.py"
+    ),
 }
 
 

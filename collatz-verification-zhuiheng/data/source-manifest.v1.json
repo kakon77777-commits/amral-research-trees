@@ -12,7 +12,7 @@
     "Hard-Zeta": 44,
     "other project": 2
   },
-  "processed_count": 1,
+  "processed_count": 2,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -39,7 +39,7 @@
       "sha256": "b487b7b62331173d5ea314c0b9d9186a6e17809a9541485d721cae22dfb1ad70",
       "line": "early experiments",
       "role": "prototype / benchmark",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 01. archived byte-exact at ../collatz-ot-series-neok/early-experiments/; rechecked by code/src01_additive_coordinate_recheck.py",
       "zip_entries": 3,
       "zip_uncompressed_bytes": 14441,
       "zip_top_level": [
