@@ -93,6 +93,39 @@ time, rebuilds, and confirms each is caught, alongside control changes that
 must be caught by nothing. A gate suite that has never been shown to fail is
 not known to work.
 
+## Stating a result at its actual strength — in both directions
+
+Neo.K's standing instruction (2026-08-14): 就事論事，是怎麼樣就怎麼樣。He is not
+chasing the word "proof" — a gap left unfilled is not a proof, and he would rather
+publish the papers and the data and let the state of things be the state of
+things. That is a **stricter** standard than the usual one, not a looser one: it
+drops the label, not the rigour.
+
+The operational consequence is that **precision cuts both ways**, and this arm had
+been getting only one side of it right.
+
+Overclaiming is guarded against everywhere above, and that stays. But
+**understating is equally inaccurate**, and it is the harder error to catch,
+because a weaker statement is always safe and therefore never questioned.
+
+The concrete instance is this tree's own: it said the published frontier was "at
+least `2^68`". That was *literally true* — `2^71` is at least `2^68` — which is
+exactly why it survived unexamined for the whole of this line's work, in the one
+place this arm insists on being precise. See `RUN-002-OT-SERIES.md` §9.
+
+So:
+
+- A local closure is a **result**. Say it closed, with its exact domain attached,
+  and without an apologetic register. `K(2^40) = 550` is a measured value of a
+  function the subject's own framework defines, not an approximation in need of an
+  excuse.
+- A bound is stated at the value actually reached, not at a safely lower one.
+- If something genuinely does close against the global adversary, that gets said
+  too, in the same plain voice — the standing refusals below are about not
+  claiming what is not there, never about declining to state what is.
+- Hedging past the point where the domain is already stated is not caution. It is
+  a second kind of imprecision, and it makes the real boundaries harder to see.
+
 ## Standing position on scale
 
 The published verification frontier is far above anything this arm produces
