@@ -33,6 +33,7 @@ CODE_FILES = [
     "code/run_verification.sh",
     "code/ot_paper02_recheck.py",
     "code/ot_paper06_recheck.py",
+    "code/ot_paper09_recheck.py",
     "code/ot_recheck_drill.py",
 ]
 
@@ -69,6 +70,7 @@ def main() -> int:
     reference = load_gate("reference-crosscheck.json")
     ot_recheck = load_gate("ot-paper02-recheck.json")
     ot_p06 = load_gate("ot-paper06-recheck.json")
+    ot_p09 = load_gate("ot-paper09-recheck.json")
     ot_drill = load_gate("ot-recheck-drill.json")
     ot_block = load_gate("ot-paper05-block-benchmark.json")
 
@@ -83,6 +85,7 @@ def main() -> int:
     for name, gate, key in (
         ("Paper 02 recheck", ot_recheck, "ok"),
         ("Paper 06 recheck", ot_p06, "ok"),
+        ("Paper 09 recheck", ot_p09, "ok"),
         ("recheck drill", ot_drill, "ok"),
         ("Paper 05 block benchmark", ot_block, "ok"),
     ):
@@ -265,6 +268,36 @@ def main() -> int:
                         "for a guarantee."
                     ),
                 },
+            },
+            "paper_09_theorems": {
+                "max_word_length": ot_p09["max_word_length"],
+                "counts": ot_p09["counts"],
+                "checks": {k: v["pass"] for k, v in ot_p09["checks"].items()},
+                "all_pass": ot_p09["ok"],
+                "why_this_paper_meets_the_engine": (
+                    "Paper 09 §2 defines sigma(n) = inf{ j >= 1 : T^j(n) < n }, which is "
+                    "exactly the quantity this arm's engine measures for every start it "
+                    "verifies, and §50 identifies K(N) = max sigma over [2, N]. The archived "
+                    "[3, 2^40] run therefore already contains K(2^40)."
+                ),
+                "frontier_function_measured": ot_p09["measured"].get("K_of_2_pow_40"),
+                "section_24_accounting": ot_p09["measured"].get("p09_s24_accounting"),
+                "section_24_resolution": (
+                    "The paper says the 938413 strict-descent certificates are explained by "
+                    "Paper 05's 58651 contracting residue classes 'plus finite boundary "
+                    "corrections'. Those corrections are now itemised exactly: 58651 classes "
+                    "give 938415 starts in [1, 2^20) — 16 per class, less one because n = 0 is "
+                    "outside the domain — and the shortfall to 938413 is exactly two integers, "
+                    "n = 1 and n = 2, which meet T^16(n) = n rather than T^16(n) < n. Zero "
+                    "starts inside a contracting class fail to descend for any other reason."
+                ),
+                "gap_the_drill_exposed_and_closed": (
+                    "The frontier, K(N) and monotonicity checks only ever compare sigma against "
+                    "itself, so a uniform off-by-one in sigma left all of them green. The drill "
+                    "surfaced this. A separate anchor now pins sigma's absolute indexing against "
+                    "values derived independently in collatz_ref.py, and that anchor is what "
+                    "catches the shift."
+                ),
             },
             "drill": {
                 "targets": ot_drill["targets"],

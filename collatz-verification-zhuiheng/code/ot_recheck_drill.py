@@ -122,15 +122,65 @@ P06_MUTATIONS = [
      []),
 ]
 
+P09_MUTATIONS = [
+    ("F01-hard-height-max", "hard height takes the max over contracting prefixes, not the min",
+     "            best = v if best is None else min(best, v)",
+     "            best = v if best is None else max(best, v)",
+     ["P09_ThmB_hard_height_characterises_the_hard_domain"]),
+    ("F02-hard-height-sign", "hard height also admits expanding prefixes",
+     "        if delta > 0:",
+     "        if delta != 0:",
+     ["P09_ThmB_hard_height_characterises_the_hard_domain"]),
+    ("F03-quotient-direction", "the quotient threshold uses >= instead of >",
+     "                if ((2 ** k - 3 ** u) * a > m_w - r) != (x < n):",
+     "                if ((2 ** k - 3 ** u) * a >= m_w - r) != (x < n):",
+     ["P09_ThmD_cylinder_quotient_threshold_is_an_exact_iff"]),
+    # 3^u is odd, so `<` and `<=` against 2^k are the same predicate. The
+    # perturbation has to move the exponent to be a real defect at all.
+    ("F04-class-threshold", "a class counts as contracting one power of two too early",
+     "        if 3 ** u < 2 ** K_BLOCK:",
+     "        if 3 ** u < 2 ** (K_BLOCK - 1):",
+     ["P05_class_count_matches_58651"]),
+    ("F05-p05-binomial", "the Paper 05 class count sums to m instead of m+1",
+     "        A = sum(comb(k, u) for u in range(m + 1))",
+     "        A = sum(comb(k, u) for u in range(m))",
+     ["P05_contracting_residue_class_counts"]),
+    ("F06-alpha", "the contraction exponent uses log3/log2 instead of log2/log3",
+     "    alpha = log(2) / log(3)",
+     "    alpha = log(3) / log(2)",
+     ["P05_contracting_residue_class_counts"]),
+    # A uniform shift of sigma leaves the frontier and K(N) checks green,
+    # because those only ever compare sigma against itself. Only the anchor
+    # against collatz_ref.py's independently derived values pins the indexing —
+    # which is why that check exists.
+    ("F07-sigma-off-by-one", "sigma counts from 0 instead of 1",
+     "    for j in range(1, cap + 1):\n        x = T(x)\n        if x < n:\n            return j",
+     "    for j in range(1, cap + 1):\n        x = T(x)\n        if x < n:\n            return j - 1",
+     ["P09_S2_sigma_indexing_matches_independent_values"]),
+    ("F08-referee-broken", "the referee itself: T halves odd values too",
+     "    return x // 2 if x % 2 == 0 else (3 * x + 1) // 2",
+     "    return x // 2 if x % 2 == 0 else (3 * x + 1) // 4",
+     ["P09_ThmB_hard_height_characterises_the_hard_domain",
+      "P09_S24_strict_descent_count_is_938413"]),
+    ("NULL-03", "control: a comment is added",
+     "def hard_height(w: str) -> float | int:",
+     "# control mutation, no behavioural change\ndef hard_height(w: str) -> float | int:",
+     []),
+]
+
 TARGETS = [
     ("code/ot_paper02_recheck.py", P02_MUTATIONS, [str(DRILL_K)]),
     ("code/ot_paper06_recheck.py", P06_MUTATIONS, [str(DRILL_ODD_LIMIT)]),
+    # block_exp must stay 20: the section 24 accounting checks are about
+    # 1 <= n < 2^20 specifically, and would be vacuous at any other width.
+    ("code/ot_paper09_recheck.py", P09_MUTATIONS, ["7", "20"]),
 ]
 
 
 def run(path: pathlib.Path, args: list[str]) -> dict | None:
     import os
-    env = dict(os.environ, PYTHONUTF8="1", PYTHONDONTWRITEBYTECODE="1")
+    env = dict(os.environ, PYTHONUTF8="1", PYTHONDONTWRITEBYTECODE="1",
+               COLLATZ_TREE_ROOT=str(ROOT))
     proc = subprocess.run(
         [sys.executable, str(path), *args],
         capture_output=True, text=True, encoding="utf-8", errors="replace",

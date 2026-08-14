@@ -45,14 +45,20 @@ describe it that way.
    re-derivation of the finite claims of Neo.K's *Collatz Operation Translation
    Series*: package integrity (and the defect that stops its own verifier on the
    author's platform), Paper 05's `k=16` benchmark reproduced, and every theorem
-   of Papers 02 and 06 rechecked against referees that assume none of them —
-   including the §14 bridge that ties the two papers' correction terms together.
-3. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+   of Papers 02, 06 and 09 rechecked against referees that assume none of them.
+   Includes the §14 bridge tying two papers' correction terms together, and
+   `K(2^40) = 550` — Paper 09's frontier function evaluated at the scale the
+   engine actually measured.
+4. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-4. [`code/`](./code/) — the engine, the independent reference, and the gates.
-5. [`data/gate-logs/`](./data/gate-logs/) and
+5. [`code/`](./code/) — the engine, the independent reference, and the gates.
+6. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
+
+The subject series itself is archived separately as its own tree at
+[`../collatz-ot-series-neok/`](../collatz-ot-series-neok/), under Neo.K's
+authorship. Its presence beside this one is not agreement between the two.
 
 ## How the evidence is arranged
 

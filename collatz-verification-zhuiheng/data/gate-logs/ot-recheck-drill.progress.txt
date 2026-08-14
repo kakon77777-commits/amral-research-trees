@@ -21,3 +21,13 @@ code/ot_paper06_recheck.py: baseline passes all 19 checks
   E09-mean-series: caught  -> ['P06_ThmF_mean_valuation_partial_sum_closed_form']
   E10-referee-broken: caught  -> ['P06_ThmA_run_length_expansion_is_the_parity_word', 'P06_ThmBC_accelerated_affine_closure_on_real_orbits', 'P06_S14_bridge_B_kappa_equals_b_of_expanded_word', 'P06_ThmD_exact_log_drift_as_rational_identity', 'P06_S19_descent_threshold_theta_is_exact_iff', 'P06_ThmH_closed_reverse_recovery', 'P06_S35_S38_stepwise_reverse_legality']
   NULL-02: clean (control)  -> []
+code/ot_paper09_recheck.py: baseline passes all 13 checks
+  F01-hard-height-max: caught  -> ['P09_ThmB_hard_height_characterises_the_hard_domain']
+  F02-hard-height-sign: caught  -> ['P09_ThmB_hard_height_characterises_the_hard_domain']
+  F03-quotient-direction: caught  -> ['P09_ThmD_cylinder_quotient_threshold_is_an_exact_iff']
+  F04-class-threshold: caught  -> ['P05_class_count_matches_58651', 'P09_S24_boundary_corrections_are_fully_itemised']
+  F05-p05-binomial: caught  -> ['P05_contracting_residue_class_counts']
+  F06-alpha: caught  -> ['P05_contracting_residue_class_counts']
+  F07-sigma-off-by-one: caught  -> ['P09_S2_sigma_indexing_matches_independent_values']
+  F08-referee-broken: caught  -> ['P09_ThmB_hard_height_characterises_the_hard_domain', 'P09_S8_expanding_prefix_imposes_no_height_bound', 'P09_ThmD_cylinder_quotient_threshold_is_an_exact_iff', 'P09_S2_sigma_indexing_matches_independent_values', 'P09_S44_canonical_residue_stabilises_at_n_once_2k_exceeds_n', 'P05_class_count_matches_58651', 'P09_S24_strict_descent_count_is_938413', 'P09_S24_boundary_corrections_are_fully_itemised', 'P09_S50_engine_max_sigma_reproduced_independently']
+  NULL-03: clean (control)  -> []

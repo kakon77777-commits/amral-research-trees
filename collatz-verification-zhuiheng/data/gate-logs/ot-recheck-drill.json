@@ -12,6 +12,13 @@
       "args": [
         "601"
       ]
+    },
+    "code/ot_paper09_recheck.py": {
+      "baseline_checks": 13,
+      "args": [
+        "7",
+        "20"
+      ]
     }
   },
   "drill_word_length": 8,
@@ -286,12 +293,126 @@
       "expected_failing_checks": [],
       "observed_failing_checks": [],
       "as_expected": true
+    },
+    {
+      "id": "F01-hard-height-max",
+      "target": "code/ot_paper09_recheck.py",
+      "description": "hard height takes the max over contracting prefixes, not the min",
+      "expected_failing_checks": [
+        "P09_ThmB_hard_height_characterises_the_hard_domain"
+      ],
+      "observed_failing_checks": [
+        "P09_ThmB_hard_height_characterises_the_hard_domain"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "F02-hard-height-sign",
+      "target": "code/ot_paper09_recheck.py",
+      "description": "hard height also admits expanding prefixes",
+      "expected_failing_checks": [
+        "P09_ThmB_hard_height_characterises_the_hard_domain"
+      ],
+      "observed_failing_checks": [
+        "P09_ThmB_hard_height_characterises_the_hard_domain"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "F03-quotient-direction",
+      "target": "code/ot_paper09_recheck.py",
+      "description": "the quotient threshold uses >= instead of >",
+      "expected_failing_checks": [
+        "P09_ThmD_cylinder_quotient_threshold_is_an_exact_iff"
+      ],
+      "observed_failing_checks": [
+        "P09_ThmD_cylinder_quotient_threshold_is_an_exact_iff"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "F04-class-threshold",
+      "target": "code/ot_paper09_recheck.py",
+      "description": "a class counts as contracting one power of two too early",
+      "expected_failing_checks": [
+        "P05_class_count_matches_58651"
+      ],
+      "observed_failing_checks": [
+        "P05_class_count_matches_58651",
+        "P09_S24_boundary_corrections_are_fully_itemised"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "F05-p05-binomial",
+      "target": "code/ot_paper09_recheck.py",
+      "description": "the Paper 05 class count sums to m instead of m+1",
+      "expected_failing_checks": [
+        "P05_contracting_residue_class_counts"
+      ],
+      "observed_failing_checks": [
+        "P05_contracting_residue_class_counts"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "F06-alpha",
+      "target": "code/ot_paper09_recheck.py",
+      "description": "the contraction exponent uses log3/log2 instead of log2/log3",
+      "expected_failing_checks": [
+        "P05_contracting_residue_class_counts"
+      ],
+      "observed_failing_checks": [
+        "P05_contracting_residue_class_counts"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "F07-sigma-off-by-one",
+      "target": "code/ot_paper09_recheck.py",
+      "description": "sigma counts from 0 instead of 1",
+      "expected_failing_checks": [
+        "P09_S2_sigma_indexing_matches_independent_values"
+      ],
+      "observed_failing_checks": [
+        "P09_S2_sigma_indexing_matches_independent_values"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "F08-referee-broken",
+      "target": "code/ot_paper09_recheck.py",
+      "description": "the referee itself: T halves odd values too",
+      "expected_failing_checks": [
+        "P09_ThmB_hard_height_characterises_the_hard_domain",
+        "P09_S24_strict_descent_count_is_938413"
+      ],
+      "observed_failing_checks": [
+        "P09_ThmB_hard_height_characterises_the_hard_domain",
+        "P09_S8_expanding_prefix_imposes_no_height_bound",
+        "P09_ThmD_cylinder_quotient_threshold_is_an_exact_iff",
+        "P09_S2_sigma_indexing_matches_independent_values",
+        "P09_S44_canonical_residue_stabilises_at_n_once_2k_exceeds_n",
+        "P05_class_count_matches_58651",
+        "P09_S24_strict_descent_count_is_938413",
+        "P09_S24_boundary_corrections_are_fully_itemised",
+        "P09_S50_engine_max_sigma_reproduced_independently"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "NULL-03",
+      "target": "code/ot_paper09_recheck.py",
+      "description": "control: a comment is added",
+      "expected_failing_checks": [],
+      "observed_failing_checks": [],
+      "as_expected": true
     }
   ],
-  "defects_planted": 19,
-  "defects_caught_by_the_named_check": 19,
-  "controls_planted": 2,
-  "controls_undisturbed": 2,
+  "defects_planted": 27,
+  "defects_caught_by_the_named_check": 27,
+  "controls_planted": 3,
+  "controls_undisturbed": 3,
   "anomalies": [],
   "ok": true
 }

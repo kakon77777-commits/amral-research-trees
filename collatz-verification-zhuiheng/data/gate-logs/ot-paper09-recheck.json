@@ -1,0 +1,111 @@
+{
+  "tool": "ot_paper09_recheck.py",
+  "subject": "Collatz Operation Translation Series — Paper 09 v0.1.1 (Neo.K)",
+  "scope": "exact finite arithmetic; the global conjecture is untouched, as the paper states",
+  "max_word_length": 11,
+  "checks": {
+    "P09_ThmB_hard_height_characterises_the_hard_domain": {
+      "pass": true
+    },
+    "P09_S8_expanding_prefix_imposes_no_height_bound": {
+      "pass": true
+    },
+    "P09_ThmD_cylinder_quotient_threshold_is_an_exact_iff": {
+      "pass": true
+    },
+    "P09_S2_sigma_indexing_matches_independent_values": {
+      "pass": true
+    },
+    "P09_ThmC_frontier_extinction_iff_all_sigma_at_most_k": {
+      "pass": true
+    },
+    "P09_S50_K_of_N_equals_max_sigma": {
+      "pass": true,
+      "detail": "least empty depth 105 vs max sigma 105"
+    },
+    "P09_S56_hard_set_is_monotone_in_depth": {
+      "pass": true
+    },
+    "P09_S44_canonical_residue_stabilises_at_n_once_2k_exceeds_n": {
+      "pass": true
+    },
+    "P05_contracting_residue_class_counts": {
+      "pass": true
+    },
+    "P05_class_count_matches_58651": {
+      "pass": true
+    },
+    "P09_S24_strict_descent_count_is_938413": {
+      "pass": true
+    },
+    "P09_S24_boundary_corrections_are_fully_itemised": {
+      "pass": true,
+      "detail": "shortfall 2 vs 2 itemised"
+    },
+    "P09_S50_engine_max_sigma_reproduced_independently": {
+      "pass": true,
+      "detail": "engine said 550, bigint walk said 550"
+    }
+  },
+  "counts": {
+    "words_checked": 4094,
+    "words_with_finite_hard_height": 3813,
+    "words_with_infinite_hard_height": 281,
+    "quotient_certificate_cases": 37441,
+    "p05_contracting_classes": {
+      "8": {
+        "m": 5,
+        "classes": 219
+      },
+      "12": {
+        "m": 7,
+        "classes": 3302
+      },
+      "16": {
+        "m": 10,
+        "classes": 58651
+      },
+      "20": {
+        "m": 12,
+        "classes": 910596
+      }
+    }
+  },
+  "measured": {
+    "K_of_20000": {
+      "value": 105,
+      "attained_at": 10087
+    },
+    "p09_s24_accounting": {
+      "k": 16,
+      "domain": "1 <= n < 2^20",
+      "contracting_classes": 58651,
+      "starts_in_a_contracting_class": 938415,
+      "strict_descents": 938413,
+      "equalities": 2,
+      "ascents_inside_a_contracting_class": 0,
+      "shortfall": 2,
+      "itemised_exceptions": [
+        {
+          "n": 1,
+          "why": "equality, not strict descent"
+        },
+        {
+          "n": 2,
+          "why": "equality, not strict descent"
+        }
+      ]
+    },
+    "K_of_2_pow_40": {
+      "value": 550,
+      "attained_at": 898696369947,
+      "source": "the archived [3, 2^40] exhaustive run, coverage.json",
+      "odd_starts_measured": 549755813887,
+      "even_starts": "sigma = 1 by definition of the map, so the max over [2, N] is this",
+      "independently_reproduced_by": "Python arbitrary-precision walk in this file",
+      "note": "This is Paper 09 §50's frontier function evaluated at N = 2^40. It is a measurement, not a bound: it says nothing about K(N) for larger N, and the paper is explicit that no uniform K exists to be found."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

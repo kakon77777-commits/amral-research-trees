@@ -206,7 +206,69 @@ margin comfortably exceeds double epsilon. **That agreement is a fact about this
 range, not a guarantee**, and it is recorded as such in `results.v1.json`. Push
 `m` past 665 and the margin shrinks.
 
-## 5. Both rechecks were drilled
+## 5. Paper 09 — the capstone, and the one place the engine meets the framework
+
+`code/ot_paper09_recheck.py`. **All 13 checks pass** over 4,094 words to length
+11 and 37,441 quotient-certificate cases.
+
+Paper 09 §2 defines the coefficient stopping time
+
+```
+σ(n) = inf{ j ≥ 1 : T^j(n) < n }
+```
+
+which is **exactly** the quantity this arm's engine already measures for every
+start it verifies, under the same map. §50 then identifies the frontier function
+
+```
+K(N) = min{ k : 𝔉_k(N) = ∅ } = max_{2 ≤ n ≤ N} σ(n)
+```
+
+So the archived `[3, 2^40]` run *already contained* Paper 09's `K(N)` — nobody had
+to compute anything new to connect them.
+
+### K(2^40) = 550
+
+| | |
+|---|---|
+| `K(2^40)` | **550** |
+| attained at | `n = 898,696,369,947` |
+| over | 549,755,813,887 measured odd starts (even `n` have `σ = 1` by definition) |
+| peak before first descent | `395,806,039,507,110,357,728` ≈ `4.404 × 10^8 · n` |
+| cross-check | the Rust engine's claim, re-derived by an independent Python arbitrary-precision walk; both give 550, and `T^j(n) ≥ n` confirmed for every `j < 550` |
+
+This is a **measurement, not a bound**. It says nothing about `K(N)` for larger
+`N`, and Paper 09 §52 is explicit that no uniform `K` is there to be found —
+`∀N ∃K(N)` does not commute to `∃K ∀N`, and the stronger form is incompatible
+with observed unbounded stopping times. The number is offered as a data point in
+the paper's own framework, at a scale the paper's prose does not reach.
+
+Verified alongside it: Theorem B's hard-height characterisation
+`H_w = Ω_w ∩ [1, h(w)]`, §8's claim that an expanding prefix imposes no height
+bound at all, Theorem D's quotient threshold as an exact iff in both directions,
+Theorem C's frontier-extinction equivalence, §56's monotonicity of the hard set,
+and §44's stabilisation of canonical residues at `n` once `2^k > n`.
+
+### §24's "finite boundary corrections", itemised exactly
+
+Paper 09 §24 says the 938,413 strict-descent certificates are explained by Paper
+05's 58,651 contracting residue classes "經 finite positive-domain 與
+strict-equality corrections". That prose is now an exact accounting:
+
+| | |
+|---|---|
+| contracting residue classes at `k = 16` | **58,651** (independently recomputed, and the Paper 05 binomial counts for `k = 8, 12, 16, 20` all confirmed) |
+| starts in a contracting class on `[1, 2^20)` | **938,415** — 16 per class, less one, because `n = 0` lies outside the domain |
+| strict descents | **938,413** |
+| shortfall | **exactly 2** |
+| itemised | `n = 1` and `n = 2` — both meet `T^16(n) = n`, equality rather than strict descent |
+| ascents inside a contracting class | **0** |
+
+So the "corrections" are two named integers and one excluded residue, and
+nothing else. The class-based count and the certificate count are now reconciled
+term by term rather than approximately.
+
+## 6. All three rechecks were drilled
 
 A recheck that passed everything is worth what it could have caught.
 `code/ot_recheck_drill.py` perturbs each asserted formula by one term and
@@ -244,14 +306,49 @@ Paper 06 target:
 | **the referee itself**: `S` divides by `2^{κ−1}` | seven checks cascade |
 | control: comment added | none |
 
-**19 defects planted across both papers, 19 caught by the check named for them,
-2 controls undisturbed.**
+Paper 09 target:
 
-Two cascades are worth reading correctly. Breaking either referee brings down
-most of that paper's checks — which is the point of having a referee. And the
-Paper 06 Theorem C mutation cascades because `B_closed` is the single claimed
-formula the other checks are written against; the recurrence check is the one
-that isolates it, and it fired alone when the recurrence itself was perturbed.
+| Planted defect | Checks that failed |
+|---|---|
+| hard height takes the max over contracting prefixes, not the min | Theorem B only |
+| hard height also admits expanding prefixes | Theorem B only |
+| quotient threshold uses `≥` instead of `>` | Theorem D only |
+| a class counts as contracting one power of two too early | the 58,651 count and the §24 accounting |
+| Paper 05 class count sums to `m` instead of `m+1` | the binomial counts only |
+| contraction exponent uses `log3/log2` | the binomial counts only |
+| `σ` counts from 0 instead of 1 | **the σ anchor only** — see below |
+| **the referee itself**: `T` halves odd values too | nine checks cascade |
+| control: comment added | none |
+
+**27 defects planted across the three papers, 27 caught by the check named for
+them, 3 controls undisturbed.**
+
+### A gap the drill found, and what was done about it
+
+The `σ`-off-by-one mutation initially **survived every check**. That was correct
+behaviour from the checks and a real hole in the design: the frontier check, the
+`K(N)` identity and the monotonicity check all compare `σ` only against *itself*,
+so a uniform shift moves both sides and leaves every one of them green.
+
+The fix is a separate anchor that pins `σ`'s absolute indexing against values
+derived independently in `collatz_ref.py` — `σ(3)=4`, `σ(7)=7`, `σ(27)=59`,
+`σ(703)=81`, `σ(10087)=105`. With that in place the mutation is caught, and
+caught by exactly one check. This is the same lesson as elsewhere in this tree:
+a quantity compared only to itself is not pinned by anything.
+
+Two other things the drill corrected before they shipped. One planted "defect"
+was a no-op — `3^u ≤ 2^k` and `3^u < 2^k` are the same predicate because `3^u` is
+odd — so it had to be re-aimed at the exponent to be a defect at all. And the
+Paper 09 baseline failed at first because a mutant runs from a scratch directory
+and could not find the archived `coverage.json`; the check refused rather than
+skipping, which is right, so the drill now passes the tree root explicitly
+instead of the check being softened.
+
+Cascades are worth reading correctly. Breaking any referee brings down most of
+that paper's checks — that is the point of having one. The Paper 06 Theorem C
+mutation cascades because `B_closed` is the single claimed formula the other
+checks are written against; the recurrence check is what isolates it, and it
+fired alone when the recurrence itself was perturbed.
 
 ### One honest insensitivity
 
@@ -265,24 +362,27 @@ Breaking the referee's `+1` injection did **not** break Theorem A or Theorem D.
   not a hole in the check — but it means **Theorem D alone cannot detect a wrong
   injection constant**, and should not be leaned on for that.
 
-## 6. Not yet done
+## 7. Where this stands
 
-Of the six finite claim groups in the subject's `validation.json`:
+All six finite claim groups in the subject's `validation.json` are now
+independently re-derived:
 
 | Group | Cases claimed | Status |
 |---|---|---|
-| `p02_p03_affine_residue_transport` | 4,079 | **re-derived**, and extended past it |
+| `p02_p03_affine_residue_transport` | 4,079 | **re-derived**, and extended to `k ≤ 16` |
 | `p02_correction_extrema` | 54 | **re-derived** (Theorem F, §21, §25) |
-| `p05_binomial_and_k16_benchmark` | — | **`k=16` block counts re-derived** |
+| `p05_binomial_and_k16_benchmark` | — | **re-derived** — block counts, class counts, and §24 reconciled term by term |
 | `p06_accelerated_affine_formula` | 1,364 | **re-derived**, on real orbits rather than formal tuples |
-| `p05` binomial counts and the KL constant | — | not yet |
-| `p07_generalized_mxr` | 11,325 | not yet |
-| `p09_hard_height` | 8,167 | not yet |
+| `p09_hard_height` | 8,167 | **re-derived**, plus Theorems B–D, §8, §44, §50, §56 |
+| `p07_generalized_mxr` | 11,325 | **not yet** |
 
-Papers 07 and 09 come next, each read first and then re-derived from its own
-statements. Paper 09's hard-height prediction is the more interesting of the two
-from this arm's side, because it is a claim about when descent *cannot* happen
-within `k` steps — which is exactly the quantity the `[3, 2^40]` engine measures
-for every start. The two should be able to bite on each other: the engine's
-`σ(n)` is the first `j` with `T^j(n) < n`, and Paper 09's hard height predicts
-when that `j` exceeds `k`.
+Remaining: Paper 07 (generalized `(mx+r)`), the Paper 05 KL constant, and Papers
+01, 03, 04, 08 and the Hard-Zeta program, whose content this arm has touched only
+where Papers 02/05/06/09 depend on it.
+
+Nothing in this report bears on the Collatz conjecture. Paper 09 §62 lists its
+own non-claims, and they stand: no uniform extinction depth, no closed bound on
+`K(N)`, no exclusion of an integer-anchored infinite hard branch, and no
+inference from survivor density to emptiness. `K(2^40) = 550` is one value of a
+function the paper defines; the paper's whole point is that no finite number of
+such values closes the quantifier gap.
