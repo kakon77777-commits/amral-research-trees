@@ -1,0 +1,95 @@
+{
+  "tool": "ot_paper03_recheck.py",
+  "subject": "Collatz Operation Translation Series — Paper 03 v0.1.1 (Neo.K)",
+  "scope": "exact finite arithmetic; not a Collatz proof",
+  "max_word_length": 13,
+  "checks": {
+    "P03_ThmC_closed_formula_agrees_with_the_refinement_induction": {
+      "pass": true
+    },
+    "P03_S32_nested_residues_form_an_inverse_system": {
+      "pass": true
+    },
+    "P03_S7_children_are_exactly_r_w_and_r_w_plus_2k": {
+      "pass": true
+    },
+    "P03_ThmA_cylinder_is_exactly_the_admissible_domain": {
+      "pass": true
+    },
+    "P03_ThmB_word_residue_bijection_and_partition": {
+      "pass": true
+    },
+    "P03_ThmD_exact_cylinder_transport": {
+      "pass": true
+    },
+    "P03_ThmE_local_identity_trivialization": {
+      "pass": true
+    },
+    "P03_ThmF_exact_recovery": {
+      "pass": true
+    },
+    "P03_S19_faithfulness_F_w_is_injective_on_its_cylinder": {
+      "pass": true
+    },
+    "P03_S29_next_branch_decided_by_the_quotient_bit": {
+      "pass": true
+    },
+    "P03_S9_level_k_atlas_partitions_the_positive_integers": {
+      "pass": true
+    },
+    "P03_S20_S24_worked_examples_match_the_stated_numbers": {
+      "pass": true
+    },
+    "P03_S27_target_charts_overlap_witness_exists": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "words_derived_two_ways": 16382,
+    "transport_cases": 114661
+  },
+  "measured": {
+    "worked_examples": {
+      "D": {
+        "r": 0,
+        "m": 0,
+        "b": 0
+      },
+      "U": {
+        "r": 1,
+        "m": 2,
+        "b": 1
+      },
+      "UD": {
+        "r": 1,
+        "m": 1,
+        "b": 1
+      },
+      "DU": {
+        "r": 2,
+        "m": 2,
+        "b": 2
+      },
+      "UUDD": {
+        "r": 3,
+        "m": 2,
+        "b": 5
+      }
+    },
+    "UUDD_orbit_of_3": [
+      3,
+      5,
+      8,
+      4,
+      2
+    ],
+    "target_overlap_witness": {
+      "target": 2,
+      "chart_1": "DDDD",
+      "chart_2": "DDDU",
+      "depth": 4
+    }
+  },
+  "failures": [],
+  "ok": true
+}

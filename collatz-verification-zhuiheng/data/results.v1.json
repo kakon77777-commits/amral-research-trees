@@ -318,6 +318,64 @@
       "independence": "computed in Rust from this arm's k-step congruence tables, a single table lookup per n, versus the subject's Python step-by-step iteration",
       "equality_witnesses_explained": "the two equality cases are n=1 and n=2, the elements of the trivial cycle; T has period 2 there and 16 is even, so they are forced"
     },
+    "paper_03_theorems": {
+      "max_word_length": 13,
+      "counts": {
+        "words_derived_two_ways": 16382,
+        "transport_cases": 114661
+      },
+      "checks": {
+        "P03_ThmC_closed_formula_agrees_with_the_refinement_induction": true,
+        "P03_S32_nested_residues_form_an_inverse_system": true,
+        "P03_S7_children_are_exactly_r_w_and_r_w_plus_2k": true,
+        "P03_ThmA_cylinder_is_exactly_the_admissible_domain": true,
+        "P03_ThmB_word_residue_bijection_and_partition": true,
+        "P03_ThmD_exact_cylinder_transport": true,
+        "P03_ThmE_local_identity_trivialization": true,
+        "P03_ThmF_exact_recovery": true,
+        "P03_S19_faithfulness_F_w_is_injective_on_its_cylinder": true,
+        "P03_S29_next_branch_decided_by_the_quotient_bit": true,
+        "P03_S9_level_k_atlas_partitions_the_positive_integers": true,
+        "P03_S20_S24_worked_examples_match_the_stated_numbers": true,
+        "P03_S27_target_charts_overlap_witness_exists": true
+      },
+      "all_pass": true,
+      "the_substantive_addition": "Four of Paper 03's statements were already confirmed as a by-product of the Paper 02 recheck, but via the closed congruence r_w = -b_w 3^-u - the very shortcut Paper 03 §11 warns against using as the foundation. So r_w is derived a SECOND time here, by the §6/§7/§28 refinement induction from r_D = 0 and r_U = 1, splitting each cylinder by the parity of m_w and never touching b_w 3^-u. The two derivations agree on all 16382 words, which is what makes the closed congruence a result rather than an assumption.",
+      "worked_examples": {
+        "D": {
+          "r": 0,
+          "m": 0,
+          "b": 0
+        },
+        "U": {
+          "r": 1,
+          "m": 2,
+          "b": 1
+        },
+        "UD": {
+          "r": 1,
+          "m": 1,
+          "b": 1
+        },
+        "DU": {
+          "r": 2,
+          "m": 2,
+          "b": 2
+        },
+        "UUDD": {
+          "r": 3,
+          "m": 2,
+          "b": 5
+        }
+      },
+      "target_overlap_witness": {
+        "target": 2,
+        "chart_1": "DDDD",
+        "chart_2": "DDDU",
+        "depth": 4
+      },
+      "non_claim_given_a_witness": "§27 states that target charts may overlap even though source charts partition. That is an existence claim, so a witness was found rather than asserted: {'target': 2, 'chart_1': 'DDDD', 'chart_2': 'DDDU', 'depth': 4}."
+    },
     "paper_04_theorems": {
       "max_word_length": 10,
       "counts": {
@@ -717,6 +775,12 @@
             "20"
           ]
         },
+        "code/ot_paper03_recheck.py": {
+          "baseline_checks": 13,
+          "args": [
+            "8"
+          ]
+        },
         "code/ot_paper04_recheck.py": {
           "baseline_checks": 21,
           "args": [
@@ -728,10 +792,10 @@
           "args": []
         }
       },
-      "defects_planted": 47,
-      "defects_caught_by_the_named_check": 47,
-      "controls_planted": 6,
-      "controls_undisturbed": 6,
+      "defects_planted": 54,
+      "defects_caught_by_the_named_check": 54,
+      "controls_planted": 7,
+      "controls_undisturbed": 7,
       "anomalies": [],
       "note": "each planted defect had to be caught by the check named for it, not merely by some check"
     }
@@ -749,14 +813,15 @@
     "code/mutation_drill.py": "45e4f84a668c5e57e0ec2b7b116dcd0f0bf419bb64e38ff4685f3ff7cfeae7a7",
     "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
     "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
-    "code/build_results.py": "67c8927e0e139cadd5f107675c2b6a0915e374d8fb453a42543876ee90d0847d",
+    "code/build_results.py": "b230b6e2cfbe4fedcb4fa45f1201516ee8d7dc7b05fc710d10ac01af2c25048e",
     "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab",
     "code/ot_paper02_recheck.py": "50b3b733ced47a25078b16a71f7c120696d0ce60d43822b464abbc2f0010591d",
     "code/ot_paper06_recheck.py": "82851076cec9f416dc100fefe8bc5d5b6e635d97e9b791df23dccf804906d077",
+    "code/ot_paper03_recheck.py": "96128f754d6a3ac4198037a638ac9e617c1d9667f670a7e1519740c8d15244ca",
     "code/ot_paper04_recheck.py": "70b4b8e0654b9578b31caae85243328e8ec0324594565d720c420c399d75d216",
     "code/ot_paper05_kl_recheck.py": "97ed0a1b0e2c133b087aca698dc11e5fa14bf9b526222942b83b08b2cae0c6b9",
     "code/ot_paper07_recheck.py": "0e438242e202d6027317ce50eb1964577b2ecd982e960151af4fcd2c066c5e7f",
     "code/ot_paper09_recheck.py": "69d8b6225bf14447758a415dd6b4350b157c4f603fb9140105817d4787f41c88",
-    "code/ot_recheck_drill.py": "afa5801ed81d6c1c1c628054d3d18c57be6dd0a0a1c0b6e02bb7e49ca81fd013"
+    "code/ot_recheck_drill.py": "bba088d058d8511c848d9c61b0a1279c6dac73faf67061f4478a7b1a084f455a"
   }
 }

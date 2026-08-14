@@ -27,6 +27,12 @@
         "20"
       ]
     },
+    "code/ot_paper03_recheck.py": {
+      "baseline_checks": 13,
+      "args": [
+        "8"
+      ]
+    },
     "code/ot_paper04_recheck.py": {
       "baseline_checks": 21,
       "args": [
@@ -563,6 +569,123 @@
       "as_expected": true
     },
     {
+      "id": "J01-refinement-parity",
+      "target": "code/ot_paper03_recheck.py",
+      "description": "the refinement induction assigns D to the wrong child",
+      "expected_failing_checks": [
+        "P03_ThmC_closed_formula_agrees_with_the_refinement_induction"
+      ],
+      "observed_failing_checks": [
+        "P03_ThmC_closed_formula_agrees_with_the_refinement_induction",
+        "P03_S32_nested_residues_form_an_inverse_system",
+        "P03_S7_children_are_exactly_r_w_and_r_w_plus_2k",
+        "P03_ThmA_cylinder_is_exactly_the_admissible_domain",
+        "P03_ThmB_word_residue_bijection_and_partition",
+        "P03_ThmD_exact_cylinder_transport",
+        "P03_S20_S24_worked_examples_match_the_stated_numbers",
+        "P03_S27_target_charts_overlap_witness_exists"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "J02-refinement-base",
+      "target": "code/ot_paper03_recheck.py",
+      "description": "the base case swaps r_D and r_U",
+      "expected_failing_checks": [
+        "P03_ThmC_closed_formula_agrees_with_the_refinement_induction"
+      ],
+      "observed_failing_checks": [
+        "P03_ThmC_closed_formula_agrees_with_the_refinement_induction",
+        "P03_S32_nested_residues_form_an_inverse_system",
+        "P03_S7_children_are_exactly_r_w_and_r_w_plus_2k",
+        "P03_ThmA_cylinder_is_exactly_the_admissible_domain",
+        "P03_ThmB_word_residue_bijection_and_partition",
+        "P03_ThmD_exact_cylinder_transport",
+        "P03_S20_S24_worked_examples_match_the_stated_numbers"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "J03-congruence-sign",
+      "target": "code/ot_paper03_recheck.py",
+      "description": "the closed formula uses 3^{+u}",
+      "expected_failing_checks": [
+        "P03_ThmC_closed_formula_agrees_with_the_refinement_induction"
+      ],
+      "observed_failing_checks": [
+        "P03_ThmC_closed_formula_agrees_with_the_refinement_induction"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "J04-child-offset",
+      "target": "code/ot_paper03_recheck.py",
+      "description": "the child cylinders are offset by 2^{k+1} instead of 2^k",
+      "expected_failing_checks": [
+        "P03_S7_children_are_exactly_r_w_and_r_w_plus_2k"
+      ],
+      "observed_failing_checks": [
+        "P03_ThmC_closed_formula_agrees_with_the_refinement_induction",
+        "P03_S32_nested_residues_form_an_inverse_system",
+        "P03_S7_children_are_exactly_r_w_and_r_w_plus_2k",
+        "P03_ThmA_cylinder_is_exactly_the_admissible_domain",
+        "P03_ThmB_word_residue_bijection_and_partition",
+        "P03_ThmD_exact_cylinder_transport"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "J05-quotient-bit",
+      "target": "code/ot_paper03_recheck.py",
+      "description": "§29's quotient-bit rule drops m_w",
+      "expected_failing_checks": [
+        "P03_S29_next_branch_decided_by_the_quotient_bit"
+      ],
+      "observed_failing_checks": [
+        "P03_S29_next_branch_decided_by_the_quotient_bit"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "J06-recovery-multiplier",
+      "target": "code/ot_paper03_recheck.py",
+      "description": "Theorem F recovers with 3^u instead of 2^k",
+      "expected_failing_checks": [
+        "P03_ThmF_exact_recovery"
+      ],
+      "observed_failing_checks": [
+        "P03_ThmF_exact_recovery"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "J07-referee-broken",
+      "target": "code/ot_paper03_recheck.py",
+      "description": "the referee itself: T halves odd values too",
+      "expected_failing_checks": [
+        "P03_ThmA_cylinder_is_exactly_the_admissible_domain",
+        "P03_ThmD_exact_cylinder_transport"
+      ],
+      "observed_failing_checks": [
+        "P03_ThmA_cylinder_is_exactly_the_admissible_domain",
+        "P03_ThmD_exact_cylinder_transport",
+        "P03_ThmE_local_identity_trivialization",
+        "P03_ThmF_exact_recovery",
+        "P03_S29_next_branch_decided_by_the_quotient_bit",
+        "P03_S9_level_k_atlas_partitions_the_positive_integers",
+        "P03_S20_S24_worked_examples_match_the_stated_numbers"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "NULL-07",
+      "target": "code/ot_paper03_recheck.py",
+      "description": "control: a comment is added",
+      "expected_failing_checks": [],
+      "observed_failing_checks": [],
+      "as_expected": true
+    },
+    {
       "id": "I01-inverse-multiplier",
       "target": "code/ot_paper04_recheck.py",
       "description": "Theorem B's inverse scales by 3^u instead of 2^k",
@@ -720,10 +843,10 @@
       "as_expected": true
     }
   ],
-  "defects_planted": 47,
-  "defects_caught_by_the_named_check": 47,
-  "controls_planted": 6,
-  "controls_undisturbed": 6,
+  "defects_planted": 54,
+  "defects_caught_by_the_named_check": 54,
+  "controls_planted": 7,
+  "controls_undisturbed": 7,
   "anomalies": [],
   "ok": true
 }

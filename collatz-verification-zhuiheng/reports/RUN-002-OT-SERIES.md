@@ -350,7 +350,70 @@ Theorems G and H measured on the exact boundary:
 claim that the one-step valuation density `2^{−j}` is independent of `(m, r)` for
 odd parameters is confirmed across all 20 pairs tested.
 
-## 7. Paper 04 — bidirectional transport, never machine-checked before
+## 7. Paper 03 — the same residue, derived twice
+
+`code/ot_paper03_recheck.py`. **All 13 checks pass** at `k ≤ 13`: 16,382 words
+with `r_w` derived twice, 114,661 transport cases.
+
+### Why this needed its own recheck
+
+Four of Paper 03's statements were already confirmed as a by-product of §3 above.
+But they were confirmed *using the closed congruence* `r_w ≡ −b_w 3^{−u} (mod 2^k)`
+— which is exactly the shortcut Paper 03 §11 warns against resting on:
+
+> 若沒有另外証明 finite parity coding 的唯一性，直接從「最終整數」跳到「每個
+> intermediate parity branch 都正確」會留下討論缺口。
+
+So `r_w` is derived a **second time**, by the §6/§7/§28 refinement induction: start
+from `r_D = 0`, `r_U = 1`, and split each cylinder into `r_w` and `r_w + 2^k`
+according to the parity of `m_w`. That route **never touches** `b_w 3^{−u}`.
+
+The two derivations agree on all 16,382 words. That is what makes the closed
+congruence a *result* rather than an assumption — and it is the check the paper's
+own repair note is about.
+
+The drill confirms both routes are load-bearing: perturbing the refinement
+parity, the induction's base case, or the child offset all break the agreement,
+and so does inverting the congruence's exponent. Neither route is decorative.
+
+### Also verified
+
+| Check | Claim |
+|---|---|
+| the cylinder is exactly the admissible domain | A |
+| word ↔ residue bijection, and the level-`k` partition | B |
+| the closed residue formula, against the induction | C |
+| exact cylinder transport | D |
+| local identity trivialization `ψ_w ∘ T^k ∘ φ_w^{-1} = id` | E |
+| exact recovery | F |
+| the two children are exactly `{r_w, r_w + 2^k}` | §7 |
+| the level-`k` atlas partitions the positive integers | §9, §26 |
+| faithfulness: `F_w` is injective on its cylinder | §19 |
+| the next branch is decided by the quotient bit alone | §29 |
+| nested residues form an inverse system | §32 |
+| all five worked examples, against the paper's own numbers | §20–§24 |
+| target charts overlap — with a witness | §27 |
+
+The five worked examples match exactly as stated: `r_D=0, m_D=0`; `r_U=1, m_U=2`;
+`r_{UD}=1, m=1`; `r_{DU}=2, m=2`; and `UUDD` with `k=4, u=2, b=5, r=3, m=2`,
+including the explicit orbit `3 → 5 → 8 → 4 → 2`.
+
+§27 is another non-claim given a witness rather than a nod: source charts
+partition, but target charts need not, and `DDDD` and `DDDU` both reach 2 at
+depth 4.
+
+### One attribution fix
+
+Three of the Paper 03 mutations initially registered as "caught by crashing"
+rather than by a named check: a wrong residue makes `m_w` non-integral, and an
+assertion fired before any check could report. A crash is a detection, but a weak
+one — it says something broke, not what. The integrality failure is now a named
+exception that the comparison reports as a disagreement, so all three attribute
+properly. Across the whole drill only one mutation still detects by crashing, and
+that one legitimately: inverting `α` to `ln3/ln2` makes `1 − α` negative, and
+there is no meaningful check to route `ln` of a negative through.
+
+## 8. Paper 04 — bidirectional transport, never machine-checked before
 
 `code/ot_paper04_recheck.py`. **All 21 checks pass** at `k ≤ 10`: 22,506
 transport triples and 112,530 negative controls.
@@ -421,7 +484,7 @@ arithmetic identity rather than by the checks — after `3^u ≤ 2^k` versus
 `3^u < 2^k` in Paper 09, and `<` versus `<=` in Paper 07. Re-aimed at the family
 index, it is caught by three checks at once.
 
-## 8. Paper 05's KL constant, and a finding
+## 9. Paper 05's KL constant, and a finding
 
 `code/ot_paper05_kl_recheck.py`. The last remaining numeric claim in the six
 finite groups.
@@ -506,7 +569,7 @@ subject is not the instrument breaking.** The KL ULP result is recorded under
 real defect in the subject would be indistinguishable from a broken checker — and
 `build_results.py` would refuse to archive the very finding worth keeping.
 
-## 9. All six rechecks were drilled
+## 10. All seven rechecks were drilled
 
 A recheck that passed everything is worth what it could have caught.
 `code/ot_recheck_drill.py` perturbs each asserted formula by one term and
@@ -564,7 +627,7 @@ geometric sum, §33's factor of `r`, the §21 threshold, the Theorem C residue
 sign, §47 using the minimum correction where the maximum is required, and the
 referee itself (which cascades into thirteen checks).
 
-**47 defects planted across the six rechecks, 47 caught, 6 controls
+**54 defects planted across the seven rechecks, 54 caught, 7 controls
 undisturbed.** One was caught by crashing rather than by a named check, which is
 recorded as such rather than counted as a clean hit.
 
@@ -607,7 +670,7 @@ Breaking the referee's `+1` injection did **not** break Theorem A or Theorem D.
   not a hole in the check — but it means **Theorem D alone cannot detect a wrong
   injection constant**, and should not be leaned on for that.
 
-## 10. Where this stands
+## 11. Where this stands
 
 | Group | Cases claimed | Status |
 |---|---|---|
@@ -630,11 +693,10 @@ Remaining, in order of what this arm can usefully do next:
   already built for Paper 09. **This is the next non-Lean task.**
 - **Paper 04 is now complete** (§7 above), and it was the largest untested gap in
   the series: the subject's suite had no Paper 04 test at all.
-- **Papers 01, 03 and 08** — Paper 03's cylinder statements are already covered as
-  a by-product of §3, so what remains there is its own theorem numbering rather
-  than new content. Paper 01 is a reclassification of prior literature, so its
-  checkable content is bibliographic rather than arithmetic. Paper 08's algebraic
-  ladder is the real remainder — and an earlier assessment here that it was
+- **Paper 03 is now complete** (§7 above), with `r_w` derived independently twice.
+- **Papers 01 and 08 remain.** Paper 01 is a reclassification of prior literature,
+  so its checkable content is bibliographic rather than arithmetic. Paper 08's
+  algebraic ladder is the real remainder — and an earlier assessment here that it was
   entirely out of instrument range was too quick: its *general* claims need a
   proof assistant, but a "structural breakage theorem" needs explicit failure
   **witnesses**, and witnesses in `ℤ/nℤ`, `M₂(ℤ)` or over a finite field are

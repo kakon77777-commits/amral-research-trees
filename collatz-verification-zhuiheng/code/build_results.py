@@ -33,6 +33,7 @@ CODE_FILES = [
     "code/run_verification.sh",
     "code/ot_paper02_recheck.py",
     "code/ot_paper06_recheck.py",
+    "code/ot_paper03_recheck.py",
     "code/ot_paper04_recheck.py",
     "code/ot_paper05_kl_recheck.py",
     "code/ot_paper07_recheck.py",
@@ -73,6 +74,7 @@ def main() -> int:
     reference = load_gate("reference-crosscheck.json")
     ot_recheck = load_gate("ot-paper02-recheck.json")
     ot_p06 = load_gate("ot-paper06-recheck.json")
+    ot_p03 = load_gate("ot-paper03-recheck.json")
     ot_p04 = load_gate("ot-paper04-recheck.json")
     ot_kl = load_gate("ot-paper05-kl-recheck.json")
     ot_p07 = load_gate("ot-paper07-recheck.json")
@@ -91,6 +93,7 @@ def main() -> int:
     for name, gate, key in (
         ("Paper 02 recheck", ot_recheck, "ok"),
         ("Paper 06 recheck", ot_p06, "ok"),
+        ("Paper 03 recheck", ot_p03, "ok"),
         ("Paper 04 recheck", ot_p04, "ok"),
         ("Paper 05 KL recheck", ot_kl, "ok"),
         ("Paper 07 recheck", ot_p07, "ok"),
@@ -222,6 +225,30 @@ def main() -> int:
                 "equality_witnesses_explained": (
                     "the two equality cases are n=1 and n=2, the elements of the trivial "
                     "cycle; T has period 2 there and 16 is even, so they are forced"
+                ),
+            },
+            "paper_03_theorems": {
+                "max_word_length": ot_p03["max_word_length"],
+                "counts": ot_p03["counts"],
+                "checks": {k: v["pass"] for k, v in ot_p03["checks"].items()},
+                "all_pass": ot_p03["ok"],
+                "the_substantive_addition": (
+                    "Four of Paper 03's statements were already confirmed as a by-product of "
+                    "the Paper 02 recheck, but via the closed congruence r_w = -b_w 3^-u - the "
+                    "very shortcut Paper 03 §11 warns against using as the foundation. So r_w "
+                    "is derived a SECOND time here, by the §6/§7/§28 refinement induction from "
+                    "r_D = 0 and r_U = 1, splitting each cylinder by the parity of m_w and "
+                    "never touching b_w 3^-u. The two derivations agree on all "
+                    + str(ot_p03["counts"]["words_derived_two_ways"]) +
+                    " words, which is what makes the closed congruence a result rather than an "
+                    "assumption."
+                ),
+                "worked_examples": ot_p03["measured"]["worked_examples"],
+                "target_overlap_witness": ot_p03["measured"]["target_overlap_witness"],
+                "non_claim_given_a_witness": (
+                    "§27 states that target charts may overlap even though source charts "
+                    "partition. That is an existence claim, so a witness was found rather than "
+                    "asserted: " + str(ot_p03["measured"]["target_overlap_witness"]) + "."
                 ),
             },
             "paper_04_theorems": {

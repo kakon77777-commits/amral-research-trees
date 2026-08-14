@@ -215,6 +215,44 @@ P07_MUTATIONS = [
      []),
 ]
 
+P03_MUTATIONS = [
+    # The whole point of Paper 03's recheck is that r_w is derived twice. These
+    # perturb each route separately: breaking either must break the agreement.
+    ("J01-refinement-parity", "the refinement induction assigns D to the wrong child",
+     "            a_for_D = m % 2",
+     "            a_for_D = 1 - m % 2",
+     ["P03_ThmC_closed_formula_agrees_with_the_refinement_induction"]),
+    ("J02-refinement-base", "the base case swaps r_D and r_U",
+     '    tab: dict[str, int] = {"D": 0, "U": 1}',
+     '    tab: dict[str, int] = {"D": 1, "U": 0}',
+     ["P03_ThmC_closed_formula_agrees_with_the_refinement_induction"]),
+    ("J03-congruence-sign", "the closed formula uses 3^{+u}",
+     "    return (-b * pow(3, -u, 2 ** k)) % 2 ** k",
+     "    return (-b * pow(3, u, 2 ** k)) % 2 ** k",
+     ["P03_ThmC_closed_formula_agrees_with_the_refinement_induction"]),
+    ("J04-child-offset", "the child cylinders are offset by 2^{k+1} instead of 2^k",
+     '            tab[w + "D"] = (r + 2 ** k * a_for_D) % 2 ** (k + 1)',
+     '            tab[w + "D"] = (r + 2 ** (k + 1) * a_for_D) % 2 ** (k + 1)',
+     ["P03_S7_children_are_exactly_r_w_and_r_w_plus_2k"]),
+    ("J05-quotient-bit", "§29's quotient-bit rule drops m_w",
+     "                if y % 2 != (m + a) % 2:",
+     "                if y % 2 != a % 2:",
+     ["P03_S29_next_branch_decided_by_the_quotient_bit"]),
+    ("J06-recovery-multiplier", "Theorem F recovers with 3^u instead of 2^k",
+     "                if r + 2 ** k * ((y - m) // 3 ** u) != n:",
+     "                if r + 3 ** u * ((y - m) // 3 ** u) != n:",
+     ["P03_ThmF_exact_recovery"]),
+    ("J07-referee-broken", "the referee itself: T halves odd values too",
+     "    return n // 2 if n % 2 == 0 else (3 * n + 1) // 2",
+     "    return n // 2 if n % 2 == 0 else (3 * n + 1) // 4",
+     ["P03_ThmA_cylinder_is_exactly_the_admissible_domain",
+      "P03_ThmD_exact_cylinder_transport"]),
+    ("NULL-07", "control: a comment is added",
+     "def refinement_table(max_k: int) -> dict[str, int]:",
+     "# control mutation, no behavioural change\ndef refinement_table(max_k: int) -> dict[str, int]:",
+     []),
+]
+
 P04_MUTATIONS = [
     ("I01-inverse-multiplier", "Theorem B's inverse scales by 3^u instead of 2^k",
      "                if r + 2 ** k * ((y - m) // 3 ** u) != x:",
@@ -297,6 +335,7 @@ TARGETS = [
     # 1 <= n < 2^20 specifically, and would be vacuous at any other width.
     ("code/ot_paper07_recheck.py", P07_MUTATIONS, ["6", "300"]),
     ("code/ot_paper09_recheck.py", P09_MUTATIONS, ["7", "20"]),
+    ("code/ot_paper03_recheck.py", P03_MUTATIONS, ["8"]),
     ("code/ot_paper04_recheck.py", P04_MUTATIONS, ["6"]),
     ("code/ot_paper05_kl_recheck.py", P05KL_MUTATIONS, []),
 ]
