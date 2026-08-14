@@ -1,0 +1,17 @@
+{
+  "version": "1.1",
+  "curve": "389.a1",
+  "p": 11,
+  "gates": {
+    "finite_layer_augmentation_order_2": "CLOSED_EXACT",
+    "mixed_augmentation_nonzero": "CLOSED_EXACT",
+    "anomalous_at_397": "CLOSED_EXACT",
+    "anomalous_at_991": "CLOSED_EXACT",
+    "tame_local_norm_quotient_lemma": "PROVED_IN_V1.1",
+    "mw_mod11_local_norm_localization": "CLOSED_EXACT",
+    "full_simultaneous_reduction_surjectivity": "CLOSED_EXACT",
+    "reduction_cokernel_J_S": "CLOSED_EXACT_VALUE_1",
+    "classical_nonanomalous_full_lattice_MT_backend": "NO_GO_HYPOTHESIS_FAILURE",
+    "P5_ANOM_BocCOMP_11_rank2": "OPEN"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "augmentation_coefficients_mod_11_through_degree_2": {
+    "1": 0,
+    "X397": 0,
+    "X397*X991": 6,
+    "X397^2": 0,
+    "X991": 0,
+    "X991^2": 0
+  },
+  "augmentation_order_mod_11": 2,
+  "claim_boundary": {
+    "closed": "finite mod-11 p-Sylow Mazur-Tate augmentation order and mixed degree-2 primitiveness",
+    "full_BSD_proved": false,
+    "not_closed": "comparison of the finite degree-2 class with the classical complex rank-2 normalized leading scalar L^(2)(E,1)/(2! Omega^+ Reg_infty)"
+  },
+  "coordinates": {
+    "X397": "gamma_397 - 1",
+    "X991": "gamma_991 - 1",
+    "primitive_roots": {
+      "397": 5,
+      "991": 6
+    }
+  },
+  "curve": "389.a1",
+  "in_I2": true,
+  "in_I3": false,
+  "initial_form_in_computed_eigenline_normalization": "6 * X397 * X991",
+  "manin_symbol_line": {
+    "hecke_eigenspace_nullity_before_plus": 2,
+    "lambda_at_infinity": 0,
+    "lambda_nonzero_count": 228,
+    "manin_quotient_dimension_mod_11": 65,
+    "manin_relation_rank_mod_11": 325,
+    "normalizing_free_index": 384,
+    "plus_hecke_eigenspace_dimension": 1
+  },
+  "mixed_degree_2_nonzero": true,
+  "n": 393427,
+  "normalization_invariance": {
+    "note": "Changing the nonzero scalar on the one-dimensional plus Hecke eigenline, or changing primitive generators in each C_11 factor, multiplies the mixed initial coefficient by units. The residue 6 is normalization-dependent; I-adic order 2 and nonvanishing are invariant.",
+    "status": "proved_for_order_and_nonvanishing"
+  },
+  "p_sylow_quotient": "C_11 x C_11",
+  "prime": 11,
+  "prime_certificates": [
+    {
+      "a_ell": 24,
+      "a_ell_minus_ell_minus_1_mod_11": 0,
+      "ell": 397,
+      "ell_minus_1_mod_11": 0,
+      "kolyvagin_condition": true,
+      "primitive_root": 5,
+      "ribet_level_raising_square_condition": true
+    },
+    {
+      "a_ell": -53,
+      "a_ell_minus_ell_minus_1_mod_11": 0,
+      "ell": 991,
+      "ell_minus_1_mod_11": 0,
+      "kolyvagin_condition": true,
+      "primitive_root": 6,
+      "ribet_level_raising_square_condition": true
+    }
+  ],
+  "pure_degree_2_coefficients_zero": true,
+  "schema_version": "1.0",
+  "unit_group_terms_summed": 392040
+}
