@@ -350,3 +350,78 @@ def terras_margin(w: "Chart") -> tuple[int, int, int]:
     c = w.b // delta
     n = nu(w)
     return n, c, n - c
+
+
+# ============================================================================
+# Round 03-A additions — the coefficient survivor tree.
+#
+# S_k = { w : 3^(u_j(w)) > 2^j for all j <= k } is the irrational ballot tree of
+# Round 03-A §1. Note the contrast with `first_crossing_words`: there every
+# PROPER prefix expands and the last contracts; here every prefix including the
+# last expands.
+# ============================================================================
+
+
+def crossing_depth(u: int) -> int:
+    """§7: K_u, the least j with 3^u < 2^j. Exact — a bit length, not a log."""
+    return (3 ** u).bit_length()
+
+
+def survives(k: int, u: int) -> bool:
+    """§1: is a depth-k word with u up-steps still a coefficient survivor?"""
+    return 3 ** u > 2 ** k
+
+
+def survivor_words(maxlen: int) -> dict[int, list["Chart"]]:
+    """S_k for k = 1..maxlen, as charts, by breadth-first refinement.
+
+    Pruned by the survival condition itself, so no dead subtree is ever built.
+    """
+    out: dict[int, list[Chart]] = {}
+    frontier = [ROOT]
+    for k in range(1, maxlen + 1):
+        nxt = [c for w in frontier for c in children(w) if survives(c.k, c.u)]
+        out[k] = nxt
+        frontier = nxt
+    return out
+
+
+def survivor_dp(maxlen: int) -> dict[tuple[int, int], int]:
+    """§3: a_{k,u}, the survivor count by depth and up-count, from the recursion."""
+    a = {(0, 0): 1}
+    for k in range(1, maxlen + 1):
+        for u in range(0, k + 1):
+            if not survives(k, u):
+                continue
+            a[(k, u)] = a.get((k - 1, u), 0) + a.get((k - 1, u - 1), 0)
+    return a
+
+
+def normalized_residue(w: "Chart") -> float:
+    """§12: x_w = r_w / 2^k, in (0, 1)."""
+    return w.r / 2 ** w.k
+
+
+def chi_D(x: float, p: int) -> float:
+    """§18: which binary lift the D-child receives."""
+    return x / 2 if p == 0 else (x + 1) / 2
+
+
+def rho_D(x: float, p: int, s: float) -> float:
+    """§18: the exact fraction of a boundary parent's mass a D-crossing removes."""
+    return 2 ** -s * hurwitz_zeta(s, chi_D(x, p)) / hurwitz_zeta(s, x)
+
+
+def coefficient_mass(k: int, s: float, words: list["Chart"]) -> float:
+    """§13: C_k(s) = 2^{-ks} * sum over survivors of zeta(s, x_w).
+
+    Exact — an infinite sum per cylinder, closed by the Hurwitz zeta, not a
+    truncation.
+    """
+    return 2 ** (-k * s) * math.fsum(
+        hurwitz_zeta(s, normalized_residue(w)) for w in words)
+
+
+def head_mass(words: list["Chart"], s: float) -> float:
+    """§25: H_k(s), the mass of the canonical heads alone."""
+    return math.fsum(w.r ** -s for w in words)

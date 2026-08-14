@@ -12,7 +12,7 @@
     "Hard-Zeta": 44,
     "other project": 2
   },
-  "processed_count": 24,
+  "processed_count": 25,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -373,7 +373,7 @@
       "sha256": "e0ba61375f4a9f36f64000fb697da92abfcf308278363eccbfcd9f66beb40ec7",
       "line": "Hard-Zeta",
       "role": "Phase I round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 24. Rechecked by code/src09_hardzeta_round03a_recheck.py: the irrational ballot tree, survivor DP, Beatty event schedule, exact Hurwitz-zeta mass, anchor ejection, event-loss operator and Head-Tail Reduction all hold. Headline: the minimum surviving anchor m_k measured from 23 tau_c records on [2, 2^32), giving rigorous upper bounds on the true C_k(s); see reports/RUN-007-HARD-ZETA-ROUND-03A.md",
       "round_sort_key": [
         "",
         3,

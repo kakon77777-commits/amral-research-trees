@@ -1,0 +1,174 @@
+{
+  "tool": "src09_drill.py",
+  "subject": "src09_hardzeta_round03a_recheck.py, Round 03-A's additions to hz_chart_algebra.py, and the measured tau_c records",
+  "defects": {
+    "A01_survival_threshold_widened": {
+      "target_check": "SRC09_DP_counts_match_RUN_006s_first_crossing_enumeration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC09_event_loss_operator_reproduces_the_frontier_drop",
+        "SRC09_exact_coefficient_mass_lands_inside_the_brute_force_bracket",
+        "SRC09_survivor_count_respects_the_terminal_binomial_bound",
+        "SRC09_survivors_start_UU_and_their_residues_are_3_mod_4",
+        "SRC09_the_D_child_survives_exactly_when_the_parent_clears_the_next_depth",
+        "SRC09_the_event_product_criterion_telescopes",
+        "SRC09_the_minimum_anchor_sandwich_holds_at_every_depth_computed"
+      ]
+    },
+    "A02_crossing_depth_off_by_one": {
+      "target_check": "SRC09_beatty_event_depths_are_the_bit_lengths_of_powers_of_three",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC09_DP_counts_match_RUN_006s_first_crossing_enumeration",
+        "SRC09_admitting_u_equals_0_repairs_the_schedule_exactly",
+        "SRC09_event_loss_operator_reproduces_the_frontier_drop",
+        "SRC09_the_ceiling_form_of_K_u_agrees_with_the_exact_form",
+        "SRC09_the_coefficient_frontier_only_shrinks_at_beatty_event_depths",
+        "SRC09_the_event_product_criterion_telescopes"
+      ]
+    },
+    "A03_survivor_DP_drops_the_D_branch": {
+      "target_check": "SRC09_survivor_DP_reproduces_the_enumerated_tree",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC09_first_crossing_word_counts_match_the_DP"
+      ]
+    },
+    "A04_survivor_tree_forgets_to_prune": {
+      "target_check": "SRC09_the_chart_algebra_evaluates_without_error",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC09_DP_counts_match_RUN_006s_first_crossing_enumeration",
+        "SRC09_first_crossing_word_counts_match_the_DP",
+        "SRC09_survivor_DP_reproduces_the_enumerated_tree",
+        "SRC09_survivor_count_respects_the_terminal_binomial_bound",
+        "SRC09_survivors_start_UU_and_their_residues_are_3_mod_4",
+        "SRC09_the_U_child_always_survives"
+      ]
+    },
+    "A05_normalized_residue_uses_the_wrong_modulus": {
+      "target_check": "SRC09_exact_coefficient_mass_lands_inside_the_brute_force_bracket",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC09_event_loss_operator_reproduces_the_frontier_drop",
+        "SRC09_head_tail_reduction_bounds_hold_in_both_forms",
+        "SRC09_the_event_product_criterion_telescopes"
+      ]
+    },
+    "A06_lift_assignment_swapped": {
+      "target_check": "SRC09_small_x_asymptotics_split_the_two_parities",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC09_event_loss_operator_reproduces_the_frontier_drop",
+        "SRC09_the_event_product_criterion_telescopes"
+      ]
+    },
+    "A07_event_loss_ratio_drops_its_scale_factor": {
+      "target_check": "SRC09_the_event_loss_ratio_is_a_proper_fraction",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A08_coefficient_mass_loses_the_cylinder_scale": {
+      "target_check": "SRC09_exact_coefficient_mass_lands_inside_the_brute_force_bracket",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC09_event_loss_operator_reproduces_the_frontier_drop",
+        "SRC09_head_tail_reduction_bounds_hold_in_both_forms",
+        "SRC09_the_event_product_criterion_telescopes",
+        "SRC09_the_minimum_anchor_sandwich_holds_at_every_depth_computed"
+      ]
+    },
+    "A09_head_mass_sums_the_wrong_representative": {
+      "target_check": "SRC09_head_tail_reduction_bounds_hold_in_both_forms",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T01_minimum_anchor_reads_the_wrong_record": {
+      "target_check": "SRC09_the_minimum_anchor_plateaus_until_its_own_tau_c",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC09_the_minimum_anchor_sandwich_holds_at_every_depth_computed"
+      ]
+    },
+    "T02_brute_force_tau_c_condition_widened": {
+      "target_check": "SRC09_exact_coefficient_mass_lands_inside_the_brute_force_bracket",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC09_every_reported_record_reproduces_under_exact_python_iteration",
+        "SRC09_the_frontier_really_does_shrink_somewhere"
+      ]
+    },
+    "T03_the_frontier_bracket_drops_its_truncation_tail": {
+      "target_check": "SRC09_exact_coefficient_mass_lands_inside_the_brute_force_bracket",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "R01_a_record_holder_is_not_actually_a_record": {
+      "target_check": "SRC09_the_measured_anchors_are_strictly_increasing_records",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC09_every_reported_record_reproduces_under_exact_python_iteration",
+        "SRC09_no_smaller_start_beats_a_reported_record_below_the_brute_range"
+      ]
+    },
+    "R02_a_record_tau_c_is_overstated": {
+      "target_check": "SRC09_every_reported_record_reproduces_under_exact_python_iteration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "R03_the_record_list_is_reordered": {
+      "target_check": "SRC09_the_measured_anchors_are_strictly_increasing_records",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC09_no_smaller_start_beats_a_reported_record_below_the_brute_range",
+        "SRC09_the_minimum_anchor_plateaus_until_its_own_tau_c"
+      ]
+    },
+    "D01_paper_loses_its_proved_unproved_ledger": {
+      "target_check": "SRC09_paper_keeps_an_explicit_proved_and_unproved_ledger",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_bundle_no_longer_carries_the_earlier_rounds": {
+      "target_check": "SRC09_bundle_carries_rounds_01_02_and_the_v03_map",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_algebra_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_record_file_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "counts": {
+    "defects_planted": 17,
+    "defects_caught_by_the_named_check": 17,
+    "defects_in_round_03as_own_formulas": 9,
+    "defects_in_the_measured_records": 3,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

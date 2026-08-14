@@ -86,11 +86,19 @@ describe it that way.
    is 2.5%; and the Terras conjecture, in Round 02's own finite-word form, holds
    on **all 81,119 first-crossing words up to length 24**, worst case at 49% of
    its bound. Also a check made vacuous by the very emptiness it measures.
-8. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+8. [`reports/RUN-007-HARD-ZETA-ROUND-03A.md`](./reports/RUN-007-HARD-ZETA-ROUND-03A.md) —
+   Round 03-A compresses the coefficient frontier to a single unproved quantity,
+   the minimum surviving anchor `m_k`. This run **measures it**: 23 values from a
+   `τ_c` record scan of `[2, 2^32)`, rising to 2,788,008,987, each converted by
+   the paper's own §28 into a rigorous upper bound on the true infinite `C_k(s)`
+   — `C_447(2) ≤ 2.3e-10`. Escaping 23 times is not evidence of escaping forever,
+   and the report says so. Also a circular check and a tautological one, found by
+   the drill in my own work.
+9. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-9. [`code/`](./code/) — the engine, the independent reference, and the gates.
-10. [`data/gate-logs/`](./data/gate-logs/) and
+10. [`code/`](./code/) — the engine, the independent reference, and the gates.
+11. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

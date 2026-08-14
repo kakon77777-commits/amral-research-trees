@@ -66,6 +66,55 @@ fn sigma_capped(n: u128, cap: u64) -> u64 {
     cap + 1
 }
 
+/// Least j with 3^u < 2^j, for u = 0..=umax, exactly.
+///
+/// 3^u leaves u128 at u = 81, and comparing `3^u < 2^j` in a fixed width was the
+/// first version's bug: the comparison was silently skipped past j = 127, so
+/// tau_c was never found for the very starts that make this measurement
+/// interesting. Base-2^32 limbs cost twenty lines and remove the ceiling.
+fn crossing_table(umax: usize) -> Vec<u64> {
+    let mut out = Vec::with_capacity(umax + 1);
+    let mut limbs: Vec<u64> = vec![1];              // 3^u, base 2^32
+    for _ in 0..=umax {
+        let bits = {
+            let top = limbs.len() - 1;
+            (top as u64) * 32 + (64 - (limbs[top] as u64).leading_zeros() as u64)
+        };
+        out.push(bits);                              // 3^u < 2^bits, minimally
+        let mut carry: u64 = 0;
+        for l in limbs.iter_mut() {
+            let v = *l * 3 + carry;
+            *l = v & 0xFFFF_FFFF;
+            carry = v >> 32;
+        }
+        if carry > 0 {
+            limbs.push(carry);
+        }
+    }
+    out
+}
+
+/// tau_c(n) = inf{ j >= 1 : 3^(u_j) < 2^j }, the coefficient stopping time.
+///
+/// Uses the crossing table: 3^u < 2^j exactly when j >= K[u].
+fn tau_c(n: u128, kt: &[u64]) -> u64 {
+    let mut x = n;
+    let mut u: usize = 0;
+    for j in 1..=1024u64 {
+        if x & 1 == 1 {
+            u += 1;
+        }
+        x = step(x);
+        if x >= VALUE_GUARD {
+            panic!("value guard tripped in tau_c at n = {n}, step {j}");
+        }
+        if j >= kt[u] {
+            return j;
+        }
+    }
+    panic!("tau_c({n}) exceeded 1024 steps");
+}
+
 /// Kahan-compensated accumulator.
 #[derive(Clone, Copy)]
 struct Kahan {
@@ -196,6 +245,21 @@ fn self_test() -> i32 {
         eprintln!("self-test: cap exactly at sigma should return sigma");
         bad += 1;
     }
+    // the crossing table, against values checkable by hand
+    let kt = crossing_table(200);
+    for &(u, want) in &[(0usize, 1u64), (1, 2), (2, 4), (3, 5), (4, 7), (5, 8),
+                        (6, 10), (7, 12), (8, 13)] {
+        if kt[u] != want {
+            eprintln!("self-test: crossing_table[{u}] = {}, expected {want}", kt[u]);
+            bad += 1;
+        }
+    }
+    // and past where 3^u leaves u128, where the first version stopped working
+    if kt[81] != 129 || kt[100] != 159 || kt[200] != 317 {
+        eprintln!("self-test: crossing table wrong past u128: {} {} {}",
+                  kt[81], kt[100], kt[200]);
+        bad += 1;
+    }
     // Kahan must beat naive summation on a case built to break naive summation
     let mut k = Kahan::new();
     let mut naive = 0.0f64;
@@ -214,7 +278,7 @@ fn self_test() -> i32 {
         bad += 1;
     }
     if bad == 0 {
-        println!("{{\"self_test\":\"ok\",\"cases\":8}}");
+        println!("{{\"self_test\":\"ok\",\"cases\":19}}");
         0
     } else {
         println!("{{\"self_test\":\"FAILED\",\"failures\":{bad}}}");
@@ -242,6 +306,31 @@ fn main() {
 
     if opts.contains_key("self-test") {
         std::process::exit(self_test());
+    }
+
+    if opts.contains_key("tau-records") {
+        // Round 03-A §28-§30: m_k = min { n >= 2 : tau_c(n) > k }, the minimum
+        // surviving coefficient anchor. It is determined entirely by the
+        // tau_c RECORD holders, since m_k is the first n whose tau_c exceeds k
+        // and any later n with a smaller tau_c can never be that first one.
+        let to: u64 = opts.get("to").and_then(|v| v.parse().ok()).unwrap_or(1 << 32);
+        let kt = crossing_table(1200);
+        let mut best: u64 = 0;
+        print!("{{\"tool\":\"hz_tau_records\",\"domain_hi\":{to},\"records\":[");
+        let mut first = true;
+        for n in 2..to {
+            let t = tau_c(n as u128, &kt);
+            if t > best {
+                best = t;
+                if !first {
+                    print!(",");
+                }
+                first = false;
+                print!("{{\"n\":{n},\"tau_c\":{t}}}");
+            }
+        }
+        println!("]}}");
+        return;
     }
 
     let to: u64 = opts

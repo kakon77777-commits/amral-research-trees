@@ -126,6 +126,14 @@ PROCESSED = {
         "item 23. Rechecked with items 21-22; both loose files are byte-identical "
         "to the bundled copies, and the bundle also carries Round 01"
     ),
+    "Hard_Zeta_Phase_I_Round_03A_bundle.zip": (
+        "item 24. Rechecked by code/src09_hardzeta_round03a_recheck.py: the "
+        "irrational ballot tree, survivor DP, Beatty event schedule, exact "
+        "Hurwitz-zeta mass, anchor ejection, event-loss operator and Head-Tail "
+        "Reduction all hold. Headline: the minimum surviving anchor m_k measured "
+        "from 23 tau_c records on [2, 2^32), giving rigorous upper bounds on the "
+        "true C_k(s); see reports/RUN-007-HARD-ZETA-ROUND-03A.md"
+    ),
     "collatz_ot_v3_threshold_benchmark.csv": (
         "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
         "all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, "

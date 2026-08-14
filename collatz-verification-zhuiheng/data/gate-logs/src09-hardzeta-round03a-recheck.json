@@ -1,0 +1,717 @@
+{
+  "tool": "src09_hardzeta_round03a_recheck.py",
+  "subject": "Neo.K + Aletheia, Hard-Zeta Phase I / Round 03-A Coefficient Frontier v0.1 (2026-08-11)",
+  "source_items": [
+    24
+  ],
+  "scope": "the irrational ballot tree and its DP (§1-§5), the Beatty event schedule and staircase (§6-§9), the exact Hurwitz-zeta mass formula and its duplication transfer (§11-§18), anchor ejection (§20-§21), the event-loss operator and product criterion (§22-§24), the Head-Tail Reduction (§25-§27) and the minimum-anchor equivalence (§28-§32).",
+  "checks": {
+    "SRC09_algebra_anchors_hold": {
+      "pass": true
+    },
+    "SRC09_bundle_carries_rounds_01_02_and_the_v03_map": {
+      "pass": true
+    },
+    "SRC09_paper_keeps_an_explicit_proved_and_unproved_ledger": {
+      "pass": true
+    },
+    "SRC09_the_power_and_floor_forms_of_survival_agree": {
+      "pass": true
+    },
+    "SRC09_that_comparison_saw_both_outcomes": {
+      "pass": true
+    },
+    "SRC09_survivor_DP_reproduces_the_enumerated_tree": {
+      "pass": true
+    },
+    "SRC09_the_U_child_always_survives": {
+      "pass": true
+    },
+    "SRC09_the_D_child_survives_exactly_when_the_parent_clears_the_next_depth": {
+      "pass": true
+    },
+    "SRC09_at_most_one_U_count_layer_can_cross_at_any_depth": {
+      "pass": true
+    },
+    "SRC09_beatty_event_depths_are_the_bit_lengths_of_powers_of_three": {
+      "pass": true
+    },
+    "SRC09_the_ceiling_form_of_K_u_agrees_with_the_exact_form": {
+      "pass": true
+    },
+    "SRC09_the_coefficient_frontier_only_shrinks_at_beatty_event_depths": {
+      "pass": true
+    },
+    "SRC09_the_frontier_really_does_shrink_somewhere": {
+      "pass": true
+    },
+    "SRC09_depth_1_changes_the_frontier_and_is_not_in_the_u_at_least_1_schedule": {
+      "pass": true
+    },
+    "SRC09_admitting_u_equals_0_repairs_the_schedule_exactly": {
+      "pass": true
+    },
+    "SRC09_first_crossing_word_counts_match_the_DP": {
+      "pass": true
+    },
+    "SRC09_DP_counts_match_RUN_006s_first_crossing_enumeration": {
+      "pass": true
+    },
+    "SRC09_survivor_count_respects_the_terminal_binomial_bound": {
+      "pass": true
+    },
+    "SRC09_survivors_start_UU_and_their_residues_are_3_mod_4": {
+      "pass": true
+    },
+    "SRC09_hurwitz_duplication_identity_holds": {
+      "pass": true
+    },
+    "SRC09_exact_coefficient_mass_lands_inside_the_brute_force_bracket": {
+      "pass": true
+    },
+    "SRC09_low_lift_goes_to_D_when_p_is_zero_and_to_U_when_p_is_one": {
+      "pass": true
+    },
+    "SRC09_the_event_loss_ratio_is_a_proper_fraction": {
+      "pass": true
+    },
+    "SRC09_small_x_asymptotics_split_the_two_parities": {
+      "pass": true
+    },
+    "SRC09_anchor_ejection_follows_the_parity_of_the_target_base": {
+      "pass": true
+    },
+    "SRC09_the_ejection_rule_was_exercised": {
+      "pass": true
+    },
+    "SRC09_event_loss_operator_reproduces_the_frontier_drop": {
+      "pass": true
+    },
+    "SRC09_the_event_product_criterion_telescopes": {
+      "pass": true
+    },
+    "SRC09_head_tail_reduction_bounds_hold_in_both_forms": {
+      "pass": true
+    },
+    "SRC09_every_reported_record_reproduces_under_exact_python_iteration": {
+      "pass": true
+    },
+    "SRC09_no_smaller_start_beats_a_reported_record_below_the_brute_range": {
+      "pass": true
+    },
+    "SRC09_the_minimum_anchor_is_nondecreasing_in_k": {
+      "pass": true
+    },
+    "SRC09_the_minimum_anchor_sandwich_holds_at_every_depth_computed": {
+      "pass": true
+    },
+    "SRC09_the_minimum_anchor_plateaus_until_its_own_tau_c": {
+      "pass": true
+    },
+    "SRC09_the_measured_anchors_are_strictly_increasing_records": {
+      "pass": true
+    },
+    "SRC09_the_chart_algebra_evaluates_without_error": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "records_verified_by_full_scan_below": 7,
+    "survivor_tree_depth": 18,
+    "survivors_per_depth": {
+      "1": 1,
+      "2": 1,
+      "3": 2,
+      "4": 3,
+      "5": 4,
+      "6": 8,
+      "7": 13,
+      "8": 19,
+      "9": 38,
+      "10": 64,
+      "11": 128,
+      "12": 226,
+      "13": 367,
+      "14": 734,
+      "15": 1295,
+      "16": 2114,
+      "17": 4228,
+      "18": 7495
+    },
+    "brute_force_range": "[2, 262144)",
+    "tau_c_scan_range": "[2, 4294967296)",
+    "tau_c_records": 23,
+    "largest_tau_c_below_scan_bound": 447,
+    "boundary_parents_exercised": 1750
+  },
+  "measured": {
+    "frontier_change_depths": [
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      10,
+      12,
+      13,
+      15,
+      16,
+      18,
+      20,
+      21,
+      23,
+      24,
+      26,
+      27,
+      29,
+      31,
+      32,
+      34,
+      35,
+      37,
+      39,
+      40,
+      42,
+      43,
+      45,
+      46,
+      48,
+      50,
+      51,
+      53,
+      54,
+      56,
+      58,
+      59
+    ],
+    "K_0": 1,
+    "exact_vs_brute_C_k": [
+      {
+        "k": 2,
+        "brute_lower": 0.15886652430879697,
+        "exact": 0.15886747797947537,
+        "brute_upper": 0.1588703390060626,
+        "inside": true
+      },
+      {
+        "k": 3,
+        "brute_lower": 0.15886652430879697,
+        "exact": 0.1588674779794754,
+        "brute_upper": 0.1588703390060626,
+        "inside": true
+      },
+      {
+        "k": 4,
+        "brute_lower": 0.04273178623375006,
+        "exact": 0.0427325014813019,
+        "brute_upper": 0.04273560093101569,
+        "inside": true
+      },
+      {
+        "k": 5,
+        "brute_lower": 0.0307548529242932,
+        "exact": 0.030755329754175595,
+        "brute_upper": 0.030758667621558825,
+        "inside": true
+      },
+      {
+        "k": 6,
+        "brute_lower": 0.0307548529242932,
+        "exact": 0.030755329754175595,
+        "brute_upper": 0.030758667621558825,
+        "inside": true
+      },
+      {
+        "k": 7,
+        "brute_lower": 0.005377464370029523,
+        "exact": 0.005377851780324832,
+        "brute_upper": 0.005381279067295148,
+        "inside": true
+      },
+      {
+        "k": 8,
+        "brute_lower": 0.004201481389223999,
+        "exact": 0.004201764493269226,
+        "brute_upper": 0.004205296086489624,
+        "inside": true
+      },
+      {
+        "k": 9,
+        "brute_lower": 0.004201481389223999,
+        "exact": 0.004201764493269227,
+        "brute_upper": 0.004205296086489624,
+        "inside": true
+      },
+      {
+        "k": 10,
+        "brute_lower": 0.004141552047539185,
+        "exact": 0.004141790467891584,
+        "brute_upper": 0.00414536674480481,
+        "inside": true
+      },
+      {
+        "k": 11,
+        "brute_lower": 0.004141552047539185,
+        "exact": 0.004141790467891584,
+        "brute_upper": 0.00414536674480481,
+        "inside": true
+      },
+      {
+        "k": 12,
+        "brute_lower": 0.004098006662560001,
+        "exact": 0.004098217144396906,
+        "brute_upper": 0.004101821359825626,
+        "inside": true
+      },
+      {
+        "k": 13,
+        "brute_lower": 0.0039949973881971326,
+        "exact": 0.003995168297572529,
+        "brute_upper": 0.0039988120854627576,
+        "inside": true
+      },
+      {
+        "k": 14,
+        "brute_lower": 0.0039949973881971326,
+        "exact": 0.003995168297572529,
+        "brute_upper": 0.0039988120854627576,
+        "inside": true
+      }
+    ],
+    "event_hazard": [
+      {
+        "u": 1,
+        "K_u": 2,
+        "A_u": 1.0748330721566943,
+        "eta_u": 0.8712268727107723,
+        "C_K_u": 0.15886747797947537
+      },
+      {
+        "u": 2,
+        "K_u": 4,
+        "A_u": 0.11613497649817352,
+        "eta_u": 0.7310179400794502,
+        "C_K_u": 0.0427325014813019
+      },
+      {
+        "u": 3,
+        "K_u": 5,
+        "A_u": 0.011977171727126302,
+        "eta_u": 0.28028248550736146,
+        "C_K_u": 0.030755329754175595
+      },
+      {
+        "u": 4,
+        "K_u": 7,
+        "A_u": 0.02537747797385077,
+        "eta_u": 0.8251408187358263,
+        "C_K_u": 0.005377851780324832
+      },
+      {
+        "u": 5,
+        "K_u": 8,
+        "A_u": 0.0011760872870556053,
+        "eta_u": 0.21869090765171062,
+        "C_K_u": 0.004201764493269226
+      },
+      {
+        "u": 6,
+        "K_u": 10,
+        "A_u": 5.997402537764221e-05,
+        "eta_u": 0.014273533291481264,
+        "C_K_u": 0.004141790467891584
+      },
+      {
+        "u": 7,
+        "K_u": 12,
+        "A_u": 4.357332349467794e-05,
+        "eta_u": 0.010520407498271957,
+        "C_K_u": 0.004098217144396906
+      },
+      {
+        "u": 8,
+        "K_u": 13,
+        "A_u": 0.00010304884682437757,
+        "eta_u": 0.025144799114723882,
+        "C_K_u": 0.003995168297572529
+      },
+      {
+        "u": 9,
+        "K_u": 15,
+        "A_u": 8.260657531055003e-05,
+        "eta_u": 0.020676619645971343,
+        "C_K_u": 0.003912561722261979
+      },
+      {
+        "u": 10,
+        "K_u": 16,
+        "A_u": 2.7848504076110796e-05,
+        "eta_u": 0.007117716231198693,
+        "C_K_u": 0.0038847132181858684
+      },
+      {
+        "u": 11,
+        "K_u": 18,
+        "A_u": 8.12769026706647e-06,
+        "eta_u": 0.002092224010003508,
+        "C_K_u": 0.0038765855279188017
+      }
+    ],
+    "head_tail": [
+      {
+        "k": 2,
+        "C_k": 0.15886747797947537,
+        "H_k": 0.1111111111111111,
+        "gap": 0.047756366868364264,
+        "tight_bound": 0.10280837917801414,
+        "loose_bound": 0.41123351671205655
+      },
+      {
+        "k": 3,
+        "C_k": 0.1588674779794754,
+        "H_k": 0.13151927437641722,
+        "gap": 0.027348203603058174,
+        "tight_bound": 0.05140418958900707,
+        "loose_bound": 0.20561675835602827
+      },
+      {
+        "k": 4,
+        "C_k": 0.0427325014813019,
+        "H_k": 0.03311707051966792,
+        "gap": 0.009615430961633982,
+        "tight_bound": 0.019276571095877652,
+        "loose_bound": 0.10280837917801414
+      },
+      {
+        "k": 5,
+        "C_k": 0.030755329754175595,
+        "H_k": 0.02726493254856016,
+        "gap": 0.0034903972056154337,
+        "tight_bound": 0.0064255236986258835,
+        "loose_bound": 0.05140418958900707
+      },
+      {
+        "k": 6,
+        "C_k": 0.030755329754175595,
+        "H_k": 0.028914314675776105,
+        "gap": 0.0018410150783994897,
+        "tight_bound": 0.0032127618493129418,
+        "loose_bound": 0.025702094794503534
+      },
+      {
+        "k": 7,
+        "C_k": 0.005377851780324832,
+        "H_k": 0.004668119131810837,
+        "gap": 0.0007097326485139954,
+        "tight_bound": 0.0013051845012833827,
+        "loose_bound": 0.012851047397251767
+      },
+      {
+        "k": 8,
+        "C_k": 0.004201764493269226,
+        "H_k": 0.003928916521557214,
+        "gap": 0.00027284797171201174,
+        "tight_bound": 0.0004768943370073898,
+        "loose_bound": 0.0064255236986258835
+      },
+      {
+        "k": 9,
+        "C_k": 0.004201764493269227,
+        "H_k": 0.004061280739878209,
+        "gap": 0.00014048375339101825,
+        "tight_bound": 0.0002384471685036949,
+        "loose_bound": 0.0032127618493129418
+      },
+      {
+        "k": 10,
+        "C_k": 0.004141790467891584,
+        "H_k": 0.004080534017303121,
+        "gap": 6.125645058846323e-05,
+        "tight_bound": 0.00010039880779102943,
+        "loose_bound": 0.0016063809246564709
+      },
+      {
+        "k": 11,
+        "C_k": 0.004141790467891584,
+        "H_k": 0.004111225362191342,
+        "gap": 3.056510570024259e-05,
+        "tight_bound": 5.0199403895514715e-05,
+        "loose_bound": 0.0008031904623282354
+      },
+      {
+        "k": 12,
+        "C_k": 0.004098217144396906,
+        "H_k": 0.004084710777900645,
+        "gap": 1.3506366496261225e-05,
+        "tight_bound": 2.215833062575454e-05,
+        "loose_bound": 0.0004015952311641177
+      },
+      {
+        "k": 13,
+        "C_k": 0.003995168297572529,
+        "H_k": 0.003989687314886837,
+        "gap": 5.480982685691915e-06,
+        "tight_bound": 8.995693959791944e-06,
+        "loose_bound": 0.00020079761558205886
+      },
+      {
+        "k": 14,
+        "C_k": 0.003995168297572529,
+        "H_k": 0.003992430899962024,
+        "gap": 2.737397610504469e-06,
+        "tight_bound": 4.497846979895972e-06,
+        "loose_bound": 0.00010039880779102943
+      }
+    ],
+    "minimum_anchor": {
+      "records": [
+        {
+          "n": 2,
+          "tau_c": 1
+        },
+        {
+          "n": 3,
+          "tau_c": 4
+        },
+        {
+          "n": 7,
+          "tau_c": 7
+        },
+        {
+          "n": 27,
+          "tau_c": 59
+        },
+        {
+          "n": 703,
+          "tau_c": 81
+        },
+        {
+          "n": 10087,
+          "tau_c": 105
+        },
+        {
+          "n": 35655,
+          "tau_c": 135
+        },
+        {
+          "n": 270271,
+          "tau_c": 164
+        },
+        {
+          "n": 362343,
+          "tau_c": 165
+        },
+        {
+          "n": 381727,
+          "tau_c": 173
+        },
+        {
+          "n": 626331,
+          "tau_c": 176
+        },
+        {
+          "n": 1027431,
+          "tau_c": 183
+        },
+        {
+          "n": 1126015,
+          "tau_c": 224
+        },
+        {
+          "n": 8088063,
+          "tau_c": 246
+        },
+        {
+          "n": 13421671,
+          "tau_c": 287
+        },
+        {
+          "n": 20638335,
+          "tau_c": 292
+        },
+        {
+          "n": 26716671,
+          "tau_c": 298
+        },
+        {
+          "n": 56924955,
+          "tau_c": 308
+        },
+        {
+          "n": 63728127,
+          "tau_c": 376
+        },
+        {
+          "n": 217740015,
+          "tau_c": 395
+        },
+        {
+          "n": 1200991791,
+          "tau_c": 398
+        },
+        {
+          "n": 1827397567,
+          "tau_c": 433
+        },
+        {
+          "n": 2788008987,
+          "tau_c": 447
+        }
+      ],
+      "bounds": [
+        {
+          "k": 0,
+          "m_k": 2,
+          "C_k_lower": 0.25,
+          "C_k_upper": 2.289868133696453
+        },
+        {
+          "k": 3,
+          "m_k": 3,
+          "C_k_lower": 0.1111111111111111,
+          "C_k_upper": 0.6005508252042546
+        },
+        {
+          "k": 6,
+          "m_k": 7,
+          "C_k_lower": 0.02040816326530612,
+          "C_k_upper": 0.17924727275384103
+        },
+        {
+          "k": 58,
+          "m_k": 27,
+          "C_k_lower": 0.0013717421124828531,
+          "C_k_upper": 0.037731373316397185
+        },
+        {
+          "k": 80,
+          "m_k": 703,
+          "C_k_lower": 2.023435429140303e-06,
+          "C_k_upper": 0.0014234873041144304
+        },
+        {
+          "k": 104,
+          "m_k": 10087,
+          "C_k_lower": 9.828244643368334e-09,
+          "C_k_upper": 9.914241800236935e-05
+        },
+        {
+          "k": 134,
+          "m_k": 35655,
+          "C_k_lower": 7.866093755460175e-10,
+          "C_k_upper": 2.8046950593457975e-05
+        },
+        {
+          "k": 163,
+          "m_k": 270271,
+          "C_k_lower": 1.3689926074299399e-11,
+          "C_k_upper": 3.6999968549984523e-06
+        },
+        {
+          "k": 164,
+          "m_k": 362343,
+          "C_k_lower": 7.616584218463598e-12,
+          "C_k_upper": 2.7598197837663684e-06
+        },
+        {
+          "k": 172,
+          "m_k": 381727,
+          "C_k_lower": 6.8626877898662984e-12,
+          "C_k_upper": 2.619676653309184e-06
+        },
+        {
+          "k": 175,
+          "m_k": 626331,
+          "C_k_lower": 2.549131179669614e-12,
+          "C_k_upper": 1.596601155459917e-06
+        },
+        {
+          "k": 182,
+          "m_k": 1027431,
+          "C_k_lower": 9.473155570703421e-13,
+          "C_k_upper": 9.733018437742708e-07
+        },
+        {
+          "k": 223,
+          "m_k": 1126015,
+          "C_k_lower": 7.886996500827863e-13,
+          "C_k_upper": 8.880880308379104e-07
+        },
+        {
+          "k": 245,
+          "m_k": 8088063,
+          "C_k_lower": 1.528660167110541e-14,
+          "C_k_upper": 1.2363900501510697e-07
+        },
+        {
+          "k": 286,
+          "m_k": 13421671,
+          "C_k_lower": 5.551199331070176e-15,
+          "C_k_upper": 7.45063738526437e-08
+        },
+        {
+          "k": 291,
+          "m_k": 20638335,
+          "C_k_lower": 2.3477437051504794e-15,
+          "C_k_upper": 4.845352225490869e-08
+        },
+        {
+          "k": 297,
+          "m_k": 26716671,
+          "C_k_lower": 1.4009909025808706e-15,
+          "C_k_upper": 3.742981371874163e-08
+        },
+        {
+          "k": 307,
+          "m_k": 56924955,
+          "C_k_lower": 3.085990665369913e-16,
+          "C_k_upper": 1.7566988129959766e-08
+        },
+        {
+          "k": 375,
+          "m_k": 63728127,
+          "C_k_lower": 2.4622814365952263e-16,
+          "C_k_upper": 1.5691658533222377e-08
+        },
+        {
+          "k": 394,
+          "m_k": 217740015,
+          "C_k_lower": 2.1092278787693346e-17,
+          "C_k_upper": 4.59263311016267e-09
+        },
+        {
+          "k": 397,
+          "m_k": 1200991791,
+          "C_k_lower": 6.932979597316762e-19,
+          "C_k_upper": 8.326451587014408e-10
+        },
+        {
+          "k": 432,
+          "m_k": 1827397567,
+          "C_k_lower": 2.99456617890661e-19,
+          "C_k_upper": 5.472262951051708e-10
+        },
+        {
+          "k": 446,
+          "m_k": 2788008987,
+          "C_k_lower": 1.2865055416787003e-19,
+          "C_k_upper": 3.5867890126687726e-10
+        }
+      ],
+      "top_of_scan": {
+        "k": 447,
+        "m_k_at_least": 4294967296,
+        "C_k_upper_at_s2": 2.328306436809747e-10
+      }
+    },
+    "assessment": {
+      "what_round_03a_gets_right": "All of it, within finite reach. The survivor DP reproduces the enumerated ballot tree; the U-child always survives and the D-child survives exactly when the parent clears the next depth; at most one U-count layer can cross at any depth; the Beatty schedule is exactly the bit lengths of powers of three; the frontier changes only at those depths; the exact Hurwitz-zeta mass lands inside the brute-force bracket; the duplication transfer, the lift assignment, the anchor ejection rule, the event-loss operator, the product criterion and both forms of the Head-Tail bound all hold.",
+      "the_headline_measurement": "§38 lists m_k -> infinity as the first UNPROVED item, and §29 makes it equivalent to C_k(s) -> 0, which is the whole coefficient conjecture. m_k is determined by the tau_c record holders, so one scan of [2, 2^32) fixes it for every k up to 447. It takes 23 values there, rising from 2 to 2,788,008,987 - and since no n below 2^32 has tau_c > 447, m_447 >= 2^32. The measured answer to 'does the minimum anchor escape' is: it has escaped 23 times, to 2.8e9, and no further than the scan.",
+      "the_derived_bounds": "Feeding each measured m_k into §28's own inequality turns it into a rigorous numerical upper bound on the TRUE infinite C_k(s). At the top of the scan that gives C_447(2) <= about 2.3e-10. These are bounds on the real quantity, not on a truncation, because §26 already bounds every progression tail and §28 bounds the heads by their minimum.",
+      "what_it_does_not_establish": "nothing about Collatz, and nothing about m_k beyond 2^32. A sequence that has increased 23 times may still be bounded; the measurement cannot distinguish that from divergence, which is exactly why §38 lists it as unproved."
+    }
+  },
+  "failures": [],
+  "ok": true
+}
