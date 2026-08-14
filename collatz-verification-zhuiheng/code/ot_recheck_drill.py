@@ -215,6 +215,53 @@ P07_MUTATIONS = [
      []),
 ]
 
+P04_MUTATIONS = [
+    ("I01-inverse-multiplier", "Theorem B's inverse scales by 3^u instead of 2^k",
+     "                if r + 2 ** k * ((y - m) // 3 ** u) != x:",
+     "                if r + 3 ** u * ((y - m) // 3 ** u) != x:",
+     ["P04_ThmB_exact_inverse"]),
+    ("I02-cross-multiplied-swap", "§8 swaps the two moduli",
+     "                if 3 ** u * (x - r) != 2 ** k * (y - m):",
+     "                if 2 ** k * (x - r) != 3 ** u * (y - m):",
+     ["P04_S8_division_free_cross_multiplied_relation"]),
+    ("I03-certificate-weakened",
+     "the §38 certificate drops the transport-consistency condition, keeping only "
+     "the two congruences",
+     "                    bad = (x2 % 2 ** k == r % 2 ** k\n"
+     "                           and (y2 - m) % 3 ** u == 0\n"
+     "                           and 3 ** u * (x2 - r) == 2 ** k * (y2 - m))",
+     "                    bad = (x2 % 2 ** k == r % 2 ** k\n"
+     "                           and (y2 - m) % 3 ** u == 0)",
+     ["P04_S38_certificate_rejects_perturbed_triples"]),
+    ("I04-amin-ignores-zero-residue",
+     "§9's quotient bound ignores the r_w = 0 case",
+     "            a_min = 1 if r == 0 else 0",
+     "            a_min = 0",
+     ["P04_S9_positive_domain_quotient_bound"]),
+    ("I05-fiber-legality-modulus",
+     "Theorem E tests the legality congruence modulo 2 instead of 3",
+     "            legal = (2 ** kappa * t) % 3 == 1",
+     "            legal = (2 ** kappa * t) % 2 == 1",
+     ["P04_ThmE_S21_accelerated_inverse_fiber_legality"]),
+    # (4^j + 1) // 3 would be a NO-OP: 4^j + 1 = 2 mod 3, so floor division
+    # returns (4^j - 1)/3 unchanged. Third mutation in this drill to be defeated
+    # by an arithmetic identity rather than by the checks. The perturbation has
+    # to move the family index to be a defect at all.
+    ("I06-terminal-fiber-index", "Theorem F returns M_{j+1} where M_j is meant",
+     "        Mj = (4 ** j - 1) // 3",
+     "        Mj = (4 ** (j + 1) - 1) // 3",
+     ["P04_ThmF_terminal_fiber_of_1_is_the_M_j_family"]),
+    ("I07-referee-broken", "the referee itself: T halves odd values too",
+     "    return n // 2 if n % 2 == 0 else (3 * n + 1) // 2",
+     "    return n // 2 if n % 2 == 0 else (3 * n + 1) // 4",
+     ["P04_S10_positive_source_image_bijection",
+      "P04_S12_single_step_inverse_relation"]),
+    ("NULL-06", "control: a comment is added",
+     "def chart(w: str) -> tuple[int, int, int, int, int]:",
+     "# control mutation, no behavioural change\ndef chart(w: str) -> tuple[int, int, int, int, int]:",
+     []),
+]
+
 P05KL_MUTATIONS = [
     # The relative-error check divided by D unguarded, so a mutation that made D
     # negative slipped past it. Guarded now, and this mutation re-aimed at it.
@@ -250,6 +297,7 @@ TARGETS = [
     # 1 <= n < 2^20 specifically, and would be vacuous at any other width.
     ("code/ot_paper07_recheck.py", P07_MUTATIONS, ["6", "300"]),
     ("code/ot_paper09_recheck.py", P09_MUTATIONS, ["7", "20"]),
+    ("code/ot_paper04_recheck.py", P04_MUTATIONS, ["6"]),
     ("code/ot_paper05_kl_recheck.py", P05KL_MUTATIONS, []),
 ]
 

@@ -1,0 +1,108 @@
+{
+  "tool": "ot_paper04_recheck.py",
+  "subject": "Collatz Operation Translation Series — Paper 04 v0.1 (Neo.K)",
+  "scope": "exact finite arithmetic; not a Collatz proof",
+  "note": "the subject's regression suite contains no Paper 04 test; these are first checks",
+  "max_word_length": 10,
+  "checks": {
+    "P04_ThmA_bidirectional_residue_transport": {
+      "pass": true
+    },
+    "P04_ThmB_exact_inverse": {
+      "pass": true
+    },
+    "P04_ThmC_target_legality": {
+      "pass": true
+    },
+    "P04_ThmD_quotient_conservation": {
+      "pass": true
+    },
+    "P04_S8_division_free_cross_multiplied_relation": {
+      "pass": true
+    },
+    "P04_S9_positive_domain_quotient_bound": {
+      "pass": true
+    },
+    "P04_S10_positive_source_image_bijection": {
+      "pass": true
+    },
+    "P04_S38_certificate_accepts_every_legal_triple": {
+      "pass": true
+    },
+    "P04_S38_certificate_rejects_perturbed_triples": {
+      "pass": true
+    },
+    "P04_S11_worked_example_w_equals_U": {
+      "pass": true
+    },
+    "P04_S12_single_step_inverse_relation": {
+      "pass": true
+    },
+    "P04_S13_original_and_modified_inverse_congruences_agree": {
+      "pass": true
+    },
+    "P04_ThmE_S21_accelerated_inverse_fiber_legality": {
+      "pass": true
+    },
+    "P04_S22_mod3_classification_of_admissible_valuations": {
+      "pass": true
+    },
+    "P04_S23_accelerated_image_avoids_multiples_of_3": {
+      "pass": true
+    },
+    "P04_ThmF_terminal_fiber_of_1_is_the_M_j_family": {
+      "pass": true
+    },
+    "P04_S25_M_j_sequence_matches_the_paper": {
+      "pass": true
+    },
+    "P04_S26_five_is_R4_of_1_with_the_stated_trajectory": {
+      "pass": true
+    },
+    "P04_S17_odd_core_decomposition_is_unique": {
+      "pass": true
+    },
+    "P04_S18_convergence_of_n_equals_convergence_of_its_odd_core": {
+      "pass": true
+    },
+    "P04_S33_cross_chart_merge_witness_exists": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "transport_triples": 22506,
+    "negative_controls_rejected": 112530,
+    "inverse_fiber_candidates": 13000
+  },
+  "measured": {
+    "ordinary_trajectory_of_5": [
+      5,
+      16,
+      8,
+      4,
+      2,
+      1
+    ],
+    "M_j_first_eight": [
+      1,
+      5,
+      21,
+      85,
+      341,
+      1365,
+      5461,
+      21845
+    ],
+    "cross_chart_merge_witness": {
+      "w": "D",
+      "v": "U",
+      "source_w": 4,
+      "source_v": 1,
+      "common_target": 2,
+      "steps_w": 1,
+      "steps_v": 1
+    }
+  },
+  "failures": [],
+  "ok": true
+}

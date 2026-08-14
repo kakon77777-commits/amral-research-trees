@@ -33,6 +33,7 @@ CODE_FILES = [
     "code/run_verification.sh",
     "code/ot_paper02_recheck.py",
     "code/ot_paper06_recheck.py",
+    "code/ot_paper04_recheck.py",
     "code/ot_paper05_kl_recheck.py",
     "code/ot_paper07_recheck.py",
     "code/ot_paper09_recheck.py",
@@ -72,6 +73,7 @@ def main() -> int:
     reference = load_gate("reference-crosscheck.json")
     ot_recheck = load_gate("ot-paper02-recheck.json")
     ot_p06 = load_gate("ot-paper06-recheck.json")
+    ot_p04 = load_gate("ot-paper04-recheck.json")
     ot_kl = load_gate("ot-paper05-kl-recheck.json")
     ot_p07 = load_gate("ot-paper07-recheck.json")
     ot_p09 = load_gate("ot-paper09-recheck.json")
@@ -89,6 +91,7 @@ def main() -> int:
     for name, gate, key in (
         ("Paper 02 recheck", ot_recheck, "ok"),
         ("Paper 06 recheck", ot_p06, "ok"),
+        ("Paper 04 recheck", ot_p04, "ok"),
         ("Paper 05 KL recheck", ot_kl, "ok"),
         ("Paper 07 recheck", ot_p07, "ok"),
         ("Paper 09 recheck", ot_p09, "ok"),
@@ -220,6 +223,31 @@ def main() -> int:
                     "the two equality cases are n=1 and n=2, the elements of the trivial "
                     "cycle; T has period 2 there and 16 is even, so they are forced"
                 ),
+            },
+            "paper_04_theorems": {
+                "max_word_length": ot_p04["max_word_length"],
+                "counts": ot_p04["counts"],
+                "checks": {k: v["pass"] for k, v in ot_p04["checks"].items()},
+                "all_pass": ot_p04["ok"],
+                "why_it_matters": (
+                    "The subject's regression suite contains NO Paper 04 test - its groups are "
+                    "p02_p03, p02_extrema, p05, p06, p07 and p09 - so every theorem here was "
+                    "machine-checked for the first time."
+                ),
+                "certificate_is_two_sided": (
+                    "§38's three-condition bidirectional certificate was checked in both "
+                    "directions: it accepts every legal triple, and rejects all "
+                    + str(ot_p04["counts"]["negative_controls_rejected"]) +
+                    " deliberately perturbed ones. A certificate that accepts everything "
+                    "certifies nothing, so the rejecting half is the load-bearing one."
+                ),
+                "non_claim_given_a_witness": (
+                    "§33 insists local bijectivity does not give global injectivity. That is an "
+                    "existence claim, so an explicit cross-chart merge was found rather than "
+                    "asserted: " + str(ot_p04["measured"]["cross_chart_merge_witness"]) +
+                    " - two different charts carrying two different sources to the same target."
+                ),
+                "cross_chart_merge_witness": ot_p04["measured"]["cross_chart_merge_witness"],
             },
             "paper_05_kl_constant": {
                 "checks": {k: (v.get("pass") if "pass" in v else v.get("subject_claim_holds"))

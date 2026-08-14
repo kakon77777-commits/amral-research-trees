@@ -27,6 +27,12 @@
         "20"
       ]
     },
+    "code/ot_paper04_recheck.py": {
+      "baseline_checks": 21,
+      "args": [
+        "6"
+      ]
+    },
     "code/ot_paper05_kl_recheck.py": {
       "baseline_checks": 12,
       "args": []
@@ -557,6 +563,103 @@
       "as_expected": true
     },
     {
+      "id": "I01-inverse-multiplier",
+      "target": "code/ot_paper04_recheck.py",
+      "description": "Theorem B's inverse scales by 3^u instead of 2^k",
+      "expected_failing_checks": [
+        "P04_ThmB_exact_inverse"
+      ],
+      "observed_failing_checks": [
+        "P04_ThmB_exact_inverse"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "I02-cross-multiplied-swap",
+      "target": "code/ot_paper04_recheck.py",
+      "description": "§8 swaps the two moduli",
+      "expected_failing_checks": [
+        "P04_S8_division_free_cross_multiplied_relation"
+      ],
+      "observed_failing_checks": [
+        "P04_S8_division_free_cross_multiplied_relation"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "I03-certificate-weakened",
+      "target": "code/ot_paper04_recheck.py",
+      "description": "the §38 certificate drops the transport-consistency condition, keeping only the two congruences",
+      "expected_failing_checks": [
+        "P04_S38_certificate_rejects_perturbed_triples"
+      ],
+      "observed_failing_checks": [
+        "P04_S38_certificate_rejects_perturbed_triples"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "I04-amin-ignores-zero-residue",
+      "target": "code/ot_paper04_recheck.py",
+      "description": "§9's quotient bound ignores the r_w = 0 case",
+      "expected_failing_checks": [
+        "P04_S9_positive_domain_quotient_bound"
+      ],
+      "observed_failing_checks": [
+        "P04_S9_positive_domain_quotient_bound",
+        "P04_S10_positive_source_image_bijection"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "I05-fiber-legality-modulus",
+      "target": "code/ot_paper04_recheck.py",
+      "description": "Theorem E tests the legality congruence modulo 2 instead of 3",
+      "expected_failing_checks": [
+        "P04_ThmE_S21_accelerated_inverse_fiber_legality"
+      ],
+      "observed_failing_checks": [
+        "P04_ThmE_S21_accelerated_inverse_fiber_legality"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "I06-terminal-fiber-index",
+      "target": "code/ot_paper04_recheck.py",
+      "description": "Theorem F returns M_{j+1} where M_j is meant",
+      "expected_failing_checks": [
+        "P04_ThmF_terminal_fiber_of_1_is_the_M_j_family"
+      ],
+      "observed_failing_checks": [
+        "P04_ThmF_terminal_fiber_of_1_is_the_M_j_family",
+        "P04_S25_M_j_sequence_matches_the_paper",
+        "P04_S26_five_is_R4_of_1_with_the_stated_trajectory"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "I07-referee-broken",
+      "target": "code/ot_paper04_recheck.py",
+      "description": "the referee itself: T halves odd values too",
+      "expected_failing_checks": [
+        "P04_S10_positive_source_image_bijection",
+        "P04_S12_single_step_inverse_relation"
+      ],
+      "observed_failing_checks": [
+        "P04_S10_positive_source_image_bijection",
+        "P04_S12_single_step_inverse_relation"
+      ],
+      "as_expected": true
+    },
+    {
+      "id": "NULL-06",
+      "target": "code/ot_paper04_recheck.py",
+      "description": "control: a comment is added",
+      "expected_failing_checks": [],
+      "observed_failing_checks": [],
+      "as_expected": true
+    },
+    {
       "id": "H01-kl-formula",
       "target": "code/ot_paper05_kl_recheck.py",
       "description": "the KL divergence divides by 2 instead of by 1/2",
@@ -617,10 +720,10 @@
       "as_expected": true
     }
   ],
-  "defects_planted": 40,
-  "defects_caught_by_the_named_check": 40,
-  "controls_planted": 5,
-  "controls_undisturbed": 5,
+  "defects_planted": 47,
+  "defects_caught_by_the_named_check": 47,
+  "controls_planted": 6,
+  "controls_undisturbed": 6,
   "anomalies": [],
   "ok": true
 }

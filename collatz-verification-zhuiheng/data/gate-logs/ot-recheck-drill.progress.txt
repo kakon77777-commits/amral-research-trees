@@ -42,6 +42,15 @@ code/ot_paper09_recheck.py: baseline passes all 13 checks
   F07-sigma-off-by-one: caught  -> ['P09_S2_sigma_indexing_matches_independent_values']
   F08-referee-broken: caught  -> ['P09_ThmB_hard_height_characterises_the_hard_domain', 'P09_S8_expanding_prefix_imposes_no_height_bound', 'P09_ThmD_cylinder_quotient_threshold_is_an_exact_iff', 'P09_S2_sigma_indexing_matches_independent_values', 'P09_S44_canonical_residue_stabilises_at_n_once_2k_exceeds_n', 'P05_class_count_matches_58651', 'P09_S24_strict_descent_count_is_938413', 'P09_S24_boundary_corrections_are_fully_itemised', 'P09_S50_engine_max_sigma_reproduced_independently']
   NULL-03: clean (control)  -> []
+code/ot_paper04_recheck.py: baseline passes all 21 checks
+  I01-inverse-multiplier: caught  -> ['P04_ThmB_exact_inverse']
+  I02-cross-multiplied-swap: caught  -> ['P04_S8_division_free_cross_multiplied_relation']
+  I03-certificate-weakened: caught  -> ['P04_S38_certificate_rejects_perturbed_triples']
+  I04-amin-ignores-zero-residue: caught  -> ['P04_S9_positive_domain_quotient_bound', 'P04_S10_positive_source_image_bijection']
+  I05-fiber-legality-modulus: caught  -> ['P04_ThmE_S21_accelerated_inverse_fiber_legality']
+  I06-terminal-fiber-index: caught  -> ['P04_ThmF_terminal_fiber_of_1_is_the_M_j_family', 'P04_S25_M_j_sequence_matches_the_paper', 'P04_S26_five_is_R4_of_1_with_the_stated_trajectory']
+  I07-referee-broken: caught  -> ['P04_S10_positive_source_image_bijection', 'P04_S12_single_step_inverse_relation']
+  NULL-06: clean (control)  -> []
 code/ot_paper05_kl_recheck.py: baseline passes all 12 checks
   H01-kl-formula: caught  -> ['P05_published_KL_agrees_with_the_real_value_to_16_significant_digits', 'P05_KL_is_strictly_positive_because_alpha_exceeds_one_half', 'P05_KL_vanishes_exactly_at_alpha_one_half', 'P05_KL_is_the_actual_decay_rate_of_the_non_contracting_fraction', 'P05_KL_rate_offset_does_not_drift_with_k']
   H02-u-max-exponent: caught  -> ['P05_exact_class_boundary_agrees_with_the_independent_float_route']

@@ -350,7 +350,78 @@ Theorems G and H measured on the exact boundary:
 claim that the one-step valuation density `2^{−j}` is independent of `(m, r)` for
 odd parameters is confirmed across all 20 pairs tested.
 
-## 7. Paper 05's KL constant, and a finding
+## 7. Paper 04 — bidirectional transport, never machine-checked before
+
+`code/ot_paper04_recheck.py`. **All 21 checks pass** at `k ≤ 10`: 22,506
+transport triples and 112,530 negative controls.
+
+**The subject's regression suite contains no Paper 04 test.** Its groups are
+`p02_p03`, `p02_extrema`, `p05`, `p06`, `p07` and `p09`. Every theorem below was
+machine-checked here for the first time.
+
+| Check | Claim |
+|---|---|
+| bidirectional residue transport `r_w + 2^kℤ ↔ m_w + 3^uℤ` | A |
+| exact inverse `x = r_w + 2^k(y − m_w)/3^u` | B |
+| target legality `y ≡ m_w (mod 3^u)` | C |
+| quotient conservation `(x−r_w)/2^k = (y−m_w)/3^u` | D |
+| accelerated fiber legality `R_κ(t)` iff `2^κ t ≡ 1 (mod 3)` | E |
+| terminal fiber `R_{2j}(1) = (4^j−1)/3` | F |
+| the division-free relation `3^u(x−r_w) = 2^k(y−m_w)` | §8 |
+| `a_min(w)` and the positive-domain bijection | §9, §10 |
+| the `w = U` worked example: `r_U=1`, `m_U=2`, `1+2a ↔ 2+3a` | §11 |
+| `T^{-1}(y) = {2y} ∪ {(2y−1)/3 : y ≡ 2 mod 3}`, exactly | §12 |
+| `y_orig ≡ 4 (mod 6)` and `y_mod ≡ 2 (mod 3)` are the same constraint | §13 |
+| the mod-3 classification of admissible κ, all three cases | §22 |
+| the accelerated image never hits a multiple of 3 | §23 |
+| `M_j = 1, 5, 21, 85, 341`, `S(M_j)=1`, `v₂(3M_j+1)=2j` | §24, §25 |
+| `5 = R_4(1)`, trajectory `5→16→8→4→2→1` | §26 |
+| odd-core decomposition and 2-ray partition | §17 |
+| `n` converges iff its odd core does | §18 |
+| the §38 certificate accepts every legal triple | §38 |
+| the §38 certificate **rejects** perturbed triples | §38 |
+
+Two of these deserve their own note.
+
+### The certificate had to be checked in the direction that matters
+
+§38 offers a three-condition bidirectional certificate: source congruence, target
+congruence, and transport consistency. Confirming it accepts legal triples is the
+easy half and proves almost nothing — **a certificate that accepts everything
+certifies nothing.** So 112,530 deliberately perturbed triples were generated
+(shifting `x` by 1, by `2^k`, `y` by 1, by `3^u`, and both together) and every one
+was required to be refused. All were.
+
+The drill confirms this is load-bearing: dropping the transport-consistency
+condition and keeping only the two congruences leaves the accepting half perfectly
+green, and is caught **only** by the rejecting half.
+
+### A non-claim, given an actual witness
+
+§33 insists that local bijectivity does **not** give global injectivity. That is a
+claim that something *exists*, so asserting it would be the wrong response. An
+explicit cross-chart merge was searched for and found:
+
+```
+w = "D", source 4  ->  2
+v = "U", source 1  ->  2
+```
+
+Two different charts carrying two different sources to the same target in one step
+each — minimal, and exactly what §33 says must be possible. Each chart is still
+injective on its own cylinder; that is the distinction the paper draws, and it now
+has a witness rather than a sentence.
+
+### Another no-op mutation, caught by the drill
+
+The first attempt at perturbing Theorem F used `(4^j + 1)/3` instead of
+`(4^j − 1)/3`. That is a **no-op**: `4^j + 1 ≡ 2 (mod 3)`, so floor division
+returns `(4^j − 1)/3` unchanged. Third mutation in this drill defeated by an
+arithmetic identity rather than by the checks — after `3^u ≤ 2^k` versus
+`3^u < 2^k` in Paper 09, and `<` versus `<=` in Paper 07. Re-aimed at the family
+index, it is caught by three checks at once.
+
+## 8. Paper 05's KL constant, and a finding
 
 `code/ot_paper05_kl_recheck.py`. The last remaining numeric claim in the six
 finite groups.
@@ -435,7 +506,7 @@ subject is not the instrument breaking.** The KL ULP result is recorded under
 real defect in the subject would be indistinguishable from a broken checker — and
 `build_results.py` would refuse to archive the very finding worth keeping.
 
-## 8. All five rechecks were drilled
+## 9. All six rechecks were drilled
 
 A recheck that passed everything is worth what it could have caught.
 `code/ot_recheck_drill.py` perturbs each asserted formula by one term and
@@ -493,7 +564,7 @@ geometric sum, §33's factor of `r`, the §21 threshold, the Theorem C residue
 sign, §47 using the minimum correction where the maximum is required, and the
 referee itself (which cascades into thirteen checks).
 
-**40 defects planted across the five rechecks, 40 caught, 5 controls
+**47 defects planted across the six rechecks, 47 caught, 6 controls
 undisturbed.** One was caught by crashing rather than by a named check, which is
 recorded as such rather than counted as a clean hit.
 
@@ -536,7 +607,7 @@ Breaking the referee's `+1` injection did **not** break Theorem A or Theorem D.
   not a hole in the check — but it means **Theorem D alone cannot detect a wrong
   injection constant**, and should not be leaned on for that.
 
-## 9. Where this stands
+## 10. Where this stands
 
 | Group | Cases claimed | Status |
 |---|---|---|
@@ -557,9 +628,19 @@ Remaining, in order of what this arm can usefully do next:
   is a genuine disjoint partition of the hard set with `n = 1` excluded is a finite
   statement per `k`, and it connects directly to the `H_w` and `σ` machinery
   already built for Paper 09. **This is the next non-Lean task.**
-- **Everything else** — Papers 01, 03, 04, 08 and Hard-Zeta's invariant-measure
-  route — is `∀`-quantified over infinite or non-integer domains, which this
-  instrument cannot address at all. Those are collected, scoped and ordered in
+- **Paper 04 is now complete** (§7 above), and it was the largest untested gap in
+  the series: the subject's suite had no Paper 04 test at all.
+- **Papers 01, 03 and 08** — Paper 03's cylinder statements are already covered as
+  a by-product of §3, so what remains there is its own theorem numbering rather
+  than new content. Paper 01 is a reclassification of prior literature, so its
+  checkable content is bibliographic rather than arithmetic. Paper 08's algebraic
+  ladder is the real remainder — and an earlier assessment here that it was
+  entirely out of instrument range was too quick: its *general* claims need a
+  proof assistant, but a "structural breakage theorem" needs explicit failure
+  **witnesses**, and witnesses in `ℤ/nℤ`, `M₂(ℤ)` or over a finite field are
+  exactly this instrument's range.
+- **Hard-Zeta's invariant-measure route** is `∀`-quantified over function spaces,
+  which this instrument cannot address at all. Those are collected, scoped and ordered in
   [`LEAN-QUEUE.md`](./LEAN-QUEUE.md), and deliberately not started: Lean is
   available but the hardware for a mathlib-backed development comes later.
 

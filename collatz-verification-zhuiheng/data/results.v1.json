@@ -318,6 +318,50 @@
       "independence": "computed in Rust from this arm's k-step congruence tables, a single table lookup per n, versus the subject's Python step-by-step iteration",
       "equality_witnesses_explained": "the two equality cases are n=1 and n=2, the elements of the trivial cycle; T has period 2 there and 16 is even, so they are forced"
     },
+    "paper_04_theorems": {
+      "max_word_length": 10,
+      "counts": {
+        "transport_triples": 22506,
+        "negative_controls_rejected": 112530,
+        "inverse_fiber_candidates": 13000
+      },
+      "checks": {
+        "P04_ThmA_bidirectional_residue_transport": true,
+        "P04_ThmB_exact_inverse": true,
+        "P04_ThmC_target_legality": true,
+        "P04_ThmD_quotient_conservation": true,
+        "P04_S8_division_free_cross_multiplied_relation": true,
+        "P04_S9_positive_domain_quotient_bound": true,
+        "P04_S10_positive_source_image_bijection": true,
+        "P04_S38_certificate_accepts_every_legal_triple": true,
+        "P04_S38_certificate_rejects_perturbed_triples": true,
+        "P04_S11_worked_example_w_equals_U": true,
+        "P04_S12_single_step_inverse_relation": true,
+        "P04_S13_original_and_modified_inverse_congruences_agree": true,
+        "P04_ThmE_S21_accelerated_inverse_fiber_legality": true,
+        "P04_S22_mod3_classification_of_admissible_valuations": true,
+        "P04_S23_accelerated_image_avoids_multiples_of_3": true,
+        "P04_ThmF_terminal_fiber_of_1_is_the_M_j_family": true,
+        "P04_S25_M_j_sequence_matches_the_paper": true,
+        "P04_S26_five_is_R4_of_1_with_the_stated_trajectory": true,
+        "P04_S17_odd_core_decomposition_is_unique": true,
+        "P04_S18_convergence_of_n_equals_convergence_of_its_odd_core": true,
+        "P04_S33_cross_chart_merge_witness_exists": true
+      },
+      "all_pass": true,
+      "why_it_matters": "The subject's regression suite contains NO Paper 04 test - its groups are p02_p03, p02_extrema, p05, p06, p07 and p09 - so every theorem here was machine-checked for the first time.",
+      "certificate_is_two_sided": "§38's three-condition bidirectional certificate was checked in both directions: it accepts every legal triple, and rejects all 112530 deliberately perturbed ones. A certificate that accepts everything certifies nothing, so the rejecting half is the load-bearing one.",
+      "non_claim_given_a_witness": "§33 insists local bijectivity does not give global injectivity. That is an existence claim, so an explicit cross-chart merge was found rather than asserted: {'w': 'D', 'v': 'U', 'source_w': 4, 'source_v': 1, 'common_target': 2, 'steps_w': 1, 'steps_v': 1} - two different charts carrying two different sources to the same target.",
+      "cross_chart_merge_witness": {
+        "w": "D",
+        "v": "U",
+        "source_w": 4,
+        "source_v": 1,
+        "common_target": 2,
+        "steps_w": 1,
+        "steps_v": 1
+      }
+    },
     "paper_05_kl_constant": {
       "checks": {
         "P05_published_literals_are_the_faithful_double_output_of_the_stated_expression": true,
@@ -673,15 +717,21 @@
             "20"
           ]
         },
+        "code/ot_paper04_recheck.py": {
+          "baseline_checks": 21,
+          "args": [
+            "6"
+          ]
+        },
         "code/ot_paper05_kl_recheck.py": {
           "baseline_checks": 12,
           "args": []
         }
       },
-      "defects_planted": 40,
-      "defects_caught_by_the_named_check": 40,
-      "controls_planted": 5,
-      "controls_undisturbed": 5,
+      "defects_planted": 47,
+      "defects_caught_by_the_named_check": 47,
+      "controls_planted": 6,
+      "controls_undisturbed": 6,
       "anomalies": [],
       "note": "each planted defect had to be caught by the check named for it, not merely by some check"
     }
@@ -696,16 +746,17 @@
     "code/collatz_verify.rs": "ec7926fbed0819f05b2fe1be1a551de0f1899025a6200c753247512fa7b7a4bc",
     "code/collatz_ref.py": "729e58fe3fd0b7dccdc1ba6b15c4e809ccda6e95e97bbf821d82f1f261c20e56",
     "code/anchors.py": "2dbcb7ab71616b622eee58cb90af512a85a8e6edffb310744f6060d53b50aae9",
-    "code/mutation_drill.py": "8d381dc10c5da83dc0049b96d629ce6d108e4de471d64d10fbdde50786131825",
+    "code/mutation_drill.py": "45e4f84a668c5e57e0ec2b7b116dcd0f0bf419bb64e38ff4685f3ff7cfeae7a7",
     "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
     "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
-    "code/build_results.py": "11149551dcf46a1b85a51215e78a9b556044fbfe3349b619088c808bd99fe53e",
+    "code/build_results.py": "67c8927e0e139cadd5f107675c2b6a0915e374d8fb453a42543876ee90d0847d",
     "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab",
     "code/ot_paper02_recheck.py": "50b3b733ced47a25078b16a71f7c120696d0ce60d43822b464abbc2f0010591d",
     "code/ot_paper06_recheck.py": "82851076cec9f416dc100fefe8bc5d5b6e635d97e9b791df23dccf804906d077",
+    "code/ot_paper04_recheck.py": "70b4b8e0654b9578b31caae85243328e8ec0324594565d720c420c399d75d216",
     "code/ot_paper05_kl_recheck.py": "97ed0a1b0e2c133b087aca698dc11e5fa14bf9b526222942b83b08b2cae0c6b9",
     "code/ot_paper07_recheck.py": "0e438242e202d6027317ce50eb1964577b2ecd982e960151af4fcd2c066c5e7f",
     "code/ot_paper09_recheck.py": "69d8b6225bf14447758a415dd6b4350b157c4f603fb9140105817d4787f41c88",
-    "code/ot_recheck_drill.py": "9398eb693a14a1fd250a739587941505235a72e0247a56fa87565380e5827e57"
+    "code/ot_recheck_drill.py": "afa5801ed81d6c1c1c628054d3d18c57be6dd0a0a1c0b6e02bb7e49ca81fd013"
   }
 }

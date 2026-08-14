@@ -12,10 +12,11 @@
 | `run_verification.sh` | Drives a full run as disjoint, separately logged chunks. |
 | `ot_paper02_recheck.py` | Independent re-derivation of Paper 02 of Neo.K's Operation Translation Series, written from the paper's theorem statements. Its referee route assumes no theorem of the paper at all. |
 | `ot_paper06_recheck.py` | The same for Paper 06 (valuation language). Referee is direct iteration of the accelerated odd map on genuine odd integers, so every valuation word tested is one an actual integer produced. Also verifies §14's bridge back to Paper 02. |
+| `ot_paper04_recheck.py` | Paper 04 (bidirectional `2^k` ↔ `3^u` transport). Checks the §38 certificate in both directions — it must reject perturbed triples, not merely accept legal ones — and finds an explicit witness for §33's non-claim that local bijectivity is not global injectivity. |
 | `ot_paper05_kl_recheck.py` | The Paper 05 KL constant, recomputed at 60 digits and verified in its *role* as the decay rate of the non-contracting fraction, on exact binomial tails. Reports subject defects separately from its own soundness, and states how sharp the rate test actually is. |
 | `ot_paper07_recheck.py` | The same for Paper 07 (generalized `(mx+r)`), over 24 `(m, r)` pairs. Evaluates the §17 geometric sum without ever dividing by `(m-2)`, so the `m = 1` case is reached with no singularity, and measures the Diophantine margin that makes the paper's floating floor safe. |
 | `ot_paper09_recheck.py` | The same for Paper 09 (finite certificate frontier). Its sigma is the same definition the engine measures, so it links the archived `[3, 2^40]` run to the paper's K(N), and it reconciles §24's boundary corrections exactly. |
-| `ot_recheck_drill.py` | Falsifiability drill for all five rechecks: perturbs each asserted formula and requires the check *named for that formula* to fail. |
+| `ot_recheck_drill.py` | Falsifiability drill for all six rechecks: perturbs each asserted formula and requires the check *named for that formula* to fail. |
 
 No third-party dependencies. `requirements.txt` is empty on purpose — the
 Python here is standard library only, so there is no version of a numeric
@@ -56,6 +57,7 @@ python code/build_results.py --tag t40 --expect-to 1099511627776
 
 python code/ot_paper02_recheck.py 16
 python code/ot_paper06_recheck.py 20001
+python code/ot_paper04_recheck.py 10
 python code/ot_paper05_kl_recheck.py
 python code/ot_paper07_recheck.py 8 3000
 python code/ot_paper09_recheck.py 11 20
