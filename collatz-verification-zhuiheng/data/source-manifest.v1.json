@@ -12,7 +12,7 @@
     "Hard-Zeta": 53,
     "other project": 2
   },
-  "processed_count": 28,
+  "processed_count": 29,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -470,7 +470,7 @@
       "sha256": "c6764d7a2796a2a07faa1d8c60e4c4a68dae6d2c74526fafcbad003ec214c04b",
       "line": "Hard-Zeta",
       "role": "Phase I round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 28. Rechecked by code/src13_hardzeta_round03a4_recheck.py: the deficit queue, Sturmian credit ledger, valuation cylinders and occupancy bound, the excursion identity (in exact integers), the logarithmic and bounded-deficit brackets, and the Legendre gate all hold; beta's continued fraction anchored against 19/12 and 84/53. Measured: the gate opens on 2 of 168 depths, so CF tools reach almost none of the spine; see reports/RUN-011-HARD-ZETA-ROUND-03A4.md",
       "round_sort_key": [
         "",
         3,

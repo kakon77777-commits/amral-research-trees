@@ -161,6 +161,15 @@ PROCESSED = {
         "= the canonical source's own subcritical lifetime minus node depth; "
         "see reports/RUN-010-HARD-ZETA-ROUND-03A3.md"
     ),
+    "Hard_Zeta_Phase_I_Round_03A4_bundle.zip": (
+        "item 28. Rechecked by code/src13_hardzeta_round03a4_recheck.py: the "
+        "deficit queue, Sturmian credit ledger, valuation cylinders and occupancy "
+        "bound, the excursion identity (in exact integers), the logarithmic and "
+        "bounded-deficit brackets, and the Legendre gate all hold; beta's "
+        "continued fraction anchored against 19/12 and 84/53. Measured: the gate "
+        "opens on 2 of 168 depths, so CF tools reach almost none of the spine; "
+        "see reports/RUN-011-HARD-ZETA-ROUND-03A4.md"
+    ),
     "collatz_ot_v3_threshold_benchmark.csv": (
         "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
         "all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, "

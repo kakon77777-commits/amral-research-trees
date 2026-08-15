@@ -1,0 +1,359 @@
+{
+  "tool": "src13_hardzeta_round03a4_recheck.py",
+  "subject": "Neo.K + Aletheia, Hard-Zeta Phase I / Round 03-A.4 Spine Valuation Rigidity v0.1 (2026-08-11)",
+  "source_items": [
+    28
+  ],
+  "scope": "the deficit queue and credit ledger (§3-§7), the valuation cylinders and occupancy ledger with its Haar comparison (§9-§13), the Spine Excursion Identity and its logarithmic reading (§15-§21), the bounded-deficit bounds and the divergence corollary (§24-§32), and the Legendre continued-fraction gate (§33-§35).",
+  "checks": {
+    "SRC13_bundle_carries_the_A_line_and_the_v07_map": {
+      "pass": true
+    },
+    "SRC13_paper_keeps_an_explicit_proved_and_unproved_ledger": {
+      "pass": true
+    },
+    "SRC13_paper_states_its_own_method_no_gos": {
+      "pass": true
+    },
+    "SRC13_beta_continued_fraction_matches_its_known_expansion": {
+      "pass": true
+    },
+    "SRC13_beta_convergents_contain_the_named_equal_temperaments": {
+      "pass": true
+    },
+    "SRC13_beta_convergents_approximate_beta_to_legendre_quality": {
+      "pass": true
+    },
+    "SRC13_the_sturmian_increment_is_always_a_single_bit": {
+      "pass": true
+    },
+    "SRC13_the_deficit_recurrence_holds_at_every_step": {
+      "pass": true
+    },
+    "SRC13_the_credit_ledger_telescopes_and_is_never_overspent": {
+      "pass": true
+    },
+    "SRC13_subcritical_is_exactly_a_nonnegative_deficit": {
+      "pass": true
+    },
+    "SRC13_that_equivalence_saw_both_outcomes": {
+      "pass": true
+    },
+    "SRC13_high_valuation_is_exactly_membership_of_one_residue_class": {
+      "pass": true
+    },
+    "SRC13_the_valuation_cylinders_nest": {
+      "pass": true
+    },
+    "SRC13_cylinder_occupancy_stays_inside_the_sturmian_budget": {
+      "pass": true
+    },
+    "SRC13_measured_spines_spend_less_than_haar_would": {
+      "pass": true
+    },
+    "SRC13_the_haar_gap_is_real_and_not_an_artefact_of_the_bound": {
+      "pass": true
+    },
+    "SRC13_the_spine_excursion_identity_holds_in_exact_integers": {
+      "pass": true
+    },
+    "SRC13_the_excursion_identity_is_paper_06s_affine_formula_rewritten": {
+      "pass": true
+    },
+    "SRC13_the_logarithmic_equivalence_bounds_hold": {
+      "pass": true
+    },
+    "SRC13_the_bounded_deficit_bounds_bracket_the_endpoint": {
+      "pass": true
+    },
+    "SRC13_endpoints_grow_along_every_subcritical_spine_measured": {
+      "pass": true
+    },
+    "SRC13_no_endpoint_repeats_along_a_subcritical_spine": {
+      "pass": true
+    },
+    "SRC13_the_legendre_gate_is_open_only_rarely": {
+      "pass": true
+    },
+    "SRC13_the_legendre_gate_opened_somewhere": {
+      "pass": true
+    },
+    "SRC13_where_the_gate_opens_the_ratio_really_is_a_convergent": {
+      "pass": true
+    },
+    "SRC13_the_deficit_algebra_evaluates_without_error": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "spines_traced": 7,
+    "spine_depth_examined": 34,
+    "cylinder_levels": 20,
+    "legendre_gate_openings": 2
+  },
+  "measured": {
+    "beta_convergents": [
+      {
+        "p": 1,
+        "q": 1
+      },
+      {
+        "p": 2,
+        "q": 1
+      },
+      {
+        "p": 3,
+        "q": 2
+      },
+      {
+        "p": 8,
+        "q": 5
+      },
+      {
+        "p": 19,
+        "q": 12
+      },
+      {
+        "p": 65,
+        "q": 41
+      },
+      {
+        "p": 84,
+        "q": 53
+      },
+      {
+        "p": 485,
+        "q": 306
+      },
+      {
+        "p": 1054,
+        "q": 665
+      }
+    ],
+    "spines": [
+      {
+        "n": 27,
+        "subcritical_lifetime": 36,
+        "final_deficit": 3,
+        "credit_spent": 16,
+        "sturmian_credit": 19
+      },
+      {
+        "n": 103,
+        "subcritical_lifetime": 25,
+        "final_deficit": 1,
+        "credit_spent": 13,
+        "sturmian_credit": 14
+      },
+      {
+        "n": 703,
+        "subcritical_lifetime": 50,
+        "final_deficit": 6,
+        "credit_spent": 13,
+        "sturmian_credit": 19
+      },
+      {
+        "n": 1407,
+        "subcritical_lifetime": 50,
+        "final_deficit": 5,
+        "credit_spent": 14,
+        "sturmian_credit": 19
+      },
+      {
+        "n": 10087,
+        "subcritical_lifetime": 65,
+        "final_deficit": 2,
+        "credit_spent": 17,
+        "sturmian_credit": 19
+      },
+      {
+        "n": 15039,
+        "subcritical_lifetime": 51,
+        "final_deficit": 4,
+        "credit_spent": 15,
+        "sturmian_credit": 19
+      },
+      {
+        "n": 35655,
+        "subcritical_lifetime": 84,
+        "final_deficit": 6,
+        "credit_spent": 13,
+        "sturmian_credit": 19
+      }
+    ],
+    "occupancy": [
+      {
+        "n": 27,
+        "m": 34,
+        "occupancy": 16,
+        "budget": 19,
+        "haar_expectation": 34.0,
+        "mean_excess_valuation": 0.4706
+      },
+      {
+        "n": 103,
+        "m": 25,
+        "occupancy": 13,
+        "budget": 14,
+        "haar_expectation": 25.0,
+        "mean_excess_valuation": 0.52
+      },
+      {
+        "n": 703,
+        "m": 34,
+        "occupancy": 13,
+        "budget": 19,
+        "haar_expectation": 34.0,
+        "mean_excess_valuation": 0.3824
+      },
+      {
+        "n": 1407,
+        "m": 34,
+        "occupancy": 14,
+        "budget": 19,
+        "haar_expectation": 34.0,
+        "mean_excess_valuation": 0.4118
+      },
+      {
+        "n": 10087,
+        "m": 34,
+        "occupancy": 17,
+        "budget": 19,
+        "haar_expectation": 34.0,
+        "mean_excess_valuation": 0.5
+      },
+      {
+        "n": 15039,
+        "m": 34,
+        "occupancy": 15,
+        "budget": 19,
+        "haar_expectation": 34.0,
+        "mean_excess_valuation": 0.4412
+      },
+      {
+        "n": 35655,
+        "m": 34,
+        "occupancy": 13,
+        "budget": 19,
+        "haar_expectation": 34.0,
+        "mean_excess_valuation": 0.3824
+      }
+    ],
+    "haar_total_density": 1.0,
+    "log_equivalence": [
+      {
+        "n": 27,
+        "m": 34,
+        "log2_Y": 8.7582,
+        "d_m": 3,
+        "lower": 7.7549,
+        "upper": 9.2605
+      },
+      {
+        "n": 103,
+        "m": 25,
+        "log2_Y": 8.3443,
+        "d_m": 1,
+        "lower": 7.6865,
+        "upper": 8.7987
+      },
+      {
+        "n": 703,
+        "m": 34,
+        "log2_Y": 16.3495,
+        "d_m": 6,
+        "lower": 15.4574,
+        "upper": 16.4805
+      },
+      {
+        "n": 1407,
+        "m": 34,
+        "log2_Y": 16.3495,
+        "d_m": 5,
+        "lower": 15.4584,
+        "upper": 16.47
+      },
+      {
+        "n": 10087,
+        "m": 34,
+        "log2_Y": 16.1892,
+        "d_m": 2,
+        "lower": 15.3002,
+        "upper": 16.3018
+      },
+      {
+        "n": 15039,
+        "m": 34,
+        "log2_Y": 18.7654,
+        "d_m": 4,
+        "lower": 17.8764,
+        "upper": 18.8775
+      },
+      {
+        "n": 35655,
+        "m": 34,
+        "log2_Y": 22.0107,
+        "d_m": 6,
+        "lower": 21.1218,
+        "upper": 22.1223
+      }
+    ],
+    "legendre_gate": [
+      {
+        "n": 27,
+        "depth": 24,
+        "gate_open_at": [
+          2
+        ],
+        "fraction": 0.0417
+      },
+      {
+        "n": 103,
+        "depth": 24,
+        "gate_open_at": [],
+        "fraction": 0.0
+      },
+      {
+        "n": 703,
+        "depth": 24,
+        "gate_open_at": [],
+        "fraction": 0.0
+      },
+      {
+        "n": 1407,
+        "depth": 24,
+        "gate_open_at": [],
+        "fraction": 0.0
+      },
+      {
+        "n": 10087,
+        "depth": 24,
+        "gate_open_at": [],
+        "fraction": 0.0
+      },
+      {
+        "n": 15039,
+        "depth": 24,
+        "gate_open_at": [],
+        "fraction": 0.0
+      },
+      {
+        "n": 35655,
+        "depth": 24,
+        "gate_open_at": [
+          4
+        ],
+        "fraction": 0.0417
+      }
+    ],
+    "assessment": {
+      "what_round_03a4_gets_right": "All of it. The Sturmian increment is always a bit; the deficit recurrence holds at every step; the credit ledger telescopes and is never overspent; subcritical is exactly a non-negative deficit; high valuation is exactly membership of one residue class and those cylinders nest; total occupancy stays inside the budget; the excursion identity holds in exact integers; the logarithmic equivalence and bounded-deficit bounds bracket the endpoint; no endpoint repeats; and where the Legendre gate opens, K_m/m really is a convergent of beta.",
+      "on_the_excursion_identity": "§18 is Paper 06's accelerated affine formula in log coordinates - multiply through by 2^{K_m} and it becomes the exact integer statement Y_m·2^{K_m} = 3^m·n + sum 3^{m-1-i}·2^{K_i}, which is what this run verifies. That is not a criticism: the NEW content of §18 is the reading, deficit as exponential growth rate, and that reading is what carries §30's divergence corollary. Worth separating so the novelty is attributed to the right half.",
+      "the_haar_gap_measured": "§12 contrasts a Haar-typical total cylinder density of 1 against a budget of gamma = 0.585. On real spines the mean excess valuation comes out well under 1, confirming the gap exists rather than being an artefact of the bound. §13 and §45's No-Go 2 are right to stop there: a measure-one statement about Haar-typical orbits cannot produce a theorem about every anchored positive-integer orbit, and this run adds nothing to close that.",
+      "the_legendre_gate_measured": "§34 says continued-fraction tools apply rigorously only when delta_m < 1/(2m). Measured on real spines, the gate is open on a small fraction of depths, and where it opens the ratio is genuinely a convergent. So §35's 'ultra-tight contact' is not a hypothetical restriction - it is most of the spine being out of reach of CF tools.",
+      "what_it_does_not_establish": "nothing on §46's unproved list. The divergence corollary is checked only in the direction a finite spine can show - endpoints grow, none repeats - which is consistent with the theorem and with any bounded search."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

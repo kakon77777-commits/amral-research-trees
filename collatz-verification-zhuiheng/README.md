@@ -115,11 +115,18 @@ describe it that way.
     pairs. Unlike RUN-009's verdict this is a real structural gain — the target
     stays equivalent to CST, but the *object* is genuinely smaller. Measured: a
     spine is exactly as long as its source's remaining subcritical life.
-12. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+12. [`reports/RUN-011-HARD-ZETA-ROUND-03A4.md`](./reports/RUN-011-HARD-ZETA-ROUND-03A4.md) —
+    Round 03-A.4 prices the spine: every unit of extra 2-adic valuation is paid
+    from a Sturmian budget of density `γ ≈ 0.585`, while a Haar-typical orbit
+    would spend **1** per step. Ledger verified throughout. Two measurements: the
+    Haar gap is real on every spine tested, and §34's **Legendre gate opens on 2
+    of 168 depths** — so continued-fraction tools have rigorous purchase on
+    almost none of the spine, which makes the paper's own No-Go 3 the normal case.
+13. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-13. [`code/`](./code/) — the engine, the independent reference, and the gates.
-14. [`data/gate-logs/`](./data/gate-logs/) and
+14. [`code/`](./code/) — the engine, the independent reference, and the gates.
+15. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

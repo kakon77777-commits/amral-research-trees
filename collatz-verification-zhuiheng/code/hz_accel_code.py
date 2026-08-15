@@ -281,3 +281,126 @@ def subcritical_lifetime(n: int, limit: int = 400) -> int:
     while m < limit and is_subcritical(accel_code(n, m + 1)):
         m += 1
     return m
+
+
+# ============================================================================
+# Round 03-A.4 additions — the deficit queue and the spine excursion.
+#
+# Round 03-A.3 made the spine deterministic. Round 03-A.4 asks what it costs to
+# stay on one: every step of valuation q spends q-1 units of a Sturmian credit
+# budget, and the accumulated deficit turns out to BE the orbit's exponential
+# growth rate.
+# ============================================================================
+
+
+def orbit_valuations(n: int, m: int) -> list[int]:
+    """q_i = v_2(3·Y_{i-1} + 1) along the accelerated odd orbit of n."""
+    return list(accel_code(n, m))
+
+
+def orbit_endpoints(n: int, m: int) -> list[int]:
+    """Y_0 = n, Y_1, ..., Y_m along the accelerated odd orbit."""
+    out, x = [n], n
+    for _ in range(m):
+        y = 3 * x + 1
+        x = y >> ((y & -y).bit_length() - 1)
+        out.append(x)
+    return out
+
+
+def sturmian_credit(m: int) -> int:
+    """§4: ⌊γm⌋ with γ = log₂3 − 1, by exact integer powers.
+
+    ⌊γm⌋ = ⌊m·log₂3⌋ − m = (bits of 3^m) − 1 − m, no logarithm involved.
+    """
+    return floor_beta(m) - m
+
+
+def deficit(n: int, m: int) -> int:
+    """§3: d_m = ⌊βm⌋ − K_m. Subcritical means d_m ≥ 0 at every prefix."""
+    return floor_beta(m) - cumulative(accel_code(n, m))[-1]
+
+
+def credit_spent(n: int, m: int) -> int:
+    """§5-§6: Σ_{i≤m} (q_i − 1), the excess valuation spent so far."""
+    return sum(q - 1 for q in orbit_valuations(n, m))
+
+
+def cylinder_residue(r: int) -> int:
+    """§9: η_r = −3^{−1} mod 2^r — the single residue with v₂(3y+1) ≥ r."""
+    return (-pow(3, -1, 1 << r)) % (1 << r)
+
+
+def cylinder_visits(n: int, m: int, r: int) -> int:
+    """§11: #{ 0 ≤ i < m : Y_i ∈ C_r }."""
+    eta, mod = cylinder_residue(r), 1 << r
+    return sum(1 for y in orbit_endpoints(n, m)[:m] if y % mod == eta)
+
+
+def excursion_check(n: int, m: int) -> bool:
+    """§18, as the exact integer statement it reduces to.
+
+    `Y_m = 2^{δ_m}[n + (1/3)Σ 2^{−δ_i}]` is Paper 06's accelerated affine formula
+    written in log coordinates: multiplying through by 2^{K_m} gives
+    `Y_m·2^{K_m} = 3^m·n + Σ_i 3^{m−1−i}·2^{K_i}`, which is checkable in exact
+    integers with no floating point at all. The NEW content of §18 is the
+    reading — deficit as exponential growth rate — not the identity.
+    """
+    kappa = accel_code(n, m)
+    K = cumulative(kappa)
+    lhs = orbit_endpoints(n, m)[m] * 2 ** K[-1]
+    rhs = 3 ** m * n + sum(3 ** (m - 1 - i) * 2 ** K[i] for i in range(m))
+    return lhs == rhs
+
+
+def beta_continued_fraction(terms: int) -> list[int]:
+    """Partial quotients of β = log₂3, by exact rational comparison.
+
+    No floating logarithm anywhere: the tail is carried as a pair of exact
+    rationals (P, Q) standing for log_P(Q), and each quotient is found by
+    multiplying P until it passes Q.
+
+    **Cost warning.** Those rationals grow very fast — beta's tenth partial
+    quotient is 23, and the exact tail after it is enormous. Asking for ~20 terms
+    takes minutes; ~12 is instant. Callers should request only what they need,
+    which for denominators up to a few dozen is about six terms.
+    """
+    from fractions import Fraction
+    P, Q = Fraction(2), Fraction(3)
+    out: list[int] = []
+    for _ in range(terms):
+        a, acc = 0, Fraction(1)
+        while acc * P <= Q:
+            acc *= P
+            a += 1
+        out.append(a)
+        rem = Q / acc
+        if rem == 1:
+            break
+        P, Q = rem, P
+    return out
+
+
+def beta_convergents(terms: int) -> list[tuple[int, int]]:
+    """Convergents p/q of β = log₂3, from its partial quotients."""
+    cf = beta_continued_fraction(terms)
+    # h_{-2}, k_{-2}, h_{-1}, k_{-1} — an earlier version had the numerator and
+    # denominator roles swapped, which printed 1/2 where beta's second
+    # convergent is 2/1. The anchors below would not have caught that on their
+    # own, so they check named values (19/12, 84/53) rather than a shape.
+    p_prev, q_prev, p, q = 0, 1, 1, 0
+    out: list[tuple[int, int]] = []
+    for a in cf:
+        p_prev, q_prev, p, q = p, q, a * p + p_prev, a * q + q_prev
+        out.append((p, q))
+    return out
+
+
+def legendre_gate(n: int, m: int) -> bool:
+    """§34: does δ_m < 1/(2m), so that Legendre makes K_m/m a convergent?
+
+    δ_m = m·log₂3 − K_m is irrational, so the test is done by exact integer
+    comparison instead: δ_m < 1/(2m) exactly when 3^{2m²} < 2^{2m·K_m + m}.
+    """
+    K = cumulative(accel_code(n, m))[-1]
+    return 3 ** (2 * m * m) < 2 ** (2 * m * K + m)

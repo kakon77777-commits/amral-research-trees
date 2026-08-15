@@ -1,0 +1,142 @@
+{
+  "tool": "src13_drill.py",
+  "subject": "src13_hardzeta_round03a4_recheck.py and the deficit-queue layer of hz_accel_code.py",
+  "defects": {
+    "A01_sturmian_credit_off_by_one": {
+      "target_check": "SRC13_the_credit_ledger_telescopes_and_is_never_overspent",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A02_deficit_uses_the_wrong_floor": {
+      "target_check": "SRC13_subcritical_is_exactly_a_nonnegative_deficit",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC13_the_credit_ledger_telescopes_and_is_never_overspent",
+        "SRC13_the_deficit_recurrence_holds_at_every_step",
+        "SRC13_the_logarithmic_equivalence_bounds_hold"
+      ]
+    },
+    "A03_credit_spent_forgets_the_minus_one": {
+      "target_check": "SRC13_the_credit_ledger_telescopes_and_is_never_overspent",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC13_measured_spines_spend_less_than_haar_would"
+      ]
+    },
+    "A04_cylinder_residue_drops_the_inverse": {
+      "target_check": "SRC13_high_valuation_is_exactly_membership_of_one_residue_class",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC13_cylinder_occupancy_stays_inside_the_sturmian_budget"
+      ]
+    },
+    "A05_cylinder_visits_scans_one_element_too_many": {
+      "target_check": "SRC13_cylinder_occupancy_stays_inside_the_sturmian_budget",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A06_excursion_check_drops_a_term": {
+      "target_check": "SRC13_the_spine_excursion_identity_holds_in_exact_integers",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_orbit_endpoints_starts_after_the_first_step": {
+      "target_check": "SRC13_high_valuation_is_exactly_membership_of_one_residue_class",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC13_cylinder_occupancy_stays_inside_the_sturmian_budget",
+        "SRC13_the_deficit_algebra_evaluates_without_error"
+      ]
+    },
+    "A08_legendre_gate_comparison_inverted": {
+      "target_check": "SRC13_where_the_gate_opens_the_ratio_really_is_a_convergent",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC13_the_legendre_gate_is_open_only_rarely"
+      ]
+    },
+    "A09_legendre_gate_loses_its_half": {
+      "target_check": "SRC13_the_legendre_gate_is_open_only_rarely",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC13_where_the_gate_opens_the_ratio_really_is_a_convergent"
+      ]
+    },
+    "A10_continued_fraction_tail_recursion_not_inverted": {
+      "target_check": "SRC13_beta_continued_fraction_matches_its_known_expansion",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC13_beta_convergents_contain_the_named_equal_temperaments",
+        "SRC13_the_deficit_algebra_evaluates_without_error"
+      ]
+    },
+    "A11_convergent_recursion_roles_swapped": {
+      "target_check": "SRC13_beta_convergents_contain_the_named_equal_temperaments",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC13_beta_convergents_approximate_beta_to_legendre_quality",
+        "SRC13_where_the_gate_opens_the_ratio_really_is_a_convergent"
+      ]
+    },
+    "T01_the_known_expansion_is_transcribed_wrong": {
+      "target_check": "SRC13_beta_continued_fraction_matches_its_known_expansion",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_the_haar_gap_check_compares_against_nothing": {
+      "target_check": "SRC13_the_haar_gap_is_real_and_not_an_artefact_of_the_bound",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_the_bounded_deficit_bracket_uses_the_wrong_maximum": {
+      "target_check": "SRC13_the_bounded_deficit_bounds_bracket_the_endpoint",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_paper_loses_its_ledger": {
+      "target_check": "SRC13_paper_keeps_an_explicit_proved_and_unproved_ledger",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_paper_loses_its_method_no_gos": {
+      "target_check": "SRC13_paper_states_its_own_method_no_gos",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_bundle": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "counts": {
+    "defects_planted": 16,
+    "defects_caught_by_the_named_check": 16,
+    "defects_in_the_ledger_layer": 11,
+    "defects_in_this_runs_own_measurement": 3,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
