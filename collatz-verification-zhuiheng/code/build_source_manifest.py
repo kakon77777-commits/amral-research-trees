@@ -161,6 +161,21 @@ PROCESSED = {
         "= the canonical source's own subcritical lifetime minus node depth; "
         "see reports/RUN-010-HARD-ZETA-ROUND-03A3.md"
     ),
+    "Hard_Zeta_Phase_II_Round_AU2b_bundle.zip": (
+        "item 33. Rechecked by code/src17_hardzeta_au2b_recheck.py. The FIRST "
+        "positive round of Phase II — it eliminates classes instead of blocking "
+        "routes, and it settles what RUN-014 left open: the mechanical code is "
+        "unanchored because d_m = 0 identically, a different argument from the "
+        "lift-flux one. The whole result turns on Lambda_gamma = "
+        "2.83951373049775... < 3, verified at 60 digits, and on two explicit "
+        "inequalities at c=0.645 that clear by 1.0e-4 and 6.0e-4. Also verified: "
+        "return separation, the complexity-peak law, the excursion bound, the "
+        "Sturmian complexity p(r)=r+1, and negative sources for periodic tails. "
+        "Measured: the same proof scheme supports eps ~ 0.0150, not just the "
+        "published 0.01 — a 50% gain with no new idea, which is what "
+        "A-U.2b.1 asks for. "
+        "See reports/RUN-015-HARD-ZETA-AU2B-SPARSE-LIFT-RIGIDITY.md"
+    ),
     "Hard_Zeta_Phase_II_Round_AU2a_bundle.zip": (
         "item 32. Rechecked by code/src16_hardzeta_au2a_recheck.py. Almost all "
         "exact algebra and all of it holds: the inverse-code series and its "

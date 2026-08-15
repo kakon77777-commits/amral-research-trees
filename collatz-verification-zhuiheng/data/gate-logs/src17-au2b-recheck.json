@@ -1,0 +1,342 @@
+{
+  "tool": "src17_hardzeta_au2b_recheck.py",
+  "subject": "Hard_Zeta_Phase_II_Round_AU2b_bundle.zip (item 33) — Round A-U.2b plus A_Line_ROUTE_MAP v1.1",
+  "source_items": [
+    33
+  ],
+  "scope": "the repeated-block congruence and return separation, the complexity-peak law and its deficit tradeoff, the thin-deficit block count and its entropy constant, the two explicit inequalities behind the 0.01 barrier, and the families the round eliminates",
+  "checks": {
+    "SRC17_a_repeated_exponent_block_forces_a_congruence": {
+      "pass": true,
+      "detail": {
+        "repeats_found": 948,
+        "violations": [],
+        "_observable_nonempty": true
+      },
+      "note": "§4: equal length-r blocks after a and b give Y_a = Y_b mod 2^{Q+1}; guarded so it is not graded on a sample with no repeats"
+    },
+    "SRC17_repeated_blocks_force_the_states_to_separate": {
+      "pass": true,
+      "detail": {
+        "repeats": 948,
+        "violations": []
+      },
+      "note": "§6: |Y_b - Y_a| >= 2^{Q+1} >= 2^{r+1}, since no state repeats"
+    },
+    "SRC17_no_state_repeats_on_a_subcritical_spine": {
+      "pass": true,
+      "detail": {
+        "spines": 7,
+        "with_a_repeat": []
+      },
+      "note": "§5: a repeat would make the orbit periodic"
+    },
+    "SRC17_a_positive_cycle_requires_a_supercritical_period": {
+      "pass": true,
+      "detail": {
+        "supercritical": 6,
+        "subcritical": 6,
+        "violations": [],
+        "_both_outcomes_seen": true
+      },
+      "note": "§5: (2^Q - 3^p) Y = B_cyc > 0 forces Q > p*beta; both signs required"
+    },
+    "SRC17_the_complexity_peak_law_holds_on_real_spines": {
+      "pass": true,
+      "detail": {
+        "windows": 35,
+        "violations": []
+      },
+      "note": "§8: M_{p(r)+1} >= 2^{r+1}, by pigeonhole on length-r factors"
+    },
+    "SRC17_the_exact_excursion_upper_bound_holds": {
+      "pass": true,
+      "detail": {
+        "points": 361,
+        "violations": []
+      },
+      "note": "§9: Y_m < 2^{d_m+1}(n + m/3), in exact rationals"
+    },
+    "SRC17_the_complexity_deficit_tradeoff_holds": {
+      "pass": true,
+      "detail": {
+        "windows": 35,
+        "violations": []
+      },
+      "note": "§10: D_{p(r)+1} > r - log2(n + (p(r)+1)/3)"
+    },
+    "SRC17_the_deficit_recurrence_holds": {
+      "pass": true,
+      "detail": {
+        "steps": 361,
+        "violations": []
+      },
+      "note": "§14: d_m = d_{m-1} + b_m - e_m"
+    },
+    "SRC17_the_block_excess_ledger_telescopes": {
+      "pass": true,
+      "detail": {
+        "blocks": 1304,
+        "violations": []
+      },
+      "note": "§15: E_{i,r} = floor(gamma(i+r)) - floor(gamma i) + d_i - d_{i+r}"
+    },
+    "SRC17_thin_deficit_blocks_stay_in_their_range": {
+      "pass": true,
+      "detail": {
+        "blocks": 978,
+        "violations": [],
+        "excess_spread": 8,
+        "_observable_nondegenerate": true
+      },
+      "note": "§16: floor(gamma r) - D <= E_{i,r} <= ceil(gamma r) + D"
+    },
+    "SRC17_the_composition_count_matches_a_direct_enumeration": {
+      "pass": true,
+      "detail": {
+        "pairs": 48,
+        "violations": []
+      },
+      "note": "§17: C(r+E-1, E) sequences of r nonnegatives summing to E"
+    },
+    "SRC17_the_entropy_constant_matches_and_is_below_three": {
+      "pass": true,
+      "detail": {
+        "computed": "2.83951373049775259640",
+        "claimed_prefix": "2.8395137304",
+        "less_than_three": true,
+        "gap_to_three": 0.1604862695022474
+      },
+      "note": "§18-§20: Lambda_gamma = (1+g)^{1+g}/g^g = 2.8395137304..., and the whole round rests on it being < 3"
+    },
+    "SRC17_return_separation_operates_at_base_three": {
+      "pass": true,
+      "detail": {
+        "violations": [],
+        "note": "r + floor(gamma r) = floor(beta r) for integer r"
+      },
+      "note": "§19: 2^{Q+1} > 3^r / 2^D, which is what makes 3 the scale Lambda must beat"
+    },
+    "SRC17_the_admissible_c_interval_is_nonempty": {
+      "pass": true,
+      "detail": {
+        "lower_1_over_beta": "0.630929753571457437",
+        "upper": "0.664167674710917616",
+        "c_used_by_the_paper": "0.645",
+        "c_inside": true
+      },
+      "note": "§21: 1/beta < c < 1/log2(Lambda_gamma), non-empty exactly because Lambda_gamma < 3"
+    },
+    "SRC17_the_first_explicit_inequality_clears": {
+      "pass": true,
+      "detail": {
+        "value": "0.002300812965145737",
+        "claimed_lower_bound": "0.0022",
+        "margin": "0.000100812965"
+      },
+      "note": "§26: beta*c - 1 - 2eps > 0.0022 at c = 0.645, eps = 0.01"
+    },
+    "SRC17_the_second_explicit_inequality_clears": {
+      "pass": true,
+      "detail": {
+        "value": "0.985401447266013990",
+        "claimed_upper_bound": "0.986",
+        "margin": "0.000598552733"
+      },
+      "note": "§26: c*log2(Lambda_{gamma+eps/c}) < 0.986 at the same c and eps"
+    },
+    "SRC17_the_mechanical_code_has_identically_zero_deficit": {
+      "pass": true,
+      "detail": {
+        "m_range": "1..400",
+        "violations": [],
+        "note": "K*_m = floor(beta m) exactly, so d_m = 0"
+      },
+      "note": "§30: d_m = 0 for every m, so D_N = 0 = o(log N) and the barrier applies"
+    },
+    "SRC17_the_mechanical_code_has_sturmian_complexity": {
+      "pass": true,
+      "detail": {
+        "r_range": "1..24",
+        "violations": []
+      },
+      "note": "§31: p(r) = r + 1, so the tradeoff excludes it independently"
+    },
+    "SRC17_two_independent_routes_agree_the_mechanical_code_is_unanchored": {
+      "pass": true,
+      "detail": {
+        "zero_deficit": true,
+        "late_nonzero_lifts": 18
+      },
+      "note": "§30 says d_m = 0 forces nonanchoring; RUN-013 measured the lifts never stopping. Different arguments, same verdict"
+    },
+    "SRC17_an_ultimately_periodic_subcritical_tail_has_a_negative_source": {
+      "pass": true,
+      "detail": {
+        "periods": 12,
+        "subcritical": 8,
+        "supercritical": 4,
+        "violations": [],
+        "_both_outcomes_seen": true
+      },
+      "note": "§33: y = B_per/(2^Q - 3^p) < 0 whenever the period is subcritical"
+    },
+    "SRC17_the_paper_states_what_it_does_not_prove": {
+      "pass": true,
+      "detail": {
+        "missing_from_the_limits_section": []
+      },
+      "note": "§36: a positive round must still say where it stops"
+    },
+    "SRC17_the_route_map_and_the_paper_agree_on_the_eliminated_classes": {
+      "pass": true,
+      "detail": {
+        "routemap_len": 2154
+      },
+      "note": "v1.1 must list the same eliminations and the same constant"
+    },
+    "SRC17_the_bundle_reships_its_predecessors_unedited": {
+      "pass": true,
+      "detail": {
+        "reshipped_identical": 3,
+        "reshipped_edited": [],
+        "new_in_this_bundle": [
+          "Hard_Zeta_A_Line_ROUTE_MAP_v1.1_AU2b.md",
+          "Hard_Zeta_Phase_II_Round_AU2b_Sparse_Lift_Rigidity_v0.1.md"
+        ]
+      },
+      "note": "the closure, A-U.1 and A-U.2a must be byte-identical to items 30-32"
+    },
+    "SRC17_the_published_constant_is_below_this_schemes_ceiling": {
+      "pass": true,
+      "detail": {
+        "ceiling": 0.015018214488925716,
+        "at_c": 0.65
+      },
+      "note": "measurement: how far §26's constant could be pushed without a new argument, which is what §37's A-U.2b.1 is for"
+    },
+    "SRC17_real_starts_clear_the_barrier_and_only_the_countermodel_does_not": {
+      "pass": true,
+      "detail": {
+        "real_starts_clearing": 9,
+        "of": 9,
+        "mechanical_D_N": 0,
+        "_both_outcomes_seen": true
+      },
+      "note": "measurement: D_N/log2 N on every subcritical run that exists, against the one code with D_N = 0"
+    }
+  },
+  "counts": {
+    "checks": 25,
+    "passed": 25,
+    "spines": 7
+  },
+  "measured": {
+    "mechanical_nonanchored": {
+      "barrier_route_D_N": 0,
+      "lift_route_nonzero_after_m30": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        42,
+        43,
+        44,
+        45,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        54,
+        55,
+        59
+      ],
+      "agree": true
+    },
+    "bundle": {
+      "reshipped_identical": [
+        "Hard_Zeta_A_Line_Closure_v1.0.md",
+        "Hard_Zeta_Phase_II_Round_AU1_Critical_Occupation_Anchor_Erasure_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2a_Lift_Occupation_Coupling_v0.1.md"
+      ],
+      "reshipped_edited": [],
+      "new_in_this_bundle": [
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.1_AU2b.md",
+        "Hard_Zeta_Phase_II_Round_AU2b_Sparse_Lift_Rigidity_v0.1.md"
+      ]
+    },
+    "sharp_threshold": {
+      "published_eps": 0.01,
+      "published_c": 0.645,
+      "scheme_ceiling_eps": 0.015018214488925716,
+      "at_c": 0.65,
+      "improvement_factor": 1.5018214488925716,
+      "reading": "the published 0.01 is a safe round choice; the same argument supports about 0.015 with no new ideas, and anything past that needs a different one"
+    },
+    "record_deficit": {
+      "real_starts": [
+        {
+          "start": 27,
+          "lifetime": 36,
+          "D_N": 6,
+          "D_over_log2N": 1.1605584217036249
+        },
+        {
+          "start": 103,
+          "lifetime": 25,
+          "D_N": 4,
+          "D_over_log2N": 0.8613531161467861
+        },
+        {
+          "start": 703,
+          "lifetime": 50,
+          "D_N": 6,
+          "D_over_log2N": 1.0631029208133476
+        },
+        {
+          "start": 1407,
+          "lifetime": 50,
+          "D_N": 5,
+          "D_over_log2N": 0.8859191006777896
+        },
+        {
+          "start": 10087,
+          "lifetime": 65,
+          "D_N": 6,
+          "D_over_log2N": 0.996285877295627
+        },
+        {
+          "start": 15039,
+          "lifetime": 51,
+          "D_N": 7,
+          "D_over_log2N": 1.2340400407221748
+        },
+        {
+          "start": 35655,
+          "lifetime": 84,
+          "D_N": 8,
+          "D_over_log2N": 1.2515023067365723
+        },
+        {
+          "start": 2047,
+          "lifetime": 35,
+          "D_N": 7,
+          "D_over_log2N": 1.3647131532565042
+        },
+        {
+          "start": 131071,
+          "lifetime": 62,
+          "D_N": 11,
+          "D_over_log2N": 1.8474365685274614
+        }
+      ],
+      "mechanical_D_N": 0,
+      "reading": "real integers have no infinite subcritical spine, so the theorem constrains a hypothetical. Every finite run that does exist clears 0.01 by two orders of magnitude; the only object with D_N = 0 is the mechanical code, which §30 proves is not a positive integer. The all-ones family is the OPPOSITE extreme — K_j = j gives d_j = floor(gamma j), the largest deficit possible, not the smallest"
+    }
+  },
+  "failures": [],
+  "ok": true
+}

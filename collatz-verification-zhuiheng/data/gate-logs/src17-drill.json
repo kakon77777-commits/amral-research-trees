@@ -1,0 +1,262 @@
+{
+  "tool": "src17_drill.py",
+  "subject": "src17_hardzeta_au2b_recheck.py and the A-U.2b layer of hz_accel_code.py",
+  "defects": {
+    "A01_orbit_endpoints_starts_after_the_first_step": {
+      "target_check": "SRC17_a_repeated_exponent_block_forces_a_congruence",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC17_the_exact_excursion_upper_bound_holds"
+      ]
+    },
+    "A02_record_deficit_takes_the_minimum": {
+      "target_check": "SRC17_real_starts_clear_the_barrier_and_only_the_countermodel_does_not",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC17_thin_deficit_blocks_stay_in_their_range"
+      ]
+    },
+    "A03_factor_complexity_counts_positions_not_factors": {
+      "target_check": "SRC17_the_mechanical_code_has_sturmian_complexity",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A04_block_excess_forgets_the_minus_one": {
+      "target_check": "SRC17_the_block_excess_ledger_telescopes",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC17_thin_deficit_blocks_stay_in_their_range"
+      ]
+    },
+    "A05_composition_count_uses_the_wrong_binomial": {
+      "target_check": "SRC17_the_composition_count_matches_a_direct_enumeration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A06_entropy_base_drops_the_denominator": {
+      "target_check": "SRC17_the_entropy_constant_matches_and_is_below_three",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_gamma_decimal_is_not_shifted": {
+      "target_check": "SRC17_the_entropy_constant_matches_and_is_below_three",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A08_periodic_tail_source_inverts_its_denominator": {
+      "target_check": "SRC17_an_ultimately_periodic_subcritical_tail_has_a_negative_source",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC17_a_positive_cycle_requires_a_supercritical_period"
+      ]
+    },
+    "A09_cycle_test_compares_the_wrong_way": {
+      "target_check": "SRC17_a_positive_cycle_requires_a_supercritical_period",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC17_an_ultimately_periodic_subcritical_tail_has_a_negative_source"
+      ]
+    },
+    "A10_deficit_uses_the_wrong_floor": {
+      "target_check": "SRC17_the_deficit_recurrence_holds",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC17_the_block_excess_ledger_telescopes"
+      ]
+    },
+    "A11_mechanical_code_shifts_its_index": {
+      "target_check": "SRC17_the_mechanical_code_has_identically_zero_deficit",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC17_two_independent_routes_agree_the_mechanical_code_is_unanchored"
+      ]
+    },
+    "A12_floor_beta_uses_the_wrong_base": {
+      "target_check": "SRC17_return_separation_operates_at_base_three",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC17_no_state_repeats_on_a_subcritical_spine",
+        "SRC17_repeated_blocks_force_the_states_to_separate",
+        "SRC17_the_mechanical_code_has_sturmian_complexity",
+        "SRC17_two_independent_routes_agree_the_mechanical_code_is_unanchored"
+      ]
+    },
+    "A13_anchor_cocycle_reports_no_lifts": {
+      "target_check": "SRC17_two_independent_routes_agree_the_mechanical_code_is_unanchored",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A14_subcritical_lifetime_stops_one_step_early": {
+      "target_check": "SRC17_the_complexity_peak_law_holds_on_real_spines",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC17_real_starts_clear_the_barrier_and_only_the_countermodel_does_not",
+        "SRC17_the_block_excess_ledger_telescopes",
+        "SRC17_the_complexity_deficit_tradeoff_holds",
+        "SRC17_thin_deficit_blocks_stay_in_their_range"
+      ]
+    },
+    "A15_orbit_valuations_shifts_by_one": {
+      "target_check": "SRC17_the_block_excess_ledger_telescopes",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC17_the_deficit_recurrence_holds",
+        "SRC17_thin_deficit_blocks_stay_in_their_range"
+      ]
+    },
+    "A16_orbit_endpoints_never_advances": {
+      "target_check": "SRC17_no_state_repeats_on_a_subcritical_spine",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC17_repeated_blocks_force_the_states_to_separate",
+        "SRC17_the_complexity_peak_law_holds_on_real_spines"
+      ]
+    },
+    "T01_the_first_inequality_bound_is_transcribed_high": {
+      "target_check": "SRC17_the_first_explicit_inequality_clears",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_the_second_inequality_bound_is_transcribed_low": {
+      "target_check": "SRC17_the_second_explicit_inequality_clears",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_the_c_used_in_the_inequalities_drifts": {
+      "target_check": "SRC17_the_first_explicit_inequality_clears",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T04_the_entropy_prefix_is_transcribed_wrong": {
+      "target_check": "SRC17_the_entropy_constant_matches_and_is_below_three",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T05_the_separation_check_compares_the_wrong_pair": {
+      "target_check": "SRC17_repeated_blocks_force_the_states_to_separate",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T06_the_peak_law_reads_only_the_first_state": {
+      "target_check": "SRC17_the_complexity_peak_law_holds_on_real_spines",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T11_the_tradeoff_sign_is_transcribed_wrong": {
+      "target_check": "SRC17_the_complexity_deficit_tradeoff_holds",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T12_the_entropy_logarithm_adds_where_it_subtracts": {
+      "target_check": "SRC17_the_published_constant_is_below_this_schemes_ceiling",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T14_the_interval_lower_end_uses_gamma_instead_of_beta": {
+      "target_check": "SRC17_the_admissible_c_interval_is_nonempty",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T13_the_excursion_bound_is_tightened_past_the_truth": {
+      "target_check": "SRC17_the_exact_excursion_upper_bound_holds",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T07_the_thin_range_uses_the_wrong_record": {
+      "target_check": "SRC17_thin_deficit_blocks_stay_in_their_range",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T08_the_ceiling_search_scans_the_wrong_window": {
+      "target_check": "SRC17_the_published_constant_is_below_this_schemes_ceiling",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T09_the_contrast_reads_a_real_start_as_the_countermodel": {
+      "target_check": "SRC17_real_starts_clear_the_barrier_and_only_the_countermodel_does_not",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T10_the_limits_section_stops_requiring_the_conjecture": {
+      "target_check": "SRC17_the_paper_states_what_it_does_not_prove",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_paper_loses_its_limits_section": {
+      "target_check": "SRC17_the_paper_states_what_it_does_not_prove",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_route_map_loses_an_eliminated_class": {
+      "target_check": "SRC17_the_route_map_and_the_paper_agree_on_the_eliminated_classes",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_route_map_changes_the_published_constant": {
+      "target_check": "SRC17_the_route_map_and_the_paper_agree_on_the_eliminated_classes",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D04_bundle_edits_the_reshipped_predecessor": {
+      "target_check": "SRC17_the_bundle_reships_its_predecessors_unedited",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_bundle": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "audit": [],
+  "counts": {
+    "defects_planted": 34,
+    "defects_caught_by_the_named_check": 34,
+    "defects_in_the_au2b_layer": 16,
+    "defects_in_this_runs_own_measurement": 14,
+    "scope_defects_in_the_documents": 4,
+    "controls": 2,
+    "controls_undisturbed": 2,
+    "checks_without_a_defect_naming_them": 0
+  },
+  "ok": true
+}

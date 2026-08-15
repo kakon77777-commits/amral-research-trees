@@ -160,11 +160,20 @@ describe it that way.
     own machinery already excludes it, and the class left open has no exhibited
     inhabitant. Also: why a mutation that makes a check *vacuous* is invisible to
     a drill.
-16. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+16. [`reports/RUN-015-HARD-ZETA-AU2B-SPARSE-LIFT-RIGIDITY.md`](./reports/RUN-015-HARD-ZETA-AU2B-SPARSE-LIFT-RIGIDITY.md) —
+    the first round of Phase II that **eliminates** rather than blocks. Its whole
+    result turns on one constant being below another — `Λ_γ = 2.8395137304… < 3`,
+    checked at 60 digits — and on two explicit inequalities that clear by
+    `1.0e-4` and `6.0e-4`, each drilled by a perturbation smaller than its own
+    margin. It also settles RUN-014's open question by a second route: the
+    mechanical code has `d_m ≡ 0`, so the barrier excludes it directly.
+    Measured: **the same proof scheme supports `0.0150`, not just the published
+    `0.01`** — where the cheap gains stop, which is what the next round asks.
+17. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-17. [`code/`](./code/) — the engine, the independent reference, and the gates.
-18. [`data/gate-logs/`](./data/gate-logs/) and
+18. [`code/`](./code/) — the engine, the independent reference, and the gates.
+19. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

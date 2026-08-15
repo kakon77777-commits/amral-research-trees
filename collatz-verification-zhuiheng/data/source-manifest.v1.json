@@ -12,7 +12,7 @@
     "Hard-Zeta": 53,
     "other project": 2
   },
-  "processed_count": 33,
+  "processed_count": 34,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -569,7 +569,7 @@
       "sha256": "19fa51f88695e115ea21d84fa7f0ed50e217813dad3d3078700453c5de9602d9",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 33. Rechecked by code/src17_hardzeta_au2b_recheck.py. The FIRST positive round of Phase II — it eliminates classes instead of blocking routes, and it settles what RUN-014 left open: the mechanical code is unanchored because d_m = 0 identically, a different argument from the lift-flux one. The whole result turns on Lambda_gamma = 2.83951373049775... < 3, verified at 60 digits, and on two explicit inequalities at c=0.645 that clear by 1.0e-4 and 6.0e-4. Also verified: return separation, the complexity-peak law, the excursion bound, the Sturmian complexity p(r)=r+1, and negative sources for periodic tails. Measured: the same proof scheme supports eps ~ 0.0150, not just the published 0.01 — a 50% gain with no new idea, which is what A-U.2b.1 asks for. See reports/RUN-015-HARD-ZETA-AU2B-SPARSE-LIFT-RIGIDITY.md",
       "round_sort_key": [
         "au",
         2,

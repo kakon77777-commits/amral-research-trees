@@ -648,3 +648,70 @@ def critical_completion(kappa: tuple[int, ...], extra: int) -> tuple[int, ...]:
     return kappa + tuple(floor_beta(m + j) - floor_beta(m + j - 1)
                          for j in range(1, extra + 1))
 
+
+# ---------------------------------------------------------------------------
+# Phase II / Round A-U.2b — sparse lift rigidity.
+# Return separation (§4-§6), factor complexity and the complexity-peak law
+# (§7-§13), the thin-deficit block count that produces the entropy constant
+# (§14-§20), and the two families the round eliminates outright (§30-§33).
+# ---------------------------------------------------------------------------
+
+
+def record_deficit(n: int, N: int) -> int:
+    """§2: D_N = max over m <= N of d_m, the record deficit."""
+    return max(deficit(n, m) for m in range(1, N + 1))
+
+
+def factor_complexity(word: tuple[int, ...], r: int) -> int:
+    """§7: p(r), the number of distinct length-r factors of an exponent word."""
+    return len({word[j:j + r] for j in range(len(word) - r + 1)})
+
+
+def block_excess(n: int, i: int, r: int) -> int:
+    """§15: E_{i,r} = sum of (q-1) over positions i+1..i+r."""
+    q = orbit_valuations(n, i + r)
+    return sum(x - 1 for x in q[i:i + r])
+
+
+def composition_count(r: int, E: int) -> int:
+    """§17: the number of length-r sequences of nonnegative integers summing to E.
+
+    Stated by the paper as C(r+E-1, E); `src17` confronts it with a direct
+    enumeration at small r rather than trusting the binomial.
+    """
+    from math import comb
+    return comb(r + E - 1, E)
+
+
+def entropy_base(g: "Decimal") -> "Decimal":
+    """§18: Lambda_g = (1+g)^{1+g} / g^g, evaluated at a Decimal g.
+
+    Taken through logarithms because the exponents are irrational. The caller
+    compares it against 3, which is what §20's entropy gap needs, so g must be
+    the true gamma rather than a rational approximation to it — pass
+    `gamma_decimal()`, not a fraction.
+    """
+    return ((1 + g) * (1 + g).ln() - g * g.ln()).exp()
+
+
+def gamma_decimal(digits: int = 40) -> "Decimal":
+    """gamma = log2(3) - 1, to `digits` places."""
+    from decimal import Decimal, getcontext
+    getcontext().prec = digits + 15
+    return Decimal(3).ln() / Decimal(2).ln() - 1
+
+
+def periodic_tail_source(v: tuple[int, ...]) -> Fraction:
+    """§33: the source of a purely periodic exponent code, B_per / (2^Q - 3^p).
+
+    Subcriticality forces 2^Q < 3^p, so the denominator is negative and the
+    source cannot be a positive integer.
+    """
+    Q, pp = cumulative(v)[-1], len(v)
+    return Fraction(offset(v), 2 ** Q - 3 ** pp)
+
+
+def cycle_is_supercritical(v: tuple[int, ...]) -> bool:
+    """§5: a positive accelerated cycle needs 2^Q > 3^p, i.e. Q > p*beta."""
+    return 2 ** cumulative(v)[-1] > 3 ** len(v)
+
