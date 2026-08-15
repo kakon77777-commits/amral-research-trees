@@ -203,11 +203,21 @@ instance behind each band.
     (multi-occurrence packing) rather than by tuning. Both entropy identities
     hold, the variational supremum is the published constant, and §27's
     optimality is checked as two exhibited failures rather than an assertion.
-18. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+18. [`reports/RUN-017-HARD-ZETA-AU2B2-QUEUE-ENTROPY.md`](./reports/RUN-017-HARD-ZETA-AU2B2-QUEUE-ENTROPY.md) —
+    the first of the previous round's five levers is pulled, and **returns zero
+    at first order**: queue legality does not change the entropy, and the gain
+    comes instead from the Stirling prefactor, which was not on the list. Their
+    queue DP is checked by **reimplementation** — opposite accumulation
+    direction, exact integer credits, validated against brute force first — and
+    all nine rows reproduce. Also a provenance finding: **the shipped JSON was
+    not produced by the shipped script** (nine rows against eight, renamed
+    fields), although every number in it is correct. A realization defect with
+    the mathematics intact — the band this tree named a day earlier.
+19. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-19. [`code/`](./code/) — the engine, the independent reference, and the gates.
-20. [`data/gate-logs/`](./data/gate-logs/) and
+20. [`code/`](./code/) — the engine, the independent reference, and the gates.
+21. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

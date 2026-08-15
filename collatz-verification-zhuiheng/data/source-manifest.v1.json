@@ -12,7 +12,7 @@
     "Hard-Zeta": 53,
     "other project": 2
   },
-  "processed_count": 35,
+  "processed_count": 36,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -618,7 +618,7 @@
       "sha256": "aa31499dc5d7bf8dbf3b9a2f9c0e26c3b24b78b3e17b7d77ab81fe4a96959e86",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 35. Rechecked by code/src19_hardzeta_au2b2_recheck.py. Pulls the FIRST of A-U.2b.1's five levers (queue entropy) and it returns ZERO at first order — that is the round's own Prefix-Constraint No-Gain theorem, and the queue rate climbs monotonically to within 0.00246 of beta at r=5000. The second-order gain came from the Stirling prefactor instead, which was not on the list; four levers remain untried. Their queue DP was checked by REIMPLEMENTATION (opposite accumulation direction, exact integer credits, validated against brute force first) and all nine rows reproduce. Constants agree to 80-82 digits, and the block-scale optimum sits exactly at s=0 with d_pack — third round running published at its own supremum. FINDING: the shipped JSON was NOT produced by the shipped script (9 rows vs 8, renamed fields), though every number in it is correct — a stale generator/output pairing, a realization defect with the mathematics intact. See reports/RUN-017-HARD-ZETA-AU2B2-QUEUE-ENTROPY.md",
       "round_sort_key": [
         "au",
         2,

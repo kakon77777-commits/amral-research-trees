@@ -737,6 +737,9 @@ def packing_entropy_derivative(z: "Decimal") -> "Decimal":
     return (1 + 1 / z).ln() / Decimal(2).ln()
 
 
+_ROOT_CACHE: dict[int, "Decimal"] = {}
+
+
 def entropy_root(digits: int = 60) -> "Decimal":
     """§20: the unique z* in (gamma, 1) with H(z*) = beta, by bisection.
 
@@ -745,6 +748,8 @@ def entropy_root(digits: int = 60) -> "Decimal":
     between the two is agreement between implementations and not a re-run.
     """
     from decimal import Decimal, getcontext
+    if digits in _ROOT_CACHE:
+        return _ROOT_CACHE[digits]
     getcontext().prec = digits + 25
     beta = Decimal(3).ln() / Decimal(2).ln()
     lo, hi = beta - 1, Decimal(1)
@@ -754,7 +759,11 @@ def entropy_root(digits: int = 60) -> "Decimal":
             lo = mid
         else:
             hi = mid
-    return (lo + hi) / 2
+    # cached: the variational scans in `src19` call this inside a bisection loop,
+    # and recomputing a 560-step high-precision root each time is what made the
+    # first version of that scan unrunnable
+    _ROOT_CACHE[digits] = (lo + hi) / 2
+    return _ROOT_CACHE[digits]
 
 
 def packing_constant(digits: int = 60) -> "Decimal":
@@ -802,4 +811,101 @@ def occurrence_counts(n: int, N: int, r: int) -> dict:
         blk = q[i:i + r]
         out[blk] = out.get(blk, 0) + 1
     return out
+
+
+# ---------------------------------------------------------------------------
+# Phase II / Round A-U.2b.2 — queue entropy and the second-order barrier.
+# The exact deficit-corridor dynamic program (§30), the phase-resolved
+# mechanical credits it runs on (§3), and the second-order constant that the
+# Stirling prefactor buys (§17-§18).
+# ---------------------------------------------------------------------------
+
+
+def phase_credit(j: int, phase: int = 0) -> int:
+    """§3: b_j = floor(theta + gamma j) - floor(theta + gamma (j-1)), in {0,1}.
+
+    Integer phases only, and the floors are taken exactly through `floor_beta`
+    rather than by multiplying a float by j — the subject's own script uses the
+    float form, and `src19` checks the two agree over the range it uses.
+    """
+    def fl(k: int) -> int:
+        return floor_beta(k) - k if k else 0
+    return fl(phase + j) - fl(phase + j - 1)
+
+
+def queue_count(r: int, D: int, phase: int = 0) -> int:
+    """§30: the number of queue-admissible blocks of length r in corridor [0, D].
+
+    V_0(d) = 1 for 0 <= d <= D, then V_j(d') = sum over d >= max(0, d'-b_j) of
+    V_{j-1}(d), and the answer is the sum of V_r. Accumulated here from the LOW
+    end via prefix sums; the subject's script accumulates from the high end via
+    suffix sums. Same recurrence, opposite direction.
+    """
+    vec = [1] * (D + 1)
+    for j in range(1, r + 1):
+        b = phase_credit(j, phase)
+        total = sum(vec)
+        pref = [0] * (D + 2)
+        for i in range(D + 1):
+            pref[i + 1] = pref[i] + vec[i]
+        vec = [total - pref[max(0, t - b)] for t in range(D + 1)]
+    return sum(vec)
+
+
+def queue_count_bruteforce(r: int, D: int, phase: int = 0) -> int:
+    """The same count by direct enumeration, for validating the DP at small r."""
+    total = 0
+
+    def walk(j: int, d: int) -> None:
+        nonlocal total
+        if j > r:
+            total += 1
+            return
+        b = phase_credit(j, phase)
+        for e in range(0, d + b + 1):
+            nd = d + b - e
+            if 0 <= nd <= D:
+                walk(j + 1, nd)
+
+    for start in range(D + 1):
+        walk(1, start)
+    return total
+
+
+_HPRIME_CACHE: dict[int, "Decimal"] = {}
+
+
+def entropy_derivative_at_root(digits: int = 60) -> "Decimal":
+    """§17: h* = H'(z*) = log2(1 + 1/z*)."""
+    from decimal import Decimal, getcontext
+    if digits in _HPRIME_CACHE:
+        return _HPRIME_CACHE[digits]
+    getcontext().prec = digits + 25
+    z = entropy_root(digits)
+    _HPRIME_CACHE[digits] = (1 + 1 / z).ln() / Decimal(2).ln()
+    return _HPRIME_CACHE[digits]
+
+
+def second_order_constant(digits: int = 60) -> "Decimal":
+    """§18: d_pack = 1 / (2 h*)."""
+    return 1 / (2 * entropy_derivative_at_root(digits))
+
+
+def block_scale_exponents(d: "Decimal", s: "Decimal",
+                          digits: int = 60) -> tuple["Decimal", "Decimal"]:
+    """§26: (P1, P2) for a block scale r = L/beta + s*l.
+
+    Both must be negative for the contradiction, so the admissible d at a given
+    s is the smaller of the two thresholds; `src19` scans s to confirm that
+    s = 0 is where that minimum is largest.
+    """
+    from decimal import Decimal, getcontext
+    getcontext().prec = digits + 25
+    beta = Decimal(3).ln() / Decimal(2).ln()
+    z = entropy_root(digits)
+    x = z - (beta - 1)
+    h = entropy_derivative_at_root(digits)
+    p1 = h * d + s * (beta - h * x) - Decimal("0.5")
+    p2 = h * (d - x * s) - Decimal("0.5")
+    return p1, p2
 

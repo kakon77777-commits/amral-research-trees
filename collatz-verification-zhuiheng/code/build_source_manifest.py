@@ -161,6 +161,23 @@ PROCESSED = {
         "= the canonical source's own subcritical lifetime minus node depth; "
         "see reports/RUN-010-HARD-ZETA-ROUND-03A3.md"
     ),
+    "Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip": (
+        "item 35. Rechecked by code/src19_hardzeta_au2b2_recheck.py. Pulls the "
+        "FIRST of A-U.2b.1's five levers (queue entropy) and it returns ZERO at "
+        "first order — that is the round's own Prefix-Constraint No-Gain "
+        "theorem, and the queue rate climbs monotonically to within 0.00246 of "
+        "beta at r=5000. The second-order gain came from the Stirling prefactor "
+        "instead, which was not on the list; four levers remain untried. Their "
+        "queue DP was checked by REIMPLEMENTATION (opposite accumulation "
+        "direction, exact integer credits, validated against brute force first) "
+        "and all nine rows reproduce. Constants agree to 80-82 digits, and the "
+        "block-scale optimum sits exactly at s=0 with d_pack — third round "
+        "running published at its own supremum. FINDING: the shipped JSON was "
+        "NOT produced by the shipped script (9 rows vs 8, renamed fields), "
+        "though every number in it is correct — a stale generator/output "
+        "pairing, a realization defect with the mathematics intact. "
+        "See reports/RUN-017-HARD-ZETA-AU2B2-QUEUE-ENTROPY.md"
+    ),
     "Hard_Zeta_Phase_II_Round_AU2b1_bundle.zip": (
         "item 34. Rechecked by code/src18_hardzeta_au2b1_recheck.py. The FIRST "
         "round to ship its own numerical artifact (a script + an 80-digit "

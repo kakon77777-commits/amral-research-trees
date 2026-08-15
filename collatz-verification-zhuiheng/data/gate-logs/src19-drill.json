@@ -1,0 +1,224 @@
+{
+  "tool": "src19_drill.py",
+  "subject": "src19_hardzeta_au2b2_recheck.py and the A-U.2b.2 layer of hz_accel_code.py",
+  "defects": {
+    "A01_the_credit_is_taken_across_two_steps": {
+      "target_check": "SRC19_the_phase_resolved_credit_is_always_a_single_bit",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC19_every_published_queue_row_reproduces_under_an_independent_dp",
+        "SRC19_the_block_excess_equals_the_credit_prefix_plus_the_queue_drop",
+        "SRC19_the_credit_prefix_stays_within_one_of_gamma_s",
+        "SRC19_the_queue_dp_matches_a_direct_enumeration",
+        "SRC19_the_queue_entropy_rate_climbs_toward_beta",
+        "SRC19_the_queue_lever_gave_no_first_order_gain"
+      ]
+    },
+    "A02_the_credit_floor_uses_beta_not_gamma": {
+      "target_check": "SRC19_the_credit_prefix_stays_within_one_of_gamma_s",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC19_every_published_queue_row_reproduces_under_an_independent_dp",
+        "SRC19_the_phase_resolved_credit_is_always_a_single_bit",
+        "SRC19_the_queue_entropy_rate_climbs_toward_beta",
+        "SRC19_the_queue_lever_gave_no_first_order_gain"
+      ]
+    },
+    "A03_the_dp_accumulates_in_the_wrong_direction": {
+      "target_check": "SRC19_the_queue_dp_matches_a_direct_enumeration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC19_every_published_queue_row_reproduces_under_an_independent_dp",
+        "SRC19_the_queue_entropy_rate_climbs_toward_beta",
+        "SRC19_the_queue_lever_gave_no_first_order_gain"
+      ]
+    },
+    "A04_the_dp_ignores_the_credit": {
+      "target_check": "SRC19_every_published_queue_row_reproduces_under_an_independent_dp",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC19_the_queue_dp_matches_a_direct_enumeration",
+        "SRC19_the_queue_entropy_rate_climbs_toward_beta",
+        "SRC19_the_queue_lever_gave_no_first_order_gain"
+      ]
+    },
+    "A05_the_dp_corridor_is_one_too_wide": {
+      "target_check": "SRC19_the_queue_dp_matches_a_direct_enumeration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC19_every_published_queue_row_reproduces_under_an_independent_dp"
+      ]
+    },
+    "A06_the_bruteforce_forbids_a_zero_excess": {
+      "target_check": "SRC19_the_queue_dp_matches_a_direct_enumeration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_floor_beta_uses_the_wrong_base": {
+      "target_check": "SRC19_the_subjects_float_floor_agrees_with_exact_arithmetic",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC19_every_published_queue_row_reproduces_under_an_independent_dp",
+        "SRC19_the_credit_prefix_stays_within_one_of_gamma_s",
+        "SRC19_the_phase_resolved_credit_is_always_a_single_bit",
+        "SRC19_the_queue_lever_gave_no_first_order_gain"
+      ]
+    },
+    "A08_the_entropy_derivative_drops_the_one": {
+      "target_check": "SRC19_the_second_order_constants_reproduce_independently",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A09_the_second_order_constant_forgets_its_half": {
+      "target_check": "SRC19_the_block_scale_optimum_sits_at_the_published_constant",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC19_the_second_order_constants_reproduce_independently"
+      ]
+    },
+    "A10_the_first_block_scale_exponent_loses_its_drift": {
+      "target_check": "SRC19_each_block_scale_exponent_binds_on_its_own_side",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A11_the_second_block_scale_exponent_loses_its_drift": {
+      "target_check": "SRC19_each_block_scale_exponent_binds_on_its_own_side",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC19_the_block_scale_optimum_sits_at_the_published_constant"
+      ]
+    },
+    "A12_the_entropy_root_bisects_the_wrong_way": {
+      "target_check": "SRC19_the_safe_second_order_constant_clears_its_criterion",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC19_each_published_row_uses_the_corridor_its_length_implies",
+        "SRC19_the_second_order_constants_reproduce_independently"
+      ]
+    },
+    "T01_the_table_tolerance_is_read_from_the_wrong_column": {
+      "target_check": "SRC19_every_published_queue_row_reproduces_under_an_independent_dp",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_the_corridor_rule_uses_the_wrong_constant": {
+      "target_check": "SRC19_each_published_row_uses_the_corridor_its_length_implies",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_the_excess_identity_drops_the_starting_deficit": {
+      "target_check": "SRC19_the_block_excess_equals_the_credit_prefix_plus_the_queue_drop",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T04_the_saturation_check_reads_the_gaps_backwards": {
+      "target_check": "SRC19_the_queue_entropy_rate_climbs_toward_beta",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T05_the_ratio_check_uses_a_range_where_it_is_false": {
+      "target_check": "SRC19_the_composition_ratios_are_below_one_in_the_relevant_range",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T06_the_safe_constant_is_read_above_its_threshold": {
+      "target_check": "SRC19_the_safe_second_order_constant_clears_its_criterion",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T07_the_optimum_scan_only_looks_at_positive_shifts": {
+      "target_check": "SRC19_the_block_scale_optimum_sits_at_the_published_constant",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T08_the_pairing_check_reads_the_wrong_marker": {
+      "target_check": "SRC19_the_json_covers_everything_the_script_would_emit",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T09_the_unproved_list_is_read_from_the_proved_section": {
+      "target_check": "SRC19_the_paper_lists_casp_terras_and_collatz_as_unproved",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T10_the_lever_measurement_reads_the_first_row": {
+      "target_check": "SRC19_the_queue_lever_gave_no_first_order_gain",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_route_map_loses_the_second_order_constant": {
+      "target_check": "SRC19_the_route_map_carries_both_constants",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_route_map_and_paper_lose_the_no_gain_statement": {
+      "target_check": "SRC19_the_paper_records_the_first_order_no_gain",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_bundle_edits_the_reshipped_predecessor": {
+      "target_check": "SRC19_the_bundle_reships_its_predecessors_unedited",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D04_the_constants_json_is_perturbed_deep_inside_d_pack": {
+      "target_check": "SRC19_the_second_order_constants_reproduce_independently",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D05_the_json_drops_a_row_the_script_emits": {
+      "target_check": "SRC19_the_json_covers_everything_the_script_would_emit",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_bundle": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "audit": [],
+  "counts": {
+    "defects_planted": 27,
+    "defects_caught_by_the_named_check": 27,
+    "defects_in_the_au2b2_layer": 12,
+    "defects_in_this_runs_own_measurement": 10,
+    "scope_defects_in_the_artifact": 5,
+    "controls": 2,
+    "controls_undisturbed": 2,
+    "checks_without_a_defect_naming_them": 0
+  },
+  "ok": true
+}

@@ -1,0 +1,353 @@
+{
+  "tool": "src19_hardzeta_au2b2_recheck.py",
+  "subject": "Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip (item 35) — Round A-U.2b.2, its queue-DP script and constants JSON, three figures, plus A_Line_ROUTE_MAP v1.3",
+  "source_items": [
+    35
+  ],
+  "scope": "the exact queue dynamic program and its entropy saturation, the second-order constant from the Stirling prefactor, the block-scale optimality that makes it maximal, and the bundled numerical artifact",
+  "checks": {
+    "SRC19_the_phase_resolved_credit_is_always_a_single_bit": {
+      "pass": true,
+      "detail": {
+        "violations": [],
+        "ones": 934,
+        "zeros": 662,
+        "_both_symbols_seen": true
+      },
+      "note": "§3: b_j in {0,1} for every phase and index"
+    },
+    "SRC19_the_credit_prefix_stays_within_one_of_gamma_s": {
+      "pass": true,
+      "detail": {
+        "violations": []
+      },
+      "note": "§3: |B_s - gamma s| < 1"
+    },
+    "SRC19_the_subjects_float_floor_agrees_with_exact_arithmetic": {
+      "pass": true,
+      "detail": {
+        "j_range": "1..20000",
+        "disagreements": []
+      },
+      "note": "the script's credits come from math.floor(gamma*j) on a float; this would silently change the credit word if it ever slipped"
+    },
+    "SRC19_the_queue_dp_matches_a_direct_enumeration": {
+      "pass": true,
+      "detail": {
+        "shapes": 7,
+        "violations": []
+      },
+      "note": "§30: the DP is validated before it is used to grade anything"
+    },
+    "SRC19_every_published_queue_row_reproduces_under_an_independent_dp": {
+      "pass": true,
+      "detail": {
+        "rows_checked": 9,
+        "violations": []
+      },
+      "note": "§31: the shipped table, recomputed by a DP that accumulates from the other end and takes its credits from exact integers"
+    },
+    "SRC19_each_published_row_uses_the_corridor_its_length_implies": {
+      "pass": true,
+      "detail": {
+        "violations": []
+      },
+      "note": "D = floor(x* r) for every row"
+    },
+    "SRC19_the_block_excess_equals_the_credit_prefix_plus_the_queue_drop": {
+      "pass": true,
+      "detail": {
+        "paths": 12,
+        "violations": []
+      },
+      "note": "§5: E_r = B_r + d_0 - d_r"
+    },
+    "SRC19_the_queue_entropy_rate_climbs_toward_beta": {
+      "pass": true,
+      "detail": {
+        "first_gap": 0.4310276973695055,
+        "last_gap": 0.0024581717616358745,
+        "monotone": true
+      },
+      "note": "§11: with D/r -> x*, the rate tends to H(gamma+x*) = beta, so the queue constraint costs nothing at first order"
+    },
+    "SRC19_the_composition_ratios_are_below_one_in_the_relevant_range": {
+      "pass": true,
+      "detail": {
+        "shapes": 6,
+        "violations": []
+      },
+      "note": "§13-§14: the adjacent-term ratios, so both packing sums are controlled by their endpoint term"
+    },
+    "SRC19_the_second_order_constants_reproduce_independently": {
+      "pass": true,
+      "detail": {
+        "digits_agreeing": {
+          "H_prime_z_star": 80,
+          "d_pack": 82,
+          "safe_margin_half_minus_Hprime_d": 82,
+          "c_pack": 83,
+          "z_star": 82
+        },
+        "mismatched": []
+      },
+      "note": "§17-§18: h* = log2(1+1/z*) and d_pack = 1/(2h*), recomputed here"
+    },
+    "SRC19_the_safe_second_order_constant_clears_its_criterion": {
+      "pass": true,
+      "detail": {
+        "h_times_safe": "0.487832668999227217",
+        "d_pack": "0.368978978733146591",
+        "safe": "0.36",
+        "root_solves_H_equals_beta": true
+      },
+      "note": "§19, §24: the contradiction needs h* d < 1/2, and 0.36 must be below d_pack"
+    },
+    "SRC19_the_block_scale_optimum_sits_at_the_published_constant": {
+      "pass": true,
+      "detail": {
+        "best_d": "0.368978978733146591",
+        "at_s": "0.000",
+        "d_pack": "0.368978978733146591"
+      },
+      "note": "§26: maximising d over the block scale s, subject to both exponents being negative"
+    },
+    "SRC19_each_block_scale_exponent_binds_on_its_own_side": {
+      "pass": true,
+      "detail": {
+        "first_exponent_fails_above_s_zero": true,
+        "second_exponent_fails_below_s_zero": true
+      },
+      "note": "§26: moving s either way breaks one of the two, which is what makes s = 0 a genuine corner rather than an arbitrary choice"
+    },
+    "SRC19_the_json_covers_everything_the_script_would_emit": {
+      "pass": true,
+      "detail": {
+        "script_rows": [
+          100,
+          200,
+          400,
+          800,
+          1200,
+          2000,
+          3000,
+          5000
+        ],
+        "json_rows": [
+          50,
+          100,
+          200,
+          400,
+          800,
+          1200,
+          2000,
+          3000,
+          5000
+        ],
+        "script_rows_all_present_in_json": true
+      },
+      "note": "the artifact pairing is stale — recorded in `measured` — but the JSON must at least not contradict its generator"
+    },
+    "SRC19_the_paper_lists_casp_terras_and_collatz_as_unproved": {
+      "pass": true,
+      "detail": {
+        "missing": []
+      },
+      "note": "§34"
+    },
+    "SRC19_the_route_map_carries_both_constants": {
+      "pass": true,
+      "detail": {
+        "routemap_len": 1783
+      },
+      "note": "v1.3 must publish the first-order and second-order constants together"
+    },
+    "SRC19_the_paper_records_the_first_order_no_gain": {
+      "pass": true,
+      "detail": {},
+      "note": "§12: the negative half must be stated as plainly as the positive half"
+    },
+    "SRC19_the_bundle_reships_its_predecessors_unedited": {
+      "pass": true,
+      "detail": {
+        "reshipped_identical": 4,
+        "reshipped_edited": [],
+        "new_in_this_bundle": [
+          "Hard_Zeta_AU2b2_centered_queue_gap.png",
+          "Hard_Zeta_AU2b2_constants_and_queue.json",
+          "Hard_Zeta_AU2b2_queue_entropy_convergence.png",
+          "Hard_Zeta_AU2b2_second_order_margin.png",
+          "Hard_Zeta_A_Line_ROUTE_MAP_v1.3_AU2b2.md",
+          "Hard_Zeta_Phase_II_Round_AU2b2_Queue_Entropy_Second_Order_Barrier_v0.1.md",
+          "verify_Hard_Zeta_AU2b2_queue_second_order.py"
+        ]
+      },
+      "note": "four predecessor rounds byte-identical; SEVEN files new — the paper, the route map, the script, the constants JSON and three figures"
+    },
+    "SRC19_the_queue_lever_gave_no_first_order_gain": {
+      "pass": true,
+      "detail": {
+        "c_pack_unchanged": true,
+        "d_pack": 0.3689789787331466
+      },
+      "note": "measurement: which of A-U.2b.1's five levers this round used, and what it actually bought"
+    }
+  },
+  "counts": {
+    "checks": 19,
+    "passed": 19,
+    "digits": 60
+  },
+  "measured": {
+    "float_floor_agreement": {
+      "j_range": 20000,
+      "disagreements": 0
+    },
+    "queue_table": [
+      {
+        "r": 50,
+        "D": 2,
+        "rate": 1.1539348033516506,
+        "their_rate": 1.1539348033516506,
+        "gap": 18.729456773587906,
+        "their_gap": 18.729456773587906
+      },
+      {
+        "r": 100,
+        "D": 5,
+        "rate": 1.4177973475705548,
+        "their_rate": 1.4177973475705548,
+        "gap": 13.39458722017276,
+        "their_gap": 13.39458722017276
+      },
+      {
+        "r": 200,
+        "D": 11,
+        "rate": 1.518769109112707,
+        "their_rate": 1.518769109112707,
+        "gap": 9.416750226802442,
+        "their_gap": 9.416750226802442
+      },
+      {
+        "r": 400,
+        "D": 22,
+        "rate": 1.5533668534110812,
+        "their_rate": 1.5533668534110812,
+        "gap": 8.316330829142608,
+        "their_gap": 8.316330829142608
+      },
+      {
+        "r": 800,
+        "D": 45,
+        "rate": 1.570017812475332,
+        "their_rate": 1.570017812475332,
+        "gap": 7.133822501771937,
+        "their_gap": 7.133822501771937
+      },
+      {
+        "r": 1200,
+        "D": 68,
+        "rate": 1.5752422136234951,
+        "their_rate": 1.5752422136234951,
+        "gap": 6.549935171945117,
+        "their_gap": 6.549935171945117
+      },
+      {
+        "r": 2000,
+        "D": 113,
+        "rate": 1.578705507929065,
+        "their_rate": 1.578705507929065,
+        "gap": 7.031093441851094,
+        "their_gap": 7.031093441851094
+      },
+      {
+        "r": 3000,
+        "D": 170,
+        "rate": 1.5807948661755524,
+        "their_rate": 1.5807948661755524,
+        "gap": 6.727530244119803,
+        "their_gap": 6.727530244119803
+      },
+      {
+        "r": 5000,
+        "D": 284,
+        "rate": 1.5825043289595202,
+        "their_rate": 1.5825043289595202,
+        "gap": 6.147002618404385,
+        "their_gap": 6.147002618404385
+      }
+    ],
+    "entropy_saturation": {
+      "beta": 1.584962500721156,
+      "rate_at_smallest_r": 1.1539348033516506,
+      "rate_at_largest_r": 1.5825043289595202,
+      "gap_at_largest_r": 0.0024581717616358745,
+      "monotone_approach": true
+    },
+    "constants": {
+      "digits_agreeing": {
+        "H_prime_z_star": 80,
+        "d_pack": 82,
+        "safe_margin_half_minus_Hprime_d": 82,
+        "c_pack": 83,
+        "z_star": 82
+      },
+      "d_pack": "0.368978978733146591525016282052",
+      "h_star": "1.355090747220075604059248432773"
+    },
+    "block_scale": {
+      "best_d": 0.3689789787331466,
+      "at_s": 0.0,
+      "d_pack": 0.3689789787331466,
+      "reading": "s = 0 is optimal, so d_pack is the ceiling of this envelope too — the third consecutive round published at its own supremum"
+    },
+    "artifact_pairing": {
+      "script_row_count": 8,
+      "json_row_count": 9,
+      "rows_only_in_json": [
+        50
+      ],
+      "script_row_keys": [
+        "beta_minus_rate",
+        "centered_gap",
+        "log2_count_over_r"
+      ],
+      "json_row_keys": [
+        "D",
+        "centered_gap",
+        "r",
+        "rate"
+      ],
+      "finding": "the shipped JSON was not produced by the shipped script revision: it carries an extra row, renames log2_count_over_r to rate, and drops beta_minus_rate. Every value in it is nevertheless correct under an independent DP, so this is a stale generator/output pairing, not a wrong number."
+    },
+    "bundle": {
+      "reshipped_identical": [
+        "Hard_Zeta_Phase_II_Round_AU1_Critical_Occupation_Anchor_Erasure_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2a_Lift_Occupation_Coupling_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2b1_Sharp_Packing_Entropy_Threshold_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2b_Sparse_Lift_Rigidity_v0.1.md"
+      ],
+      "reshipped_edited": [],
+      "new_in_this_bundle": [
+        "Hard_Zeta_AU2b2_centered_queue_gap.png",
+        "Hard_Zeta_AU2b2_constants_and_queue.json",
+        "Hard_Zeta_AU2b2_queue_entropy_convergence.png",
+        "Hard_Zeta_AU2b2_second_order_margin.png",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.3_AU2b2.md",
+        "Hard_Zeta_Phase_II_Round_AU2b2_Queue_Entropy_Second_Order_Barrier_v0.1.md",
+        "verify_Hard_Zeta_AU2b2_queue_second_order.py"
+      ]
+    },
+    "lever": {
+      "lever_used": "queue entropy (§28 item 1)",
+      "first_order_gain": 0.0,
+      "c_pack_unchanged": "0.035856760034048669",
+      "second_order_gain_d_pack": 0.3689789787331466,
+      "queue_rate_at_r_5000": 1.5825043289595202,
+      "beta": 1.584962500721156,
+      "reading": "the lever produced NO first-order gain — that is the round's own Prefix-Constraint No-Gain theorem — and the second-order term came from the Stirling prefactor instead, which was not on the list of five. Four levers remain untried."
+    }
+  },
+  "failures": [],
+  "ok": true
+}
