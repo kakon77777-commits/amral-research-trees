@@ -39,6 +39,31 @@ A finite verification to any `N`, however large, says something about `[1, N]`
 and nothing else. It is not support for the conjecture, and this tree will not
 describe it that way.
 
+## Where mathematics and computation do not align
+
+Neo.K's standing position, which this tree now records with its evidence: going
+from formal language to mathematical language to programming language, **the
+choice of underlying symbol space is not fully identical** — it can be, and it
+can fail to be. A body of mathematics can be highly complete *as mathematics* and
+still not reduce cleanly to a machine, and where it fails to reduce, the first
+hypothesis should not be that the theory is wrong.
+
+Across thirty-five source items and sixteen runs, **nothing in the source
+mathematics failed a check**. The defects clustered in the *realizations* — two
+in the subject's own computational apparatus, considerably more in this arm's
+code, which is what the 304-defect mutation suite exists to catch. But the
+non-alignment is real, and it has at least four distinct shapes: fully alignable,
+alignable in shadow only, structurally unreachable, and **scale-invisible** — a
+check that is green, exact and drilled while reporting nothing about what the
+theorem is actually for.
+
+It also runs in both directions. In Rounds A-U.1 and A-U.2a the machine holds
+exactly what the standard formalism provably discards. Neither symbol space
+contains the other.
+
+[`reports/CHARTER.md`](./reports/CHARTER.md) states this in full, with the
+instance behind each band.
+
 ## Read in this order
 
 1. [`reports/CHARTER.md`](./reports/CHARTER.md) — what this arm answers, what it
