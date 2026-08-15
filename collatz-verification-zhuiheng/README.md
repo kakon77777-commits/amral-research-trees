@@ -108,11 +108,18 @@ describe it that way.
     extraction shows the longest odd-`M` runs belong to the **anchored** codes.
     So that counterfamily is the CST counterexample itself — the route is
     equivalent, not cheaper. Worth knowing before spending a round on it.
-11. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+11. [`reports/RUN-010-HARD-ZETA-ROUND-03A3.md`](./reports/RUN-010-HARD-ZETA-ROUND-03A3.md) —
+    Round 03-A.3 finds a **unique zero-lift edge**: every node has at most one
+    source-preserving child, so the tree of exact codes collapses to one
+    deterministic path per canonical source. Verified over 13,929 node/exponent
+    pairs. Unlike RUN-009's verdict this is a real structural gain — the target
+    stays equivalent to CST, but the *object* is genuinely smaller. Measured: a
+    spine is exactly as long as its source's remaining subcritical life.
+12. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-12. [`code/`](./code/) — the engine, the independent reference, and the gates.
-13. [`data/gate-logs/`](./data/gate-logs/) and
+13. [`code/`](./code/) — the engine, the independent reference, and the gates.
+14. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

@@ -1,0 +1,253 @@
+{
+  "tool": "src12_hardzeta_round03a3_recheck.py",
+  "subject": "Neo.K + Aletheia, Hard-Zeta Phase I / Round 03-A.3 Endpoint Parity Dynamics v0.1 (2026-08-11)",
+  "source_items": [
+    27
+  ],
+  "scope": "the endpoint recurrence and coarse lift digit (§2-§4), the 2-adic endpoint state and bit-selection theorem (§5-§10), the lift-digit decomposition and parity-only no-go (§11-§14), the zero-lift conditions and Unique Zero-Lift Edge (§15-§22), the subcritical budget and Spine Ejection Criterion (§23-§26).",
+  "checks": {
+    "SRC12_bundle_carries_the_A_line_so_far_and_the_v06_map": {
+      "pass": true
+    },
+    "SRC12_paper_keeps_an_explicit_proved_and_unproved_ledger": {
+      "pass": true
+    },
+    "SRC12_the_paper_states_the_parity_only_no_go_itself": {
+      "pass": true
+    },
+    "SRC12_the_endpoint_state_carries_enough_precision": {
+      "pass": true
+    },
+    "SRC12_the_endpoint_recurrence_holds": {
+      "pass": true
+    },
+    "SRC12_the_coarse_lift_digit_lies_in_its_range": {
+      "pass": true
+    },
+    "SRC12_the_coarse_digit_is_the_low_bits_of_the_endpoint_state": {
+      "pass": true
+    },
+    "SRC12_endpoint_parity_is_the_selected_bit_of_the_state": {
+      "pass": true
+    },
+    "SRC12_the_cut_and_shift_recurrence_holds": {
+      "pass": true
+    },
+    "SRC12_the_lift_digit_decomposition_holds": {
+      "pass": true
+    },
+    "SRC12_zero_lift_matches_its_stated_bit_conditions": {
+      "pass": true
+    },
+    "SRC12_zero_lift_happens_exactly_at_the_self_generated_exponent": {
+      "pass": true
+    },
+    "SRC12_every_other_exponent_strictly_raises_the_source": {
+      "pass": true
+    },
+    "SRC12_zero_lift_edges_were_actually_seen": {
+      "pass": true
+    },
+    "SRC12_the_two_routes_to_the_self_generated_exponent_agree": {
+      "pass": true
+    },
+    "SRC12_no_node_has_two_source_preserving_children": {
+      "pass": true
+    },
+    "SRC12_the_uniqueness_probe_could_have_found_a_second_child": {
+      "pass": true
+    },
+    "SRC12_section_13s_parity_only_example_reproduces_exactly": {
+      "pass": true
+    },
+    "SRC12_that_example_really_keeps_the_endpoint_odd_while_ejecting": {
+      "pass": true
+    },
+    "SRC12_the_spine_keeps_its_canonical_source_fixed": {
+      "pass": true
+    },
+    "SRC12_spine_length_is_exactly_the_sources_remaining_subcritical_life": {
+      "pass": true
+    },
+    "SRC12_the_spine_ejection_criterion_matches_following_the_edge": {
+      "pass": true
+    },
+    "SRC12_spine_survival_grows_with_depth": {
+      "pass": true
+    },
+    "SRC12_no_traced_spine_hit_the_iteration_limit": {
+      "pass": true
+    },
+    "SRC12_the_spine_algebra_evaluates_without_error": {
+      "pass": true
+    }
+  },
+  "counts": {
+    "node_exponent_pairs": 13929,
+    "zero_lift_edges_found": 1742,
+    "source_preserving_children_found": 1581,
+    "nodes_enumerated_to": 11,
+    "exponents_probed_per_node": 8
+  },
+  "measured": {
+    "section_13": {
+      "K4": 5,
+      "r4": 27,
+      "M4": 71,
+      "K5": 7,
+      "r5": 91,
+      "M5": 175,
+      "c5": 2,
+      "t5": 1
+    },
+    "spine_traces": [
+      {
+        "node": [
+          1
+        ],
+        "source": 3,
+        "steps": 0,
+        "ejected_q": 4,
+        "budget": 2,
+        "source_lifetime": 1
+      },
+      {
+        "node": [
+          1,
+          2
+        ],
+        "source": 11,
+        "steps": 0,
+        "ejected_q": 3,
+        "budget": 1,
+        "source_lifetime": 2
+      },
+      {
+        "node": [
+          1,
+          1,
+          2
+        ],
+        "source": 7,
+        "steps": 0,
+        "ejected_q": 3,
+        "budget": 2,
+        "source_lifetime": 3
+      },
+      {
+        "node": [
+          1,
+          2,
+          1,
+          1
+        ],
+        "source": 27,
+        "steps": 32,
+        "ejected_q": 3,
+        "budget": 2,
+        "source_lifetime": 36
+      },
+      {
+        "node": [
+          1,
+          1,
+          2,
+          1,
+          1
+        ],
+        "source": 103,
+        "steps": 20,
+        "ejected_q": 4,
+        "budget": 3,
+        "source_lifetime": 25
+      }
+    ],
+    "spine_profile": [
+      {
+        "m": 1,
+        "nodes": 1,
+        "max_steps": 0,
+        "mean_steps": 0.0,
+        "longest_lived_source": 3
+      },
+      {
+        "m": 2,
+        "nodes": 2,
+        "max_steps": 1,
+        "mean_steps": 0.5,
+        "longest_lived_source": 7
+      },
+      {
+        "m": 3,
+        "nodes": 3,
+        "max_steps": 33,
+        "mean_steps": 11.0,
+        "longest_lived_source": 27
+      },
+      {
+        "m": 4,
+        "nodes": 7,
+        "max_steps": 32,
+        "mean_steps": 16.857,
+        "longest_lived_source": 27
+      },
+      {
+        "m": 5,
+        "nodes": 12,
+        "max_steps": 31,
+        "mean_steps": 19.583,
+        "longest_lived_source": 27
+      },
+      {
+        "m": 6,
+        "nodes": 30,
+        "max_steps": 30,
+        "mean_steps": 9.4,
+        "longest_lived_source": 27
+      },
+      {
+        "m": 7,
+        "nodes": 85,
+        "max_steps": 43,
+        "mean_steps": 6.259,
+        "longest_lived_source": 1407
+      },
+      {
+        "m": 8,
+        "nodes": 173,
+        "max_steps": 42,
+        "mean_steps": 6.249,
+        "longest_lived_source": 1407
+      },
+      {
+        "m": 9,
+        "nodes": 476,
+        "max_steps": 42,
+        "mean_steps": 5.103,
+        "longest_lived_source": 15039
+      },
+      {
+        "m": 10,
+        "nodes": 961,
+        "max_steps": 74,
+        "mean_steps": 6.385,
+        "longest_lived_source": 35655
+      },
+      {
+        "m": 11,
+        "nodes": 2652,
+        "max_steps": 73,
+        "mean_steps": 6.057,
+        "longest_lived_source": 35655
+      }
+    ],
+    "assessment": {
+      "what_round_03a3_gets_right": "All of it. The endpoint recurrence, the coarse lift digit and its range, the identification of that digit with the low bits of the 2-adic endpoint state, the Endpoint Bit-Selection Theorem, the cut-and-shift recurrence, the lift-digit decomposition, both routes to the self-generated exponent, the Unique Zero-Lift Edge, the ejection of every other exponent, and the Spine Ejection Criterion against actually following the edge. §13's parity-only example reproduces to the digit and does exhibit what it claims: endpoints staying odd while the source is ejected.",
+      "a_different_verdict_from_RUN_009": "RUN-009 priced the previous round's endpoint-parity route as equivalent-not-cheaper. This round retires that route ITSELF - §37's New No-Go, §13's counterexample, and route map v0.6 calling it 'sufficient but too strong'. Same conclusion, reached independently on the theory side. What replaces it is not another restatement: the target stays equivalent to CST, but the SEARCH SPACE collapses from a branching tree to one deterministic path per canonical source. That is a structural gain, and it is what makes §40's proposed tools - continued fractions, Diophantine rigidity - applicable at all.",
+      "the_measurement": "Spine length obeys an exact identity: node depth + spine steps = the canonical source's own subcritical lifetime. So a spine is never longer than its source's life, and asking how long spines can run is asking how large tau_c can be - CST again, now per-source rather than per-tree. Measured to depth 11, the longest spines belong to 3, 7, 27, 1407, 15039 and 35655; 27 and 35655 are exactly the anchors RUN-007 measured, and the others are new.",
+      "what_it_does_not_establish": "nothing about Collatz and nothing on §39's unproved list. In particular 'no infinite subcritical spine' is untouched: every spine measured here terminates, which is what a true conjecture and a bounded search both look like."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

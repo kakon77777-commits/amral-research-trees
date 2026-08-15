@@ -1,0 +1,144 @@
+{
+  "tool": "src12_drill.py",
+  "subject": "src12_hardzeta_round03a3_recheck.py and the spine layer of hz_accel_code.py",
+  "defects": {
+    "A01_endpoint_state_loses_its_sign": {
+      "target_check": "SRC12_the_coarse_digit_is_the_low_bits_of_the_endpoint_state",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC12_endpoint_parity_is_the_selected_bit_of_the_state",
+        "SRC12_the_cut_and_shift_recurrence_holds",
+        "SRC12_the_two_routes_to_the_self_generated_exponent_agree"
+      ]
+    },
+    "A02_endpoint_state_uses_the_wrong_power_of_three": {
+      "target_check": "SRC12_the_coarse_digit_is_the_low_bits_of_the_endpoint_state",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC12_endpoint_parity_is_the_selected_bit_of_the_state",
+        "SRC12_the_cut_and_shift_recurrence_holds",
+        "SRC12_the_two_routes_to_the_self_generated_exponent_agree"
+      ]
+    },
+    "A03_zero_lift_exponent_reads_the_coarse_endpoint": {
+      "target_check": "SRC12_zero_lift_happens_exactly_at_the_self_generated_exponent",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC12_every_other_exponent_strictly_raises_the_source",
+        "SRC12_spine_length_is_exactly_the_sources_remaining_subcritical_life",
+        "SRC12_the_spine_keeps_its_canonical_source_fixed",
+        "SRC12_the_two_routes_to_the_self_generated_exponent_agree"
+      ]
+    },
+    "A04_zero_lift_exponent_off_by_one": {
+      "target_check": "SRC12_the_two_routes_to_the_self_generated_exponent_agree",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC12_every_other_exponent_strictly_raises_the_source",
+        "SRC12_spine_length_is_exactly_the_sources_remaining_subcritical_life",
+        "SRC12_the_spine_keeps_its_canonical_source_fixed",
+        "SRC12_zero_lift_happens_exactly_at_the_self_generated_exponent"
+      ]
+    },
+    "A05_subcritical_budget_shifted": {
+      "target_check": "SRC12_the_spine_ejection_criterion_matches_following_the_edge",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC12_spine_length_is_exactly_the_sources_remaining_subcritical_life"
+      ]
+    },
+    "A06_spine_survival_test_uses_the_wrong_comparison": {
+      "target_check": "SRC12_the_spine_ejection_criterion_matches_following_the_edge",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_spine_trace_extends_by_a_fixed_exponent": {
+      "target_check": "SRC12_the_spine_keeps_its_canonical_source_fixed",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC12_no_traced_spine_hit_the_iteration_limit",
+        "SRC12_spine_length_is_exactly_the_sources_remaining_subcritical_life",
+        "SRC12_spine_survival_grows_with_depth"
+      ]
+    },
+    "A08_spine_trace_stops_one_step_early": {
+      "target_check": "SRC12_spine_length_is_exactly_the_sources_remaining_subcritical_life",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A09_subcritical_lifetime_counts_one_too_many": {
+      "target_check": "SRC12_spine_length_is_exactly_the_sources_remaining_subcritical_life",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A10_endpoint_state_truncated_too_far": {
+      "target_check": "SRC12_the_endpoint_state_carries_enough_precision",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC12_endpoint_parity_is_the_selected_bit_of_the_state",
+        "SRC12_the_coarse_digit_is_the_low_bits_of_the_endpoint_state",
+        "SRC12_the_cut_and_shift_recurrence_holds",
+        "SRC12_the_two_routes_to_the_self_generated_exponent_agree"
+      ]
+    },
+    "T01_the_papers_example_is_transcribed_wrong": {
+      "target_check": "SRC12_section_13s_parity_only_example_reproduces_exactly",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_the_spine_identity_compares_against_the_node_not_the_source": {
+      "target_check": "SRC12_spine_length_is_exactly_the_sources_remaining_subcritical_life",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_the_uniqueness_check_probes_only_one_exponent": {
+      "target_check": "SRC12_the_uniqueness_probe_could_have_found_a_second_child",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_paper_loses_its_ledger": {
+      "target_check": "SRC12_paper_keeps_an_explicit_proved_and_unproved_ledger",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_the_route_map_no_longer_retires_the_parity_route": {
+      "target_check": "SRC12_the_paper_states_the_parity_only_no_go_itself",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_bundle": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "counts": {
+    "defects_planted": 15,
+    "defects_caught_by_the_named_check": 15,
+    "defects_in_the_spine_chain": 10,
+    "defects_in_this_runs_own_measurement": 3,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

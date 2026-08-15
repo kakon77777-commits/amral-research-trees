@@ -12,7 +12,7 @@
     "Hard-Zeta": 53,
     "other project": 2
   },
-  "processed_count": 27,
+  "processed_count": 28,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -445,7 +445,7 @@
       "sha256": "91c70e13829dc3230eded4b9a0341a064166214379ae8ad15773c695b7411b72",
       "line": "Hard-Zeta",
       "role": "Phase I round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 27. Rechecked by code/src12_hardzeta_round03a3_recheck.py over 13,929 node/exponent pairs: the endpoint 2-adic state, bit-selection theorem, cut-and-shift recurrence, Unique Zero-Lift Edge and Spine Ejection Criterion all hold, and no node ever had two source-preserving children. §13's parity-only example reproduces to the digit. Measured: spine length = the canonical source's own subcritical lifetime minus node depth; see reports/RUN-010-HARD-ZETA-ROUND-03A3.md",
       "round_sort_key": [
         "",
         3,

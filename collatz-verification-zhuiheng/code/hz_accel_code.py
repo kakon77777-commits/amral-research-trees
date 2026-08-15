@@ -204,3 +204,80 @@ def sync_bit(kappa: tuple[int, ...]) -> int:
 def exact_endpoint(kappa: tuple[int, ...]) -> int:
     """§9: Ŷ_m = M_m + ε_m·3^m, the endpoint the exact source actually reaches."""
     return canonical_endpoint(kappa) + sync_bit(kappa) * 3 ** len(kappa)
+
+
+# ============================================================================
+# Round 03-A.3 additions — endpoint 2-adic state and the zero-lift spine.
+#
+# Round 03-A.2 gave one bit per step. Round 03-A.3 collects all of them into a
+# single 2-adic state Xi_m and shows the next exponent SELECTS a bit of it — and
+# that exactly one choice of exponent keeps the source fixed. The tree of exact
+# codes therefore carries a deterministic sub-object: the spine.
+# ============================================================================
+
+XI_PRECISION = 96      # bits of Xi_m kept; guarded against by the callers
+
+
+def endpoint_state(kappa: tuple[int, ...], bits: int = XI_PRECISION) -> int:
+    """§5: Xi_m = −(3·M_m + 1)·3^{−(m+1)} in Z_2, truncated to `bits` bits.
+
+    A 2-adic integer has no finite representation, so this is a truncation and is
+    named as one. Every caller must use fewer than `bits` low bits of it; the
+    checks assert that rather than trusting it.
+    """
+    m = len(kappa)
+    mod = 1 << bits
+    return (-(3 * canonical_endpoint(kappa) + 1) * pow(3, -(m + 1), mod)) % mod
+
+
+def coarse_lift_digit(kappa: tuple[int, ...], q: int) -> int:
+    """§4-§5: c_{m+1} = [Xi_m]_q, the low q bits of the endpoint state."""
+    return endpoint_state(kappa) & ((1 << q) - 1)
+
+
+def zero_lift_exponent(kappa: tuple[int, ...]) -> int:
+    """§19: q*_m = v_2(3·Ŷ_m + 1), the self-generated exponent.
+
+    §19 also gives q* = v_2(Xi_m − eps_m); this route uses the exact endpoint
+    directly, so it needs no 2-adic truncation at all and the two can be
+    compared.
+    """
+    y = 3 * exact_endpoint(kappa) + 1
+    return (y & -y).bit_length() - 1
+
+
+def subcritical_budget(kappa: tuple[int, ...]) -> int:
+    """§23: Q_m = ⌊β(m+1)⌋ − K_m, the room left for the next exponent."""
+    return floor_beta(len(kappa) + 1) - cumulative(kappa)[-1]
+
+
+def spine_survives(kappa: tuple[int, ...]) -> bool:
+    """§24: the anchor-preserving move stays subcritical iff q* ≤ Q."""
+    return zero_lift_exponent(kappa) <= subcritical_budget(kappa)
+
+
+def trace_spine(kappa: tuple[int, ...], limit: int = 400) -> dict:
+    """Follow the deterministic zero-lift spine until §24 ejects it.
+
+    §20 makes this well defined: each node has at most one source-preserving
+    child, so there is nothing to search — the continuation is forced.
+    """
+    steps = 0
+    node = kappa
+    while steps < limit:
+        q, Q = zero_lift_exponent(node), subcritical_budget(node)
+        if q > Q:
+            return {"steps": steps, "end": node, "ejected_q": q, "budget": Q,
+                    "hit_limit": False}
+        node = node + (q,)
+        steps += 1
+    return {"steps": steps, "end": node, "ejected_q": None, "budget": None,
+            "hit_limit": True}
+
+
+def subcritical_lifetime(n: int, limit: int = 400) -> int:
+    """How many odd steps an odd start stays inside the subcritical cone."""
+    m = 0
+    while m < limit and is_subcritical(accel_code(n, m + 1)):
+        m += 1
+    return m

@@ -152,6 +152,15 @@ PROCESSED = {
         "the longest odd-M runs are held by the ANCHORED codes; "
         "see reports/RUN-009-HARD-ZETA-ROUND-03A2.md"
     ),
+    "Hard_Zeta_Phase_I_Round_03A3_bundle.zip": (
+        "item 27. Rechecked by code/src12_hardzeta_round03a3_recheck.py over 13,929 "
+        "node/exponent pairs: the endpoint 2-adic state, bit-selection theorem, "
+        "cut-and-shift recurrence, Unique Zero-Lift Edge and Spine Ejection "
+        "Criterion all hold, and no node ever had two source-preserving children. "
+        "§13's parity-only example reproduces to the digit. Measured: spine length "
+        "= the canonical source's own subcritical lifetime minus node depth; "
+        "see reports/RUN-010-HARD-ZETA-ROUND-03A3.md"
+    ),
     "collatz_ot_v3_threshold_benchmark.csv": (
         "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; "
         "all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, "
