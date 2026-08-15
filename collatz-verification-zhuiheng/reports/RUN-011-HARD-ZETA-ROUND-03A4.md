@@ -59,16 +59,25 @@ cylinder density of exactly **1** against a budget of `γ ≈ 0.585`. On real sp
 
 | `n` | lifetime | credit spent / budget | mean excess valuation |
 |---|---|---|---|
-| 27 | 36 | 16 / 19 | 0.471 |
-| 703 | 50 | 13 / 19 | 0.382 |
-| 10087 | 65 | 17 / 19 | 0.500 |
-| 35655 | 84 | 13 / 19 | 0.382 |
+| 27 | 36 | 20 / 21 | 0.556 |
+| 703 | 50 | 27 / 29 | 0.540 |
+| 10087 | 65 | 37 / 38 | 0.569 |
+| 35655 | 84 | 48 / 49 | 0.571 |
 
 Every measured spine spends well under the Haar rate of 1 per step. So the
 discrepancy exists rather than being an artefact of the bound — and §13 and §45's
 No-Go 2 are right to stop there: a measure-one statement about Haar-typical orbits
 cannot become a theorem about every anchored positive-integer orbit. This run adds
 nothing that closes that gap.
+
+> **Corrected 2026-08-15 (RUN-012).** This table first read `16/19`, `13/19`,
+> `17/19`, `13/19` and `0.471`, `0.382`, `0.500`, `0.382`. Those were measured at
+> `M_MAX = 34`, the depth cap in `src13`, while the *lifetime* column printed the
+> true lifetime — so four rows paired a spine's full life with credit counted only
+> to depth 34. The values above are at the full lifetime. The Haar conclusion is
+> unchanged, but the budget reading is not: spines end their lives having spent
+> **93–98%** of the Sturmian credit, where the truncated rows read 68–89%. See
+> RUN-012 for what that costs the reading of Round 03-A.5 §19–20.
 
 ---
 

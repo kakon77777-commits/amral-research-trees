@@ -108,6 +108,32 @@ would make precise what the bound *is a bound on*.
   tightness, and the regularity needed to pass dynamics to a weak limit.
   Formalising the *hypotheses* is the value here, not the conclusion.
 
+### 6b. Hard-Zeta A line — CASP and its two escape hatches (added 2026-08-15)
+
+Round 03-A.5 closes the A-line reduction onto a single `∀`-statement, so it lands
+here by definition. From `RUN-012`:
+
+- **CASP — Critical Anchored Spine Exclusion.** *No positive integer generates an
+  infinite self-generated valuation spine satisfying `K_m < m log₂3` at every
+  prefix.* This is the whole remaining A line. This arm can only exhibit spines
+  that die: the longest measured is `n = 35655` at 84 steps. Instantiation is not
+  evidence, and the report says so.
+- **The finite-local no-go, §5–§6.** *There is no positive `g(m)` with
+  `N_{≥2}(m) ≥ g(m)` for every positive start.* The witness family
+  `2^{m+1} − 1` is fully verified here to `m = 40` and is elementary — this is
+  the **cheapest** item in the whole queue and needs nothing beyond `ℕ` and
+  `v₂`. It is also the most useful to formalise, because it is a statement about
+  *proof methods*: it retires a whole strategy class, so a machine-checked
+  version is worth more than a machine-checked instance of anything else here.
+- **The occupancy/tail dichotomy, §24–§26.** Regime L is invisible to this
+  instrument by construction — every finite spine has bounded valuation, so
+  `L_R ≡ 0` above it. Formalising the *dichotomy* (that a saturating subsequence
+  must fall into U or L) is elementary; excluding either regime is not.
+- **Not to be formalised from this tree:** the López–Stoll input that A.5 §14
+  leans on. It is an unrefereed preprint, and its statement — verified verbatim
+  in the abstract, see `data/external/` — should be taken as a *hypothesis* in any
+  formal development, exactly as the subject's own bibliography instructs.
+
 ### 7. Paper 08 — only the universally quantified half remains
 
 Paper 08 walks the coefficient algebra from `ℤ` outward: general commutative

@@ -122,11 +122,27 @@ describe it that way.
     Haar gap is real on every spine tested, and §34's **Legendre gate opens on 2
     of 168 depths** — so continued-fraction tools have rigorous purchase on
     almost none of the spine, which makes the paper's own No-Go 3 the normal case.
-13. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+13. [`reports/RUN-012-HARD-ZETA-A-LINE-CLOSURE.md`](./reports/RUN-012-HARD-ZETA-A-LINE-CLOSURE.md) —
+    the B-line handoff and the **A-line closure**. Read as a scope claim first:
+    the closure says *reduction programme complete*, explicitly not that Terras
+    or Collatz is proved, and leaves CASP open — and it is checked that way, with
+    seven planted edits that would make it claim more. Its one external
+    dependency (López–Stoll, arXiv:2101.12747) was fetched, and the liminf
+    equality it is used for appears verbatim in that abstract. Three
+    measurements: the B line's ratio supremum is attained at a **length-8** word
+    and nothing to length 24 comes within a factor of ten; the finite-local
+    no-go's own witness `2^{m+1}−1` is up to **5 × 10⁹** times larger than the
+    cheapest start with the same subcritical reach; and spines die having spent
+    **93–98%** of the Sturmian budget, so the near-saturation A.5 requires of a
+    counterexample is the ordinary end state rather than an exotic one. Also
+    corrects a truncated table in RUN-011. And the bundle is checked as a
+    bundle: its seven re-shipped rounds are **byte-identical** to the standalone
+    ones already verified as items 19-28, so those runs carry over.
+14. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-14. [`code/`](./code/) — the engine, the independent reference, and the gates.
-15. [`data/gate-logs/`](./data/gate-logs/) and
+15. [`code/`](./code/) — the engine, the independent reference, and the gates.
+16. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

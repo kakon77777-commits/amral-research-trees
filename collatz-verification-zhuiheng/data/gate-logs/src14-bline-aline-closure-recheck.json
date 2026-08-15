@@ -1,0 +1,547 @@
+{
+  "tool": "src14_hardzeta_bline_aline_closure_recheck.py",
+  "subject": "Hard_Zeta_B_Line_Handoff_v0.1.md (item 29) and Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip (item 30)",
+  "source_items": [
+    29,
+    30
+  ],
+  "scope": "the correction-delay handoff's slack algebra, Round 03-A.5's finite-local no-go and occupancy dichotomy, and whether the A-line closure claims exactly what it has",
+  "checks": {
+    "SRC14_first_crossing_prefixes_are_uniformly_expanding": {
+      "pass": true,
+      "detail": {
+        "words_walked": 4000,
+        "violations": 0
+      },
+      "note": "§3: every proper prefix expands, the word itself contracts"
+    },
+    "SRC14_no_member_of_a_first_crossing_cylinder_descends_early": {
+      "pass": true,
+      "detail": {
+        "steps_checked": 1537,
+        "violations": 0
+      },
+      "note": "§3: T^j(n) > n for every j < |w|, checked by iterating T"
+    },
+    "SRC14_the_slack_trichotomy_is_exactly_descent_on_the_least_member": {
+      "pass": true,
+      "detail": {
+        "immediate_descent": 26421,
+        "boundary": 7,
+        "correction_delay": 5,
+        "mismatches": [],
+        "_both_outcomes_seen": true
+      },
+      "note": "§4: Lambda(w) > 0 iff F_w(nu) < nu; both branches required to appear"
+    },
+    "SRC14_the_ratio_and_the_integer_slack_classify_identically": {
+      "pass": true,
+      "detail": {
+        "words": 81119,
+        "mismatches": []
+      },
+      "note": "§12 vs §13: R(w) < 1 exactly when Lambda(w) > 0"
+    },
+    "SRC14_terras_equality_holds_as_an_integer_lower_bound_on_every_word": {
+      "pass": true,
+      "detail": {
+        "minimum": 2,
+        "at": "D",
+        "words": 81119
+      },
+      "note": "§13: Terras equality on W_fc is exactly Lambda >= 1"
+    },
+    "SRC14_the_slack_form_reproduces_run_006s_measured_binding_ratio": {
+      "pass": true,
+      "detail": {
+        "argmax": "UUUDUUDD",
+        "c_over_nu": "19/39",
+        "run_006_recorded": "19/39 at UUUDUUDD"
+      },
+      "note": "cross-run: two formulas, one word, one value"
+    },
+    "SRC14_b_extremals_match_their_closed_forms": {
+      "pass": true,
+      "detail": {
+        "shapes_checked": "k=2..12",
+        "mismatches": []
+      },
+      "note": "§11: min at U^u D^{k-u} = 3^u - 2^u, max at D^{k-u} U^u = 2^{k-u}(3^u - 2^u), confronted with a full enumeration of each shape"
+    },
+    "SRC14_b_extremal_is_not_slack_extremal": {
+      "pass": true,
+      "detail": {
+        "witnesses": 41,
+        "first": [
+          {
+            "k": 4,
+            "u": 1,
+            "b_min_word": "UDDD",
+            "b_max_word": "DDDU",
+            "slack_min_word": "DDUD"
+          },
+          {
+            "k": 4,
+            "u": 2,
+            "b_min_word": "UUDD",
+            "b_max_word": "DDUU",
+            "slack_min_word": "DUDU"
+          },
+          {
+            "k": 5,
+            "u": 1,
+            "b_min_word": "UDDDD",
+            "b_max_word": "DDDDU",
+            "slack_min_word": "DDDUD"
+          }
+        ]
+      },
+      "note": "§11 and No-Go 2: needs a witness, so it fails if the warning is empty"
+    },
+    "SRC14_the_handoff_states_its_own_no_gos": {
+      "pass": true,
+      "detail": {
+        "no_go_mentions": 6
+      },
+      "note": "§24: five named method no-gos"
+    },
+    "SRC14_the_handoff_lists_what_must_not_be_reasked": {
+      "pass": true,
+      "detail": {
+        "present": true
+      },
+      "note": "§31: the settled list the next line must not restart from"
+    },
+    "SRC14_every_finite_code_is_realized_by_infinitely_many_positive_integers": {
+      "pass": true,
+      "detail": {
+        "lifts_tested": 60,
+        "mismatches": []
+      },
+      "note": "§2: n = r_m + t 2^{K_m+1} realizes the same code for every t >= 0"
+    },
+    "SRC14_the_all_one_family_has_the_claimed_source_and_offset": {
+      "pass": true,
+      "detail": {
+        "m_range": "1..40",
+        "mismatches": []
+      },
+      "note": "§4: B_m = 3^m - 2^m and r_m = 2^{m+1} - 1, and 2^{m+1}-1 really runs it"
+    },
+    "SRC14_the_all_one_code_is_subcritical_at_every_prefix": {
+      "pass": true,
+      "detail": {
+        "m_range": "1..60"
+      },
+      "note": "§4: K_j = j < j log2 3 for every prefix"
+    },
+    "SRC14_arbitrarily_long_zero_occupancy_prefixes_exist": {
+      "pass": true,
+      "detail": {
+        "m_range": "1..40",
+        "nonzero_at": []
+      },
+      "note": "§5: N_{>=2}(m) = 0 for n = 2^{m+1} - 1, at every m"
+    },
+    "SRC14_high_valuation_is_exactly_the_one_mod_four_class": {
+      "pass": true,
+      "detail": {
+        "odd_y_tested": 20000,
+        "mismatches": [],
+        "q_at_least_2": 10000,
+        "q_equals_1": 10000,
+        "_both_outcomes_seen": true
+      },
+      "note": "§10: Y = 1 mod 4 iff v2(3Y+1) >= 2; both outcomes required"
+    },
+    "SRC14_the_accelerated_endpoint_carries_exactly_m_up_steps": {
+      "pass": true,
+      "detail": {
+        "pairs": 205,
+        "mismatches": []
+      },
+      "note": "§12: h(K_m) = m, with the parity word generated by iterating T directly"
+    },
+    "SRC14_the_parity_ratio_bottoms_out_at_block_ends": {
+      "pass": true,
+      "detail": {
+        "interior_points": 88,
+        "below_the_block_end": []
+      },
+      "note": "§13: liminf over l equals liminf over m because each block's minimum is at its end"
+    },
+    "SRC14_the_real_and_integer_deficits_differ_by_less_than_one": {
+      "pass": true,
+      "detail": {
+        "mismatches": []
+      },
+      "note": "§16: |delta_m - d_m| < 1, decided by exact integer bracketing"
+    },
+    "SRC14_cylinder_indicators_sum_to_the_excess": {
+      "pass": true,
+      "detail": {
+        "valuations": 261,
+        "mismatches": []
+      },
+      "note": "§21: q - 1 = sum over r >= 2 of 1{q >= r}"
+    },
+    "SRC14_the_occupancy_tail_split_is_an_exact_identity": {
+      "pass": true,
+      "detail": {
+        "splits": 49,
+        "mismatches": []
+      },
+      "note": "§22-23: E_m/m = G_R(m) + L_R(m), in exact Fractions, for every R"
+    },
+    "SRC14_the_lopez_stoll_citation_resolves_to_the_claimed_statement": {
+      "pass": true,
+      "detail": {
+        "bibliography_fields_found": [
+          "2101.12747",
+          "López",
+          "Stoll"
+        ],
+        "archived_abstract_states_the_liminf_equality": true,
+        "subject_flags_it_as_a_preprint": true,
+        "not_verified": [
+          "that the statement is numbered Theorem 1 inside the paper, as the subject calls it; only the abstract was read",
+          "the proof itself",
+          "peer review: no journal reference appeared on the listing, so it remains a preprint, which the subject bibliography itself flags"
+        ]
+      },
+      "note": "§14's only external dependency, checked against an archived record of the arXiv abstract"
+    },
+    "SRC14_the_closure_declines_to_claim_a_proof": {
+      "pass": true,
+      "detail": {
+        "has_an_explicit_disclaimer": true,
+        "the_proof_sentence_appears_only_as_the_incorrect_one": true
+      },
+      "note": "§9: the closure must say reduction complete, conjecture not proved"
+    },
+    "SRC14_the_closure_ledger_lists_casp_as_the_single_open_item": {
+      "pass": true,
+      "detail": {
+        "open_section_names_casp": true,
+        "status_line_says_unfinished": true
+      },
+      "note": "§35: exactly one open item, and it is CASP"
+    },
+    "SRC14_every_completed_reduction_maps_to_a_report_in_this_tree": {
+      "pass": true,
+      "detail": {
+        "reductions": 13,
+        "claimed_but_absent_from_the_document": [],
+        "mapped_to_a_report_that_does_not_exist": []
+      },
+      "note": "§35's completed list, each tied to the run in this arm that rechecked it"
+    },
+    "SRC14_the_complete_bundle_reships_the_rounds_unedited": {
+      "pass": true,
+      "detail": {
+        "reshipped_identical": 7,
+        "reshipped_edited": [],
+        "new_in_this_bundle": [
+          "Hard_Zeta_A_Line_Closure_v1.0.md",
+          "Hard_Zeta_Phase_I_Round_03A5_Exceptional_Occupancy_Rigidity_v0.1.md",
+          "Hard_Zeta_ROUTE_MAP_v0.8_A_CLOSED.md"
+        ],
+        "standalone_bundles_compared_against": 7
+      },
+      "note": "item 30 claims to bundle Rounds 01-03A5; the seven already rechecked as items 19-28 must be byte-identical to their standalone bundles, and exactly three files must be new"
+    },
+    "SRC14_the_route_map_and_the_closure_state_the_same_obstruction": {
+      "pass": true,
+      "detail": {
+        "routemap_len": 1397
+      },
+      "note": "v0.8 and the closure must not disagree about what is left"
+    },
+    "SRC14_the_ratio_supremum_is_attained_at_a_short_word": {
+      "pass": true,
+      "detail": {
+        "argmax_length": 8,
+        "value": "251/507",
+        "largest_at_greater_length": "2530771/52862419"
+      },
+      "note": "measurement: where sup R lives, and by how much longer words fall short"
+    },
+    "SRC14_the_finite_local_witness_is_exponentially_far_from_the_minimal_one": {
+      "pass": true,
+      "detail": {
+        "rows": [
+          {
+            "m": 8,
+            "all_ones_witness": 511,
+            "cheapest_witness": 27,
+            "ratio": 18
+          },
+          {
+            "m": 12,
+            "all_ones_witness": 8191,
+            "cheapest_witness": 27,
+            "ratio": 303
+          },
+          {
+            "m": 16,
+            "all_ones_witness": 131071,
+            "cheapest_witness": 27,
+            "ratio": 4854
+          }
+        ],
+        "widest": {
+          "m": 36,
+          "all_ones_witness": 137438953471,
+          "cheapest_witness": 27,
+          "ratio": 5090331610
+        }
+      },
+      "note": "measurement: §5's explicit witness 2^{m+1}-1 against the smallest start with the same subcritical reach"
+    },
+    "SRC14_the_saturation_shortfall_is_exactly_the_budget_minus_the_deficit": {
+      "pass": true,
+      "detail": {
+        "mismatches": [],
+        "deficits_nonnegative": 361,
+        "deficits_negative": 7,
+        "_both_outcomes_seen": true
+      },
+      "note": "§19-20: E_m = floor(gamma m) - d_m, so gamma - E_m/m = ({gamma m} + d_m)/m; the inequality alone is forced by subcriticality and cannot fail"
+    },
+    "SRC14_the_tail_leakage_observable_is_nonempty_only_below_the_top_valuation": {
+      "pass": true,
+      "detail": {
+        "spines": 7,
+        "nonzero_below_the_top": 7,
+        "zero_above_the_top": 7,
+        "_both_outcomes_seen": true
+      },
+      "note": "§23, §26: every finite spine has a bounded valuation, so Regime L is invisible to any bounded computation — checked with both outcomes"
+    }
+  },
+  "counts": {
+    "checks": 30,
+    "passed": 30,
+    "first_crossing_words": 81119,
+    "spines": 7
+  },
+  "measured": {
+    "first_crossing_words_enumerated": 81119,
+    "min_correction_slack": {
+      "value": 2,
+      "word": "D"
+    },
+    "shapes_where_b_extremal_is_not_slack_extremal": 41,
+    "complete_bundle": {
+      "reshipped_identical": [
+        "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A1_Small_Anchor_Event_Arithmetic_v0.1.1.md",
+        "Hard_Zeta_Phase_I_Round_03A2_2_3_Infinity_Anchor_Compatibility_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A3_Endpoint_Parity_Dynamics_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A4_Spine_Valuation_Rigidity_v0.1.md",
+        "Hard_Zeta_Phase_I_Round_03A_Coefficient_Frontier_v0.1.md"
+      ],
+      "reshipped_edited": [],
+      "new_in_this_bundle": [
+        "Hard_Zeta_A_Line_Closure_v1.0.md",
+        "Hard_Zeta_Phase_I_Round_03A5_Exceptional_Occupancy_Rigidity_v0.1.md",
+        "Hard_Zeta_ROUTE_MAP_v0.8_A_CLOSED.md"
+      ]
+    },
+    "ratio_max_by_length": {
+      "1": "0",
+      "2": "1/5",
+      "4": "5/21",
+      "5": "23/55",
+      "7": "73/329",
+      "8": "251/507",
+      "10": "989/102365",
+      "12": "2707/440979",
+      "13": "9937/337617",
+      "15": "4679/332359",
+      "16": "100609/2328833",
+      "18": "16337/3948497",
+      "20": "911873/123595265",
+      "21": "2355187/79949811",
+      "23": "10532861/4020287485",
+      "24": "2530771/52862419"
+    },
+    "ratio_supremum": {
+      "value": "251/507",
+      "length": 8,
+      "max_after": "2530771/52862419"
+    },
+    "finite_local_witness_cost": [
+      {
+        "m": 8,
+        "all_ones_witness": 511,
+        "cheapest_witness": 27,
+        "ratio": 18
+      },
+      {
+        "m": 12,
+        "all_ones_witness": 8191,
+        "cheapest_witness": 27,
+        "ratio": 303
+      },
+      {
+        "m": 16,
+        "all_ones_witness": 131071,
+        "cheapest_witness": 27,
+        "ratio": 4854
+      },
+      {
+        "m": 20,
+        "all_ones_witness": 2097151,
+        "cheapest_witness": 27,
+        "ratio": 77672
+      },
+      {
+        "m": 24,
+        "all_ones_witness": 33554431,
+        "cheapest_witness": 27,
+        "ratio": 1242756
+      },
+      {
+        "m": 28,
+        "all_ones_witness": 536870911,
+        "cheapest_witness": 27,
+        "ratio": 19884107
+      },
+      {
+        "m": 32,
+        "all_ones_witness": 8589934591,
+        "cheapest_witness": 27,
+        "ratio": 318145725
+      },
+      {
+        "m": 36,
+        "all_ones_witness": 137438953471,
+        "cheapest_witness": 27,
+        "ratio": 5090331610
+      }
+    ],
+    "saturation": {
+      "gamma": 0.5849625007211561,
+      "spines": [
+        {
+          "n": 27,
+          "lifetime": 36,
+          "excess": 20,
+          "budget": 21,
+          "final_deficit": 1,
+          "deficit_after_death": -1,
+          "density": 0.5555555555555556,
+          "shortfall_from_gamma": 0.029406945165600495
+        },
+        {
+          "n": 103,
+          "lifetime": 25,
+          "excess": 13,
+          "budget": 14,
+          "final_deficit": 1,
+          "deficit_after_death": -1,
+          "density": 0.52,
+          "shortfall_from_gamma": 0.06496250072115606
+        },
+        {
+          "n": 703,
+          "lifetime": 50,
+          "excess": 27,
+          "budget": 29,
+          "final_deficit": 2,
+          "deficit_after_death": -3,
+          "density": 0.54,
+          "shortfall_from_gamma": 0.04496250072115604
+        },
+        {
+          "n": 1407,
+          "lifetime": 50,
+          "excess": 28,
+          "budget": 29,
+          "final_deficit": 1,
+          "deficit_after_death": -4,
+          "density": 0.56,
+          "shortfall_from_gamma": 0.024962500721156022
+        },
+        {
+          "n": 10087,
+          "lifetime": 65,
+          "excess": 37,
+          "budget": 38,
+          "final_deficit": 1,
+          "deficit_after_death": -4,
+          "density": 0.5692307692307692,
+          "shortfall_from_gamma": 0.01573173149038687
+        },
+        {
+          "n": 15039,
+          "lifetime": 51,
+          "excess": 27,
+          "budget": 29,
+          "final_deficit": 2,
+          "deficit_after_death": -1,
+          "density": 0.5294117647058824,
+          "shortfall_from_gamma": 0.055550736015273716
+        },
+        {
+          "n": 35655,
+          "lifetime": 84,
+          "excess": 48,
+          "budget": 49,
+          "final_deficit": 1,
+          "deficit_after_death": -1,
+          "density": 0.5714285714285714,
+          "shortfall_from_gamma": 0.013533929292584679
+        }
+      ]
+    },
+    "tail_leakage": [
+      {
+        "n": 27,
+        "largest_valuation": 4,
+        "L_just_below_the_top": "1/18",
+        "L_at_and_above_the_top": "0"
+      },
+      {
+        "n": 103,
+        "largest_valuation": 4,
+        "L_just_below_the_top": "1/25",
+        "L_at_and_above_the_top": "0"
+      },
+      {
+        "n": 703,
+        "largest_valuation": 5,
+        "L_just_below_the_top": "1/50",
+        "L_at_and_above_the_top": "0"
+      },
+      {
+        "n": 1407,
+        "largest_valuation": 5,
+        "L_just_below_the_top": "1/50",
+        "L_at_and_above_the_top": "0"
+      },
+      {
+        "n": 10087,
+        "largest_valuation": 7,
+        "L_just_below_the_top": "1/65",
+        "L_at_and_above_the_top": "0"
+      },
+      {
+        "n": 15039,
+        "largest_valuation": 4,
+        "L_just_below_the_top": "1/17",
+        "L_at_and_above_the_top": "0"
+      },
+      {
+        "n": 35655,
+        "largest_valuation": 6,
+        "L_just_below_the_top": "1/84",
+        "L_at_and_above_the_top": "0"
+      }
+    ]
+  },
+  "failures": [],
+  "ok": true
+}

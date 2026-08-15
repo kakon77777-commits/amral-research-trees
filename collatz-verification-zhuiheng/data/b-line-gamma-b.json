@@ -1,0 +1,525 @@
+{
+  "tool": "bline_gamma_b.py",
+  "_what_this_is": "Gamma_B records for the extremal first-crossing words, as asked for by Hard_Zeta_B_Line_Handoff_v0.1.md §25 and §26 Round B-01. An emitter, not a check: it asserts nothing.",
+  "enumeration": {
+    "max_word_length": 24,
+    "first_crossing_words": 81119,
+    "note": "W_fc is pruned by its own defining condition — a word is extended only while still uniformly expanding — so this is the complete set to this length, not a sample."
+  },
+  "terras_form": "Terras coefficient-stopping equality on W_fc is exactly Lambda(w) >= 1 for every first-crossing word (handoff §13).",
+  "global_extremals": {
+    "min_slack": {
+      "word": "D",
+      "k": 1,
+      "u": 0,
+      "delta_w": 1,
+      "b_w": 0,
+      "r_w": 0,
+      "nu_w": 2,
+      "m_w": 0,
+      "lambda_w": 2,
+      "ratio_R": "0",
+      "ratio_R_float": 0.0
+    },
+    "max_ratio": {
+      "word": "UUUDUUDD",
+      "k": 8,
+      "u": 5,
+      "delta_w": 13,
+      "b_w": 251,
+      "r_w": 39,
+      "nu_w": 39,
+      "m_w": 38,
+      "lambda_w": 256,
+      "ratio_R": "251/507",
+      "ratio_R_float": 0.49506903353057197
+    }
+  },
+  "by_length": [
+    {
+      "length": 1,
+      "words": 1,
+      "min_slack": {
+        "word": "D",
+        "k": 1,
+        "u": 0,
+        "delta_w": 1,
+        "b_w": 0,
+        "r_w": 0,
+        "nu_w": 2,
+        "m_w": 0,
+        "lambda_w": 2,
+        "ratio_R": "0",
+        "ratio_R_float": 0.0
+      },
+      "max_ratio": {
+        "word": "D",
+        "k": 1,
+        "u": 0,
+        "delta_w": 1,
+        "b_w": 0,
+        "r_w": 0,
+        "nu_w": 2,
+        "m_w": 0,
+        "lambda_w": 2,
+        "ratio_R": "0",
+        "ratio_R_float": 0.0
+      }
+    },
+    {
+      "length": 2,
+      "words": 1,
+      "min_slack": {
+        "word": "UD",
+        "k": 2,
+        "u": 1,
+        "delta_w": 1,
+        "b_w": 1,
+        "r_w": 1,
+        "nu_w": 5,
+        "m_w": 1,
+        "lambda_w": 4,
+        "ratio_R": "1/5",
+        "ratio_R_float": 0.2
+      },
+      "max_ratio": {
+        "word": "UD",
+        "k": 2,
+        "u": 1,
+        "delta_w": 1,
+        "b_w": 1,
+        "r_w": 1,
+        "nu_w": 5,
+        "m_w": 1,
+        "lambda_w": 4,
+        "ratio_R": "1/5",
+        "ratio_R_float": 0.2
+      }
+    },
+    {
+      "length": 4,
+      "words": 1,
+      "min_slack": {
+        "word": "UUDD",
+        "k": 4,
+        "u": 2,
+        "delta_w": 7,
+        "b_w": 5,
+        "r_w": 3,
+        "nu_w": 3,
+        "m_w": 2,
+        "lambda_w": 16,
+        "ratio_R": "5/21",
+        "ratio_R_float": 0.23809523809523808
+      },
+      "max_ratio": {
+        "word": "UUDD",
+        "k": 4,
+        "u": 2,
+        "delta_w": 7,
+        "b_w": 5,
+        "r_w": 3,
+        "nu_w": 3,
+        "m_w": 2,
+        "lambda_w": 16,
+        "ratio_R": "5/21",
+        "ratio_R_float": 0.23809523809523808
+      }
+    },
+    {
+      "length": 5,
+      "words": 2,
+      "min_slack": {
+        "word": "UUDUD",
+        "k": 5,
+        "u": 3,
+        "delta_w": 5,
+        "b_w": 23,
+        "r_w": 11,
+        "nu_w": 11,
+        "m_w": 10,
+        "lambda_w": 32,
+        "ratio_R": "23/55",
+        "ratio_R_float": 0.41818181818181815
+      },
+      "max_ratio": {
+        "word": "UUDUD",
+        "k": 5,
+        "u": 3,
+        "delta_w": 5,
+        "b_w": 23,
+        "r_w": 11,
+        "nu_w": 11,
+        "m_w": 10,
+        "lambda_w": 32,
+        "ratio_R": "23/55",
+        "ratio_R_float": 0.41818181818181815
+      }
+    },
+    {
+      "length": 7,
+      "words": 3,
+      "min_slack": {
+        "word": "UUUDUDD",
+        "k": 7,
+        "u": 4,
+        "delta_w": 47,
+        "b_w": 73,
+        "r_w": 7,
+        "nu_w": 7,
+        "m_w": 5,
+        "lambda_w": 256,
+        "ratio_R": "73/329",
+        "ratio_R_float": 0.22188449848024316
+      },
+      "max_ratio": {
+        "word": "UUUDUDD",
+        "k": 7,
+        "u": 4,
+        "delta_w": 47,
+        "b_w": 73,
+        "r_w": 7,
+        "nu_w": 7,
+        "m_w": 5,
+        "lambda_w": 256,
+        "ratio_R": "73/329",
+        "ratio_R_float": 0.22188449848024316
+      }
+    },
+    {
+      "length": 8,
+      "words": 7,
+      "min_slack": {
+        "word": "UUUDUUDD",
+        "k": 8,
+        "u": 5,
+        "delta_w": 13,
+        "b_w": 251,
+        "r_w": 39,
+        "nu_w": 39,
+        "m_w": 38,
+        "lambda_w": 256,
+        "ratio_R": "251/507",
+        "ratio_R_float": 0.49506903353057197
+      },
+      "max_ratio": {
+        "word": "UUUDUUDD",
+        "k": 8,
+        "u": 5,
+        "delta_w": 13,
+        "b_w": 251,
+        "r_w": 39,
+        "nu_w": 39,
+        "m_w": 38,
+        "lambda_w": 256,
+        "ratio_R": "251/507",
+        "ratio_R_float": 0.49506903353057197
+      }
+    },
+    {
+      "length": 10,
+      "words": 12,
+      "min_slack": {
+        "word": "UUUUUDUDDD",
+        "k": 10,
+        "u": 6,
+        "delta_w": 295,
+        "b_w": 697,
+        "r_w": 287,
+        "nu_w": 287,
+        "m_w": 205,
+        "lambda_w": 83968,
+        "ratio_R": "17/2065",
+        "ratio_R_float": 0.008232445520581114
+      },
+      "max_ratio": {
+        "word": "UUDUUUDUDD",
+        "k": 10,
+        "u": 6,
+        "delta_w": 295,
+        "b_w": 989,
+        "r_w": 347,
+        "nu_w": 347,
+        "m_w": 248,
+        "lambda_w": 101376,
+        "ratio_R": "989/102365",
+        "ratio_R_float": 0.00966150539735261
+      }
+    },
+    {
+      "length": 12,
+      "words": 30,
+      "min_slack": {
+        "word": "UUUDUUUDUDDD",
+        "k": 12,
+        "u": 7,
+        "delta_w": 1909,
+        "b_w": 2707,
+        "r_w": 231,
+        "nu_w": 231,
+        "m_w": 124,
+        "lambda_w": 438272,
+        "ratio_R": "2707/440979",
+        "ratio_R_float": 0.006138614310432016
+      },
+      "max_ratio": {
+        "word": "UUUDUUUDUDDD",
+        "k": 12,
+        "u": 7,
+        "delta_w": 1909,
+        "b_w": 2707,
+        "r_w": 231,
+        "nu_w": 231,
+        "m_w": 124,
+        "lambda_w": 438272,
+        "ratio_R": "2707/440979",
+        "ratio_R_float": 0.006138614310432016
+      }
+    },
+    {
+      "length": 13,
+      "words": 85,
+      "min_slack": {
+        "word": "UUUUUUDUDDDUD",
+        "k": 13,
+        "u": 8,
+        "delta_w": 1631,
+        "b_w": 8417,
+        "r_w": 191,
+        "nu_w": 191,
+        "m_w": 154,
+        "lambda_w": 303104,
+        "ratio_R": "8417/311521",
+        "ratio_R_float": 0.02701904526500621
+      },
+      "max_ratio": {
+        "word": "UUUUDDUUUDUDD",
+        "k": 13,
+        "u": 8,
+        "delta_w": 1631,
+        "b_w": 9937,
+        "r_w": 207,
+        "nu_w": 207,
+        "m_w": 167,
+        "lambda_w": 327680,
+        "ratio_R": "9937/337617",
+        "ratio_R_float": 0.029432759606299447
+      }
+    },
+    {
+      "length": 15,
+      "words": 173,
+      "min_slack": {
+        "word": "UUUUUUUDUDDDUDD",
+        "k": 15,
+        "u": 9,
+        "delta_w": 13085,
+        "b_w": 23395,
+        "r_w": 127,
+        "nu_w": 127,
+        "m_w": 77,
+        "lambda_w": 1638400,
+        "ratio_R": "4679/332359",
+        "ratio_R_float": 0.014078150433717757
+      },
+      "max_ratio": {
+        "word": "UUUUUUUDUDDDUDD",
+        "k": 15,
+        "u": 9,
+        "delta_w": 13085,
+        "b_w": 23395,
+        "r_w": 127,
+        "nu_w": 127,
+        "m_w": 77,
+        "lambda_w": 1638400,
+        "ratio_R": "4679/332359",
+        "ratio_R_float": 0.014078150433717757
+      }
+    },
+    {
+      "length": 16,
+      "words": 476,
+      "min_slack": {
+        "word": "UUUDUUUUUDDDUDUD",
+        "k": 16,
+        "u": 10,
+        "delta_w": 6487,
+        "b_w": 100609,
+        "r_w": 359,
+        "nu_w": 359,
+        "m_w": 325,
+        "lambda_w": 2228224,
+        "ratio_R": "100609/2328833",
+        "ratio_R_float": 0.04320146614205484
+      },
+      "max_ratio": {
+        "word": "UUUDUUUUUDDDUDUD",
+        "k": 16,
+        "u": 10,
+        "delta_w": 6487,
+        "b_w": 100609,
+        "r_w": 359,
+        "nu_w": 359,
+        "m_w": 325,
+        "lambda_w": 2228224,
+        "ratio_R": "100609/2328833",
+        "ratio_R_float": 0.04320146614205484
+      }
+    },
+    {
+      "length": 18,
+      "words": 961,
+      "min_slack": {
+        "word": "UUUUUUUUUDUDUDDDDD",
+        "k": 18,
+        "u": 11,
+        "delta_w": 84997,
+        "b_w": 179707,
+        "r_w": 511,
+        "nu_w": 511,
+        "m_w": 346,
+        "lambda_w": 43253760,
+        "ratio_R": "16337/3948497",
+        "ratio_R_float": 0.004137523721051327
+      },
+      "max_ratio": {
+        "word": "UUUUUUUUUDUDUDDDDD",
+        "k": 18,
+        "u": 11,
+        "delta_w": 84997,
+        "b_w": 179707,
+        "r_w": 511,
+        "nu_w": 511,
+        "m_w": 346,
+        "lambda_w": 43253760,
+        "ratio_R": "16337/3948497",
+        "ratio_R_float": 0.004137523721051327
+      }
+    },
+    {
+      "length": 20,
+      "words": 2652,
+      "min_slack": {
+        "word": "UUUUDUUUUUDDDUDUDUDD",
+        "k": 20,
+        "u": 12,
+        "delta_w": 517135,
+        "b_w": 911873,
+        "r_w": 239,
+        "nu_w": 239,
+        "m_w": 122,
+        "lambda_w": 122683392,
+        "ratio_R": "911873/123595265",
+        "ratio_R_float": 0.007377895908876444
+      },
+      "max_ratio": {
+        "word": "UUUUDUUUUUDDDUDUDUDD",
+        "k": 20,
+        "u": 12,
+        "delta_w": 517135,
+        "b_w": 911873,
+        "r_w": 239,
+        "nu_w": 239,
+        "m_w": 122,
+        "lambda_w": 122683392,
+        "ratio_R": "911873/123595265",
+        "ratio_R_float": 0.007377895908876444
+      }
+    },
+    {
+      "length": 21,
+      "words": 8045,
+      "min_slack": {
+        "word": "UUUUUDUUUUUDDDUDUDUDD",
+        "k": 21,
+        "u": 13,
+        "delta_w": 502829,
+        "b_w": 2355187,
+        "r_w": 159,
+        "nu_w": 159,
+        "m_w": 122,
+        "lambda_w": 77594624,
+        "ratio_R": "2355187/79949811",
+        "ratio_R_float": 0.02945831854436779
+      },
+      "max_ratio": {
+        "word": "UUUUUDUUUUUDDDUDUDUDD",
+        "k": 21,
+        "u": 13,
+        "delta_w": 502829,
+        "b_w": 2355187,
+        "r_w": 159,
+        "nu_w": 159,
+        "m_w": 122,
+        "lambda_w": 77594624,
+        "ratio_R": "2355187/79949811",
+        "ratio_R_float": 0.02945831854436779
+      }
+    },
+    {
+      "length": 23,
+      "words": 17637,
+      "min_slack": {
+        "word": "UUUUUUUDUUDUUUDUDDUDDDD",
+        "k": 23,
+        "u": 14,
+        "delta_w": 3605639,
+        "b_w": 5524729,
+        "r_w": 639,
+        "nu_w": 639,
+        "m_w": 365,
+        "lambda_w": 2298478592,
+        "ratio_R": "5524729/2304003321",
+        "ratio_R_float": 0.0023978823943717744
+      },
+      "max_ratio": {
+        "word": "UUDUUUDUUUDUDUUDUUDUDDD",
+        "k": 23,
+        "u": 14,
+        "delta_w": 3605639,
+        "b_w": 10532861,
+        "r_w": 1115,
+        "nu_w": 1115,
+        "m_w": 637,
+        "lambda_w": 4009754624,
+        "ratio_R": "10532861/4020287485",
+        "ratio_R_float": 0.002619927315969047
+      }
+    },
+    {
+      "length": 24,
+      "words": 51033,
+      "min_slack": {
+        "word": "UUDUUUUUUDDUUUUDDDUDUDUD",
+        "k": 24,
+        "u": 15,
+        "delta_w": 2428309,
+        "b_w": 32900023,
+        "r_w": 283,
+        "nu_w": 283,
+        "m_w": 244,
+        "lambda_w": 654311424,
+        "ratio_R": "2530771/52862419",
+        "ratio_R_float": 0.04787467255329349
+      },
+      "max_ratio": {
+        "word": "UUDUUUUUUDDUUUUDDDUDUDUD",
+        "k": 24,
+        "u": 15,
+        "delta_w": 2428309,
+        "b_w": 32900023,
+        "r_w": 283,
+        "nu_w": 283,
+        "m_w": 244,
+        "lambda_w": 654311424,
+        "ratio_R": "2530771/52862419",
+        "ratio_R_float": 0.04787467255329349
+      }
+    }
+  ],
+  "observations_for_round_B01": [
+    "minimum slack over all 81119 words is 2, at D",
+    "supremum of R(w) is 251/507 at UUUDUUDD, of length 8",
+    "no length beyond the argmax comes within a factor of ten of it, but the post-argmax maximum does NOT decay — it oscillates, and its largest value sits at the longest length examined, so there is no evidence here for max R -> 0"
+  ]
+}

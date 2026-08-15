@@ -1,0 +1,30 @@
+{
+  "_what_this_is": "Archived record of an external citation that Round 03-A.5 and the A-line closure both depend on. Written from a live fetch of the arXiv abstract page so the dependency can be rechecked offline; it is evidence about what the cited source says, not agreement with it.",
+  "cited_by": [
+    "Hard_Zeta_Phase_I_Round_03A5_Exceptional_Occupancy_Rigidity_v0.1.md sections 14, 16, 17, 18, 20",
+    "Hard_Zeta_A_Line_Closure_v1.0.md section 4",
+    "Hard_Zeta_ROUTE_MAP_v0.8_A_CLOSED.md"
+  ],
+  "arxiv_id": "2101.12747",
+  "url": "https://arxiv.org/abs/2101.12747",
+  "authors": ["Josefina López", "Peter Stoll"],
+  "title_as_listed_on_arxiv": "The 3x+1 Periodicity Conjeture in $\\mathbb{R}$",
+  "title_note": "arXiv carries the misspelling 'Conjeture'. The subject bibliography silently corrects it to 'Conjecture'; that is a transcription difference, not a mismatch of work.",
+  "submitted": "2021-01-29",
+  "claimed_statement_in_the_subject": "If a rational 2-adic integer has a divergent trajectory then liminf h(l)/l = ln2/ln3, where h counts the U symbols among the first l parity symbols.",
+  "abstract_sentence_supporting_it": "if there is a rational 2-adic integer with a non-cyclic trajectory, then necessarily \\underline{\\lim}\\;(\\frac{h}{\\ell})_{\\ell=1}^{\\infty}=\\frac{\\ln(2)}{\\ln(3)}",
+  "verified": [
+    "the arXiv identifier resolves",
+    "to those two authors",
+    "to a paper on the 3x+1 map on the 2-adic integers",
+    "whose abstract states the claimed liminf equality verbatim, in the same h/l notation the subject uses, for rational 2-adic integers with non-cyclic trajectories"
+  ],
+  "not_verified": [
+    "that the statement is numbered Theorem 1 inside the paper, as the subject calls it; only the abstract was read",
+    "the proof itself",
+    "peer review: no journal reference appeared on the listing, so it remains a preprint, which the subject bibliography itself flags"
+  ],
+  "scope_note": "Positive integers are rational 2-adic integers, and a positive-integer trajectory is non-cyclic exactly when it is unbounded, so the subject's specialisation to divergent positive-integer orbits is within the cited statement.",
+  "fetched_by": "數學戰士「墜衡」, AMRAL Research Lab",
+  "fetched_on": "2026-08-15"
+}

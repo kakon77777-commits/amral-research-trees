@@ -161,6 +161,28 @@ PROCESSED = {
         "= the canonical source's own subcritical lifetime minus node depth; "
         "see reports/RUN-010-HARD-ZETA-ROUND-03A3.md"
     ),
+    "Hard_Zeta_B_Line_Handoff_v0.1.md": (
+        "item 29. Rechecked by "
+        "code/src14_hardzeta_bline_aline_closure_recheck.py. Its integer slack "
+        "Lambda(w) = Delta_w nu(w) - b_w holds on all 81,119 first-crossing "
+        "words to length 24, and reproduces RUN-006's 19/39 at UUUDUUDD by a "
+        "different formula. Measured: sup R(w) is attained at LENGTH 8 "
+        "(251/507), and no length 10-24 comes within a factor of ten; section "
+        "11's warning that b-extremal is not slack-extremal has 41 witnesses. "
+        "See reports/RUN-012-HARD-ZETA-A-LINE-CLOSURE.md"
+    ),
+    "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip": (
+        "item 30. Rechecked by the same tool. The closure is correctly scoped: "
+        "'A line reduction program complete', explicitly NOT a proof of Terras "
+        "or Collatz, with CASP left open. Its one external dependency "
+        "(Lopez-Stoll, arXiv:2101.12747) was fetched and the claimed liminf "
+        "equality appears verbatim in that abstract; archived at "
+        "data/external/. Measured: section 5's witness 2^(m+1)-1 is up to 5e9 "
+        "times larger than the cheapest start with the same subcritical reach "
+        "(n=27), and spines die having spent 93-98% of the Sturmian budget, so "
+        "sections 19-20's near-saturation is the normal end state. "
+        "See reports/RUN-012-HARD-ZETA-A-LINE-CLOSURE.md"
+    ),
     "Hard_Zeta_Phase_I_Round_03A4_bundle.zip": (
         "item 28. Rechecked by code/src13_hardzeta_round03a4_recheck.py: the "
         "deficit queue, Sturmian credit ledger, valuation cylinders and occupancy "

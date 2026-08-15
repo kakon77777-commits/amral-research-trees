@@ -4,3 +4,5 @@ __pycache__/
 .DS_Store
 Thumbs.db
 collatz-verification-zhuiheng/build/
+# transient mutation-drill copies; written and unlinked inside a run
+collatz-verification-zhuiheng/code/_drill_*.py

@@ -425,3 +425,67 @@ def coefficient_mass(k: int, s: float, words: list["Chart"]) -> float:
 def head_mass(words: list["Chart"], s: float) -> float:
     """§25: H_k(s), the mass of the canonical heads alone."""
     return math.fsum(w.r ** -s for w in words)
+
+
+# ---------------------------------------------------------------------------
+# B-Line Handoff v0.1 — the correction-delay frontier, in its own coordinates.
+# The handoff restates Round 02's first-crossing test as an integer slack, which
+# is the form it asks to be machine-checked in (§13).
+# ---------------------------------------------------------------------------
+
+
+def correction_slack(w: "Chart") -> int:
+    """B-Line §4, §13: Lambda(w) = Delta_w * nu(w) - b_w, an exact integer.
+
+    Trichotomy: > 0 immediate descent, = 0 boundary, < 0 correction delay.
+    Terras equality on W_fc is exactly Lambda(w) >= 1 for every first-crossing
+    word, so the conjecture has an integer lower bound as its finite form.
+    """
+    return delta_of(w.k, w.u) * nu(w) - w.b
+
+
+def normalized_correction_ratio(w: "Chart") -> Fraction:
+    """B-Line §12: R(w) = b_w / ((2^k - 3^u) nu(w)); delay exactly when R > 1.
+
+    Kept as a Fraction: R(w) = 1 is one of the three cases and a float compare
+    could not tell it from either neighbour.
+    """
+    return Fraction(w.b, delta_of(w.k, w.u) * nu(w))
+
+
+def word_chart(word: str) -> "Chart":
+    """The chart of an explicit U/D word, walked down the child recursion."""
+    w = ROOT
+    for ch in word:
+        d, u = children(w)
+        w = u if ch == "U" else d
+    return w
+
+
+def b_extremals(k: int, u: int) -> dict:
+    """B-Line §11: the claimed argmin and argmax of b_w at fixed (k, u).
+
+    min at U^u D^{k-u} with b = 3^u - 2^u; max at D^{k-u} U^u with b =
+    2^{k-u} (3^u - 2^u). Returned with the words so a caller can confront the
+    closed forms with an enumeration rather than trusting them.
+    """
+    lo, hi = word_chart("U" * u + "D" * (k - u)), word_chart("D" * (k - u) + "U" * u)
+    return {"min_word": lo.word, "b_min": lo.b, "b_min_closed": 3 ** u - 2 ** u,
+            "max_word": hi.word, "b_max": hi.b,
+            "b_max_closed": 2 ** (k - u) * (3 ** u - 2 ** u)}
+
+
+def words_of_shape(k: int, u: int) -> list["Chart"]:
+    """Every chart of length k with exactly u up-steps."""
+    out, stack = [], [ROOT]
+    while stack:
+        w = stack.pop()
+        if w.k == k:
+            if w.u == u:
+                out.append(w)
+            continue
+        if w.u > u or (u - w.u) > (k - w.k):
+            continue
+        stack.extend(children(w))
+    return out
+

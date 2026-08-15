@@ -1,0 +1,262 @@
+{
+  "tool": "src14_drill.py",
+  "subject": "src14_hardzeta_bline_aline_closure_recheck.py, the B-line slack layer of hz_chart_algebra.py, the A.5 occupancy layer of hz_accel_code.py, and the archived López–Stoll record",
+  "defects": {
+    "G01_correction_slack_drops_the_residue": {
+      "target_check": "SRC14_the_slack_trichotomy_is_exactly_descent_on_the_least_member",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC14_b_extremal_is_not_slack_extremal",
+        "SRC14_terras_equality_holds_as_an_integer_lower_bound_on_every_word",
+        "SRC14_the_ratio_and_the_integer_slack_classify_identically"
+      ]
+    },
+    "G02_correction_slack_sign_inverted": {
+      "target_check": "SRC14_the_ratio_and_the_integer_slack_classify_identically",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC14_terras_equality_holds_as_an_integer_lower_bound_on_every_word",
+        "SRC14_the_slack_trichotomy_is_exactly_descent_on_the_least_member"
+      ]
+    },
+    "G03_normalized_ratio_forgets_the_drift_gap": {
+      "target_check": "SRC14_the_ratio_and_the_integer_slack_classify_identically",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC14_the_ratio_supremum_is_attained_at_a_short_word"
+      ]
+    },
+    "G04_b_min_closed_form_wrong": {
+      "target_check": "SRC14_b_extremals_match_their_closed_forms",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "G05_b_max_closed_form_loses_its_power_of_two": {
+      "target_check": "SRC14_b_extremals_match_their_closed_forms",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "G06_b_extremal_words_swapped": {
+      "target_check": "SRC14_b_extremals_match_their_closed_forms",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "G07_words_of_shape_prunes_the_all_up_tail": {
+      "target_check": "SRC14_b_extremals_match_their_closed_forms",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "G08_nu_takes_the_residue_even_when_it_is_too_small": {
+      "target_check": "SRC14_no_member_of_a_first_crossing_cylinder_descends_early",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC14_terras_equality_holds_as_an_integer_lower_bound_on_every_word",
+        "SRC14_the_ratio_and_the_integer_slack_classify_identically",
+        "SRC14_the_ratio_supremum_is_attained_at_a_short_word",
+        "SRC14_the_slack_form_reproduces_run_006s_measured_binding_ratio"
+      ]
+    },
+    "A01_all_ones_source_off_by_one_power": {
+      "target_check": "SRC14_the_all_one_family_has_the_claimed_source_and_offset",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC14_arbitrarily_long_zero_occupancy_prefixes_exist"
+      ]
+    },
+    "A02_all_ones_offset_wrong_base": {
+      "target_check": "SRC14_the_all_one_family_has_the_claimed_source_and_offset",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A03_code_lifts_use_the_wrong_modulus": {
+      "target_check": "SRC14_every_finite_code_is_realized_by_infinitely_many_positive_integers",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A04_occupancy_counts_the_wrong_side_of_the_threshold": {
+      "target_check": "SRC14_arbitrarily_long_zero_occupancy_prefixes_exist",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A05_excess_forgets_to_subtract_the_step_count": {
+      "target_check": "SRC14_the_saturation_shortfall_is_exactly_the_budget_minus_the_deficit",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC14_the_occupancy_tail_split_is_an_exact_identity"
+      ]
+    },
+    "A06_truncated_occupancy_clips_at_the_wrong_level": {
+      "target_check": "SRC14_the_occupancy_tail_split_is_an_exact_identity",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_tail_leakage_measures_from_the_wrong_level": {
+      "target_check": "SRC14_the_occupancy_tail_split_is_an_exact_identity",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC14_the_tail_leakage_observable_is_nonempty_only_below_the_top_valuation"
+      ]
+    },
+    "A08_tail_leakage_saturates_and_hides_the_top": {
+      "target_check": "SRC14_the_tail_leakage_observable_is_nonempty_only_below_the_top_valuation",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC14_the_occupancy_tail_split_is_an_exact_identity"
+      ]
+    },
+    "A09_shortcut_parity_labels_the_odd_branch_D": {
+      "target_check": "SRC14_the_accelerated_endpoint_carries_exactly_m_up_steps",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A10_shortcut_parity_uses_the_unshortcut_step": {
+      "target_check": "SRC14_the_parity_ratio_bottoms_out_at_block_ends",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC14_the_accelerated_endpoint_carries_exactly_m_up_steps"
+      ]
+    },
+    "A11_u_count_reads_one_symbol_too_many": {
+      "target_check": "SRC14_the_accelerated_endpoint_carries_exactly_m_up_steps",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC14_the_parity_ratio_bottoms_out_at_block_ends"
+      ]
+    },
+    "T01_run_006s_recorded_value_transcribed_wrong": {
+      "target_check": "SRC14_the_slack_form_reproduces_run_006s_measured_binding_ratio",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_per_length_maxima_accumulate_instead_of_maximising": {
+      "target_check": "SRC14_the_ratio_supremum_is_attained_at_a_short_word",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_the_witness_search_starts_above_the_cheapest_start": {
+      "target_check": "SRC14_the_finite_local_witness_is_exponentially_far_from_the_minimal_one",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T05_the_witness_search_picks_the_b_extremal_by_construction": {
+      "target_check": "SRC14_b_extremal_is_not_slack_extremal",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T04_the_reduction_map_loses_an_entry": {
+      "target_check": "SRC14_every_completed_reduction_maps_to_a_report_in_this_tree",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "E01_archived_abstract_no_longer_states_the_equality": {
+      "target_check": "SRC14_the_lopez_stoll_citation_resolves_to_the_claimed_statement",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "E02_archived_record_drops_the_liminf_symbol": {
+      "target_check": "SRC14_the_lopez_stoll_citation_resolves_to_the_claimed_statement",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_closure_drops_its_disclaimer": {
+      "target_check": "SRC14_the_closure_declines_to_claim_a_proof",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_closure_promotes_the_incorrect_statement_to_correct": {
+      "target_check": "SRC14_the_closure_declines_to_claim_a_proof",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_a5_ledger_loses_its_open_item": {
+      "target_check": "SRC14_the_closure_ledger_lists_casp_as_the_single_open_item",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D04_a5_drops_a_completed_reduction": {
+      "target_check": "SRC14_every_completed_reduction_maps_to_a_report_in_this_tree",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D05_route_map_and_closure_disagree": {
+      "target_check": "SRC14_the_route_map_and_the_closure_state_the_same_obstruction",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D08_complete_bundle_edits_a_reshipped_round": {
+      "target_check": "SRC14_the_complete_bundle_reships_the_rounds_unedited",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D06_handoff_loses_its_no_gos": {
+      "target_check": "SRC14_the_handoff_states_its_own_no_gos",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D07_handoff_loses_its_settled_list": {
+      "target_check": "SRC14_the_handoff_lists_what_must_not_be_reasked",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_sources": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N03_unrelated_file_beside_the_citation_record": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "counts": {
+    "defects_planted": 34,
+    "defects_caught_by_the_named_check": 34,
+    "defects_in_the_b_line_slack_layer": 8,
+    "defects_in_the_a5_occupancy_layer": 11,
+    "defects_in_this_runs_own_measurement": 5,
+    "defects_in_the_archived_citation": 2,
+    "scope_defects_in_the_documents": 8,
+    "controls": 3,
+    "controls_undisturbed": 3
+  },
+  "ok": true
+}
