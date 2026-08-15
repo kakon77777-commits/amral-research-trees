@@ -59,7 +59,7 @@
         "SRC10_subcritical_code_count_equals_round_03As_first_crossing_count",
         "SRC10_subcritical_means_the_coefficient_has_not_crossed",
         "SRC10_the_accelerated_anchors_are_a_prefix_of_the_classical_ones",
-        "SRC10_the_mechanical_code_is_the_maximal_subcritical_path"
+        "SRC10_the_mechanical_code_is_never_the_minimizer_past_m_1"
       ]
     },
     "A06_subcritical_test_uses_the_wrong_index": {

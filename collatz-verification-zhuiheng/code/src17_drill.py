@@ -92,7 +92,7 @@ ACCEL_DEFECTS = [
       "    return tuple(floor_beta(j + 1) - floor_beta(j) for j in range(1, m + 1))")),
     ("A12_floor_beta_uses_the_wrong_base",
      "SRC17_return_separation_operates_at_base_three",
-     ("    return (3 ** j).bit_length() - 1", "    return (4 ** j).bit_length() - 1")),
+     ("        _POW3.append(_POW3[-1] * 3)", "        _POW3.append(_POW3[-1] * 4)")),
     ("A13_anchor_cocycle_reports_no_lifts",
      "SRC17_two_independent_routes_agree_the_mechanical_code_is_unanchored",
      ("    return [lift_digit(kappa[:j]) for j in range(1, len(kappa) + 1)]",

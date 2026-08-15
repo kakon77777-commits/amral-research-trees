@@ -252,6 +252,21 @@ The subject series itself is archived separately as its own tree at
 [`../collatz-ot-series-neok/`](../collatz-ot-series-neok/), under Neo.K's
 authorship. Its presence beside this one is not agreement between the two.
 
+## Keeping the drills aimed
+
+A mutation drill plants its defects by exact string replacement, so a refactor of
+the code under test can **unaim** it without anything going red — the anchors
+simply stop matching, and the drill says so only when next run. That happened
+here: one performance change to `floor_beta` broke eight anchors across six
+drills in a single edit.
+
+[`code/audit_drill_anchors.py`](./code/audit_drill_anchors.py) is the standing
+guard. It requires every anchor to match its source **exactly once** and every
+target check name to still exist — currently 256 anchors across 16 drills. It is
+itself drilled: a whitespace-only edit to one anchored line turns it red. Run it
+after any change to a shared module, including changes that provably preserve
+behaviour.
+
 ## How the evidence is arranged
 
 The engine verifies intervals; a statement about `[3, N]` exists only once

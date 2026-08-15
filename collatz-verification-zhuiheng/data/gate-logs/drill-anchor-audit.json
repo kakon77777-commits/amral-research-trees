@@ -1,0 +1,76 @@
+{
+  "tool": "audit_drill_anchors.py",
+  "subject": "every src*_drill.py in this tree",
+  "drills": {
+    "src05_drill.py": {
+      "anchors": 0,
+      "stale": []
+    },
+    "src06_drill.py": {
+      "anchors": 0,
+      "stale": []
+    },
+    "src07_drill.py": {
+      "anchors": 16,
+      "stale": []
+    },
+    "src08_drill.py": {
+      "anchors": 11,
+      "stale": []
+    },
+    "src09_drill.py": {
+      "anchors": 12,
+      "stale": []
+    },
+    "src10_drill.py": {
+      "anchors": 13,
+      "stale": []
+    },
+    "src11_drill.py": {
+      "anchors": 12,
+      "stale": []
+    },
+    "src12_drill.py": {
+      "anchors": 13,
+      "stale": []
+    },
+    "src13_drill.py": {
+      "anchors": 14,
+      "stale": []
+    },
+    "src14_drill.py": {
+      "anchors": 24,
+      "stale": []
+    },
+    "src15_drill.py": {
+      "anchors": 22,
+      "stale": []
+    },
+    "src16_drill.py": {
+      "anchors": 25,
+      "stale": []
+    },
+    "src17_drill.py": {
+      "anchors": 30,
+      "stale": []
+    },
+    "src18_drill.py": {
+      "anchors": 21,
+      "stale": []
+    },
+    "src19_drill.py": {
+      "anchors": 22,
+      "stale": []
+    },
+    "src20_drill.py": {
+      "anchors": 21,
+      "stale": []
+    }
+  },
+  "counts": {
+    "drills": 16,
+    "anchors_checked": 256,
+    "anchors_not_matching_exactly_once": 0
+  },
+  "ok": true
+}

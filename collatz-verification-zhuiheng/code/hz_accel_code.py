@@ -24,9 +24,21 @@ from __future__ import annotations
 from fractions import Fraction
 
 
+_FLOOR_BETA: list[int] = [0]      # _FLOOR_BETA[k] = floor(k log2 3)
+_POW3: list[int] = [1]            # _POW3[k] = 3^k, extended by multiplication
+
+
 def floor_beta(j: int) -> int:
-    """§4: floor(j·log₂3), exactly, as a bit length rather than a logarithm."""
-    return (3 ** j).bit_length() - 1
+    """§4: floor(j·log₂3), exactly, as a bit length rather than a logarithm.
+
+    Tabulated incrementally. Computing `(3 ** j).bit_length()` afresh raises 3 to
+    a large power on every call, which is what made the A-U.2b.3 drill take half
+    an hour: the queue DP asks for every j from 1 to 10000, twice each.
+    """
+    while len(_FLOOR_BETA) <= j:
+        _POW3.append(_POW3[-1] * 3)
+        _FLOOR_BETA.append(_POW3[-1].bit_length() - 1)
+    return _FLOOR_BETA[j]
 
 
 def accel_code(n: int, m: int) -> tuple[int, ...]:
@@ -821,6 +833,9 @@ def occurrence_counts(n: int, N: int, r: int) -> dict:
 # ---------------------------------------------------------------------------
 
 
+_CREDIT_CACHE: dict[tuple[int, int], int] = {}
+
+
 def phase_credit(j: int, phase: int = 0) -> int:
     """§3: b_j = floor(theta + gamma j) - floor(theta + gamma (j-1)), in {0,1}.
 
@@ -828,9 +843,18 @@ def phase_credit(j: int, phase: int = 0) -> int:
     rather than by multiplying a float by j — the subject's own script uses the
     float form, and `src19` checks the two agree over the range it uses.
     """
+    key = (j, phase)
+    if key in _CREDIT_CACHE:
+        return _CREDIT_CACHE[key]
+
     def fl(k: int) -> int:
         return floor_beta(k) - k if k else 0
-    return fl(phase + j) - fl(phase + j - 1)
+
+    _CREDIT_CACHE[key] = fl(phase + j) - fl(phase + j - 1)
+    return _CREDIT_CACHE[key]
+
+
+_QUEUE_CACHE: dict[tuple[int, int, int], int] = {}
 
 
 def queue_count(r: int, D: int, phase: int = 0) -> int:
@@ -841,6 +865,9 @@ def queue_count(r: int, D: int, phase: int = 0) -> int:
     end via prefix sums; the subject's script accumulates from the high end via
     suffix sums. Same recurrence, opposite direction.
     """
+    key = (r, D, phase)
+    if key in _QUEUE_CACHE:
+        return _QUEUE_CACHE[key]
     vec = [1] * (D + 1)
     for j in range(1, r + 1):
         b = phase_credit(j, phase)
@@ -849,7 +876,11 @@ def queue_count(r: int, D: int, phase: int = 0) -> int:
         for i in range(D + 1):
             pref[i + 1] = pref[i] + vec[i]
         vec = [total - pref[max(0, t - b)] for t in range(D + 1)]
-    return sum(vec)
+    # cached: `unpointed_queue_count` needs (r,D) and (r,D-1), and the diagnostic
+    # check then asks for (r,D) again. Without this, a single drill run spent a
+    # minute recomputing the same corridors.
+    _QUEUE_CACHE[key] = sum(vec)
+    return _QUEUE_CACHE[key]
 
 
 def queue_count_bruteforce(r: int, D: int, phase: int = 0) -> int:
@@ -961,8 +992,19 @@ def unpointed_words(r: int, D: int, phase: int = 0) -> list[tuple[int, ...]]:
     return out
 
 
+_BRIDGE_CACHE: dict[tuple[int, int, int], int] = {}
+
+
 def bridge_count(r: int, D: int, phase: int = 0) -> int:
-    """§27: paths from deficit D to deficit 0, the fixed-endpoint bridge."""
+    """§27: paths from deficit D to deficit 0, the fixed-endpoint bridge.
+
+    Cached, but NOT fused with the pointed pass. Fusing them was tried and made
+    the run slower: `queue_count` is memoised, so a fused loop recomputes the
+    pointed vector that the cache already holds. Measured 33s -> 47s.
+    """
+    key = (r, D, phase)
+    if key in _BRIDGE_CACHE:
+        return _BRIDGE_CACHE[key]
     vec = [0] * (D + 1)
     vec[D] = 1
     for j in range(1, r + 1):
@@ -972,7 +1014,8 @@ def bridge_count(r: int, D: int, phase: int = 0) -> int:
         for i in range(D + 1):
             pref[i + 1] = pref[i] + vec[i]
         vec = [total - pref[max(0, tt - b)] for tt in range(D + 1)]
-    return vec[0]
+    _BRIDGE_CACHE[key] = vec[0]
+    return _BRIDGE_CACHE[key]
 
 
 def unpointed_queue_count(r: int, D: int, phase: int = 0) -> int:

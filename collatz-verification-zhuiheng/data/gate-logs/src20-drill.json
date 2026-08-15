@@ -88,9 +88,7 @@
         "SRC20_pointed_and_unpointed_counts_genuinely_differ",
         "SRC20_the_centered_prefactor_stays_in_a_narrow_band",
         "SRC20_the_pointed_count_is_the_sum_of_multiplicities",
-        "SRC20_the_pointing_multiplicity_is_the_number_of_starts_that_work",
-        "SRC20_the_word_count_equals_the_finite_difference_of_the_pointed_count",
-        "SRC20_the_word_range_is_the_span_of_its_partial_sums"
+        "SRC20_the_word_count_equals_the_finite_difference_of_the_pointed_count"
       ]
     },
     "T01_the_multiplicity_check_uses_a_corridor_one_too_wide": {

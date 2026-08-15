@@ -97,7 +97,7 @@ ACCEL_DEFECTS = [
     # the base survives telescoping and really moves K*_m.
     ("A15_floor_beta_uses_the_wrong_base",
      "SRC15_the_mechanical_code_is_subcritical_at_every_prefix",
-     ("    return (3 ** j).bit_length() - 1", "    return (4 ** j).bit_length() - 1")),
+     ("        _POW3.append(_POW3[-1] * 3)", "        _POW3.append(_POW3[-1] * 4)")),
     ("A16_mechanical_valuation_steps_two_at_a_time",
      "SRC15_the_mechanical_code_uses_only_the_two_symbol_alphabet",
      ("    return floor_beta(m) - floor_beta(m - 1)",

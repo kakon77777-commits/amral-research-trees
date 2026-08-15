@@ -8,7 +8,6 @@
       "run_went_red": true,
       "other_checks_that_also_fired": [
         "SRC19_every_published_queue_row_reproduces_under_an_independent_dp",
-        "SRC19_the_block_excess_equals_the_credit_prefix_plus_the_queue_drop",
         "SRC19_the_credit_prefix_stays_within_one_of_gamma_s",
         "SRC19_the_queue_dp_matches_a_direct_enumeration",
         "SRC19_the_queue_entropy_rate_climbs_toward_beta",

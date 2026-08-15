@@ -87,7 +87,7 @@ ACCEL_DEFECTS = [
     # non-integrality check survives it. The excess window does not.
     ("A10_floor_beta_uses_the_wrong_base",
      "SRC18_the_block_excess_stays_inside_its_range",
-     ("    return (3 ** j).bit_length() - 1", "    return (2 ** j).bit_length() - 1")),
+     ("        _POW3.append(_POW3[-1] * 3)", "        _POW3.append(_POW3[-1] * 2)")),
     # A defect on block_excess() would be DEAD here — this tool computes the
     # excess from `cumulative` directly and never calls that function. Replaced
     # by one that empties the multi-occurrence term, which the strengthened

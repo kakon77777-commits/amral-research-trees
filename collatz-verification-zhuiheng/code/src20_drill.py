@@ -75,15 +75,15 @@ ACCEL_DEFECTS = [
     # floor_beta. What a wrong base breaks is the diagnostics themselves.
     ("A08_floor_beta_uses_the_wrong_base",
      "SRC20_every_published_diagnostic_row_reproduces_from_the_definitions",
-     ("    return (3 ** j).bit_length() - 1", "    return (4 ** j).bit_length() - 1")),
+     ("        _POW3.append(_POW3[-1] * 3)", "        _POW3.append(_POW3[-1] * 4)")),
     ("A09_the_entropy_root_bisects_the_wrong_way",
      "SRC20_the_two_earlier_constants_are_unchanged",
      ("        if packing_entropy(mid) < beta:\n            lo = mid\n        else:\n            hi = mid",
       "        if packing_entropy(mid) < beta:\n            hi = mid\n        else:\n            lo = mid")),
     ("A10_the_credit_is_taken_across_two_steps",
      "SRC20_the_pointed_unpointed_correction_does_not_move_the_first_order_rate",
-     ("    return fl(phase + j) - fl(phase + j - 1)",
-      "    return fl(phase + j) - fl(phase + j - 2)")),
+     ("    _CREDIT_CACHE[key] = fl(phase + j) - fl(phase + j - 1)",
+      "    _CREDIT_CACHE[key] = fl(phase + j) - fl(phase + j - 2)")),
 ]
 
 TOOL_DEFECTS = [
