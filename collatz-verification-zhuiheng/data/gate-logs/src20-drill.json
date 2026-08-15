@@ -1,0 +1,221 @@
+{
+  "tool": "src20_drill.py",
+  "subject": "src20_hardzeta_au2b3_recheck.py and the A-U.2b.3 layer of hz_accel_code.py",
+  "defects": {
+    "A01_the_word_range_forgets_the_credit": {
+      "target_check": "SRC20_the_word_range_is_the_span_of_its_partial_sums",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC20_the_pointed_count_is_the_sum_of_multiplicities",
+        "SRC20_the_pointing_multiplicity_is_the_number_of_starts_that_work",
+        "SRC20_the_word_count_equals_the_finite_difference_of_the_pointed_count"
+      ]
+    },
+    "A02_the_word_range_ignores_the_origin": {
+      "target_check": "SRC20_the_pointing_multiplicity_is_the_number_of_starts_that_work",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC20_the_pointed_count_is_the_sum_of_multiplicities",
+        "SRC20_the_word_count_equals_the_finite_difference_of_the_pointed_count"
+      ]
+    },
+    "A03_the_multiplicity_is_off_by_one": {
+      "target_check": "SRC20_the_pointed_count_is_the_sum_of_multiplicities",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC20_the_pointing_multiplicity_is_the_number_of_starts_that_work",
+        "SRC20_the_word_count_equals_the_finite_difference_of_the_pointed_count"
+      ]
+    },
+    "A04_the_finite_difference_uses_the_wrong_neighbour": {
+      "target_check": "SRC20_the_word_count_equals_the_finite_difference_of_the_pointed_count",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC20_every_published_diagnostic_row_reproduces_from_the_definitions",
+        "SRC20_pointed_and_unpointed_counts_genuinely_differ",
+        "SRC20_the_centered_prefactor_stays_in_a_narrow_band"
+      ]
+    },
+    "A05_the_unpointed_enumeration_bounds_the_excess_too_tightly": {
+      "target_check": "SRC20_the_word_count_equals_the_finite_difference_of_the_pointed_count",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC20_the_pointed_count_is_the_sum_of_multiplicities"
+      ]
+    },
+    "A06_the_bridge_starts_from_the_wrong_end": {
+      "target_check": "SRC20_every_published_diagnostic_row_reproduces_from_the_definitions",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_the_pointed_dp_ignores_the_credit": {
+      "target_check": "SRC20_the_centered_prefactor_stays_in_a_narrow_band",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC20_every_published_diagnostic_row_reproduces_from_the_definitions",
+        "SRC20_the_pointed_count_is_the_sum_of_multiplicities",
+        "SRC20_the_word_count_equals_the_finite_difference_of_the_pointed_count"
+      ]
+    },
+    "A08_floor_beta_uses_the_wrong_base": {
+      "target_check": "SRC20_every_published_diagnostic_row_reproduces_from_the_definitions",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC20_the_centered_prefactor_stays_in_a_narrow_band",
+        "SRC20_the_pointed_unpointed_correction_does_not_move_the_first_order_rate"
+      ]
+    },
+    "A09_the_entropy_root_bisects_the_wrong_way": {
+      "target_check": "SRC20_the_two_earlier_constants_are_unchanged",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A10_the_credit_is_taken_across_two_steps": {
+      "target_check": "SRC20_the_pointed_unpointed_correction_does_not_move_the_first_order_rate",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC20_every_published_diagnostic_row_reproduces_from_the_definitions",
+        "SRC20_pointed_and_unpointed_counts_genuinely_differ",
+        "SRC20_the_centered_prefactor_stays_in_a_narrow_band",
+        "SRC20_the_pointed_count_is_the_sum_of_multiplicities",
+        "SRC20_the_pointing_multiplicity_is_the_number_of_starts_that_work",
+        "SRC20_the_word_count_equals_the_finite_difference_of_the_pointed_count",
+        "SRC20_the_word_range_is_the_span_of_its_partial_sums"
+      ]
+    },
+    "T01_the_multiplicity_check_uses_a_corridor_one_too_wide": {
+      "target_check": "SRC20_the_pointing_multiplicity_is_the_number_of_starts_that_work",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_the_range_check_reuses_the_library_partial_sums": {
+      "target_check": "SRC20_the_word_range_is_the_span_of_its_partial_sums",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_the_diagnostic_tolerance_reads_the_wrong_composition": {
+      "target_check": "SRC20_every_published_diagnostic_row_reproduces_from_the_definitions",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T04_the_band_check_reads_the_row_index": {
+      "target_check": "SRC20_the_centered_prefactor_stays_in_a_narrow_band",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T05_the_difference_check_compares_a_count_to_itself": {
+      "target_check": "SRC20_pointed_and_unpointed_counts_genuinely_differ",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T06_the_corrigendum_check_looks_at_the_wrong_document": {
+      "target_check": "SRC20_the_corrigendum_is_declared_and_the_corrected_file_shipped",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T07_the_additivity_check_stops_requiring_the_constants": {
+      "target_check": "SRC20_the_corrected_file_adds_the_distinction_without_moving_the_results",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T08_the_unproved_list_is_read_from_the_self_contained_section": {
+      "target_check": "SRC20_the_paper_lists_casp_terras_and_collatz_as_unproved",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T09_the_closed_branch_list_is_read_from_the_wrong_section": {
+      "target_check": "SRC20_the_packing_branch_is_declared_closed_with_its_seven_items",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T10_the_provenance_check_flags_every_file_as_edited": {
+      "target_check": "SRC20_the_correction_ships_under_a_new_name_rather_than_in_place",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T11_the_correction_cost_reads_the_same_count_twice": {
+      "target_check": "SRC20_the_pointed_unpointed_correction_does_not_move_the_first_order_rate",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_route_map_loses_its_corrigendum": {
+      "target_check": "SRC20_the_corrigendum_is_declared_and_the_corrected_file_shipped",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_paper_absorbs_its_analytic_dependency": {
+      "target_check": "SRC20_the_paper_separates_self_contained_results_from_its_analytic_dependency",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_route_map_drops_a_successor_route": {
+      "target_check": "SRC20_the_route_map_names_the_three_successor_routes",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D04_the_closed_branch_list_loses_an_item": {
+      "target_check": "SRC20_the_packing_branch_is_declared_closed_with_its_seven_items",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D05_the_diagnostics_json_is_perturbed": {
+      "target_check": "SRC20_every_published_diagnostic_row_reproduces_from_the_definitions",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D06_the_corridor_constant_is_shifted": {
+      "target_check": "SRC20_each_diagnostic_row_uses_the_critical_corridor",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_bundle": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "audit": [],
+  "counts": {
+    "defects_planted": 27,
+    "defects_caught_by_the_named_check": 27,
+    "defects_in_the_definition_layer": 10,
+    "defects_in_this_runs_own_measurement": 11,
+    "scope_defects_in_the_documents": 6,
+    "controls": 2,
+    "controls_undisturbed": 2,
+    "checks_without_a_defect_naming_them": 0
+  },
+  "ok": true
+}

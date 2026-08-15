@@ -12,7 +12,7 @@
     "Hard-Zeta": 53,
     "other project": 2
   },
-  "processed_count": 36,
+  "processed_count": 37,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -643,7 +643,7 @@
       "sha256": "4f7b78eeaa33d87fc0ef2b2b689921705373f45037d21665110057b3c80d51ab",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 36. Rechecked by code/src20_hardzeta_au2b3_recheck.py. THE SUBJECT CORRECTED A DEFECT THIS ARM REPRODUCED FAITHFULLY AND DID NOT NOTICE: A-U.2b.2's queue DP counted POINTED paths where its own section 4 defined an UNPOINTED word set (66 vs 48 at r=4,D=2). RUN-017 verified the program against a brute force written from the program's reading, so both shared the misreading. Everything here is implemented from the PROSE definitions instead, and Q = P_D - P_(D-1) is checked against a direct enumeration of WORDS. Cost to RUN-017: the label, not the conclusion — the rate shifts by at most 1.5e-3, and 1.4e-4 at r=5000, so first-order saturation stands and the second-order barrier never used the DP at all. All nine diagnostic rows reproduce with worst deviation exactly 0. Measured: the pointing ratio P/Q settles at 1.638, which is why the correction cannot move the exponential rate. The packing branch is declared closed. See reports/RUN-018-HARD-ZETA-AU2B3-PREFACTOR-SATURATION.md",
       "round_sort_key": [
         "au",
         2,

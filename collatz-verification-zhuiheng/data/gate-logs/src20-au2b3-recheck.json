@@ -1,0 +1,413 @@
+{
+  "tool": "src20_hardzeta_au2b3_recheck.py",
+  "subject": "Hard_Zeta_Phase_II_Round_AU2b3_bundle.zip (item 36) — Round A-U.2b.3, its prefactor diagnostics, three figures, the corrected A-U.2b.2 v0.1.1, plus A_Line_ROUTE_MAP v1.4",
+  "source_items": [
+    36
+  ],
+  "scope": "the pointed/unpointed identity implemented from the prose definitions, the prefactor diagnostics, the corrigendum to A-U.2b.2, and the claim that the packing branch is closed",
+  "checks": {
+    "SRC20_the_pointing_multiplicity_is_the_number_of_starts_that_work": {
+      "pass": true,
+      "detail": {
+        "words": 474,
+        "violations": []
+      },
+      "note": "§4: D - R(e) + 1, against trying every starting deficit"
+    },
+    "SRC20_the_pointed_count_is_the_sum_of_multiplicities": {
+      "pass": true,
+      "detail": {
+        "shapes": 7,
+        "violations": []
+      },
+      "note": "§5: P = sum over admissible words of (D - R(e) + 1), against the DP"
+    },
+    "SRC20_the_word_count_equals_the_finite_difference_of_the_pointed_count": {
+      "pass": true,
+      "detail": {
+        "shapes": 7,
+        "violations": []
+      },
+      "note": "§7: Q = P_D - P_{D-1}, with Q enumerated from §4's definition"
+    },
+    "SRC20_pointed_and_unpointed_counts_genuinely_differ": {
+      "pass": true,
+      "detail": {
+        "shapes": 7,
+        "all_differ": true,
+        "sample": [
+          [
+            3,
+            1,
+            9,
+            8
+          ],
+          [
+            4,
+            2,
+            66,
+            48
+          ],
+          [
+            5,
+            2,
+            117,
+            90
+          ]
+        ]
+      },
+      "note": "the correction is only meaningful if the two objects are not equal"
+    },
+    "SRC20_the_word_range_is_the_span_of_its_partial_sums": {
+      "pass": true,
+      "detail": {
+        "violations": []
+      },
+      "note": "§4: R(e) = max_j S_j - min_j S_j with S_j = sum (e_i - b_i)"
+    },
+    "SRC20_every_published_diagnostic_row_reproduces_from_the_definitions": {
+      "pass": true,
+      "detail": {
+        "rows": 9,
+        "violations": []
+      },
+      "note": "§28: eight columns on nine rows, computed from §4-§7 rather than from the shipped script"
+    },
+    "SRC20_each_diagnostic_row_uses_the_critical_corridor": {
+      "pass": true,
+      "detail": {
+        "violations": [],
+        "x_star": 0.05683162005132419
+      },
+      "note": "D = floor(x* r), the packing-critical width"
+    },
+    "SRC20_the_centered_prefactor_stays_in_a_narrow_band": {
+      "pass": true,
+      "detail": {
+        "band_width": 2.325540157405549,
+        "pointing_ratio_last": 1.638327376873481
+      },
+      "note": "§19, §21: consistent with Theta(r^{-1/2} 2^{rH}); a band, not a limit"
+    },
+    "SRC20_the_two_earlier_constants_are_unchanged": {
+      "pass": true,
+      "detail": {
+        "c_pack": "0.03585676003404866918",
+        "d_pack": "0.36897897873314659152"
+      },
+      "note": "§22-§23: the correction moves neither c_pack nor d_pack"
+    },
+    "SRC20_the_corrigendum_is_declared_and_the_corrected_file_shipped": {
+      "pass": true,
+      "detail": {
+        "route_map_flags_it": true,
+        "corrected_file_shipped": true
+      },
+      "note": "the route map must say A-U.2b.2's DP counted pointed paths, and the corrected file must be in the bundle"
+    },
+    "SRC20_the_corrected_file_adds_the_distinction_without_moving_the_results": {
+      "pass": true,
+      "detail": {
+        "grew": true,
+        "names_the_distinction": true
+      },
+      "note": "v0.1.1 against v0.1: both constants and both theorem names survive"
+    },
+    "SRC20_the_paper_separates_self_contained_results_from_its_analytic_dependency": {
+      "pass": true,
+      "detail": {
+        "declares_its_analytic_dependency": true
+      },
+      "note": "§33: the saturation lower bound leans on standard lattice local-limit and ballot estimates, and the round says so rather than absorbing it"
+    },
+    "SRC20_the_paper_lists_casp_terras_and_collatz_as_unproved": {
+      "pass": true,
+      "detail": {
+        "missing": []
+      },
+      "note": "§33"
+    },
+    "SRC20_the_packing_branch_is_declared_closed_with_its_seven_items": {
+      "pass": true,
+      "detail": {
+        "missing_from_the_closed_list": []
+      },
+      "note": "§31 and the route map: what has been exhausted, itemised"
+    },
+    "SRC20_the_route_map_names_the_three_successor_routes": {
+      "pass": true,
+      "detail": {
+        "routes": [
+          "2c",
+          "2d",
+          "2e"
+        ]
+      },
+      "note": "with the branch closed, what remains must be stated"
+    },
+    "SRC20_the_correction_ships_under_a_new_name_rather_than_in_place": {
+      "pass": true,
+      "detail": {
+        "silently_edited_in_place": [],
+        "corrected_file_is_a_new_name": true,
+        "superseded_file_dropped": true
+      },
+      "note": "a corrigendum that overwrote the old filename would erase its own history; this one supersedes by version instead"
+    },
+    "SRC20_the_pointed_unpointed_correction_does_not_move_the_first_order_rate": {
+      "pass": true,
+      "detail": {
+        "rows": [
+          {
+            "r": 200,
+            "rate_pointed": 1.518769109112707,
+            "rate_unpointed": 1.5172834940111033,
+            "shift": 0.00148561510160361
+          },
+          {
+            "r": 800,
+            "rate_pointed": 1.570017812475332,
+            "rate_unpointed": 1.5691920355013989,
+            "shift": 0.0008257769739330456
+          },
+          {
+            "r": 2000,
+            "rate_pointed": 1.578705507929065,
+            "rate_unpointed": 1.5783565209467356,
+            "shift": 0.0003489869823294356
+          },
+          {
+            "r": 5000,
+            "rate_pointed": 1.5825043289595202,
+            "rate_unpointed": 1.5823625220779887,
+            "shift": 0.00014180688153153653
+          }
+        ]
+      },
+      "note": "measurement: what RUN-017's mislabelling actually cost"
+    }
+  },
+  "counts": {
+    "checks": 17,
+    "passed": 17
+  },
+  "measured": {
+    "pointed_vs_unpointed_small": [
+      [
+        3,
+        1,
+        9,
+        8
+      ],
+      [
+        4,
+        2,
+        66,
+        48
+      ],
+      [
+        5,
+        2,
+        117,
+        90
+      ],
+      [
+        6,
+        2,
+        285,
+        231
+      ],
+      [
+        4,
+        3,
+        163,
+        97
+      ],
+      [
+        5,
+        1,
+        27,
+        26
+      ],
+      [
+        3,
+        2,
+        27,
+        18
+      ]
+    ],
+    "diagnostics": [
+      {
+        "r": 200,
+        "D": 11,
+        "z_r": 0.635,
+        "log2_P_over_composition": -6.215081102744023,
+        "log2_Q_over_composition": -6.512204123064748,
+        "log2_bridge_over_composition": -8.589789615677262,
+        "P_centered_prefactor": 7.569068845434238,
+        "Q_centered_prefactor": 7.866191865754963,
+        "bridge_centered_prefactor": 9.943777358367477,
+        "pointing_multiplicity_ratio": 1.2286917479843522
+      },
+      {
+        "r": 400,
+        "D": 22,
+        "z_r": 0.6375,
+        "log2_P_over_composition": -4.626363767273574,
+        "log2_Q_over_composition": -5.174823519855067,
+        "log2_bridge_over_composition": -7.06441108829199,
+        "P_centered_prefactor": 5.983696390033805,
+        "Q_centered_prefactor": 6.532156142615299,
+        "bridge_centered_prefactor": 8.421743711052223,
+        "pointing_multiplicity_ratio": 1.4625234455672238
+      },
+      {
+        "r": 800,
+        "D": 45,
+        "z_r": 0.64,
+        "log2_P_over_composition": -3.8261388269727377,
+        "log2_Q_over_composition": -4.486760406119174,
+        "log2_bridge_over_composition": -6.284505779510482,
+        "P_centered_prefactor": 5.187100163993427,
+        "Q_centered_prefactor": 5.847721743139863,
+        "bridge_centered_prefactor": 7.645467116531171,
+        "pointing_multiplicity_ratio": 1.5807635424158468
+      },
+      {
+        "r": 1200,
+        "D": 68,
+        "z_r": 0.6408333333333334,
+        "log2_P_over_composition": -3.624662865537175,
+        "log2_Q_over_composition": -4.30861000096661,
+        "log2_bridge_over_composition": -6.087937208379344,
+        "P_centered_prefactor": 4.98683129901533,
+        "Q_centered_prefactor": 5.670778434444765,
+        "bridge_centered_prefactor": 7.450105641857499,
+        "pointing_multiplicity_ratio": 1.60652912450462
+      },
+      {
+        "r": 2000,
+        "D": 113,
+        "z_r": 0.641,
+        "log2_P_over_composition": -3.515667007284719,
+        "log2_Q_over_composition": -4.213640971943732,
+        "log2_bridge_over_composition": -5.982976613803203,
+        "P_centered_prefactor": 4.878018082143494,
+        "Q_centered_prefactor": 5.575992046802507,
+        "bridge_centered_prefactor": 7.345327688661977,
+        "pointing_multiplicity_ratio": 1.622225035692691
+      },
+      {
+        "r": 3000,
+        "D": 170,
+        "z_r": 0.6413333333333333,
+        "log2_P_over_composition": -3.491034156736532,
+        "log2_Q_over_composition": -4.19539023211928,
+        "log2_bridge_over_composition": -5.9745347835760185,
+        "P_centered_prefactor": 4.85386764682829,
+        "Q_centered_prefactor": 5.5582237222110376,
+        "bridge_centered_prefactor": 7.337368273667776,
+        "pointing_multiplicity_ratio": 1.629417237297441
+      },
+      {
+        "r": 5000,
+        "D": 284,
+        "z_r": 0.6416,
+        "log2_P_over_composition": -3.468398020310815,
+        "log2_Q_over_composition": -4.177432427968597,
+        "log2_bridge_over_composition": -5.956545064918828,
+        "P_centered_prefactor": 4.831617300691632,
+        "Q_centered_prefactor": 5.540651708349414,
+        "bridge_centered_prefactor": 7.319764345299645,
+        "pointing_multiplicity_ratio": 1.6347096436352373
+      },
+      {
+        "r": 8000,
+        "D": 454,
+        "z_r": 0.641625,
+        "log2_P_over_composition": -3.5438650130327005,
+        "log2_Q_over_composition": -4.25525974384982,
+        "log2_bridge_over_composition": -6.077770804697138,
+        "P_centered_prefactor": 4.9071058070015665,
+        "Q_centered_prefactor": 5.618500537818686,
+        "bridge_centered_prefactor": 7.441011598666004,
+        "pointing_multiplicity_ratio": 1.6373863015213257
+      },
+      {
+        "r": 10000,
+        "D": 568,
+        "z_r": 0.6417,
+        "log2_P_over_composition": -3.5707488294410723,
+        "log2_Q_over_composition": -4.282972500095639,
+        "log2_bridge_over_composition": -6.110143424813941,
+        "P_centered_prefactor": 4.93410103138116,
+        "Q_centered_prefactor": 5.646324702035726,
+        "bridge_centered_prefactor": 7.473495626754029,
+        "pointing_multiplicity_ratio": 1.638327376873481
+      }
+    ],
+    "prefactor_band": {
+      "Q_centered_min": 5.540651708349414,
+      "Q_centered_max": 7.866191865754963,
+      "band_width": 2.325540157405549,
+      "monotone": false,
+      "pointing_ratio_first": 1.2286917479843522,
+      "pointing_ratio_last": 1.638327376873481,
+      "reading": "the centered prefactor sits in a band of width 2.3 and is NOT monotone — it bottoms at r = 5000 and rises again — which is consistent with Theta(r^{-1/2}) and is all a finite table can show. The pointing ratio settles near 1.638, which is why the correction cannot move the exponential rate or the prefactor scale."
+    },
+    "corrigendum": {
+      "v0_1_chars": 17674,
+      "v0_1_1_chars": 19422,
+      "both_keep_the_two_constants": true,
+      "reading": "the corrected file ADDS a pointed/unpointed section and keeps both constants and both theorem names, so the correction is scoped to the DP diagnostic"
+    },
+    "bundle": {
+      "reshipped_identical": [
+        "Hard_Zeta_Phase_II_Round_AU2b1_Sharp_Packing_Entropy_Threshold_v0.1.md"
+      ],
+      "reshipped_edited": [],
+      "new_in_this_bundle": [
+        "Hard_Zeta_AU2b3_centered_prefactors.png",
+        "Hard_Zeta_AU2b3_pointing_multiplicity.png",
+        "Hard_Zeta_AU2b3_queue_prefactor_diagnostics.json",
+        "Hard_Zeta_AU2b3_queue_to_composition_ratios.png",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.4_AU2b3.md",
+        "Hard_Zeta_Phase_II_Round_AU2b2_Queue_Entropy_Second_Order_Barrier_v0.1.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2b3_Queue_Prefactor_Saturation_v0.1.md",
+        "verify_Hard_Zeta_AU2b3_queue_prefactor.py"
+      ]
+    },
+    "correction_cost": {
+      "rows": [
+        {
+          "r": 200,
+          "rate_pointed": 1.518769109112707,
+          "rate_unpointed": 1.5172834940111033,
+          "shift": 0.00148561510160361
+        },
+        {
+          "r": 800,
+          "rate_pointed": 1.570017812475332,
+          "rate_unpointed": 1.5691920355013989,
+          "shift": 0.0008257769739330456
+        },
+        {
+          "r": 2000,
+          "rate_pointed": 1.578705507929065,
+          "rate_unpointed": 1.5783565209467356,
+          "shift": 0.0003489869823294356
+        },
+        {
+          "r": 5000,
+          "rate_pointed": 1.5825043289595202,
+          "rate_unpointed": 1.5823625220779887,
+          "shift": 0.00014180688153153653
+        }
+      ],
+      "max_shift": 0.00148561510160361,
+      "reading": "RUN-017 reproduced the pointed rate. Recomputing the unpointed one moves it by at most 1.5e-3 and by 1.4e-4 at r = 5000, so the first-order saturation verdict of that run stands; only its object was mislabelled."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

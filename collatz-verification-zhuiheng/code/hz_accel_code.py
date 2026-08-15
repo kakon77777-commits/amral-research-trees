@@ -909,3 +909,77 @@ def block_scale_exponents(d: "Decimal", s: "Decimal",
     p2 = h * (d - x * s) - Decimal("0.5")
     return p1, p2
 
+
+# ---------------------------------------------------------------------------
+# Phase II / Round A-U.2b.3 — the pointed / unpointed correction.
+# Implemented from the PROSE DEFINITIONS (§1-§7), not from the shipped script:
+# A-U.2b.2's DP turned out to count pointed paths where its own §4 defined an
+# unpointed word set, and a reimplementation of the program cannot see that.
+# ---------------------------------------------------------------------------
+
+
+def word_range(word: tuple[int, ...], phase: int = 0) -> int:
+    """§4: R(e) = max_j S_j - min_j S_j, with S_j = sum_{i<=j} (e_i - b_i).
+
+    A word is admissible from starting deficit d_0 exactly when
+    0 <= d_0 - S_j <= D for every j, i.e. max_j S_j <= d_0 <= D + min_j S_j.
+    """
+    S = 0
+    lo = hi = 0
+    for i, e in enumerate(word, start=1):
+        S += e - phase_credit(i, phase)
+        lo, hi = min(lo, S), max(hi, S)
+    return hi - lo
+
+
+def pointing_multiplicity(word: tuple[int, ...], D: int, phase: int = 0) -> int:
+    """§4: the number of admissible starting deficits, D - R(e) + 1 or zero."""
+    return max(0, D - word_range(word, phase) + 1)
+
+
+def unpointed_words(r: int, D: int, phase: int = 0) -> list[tuple[int, ...]]:
+    """§4's Q_{r,D} itself — the words with SOME admissible start, enumerated.
+
+    Exponential, so only for small r; it exists so the identities below are
+    checked against the definition rather than against a dynamic program.
+    """
+    out = []
+
+    def walk(j: int, seq: list[int]) -> None:
+        if j > r:
+            if pointing_multiplicity(tuple(seq), D, phase) > 0:
+                out.append(tuple(seq))
+            return
+        # e_j is bounded because the range can only grow
+        for e in range(0, D + 2):
+            seq.append(e)
+            if word_range(tuple(seq), phase) <= D:
+                walk(j + 1, seq)
+            seq.pop()
+
+    walk(1, [])
+    return out
+
+
+def bridge_count(r: int, D: int, phase: int = 0) -> int:
+    """§27: paths from deficit D to deficit 0, the fixed-endpoint bridge."""
+    vec = [0] * (D + 1)
+    vec[D] = 1
+    for j in range(1, r + 1):
+        b = phase_credit(j, phase)
+        total = sum(vec)
+        pref = [0] * (D + 2)
+        for i in range(D + 1):
+            pref[i + 1] = pref[i] + vec[i]
+        vec = [total - pref[max(0, tt - b)] for tt in range(D + 1)]
+    return vec[0]
+
+
+def unpointed_queue_count(r: int, D: int, phase: int = 0) -> int:
+    """§7: Q_{r,D} = P_{r,D} - P_{r,D-1}.
+
+    The identity is verified against `unpointed_words` at small r by `src20`;
+    beyond that it is the only tractable route, and the report says so.
+    """
+    return queue_count(r, D, phase) - (queue_count(r, D - 1, phase) if D else 0)
+

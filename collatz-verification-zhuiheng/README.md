@@ -213,11 +213,22 @@ instance behind each band.
     not produced by the shipped script** (nine rows against eight, renamed
     fields), although every number in it is correct. A realization defect with
     the mathematics intact — the band this tree named a day earlier.
-19. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+19. [`reports/RUN-018-HARD-ZETA-AU2B3-PREFACTOR-SATURATION.md`](./reports/RUN-018-HARD-ZETA-AU2B3-PREFACTOR-SATURATION.md) —
+    **the subject corrected a defect this arm reproduced faithfully and did not
+    notice.** The previous round's queue DP counted *pointed* paths where its own
+    §4 defined an *unpointed* word set; RUN-017 verified the program against a
+    brute force written from the program's reading, so both shared the
+    misreading. Everything here is implemented from the **prose definitions**
+    instead. Cost to RUN-017: the label, not the conclusion — the rate moves by
+    `1.4e-4` at `r = 5000`. All nine diagnostic rows reproduce with worst
+    deviation **exactly 0**, and the pointing ratio settles at 1.638, which is
+    why the correction cannot move the exponential rate. The packing branch is
+    declared closed.
+20. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-20. [`code/`](./code/) — the engine, the independent reference, and the gates.
-21. [`data/gate-logs/`](./data/gate-logs/) and
+21. [`code/`](./code/) — the engine, the independent reference, and the gates.
+22. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

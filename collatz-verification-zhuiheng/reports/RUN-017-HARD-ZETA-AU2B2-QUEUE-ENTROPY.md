@@ -9,6 +9,34 @@
 
 ---
 
+> ## Correction, 2026-08-15 (RUN-018)
+>
+> **The queue DP counts pointed paths, not exponent words — and I did not catch
+> it. The subject did, in the next round.**
+>
+> A-U.2b.2 §4 defines `Q_{r,D}` as the set of words `(e₁…e_r)` for which
+> **there exists** an admissible starting deficit. The shipped DP sums `V_r`
+> over all starting deficits, which counts each word once *per* admissible
+> start — the **pointed** count `P_{r,D}`. The two genuinely differ: at
+> `r = 4, D = 2` they are 66 against 48. The exact relation, verified here on
+> seven shapes, is `Q_{r,D} = P_{r,D} − P_{r,D−1}`.
+>
+> **What this costs the run below: the label, not the conclusion.** Every row
+> still reproduces exactly — what was reproduced is `P`. Recomputing `Q` from the
+> finite-difference relation moves the rate by at most `1.5 × 10⁻³`, and by
+> `1.4 × 10⁻⁴` at `r = 5000`, where the gap to `β` becomes `0.0026` instead of
+> `0.00246`. The entropy still saturates, so the **Prefix-Constraint First-Order
+> No-Gain** verdict stands. The Second-Order Barrier never used the DP data at
+> all — its proof runs on the weak-composition sums `A(r,D)`, `B(r,D)` — so
+> nothing there is touched either. A-U.2b.2 v0.1.1's own corrigendum says both,
+> and the measurements above are what confirm it independently.
+>
+> **Why I missed it.** I reimplemented the *script* and validated it against a
+> brute force that shared the script's reading. The paper's §4 was correct; the
+> program disagreed with it; and my referee copied the program instead of the
+> definition. A subject that ships both a specification and an implementation has
+> made **two** claims, and the second has to be checked against the first.
+
 ## Which lever was pulled, and what it bought
 
 A-U.2b.1 §28 listed five things that could beat `c_pack`. This round pulls the
