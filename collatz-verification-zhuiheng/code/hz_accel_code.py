@@ -537,3 +537,114 @@ def in_singular_cylinder(y: int, r: int) -> bool:
     res, mod = singular_cylinder(r)
     return y % mod == res
 
+
+# ---------------------------------------------------------------------------
+# Phase II / Round A-U.2a — lift-occupation coupling.
+# The accelerated inverse-code series (§1-§2), the block-digit reading of the
+# lift (§5), the normalized pointed coordinates and their exact recurrences
+# (§12-§15), and the two completions that share every finite datum with a
+# genuine positive anchor (§27-§28).
+# ---------------------------------------------------------------------------
+
+
+def inverse_code_source(kappa: tuple[int, ...], bits: int) -> int:
+    """§1: B(q) = -sum_j 2^{K_j} / 3^{j+1}, read modulo 2^bits.
+
+    The series converges in the 2-adic metric because 2^{K_j} -> 0 there; the
+    division by 3^{j+1} is a modular inverse, not a rational division.
+    """
+    mod = 1 << bits
+    K = cumulative(kappa)
+    total = 0
+    # j runs to m INCLUSIVE: the j = m term is 2^{K_m}·3^{-(m+1)}, which is not
+    # zero modulo 2^{K_m+1}. Only from j = m+1 on does 2^{K_j} vanish there,
+    # because K_{m+1} >= K_m + 1. Dropping it costs exactly 2^{K_m}.
+    for j in range(len(kappa) + 1):
+        total += (1 << K[j]) * pow(3, -(j + 1), mod)
+    return (-total) % mod
+
+
+def source_bit(kappa: tuple[int, ...], j: int) -> int:
+    """d_j, the j-th binary digit of the source, read from a long enough prefix."""
+    K = cumulative(kappa)[-1]
+    return (source_residue(kappa) >> j) & 1 if j <= K else -1
+
+
+def block_digit(kappa: tuple[int, ...], m: int) -> int:
+    """§5: t_{m+1} read as the source's binary block on positions K_m+1..K_{m+1}.
+
+    Same quantity as `lift_digit(kappa[:m+1])`, obtained a different way — from
+    the digits of the longer source rather than from a difference of two
+    canonical representatives.
+    """
+    K = cumulative(kappa)
+    r = source_residue(kappa[:m + 1])
+    return sum(((r >> (K[m] + 1 + j)) & 1) << j for j in range(kappa[m]))
+
+
+def prefix_endpoint(kappa: tuple[int, ...]) -> int:
+    """§9: E_m = (3^m R_m + B_m) / 2^{K_m}, a positive odd integer."""
+    return endpoint(source_residue(kappa), kappa)
+
+
+def x_coord(kappa: tuple[int, ...]) -> Fraction:
+    """§12: X_m = R_m / 2^{K_m+1}, the normalized source height in (0,1)."""
+    return Fraction(source_residue(kappa), 1 << (cumulative(kappa)[-1] + 1))
+
+
+def z_coord(kappa: tuple[int, ...]) -> Fraction:
+    """§12: Z_m = E_m / 3^m, the normalized endpoint height."""
+    return Fraction(prefix_endpoint(kappa), 3 ** len(kappa))
+
+
+def lift_flux(kappa: tuple[int, ...], m: int) -> Fraction:
+    """§12: lambda_{m+1} = t_{m+1} / 2^{q_{m+1}}."""
+    return Fraction(lift_digit(kappa[:m + 1]), 1 << kappa[m])
+
+
+def correction_coord(kappa: tuple[int, ...]) -> Fraction:
+    """§14: C_m = Z_m - 2 X_m, claimed equal to B_m / (2^{K_m} 3^m).
+
+    The claim that matters is §14's Decoupling: this depends on the exponent
+    code alone, so two sources sharing a code prefix share C_m exactly.
+    """
+    return z_coord(kappa) - 2 * x_coord(kappa)
+
+
+def anchor_height(kappa: tuple[int, ...]) -> int:
+    """§23: A_m = 2^{K_m+1} X_m = R_m — faithful, monotone, and noncompact."""
+    return source_residue(kappa)
+
+
+def v2_rational(x: Fraction) -> int:
+    """v_2 of a rational with odd denominator."""
+    if x.denominator % 2 == 0:
+        raise ValueError(f"{x} is not a 2-adic integer")
+    n = x.numerator
+    return (n & -n).bit_length() - 1
+
+
+def accel_step_rational(x: Fraction) -> tuple[Fraction, int]:
+    """One accelerated step on a rational 2-adic integer: (S(x), q)."""
+    y = 3 * x + 1
+    q = v2_rational(y)
+    return y / 2 ** q, q
+
+
+def negative_completion(kappa: tuple[int, ...]) -> Fraction:
+    """§27: x_- = -(2^{K_m} + B_m) / 3^m, the source whose tail is all q = 1.
+
+    -1 is the accelerated fixed point (S(-1) = -1 with q = 1), so continuing any
+    finite code by ones lands on it. This negative rational shares every finite
+    exact datum with the code's positive realizations.
+    """
+    K = cumulative(kappa)[-1]
+    return Fraction(-(2 ** K + offset(kappa)), 3 ** len(kappa))
+
+
+def critical_completion(kappa: tuple[int, ...], extra: int) -> tuple[int, ...]:
+    """§28: continue a subcritical prefix by the mechanical code's increments."""
+    m = len(kappa)
+    return kappa + tuple(floor_beta(m + j) - floor_beta(m + j - 1)
+                         for j in range(1, extra + 1))
+

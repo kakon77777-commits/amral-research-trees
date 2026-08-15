@@ -150,11 +150,21 @@ describe it that way.
     its source grown from 13 to 93 bits. So the datum the no-go calls
     load-bearing is cheaply available in the coordinate an occupation measure
     discards.
-15. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+15. [`reports/RUN-014-HARD-ZETA-AU2A-LIFT-COUPLING.md`](./reports/RUN-014-HARD-ZETA-AU2A-LIFT-COUPLING.md) —
+    Round A-U.2a's lift-occupation algebra, almost all of it exact and all of it
+    holding: a lift digit turns out to **be** a binary block of the source, one
+    such digit is amplified to `2t·3^m` at the endpoint, and the normalized
+    correction is identical for *every* source in a cylinder. It ends in a second
+    no-go — compact coordinates collapse every anchor to the same point. Measured:
+    **the countermodel that defeated A-U.1 has positive lift flux**, so A-U.2a's
+    own machinery already excludes it, and the class left open has no exhibited
+    inhabitant. Also: why a mutation that makes a check *vacuous* is invisible to
+    a drill.
+16. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-16. [`code/`](./code/) — the engine, the independent reference, and the gates.
-17. [`data/gate-logs/`](./data/gate-logs/) and
+17. [`code/`](./code/) — the engine, the independent reference, and the gates.
+18. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

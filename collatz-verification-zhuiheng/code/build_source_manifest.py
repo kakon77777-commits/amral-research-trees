@@ -161,6 +161,19 @@ PROCESSED = {
         "= the canonical source's own subcritical lifetime minus node depth; "
         "see reports/RUN-010-HARD-ZETA-ROUND-03A3.md"
     ),
+    "Hard_Zeta_Phase_II_Round_AU2a_bundle.zip": (
+        "item 32. Rechecked by code/src16_hardzeta_au2a_recheck.py. Almost all "
+        "exact algebra and all of it holds: the inverse-code series and its "
+        "functional equation, the Source Block-Digit Theorem (the lift IS a "
+        "binary block of the source), the amplification law Etilde-E = 2t*3^m, "
+        "the X/Z/C recurrences, the Decoupling (C is identical for every source "
+        "in a cylinder), the synchronization bound, the flux balance, and both "
+        "rival completions (the negative one reaches -1 on exact rationals). "
+        "Measured: the A-U.1 countermodel has POSITIVE lift flux (lambda-bar "
+        "~0.34 stable to M=400), so it sits in the class the Zero-Flux Boundary "
+        "Theorem already excludes — it is not a witness for the sparse class "
+        "A-U.2b must handle. See reports/RUN-014-HARD-ZETA-AU2A-LIFT-COUPLING.md"
+    ),
     "Hard_Zeta_Phase_II_Round_AU1_bundle.zip": (
         "item 31. Rechecked by code/src15_hardzeta_au1_recheck.py. A NEGATIVE "
         "round and it holds: the Critical Invariant-Limit Theorem's finite "

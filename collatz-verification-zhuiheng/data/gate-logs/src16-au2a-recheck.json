@@ -1,0 +1,575 @@
+{
+  "tool": "src16_hardzeta_au2a_recheck.py",
+  "subject": "Hard_Zeta_Phase_II_Round_AU2a_bundle.zip (item 32) — Round A-U.2a plus A_Line_ROUTE_MAP v1.0",
+  "source_items": [
+    32
+  ],
+  "scope": "the inverse-code series and its functional equation, the Source Block-Digit Theorem, the lift-endpoint amplification law, the normalized pointed recurrences and their decoupling, the flux balance and its zero-flux boundary, and the two completions that share every finite datum with a genuine anchor",
+  "checks": {
+    "SRC16_the_inverse_code_series_converges_to_the_exact_source": {
+      "pass": true,
+      "detail": {
+        "prefixes": 192,
+        "violations": []
+      },
+      "note": "§1: B(q) = -sum_j 2^{K_j} 3^{-(j+1)}, summed to j = m inclusive because the j = m term is nonzero modulo 2^{K_m+1}"
+    },
+    "SRC16_the_source_satisfies_the_shift_functional_equation": {
+      "pass": true,
+      "detail": {
+        "prefixes": 184,
+        "violations": []
+      },
+      "note": "§2: 3 B(q) + 1 = 2^{q_1} B(sigma q), at the precision the shifted code actually determines"
+    },
+    "SRC16_the_lift_digit_is_a_binary_block_of_the_source": {
+      "pass": true,
+      "detail": {
+        "digits": 192,
+        "violations": []
+      },
+      "note": "§5: t_{m+1} read off the source's bits at positions K_m+1..K_{m+1} equals the lift computed as a difference of canonical representatives"
+    },
+    "SRC16_the_source_is_one_plus_the_weighted_lift_series": {
+      "pass": true,
+      "detail": {
+        "prefixes": 192,
+        "violations": []
+      },
+      "note": "§5: R_m = 1 + sum_i t_i 2^{K_{i-1}+1}, with R_0 = 1"
+    },
+    "SRC16_the_adelic_lift_dichotomy_separates_the_two_branches": {
+      "pass": true,
+      "detail": {
+        "stabilised": 7,
+        "of": 7,
+        "mechanical_strict_increases": 41,
+        "_both_outcomes_seen": true
+      },
+      "note": "§7-§8: finitely many nonzero lifts means R_m is eventually a positive odd integer; infinitely many means R_m -> +infinity"
+    },
+    "SRC16_the_affine_offset_matches_its_closed_form": {
+      "pass": true,
+      "detail": {
+        "prefixes": 192,
+        "violations": []
+      },
+      "note": "§9: B_m = sum_i 3^{m-i} 2^{K_{i-1}}, checked against the recurrence the rest of the module uses"
+    },
+    "SRC16_the_canonical_prefix_endpoint_is_a_positive_odd_integer": {
+      "pass": true,
+      "detail": {
+        "endpoints": 192,
+        "violations": []
+      },
+      "note": "§9: E_m = (3^m R_m + B_m)/2^{K_m}"
+    },
+    "SRC16_a_source_lift_amplifies_to_twice_it_times_three_to_the_m": {
+      "pass": true,
+      "detail": {
+        "pairs": 184,
+        "violations": [],
+        "with_a_nonzero_lift": 57,
+        "_observable_nonempty": true
+      },
+      "note": "§10-§11: E~_m - E_m = 2 t_{m+1} 3^m; guarded so it is not graded only where every lift is zero"
+    },
+    "SRC16_the_source_coordinate_follows_its_skew_product_recurrence": {
+      "pass": true,
+      "detail": {
+        "steps": 184,
+        "violations": []
+      },
+      "note": "§13: X_{m+1} = 2^{-q} X_m + lambda_{m+1}, in Fractions"
+    },
+    "SRC16_the_endpoint_coordinate_follows_its_skew_product_recurrence": {
+      "pass": true,
+      "detail": {
+        "steps": 184,
+        "violations": []
+      },
+      "note": "§13: Z_{m+1} = (Z_m + 2t + 3^{-(m+1)}) / 2^q, in Fractions"
+    },
+    "SRC16_the_correction_coordinate_is_the_affine_offset_normalized": {
+      "pass": true,
+      "detail": {
+        "prefixes": 192,
+        "violations": []
+      },
+      "note": "§14: C_m = Z_m - 2 X_m = B_m / (2^{K_m} 3^m) > 0"
+    },
+    "SRC16_the_correction_recurrence_does_not_mention_the_lift": {
+      "pass": true,
+      "detail": {
+        "steps": 184,
+        "violations": []
+      },
+      "note": "§14: C_{m+1} = (C_m + 3^{-(m+1)})/2^{q_{m+1}} — the lift digit is absent"
+    },
+    "SRC16_the_correction_is_the_same_for_every_source_in_a_cylinder": {
+      "pass": true,
+      "detail": {
+        "cylinders": 36,
+        "sources_tested": 216,
+        "violations": [],
+        "_observable_nonempty": true
+      },
+      "note": "§14 sharp form: C_m is a function of the exponent code alone, so the lift enters only X — checked across distinct sources of one cylinder"
+    },
+    "SRC16_the_correction_obeys_the_exponential_synchronization_bound": {
+      "pass": true,
+      "detail": {
+        "prefixes": 192,
+        "violations": []
+      },
+      "note": "§15: 0 < C_m <= 2^{-m}[1 - (2/3)^m] < 2^{-m}, so Z_m = 2 X_m + O(2^{-m})"
+    },
+    "SRC16_the_lift_flux_balance_is_an_exact_identity": {
+      "pass": true,
+      "detail": {
+        "windows": 32,
+        "violations": []
+      },
+      "note": "§17: mean lambda = mean (1 - 2^{-q}) X + boundary/M, in Fractions"
+    },
+    "SRC16_mean_lift_is_bracketed_by_mean_source_height": {
+      "pass": true,
+      "detail": {
+        "rows": [
+          {
+            "code": "mechanical",
+            "M": 399,
+            "X_bar": 0.5206535517144664,
+            "lambda_bar": 0.33771929824561403,
+            "half_X_bar": 0.2603267758572332
+          },
+          {
+            "code": "27",
+            "M": 59,
+            "X_bar": 0.06029367171582613,
+            "lambda_bar": 0.025423728813559324,
+            "half_X_bar": 0.030146835857913064
+          },
+          {
+            "code": "35655",
+            "M": 59,
+            "X_bar": 0.09894680024367634,
+            "lambda_bar": 0.05084745762711865,
+            "half_X_bar": 0.04947340012183817
+          }
+        ],
+        "violations": []
+      },
+      "note": "§18: (1/2) Xbar <= lambdabar <= Xbar up to the boundary term"
+    },
+    "SRC16_every_positive_anchor_collapses_to_the_same_boundary_point": {
+      "pass": true,
+      "detail": {
+        "rows": [
+          {
+            "n": 27,
+            "X_60": 4.1600086798764294e-32,
+            "Z_60": 2.3589824875925728e-29,
+            "lambda_zero_after_m20": true
+          },
+          {
+            "n": 103,
+            "X_60": 2.479634803398566e-33,
+            "Z_60": 2.3589824875925728e-29,
+            "lambda_zero_after_m20": true
+          },
+          {
+            "n": 703,
+            "X_60": 1.3864230409259282e-28,
+            "Z_60": 3.0666772338703446e-28,
+            "lambda_zero_after_m20": true
+          }
+        ],
+        "violations": []
+      },
+      "note": "§21-§22: X_m = n/2^{K_m+1} -> 0, lambda eventually 0, Z_m -> 0, so the anchor value n is erased in compact coordinates"
+    },
+    "SRC16_the_anchor_height_is_monotone_and_bounded_only_when_it_settles": {
+      "pass": true,
+      "detail": {
+        "monotone_violations": [],
+        "bounded": 7,
+        "unbounded": 1,
+        "_both_outcomes_seen": true
+      },
+      "note": "§23-§24: A_m = R_m is integer monotone, so bounded iff eventually constant iff the lifts stop — faithful, but noncompact"
+    },
+    "SRC16_the_negative_completion_shares_the_whole_finite_code": {
+      "pass": true,
+      "detail": {
+        "completions": 20,
+        "violations": []
+      },
+      "note": "§27: x_- = -(2^{K_m} + B_m)/3^m runs the same m valuations and lands on the accelerated fixed point -1"
+    },
+    "SRC16_every_subcritical_prefix_extends_to_a_critical_completion": {
+      "pass": true,
+      "detail": {
+        "prefixes": 77,
+        "violations": []
+      },
+      "note": "§28: K_{m+j} = floor(beta(m+j)) - d_m < beta(m+j), so the formal critical continuation always exists"
+    },
+    "SRC16_the_sparse_lift_counting_bound_holds": {
+      "pass": true,
+      "detail": {
+        "density": 0.6725,
+        "violations": []
+      },
+      "note": "§25: #{t_m>0}/M <= 2^R lambdabar + qbar/R for every R"
+    },
+    "SRC16_the_paper_keeps_an_explicit_proved_and_unproved_ledger": {
+      "pass": true,
+      "detail": {},
+      "note": "§33"
+    },
+    "SRC16_the_paper_lists_casp_cst_and_collatz_as_unproved": {
+      "pass": true,
+      "detail": {
+        "missing_from_the_unproved_list": []
+      },
+      "note": "§33: a second no-go must not read as progress on the conjecture"
+    },
+    "SRC16_the_paper_marks_its_own_quantifier_gap": {
+      "pass": true,
+      "detail": {
+        "gap_marked": true
+      },
+      "note": "the abstract states that zero lift density does NOT give finitely many lifts; that gap is the whole reason A-U.2b exists"
+    },
+    "SRC16_the_route_map_and_the_paper_agree_on_the_next_routes": {
+      "pass": true,
+      "detail": {
+        "routemap_len": 2035
+      },
+      "note": "v1.0 names the same three successor routes the paper does"
+    },
+    "SRC16_the_bundle_reships_its_predecessors_unedited": {
+      "pass": true,
+      "detail": {
+        "reshipped_identical": 2,
+        "reshipped_edited": [],
+        "new_in_this_bundle": [
+          "Hard_Zeta_A_Line_ROUTE_MAP_v1.0_AU2a.md",
+          "Hard_Zeta_Phase_II_Round_AU2a_Lift_Occupation_Coupling_v0.1.md"
+        ]
+      },
+      "note": "the closure and A-U.1 must be byte-identical to items 30 and 31"
+    },
+    "SRC16_the_au1_countermodel_has_positive_lift_flux": {
+      "pass": true,
+      "detail": {
+        "rows": [
+          {
+            "M": 40,
+            "lambda_bar": 0.33125,
+            "X_bar": 0.5110369912524695,
+            "lift_density": 0.725
+          },
+          {
+            "M": 80,
+            "lambda_bar": 0.3375,
+            "X_bar": 0.5220412124217871,
+            "lift_density": 0.7125
+          },
+          {
+            "M": 150,
+            "lambda_bar": 0.3283333333333333,
+            "X_bar": 0.5113259490862802,
+            "lift_density": 0.6866666666666666
+          },
+          {
+            "M": 250,
+            "lambda_bar": 0.336,
+            "X_bar": 0.5176979263417197,
+            "lift_density": 0.692
+          },
+          {
+            "M": 400,
+            "lambda_bar": 0.338125,
+            "X_bar": 0.5226783303987039,
+            "lift_density": 0.6725
+          }
+        ],
+        "stays_above_quarter": true
+      },
+      "note": "measurement: which of §26's three classes the mechanical code falls in"
+    },
+    "SRC16_the_compact_coordinate_separates_anchors_from_the_countermodel": {
+      "pass": true,
+      "detail": {
+        "means": {
+          "27": 1.8116270863419464e-13,
+          "35655": 7.333233343388472e-10,
+          "mechanical": 0.45921254221345725
+        },
+        "pointwise": [
+          {
+            "m": 8,
+            "X_27": 0.006591796875,
+            "X_35655": 0.3524169921875,
+            "X_mechanical": 0.8743896484375
+          },
+          {
+            "m": 16,
+            "X_27": 6.4373016357421875e-06,
+            "X_35655": 0.008500814437866211,
+            "X_mechanical": 0.43589775264263153
+          },
+          {
+            "m": 24,
+            "X_27": 7.8580342233181e-10,
+            "X_35655": 2.0753941498696804e-06,
+            "X_mechanical": 0.34209422579988313
+          },
+          {
+            "m": 40,
+            "X_27": 1.8295911660692887e-19,
+            "X_35655": 6.185156553595306e-14,
+            "X_mechanical": 0.6758003634838529
+          },
+          {
+            "m": 60,
+            "X_27": 4.1600086798764294e-32,
+            "X_35655": 2.88018796294709e-23,
+            "X_mechanical": 0.06499415605231197
+          }
+        ]
+      },
+      "note": "measurement: X_m -> 0 exponentially for genuine anchors while the countermodel stays order one — the coordinate separates, but it also collapses every anchor to the same point"
+    }
+  },
+  "counts": {
+    "checks": 28,
+    "passed": 28,
+    "codes": 8,
+    "depth": 24,
+    "flux_window": 400
+  },
+  "measured": {
+    "adelic_dichotomy": {
+      "integers": [
+        {
+          "start": 27,
+          "final_R": 27,
+          "stabilised": true
+        },
+        {
+          "start": 103,
+          "final_R": 103,
+          "stabilised": true
+        },
+        {
+          "start": 703,
+          "final_R": 703,
+          "stabilised": true
+        },
+        {
+          "start": 1407,
+          "final_R": 1407,
+          "stabilised": true
+        },
+        {
+          "start": 10087,
+          "final_R": 10087,
+          "stabilised": true
+        },
+        {
+          "start": 15039,
+          "final_R": 15039,
+          "stabilised": true
+        },
+        {
+          "start": 35655,
+          "final_R": 35655,
+          "stabilised": true
+        }
+      ],
+      "mechanical_final_bits": 93,
+      "mechanical_strict_increases": 41
+    },
+    "mean_equivalence": [
+      {
+        "code": "mechanical",
+        "M": 399,
+        "X_bar": 0.5206535517144664,
+        "lambda_bar": 0.33771929824561403,
+        "half_X_bar": 0.2603267758572332
+      },
+      {
+        "code": "27",
+        "M": 59,
+        "X_bar": 0.06029367171582613,
+        "lambda_bar": 0.025423728813559324,
+        "half_X_bar": 0.030146835857913064
+      },
+      {
+        "code": "35655",
+        "M": 59,
+        "X_bar": 0.09894680024367634,
+        "lambda_bar": 0.05084745762711865,
+        "half_X_bar": 0.04947340012183817
+      }
+    ],
+    "compact_collapse": [
+      {
+        "n": 27,
+        "X_60": 4.1600086798764294e-32,
+        "Z_60": 2.3589824875925728e-29,
+        "lambda_zero_after_m20": true
+      },
+      {
+        "n": 103,
+        "X_60": 2.479634803398566e-33,
+        "Z_60": 2.3589824875925728e-29,
+        "lambda_zero_after_m20": true
+      },
+      {
+        "n": 703,
+        "X_60": 1.3864230409259282e-28,
+        "Z_60": 3.0666772338703446e-28,
+        "lambda_zero_after_m20": true
+      },
+      {
+        "n": 1407,
+        "X_60": 1.3874091170574545e-28,
+        "Z_60": 3.0666772338703446e-28,
+        "lambda_zero_after_m20": true
+      },
+      {
+        "n": 10087,
+        "X_60": 5.0926335686171815e-25,
+        "Z_60": 1.01891530586586e-24,
+        "lambda_zero_after_m20": true
+      },
+      {
+        "n": 15039,
+        "X_60": 2.965919788404699e-27,
+        "Z_60": 5.968225693609209e-27,
+        "lambda_zero_after_m20": true
+      },
+      {
+        "n": 35655,
+        "X_60": 2.88018796294709e-23,
+        "Z_60": 5.760845184142459e-23,
+        "lambda_zero_after_m20": true
+      }
+    ],
+    "sparse_lift": {
+      "lift_density": 0.6725,
+      "lambda_bar": 0.338125,
+      "q_bar": 1.5825,
+      "bounds": [
+        {
+          "R": 2,
+          "bound": 2.14375
+        },
+        {
+          "R": 3,
+          "bound": 3.2325
+        },
+        {
+          "R": 4,
+          "bound": 5.805625
+        },
+        {
+          "R": 6,
+          "bound": 21.90375
+        }
+      ]
+    },
+    "bundle": {
+      "reshipped_identical": [
+        "Hard_Zeta_A_Line_Closure_v1.0.md",
+        "Hard_Zeta_Phase_II_Round_AU1_Critical_Occupation_Anchor_Erasure_v0.1.md"
+      ],
+      "reshipped_edited": [],
+      "new_in_this_bundle": [
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.0_AU2a.md",
+        "Hard_Zeta_Phase_II_Round_AU2a_Lift_Occupation_Coupling_v0.1.md"
+      ]
+    },
+    "countermodel_flux": {
+      "rows": [
+        {
+          "M": 40,
+          "lambda_bar": 0.33125,
+          "X_bar": 0.5110369912524695,
+          "lift_density": 0.725
+        },
+        {
+          "M": 80,
+          "lambda_bar": 0.3375,
+          "X_bar": 0.5220412124217871,
+          "lift_density": 0.7125
+        },
+        {
+          "M": 150,
+          "lambda_bar": 0.3283333333333333,
+          "X_bar": 0.5113259490862802,
+          "lift_density": 0.6866666666666666
+        },
+        {
+          "M": 250,
+          "lambda_bar": 0.336,
+          "X_bar": 0.5176979263417197,
+          "lift_density": 0.692
+        },
+        {
+          "M": 400,
+          "lambda_bar": 0.338125,
+          "X_bar": 0.5226783303987039,
+          "lift_density": 0.6725
+        }
+      ],
+      "reading": "the mechanical code sits in §26's POSITIVE-lift-flux class, which the Zero-Flux Boundary Theorem excludes. It is therefore not a witness for the sparse-lift class, which is the one A-U.2b has to exclude."
+    },
+    "compact_separation": {
+      "pointwise": [
+        {
+          "m": 8,
+          "X_27": 0.006591796875,
+          "X_35655": 0.3524169921875,
+          "X_mechanical": 0.8743896484375
+        },
+        {
+          "m": 16,
+          "X_27": 6.4373016357421875e-06,
+          "X_35655": 0.008500814437866211,
+          "X_mechanical": 0.43589775264263153
+        },
+        {
+          "m": 24,
+          "X_27": 7.8580342233181e-10,
+          "X_35655": 2.0753941498696804e-06,
+          "X_mechanical": 0.34209422579988313
+        },
+        {
+          "m": 40,
+          "X_27": 1.8295911660692887e-19,
+          "X_35655": 6.185156553595306e-14,
+          "X_mechanical": 0.6758003634838529
+        },
+        {
+          "m": 60,
+          "X_27": 4.1600086798764294e-32,
+          "X_35655": 2.88018796294709e-23,
+          "X_mechanical": 0.06499415605231197
+        }
+      ],
+      "mean_X_over_m30_to_m59": {
+        "27": 1.8116270863419464e-13,
+        "35655": 7.333233343388472e-10,
+        "mechanical": 0.45921254221345725
+      },
+      "note": "the countermodel's pointwise X oscillates; the mean does not"
+    }
+  },
+  "failures": [],
+  "ok": true
+}

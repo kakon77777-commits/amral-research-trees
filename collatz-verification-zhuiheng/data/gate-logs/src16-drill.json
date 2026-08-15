@@ -1,0 +1,274 @@
+{
+  "tool": "src16_drill.py",
+  "subject": "src16_hardzeta_au2a_recheck.py and the A-U.2a layer of hz_accel_code.py",
+  "defects": {
+    "A01_inverse_series_drops_the_last_term": {
+      "target_check": "SRC16_the_inverse_code_series_converges_to_the_exact_source",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A02_shift_code_drops_the_wrong_end": {
+      "target_check": "SRC16_the_source_satisfies_the_shift_functional_equation",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A03_block_digit_reads_from_the_wrong_bit_offset": {
+      "target_check": "SRC16_the_lift_digit_is_a_binary_block_of_the_source",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A04_lift_digit_divides_by_the_wrong_power": {
+      "target_check": "SRC16_the_source_is_one_plus_the_weighted_lift_series",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC16_a_source_lift_amplifies_to_twice_it_times_three_to_the_m",
+        "SRC16_mean_lift_is_bracketed_by_mean_source_height",
+        "SRC16_the_endpoint_coordinate_follows_its_skew_product_recurrence",
+        "SRC16_the_lift_digit_is_a_binary_block_of_the_source",
+        "SRC16_the_lift_flux_balance_is_an_exact_identity",
+        "SRC16_the_source_coordinate_follows_its_skew_product_recurrence"
+      ]
+    },
+    "A05_source_residue_loses_the_oddness_digit": {
+      "target_check": "SRC16_the_canonical_prefix_endpoint_is_a_positive_odd_integer",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC16_a_source_lift_amplifies_to_twice_it_times_three_to_the_m",
+        "SRC16_mean_lift_is_bracketed_by_mean_source_height",
+        "SRC16_the_au1_countermodel_has_positive_lift_flux",
+        "SRC16_the_endpoint_coordinate_follows_its_skew_product_recurrence",
+        "SRC16_the_inverse_code_series_converges_to_the_exact_source",
+        "SRC16_the_lift_flux_balance_is_an_exact_identity",
+        "SRC16_the_source_coordinate_follows_its_skew_product_recurrence",
+        "SRC16_the_source_is_one_plus_the_weighted_lift_series"
+      ]
+    },
+    "A15_source_residue_is_shifted_off_the_cylinder": {
+      "target_check": "SRC16_the_adelic_lift_dichotomy_separates_the_two_branches",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC16_a_source_lift_amplifies_to_twice_it_times_three_to_the_m",
+        "SRC16_every_positive_anchor_collapses_to_the_same_boundary_point",
+        "SRC16_the_anchor_height_is_monotone_and_bounded_only_when_it_settles",
+        "SRC16_the_canonical_prefix_endpoint_is_a_positive_odd_integer",
+        "SRC16_the_correction_coordinate_is_the_affine_offset_normalized",
+        "SRC16_the_correction_is_the_same_for_every_source_in_a_cylinder",
+        "SRC16_the_correction_obeys_the_exponential_synchronization_bound",
+        "SRC16_the_correction_recurrence_does_not_mention_the_lift",
+        "SRC16_the_endpoint_coordinate_follows_its_skew_product_recurrence",
+        "SRC16_the_inverse_code_series_converges_to_the_exact_source"
+      ]
+    },
+    "A06_offset_advances_before_accumulating": {
+      "target_check": "SRC16_the_affine_offset_matches_its_closed_form",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC16_a_source_lift_amplifies_to_twice_it_times_three_to_the_m",
+        "SRC16_every_positive_anchor_collapses_to_the_same_boundary_point",
+        "SRC16_mean_lift_is_bracketed_by_mean_source_height",
+        "SRC16_the_adelic_lift_dichotomy_separates_the_two_branches",
+        "SRC16_the_anchor_height_is_monotone_and_bounded_only_when_it_settles",
+        "SRC16_the_au1_countermodel_has_positive_lift_flux",
+        "SRC16_the_compact_coordinate_separates_anchors_from_the_countermodel",
+        "SRC16_the_correction_obeys_the_exponential_synchronization_bound",
+        "SRC16_the_correction_recurrence_does_not_mention_the_lift",
+        "SRC16_the_endpoint_coordinate_follows_its_skew_product_recurrence",
+        "SRC16_the_inverse_code_series_converges_to_the_exact_source",
+        "SRC16_the_lift_digit_is_a_binary_block_of_the_source",
+        "SRC16_the_lift_flux_balance_is_an_exact_identity",
+        "SRC16_the_negative_completion_shares_the_whole_finite_code",
+        "SRC16_the_source_coordinate_follows_its_skew_product_recurrence",
+        "SRC16_the_source_is_one_plus_the_weighted_lift_series"
+      ]
+    },
+    "A07_x_coord_normalizes_by_the_wrong_power": {
+      "target_check": "SRC16_the_source_coordinate_follows_its_skew_product_recurrence",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC16_mean_lift_is_bracketed_by_mean_source_height",
+        "SRC16_the_correction_coordinate_is_the_affine_offset_normalized",
+        "SRC16_the_correction_is_the_same_for_every_source_in_a_cylinder",
+        "SRC16_the_correction_obeys_the_exponential_synchronization_bound",
+        "SRC16_the_correction_recurrence_does_not_mention_the_lift",
+        "SRC16_the_lift_flux_balance_is_an_exact_identity"
+      ]
+    },
+    "A08_z_coord_normalizes_by_the_wrong_power_of_three": {
+      "target_check": "SRC16_the_endpoint_coordinate_follows_its_skew_product_recurrence",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC16_the_correction_coordinate_is_the_affine_offset_normalized",
+        "SRC16_the_correction_is_the_same_for_every_source_in_a_cylinder",
+        "SRC16_the_correction_obeys_the_exponential_synchronization_bound",
+        "SRC16_the_correction_recurrence_does_not_mention_the_lift"
+      ]
+    },
+    "A09_correction_uses_the_wrong_multiple_of_x": {
+      "target_check": "SRC16_the_correction_coordinate_is_the_affine_offset_normalized",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC16_the_correction_is_the_same_for_every_source_in_a_cylinder",
+        "SRC16_the_correction_obeys_the_exponential_synchronization_bound",
+        "SRC16_the_correction_recurrence_does_not_mention_the_lift"
+      ]
+    },
+    "A10_lift_flux_normalizes_by_the_wrong_power": {
+      "target_check": "SRC16_the_lift_flux_balance_is_an_exact_identity",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC16_mean_lift_is_bracketed_by_mean_source_height",
+        "SRC16_the_au1_countermodel_has_positive_lift_flux",
+        "SRC16_the_source_coordinate_follows_its_skew_product_recurrence"
+      ]
+    },
+    "A11_anchor_height_is_not_the_source": {
+      "target_check": "SRC16_the_anchor_height_is_monotone_and_bounded_only_when_it_settles",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A12_negative_completion_loses_its_sign": {
+      "target_check": "SRC16_the_negative_completion_shares_the_whole_finite_code",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A13_critical_completion_starts_from_the_wrong_index": {
+      "target_check": "SRC16_every_subcritical_prefix_extends_to_a_critical_completion",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A14_v2_rational_reads_the_denominator": {
+      "target_check": "SRC16_the_negative_completion_shares_the_whole_finite_code",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T01_flux_balance_telescopes_over_the_wrong_range": {
+      "target_check": "SRC16_the_lift_flux_balance_is_an_exact_identity",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_the_amplification_law_uses_the_wrong_power": {
+      "target_check": "SRC16_a_source_lift_amplifies_to_twice_it_times_three_to_the_m",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_the_correction_recurrence_forgets_its_source_term": {
+      "target_check": "SRC16_the_correction_recurrence_does_not_mention_the_lift",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T04_the_decoupling_baseline_comes_from_the_wrong_prefix": {
+      "target_check": "SRC16_the_correction_is_the_same_for_every_source_in_a_cylinder",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T05_the_synchronization_cap_is_transcribed_loosely": {
+      "target_check": "SRC16_the_correction_obeys_the_exponential_synchronization_bound",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T06_the_mean_bracket_drops_its_lower_half": {
+      "target_check": "SRC16_mean_lift_is_bracketed_by_mean_source_height",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T07_the_collapse_check_never_looks_at_the_flux": {
+      "target_check": "SRC16_every_positive_anchor_collapses_to_the_same_boundary_point",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T08_the_sparse_bound_uses_the_wrong_mean_exponent": {
+      "target_check": "SRC16_the_sparse_lift_counting_bound_holds",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T09_the_flux_measurement_reads_a_genuine_anchor": {
+      "target_check": "SRC16_the_au1_countermodel_has_positive_lift_flux",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T10_the_separation_compares_the_countermodel_to_itself": {
+      "target_check": "SRC16_the_compact_coordinate_separates_anchors_from_the_countermodel",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_paper_loses_its_unproved_ledger": {
+      "target_check": "SRC16_the_paper_keeps_an_explicit_proved_and_unproved_ledger",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC16_the_paper_lists_casp_cst_and_collatz_as_unproved"
+      ]
+    },
+    "D02_unproved_list_drops_the_conjecture": {
+      "target_check": "SRC16_the_paper_lists_casp_cst_and_collatz_as_unproved",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_paper_hides_its_quantifier_gap": {
+      "target_check": "SRC16_the_paper_marks_its_own_quantifier_gap",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D04_route_map_loses_a_successor_route": {
+      "target_check": "SRC16_the_route_map_and_the_paper_agree_on_the_next_routes",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D05_bundle_edits_the_reshipped_predecessor": {
+      "target_check": "SRC16_the_bundle_reships_its_predecessors_unedited",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_bundle": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "audit": [],
+  "counts": {
+    "defects_planted": 30,
+    "defects_caught_by_the_named_check": 30,
+    "defects_in_the_au2a_layer": 15,
+    "defects_in_this_runs_own_measurement": 10,
+    "scope_defects_in_the_documents": 5,
+    "controls": 2,
+    "controls_undisturbed": 2,
+    "checks_without_a_defect_naming_them": 0
+  },
+  "ok": true
+}
