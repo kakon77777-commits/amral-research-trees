@@ -138,11 +138,23 @@ describe it that way.
     corrects a truncated table in RUN-011. And the bundle is checked as a
     bundle: its seven re-shipped rounds are **byte-identical** to the standalone
     ones already verified as items 19-28, so those runs carry over.
-14. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+14. [`reports/RUN-013-HARD-ZETA-AU1-ANCHOR-ERASURE.md`](./reports/RUN-013-HARD-ZETA-AU1-ANCHOR-ERASURE.md) —
+    Phase II opens, and Round A-U.1's main result is that its own programme does
+    not work: invariance, uniform integrability and the critical mean are
+    **mutually consistent**, so no contradiction comes from them alone. Both
+    countermodels verified exactly — the Bernoulli critical measure, and the
+    mechanical code, whose closed formula agrees with the implementation RUN-008
+    wrote from a different round's description. What survives is the anchor
+    cocycle, and this run **measures** it: every genuine integer's lift digits
+    settle by `m = 11`, while the countermodel is still lifting at `m = 59` with
+    its source grown from 13 to 93 bits. So the datum the no-go calls
+    load-bearing is cheaply available in the coordinate an occupation measure
+    discards.
+15. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-15. [`code/`](./code/) — the engine, the independent reference, and the gates.
-16. [`data/gate-logs/`](./data/gate-logs/) and
+16. [`code/`](./code/) — the engine, the independent reference, and the gates.
+17. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

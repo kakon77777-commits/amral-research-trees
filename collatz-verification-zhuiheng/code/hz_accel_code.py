@@ -474,3 +474,66 @@ def u_count(word: str, ell: int) -> int:
     """h(l): the number of U symbols among the first l parity symbols."""
     return word[:ell].count("U")
 
+
+# ---------------------------------------------------------------------------
+# Phase II / Round A-U.1 — critical occupation and anchor erasure.
+# The exponent-code conjugacy (§1-§5), the singular neighbourhoods the
+# invariant-limit theorem is proved through (§7-§10), the two countermodels that
+# make the Pure Occupation No-Go (§13-§17), and the anchor cocycle that
+# occupation measures cannot see (§21-§26).
+# ---------------------------------------------------------------------------
+
+
+def shift_code(kappa: tuple[int, ...]) -> tuple[int, ...]:
+    """The one-sided left shift sigma on exponent codes (§5)."""
+    return kappa[1:]
+
+
+def code_cylinder(kappa: tuple[int, ...]) -> tuple[int, int]:
+    """§2: the clopen cylinder of a finite code, as (residue, modulus).
+
+    Omega_hat = r_m + 2^{K_m+1} Z_2, so the modulus is the diameter's inverse.
+    """
+    return source_residue(kappa), 1 << (cumulative(kappa)[-1] + 1)
+
+
+def anchor_cocycle(kappa: tuple[int, ...]) -> list[int]:
+    """§21, §26: the lift digits t_1..t_m of a code, read along its prefixes.
+
+    A positive integer anchor is exactly `t_m = 0 eventually` — once the modulus
+    passes the integer, the canonical source *is* that integer and never lifts
+    again. This is the datum §22 shows an occupation measure does not carry.
+    """
+    return [lift_digit(kappa[:j]) for j in range(1, len(kappa) + 1)]
+
+
+def mechanical_valuation(m: int) -> int:
+    """§15: q*_m = floor(beta m) - floor(beta (m-1)), stated directly."""
+    return floor_beta(m) - floor_beta(m - 1)
+
+
+def mechanical_two_frequency(m: int) -> Fraction:
+    """§17: the density of the symbol 2 in the mechanical code's first m terms."""
+    return Fraction(sum(1 for j in range(1, m + 1) if mechanical_valuation(j) == 2), m)
+
+
+def bernoulli_mean_valuation(num: int, den: int) -> Fraction:
+    """§13: mean of q under the product measure (1-p) delta_1 + p delta_2.
+
+    Taken as an exact rational p = num/den so the identity mean = 1 + p is
+    decided in Fractions rather than floating point.
+    """
+    p = Fraction(num, den)
+    return 1 * (1 - p) + 2 * p
+
+
+def singular_cylinder(r: int) -> tuple[int, int]:
+    """§7: C_r = {x : q(x) >= r}, as (residue, modulus) — one clopen class."""
+    return cylinder_residue(r), 1 << r
+
+
+def in_singular_cylinder(y: int, r: int) -> bool:
+    """Membership of C_r, decided by the residue rather than by computing q."""
+    res, mod = singular_cylinder(r)
+    return y % mod == res
+

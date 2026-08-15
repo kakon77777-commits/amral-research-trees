@@ -12,7 +12,7 @@
     "Hard-Zeta": 53,
     "other project": 2
   },
-  "processed_count": 31,
+  "processed_count": 32,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -523,7 +523,7 @@
       "sha256": "1282c2f082e922cc36b7da3a321e3eecad10428f693b8d2246c6bd94c62d0b0e",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 31. Rechecked by code/src15_hardzeta_au1_recheck.py. A NEGATIVE round and it holds: the Critical Invariant-Limit Theorem's finite arithmetic checks out, and both countermodels behind the Pure Occupation No-Go are verified exactly — the Bernoulli measure's mean is 1+p, and the mechanical code telescopes to floor(beta m), stays in {1,2}, is subcritical at every prefix to m=300, and its 2-density reaches gamma to 8.8e-5 by m=8000. Its formula agrees with the implementation RUN-008 wrote from Round 03-A.1. Measured: the anchor cocycle separates them — every genuine integer's lift digits settle by m=11, while the mechanical code still lifts at m=59 and its source grows 13 to 93 bits. See reports/RUN-013-HARD-ZETA-AU1-ANCHOR-ERASURE.md",
       "round_sort_key": [
         "au",
         1,

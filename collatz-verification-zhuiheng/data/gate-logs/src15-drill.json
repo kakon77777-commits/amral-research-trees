@@ -1,0 +1,229 @@
+{
+  "tool": "src15_drill.py",
+  "subject": "src15_hardzeta_au1_recheck.py and the A-U.1 layer of hz_accel_code.py",
+  "defects": {
+    "A01_shift_code_drops_two_symbols": {
+      "target_check": "SRC15_the_code_map_intertwines_with_the_shift",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A02_code_cylinder_loses_the_oddness_bit": {
+      "target_check": "SRC15_a_finite_code_is_exactly_one_clopen_cylinder",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC15_exact_cylinders_nest_as_the_code_extends"
+      ]
+    },
+    "A03_anchor_cocycle_skips_the_first_prefix": {
+      "target_check": "SRC15_a_positive_integer_anchor_is_exactly_an_eventually_zero_lift",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A04_mechanical_valuation_uses_the_wrong_predecessor": {
+      "target_check": "SRC15_the_mechanical_code_matches_its_stated_formula",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC15_the_mechanical_code_uses_only_the_two_symbol_alphabet",
+        "SRC15_the_mechanical_two_frequency_converges_to_gamma"
+      ]
+    },
+    "A05_two_frequency_counts_the_other_symbol": {
+      "target_check": "SRC15_the_mechanical_two_frequency_converges_to_gamma",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A06_bernoulli_mean_weights_swapped": {
+      "target_check": "SRC15_the_bernoulli_critical_measure_has_mean_beta",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_singular_cylinder_modulus_off_by_one": {
+      "target_check": "SRC15_the_singular_cylinders_nest_and_are_exactly_high_valuation",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC15_the_truncated_observable_is_the_clipped_valuation"
+      ]
+    },
+    "A08_singular_membership_ignores_the_residue": {
+      "target_check": "SRC15_the_truncated_observable_is_the_clipped_valuation",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC15_the_singular_cylinders_nest_and_are_exactly_high_valuation"
+      ]
+    },
+    "A09_lift_digit_divides_by_the_wrong_power": {
+      "target_check": "SRC15_the_anchor_cocycle_recursion_is_exact",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A10_source_residue_drops_the_extra_digit": {
+      "target_check": "SRC15_the_positive_integers_are_dense_but_not_closed",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC15_a_finite_code_is_exactly_one_clopen_cylinder",
+        "SRC15_a_positive_integer_anchor_is_exactly_an_eventually_zero_lift",
+        "SRC15_every_finite_code_including_large_valuations_is_realized",
+        "SRC15_every_finite_cylinder_holds_infinitely_many_positive_integers",
+        "SRC15_exact_cylinders_nest_as_the_code_extends",
+        "SRC15_the_anchor_cocycle_recursion_is_exact",
+        "SRC15_the_anchor_cocycle_separates_the_mechanical_code_from_integers"
+      ]
+    },
+    "A11_mechanical_code_telescopes_from_the_wrong_index": {
+      "target_check": "SRC15_the_mechanical_cumulative_telescopes_to_floor_beta",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC15_the_mechanical_code_is_subcritical_at_every_prefix",
+        "SRC15_the_mechanical_code_matches_its_stated_formula"
+      ]
+    },
+    "A12_source_residue_forgets_the_modular_inverse": {
+      "target_check": "SRC15_exact_cylinders_nest_as_the_code_extends",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC15_a_finite_code_is_exactly_one_clopen_cylinder",
+        "SRC15_a_positive_integer_anchor_is_exactly_an_eventually_zero_lift",
+        "SRC15_every_finite_code_including_large_valuations_is_realized",
+        "SRC15_every_finite_cylinder_holds_infinitely_many_positive_integers",
+        "SRC15_the_anchor_cocycle_recursion_is_exact",
+        "SRC15_the_mechanical_source_grows_without_settling",
+        "SRC15_the_positive_integers_are_dense_but_not_closed"
+      ]
+    },
+    "A13_offset_accumulates_after_advancing_the_exponent": {
+      "target_check": "SRC15_every_finite_code_including_large_valuations_is_realized",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC15_a_finite_code_is_exactly_one_clopen_cylinder",
+        "SRC15_a_positive_integer_anchor_is_exactly_an_eventually_zero_lift",
+        "SRC15_every_finite_cylinder_holds_infinitely_many_positive_integers",
+        "SRC15_exact_cylinders_nest_as_the_code_extends",
+        "SRC15_the_anchor_cocycle_recursion_is_exact",
+        "SRC15_the_mechanical_source_grows_without_settling",
+        "SRC15_the_positive_integers_are_dense_but_not_closed"
+      ]
+    },
+    "A14_excess_double_counts_the_step_length": {
+      "target_check": "SRC15_the_singular_mass_bound_holds_on_real_spines",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A15_floor_beta_uses_the_wrong_base": {
+      "target_check": "SRC15_the_mechanical_code_is_subcritical_at_every_prefix",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC15_the_anchor_cocycle_separates_the_mechanical_code_from_integers",
+        "SRC15_the_mechanical_code_uses_only_the_two_symbol_alphabet",
+        "SRC15_the_mechanical_source_grows_without_settling",
+        "SRC15_the_mechanical_two_frequency_converges_to_gamma",
+        "SRC15_the_positive_integers_are_dense_but_not_closed"
+      ]
+    },
+    "A16_mechanical_valuation_steps_two_at_a_time": {
+      "target_check": "SRC15_the_mechanical_code_uses_only_the_two_symbol_alphabet",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC15_the_mechanical_code_matches_its_stated_formula",
+        "SRC15_the_mechanical_two_frequency_converges_to_gamma"
+      ]
+    },
+    "A17_code_lifts_step_by_half_the_modulus": {
+      "target_check": "SRC15_every_finite_cylinder_holds_infinitely_many_positive_integers",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T01_the_settle_search_accepts_a_single_zero": {
+      "target_check": "SRC15_a_positive_integer_anchor_is_exactly_an_eventually_zero_lift",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_the_separation_measures_an_integer_instead_of_the_countermodel": {
+      "target_check": "SRC15_the_anchor_cocycle_separates_the_mechanical_code_from_integers",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_the_bundle_comparison_globs_nothing": {
+      "target_check": "SRC15_the_bundle_reships_phase_i_unedited",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T04_the_unproved_list_is_read_from_the_proved_section": {
+      "target_check": "SRC15_the_paper_lists_terras_and_collatz_as_unproved",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T05_the_source_growth_check_accepts_a_settled_source": {
+      "target_check": "SRC15_the_mechanical_source_grows_without_settling",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_paper_loses_its_unproved_ledger": {
+      "target_check": "SRC15_the_paper_keeps_an_explicit_proved_and_unproved_ledger",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC15_the_paper_lists_terras_and_collatz_as_unproved"
+      ]
+    },
+    "D02_unproved_list_drops_the_conjecture": {
+      "target_check": "SRC15_the_paper_lists_terras_and_collatz_as_unproved",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_route_map_loses_the_no_go": {
+      "target_check": "SRC15_the_route_map_and_the_paper_agree_on_the_no_go",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D04_bundle_edits_the_reshipped_phase_i_round": {
+      "target_check": "SRC15_the_bundle_reships_phase_i_unedited",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_bundle": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "counts": {
+    "defects_planted": 26,
+    "defects_caught_by_the_named_check": 26,
+    "defects_in_the_au1_layer": 17,
+    "defects_in_this_runs_own_measurement": 5,
+    "scope_defects_in_the_documents": 4,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

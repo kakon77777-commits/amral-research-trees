@@ -161,6 +161,19 @@ PROCESSED = {
         "= the canonical source's own subcritical lifetime minus node depth; "
         "see reports/RUN-010-HARD-ZETA-ROUND-03A3.md"
     ),
+    "Hard_Zeta_Phase_II_Round_AU1_bundle.zip": (
+        "item 31. Rechecked by code/src15_hardzeta_au1_recheck.py. A NEGATIVE "
+        "round and it holds: the Critical Invariant-Limit Theorem's finite "
+        "arithmetic checks out, and both countermodels behind the Pure "
+        "Occupation No-Go are verified exactly — the Bernoulli measure's mean is "
+        "1+p, and the mechanical code telescopes to floor(beta m), stays in "
+        "{1,2}, is subcritical at every prefix to m=300, and its 2-density "
+        "reaches gamma to 8.8e-5 by m=8000. Its formula agrees with the "
+        "implementation RUN-008 wrote from Round 03-A.1. Measured: the anchor "
+        "cocycle separates them — every genuine integer's lift digits settle by "
+        "m=11, while the mechanical code still lifts at m=59 and its source "
+        "grows 13 to 93 bits. See reports/RUN-013-HARD-ZETA-AU1-ANCHOR-ERASURE.md"
+    ),
     "Hard_Zeta_B_Line_Handoff_v0.1.md": (
         "item 29. Rechecked by "
         "code/src14_hardzeta_bline_aline_closure_recheck.py. Its integer slack "
