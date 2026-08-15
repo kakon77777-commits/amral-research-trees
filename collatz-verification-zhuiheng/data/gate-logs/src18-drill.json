@@ -1,0 +1,198 @@
+{
+  "tool": "src18_drill.py",
+  "subject": "src18_hardzeta_au2b1_recheck.py and the A-U.2b.1 layer of hz_accel_code.py",
+  "defects": {
+    "A01_entropy_adds_where_it_subtracts": {
+      "target_check": "SRC18_the_entropy_root_is_bracketed_by_gamma_and_one",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC18_the_bundled_constants_reproduce_under_a_different_method",
+        "SRC18_the_entropy_derivative_is_log_of_one_plus_reciprocal",
+        "SRC18_the_entropy_minus_z_times_its_derivative_is_log_of_one_plus_z",
+        "SRC18_the_new_argument_passes_the_previous_schemes_measured_ceiling",
+        "SRC18_the_published_root_bracket_really_straddles_the_root"
+      ]
+    },
+    "A02_entropy_derivative_drops_the_one": {
+      "target_check": "SRC18_the_entropy_derivative_is_log_of_one_plus_reciprocal",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC18_the_entropy_minus_z_times_its_derivative_is_log_of_one_plus_z"
+      ]
+    },
+    "A03_the_root_bisection_moves_the_wrong_end": {
+      "target_check": "SRC18_the_bundled_constants_reproduce_under_a_different_method",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC18_the_new_argument_passes_the_previous_schemes_measured_ceiling",
+        "SRC18_the_variational_supremum_equals_the_published_constant"
+      ]
+    },
+    "A04_the_packing_constant_divides_by_gamma": {
+      "target_check": "SRC18_the_variational_supremum_equals_the_published_constant",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC18_the_bundled_constants_reproduce_under_a_different_method",
+        "SRC18_the_new_argument_passes_the_previous_schemes_measured_ceiling"
+      ]
+    },
+    "A05_the_variational_ratio_is_inverted": {
+      "target_check": "SRC18_the_variational_ratio_is_strictly_increasing",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC18_the_variational_supremum_equals_the_published_constant"
+      ]
+    },
+    "A06_the_excess_window_is_one_too_narrow": {
+      "target_check": "SRC18_the_block_excess_stays_inside_its_range",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_block_count_A_stops_one_excess_short": {
+      "target_check": "SRC18_the_packing_sums_match_a_direct_enumeration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A08_block_count_B_weights_by_the_wrong_power": {
+      "target_check": "SRC18_the_packing_sums_match_a_direct_enumeration",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A09_occurrence_counts_keys_on_the_position": {
+      "target_check": "SRC18_no_block_recurs_more_often_than_packing_allows",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A10_floor_beta_uses_the_wrong_base": {
+      "target_check": "SRC18_the_block_excess_stays_inside_its_range",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC18_the_multi_occurrence_packing_inequality_holds"
+      ]
+    },
+    "A11_block_count_B_contributes_nothing": {
+      "target_check": "SRC18_the_multi_occurrence_packing_inequality_holds",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC18_the_packing_sums_match_a_direct_enumeration"
+      ]
+    },
+    "A12_deficit_uses_the_wrong_floor": {
+      "target_check": "SRC18_the_block_excess_identity_holds",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T01_the_recomputed_constant_is_scaled": {
+      "target_check": "SRC18_the_bundled_constants_reproduce_under_a_different_method",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T09_the_non_integrality_test_compares_a_thing_to_itself": {
+      "target_check": "SRC18_gamma_times_r_is_never_an_integer",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T02_the_entropy_identity_tolerance_is_widened_past_the_claim": {
+      "target_check": "SRC18_the_entropy_minus_z_times_its_derivative_is_log_of_one_plus_z",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_the_bracket_sign_check_reads_the_same_end_twice": {
+      "target_check": "SRC18_the_published_root_bracket_really_straddles_the_root",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T04_the_safe_witness_reads_the_wrong_exponent": {
+      "target_check": "SRC18_the_explicit_safe_constant_satisfies_both_criteria",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T05_the_optimality_probe_stays_inside_the_feasible_side": {
+      "target_check": "SRC18_both_sides_of_the_optimality_boundary_really_fail",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T06_the_comparison_uses_the_published_constant_as_the_ceiling": {
+      "target_check": "SRC18_the_new_argument_passes_the_previous_schemes_measured_ceiling",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T07_the_unproved_list_is_read_from_the_proved_section": {
+      "target_check": "SRC18_the_paper_lists_casp_terras_and_collatz_as_unproved",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T08_the_script_field_check_reads_the_route_map": {
+      "target_check": "SRC18_the_bundled_script_and_json_describe_the_same_quantities",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_route_map_changes_the_published_constant": {
+      "target_check": "SRC18_the_route_map_carries_the_same_constant",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_route_map_loses_its_method_boundary": {
+      "target_check": "SRC18_the_paper_states_the_method_boundary",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_bundle_edits_the_reshipped_predecessor": {
+      "target_check": "SRC18_the_bundle_reships_its_predecessors_unedited",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D04_the_constants_json_is_perturbed_in_its_fortieth_digit": {
+      "target_check": "SRC18_the_bundled_constants_reproduce_under_a_different_method",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_bundle": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "audit": [],
+  "counts": {
+    "defects_planted": 25,
+    "defects_caught_by_the_named_check": 25,
+    "defects_in_the_au2b1_layer": 12,
+    "defects_in_this_runs_own_measurement": 9,
+    "scope_defects_in_the_artifact": 4,
+    "controls": 2,
+    "controls_undisturbed": 2,
+    "checks_without_a_defect_naming_them": 0
+  },
+  "ok": true
+}

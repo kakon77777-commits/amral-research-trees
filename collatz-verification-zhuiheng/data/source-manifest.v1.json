@@ -12,7 +12,7 @@
     "Hard-Zeta": 53,
     "other project": 2
   },
-  "processed_count": 34,
+  "processed_count": 35,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -593,7 +593,7 @@
       "sha256": "53d7a5bc07dded8d9c0e2deae0f04e6850d0b14e386d6f6ccfe45f203021de2b",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 34. Rechecked by code/src18_hardzeta_au2b1_recheck.py. The FIRST round to ship its own numerical artifact (a script + an 80-digit constants JSON), so it is checked as one: the constants are recomputed from scratch by decimal bisection against the subject's mpmath findroot, and agree to 80-83 digits — every digit published. c_pack = 0.03585676003404867, which is 2.388x the ceiling RUN-015 measured for the PREVIOUS round's scheme; the new argument is multi-occurrence packing, exactly the kind of change RUN-015 said would be needed. Also verified: both entropy identities, the variational supremum, and §27's optimality as TWO exhibited failures rather than an assertion. This round publishes AT its supremum where the previous published 67% of its own. See reports/RUN-016-HARD-ZETA-AU2B1-PACKING-THRESHOLD.md",
       "round_sort_key": [
         "au",
         2,

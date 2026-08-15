@@ -169,11 +169,20 @@ describe it that way.
     mechanical code has `d_m ≡ 0`, so the barrier excludes it directly.
     Measured: **the same proof scheme supports `0.0150`, not just the published
     `0.01`** — where the cheap gains stop, which is what the next round asks.
-17. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+17. [`reports/RUN-016-HARD-ZETA-AU2B1-PACKING-THRESHOLD.md`](./reports/RUN-016-HARD-ZETA-AU2B1-PACKING-THRESHOLD.md) —
+    the first round to ship a numerical artifact of its own, so it is checked as
+    one: its 80-digit constants are **recomputed from scratch** by `decimal`
+    bisection against the subject's `mpmath` root-finder, and agree to **80-83
+    digits**. `c_pack = 0.03586` is **2.388×** the ceiling RUN-015 measured for
+    the previous round's scheme — reached, as predicted, by a new argument
+    (multi-occurrence packing) rather than by tuning. Both entropy identities
+    hold, the variational supremum is the published constant, and §27's
+    optimality is checked as two exhibited failures rather than an assertion.
+18. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-18. [`code/`](./code/) — the engine, the independent reference, and the gates.
-19. [`data/gate-logs/`](./data/gate-logs/) and
+19. [`code/`](./code/) — the engine, the independent reference, and the gates.
+20. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

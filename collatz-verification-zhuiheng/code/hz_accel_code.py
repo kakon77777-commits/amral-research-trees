@@ -715,3 +715,91 @@ def cycle_is_supercritical(v: tuple[int, ...]) -> bool:
     """§5: a positive accelerated cycle needs 2^Q > 3^p, i.e. Q > p*beta."""
     return 2 ** cumulative(v)[-1] > 3 ** len(v)
 
+
+# ---------------------------------------------------------------------------
+# Phase II / Round A-U.2b.1 — the sharp packing-entropy threshold.
+# The per-block packing bound (§6) and its multi-occurrence sum (§10-§11), the
+# composition entropy and its two exact derivative identities (§12, §23), and
+# the variational problem whose supremum is the published constant (§20-§24).
+# ---------------------------------------------------------------------------
+
+
+def packing_entropy(z: "Decimal") -> "Decimal":
+    """§12: H(z) = (1+z) log2(1+z) - z log2 z."""
+    from decimal import Decimal
+    ln2 = Decimal(2).ln()
+    return ((1 + z) * (1 + z).ln() - z * z.ln()) / ln2
+
+
+def packing_entropy_derivative(z: "Decimal") -> "Decimal":
+    """§12: H'(z) = log2(1 + 1/z), which is positive, so H is increasing."""
+    from decimal import Decimal
+    return (1 + 1 / z).ln() / Decimal(2).ln()
+
+
+def entropy_root(digits: int = 60) -> "Decimal":
+    """§20: the unique z* in (gamma, 1) with H(z*) = beta, by bisection.
+
+    Deliberately a different method from the subject's own `mpmath.findroot`,
+    and on the standard library rather than a third-party package, so agreement
+    between the two is agreement between implementations and not a re-run.
+    """
+    from decimal import Decimal, getcontext
+    getcontext().prec = digits + 25
+    beta = Decimal(3).ln() / Decimal(2).ln()
+    lo, hi = beta - 1, Decimal(1)
+    for _ in range(8 * (digits + 10)):
+        mid = (lo + hi) / 2
+        if packing_entropy(mid) < beta:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2
+
+
+def packing_constant(digits: int = 60) -> "Decimal":
+    """§22: c_pack = x*/beta with x* = z* - gamma."""
+    from decimal import Decimal
+    beta = Decimal(3).ln() / Decimal(2).ln()
+    return (entropy_root(digits) - (beta - 1)) / beta
+
+
+def variational_ratio(x: "Decimal") -> "Decimal":
+    """§23-§24: F(x) = x / H(gamma + x), whose supremum is c_pack."""
+    from decimal import Decimal
+    beta = Decimal(3).ln() / Decimal(2).ln()
+    return x / packing_entropy(beta - 1 + x)
+
+
+def excess_bounds(r: int, D: int) -> tuple[int, int]:
+    """§8: E_- = max(0, floor(gamma r) - D), E_+ = ceil(gamma r) + D."""
+    lo_g = floor_beta(r) - r                       # floor(gamma r), exactly
+    # gamma is irrational, so gamma*r is never an integer for r >= 1 and the
+    # ceiling is always one above the floor. `src18` checks that rather than
+    # assuming it, by confirming 2^{floor(beta r)} != 3^r over the tested range.
+    return max(0, lo_g - D), lo_g + 1 + D
+
+
+def block_count_A(r: int, D: int) -> int:
+    """§10: A(r,D) = sum over the admissible excess range of C(r+E-1, E)."""
+    from math import comb
+    lo, hi = excess_bounds(r, D)
+    return sum(comb(r + E - 1, E) for E in range(lo, hi + 1))
+
+
+def block_count_B(r: int, D: int) -> Fraction:
+    """§10: B(r,D) = sum of 2^{-E} C(r+E-1, E) over the same range."""
+    from math import comb
+    lo, hi = excess_bounds(r, D)
+    return sum(Fraction(comb(r + E - 1, E), 2 ** E) for E in range(lo, hi + 1))
+
+
+def occurrence_counts(n: int, N: int, r: int) -> dict:
+    """How often each length-r exponent block starts in the first N positions."""
+    q = accel_code(n, N)
+    out: dict[tuple[int, ...], int] = {}
+    for i in range(N - r + 1):
+        blk = q[i:i + r]
+        out[blk] = out.get(blk, 0) + 1
+    return out
+

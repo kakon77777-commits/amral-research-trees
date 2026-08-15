@@ -1,0 +1,261 @@
+{
+  "tool": "src18_hardzeta_au2b1_recheck.py",
+  "subject": "Hard_Zeta_Phase_II_Round_AU2b1_bundle.zip (item 34) — Round A-U.2b.1, its constants JSON and verification script, plus A_Line_ROUTE_MAP v1.2",
+  "source_items": [
+    34
+  ],
+  "scope": "the per-block packing bound and its multi-occurrence sum, the composition entropy with its two exact derivative identities, the variational problem whose supremum is the published constant, and the bundled numerical artifact",
+  "checks": {
+    "SRC18_the_block_excess_identity_holds": {
+      "pass": true,
+      "detail": {
+        "blocks": 1665,
+        "violations": []
+      },
+      "note": "§7: E_i = floor(gamma(i+r)) - floor(gamma i) + d_i - d_{i+r}"
+    },
+    "SRC18_gamma_times_r_is_never_an_integer": {
+      "pass": true,
+      "detail": {
+        "r_range": "1..199",
+        "integral_at": []
+      },
+      "note": "§8: so the floor/ceil window is exactly one wide"
+    },
+    "SRC18_the_block_excess_stays_inside_its_range": {
+      "pass": true,
+      "detail": {
+        "blocks": 1346,
+        "violations": [],
+        "excess_spread": 9
+      },
+      "note": "§8: E_- <= E_i <= E_+; guarded so a degenerate sample cannot pass"
+    },
+    "SRC18_no_block_recurs_more_often_than_packing_allows": {
+      "pass": true,
+      "detail": {
+        "blocks": 454,
+        "violations": [],
+        "blocks_occurring_more_than_once": 186,
+        "_observable_nonempty": true
+      },
+      "note": "§6: occ_N(v) <= 1 + M_N/2^{Q+1}; guarded so it is not graded where every block occurs once"
+    },
+    "SRC18_the_multi_occurrence_packing_inequality_holds": {
+      "pass": true,
+      "detail": {
+        "windows": 28,
+        "violations": [],
+        "A_term_alone_insufficient_at": 4,
+        "min_slack_ratio": 44.770661272321426,
+        "_B_term_is_exercised": true
+      },
+      "note": "§11: N - r + 1 <= A(r,D) + (M_N/2^{r+1}) B(r,D), in exact rationals"
+    },
+    "SRC18_the_packing_sums_match_a_direct_enumeration": {
+      "pass": true,
+      "detail": {
+        "shapes": 15,
+        "violations": []
+      },
+      "note": "§9-§10: A and B counted by binomials against the blocks themselves"
+    },
+    "SRC18_the_entropy_derivative_is_log_of_one_plus_reciprocal": {
+      "pass": true,
+      "detail": {
+        "points": 5,
+        "violations": []
+      },
+      "note": "§12: H'(z) = log2(1 + 1/z) > 0, against a central difference"
+    },
+    "SRC18_the_entropy_minus_z_times_its_derivative_is_log_of_one_plus_z": {
+      "pass": true,
+      "detail": {
+        "points": 5,
+        "violations": []
+      },
+      "note": "§23: H(z) - z H'(z) = log2(1+z), which is what forces F' > 0"
+    },
+    "SRC18_the_variational_ratio_is_strictly_increasing": {
+      "pass": true,
+      "detail": {
+        "points": 56,
+        "decreases_at": []
+      },
+      "note": "§23: F(x) = x/H(gamma+x) has F' > 0"
+    },
+    "SRC18_the_entropy_root_is_bracketed_by_gamma_and_one": {
+      "pass": true,
+      "detail": {
+        "H_gamma": "1.50564388794630079431",
+        "beta": "1.58496250072115618145",
+        "H_one": "1.99999999999999999999"
+      },
+      "note": "§20: H(gamma) = 1.5056438879... < beta < 2 = H(1), so a unique root exists in between"
+    },
+    "SRC18_the_bundled_constants_reproduce_under_a_different_method": {
+      "pass": true,
+      "detail": {
+        "digits_agreeing": {
+          "beta_log2_3": 80,
+          "gamma_beta_minus_1": 82,
+          "z_star": 82,
+          "x_star": 83,
+          "c_pack": 83
+        },
+        "mismatched": []
+      },
+      "note": "the artifact is checked as an artifact: recomputed independently to at least 50 digits, not re-run"
+    },
+    "SRC18_the_published_root_bracket_really_straddles_the_root": {
+      "pass": true,
+      "detail": {
+        "sign_low": "-0.000042848723462983908",
+        "sign_high": "0.0000926578348895004730",
+        "straddles": true
+      },
+      "note": "the JSON records both sign values; they must be reproducible and of opposite sign"
+    },
+    "SRC18_the_explicit_safe_constant_satisfies_both_criteria": {
+      "pass": true,
+      "detail": {
+        "a": "0.625",
+        "H_at_safe_x": "1.583835106343333956",
+        "a_times_H": "0.989896941464583723",
+        "below_c_pack": true
+      },
+      "note": "§26: c = 0.035, x = 0.056, a = 0.625 with H(gamma+x) < beta and aH < 1"
+    },
+    "SRC18_the_variational_supremum_equals_the_published_constant": {
+      "pass": true,
+      "detail": {
+        "F_at_x_star": "0.0358567600340486691896",
+        "c_pack": "0.0358567600340486691896",
+        "F_just_below": "0.0358226439163023302855"
+      },
+      "note": "§24: sup over the feasible interval is F(x*) = x*/beta = c_pack"
+    },
+    "SRC18_both_sides_of_the_optimality_boundary_really_fail": {
+      "pass": true,
+      "detail": {
+        "x_above_star_breaks_second_term": true,
+        "c_above_F_breaks_first_term": true
+      },
+      "note": "§27: the envelope is maximal because each side of x* kills a different packing term"
+    },
+    "SRC18_the_paper_lists_casp_terras_and_collatz_as_unproved": {
+      "pass": true,
+      "detail": {
+        "missing": []
+      },
+      "note": "§35"
+    },
+    "SRC18_the_route_map_carries_the_same_constant": {
+      "pass": true,
+      "detail": {
+        "routemap_len": 1681
+      },
+      "note": "v1.2 must publish the same c_pack and the same safe constant"
+    },
+    "SRC18_the_paper_states_the_method_boundary": {
+      "pass": true,
+      "detail": {},
+      "note": "§27-§28: a sharp constant must say what would be needed to beat it"
+    },
+    "SRC18_the_bundled_script_and_json_describe_the_same_quantities": {
+      "pass": true,
+      "detail": {
+        "keys_absent_from_the_script": [],
+        "script_bytes": 1968
+      },
+      "note": "the artifact ships a generator and its output; they must at least name the same fields"
+    },
+    "SRC18_the_bundle_reships_its_predecessors_unedited": {
+      "pass": true,
+      "detail": {
+        "reshipped_identical": 3,
+        "reshipped_edited": [],
+        "new_in_this_bundle": [
+          "Hard_Zeta_AU2b1_entropy_root.png",
+          "Hard_Zeta_AU2b1_packing_entropy_constants.json",
+          "Hard_Zeta_AU2b1_variational_constant.png",
+          "Hard_Zeta_A_Line_ROUTE_MAP_v1.2_AU2b1.md",
+          "Hard_Zeta_Phase_II_Round_AU2b1_Sharp_Packing_Entropy_Threshold_v0.1.md",
+          "verify_Hard_Zeta_AU2b1_packing_entropy.py"
+        ]
+      },
+      "note": "the three predecessor rounds must be byte-identical; SIX files are new — the paper, the route map, the verification script, the constants JSON and two figures"
+    },
+    "SRC18_the_new_argument_passes_the_previous_schemes_measured_ceiling": {
+      "pass": true,
+      "detail": {
+        "rows": {
+          "au2b_published": 0.01,
+          "au2b_scheme_ceiling_measured_in_run_015": 0.015018214488925716,
+          "au2b1_published_c_pack": 0.03585676003404867,
+          "au2b1_safe_constant": 0.035,
+          "gain_over_the_old_ceiling": 2.387551466952952,
+          "au2b_published_as_fraction_of_its_ceiling": 0.6658581156484282,
+          "au2b1_safe_as_fraction_of_its_ceiling": 0.9761060387710683
+        }
+      },
+      "note": "measurement: RUN-015's ceiling against this round's constant, and how tightly each round publishes against its own limit"
+    }
+  },
+  "counts": {
+    "checks": 21,
+    "passed": 21,
+    "spines": 7,
+    "digits": 60
+  },
+  "measured": {
+    "packing_slack": {
+      "windows": 28,
+      "where_the_A_term_alone_is_insufficient": 4,
+      "min_slack_ratio": 44.770661272321426,
+      "max_slack_ratio": 83226.99617814428,
+      "reading": "the right side exceeds the left by up to eight orders of magnitude at these sizes, so this check would not notice a small error in either term — only a gross one. The asymptotic content of the multi-occurrence refinement is not visible on orbits this short."
+    },
+    "constants": {
+      "digits_agreeing": {
+        "beta_log2_3": 80,
+        "gamma_beta_minus_1": 82,
+        "z_star": 82,
+        "x_star": 83,
+        "c_pack": 83
+      },
+      "c_pack": "0.03585676003404866918967051469701",
+      "method": "decimal bisection vs mpmath findroot"
+    },
+    "bundle": {
+      "reshipped_identical": [
+        "Hard_Zeta_Phase_II_Round_AU1_Critical_Occupation_Anchor_Erasure_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2a_Lift_Occupation_Coupling_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2b_Sparse_Lift_Rigidity_v0.1.md"
+      ],
+      "reshipped_edited": [],
+      "new_in_this_bundle": [
+        "Hard_Zeta_AU2b1_entropy_root.png",
+        "Hard_Zeta_AU2b1_packing_entropy_constants.json",
+        "Hard_Zeta_AU2b1_variational_constant.png",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.2_AU2b1.md",
+        "Hard_Zeta_Phase_II_Round_AU2b1_Sharp_Packing_Entropy_Threshold_v0.1.md",
+        "verify_Hard_Zeta_AU2b1_packing_entropy.py"
+      ]
+    },
+    "scheme_comparison": {
+      "rows": {
+        "au2b_published": 0.01,
+        "au2b_scheme_ceiling_measured_in_run_015": 0.015018214488925716,
+        "au2b1_published_c_pack": 0.03585676003404867,
+        "au2b1_safe_constant": 0.035,
+        "gain_over_the_old_ceiling": 2.387551466952952,
+        "au2b_published_as_fraction_of_its_ceiling": 0.6658581156484282,
+        "au2b1_safe_as_fraction_of_its_ceiling": 0.9761060387710683
+      },
+      "reading": "RUN-015 measured the previous scheme's ceiling at 0.01502 and said passing it needed a different argument, not tuning. Multi-occurrence packing is that argument, and it reaches 2.39x the old ceiling. Note also the tightness: A-U.2b published 67% of what its own scheme allowed, while A-U.2b.1 publishes the supremum itself and rounds down only for the explicit witness."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

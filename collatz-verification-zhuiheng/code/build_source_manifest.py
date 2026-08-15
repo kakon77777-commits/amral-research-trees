@@ -161,6 +161,21 @@ PROCESSED = {
         "= the canonical source's own subcritical lifetime minus node depth; "
         "see reports/RUN-010-HARD-ZETA-ROUND-03A3.md"
     ),
+    "Hard_Zeta_Phase_II_Round_AU2b1_bundle.zip": (
+        "item 34. Rechecked by code/src18_hardzeta_au2b1_recheck.py. The FIRST "
+        "round to ship its own numerical artifact (a script + an 80-digit "
+        "constants JSON), so it is checked as one: the constants are recomputed "
+        "from scratch by decimal bisection against the subject's mpmath "
+        "findroot, and agree to 80-83 digits — every digit published. "
+        "c_pack = 0.03585676003404867, which is 2.388x the ceiling RUN-015 "
+        "measured for the PREVIOUS round's scheme; the new argument is "
+        "multi-occurrence packing, exactly the kind of change RUN-015 said would "
+        "be needed. Also verified: both entropy identities, the variational "
+        "supremum, and §27's optimality as TWO exhibited failures rather than an "
+        "assertion. This round publishes AT its supremum where the previous "
+        "published 67% of its own. "
+        "See reports/RUN-016-HARD-ZETA-AU2B1-PACKING-THRESHOLD.md"
+    ),
     "Hard_Zeta_Phase_II_Round_AU2b_bundle.zip": (
         "item 33. Rechecked by code/src17_hardzeta_au2b_recheck.py. The FIRST "
         "positive round of Phase II — it eliminates classes instead of blocking "
