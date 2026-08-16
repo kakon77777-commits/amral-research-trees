@@ -1,16 +1,36 @@
-# Lean queue — claims this arm cannot settle, held until the hardware is ready
+# Lean queue — claims this arm cannot settle by finite computation
 
-**Status: DEFERRED, deliberately and on Neo.K's instruction (2026-08-14).**
+**Status: ACTIVE from 2026-08-16.** Neo.K released the hardware constraint —
+C: is back to 262 GiB free, D: to 332 GiB, and compute is no longer a limit. The
+development lives at `D:\Ai\work together\lean\collatz\`, classified by
+subject from the start rather than sorted later, on Neo.K's instruction.
 
-Neo.K has Lean available. Everything requiring it is collected here rather than
-started, because a mathlib-backed project is heavy on both CPU and disk, and the
-C: drive is currently at **36.7 GiB free of 232 GiB (15.8%)**. A new drive and a
-full drive reorganisation are planned first.
+Toolchain: `elan`, Lean `v4.33.0`, mathlib pinned to the matching tag, cache
+taken rather than built. `.lake` is 7.3 GiB and sits on D:.
 
-Nothing in this queue is blocked on knowing what to do. It is blocked on
-hardware. This document exists so that when the drive arrives, the work is
-already sorted, scoped and ordered, and nobody has to re-derive why each item is
-here.
+| queue item | state |
+|---|---|
+| §6b — the finite-local no-go | **DONE 2026-08-16**, `Collatz/AllOnes.lean` |
+| everything else below | open, in the order given |
+
+**What "done" means here.** Seven theorems, no `sorry`, `#print axioms` showing
+only `propext` / `Classical.choice` / `Quot.sound` — and two things beyond that,
+because a compiling proof is a proof *about the definitions in the file*:
+
+- `Collatz/Audit.lean` evaluates a start whose occupancy is **positive**
+  (`n = 27` gives `[1,2,1,1,1,1,2,2,1,2]`). Without it the no-go would be a
+  statement about a quantity that cannot be positive.
+- `gate/crosscheck_against_finite_arm.py` confronts `Collatz.orbit` and
+  `Collatz.kappa` with this tree's `hz_accel_code.accel_code` and
+  `orbit_endpoints` — written from Round 03-A.1's prose, never from the Lean.
+  6 starts, 83 exponent values and 83 orbit values, elementwise, 0
+  disagreements, with a disagreement control so the comparison can fail.
+
+Two choices made the proof short enough to be worth reading. The subcriticality
+condition `K_j < j log₂ 3` is stated as the **integer** statement
+`2 ^ K_j < 3 ^ j`, so no real numbers appear anywhere; and the orbit invariant is
+stated as `Y i + 1 = 3^i · 2^(m+1-i)` rather than `Y i = … − 1`, which keeps
+natural subtraction out of the induction entirely.
 
 ## Why these items and not the others
 
@@ -118,13 +138,18 @@ here by definition. From `RUN-012`:
   prefix.* This is the whole remaining A line. This arm can only exhibit spines
   that die: the longest measured is `n = 35655` at 84 steps. Instantiation is not
   evidence, and the report says so.
-- **The finite-local no-go, §5–§6.** *There is no positive `g(m)` with
-  `N_{≥2}(m) ≥ g(m)` for every positive start.* The witness family
-  `2^{m+1} − 1` is fully verified here to `m = 40` and is elementary — this is
-  the **cheapest** item in the whole queue and needs nothing beyond `ℕ` and
-  `v₂`. It is also the most useful to formalise, because it is a statement about
-  *proof methods*: it retires a whole strategy class, so a machine-checked
-  version is worth more than a machine-checked instance of anything else here.
+- **The finite-local no-go, §5–§6. — DONE 2026-08-16.** *There is no positive
+  `g(m)` with `N_{≥2}(m) ≥ g(m)` for every positive start.* Formalised as
+  `Collatz.finite_local_no_go` and `Collatz.arbitrarily_long_zero_occupancy` in
+  `lean/collatz/Collatz/AllOnes.lean`. It was picked first for the reason given
+  when it was queued — it is the **cheapest** item and needs nothing beyond `ℕ`
+  and `v₂`, and it is a statement about *proof methods*, so it retires a whole
+  strategy class rather than settling one number. The witness family
+  `2^{m+1} − 1` was verified here to `m = 40`; the Lean adds `∀ m`.
+  A sharpness statement the finite arm had not recorded is proved alongside it
+  (`Collatz.kappa_at_m_ge_two`): the run of ones ends **exactly** at `m`, since
+  `3·Y_m + 1 = 2(3^{m+1} − 1)` and `3^{m+1} − 1` is even. So the witness realizes
+  the length-`m` all-one code and no longer — sharp, not merely sufficient.
 - **The occupancy/tail dichotomy, §24–§26.** Regime L is invisible to this
   instrument by construction — every finite spine has bounded valuation, so
   `L_R ≡ 0` above it. Formalising the *dichotomy* (that a saturating subsequence
@@ -158,13 +183,14 @@ is no longer the worst item in the queue — but it is still the one with the le
 leverage, because the finite witnesses already tell a reader where each theorem
 stops applying.
 
-## Practical notes for when the drive arrives
+## Practical notes, now that the drive is here
 
-- **Keep the toolchain off C:.** `elan` installs to `~/.elan` by default, which
-  is on C: on this machine. Set `ELAN_HOME` to the new drive *before* the first
-  install, and put the project's `.lake` build directory there too. A mathlib
-  cache plus `.olean` artifacts runs to several GB, and a first build without the
-  cache is CPU-hours rather than minutes.
+- **The toolchain is on C: and that is now fine.** `~/.elan` is 13 GiB with four
+  toolchains already installed, against 262 GiB free — so the earlier plan to
+  relocate it is moot. What did matter is the `.lake` build tree: 7.3 GiB, and it
+  sits with the project on D:.
+- **Taking the cache is not optional.** 8,690 files, about twenty seconds to
+  build afterwards. Building mathlib instead is CPU-hours.
 - **Take the mathlib cache** (`lake exe cache get`) rather than building it.
 - **This tree is already portable.** Nothing in
   `collatz-verification-zhuiheng/` hardcodes an absolute path; the one path input
@@ -173,8 +199,15 @@ stops applying.
   relative, so the tree survives being moved between drives without a re-run.
   `code/requirements.txt` is empty on purpose and there are no crates, so there
   is nothing to reinstall either.
-- **A Lean development would be its own research tree**, not a subdirectory of
-  this one — separate author, separate scope, per the repository protocol.
+- **The Lean development is its own tree**, at `D:\Ai\work together\lean\collatz\`
+  — separate author, separate scope, per the repository protocol, and classified
+  by subject from the start on Neo.K's instruction (2026-08-16) so that later
+  subjects get sibling directories rather than a sort-out.
+- **Cross-check every development against this arm.** A Lean theorem is a theorem
+  about the definitions in the Lean file. `gate/crosscheck_against_finite_arm.py`
+  is the pattern: confront the formal definitions with the Python ones written
+  independently from the same prose, elementwise, with a control that makes the
+  comparison able to fail.
 
 ## What is explicitly not in this queue
 
