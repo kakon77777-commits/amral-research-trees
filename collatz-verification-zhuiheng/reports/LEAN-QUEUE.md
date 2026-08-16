@@ -12,6 +12,7 @@ taken rather than built. `.lake` is 7.3 GiB and sits on D:.
 |---|---|
 | §6b — the finite-local no-go | **DONE 2026-08-16**, `Collatz/AllOnes.lean` |
 | 1 — Paper 02, Theorems A–F for all words | **DONE 2026-08-16**, `Collatz/AffineAtlas.lean` |
+| 2 — Paper 07, generalised `mx+r` and §25 | **DONE 2026-08-16**, `Collatz/Generalized.lean` |
 | everything else below | open, in the order given |
 
 **Published:** https://github.com/kakon77777-commits/collatz-lean (Apache-2.0),
@@ -104,7 +105,33 @@ statements are not in doubt — what Lean adds is the quantifier.
 the same `b_w` machinery. If it does not, that is worth knowing before spending
 CPU-hours on anything bigger.
 
-### 2. Paper 07, Theorems A–D and §25, for all odd `(m, r)`
+### 2. Paper 07, Theorems A–D and §25, for all odd `(m, r)` — DONE 2026-08-16
+
+`Collatz/Generalized.lean`. **The queue's stated reason for doing this
+immediately after item 1 was to test whether the Paper 02 development
+generalises the way Paper 07 says it does. It does, and the test is a
+theorem.** §6's "`(m,r) = (3,1)` immediately recovers Paper 02" is
+`bG_three_one` / `FG_three_one`, with the two developments defined
+independently — neither definition mentions the other.
+
+Also proved: §2's odd-branch integrality (so no admissibility hypothesis is
+needed to keep `U_{m,r}` integral), the concatenation law and recurrence, the
+closed form, and §33's "`r` only changes the finite geometry" as the exact
+statement `b^{(m,r)}_w = r · b^{(m,1)}_w`.
+
+**§25 was the first place in the queue where real numbers were unavoidable, and
+it turned out to need almost no analysis.** The content is the integer statement
+that an odd power is never a power of two (`odd_pow_ne_two_pow`), proved first
+and standing alone; `Irrational (Real.logb m 2)` is derived from it in a dozen
+lines. Later items with a `log` threshold should be read the same way — find the
+integer statement underneath before importing analysis.
+
+Cross-checked at 3,066 comparisons against this tree's `compose(word, m, r)`
+over six parameter pairs, including `m = 1` (§19 says that case needs separate
+understanding) and `r = 7`, because a parameter that only ever appears as `1`
+is not being tested.
+
+The original entry:
 
 Structurally identical to item 1 with `3 → m` and `1 → r`, plus:
 
