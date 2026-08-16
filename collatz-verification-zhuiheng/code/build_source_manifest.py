@@ -178,6 +178,24 @@ PROCESSED = {
         "packing branch is declared closed. "
         "See reports/RUN-018-HARD-ZETA-AU2B3-PREFACTOR-SATURATION.md"
     ),
+    "Hard_Zeta_Phase_II_Round_AU2e_bundle.zip": (
+        "item 37. Rechecked by code/src21_hardzeta_au2e_recheck.py. Every exact "
+        "identity holds: the deviation identity d_m - d_(m-1) = a_m - q_m, the "
+        "directional split U - W = d_N with U counting skipped credits exactly, "
+        "the Reset Affine Identity cleared to INTEGERS at 1554 windows with no "
+        "floating point, and the deficit-drop slope identity. THE ROUND'S TWO "
+        "INEQUALITIES TURN OUT TO BE ONE LINE: the contamination bound is "
+        "informative only when J_N < (N-2r)/r, which is exactly the packing "
+        "theorem's floor — verified row by row with 0 disagreements. Every "
+        "computable spine sits on the vacuous side of it: J_N/N runs 0.55-0.69 "
+        "while the floor is 0.08-1.50, so the barrier pins only 3.1%-6.7% of the "
+        "mismatches present and CANNOT FAIL at these sizes; the drill says so "
+        "instead of implying coverage. By contrast the reset geometry does bind "
+        "— across 190 first-return windows Y_b reaches 0.203-0.938 of its cap — "
+        "but its affine correction is never what makes the bound true (0 windows "
+        "need it; it moves the worst case by 4.6e-4). "
+        "See reports/RUN-019-HARD-ZETA-AU2E-MULTISCALE-RETURN.md"
+    ),
     "Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip": (
         "item 35. Rechecked by code/src19_hardzeta_au2b2_recheck.py. Pulls the "
         "FIRST of A-U.2b.1's five levers (queue entropy) and it returns ZERO at "

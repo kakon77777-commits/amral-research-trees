@@ -173,10 +173,22 @@ finish on its author's `cp950` host because of the `ö` in *Möbius*, and a
 published KL constant off by 2.79 ULP in its seventeenth digit. Neither touches
 a theorem. Far more were found in *this arm's* code: bounds reported under names
 that read as measurements, checks entailed by their own setup, no-op mutations,
-vacuous comparisons. Across fourteen mutation drills, 304 planted defects were
-all caught by the check named for each, with 29 null controls undisturbed — and
-that suite exists precisely because the failure mode being guarded against is
-mine, not the mathematics'.
+vacuous comparisons. Across the whole suite every planted defect has been caught
+by the check named for it, with every null control undisturbed — and that suite
+exists precisely because the failure mode being guarded against is mine, not the
+mathematics'.
+
+The count itself is **not written here.** A figure typed into prose is checked by
+nothing and drifts: this paragraph said "fourteen drills, 304 defects" long after
+the logs held far more. It is emitted by
+[`code/suite_totals.py`](../code/suite_totals.py) from the archived gate logs, and
+the current value lives in
+[`data/gate-logs/suite-totals.json`](../data/gate-logs/suite-totals.json). That
+script's own failure mode is silent undercounting — its first version read one
+log shape and reported 383 where the logs held 461, losing two entire drills
+without a murmur — so it classifies every log explicitly, refuses anything it
+cannot interpret, and is itself drilled by
+[`code/suite_totals_drill.py`](../code/suite_totals_drill.py).
 
 **But non-alignment is real, and it has at least four distinct shapes.** Naming
 them is more useful than asserting the gap:

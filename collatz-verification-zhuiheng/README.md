@@ -224,11 +224,23 @@ instance behind each band.
     deviation **exactly 0**, and the pointing ratio settles at 1.638, which is
     why the correction cannot move the exponential rate. The packing branch is
     declared closed.
-20. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+20. [`reports/RUN-019-HARD-ZETA-AU2E-MULTISCALE-RETURN.md`](./reports/RUN-019-HARD-ZETA-AU2E-MULTISCALE-RETURN.md) —
+    **every exact identity holds, and the round's two inequalities turn out to be
+    the same line.** The Reset Affine Identity clears to a statement between
+    integers and holds at 1,554 windows with no floating point. But the
+    contamination bound says something only when `J_N < (N−2r)/r`, which *is* the
+    packing theorem's floor — verified row by row with **0 disagreements** — and
+    every computable spine sits far on the vacuous side: `J_N/N` runs 0.55–0.69
+    against a floor of 0.08–1.50, so the barrier pins **3.1 %–6.7 %** of the
+    mismatches present and cannot fail at these sizes. The reset geometry, by
+    contrast, binds — `Y_b` reaches 0.203–0.938 of its cap across 190
+    first-return windows — though its affine correction is never what makes the
+    bound true.
+21. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-21. [`code/`](./code/) — the engine, the independent reference, and the gates.
-22. [`data/gate-logs/`](./data/gate-logs/) and
+22. [`code/`](./code/) — the engine, the independent reference, and the gates.
+23. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
@@ -262,10 +274,30 @@ drills in a single edit.
 
 [`code/audit_drill_anchors.py`](./code/audit_drill_anchors.py) is the standing
 guard. It requires every anchor to match its source **exactly once** and every
-target check name to still exist — currently 256 anchors across 16 drills. It is
+target check name to still exist — currently 277 anchors across 17 drills. It is
 itself drilled: a whitespace-only edit to one anchored line turns it red. Run it
 after any change to a shared module, including changes that provably preserve
 behaviour.
+
+## Counting the suite
+
+How many defects the suite has planted and caught is **not typed into this file.**
+[`code/suite_totals.py`](./code/suite_totals.py) reads the archived gate logs and
+emits it to
+[`data/gate-logs/suite-totals.json`](./data/gate-logs/suite-totals.json):
+
+```bash
+python code/suite_totals.py
+```
+
+Its only real failure mode is silent undercounting — drill logs have used three
+different shapes, and a reader that knows one returns zero for the others while
+the total still looks plausible. The first version did exactly that, reporting
+383 where the logs held 461. So it classifies every log explicitly and refuses
+anything it cannot interpret, including a zero-byte file, rather than counting it
+as nothing. [`code/suite_totals_drill.py`](./code/suite_totals_drill.py) plants
+that failure and five others in the **logs** and requires each to turn the
+totalling red.
 
 ## How the evidence is arranged
 

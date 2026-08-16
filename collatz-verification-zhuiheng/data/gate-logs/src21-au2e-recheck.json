@@ -1,0 +1,912 @@
+{
+  "tool": "src21_hardzeta_au2e_recheck.py",
+  "subject": "Hard_Zeta_Phase_II_Round_AU2e_bundle.zip (item 37) — Round A-U.2e plus A_Line_ROUTE_MAP v1.5",
+  "source_items": [
+    37
+  ],
+  "scope": "the mechanical deviation identity and its directional split, the contamination bound and the mismatch barrier built on it, the reset geometry cleared to exact integers, and the one-sided deficit dichotomy",
+  "checks": {
+    "SRC21_the_deficit_increment_is_the_mechanical_deviation": {
+      "pass": true,
+      "detail": {
+        "steps": 361,
+        "violations": []
+      },
+      "note": "abstract: d_m - d_{m-1} = a_m - q_m, so the L1 deviation from the mechanical word IS the deficit path's total variation"
+    },
+    "SRC21_the_deviation_is_the_deficit_paths_total_variation": {
+      "pass": true,
+      "detail": {
+        "spines": 7,
+        "violations": []
+      },
+      "note": "V_N = sum |d_m - d_{m-1}|, and J_N <= V_N"
+    },
+    "SRC21_the_two_directions_reconstruct_the_deficit_and_its_variation": {
+      "pass": true,
+      "detail": {
+        "spines": 7,
+        "violations": []
+      },
+      "note": "§1: U - W = d_N and U + W = V_N"
+    },
+    "SRC21_the_upward_variation_counts_exactly_the_skipped_credits": {
+      "pass": true,
+      "detail": {
+        "violations": [],
+        "upward_steps": 142,
+        "downward_steps": 133,
+        "_both_directions_seen": true
+      },
+      "note": "§1: U_N = #{a_m = 2, q_m = 1}, and W_N = sum (q_m - a_m)_+"
+    },
+    "SRC21_the_factor_complexity_obeys_the_contamination_bound": {
+      "pass": true,
+      "detail": {
+        "windows": 42,
+        "violations": []
+      },
+      "note": "abstract: p_N(r) <= (r+1) + r J_N, because the mechanical word has complexity r+1 and each mismatch spoils at most r windows"
+    },
+    "SRC21_the_contamination_bound_and_the_packing_floor_are_one_line": {
+      "pass": true,
+      "detail": {
+        "disagreements": [],
+        "informative_rows": 7,
+        "vacuous_rows": 35,
+        "_both_outcomes_seen": true
+      },
+      "note": "the two inequalities of this round are the same threshold from two sides: contamination says something only when J < (N-2r)/r, which is exactly what the packing theorem forbids"
+    },
+    "SRC21_the_mechanical_word_has_complexity_r_plus_one": {
+      "pass": true,
+      "detail": {
+        "r_range": "1..24",
+        "violations": []
+      },
+      "note": "the (r+1) term: the mechanical word is Sturmian"
+    },
+    "SRC21_the_mismatch_packing_bound_holds_on_real_spines": {
+      "pass": true,
+      "detail": {
+        "spines": 7,
+        "violations": []
+      },
+      "note": "abstract: J_N >= (N - 2 r_N)/r_N with r_N = ceil(log2 M_N). Passing this is WEAK evidence and the row's fraction_pinned says how weak: the floor is near 1 while J_N is in the tens. The falsifiable statement here is not the inequality but the quantity — see SRC21_the_rounds_three_inequalities_have_different_finite_quality."
+    },
+    "SRC21_the_peak_exponent_is_bounded_by_the_deficit_record_and_log_n": {
+      "pass": true,
+      "detail": {
+        "spines": 7,
+        "violations": []
+      },
+      "note": "r_N <= D_N + log2 N + O_n(1), from Round 03-A.4's excursion bound"
+    },
+    "SRC21_on_a_nondecreasing_stretch_every_mismatch_is_a_skipped_credit": {
+      "pass": true,
+      "detail": {
+        "stretches": 7,
+        "violations": []
+      },
+      "note": "§2: q_m <= a_m there, so mismatches are exactly a_m=2 q_m=1 and their count is the deficit gain"
+    },
+    "SRC21_a_nonincreasing_nonnegative_integer_deficit_would_be_constant": {
+      "pass": true,
+      "detail": {
+        "spines_with_a_rising_step": 7,
+        "of": 7
+      },
+      "note": "§2: which is why that branch reduces to bounded deficit and is already excluded; every real spine does have rising steps"
+    },
+    "SRC21_the_reset_affine_identity_holds_in_exact_integers": {
+      "pass": true,
+      "detail": {
+        "windows": 1554,
+        "violations": []
+      },
+      "note": "§3: cleared of 2^{-K_b} and 3^b, Y_b 2^{K_b} = Y_a 2^{K_a} 3^{b-a} + sum 3^{b-1-i} 2^{K_i} — no floating point anywhere"
+    },
+    "SRC21_a_deficit_drop_is_exactly_a_locally_contracting_block": {
+      "pass": true,
+      "detail": {
+        "violations": [],
+        "contracting": 791,
+        "expanding": 1207,
+        "_both_outcomes_seen": true
+      },
+      "note": "§3: the slope identity's content — delta falling means 3^{b-a} < 2^{K_b-K_a}; both outcomes required"
+    },
+    "SRC21_the_first_return_reset_bound_holds_in_exact_integers": {
+      "pass": true,
+      "detail": {
+        "windows": 190,
+        "multi_step_windows": 166,
+        "violations": []
+      },
+      "note": "§3: Y_b < 2^{h-delta_a} Y_a + (b-a)/3, cleared to integers for integer h; requires genuine multi-step returns, not just b = a+1"
+    },
+    "SRC21_the_affine_correction_never_carries_the_first_return_bound": {
+      "pass": true,
+      "detail": {
+        "windows": 190,
+        "windows_needing_the_correction": 0,
+        "worst_ratio_contraction_only": 0.9385004650479734
+      },
+      "note": "§3: the contraction term alone bounds Y_b at every window here, so the +(b-a)/3 provision is asymptotic rather than live. This is also why removing that term from the bound is a no-op in the drill."
+    },
+    "SRC21_the_paper_lists_casp_terras_and_collatz_as_unproved": {
+      "pass": true,
+      "detail": {
+        "missing": []
+      },
+      "note": "§6"
+    },
+    "SRC21_the_paper_states_its_dichotomy_as_two_named_regimes": {
+      "pass": true,
+      "detail": {},
+      "note": "§4: a candidate must pay either monotone buildup or reset domination"
+    },
+    "SRC21_the_route_map_carries_the_same_three_successors": {
+      "pass": true,
+      "detail": {
+        "missing": [],
+        "routemap_len": 1517
+      },
+      "note": "v1.5: Reset-Block Arithmetic, the giant-valuation tail, and transducer rationality"
+    },
+    "SRC21_whatever_the_trimmed_bundle_reships_is_unedited": {
+      "pass": true,
+      "detail": {
+        "reshipped_identical": 3,
+        "reshipped_edited": [],
+        "new_in_this_bundle": [
+          "Hard_Zeta_A_Line_ROUTE_MAP_v1.5_AU2e.md",
+          "Hard_Zeta_Phase_II_Round_AU2e_Multiscale_Return_Arithmetic_v0.1.md"
+        ]
+      },
+      "note": "three predecessors byte-identical, two files new; the bundle drops three earlier papers, which is a trim rather than an edit"
+    },
+    "SRC21_the_rounds_three_inequalities_have_different_finite_quality": {
+      "pass": true,
+      "detail": {
+        "reset_geometry_saturation": [
+          0.20293645331957708,
+          0.9380381082891953
+        ],
+        "contamination_slack": [
+          3.611111111111111,
+          9.4
+        ],
+        "packing_slack": [
+          22.0,
+          180.0
+        ],
+        "packing_fraction_pinned": [
+          0.03125,
+          0.06666666666666667
+        ]
+      },
+      "note": "measurement: which of this round's inequalities a bounded computation can actually see, and which is asymptotic only"
+    }
+  },
+  "counts": {
+    "checks": 20,
+    "passed": 20,
+    "spines": 7
+  },
+  "measured": {
+    "contamination": [
+      {
+        "n": 27,
+        "N": 36,
+        "J": 22,
+        "r": 1,
+        "p": 4,
+        "cap": 24,
+        "trivial_ceiling": 36,
+        "informative": true,
+        "slack": 6.0
+      },
+      {
+        "n": 27,
+        "N": 36,
+        "J": 22,
+        "r": 2,
+        "p": 10,
+        "cap": 47,
+        "trivial_ceiling": 35,
+        "informative": false,
+        "slack": 4.7
+      },
+      {
+        "n": 27,
+        "N": 36,
+        "J": 22,
+        "r": 3,
+        "p": 16,
+        "cap": 70,
+        "trivial_ceiling": 34,
+        "informative": false,
+        "slack": 4.375
+      },
+      {
+        "n": 27,
+        "N": 36,
+        "J": 22,
+        "r": 4,
+        "p": 23,
+        "cap": 93,
+        "trivial_ceiling": 33,
+        "informative": false,
+        "slack": 4.043478260869565
+      },
+      {
+        "n": 27,
+        "N": 36,
+        "J": 22,
+        "r": 5,
+        "p": 28,
+        "cap": 116,
+        "trivial_ceiling": 32,
+        "informative": false,
+        "slack": 4.142857142857143
+      },
+      {
+        "n": 27,
+        "N": 36,
+        "J": 22,
+        "r": 6,
+        "p": 30,
+        "cap": 139,
+        "trivial_ceiling": 31,
+        "informative": false,
+        "slack": 4.633333333333334
+      },
+      {
+        "n": 103,
+        "N": 25,
+        "J": 15,
+        "r": 1,
+        "p": 4,
+        "cap": 17,
+        "trivial_ceiling": 25,
+        "informative": true,
+        "slack": 4.25
+      },
+      {
+        "n": 103,
+        "N": 25,
+        "J": 15,
+        "r": 2,
+        "p": 9,
+        "cap": 33,
+        "trivial_ceiling": 24,
+        "informative": false,
+        "slack": 3.6666666666666665
+      },
+      {
+        "n": 103,
+        "N": 25,
+        "J": 15,
+        "r": 3,
+        "p": 13,
+        "cap": 49,
+        "trivial_ceiling": 23,
+        "informative": false,
+        "slack": 3.769230769230769
+      },
+      {
+        "n": 103,
+        "N": 25,
+        "J": 15,
+        "r": 4,
+        "p": 18,
+        "cap": 65,
+        "trivial_ceiling": 22,
+        "informative": false,
+        "slack": 3.611111111111111
+      },
+      {
+        "n": 103,
+        "N": 25,
+        "J": 15,
+        "r": 5,
+        "p": 20,
+        "cap": 81,
+        "trivial_ceiling": 21,
+        "informative": false,
+        "slack": 4.05
+      },
+      {
+        "n": 103,
+        "N": 25,
+        "J": 15,
+        "r": 6,
+        "p": 20,
+        "cap": 97,
+        "trivial_ceiling": 20,
+        "informative": false,
+        "slack": 4.85
+      },
+      {
+        "n": 703,
+        "N": 50,
+        "J": 30,
+        "r": 1,
+        "p": 5,
+        "cap": 32,
+        "trivial_ceiling": 50,
+        "informative": true,
+        "slack": 6.4
+      },
+      {
+        "n": 703,
+        "N": 50,
+        "J": 30,
+        "r": 2,
+        "p": 14,
+        "cap": 63,
+        "trivial_ceiling": 49,
+        "informative": false,
+        "slack": 4.5
+      },
+      {
+        "n": 703,
+        "N": 50,
+        "J": 30,
+        "r": 3,
+        "p": 20,
+        "cap": 94,
+        "trivial_ceiling": 48,
+        "informative": false,
+        "slack": 4.7
+      },
+      {
+        "n": 703,
+        "N": 50,
+        "J": 30,
+        "r": 4,
+        "p": 27,
+        "cap": 125,
+        "trivial_ceiling": 47,
+        "informative": false,
+        "slack": 4.62962962962963
+      },
+      {
+        "n": 703,
+        "N": 50,
+        "J": 30,
+        "r": 5,
+        "p": 35,
+        "cap": 156,
+        "trivial_ceiling": 46,
+        "informative": false,
+        "slack": 4.457142857142857
+      },
+      {
+        "n": 703,
+        "N": 50,
+        "J": 30,
+        "r": 6,
+        "p": 41,
+        "cap": 187,
+        "trivial_ceiling": 45,
+        "informative": false,
+        "slack": 4.560975609756097
+      },
+      {
+        "n": 1407,
+        "N": 50,
+        "J": 32,
+        "r": 1,
+        "p": 5,
+        "cap": 34,
+        "trivial_ceiling": 50,
+        "informative": true,
+        "slack": 6.8
+      },
+      {
+        "n": 1407,
+        "N": 50,
+        "J": 32,
+        "r": 2,
+        "p": 14,
+        "cap": 67,
+        "trivial_ceiling": 49,
+        "informative": false,
+        "slack": 4.785714285714286
+      },
+      {
+        "n": 1407,
+        "N": 50,
+        "J": 32,
+        "r": 3,
+        "p": 21,
+        "cap": 100,
+        "trivial_ceiling": 48,
+        "informative": false,
+        "slack": 4.761904761904762
+      },
+      {
+        "n": 1407,
+        "N": 50,
+        "J": 32,
+        "r": 4,
+        "p": 28,
+        "cap": 133,
+        "trivial_ceiling": 47,
+        "informative": false,
+        "slack": 4.75
+      },
+      {
+        "n": 1407,
+        "N": 50,
+        "J": 32,
+        "r": 5,
+        "p": 36,
+        "cap": 166,
+        "trivial_ceiling": 46,
+        "informative": false,
+        "slack": 4.611111111111111
+      },
+      {
+        "n": 1407,
+        "N": 50,
+        "J": 32,
+        "r": 6,
+        "p": 42,
+        "cap": 199,
+        "trivial_ceiling": 45,
+        "informative": false,
+        "slack": 4.738095238095238
+      },
+      {
+        "n": 10087,
+        "N": 65,
+        "J": 45,
+        "r": 1,
+        "p": 5,
+        "cap": 47,
+        "trivial_ceiling": 65,
+        "informative": true,
+        "slack": 9.4
+      },
+      {
+        "n": 10087,
+        "N": 65,
+        "J": 45,
+        "r": 2,
+        "p": 12,
+        "cap": 93,
+        "trivial_ceiling": 64,
+        "informative": false,
+        "slack": 7.75
+      },
+      {
+        "n": 10087,
+        "N": 65,
+        "J": 45,
+        "r": 3,
+        "p": 24,
+        "cap": 139,
+        "trivial_ceiling": 63,
+        "informative": false,
+        "slack": 5.791666666666667
+      },
+      {
+        "n": 10087,
+        "N": 65,
+        "J": 45,
+        "r": 4,
+        "p": 36,
+        "cap": 185,
+        "trivial_ceiling": 62,
+        "informative": false,
+        "slack": 5.138888888888889
+      },
+      {
+        "n": 10087,
+        "N": 65,
+        "J": 45,
+        "r": 5,
+        "p": 47,
+        "cap": 231,
+        "trivial_ceiling": 61,
+        "informative": false,
+        "slack": 4.914893617021277
+      },
+      {
+        "n": 10087,
+        "N": 65,
+        "J": 45,
+        "r": 6,
+        "p": 58,
+        "cap": 277,
+        "trivial_ceiling": 60,
+        "informative": false,
+        "slack": 4.775862068965517
+      },
+      {
+        "n": 15039,
+        "N": 51,
+        "J": 28,
+        "r": 1,
+        "p": 4,
+        "cap": 30,
+        "trivial_ceiling": 51,
+        "informative": true,
+        "slack": 7.5
+      },
+      {
+        "n": 15039,
+        "N": 51,
+        "J": 28,
+        "r": 2,
+        "p": 11,
+        "cap": 59,
+        "trivial_ceiling": 50,
+        "informative": false,
+        "slack": 5.363636363636363
+      },
+      {
+        "n": 15039,
+        "N": 51,
+        "J": 28,
+        "r": 3,
+        "p": 19,
+        "cap": 88,
+        "trivial_ceiling": 49,
+        "informative": false,
+        "slack": 4.631578947368421
+      },
+      {
+        "n": 15039,
+        "N": 51,
+        "J": 28,
+        "r": 4,
+        "p": 29,
+        "cap": 117,
+        "trivial_ceiling": 48,
+        "informative": false,
+        "slack": 4.0344827586206895
+      },
+      {
+        "n": 15039,
+        "N": 51,
+        "J": 28,
+        "r": 5,
+        "p": 35,
+        "cap": 146,
+        "trivial_ceiling": 47,
+        "informative": false,
+        "slack": 4.171428571428572
+      },
+      {
+        "n": 15039,
+        "N": 51,
+        "J": 28,
+        "r": 6,
+        "p": 39,
+        "cap": 175,
+        "trivial_ceiling": 46,
+        "informative": false,
+        "slack": 4.487179487179487
+      },
+      {
+        "n": 35655,
+        "N": 84,
+        "J": 54,
+        "r": 1,
+        "p": 6,
+        "cap": 56,
+        "trivial_ceiling": 84,
+        "informative": true,
+        "slack": 9.333333333333334
+      },
+      {
+        "n": 35655,
+        "N": 84,
+        "J": 54,
+        "r": 2,
+        "p": 14,
+        "cap": 111,
+        "trivial_ceiling": 83,
+        "informative": false,
+        "slack": 7.928571428571429
+      },
+      {
+        "n": 35655,
+        "N": 84,
+        "J": 54,
+        "r": 3,
+        "p": 25,
+        "cap": 166,
+        "trivial_ceiling": 82,
+        "informative": false,
+        "slack": 6.64
+      },
+      {
+        "n": 35655,
+        "N": 84,
+        "J": 54,
+        "r": 4,
+        "p": 38,
+        "cap": 221,
+        "trivial_ceiling": 81,
+        "informative": false,
+        "slack": 5.815789473684211
+      },
+      {
+        "n": 35655,
+        "N": 84,
+        "J": 54,
+        "r": 5,
+        "p": 51,
+        "cap": 276,
+        "trivial_ceiling": 80,
+        "informative": false,
+        "slack": 5.411764705882353
+      },
+      {
+        "n": 35655,
+        "N": 84,
+        "J": 54,
+        "r": 6,
+        "p": 65,
+        "cap": 331,
+        "trivial_ceiling": 79,
+        "informative": false,
+        "slack": 5.092307692307692
+      }
+    ],
+    "informative_window": {
+      "rows": 42,
+      "informative": 7,
+      "vacuous": 35,
+      "informative_r": [
+        1
+      ],
+      "vacuous_r": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "mismatch_packing": [
+      {
+        "n": 27,
+        "N": 36,
+        "r_N": 12,
+        "J": 22,
+        "lower_bound": 1.0,
+        "N_over_r": 3.0,
+        "min_J_that_passes": 1,
+        "fraction_pinned": 0.045454545454545456,
+        "slack": 22.0
+      },
+      {
+        "n": 103,
+        "N": 25,
+        "r_N": 12,
+        "J": 15,
+        "lower_bound": 0.08333333333333333,
+        "N_over_r": 2.0833333333333335,
+        "min_J_that_passes": 1,
+        "fraction_pinned": 0.06666666666666667,
+        "slack": 180.0
+      },
+      {
+        "n": 703,
+        "N": 50,
+        "r_N": 17,
+        "J": 30,
+        "lower_bound": 0.9411764705882353,
+        "N_over_r": 2.9411764705882355,
+        "min_J_that_passes": 1,
+        "fraction_pinned": 0.03333333333333333,
+        "slack": 31.875
+      },
+      {
+        "n": 1407,
+        "N": 50,
+        "r_N": 17,
+        "J": 32,
+        "lower_bound": 0.9411764705882353,
+        "N_over_r": 2.9411764705882355,
+        "min_J_that_passes": 1,
+        "fraction_pinned": 0.03125,
+        "slack": 34.0
+      },
+      {
+        "n": 10087,
+        "N": 65,
+        "r_N": 20,
+        "J": 45,
+        "lower_bound": 1.25,
+        "N_over_r": 3.25,
+        "min_J_that_passes": 2,
+        "fraction_pinned": 0.044444444444444446,
+        "slack": 36.0
+      },
+      {
+        "n": 15039,
+        "N": 51,
+        "r_N": 22,
+        "J": 28,
+        "lower_bound": 0.3181818181818182,
+        "N_over_r": 2.3181818181818183,
+        "min_J_that_passes": 1,
+        "fraction_pinned": 0.03571428571428571,
+        "slack": 88.0
+      },
+      {
+        "n": 35655,
+        "N": 84,
+        "r_N": 24,
+        "J": 54,
+        "lower_bound": 1.5,
+        "N_over_r": 3.5,
+        "min_J_that_passes": 2,
+        "fraction_pinned": 0.037037037037037035,
+        "slack": 36.0
+      }
+    ],
+    "peak_exponent": [
+      {
+        "n": 27,
+        "r_N": 12,
+        "D_N": 6,
+        "cap": 12.285402218862249
+      },
+      {
+        "n": 103,
+        "r_N": 12,
+        "D_N": 4,
+        "cap": 11.798741791752896
+      },
+      {
+        "n": 703,
+        "r_N": 17,
+        "D_N": 6,
+        "cap": 16.49118502730135
+      },
+      {
+        "n": 1407,
+        "r_N": 17,
+        "D_N": 5,
+        "cap": 16.475395681920986
+      },
+      {
+        "n": 10087,
+        "r_N": 20,
+        "D_N": 6,
+        "cap": 20.303305097834563
+      },
+      {
+        "n": 15039,
+        "r_N": 22,
+        "D_N": 7,
+        "cap": 21.878050912728536
+      },
+      {
+        "n": 35655,
+        "r_N": 24,
+        "D_N": 8,
+        "cap": 24.122949292542494
+      }
+    ],
+    "monotone_stretches": [
+      {
+        "n": 27,
+        "from": 18,
+        "to": 28,
+        "gain": 4,
+        "mismatches": 4,
+        "skipped": 4
+      },
+      {
+        "n": 103,
+        "from": 13,
+        "to": 18,
+        "gain": 3,
+        "mismatches": 3,
+        "skipped": 3
+      },
+      {
+        "n": 703,
+        "from": 1,
+        "to": 12,
+        "gain": 5,
+        "mismatches": 5,
+        "skipped": 5
+      },
+      {
+        "n": 1407,
+        "from": 20,
+        "to": 28,
+        "gain": 4,
+        "mismatches": 4,
+        "skipped": 4
+      },
+      {
+        "n": 10087,
+        "from": 3,
+        "to": 9,
+        "gain": 4,
+        "mismatches": 4,
+        "skipped": 4
+      },
+      {
+        "n": 15039,
+        "from": 27,
+        "to": 44,
+        "gain": 6,
+        "mismatches": 6,
+        "skipped": 6
+      },
+      {
+        "n": 35655,
+        "from": 10,
+        "to": 18,
+        "gain": 4,
+        "mismatches": 4,
+        "skipped": 4
+      }
+    ],
+    "first_return": {
+      "windows": 190,
+      "windows_longer_than_one_step": 166,
+      "ratio_min": 0.20293645331957708,
+      "ratio_max": 0.9380381082891953,
+      "longest_gap": 66,
+      "windows_where_the_correction_is_needed": 0
+    },
+    "correction_weight": {
+      "windows": 190,
+      "worst_ratio_contraction_only": 0.9385004650479734,
+      "worst_ratio_with_correction": 0.9380381082891953,
+      "windows_where_the_correction_is_needed": 0,
+      "reading": "the affine correction moves the worst case by 4.62e-04; it is never what makes the bound true at these sizes"
+    },
+    "bundle": {
+      "reshipped_identical": [
+        "Hard_Zeta_Phase_II_Round_AU2b1_Sharp_Packing_Entropy_Threshold_v0.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2b2_Queue_Entropy_Second_Order_Barrier_v0.1.1.md",
+        "Hard_Zeta_Phase_II_Round_AU2b3_Queue_Prefactor_Saturation_v0.1.md"
+      ],
+      "reshipped_edited": [],
+      "new_in_this_bundle": [
+        "Hard_Zeta_A_Line_ROUTE_MAP_v1.5_AU2e.md",
+        "Hard_Zeta_Phase_II_Round_AU2e_Multiscale_Return_Arithmetic_v0.1.md"
+      ],
+      "note": "this bundle is TRIMMED: it drops AU1, AU2a and AU2b, which earlier bundles carried. Dropping is not editing, so the check requires only that what IS re-shipped is byte-identical."
+    },
+    "which_half_binds": {
+      "reset_geometry_saturation": [
+        0.20293645331957708,
+        0.9380381082891953
+      ],
+      "contamination_slack": [
+        3.611111111111111,
+        9.4
+      ],
+      "packing_slack": [
+        22.0,
+        180.0
+      ],
+      "packing_fraction_pinned": [
+        0.03125,
+        0.06666666666666667
+      ],
+      "N_over_r_N": [
+        2.0833333333333335,
+        3.5
+      ],
+      "reading": "This round asserts three inequalities whose finite qualities differ by a factor of 30.\n(1) The reset geometry of §3 nearly saturates: across 190 first-return windows the true Y_b reaches 0.20 to 0.94 of its cap, so that bound is doing real work at this scale.\n(2) The contamination bound is informative at r = [1] and vacuous at r = [2, 3, 4, 5, 6]: for the larger windows its cap exceeds N-r+1, which every word of length N satisfies for free. Where it does bite it exceeds the true complexity by 3.61 to 9.40.\n(3) The mismatch barrier is not visible at all. Its floor is N/r_N - 2, and on real spines N/r_N runs 2.08 to 3.50, so the floor lands at 0.08 to 1.50 against a measured J_N of 15 to 54. It pins only 3.1% to 6.7% of the mismatches that are actually there, so it would still be satisfied if all but one or two of them vanished. Passing it is not evidence.\n(2) and (3) are the same threshold from two sides — contamination constrains the word only below J = (N-2r)/r, which is exactly the floor return separation forbids — and at these sizes real spines sit far on the vacuous side of that line, with J_N/N running 0.55 to 0.69. The round's exact identities are checkable and check out; its asymptotic content is what this computation cannot see."
+    }
+  },
+  "failures": [],
+  "ok": true
+}

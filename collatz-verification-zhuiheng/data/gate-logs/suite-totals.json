@@ -1,0 +1,183 @@
+{
+  "tool": "suite_totals.py",
+  "purpose": "the figure the README and CHARTER cite, emitted rather than typed",
+  "drills": 20,
+  "defects_planted": 467,
+  "defects_caught_by_the_named_check": 467,
+  "controls": 48,
+  "controls_undisturbed": 48,
+  "per_drill": [
+    {
+      "log": "mutation-drill.json",
+      "ok": true,
+      "planted": 10,
+      "caught": 10,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "ot-recheck-drill.json",
+      "ok": true,
+      "planted": 68,
+      "caught": 68,
+      "controls": 9,
+      "controls_undisturbed": 9
+    },
+    {
+      "log": "src05-drill.json",
+      "ok": true,
+      "planted": 18,
+      "caught": 18,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src06-drill.json",
+      "ok": true,
+      "planted": 24,
+      "caught": 24,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src07-drill.json",
+      "ok": true,
+      "planted": 20,
+      "caught": 20,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src08-drill.json",
+      "ok": true,
+      "planted": 14,
+      "caught": 14,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src09-drill.json",
+      "ok": true,
+      "planted": 17,
+      "caught": 17,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src10-drill.json",
+      "ok": true,
+      "planted": 17,
+      "caught": 17,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src11-drill.json",
+      "ok": true,
+      "planted": 14,
+      "caught": 14,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src12-drill.json",
+      "ok": true,
+      "planted": 15,
+      "caught": 15,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src13-drill.json",
+      "ok": true,
+      "planted": 16,
+      "caught": 16,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src14-drill.json",
+      "ok": true,
+      "planted": 34,
+      "caught": 34,
+      "controls": 3,
+      "controls_undisturbed": 3
+    },
+    {
+      "log": "src15-drill.json",
+      "ok": true,
+      "planted": 26,
+      "caught": 26,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src16-drill.json",
+      "ok": true,
+      "planted": 30,
+      "caught": 30,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src17-drill.json",
+      "ok": true,
+      "planted": 34,
+      "caught": 34,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src18-drill.json",
+      "ok": true,
+      "planted": 25,
+      "caught": 25,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src19-drill.json",
+      "ok": true,
+      "planted": 27,
+      "caught": 27,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src20-drill.json",
+      "ok": true,
+      "planted": 27,
+      "caught": 27,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "src21-drill.json",
+      "ok": true,
+      "planted": 25,
+      "caught": 25,
+      "controls": 2,
+      "controls_undisturbed": 2
+    },
+    {
+      "log": "suite-totals-drill.json",
+      "ok": true,
+      "planted": 6,
+      "caught": 6,
+      "controls": 2,
+      "controls_undisturbed": 2
+    }
+  ],
+  "not_a_defect_tally": [
+    {
+      "log": "coverage-refusal-drill.json",
+      "why": "a refusal drill; it asserts the suite REFUSES to emit, and plants no defects"
+    },
+    {
+      "log": "drill-anchor-audit.json",
+      "why": "an audit of the drills, not a drill"
+    }
+  ],
+  "uninterpreted": [],
+  "ok": true
+}

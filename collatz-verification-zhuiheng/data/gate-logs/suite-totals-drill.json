@@ -1,0 +1,75 @@
+{
+  "tool": "suite_totals_drill.py",
+  "subject": "code/suite_totals.py and the drill logs it reads",
+  "defects": {
+    "D1_a_drill_log_in_an_unrecognised_shape": {
+      "why": "must land in `uninterpreted`, not contribute zero",
+      "caught": true,
+      "uninterpreted": [
+        "src99-drill.json"
+      ],
+      "drills": 20,
+      "planted": 466
+    },
+    "D2_a_planted_defect_survived": {
+      "why": "planted != caught must refuse",
+      "caught": true,
+      "uninterpreted": [],
+      "drills": 20,
+      "planted": 466
+    },
+    "D3_a_null_control_was_disturbed_in_the_list_shaped_log": {
+      "why": "the second control shape must be read, not ignored",
+      "caught": true,
+      "uninterpreted": [],
+      "drills": 20,
+      "planted": 466
+    },
+    "D4_a_drill_log_reports_itself_red": {
+      "why": "a red drill must not be totalled into a green summary",
+      "caught": true,
+      "uninterpreted": [],
+      "drills": 20,
+      "planted": 466
+    },
+    "D5_the_second_tally_shape_is_no_longer_read": {
+      "why": "dropping a shape must change the total AND be refused",
+      "caught": true,
+      "planted": 388,
+      "baseline_planted": 466,
+      "uninterpreted": [
+        "mutation-drill.json",
+        "ot-recheck-drill.json"
+      ]
+    },
+    "D6_a_half_written_log_is_refused_not_crashed_on": {
+      "why": "an empty file must land in `uninterpreted`",
+      "caught": true,
+      "uninterpreted": [
+        "src18-drill.json"
+      ],
+      "drills": 19,
+      "planted": 441
+    }
+  },
+  "controls": {
+    "N01_unrelated_file_beside_the_logs": {
+      "undisturbed": true
+    },
+    "N02_a_recheck_log_is_not_mistaken_for_a_drill": {
+      "undisturbed": true
+    }
+  },
+  "baseline": {
+    "drills": 20,
+    "defects_planted": 466,
+    "controls": 48
+  },
+  "counts": {
+    "defects_planted": 6,
+    "defects_caught_by_the_named_check": 6,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

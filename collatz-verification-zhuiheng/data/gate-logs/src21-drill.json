@@ -1,0 +1,192 @@
+{
+  "tool": "src21_drill.py",
+  "subject": "src21_hardzeta_au2e_recheck.py and the A-U.2e layer of hz_accel_code.py",
+  "defects": {
+    "A01_the_mechanical_word_is_read_one_step_ahead": {
+      "target_check": "SRC21_the_deficit_increment_is_the_mechanical_deviation",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC21_on_a_nondecreasing_stretch_every_mismatch_is_a_skipped_credit",
+        "SRC21_the_deviation_is_the_deficit_paths_total_variation",
+        "SRC21_the_two_directions_reconstruct_the_deficit_and_its_variation"
+      ]
+    },
+    "A02_the_deviation_forgets_the_absolute_value": {
+      "target_check": "SRC21_the_deviation_is_the_deficit_paths_total_variation",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC21_the_two_directions_reconstruct_the_deficit_and_its_variation"
+      ]
+    },
+    "A03_the_downward_variation_counts_the_agreements_too": {
+      "target_check": "SRC21_the_two_directions_reconstruct_the_deficit_and_its_variation",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC21_the_upward_variation_counts_exactly_the_skipped_credits"
+      ]
+    },
+    "A04_a_skipped_credit_is_read_as_a_spent_one": {
+      "target_check": "SRC21_the_upward_variation_counts_exactly_the_skipped_credits",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A05_the_mechanical_word_picks_up_a_third_symbol": {
+      "target_check": "SRC21_the_mechanical_word_has_complexity_r_plus_one",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A06_the_deficit_record_takes_the_smallest_excursion": {
+      "target_check": "SRC21_the_peak_exponent_is_bounded_by_the_deficit_record_and_log_n",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A07_the_reset_identity_misplaces_a_power_of_three": {
+      "target_check": "SRC21_the_reset_affine_identity_holds_in_exact_integers",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "A08_the_slack_test_subtracts_the_threshold": {
+      "target_check": "SRC21_the_first_return_reset_bound_holds_in_exact_integers",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC21_the_rounds_three_inequalities_have_different_finite_quality"
+      ]
+    },
+    "T01_the_contamination_cap_charges_each_mismatch_once": {
+      "target_check": "SRC21_the_factor_complexity_obeys_the_contamination_bound",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC21_the_contamination_bound_and_the_packing_floor_are_one_line"
+      ]
+    },
+    "T02_the_informative_column_reads_the_complexity_not_the_cap": {
+      "target_check": "SRC21_the_contamination_bound_and_the_packing_floor_are_one_line",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T03_the_separation_hypothesis_is_tested_one_bit_short": {
+      "target_check": "SRC21_the_mismatch_packing_bound_holds_on_real_spines",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "SRC21_the_rounds_three_inequalities_have_different_finite_quality"
+      ]
+    },
+    "T04_the_monotone_stretch_looks_for_the_opposite_skip": {
+      "target_check": "SRC21_on_a_nondecreasing_stretch_every_mismatch_is_a_skipped_credit",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T05_the_rising_step_scan_stops_after_the_first_move": {
+      "target_check": "SRC21_a_nonincreasing_nonnegative_integer_deficit_would_be_constant",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T06_the_local_valuation_drops_a_step": {
+      "target_check": "SRC21_a_deficit_drop_is_exactly_a_locally_contracting_block",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T07_the_first_return_threshold_enters_with_the_wrong_sign": {
+      "target_check": "SRC21_the_first_return_reset_bound_holds_in_exact_integers",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T07b_the_correction_weight_is_measured_against_the_full_bound": {
+      "target_check": "SRC21_the_affine_correction_never_carries_the_first_return_bound",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T08_the_unproved_list_is_read_from_the_proved_section": {
+      "target_check": "SRC21_the_paper_lists_casp_terras_and_collatz_as_unproved",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T09_the_regimes_are_looked_for_in_the_route_map": {
+      "target_check": "SRC21_the_paper_states_its_dichotomy_as_two_named_regimes",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T10_the_route_map_successors_are_sought_in_the_paper": {
+      "target_check": "SRC21_the_route_map_carries_the_same_three_successors",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T11_the_provenance_check_flags_every_file_as_edited": {
+      "target_check": "SRC21_whatever_the_trimmed_bundle_reships_is_unedited",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "T12_the_quality_measure_reads_the_slack_instead_of_the_fraction": {
+      "target_check": "SRC21_the_rounds_three_inequalities_have_different_finite_quality",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D01_the_unproved_ledger_loses_the_conjecture_itself": {
+      "target_check": "SRC21_the_paper_lists_casp_terras_and_collatz_as_unproved",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_the_dichotomy_loses_one_of_its_two_regimes": {
+      "target_check": "SRC21_the_paper_states_its_dichotomy_as_two_named_regimes",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_the_route_map_drops_the_transducer_route": {
+      "target_check": "SRC21_the_route_map_carries_the_same_three_successors",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D04_a_reshipped_predecessor_is_edited_in_place": {
+      "target_check": "SRC21_whatever_the_trimmed_bundle_reships_is_unedited",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_accel_module_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    },
+    "N02_unrelated_file_beside_the_bundle": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "audit": [],
+  "counts": {
+    "defects_planted": 25,
+    "defects_caught_by_the_named_check": 25,
+    "defects_in_the_definition_layer": 8,
+    "defects_in_this_runs_own_measurement": 13,
+    "scope_defects_in_the_documents": 4,
+    "controls": 2,
+    "controls_undisturbed": 2,
+    "checks_without_a_defect_naming_them": 0
+  },
+  "ok": true
+}

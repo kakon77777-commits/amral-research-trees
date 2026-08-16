@@ -12,7 +12,7 @@
     "Hard-Zeta": 53,
     "other project": 2
   },
-  "processed_count": 37,
+  "processed_count": 38,
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -668,7 +668,7 @@
       "sha256": "7b62580f762efb9111e9969156b36f5de9700b34a9b003216e8211d0ea4fe59a",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 37. Rechecked by code/src21_hardzeta_au2e_recheck.py. Every exact identity holds: the deviation identity d_m - d_(m-1) = a_m - q_m, the directional split U - W = d_N with U counting skipped credits exactly, the Reset Affine Identity cleared to INTEGERS at 1554 windows with no floating point, and the deficit-drop slope identity. THE ROUND'S TWO INEQUALITIES TURN OUT TO BE ONE LINE: the contamination bound is informative only when J_N < (N-2r)/r, which is exactly the packing theorem's floor — verified row by row with 0 disagreements. Every computable spine sits on the vacuous side of it: J_N/N runs 0.55-0.69 while the floor is 0.08-1.50, so the barrier pins only 3.1%-6.7% of the mismatches present and CANNOT FAIL at these sizes; the drill says so instead of implying coverage. By contrast the reset geometry does bind — across 190 first-return windows Y_b reaches 0.203-0.938 of its cap — but its affine correction is never what makes the bound true (0 windows need it; it moves the worst case by 4.6e-4). See reports/RUN-019-HARD-ZETA-AU2E-MULTISCALE-RETURN.md",
       "round_sort_key": [
         "au",
         2,

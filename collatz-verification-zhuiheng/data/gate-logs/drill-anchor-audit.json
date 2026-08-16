@@ -65,11 +65,15 @@
     "src20_drill.py": {
       "anchors": 21,
       "stale": []
+    },
+    "src21_drill.py": {
+      "anchors": 21,
+      "stale": []
     }
   },
   "counts": {
-    "drills": 16,
-    "anchors_checked": 256,
+    "drills": 17,
+    "anchors_checked": 277,
     "anchors_not_matching_exactly_once": 0
   },
   "ok": true

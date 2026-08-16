@@ -1026,3 +1026,76 @@ def unpointed_queue_count(r: int, D: int, phase: int = 0) -> int:
     """
     return queue_count(r, D, phase) - (queue_count(r, D - 1, phase) if D else 0)
 
+
+# ---------------------------------------------------------------------------
+# Phase II / Round A-U.2e — multiscale return arithmetic.
+# Deviation from the mechanical word (§abstract), the directional split of the
+# deficit's total variation (§1), and the reset geometry (§3), whose affine
+# identity reduces to an exact integer statement with no floating point at all.
+# ---------------------------------------------------------------------------
+
+
+def deviation_counts(n: int, N: int) -> dict:
+    """§abstract, §1: J_N, V_N, U_N, W_N for a real orbit.
+
+    J = positions where q differs from the mechanical word; V = the L1 deviation,
+    which is also the deficit path's total variation; U and W its upward and
+    downward halves.
+    """
+    q = accel_code(n, N)
+    a = [mechanical_valuation(m) for m in range(1, N + 1)]
+    J = sum(1 for i in range(N) if q[i] != a[i])
+    V = sum(abs(q[i] - a[i]) for i in range(N))
+    U = sum(max(a[i] - q[i], 0) for i in range(N))
+    W = sum(max(q[i] - a[i], 0) for i in range(N))
+    return {"J": J, "V": V, "U": U, "W": W}
+
+
+def skipped_credit_positions(n: int, N: int) -> int:
+    """§1: #{m <= N : a_m = 2 and q_m = 1}, claimed to equal U_N exactly."""
+    q = accel_code(n, N)
+    return sum(1 for m in range(1, N + 1)
+               if mechanical_valuation(m) == 2 and q[m - 1] == 1)
+
+
+def exponent_factor_complexity(n: int, N: int, r: int) -> int:
+    """The number of distinct length-r factors among the first N exponents."""
+    return factor_complexity(accel_code(n, N), r)
+
+
+def reset_affine_holds(n: int, a: int, b: int) -> bool:
+    """§3's Reset Affine Identity, cleared of every power of two and three.
+
+    Y_b = 2^{delta_b - delta_a} Y_a + (2^{delta_b}/3) sum_{i=a}^{b-1} 2^{-delta_i}
+    multiplied through by 3^b and 2^{-K_b} becomes
+
+        Y_b 2^{K_b} = Y_a 2^{K_a} 3^{b-a} + sum_{i=a}^{b-1} 3^{b-1-i} 2^{K_i},
+
+    which is an identity between integers. The paper's form is stated with the
+    irrational slack delta_m = beta m - K_m; this one needs no float.
+    """
+    Y = orbit_endpoints(n, b)
+    K = cumulative(accel_code(n, b))
+    lhs = Y[b] * 2 ** K[b]
+    rhs = (Y[a] * 2 ** K[a] * 3 ** (b - a)
+           + sum(3 ** (b - 1 - i) * 2 ** K[i] for i in range(a, b)))
+    return lhs == rhs
+
+
+def slack_exceeds(n: int, m: int, h_num: int, h_den: int) -> bool:
+    """Is delta_m = beta m - K_m greater than the rational h_num/h_den?
+
+    delta_m > h  iff  3^{m h_den} > 2^{(K_m h_den + h_num)}, in exact integers.
+    """
+    K = cumulative(accel_code(n, m))[-1]
+    return 3 ** (m * h_den) > 2 ** (K * h_den + h_num)
+
+
+def first_return_below(n: int, a: int, h_num: int, h_den: int,
+                       limit: int = 400) -> int | None:
+    """§3: the first b > a with delta_b <= h, or None inside `limit` steps."""
+    for b in range(a + 1, limit + 1):
+        if not slack_exceeds(n, b, h_num, h_den):
+            return b
+    return None
+
