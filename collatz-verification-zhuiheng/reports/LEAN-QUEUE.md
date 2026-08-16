@@ -11,7 +11,12 @@ taken rather than built. `.lake` is 7.3 GiB and sits on D:.
 | queue item | state |
 |---|---|
 | §6b — the finite-local no-go | **DONE 2026-08-16**, `Collatz/AllOnes.lean` |
+| 1 — Paper 02, Theorems A–F for all words | **DONE 2026-08-16**, `Collatz/AffineAtlas.lean` |
 | everything else below | open, in the order given |
+
+**Published:** https://github.com/kakon77777-commits/collatz-lean (Apache-2.0),
+with CI running the build, the axiom audit, the audit's own drill, and the
+cross-check against this tree on every push.
 
 **What "done" means here.** Seven theorems, no `sorry`, `#print axioms` showing
 only `propext` / `Classical.choice` / `Quot.sound` — and two things beyond that,
@@ -54,7 +59,33 @@ a statement whose truth this arm has confirmed on every case it can reach and
 
 ## The queue, cheapest first
 
-### 1. Paper 02, Theorems A–F, for all words
+### 1. Paper 02, Theorems A–F, for all words — DONE 2026-08-16
+
+`Collatz/AffineAtlas.lean`. All six, plus §14's order defect as an exact
+identity and a sharpness result showing Theorem F's bounds are attained.
+
+**The queue's own reason for putting this first held.** The `b_w` machinery is
+now available to every later item, and the induction was clean — the whole file
+is elementary, with `ℚ` used only for Theorem A's statement.
+
+Two things the finite arm's exhaustive check to `k ≤ 16` could not have told me,
+because both are about how the statement is *written* rather than whether it is
+true:
+
+- **Theorem E multiplies in the opposite order to reading.** A word runs left to
+  right, so `F_w = σ_k ∘ ⋯ ∘ σ₁` and hence `M_{wv} = M_v · M_w`. §16 says this;
+  the tidier-looking statement would have been false.
+- **`b_w` should be defined by the recursion `List` recurses on** (cons), with
+  the paper's right-append recurrence proved as a corollary of Theorem D.
+  Defining it the paper's way would have buried Theorem A under list-reversal
+  lemmas.
+
+The cross-check for this item is **exhaustive**: every word of length ≤ 10,
+2,047 of them, `u(w)` and `b_w` against this tree's `compose_affine`, with Lean
+emitting each word's encoding so the comparison does not rest on both sides
+enumerating in the same order.
+
+The original entry, kept because its reasoning is what made it first:
 
 The best first target: small, self-contained, and needs nothing from mathlib
 beyond `ℤ` and `ℚ`.
