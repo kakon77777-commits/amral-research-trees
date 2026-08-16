@@ -196,6 +196,28 @@ PROCESSED = {
         "need it; it moves the worst case by 4.6e-4). "
         "See reports/RUN-019-HARD-ZETA-AU2E-MULTISCALE-RETURN.md"
     ),
+    "NeoK_Crypto_Semiotics_Theory_Compiler_v0.8.zip": (
+        "item 38. THE SWEEP LEAVES HARD-ZETA HERE — a different subject, so the "
+        "instruments changed. Verified in a separate tree: "
+        "../neok-crypto-semiotics-verification/, RUN-020. Every countable figure "
+        "reproduces (264 claims / 2490 obligations / 608 evidence gaps / 714 "
+        "dependency edges), their three pytest suites reproduce CROSS-PLATFORM "
+        "(18 passed on Windows against their Linux capture), and the CTCL trust "
+        "model re-derives from its own TLA+ at 10 states with 0 cloud-only "
+        "secrecy violations. TWO THINGS DO NOT, both artifacts never re-run "
+        "against the layer after them: (1) the shipped "
+        "PersistentSecurityRuntime.tla pins authorized and verificationOK TRUE "
+        "with no action changing them, so it reaches 16 states and Rollback is "
+        "UNREACHABLE against the reported 62 — adding the two environment "
+        "actions their Python takes reproduces 62 exactly with both safety "
+        "properties intact, so the gap is coverage not correctness; (2) exactly "
+        "1 profile of 264 is rejected by the shipped JSON Schema (CL-N21-005, "
+        "promotion_decision 'ready_at_target'), and it is the SAME claim that is "
+        "the only exception to the prose gate rule. Also: readiness_score is the "
+        "v0.8 report's headline metric and cannot be re-derived from the package "
+        "at all. Payload NOT mirrored (23.9 MiB); source sha256 recorded. "
+        "See ../neok-crypto-semiotics-verification/reports/RUN-020-CRYPTO-SEMIOTICS-V08.md"
+    ),
     "Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip": (
         "item 35. Rechecked by code/src19_hardzeta_au2b2_recheck.py. Pulls the "
         "FIRST of A-U.2b.1's five levers (queue entropy) and it returns ZERO at "

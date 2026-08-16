@@ -1,0 +1,89 @@
+{
+  "tool": "cs01_drill.py",
+  "subject": "cs01_v08_recheck.py",
+  "defects": {
+    "D01_the_manifest_is_hashed_over_the_wrong_bytes": {
+      "target_check": "CS01_the_integrity_manifest_verifies_except_the_two_timing_outputs",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D02_the_timing_agreement_is_sought_under_a_mangled_key": {
+      "target_check": "CS01_the_two_stale_files_still_agree_with_each_other",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D03_an_extra_obligation_is_counted": {
+      "target_check": "CS01_the_readme_headline_counts_recompute_from_the_shipped_data",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D04_the_population_check_reads_the_previous_layer": {
+      "target_check": "CS01_the_v08_layer_carries_the_same_claim_population",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D05_the_gate_order_restriction_is_dropped_from_the_scope": {
+      "target_check": "CS01_the_gate_rule_from_the_prose_reproduces_every_profile_but_one",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D06_readiness_is_computed_from_the_value_it_is_checking": {
+      "target_check": "CS01_the_readiness_score_cannot_be_rederived_from_the_package",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D07_the_schema_check_validates_against_an_empty_schema": {
+      "target_check": "CS01_the_shipped_schema_rejects_exactly_one_v08_profile",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D08_the_ctcl_model_lets_decryption_happen_without_the_stolen_key": {
+      "target_check": "CS01_the_ctcl_trust_model_reproduces_from_its_own_tla",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D09_the_tla_transcription_always_takes_the_environment_actions": {
+      "target_check": "CS01_the_shipped_tla_does_not_specify_the_model_that_was_validated",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    },
+    "D10_the_runtime_applies_a_response_from_an_unauthorized_actor": {
+      "target_check": "CS01_the_runtime_safety_properties_survive_on_the_larger_model",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": [
+        "CS01_the_shipped_tla_does_not_specify_the_model_that_was_validated"
+      ]
+    },
+    "D11_their_suite_is_run_from_the_wrong_directory": {
+      "target_check": "CS01_their_own_test_suites_reproduce_on_this_platform",
+      "caught_by_the_named_check": true,
+      "run_went_red": true,
+      "other_checks_that_also_fired": []
+    }
+  },
+  "controls": {
+    "N01_the_tool_annotated_where_nothing_reads": {
+      "undisturbed": true,
+      "checks_that_fired": []
+    }
+  },
+  "audit": [],
+  "counts": {
+    "defects_planted": 11,
+    "defects_caught_by_the_named_check": 11,
+    "controls": 1,
+    "controls_undisturbed": 1,
+    "checks_without_a_defect_naming_them": 0
+  },
+  "ok": true
+}

@@ -1,0 +1,76 @@
+{
+  "tool": "cs02_guard_pinning.py",
+  "subject": "the Ω-wrapper of source item 38 and its own pytest suite",
+  "guards": {
+    "G1_visible_only_copy_keeps_the_hidden_state": {
+      "their_suite_catches_it": true,
+      "behaviour_change": [],
+      "verdict": "pinned"
+    },
+    "G2_recover_stops_checking_the_carrier_profile": {
+      "their_suite_catches_it": false,
+      "behaviour_change": [
+        "accepts a carrier with a foreign profile and glyph"
+      ],
+      "verdict": "unpinned guard"
+    },
+    "G3_decode_packet_drops_the_canonicality_check": {
+      "their_suite_catches_it": false,
+      "behaviour_change": [
+        "accepts a non-canonical re-encoding of the same packet"
+      ],
+      "verdict": "unpinned guard"
+    },
+    "G4_decode_packet_stops_pinning_the_packet_shape": {
+      "their_suite_catches_it": false,
+      "behaviour_change": [
+        "accepts a packet carrying undeclared extra fields"
+      ],
+      "verdict": "unpinned guard"
+    },
+    "G5_the_aad_is_not_bound_into_the_ciphertext": {
+      "their_suite_catches_it": true,
+      "behaviour_change": [
+        "BROKEN: raises on its own ciphertext"
+      ],
+      "verdict": "pinned"
+    },
+    "G6_recover_ignores_the_aad_it_was_given": {
+      "their_suite_catches_it": true,
+      "behaviour_change": [
+        "BROKEN: raises on its own ciphertext"
+      ],
+      "verdict": "pinned"
+    },
+    "G7_the_nonce_length_is_no_longer_enforced_on_recover": {
+      "their_suite_catches_it": false,
+      "behaviour_change": [],
+      "verdict": "redundant guard"
+    },
+    "G8_the_key_length_check_is_removed_from_encrypt": {
+      "their_suite_catches_it": false,
+      "behaviour_change": [],
+      "verdict": "redundant guard"
+    },
+    "G9_the_packet_carries_the_plaintext_beside_the_ciphertext": {
+      "their_suite_catches_it": true,
+      "behaviour_change": [
+        "BROKEN: raises on its own ciphertext"
+      ],
+      "verdict": "pinned"
+    }
+  },
+  "counts": {
+    "guards_probed": 9,
+    "pinned_by_their_suite": 4,
+    "unpinned_guards": 3,
+    "redundant_guards": 2
+  },
+  "reference_module_unexpected_acceptances": [],
+  "unpinned": [
+    "G2_recover_stops_checking_the_carrier_profile",
+    "G3_decode_packet_drops_the_canonicality_check",
+    "G4_decode_packet_stops_pinning_the_packet_shape"
+  ],
+  "ok": true
+}

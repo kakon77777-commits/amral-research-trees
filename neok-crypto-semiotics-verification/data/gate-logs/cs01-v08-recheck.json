@@ -1,0 +1,313 @@
+{
+  "tool": "cs01_v08_recheck.py",
+  "subject": "NeoK_Crypto_Semiotics_Theory_Compiler_v0.8.zip (source item 38) — the theory compiler through its v0.8 obligation-execution layer",
+  "source_items": [
+    38
+  ],
+  "scope": "the package's own integrity manifest, the headline counts, the promotion-profile fields re-derived from the PROSE gate rule, JSON Schema conformance, and whether the shipped TLA+ artifacts specify the models the Python actually validated",
+  "checks": {
+    "CS01_the_integrity_manifest_verifies_except_the_two_timing_outputs": {
+      "pass": true,
+      "detail": {
+        "entries": 51,
+        "verified": 49,
+        "mismatched": [
+          "01_omega_wrapper/benchmark_results.csv",
+          "validation_results.json"
+        ],
+        "missing": []
+      },
+      "note": "49 of 51 entries verify. The two that do not are the benchmark CSV and validation_results.json — the only files carrying wall-clock timings, and run_v08_validation.py rewrites both, so the manifest was hashed before the last run."
+    },
+    "CS01_the_two_stale_files_still_agree_with_each_other": {
+      "pass": true,
+      "detail": {
+        "csv_rows": 3,
+        "rows_not_found_in_the_json": []
+      },
+      "note": "each benchmark timing appears verbatim in the captured stdout, which is what separates a stale manifest from altered content"
+    },
+    "CS01_the_readme_headline_counts_recompute_from_the_shipped_data": {
+      "pass": true,
+      "detail": {
+        "recomputed": {
+          "claims": 264,
+          "formal_obligations": 2490,
+          "evidence_gaps": 608,
+          "obligation_dependency_edges": 714,
+          "promotion_profiles": 264
+        },
+        "disagreements": {}
+      },
+      "note": "README_v0.7 states 264 / 2490 / 608 / 714; every one is a row count over a shipped JSONL"
+    },
+    "CS01_the_v08_layer_carries_the_same_claim_population": {
+      "pass": true,
+      "detail": {
+        "obligations": 2490,
+        "profiles": 264,
+        "distinct_claims_in_obligations": 264,
+        "distinct_claims_in_profiles": 264
+      },
+      "note": "the execution layer advances three claims; it must not change the population underneath them"
+    },
+    "CS01_the_gate_rule_from_the_prose_reproduces_every_profile_but_one": {
+      "pass": true,
+      "detail": {
+        "profiles_in_scope": 206,
+        "population_disagreements": 0,
+        "unresolved_blocking_disagreements": [
+          {
+            "claim": "CL-N21-005",
+            "said": 1,
+            "derived": 0,
+            "out_of_scope_blocking_not_passing": 1
+          }
+        ]
+      },
+      "note": "the quantifier is in the prose, not the field name: only obligations at gate order <= the TARGET gate count. 205 of 206 profiles follow it; CL-N21-005 counts one that sits above its target gate."
+    },
+    "CS01_the_readiness_score_cannot_be_rederived_from_the_package": {
+      "pass": true,
+      "detail": {
+        "scopes": {
+          "blocking, gate<=target": {
+            "checked": 206,
+            "mismatch": 78
+          },
+          "blocking, all gates": {
+            "checked": 206,
+            "mismatch": 64
+          },
+          "all obligations": {
+            "checked": 206,
+            "mismatch": 185
+          },
+          "all, gate<=target": {
+            "checked": 206,
+            "mismatch": 186
+          }
+        }
+      },
+      "note": "a falsifiable claim about the package: if a future version ships the generator or defines the metric, one of these scopes starts matching and this check goes red on purpose"
+    },
+    "CS01_the_shipped_schema_rejects_exactly_one_v08_profile": {
+      "pass": true,
+      "detail": {
+        "summary": {
+          "v0.7 profiles": {
+            "rows": 264,
+            "rejected": 0
+          },
+          "v0.7 obligations": {
+            "rows": 2490,
+            "rejected": 0
+          },
+          "v0.8 profiles": {
+            "rows": 264,
+            "rejected": 1
+          },
+          "v0.8 obligations": {
+            "rows": 2490,
+            "rejected": 0
+          }
+        },
+        "rejections": {
+          "v0.8 profiles": [
+            {
+              "id": "CL-N21-005",
+              "error": "'ready_at_target' is not one of ['archival_only', 'blocked', 'not_ready', 'ready_for_target_gate']"
+            }
+          ]
+        }
+      },
+      "note": "the v0.7 data validates clean on both schemas and so do the v0.8 obligations. Exactly one v0.8 profile fails: CL-N21-005 carries promotion_decision 'ready_at_target', which the shipped enum does not contain. It is the same claim the gate rule misses."
+    },
+    "CS01_the_ctcl_trust_model_reproduces_from_its_own_tla": {
+      "pass": true,
+      "detail": {
+        "reachable_states": 10,
+        "cloud_only_secrecy_violations": 0,
+        "states_with_plaintext_known": 2,
+        "note": "derived from CTCL_CloudCompromise.tla, not from their finite_model.py; matches the reported 10 and 0"
+      },
+      "note": "10 reachable states and 0 cloud-only secrecy violations, and both plaintext-known states require the client key to be stolen — so the model does not overclaim endpoint security"
+    },
+    "CS01_the_shipped_tla_does_not_specify_the_model_that_was_validated": {
+      "pass": true,
+      "detail": {
+        "as_written": 16,
+        "with_environment": 62,
+        "reported": 62
+      },
+      "note": "16 states as written with Rollback unreachable, against the reported 62. Two environment actions close the gap exactly. The report says TLC was not run, which is why this survived."
+    },
+    "CS01_the_runtime_safety_properties_survive_on_the_larger_model": {
+      "pass": true,
+      "detail": {
+        "states": 62,
+        "high_risk_applied_without_approval": 0,
+        "applied_while_unauthorized": 0
+      },
+      "note": "over all 62 states, no response is applied at high risk without approval and none is applied unauthorized — the repair widens coverage without breaking the claim"
+    },
+    "CS01_their_own_test_suites_reproduce_on_this_platform": {
+      "pass": true,
+      "detail": {
+        "01_omega_wrapper": {
+          "rc": 0,
+          "summary": [
+            "7 passed in 0.07s"
+          ]
+        },
+        "02_ctcl_cloud_compromise": {
+          "rc": 0,
+          "summary": [
+            "7 passed in 0.13s"
+          ]
+        },
+        "03_persistent_security_runtime": {
+          "rc": 0,
+          "summary": [
+            "4 passed in 0.03s"
+          ]
+        }
+      },
+      "note": "the shipped validation_results.json was captured on Linux under /opt/pyvenv; this reruns it on Windows with a different pytest and cryptography, which is the cross-platform half the package cannot claim for itself"
+    }
+  },
+  "counts": {
+    "checks": 11,
+    "passed": 11
+  },
+  "measured": {
+    "integrity": {
+      "entries": 51,
+      "verified": 49,
+      "mismatched": [
+        "01_omega_wrapper/benchmark_results.csv",
+        "validation_results.json"
+      ],
+      "missing": []
+    },
+    "headline_counts": {
+      "README_v0.7": {
+        "claims": 264,
+        "formal_obligations": 2490,
+        "evidence_gaps": 608,
+        "obligation_dependency_edges": 714,
+        "promotion_profiles": 264
+      },
+      "recomputed": {
+        "claims": 264,
+        "formal_obligations": 2490,
+        "evidence_gaps": 608,
+        "obligation_dependency_edges": 714,
+        "promotion_profiles": 264
+      }
+    },
+    "prose_rule": {
+      "profiles_in_scope": 206,
+      "population_disagreements": [],
+      "unresolved_blocking_disagreements": [
+        {
+          "claim": "CL-N21-005",
+          "said": 1,
+          "derived": 0,
+          "out_of_scope_blocking_not_passing": 1
+        }
+      ]
+    },
+    "readiness": {
+      "scopes_tried": {
+        "blocking, gate<=target": {
+          "checked": 206,
+          "mismatch": 78
+        },
+        "blocking, all gates": {
+          "checked": 206,
+          "mismatch": 64
+        },
+        "all obligations": {
+          "checked": 206,
+          "mismatch": 185
+        },
+        "all, gate<=target": {
+          "checked": 206,
+          "mismatch": 186
+        }
+      },
+      "reading": "readiness_score is the v0.8 report's headline metric and no shipped artefact defines or computes it. The closest reading leaves 64 of 206 claims unexplained, so the figure cannot be re-derived from the package."
+    },
+    "schema": {
+      "summary": {
+        "v0.7 profiles": {
+          "rows": 264,
+          "rejected": 0
+        },
+        "v0.7 obligations": {
+          "rows": 2490,
+          "rejected": 0
+        },
+        "v0.8 profiles": {
+          "rows": 264,
+          "rejected": 1
+        },
+        "v0.8 obligations": {
+          "rows": 2490,
+          "rejected": 0
+        }
+      },
+      "rejections": {
+        "v0.8 profiles": [
+          {
+            "id": "CL-N21-005",
+            "error": "'ready_at_target' is not one of ['archival_only', 'blocked', 'not_ready', 'ready_for_target_gate']"
+          }
+        ]
+      }
+    },
+    "persistent_security_runtime": {
+      "tla_as_written_states": 16,
+      "tla_as_written_stages": [
+        "AwaitApproval",
+        "Detect",
+        "Learn",
+        "Model",
+        "Observe",
+        "Prioritize",
+        "Respond",
+        "Verify"
+      ],
+      "rollback_reachable_as_written": false,
+      "with_two_environment_actions_states": 62,
+      "rollback_reachable_with_env": true,
+      "reported_by_the_package": 62,
+      "reading": "the shipped PersistentSecurityRuntime.tla pins authorized = TRUE and verificationOK = TRUE in Init and no action ever changes them, so VerifyFail can never fire and the Rollback stage is unreachable. Running TLC on it as written would explore 16 states and would never exercise the rollback behaviour the report highlights. Their runtime_model.py takes an environment choice at the Respond and Verify boundaries; adding those two actions to the .tla reproduces the reported 62 exactly."
+    },
+    "their_suite": {
+      "01_omega_wrapper": {
+        "rc": 0,
+        "summary": [
+          "7 passed in 0.07s"
+        ]
+      },
+      "02_ctcl_cloud_compromise": {
+        "rc": 0,
+        "summary": [
+          "7 passed in 0.13s"
+        ]
+      },
+      "03_persistent_security_runtime": {
+        "rc": 0,
+        "summary": [
+          "4 passed in 0.03s"
+        ]
+      }
+    }
+  },
+  "failures": [],
+  "source_sha256": "b0a7ae85f94c2e9ee748ad96bb4f7585295770d7c6e338d43b24be6867a54e47",
+  "source_bytes": 3467925,
+  "ok": true
+}
