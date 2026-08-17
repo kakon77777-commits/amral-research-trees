@@ -15,7 +15,7 @@ taken rather than built. `.lake` is 7.3 GiB and sits on D:.
 | 2 — Paper 07, generalised `mx+r` and §25 | **DONE 2026-08-16**, `Collatz/Generalized.lean` |
 | 3 — Paper 03, cylinders + charts + local identity | **DONE 2026-08-16**, `Collatz/ResidueCylinder.lean` |
 | 4 — Paper 06, valuation language A–C, E, F | **DONE 2026-08-16**, `Collatz/Valuation.lean` |
-| 5 — Paper 09, Theorem A (+ §52) | **DONE 2026-08-16**, `Collatz/StoppingTime.lean` |
+| 5 — Paper 09, Theorems A (+ §52) and F | **DONE 2026-08-17**, `Collatz/StoppingTime.lean` + `Collatz/AnchoredBranch.lean` |
 | 6 — Hard-Zeta, both repaired claims | **DONE 2026-08-16**, `Collatz/HardSet.lean` + `Collatz/InvariantLimit.lean` |
 | everything else below | open, in the order given |
 
@@ -239,7 +239,7 @@ The density claim is a counting argument over `ℤ/2^{j+1}ℤ` and should be
 comfortable. Theorem D's log drift is already verified here as an exact rational
 identity, so it needs no analysis in Lean either.
 
-### 5. Paper 09, Theorems A and F — Theorem A DONE 2026-08-16
+### 5. Paper 09, Theorems A and F — DONE 2026-08-17
 
 `Collatz/StoppingTime.lean`. **Theorem A is done, and the queue's reason for
 rating it above its difficulty was right: it is the statement that says what this
@@ -259,11 +259,49 @@ whole tree's finite work is evidence for.**
 - `sigma_spec` — where `σ` is finite it is the *least* such `j`, so the `Nat.find`
   definition is the paper's `inf` and not merely some witness.
 
-σ is also now the sixth and most direct cross-check front: 498 values against
-this tree's own engine, the one that computed the `[3, 2^40]` run.
+σ is also the most direct cross-check front there is — compared against this
+tree's own engine, the one that computed the `[3, 2^40]` run. How many values,
+and how many fronts, is emitted by `gate/emit_gate_summary.py` into the Lean
+repository's README rather than typed anywhere: this line said "the sixth
+front" and there are now seven.
 
-**Theorem F remains open** — it needs `PadicInt` and the eventual-stabilisation
-characterisation of an ordinary positive integer inside `ℤ₂`.
+**Theorem F is now done too, and this entry's reason for calling it "heavier" was
+wrong.** `Collatz/AnchoredBranch.lean`, ten theorems.
+
+The entry said Theorem F needs `PadicInt` and the eventual-stabilisation
+characterisation of a positive integer inside `ℤ₂`. `ℤ₂` is the right home for the
+*interpretation* — a nested residue chain that is not anchored at any integer is a
+2-adic integer that is not a rational one — but **every claim in the theorem is
+about the canonical residues `r_k = n mod 2^k`**, and §44's content is just that
+`n mod 2^k = n` once `2^k > n`. So the whole thing lives in `ℕ`, with no
+completion, no valuation ring, and no analysis. Reading a paper's *motivation* as
+its *proof obligation* is what made this look like the heavy item; it was the
+light one.
+
+- `nested_residue`, `residue_stabilises` — §42 and §44: every integer's residue
+  tower is nested, and it is eventually constant at the integer itself.
+- **`nested_not_always_anchored`** — §43: the all-ones tower `2^k − 1` is nested
+  and anchored at **no** integer. This is the theorem that makes "anchored" a real
+  hypothesis rather than a restatement of "nested"; `anchored_strictly_stronger`
+  states the implication and its failure together.
+- **`no_stopping_iff_hard_forever`** — Theorem 47.1: `σ(n) = ∞` iff `n` is hard at
+  every depth. `hard_forever_iff_anchored_hard` then puts it in the anchored-branch
+  form, and `collatz_iff_no_anchored_hard_branch` is §48's minimal obstruction:
+  Collatz holds iff no integer above 1 anchors a hard branch at every depth.
+- **`hard_at_each_depth_is_nonempty`** — at every depth the hard set is inhabited,
+  witnessed by `allOnesStart (k+1)`. The witness is `k+1`, not `k`: at `k = 0`
+  `allOnesStart 0 = 1`, and `Hard 0 1` fails the `2 ≤ n` clause. **The first
+  version of this proof used `allOnesStart k` and the statement was false at
+  `k = 0`** — the second time this session that a failing tactic meant a false
+  statement rather than a weak tactic.
+
+There is deliberately no theorem asserting that some integer *does* anchor a hard
+branch forever. That is the negation of Collatz.
+
+Theorem F also contributes the cross-check's seventh front: both residue towers,
+the depth-`k` witness and its decided hardness, against a Python `T` written in
+the gate rather than imported from this tree — a cross-check that calls the same
+code on both sides is one method compared with itself.
 
 The original entry:
 
