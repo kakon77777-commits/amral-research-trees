@@ -16,7 +16,7 @@ taken rather than built. `.lake` is 7.3 GiB and sits on D:.
 | 3 — Paper 03, cylinders + charts + local identity | **DONE 2026-08-16**, `Collatz/ResidueCylinder.lean` |
 | 4 — Paper 06, valuation language A–C, E, F | **DONE 2026-08-16**, `Collatz/Valuation.lean` |
 | 5 — Paper 09, Theorem A (+ §52) | **DONE 2026-08-16**, `Collatz/StoppingTime.lean` |
-| 6 — Hard-Zeta, the `n ≥ 2` stopping domain | **DONE 2026-08-16**, `Collatz/HardSet.lean` |
+| 6 — Hard-Zeta, both repaired claims | **DONE 2026-08-16**, `Collatz/HardSet.lean` + `Collatz/InvariantLimit.lean` |
 | everything else below | open, in the order given |
 
 **Published:** https://github.com/kakon77777-commits/collatz-lean (Apache-2.0),
@@ -298,6 +298,16 @@ would make precise what the bound *is a bound on*.
 - the invariant-measure route, now stated conditionally on a compactification,
   tightness, and the regularity needed to pass dynamics to a weak limit.
   Formalising the *hypotheses* is the value here, not the conclusion.
+  **DONE 2026-08-16**, `Collatz/InvariantLimit.lean`. The way to formalise a
+  hypothesis turned out to be **to show what breaks without it** — the same move
+  as `no_uniform_depth`. Without something keeping mass from escaping the failure
+  is not mild: on the canonical mass-escaping system, the successor map on `ℕ`,
+  invariance alone forces every atom to zero and there is **no invariant
+  probability measure at all**, so there is nothing for an empirical limit to
+  converge to. `invariant_vanishes_on_finite` sharpens it — not a normalisation
+  artefact either. Explicitly *not* Krylov–Bogolyubov (mathlib has none at this
+  pin) and weak convergence is not formalised, because it need not be: if no
+  invariant probability measure exists, no limit of any kind can be one.
 
 ### 6b. Hard-Zeta A line — CASP and its two escape hatches (added 2026-08-15)
 
