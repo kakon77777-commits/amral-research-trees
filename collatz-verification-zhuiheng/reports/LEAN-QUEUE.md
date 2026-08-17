@@ -13,6 +13,7 @@ taken rather than built. `.lake` is 7.3 GiB and sits on D:.
 | §6b — the finite-local no-go | **DONE 2026-08-16**, `Collatz/AllOnes.lean` |
 | 1 — Paper 02, Theorems A–F for all words | **DONE 2026-08-16**, `Collatz/AffineAtlas.lean` |
 | 2 — Paper 07, generalised `mx+r` and §25 | **DONE 2026-08-16**, `Collatz/Generalized.lean` |
+| 3 — Paper 03, residue cylinders | **DONE 2026-08-16**, `Collatz/ResidueCylinder.lean` |
 | everything else below | open, in the order given |
 
 **Published:** https://github.com/kakon77777-commits/collatz-lean (Apache-2.0),
@@ -142,7 +143,35 @@ Structurally identical to item 1 with `3 → m` and `1 → r`, plus:
 Doing this immediately after item 1 tests whether the Paper 02 development
 generalises the way the paper says it does — which is Paper 07's whole thesis.
 
-### 3. Paper 03, the local identityisation
+### 3. Paper 03, the local identityisation — the bijection DONE 2026-08-16
+
+`Collatz/ResidueCylinder.lean`. The word↔residue correspondence is done:
+`parityWord_eq_iff_modEq` (two integers follow the same length-`k` word iff they
+are congruent mod `2^k`), with injectivity and the count. Plus `iterate_eq_F`,
+the bridge from the `ℕ` dynamics to Paper 02's `ℚ` algebra — no admissibility
+hypothesis needed, because the word is read off `n` itself — and
+`cylinder_congruence`, which is what makes Theorem C's `r_w ≡ −b_w·3^{−u}` well
+posed.
+
+**The queue said the `r_w = 0` boundary was where a formalisation would earn its
+keep, and it did.** `AUDIT_AND_CORRECTIONS.md` records that the original
+induction used `r_w ∈ Ω_w`, which has no witness for the all-`D` cylinder since
+its canonical residue is `0` and the domain is the *positive* integers. The
+repair is `cylinder_has_positive_member`, and Lean forced it to be stated for
+**every** cylinder rather than patched onto the one that breaks.
+
+**One trap that was mine, not the paper's.** Periodicity is *not*
+`parityWord (n + 2^k) k = parityWord n k` proved by naive induction: the `U`
+branch sends `n + c·2^k ↦ T n + 3c·2^{k−1}`, so the multiplier is multiplied by
+3, and an induction hypothesis fixed at `c = 1` cannot be applied to its own
+successor. Quantifying over all odd `c` closes it; the `c = 1` form is then a
+corollary. **Worth remembering for any later periodicity claim in this series.**
+
+Still open from this item: the charts `φ_w, ψ_w` themselves and §16's
+`ψ_w ∘ T^k ∘ φ_w^{-1} = id`, plus §18's exact recovery. The congruence and the
+transport identity are the inputs to both, so they are now in place.
+
+The original entry:
 
 `ψ_w ∘ T^k ∘ φ_w^{-1} = id` on each cylinder, and the word↔residue bijection
 `{D,U}^k ↔ ℤ/2^kℤ` for all `k`.
