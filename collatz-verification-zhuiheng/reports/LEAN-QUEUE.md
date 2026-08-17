@@ -15,6 +15,7 @@ taken rather than built. `.lake` is 7.3 GiB and sits on D:.
 | 2 — Paper 07, generalised `mx+r` and §25 | **DONE 2026-08-16**, `Collatz/Generalized.lean` |
 | 3 — Paper 03, cylinders + charts + local identity | **DONE 2026-08-16**, `Collatz/ResidueCylinder.lean` |
 | 4 — Paper 06, valuation language A–C, E, F | **DONE 2026-08-16**, `Collatz/Valuation.lean` |
+| 5 — Paper 09, Theorem A (+ §52) | **DONE 2026-08-16**, `Collatz/StoppingTime.lean` |
 | everything else below | open, in the order given |
 
 **Published:** https://github.com/kakon77777-commits/collatz-lean (Apache-2.0),
@@ -237,7 +238,33 @@ The density claim is a counting argument over `ℤ/2^{j+1}ℤ` and should be
 comfortable. Theorem D's log drift is already verified here as an exact rational
 identity, so it needs no analysis in Lean either.
 
-### 5. Paper 09, Theorems A and F — the real quantifier content
+### 5. Paper 09, Theorems A and F — Theorem A DONE 2026-08-16
+
+`Collatz/StoppingTime.lean`. **Theorem A is done, and the queue's reason for
+rating it above its difficulty was right: it is the statement that says what this
+whole tree's finite work is evidence for.**
+
+- `collatz_iff_finite_stopping` — the equivalence, both directions.
+- **`reaches_one_of_bounded_stopping`** — verifying `σ(n) < ∞` on `[2, N]` proves
+  Collatz on `[1, N]` **and only there**. The exhaustive `[3, 2^40]` descent run
+  archived in this tree is precisely an instance. There is deliberately **no**
+  theorem bridging the bounded conclusion to the unbounded one: that gap is the
+  conjecture, and pretending otherwise is the error this arm exists to avoid.
+- **`no_uniform_depth`** — §52's warning that `∀n ∃k` must not become `∃k ∀n`,
+  proved. The counterexample is the all-ones family from queue item §6b:
+  `2^{k+1} − 1` has *grown* after `k` steps (at `k = 6`, 127 ↦ 1457). **The first
+  item in the queue turned out to be the witness for the fifth**, which is an
+  argument for having formalised it first rather than for its own sake.
+- `sigma_spec` — where `σ` is finite it is the *least* such `j`, so the `Nat.find`
+  definition is the paper's `inf` and not merely some witness.
+
+σ is also now the sixth and most direct cross-check front: 498 values against
+this tree's own engine, the one that computed the `[3, 2^40]` run.
+
+**Theorem F remains open** — it needs `PadicInt` and the eventual-stabilisation
+characterisation of an ordinary positive integer inside `ℤ₂`.
+
+The original entry:
 
 - **Theorem A:** Collatz `⟺ ∀n>1, σ(n) < ∞`. The forward direction is strong
   induction and should be short. This is the statement that makes every finite
