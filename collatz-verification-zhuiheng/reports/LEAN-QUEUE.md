@@ -14,6 +14,7 @@ taken rather than built. `.lake` is 7.3 GiB and sits on D:.
 | 1 — Paper 02, Theorems A–F for all words | **DONE 2026-08-16**, `Collatz/AffineAtlas.lean` |
 | 2 — Paper 07, generalised `mx+r` and §25 | **DONE 2026-08-16**, `Collatz/Generalized.lean` |
 | 3 — Paper 03, cylinders + charts + local identity | **DONE 2026-08-16**, `Collatz/ResidueCylinder.lean` |
+| 4 — Paper 06, valuation language A–C, E, F | **DONE 2026-08-16**, `Collatz/Valuation.lean` |
 | everything else below | open, in the order given |
 
 **Published:** https://github.com/kakon77777-commits/collatz-lean (Apache-2.0),
@@ -197,7 +198,37 @@ bijection for every `k ≤ 20`. The general statement is a short argument; the
 `r_w = 0` boundary that the repair ledger corrects is the one place to be careful,
 and it is exactly where a formalisation would earn its keep.
 
-### 4. Paper 06, Theorems A–C and F
+### 4. Paper 06, Theorems A–C and F — DONE 2026-08-16
+
+`Collatz/Valuation.lean`. Theorems A, B, C, E and F's arithmetic content, plus
+§6's run-length correspondence.
+
+**§14's "complete correspondence with Paper 02" is a claim about a previous
+development, so it is proved** — the same pattern as Paper 07's §6.
+`bCorr_expand` says the accelerated correction `B_κ` **is** Paper 02's `b_w` of
+the run-length expansion; `orbit_eq_iterate` says `m` accelerated steps are
+exactly `K = Σκ` modified steps. Theorem B is then proved by Paper 06's own
+induction anyway, so `bCorr_expand` stays an independent statement about the
+change of coordinates rather than a step in it.
+
+**A hypothesis that turned out to be discharged rather than assumed.**
+`length_expand` and `bCorr_expand` need `κ_i ≥ 1`; `S_odd` and `one_le_valWord`
+prove it is a fact about the map. `S_odd` is the one place in the file needing
+more than divisibility — it uses the **maximality** of `v₂`, which is what makes
+`(3n+1)/2^{v₂}` odd. Worth noting because every later valuation-side item will
+need the same fact.
+
+**Recursion direction, for the third time.** `B_j = 3B_{j−1} + 2^{K_{j−1}}`
+appends on the right; the cons form is
+`B (κ :: rest) = 3^{|rest|} + 2^κ · B rest`, which is exactly the shape `bCorr`
+has on the expanded word. Getting that right made the correspondence a one-line
+induction instead of a fight with `List.reverse`. **Check the direction before
+writing the definition, not after.**
+
+§21–§22's density is stated as its two counts, because "density" is not a Lean
+concept and the arithmetic content is entirely in them.
+
+The original entry:
 
 The accelerated affine closure and the run-length correspondence for **all**
 valuation words, and the one-step density `δ(κ = j) = 2^{−j}`.
