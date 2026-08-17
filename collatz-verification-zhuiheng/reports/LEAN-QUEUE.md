@@ -17,6 +17,7 @@ taken rather than built. `.lake` is 7.3 GiB and sits on D:.
 | 4 — Paper 06, valuation language A–C, E, F | **DONE 2026-08-16**, `Collatz/Valuation.lean` |
 | 5 — Paper 09, Theorems A (+ §52) and F | **DONE 2026-08-17**, `Collatz/StoppingTime.lean` + `Collatz/AnchoredBranch.lean` |
 | 6 — Hard-Zeta, both repaired claims | **DONE 2026-08-16**, `Collatz/HardSet.lean` + `Collatz/InvariantLimit.lean` |
+| 7 — Paper 08, Theorems A–E and G | **DONE 2026-08-17**, `Collatz/AlgebraicDomains.lean` (F deliberately absent) |
 | everything else below | open, in the order given |
 
 **Published:** https://github.com/kakon77777-commits/collatz-lean (Apache-2.0),
@@ -378,7 +379,7 @@ here by definition. From `RUN-012`:
   in the abstract, see `data/external/` — should be taken as a *hypothesis* in any
   formal development, exactly as the subject's own bibliography instructs.
 
-### 7. Paper 08 — only the universally quantified half remains
+### 7. Paper 08 — DONE 2026-08-17, and this entry's own estimate was wrong
 
 Paper 08 walks the coefficient algebra from `ℤ` outward: general commutative
 rings, zero divisors, unordered fields, matrices and noncommutative algebras,
@@ -394,13 +395,58 @@ that is now done: see `RUN-002-OT-SERIES.md` §8 and
 `../data/gate-logs/ot-paper08-recheck.json`, which carries a concrete witness for
 every rung of §43's ladder.
 
-What genuinely remains for Lean is only the **universally quantified** half: "for
-*every* commutative ring `R` and *every* ideal `I`, `[A_w] ∈ (R/I)^×` implies a
-unique residue chart", and the same for the regular-multiplier and degree-growth
-theorems. Those are clean statements and mathlib has the algebra for them, so this
-is no longer the worst item in the queue — but it is still the one with the least
-leverage, because the finite witnesses already tell a reader where each theorem
-stops applying.
+**DONE 2026-08-17**, `Collatz/AlgebraicDomains.lean`, Theorems A–E and G of §51.
+And the "least leverage" verdict above was **half wrong** — which is worth more
+than the entry being right would have been, because it is the second time in two
+items that reading the paper rather than this queue's summary changed the work.
+
+The verdict holds for **B, C and G**. Their universally quantified forms add the
+quantifier and nothing else: `unique_residue_chart` over every commutative ring and
+ideal, `injective_of_isRegular` for every regular multiplier, `natDegree_iterComp`
+for every polynomial over a domain. `RUN-002-OT-SERIES.md` §8 already tells a reader
+where each stops.
+
+It fails for **A and D**.
+
+* **Theorem A is where the series' slogan becomes a theorem.** "Counts determine
+  the multiplicative skeleton; order determines the affine correction" is two
+  claims needing opposite treatment. The first (`Aw_perm`, `Dw_perm`) is universal
+  over all reorderings of all words — no table states it. The second is a
+  *separation*, and `Bw_not_perm_invariant` supplies it with the **Collatz pair
+  itself**: `UD` and `DU` share `A_w` and `D_w` and differ in `B_w`. A finite
+  witness can exhibit the second half and cannot state the first.
+* **Theorem D is the one a finite Collatz table cannot approach**, because the
+  object it is about is the *choice of absolute value*. Paper 02's own word `UUDD`
+  has `F(x) = (9x+5)/16` — and those coefficients are read off the general
+  definitions rather than quoted, so a mistyped `5` fails instead of sitting in
+  prose. Its `λ = 9/16` then has `|λ| < 1`, `|λ|₂ = 16 > 1`, `|λ|₃ = 1/9 < 1`. One
+  operator, three geometries, three answers to "does it contract". Lean's
+  `padicNorm` evaluates these in the kernel, so the three numbers are computed and
+  not typed.
+
+**Theorem E earns its place by being the exact converse of `Aw_perm`.** That proof
+used commutativity and nothing else, and `counts_do_not_determine_skeleton` shows
+the conclusion is *false* without it — two unipotent matrices, equal counts,
+different product. A hypothesis with a counterexample attached is a different object
+from one merely written down.
+
+**Theorem F is deliberately absent, and recorded as absent.** The projective rung
+would need a formal notion of transporting an arithmetic progression along a Möbius
+map, built to support one negative remark. Here the queue's verdict is simply right.
+
+Paper 08 also contributes the cross-check's sharpest front, because there the two
+sides use two **different formulas** rather than two implementations of one: Lean
+computes `B_w` by the cons recursion, the gate by §5's closed sum
+`Σ_j b_j (∏_{ℓ>j} a_ℓ)(∏_{ℓ<j} d_ℓ)`, exhaustively over every word to length 8.
+
+**And building it found a third generation of the same hole in the axiom gate.**
+Naming a theorem `affine_closure` in `Collatz.Domains` collided with Paper 02's
+`Collatz.Atlas.affine_closure`, and the gate compared **short** names — so the two
+were one member and an audit line for either covered both. Comparing fully qualified
+names raised the declared count by exactly the one member the collision had been
+hiding. Qualifying the audit lines then silently de-aimed one drill defect, and the
+drill's own `count == 1` anchor guard reported it as **uncaught** rather than
+matching an empty string. Both are now defects in the drill.
 
 ## Practical notes, now that the drive is here
 
