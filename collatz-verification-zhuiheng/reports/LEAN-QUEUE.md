@@ -13,7 +13,7 @@ taken rather than built. `.lake` is 7.3 GiB and sits on D:.
 | §6b — the finite-local no-go | **DONE 2026-08-16**, `Collatz/AllOnes.lean` |
 | 1 — Paper 02, Theorems A–F for all words | **DONE 2026-08-16**, `Collatz/AffineAtlas.lean` |
 | 2 — Paper 07, generalised `mx+r` and §25 | **DONE 2026-08-16**, `Collatz/Generalized.lean` |
-| 3 — Paper 03, residue cylinders | **DONE 2026-08-16**, `Collatz/ResidueCylinder.lean` |
+| 3 — Paper 03, cylinders + charts + local identity | **DONE 2026-08-16**, `Collatz/ResidueCylinder.lean` |
 | everything else below | open, in the order given |
 
 **Published:** https://github.com/kakon77777-commits/collatz-lean (Apache-2.0),
@@ -143,7 +143,7 @@ Structurally identical to item 1 with `3 → m` and `1 → r`, plus:
 Doing this immediately after item 1 tests whether the Paper 02 development
 generalises the way the paper says it does — which is Paper 07's whole thesis.
 
-### 3. Paper 03, the local identityisation — the bijection DONE 2026-08-16
+### 3. Paper 03, the local identityisation — DONE 2026-08-16
 
 `Collatz/ResidueCylinder.lean`. The word↔residue correspondence is done:
 `parityWord_eq_iff_modEq` (two integers follow the same length-`k` word iff they
@@ -167,9 +167,25 @@ branch sends `n + c·2^k ↦ T n + 3c·2^{k−1}`, so the multiplier is multipli
 successor. Quantifying over all odd `c` closes it; the `c = 1` form is then a
 corollary. **Worth remembering for any later periodicity claim in this series.**
 
-Still open from this item: the charts `φ_w, ψ_w` themselves and §16's
-`ψ_w ∘ T^k ∘ φ_w^{-1} = id`, plus §18's exact recovery. The congruence and the
-transport identity are the inputs to both, so they are now in place.
+**§12–§19 are also done**: the transport theorem, both charts, §16's
+`ψ_w ∘ F_w ∘ φ_w^{-1} = id`, its restriction to `T^k` on the positive domain,
+§18's exact recovery and §19's faithfulness.
+
+Two modelling choices there are worth carrying forward:
+
+- **The charts live on `ℤ`, not `ℕ`.** `φ_w(n) = (n − r_w)/2^k` needs
+  subtraction, so this is the first section of the whole queue where `ℕ` is the
+  wrong home even though everything before it was fine in `ℕ`. Check the home
+  before starting a section, not after the third failed `omega`.
+- **`m_w` is never defined by a division.** It is taken as any integer with
+  `2^k·m = 3^u·r + b_w` — which is exactly what §4 establishes and what the
+  `r_w = 0` repair was needed for. As a hypothesis rather than a quotient, every
+  proof in the section becomes a ring identity and the statements get stronger.
+
+§16's first display is about the **formal** operator on the whole cylinder; only
+its restriction is about `T^k` on the positive domain. Both are proved separately
+(`local_identity`, `local_identity_dynamical`) because conflating them is exactly
+the domain confusion Paper 03 exists to fix.
 
 The original entry:
 
