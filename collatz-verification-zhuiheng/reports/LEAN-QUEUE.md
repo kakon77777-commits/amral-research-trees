@@ -16,6 +16,7 @@ taken rather than built. `.lake` is 7.3 GiB and sits on D:.
 | 3 — Paper 03, cylinders + charts + local identity | **DONE 2026-08-16**, `Collatz/ResidueCylinder.lean` |
 | 4 — Paper 06, valuation language A–C, E, F | **DONE 2026-08-16**, `Collatz/Valuation.lean` |
 | 5 — Paper 09, Theorem A (+ §52) | **DONE 2026-08-16**, `Collatz/StoppingTime.lean` |
+| 6 — Hard-Zeta, the `n ≥ 2` stopping domain | **DONE 2026-08-16**, `Collatz/HardSet.lean` |
 | everything else below | open, in the order given |
 
 **Published:** https://github.com/kakon77777-commits/collatz-lean (Apache-2.0),
@@ -282,6 +283,15 @@ would make precise what the bound *is a bound on*.
 ### 6. Hard-Zeta — the two repaired claims
 
 - the `n ≥ 2` stopping domain: `Ẽ_w = H_w ∩ [2,∞)`, `E_k^C = ⊔_{|w|=k} Ẽ_w`.
+  **DONE 2026-08-16**, `Collatz/HardSet.lean`. The reason `1` must be excluded is
+  a *theorem*, not a stipulation: under the modified map `1 → 2 → 1`, so
+  `T^j(1) ∈ {1,2}` always and `1` **never descends**. Without the domain clause it
+  would sit in every `E_k` and a Dirichlet sum over the hard set would carry a
+  `1^{-s}` term at every depth. Also `descent_iff_quotient`: whether `n` has
+  descended by step `k` is not a fact about `n` — in chart coordinates it is a
+  linear inequality of slope `2^k − 3^u`, which is what makes the per-chart mass
+  exactly computable. The partition itself is by parity word, so `length_parityWord`
+  is what guarantees no other word contributes.
   **This one is partly checkable here** — that the union is a genuine disjoint
   partition of the hard set with `n = 1` excluded is a finite statement per `k`,
   and it is the natural next non-Lean task.
