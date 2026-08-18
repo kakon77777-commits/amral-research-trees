@@ -1,0 +1,243 @@
+{
+  "tool": "cs03_v09_models.py",
+  "subject": "source item 39, v0.9",
+  "problems": [],
+  "controls": {
+    "C1_the_two_models_differ": {
+      "detected": true,
+      "v09_states": 62,
+      "v08_states": 16
+    },
+    "C2_v08_really_had_dead_actions": {
+      "detected": true,
+      "dead": [
+        "Deny",
+        "RollbackDone",
+        "VerifyFail"
+      ]
+    },
+    "C3_v09_has_no_dead_actions": {
+      "detected": true
+    },
+    "C4_removing_an_action_changes_the_walk": {
+      "detected": true,
+      "states_without_VerifyFail": 30
+    },
+    "C5_the_induction_check_can_reject": {
+      "detected": true
+    },
+    "C6_strengthening_is_strict": {
+      "detected": true,
+      "cloud_only_states": 15,
+      "strengthened_states": 10
+    },
+    "C7_the_cycle_detector_can_say_yes": {
+      "detected": true
+    }
+  },
+  "source": {
+    "name": "NeoK_Crypto_Semiotics_Theory_Compiler_v0.9.zip",
+    "bytes": 3481122,
+    "sha256": "96aa7e9eb4f3eeb6cc5923e24fd13f3e7015d906aa6c66f49bacdc834ac73bbf"
+  },
+  "manifest": {
+    "entries": 14,
+    "mismatches": [],
+    "unlisted_in_layer_13": [
+      "13_external_formal_attempt_v0.9/manifest_v0.9.json"
+    ]
+  },
+  "obligation": {
+    "id": "OBL-N21-005-008",
+    "claim_id": "CL-N21-005",
+    "state": "partially_satisfied",
+    "gate": "G4_external_validation",
+    "blocking": true,
+    "claim_text": "常駐安全循環為 Observe → Model → Detect → Prioritize → Respond → Verify → Learn。",
+    "completion_criteria": "The model excludes unauthorized high-risk actions, records rollback paths and demonstrates progress under fair scheduling.",
+    "symbol_ids": [
+      "SYM-RUNTIME-OBSERVE",
+      "SYM-RUNTIME-MODEL",
+      "SYM-RUNTIME-DETECT",
+      "SYM-RUNTIME-PRIORITIZE",
+      "SYM-RUNTIME-RESPOND",
+      "SYM-RUNTIME-VERIFY",
+      "SYM-RUNTIME-LEARN"
+    ],
+    "symbol_count": 7
+  },
+  "promotion_profile": {
+    "profiles_total": 264,
+    "CL-N21-005": {
+      "claim_id": "CL-N21-005",
+      "document_node_id": "N21",
+      "claim_text": "常駐安全循環為 Observe → Model → Detect → Prioritize → Respond → Verify → Learn。",
+      "status": "current_definition",
+      "logical_role": "definition",
+      "scope_domain": "digital_immunity",
+      "current_gate": "G3_internal_validation",
+      "target_gate": "G3_internal_validation",
+      "promotion_decision": "ready_at_target",
+      "readiness_score": 0.9286,
+      "obligation_count": 8,
+      "blocking_obligation_count": 7,
+      "unresolved_blocking_count": 1,
+      "blocked_count": 0,
+      "top_blocker_ids": [
+        "OBL-N21-005-008"
+      ],
+      "external_evidence_gap_count": 1,
+      "updated_by": "obligation_execution_v0.8"
+    },
+    "ready_at_target_with_unresolved_blocking": [
+      "CL-N21-005"
+    ]
+  },
+  "runtime_symbols_in_package": [
+    "SYM-RUNTIME-DETECT",
+    "SYM-RUNTIME-LEARN",
+    "SYM-RUNTIME-MODEL",
+    "SYM-RUNTIME-OBSERVE",
+    "SYM-RUNTIME-PRIORITIZE",
+    "SYM-RUNTIME-RESPOND",
+    "SYM-RUNTIME-VERIFY"
+  ],
+  "runtime_v09": {
+    "reachable_states": 62,
+    "nonstuttering_edges": 86,
+    "edge_depth": 19,
+    "stages_reached": [
+      "AwaitApproval",
+      "Detect",
+      "Learn",
+      "Model",
+      "Observe",
+      "Prioritize",
+      "Respond",
+      "Rollback",
+      "Verify"
+    ],
+    "actions_never_enabled": [],
+    "rollback_reachable": true,
+    "rollback_recorded_states": 2,
+    "cycle_avoiding_learn_exists": false,
+    "invariants": {
+      "TypeOK": true,
+      "HighRiskApproval": true,
+      "NoUnauthorizedResponse": true,
+      "RollbackRecordedOnlyAtLearn": true
+    }
+  },
+  "runtime_v08_for_comparison": {
+    "reachable_states": 16,
+    "nonstuttering_edges": 19,
+    "edge_depth": 8,
+    "stages_reached": [
+      "AwaitApproval",
+      "Detect",
+      "Learn",
+      "Model",
+      "Observe",
+      "Prioritize",
+      "Respond",
+      "Verify"
+    ],
+    "actions_never_enabled": [
+      "Deny",
+      "RollbackDone",
+      "VerifyFail"
+    ],
+    "authorized_ever_false": false,
+    "verificationOK_ever_false": false,
+    "rollback_recorded_ever_true": false
+  },
+  "ctcl": {
+    "states_enumerated": 16,
+    "reachable_states": 10,
+    "nonstuttering_edges": 15,
+    "edge_depth": 4,
+    "init_implies_strong_invariant": true,
+    "cloud_only_secrecy_inductive_by_itself": false,
+    "cloud_only_action_results": {
+      "Upload": false,
+      "CompromiseCloud": false,
+      "StealClientKey": true,
+      "Decrypt": true,
+      "Stutter": true
+    },
+    "strengthened_invariant_action_results": {
+      "Upload": true,
+      "CompromiseCloud": true,
+      "StealClientKey": true,
+      "Decrypt": true,
+      "Stutter": true
+    },
+    "strengthened_invariant_implies_cloud_only_secrecy": true,
+    "client_key_stolen_decrypt_counterexample_exists": true,
+    "cloud_only_holds_on_every_reachable_state": true,
+    "strengthened_set_equals_reachable_set": true,
+    "counterexamples_to_cloud_only_induction": {
+      "Upload": {
+        "from": [
+          false,
+          true,
+          false,
+          true
+        ],
+        "to": [
+          true,
+          true,
+          false,
+          true
+        ]
+      },
+      "CompromiseCloud": {
+        "from": [
+          true,
+          false,
+          false,
+          true
+        ],
+        "to": [
+          true,
+          true,
+          false,
+          true
+        ]
+      }
+    }
+  },
+  "tlc": {
+    "runs": [
+      {
+        "generated": 16,
+        "distinct": 10,
+        "left_on_queue": 0,
+        "depth": 5
+      },
+      {
+        "generated": 87,
+        "distinct": 62,
+        "left_on_queue": 0,
+        "depth": 20
+      }
+    ],
+    "errors_found": 0,
+    "completed_without_error": 2,
+    "temporal_properties_checked": true,
+    "tlc_version": "TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)"
+  },
+  "tlc_predicted_by_this_file": [
+    {
+      "distinct": 10,
+      "generated": 16,
+      "depth": 5
+    },
+    {
+      "distinct": 62,
+      "generated": 87,
+      "depth": 20
+    }
+  ],
+  "ok": true
+}

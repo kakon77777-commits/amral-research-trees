@@ -1,0 +1,78 @@
+{
+  "tool": "cs03_drill.py",
+  "subject": "cs03_v09_models.py",
+  "defects": {
+    "D1_rollback_becomes_unreachable_again": {
+      "caught": true,
+      "expected_substring": "Rollback still unreachable",
+      "reported": [
+        "package reports reachable_states = 62; independent enumeration gives 30",
+        "package reports nonstuttering_edges = 86; independent enumeration gives 40",
+        "Rollback still unreachable in v0.9"
+      ]
+    },
+    "D2_an_unauthorized_response_becomes_possible": {
+      "caught": true,
+      "expected_substring": "NoUnauthorizedResponse",
+      "reported": [
+        "package reports reachable_states = 62; independent enumeration gives 50",
+        "package reports nonstuttering_edges = 86; independent enumeration gives 69",
+        "runtime invariant NoUnauthorizedResponse fails"
+      ]
+    },
+    "D3_the_state_count_stops_matching_the_package": {
+      "caught": true,
+      "expected_substring": "independent enumeration gives",
+      "reported": [
+        "package reports reachable_states = 62; independent enumeration gives 19",
+        "package reports nonstuttering_edges = 86; independent enumeration gives 18",
+        "TLC run 1 reports distinct = 62; this file predicts 19"
+      ]
+    },
+    "D4_the_auxiliary_invariants_are_dropped": {
+      "caught": true,
+      "expected_substring": "exhaustion gives",
+      "reported": [
+        "package reports strengthened_invariant_action_results = {'Upload': True, 'CompromiseCloud': True, 'StealClientKey': True, 'Decrypt': True, 'Stutter': True}; exhaustion gives {'Upload': False, 'CompromiseCloud': False, 'StealClientKey': True, 'Decrypt': True, 'Stutter': True}",
+        "the strengthened invariant no longer characterises reachability exactly, so this run's claim that it is the strongest available inductive invariant is stale"
+      ]
+    },
+    "D5_the_tlc_transcript_disagrees_with_the_walk": {
+      "caught": true,
+      "expected_substring": "this file predicts",
+      "reported": [
+        "TLC run 0 reports distinct = 11; this file predicts 10"
+      ]
+    },
+    "D6_the_liveness_check_never_ran": {
+      "caught": true,
+      "expected_substring": "liveness property was not actually verified",
+      "reported": [
+        "the TLC transcript contains no temporal-property check, so the liveness property was not actually verified"
+      ]
+    }
+  },
+  "controls": {
+    "N1_a_comment_is_not_a_problem": {
+      "undisturbed": true
+    },
+    "N2_every_file_restored_byte_exactly": {
+      "undisturbed": true,
+      "per_file": {
+        "D:\\Ai\\work together\\amral-research-trees\\neok-crypto-semiotics-verification\\code\\cs03_v09_models.py": true,
+        "D:\\Ai\\work together\\amral-research-trees\\neok-crypto-semiotics-verification\\data\\tlc-v09.log": true
+      }
+    }
+  },
+  "baseline": {
+    "reachable_states": 62,
+    "tlc_runs": 2
+  },
+  "counts": {
+    "defects_planted": 6,
+    "caught": 6,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

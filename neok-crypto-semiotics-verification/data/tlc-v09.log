@@ -1,0 +1,50 @@
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 55 and seed -1909934664277041610 with 1 worker on 16 cores with 7266MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_491 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\kakon\AppData\Local\Temp\claude\D--Ai\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\scratchpad\cs09\NeoK_Crypto_Semiotics_Theory_Compiler_v0.9\13_external_formal_attempt_v0.9\01_tla_models\CTCL_CloudCompromise_v09.tla
+Parsing file C:\Users\kakon\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\kakon\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\kakon\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\kakon\AppData\Local\Temp\FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module CTCL_CloudCompromise_v09
+Starting... (2026-08-18 12:11:01)
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-08-18 12:11:01.
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 3.3E-18
+16 states generated, 10 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 5.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 3 and the 95th percentile is 3).
+Finished in 00s at (2026-08-18 12:11:01)
+TLC2 Version 2.19 of 08 August 2024 (rev: 5a47802)
+Running breadth-first search Model-Checking with fp 87 and seed 3949898064676632342 with 1 worker on 16 cores with 7266MB heap and 64MB offheap memory (Windows 10 10.0 amd64, Oracle Corporation 1.8.0_491 x86_64, MSBDiskFPSet, DiskStateQueue).
+Parsing file C:\Users\kakon\AppData\Local\Temp\claude\D--Ai\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\scratchpad\cs09\NeoK_Crypto_Semiotics_Theory_Compiler_v0.9\13_external_formal_attempt_v0.9\01_tla_models\PersistentSecurityRuntime_v09.tla
+Parsing file C:\Users\kakon\AppData\Local\Temp\Naturals.tla
+Parsing file C:\Users\kakon\AppData\Local\Temp\TLC.tla
+Parsing file C:\Users\kakon\AppData\Local\Temp\Sequences.tla
+Parsing file C:\Users\kakon\AppData\Local\Temp\FiniteSets.tla
+Semantic processing of module Naturals
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module PersistentSecurityRuntime_v09
+Starting... (2026-08-18 12:11:02)
+Implied-temporal checking--satisfiability problem has 1 branches.
+Computing initial states...
+Finished computing initial states: 1 distinct state generated at 2026-08-18 12:11:02.
+Progress(20) at 2026-08-18 12:11:02: 87 states generated, 62 distinct states found, 0 states left on queue.
+Checking temporal properties for the complete state space with 62 total distinct states at (2026-08-18 12:11:02)
+Finished checking temporal properties in 00s at 2026-08-18 12:11:02
+Model checking completed. No error has been found.
+  Estimates of the probability that TLC did not check all reachable states
+  because two distinct states had the same fingerprint:
+  calculated (optimistic):  val = 8.4E-17
+87 states generated, 62 distinct states found, 0 states left on queue.
+The depth of the complete state graph search is 20.
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 2 and the 95th percentile is 2).
+Finished in 00s at (2026-08-18 12:11:02)
