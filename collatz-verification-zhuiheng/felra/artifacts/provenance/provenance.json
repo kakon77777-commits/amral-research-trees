@@ -7,7 +7,7 @@
       "kind": "project",
       "label": "Where a float64 anchor stops seeing the correction mass",
       "path": "project_snapshot.yaml",
-      "sha256": "bf5ebf86113a5de0eafdd76e3c802e4edfbb46360a05c175dcc5b127fa08e2d7"
+      "sha256": "f8b8b37d71145f14c144b47d67af5657ffc933e5f771e1c58e0e7c0621c5f523"
     },
     {
       "id": "claim:correction_mass_never_exhausts",
@@ -77,6 +77,27 @@
       "kind": "artifact",
       "label": "metrics.json",
       "path": "analyses\\decimal_still_sees_it\\metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "analysis:anchor_precision_ladder",
+      "kind": "analysis",
+      "label": "At what precision does the anchor gap settle",
+      "path": "analyses/anchor_precision_ladder/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "artifact:anchor_precision_ladder:analyses\\anchor_precision_ladder\\analysis_report.md",
+      "kind": "artifact",
+      "label": "analysis_report.md",
+      "path": "analyses\\anchor_precision_ladder\\analysis_report.md",
+      "sha256": null
+    },
+    {
+      "id": "artifact:anchor_precision_ladder:analyses\\anchor_precision_ladder\\metrics.json",
+      "kind": "artifact",
+      "label": "metrics.json",
+      "path": "analyses\\anchor_precision_ladder\\metrics.json",
       "sha256": null
     },
     {
@@ -172,6 +193,26 @@
     {
       "source": "analysis:decimal_still_sees_it",
       "target": "artifact:decimal_still_sees_it:analyses\\decimal_still_sees_it\\metrics.json",
+      "relation": "produces"
+    },
+    {
+      "source": "project",
+      "target": "analysis:anchor_precision_ladder",
+      "relation": "defines"
+    },
+    {
+      "source": "analysis:anchor_precision_ladder",
+      "target": "claim:correction_mass_never_exhausts",
+      "relation": "supports"
+    },
+    {
+      "source": "analysis:anchor_precision_ladder",
+      "target": "artifact:anchor_precision_ladder:analyses\\anchor_precision_ladder\\analysis_report.md",
+      "relation": "produces"
+    },
+    {
+      "source": "analysis:anchor_precision_ladder",
+      "target": "artifact:anchor_precision_ladder:analyses\\anchor_precision_ladder\\metrics.json",
       "relation": "produces"
     },
     {

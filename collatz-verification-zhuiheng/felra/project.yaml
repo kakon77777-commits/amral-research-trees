@@ -92,6 +92,26 @@ analyses:
   # The universally quantified statement is not settled by any of the above, and
   # this is where it lives: Collatz/AllOnes.lean proves the subcritical prefix
   # property for EVERY m, machine-checked.
+  # The float64 horizon above says a representation stops seeing the gap. This
+  # says at what precision a Decimal computation of it SETTLES — and it is run
+  # with three tail levels, not two, because at 32 and 64 bits the value rounds to
+  # exactly 1 at both and a two-level test would report `stable` on the wrong
+  # answer. That trap is real here, not hypothetical.
+  - id: anchor_precision_ladder
+    type: precision_ladder
+    title: At what precision does the anchor gap settle
+    claim_id: correction_mass_never_exhausts
+    expression: 1 - (two / three) ** m
+    points:
+      - {two: "2", three: "3", m: "93"}
+      - {two: "2", three: "3", m: "150"}
+    initial_precision_bits: 32
+    strategy: doubling
+    max_precision_bits: 4096
+    consecutive_levels: 3
+    absolute_tolerance: "1e-80"
+    relative_tolerance: "1e-70"
+
   # One file elaborating says one file elaborates. `axioms_within` makes the
   # claim about the WHOLE development: Audit.lean prints `#print axioms` for every
   # theorem in the tree, and the backend refuses any that rests on an axiom outside

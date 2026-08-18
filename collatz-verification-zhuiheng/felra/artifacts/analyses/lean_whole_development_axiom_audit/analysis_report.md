@@ -4,7 +4,7 @@
 - Type: `formal_check`
 - Execution success: `True`
 - Summary: lean → formal_status=verified (expected verified): 184 theorem(s) audited; every one depends only on the declared axioms (Classical.choice, Quot.sound, propext)
-- Generated at: `2026-08-18T14:47:33.275050+00:00`
+- Generated at: `2026-08-18T15:02:37.433793+00:00`
 
 > Analysis outputs are finite-budget computational evidence and diagnostics.
 
@@ -30,7 +30,7 @@
     "bytes": 18820
   },
   "exit_code": 0,
-  "duration_seconds": 16.803,
+  "duration_seconds": 16.508,
   "detail": "184 theorem(s) audited; every one depends only on the declared axioms (Classical.choice, Quot.sound, propext)",
   "stdout_tail": "opext, Quot.sound]\n'Collatz.Domains.mod_six_no_solution' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.two_not_isUnit_mod_six' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.injective_of_isRegular' does not depend on any axioms\n'Collatz.Domains.nonunit_not_noninjective' depends on axioms: [propext, Classical.choice]\n'Collatz.Domains.zero_divisor_breaks_recovery' depends on axioms: [propext, Quot.sound]\n'Collatz.Domains.padicNorm_pow' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.abs_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.padic_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.UUDD_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.UUDD_operator' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.lam_archimedean' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.lam_two_adic' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.lam_three_adic' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.contraction_is_geometry_relative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.same_operator_contracts_and_expands' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.MA_mul_MB_ne' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.counts_do_not_determine_skeleton' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.natDegree_iterComp' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.escapes_every_fixed_degree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.square_iterates_degrees' depends on axioms: [propext, Classical.choice, Quot.sound]\n(9, 5, 16)\n((3, 4, 1), 3, 4, 2)\n(!![2, 1; 1, 1], !![1, 1; 1, 2])\n[1, 4]\n[]\n",
   "assumptions": [
@@ -55,7 +55,7 @@
   ],
   "status_separation": "`success` is FELRA's evidence-pipeline flag (the declared expectation was met); `formal_status` is the external checker's verdict. They are recorded separately and are never combined into a single notion of proof.",
   "cache_hit": false,
-  "cache_fingerprint": "b927b626da25bd7ef648523d9ff34e8806ceae8cc7a190c942c054224cb96990"
+  "cache_fingerprint": "322f1b5d3fe3327b86fe01733c5d98ae5ae2489ad5dfe5cbec2eb90086a80cb3"
 }
 ```
 

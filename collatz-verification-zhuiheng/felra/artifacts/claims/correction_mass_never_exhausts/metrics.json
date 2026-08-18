@@ -5,12 +5,12 @@
     "status": "hypothesis",
     "domain_description": "m in [1, 200] with 200 declared samples"
   },
-  "created_at": "2026-08-18T14:47:16.258682+00:00",
+  "created_at": "2026-08-18T15:02:20.696719+00:00",
   "passed": true,
   "metadata": {
     "expression": "m > 0",
     "project_id": "collatz-anchor-representation",
-    "config_sha256": "bf5ebf86113a5de0eafdd76e3c802e4edfbb46360a05c175dcc5b127fa08e2d7",
+    "config_sha256": "f8b8b37d71145f14c144b47d67af5657ffc933e5f771e1c58e0e7c0621c5f523",
     "seed": 42,
     "analyses": [
       {
@@ -30,6 +30,12 @@
         "type": "cross_backend",
         "success": true,
         "report": "analyses/decimal_still_sees_it/analysis_report.md"
+      },
+      {
+        "id": "anchor_precision_ladder",
+        "type": "precision_ladder",
+        "success": true,
+        "report": "analyses/anchor_precision_ladder/analysis_report.md"
       },
       {
         "id": "lean_whole_development_axiom_audit",

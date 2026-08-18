@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1000" viewBox="0 0 1200 1000">
 <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="black"/></marker></defs>
 <rect width="100%" height="100%" fill="white"/>
 <text x="20" y="25" font-family="sans-serif" font-size="16">FELRA Evidence Provenance Graph</text>
@@ -19,6 +19,10 @@
 <line x1="645" y1="355" x2="275" y2="85" stroke="black" stroke-width="1" marker-end="url(#arrow)"/>
 <line x1="645" y1="355" x2="715" y2="625" stroke="black" stroke-width="1" marker-end="url(#arrow)"/>
 <line x1="645" y1="355" x2="715" y2="715" stroke="black" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="205" y1="85" x2="495" y2="445" stroke="black" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="645" y1="445" x2="275" y2="85" stroke="black" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="645" y1="445" x2="715" y2="805" stroke="black" stroke-width="1" marker-end="url(#arrow)"/>
+<line x1="645" y1="445" x2="715" y2="895" stroke="black" stroke-width="1" marker-end="url(#arrow)"/>
 <line x1="205" y1="85" x2="935" y2="85" stroke="black" stroke-width="1" marker-end="url(#arrow)"/>
 <rect x="55" y="60" width="150" height="50" rx="8" fill="white" stroke="black"/>
 <text x="130" y="83" text-anchor="middle" font-family="sans-serif" font-size="10">Where a float64 anchor stop...</text>
@@ -54,7 +58,7 @@
 <text x="790" y="533" text-anchor="middle" font-family="sans-serif" font-size="10">metrics.json</text>
 <text x="790" y="549" text-anchor="middle" font-family="sans-serif" font-size="9">[artifact]</text>
 <rect x="495" y="330" width="150" height="50" rx="8" fill="white" stroke="black"/>
-<text x="570" y="353" text-anchor="middle" font-family="sans-serif" font-size="10">Every theorem in collatz-le...</text>
+<text x="570" y="353" text-anchor="middle" font-family="sans-serif" font-size="10">At what precision does the ...</text>
 <text x="570" y="369" text-anchor="middle" font-family="sans-serif" font-size="9">[analysis]</text>
 <rect x="715" y="600" width="150" height="50" rx="8" fill="white" stroke="black"/>
 <text x="790" y="623" text-anchor="middle" font-family="sans-serif" font-size="10">analysis_report.md</text>
@@ -62,6 +66,15 @@
 <rect x="715" y="690" width="150" height="50" rx="8" fill="white" stroke="black"/>
 <text x="790" y="713" text-anchor="middle" font-family="sans-serif" font-size="10">metrics.json</text>
 <text x="790" y="729" text-anchor="middle" font-family="sans-serif" font-size="9">[artifact]</text>
+<rect x="495" y="420" width="150" height="50" rx="8" fill="white" stroke="black"/>
+<text x="570" y="443" text-anchor="middle" font-family="sans-serif" font-size="10">Every theorem in collatz-le...</text>
+<text x="570" y="459" text-anchor="middle" font-family="sans-serif" font-size="9">[analysis]</text>
+<rect x="715" y="780" width="150" height="50" rx="8" fill="white" stroke="black"/>
+<text x="790" y="803" text-anchor="middle" font-family="sans-serif" font-size="10">analysis_report.md</text>
+<text x="790" y="819" text-anchor="middle" font-family="sans-serif" font-size="9">[artifact]</text>
+<rect x="715" y="870" width="150" height="50" rx="8" fill="white" stroke="black"/>
+<text x="790" y="893" text-anchor="middle" font-family="sans-serif" font-size="10">metrics.json</text>
+<text x="790" y="909" text-anchor="middle" font-family="sans-serif" font-size="9">[artifact]</text>
 <rect x="935" y="60" width="150" height="50" rx="8" fill="white" stroke="black"/>
 <text x="1010" y="83" text-anchor="middle" font-family="sans-serif" font-size="10">Run manifest</text>
 <text x="1010" y="99" text-anchor="middle" font-family="sans-serif" font-size="9">[manifest]</text>

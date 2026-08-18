@@ -4,9 +4,9 @@
 - Overall result: **ATTENTION REQUIRED**
 - Claims supported in declared domain: `True`
 - Analyses completed successfully: `False`
-- Generated at: `2026-08-18T14:47:33.284723+00:00`
-- Configuration SHA-256: `bf5ebf86113a5de0eafdd76e3c802e4edfbb46360a05c175dcc5b127fa08e2d7`
-- Result SHA-256: `38d51d9170af85193899199af86191a7aaacce07942ecd3701b15df60ff7f5ca`
+- Generated at: `2026-08-18T15:02:37.444685+00:00`
+- Configuration SHA-256: `f8b8b37d71145f14c144b47d67af5657ffc933e5f771e1c58e0e7c0621c5f523`
+- Result SHA-256: `aecd508b77eef6cfa607a4e4e406ba289635bb61765133ccb907573a160c274e`
 
 > All results are finite-budget computational evidence, not universal proofs.
 
@@ -19,6 +19,7 @@
 - **PASS** `anchor_gap_below_the_horizon` — The anchor gap at small m ([report](analyses/anchor_gap_below_the_horizon/analysis_report.md))
 - **FAIL** `anchor_gap_at_the_horizon` — Where float64 reports the correction mass as exhausted ([report](analyses/anchor_gap_at_the_horizon/analysis_report.md))
 - **PASS** `decimal_still_sees_it` — Decimal at 40 digits against the exact value, past the float64 horizon ([report](analyses/decimal_still_sees_it/analysis_report.md))
+- **PASS** `anchor_precision_ladder` — At what precision does the anchor gap settle ([report](analyses/anchor_precision_ladder/analysis_report.md))
 - **PASS** `lean_whole_development_axiom_audit` — Every theorem in collatz-lean, and what each one rests on ([report](analyses/lean_whole_development_axiom_audit/analysis_report.md))
 
 ## Reproducibility

@@ -80,6 +80,24 @@ analyses:
   - two: '2'
     three: '3'
     m: '150'
+- id: anchor_precision_ladder
+  type: precision_ladder
+  title: At what precision does the anchor gap settle
+  claim_id: correction_mass_never_exhausts
+  expression: 1 - (two / three) ** m
+  points:
+  - two: '2'
+    three: '3'
+    m: '93'
+  - two: '2'
+    three: '3'
+    m: '150'
+  initial_precision_bits: 32
+  strategy: doubling
+  max_precision_bits: 4096
+  consecutive_levels: 3
+  absolute_tolerance: 1e-80
+  relative_tolerance: 1e-70
 - id: lean_whole_development_axiom_audit
   type: formal_check
   title: Every theorem in collatz-lean, and what each one rests on
