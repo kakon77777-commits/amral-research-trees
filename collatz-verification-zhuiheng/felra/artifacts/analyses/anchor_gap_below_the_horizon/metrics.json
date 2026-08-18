@@ -5,7 +5,7 @@
   "success": true,
   "summary": "3 point(s) across float64, decimal, rational → within_tolerance_only",
   "claim_id": "correction_mass_never_exhausts",
-  "created_at": "2026-08-18T14:34:03.431014+00:00",
+  "created_at": "2026-08-18T14:47:16.286196+00:00",
   "metrics": {
     "expression": "1 - (two / three) ** m",
     "backends": [
@@ -106,7 +106,7 @@
     "errors": [],
     "note": "`exact` means the two ontologies produced the same rational number; `within_tolerance` means they did not. Only the first supports the evidence ladder's `exact_verified` rung.",
     "cache_hit": false,
-    "cache_fingerprint": "6dba137ca3d0636096570a6b30ed58e8a1353cabc49ab4a9f1acfdbf4dd8005b"
+    "cache_fingerprint": "edd85c7ae4e96bbc401a6071ca4e1b52b501bc89fe70ec844ccbdd6ac55e63a0"
   },
   "artifacts": [
     "analyses\\anchor_gap_below_the_horizon\\analysis_report.md",

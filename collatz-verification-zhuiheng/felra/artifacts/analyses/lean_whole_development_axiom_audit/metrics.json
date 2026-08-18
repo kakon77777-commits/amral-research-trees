@@ -1,0 +1,63 @@
+{
+  "id": "lean_whole_development_axiom_audit",
+  "type": "formal_check",
+  "title": "Every theorem in collatz-lean, and what each one rests on",
+  "success": true,
+  "summary": "lean → formal_status=verified (expected verified): 184 theorem(s) audited; every one depends only on the declared axioms (Classical.choice, Quot.sound, propext)",
+  "claim_id": "correction_mass_never_exhausts",
+  "created_at": "2026-08-18T14:47:33.275050+00:00",
+  "metrics": {
+    "formal_status": "verified",
+    "checker": {
+      "backend": "lean",
+      "available": true,
+      "command": [
+        "C:\\Users\\kakon\\.elan\\bin\\lake.EXE"
+      ],
+      "executable_path": "C:\\Users\\kakon\\.elan\\bin\\lake.EXE",
+      "executable_sha256": "c3f728aebdceb2635a273d4bb39bbd07ad92bcc517f838b597b5575df6288a2e",
+      "version_string": "Lake version 5.0.0-src+d8b1897 (Lean version 4.33.0)",
+      "note": null
+    },
+    "obligation": {
+      "path": "D:\\Ai\\work together\\lean\\collatz\\Collatz\\Audit.lean",
+      "sha256": "786d9c40de27b6ac65b3a40e5a62c2328f161a8973126e071a9f8a78d7f3c5ff",
+      "bytes": 18820
+    },
+    "exit_code": 0,
+    "duration_seconds": 16.803,
+    "detail": "184 theorem(s) audited; every one depends only on the declared axioms (Classical.choice, Quot.sound, propext)",
+    "stdout_tail": "opext, Quot.sound]\n'Collatz.Domains.mod_six_no_solution' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.two_not_isUnit_mod_six' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.injective_of_isRegular' does not depend on any axioms\n'Collatz.Domains.nonunit_not_noninjective' depends on axioms: [propext, Classical.choice]\n'Collatz.Domains.zero_divisor_breaks_recovery' depends on axioms: [propext, Quot.sound]\n'Collatz.Domains.padicNorm_pow' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.abs_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.padic_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.UUDD_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.UUDD_operator' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.lam_archimedean' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.lam_two_adic' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.lam_three_adic' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.contraction_is_geometry_relative' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.same_operator_contracts_and_expands' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.MA_mul_MB_ne' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.counts_do_not_determine_skeleton' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.natDegree_iterComp' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.escapes_every_fixed_degree' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Collatz.Domains.square_iterates_degrees' depends on axioms: [propext, Classical.choice, Quot.sound]\n(9, 5, 16)\n((3, 4, 1), 3, 4, 2)\n(!![2, 1; 1, 1], !![1, 1; 1, 2])\n[1, 4]\n[]\n",
+    "assumptions": [
+      "Audit.lean covers every theorem in the development; that is enforced by the development's own gate/audit_axioms.py, not by FELRA"
+    ],
+    "limitations": [
+      "the audit covers the theorems this file prints axioms for; a theorem the file never mentions is outside it",
+      "Lean checks the statements as written; the float64 horizon measured above is a fact about arithmetic, not one of its theorems",
+      "a formal verdict is relative to the obligation as written; it says nothing about whether the obligation states the intended claim",
+      "the audit covers the theorems this file prints axioms for; a theorem the file never mentions is outside it"
+    ],
+    "theorems_audited": 184,
+    "axioms_seen": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "expected_formal_status": "verified",
+    "expectation_met": true,
+    "derives_from": [
+      "analysis:anchor_gap_at_the_horizon"
+    ],
+    "status_separation": "`success` is FELRA's evidence-pipeline flag (the declared expectation was met); `formal_status` is the external checker's verdict. They are recorded separately and are never combined into a single notion of proof.",
+    "cache_hit": false,
+    "cache_fingerprint": "b927b626da25bd7ef648523d9ff34e8806ceae8cc7a190c942c054224cb96990"
+  },
+  "artifacts": [
+    "analyses\\lean_whole_development_axiom_audit\\analysis_report.md",
+    "analyses\\lean_whole_development_axiom_audit\\metrics.json"
+  ],
+  "figures": [],
+  "warnings": [
+    "a formal verdict is about the obligation as written; it does not establish that the obligation states the intended claim"
+  ]
+}

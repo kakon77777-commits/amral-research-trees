@@ -92,19 +92,29 @@ analyses:
   # The universally quantified statement is not settled by any of the above, and
   # this is where it lives: Collatz/AllOnes.lean proves the subcritical prefix
   # property for EVERY m, machine-checked.
-  - id: lean_all_ones_spine
+  # One file elaborating says one file elaborates. `axioms_within` makes the
+  # claim about the WHOLE development: Audit.lean prints `#print axioms` for every
+  # theorem in the tree, and the backend refuses any that rests on an axiom outside
+  # Lean's own three. A file that printed no axiom lines at all would be reported
+  # `unknown`, never `verified` — an axiom claim about nothing is not a verified
+  # one.
+  - id: lean_whole_development_axiom_audit
     type: formal_check
-    title: The all-ones spine's properties, machine-checked in Lean 4
+    title: Every theorem in collatz-lean, and what each one rests on
     claim_id: correction_mass_never_exhausts
     backend: lean
-    obligation: ${LEAN_PROJECT}/Collatz/AllOnes.lean
+    obligation: ${LEAN_PROJECT}/Collatz/Audit.lean
     project_dir: ${LEAN_PROJECT}
+    axioms_within: [propext, Classical.choice, Quot.sound]
     expect: verified
-    timeout_seconds: 1800
+    timeout_seconds: 2400
     derives_from:
       - analysis:anchor_gap_at_the_horizon
     assumptions:
-      - the Lean development's `allOnesStart` is the same spine this project samples
+      - Audit.lean covers every theorem in the development; that is enforced by
+        the development's own gate/audit_axioms.py, not by FELRA
     limitations:
-      - Lean checks the statements as written in that file; the float64 horizon
-        measured here is a fact about arithmetic, not one of its theorems
+      - the audit covers the theorems this file prints axioms for; a theorem the
+        file never mentions is outside it
+      - Lean checks the statements as written; the float64 horizon measured above
+        is a fact about arithmetic, not one of its theorems

@@ -4,7 +4,7 @@
 - Statement: On the all-ones spine the anchor gap 1 - (2/3)^m is positive at every m
 - Declared domain: m in [1, 200] with 200 declared samples
 - Result: **SUPPORTED IN DECLARED DOMAIN**
-- Generated at: `2026-08-18T14:34:03.403849+00:00`
+- Generated at: `2026-08-18T14:47:16.258682+00:00`
 
 > This report records finite-budget machine validation. It is not a universal proof.
 
@@ -12,9 +12,9 @@
 
 - `expression`: `"m > 0"`
 - `project_id`: `"collatz-anchor-representation"`
-- `config_sha256`: `"2ec4ff5c1364dd80d6f220817169b6eb8460a763388522b7a44af712b6d5a1fb"`
+- `config_sha256`: `"bf5ebf86113a5de0eafdd76e3c802e4edfbb46360a05c175dcc5b127fa08e2d7"`
 - `seed`: `42`
-- `analyses`: `[{"id": "anchor_gap_below_the_horizon", "type": "cross_backend", "success": true, "report": "analyses/anchor_gap_below_the_horizon/analysis_report.md"}, {"id": "anchor_gap_at_the_horizon", "type": "cross_backend", "success": false, "report": "analyses/anchor_gap_at_the_horizon/analysis_report.md"}, {"id": "decimal_still_sees_it", "type": "cross_backend", "success": true, "report": "analyses/decimal_still_sees_it/analysis_report.md"}, {"id": "lean_all_ones_spine", "type": "formal_check", "success": true, "report": "analyses/lean_all_ones_spine/analysis_report.md"}]`
+- `analyses`: `[{"id": "anchor_gap_below_the_horizon", "type": "cross_backend", "success": true, "report": "analyses/anchor_gap_below_the_horizon/analysis_report.md"}, {"id": "anchor_gap_at_the_horizon", "type": "cross_backend", "success": false, "report": "analyses/anchor_gap_at_the_horizon/analysis_report.md"}, {"id": "decimal_still_sees_it", "type": "cross_backend", "success": true, "report": "analyses/decimal_still_sees_it/analysis_report.md"}, {"id": "lean_whole_development_axiom_audit", "type": "formal_check", "success": true, "report": "analyses/lean_whole_development_axiom_audit/analysis_report.md"}]`
 
 ## Validation channels
 

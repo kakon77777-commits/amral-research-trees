@@ -54,7 +54,7 @@
 <text x="790" y="533" text-anchor="middle" font-family="sans-serif" font-size="10">metrics.json</text>
 <text x="790" y="549" text-anchor="middle" font-family="sans-serif" font-size="9">[artifact]</text>
 <rect x="495" y="330" width="150" height="50" rx="8" fill="white" stroke="black"/>
-<text x="570" y="353" text-anchor="middle" font-family="sans-serif" font-size="10">The all-ones spine's proper...</text>
+<text x="570" y="353" text-anchor="middle" font-family="sans-serif" font-size="10">Every theorem in collatz-le...</text>
 <text x="570" y="369" text-anchor="middle" font-family="sans-serif" font-size="9">[analysis]</text>
 <rect x="715" y="600" width="150" height="50" rx="8" fill="white" stroke="black"/>
 <text x="790" y="623" text-anchor="middle" font-family="sans-serif" font-size="10">analysis_report.md</text>

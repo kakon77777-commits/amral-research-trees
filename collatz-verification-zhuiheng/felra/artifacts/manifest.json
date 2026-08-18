@@ -4,12 +4,12 @@
     "title": "Where a float64 anchor stops seeing the correction mass",
     "language": "en"
   },
-  "created_at": "2026-08-18T14:34:16.924949+00:00",
+  "created_at": "2026-08-18T14:47:33.284723+00:00",
   "passed": false,
   "claims_passed": true,
   "analyses_succeeded": false,
-  "config_sha256": "2ec4ff5c1364dd80d6f220817169b6eb8460a763388522b7a44af712b6d5a1fb",
-  "result_sha256": "d732687c1dbaaec526b6dd21f4437944f09294751c1515693c3f4d45447b9bd3",
+  "config_sha256": "bf5ebf86113a5de0eafdd76e3c802e4edfbb46360a05c175dcc5b127fa08e2d7",
+  "result_sha256": "38d51d9170af85193899199af86191a7aaacce07942ecd3701b15df60ff7f5ca",
   "environment": {
     "python": "3.14.5",
     "platform": "Windows-10-10.0.19045-SP0",
@@ -114,7 +114,7 @@
       "type": "cross_backend",
       "success": true,
       "cache_hit": false,
-      "cache_fingerprint": "6dba137ca3d0636096570a6b30ed58e8a1353cabc49ab4a9f1acfdbf4dd8005b",
+      "cache_fingerprint": "edd85c7ae4e96bbc401a6071ca4e1b52b501bc89fe70ec844ccbdd6ac55e63a0",
       "report": "analyses/anchor_gap_below_the_horizon/analysis_report.md",
       "metrics": "analyses/anchor_gap_below_the_horizon/metrics.json",
       "artifacts": [
@@ -127,7 +127,7 @@
       "type": "cross_backend",
       "success": false,
       "cache_hit": false,
-      "cache_fingerprint": "b4e1991a273c5821b016d2c4a98f750c1e84d41cfb235d197bcd040bb4f81d22",
+      "cache_fingerprint": "11c9f310e0b717d369cf9d1ef911b2eec1dd8d9690f05c909a52bb4d58f5925c",
       "report": "analyses/anchor_gap_at_the_horizon/analysis_report.md",
       "metrics": "analyses/anchor_gap_at_the_horizon/metrics.json",
       "artifacts": [
@@ -140,7 +140,7 @@
       "type": "cross_backend",
       "success": true,
       "cache_hit": false,
-      "cache_fingerprint": "bb1d7640da720baa90e093a4864228351a242ba2ef74527881da4ad98bb88420",
+      "cache_fingerprint": "50c7180293c15f304f01415d8b80f02bc3a2756ce30cf108830137ef886d892c",
       "report": "analyses/decimal_still_sees_it/analysis_report.md",
       "metrics": "analyses/decimal_still_sees_it/metrics.json",
       "artifacts": [
@@ -149,23 +149,23 @@
       ]
     },
     {
-      "id": "lean_all_ones_spine",
+      "id": "lean_whole_development_axiom_audit",
       "type": "formal_check",
       "success": true,
       "cache_hit": false,
-      "cache_fingerprint": "51fce494a78baaf7944cb326f7964533fd4e83947e386f2534e80101f5b625b1",
-      "report": "analyses/lean_all_ones_spine/analysis_report.md",
-      "metrics": "analyses/lean_all_ones_spine/metrics.json",
+      "cache_fingerprint": "b927b626da25bd7ef648523d9ff34e8806ceae8cc7a190c942c054224cb96990",
+      "report": "analyses/lean_whole_development_axiom_audit/analysis_report.md",
+      "metrics": "analyses/lean_whole_development_axiom_audit/metrics.json",
       "artifacts": [
-        "analyses\\lean_all_ones_spine\\analysis_report.md",
-        "analyses\\lean_all_ones_spine\\metrics.json"
+        "analyses\\lean_whole_development_axiom_audit\\analysis_report.md",
+        "analyses\\lean_whole_development_axiom_audit\\metrics.json"
       ]
     }
   ],
   "figures": [],
   "warnings": [
     "Analysis anchor_gap_at_the_horizon did not complete successfully.",
-    "Analysis lean_all_ones_spine: a formal verdict is about the obligation as written; it does not establish that the obligation states the intended claim"
+    "Analysis lean_whole_development_axiom_audit: a formal verdict is about the obligation as written; it does not establish that the obligation states the intended claim"
   ],
   "registry": null
 }

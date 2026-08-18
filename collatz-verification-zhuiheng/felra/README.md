@@ -49,11 +49,25 @@ asserting it.
 ## The universally quantified half
 
 The horizon is a fact about arithmetic at sampled points. The statement *for every
-m* lives in Lean, and the same project checks it: `lean_all_ones_spine` runs
-`Collatz/AllOnes.lean` from the [`collatz-lean`](https://github.com/kakon77777-commits/collatz-lean)
-development through FELRA's `formal_check` backend — **`verified`**, Lake
-5.0.0-src+d8b1897 / Lean 4.33.0, with the checker's identity and the obligation's
-hash recorded in the manifest.
+m* lives in Lean, and the same project checks it — not one file, but the whole
+development.
+
+`lean_whole_development_axiom_audit` runs `Collatz/Audit.lean` from
+[`collatz-lean`](https://github.com/kakon77777-commits/collatz-lean) with
+`axioms_within: [propext, Classical.choice, Quot.sound]`. FELRA parses Lean's own
+`#print axioms` output and refuses any theorem resting on anything else:
+
+> **184 theorem(s) audited; every one depends only on the declared axioms.**
+
+That 184 independently agrees with the count the development's own
+`gate/audit_axioms.py` reports, and the two reach it by **different routes** — one
+scans the sources for declarations, the other parses the checker's output. Two
+methods meeting on a count is worth more than either asserting it.
+
+A file that printed no axiom lines would be reported `unknown`, never `verified`:
+an axiom claim about nothing is not a verified one. The theorem count and the
+axioms actually seen are both recorded, so an audit that quietly shrinks is
+visible.
 
 The evidence ladder ends at `executed`, with `formally_proved: pass` recorded
 above it. It does **not** report a higher level, because the ladder is cumulative
@@ -89,5 +103,5 @@ export LEAN_PROJECT="D:/Ai/work together/lean/collatz"
 felra run felra/project.yaml --output felra/artifacts
 ```
 
-`lean_all_ones_spine` reports `unavailable` rather than failing if Lean is not
-installed — a checker that did not run is never a pass.
+`lean_whole_development_axiom_audit` reports `unavailable` rather than failing if
+Lean is not installed — a checker that did not run is never a pass.

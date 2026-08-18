@@ -4,7 +4,7 @@
 - Type: `cross_backend`
 - Execution success: `True`
 - Summary: 2 point(s) across decimal, rational → within_tolerance_only
-- Generated at: `2026-08-18T14:34:03.442623+00:00`
+- Generated at: `2026-08-18T14:47:16.296696+00:00`
 
 > Analysis outputs are finite-budget computational evidence and diagnostics.
 
@@ -70,7 +70,7 @@
   "errors": [],
   "note": "`exact` means the two ontologies produced the same rational number; `within_tolerance` means they did not. Only the first supports the evidence ladder's `exact_verified` rung.",
   "cache_hit": false,
-  "cache_fingerprint": "bb1d7640da720baa90e093a4864228351a242ba2ef74527881da4ad98bb88420"
+  "cache_fingerprint": "50c7180293c15f304f01415d8b80f02bc3a2756ce30cf108830137ef886d892c"
 }
 ```
 

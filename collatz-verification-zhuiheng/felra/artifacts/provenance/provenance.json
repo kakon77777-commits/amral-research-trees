@@ -7,7 +7,7 @@
       "kind": "project",
       "label": "Where a float64 anchor stops seeing the correction mass",
       "path": "project_snapshot.yaml",
-      "sha256": "2ec4ff5c1364dd80d6f220817169b6eb8460a763388522b7a44af712b6d5a1fb"
+      "sha256": "bf5ebf86113a5de0eafdd76e3c802e4edfbb46360a05c175dcc5b127fa08e2d7"
     },
     {
       "id": "claim:correction_mass_never_exhausts",
@@ -80,24 +80,24 @@
       "sha256": null
     },
     {
-      "id": "analysis:lean_all_ones_spine",
+      "id": "analysis:lean_whole_development_axiom_audit",
       "kind": "analysis",
-      "label": "The all-ones spine's properties, machine-checked in Lean 4",
-      "path": "analyses/lean_all_ones_spine/metrics.json",
+      "label": "Every theorem in collatz-lean, and what each one rests on",
+      "path": "analyses/lean_whole_development_axiom_audit/metrics.json",
       "sha256": null
     },
     {
-      "id": "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\analysis_report.md",
+      "id": "artifact:lean_whole_development_axiom_audit:analyses\\lean_whole_development_axiom_audit\\analysis_report.md",
       "kind": "artifact",
       "label": "analysis_report.md",
-      "path": "analyses\\lean_all_ones_spine\\analysis_report.md",
+      "path": "analyses\\lean_whole_development_axiom_audit\\analysis_report.md",
       "sha256": null
     },
     {
-      "id": "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\metrics.json",
+      "id": "artifact:lean_whole_development_axiom_audit:analyses\\lean_whole_development_axiom_audit\\metrics.json",
       "kind": "artifact",
       "label": "metrics.json",
-      "path": "analyses\\lean_all_ones_spine\\metrics.json",
+      "path": "analyses\\lean_whole_development_axiom_audit\\metrics.json",
       "sha256": null
     },
     {
@@ -176,22 +176,22 @@
     },
     {
       "source": "project",
-      "target": "analysis:lean_all_ones_spine",
+      "target": "analysis:lean_whole_development_axiom_audit",
       "relation": "defines"
     },
     {
-      "source": "analysis:lean_all_ones_spine",
+      "source": "analysis:lean_whole_development_axiom_audit",
       "target": "claim:correction_mass_never_exhausts",
       "relation": "supports"
     },
     {
-      "source": "analysis:lean_all_ones_spine",
-      "target": "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\analysis_report.md",
+      "source": "analysis:lean_whole_development_axiom_audit",
+      "target": "artifact:lean_whole_development_axiom_audit:analyses\\lean_whole_development_axiom_audit\\analysis_report.md",
       "relation": "produces"
     },
     {
-      "source": "analysis:lean_all_ones_spine",
-      "target": "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\metrics.json",
+      "source": "analysis:lean_whole_development_axiom_audit",
+      "target": "artifact:lean_whole_development_axiom_audit:analyses\\lean_whole_development_axiom_audit\\metrics.json",
       "relation": "produces"
     },
     {

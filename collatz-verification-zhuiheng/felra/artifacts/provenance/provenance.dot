@@ -12,9 +12,9 @@ digraph FELRA {
   "analysis:decimal_still_sees_it" [label="Decimal at 40 digits against the exact value, past the float64 horizon\n[analysis]"];
   "artifact:decimal_still_sees_it:analyses\\decimal_still_sees_it\\analysis_report.md" [label="analysis_report.md\n[artifact]"];
   "artifact:decimal_still_sees_it:analyses\\decimal_still_sees_it\\metrics.json" [label="metrics.json\n[artifact]"];
-  "analysis:lean_all_ones_spine" [label="The all-ones spine's properties, machine-checked in Lean 4\n[analysis]"];
-  "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\analysis_report.md" [label="analysis_report.md\n[artifact]"];
-  "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\metrics.json" [label="metrics.json\n[artifact]"];
+  "analysis:lean_whole_development_axiom_audit" [label="Every theorem in collatz-lean, and what each one rests on\n[analysis]"];
+  "artifact:lean_whole_development_axiom_audit:analyses\\lean_whole_development_axiom_audit\\analysis_report.md" [label="analysis_report.md\n[artifact]"];
+  "artifact:lean_whole_development_axiom_audit:analyses\\lean_whole_development_axiom_audit\\metrics.json" [label="metrics.json\n[artifact]"];
   "manifest" [label="Run manifest\n[manifest]"];
   "project" -> "claim:correction_mass_never_exhausts" [label="defines"];
   "project" -> "analysis:anchor_gap_below_the_horizon" [label="defines"];
@@ -29,9 +29,9 @@ digraph FELRA {
   "analysis:decimal_still_sees_it" -> "claim:correction_mass_never_exhausts" [label="supports"];
   "analysis:decimal_still_sees_it" -> "artifact:decimal_still_sees_it:analyses\\decimal_still_sees_it\\analysis_report.md" [label="produces"];
   "analysis:decimal_still_sees_it" -> "artifact:decimal_still_sees_it:analyses\\decimal_still_sees_it\\metrics.json" [label="produces"];
-  "project" -> "analysis:lean_all_ones_spine" [label="defines"];
-  "analysis:lean_all_ones_spine" -> "claim:correction_mass_never_exhausts" [label="supports"];
-  "analysis:lean_all_ones_spine" -> "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\analysis_report.md" [label="produces"];
-  "analysis:lean_all_ones_spine" -> "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\metrics.json" [label="produces"];
+  "project" -> "analysis:lean_whole_development_axiom_audit" [label="defines"];
+  "analysis:lean_whole_development_axiom_audit" -> "claim:correction_mass_never_exhausts" [label="supports"];
+  "analysis:lean_whole_development_axiom_audit" -> "artifact:lean_whole_development_axiom_audit:analyses\\lean_whole_development_axiom_audit\\analysis_report.md" [label="produces"];
+  "analysis:lean_whole_development_axiom_audit" -> "artifact:lean_whole_development_axiom_audit:analyses\\lean_whole_development_axiom_audit\\metrics.json" [label="produces"];
   "project" -> "manifest" [label="summarizes"];
 }
