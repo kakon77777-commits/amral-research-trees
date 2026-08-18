@@ -1,0 +1,109 @@
+{
+  "tool": "src22_au2e1_reset_block.py",
+  "subject": "Hard_Zeta_Phase_II_Round_AU2e1_bundle.zip (source item 40)",
+  "problems": [],
+  "controls": {
+    "C1_reset_blocks_exist": {
+      "detected": true,
+      "blocks": 20923
+    },
+    "C2_the_bridge_is_not_vacuous": {
+      "detected": true,
+      "steps_with_q_ge_3": 182
+    },
+    "C3_valuations_actually_vary": {
+      "detected": true,
+      "distinct": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "C4_the_survival_bound_can_reject": {
+      "detected": true,
+      "note": "a ratio of 10^6 exceeds the bound on this many blocks, so the comparison is not satisfied by everything",
+      "blocks_where_a_huge_ratio_would_fail": 120
+    },
+    "C5_the_anchor_check_can_reject": {
+      "detected": true
+    }
+  },
+  "mod8_bridge": {
+    "q_classes_by_odd_residue_capped_at_3": {
+      "1": [
+        2
+      ],
+      "3": [
+        1
+      ],
+      "5": [
+        3
+      ],
+      "7": [
+        1
+      ]
+    },
+    "q_ge_3_iff_residue_5": true
+  },
+  "orbits": {
+    "starts": 23,
+    "steps": 60,
+    "reset_blocks_found": 20923,
+    "distinct_valuations_seen": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "steps_with_q_ge_3": 182
+  },
+  "anchor_identity": {
+    "checked_exactly": true,
+    "violations": 0,
+    "note": "A_m = 2^{K_m} Y_m / 3^m compared against n + sum (1/3) 2^{K_i}/3^i in exact rational arithmetic; increments and monotonicity too"
+  },
+  "deficit_drop_rearrangement": {
+    "violations": 0,
+    "note": "DEFINITIONAL. Q = beta*L + D is a rearrangement of delta_m = m*beta - K_m, so this tests this file's transcription and nothing about the round. Recorded, not counted as evidence."
+  },
+  "relative_survival": {
+    "theorem_form_at_the_weakest_admissible_h": {
+      "checked": 19581,
+      "violations": 0
+    },
+    "theorem_form_at_h_equals_delta_b_which_is_the_route_map_form": {
+      "checked": 20923,
+      "violations": 0
+    },
+    "note": "same theorem, two instantiations of its free parameter h"
+  },
+  "depth_duration": {
+    "checked": 20923,
+    "violations": 0
+  },
+  "disjoint_reset_packing": {
+    "D0": 3,
+    "rho": "1/4",
+    "families_checked": 12,
+    "families_with_at_least_one_qualifying_block": 12,
+    "violations": 0
+  },
+  "worked_example": {
+    "D": 4,
+    "rho": "1/2",
+    "rho_minus_2_pow_minus_D": "7/16",
+    "package_states": "7/16",
+    "matches": true,
+    "L_coefficient": "21/16",
+    "package_states_coefficient": "21/16",
+    "coefficient_matches": true
+  },
+  "ok": true
+}

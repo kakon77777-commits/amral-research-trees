@@ -1,0 +1,89 @@
+{
+  "tool": "src22_drill.py",
+  "subject": "src22_au2e1_reset_block.py",
+  "defects": {
+    "D1_the_anchor_increment_gets_the_wrong_exponent": {
+      "caught": true,
+      "expected_substring": "renormalized anchor identity fails",
+      "reported": [
+        "renormalized anchor identity fails on 1380 instances"
+      ]
+    },
+    "D2_the_anchor_base_is_wrong": {
+      "caught": true,
+      "expected_substring": "renormalized anchor identity fails",
+      "reported": [
+        "renormalized anchor identity fails on 92 instances"
+      ]
+    },
+    "D3_the_mod8_bridge_admits_a_wrong_residue": {
+      "caught": true,
+      "expected_substring": "mod-8 bridge",
+      "reported": [
+        "the mod-8 bridge q >= 3 <=> Y = 5 (mod 8) fails on the residues"
+      ]
+    },
+    "D4_the_survival_comparison_is_inverted": {
+      "caught": true,
+      "expected_substring": "relative-survival",
+      "reported": [
+        "relative-survival route-map form violated on 20923 of 20923 blocks"
+      ]
+    },
+    "D5_the_depth_duration_comparison_is_inverted": {
+      "caught": true,
+      "expected_substring": "depth-duration bound violated",
+      "reported": [
+        "depth-duration bound violated on 20923 of 20923 blocks"
+      ]
+    },
+    "D6_the_packing_comparison_is_inverted": {
+      "caught": true,
+      "expected_substring": "packing bound is violated",
+      "reported": [
+        "the disjoint-reset packing bound is violated on 12 of 12 families"
+      ]
+    },
+    "D7_the_worked_example_arithmetic_is_wrong": {
+      "caught": true,
+      "expected_substring": "worked example does not recompute",
+      "reported": [
+        "the round's worked example does not recompute"
+      ]
+    },
+    "D8_delta_is_transcribed_wrongly": {
+      "caught": true,
+      "expected_substring": "transcription of delta is wrong",
+      "reported": [
+        "the deficit-drop rearrangement does not reproduce; this file's transcription of delta is wrong",
+        "relative-survival theorem form violated on 25435 of 40710 blocks",
+        "relative-survival route-map form violated on 26975 of 42090 blocks"
+      ]
+    },
+    "D9_the_packing_hypothesis_is_violated_silently": {
+      "caught": true,
+      "expected_substring": "violate the theorem's own hypothesis",
+      "reported": [
+        "packing parameters violate the theorem's own hypothesis rho > 2^-D0"
+      ]
+    }
+  },
+  "controls": {
+    "N1_a_comment_is_not_a_problem": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "baseline": {
+    "reset_blocks": 20923
+  },
+  "counts": {
+    "defects_planted": 9,
+    "caught": 9,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
