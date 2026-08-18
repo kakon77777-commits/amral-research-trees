@@ -1,0 +1,121 @@
+# FELRA Analysis Report — The anchor gap at small m
+
+- Analysis ID: `anchor_gap_below_the_horizon`
+- Type: `cross_backend`
+- Execution success: `True`
+- Summary: 3 point(s) across float64, decimal, rational → within_tolerance_only
+- Generated at: `2026-08-18T14:34:03.431014+00:00`
+
+> Analysis outputs are finite-budget computational evidence and diagnostics.
+
+## Metrics
+
+```json
+{
+  "expression": "1 - (two / three) ** m",
+  "backends": [
+    "float64",
+    "decimal",
+    "rational"
+  ],
+  "tolerance": 1e-15,
+  "decimal_prec": 60,
+  "points_compared": 3,
+  "difference_matrix": {
+    "float64|decimal": {
+      "exact": 0,
+      "within_tolerance": 3,
+      "inconsistent": 0
+    },
+    "float64|rational": {
+      "exact": 0,
+      "within_tolerance": 3,
+      "inconsistent": 0
+    },
+    "decimal|rational": {
+      "exact": 0,
+      "within_tolerance": 3,
+      "inconsistent": 0
+    }
+  },
+  "points": [
+    {
+      "assignment": {
+        "two": "2",
+        "three": "3",
+        "m": "10"
+      },
+      "values": {
+        "float64": "2212750159851759/2251799813685248",
+        "decimal": "196531694016833477281579704990770377144405493742485054785009/200000000000000000000000000000000000000000000000000000000000",
+        "rational": "58025/59049"
+      },
+      "values_float": {
+        "float64": 0.9826584700841674,
+        "decimal": 0.9826584700841674,
+        "rational": 0.9826584700841674
+      },
+      "agreement": {
+        "float64|decimal": "within_tolerance",
+        "float64|rational": "within_tolerance",
+        "decimal|rational": "within_tolerance"
+      }
+    },
+    {
+      "assignment": {
+        "two": "2",
+        "three": "3",
+        "m": "40"
+      },
+      "values": {
+        "float64": "4503599220075183/4503599627370496",
+        "decimal": "7999999276498185294669744607956037997154174506564004923669/8000000000000000000000000000000000000000000000000000000000",
+        "rational": "12157664359545301025/12157665459056928801"
+      },
+      "values_float": {
+        "float64": 0.9999999095622731,
+        "decimal": 0.9999999095622731,
+        "rational": 0.9999999095622731
+      },
+      "agreement": {
+        "float64|decimal": "within_tolerance",
+        "float64|rational": "within_tolerance",
+        "decimal|rational": "within_tolerance"
+      }
+    },
+    {
+      "assignment": {
+        "two": "2",
+        "three": "3",
+        "m": "80"
+      },
+      "values": {
+        "float64": "4503599627370459/4503599627370496",
+        "decimal": "499999999999995910508782172609101656680120898296747275700337/500000000000000000000000000000000000000000000000000000000000",
+        "rational": "147808829414344714390263595577208591425/147808829414345923316083210206383297601"
+      },
+      "values_float": {
+        "float64": 0.9999999999999918,
+        "decimal": 0.9999999999999918,
+        "rational": 0.9999999999999918
+      },
+      "agreement": {
+        "float64|decimal": "within_tolerance",
+        "float64|rational": "within_tolerance",
+        "decimal|rational": "within_tolerance"
+      }
+    }
+  ],
+  "exactness": "within_tolerance_only",
+  "any_input_was_float64": false,
+  "errors": [],
+  "note": "`exact` means the two ontologies produced the same rational number; `within_tolerance` means they did not. Only the first supports the evidence ladder's `exact_verified` rung.",
+  "cache_hit": false,
+  "cache_fingerprint": "6dba137ca3d0636096570a6b30ed58e8a1353cabc49ab4a9f1acfdbf4dd8005b"
+}
+```
+
+## Artifacts
+
+- `analyses\anchor_gap_below_the_horizon\analysis_report.md`
+- `analyses\anchor_gap_below_the_horizon\metrics.json`

@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0",
+  "project_id": "collatz-anchor-representation",
+  "nodes": [
+    {
+      "id": "project",
+      "kind": "project",
+      "label": "Where a float64 anchor stops seeing the correction mass",
+      "path": "project_snapshot.yaml",
+      "sha256": "2ec4ff5c1364dd80d6f220817169b6eb8460a763388522b7a44af712b6d5a1fb"
+    },
+    {
+      "id": "claim:correction_mass_never_exhausts",
+      "kind": "claim",
+      "label": "On the all-ones spine the anchor gap 1 - (2/3)^m is positive at every m",
+      "path": "claims/correction_mass_never_exhausts/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "analysis:anchor_gap_below_the_horizon",
+      "kind": "analysis",
+      "label": "The anchor gap at small m",
+      "path": "analyses/anchor_gap_below_the_horizon/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "artifact:anchor_gap_below_the_horizon:analyses\\anchor_gap_below_the_horizon\\analysis_report.md",
+      "kind": "artifact",
+      "label": "analysis_report.md",
+      "path": "analyses\\anchor_gap_below_the_horizon\\analysis_report.md",
+      "sha256": null
+    },
+    {
+      "id": "artifact:anchor_gap_below_the_horizon:analyses\\anchor_gap_below_the_horizon\\metrics.json",
+      "kind": "artifact",
+      "label": "metrics.json",
+      "path": "analyses\\anchor_gap_below_the_horizon\\metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "analysis:anchor_gap_at_the_horizon",
+      "kind": "analysis",
+      "label": "Where float64 reports the correction mass as exhausted",
+      "path": "analyses/anchor_gap_at_the_horizon/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "artifact:anchor_gap_at_the_horizon:analyses\\anchor_gap_at_the_horizon\\analysis_report.md",
+      "kind": "artifact",
+      "label": "analysis_report.md",
+      "path": "analyses\\anchor_gap_at_the_horizon\\analysis_report.md",
+      "sha256": null
+    },
+    {
+      "id": "artifact:anchor_gap_at_the_horizon:analyses\\anchor_gap_at_the_horizon\\metrics.json",
+      "kind": "artifact",
+      "label": "metrics.json",
+      "path": "analyses\\anchor_gap_at_the_horizon\\metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "analysis:decimal_still_sees_it",
+      "kind": "analysis",
+      "label": "Decimal at 40 digits against the exact value, past the float64 horizon",
+      "path": "analyses/decimal_still_sees_it/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "artifact:decimal_still_sees_it:analyses\\decimal_still_sees_it\\analysis_report.md",
+      "kind": "artifact",
+      "label": "analysis_report.md",
+      "path": "analyses\\decimal_still_sees_it\\analysis_report.md",
+      "sha256": null
+    },
+    {
+      "id": "artifact:decimal_still_sees_it:analyses\\decimal_still_sees_it\\metrics.json",
+      "kind": "artifact",
+      "label": "metrics.json",
+      "path": "analyses\\decimal_still_sees_it\\metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "analysis:lean_all_ones_spine",
+      "kind": "analysis",
+      "label": "The all-ones spine's properties, machine-checked in Lean 4",
+      "path": "analyses/lean_all_ones_spine/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\analysis_report.md",
+      "kind": "artifact",
+      "label": "analysis_report.md",
+      "path": "analyses\\lean_all_ones_spine\\analysis_report.md",
+      "sha256": null
+    },
+    {
+      "id": "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\metrics.json",
+      "kind": "artifact",
+      "label": "metrics.json",
+      "path": "analyses\\lean_all_ones_spine\\metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "manifest",
+      "kind": "manifest",
+      "label": "Run manifest",
+      "path": "manifest.json",
+      "sha256": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "project",
+      "target": "claim:correction_mass_never_exhausts",
+      "relation": "defines"
+    },
+    {
+      "source": "project",
+      "target": "analysis:anchor_gap_below_the_horizon",
+      "relation": "defines"
+    },
+    {
+      "source": "analysis:anchor_gap_below_the_horizon",
+      "target": "claim:correction_mass_never_exhausts",
+      "relation": "supports"
+    },
+    {
+      "source": "analysis:anchor_gap_below_the_horizon",
+      "target": "artifact:anchor_gap_below_the_horizon:analyses\\anchor_gap_below_the_horizon\\analysis_report.md",
+      "relation": "produces"
+    },
+    {
+      "source": "analysis:anchor_gap_below_the_horizon",
+      "target": "artifact:anchor_gap_below_the_horizon:analyses\\anchor_gap_below_the_horizon\\metrics.json",
+      "relation": "produces"
+    },
+    {
+      "source": "project",
+      "target": "analysis:anchor_gap_at_the_horizon",
+      "relation": "defines"
+    },
+    {
+      "source": "analysis:anchor_gap_at_the_horizon",
+      "target": "claim:correction_mass_never_exhausts",
+      "relation": "supports"
+    },
+    {
+      "source": "analysis:anchor_gap_at_the_horizon",
+      "target": "artifact:anchor_gap_at_the_horizon:analyses\\anchor_gap_at_the_horizon\\analysis_report.md",
+      "relation": "produces"
+    },
+    {
+      "source": "analysis:anchor_gap_at_the_horizon",
+      "target": "artifact:anchor_gap_at_the_horizon:analyses\\anchor_gap_at_the_horizon\\metrics.json",
+      "relation": "produces"
+    },
+    {
+      "source": "project",
+      "target": "analysis:decimal_still_sees_it",
+      "relation": "defines"
+    },
+    {
+      "source": "analysis:decimal_still_sees_it",
+      "target": "claim:correction_mass_never_exhausts",
+      "relation": "supports"
+    },
+    {
+      "source": "analysis:decimal_still_sees_it",
+      "target": "artifact:decimal_still_sees_it:analyses\\decimal_still_sees_it\\analysis_report.md",
+      "relation": "produces"
+    },
+    {
+      "source": "analysis:decimal_still_sees_it",
+      "target": "artifact:decimal_still_sees_it:analyses\\decimal_still_sees_it\\metrics.json",
+      "relation": "produces"
+    },
+    {
+      "source": "project",
+      "target": "analysis:lean_all_ones_spine",
+      "relation": "defines"
+    },
+    {
+      "source": "analysis:lean_all_ones_spine",
+      "target": "claim:correction_mass_never_exhausts",
+      "relation": "supports"
+    },
+    {
+      "source": "analysis:lean_all_ones_spine",
+      "target": "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\analysis_report.md",
+      "relation": "produces"
+    },
+    {
+      "source": "analysis:lean_all_ones_spine",
+      "target": "artifact:lean_all_ones_spine:analyses\\lean_all_ones_spine\\metrics.json",
+      "relation": "produces"
+    },
+    {
+      "source": "project",
+      "target": "manifest",
+      "relation": "summarizes"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "id": "decimal_still_sees_it",
+  "type": "cross_backend",
+  "title": "Decimal at 40 digits against the exact value, past the float64 horizon",
+  "success": true,
+  "summary": "2 point(s) across decimal, rational → within_tolerance_only",
+  "claim_id": "correction_mass_never_exhausts",
+  "created_at": "2026-08-18T14:34:03.442623+00:00",
+  "metrics": {
+    "expression": "1 - (two / three) ** m",
+    "backends": [
+      "decimal",
+      "rational"
+    ],
+    "tolerance": 1e-38,
+    "decimal_prec": 40,
+    "points_compared": 2,
+    "difference_matrix": {
+      "decimal|rational": {
+        "exact": 0,
+        "within_tolerance": 2,
+        "inconsistent": 0
+      }
+    },
+    "points": [
+      {
+        "assignment": {
+          "two": "2",
+          "three": "3",
+          "m": "93"
+        },
+        "values": {
+          "decimal": "9999999999999999579744981958586983450299/10000000000000000000000000000000000000000",
+          "rational": "235655016338368225595547417662829438988125331/235655016338368235499067731945871638181119123"
+        },
+        "values_float": {
+          "decimal": 1.0,
+          "rational": 1.0
+        },
+        "agreement": {
+          "decimal|rational": "within_tolerance"
+        }
+      },
+      {
+        "assignment": {
+          "two": "2",
+          "three": "3",
+          "m": "150"
+        },
+        "values": {
+          "decimal": "9999999999999999999999999961424537507689/10000000000000000000000000000000000000000",
+          "rational": "369988485035126972924700781024448951480513219331437004365689268919001625/369988485035126972924700782451696644186473100389722973815184405301748249"
+        },
+        "values_float": {
+          "decimal": 1.0,
+          "rational": 1.0
+        },
+        "agreement": {
+          "decimal|rational": "within_tolerance"
+        }
+      }
+    ],
+    "exactness": "within_tolerance_only",
+    "any_input_was_float64": false,
+    "errors": [],
+    "note": "`exact` means the two ontologies produced the same rational number; `within_tolerance` means they did not. Only the first supports the evidence ladder's `exact_verified` rung.",
+    "cache_hit": false,
+    "cache_fingerprint": "bb1d7640da720baa90e093a4864228351a242ba2ef74527881da4ad98bb88420"
+  },
+  "artifacts": [
+    "analyses\\decimal_still_sees_it\\analysis_report.md",
+    "analyses\\decimal_still_sees_it\\metrics.json"
+  ],
+  "figures": [],
+  "warnings": []
+}

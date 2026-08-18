@@ -1,0 +1,110 @@
+project:
+  id: collatz-anchor-representation
+  title: Where a float64 anchor stops seeing the correction mass
+  language: en
+
+# RUN-022 verified the renormalized anchor identity of Hard-Zeta A-U.2e.1 in EXACT
+# rational arithmetic, and said so. This project asks the question that choice
+# implies but does not answer: what would have happened in float64?
+#
+# On the all-ones spine (n = 2^(m+1) - 1, every accelerated valuation 1) the
+# anchor has a closed form:
+#
+#     A_m - n = 1 - (2/3)^m
+#
+# which is exactly rational at every m. Round-tripping it through three numeric
+# ontologies measures the horizon beyond which a float64 implementation of the
+# anchor cocycle reports the correction mass as exhausted — while the exact value
+# says it is positive and always will be.
+#
+# Requires: Z3_EXE, LEAN_PROJECT (see tools/README.md in work together).
+
+numeric_policy:
+  default_backend: rational
+  source_parsing: exact_string
+  certification:
+    mode: cross_backend
+
+parameters:
+  m:
+    type: int
+    range: [1, 200]
+    samples: 200
+
+claims:
+  - id: correction_mass_never_exhausts
+    statement: On the all-ones spine the anchor gap 1 - (2/3)^m is positive at every m
+    expression: m > 0
+    status: hypothesis
+    required_checks:
+      - numerical
+
+analyses:
+  # Below the horizon the three ontologies still disagree, but float64 is at
+  # least carrying a nonzero gap.
+  - id: anchor_gap_below_the_horizon
+    type: cross_backend
+    title: The anchor gap at small m
+    claim_id: correction_mass_never_exhausts
+    expression: 1 - (two / three) ** m
+    backends: [float64, decimal, rational]
+    tolerance: 1e-15
+    decimal_prec: 60
+    points:
+      - {two: "2", three: "3", m: "10"}
+      - {two: "2", three: "3", m: "40"}
+      - {two: "2", three: "3", m: "80"}
+
+  # At and beyond m = 93 float64 reports the gap as exactly zero: the anchor has
+  # arrived at its limit, which is false. Zero tolerance, because the claim under
+  # test is an exact one.
+  - id: anchor_gap_at_the_horizon
+    type: cross_backend
+    title: Where float64 reports the correction mass as exhausted
+    claim_id: correction_mass_never_exhausts
+    expression: 1 - (two / three) ** m
+    backends: [float64, rational]
+    tolerance: 0.0
+    points:
+      - {two: "2", three: "3", m: "92"}
+      - {two: "2", three: "3", m: "93"}
+      - {two: "2", three: "3", m: "150"}
+
+  # The same quantity in Decimal at ordinary working precision still sees it, so
+  # the horizon is a property of the representation rather than of the problem.
+  # The tolerance here was first written as 1e-30 and the comparison came back
+  # inconsistent at 4e-29. Chasing that number found a real defect: `decimal_prec`
+  # was governing only the input conversion, so the arithmetic ran at Python's
+  # default 28 digits whatever the project declared. With the fix, 40 digits buys
+  # 2e-41 and the tolerance below is the one 40 digits actually earns.
+  - id: decimal_still_sees_it
+    type: cross_backend
+    title: Decimal at 40 digits against the exact value, past the float64 horizon
+    claim_id: correction_mass_never_exhausts
+    expression: 1 - (two / three) ** m
+    backends: [decimal, rational]
+    tolerance: 1e-38
+    decimal_prec: 40
+    points:
+      - {two: "2", three: "3", m: "93"}
+      - {two: "2", three: "3", m: "150"}
+
+  # The universally quantified statement is not settled by any of the above, and
+  # this is where it lives: Collatz/AllOnes.lean proves the subcritical prefix
+  # property for EVERY m, machine-checked.
+  - id: lean_all_ones_spine
+    type: formal_check
+    title: The all-ones spine's properties, machine-checked in Lean 4
+    claim_id: correction_mass_never_exhausts
+    backend: lean
+    obligation: ${LEAN_PROJECT}/Collatz/AllOnes.lean
+    project_dir: ${LEAN_PROJECT}
+    expect: verified
+    timeout_seconds: 1800
+    derives_from:
+      - analysis:anchor_gap_at_the_horizon
+    assumptions:
+      - the Lean development's `allOnesStart` is the same spine this project samples
+    limitations:
+      - Lean checks the statements as written in that file; the float64 horizon
+        measured here is a fact about arithmetic, not one of its theorems

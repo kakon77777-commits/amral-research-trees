@@ -1,0 +1,98 @@
+project:
+  id: collatz-anchor-representation
+  title: Where a float64 anchor stops seeing the correction mass
+  language: en
+numeric_policy:
+  default_backend: rational
+  source_parsing: exact_string
+  certification:
+    mode: cross_backend
+parameters:
+  m:
+    type: int
+    range:
+    - 1
+    - 200
+    samples: 200
+claims:
+- id: correction_mass_never_exhausts
+  statement: On the all-ones spine the anchor gap 1 - (2/3)^m is positive at every
+    m
+  expression: m > 0
+  status: hypothesis
+  required_checks:
+  - numerical
+analyses:
+- id: anchor_gap_below_the_horizon
+  type: cross_backend
+  title: The anchor gap at small m
+  claim_id: correction_mass_never_exhausts
+  expression: 1 - (two / three) ** m
+  backends:
+  - float64
+  - decimal
+  - rational
+  tolerance: 1e-15
+  decimal_prec: 60
+  points:
+  - two: '2'
+    three: '3'
+    m: '10'
+  - two: '2'
+    three: '3'
+    m: '40'
+  - two: '2'
+    three: '3'
+    m: '80'
+- id: anchor_gap_at_the_horizon
+  type: cross_backend
+  title: Where float64 reports the correction mass as exhausted
+  claim_id: correction_mass_never_exhausts
+  expression: 1 - (two / three) ** m
+  backends:
+  - float64
+  - rational
+  tolerance: 0.0
+  points:
+  - two: '2'
+    three: '3'
+    m: '92'
+  - two: '2'
+    three: '3'
+    m: '93'
+  - two: '2'
+    three: '3'
+    m: '150'
+- id: decimal_still_sees_it
+  type: cross_backend
+  title: Decimal at 40 digits against the exact value, past the float64 horizon
+  claim_id: correction_mass_never_exhausts
+  expression: 1 - (two / three) ** m
+  backends:
+  - decimal
+  - rational
+  tolerance: 1e-38
+  decimal_prec: 40
+  points:
+  - two: '2'
+    three: '3'
+    m: '93'
+  - two: '2'
+    three: '3'
+    m: '150'
+- id: lean_all_ones_spine
+  type: formal_check
+  title: The all-ones spine's properties, machine-checked in Lean 4
+  claim_id: correction_mass_never_exhausts
+  backend: lean
+  obligation: ${LEAN_PROJECT}/Collatz/AllOnes.lean
+  project_dir: ${LEAN_PROJECT}
+  expect: verified
+  timeout_seconds: 1800
+  derives_from:
+  - analysis:anchor_gap_at_the_horizon
+  assumptions:
+  - the Lean development's `allOnesStart` is the same spine this project samples
+  limitations:
+  - Lean checks the statements as written in that file; the float64 horizon measured
+    here is a fact about arithmetic, not one of its theorems

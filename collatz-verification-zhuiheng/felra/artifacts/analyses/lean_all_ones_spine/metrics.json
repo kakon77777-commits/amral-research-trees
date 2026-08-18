@@ -1,0 +1,55 @@
+{
+  "id": "lean_all_ones_spine",
+  "type": "formal_check",
+  "title": "The all-ones spine's properties, machine-checked in Lean 4",
+  "success": true,
+  "summary": "lean → formal_status=verified (expected verified): Lean elaborated the obligation with no error",
+  "claim_id": "correction_mass_never_exhausts",
+  "created_at": "2026-08-18T14:34:16.916107+00:00",
+  "metrics": {
+    "formal_status": "verified",
+    "checker": {
+      "backend": "lean",
+      "available": true,
+      "command": [
+        "C:\\Users\\kakon\\.elan\\bin\\lake.EXE"
+      ],
+      "executable_path": "C:\\Users\\kakon\\.elan\\bin\\lake.EXE",
+      "executable_sha256": "c3f728aebdceb2635a273d4bb39bbd07ad92bcc517f838b597b5575df6288a2e",
+      "version_string": "Lake version 5.0.0-src+d8b1897 (Lean version 4.33.0)",
+      "note": null
+    },
+    "obligation": {
+      "path": "D:\\Ai\\work together\\lean\\collatz\\Collatz\\AllOnes.lean",
+      "sha256": "f59cb84b0017713a81950e061b7c02e1d991dacbd85f018552e590000ca806f1",
+      "bytes": 10005
+    },
+    "exit_code": 0,
+    "duration_seconds": 13.313,
+    "detail": "Lean elaborated the obligation with no error",
+    "stdout_tail": "",
+    "assumptions": [
+      "the Lean development's `allOnesStart` is the same spine this project samples"
+    ],
+    "limitations": [
+      "Lean checks the statements as written in that file; the float64 horizon measured here is a fact about arithmetic, not one of its theorems",
+      "a formal verdict is relative to the obligation as written; it says nothing about whether the obligation states the intended claim"
+    ],
+    "expected_formal_status": "verified",
+    "expectation_met": true,
+    "derives_from": [
+      "analysis:anchor_gap_at_the_horizon"
+    ],
+    "status_separation": "`success` is FELRA's evidence-pipeline flag (the declared expectation was met); `formal_status` is the external checker's verdict. They are recorded separately and are never combined into a single notion of proof.",
+    "cache_hit": false,
+    "cache_fingerprint": "51fce494a78baaf7944cb326f7964533fd4e83947e386f2534e80101f5b625b1"
+  },
+  "artifacts": [
+    "analyses\\lean_all_ones_spine\\analysis_report.md",
+    "analyses\\lean_all_ones_spine\\metrics.json"
+  ],
+  "figures": [],
+  "warnings": [
+    "a formal verdict is about the obligation as written; it does not establish that the obligation states the intended claim"
+  ]
+}
