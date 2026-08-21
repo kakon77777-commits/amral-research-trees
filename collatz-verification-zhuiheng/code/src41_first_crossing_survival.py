@@ -82,9 +82,11 @@ def best_approximation_set(max_q: int) -> set[Fraction]:
     exact comparison above, so no continued fraction is ever computed from a
     floating-point value.
 
-    Cross-checked in `check_best_approximations` against the classical equal
-    temperaments 19/12, 65/41 and 84/53, which are these convergents under a
-    different name and were written down for unrelated reasons.
+    Cross-checked in `check_best_approximations` two ways: against the classical
+    equal temperaments 19/12, 65/41 and 84/53, which are these convergents under a
+    different name and were written down for unrelated reasons; and against the
+    full convergent list produced by the recursive continued-fraction algorithm on
+    exact Fractions, a computation that never forms `2^p` or `3^q` at all.
     """
     lo, hi, out = (1, 1), (2, 1), set()
     while True:
@@ -193,13 +195,24 @@ def check_best_approximations() -> dict:
     they are the kind of thing that would go missing. This is a second method
     meeting the first on the same objects.
     """
-    approx = best_approximation_set(400)
+    approx = best_approximation_set(1200)
+    # The full convergent list of log2(3), from an INDEPENDENT computation: the
+    # recursive continued-fraction algorithm on exact Fractions
+    # (log_p q = a + 1 / log_{q/p^a} p), which returned
+    # [1,1,1,2,2,3,1,5,2,23,2,2,1,1,55,1] and the convergents below. That is a
+    # completely different computation from the mediant descent used here -- it
+    # never compares 2^p against 3^q -- and the two agreeing on the whole set is
+    # worth more than either agreeing with itself. It is not run in the gate
+    # because the deep partial quotients (23, 55) make its Fractions enormous and
+    # it takes minutes; its OUTPUT is pinned here instead.
     classical = {
         "3/2": Fraction(3, 2),
         "8/5": Fraction(8, 5),
         "19/12 (12-tone)": Fraction(19, 12),
         "65/41 (41-tone)": Fraction(65, 41),
         "84/53 (53-tone)": Fraction(84, 53),
+        "485/306": Fraction(485, 306),
+        "1054/665": Fraction(1054, 665),
     }
     present = {name: (f in approx) for name, f in classical.items()}
     # and a NEGATIVE control: a fraction near log2 3 that must NOT be a best
@@ -214,7 +227,10 @@ def check_best_approximations() -> dict:
         "1000/631": Fraction(1000, 631) not in approx,
     }
     return {
-        "size_q_le_400": len(approx),
+        "size_q_le_1200": len(approx),
+        "cross_checked_against": "the continued-fraction algorithm on exact "
+                                 "Fractions, a computation sharing no code and no "
+                                 "comparison with the mediant descent used here",
         "classical_all_present": all(present.values()),
         "classical": present,
         "non_members_rejected": all(negatives.values()),

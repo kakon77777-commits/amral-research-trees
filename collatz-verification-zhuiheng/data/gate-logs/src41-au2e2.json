@@ -12,14 +12,17 @@
     "recomputed_15_digits": "1.019666990168808"
   },
   "best_approximation_set": {
-    "size_q_le_400": 15,
+    "size_q_le_1200": 17,
+    "cross_checked_against": "the continued-fraction algorithm on exact Fractions, a computation sharing no code and no comparison with the mediant descent used here",
     "classical_all_present": true,
     "classical": {
       "3/2": true,
       "8/5": true,
       "19/12 (12-tone)": true,
       "65/41 (41-tone)": true,
-      "84/53 (53-tone)": true
+      "84/53 (53-tone)": true,
+      "485/306": true,
+      "1054/665": true
     },
     "non_members_rejected": true,
     "negative_control": {

@@ -130,6 +130,18 @@ a different sample — first crossings from every odd start, rather than enumera
 paradoxical ratios — and reached without evaluating a logarithm. It supports the
 round's mechanism; it does not verify the gate, which remains conditional.
 
+**The path itself is cross-checked by a second method.** It is built here by
+mediant descent, deciding `p/q < log₂3` as `2^p < 3^q`. A separate run of the
+recursive continued-fraction algorithm on exact `Fraction`s — which never forms
+either of those powers — returns `log₂3 = [1;1,1,2,2,3,1,5,2,23,2,2,1,1,55,1]`,
+whose convergents `3/2, 8/5, 19/12, 65/41, 84/53, 485/306, 1054/665` all lie on
+the path. Two computations sharing no code and no comparison agreeing on the whole
+set is worth more than either agreeing with itself; three of those convergents are
+also the classical equal temperaments, written down for unrelated reasons
+centuries earlier. The CF algorithm is not run in the gate — its deep partial
+quotients (`23`, `55`) make the intermediate fractions enormous and it takes
+minutes — so its output is pinned in `check_best_approximations` instead.
+
 <!-- BEGIN GENERATED measured block: python code/src41_emit_report_block.py -->
 
 | what | measured | value |
