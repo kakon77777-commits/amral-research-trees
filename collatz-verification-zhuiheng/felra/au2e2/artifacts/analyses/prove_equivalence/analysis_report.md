@@ -1,0 +1,127 @@
+# FELRA Analysis Report — The reset inequality IS the correction bound, in both directions
+
+- Analysis ID: `prove_equivalence`
+- Type: `obligation_export`
+- Execution success: `True`
+- Summary: z3 → verified (expected verified): no counterexample exists on the declared domain, and the twin is satisfiable, so the domain is non-empty and the obligation discriminates
+- Generated at: `2026-08-21T13:16:23.556410+00:00`
+
+> Analysis outputs are finite-budget computational evidence and diagnostics.
+
+## Metrics
+
+```json
+{
+  "exported": true,
+  "expression": "(not (b <= 405) or 3 * (243 * y + b) <= 243 * (3 * y + 5)) and (not (3 * (243 * y + b) <= 243 * (3 * y + 5)) or b <= 405)\n",
+  "parameters": {
+    "y": {
+      "type": "int",
+      "range": [
+        1,
+        1000000
+      ]
+    },
+    "b": {
+      "type": "int",
+      "range": [
+        0,
+        1000000
+      ]
+    }
+  },
+  "obligation_file": "felra\\au2e2\\artifacts\\analyses\\prove_equivalence\\obligation.smt2",
+  "twin_file": "felra\\au2e2\\artifacts\\analyses\\prove_equivalence\\obligation_twin.smt2",
+  "obligation_sha256": "fc334703e49be176f7cdb215fc09c5e40d4466cd86876b59191315577388df06",
+  "twin_sha256": "b75a605d85553c9c9f91c78d50070af17111b608f7cd8e5658bfb2cd460abf0f",
+  "format": "smt-lib2",
+  "note": "the obligation asserts the domain and the NEGATION of the claim, so `unsat` is a proof over that domain and `sat` is a counterexample",
+  "primary": {
+    "formal_status": "verified",
+    "checker": {
+      "backend": "z3",
+      "available": true,
+      "command": [
+        "D:\\Ai\\work together\\tools\\z3-5.1.0-x64-win\\bin\\z3.exe"
+      ],
+      "executable_path": "D:\\Ai\\work together\\tools\\z3-5.1.0-x64-win\\bin\\z3.exe",
+      "executable_sha256": "c638e6b8d066a5ad6ea2712dcd5e2eff5c57eba501b98e7fa8487f7daf0e863d",
+      "version_string": "Z3 version 5.1.0 - 64 bit",
+      "note": null
+    },
+    "obligation": {
+      "path": "D:\\Ai\\work together\\amral-research-trees\\collatz-verification-zhuiheng\\felra\\au2e2\\artifacts\\analyses\\prove_equivalence\\obligation.smt2",
+      "sha256": "c929dfa5af691f2e8b7ab4e2996b94b91e587f01f6c583ad35fda61698b1b567",
+      "bytes": 692
+    },
+    "exit_code": 0,
+    "duration_seconds": 0.023,
+    "detail": "z3 reported unsat, so the negated obligation has no model",
+    "stdout_tail": "unsat\n",
+    "assumptions": [],
+    "limitations": [
+      "a formal verdict is relative to the obligation as written; it says nothing about whether the obligation states the intended claim"
+    ],
+    "theorems_audited": null,
+    "axioms_seen": null
+  },
+  "twin": {
+    "formal_status": "refuted",
+    "checker": {
+      "backend": "z3",
+      "available": true,
+      "command": [
+        "D:\\Ai\\work together\\tools\\z3-5.1.0-x64-win\\bin\\z3.exe"
+      ],
+      "executable_path": "D:\\Ai\\work together\\tools\\z3-5.1.0-x64-win\\bin\\z3.exe",
+      "executable_sha256": "c638e6b8d066a5ad6ea2712dcd5e2eff5c57eba501b98e7fa8487f7daf0e863d",
+      "version_string": "Z3 version 5.1.0 - 64 bit",
+      "note": null
+    },
+    "obligation": {
+      "path": "D:\\Ai\\work together\\amral-research-trees\\collatz-verification-zhuiheng\\felra\\au2e2\\artifacts\\analyses\\prove_equivalence\\obligation_twin.smt2",
+      "sha256": "6a44b567c6c185b265f35a8720a1d5c3588158a6216795ad67397bb7b9967ee2",
+      "bytes": 804
+    },
+    "exit_code": 0,
+    "duration_seconds": 0.024,
+    "detail": "z3 reported sat, so a counter-model exists",
+    "stdout_tail": "sat\n",
+    "assumptions": [],
+    "limitations": [
+      "a formal verdict is relative to the obligation as written; it says nothing about whether the obligation states the intended claim"
+    ],
+    "theorems_audited": null,
+    "axioms_seen": null
+  },
+  "formal_status": "verified",
+  "detail": "no counterexample exists on the declared domain, and the twin is satisfiable, so the domain is non-empty and the obligation discriminates",
+  "domain_is_nonempty": true,
+  "discriminates": true,
+  "certificates": [
+    {
+      "kind": "external_formal",
+      "subject": "reset_is_equivalent_to_the_correction_bound over its declared domain",
+      "data": {
+        "checker": {
+          "backend": "z3",
+          "version_string": "Z3 version 5.1.0 - 64 bit",
+          "executable_sha256": "c638e6b8d066a5ad6ea2712dcd5e2eff5c57eba501b98e7fa8487f7daf0e863d"
+        },
+        "obligation_sha256": "c929dfa5af691f2e8b7ab4e2996b94b91e587f01f6c583ad35fda61698b1b567",
+        "theorems_audited": null,
+        "axioms_seen": null
+      },
+      "issuer": "z3",
+      "certificate_sha256": "88391a0111c283bc324a90a9a0d87e541a2ba400dd93e2bfd68e1d49f7988d3b"
+    }
+  ],
+  "cache_hit": false,
+  "cache_fingerprint": "72ecb99b4c6c1b392fbac72fb736c5ab568db0e6843e3e8a22943ae87d42489b"
+}
+```
+
+## Artifacts
+
+- `analyses\prove_equivalence\analysis_report.md`
+- `analyses\prove_equivalence\metrics.json`

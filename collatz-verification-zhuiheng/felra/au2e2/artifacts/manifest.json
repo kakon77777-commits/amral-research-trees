@@ -1,0 +1,161 @@
+{
+  "project": {
+    "id": "au2e2-first-crossing-reset",
+    "title": "Is the First-Crossing Reset Inequality a second fact, or the Correction Bound restated?",
+    "language": "en"
+  },
+  "created_at": "2026-08-21T13:16:23.577125+00:00",
+  "passed": false,
+  "claims_passed": false,
+  "analyses_succeeded": false,
+  "config_sha256": "3f0168cc2245df7ee2a746e22ca4bd64e51c73d8eaba98fe1c86ce0721895a79",
+  "result_sha256": "49322281080492c8f387a46bfc086597d4cd785f41fbfa2d6272ce714eeca5db",
+  "environment": {
+    "python": "3.14.5",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0",
+    "felra": "1.8.0"
+  },
+  "numeric": null,
+  "certificates": {
+    "count": 2,
+    "all_reverified": true,
+    "invalid": [],
+    "entries": [
+      {
+        "analysis": "prove_reset_from_bound",
+        "kind": "external_formal",
+        "subject": "reset_follows_from_the_correction_bound over its declared domain",
+        "certificate_sha256": "dcd884d1169235db8d1973a741eeb4ca3e845932de1054deedc72c3193ca1a94",
+        "reverified": true,
+        "detail": "the certificate is internally complete: it names z3 and the obligation it checked. Re-running that prover is the original check again, not an independent re-verification of it."
+      },
+      {
+        "analysis": "prove_equivalence",
+        "kind": "external_formal",
+        "subject": "reset_is_equivalent_to_the_correction_bound over its declared domain",
+        "certificate_sha256": "88391a0111c283bc324a90a9a0d87e541a2ba400dd93e2bfd68e1d49f7988d3b",
+        "reverified": true,
+        "detail": "the certificate is internally complete: it names z3 and the obligation it checked. Re-running that prover is the original check again, not an independent re-verification of it."
+      }
+    ],
+    "note": "each certificate is re-checked from its own recorded data at manifest time; a run carrying an unverifiable certificate is not a complete pass"
+  },
+  "evidence_status": {
+    "highest_level": "falsified",
+    "levels": {
+      "executed": "pass",
+      "reproduced": "not_run",
+      "precision_stable": "not_run",
+      "cross_backend_consistent": "not_run",
+      "exact_verified": "not_run",
+      "numerically_certified": "pass",
+      "formally_proved": "not_run"
+    },
+    "ladder": [
+      "executed",
+      "reproduced",
+      "precision_stable",
+      "cross_backend_consistent",
+      "exact_verified",
+      "numerically_certified",
+      "formally_proved"
+    ],
+    "note": "the ladder is cumulative: `highest_level` is the tallest rung reached with no gap below it, so a formal proof recorded above an unrun precision check does not raise the level",
+    "falsified": true
+  },
+  "preregistration": null,
+  "replay_project": "replay_project.yaml",
+  "provenance": [
+    "provenance\\provenance.json",
+    "provenance\\provenance.dot",
+    "provenance\\provenance.svg"
+  ],
+  "datasets": [],
+  "claims": [
+    {
+      "id": "reset_follows_from_the_correction_bound",
+      "passed": true,
+      "report": "claims/reset_follows_from_the_correction_bound/validation_report.md",
+      "metrics": "claims/reset_follows_from_the_correction_bound/metrics.json"
+    },
+    {
+      "id": "reset_needs_the_correction_bound",
+      "passed": false,
+      "report": "claims/reset_needs_the_correction_bound/validation_report.md",
+      "metrics": "claims/reset_needs_the_correction_bound/metrics.json"
+    },
+    {
+      "id": "reset_is_equivalent_to_the_correction_bound",
+      "passed": true,
+      "report": "claims/reset_is_equivalent_to_the_correction_bound/validation_report.md",
+      "metrics": "claims/reset_is_equivalent_to_the_correction_bound/metrics.json"
+    },
+    {
+      "id": "the_general_form_has_a_symbolic_exponent",
+      "passed": false,
+      "report": "claims/the_general_form_has_a_symbolic_exponent/validation_report.md",
+      "metrics": "claims/the_general_form_has_a_symbolic_exponent/metrics.json"
+    }
+  ],
+  "analyses": [
+    {
+      "id": "prove_reset_from_bound",
+      "type": "obligation_export",
+      "success": true,
+      "cache_hit": false,
+      "cache_fingerprint": "c196f5ea139a5259e7ce84c1feeb4c66c3b81da06add6a8b52c4b5eab15aa64b",
+      "report": "analyses/prove_reset_from_bound/analysis_report.md",
+      "metrics": "analyses/prove_reset_from_bound/metrics.json",
+      "artifacts": [
+        "analyses\\prove_reset_from_bound\\analysis_report.md",
+        "analyses\\prove_reset_from_bound\\metrics.json"
+      ]
+    },
+    {
+      "id": "refute_reset_alone",
+      "type": "obligation_export",
+      "success": true,
+      "cache_hit": false,
+      "cache_fingerprint": "6c40f7166bedee9c82198f3467bdb0f04f1ed0ef9de0c094326732cdc355093c",
+      "report": "analyses/refute_reset_alone/analysis_report.md",
+      "metrics": "analyses/refute_reset_alone/metrics.json",
+      "artifacts": [
+        "analyses\\refute_reset_alone\\analysis_report.md",
+        "analyses\\refute_reset_alone\\metrics.json"
+      ]
+    },
+    {
+      "id": "prove_equivalence",
+      "type": "obligation_export",
+      "success": true,
+      "cache_hit": false,
+      "cache_fingerprint": "72ecb99b4c6c1b392fbac72fb736c5ab568db0e6843e3e8a22943ae87d42489b",
+      "report": "analyses/prove_equivalence/analysis_report.md",
+      "metrics": "analyses/prove_equivalence/metrics.json",
+      "artifacts": [
+        "analyses\\prove_equivalence\\analysis_report.md",
+        "analyses\\prove_equivalence\\metrics.json"
+      ]
+    },
+    {
+      "id": "refusal_on_symbolic_exponent",
+      "type": "obligation_export",
+      "success": false,
+      "cache_hit": false,
+      "cache_fingerprint": "4cb4aefaa778b4f49c5dfee6ee129732423ee384257454f256699da8c19d37bc",
+      "report": "analyses/refusal_on_symbolic_exponent/analysis_report.md",
+      "metrics": "analyses/refusal_on_symbolic_exponent/metrics.json",
+      "artifacts": [
+        "analyses\\refusal_on_symbolic_exponent\\analysis_report.md",
+        "analyses\\refusal_on_symbolic_exponent\\metrics.json"
+      ]
+    }
+  ],
+  "figures": [],
+  "warnings": [
+    "Analysis refusal_on_symbolic_exponent: refused rather than approximated: an obligation that is nearly the claim is an obligation about a different claim"
+  ],
+  "registry": null
+}

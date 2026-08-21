@@ -1,0 +1,153 @@
+{
+  "gate": "src41_first_crossing_survival.py",
+  "baseline": {
+    "passed": true,
+    "failures": []
+  },
+  "defects": {
+    "D1_the_correction_bound_comparison_is_inverted": {
+      "caught": true,
+      "expected_failure_named": "correction_bound",
+      "reported": [
+        "correction_bound"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_correction_bound_uses_the_wrong_power": {
+      "caught": true,
+      "expected_failure_named": "correction_bound",
+      "reported": [
+        "correction_bound"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_reset_inequality_drops_the_duration_term": {
+      "caught": true,
+      "expected_failure_named": "reset_inequality",
+      "reported": [
+        "reset_inequality"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_reset_inequality_comparison_is_inverted": {
+      "caught": true,
+      "expected_failure_named": "reset_inequality",
+      "reported": [
+        "reset_inequality"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_cap_denominator_is_wrong": {
+      "caught": true,
+      "expected_failure_named": "cap_threshold",
+      "reported": [
+        "cap_threshold"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5b_the_cap_threshold_probes_only_one_side": {
+      "caught": true,
+      "expected_failure_named": "cap_threshold",
+      "reported": [
+        "cap_threshold"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5c_the_reset_slack_identity_loses_its_factor_of_three": {
+      "caught": true,
+      "expected_failure_named": "reset_inequality",
+      "reported": [
+        "reset_inequality"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_constant_is_recomputed_from_the_wrong_expression": {
+      "caught": true,
+      "expected_failure_named": "constant",
+      "reported": [
+        "constant"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_approximation_set_admits_every_fraction": {
+      "caught": true,
+      "expected_failure_named": "approximation set accepts a non-member",
+      "reported": [
+        "approximation set accepts a non-member"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_approximation_descent_goes_the_wrong_way": {
+      "caught": true,
+      "expected_failure_named": "approximation set misses a classical convergent",
+      "reported": [
+        "approximation set misses a classical convergent"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_at_or_below_the_cap_is_allowed_to_descend": {
+      "caught": true,
+      "expected_failure_named": "cap_equivalence_branches",
+      "reported": [
+        "cap_equivalence_branches"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_just_above_the_cap_is_allowed_not_to_descend": {
+      "caught": true,
+      "expected_failure_named": "cap_equivalence_branches",
+      "reported": [
+        "cap_equivalence_branches"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_survival_cost_loses_its_factor_of_three": {
+      "caught": true,
+      "expected_failure_named": "survival_cost",
+      "reported": [
+        "survival_cost"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_log_form_of_the_survival_cost_is_wrong": {
+      "caught": true,
+      "expected_failure_named": "survival_cost",
+      "reported": [
+        "survival_cost"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_duration_branch_is_evaluated_against_the_wrong_threshold": {
+      "caught": true,
+      "expected_failure_named": "legendre_gate",
+      "reported": [
+        "legendre_gate"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_clustering_control_is_the_sample_itself": {
+      "caught": true,
+      "expected_failure_named": "clustering control overlaps the sample it controls for",
+      "reported": [
+        "clustering control overlaps the sample it controls for"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 16,
+    "caught_by_their_own_check": 16,
+    "missed": 0,
+    "controls_undisturbed": 2,
+    "controls": 2
+  },
+  "ok": true
+}

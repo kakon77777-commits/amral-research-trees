@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0",
+  "project_id": "au2e2-first-crossing-reset",
+  "nodes": [
+    {
+      "id": "project",
+      "kind": "project",
+      "label": "Is the First-Crossing Reset Inequality a second fact, or the Correction Bound restated?",
+      "path": "project_snapshot.yaml",
+      "sha256": "3f0168cc2245df7ee2a746e22ca4bd64e51c73d8eaba98fe1c86ce0721895a79"
+    },
+    {
+      "id": "claim:reset_follows_from_the_correction_bound",
+      "kind": "claim",
+      "label": "At L=5, the correction bound b <= 405 implies the reset inequality, for every start y in the declared range.\n",
+      "path": "claims/reset_follows_from_the_correction_bound/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "claim:reset_needs_the_correction_bound",
+      "kind": "claim",
+      "label": "The reset inequality does NOT hold on its own. FALSE on this domain, and a solver should hand back a counterexample rather than a proof.\n",
+      "path": "claims/reset_needs_the_correction_bound/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "claim:reset_is_equivalent_to_the_correction_bound",
+      "kind": "claim",
+      "label": "The two are the same statement: each implies the other, so the reset inequality carries no information about y at all.\n",
+      "path": "claims/reset_is_equivalent_to_the_correction_bound/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "claim:the_general_form_has_a_symbolic_exponent",
+      "kind": "claim",
+      "label": "With L symbolic the same claim needs 3^L and 2^Q, which SMT-LIB2 cannot render exactly. Declared so that the refusal is on the record.\n",
+      "path": "claims/the_general_form_has_a_symbolic_exponent/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "analysis:prove_reset_from_bound",
+      "kind": "analysis",
+      "label": "Export the implication and let z3 settle it over the whole declared box",
+      "path": "analyses/prove_reset_from_bound/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "artifact:prove_reset_from_bound:analyses\\prove_reset_from_bound\\analysis_report.md",
+      "kind": "artifact",
+      "label": "analysis_report.md",
+      "path": "analyses\\prove_reset_from_bound\\analysis_report.md",
+      "sha256": null
+    },
+    {
+      "id": "artifact:prove_reset_from_bound:analyses\\prove_reset_from_bound\\metrics.json",
+      "kind": "artifact",
+      "label": "metrics.json",
+      "path": "analyses\\prove_reset_from_bound\\metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "analysis:refute_reset_alone",
+      "kind": "analysis",
+      "label": "Export the unguarded inequality — a counterexample is the correct outcome",
+      "path": "analyses/refute_reset_alone/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "artifact:refute_reset_alone:analyses\\refute_reset_alone\\analysis_report.md",
+      "kind": "artifact",
+      "label": "analysis_report.md",
+      "path": "analyses\\refute_reset_alone\\analysis_report.md",
+      "sha256": null
+    },
+    {
+      "id": "artifact:refute_reset_alone:analyses\\refute_reset_alone\\metrics.json",
+      "kind": "artifact",
+      "label": "metrics.json",
+      "path": "analyses\\refute_reset_alone\\metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "analysis:prove_equivalence",
+      "kind": "analysis",
+      "label": "The reset inequality IS the correction bound, in both directions",
+      "path": "analyses/prove_equivalence/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "artifact:prove_equivalence:analyses\\prove_equivalence\\analysis_report.md",
+      "kind": "artifact",
+      "label": "analysis_report.md",
+      "path": "analyses\\prove_equivalence\\analysis_report.md",
+      "sha256": null
+    },
+    {
+      "id": "artifact:prove_equivalence:analyses\\prove_equivalence\\metrics.json",
+      "kind": "artifact",
+      "label": "metrics.json",
+      "path": "analyses\\prove_equivalence\\metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "analysis:refusal_on_symbolic_exponent",
+      "kind": "analysis",
+      "label": "What FELRA will not export, and why the general round is not solver-checkable",
+      "path": "analyses/refusal_on_symbolic_exponent/metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "artifact:refusal_on_symbolic_exponent:analyses\\refusal_on_symbolic_exponent\\analysis_report.md",
+      "kind": "artifact",
+      "label": "analysis_report.md",
+      "path": "analyses\\refusal_on_symbolic_exponent\\analysis_report.md",
+      "sha256": null
+    },
+    {
+      "id": "artifact:refusal_on_symbolic_exponent:analyses\\refusal_on_symbolic_exponent\\metrics.json",
+      "kind": "artifact",
+      "label": "metrics.json",
+      "path": "analyses\\refusal_on_symbolic_exponent\\metrics.json",
+      "sha256": null
+    },
+    {
+      "id": "manifest",
+      "kind": "manifest",
+      "label": "Run manifest",
+      "path": "manifest.json",
+      "sha256": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "project",
+      "target": "claim:reset_follows_from_the_correction_bound",
+      "relation": "defines"
+    },
+    {
+      "source": "project",
+      "target": "claim:reset_needs_the_correction_bound",
+      "relation": "defines"
+    },
+    {
+      "source": "project",
+      "target": "claim:reset_is_equivalent_to_the_correction_bound",
+      "relation": "defines"
+    },
+    {
+      "source": "project",
+      "target": "claim:the_general_form_has_a_symbolic_exponent",
+      "relation": "defines"
+    },
+    {
+      "source": "project",
+      "target": "analysis:prove_reset_from_bound",
+      "relation": "defines"
+    },
+    {
+      "source": "analysis:prove_reset_from_bound",
+      "target": "claim:reset_follows_from_the_correction_bound",
+      "relation": "supports"
+    },
+    {
+      "source": "analysis:prove_reset_from_bound",
+      "target": "artifact:prove_reset_from_bound:analyses\\prove_reset_from_bound\\analysis_report.md",
+      "relation": "produces"
+    },
+    {
+      "source": "analysis:prove_reset_from_bound",
+      "target": "artifact:prove_reset_from_bound:analyses\\prove_reset_from_bound\\metrics.json",
+      "relation": "produces"
+    },
+    {
+      "source": "project",
+      "target": "analysis:refute_reset_alone",
+      "relation": "defines"
+    },
+    {
+      "source": "analysis:refute_reset_alone",
+      "target": "claim:reset_needs_the_correction_bound",
+      "relation": "supports"
+    },
+    {
+      "source": "analysis:refute_reset_alone",
+      "target": "artifact:refute_reset_alone:analyses\\refute_reset_alone\\analysis_report.md",
+      "relation": "produces"
+    },
+    {
+      "source": "analysis:refute_reset_alone",
+      "target": "artifact:refute_reset_alone:analyses\\refute_reset_alone\\metrics.json",
+      "relation": "produces"
+    },
+    {
+      "source": "project",
+      "target": "analysis:prove_equivalence",
+      "relation": "defines"
+    },
+    {
+      "source": "analysis:prove_equivalence",
+      "target": "claim:reset_is_equivalent_to_the_correction_bound",
+      "relation": "supports"
+    },
+    {
+      "source": "analysis:prove_equivalence",
+      "target": "artifact:prove_equivalence:analyses\\prove_equivalence\\analysis_report.md",
+      "relation": "produces"
+    },
+    {
+      "source": "analysis:prove_equivalence",
+      "target": "artifact:prove_equivalence:analyses\\prove_equivalence\\metrics.json",
+      "relation": "produces"
+    },
+    {
+      "source": "project",
+      "target": "analysis:refusal_on_symbolic_exponent",
+      "relation": "defines"
+    },
+    {
+      "source": "analysis:refusal_on_symbolic_exponent",
+      "target": "claim:the_general_form_has_a_symbolic_exponent",
+      "relation": "supports"
+    },
+    {
+      "source": "analysis:refusal_on_symbolic_exponent",
+      "target": "artifact:refusal_on_symbolic_exponent:analyses\\refusal_on_symbolic_exponent\\analysis_report.md",
+      "relation": "produces"
+    },
+    {
+      "source": "analysis:refusal_on_symbolic_exponent",
+      "target": "artifact:refusal_on_symbolic_exponent:analyses\\refusal_on_symbolic_exponent\\metrics.json",
+      "relation": "produces"
+    },
+    {
+      "source": "project",
+      "target": "manifest",
+      "relation": "summarizes"
+    }
+  ]
+}

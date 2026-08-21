@@ -1,0 +1,123 @@
+{
+  "id": "prove_reset_from_bound",
+  "type": "obligation_export",
+  "title": "Export the implication and let z3 settle it over the whole declared box",
+  "success": true,
+  "summary": "z3 → verified (expected verified): no counterexample exists on the declared domain, and the twin is satisfiable, so the domain is non-empty and the obligation discriminates",
+  "claim_id": "reset_follows_from_the_correction_bound",
+  "created_at": "2026-08-21T13:16:23.305307+00:00",
+  "metrics": {
+    "exported": true,
+    "expression": "not (b <= 405) or 3 * (243 * y + b) <= 243 * (3 * y + 5)",
+    "parameters": {
+      "y": {
+        "type": "int",
+        "range": [
+          1,
+          1000000
+        ]
+      },
+      "b": {
+        "type": "int",
+        "range": [
+          0,
+          1000000
+        ]
+      }
+    },
+    "obligation_file": "felra\\au2e2\\artifacts\\analyses\\prove_reset_from_bound\\obligation.smt2",
+    "twin_file": "felra\\au2e2\\artifacts\\analyses\\prove_reset_from_bound\\obligation_twin.smt2",
+    "obligation_sha256": "2739b55c17bc2c5afcaef8456da89527ed836d6f703e9eaeeb92f88fcded86f4",
+    "twin_sha256": "c7737c961282325322633991f444a51618e73c565fd08193387dd707fa3bdc0e",
+    "format": "smt-lib2",
+    "note": "the obligation asserts the domain and the NEGATION of the claim, so `unsat` is a proof over that domain and `sat` is a counterexample",
+    "primary": {
+      "formal_status": "verified",
+      "checker": {
+        "backend": "z3",
+        "available": true,
+        "command": [
+          "D:\\Ai\\work together\\tools\\z3-5.1.0-x64-win\\bin\\z3.exe"
+        ],
+        "executable_path": "D:\\Ai\\work together\\tools\\z3-5.1.0-x64-win\\bin\\z3.exe",
+        "executable_sha256": "c638e6b8d066a5ad6ea2712dcd5e2eff5c57eba501b98e7fa8487f7daf0e863d",
+        "version_string": "Z3 version 5.1.0 - 64 bit",
+        "note": null
+      },
+      "obligation": {
+        "path": "D:\\Ai\\work together\\amral-research-trees\\collatz-verification-zhuiheng\\felra\\au2e2\\artifacts\\analyses\\prove_reset_from_bound\\obligation.smt2",
+        "sha256": "2fa2b645481b1c70b3bb6d1c03e107f90def7b4565d2a630209ce3fddaf05ae3",
+        "bytes": 544
+      },
+      "exit_code": 0,
+      "duration_seconds": 0.024,
+      "detail": "z3 reported unsat, so the negated obligation has no model",
+      "stdout_tail": "unsat\n",
+      "assumptions": [],
+      "limitations": [
+        "a formal verdict is relative to the obligation as written; it says nothing about whether the obligation states the intended claim"
+      ],
+      "theorems_audited": null,
+      "axioms_seen": null
+    },
+    "twin": {
+      "formal_status": "refuted",
+      "checker": {
+        "backend": "z3",
+        "available": true,
+        "command": [
+          "D:\\Ai\\work together\\tools\\z3-5.1.0-x64-win\\bin\\z3.exe"
+        ],
+        "executable_path": "D:\\Ai\\work together\\tools\\z3-5.1.0-x64-win\\bin\\z3.exe",
+        "executable_sha256": "c638e6b8d066a5ad6ea2712dcd5e2eff5c57eba501b98e7fa8487f7daf0e863d",
+        "version_string": "Z3 version 5.1.0 - 64 bit",
+        "note": null
+      },
+      "obligation": {
+        "path": "D:\\Ai\\work together\\amral-research-trees\\collatz-verification-zhuiheng\\felra\\au2e2\\artifacts\\analyses\\prove_reset_from_bound\\obligation_twin.smt2",
+        "sha256": "85c43e02f007af84061b19b8ce03530f04945c9ca84d3b4ba27df7d21488b886",
+        "bytes": 656
+      },
+      "exit_code": 0,
+      "duration_seconds": 0.026,
+      "detail": "z3 reported sat, so a counter-model exists",
+      "stdout_tail": "sat\n",
+      "assumptions": [],
+      "limitations": [
+        "a formal verdict is relative to the obligation as written; it says nothing about whether the obligation states the intended claim"
+      ],
+      "theorems_audited": null,
+      "axioms_seen": null
+    },
+    "formal_status": "verified",
+    "detail": "no counterexample exists on the declared domain, and the twin is satisfiable, so the domain is non-empty and the obligation discriminates",
+    "domain_is_nonempty": true,
+    "discriminates": true,
+    "certificates": [
+      {
+        "kind": "external_formal",
+        "subject": "reset_follows_from_the_correction_bound over its declared domain",
+        "data": {
+          "checker": {
+            "backend": "z3",
+            "version_string": "Z3 version 5.1.0 - 64 bit",
+            "executable_sha256": "c638e6b8d066a5ad6ea2712dcd5e2eff5c57eba501b98e7fa8487f7daf0e863d"
+          },
+          "obligation_sha256": "2fa2b645481b1c70b3bb6d1c03e107f90def7b4565d2a630209ce3fddaf05ae3",
+          "theorems_audited": null,
+          "axioms_seen": null
+        },
+        "issuer": "z3",
+        "certificate_sha256": "dcd884d1169235db8d1973a741eeb4ca3e845932de1054deedc72c3193ca1a94"
+      }
+    ],
+    "cache_hit": false,
+    "cache_fingerprint": "c196f5ea139a5259e7ce84c1feeb4c66c3b81da06add6a8b52c4b5eab15aa64b"
+  },
+  "artifacts": [
+    "analyses\\prove_reset_from_bound\\analysis_report.md",
+    "analyses\\prove_reset_from_bound\\metrics.json"
+  ],
+  "figures": [],
+  "warnings": []
+}

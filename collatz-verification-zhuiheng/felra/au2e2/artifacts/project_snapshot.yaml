@@ -1,0 +1,87 @@
+project:
+  id: au2e2-first-crossing-reset
+  title: Is the First-Crossing Reset Inequality a second fact, or the Correction Bound
+    restated?
+  language: en
+parameters:
+  y:
+    type: int
+    range:
+    - 1
+    - 1000000
+    samples: 25
+  b:
+    type: int
+    range:
+    - 0
+    - 1000000
+    samples: 25
+claims:
+- id: reset_follows_from_the_correction_bound
+  statement: 'At L=5, the correction bound b <= 405 implies the reset inequality,
+    for every start y in the declared range.
+
+    '
+  expression: not (b <= 405) or 3 * (243 * y + b) <= 243 * (3 * y + 5)
+  status: hypothesis
+  required_checks:
+  - numerical
+- id: reset_needs_the_correction_bound
+  statement: 'The reset inequality does NOT hold on its own. FALSE on this domain,
+    and a solver should hand back a counterexample rather than a proof.
+
+    '
+  expression: 3 * (243 * y + b) <= 243 * (3 * y + 5)
+  status: hypothesis
+  required_checks:
+  - numerical
+- id: reset_is_equivalent_to_the_correction_bound
+  statement: 'The two are the same statement: each implies the other, so the reset
+    inequality carries no information about y at all.
+
+    '
+  expression: '(not (b <= 405) or 3 * (243 * y + b) <= 243 * (3 * y + 5)) and (not
+    (3 * (243 * y + b) <= 243 * (3 * y + 5)) or b <= 405)
+
+    '
+  status: hypothesis
+  required_checks:
+  - numerical
+- id: the_general_form_has_a_symbolic_exponent
+  statement: 'With L symbolic the same claim needs 3^L and 2^Q, which SMT-LIB2 cannot
+    render exactly. Declared so that the refusal is on the record.
+
+    '
+  expression: 3 ** y <= 2 ** b
+  status: hypothesis
+  required_checks:
+  - numerical
+analyses:
+- id: prove_reset_from_bound
+  type: obligation_export
+  title: Export the implication and let z3 settle it over the whole declared box
+  claim_id: reset_follows_from_the_correction_bound
+  backend: z3
+  path: ${Z3_EXE}
+  expect: verified
+- id: refute_reset_alone
+  type: obligation_export
+  title: Export the unguarded inequality — a counterexample is the correct outcome
+  claim_id: reset_needs_the_correction_bound
+  backend: z3
+  path: ${Z3_EXE}
+  expect: refuted
+- id: prove_equivalence
+  type: obligation_export
+  title: The reset inequality IS the correction bound, in both directions
+  claim_id: reset_is_equivalent_to_the_correction_bound
+  backend: z3
+  path: ${Z3_EXE}
+  expect: verified
+- id: refusal_on_symbolic_exponent
+  type: obligation_export
+  title: What FELRA will not export, and why the general round is not solver-checkable
+  claim_id: the_general_form_has_a_symbolic_exponent
+  backend: z3
+  path: ${Z3_EXE}
+  expect: verified

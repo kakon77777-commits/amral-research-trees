@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across thirty-five source items and sixteen runs, **nothing in the source
+Across <!-- COUNTS -->41 source items and twenty-one runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -236,11 +236,32 @@ instance behind each band.
     contrast, binds — `Y_b` reaches 0.203–0.938 of its cap across 190
     first-return windows — though its affine correction is never what makes the
     bound true.
-21. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+21. [`reports/RUN-020-HARD-ZETA-AU2B3-PREFACTOR-SATURATION.md`](./reports/RUN-020-HARD-ZETA-AU2B3-PREFACTOR-SATURATION.md),
+    [`RUN-021-CRYPTO-SEMIOTICS-V09.md`](./reports/RUN-021-CRYPTO-SEMIOTICS-V09.md) and
+    [`RUN-022-HARD-ZETA-AU2E1-RESET-BLOCK.md`](./reports/RUN-022-HARD-ZETA-AU2E1-RESET-BLOCK.md)
+    — source items 38–40. These three sat outside this index for three rounds
+    while the index itself said "sixteen runs"; the count below is now emitted
+    from the report files rather than typed, which is the only fix that does not
+    go stale again.
+22. [`reports/RUN-023-HARD-ZETA-AU2E2-FIRST-CROSSING-SURVIVAL.md`](./reports/RUN-023-HARD-ZETA-AU2E2-FIRST-CROSSING-SURVIVAL.md) —
+    **the round holds, and its two headline inequalities are one inequality.**
+    Substituting the closed form into the First-Crossing Reset Inequality cancels
+    the `Y_a` terms identically, leaving the First-Crossing Correction Bound: the
+    reset inequality says nothing about the starting height, and its slack is
+    exactly `3·(L·3^(L−1) − B_L)` at every crossing. The Duration–Diophantine
+    Dichotomy is likewise a **partition** on `D` against `1/(2L)` rather than a
+    choice between escape routes — the cap forces the duration branch on one side
+    and Legendre covers the other, so "satisfies neither" is impossible rather
+    than unobserved. Everything conditional on a *surviving* crossing is checked
+    as algebra, because a survivor would refute the Terras coefficient-stopping
+    conjecture and there are **0 in 99,999 starts**. What is not vacuous: near
+    misses land on the Stern–Brocot path to `log₂3` at **66.3 %** against a
+    population base rate of **12.9 %**, with the furthest 1,000 at **0.0 %**.
+23. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-22. [`code/`](./code/) — the engine, the independent reference, and the gates.
-23. [`data/gate-logs/`](./data/gate-logs/) and
+24. [`code/`](./code/) — the engine, the independent reference, and the gates.
+25. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

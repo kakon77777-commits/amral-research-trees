@@ -1,0 +1,47 @@
+digraph FELRA {
+  rankdir=LR;
+  node [shape=box];
+  "project" [label="Is the First-Crossing Reset Inequality a second fact, or the Correction Bound restated?\n[project]"];
+  "claim:reset_follows_from_the_correction_bound" [label="At L=5, the correction bound b <= 405 implies the reset inequality, for every start y in the declared range.
+\n[claim]"];
+  "claim:reset_needs_the_correction_bound" [label="The reset inequality does NOT hold on its own. FALSE on this domain, and a solver should hand back a counterexample rather than a proof.
+\n[claim]"];
+  "claim:reset_is_equivalent_to_the_correction_bound" [label="The two are the same statement: each implies the other, so the reset inequality carries no information about y at all.
+\n[claim]"];
+  "claim:the_general_form_has_a_symbolic_exponent" [label="With L symbolic the same claim needs 3^L and 2^Q, which SMT-LIB2 cannot render exactly. Declared so that the refusal is on the record.
+\n[claim]"];
+  "analysis:prove_reset_from_bound" [label="Export the implication and let z3 settle it over the whole declared box\n[analysis]"];
+  "artifact:prove_reset_from_bound:analyses\\prove_reset_from_bound\\analysis_report.md" [label="analysis_report.md\n[artifact]"];
+  "artifact:prove_reset_from_bound:analyses\\prove_reset_from_bound\\metrics.json" [label="metrics.json\n[artifact]"];
+  "analysis:refute_reset_alone" [label="Export the unguarded inequality — a counterexample is the correct outcome\n[analysis]"];
+  "artifact:refute_reset_alone:analyses\\refute_reset_alone\\analysis_report.md" [label="analysis_report.md\n[artifact]"];
+  "artifact:refute_reset_alone:analyses\\refute_reset_alone\\metrics.json" [label="metrics.json\n[artifact]"];
+  "analysis:prove_equivalence" [label="The reset inequality IS the correction bound, in both directions\n[analysis]"];
+  "artifact:prove_equivalence:analyses\\prove_equivalence\\analysis_report.md" [label="analysis_report.md\n[artifact]"];
+  "artifact:prove_equivalence:analyses\\prove_equivalence\\metrics.json" [label="metrics.json\n[artifact]"];
+  "analysis:refusal_on_symbolic_exponent" [label="What FELRA will not export, and why the general round is not solver-checkable\n[analysis]"];
+  "artifact:refusal_on_symbolic_exponent:analyses\\refusal_on_symbolic_exponent\\analysis_report.md" [label="analysis_report.md\n[artifact]"];
+  "artifact:refusal_on_symbolic_exponent:analyses\\refusal_on_symbolic_exponent\\metrics.json" [label="metrics.json\n[artifact]"];
+  "manifest" [label="Run manifest\n[manifest]"];
+  "project" -> "claim:reset_follows_from_the_correction_bound" [label="defines"];
+  "project" -> "claim:reset_needs_the_correction_bound" [label="defines"];
+  "project" -> "claim:reset_is_equivalent_to_the_correction_bound" [label="defines"];
+  "project" -> "claim:the_general_form_has_a_symbolic_exponent" [label="defines"];
+  "project" -> "analysis:prove_reset_from_bound" [label="defines"];
+  "analysis:prove_reset_from_bound" -> "claim:reset_follows_from_the_correction_bound" [label="supports"];
+  "analysis:prove_reset_from_bound" -> "artifact:prove_reset_from_bound:analyses\\prove_reset_from_bound\\analysis_report.md" [label="produces"];
+  "analysis:prove_reset_from_bound" -> "artifact:prove_reset_from_bound:analyses\\prove_reset_from_bound\\metrics.json" [label="produces"];
+  "project" -> "analysis:refute_reset_alone" [label="defines"];
+  "analysis:refute_reset_alone" -> "claim:reset_needs_the_correction_bound" [label="supports"];
+  "analysis:refute_reset_alone" -> "artifact:refute_reset_alone:analyses\\refute_reset_alone\\analysis_report.md" [label="produces"];
+  "analysis:refute_reset_alone" -> "artifact:refute_reset_alone:analyses\\refute_reset_alone\\metrics.json" [label="produces"];
+  "project" -> "analysis:prove_equivalence" [label="defines"];
+  "analysis:prove_equivalence" -> "claim:reset_is_equivalent_to_the_correction_bound" [label="supports"];
+  "analysis:prove_equivalence" -> "artifact:prove_equivalence:analyses\\prove_equivalence\\analysis_report.md" [label="produces"];
+  "analysis:prove_equivalence" -> "artifact:prove_equivalence:analyses\\prove_equivalence\\metrics.json" [label="produces"];
+  "project" -> "analysis:refusal_on_symbolic_exponent" [label="defines"];
+  "analysis:refusal_on_symbolic_exponent" -> "claim:the_general_form_has_a_symbolic_exponent" [label="supports"];
+  "analysis:refusal_on_symbolic_exponent" -> "artifact:refusal_on_symbolic_exponent:analyses\\refusal_on_symbolic_exponent\\analysis_report.md" [label="produces"];
+  "analysis:refusal_on_symbolic_exponent" -> "artifact:refusal_on_symbolic_exponent:analyses\\refusal_on_symbolic_exponent\\metrics.json" [label="produces"];
+  "project" -> "manifest" [label="summarizes"];
+}

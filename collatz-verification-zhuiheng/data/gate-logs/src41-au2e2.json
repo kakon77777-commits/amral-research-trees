@@ -1,0 +1,286 @@
+{
+  "round": "Hard-Zeta Phase II / Round A-U.2e.2",
+  "source_item": 41,
+  "odd_starts_below": 200001,
+  "constant": {
+    "paper_prints": "1.019666990169",
+    "enclosure_low": "1.01966699016880896776",
+    "enclosure_high": "1.01966699016880896776",
+    "enclosure_is_tight_to_20_digits": true,
+    "printed_digits_agree": true,
+    "comparison": "true value rounds to the printed 12 decimals",
+    "recomputed_15_digits": "1.019666990168808"
+  },
+  "best_approximation_set": {
+    "size_q_le_400": 15,
+    "classical_all_present": true,
+    "classical": {
+      "3/2": true,
+      "8/5": true,
+      "19/12 (12-tone)": true,
+      "65/41 (41-tone)": true,
+      "84/53 (53-tone)": true
+    },
+    "non_members_rejected": true,
+    "negative_control": {
+      "17/11": true,
+      "50/31": true,
+      "13/8": true,
+      "1000/631": true
+    }
+  },
+  "transcription": {
+    "is_a_transcription_check_not_a_result": true,
+    "checked": 99999,
+    "violations": 0,
+    "first_bad": []
+  },
+  "unconditional": {
+    "correction_bound": {
+      "checked": 99999,
+      "violations": 0,
+      "first_bad": [],
+      "degenerate_bound": 0,
+      "max_B_over_bound_all_L": 1.0,
+      "max_B_over_bound_L_ge_2": 0.8518518518518519,
+      "note": "the all-L figure is saturated by L=1, where B_1 = 1 = 1*3^0"
+    },
+    "reset_inequality": {
+      "checked": 99999,
+      "violations": 0,
+      "first_bad": [],
+      "slack_identity_violations": 0,
+      "first_identity_break": [],
+      "min_slack": "0",
+      "identity": "rhs - lhs == 3*(L*3^(L-1) - B), so the reset inequality is the correction bound restated and carries no information about Y_a"
+    },
+    "cap_equivalence": {
+      "checked": 99999,
+      "mismatches": 0,
+      "first_mismatch": [],
+      "cap_satisfied_count": 0,
+      "survivor_count": 0,
+      "is_vacuous_here": true,
+      "true_branch_tested_in": "check_cap_equivalence_branches"
+    },
+    "cap_threshold": {
+      "checked": 99999,
+      "at_threshold_should_not_descend__failures": 0,
+      "just_above_threshold_should_descend__failures": 0,
+      "below_examples": [],
+      "above_examples": [],
+      "note": "probes each real crossing's cap from both sides, so this one is not vacuous even though no real start reaches the cap"
+    }
+  },
+  "survival_census": {
+    "starts_walked": 99999,
+    "survivors": 0,
+    "survivor_starts": [],
+    "a_survivor_would_refute": "Terras coefficient-stopping conjecture",
+    "max_cap_ratio": 0.572331380543576,
+    "max_cap_ratio_exact": "48215861999407177/84244659018371145",
+    "max_cap_ratio_at_n": 63,
+    "survival_threshold": 1.0,
+    "nearest_ten": [
+      {
+        "n": 63,
+        "L": 34,
+        "Q": 54,
+        "Q_over_L": "27/17",
+        "cap_ratio": 0.572331,
+        "Y_end_over_Y_a": 0.968254
+      },
+      {
+        "n": 27,
+        "L": 37,
+        "Q": 59,
+        "Q_over_L": "59/37",
+        "cap_ratio": 0.32316,
+        "Y_end_over_Y_a": 0.851852
+      },
+      {
+        "n": 7,
+        "L": 4,
+        "Q": 7,
+        "Q_over_L": "7/4",
+        "cap_ratio": 0.221884,
+        "Y_end_over_Y_a": 0.714286
+      },
+      {
+        "n": 71,
+        "L": 32,
+        "Q": 51,
+        "Q_over_L": "51/32",
+        "cap_ratio": 0.204686,
+        "Y_end_over_Y_a": 0.859155
+      },
+      {
+        "n": 95,
+        "L": 5,
+        "Q": 8,
+        "Q_over_L": "8/5",
+        "cap_ratio": 0.17085,
+        "Y_end_over_Y_a": 0.957895
+      },
+      {
+        "n": 31,
+        "L": 35,
+        "Q": 56,
+        "Q_over_L": "8/5",
+        "cap_ratio": 0.155749,
+        "Y_end_over_Y_a": 0.741935
+      },
+      {
+        "n": 9,
+        "L": 1,
+        "Q": 2,
+        "Q_over_L": "2",
+        "cap_ratio": 0.111111,
+        "Y_end_over_Y_a": 0.777778
+      },
+      {
+        "n": 43,
+        "L": 3,
+        "Q": 5,
+        "Q_over_L": "5/3",
+        "cap_ratio": 0.106977,
+        "Y_end_over_Y_a": 0.860465
+      },
+      {
+        "n": 219,
+        "L": 5,
+        "Q": 8,
+        "Q_over_L": "8/5",
+        "cap_ratio": 0.100808,
+        "Y_end_over_Y_a": 0.954338
+      },
+      {
+        "n": 175,
+        "L": 5,
+        "Q": 8,
+        "Q_over_L": "8/5",
+        "cap_ratio": 0.09978,
+        "Y_end_over_Y_a": 0.954286
+      }
+    ]
+  },
+  "conditional_as_algebra": {
+    "cap_equivalence_branches": {
+      "is_algebra_not_orbit_data": true,
+      "configurations": 34,
+      "at_or_below_cap_should_not_descend__failures": 0,
+      "just_above_cap_should_descend__failures": 0,
+      "below_examples": [],
+      "above_examples": []
+    },
+    "survival_cost": {
+      "is_algebra_not_orbit_data": true,
+      "triples": 34,
+      "violations_cost_form": 0,
+      "violations_log_form": 0
+    },
+    "legendre_gate": {
+      "is_algebra_not_orbit_data": true,
+      "configurations": 34,
+      "D_below_half_over_L__legendre_side": 1,
+      "D_at_or_above_half_over_L__duration_side": 33,
+      "duration_branch_failed_on_the_duration_side": 0,
+      "counterexamples": [],
+      "satisfy_neither": 0,
+      "undecided_by_beta_bracket": 0,
+      "structure": "the cap forces the duration branch whenever D >= 1/(2L), so the dichotomy is a partition on D against 1/(2L) rather than a choice between independent alternatives"
+    }
+  },
+  "legendre_distance_on_real_orbits": {
+    "is_a_measurement_not_a_check": true,
+    "population": 99999,
+    "in_the_legendre_regime_2LD_lt_1": 27733,
+    "smallest_2LD": 0.751875,
+    "at_n": 95,
+    "with_L": 5,
+    "with_Q": 8,
+    "closest_five": [
+      {
+        "n": 95,
+        "L": 5,
+        "Q": 8,
+        "two_L_D": 0.7519
+      },
+      {
+        "n": 175,
+        "L": 5,
+        "Q": 8,
+        "two_L_D": 0.7519
+      },
+      {
+        "n": 219,
+        "L": 5,
+        "Q": 8,
+        "two_L_D": 0.7519
+      },
+      {
+        "n": 295,
+        "L": 5,
+        "Q": 8,
+        "two_L_D": 0.7519
+      },
+      {
+        "n": 335,
+        "L": 5,
+        "Q": 8,
+        "two_L_D": 0.7519
+      }
+    ]
+  },
+  "near_miss_clustering": {
+    "path_size": 9,
+    "control_is_a_disjoint_set": true,
+    "overlap": 0,
+    "all_L": {
+      "top_10": {
+        "size": 10,
+        "on_path": 6,
+        "share": 60.0
+      },
+      "top_100": {
+        "size": 100,
+        "on_path": 64,
+        "share": 64.0
+      },
+      "top_1000": {
+        "size": 1000,
+        "on_path": 663,
+        "share": 66.3
+      },
+      "population": {
+        "size": 99999,
+        "on_path": 12915,
+        "share": 12.92
+      },
+      "bottom_1000": {
+        "size": 1000,
+        "on_path": 0,
+        "share": 0.0
+      }
+    },
+    "L_at_least_2": {
+      "top_1000": {
+        "size": 850,
+        "on_path": 663,
+        "share": 78.0
+      },
+      "population": {
+        "size": 50000,
+        "on_path": 12915,
+        "share": 25.83
+      },
+      "bottom_1000": {
+        "size": 294,
+        "on_path": 0,
+        "share": 0.0
+      }
+    }
+  },
+  "failures": [],
+  "passed": true
+}

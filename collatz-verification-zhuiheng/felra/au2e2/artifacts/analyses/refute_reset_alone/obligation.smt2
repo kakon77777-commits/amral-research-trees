@@ -1,0 +1,13 @@
+; FELRA proof obligation
+; claim: reset_needs_the_correction_bound
+; expression: 3 * (243 * y + b) <= 243 * (3 * y + 5)
+;
+; The DOMAIN and the NEGATION of the claim are asserted, so `unsat` means
+; no counterexample exists on that domain. `sat` is a counterexample.
+(set-logic AUFNIRA)
+(declare-const b Int)
+(declare-const y Int)
+(assert (and (>= b 0) (<= b 1000000)))
+(assert (and (>= y 1) (<= y 1000000)))
+(assert (not (<= (* 3 (+ (* 243 y) b)) (* 243 (+ (* 3 y) 5)))))
+(check-sat)
