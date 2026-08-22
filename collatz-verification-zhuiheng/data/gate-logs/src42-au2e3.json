@@ -1,0 +1,115 @@
+{
+  "round": "Hard-Zeta Phase II / Round A-U.2e.3",
+  "source_item": 42,
+  "odd_starts_below": 60001,
+  "corrigendum_gap": {
+    "starts": 29999,
+    "routes_disagree": 0,
+    "first_disagreements": [],
+    "odd_count_not_equal_to_L": 0,
+    "gap_distribution": {
+      "0": 14951,
+      "1": 7543,
+      "2": 3727,
+      "3": 1910,
+      "4": 932,
+      "5": 463,
+      "6": 236,
+      "7": 116,
+      "8": 55,
+      "9": 29,
+      "10": 22,
+      "11": 9,
+      "12": 3,
+      "13": 2,
+      "14": 1
+    },
+    "gap_zero_share_pct": 49.84,
+    "gap_max": 14,
+    "gap_mean": 1.0032,
+    "reading": "the two indices coincide on about half of all starts; on the rest the accelerated endpoint lags the true first crossing by a geometrically distributed number of modified steps"
+  },
+  "mass_no_go": {
+    "infinite_sets_can_be_arbitrarily_light": [
+      {
+        "s": 2,
+        "epsilon": "1/1000000",
+        "J": 11,
+        "set": "{2^j : j >= 11}, infinite",
+        "mass_below_epsilon": true,
+        "mass": 3.178914388020833e-07
+      },
+      {
+        "s": 2,
+        "epsilon": "1/1000000000000",
+        "J": 21,
+        "set": "{2^j : j >= 21}, infinite",
+        "mass_below_epsilon": true,
+        "mass": 3.0316490059097606e-13
+      },
+      {
+        "s": 3,
+        "epsilon": "1/100000000000000000000",
+        "J": 23,
+        "set": "{2^j : j >= 23}, infinite",
+        "mass_below_epsilon": true,
+        "mass": 1.9360753080098292e-21
+      }
+    ],
+    "all_below_target": true,
+    "section_13_domination_is_termwise_monotone": true,
+    "section_13_partial_sum_at_s2": 0.23363806575758983,
+    "section_13_bounded_by_zeta2": true
+  },
+  "unconditional": {
+    "correction_bank": {
+      "starts": 9999,
+      "increment_identity_violations": 0,
+      "two_expressions_for_A_disagree": 0,
+      "upper_bound_violations_before_the_crossing": 0,
+      "starts_where_the_upper_bound_fails_after_the_crossing": 9980,
+      "upper_bound_has_a_negative_half": true,
+      "note": "A_m <= n + m/3 is a CASP-candidate statement, not an orbit statement: it needs delta_i >= 0, which a real orbit loses at the crossing. Checked as holding before and failing after."
+    },
+    "bank_cost_identity": {
+      "is_a_transcription_check_not_a_result": true,
+      "pairs_checked": 191247,
+      "violations": 0,
+      "first_bad": [],
+      "note": "section 3's real content is the INEQUALITY A_b >= 2^D A_a, which needs Y_b >= Y_a -- a Terras counterexample, of which this sample contains none"
+    },
+    "telescoping": {
+      "cases": 7624,
+      "violations": 0,
+      "first_bad": [],
+      "cases_where_the_inequality_is_STRICT": 7624,
+      "has_a_strict_case": true,
+      "is_unconditional": true,
+      "note": "needs only monotone A and disjoint ordered intervals; the Depth Budget's other half, A_b/A_a >= 2^D, needs survival and is not checked here"
+    }
+  },
+  "survival_census": {
+    "starts": 29999,
+    "surviving_resets": 0,
+    "examples": [],
+    "a_survivor_would_refute": "Terras coefficient-stopping conjecture",
+    "consequence": "the Reset Bank-Cost inequality, the Depth Budget, Fixed-Depth Sparsity and the Weighted B-Injection Budget all quantify over this set"
+  },
+  "not_testable_here": {
+    "suffix_minima": {
+      "starts": 1999,
+      "delta_set_sizes": {
+        "1": 1999
+      },
+      "Y_set_sizes": {
+        "1": 1999
+      },
+      "sets_disagree_on": 0,
+      "every_set_is_a_singleton": true,
+      "testable_here": false,
+      "verdict": "NOT TESTABLE on terminating orbits — both characterisations degenerate to the final position, so their agreement is a statement about two singletons and is not evidence for section 8"
+    }
+  },
+  "failures": [],
+  "passed": true
+}

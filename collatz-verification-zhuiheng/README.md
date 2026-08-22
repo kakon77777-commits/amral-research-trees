@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->41 source items and twenty-one runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->42 source items and twenty-two runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -257,11 +257,28 @@ instance behind each band.
     conjecture and there are **0 in 99,999 starts**. What is not vacuous: near
     misses land on the Stern–Brocot path to `log₂3` at **66.3 %** against a
     population base rate of **12.9 %**, with the furthest 1,000 at **0.0 %**.
-23. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+23. [`reports/RUN-024-HARD-ZETA-AU2E3-INFINITE-SUPPORT.md`](./reports/RUN-024-HARD-ZETA-AU2E3-INFINITE-SUPPORT.md) —
+    **the round's headline is a negative result and a correct one**, and its own
+    corrigendum turns out to be measurable. A-U.2e.3 declines an available
+    shortcut: `Σ_{n∈S} n^(−s) ≤ ζ(s)` for *any* `S`, so infinite obstruction
+    support cannot be killed by cardinality — checked here by **constructing**
+    infinite sets whose mass is below a target, in exact rationals. The new
+    content is the conversion the corrigendum asks for and does not supply: the
+    accelerated block endpoint sits at modified step `Q_L` while the true first
+    crossing is at `⌊L·log₂3⌋+1`, and measured by **two routes sharing no code**
+    the two coincide **49.84 %** of the time, mean gap `1.0032`, max `14`. So
+    "do not conflate them" bites on half the population. Also: §8's suffix-minimum
+    characterisation is **structurally untestable on any terminating orbit** —
+    both characterisations degenerate to the final index, and their perfect
+    agreement is a statement about two singletons, which this run nearly reported
+    as a finding. Drill 12/12; three of its defects were re-aimed after misses,
+    one of which hung the gate forever and left a live defect on disk, which is
+    why `src42_drill.py` now has a subprocess timeout.
+24. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-24. [`code/`](./code/) — the engine, the independent reference, and the gates.
-25. [`data/gate-logs/`](./data/gate-logs/) and
+25. [`code/`](./code/) — the engine, the independent reference, and the gates.
+26. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

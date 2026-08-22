@@ -1,0 +1,122 @@
+{
+  "gate": "src42_infinite_support.py",
+  "baseline": {
+    "passed": true,
+    "failures": []
+  },
+  "defects": {
+    "D1_the_bank_uses_the_wrong_power_of_three": {
+      "caught": true,
+      "expected_failure_named": "correction_bank",
+      "reported": [
+        "correction_bank",
+        "correction_bank: the upper bound never fails, so the two-sided test has no negative half"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_increment_identity_loses_its_third": {
+      "caught": true,
+      "expected_failure_named": "correction_bank",
+      "reported": [
+        "correction_bank"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_accumulated_expression_starts_from_the_wrong_place": {
+      "caught": true,
+      "expected_failure_named": "correction_bank",
+      "reported": [
+        "correction_bank"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3b_the_accumulated_increment_loses_its_third": {
+      "caught": true,
+      "expected_failure_named": "correction_bank",
+      "reported": [
+        "correction_bank"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_upper_bound_is_checked_past_the_crossing": {
+      "caught": true,
+      "expected_failure_named": "correction_bank",
+      "reported": [
+        "correction_bank"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_transcription_check_is_inverted_again": {
+      "caught": true,
+      "expected_failure_named": "bank_cost_identity",
+      "reported": [
+        "bank_cost_identity"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_telescoping_comparison_is_inverted": {
+      "caught": true,
+      "expected_failure_named": "telescoping",
+      "reported": [
+        "telescoping"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6b_the_intervals_go_back_to_being_contiguous": {
+      "caught": true,
+      "expected_failure_named": "never strict",
+      "reported": [
+        "telescoping: the inequality is never strict, so the comparison cannot distinguish anything"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_light_infinite_set_is_never_actually_light": {
+      "caught": true,
+      "expected_failure_named": "mass_no_go",
+      "reported": [
+        "mass_no_go: no light infinite set was constructed"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_walked_route_offsets_its_step_counter": {
+      "caught": true,
+      "expected_failure_named": "corrigendum_gap",
+      "reported": [
+        "corrigendum_gap: the two routes disagree"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_closed_form_route_is_off_by_one": {
+      "caught": true,
+      "expected_failure_named": "corrigendum_gap",
+      "reported": [
+        "corrigendum_gap: the two routes disagree"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_upper_bound_loses_its_negative_half": {
+      "caught": true,
+      "expected_failure_named": "negative half",
+      "reported": [
+        "correction_bank: the upper bound never fails, so the two-sided test has no negative half"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 12,
+    "caught_by_their_own_check": 12,
+    "missed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
