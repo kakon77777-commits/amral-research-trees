@@ -1,0 +1,154 @@
+{
+  "gate": "src43_renewal_rigidity.py",
+  "baseline": {
+    "passed": true,
+    "failures": []
+  },
+  "defects": {
+    "D1_the_rho_closed_form_is_wrong": {
+      "caught": true,
+      "expected_failure_named": "rho_constants",
+      "reported": [
+        "rho_constants"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D2_the_perfect_square_test_is_wrong": {
+      "caught": true,
+      "expected_failure_named": "rho_constants",
+      "reported": [
+        "rho_constants"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D3_the_determinant_identity_is_transcribed_backwards": {
+      "caught": true,
+      "expected_failure_named": "determinant identity",
+      "reported": [
+        "determinant identity"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D4_the_lower_error_has_the_wrong_sign": {
+      "caught": true,
+      "expected_failure_named": "determinant identity",
+      "reported": [
+        "determinant identity"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D5_the_determinant_positivity_test_is_inverted": {
+      "caught": true,
+      "expected_failure_named": "determinant positive",
+      "reported": [
+        "determinant positive"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D6_the_cross_error_threshold_uses_the_wrong_denominator": {
+      "caught": true,
+      "expected_failure_named": "cross_error_barrier",
+      "reported": [
+        "cross_error_barrier"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D7_the_interior_search_accepts_an_endpoint": {
+      "caught": true,
+      "expected_failure_named": "farey_lock",
+      "reported": [
+        "farey_lock"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D8_the_cf_tax_uses_the_current_denominator_not_the_next": {
+      "caught": true,
+      "expected_failure_named": "cf_tax",
+      "reported": [
+        "cf_tax"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D9_the_recycling_monotonicity_comparison_is_inverted": {
+      "caught": true,
+      "expected_failure_named": "recycling_no_go",
+      "reported": [
+        "recycling_no_go"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D10_the_descent_stops_taking_true_mediants": {
+      "caught": true,
+      "expected_failure_named": "section_5: the premise itself failed",
+      "reported": [
+        "farey_lock",
+        "scale_separation: NO c had a qualifying pair, so the whole check passed vacuously",
+        "section_5: the premise itself failed"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D11_the_determinant_sample_keeps_only_locked_pairs": {
+      "caught": true,
+      "expected_failure_named": "not discriminating",
+      "reported": [
+        "determinant: the sample has only one kind of pair, so the Delta >= 1 check is not discriminating"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D12_the_farey_negative_half_is_emptied": {
+      "caught": true,
+      "expected_failure_named": "only the easy side",
+      "reported": [
+        "farey_lock: no unlocked pair admitted a cheaper interior, so only the easy side was tested"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D13_every_scale_separation_hypothesis_is_emptied": {
+      "caught": true,
+      "expected_failure_named": "passed vacuously",
+      "reported": [
+        "scale_separation: NO c had a qualifying pair, so the whole check passed vacuously"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D14_the_barrier_is_never_approached": {
+      "caught": true,
+      "expected_failure_named": "not exercised",
+      "reported": [
+        "cross_error_barrier: never approached, so the bound is not exercised"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 14,
+    "caught_by_their_own_check": 14,
+    "missed": 0,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

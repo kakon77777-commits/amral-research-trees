@@ -1,0 +1,181 @@
+{
+  "round": "Hard-Zeta Phase II / Round A-U.2e.4",
+  "source_item": 43,
+  "max_denominator": 200000,
+  "rho_constants": {
+    "c_2_5": {
+      "one_minus_4c2": "9/25",
+      "is_a_perfect_rational_square": true,
+      "rho_exact": "2",
+      "paper_says": "2",
+      "agrees": true,
+      "no_square_root_was_evaluated": true
+    },
+    "c_1_4": {
+      "one_minus_4c2": "3/4",
+      "closed_form": "2 + sqrt(3)",
+      "verified_by_squaring": true,
+      "paper_says": "3.732",
+      "decimal_agrees_to_printed_digits": true,
+      "recomputed": "3.732050807568877293"
+    },
+    "both_exact": true
+  },
+  "determinant": {
+    "identity_is_algebra_in_beta": {
+      "pairs": 4,
+      "beta_substitutions_each": 8,
+      "violations": 0,
+      "first_bad": [],
+      "holds_for_arbitrary_beta": true,
+      "reading": "the identity is ALGEBRA in beta; section 2's content is that Delta is a positive integer, which comes from the bracketing rather than from beta's arithmetic"
+    },
+    "positive_on_real_brackets": {
+      "lower_approximants": 8,
+      "upper_approximants": 34,
+      "pairs": 272,
+      "violations": 0,
+      "first_bad": [],
+      "delta_equals_1": 41,
+      "delta_above_1": 231,
+      "smallest_deltas": {
+        "1": 41,
+        "2": 8,
+        "3": 12,
+        "4": 6,
+        "5": 8,
+        "6": 4
+      },
+      "largest_delta": 9126,
+      "has_both_locked_and_unlocked_pairs": true
+    }
+  },
+  "cross_error_barrier": {
+    "pairs": 238,
+    "violations": 0,
+    "first_bad": [],
+    "undecided_by_beta_bracket": 0,
+    "pairs_within_a_factor_two_of_the_barrier": 18,
+    "barrier_is_approached": true
+  },
+  "farey_lock": {
+    "consecutive_pairs": 40,
+    "consecutive_pairs_not_locked": 0,
+    "locked_pairs_checked": 40,
+    "locked_pairs_violating_the_bound": 0,
+    "first_bad": [],
+    "unlocked_pairs_checked": 138,
+    "unlocked_pairs_admitting_a_cheaper_interior": 138,
+    "negative_half_is_exercised": true
+  },
+  "scale_separation": {
+    "c_2_5": {
+      "pairs_satisfying_the_hypothesis": 5,
+      "violations": 0,
+      "first_bad": [],
+      "hypothesis_is_inhabited": true,
+      "min_scale_ratio_seen": "12/5",
+      "rho_c_lower_bound": "3/2"
+    },
+    "c_1_4": {
+      "pairs_satisfying_the_hypothesis": 0,
+      "violations": 0,
+      "first_bad": [],
+      "hypothesis_is_inhabited": false,
+      "min_scale_ratio_seen": null,
+      "rho_c_lower_bound": "3"
+    },
+    "c_1_10": {
+      "pairs_satisfying_the_hypothesis": 0,
+      "violations": 0,
+      "first_bad": [],
+      "hypothesis_is_inhabited": false,
+      "min_scale_ratio_seen": null,
+      "rho_c_lower_bound": "9"
+    },
+    "inhabited": [
+      "c_2_5"
+    ],
+    "at_least_one_inhabited": true,
+    "uninhabited_are_expected_not_failures": "a c with no qualifying pair says nothing about that c; requiring every c to be inhabited would be asking the sample to contain the very configuration the theorem says is constrained"
+  },
+  "cf_tax": {
+    "consecutive_convergents_checked": 10,
+    "violations": 0,
+    "first_bad": []
+  },
+  "recycling_no_go": {
+    "samples": 995,
+    "monotonicity_violations": 0,
+    "first_bad": [],
+    "note": "strictly decreasing, so the maximum over g >= 1 is at g = 1 and the cap depends only on the reduced rational"
+  },
+  "section_5_growth": {
+    "is_a_measurement_with_a_verdict": true,
+    "premise_next_denominator_is_q_minus_plus_q_plus__violations": 0,
+    "steps": 45,
+    "steps_failing_q_k_ge_q_k1_plus_q_k2": 33,
+    "longest_same_side_run": 23,
+    "denominators_in_that_run": [
+      971,
+      1636,
+      2301,
+      2966,
+      3631,
+      4296,
+      4961,
+      5626,
+      6291
+    ],
+    "consecutive_differences_there": [
+      665,
+      665,
+      665,
+      665,
+      665,
+      665,
+      665,
+      665
+    ],
+    "difference_is_constant": true,
+    "convergent_denominators": [
+      2,
+      5,
+      12,
+      41,
+      53,
+      306,
+      665,
+      15601,
+      31867,
+      79335,
+      111202
+    ],
+    "convergents_failing_the_fibonacci_recursion": 0,
+    "record_updates_against_log2N": {
+      "100": {
+        "record_updates": 10,
+        "log2_N": 6.6,
+        "ratio": 1.51
+      },
+      "1000": {
+        "record_updates": 17,
+        "log2_N": 10.0,
+        "ratio": 1.71
+      },
+      "10000": {
+        "record_updates": 30,
+        "log2_N": 13.3,
+        "ratio": 2.26
+      },
+      "100000": {
+        "record_updates": 43,
+        "log2_N": 16.6,
+        "ratio": 2.59
+      }
+    },
+    "verdict": "the premise holds at every step; the inference to Fibonacci-type growth does NOT follow from it. Every consecutive bracket here is Farey-locked, so section 5's hypothesis is satisfied perfectly, and the growth is still linear across the long run: one endpoint is frozen and each step adds its denominator. The conclusion is true for CONVERGENTS, which do satisfy the recursion, but the Farey-lock condition admits semiconvergents and the Stern-Brocot mediants are exactly the Farey-locked ones. Whether the count is O(log N) for beta reduces to whether beta's partial quotients are bounded, which is open."
+  },
+  "failures": [],
+  "passed": true
+}

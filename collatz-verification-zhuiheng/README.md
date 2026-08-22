@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->42 source items and twenty-two runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->43 source items and twenty-three runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -274,11 +274,31 @@ instance behind each band.
     as a finding. Drill 12/12; three of its defects were re-aimed after misses,
     one of which hung the gate forever and left a live defect on disk, which is
     why `src42_drill.py` now has a subprocess timeout.
-24. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+24. [`reports/RUN-025-HARD-ZETA-AU2E4-RENEWAL-RIGIDITY.md`](./reports/RUN-025-HARD-ZETA-AU2E4-RENEWAL-RIGIDITY.md) —
+    **the arithmetic holds, and one inference does not follow from its own
+    premise.** A-U.2e.4 is the most checkable round in a while: its determinant
+    barrier, Farey lock, scale separation, CF tax and both recycling no-gos are
+    statements about *any* pair of rationals bracketing `log₂3`, needing no orbit.
+    All verified exactly on 272 real bracketing pairs. Both stated constants are
+    **exact algebraic identities** — `ρ(2/5) = 2` is a rational, provable with no
+    square root evaluated; `ρ(1/4) = 2+√3` exactly. **The finding:** §5's premise
+    (a Farey-locked bracket's next denominator is at least `q₋+q₊`) holds at every
+    step with 0 violations, but the conclusion drawn from it — Fibonacci growth,
+    hence `O(log N)` record updates — **does not follow**, and `log₂3` is its own
+    counterexample. Its continued fraction has a partial quotient of 23, and the
+    convergent `1054/665` sits frozen for 23 consecutive steps while denominators
+    walk in arithmetic progression with difference 665. Every one of those
+    brackets is Farey-locked, so the hypothesis holds perfectly and the inference
+    still fails: **33 of 45 steps** violate the Fibonacci recursion, while the
+    convergents violate it 0 times. The claim is true for convergents; the
+    Farey-lock condition admits semiconvergents. Drill 14/14 after five misses,
+    four of the same class — *to test a check that never fires, break its subject,
+    not its comparison.*
+25. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-25. [`code/`](./code/) — the engine, the independent reference, and the gates.
-26. [`data/gate-logs/`](./data/gate-logs/) and
+26. [`code/`](./code/) — the engine, the independent reference, and the gates.
+27. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
