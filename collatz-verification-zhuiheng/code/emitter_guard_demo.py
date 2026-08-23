@@ -45,6 +45,7 @@ CASES = [
     ("src47", (0, ("continued_fraction", "largest_denominator_certified"))),
     ("src48", (0, ("cross_bundle_identity", "distinct_documents"))),
     ("src49", (0, ("recursive_integrity", "files"))),
+    ("src50", (0, ("structure", "annulus_edges"))),
 ]
 
 

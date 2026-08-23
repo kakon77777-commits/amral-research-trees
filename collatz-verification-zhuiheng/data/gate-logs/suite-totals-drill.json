@@ -8,35 +8,35 @@
       "uninterpreted": [
         "src99-drill.json"
       ],
-      "drills": 30,
-      "planted": 610
+      "drills": 31,
+      "planted": 628
     },
     "D2_a_planted_defect_survived": {
       "why": "planted != caught must refuse",
       "caught": true,
       "uninterpreted": [],
-      "drills": 30,
-      "planted": 610
+      "drills": 31,
+      "planted": 628
     },
     "D3_a_null_control_was_disturbed_in_the_list_shaped_log": {
       "why": "the second control shape must be read, not ignored",
       "caught": true,
       "uninterpreted": [],
-      "drills": 30,
-      "planted": 610
+      "drills": 31,
+      "planted": 628
     },
     "D4_a_drill_log_reports_itself_red": {
       "why": "a red drill must not be totalled into a green summary",
       "caught": true,
       "uninterpreted": [],
-      "drills": 30,
-      "planted": 610
+      "drills": 31,
+      "planted": 628
     },
     "D5_the_second_tally_shape_is_no_longer_read": {
       "why": "dropping a shape must change the total AND be refused",
       "caught": true,
-      "planted": 532,
-      "baseline_planted": 610,
+      "planted": 550,
+      "baseline_planted": 628,
       "uninterpreted": [
         "mutation-drill.json",
         "ot-recheck-drill.json"
@@ -48,14 +48,14 @@
       "uninterpreted": [
         "src18-drill.json"
       ],
-      "drills": 29,
-      "planted": 585
+      "drills": 30,
+      "planted": 603
     },
     "D7_the_newest_tally_shape_is_no_longer_read": {
       "why": "the shape added for src41..src46 must be load-bearing",
       "caught": true,
       "planted": 478,
-      "baseline_planted": 610,
+      "baseline_planted": 628,
       "uninterpreted": [
         "src41-drill.json",
         "src42-drill.json",
@@ -65,15 +65,16 @@
         "src46-drill.json",
         "src47-drill.json",
         "src48-drill.json",
-        "src49-drill.json"
+        "src49-drill.json",
+        "src50-drill.json"
       ]
     },
     "D8_a_planted_defect_survived_in_the_newest_shape": {
       "why": "planted != caught must refuse in every shape, not just the oldest",
       "caught": true,
       "uninterpreted": [],
-      "drills": 30,
-      "planted": 610
+      "drills": 31,
+      "planted": 628
     }
   },
   "controls": {
@@ -85,9 +86,9 @@
     }
   },
   "baseline": {
-    "drills": 30,
-    "defects_planted": 610,
-    "controls": 68
+    "drills": 31,
+    "defects_planted": 628,
+    "controls": 70
   },
   "counts": {
     "defects_planted": 8,

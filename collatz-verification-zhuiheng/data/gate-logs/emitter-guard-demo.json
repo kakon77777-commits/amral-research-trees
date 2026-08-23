@@ -92,6 +92,19 @@
         "0:recursive_integrity/files"
       ],
       "ok": true
+    },
+    {
+      "emitter": "src50_emit_report_block.py",
+      "figure_frozen": "0:structure/annulus_edges",
+      "value_frozen_at": "229",
+      "the_freeze_is_a_real_mutation": true,
+      "the_unchanged_emitter_is_green": true,
+      "figures_the_unchanged_emitter_reads": 62,
+      "the_frozen_emitter_goes_red": true,
+      "reported_as_no_longer_read": [
+        "0:structure/annulus_edges"
+      ],
+      "ok": true
     }
   ],
   "ok": true

@@ -1,0 +1,202 @@
+{
+  "gate": "src50_congestion_rigidity.py",
+  "starts": "27,703,6171",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "findings": [
+      "the annulus identity `A_i + D_i = D_{i+1} + E_i` is exact in integers — every quantity in it is `a·β + b` for integers a, b, so the residual is the pair `(0, 0)` and not a small number. Recomputed that way over 115 nested edges the error is **0**; the shipped validation record reports `max_annulus_identity_error = 2.3092638912203256e-14` because the checker evaluates it in `float`. Third time in this line that an exactly rational or exactly integral quantity was reached for with floating point (RUN-027, RUN-029, here).",
+      "6 of the 7 published exponents differ from the nearest double of their exact rational by 1 to 6 ulps — they are chained float arithmetic where an exact rational was available. Every one is right to 15 significant digits and nothing in the round turns on it, so this is a note rather than a defect.",
+      "`checker_stdout.txt` is byte-identical to `Hard_Zeta_AU2d4_checker_report.json`. The README describes them as different artifacts — \"deterministic checker output\" and \"human-readable checker run output\" — and the bundle's own validation record lists both, with the same hash. Two names, one file."
+    ]
+  },
+  "defects": {
+    "D1_the_slack_comparison_answers_only_one_direction": {
+      "caught": true,
+      "expected_failure_named": "contradicting Theorem 3.1",
+      "reported": [
+        "a proper prefix of a first-crossing interval does not have a strictly larger slack, contradicting Theorem 3.1"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D2_the_slack_comparison_is_reversed": {
+      "caught": true,
+      "expected_failure_named": "orbit figures do not reproduce",
+      "reported": [
+        "the strict-drop determinant identity or its lower bound fails",
+        "the float-margin measurement decided almost nothing: 373 comparisons for 169 intervals, so it looked at the first step of each rather than the whole interval",
+        "the shipped checker's orbit figures do not reproduce: [{'start': 27, 'fields': {'max_completed_active_depth': (17, 4), 'depth_time': (32, 21), 'chain_plateau_edges': (13, 1), 'chain_strict_drop_edges': (3, 2)}}, {'start': 703, 'fields': {'max_completed_active_depth': (15, 4), 'depth_time': (34, 24), 'chain_plateau_edges': (10, 1), 'chain_strict_drop_edges': (4, 2)}}, {'start': 6171, 'fields': {'max_completed_active_depth': (15, 6), 'depth_time': (87, 76), 'chain_plateau_edges': (11, 2)}}]",
+        "the shipped checker's mechanical figures do not reproduce: [{'N': 100, 'fields': {'max_completed_active_depth': (6, 5), 'depth_time': (41, 53), 'active_chain_first_start': (12, 41), 'active_chain_last_start': (41, 53)}}, {'N': 1000, 'fields': {'max_completed_active_depth': (11, 7), 'depth_time': (306, 665), 'active_chain_first_start': (53, 306), 'active_chain_last_start': (306, 665)}}, {'N': 10000, 'fields': {'max_completed_active_depth': (11, 7), 'depth_time': (306, 665), 'active_chain_first_start': (53, 306), 'active_chain_last_start': (306, 665)}}, {'N': 100000, 'fields': {'max_completed_active_depth': (34, 9), 'depth_time': (15601, 31867), 'active_chain_first_start': (665, 15601), 'active_chain_last_start': (15601, 31867)}}]"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D3_the_monotone_stack_pops_on_the_wrong_condition": {
+      "caught": true,
+      "expected_failure_named": "disagree on the next-smaller slack",
+      "reported": [
+        "the quadratic scan and the monotone stack disagree on the next-smaller slack",
+        "the shipped checker's mechanical figures do not reproduce: [{'N': 100, 'fields': {'max_completed_active_depth': (6, 5), 'depth_time': (41, 53), 'active_chain_first_start': (12, 41), 'active_chain_last_start': (41, 53)}}, {'N': 1000, 'fields': {'max_completed_active_depth': (11, 7), 'depth_time': (306, 665), 'active_chain_first_start': (53, 306), 'active_chain_last_start': (306, 665)}}, {'N': 10000, 'fields': {'max_completed_active_depth': (11, 7), 'depth_time': (306, 665), 'active_chain_first_start': (53, 306), 'active_chain_last_start': (306, 665)}}, {'N': 100000, 'fields': {'max_completed_active_depth': (34, 9), 'depth_time': (15601, 31867), 'active_chain_first_start': (665, 15601), 'active_chain_last_start': (15601, 31867)}}]"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D4_the_intervals_are_stretched_past_their_crossing": {
+      "caught": true,
+      "expected_failure_named": "properly cross, contradicting Theorem 4.1",
+      "reported": [
+        "two first-crossing intervals properly cross, contradicting Theorem 4.1",
+        "the strict-drop determinant identity or its lower bound fails",
+        "the shipped checker's orbit figures do not reproduce: [{'start': 27, 'fields': {'max_completed_active_depth': (17, 18), 'depth_time': (32, 33), 'chain_strict_drop_edges': (3, 4)}}, {'start': 703, 'fields': {'max_completed_active_depth': (15, 16), 'depth_time': (34, 35), 'chain_strict_drop_edges': (4, 5)}}, {'start': 6171, 'fields': {'max_completed_active_depth': (15, 16), 'depth_time': (87, 88), 'chain_strict_drop_edges': (3, 4)}}]"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D5_nested_and_disjoint_are_never_distinguished": {
+      "caught": true,
+      "expected_failure_named": "laminarity was not exercised",
+      "reported": [
+        "laminarity was not exercised: the sample contains no nested pair or no disjoint pair"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D6_the_annulus_residual_adds_where_it_should_subtract": {
+      "caught": true,
+      "expected_failure_named": "annulus identity does not hold exactly",
+      "reported": [
+        "the annulus identity does not hold exactly"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D7_the_slack_form_has_the_wrong_sign_on_K": {
+      "caught": true,
+      "expected_failure_named": "annulus identity does not hold exactly",
+      "reported": [
+        "the annulus identity does not hold exactly"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D8_the_determinant_combines_its_wings_with_the_wrong_sign": {
+      "caught": true,
+      "expected_failure_named": "determinant identity or its lower bound fails",
+      "reported": [
+        "the strict-drop determinant identity or its lower bound fails"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D9_chain_edges_are_classified_by_origin_instead_of_endpoint": {
+      "caught": true,
+      "expected_failure_named": "orbit figures do not reproduce",
+      "reported": [
+        "the shipped checker's orbit figures do not reproduce: [{'start': 27, 'fields': {'chain_plateau_edges': (13, 0), 'chain_strict_drop_edges': (3, 16)}}, {'start': 703, 'fields': {'chain_plateau_edges': (10, 0), 'chain_strict_drop_edges': (4, 14)}}, {'start': 6171, 'fields': {'chain_plateau_edges': (11, 0), 'chain_strict_drop_edges': (3, 14)}}]"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D10_only_one_shipped_smoke_test_is_compared": {
+      "caught": true,
+      "expected_failure_named": "too few shipped smoke tests",
+      "reported": [
+        "too few shipped smoke tests were compared"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D11_the_floor_bracket_is_taken_from_the_first_convergents": {
+      "caught": true,
+      "expected_failure_named": "the floor bracket could not decide",
+      "reported": [
+        "the floor bracket could not decide 65 times, so the fast path is not the exact one it is standing in for",
+        "the bracketed floor route disagrees with exact powers of three, so the fast path is not the exact one"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D18_the_sweep_processes_starts_before_ends": {
+      "caught": true,
+      "expected_failure_named": "mechanical figures do not reproduce",
+      "reported": [
+        "the shipped checker's mechanical figures do not reproduce: [{'N': 100, 'fields': {'max_completed_active_depth': (6, 7), 'depth_time': (41, 42), 'active_chain_last_start': (41, 42)}}, {'N': 1000, 'fields': {'max_completed_active_depth': (11, 12), 'depth_time': (306, 307), 'active_chain_last_start': (306, 307)}}, {'N': 10000, 'fields': {'max_completed_active_depth': (11, 12), 'depth_time': (306, 307), 'active_chain_last_start': (306, 307)}}, {'N': 100000, 'fields': {'max_completed_active_depth': (34, 35), 'depth_time': (15601, 15602), 'active_chain_last_start': (15601, 15602)}}]"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D12_an_exponent_is_derived_from_the_wrong_expression": {
+      "caught": true,
+      "expected_failure_named": "wrong beyond float precision",
+      "reported": [
+        "a published exponent is wrong beyond float precision: ['chain_outer_log_denominator_power']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D13_the_validation_record_is_verified_with_the_wrong_hash": {
+      "caught": true,
+      "expected_failure_named": "validation record does not match its files",
+      "reported": [
+        "the bundle's own validation record does not match its files",
+        "almost nothing in the validation record was verified"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D14_the_upstream_chain_is_closed_against_the_wrong_record": {
+      "caught": true,
+      "expected_failure_named": "declared input state disagrees",
+      "reported": [
+        "the declared input state disagrees with this tree's records"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D15_the_markdown_dollar_count_is_read_from_the_record": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green",
+      "gate_still_green": true,
+      "failures_seen": []
+    },
+    "D16_the_float_margin_looks_at_one_step_of_each_interval": {
+      "caught": true,
+      "expected_failure_named": "float-margin measurement decided almost nothing",
+      "reported": [
+        "the float-margin measurement decided almost nothing: 199 comparisons for 199 intervals, so it looked at the first step of each rather than the whole interval"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D17_a_scope_refusal_pattern_can_no_longer_match": {
+      "caught": true,
+      "expected_failure_named": "scope refusals are missing",
+      "reported": [
+        "the round's own scope refusals are missing: [\"the paper's status line refuses Collatz / CST / CASP\"]"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 18,
+    "caught_by_their_own_check": 18,
+    "missed": 0,
+    "robustness_properties": 1,
+    "malformed": 0,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

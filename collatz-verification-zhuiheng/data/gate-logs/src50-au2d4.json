@@ -1,0 +1,309 @@
+{
+  "round": "Hard-Zeta Phase II / Round A-U.2d.4",
+  "beta_floor_route_agrees_with_exact_powers_on_0_to_399": true,
+  "source_item": 50,
+  "starts": [
+    27,
+    703,
+    6171,
+    837799
+  ],
+  "structure": {
+    "orbits": 4,
+    "intervals": 394,
+    "next_smaller_disagreements": 0,
+    "two_routes_disagreements": 0,
+    "prefix_violations": 0,
+    "laminarity_violations": 0,
+    "nested_pairs": 2757,
+    "disjoint_pairs": 23429,
+    "annulus_edges": 229,
+    "annulus_identity_errors": 0,
+    "plateau_edges": 123,
+    "strict_drop_edges": 106,
+    "determinant_form_disagreements": 0,
+    "determinants_below_one": 0,
+    "chain_edges": 66,
+    "rows": [
+      {
+        "start": 27,
+        "accelerated_steps_to_1": 41,
+        "intervals": 41,
+        "max_completed_active_depth": 17,
+        "depth_time": 32,
+        "chain_plateau_edges": 13,
+        "chain_strict_drop_edges": 3,
+        "orbit_wide_plateau_edges": 12,
+        "orbit_wide_strict_drop_edges": 12
+      },
+      {
+        "start": 703,
+        "accelerated_steps_to_1": 62,
+        "intervals": 62,
+        "max_completed_active_depth": 15,
+        "depth_time": 34,
+        "chain_plateau_edges": 10,
+        "chain_strict_drop_edges": 4,
+        "orbit_wide_plateau_edges": 21,
+        "orbit_wide_strict_drop_edges": 16
+      },
+      {
+        "start": 6171,
+        "accelerated_steps_to_1": 96,
+        "intervals": 96,
+        "max_completed_active_depth": 15,
+        "depth_time": 87,
+        "chain_plateau_edges": 11,
+        "chain_strict_drop_edges": 3,
+        "orbit_wide_plateau_edges": 29,
+        "orbit_wide_strict_drop_edges": 25
+      },
+      {
+        "start": 837799,
+        "accelerated_steps_to_1": 195,
+        "intervals": 195,
+        "max_completed_active_depth": 23,
+        "depth_time": 49,
+        "chain_plateau_edges": 16,
+        "chain_strict_drop_edges": 6,
+        "orbit_wide_plateau_edges": 61,
+        "orbit_wide_strict_drop_edges": 53
+      }
+    ],
+    "exact_annulus_identity_error": 0
+  },
+  "float_margin": {
+    "comparisons_the_scan_had_to_decide": 3151,
+    "smallest_exact_gap": "0.0030125382",
+    "at_start_s_u": [
+      837799,
+      10,
+      63
+    ],
+    "double_spacing_at_that_magnitude": "4.4258624e-15",
+    "margin_in_units_of_that_spacing": "6.8066694e+11",
+    "margin_in_orders_of_magnitude": 11.8,
+    "the_float_comparison_had_room": true
+  },
+  "mechanical": {
+    "rows": [
+      {
+        "N": 100,
+        "alphabet": [
+          1,
+          2
+        ],
+        "max_completed_active_depth": 6,
+        "depth_time": 41,
+        "active_chain_first_start": 12,
+        "active_chain_last_start": 41
+      },
+      {
+        "N": 1000,
+        "alphabet": [
+          1,
+          2
+        ],
+        "max_completed_active_depth": 11,
+        "depth_time": 306,
+        "active_chain_first_start": 53,
+        "active_chain_last_start": 306
+      },
+      {
+        "N": 10000,
+        "alphabet": [
+          1,
+          2
+        ],
+        "max_completed_active_depth": 11,
+        "depth_time": 306,
+        "active_chain_first_start": 53,
+        "active_chain_last_start": 306
+      },
+      {
+        "N": 100000,
+        "alphabet": [
+          1,
+          2
+        ],
+        "max_completed_active_depth": 34,
+        "depth_time": 15601,
+        "active_chain_first_start": 665,
+        "active_chain_last_start": 15601
+      }
+    ],
+    "largest_N": 100000,
+    "times_the_bracket_could_not_decide_and_the_exact_power_ran": 0
+  },
+  "exponents": {
+    "rows": {
+      "theta_star": {
+        "exact": "2500/12791",
+        "published": 0.19544992572902825,
+        "nearest_double": 0.19544992572902822,
+        "ulps_from_the_nearest_double": 1,
+        "relative_error": "1.43e-16",
+        "correct_to_15_significant_digits": true
+      },
+      "sigma_star": {
+        "exact": "12791/15291",
+        "published": 0.8365051337388005,
+        "nearest_double": 0.8365051337388006,
+        "ulps_from_the_nearest_double": 1,
+        "relative_error": "8.26e-17",
+        "correct_to_15_significant_digits": true
+      },
+      "dense_overlap_lower_exponent": {
+        "exact": "2500/15291",
+        "published": 0.16349486626119947,
+        "nearest_double": 0.1634948662611994,
+        "ulps_from_the_nearest_double": 2,
+        "relative_error": "4.23e-16",
+        "correct_to_15_significant_digits": true
+      },
+      "chain_outer_length_power": {
+        "exact": "12791/10291",
+        "published": 1.2429307161597514,
+        "nearest_double": 1.2429307161597511,
+        "ulps_from_the_nearest_double": 1,
+        "relative_error": "1.05e-16",
+        "correct_to_15_significant_digits": true
+      },
+      "chain_outer_log_denominator_power": {
+        "exact": "2500/10291",
+        "published": 0.2429307161597514,
+        "nearest_double": 0.24293071615975123,
+        "ulps_from_the_nearest_double": 6,
+        "relative_error": "6.53e-16",
+        "correct_to_15_significant_digits": true
+      },
+      "congestion_upper_power": {
+        "exact": "10291/12791",
+        "published": 0.8045500742709718,
+        "nearest_double": 0.8045500742709718,
+        "ulps_from_the_nearest_double": 0,
+        "relative_error": "3.41e-17",
+        "correct_to_15_significant_digits": true
+      },
+      "congestion_upper_log_power": {
+        "exact": "2500/12791",
+        "published": 0.19544992572902825,
+        "nearest_double": 0.19544992572902822,
+        "ulps_from_the_nearest_double": 1,
+        "relative_error": "1.43e-16",
+        "correct_to_15_significant_digits": true
+      }
+    },
+    "exponents_not_published": [],
+    "exponents_wrong_beyond_15_digits": [],
+    "exponents_off_by_at_least_one_ulp": [
+      "chain_outer_length_power",
+      "chain_outer_log_denominator_power",
+      "congestion_upper_log_power",
+      "dense_overlap_lower_exponent",
+      "sigma_star",
+      "theta_star"
+    ],
+    "largest_ulp_drift": 6,
+    "exact_identities": {
+      "theta_star + congestion_upper_power == 1": true,
+      "chain_outer_length_power * congestion_upper_power == 1": true
+    },
+    "all_identities_hold_exactly": true
+  },
+  "artifacts": {
+    "files_in_the_bundle": 9,
+    "files_listed_by_the_validation_record": 8,
+    "verified": 8,
+    "mismatched": [],
+    "listed_but_absent": [],
+    "present_but_not_covered": [
+      "SOURCE_VALIDATION_AU2d4.json"
+    ],
+    "the_only_uncovered_file_is_the_record_itself": true,
+    "upstream_state": {
+      "handoff_zip": {
+        "declared_by_the_bundle": "799fad5e0614c598157b4748e0b1033585f11194d80824051ac12e3a5730acdd",
+        "recorded_by_this_tree": "799fad5e0614c598157b4748e0b1033585f11194d80824051ac12e3a5730acdd",
+        "agrees": true
+      },
+      "collatz_ot_series_zip": {
+        "declared_by_the_bundle": "d7394cce7b6a877112446d5d4616339bf2b2eda4241f3d6a9010128c288f0d2d",
+        "recorded_by_this_tree": "d7394cce7b6a877112446d5d4616339bf2b2eda4241f3d6a9010128c288f0d2d",
+        "agrees": true
+      }
+    },
+    "upstream_agrees_with_this_trees_records": true,
+    "checker_report_and_stdout_are_byte_identical": true,
+    "markdown_checks": {
+      "Hard_Zeta_AU2d4_Literature_Notes_v0.1.md": {
+        "bytes_agree": true,
+        "dollar_count_agrees": true,
+        "dollar_count": 24,
+        "no_backslash_paren": true,
+        "no_backslash_bracket": true
+      },
+      "Hard_Zeta_A_Line_ROUTE_MAP_v2.4_AU2d4.md": {
+        "bytes_agree": true,
+        "dollar_count_agrees": true,
+        "dollar_count": 170,
+        "no_backslash_paren": true,
+        "no_backslash_bracket": true
+      },
+      "Hard_Zeta_Phase_II_Round_AU2d4_Renewal_Congestion_Rigidity_v0.1.md": {
+        "bytes_agree": true,
+        "dollar_count_agrees": true,
+        "dollar_count": 826,
+        "no_backslash_paren": true,
+        "no_backslash_bracket": true
+      },
+      "README_AU2d4_bundle.md": {
+        "bytes_agree": true,
+        "dollar_count_agrees": true,
+        "dollar_count": 6,
+        "no_backslash_paren": true,
+        "no_backslash_bracket": true
+      }
+    },
+    "markdown_checks_all_agree": true,
+    "checker_gate_reported": {
+      "countermodel_depth": 64,
+      "max_annulus_identity_error": 2.3092638912203256e-14,
+      "random_trials": 200,
+      "status": "PASS"
+    }
+  },
+  "scope_discipline": {
+    "checks": {
+      "the paper's status line refuses Collatz / CST / CASP": true,
+      "the abstract says Highly Nested is not eliminated": true,
+      "the headroom non-telescoping no-go is restated": true,
+      "the constants JSON carries the same refusal": true,
+      "the rotation-headroom telescope is still forbidden": true
+    },
+    "missing": [],
+    "ok": true
+  },
+  "shipped_smoke_tests": {
+    "starts_compared": 4,
+    "agreeing": [
+      27,
+      703,
+      6171,
+      837799
+    ],
+    "disagreeing": [],
+    "fields_per_start": 5
+  },
+  "shipped_mechanical_tests": {
+    "sizes_compared": 4,
+    "disagreeing": []
+  },
+  "findings": [
+    "the annulus identity `A_i + D_i = D_{i+1} + E_i` is exact in integers — every quantity in it is `a·β + b` for integers a, b, so the residual is the pair `(0, 0)` and not a small number. Recomputed that way over 229 nested edges the error is **0**; the shipped validation record reports `max_annulus_identity_error = 2.3092638912203256e-14` because the checker evaluates it in `float`. Third time in this line that an exactly rational or exactly integral quantity was reached for with floating point (RUN-027, RUN-029, here).",
+    "6 of the 7 published exponents differ from the nearest double of their exact rational by 1 to 6 ulps — they are chained float arithmetic where an exact rational was available. Every one is right to 15 significant digits and nothing in the round turns on it, so this is a note rather than a defect.",
+    "`checker_stdout.txt` is byte-identical to `Hard_Zeta_AU2d4_checker_report.json`. The README describes them as different artifacts — \"deterministic checker output\" and \"human-readable checker run output\" — and the bundle's own validation record lists both, with the same hash. Two names, one file."
+  ],
+  "failures": [],
+  "passed": true
+}

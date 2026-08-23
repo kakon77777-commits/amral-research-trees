@@ -21,7 +21,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
 BEGIN, END = "<!-- COUNTS -->", "<!-- /COUNTS -->"
 SWEEP_TOTAL = 73          # items in the subject's source folder
-SWEEP_DONE = 49           # highest item this tree has a report for
+SWEEP_DONE = 50           # highest item this tree has a report for
 
 
 def spell(n: int) -> str:

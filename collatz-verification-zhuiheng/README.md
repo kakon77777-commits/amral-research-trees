@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->49 source items and twenty-nine runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->50 source items and thirty runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -430,11 +430,40 @@ instance behind each band.
     one source item **33 seconds** older than itself: the bootstrap handoff of
     RUN-030. Drill **14/14**; six of its defects aim at the non-vacuity guards,
     because an archive check's defect branches are ones no real input reaches.
-31. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+31. [`reports/RUN-032-HARD-ZETA-AU2D4-CONGESTION-RIGIDITY.md`](./reports/RUN-032-HARD-ZETA-AU2D4-CONGESTION-RIGIDITY.md) —
+    **the first round in this line whose core holds on orbits that exist.** Every
+    A-U.2d round so far proved something about *surviving* crossings, of which
+    RUN-023 measured **0** below `2·10⁵`. Theorem 3.1 is different: `e(s) = min{u
+    > s : δ_u < δ_s}` is an identity about the scalar sequence `δ_m = βm − K_m`,
+    true of any orbit, and laminarity follows for the reason next-smaller
+    intervals are laminar in any sequence at all. So the structural core was
+    tested on four real Collatz orbits — **in exact integers, with no floating
+    point anywhere**, since `δ_u < δ_s` is `3^(u−s) < 2^(K_u−K_s)`. Theorem 3.1:
+    **0** violations over **394** intervals. Laminarity: **0** crossing pairs,
+    with **2757** nested and **23429** disjoint so both branches are exercised.
+    The annulus identity `A+D = D′+E` is not a small residual but the **pair
+    (0,0)** in β-linear integers — **0** errors over **229** nested edges — and
+    the strict-drop determinant `Δ = rg−ph = gE+hA` is exact on all **106** of
+    them. All **8** of the shipped checker's smoke-test figures reproduce
+    independently, field for field. **Three findings, none mathematical:** the
+    bundle's own validation record reports `max_annulus_identity_error =
+    2.3e-14`, because its checker evaluates in `float` an identity that is
+    exactly integral — the **third** time in this line an exact quantity was
+    reached for with higher precision instead (RUN-027, RUN-029, here), though
+    the float route's margin is measured at **11.8 orders of magnitude** and was
+    never at risk; `checker_stdout.txt` is **byte-identical** to the checker
+    report it is described as differing from; and six of seven exponents drift
+    1–6 ulps from their exact rationals, which is a note and not a defect. **What
+    the bundle gets right is worth saying:** unlike item 49's manifest, its
+    `SOURCE_VALIDATION` covers 8 of 9 files and the one it omits is itself, all 8
+    verify, and its declared `input_state_sha256` **closes against RUN-030 and
+    RUN-031**. Drill **18/18** — and a killed drill left a planted defect live on
+    disk, so drills now keep a pristine sidecar and restore from it.
+32. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-32. [`code/`](./code/) — the engine, the independent reference, and the gates.
-33. [`data/gate-logs/`](./data/gate-logs/) and
+33. [`code/`](./code/) — the engine, the independent reference, and the gates.
+34. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

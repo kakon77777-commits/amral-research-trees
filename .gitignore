@@ -6,3 +6,6 @@ Thumbs.db
 collatz-verification-zhuiheng/build/
 # transient mutation-drill copies; written and unlinked inside a run
 collatz-verification-zhuiheng/code/_drill_*.py
+
+# a drill's crash-safe sidecar; present only while a drill is running
+*.pristine
