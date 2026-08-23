@@ -1,0 +1,88 @@
+{
+  "round": "Hard-Zeta Phase II / Round A-U.2d",
+  "source_item": 44,
+  "odd_starts_below": 200001,
+  "shift_hereditary_source": {
+    "cases": 400,
+    "matches": 400,
+    "mismatches": 0,
+    "first_mismatch": [],
+    "negative_controls_that_correctly_failed": 380,
+    "negative_controls_that_wrongly_matched": 0,
+    "control_is_exercised": true
+  },
+  "horizons": {
+    "starts": 2041,
+    "freeze_bound_violations": 0,
+    "first_bad_freeze": [],
+    "endpoint_exposure_violations": 0,
+    "first_bad_exposure": [],
+    "bi_exact_horizon_violations": 0,
+    "mean_F2_over_floor_log2": 0.5309,
+    "max_F2_over_floor_log2": 1.0,
+    "starts_where_the_bound_is_ATTAINED": 1,
+    "starts_where_log2_is_STRICTLY_below_log32": 2041,
+    "domination_is_strict_somewhere": true,
+    "bound_is_attained": true
+  },
+  "contraction": {
+    "odd_x_checked": 99999,
+    "violations": 0,
+    "first_bad": [],
+    "S_of_1_is_1": true,
+    "note": "one line of algebra: v >= 1 gives S(x) <= (3x+1)/2, which is < 2x exactly when x > 1"
+  },
+  "adelic_bank": {
+    "starts": 599,
+    "two_expressions_disagree": 0,
+    "first_bad": [],
+    "v2_of_bank_not_equal_to_Q": 0,
+    "archimedean_bound_violations_before_the_crossing": 0,
+    "starts_where_it_fails_after_the_crossing": 571,
+    "has_a_negative_half": true
+  },
+  "freeze_versus_crossing": {
+    "is_a_measurement_with_a_verdict": true,
+    "starts": 14286,
+    "source_frozen_before_the_crossing": 120,
+    "share_pct": 0.84,
+    "crossing_first": 14153,
+    "crossing_first_pct": 99.07,
+    "tie": 13,
+    "examples_in_the_bi_exact_regime": [
+      {
+        "n": 31,
+        "F2": 4,
+        "F23": 9,
+        "L": 35
+      },
+      {
+        "n": 283,
+        "F2": 7,
+        "F23": 14,
+        "L": 15
+      },
+      {
+        "n": 703,
+        "F2": 7,
+        "F23": 17,
+        "L": 51
+      },
+      {
+        "n": 871,
+        "F2": 8,
+        "F23": 17,
+        "L": 22
+      },
+      {
+        "n": 927,
+        "F2": 7,
+        "F23": 17,
+        "L": 23
+      }
+    ],
+    "verdict": "on real starts the ordering is REVERSED almost always: the first coefficient crossing happens before the source freezes. Section 15's regime is reached under L(y) >= c*y^kappa, which is the surviving-crossing hypothesis, and RUN-023 found no surviving crossing below 2e5. So the bi-exact regime the round locates the obstruction in is not a regime any exhibitable start is in when it crosses."
+  },
+  "failures": [],
+  "passed": true
+}

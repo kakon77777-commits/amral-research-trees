@@ -1,0 +1,140 @@
+{
+  "gate": "src44_source_freeze.py",
+  "baseline": {
+    "passed": true,
+    "failures": []
+  },
+  "defects": {
+    "D1_the_source_series_loses_its_sign": {
+      "caught": true,
+      "expected_failure_named": "shift_hereditary_source",
+      "reported": [
+        "shift_hereditary_source"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D2_the_source_series_uses_the_wrong_power_of_three": {
+      "caught": true,
+      "expected_failure_named": "shift_hereditary_source",
+      "reported": [
+        "shift_hereditary_source"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D3_the_local_valuations_are_not_local": {
+      "caught": true,
+      "expected_failure_named": "shift_hereditary_source",
+      "reported": [
+        "shift_hereditary_source",
+        "adelic_bank",
+        "adelic_bank: the Archimedean bound never fails, so the two-sided test has no negative half"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D4_the_negative_control_compares_against_itself": {
+      "caught": true,
+      "expected_failure_named": "the negative control never ran",
+      "reported": [
+        "shift_hereditary_source: the negative control never ran, so the match is not discriminating"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D5_the_freeze_threshold_is_far_too_strict": {
+      "caught": true,
+      "expected_failure_named": "horizons: freeze bound",
+      "reported": [
+        "horizons: freeze bound"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D6_floor_log32_is_computed_as_floor_log2": {
+      "caught": true,
+      "expected_failure_named": "horizons",
+      "reported": [
+        "horizons: bi-exact horizon",
+        "horizons: floor(log2 y) never falls strictly below floor(log_{3/2} y), so the domination is untested"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D7_the_bit_length_horizon_is_off_by_one": {
+      "caught": true,
+      "expected_failure_named": "horizons",
+      "reported": [
+        "horizons: freeze bound"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D8_the_contraction_step_forgets_to_divide": {
+      "caught": true,
+      "expected_failure_named": "contraction",
+      "reported": [
+        "contraction"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D9_the_accumulated_bank_increment_loses_its_three": {
+      "caught": true,
+      "expected_failure_named": "adelic_bank",
+      "reported": [
+        "adelic_bank",
+        "adelic_bank: the Archimedean bound never fails, so the two-sided test has no negative half"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D10_the_closed_form_bank_uses_the_wrong_endpoint": {
+      "caught": true,
+      "expected_failure_named": "adelic_bank",
+      "reported": [
+        "adelic_bank",
+        "adelic_bank: the Archimedean bound never fails, so the two-sided test has no negative half"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D11_the_two_adic_valuation_is_read_off_the_denominator": {
+      "caught": true,
+      "expected_failure_named": "adelic_bank",
+      "reported": [
+        "adelic_bank",
+        "adelic_bank: the Archimedean bound never fails, so the two-sided test has no negative half"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D12_the_archimedean_negative_half_is_emptied": {
+      "caught": true,
+      "expected_failure_named": "no negative half",
+      "reported": [
+        "adelic_bank: the Archimedean bound never fails, so the two-sided test has no negative half"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 12,
+    "caught_by_their_own_check": 12,
+    "missed": 0,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

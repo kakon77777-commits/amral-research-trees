@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->43 source items and twenty-three runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->44 source items and twenty-four runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -294,11 +294,30 @@ instance behind each band.
     Farey-lock condition admits semiconvergents. Drill 14/14 after five misses,
     four of the same class — *to test a check that never fires, break its subject,
     not its comparison.*
-25. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+25. [`reports/RUN-026-HARD-ZETA-AU2D-SOURCE-FREEZE.md`](./reports/RUN-026-HARD-ZETA-AU2D-SOURCE-FREEZE.md) —
+    **the round is a negative result about proof architecture and is right about
+    it.** A-U.2d proves why transducer rationality alone cannot close CASP: once a
+    positive source freezes its lift tail is `0^∞` for *every* positive source, so
+    no source-only statistic distinguishes a convergent orbit from a CASP
+    candidate. Everything checkable holds exactly, including §2's 2-adic
+    shift-hereditary identity `𝓑(σ^s q) = Y_s` — **verified with a negative
+    control**, 380 of which correctly failed. **Finding 1:** §15 concludes the
+    source is frozen before a large B-atom crosses; asked of starts that exist the
+    ordering is **reversed on 99.07 %** of them, because §15's hypothesis is the
+    surviving-crossing one and RUN-023 found zero of those. The bi-exact regime is
+    a true localisation pointing at a place nothing exhibitable is in when it
+    matters. **Finding 2, about provenance:** all four cited arXiv references were
+    fetched and checked; three are live and say what the notes say, and
+    **arXiv:2605.13886 (Niu) is WITHDRAWN** as of 2026-05-20 while listed as a
+    primary reference. Not load-bearing — both rounds explicitly decline to use it
+    as a theorem — and the withdrawal points at a paper the notes already cite.
+    Drill 12/12; a byte-restore control fired once and its cause was **not pinned
+    down**, which the report says rather than explaining away.
+26. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-26. [`code/`](./code/) — the engine, the independent reference, and the gates.
-27. [`data/gate-logs/`](./data/gate-logs/) and
+27. [`code/`](./code/) — the engine, the independent reference, and the gates.
+28. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

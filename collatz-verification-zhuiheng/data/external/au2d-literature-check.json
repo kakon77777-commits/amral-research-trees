@@ -1,0 +1,73 @@
+{
+  "what": "independent verification of the four arXiv references in Hard_Zeta_AU2d_Literature_Notes_v0.1.md",
+  "method": "each abstract page fetched and read; title, authors and the specific claims the notes attribute to it checked against it. Nothing here is a judgement about the mathematics in those papers -- only about whether the citation says what the notes say it says.",
+  "checked_on": "2026-08-23",
+  "references": [
+    {
+      "arxiv": "1805.00133",
+      "cited_as": "Olivier Rozier, Parity sequences of the 3x+1 map on the 2-adic integers and Euclidean embedding",
+      "title_matches": true,
+      "authors_match": true,
+      "status": "live",
+      "claims_checked": {
+        "2-adic / parity-sequence correspondence": true,
+        "inverse transform": true,
+        "Euclidean embedding": true
+      },
+      "note": "abstract carries 'a new formula for the inverse transform' and a plane embedding with affine self-similarity"
+    },
+    {
+      "arxiv": "2607.10041",
+      "cited_as": "Oliver Kramer, Adaptive Search in Collatz Exponent-Code Space via 2-adic and 3-adic Constraints",
+      "title_matches": true,
+      "authors_match": true,
+      "status": "live",
+      "claims_checked": {
+        "accelerated exponent-code space": true,
+        "real drift + 2-adic source + 3-adic endpoint": true,
+        "fixed positive-integer codes have vanishing residue rates": true,
+        "explicitly diagnostic, not a Collatz proof": true
+      },
+      "note": "the disclaimer is verbatim: 'not a verification method for the Collatz conjecture, but a symbolic diagnostic approach'"
+    },
+    {
+      "arxiv": "2502.00948",
+      "cited_as": "Olivier Rozier and Claude Terracol, Paradoxical behavior in Collatz sequences",
+      "title_matches": true,
+      "authors_match": true,
+      "status": "live",
+      "claims_checked": {
+        "finite paradoxical coefficient/height mismatch": true
+      },
+      "note": "abstract: sequences 'whose first term is unexpectedly exceeded, given the proportion of odd terms'"
+    },
+    {
+      "arxiv": "2605.13886",
+      "cited_as": "Tong Niu, Parity vectors and paradoxical sequences in the accelerated Collatz map",
+      "title_matches": true,
+      "authors_match": true,
+      "status": "WITHDRAWN",
+      "withdrawn_on": "2026-05-20",
+      "withdrawal_reason_as_stated": "later work by Rozier and Terracol had already enumerated the relevant data",
+      "claims_checked": {
+        "finitary parity-vector counts": true,
+        "bounded-length density-zero theorem": true,
+        "continued-fraction structure as numerical observation": true,
+        "no claim to solve Collatz or Terras coefficient-stopping": true
+      },
+      "note": "every claim the notes attribute to it is present and verbatim -- including the disclaimer. The issue is only that the paper is withdrawn and the notes list it as a primary reference without saying so. The withdrawal points at arXiv:2502.00948, which the notes ALREADY cite.",
+      "load_bearing": false,
+      "why_not_load_bearing": "A-U.2e.4 section 12 and A-U.2d section 21 both state explicitly that they do NOT elevate Niu's numerical observation to a theorem, and derive the Farey / Stern-Brocot geometry from the integer determinant instead. No theorem in either round rests on it."
+    }
+  ],
+  "findings": [
+    "3 of 4 references are live and say what the notes say they say.",
+    "arXiv:2605.13886 (Niu) is WITHDRAWN as of 2026-05-20 and is listed as a primary reference without that being noted.",
+    "The withdrawal reason names Rozier-Terracol, which the notes already cite, so the fix is one line and no mathematics moves."
+  ],
+  "what_this_does_not_check": [
+    "whether the mathematics in any of the four papers is correct",
+    "whether the notes' summary of each paper is complete",
+    "arXiv listings can change; this is a reading on the date above"
+  ]
+}
