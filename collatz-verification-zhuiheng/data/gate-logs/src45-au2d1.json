@@ -1,0 +1,236 @@
+{
+  "round": "Hard-Zeta Phase II / Round A-U.2d.1",
+  "source_item": 45,
+  "odd_starts_below": 20001,
+  "artifact_provenance": {
+    "script_top_level_keys": [
+      "beta",
+      "gamma",
+      "eta_beta",
+      "improved_sqrt_y_constant",
+      "sample_rotation_sums",
+      "continued_fraction_denominators"
+    ],
+    "json_top_level_keys": [
+      "beta_log2_3",
+      "eta_beta",
+      "six_ln2",
+      "improved_sqrt_y_constant",
+      "sample_rotation_sums",
+      "cf_denominator_checks"
+    ],
+    "in_script_but_not_json": [
+      "beta",
+      "gamma",
+      "continued_fraction_denominators"
+    ],
+    "in_json_but_not_script": [
+      "beta_log2_3",
+      "six_ln2",
+      "cf_denominator_checks"
+    ],
+    "script_sample_row_keys": [
+      "eta",
+      "difference"
+    ],
+    "json_sample_row_keys": [
+      "L",
+      "U",
+      "U_over_L",
+      "difference_from_eta"
+    ],
+    "script_cf_row_keys": [
+      "q",
+      "dk_upper",
+      "slack",
+      "verified_upper"
+    ],
+    "json_cf_row_keys": [
+      "q",
+      "U",
+      "dk_upper",
+      "slack",
+      "verified"
+    ],
+    "json_was_produced_by_this_script": false,
+    "note": "a mismatch is about provenance, not arithmetic: it means the shipped program is not what produced the shipped file, so re-running it would not reproduce it"
+  },
+  "constants": {
+    "constants": {
+      "beta_log2_3": {
+        "closed_form": "log2 3",
+        "published_decimals": 79,
+        "agrees_to_every_published_digit": true,
+        "recomputed_head": "1.5849625007211561814537",
+        "published_head": "1.5849625007211561814537"
+      },
+      "eta_beta": {
+        "closed_form": "1/(6 ln 2)",
+        "published_decimals": 80,
+        "agrees_to_every_published_digit": true,
+        "recomputed_head": "0.2404491734814939012266",
+        "published_head": "0.2404491734814939012266"
+      },
+      "six_ln2": {
+        "closed_form": "6 ln 2",
+        "published_decimals": 79,
+        "agrees_to_every_published_digit": true,
+        "recomputed_head": "4.1588830833596718565033",
+        "published_head": "4.1588830833596718565033"
+      },
+      "improved_sqrt_y_constant": {
+        "closed_form": "sqrt(3) * ln 2",
+        "published_decimals": 79,
+        "agrees_to_every_published_digit": true,
+        "recomputed_head": "1.2005661338529436771451",
+        "published_head": "1.2005661338529436771451"
+      },
+      "one_over_6_ln2_squared": {
+        "closed_form": "1/(6 (ln 2)^2)",
+        "printed_in_section_4": "0.34689483016760",
+        "recomputed_head": "0.34689483016760",
+        "agrees_to_printed_digits": true,
+        "shipped_in_json": false
+      }
+    },
+    "disagreements": [],
+    "all_agree": true
+  },
+  "shipped_U_values": {
+    "rows": [
+      {
+        "L": 10,
+        "published_decimals": 79,
+        "decimals_actually_correct": 79,
+        "over_published_by": 0
+      },
+      {
+        "L": 30,
+        "published_decimals": 79,
+        "decimals_actually_correct": 79,
+        "over_published_by": 0
+      },
+      {
+        "L": 100,
+        "published_decimals": 78,
+        "decimals_actually_correct": 78,
+        "over_published_by": 0
+      },
+      {
+        "L": 300,
+        "published_decimals": 78,
+        "decimals_actually_correct": 76,
+        "over_published_by": 2
+      },
+      {
+        "L": 1000,
+        "published_decimals": 77,
+        "decimals_actually_correct": 75,
+        "over_published_by": 2
+      },
+      {
+        "L": 3000,
+        "published_decimals": 77,
+        "decimals_actually_correct": 74,
+        "over_published_by": 3
+      },
+      {
+        "L": 10000,
+        "published_decimals": 76,
+        "decimals_actually_correct": 73,
+        "over_published_by": 3
+      }
+    ],
+    "values_with_incorrect_trailing_decimals": [
+      300,
+      1000,
+      3000,
+      10000
+    ],
+    "values_wrong_in_the_first_20_decimals": [],
+    "all_agree": false,
+    "cause": "the shipped script computes these in mpmath at 80 dps and the JSON prints up to 79 decimals; summing L terms at fixed precision costs about log10(L) digits, so the tail of the larger values is not supported by the computation that produced it",
+    "note": "recomputed here as an EXACT rational, so this side has no rounding at all"
+  },
+  "convergent_denominators": {
+    "published": [
+      2,
+      5,
+      12,
+      41,
+      53,
+      306,
+      665,
+      15601,
+      31867,
+      79335,
+      111202,
+      190537
+    ],
+    "recomputed_exactly": [
+      2,
+      5,
+      12,
+      41,
+      53,
+      306,
+      665,
+      15601,
+      31867,
+      79335,
+      111202,
+      190537
+    ],
+    "agree": true,
+    "count": 12
+  },
+  "denjoy_koksma": {
+    "convergents_checked": 12,
+    "exact_vs_high_precision_cross_checked": 6,
+    "exact_vs_high_precision_disagreements": 0,
+    "undecidable_wrap_decisions": 0,
+    "upper_violations": 0,
+    "lower_violations": 0,
+    "max_abs_deviation": "0.1387070000042114",
+    "variation_bound": "0.3333333333333333",
+    "two_sided": true,
+    "variation_from_its_definition_is_one_third": true,
+    "the_jump_is_half_the_variation": true,
+    "this_data_cannot_catch_a_missing_jump": true,
+    "margin_head": "0.1946263333291218",
+    "fraction_of_the_bound_used": "0.4161"
+  },
+  "rotation_cap": {
+    "crossings": 9999,
+    "cap_violations": 0,
+    "first_bad": [],
+    "termwise_violations": 0,
+    "first_termwise_bad": [],
+    "max_B3_over_U": 1.0,
+    "at_n": 3,
+    "mean_B3_over_U": 0.917624,
+    "crossings_where_the_cap_is_ATTAINED": 7137,
+    "cap_is_attained": true,
+    "U_over_L_third_by_L": {
+      "1": 1.0,
+      "5": 0.787654,
+      "10": 0.756048,
+      "34": 0.733817
+    },
+    "asymptotic_improvement_factor": "1/(2 ln 2) = 0.7213..."
+  },
+  "endpoint_gap": {
+    "crossings": 9999,
+    "violations": 0,
+    "first_bad": [],
+    "crossings_with_h_negative_endpoint_dropped": 9999,
+    "crossings_with_h_at_least_1": 0,
+    "note": "the round's h >= 1 needs z > y, which is the surviving case; on real orbits the endpoint usually drops, and that count is reported rather than filtered away"
+  },
+  "findings": [
+    "the shipped JSON publishes more decimals than its own computation supports: the U values at L = 300, 1000, 3000, 10000 have incorrect trailing decimals, by up to 3 places. Every leading digit is right; the tail is accumulated rounding from summing L terms at 80 dps.",
+    "the shipped constants JSON was not produced by the shipped script: fields are renamed and one top-level key is dropped, so re-running the published program would not reproduce the published file. This is about PROVENANCE and is separate from the precision finding above -- no value is wrong in any digit the computation supports"
+  ],
+  "failures": [],
+  "passed": true
+}

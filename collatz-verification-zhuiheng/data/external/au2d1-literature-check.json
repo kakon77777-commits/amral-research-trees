@@ -1,0 +1,59 @@
+{
+  "what": "independent verification of the six references in Hard_Zeta_AU2d1_Literature_Notes_v0.1.md",
+  "method": "abstract pages fetched and read; title, authors, status and the specific claims the notes attribute to each checked against it. Not a judgement about the mathematics in those papers.",
+  "checked_on": "2026-08-23",
+  "collatz_references": [
+    {
+      "arxiv": "2607.10041",
+      "author": "Oliver Kramer",
+      "status": "live",
+      "claims_checked_all_present": true,
+      "note": "same reference verified at RUN-026; disclaimer verbatim"
+    },
+    {
+      "arxiv": "1805.00133",
+      "author": "Olivier Rozier",
+      "status": "live",
+      "claims_checked_all_present": true,
+      "note": "same reference verified at RUN-026"
+    },
+    {
+      "arxiv": "2502.00948",
+      "author": "Olivier Rozier & Claude Terracol",
+      "status": "live",
+      "claims_checked_all_present": true,
+      "note": "same reference verified at RUN-026"
+    },
+    {
+      "arxiv": "2605.13886",
+      "author": "Tong Niu",
+      "status": "WITHDRAWN",
+      "withdrawn_on": "2026-05-20",
+      "claims_checked_all_present": true,
+      "RECURRENCE": true,
+      "note": "RUN-026 found this withdrawn while cited as a primary reference in the A-U.2d literature notes. The A-U.2d.1 notes, shipped the same day, cite it again the same way. Every claim attributed to it is still present and verbatim, and it is still not load-bearing -- but this is now a recurrence across two bundles rather than a one-off."
+    }
+  ],
+  "analytic_references": [
+    {
+      "arxiv": "2303.15992",
+      "author": "Lorenz Fruhwirth & Manuel Hauke",
+      "title": "On the metric upper density of Birkhoff sums for irrational rotations",
+      "status": "live",
+      "cited_as": "a recent primary-source discussion of Denjoy-Koksma sharpness",
+      "citation_is_fair": true,
+      "scope_note": "the abstract does establish 'asymptotic sharpness of the Denjoy-Koksma inequality'. But that result is METRIC -- for almost every alpha -- and for f with discontinuities or logarithmic singularities at rationals. This round applies DK at ONE specific alpha, log2(3), and only uses its upper bound, which is deterministic and valid at every alpha. So the citation is positional and correct. It is worth stating the distinction because a sharpness reference invites the inference that the bound is tight HERE, and an almost-every result cannot supply that: log2(3) could be exceptional.",
+      "measured_here": "at the 12 convergent denominators the round checks, the largest |U(q) - q*eta| is about 0.1387 against the variation bound 1/3 -- so DK is used at roughly 42 percent of its allowance and is far from tight at these q."
+    },
+    {
+      "classical": "irrational-rotation equidistribution",
+      "status": "classical, not checked here"
+    }
+  ],
+  "findings": [
+    "5 of 5 arXiv references say what the notes say they say.",
+    "arXiv:2605.13886 (Niu) is WITHDRAWN and is cited as primary for the SECOND bundle running.",
+    "the Denjoy-Koksma sharpness reference is a metric (almost-every-alpha) result while the round applies DK at one specific alpha; the round only uses the upper bound, so nothing is wrong, but the distinction is worth keeping.",
+    "measured: DK's bound is used at about 42 percent of its allowance at these convergents, so it is not tight here."
+  ]
+}

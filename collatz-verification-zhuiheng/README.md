@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->44 source items and twenty-four runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->45 source items and twenty-five runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -313,11 +313,28 @@ instance behind each band.
     as a theorem — and the withdrawal points at a paper the notes already cite.
     Drill 12/12; a byte-restore control fired once and its cause was **not pinned
     down**, which the report says rather than explaining away.
-26. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+26. [`reports/RUN-027-HARD-ZETA-AU2D1-ROTATION-CAP.md`](./reports/RUN-027-HARD-ZETA-AU2D1-ROTATION-CAP.md) —
+    **the rotation cap holds, is attained, and is exactly rational.** A-U.2d.1
+    sharpens the bound RUN-023 verified — `B/3^L ≤ L/3` becomes `≤ U_β(L)`, with
+    the universal efficiency dropping from `0.3333` to `1/(6 ln 2) = 0.2404`.
+    Verified termwise on **9,999** real first crossings with **0** violations, and
+    **attained 7,137 times**. A methodological note that made this possible:
+    `2^(−{βj}) = 2^(⌊βj⌋)/3^j`, so `U_β(L)` is a **rational number** and the whole
+    inequality is exact — the shipped script computes it in `mpmath` at 80 digits
+    and does not need to. **Three findings, all in the shipped artifacts and none
+    in the mathematics:** the constants JSON over-publishes its own precision (the
+    last 2–3 decimals of four `U` values are wrong, tracking `log₁₀L` exactly as
+    fixed-precision summation costs); the JSON is **not what the shipped script
+    produces** (renamed and dropped fields — the item-35 class, second occurrence);
+    and the **withdrawn** Niu citation recurs for a second bundle. Drill 16/16
+    after three passes; the most useful thing in the run is that a wrong
+    Denjoy–Koksma variation constant would have **passed on this data**, so the
+    constant is now asserted against its definition rather than against the data.
+27. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-27. [`code/`](./code/) — the engine, the independent reference, and the gates.
-28. [`data/gate-logs/`](./data/gate-logs/) and
+28. [`code/`](./code/) — the engine, the independent reference, and the gates.
+29. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
