@@ -1,0 +1,108 @@
+{
+  "round": "Hard-Zeta Phase II / Round A-U.2d.2",
+  "source_item": 46,
+  "odd_starts_below": 20001,
+  "saturation_equivalence": {
+    "crossings": 9999,
+    "saturated_and_mechanical": 7137,
+    "saturated_but_NOT_mechanical": 0,
+    "mechanical_but_NOT_saturated": 0,
+    "neither": 2862,
+    "off_diagonal_examples": [],
+    "both_diagonals_are_inhabited": true,
+    "largest_L_at_which_the_envelope_is_attained": 9
+  },
+  "gap_prediction": {
+    "crossings_with_positive_gap": 75,
+    "attained_despite_a_positive_gap": 0,
+    "counterexamples": [],
+    "smallest_L_with_a_positive_gap": 19,
+    "the_prediction_is_exercised": true
+  },
+  "artifact_provenance": {
+    "script_top_level_keys": [
+      "eta_beta",
+      "kappa_rot",
+      "relative_constant",
+      "rows"
+    ],
+    "json_top_level_keys": [
+      "eta_beta",
+      "kappa_rot",
+      "relative_constant",
+      "rows"
+    ],
+    "script_row_keys": [
+      "L",
+      "y_power",
+      "y",
+      "G",
+      "G_over_sqrt_L",
+      "relative_gap_lower_estimate"
+    ],
+    "json_row_keys": [
+      "L",
+      "y_power",
+      "G",
+      "G_over_sqrt_L",
+      "relative_gap"
+    ],
+    "row_keys_in_script_but_not_json": [
+      "y",
+      "relative_gap_lower_estimate"
+    ],
+    "row_keys_in_json_but_not_script": [
+      "relative_gap"
+    ],
+    "json_was_produced_by_this_script": false
+  },
+  "constants": {
+    "constants": {
+      "eta_beta": {
+        "closed_form": "1/(6 ln 2)",
+        "published": "0.24044917348149392",
+        "recomputed": "0.24044917348149390123",
+        "agrees_to_float_precision": true
+      },
+      "kappa_rot": {
+        "closed_form": "1/(12 sqrt 2)",
+        "published": "0.05892556509887895",
+        "recomputed": "0.05892556509887896037",
+        "agrees_to_float_precision": true
+      },
+      "relative_constant": {
+        "closed_form": "ln 2 / (2 sqrt 2)",
+        "published": "0.24506453586713678",
+        "recomputed": "0.24506453586713679793",
+        "agrees_to_float_precision": true
+      },
+      "kappa_over_eta_equals_relative_constant": true
+    },
+    "disagreements": [],
+    "all_agree": true,
+    "note": "the shipped script is plain float, so ~17 significant digits is all it claims and nothing is over-published -- unlike item 45, where 79 decimals were printed from an 80-dps sum"
+  },
+  "shipped_rows": {
+    "rows": 15,
+    "disagreements": 0,
+    "first_bad": []
+  },
+  "float_ceiling": {
+    "rows_checked": 15,
+    "float_vs_exact_mismatches": 0,
+    "first_bad": [],
+    "closest_approach_to_a_power_of_two": 0.024674,
+    "at_L_and_power": [
+      100000,
+      1.0
+    ],
+    "float_log2_absolute_error_is_about": "1e-15",
+    "margin_in_orders_of_magnitude": 13.4,
+    "verdict": "the float ceiling is safe at every shipped point, by a margin of many orders of magnitude; the failure mode was looked for and is not present"
+  },
+  "findings": [
+    "the shipped constants JSON was not produced by the shipped script: row fields are renamed and one is dropped, so re-running the published program would not reproduce the published file. Third occurrence of this class (items 35, 45, 46). No value is wrong."
+  ],
+  "failures": [],
+  "passed": true
+}

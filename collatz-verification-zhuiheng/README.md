@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->45 source items and twenty-five runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->46 source items and twenty-six runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -330,11 +330,37 @@ instance behind each band.
     after three passes; the most useful thing in the run is that a wrong
     Denjoy–Koksma variation constant would have **passed on this data**, so the
     constant is now asserted against its definition rather than against the data.
-27. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+27. [`reports/RUN-028-HARD-ZETA-AU2D2-ATTAINABILITY.md`](./reports/RUN-028-HARD-ZETA-AU2D2-ATTAINABILITY.md) —
+    **the saturation equivalence is an exact iff, and it holds both ways.**
+    A-U.2d.2's one unconditional theorem — the rotation envelope is attained
+    exactly when the proper-prefix code is completely mechanical
+    (`B/3^L = U_β(L) ⟺ Q_j = ⌊βj⌋ ∀ j<L`) — verified on **9,999** real first
+    crossings with **both off-diagonals empty and both diagonals inhabited**, so
+    it is exercised in both directions rather than only where it is easy. The
+    round's asymptotic `Θ(√L)` non-attainment gap also makes a falsifiable
+    prediction about orbits that exist: **75** crossings have `G > 0` and **0** of
+    them attain the envelope. Two failure modes were looked for and **not** found
+    — the shipped script drops from 80-digit `mpmath` to plain `float`, and its
+    `ceil(log2(y+N/3))` matches an exact integer route on all **15** rows with
+    **13.4 orders of magnitude** of margin. **Three findings, none in the
+    mathematics:** the JSON is again not what the shipped script produces (the
+    item-35 class, third occurrence); the **withdrawn** Niu citation recurs for a
+    third bundle, this time under a heading asserting the references were
+    *rechecked*; and — in my own tooling — the guard certifying that these reports'
+    figures are generated rather than typed **could not fail**, in three published
+    runs. It is replaced, the replacement is shown failing on the real logs, and
+    all four reports regenerate byte-identically. **A fourth finding, also mine:**
+    the suite-wide defect total had been *refusing to compute* since item 22 —
+    two drill logs renamed their tally keys, the aggregator did exactly what it
+    was built to do and exited non-zero, and nobody read it, so **seven drills
+    and 91 defects** sat outside the published figure for seven rounds (now
+    **27 drills, 560/560**). Drill 12/12, with a new pre-flight that names a
+    malformed mutation instead of blaming the check.
+28. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-28. [`code/`](./code/) — the engine, the independent reference, and the gates.
-29. [`data/gate-logs/`](./data/gate-logs/) and
+29. [`code/`](./code/) — the engine, the independent reference, and the gates.
+30. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
@@ -384,14 +410,23 @@ emits it to
 python code/suite_totals.py
 ```
 
-Its only real failure mode is silent undercounting — drill logs have used three
-different shapes, and a reader that knows one returns zero for the others while
-the total still looks plausible. The first version did exactly that, reporting
-383 where the logs held 461. So it classifies every log explicitly and refuses
-anything it cannot interpret, including a zero-byte file, rather than counting it
-as nothing. [`code/suite_totals_drill.py`](./code/suite_totals_drill.py) plants
-that failure and five others in the **logs** and requires each to turn the
+Its only real failure mode is silent undercounting — drill logs have used four
+different key shapes, and a reader that knows one returns zero for the others
+while the total still looks plausible. The first version did exactly that,
+reporting 383 where the logs held 461. So it classifies every log explicitly and
+refuses anything it cannot interpret, including a zero-byte file, rather than
+counting it as nothing. [`code/suite_totals_drill.py`](./code/suite_totals_drill.py)
+plants that failure and seven others in the **logs** and requires each to turn the
 totalling red.
+
+**The refusal worked and went unread.** `src22` renamed one tally key and `src41`
+renamed both, after which this script exited non-zero on every run while the
+archived summary still said `drills: 20 … ok: true`. Seven drills and 91 defects
+sat outside the published figure for seven rounds, until RUN-028 went looking.
+The shapes are now enumerated with the run that introduced each, every row
+reports which shape it used so the next rename is visible in the output rather
+than only in an exit code, and the drill removes the newest shape again to prove
+that branch is load-bearing.
 
 ## How the evidence is arranged
 

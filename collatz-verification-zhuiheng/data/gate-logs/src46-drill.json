@@ -1,0 +1,129 @@
+{
+  "gate": "src46_attainability.py",
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "findings": [
+      "the shipped constants JSON was not produced by the shipped script: row fields are renamed and one is dropped, so re-running the published program would not reproduce the published file. Third occurrence of this class (items 35, 45, 46). No value is wrong."
+    ]
+  },
+  "defects": {
+    "D1_the_mechanical_test_uses_the_wrong_floor": {
+      "caught": true,
+      "expected_failure_named": "saturation_equivalence",
+      "reported": [
+        "saturation_equivalence: an off-diagonal case exists",
+        "saturation_equivalence: one side of the iff never occurred, so the equivalence is half-untested"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D2_the_mechanical_test_stops_one_short": {
+      "caught": true,
+      "expected_failure_named": "saturation_equivalence",
+      "reported": [
+        "saturation_equivalence: an off-diagonal case exists"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D3_B_over_3L_uses_the_wrong_power": {
+      "caught": true,
+      "expected_failure_named": "saturation_equivalence",
+      "reported": [
+        "saturation_equivalence: an off-diagonal case exists",
+        "saturation_equivalence: one side of the iff never occurred, so the equivalence is half-untested"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D4_U_uses_the_wrong_floor": {
+      "caught": true,
+      "expected_failure_named": "saturation_equivalence",
+      "reported": [
+        "saturation_equivalence: an off-diagonal case exists",
+        "saturation_equivalence: one side of the iff never occurred, so the equivalence is half-untested"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D5_only_one_diagonal_is_required_to_be_inhabited": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green because another check covers this",
+      "gate_still_green": true,
+      "failures_seen": []
+    },
+    "D6_the_gap_formula_drops_its_clamp": {
+      "caught": true,
+      "expected_failure_named": "gap_prediction",
+      "reported": [
+        "gap_prediction: the envelope was attained where the round's gap is positive"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D7_the_gap_prediction_never_fires": {
+      "caught": true,
+      "expected_failure_named": "the prediction is untested",
+      "reported": [
+        "gap_prediction: the gap is never positive, so the prediction is untested"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D8_kappa_rot_uses_the_wrong_root": {
+      "caught": true,
+      "expected_failure_named": "constants",
+      "reported": [
+        "constants: kappa_rot"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D9_the_mutual_consistency_check_compares_a_thing_with_itself": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green because another check covers this",
+      "gate_still_green": true,
+      "failures_seen": []
+    },
+    "D10_the_shipped_row_check_recomputes_from_the_json": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green because another check covers this",
+      "gate_still_green": true,
+      "failures_seen": []
+    },
+    "D11_the_exact_ceiling_overshoots": {
+      "caught": true,
+      "expected_failure_named": "float_ceiling",
+      "reported": [
+        "float_ceiling"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D12_the_row_key_regex_drops_uppercase_again": {
+      "caught": true,
+      "kind": "robustness: the finding must SURVIVE",
+      "finding_present_at_baseline": true,
+      "finding_survived": true
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 12,
+    "caught_by_their_own_check": 12,
+    "missed": 0,
+    "robustness_properties": 4,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

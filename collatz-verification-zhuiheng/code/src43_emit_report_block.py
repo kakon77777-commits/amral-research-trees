@@ -12,8 +12,10 @@ from __future__ import annotations
 
 import json
 import pathlib
-import re
 import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from report_block_guard import check_against_snapshot        # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 GATE_LOG = ROOT / "data" / "gate-logs" / "src43-au2e4.json"
@@ -21,6 +23,7 @@ DRILL_LOG = ROOT / "data" / "gate-logs" / "src43-drill.json"
 REPORT = ROOT / "reports" / "RUN-025-HARD-ZETA-AU2E4-RENEWAL-RIGIDITY.md"
 BEGIN = "<!-- BEGIN GENERATED measured block: python code/src43_emit_report_block.py -->"
 END = "<!-- END GENERATED measured block -->"
+FIGURES = ROOT / "data" / "gate-logs" / "src43-emitter-figures.json"
 
 
 def build(g: dict, d: dict) -> str:
@@ -157,25 +160,27 @@ def main() -> int:
     _old, tail = rest.split(END, 1)
     new = head + block + tail
 
-    digits = [m.start() for m in re.finditer(r"\d", block)]
-    missed = [i for i in digits
-              if (block[:i] + ("9" if block[i] != "9" else "0") + block[i + 1:]) == block]
-    if missed:                                          # pragma: no cover
-        print(json.dumps({"error": "staleness comparison blind to some digits",
-                          "undetected": missed}, indent=2))
+    guard = check_against_snapshot(build, [g, d], FIGURES,
+                                   refresh="--refresh-figures" in sys.argv)
+    if not guard["ok"]:
+        print(json.dumps({"error": "the block no longer reads what it used to; "
+                                   "a figure that stopped moving with its log "
+                                   "is a figure somebody typed",
+                          "guard": guard}, indent=2))
         return 2
 
     if "--check" in sys.argv:
         stale = new != text
         print(json.dumps({"tool": "src43_emit_report_block.py", "mode": "check",
-                          "report_up_to_date": not stale, "ok": not stale}, indent=2))
+                          "report_up_to_date": not stale, "guard": guard,
+                          "ok": not stale}, indent=2))
         return 1 if stale else 0
 
     if new != text:
         REPORT.write_text(new, encoding="utf-8", newline="\n")
     print(json.dumps({"tool": "src43_emit_report_block.py", "mode": "emit",
                       "report_rewritten": new != text,
-                      "digits_guarded": len(digits), "ok": True}, indent=2))
+                      "guard": guard, "ok": True}, indent=2))
     return 0
 
 

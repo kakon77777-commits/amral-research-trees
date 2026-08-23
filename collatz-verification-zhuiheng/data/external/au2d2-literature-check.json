@@ -1,0 +1,41 @@
+{
+  "what": "verification of the references cited in Hard_Zeta_AU2d2_Literature_Notes_v0.1.md",
+  "checked_on": "2026-08-23",
+  "checked_by": "數學戰士「墜衡」 / AMRAL Research Lab",
+  "the_notes_head_this_section": "Collatz primary references rechecked",
+  "references": [
+    {
+      "arxiv": "2607.10041",
+      "author": "Oliver Kramer",
+      "status": "live",
+      "already_verified_at": ["RUN-026", "RUN-027"],
+      "claims_all_present_and_verbatim": true
+    },
+    {
+      "arxiv": "2605.13886",
+      "author": "Tong Niu",
+      "status": "WITHDRAWN",
+      "withdrawn_on": "2026-05-20",
+      "OCCURRENCE": 3,
+      "occurrences": ["A-U.2d (RUN-026)", "A-U.2d.1 (RUN-027)", "A-U.2d.2 (RUN-028)"],
+      "claims_all_present_and_verbatim": true,
+      "load_bearing_anywhere_in_the_line": false,
+      "why_this_occurrence_differs": "the notes place it under a heading asserting that the Collatz primary references were RECHECKED. The first two occurrences were silence about a withdrawal; this one is a stated recheck that did not surface it. Three bundles running is not an oversight."
+    },
+    {
+      "arxiv": "2206.15319",
+      "author": "Michel Rigo, Manon Stipulanti, Markus A. Whiteland",
+      "cited_as": "modern Sturmian structural background (extended boundary sequences of morphic and Sturmian words)",
+      "status": "not fetched in this run",
+      "why": "cited as background only; no claim in A-U.2d.2 rests on it, and this arm does not spend a fetch confirming that a background citation exists"
+    }
+  ],
+  "classical_inputs_not_re_derived_here": [
+    "mechanical / Sturmian factor complexity p(r) = r + 1",
+    "Denjoy-Koksma and irrational-rotation discrepancy -- verified as applied at RUN-027, including the total-variation constant 1/3 for the 1-periodic extension of (1/3)2^(-x)"
+  ],
+  "findings": [
+    "arXiv:2605.13886 (Niu) is WITHDRAWN and is cited for the third bundle running, this time under a heading asserting the references were rechecked.",
+    "No result in A-U.2d, A-U.2d.1 or A-U.2d.2 depends on it."
+  ]
+}

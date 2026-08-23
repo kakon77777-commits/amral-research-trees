@@ -38,15 +38,38 @@ NOT_A_DEFECT_TALLY = {
 }
 
 
+# Every (planted, caught) key pair a drill log has ever used, and the run that
+# introduced it. Enumerated rather than guessed: an unlisted pair is refused, so
+# the next rename shows up as a refusal instead of as a smaller total.
+#
+# It has already shown up that way and been ignored. src22 renamed `caught` and
+# src41 renamed both, and from then on this script exited non-zero on every run
+# while the archived summary kept saying `drills: 20, uninterpreted: [], ok:
+# true`. Seven drills sat outside the published figure for seven rounds. The
+# refusal worked; nobody read it. Adding a shape is therefore a deliberate act
+# with a name attached, and the shape each log used is reported per row so the
+# drift is visible in the output rather than only in an exit code.
+TALLY_KEYS = [
+    ("defects_planted", "defects_caught_by_the_named_check"),   # src05..src21
+    ("defects_planted", "defects_caught"),                      # early variants
+    ("defects_planted", "caught"),                              # src22
+    ("planted", "caught_by_their_own_check"),                   # src41..src46
+]
+
+
 def tallies(doc: dict) -> dict | None:
-    """Read a drill log's tallies from either shape, or None if neither fits."""
+    """Read a drill log's tallies from any known shape, or None if none fits."""
     for src in (doc.get("counts", {}), doc):
-        planted = src.get("defects_planted")
-        caught = src.get("defects_caught_by_the_named_check",
-                         src.get("defects_caught"))
-        if isinstance(planted, int) and isinstance(caught, int):
+        for planted_key, caught_key in TALLY_KEYS:
+            planted = src.get(planted_key)
+            caught = src.get(caught_key)
+            if not (isinstance(planted, int) and isinstance(caught, int)):
+                continue
+            shape = "%s/%s" % (planted_key, caught_key)
             controls = src.get("controls", src.get("controls_planted"))
             if isinstance(controls, list):
+                controls = len(controls)
+            if isinstance(controls, dict):
                 controls = len(controls)
             if not isinstance(controls, int):
                 continue
@@ -64,7 +87,8 @@ def tallies(doc: dict) -> dict | None:
                 continue
             if planted > 0:
                 return {"planted": planted, "caught": caught,
-                        "controls": controls, "controls_undisturbed": quiet}
+                        "controls": controls, "controls_undisturbed": quiet,
+                        "shape": shape}
     return None
 
 

@@ -154,6 +154,38 @@ def main() -> int:
                "an empty file must land in `uninterpreted`",
                expect_key="uninterpreted")
 
+        # D7 — the newest tally shape is dropped from the table. Adding a shape
+        # without a defect that removes it again is adding an unverified branch:
+        # this is the drill for the fix that brought src22 and src41..src46 back
+        # into the figure, and it must both move the total and refuse.
+        anchor7 = '    ("planted", "caught_by_their_own_check"),                   # src41..src46'
+        if anchor7 not in original:
+            raise SystemExit(f"D7 anchor absent: {anchor7!r}")
+        f = CODE / "_st_drop_newest.py"
+        try:
+            f.write_text(original.replace(anchor7, ""), encoding="utf-8")
+            res = run(base, f)
+        finally:
+            f.unlink(missing_ok=True)
+        moved7 = res.get("defects_planted") != baseline["defects_planted"]
+        rep["defects"]["D7_the_newest_tally_shape_is_no_longer_read"] = {
+            "why": "the shape added for src41..src46 must be load-bearing",
+            "caught": (not res.get("ok")) and moved7,
+            "planted": res.get("defects_planted"),
+            "baseline_planted": baseline["defects_planted"],
+            "uninterpreted": res.get("uninterpreted")}
+
+        # D8 — a survivor in the NEWEST shape. D2 proves the src21 shape's
+        # tallies are read; without this, the newest shape could be merely
+        # recognised while its numbers went unchecked.
+        d = fresh("survivor_newest")
+        p8 = d / "src46-drill.json"
+        doc = json.loads(p8.read_text(encoding="utf-8"))
+        doc["counts"]["caught_by_their_own_check"] -= 1
+        p8.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+        record("D8_a_planted_defect_survived_in_the_newest_shape", run(d, TOOL),
+               "planted != caught must refuse in every shape, not just the oldest")
+
         # N1 — an unrelated file beside the logs
         d = fresh("null")
         (d / "notes.txt").write_text("read by nothing\n", encoding="utf-8")

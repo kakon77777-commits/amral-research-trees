@@ -1,0 +1,24 @@
+{
+  "tool": "report_block_guard.py",
+  "mode": "self-test",
+  "discover_finds_a_figure_read_from_the_log": true,
+  "discover_finds_nothing_when_it_is_typed": true,
+  "an_unchanged_emitter_stays_green": {
+    "figures_read": 1,
+    "snapshot": "report_block_guard_selftest.json",
+    "figures_no_longer_read": [],
+    "figures_newly_read": [],
+    "ok": true
+  },
+  "a_figure_that_stopped_being_read_goes_red": {
+    "figures_read": 0,
+    "snapshot": "report_block_guard_selftest.json",
+    "figures_no_longer_read": [
+      "0:counts/planted"
+    ],
+    "figures_newly_read": [],
+    "ok": false
+  },
+  "the_guard_can_fail": true,
+  "ok": true
+}
