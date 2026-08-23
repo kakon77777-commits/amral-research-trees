@@ -1,0 +1,78 @@
+{
+  "what": "verification of the references cited in Hard_Zeta_AU2d3_Literature_Notes_v0.1.md",
+  "checked_on": "2026-08-23",
+  "checked_by": "數學戰士「墜衡」 / AMRAL Research Lab",
+  "why_this_round_is_different": "A-U.2d.3 takes exactly one external input, the Diophantine exponent rho_star = 4.1164, and derives theta_star, sigma_star and every published figure from it. Unlike the withdrawn citation in the three previous rounds, this reference is LOAD-BEARING: if it does not say what the round says it says, every exponent moves.",
+  "references": [
+    {
+      "arxiv": "2303.06850",
+      "authors": "Aihua Fan, Hervé Queffélec, Martine Queffélec",
+      "title": "Old and new results on the Furstenberg sets",
+      "status": "live",
+      "the_round_attributes_to_it": "a survey reporting the Wang-Wu improvement rho <= 4.11633052 for alpha = log2/log3",
+      "verified": true,
+      "what_it_actually_says": "G. Rhin proved rho <= 7.616 for alpha = log2/log3 by Padé approximants, 'improved by Wang and Wu to rho <= 4.11633052'. It then uses rho = 4.11633052 with delta := 0.80454645 = rho/(rho+1) in its Theorem 2.1 remainder estimate for the Furstenberg set counting function.",
+      "verdict": "the attribution is exactly right, and the exponent applies to alpha = log2/log3 as the round needs -- not to ln 3"
+    },
+    {
+      "doi": "10.1016/j.jnt.2014.03.007",
+      "cited_in_the_notes_as": "Lihong Wang, Qiang Wu, *On the irrationality measure of \\log_2 3*, Journal of Number Theory 142 (2014), 264-273",
+      "crossref_says_title": "On the irrationality measure of log 3",
+      "crossref_says_authors": ["Qiang Wu", "Lihong Wang"],
+      "crossref_says_venue": "Journal of Number Theory 142 (2014), 264-273",
+      "status": "live",
+      "FINDING": "the title is misstated and the authors are reversed",
+      "detail": "Volume, pages, year and DOI all match exactly. The title does not: the paper is 'On the irrationality measure of log 3', and the notes render it 'On the irrationality measure of log_2 3'. The published result most often quoted from it is mu(log 3) <= 5.1163051, about the natural logarithm of 3 -- a different quantity from log2/log3.",
+      "why_it_matters_more_than_a_typo": "log 3 -> log_2 3 is precisely the substitution that would make the citation self-justifying. A reader checking whether this exponent applies to log2/log3 rather than to ln 3 finds the title already asserting it, and stops. The exponent the round uses IS about log2/log3 -- established above from Fan-Queffelec-Queffelec directly -- so the mathematics is unaffected. The citation is what fails.",
+      "not_established_here": "whether this paper itself contains the log2/log3 exponent, or whether Fan-Queffelec-Queffelec's reference [74] is a different Wang-Wu work. The publisher's page returns 403 and the arXiv survey's bibliography was not retrievable. Volume, pages and DOI matching makes it the same paper, but its contents were not read."
+    },
+    {
+      "author": "Georges Rhin",
+      "title": "Approximants de Padé et mesures effectives d'irrationalité",
+      "venue": "Séminaire de Théorie des Nombres, Paris 1985-86",
+      "status": "not fetched",
+      "consistency_check": "Fan-Queffelec-Queffelec independently attribute the earlier bound rho <= 7.616 for alpha to Rhin, by Padé approximants -- which is what the notes describe. Consistent."
+    },
+    {
+      "arxiv": "2605.13886",
+      "author": "Tong Niu",
+      "title": "Parity vectors and paradoxical sequences in the accelerated Collatz map",
+      "status": "WITHDRAWN",
+      "withdrawn_on": "2026-05-20",
+      "OCCURRENCE": 4,
+      "occurrences": ["A-U.2d (RUN-026)", "A-U.2d.1 (RUN-027)", "A-U.2d.2 (RUN-028)", "A-U.2d.3 (RUN-029)"],
+      "claims_all_present_and_verbatim": true,
+      "load_bearing_anywhere_in_the_line": false,
+      "new_this_round": "the withdrawal notice names Rozier and Terracol arXiv:2502.00948v4 as already containing the enumeration, and THESE NOTES CITE ROZIER-TERRACOL TWO ENTRIES BELOW. The bundle carries both the withdrawn paper and the paper it was withdrawn in favour of, and says nothing about the relation between them.",
+      "withdrawal_comment_verbatim": "withdrawn - Rozier and Terracol [arXiv:2502.00948v4] (April 2026) already enumerate the 593 paradoxical sequences in the accelerated Collatz map up to length 60 and identify the seven (j,q) pairs; the (46,73) mediant observation follows routinely from their data. Withdrawing to avoid duplication"
+    },
+    {
+      "arxiv": "2502.00948",
+      "authors": "Olivier Rozier, Claude Terracol",
+      "title": "Paradoxical behavior in Collatz sequences",
+      "journal_ref": "Discrete Mathematics 349, 115167 (2026)",
+      "version": "v5, last revised 2026-05-17",
+      "status": "live",
+      "verified": true,
+      "verdict": "cited accurately, including the Discrete Mathematics 2026 journal reference"
+    },
+    {
+      "arxiv": "2607.10041",
+      "author": "Oliver Kramer",
+      "status": "live",
+      "already_verified_at": ["RUN-026", "RUN-027", "RUN-028"],
+      "claims_all_present_and_verbatim": true
+    }
+  ],
+  "a_hypothesis_this_check_raised_and_then_refuted": {
+    "hypothesis": "that rho_star = 4.1164 was mu(ln 3) = 5.1163051 minus one, misapplied to log2/log3 -- which would have moved theta_star from 0.19545 to about 0.116 and every exponent in the round with it",
+    "how_it_arose": "a web search summary reported Wu and Wang's result as mu(log 3) <= 5.1163051 and attributed rho <= 8.616 for log3/log2 to Rhin, which is close enough to the round's numbers to look like the source of a substitution",
+    "how_it_was_refuted": "by reading Fan-Queffelec-Queffelec's own text, which states Rhin's bound for alpha as 7.616 (not 8.616) and Wang-Wu's improvement as 4.11633052 for the same alpha",
+    "lesson": "a search summary is not a source. The hypothesis was specific, quantitative, and wrong, and only the primary text could say so."
+  },
+  "findings": [
+    "the Wu-Wang citation misstates the paper's title as 'log_2 3' when it is 'log 3', and reverses the author order; volume, pages, year and DOI are exact.",
+    "arXiv:2605.13886 (Niu) is WITHDRAWN and cited for the fourth bundle running, alongside the very paper its withdrawal notice defers to.",
+    "the exponent rho_star = 4.1164 is correctly sourced and is conservative against the cited 4.11633052 by 1737/25000000, checked as exact rationals in the gate."
+  ]
+}

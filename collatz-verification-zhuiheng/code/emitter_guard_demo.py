@@ -4,8 +4,8 @@
 
 `report_block_guard` replaced a guard that could not fail. Asserting that the
 replacement can fail is not the same as showing it, so this freezes one figure in
-each of the four report emitters -- exactly what a copy-paste does, the number
-stops tracking its log -- and requires the emitter to go red.
+each report emitter -- exactly what a copy-paste does, the number
+stops tracking its log -- and requires the emitter to go red. Five emitters now.
 
 Two screens keep the demo from being the thing it is testing:
 
@@ -14,7 +14,7 @@ Two screens keep the demo from being the thing it is testing:
     against a perturbed log and requiring the output to differ.
 
 The second screen earned its place immediately. The first version of this demo
-replaced ``` `9999` ``` with the same literal, but two of the four emitters print
+replaced ``` `9999` ``` with the same literal, but two of the emitters print
 that figure without backticks, so the substring never occurred, nothing was
 planted, and the guard passed for the wrong reason -- the same malformed-defect
 class that `srcNN_drill.py` screens for.
@@ -42,6 +42,7 @@ CASES = [
     ("src44", (0, ("horizons", "starts"))),
     ("src45", (0, ("rotation_cap", "crossings"))),
     ("src46", (0, ("saturation_equivalence", "crossings"))),
+    ("src47", (0, ("continued_fraction", "largest_denominator_certified"))),
 ]
 
 

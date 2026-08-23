@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->46 source items and twenty-six runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->47 source items and twenty-seven runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -356,11 +356,36 @@ instance behind each band.
     and 91 defects** sat outside the published figure for seven rounds (now
     **27 drills, 560/560**). Drill 12/12, with a new pre-flight that names a
     malformed mutation instead of blaming the check.
-28. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+28. [`reports/RUN-029-HARD-ZETA-AU2D3-SURVIVAL-CLOSURE.md`](./reports/RUN-029-HARD-ZETA-AU2D3-SURVIVAL-CLOSURE.md) —
+    **the most checkable round the sweep has met, and its one load-bearing
+    citation names a different paper.** A-U.2d.3 takes exactly one external input,
+    a Diophantine exponent `ρ★ = 4.1164` for `log2/log3`, and derives everything
+    from it — and because `4.1164` is a terminating decimal, `θ★ = 2500/12791`
+    and `σ★ = 12791/15291` are **exact rationals**, right to all **100** published
+    digits. Two things this run could do that earlier ones could not. The round's
+    two **second-order expansion coefficients** were tested by a probe that
+    vanishes for the round's values (`1.7e-7`, `3.0e-8` at `10¹²`) and converges
+    to a nonzero constant for values **1% away** — testing the expansion rather
+    than confirming the symbols. And the continued fraction of `log₂3` was
+    recomputed **with no logarithm evaluated anywhere**, every partial quotient
+    decided by comparing `2^A` against `3^B`: **16 terms certified, to denominator
+    10,781,274**, with the cutoff reported rather than crossed silently, and the
+    integer comparisons counted so the independence is measured. **Three findings,
+    none in the mathematics:** one digit of `η_β` is over-published, and the
+    per-row `p − βq` is published to 100 significant digits where **83–100** are
+    supported — the shortfall predicted by `log₁₀(β·q·q⁺)` to within **2.0**
+    digits at every row; the Wu–Wang citation gives the title as *log₂ 3* when
+    Crossref says *log 3* and reverses the authors, which matters because that is
+    exactly the substitution that would make the citation self-justifying; and the
+    **withdrawn** Niu paper recurs for a **fourth** bundle, beside the very paper
+    its withdrawal notice defers to. The item-35 artifact class **does not** recur.
+    Drill **20/20**, and its byte-exact restore control caught a real defect in my
+    own harness after six quiet items.
+29. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-29. [`code/`](./code/) — the engine, the independent reference, and the gates.
-30. [`data/gate-logs/`](./data/gate-logs/) and
+30. [`code/`](./code/) — the engine, the independent reference, and the gates.
+31. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

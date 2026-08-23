@@ -1,0 +1,214 @@
+{
+  "gate": "src47_survival_closure.py",
+  "cf_budget_seconds": 4.0,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "findings": [
+      "the constants JSON over-publishes its own precision: eta_beta carries a final digit the 100-digit computation behind it does not support, out of 4 transcendental constants checked. Same class as item 45 (RUN-027), second occurrence and far milder. The three exponent figures are exactly rational and are right to every published digit.",
+      "the per-row `primitive_error` is published to 100 significant digits at every convergent while the computation behind it supports between 83 and 100, and the shortfall is exactly the cancellation in `p - beta*q`: predicted by `log10(beta*q*q+)` to within 2.0 digits at every row, always conservatively. The two capacity fields are unaffected: none is over-published."
+    ]
+  },
+  "defects": {
+    "D1_a_published_figure_is_checked_against_the_wrong_exact_value": {
+      "caught": true,
+      "expected_failure_named": "published exponent digits are wrong",
+      "reported": [
+        "published exponent digits are wrong: ['theta_star']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D20_rho_star_is_no_longer_conservative_against_the_cited_exponent": {
+      "caught": true,
+      "expected_failure_named": "not conservative against the exponent the round cites",
+      "reported": [
+        "rho_star is not conservative against the exponent the round cites",
+        "the exponent chain does not satisfy its own identities"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D2_sigma_is_built_from_the_wrong_reciprocal": {
+      "caught": true,
+      "expected_failure_named": "does not satisfy its own identities",
+      "reported": [
+        "the exponent chain does not satisfy its own identities",
+        "published exponent digits are wrong: ['congestion_exponent', 'sigma_star']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D3_kappa_rot_uses_the_wrong_root": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green because another check covers this",
+      "gate_still_green": true,
+      "failures_seen": []
+    },
+    "D4_the_leading_cf_constant_gets_the_wrong_power": {
+      "caught": true,
+      "expected_failure_named": "disagrees with its closed form far beyond rounding",
+      "reported": [
+        "a published constant disagrees with its closed form far beyond rounding: ['cf_leading_constant']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D19_a_relation_between_the_constants_is_stated_wrongly": {
+      "caught": true,
+      "expected_failure_named": "the constants contradict each other",
+      "reported": [
+        "the constants contradict each other"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D5_the_integer_comparison_has_a_branch_backwards": {
+      "caught": true,
+      "expected_failure_named": "integer comparison primitive is wrong",
+      "reported": [
+        "the integer comparison primitive is wrong on cases decided by hand"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D6_the_certified_route_is_silently_the_high_precision_one": {
+      "caught": true,
+      "expected_failure_named": "did not perform integer comparisons",
+      "reported": [
+        "the certified route did not perform integer comparisons, so its independence from the artifact's method is a claim rather than a measurement"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D7_the_bracket_is_taken_from_far_too_early_a_convergent": {
+      "caught": true,
+      "expected_failure_named": "decided too few rows",
+      "reported": [
+        "the exact bracket decided too few rows to be the primary route"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D8_the_parity_rule_is_inverted": {
+      "caught": true,
+      "expected_failure_named": "filter is wrong in one direction",
+      "reported": [
+        "the upper-convergent filter is wrong in one direction"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D9_a_shipped_row_goes_missing_before_the_filter_sees_it": {
+      "caught": true,
+      "expected_failure_named": "filter is wrong in one direction",
+      "reported": [
+        "the upper-convergent filter is wrong in one direction"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D10_the_tax_lower_bound_is_raised_to_meet_the_upper_one": {
+      "caught": true,
+      "expected_failure_named": "continued-fraction tax inequality is violated",
+      "reported": [
+        "the continued-fraction tax inequality is violated"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D11_the_section_9_residual_is_scaled_by_the_wrong_power": {
+      "caught": true,
+      "expected_failure_named": "section-9 residual does not discriminate its coefficient asymptotically",
+      "reported": [
+        "the section-9 residual does not discriminate its coefficient asymptotically"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D12_the_section_16_coefficient_uses_the_wrong_exponent": {
+      "caught": true,
+      "expected_failure_named": "section-16 residual does not discriminate",
+      "reported": [
+        "the section-16 residual does not discriminate its coefficient",
+        "the section-16 residual does not discriminate its coefficient asymptotically"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D13_the_expansion_uses_the_other_root": {
+      "caught": true,
+      "expected_failure_named": "section-16 residual does not discriminate",
+      "reported": [
+        "the section-16 residual does not discriminate its coefficient",
+        "the section-16 residual does not discriminate its coefficient asymptotically"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D18_the_root_check_is_asked_the_wrong_equation": {
+      "caught": true,
+      "expected_failure_named": "quadratic root is wrong",
+      "reported": [
+        "the section-16 quadratic root is wrong"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D14_the_colouring_never_reuses_a_colour": {
+      "caught": true,
+      "expected_failure_named": "renewal geometry does not hold as stated",
+      "reported": [
+        "the renewal geometry does not hold as stated"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D15_the_colouring_sample_can_no_longer_overlap": {
+      "caught": true,
+      "expected_failure_named": "colouring sample never exercised a real overlap",
+      "reported": [
+        "the colouring sample never exercised a real overlap"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D16_the_cancellation_model_forgets_the_next_denominator": {
+      "caught": true,
+      "expected_failure_named": "cancellation model does not predict",
+      "reported": [
+        "the cancellation model does not predict the observed digit loss at rows [7, 9, 11, 13, 15, 17, 19]"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D17_the_superadditivity_hypothesis_drops_g_being_an_integer": {
+      "caught": true,
+      "expected_failure_named": "elementary inequality the derivation uses fails",
+      "reported": [
+        "an elementary inequality the derivation uses fails"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 20,
+    "caught_by_their_own_check": 20,
+    "missed": 0,
+    "robustness_properties": 1,
+    "malformed": 0,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
