@@ -1,0 +1,307 @@
+{
+  "round": "Hard-Zeta Collatz New-Chat Handoff v1.0",
+  "source_item": 48,
+  "corpus_documents": 130,
+  "cross_bundle_identity": {
+    "distinct_documents": 132,
+    "documents_reshipped_in_more_than_one_bundle": 27,
+    "most_reshipped": "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",
+    "most_reshipped_count": 8,
+    "documents_with_more_than_one_hash": [],
+    "ok": true
+  },
+  "constants": {
+    "closed_forms": {
+      "beta = log2 3": {
+        "handoff_prints": "1.5849625007",
+        "correct": true,
+        "in_the_handoff": true
+      },
+      "eta_beta = 1/(6 ln 2)": {
+        "handoff_prints": "0.24044917348",
+        "correct": true,
+        "in_the_handoff": true
+      },
+      "kappa_rot = 1/(12 sqrt 2)": {
+        "handoff_prints": "0.05892556510",
+        "correct": true,
+        "in_the_handoff": true
+      },
+      "cf leading = 6 (ln2)^2": {
+        "handoff_prints": "2.8827180835",
+        "correct": true,
+        "in_the_handoff": true
+      },
+      "cf second = 3 (ln2)^3/sqrt2": {
+        "handoff_prints": "0.7064519692",
+        "correct": true,
+        "in_the_handoff": true
+      }
+    },
+    "exact_rationals": {
+      "theta_star = 1/(rho+1)": {
+        "exact": "2500/12791",
+        "handoff_prints": "0.195449925729",
+        "correct": true,
+        "in_the_handoff": true
+      },
+      "sigma_star = 1/(1+theta)": {
+        "exact": "12791/15291",
+        "handoff_prints": "0.836505133739",
+        "correct": true,
+        "in_the_handoff": true
+      },
+      "1 - sigma_star": {
+        "exact": "2500/15291",
+        "handoff_prints": "0.163494866261",
+        "correct": true,
+        "in_the_handoff": true
+      }
+    },
+    "literals_traced": 13,
+    "traced_verbatim": 10,
+    "traced_as_a_correct_rounding": 3,
+    "trace": {
+      "0.03585676003404866": {
+        "how": "verbatim",
+        "documents": 7,
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v1.2_AU2b1.md",
+        "ok": true
+      },
+      "0.05892556510": {
+        "how": "correct rounding of a longer literal",
+        "source": "0.05892556509888",
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v2.2_AU2d2.md",
+        "documents": 3,
+        "ok": true
+      },
+      "0.16349": {
+        "how": "verbatim",
+        "documents": 10,
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v2.3_AU2d3.md",
+        "ok": true
+      },
+      "0.163494866261": {
+        "how": "verbatim",
+        "documents": 5,
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v2.3_AU2d3.md",
+        "ok": true
+      },
+      "0.195449925729": {
+        "how": "verbatim",
+        "documents": 16,
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v2.10_AU2d10.md",
+        "ok": true
+      },
+      "0.24044917348": {
+        "how": "verbatim",
+        "documents": 3,
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v2.1_AU2d1.md",
+        "ok": true
+      },
+      "0.36897897873314659": {
+        "how": "verbatim",
+        "documents": 2,
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v1.4_AU2b3.md",
+        "ok": true
+      },
+      "0.7064519692": {
+        "how": "correct rounding of a longer literal",
+        "source": "0.706451969171",
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v2.3_AU2d3.md",
+        "documents": 2,
+        "ok": true
+      },
+      "0.836505133739": {
+        "how": "correct rounding of a longer literal",
+        "source": "0.83650513373880",
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v2.3_AU2d3.md",
+        "documents": 7,
+        "ok": true
+      },
+      "1.5849625007": {
+        "how": "verbatim",
+        "documents": 5,
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v2.17_AU2d17.md",
+        "ok": true
+      },
+      "2.8827180835": {
+        "how": "verbatim",
+        "documents": 2,
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v2.3_AU2d3.md",
+        "ok": true
+      },
+      "0.1634948663": {
+        "how": "verbatim",
+        "documents": 7,
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v2.4_AU2d4.md",
+        "ok": true
+      },
+      "0.8365051337": {
+        "how": "verbatim",
+        "documents": 7,
+        "example": "Hard_Zeta_A_Line_ROUTE_MAP_v2.13_AU2d13.md",
+        "ok": true
+      }
+    },
+    "constants_disagreeing_with_their_closed_form": [],
+    "constants_the_handoff_does_not_actually_print": [],
+    "numbers_in_no_round_document": [],
+    "ok": true
+  },
+  "references_introduced": {
+    "identifiers": [
+      {
+        "arxiv": "1805.00133",
+        "cited_in_round_documents": 5,
+        "new_in_the_handoff": false,
+        "checked_in_the_literature_record": true,
+        "status": "not fetched"
+      },
+      {
+        "arxiv": "2101.12747",
+        "cited_in_round_documents": 5,
+        "new_in_the_handoff": false,
+        "checked_in_the_literature_record": true,
+        "status": "not fetched"
+      },
+      {
+        "arxiv": "2111.02635",
+        "cited_in_round_documents": 0,
+        "new_in_the_handoff": true,
+        "checked_in_the_literature_record": true,
+        "status": "live"
+      },
+      {
+        "arxiv": "2303.06850",
+        "cited_in_round_documents": 3,
+        "new_in_the_handoff": false,
+        "checked_in_the_literature_record": true,
+        "status": "live"
+      },
+      {
+        "arxiv": "2502.00948",
+        "cited_in_round_documents": 35,
+        "new_in_the_handoff": false,
+        "checked_in_the_literature_record": true,
+        "status": "live"
+      },
+      {
+        "arxiv": "2605.13886",
+        "cited_in_round_documents": 15,
+        "new_in_the_handoff": false,
+        "checked_in_the_literature_record": true,
+        "status": "WITHDRAWN"
+      },
+      {
+        "arxiv": "2607.10041",
+        "cited_in_round_documents": 41,
+        "new_in_the_handoff": false,
+        "checked_in_the_literature_record": true,
+        "status": "live"
+      }
+    ],
+    "introduced_by_the_handoff": [
+      "2111.02635"
+    ],
+    "introduced_and_unchecked": []
+  },
+  "occupancy_bound": {
+    "the_round_states_an_explicit_occupancy_bound": true,
+    "the_handoff_states_the_lemma_in_some_recognised_form": true,
+    "the_handoff_s_divisor_line_was_located": true,
+    "the_round_never_states_the_bare_sqrt_L_form": true,
+    "the_handoff_states_it_as_O_L_gtrsim_sqrt_L": true,
+    "the_handoff_also_states_Lambda_ge_O_over_12": true,
+    "the_handoff_keeps_the_round_s_kappa_rot": true,
+    "round_bound_over_sqrt_L": [
+      {
+        "L": "1e4",
+        "round_s_occupancy_bound_over_sqrt_L": "0.697071425"
+      },
+      {
+        "L": "1e6",
+        "round_s_occupancy_bound_over_sqrt_L": "0.7061064276"
+      },
+      {
+        "L": "1e8",
+        "round_s_occupancy_bound_over_sqrt_L": "0.7070067777"
+      },
+      {
+        "L": "1e10",
+        "round_s_occupancy_bound_over_sqrt_L": "0.7070967812"
+      },
+      {
+        "L": "1e12",
+        "round_s_occupancy_bound_over_sqrt_L": "0.7071057812"
+      }
+    ],
+    "its_limit_is_1_over_sqrt_2": true,
+    "kappa_implied_by_the_handoff_s_own_two_lines": "0.08333333333",
+    "kappa_the_round_proves_and_the_handoff_prints": "0.0589255651",
+    "overstatement_factor": "1.414213562",
+    "internally_inconsistent": true
+  },
+  "status_fidelity": {
+    "required_present": {
+      "disclaims proving Collatz / Terras / CASP": true,
+      "flags the Diophantine exponent as an external input": true,
+      "flags the criticality theorem as an external input": true,
+      "carries the G non-telescoping no-go": true,
+      "keeps the first-crossing index caveat": true,
+      "states the frontier as a disjunction": true
+    },
+    "required_absent": {
+      "does not claim CASP is proved": {
+        "absent_from_the_handoff": true,
+        "pattern_fires_on_its_counterexample": true
+      },
+      "does not claim the Collatz conjecture is proved": {
+        "absent_from_the_handoff": true,
+        "pattern_fires_on_its_counterexample": true
+      },
+      "does not present the Diophantine exponent as derived here": {
+        "absent_from_the_handoff": true,
+        "pattern_fires_on_its_counterexample": true
+      }
+    },
+    "missing_statements": [],
+    "forbidden_statements_found": [],
+    "absence_checks_that_could_never_fire": [],
+    "ok": true
+  },
+  "reference_hygiene": {
+    "entries_in_the_standing_reference_list": 11,
+    "arxiv_identifiers_in_the_located_section": 7,
+    "entries_carrying_a_caveat": 1,
+    "caveat_examples": [
+      "López–Stoll, arXiv:2101.12747（外部 criticality input，保留 caveat）"
+    ],
+    "withdrawn_references": [
+      {
+        "arxiv": "2605.13886",
+        "withdrawn_on": "2026-05-20",
+        "occurrence": 5,
+        "listed_in_section_25": true,
+        "entry": "Tong Niu, arXiv:2605.13886 (2026)",
+        "carries_a_caveat": false
+      }
+    ],
+    "a_withdrawn_reference_is_listed_without_a_caveat": true
+  },
+  "file_manifest": {
+    "files_named": 12,
+    "markdown_found_in_the_corpus": 10,
+    "not_markdown_so_not_in_this_corpus": [
+      "Hard_Zeta_AU2d3_survival_closure_constants.json",
+      "verify_Hard_Zeta_AU2d3_survival_closure.py"
+    ],
+    "markdown_named_but_missing": []
+  },
+  "findings": [
+    "the handoff states the occupancy lemma as `O_L >~ sqrt L`, which is the round's own bound times sqrt 2. Combined with the `Lambda >= O_L/12` the handoff also prints, that yields kappa_rot = 0.08333333333, while the handoff prints the round's correct 0.0589255651 three lines later. The conclusion was copied and the step that produces it was rounded off, so the two lines contradict each other by a factor of 1.414213562.",
+    "arXiv:2605.13886, withdrawn 2026-05-20, is listed in the standing reference list a new conversation is told to work from, with no note — occurrence 5. The list does annotate elsewhere (1 of 11 entries carry a caveat), so the omission is not a format limitation."
+  ],
+  "failures": [],
+  "passed": true
+}

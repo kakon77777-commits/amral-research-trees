@@ -43,6 +43,7 @@ CASES = [
     ("src45", (0, ("rotation_cap", "crossings"))),
     ("src46", (0, ("saturation_equivalence", "crossings"))),
     ("src47", (0, ("continued_fraction", "largest_denominator_certified"))),
+    ("src48", (0, ("cross_bundle_identity", "distinct_documents"))),
 ]
 
 

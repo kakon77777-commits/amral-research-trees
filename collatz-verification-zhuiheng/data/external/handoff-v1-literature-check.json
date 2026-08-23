@@ -1,0 +1,88 @@
+{
+  "what": "verification of the standing reference list in Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.md section 25",
+  "checked_on": "2026-08-23",
+  "checked_by": "數學戰士「墜衡」 / AMRAL Research Lab",
+  "why_this_list_is_different": "Every previous literature check in this sweep read the notes attached to one round. This list is the standing bibliography a NEW conversation is instructed to work from, so an entry here is not a citation in one paper -- it is a starting assumption for every paper after.",
+  "references": [
+    {
+      "arxiv": "2111.02635",
+      "authors": "Jeffrey C. Lagarias",
+      "title": "The 3x+1 Problem: An Overview",
+      "date": "2021-11-04",
+      "the_handoff_calls_it": "Lagarias overview",
+      "status": "live",
+      "verified": true,
+      "new_in_the_handoff": true,
+      "verdict": "accurate, and it is the only reference the handoff adds that no round document cites. A survey is a sensible thing for a bootstrap list to carry."
+    },
+    {
+      "arxiv": "2605.13886",
+      "author": "Tong Niu",
+      "title": "Parity vectors and paradoxical sequences in the accelerated Collatz map",
+      "status": "WITHDRAWN",
+      "withdrawn_on": "2026-05-20",
+      "OCCURRENCE": 5,
+      "occurrences": [
+        "A-U.2d (RUN-026)", "A-U.2d.1 (RUN-027)", "A-U.2d.2 (RUN-028)",
+        "A-U.2d.3 (RUN-029)", "New-Chat Handoff v1.0 (RUN-030)"
+      ],
+      "load_bearing_anywhere_in_the_line": false,
+      "new_this_round": "this occurrence is not a citation inside a round. It is an entry in the STANDING reference list a fresh conversation is told to work from, under the heading 常用文獻, with no note that the paper has been withdrawn. The four earlier occurrences propagated an unmarked withdrawal within the line; this one propagates it forward into work that has not been written yet.",
+      "the_list_does_annotate_elsewhere": "the López–Stoll entry carries 「外部 criticality input，保留 caveat」 and the section ends with a warning against treating unaccepted Collatz proofs as fact, so the list's format supports caveats and this omission is a choice rather than a limitation"
+    },
+    {
+      "arxiv": "2502.00948",
+      "authors": "Olivier Rozier, Claude Terracol",
+      "title": "Paradoxical behavior in Collatz sequences",
+      "journal_ref": "Discrete Mathematics 349, 115167 (2026)",
+      "status": "live",
+      "verified_at": "RUN-029",
+      "note": "listed two lines below the withdrawn Niu entry, which is the paper Niu's withdrawal notice defers to"
+    },
+    {
+      "arxiv": "2607.10041",
+      "author": "Oliver Kramer",
+      "status": "live",
+      "verified_at": ["RUN-026", "RUN-027", "RUN-028", "RUN-029"]
+    },
+    {
+      "arxiv": "2303.06850",
+      "authors": "Aihua Fan, Hervé Queffélec, Martine Queffélec",
+      "title": "Old and new results on the Furstenberg sets",
+      "status": "live",
+      "verified_at": "RUN-029",
+      "note": "the source of rho_star = 4.1164; its own text gives Rhin 7.616 improved by Wang-Wu to 4.11633052 for alpha = log2/log3"
+    },
+    {
+      "arxiv": "1805.00133",
+      "author": "Olivier Rozier",
+      "status": "not fetched",
+      "why": "cited as background in this list and in earlier rounds' notes; no claim in the handoff rests on it"
+    },
+    {
+      "arxiv": "2101.12747",
+      "authors": "López, Stoll",
+      "status": "not fetched",
+      "the_handoff_calls_it": "外部 criticality input，保留 caveat",
+      "note": "the ONE entry in the list that carries an explicit caveat, which is what makes the unmarked withdrawn entry a choice"
+    },
+    {
+      "cited_as": "Wang & Wu, JNT 142 (2014), irrationality measure of \\log_2 3",
+      "doi": "10.1016/j.jnt.2014.03.007",
+      "crossref_says_title": "On the irrationality measure of log 3",
+      "crossref_says_authors": ["Qiang Wu", "Lihong Wang"],
+      "status": "live",
+      "FINDING": "the misstated title from RUN-029 is carried forward",
+      "detail": "RUN-029 found the A-U.2d.3 notes render the title as log_2 3 when the paper is titled log 3. The handoff repeats it, in the standing reference list. A citation defect confined to one round's notes is a footnote; the same defect in the bootstrap bibliography is inherited by every round that starts from it."
+    }
+  ],
+  "not_arxiv_entries_in_section_25": [
+    "Denjoy-Koksma / irrational rotation (verified as applied at RUN-027)",
+    "Sturmian factor complexity p(r) = r+1 (classical)"
+  ],
+  "findings": [
+    "arXiv:2605.13886 (Niu), withdrawn 2026-05-20, appears for the FIFTH time and for the first time in a standing bibliography for future work, without a note.",
+    "the Wu-Wang title defect found at RUN-029 is carried into the bootstrap reference list.",
+    "arXiv:2111.02635 (Lagarias, The 3x+1 Problem: An Overview) is the one reference the handoff adds that no round cites, and it is accurate."
+  ]
+}

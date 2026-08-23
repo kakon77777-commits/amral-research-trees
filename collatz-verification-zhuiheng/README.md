@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->47 source items and twenty-seven runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->48 source items and twenty-eight runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -381,11 +381,35 @@ instance behind each band.
     its withdrawal notice defers to. The item-35 artifact class **does not** recur.
     Drill **20/20**, and its byte-exact restore control caught a real defect in my
     own harness after six quiet items.
-29. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+29. [`reports/RUN-030-HARD-ZETA-HANDOFF-FIDELITY.md`](./reports/RUN-030-HARD-ZETA-HANDOFF-FIDELITY.md) —
+    **132 documents reshipped 27 times without a byte of drift, and one lemma
+    compressed into a stronger one than the round proves.** Item 48 is not a
+    round: it is the handoff a *new conversation* is bootstrapped from, so it
+    asserts what the other documents say rather than asserting mathematics, and
+    an error in it is inherited by every round written afterwards. Checked for
+    fidelity instead: every number must trace to a round document, every
+    reshipped document must be byte-identical, every status disclaimer must
+    survive the compression, and the **intermediate lemmas** must be the round's
+    lemmas rather than stronger ones that imply the same conclusion. Three things
+    could have gone wrong and did not — **132** distinct markdown documents, **27**
+    of them shipped in more than one bundle and one shipped **8** times, each
+    resolving to exactly **one** hash; **13** constants all traced (10 verbatim,
+    3 as correct roundings); and all **6** required disclaimers intact. **Two
+    findings.** The handoff states the occupancy lemma as `𝒪_L ≳ √L` where the
+    round proves `(√(H²+2N) − H)/2 − 1`, which tends to `√L/√2` — so the
+    handoff's own first two lines give `κ_rot = 1/12` while its third prints the
+    round's `1/(12√2)`, contradicting each other by exactly **√2**; the
+    conclusion was copied and the step that produced it was rounded off. And the
+    **withdrawn** Niu paper appears a **fifth** time, now in the standing
+    bibliography a new conversation is told to work from, with no note — in a
+    list that annotates elsewhere. Drill **16/16**; six of its defects break a
+    *locator* rather than a comparison, because a locator that finds nothing
+    reports its subject as clean.
+30. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-30. [`code/`](./code/) — the engine, the independent reference, and the gates.
-31. [`data/gate-logs/`](./data/gate-logs/) and
+31. [`code/`](./code/) — the engine, the independent reference, and the gates.
+32. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

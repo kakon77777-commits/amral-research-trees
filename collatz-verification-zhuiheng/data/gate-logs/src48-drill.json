@@ -1,0 +1,174 @@
+{
+  "gate": "src48_handoff_fidelity.py",
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "findings": [
+      "the handoff states the occupancy lemma as `O_L >~ sqrt L`, which is the round's own bound times sqrt 2. Combined with the `Lambda >= O_L/12` the handoff also prints, that yields kappa_rot = 0.08333333333, while the handoff prints the round's correct 0.0589255651 three lines later. The conclusion was copied and the step that produces it was rounded off, so the two lines contradict each other by a factor of 1.414213562.",
+      "arXiv:2605.13886, withdrawn 2026-05-20, is listed in the standing reference list a new conversation is told to work from, with no note — occurrence 5. The list does annotate elsewhere (1 of 11 entries carry a caveat), so the omission is not a format limitation."
+    ]
+  },
+  "defects": {
+    "D1_arXiv_identifiers_are_treated_as_constants_again": {
+      "caught": true,
+      "expected_failure_named": "numbers found in no round document",
+      "reported": [
+        "the handoff prints numbers found in no round document: ['2111.02635']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D2_the_squeeze_normalises_the_haystack_only": {
+      "caught": true,
+      "expected_failure_named": "cannot find the handoff's own lemma",
+      "reported": [
+        "the occupancy comparison cannot find the handoff's own lemma in any form, so it is reading nothing"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D16_the_divisor_line_locator_normalises_one_side_only": {
+      "caught": true,
+      "expected_failure_named": "half its arithmetic is unread",
+      "reported": [
+        "the occupancy comparison cannot find the handoff's divisor line, so half its arithmetic is unread"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D3_the_reference_list_section_is_mislocated": {
+      "caught": true,
+      "expected_failure_named": "standing reference list could not be located",
+      "reported": [
+        "the standing reference list could not be located"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D4_the_file_manifest_section_is_mislocated": {
+      "caught": true,
+      "expected_failure_named": "file manifest could not be located",
+      "reported": [
+        "the handoff's file manifest could not be located"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D5_the_corpus_trace_looks_at_one_document_only": {
+      "caught": true,
+      "expected_failure_named": "numbers found in no round document",
+      "reported": [
+        "the handoff prints numbers found in no round document: ['0.03585676003404866', '0.36897897873314659']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D6_kappa_rot_closed_form_uses_the_wrong_root": {
+      "caught": true,
+      "expected_failure_named": "disagrees with its closed form",
+      "reported": [
+        "a handoff constant disagrees with its closed form: ['kappa_rot = 1/(12 sqrt 2)']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D7_sigma_star_is_the_wrong_rational": {
+      "caught": true,
+      "expected_failure_named": "disagrees with its closed form",
+      "reported": [
+        "a handoff constant disagrees with its closed form: ['sigma_star = 1/(1+theta)']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D8_a_constant_the_check_claims_to_read_is_not_in_the_handoff": {
+      "caught": true,
+      "expected_failure_named": "not in the handoff",
+      "reported": [
+        "a constant this check claims to read is not in the handoff"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D9_a_required_statement_pattern_can_no_longer_match": {
+      "caught": true,
+      "expected_failure_named": "drops required statements",
+      "reported": [
+        "the handoff drops required statements: ['disclaims proving Collatz / Terras / CASP']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D10_an_absence_check_is_made_vacuous": {
+      "caught": true,
+      "expected_failure_named": "absence check is vacuous",
+      "reported": [
+        "an absence check is vacuous: ['does not claim CASP is proved']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D11_every_reshipped_document_looks_divergent": {
+      "caught": true,
+      "expected_failure_named": "reshipped document differs between bundles",
+      "reported": [
+        "a reshipped document differs between bundles",
+        "the cross-bundle identity check did not exercise anything"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D12_only_one_bundle_is_examined": {
+      "caught": true,
+      "expected_failure_named": "did not exercise anything",
+      "reported": [
+        "the cross-bundle identity check did not exercise anything"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D13_the_occupancy_bound_is_evaluated_at_the_wrong_horizon": {
+      "caught": true,
+      "expected_failure_named": "does not tend to sqrt(L)/sqrt(2)",
+      "reported": [
+        "the round's occupancy bound does not tend to sqrt(L)/sqrt(2)"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D14_an_introduced_reference_is_no_longer_checked": {
+      "caught": true,
+      "expected_failure_named": "did not check them",
+      "reported": [
+        "the handoff introduces references no round cites and this run did not check them: ['2111.02635']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D15_the_caveat_count_is_inflated": {
+      "caught": true,
+      "kind": "robustness: the finding must SURVIVE",
+      "finding_present_at_baseline": true,
+      "finding_survived": true
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 16,
+    "caught_by_their_own_check": 16,
+    "missed": 0,
+    "robustness_properties": 1,
+    "malformed": 0,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

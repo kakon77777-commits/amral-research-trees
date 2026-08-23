@@ -1,0 +1,1269 @@
+{
+  "what": "every markdown document shipped in any Hard-Zeta bundle, with its hash and the bundles that carry it",
+  "why": "the line reships prior rounds in every bundle, so one filename drifting into two versions is a live and silent risk -- a reader takes whichever copy is nearest. This manifest makes the RUN-030 identity result re-derivable without the source folder.",
+  "generated_by": "code/src48_handoff_fidelity.py (--source), manifest by hand from the same walk",
+  "checked_on": "2026-08-23",
+  "distinct_documents": 132,
+  "documents_reshipped": 27,
+  "documents_with_more_than_one_hash": [],
+  "documents": {
+    "Faithful_Global_Quantifier_Compression_Proof_Route_v0.1.1.md": {
+      "sha256": [
+        "fe8ea2204b0a04f7e543a0e438ea45bc5c55f672913a28ae1d1e509787654333"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_I_Round_01_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d10_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "16a69b05c6892734dfa91622a95c2c3788b61bbe8feced06909ce5c4321fade5"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d10_Valuation_Class_Harmonic_Deficit_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d11_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "94b6f16a9f281655b47aaba91215628d93241d847c51cfcfddcfe76ef0c48b09"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d11_Multi_Step_Reciprocal_Transport_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d12_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "8d0d0ccb768443aa74d198784d5752cb3916471a6776707cf8eeb86c97359fb0"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d12_3Adic_Transport_Hierarchy_Closure_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d13_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "3a4a094dcb9c39336ebad785384e6eb7f2eb20c4cb83e96a4b8539b8a2ed8d61"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d13_Dense_Source_Depth_Exponent_Collision_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d14_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "837fea431b2227ad1a6196821e13b7c6574517869bfc9b0cf0def04b8329e1e9"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d14_Sparse_B_Support_Exhaustion_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d15_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "f20c93cb5e10cc8bd7fe4d7837a2debaa312caaacb2ddb792b305d3cbf113402"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d15_Suffix_Minimum_Record_Sparsity_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d16_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "663dc6db63df9253247d70389a383c78fb91b2b0a8c398c7e453dab5c394858b"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d16_Critical_Record_Gap_Transport_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d17_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "41ef5772f728c0d39b469ae7572dda030081b9d4b8743ae0db4f413f67450d7a"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d17_Small_Endpoint_Critical_Bridge_Cylinder_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d18_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "bc16a987270eaa6f2284541ab351547f3f6ae0b5cd801c8f7bb581ebbca4ed30"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d18_Double_Canonical_Critical_Cylinder_Spectral_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d19_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "bd10c915235d631e15dbe55c8c07c66e1b7d175c43c713cdf13e9b6d2c870dd8"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d19_Zero_Lift_Mechanical_Cocycle_Discrepancy_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d1_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "e68d3e3c6449fd1106f92d2024da1677fff50ff3526452d59f6c69063808e824"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d1_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d20_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "83cde71713f3e0dc8f5f580af4dc416942ef4780d405d06e6a26874697d1ce6f"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d20_Mesoscopic_Ternary_Return_Discrepancy_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d21_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "9148cca226e275975d14f347e76a96015809bab838d7eb86bae579781ab021ea"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d21_Faithful_Return_Loop_Boundary_Layer_Coupling_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d22_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "370605006b4da0e1fb1bfd16d2cb4cb9af83ab7b3b97823ba53e1ab5b8665b25"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d22_Loop_Tree_Defect_Renormalization_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d23_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "01999be6927c72e7d2b0e0e9e4b9d9acec5725718f39c0c02eb05ff2de3bb4f0"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d23_Quotient_State_Resonance_and_Defect_Carry_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d24_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "69de9b2d771bd1ee431ff900e919cefa4c2090719cbfc0c43041830b321f1dc6"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d24_Binary_Replenishment_Ternary_Reset_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d25_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "e120bc1f62bbae9453fa060351b21db6e8017f7b9e5fb78e02a984ebe3691c96"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d25_Primitive_Defect_Cylinder_Compensation_Seesaw_Discrepancy_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d26_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "7da2021faecab2547d87055b6592337d1be71c2e73535426ea60cc299e5e1bb6"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d26_Primitive_Unit_Oscillation_Critical_Slope_Synchronization_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d2_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "80b3433c693d9118d82f9fd6c13d3deea63b9711be40587085e33025a07ceeb8"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d2_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d3_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "992b7b9c8f29b7b7354b34b84e53b2704e1cdb43f4f503ec496be272eb1622bc"
+      ],
+      "bundles": [
+        "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d3_bundle.zip"
+      ],
+      "times_shipped": 2
+    },
+    "Hard_Zeta_AU2d4_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "aa1408903ce07d50b6cf3bcdcdbc663dc0d05dd48a3c7df08d89ff2707568abd"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d4_Renewal_Congestion_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d5_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "f479645ffa107ca5babe29b6773de7520bd38cfa0b76eee11085c22140aa9cff"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d5_Annular_Farey_Residue_Coupling_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d6_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "5e71f857e27efb61a544983875c0391870586eb0f6bc28bb0cc79a1f7c960af0"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d6_Farey_Order_Entropy_Collision_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d7_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "a8ed9510a6d7c44987afec10ad46ca1afaa2b9f2a4925e819e721be3f1e7c806"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d7_Plateau_Reset_Quantization_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d8_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "0b612abc583face23b0a880a251e26c35f6ae68e8d7a526191db951c98fcf9ec"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d8_Quadratic_Low_Source_Corridor_Saturation_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d9_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "66426ae6b9b97867d9e3e3eb89d11e36c39cd7dfd84ff8f1557fa16d6cca07c0"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d9_Orbit_Packing_Deficit_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2d_Literature_Notes_v0.1.md": {
+      "sha256": [
+        "a5ef713963d6c1e4e41c7ee3235e8193d06ec8e59817a97fcd5c9822257afc37"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_AU2e2_Terminology_Corrigendum_v0.1.1.md": {
+      "sha256": [
+        "89d2b8a6c9b569d4cac16b4a5b8fd570f18fa599b9ebed3b3a1c44854b47238e"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2e3_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e4_bundle.zip"
+      ],
+      "times_shipped": 2
+    },
+    "Hard_Zeta_A_Line_Closure_v1.0.md": {
+      "sha256": [
+        "c1d9b20e115588e2f619933eaa4b51f98fdc0e0ef862e45584cd2f7d3f9c40c3"
+      ],
+      "bundles": [
+        "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip",
+        "Hard_Zeta_Phase_II_Round_AU1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2a_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2b_bundle.zip"
+      ],
+      "times_shipped": 4
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v0.9_AU1.md": {
+      "sha256": [
+        "81bf8294fd79261a36c678f5efba3544aec81f51c7beca92c6418d1948b27407"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU1_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v1.0_AU2a.md": {
+      "sha256": [
+        "06fefd2256a53a5d56b001f11cbbe6d0ca8b8caad98789e607c372d606131f08"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2a_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v1.1_AU2b.md": {
+      "sha256": [
+        "71cff355e2c6314b83df7cdffc1d4682d524ade84ffd1353fc211c32e0fd37ab"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2b_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v1.2_AU2b1.md": {
+      "sha256": [
+        "db4701e8765d706d4b48adfca2879e51818dfb9180f37516e9e75bf68cc088df"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2b1_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v1.3_AU2b2.md": {
+      "sha256": [
+        "3c1f0bbf2e1a85837ba72fcb6c980f605357caac5b4ca1cfc26e4477eda80077"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v1.4_AU2b3.md": {
+      "sha256": [
+        "a849161e5bdad70687347817d3a7b5946dbffbce5af6358953c0b2702b7eba8e"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2b3_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v1.5_AU2e.md": {
+      "sha256": [
+        "7c8b0637c3c1fc2f4d45c650c0e2d06f3d3bd1f7baccfdaca2c3100ec44b86cf"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2e_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v1.6_AU2e1.md": {
+      "sha256": [
+        "7792b0df30d7c47a10bdda578d4d06daf3c88a624c5fc0e6d2f6b0c434b42035"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2e1_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v1.7_AU2e2.md": {
+      "sha256": [
+        "59975802d08be06ccdddf60d74eff3188c929712bb4d1a193a7d3c4b28be29e9"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2e2_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v1.8_AU2e3.md": {
+      "sha256": [
+        "0a47aeec232a6dec7b051933d3ef0f023682c188c1eb9a33ef833cb3e9667fda"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2e3_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v1.9_AU2e4.md": {
+      "sha256": [
+        "59fd4dd8523e292c293655d051e8283cbdc62f59dd67fea46ebc9a20654aab7f"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2e4_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.0_AU2d.md": {
+      "sha256": [
+        "28f58ed9344f0c28c1136411ab7abdf1706c72ab47dab632edd1e1f8ba7218c3"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.10_AU2d10.md": {
+      "sha256": [
+        "19b5f6293d03504c2b1310123ca49dd6fe34cbeedb42c2db06e9a0dcac4dc085"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d10_Valuation_Class_Harmonic_Deficit_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.11_AU2d11.md": {
+      "sha256": [
+        "aa7db3287699b3b43cd884c29586d1f6fdd7e0bf83ae5e52f03d190aaae503e0"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d11_Multi_Step_Reciprocal_Transport_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.12_AU2d12.md": {
+      "sha256": [
+        "4f424aecfc733cbbc6881724918d689360375f1436dbf66a86bae131b101d32a"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d12_3Adic_Transport_Hierarchy_Closure_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.13_AU2d13.md": {
+      "sha256": [
+        "d13d78ee5994fa5872b441e52c5f28bbdf354e3a89979adb24bcd4c0fffa662c"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d13_Dense_Source_Depth_Exponent_Collision_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.14_AU2d14.md": {
+      "sha256": [
+        "7d2ae3b78d7ca4f7c216a9f15fbb3aec98df24e1ece4d880910a8a44f840a834"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d14_Sparse_B_Support_Exhaustion_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.15_AU2d15.md": {
+      "sha256": [
+        "08917bec8c18ef6151c76293ab0755363126647f6d68429d318347a7f42d72e3"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d15_Suffix_Minimum_Record_Sparsity_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.16_AU2d16.md": {
+      "sha256": [
+        "0549f6e356d0396c09ea4b141dbd4a61792f6643a06e79419da20032a2e7201a"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d16_Critical_Record_Gap_Transport_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.17_AU2d17.md": {
+      "sha256": [
+        "01664a19e268ddf4a7840f4a676c185ab429ff6181989633fcd37bfb4f66b8ab"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d17_Small_Endpoint_Critical_Bridge_Cylinder_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.18_AU2d18.md": {
+      "sha256": [
+        "781452c8c4cf3a7b1aebce224e3d69fac75dabd1aa99b714b07e517723875f30"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d18_Double_Canonical_Critical_Cylinder_Spectral_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.19_AU2d19.md": {
+      "sha256": [
+        "83b00ff0b10058e54fd1840981d52f341a55e0f9058eaede8c52c0f373133576"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d19_Zero_Lift_Mechanical_Cocycle_Discrepancy_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.1_AU2d1.md": {
+      "sha256": [
+        "a227cff34866198e3d71b2f90e58a6bb4b4de5e67072c804c4435d2c34ca9a94"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d1_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.20_AU2d20.md": {
+      "sha256": [
+        "06d16ae1f3a2acb82966636096fdae52c94cd1de1c2352dbbc6179c08ae5593b"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d20_Mesoscopic_Ternary_Return_Discrepancy_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.21_AU2d21.md": {
+      "sha256": [
+        "c5c72a1a5445b941322a170760c233152eae9eb62cc2d16fea2b4214ae89010c"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d21_Faithful_Return_Loop_Boundary_Layer_Coupling_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.22_AU2d22.md": {
+      "sha256": [
+        "b6ceb7d282136905d9ac2894829bac112322f2fb3ad6184e782908386512379d"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d22_Loop_Tree_Defect_Renormalization_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.23_AU2d23.md": {
+      "sha256": [
+        "231a77a105b865bba1ff77aea06aa900c52bf4b5415440c8d1b19faebde25b4f"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d23_Quotient_State_Resonance_and_Defect_Carry_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.24_AU2d24.md": {
+      "sha256": [
+        "c454274dcebd897d33a88efff4a206481d7a0cd39ad354b3651cfae64af8b528"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d24_Binary_Replenishment_Ternary_Reset_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.25_AU2d25.md": {
+      "sha256": [
+        "e7a4941282ce62d615e3af0f60a7a018d68cbc098550c90ca6db602734bbe5d3"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d25_Primitive_Defect_Cylinder_Compensation_Seesaw_Discrepancy_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.26_AU2d26.md": {
+      "sha256": [
+        "63c039a12050a3ceb5fe3a4ad93fbe2aadf4ebad31630696d25a12cb03909f16"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d26_Primitive_Unit_Oscillation_Critical_Slope_Synchronization_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.2_AU2d2.md": {
+      "sha256": [
+        "b8b6c7638a64b313c8c62b310551578ac9229f9b6eb70ad1106cd77348990727"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d2_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.3_AU2d3.md": {
+      "sha256": [
+        "54d96b13a65e6afe92fcc0508d27d366fd245deec09b0e9088ae7f3277c10bab"
+      ],
+      "bundles": [
+        "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d3_bundle.zip"
+      ],
+      "times_shipped": 2
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.4_AU2d4.md": {
+      "sha256": [
+        "6717d819830da2a533d2101911be08aadbe2fd219725aa6232251caa1a78cf05"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d4_Renewal_Congestion_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.5_AU2d5.md": {
+      "sha256": [
+        "138c04991b258114fd61f097b1d52252d7c099e1faa80f30bd041a565520f4af"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d5_Annular_Farey_Residue_Coupling_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.6_AU2d6.md": {
+      "sha256": [
+        "bc78aff6e4ef3725b6805c6ed3fa440920287f6a0747b2d75aaada7a4d5627c2"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d6_Farey_Order_Entropy_Collision_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.7_AU2d7.md": {
+      "sha256": [
+        "a40bb0e9ed453750fb202cfdc216221ba94d915ce539a483b4ce95d5f422ddcd"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d7_Plateau_Reset_Quantization_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.8_AU2d8.md": {
+      "sha256": [
+        "e20bc77a7f18d7a506dcf0c3cde968a38e96e335db7b5a44dc92292d70d63814"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d8_Quadratic_Low_Source_Corridor_Saturation_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_A_Line_ROUTE_MAP_v2.9_AU2d9.md": {
+      "sha256": [
+        "7f028ab1a2ad063aa3e8a67c8297edbea602aa0deff0a5c4064ffaf29add398f"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d9_Orbit_Packing_Deficit_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.md": {
+      "sha256": [
+        "3167ea151f248d3a00601bf84a787e9765459c318c8de0c13e02bfbe559dcdfa"
+      ],
+      "bundles": [
+        "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Collatz_New_Chat_Start_Prompt_v1.0.md": {
+      "sha256": [
+        "e22988fb04ede75d5989b3d5b69dbde5ab8dccf937a882938599beada79a4ec8"
+      ],
+      "bundles": [
+        "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU1_Critical_Occupation_Anchor_Erasure_v0.1.md": {
+      "sha256": [
+        "bae02e8240b8502c96654ee97338b350758a4fb5d26a9ca7fc646e99dd2a7c41"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2a_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2b1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2b_bundle.zip"
+      ],
+      "times_shipped": 5
+    },
+    "Hard_Zeta_Phase_II_Round_AU2a_Lift_Occupation_Coupling_v0.1.md": {
+      "sha256": [
+        "3d87012c3914408df30a350e575af529c917d6a136d2bf902c62e18241fbf3c1"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2a_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2b1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2b_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d_bundle.zip"
+      ],
+      "times_shipped": 5
+    },
+    "Hard_Zeta_Phase_II_Round_AU2b1_Sharp_Packing_Entropy_Threshold_v0.1.md": {
+      "sha256": [
+        "dd11f45389d6f6316d6515d067585ec19b5c029262b7e7379b9383c7110f5edb"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2b1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2b3_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e_bundle.zip"
+      ],
+      "times_shipped": 4
+    },
+    "Hard_Zeta_Phase_II_Round_AU2b2_Queue_Entropy_Second_Order_Barrier_v0.1.1.md": {
+      "sha256": [
+        "5502353dfe9672a4051f42a5af85d8295b54bcba9036dc7411ac3986a29ad0e3"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2b3_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e_bundle.zip"
+      ],
+      "times_shipped": 2
+    },
+    "Hard_Zeta_Phase_II_Round_AU2b2_Queue_Entropy_Second_Order_Barrier_v0.1.md": {
+      "sha256": [
+        "e29ec917add5c37cf023574b8e4bc8ca30bf58f6d6448aa08011120a4c9126f4"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2b3_Queue_Prefactor_Saturation_v0.1.md": {
+      "sha256": [
+        "f225313e86133c4d41705fcf9577d34840769900e2a79eb5b2cb4a26776dee00"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2b3_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e_bundle.zip"
+      ],
+      "times_shipped": 3
+    },
+    "Hard_Zeta_Phase_II_Round_AU2b_Sparse_Lift_Rigidity_v0.1.md": {
+      "sha256": [
+        "9567f7bff9953ce1d0be34511392dc88c2bade9176df8eb69e419391e975da10"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2b1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2b_bundle.zip"
+      ],
+      "times_shipped": 3
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d10_Valuation_Class_Harmonic_Deficit_Rigidity_v0.1.md": {
+      "sha256": [
+        "e8903511fccb0c84639c6010ca34d05ba22b9350a4d66f68c947ec9a68e17349"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d10_Valuation_Class_Harmonic_Deficit_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d11_Multi_Step_Reciprocal_Transport_Rigidity_v0.1.md": {
+      "sha256": [
+        "8c564245206c71191e6fdecd3af947289488e42fb413d0992268ca6f69f50841"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d11_Multi_Step_Reciprocal_Transport_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d12_3Adic_Transport_Hierarchy_Closure_v0.1.md": {
+      "sha256": [
+        "ab9efb235fc65ab8c998bed5dce7b30efca5c84a70afe2bb2bf08751a1a68b5a"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d12_3Adic_Transport_Hierarchy_Closure_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d13_Dense_Source_Depth_Exponent_Collision_v0.1.md": {
+      "sha256": [
+        "71b2a26b07ffedd8ace851af85c7a574e396208e0d1af85f0700e3e318dfa4b7"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d13_Dense_Source_Depth_Exponent_Collision_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d14_Sparse_B_Support_Exhaustion_v0.1.md": {
+      "sha256": [
+        "ecfca9dec90c54a3a64de637d804174fbf049ae7848e3110007ecf4bbadce918"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d14_Sparse_B_Support_Exhaustion_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d15_Suffix_Minimum_Record_Sparsity_Rigidity_v0.1.md": {
+      "sha256": [
+        "77003b17558bc24e6d7c405729f931ba4281453ee99ff99fe008b73d818cdc45"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d15_Suffix_Minimum_Record_Sparsity_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d16_Critical_Record_Gap_Transport_Rigidity_v0.1.md": {
+      "sha256": [
+        "f274b1a61a3a7ecfc9abedecd01fd336473590fb761f8c3fbc06e614f7bd3d0a"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d16_Critical_Record_Gap_Transport_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d17_Small_Endpoint_Critical_Bridge_Cylinder_Rigidity_v0.1.md": {
+      "sha256": [
+        "a01c202bdaa9acd08aad1a730a632c311c0926825ad0eba0f7bdc4b241dea910"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d17_Small_Endpoint_Critical_Bridge_Cylinder_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d18_Double_Canonical_Critical_Cylinder_Spectral_Rigidity_v0.1.md": {
+      "sha256": [
+        "99c51a2aaf448e41fd74b71dc3d94f45199e9d0a2c0140c586fae1b6d8245f7d"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d18_Double_Canonical_Critical_Cylinder_Spectral_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d19_Zero_Lift_Mechanical_Cocycle_Discrepancy_Rigidity_v0.1.md": {
+      "sha256": [
+        "d3f736f05c3a5f835737e4e01e48c6f2fc06a82ed6cef562db4b124c2da8d475"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d19_Zero_Lift_Mechanical_Cocycle_Discrepancy_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d1_Bi_Exact_Rotation_Correction_Rigidity_v0.1.md": {
+      "sha256": [
+        "a4a3b9ee73eae6d878b5ae65fe30a1743f5a5a3a387ac7101e9b41d7e4c016f4"
+      ],
+      "bundles": [
+        "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d2_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d3_bundle.zip"
+      ],
+      "times_shipped": 4
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d20_Mesoscopic_Ternary_Return_Discrepancy_Rigidity_v0.1.md": {
+      "sha256": [
+        "058de7c62301d45348d0896022e884db23c3a24ad97e00a27868788b32c1b9f4"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d20_Mesoscopic_Ternary_Return_Discrepancy_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d21_Faithful_Return_Loop_Boundary_Layer_Coupling_Rigidity_v0.1.md": {
+      "sha256": [
+        "37e1c93ba7190ef018ae97150e7f9abc94397376be6bd03f9e6eb4b09b23a3bd"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d21_Faithful_Return_Loop_Boundary_Layer_Coupling_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d22_Loop_Tree_Defect_Renormalization_Rigidity_v0.1.md": {
+      "sha256": [
+        "0362869107c9519c4937403e2cbaee97b329314787161c4f160ca4ceb20b3e6f"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d22_Loop_Tree_Defect_Renormalization_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d23_Quotient_State_Resonance_and_Defect_Carry_Rigidity_v0.1.md": {
+      "sha256": [
+        "5c9433096f1edfde87c7ccfa87be743d15e254f8e9ed7606378ca7d94491597a"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d23_Quotient_State_Resonance_and_Defect_Carry_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d24_Binary_Replenishment_Ternary_Reset_Rigidity_v0.1.md": {
+      "sha256": [
+        "dbe145b912ba6b8a07a7d08636162bb6daf6c6dd10ef8aaf64583a3d99510eb5"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d24_Binary_Replenishment_Ternary_Reset_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d25_Primitive_Defect_Cylinder_Compensation_Seesaw_Discrepancy_Rigidity_v0.1.md": {
+      "sha256": [
+        "f696c1c296768bdf98817182c3cca51ffe86cd96ba2ce51f5af56f281b6ab01d"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d25_Primitive_Defect_Cylinder_Compensation_Seesaw_Discrepancy_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d26_Primitive_Unit_Oscillation_Critical_Slope_Synchronization_Rigidity_v0.1.md": {
+      "sha256": [
+        "b6537aba3a40da634d4540e3470a80aae3eee7a07e9fed08885716465a39732b"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d26_Primitive_Unit_Oscillation_Critical_Slope_Synchronization_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d2_Rotation_Envelope_Attainability_v0.1.md": {
+      "sha256": [
+        "ae21abf7439b7ca0b6a520dfbc1e2787483b8ad737a6e6f4f6c00efc49ba44ed"
+      ],
+      "bundles": [
+        "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d2_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d3_bundle.zip"
+      ],
+      "times_shipped": 3
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d3_Second_Order_Survival_Closure_v0.1.md": {
+      "sha256": [
+        "adac8107cb37000f543f1245c06c09e07dd42f13180af8c14f977d5f2dc6852c"
+      ],
+      "bundles": [
+        "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d3_bundle.zip"
+      ],
+      "times_shipped": 2
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d4_Renewal_Congestion_Rigidity_v0.1.md": {
+      "sha256": [
+        "e98a49ca26d8c9afcf10720ff5aca57925d88127e4ee05b3276b4d2e01e8d9d6"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d4_Renewal_Congestion_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d5_Annular_Farey_Residue_Coupling_v0.1.md": {
+      "sha256": [
+        "e53e01eabeb5a65378e8991465c07c7c2108f3ce7e643cc504e23875fc99649e"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d5_Annular_Farey_Residue_Coupling_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d6_Farey_Order_Entropy_Collision_v0.1.md": {
+      "sha256": [
+        "2a8369ba8c82ae8540f0aa80d635f76cf34bb5761225a9e8a8ac08e5f44a4e27"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d6_Farey_Order_Entropy_Collision_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d7_Plateau_Reset_Quantization_Rigidity_v0.1.md": {
+      "sha256": [
+        "2afbcf1301f058e911345bee417518959be4198d94c5d8fb7d27a908f227c6c0"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d7_Plateau_Reset_Quantization_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d8_Quadratic_Low_Source_Corridor_Saturation_v0.1.md": {
+      "sha256": [
+        "8e388147488f36f6d2debbf6b1c0a79c99796558408aab99f32d92e5f41a298d"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d8_Quadratic_Low_Source_Corridor_Saturation_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d9_Orbit_Packing_Deficit_Rigidity_v0.1.md": {
+      "sha256": [
+        "c230fb7e37553bea32c7417d794b33f6384bec85a97bafd42ab8110cfc5ac0fc"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d9_Orbit_Packing_Deficit_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_II_Round_AU2d_Transducer_Rationality_Source_Freeze_v0.1.md": {
+      "sha256": [
+        "2225885a245c8e48b1e69e8286980625770434bebb3b4ed59060c30e15ed98ab"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d_bundle.zip"
+      ],
+      "times_shipped": 2
+    },
+    "Hard_Zeta_Phase_II_Round_AU2e1_Reset_Block_Arithmetic_v0.1.md": {
+      "sha256": [
+        "dbf9361421d2d68a206406cb52599f8956e208fbefaad1b3b6ebda395a0ae363"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2e1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e2_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e3_bundle.zip"
+      ],
+      "times_shipped": 3
+    },
+    "Hard_Zeta_Phase_II_Round_AU2e2_Reset_Survival_AB_Atomic_Multiplication_v0.1.md": {
+      "sha256": [
+        "b4e68a94a0137c8717decf699bcadf622775f929f8824b03bf7de1d8de5c5a95"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2e2_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e3_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e4_bundle.zip"
+      ],
+      "times_shipped": 3
+    },
+    "Hard_Zeta_Phase_II_Round_AU2e3_Infinite_Support_Degeneration_v0.1.md": {
+      "sha256": [
+        "28ac6a8549d92e676b9273078fefd17f46325f86acffcf694760920794504852"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e3_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e4_bundle.zip"
+      ],
+      "times_shipped": 3
+    },
+    "Hard_Zeta_Phase_II_Round_AU2e4_Renewal_Diophantine_Rigidity_v0.1.md": {
+      "sha256": [
+        "a3c63c7877cf3a376142cd2d17fb9ad455c893c1760821575cd9d3515004cf4c"
+      ],
+      "bundles": [
+        "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d2_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d3_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2d_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e4_bundle.zip"
+      ],
+      "times_shipped": 6
+    },
+    "Hard_Zeta_Phase_II_Round_AU2e_Multiscale_Return_Arithmetic_v0.1.md": {
+      "sha256": [
+        "17e980616e1c61d57e20736b517a14e6e74c6192ccf7ae780b1797cc05c1a0dc"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2e1_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e2_bundle.zip",
+        "Hard_Zeta_Phase_II_Round_AU2e_bundle.zip"
+      ],
+      "times_shipped": 3
+    },
+    "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md": {
+      "sha256": [
+        "47efa6e5b26b149c63fd1791a40c7fb47333ad4f3007759ab24d7c368658b358"
+      ],
+      "bundles": [
+        "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip",
+        "Hard_Zeta_Phase_I_Round_01_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_02_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A1_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A2_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A3_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A4_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A_bundle.zip"
+      ],
+      "times_shipped": 8
+    },
+    "Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md": {
+      "sha256": [
+        "6a78a5b3fac0428e1787f372e53bca39a5f0ae02b47819b4a8ccbe512a534d47"
+      ],
+      "bundles": [
+        "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip",
+        "Hard_Zeta_Phase_I_Round_02_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A1_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A2_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A3_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A4_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A_bundle.zip"
+      ],
+      "times_shipped": 7
+    },
+    "Hard_Zeta_Phase_I_Round_03A1_Small_Anchor_Event_Arithmetic_v0.1.1.md": {
+      "sha256": [
+        "f6c2650911d6e1b2588ff304475d3afb52fb09002b58b16d7abf29f7984e985e"
+      ],
+      "bundles": [
+        "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip",
+        "Hard_Zeta_Phase_I_Round_03A2_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A3_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A4_bundle.zip"
+      ],
+      "times_shipped": 4
+    },
+    "Hard_Zeta_Phase_I_Round_03A1_Small_Anchor_Event_Arithmetic_v0.1.md": {
+      "sha256": [
+        "cd464ea46802e3ef18b6e2787ea4943a7500ce2a0fc2908a612d35cfbba59b99"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_I_Round_03A1_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_Phase_I_Round_03A2_2_3_Infinity_Anchor_Compatibility_v0.1.md": {
+      "sha256": [
+        "831711dceab98ef51c33d60f2acb7958a75778a100311c4b62ead9fbfaf22c6e"
+      ],
+      "bundles": [
+        "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip",
+        "Hard_Zeta_Phase_I_Round_03A2_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A3_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A4_bundle.zip"
+      ],
+      "times_shipped": 4
+    },
+    "Hard_Zeta_Phase_I_Round_03A3_Endpoint_Parity_Dynamics_v0.1.md": {
+      "sha256": [
+        "8b9adfbb3931ae11453b1c1a604af962e7e8102b3b9b81058b0f32dae2d363b2"
+      ],
+      "bundles": [
+        "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip",
+        "Hard_Zeta_Phase_I_Round_03A3_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A4_bundle.zip"
+      ],
+      "times_shipped": 3
+    },
+    "Hard_Zeta_Phase_I_Round_03A4_Spine_Valuation_Rigidity_v0.1.md": {
+      "sha256": [
+        "2b70d28af3a10af2219854ec3aef5cd7e5e05cb2b5e5d52c2db8c08b8bf8c72d"
+      ],
+      "bundles": [
+        "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip",
+        "Hard_Zeta_Phase_I_Round_03A4_bundle.zip"
+      ],
+      "times_shipped": 2
+    },
+    "Hard_Zeta_Phase_I_Round_03A5_Exceptional_Occupancy_Rigidity_v0.1.md": {
+      "sha256": [
+        "d77daed42c0fd5a2efb7e07b4749fd948089644ec017ef8d99a54fb66d9cf87b"
+      ],
+      "bundles": [
+        "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip",
+        "Hard_Zeta_Phase_II_Round_AU1_bundle.zip"
+      ],
+      "times_shipped": 2
+    },
+    "Hard_Zeta_Phase_I_Round_03A_Coefficient_Frontier_v0.1.md": {
+      "sha256": [
+        "8f73e9642a575dfdd37ad7c8addf9cf8cf7e887b6d6739b769a771344c493860"
+      ],
+      "bundles": [
+        "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip",
+        "Hard_Zeta_Phase_I_Round_03A1_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A2_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A3_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A4_bundle.zip",
+        "Hard_Zeta_Phase_I_Round_03A_bundle.zip"
+      ],
+      "times_shipped": 6
+    },
+    "Hard_Zeta_ROUTE_MAP_v0.2.md": {
+      "sha256": [
+        "963aa2dd1631c3a1a6e882c4bec65b522e8d4fba7967317e9ae013cfe7052bc6"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_I_Round_02_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_ROUTE_MAP_v0.3.md": {
+      "sha256": [
+        "e3f6fe0f419b60ee7504b0fc2def643e53598cf79e40e6c5e900f313899e8866"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_I_Round_03A_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_ROUTE_MAP_v0.4.md": {
+      "sha256": [
+        "9b3898df24ee266fec84e7b20574ab615649f55a53fe2ee4a2fa2e50f04b722b"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_I_Round_03A1_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_ROUTE_MAP_v0.5.md": {
+      "sha256": [
+        "68ea000be4d032fba6b4426ae6038a7660050d9e371134f769a604113eb7becc"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_I_Round_03A2_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_ROUTE_MAP_v0.6.md": {
+      "sha256": [
+        "8eba0ae409c04f111307bae6514c9fc4c849eaba42286346fda59cb5702c84f9"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_I_Round_03A3_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_ROUTE_MAP_v0.7.md": {
+      "sha256": [
+        "fdb237d62dc784b9d65fc8e5f169e36cd05be2fecf05c6d2cadc0dbc0d7f6d6d"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_I_Round_03A4_bundle.zip"
+      ],
+      "times_shipped": 1
+    },
+    "Hard_Zeta_ROUTE_MAP_v0.8_A_CLOSED.md": {
+      "sha256": [
+        "fb7b4258688559b6cead40ef69f7464a56ba63ef0345e4efa451d149b6c650f8"
+      ],
+      "bundles": [
+        "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip"
+      ],
+      "times_shipped": 1
+    },
+    "PROVENANCE_REPAIR_AU2d26.md": {
+      "sha256": [
+        "778c63be4ef38dce4cdc2bcfd411254a34c16712e33af3d6997dc87b7ed83303"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d26_Primitive_Unit_Oscillation_Critical_Slope_Synchronization_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "README.md": {
+      "sha256": [
+        "dcb297b37dc4deb53b6eeed716d64136435dfe0debb8dfd5eafd4e60795f1fa6"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d7_Plateau_Reset_Quantization_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "README_AU2d16.md": {
+      "sha256": [
+        "b8a98c06138aca89a4708f105e7153e547b3664fc1c93f0d8b2e4a636133d537"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d16_Critical_Record_Gap_Transport_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "README_AU2d17.md": {
+      "sha256": [
+        "959961b9387041d333bdb8e4a4924370d3100a3519a9faa22ad6607bb0bc53f3"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d17_Small_Endpoint_Critical_Bridge_Cylinder_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "README_AU2d4_bundle.md": {
+      "sha256": [
+        "fb28c0779d0476c45ea8c060ed054a5b197c80f9166d0940ec09e34f47a629d3"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d4_Renewal_Congestion_Rigidity_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "README_AU2d5_bundle.md": {
+      "sha256": [
+        "bccd85a1f3ee085f60426832835c7a7abbe9a23c0a24dbe3471cada20c5c7453"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d5_Annular_Farey_Residue_Coupling_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    },
+    "README_AU2d6_bundle.md": {
+      "sha256": [
+        "cea9ea28aa5a292e50bc3643efc2a5dfcf4e9ea8a83699860fa8bec3884616f8"
+      ],
+      "bundles": [
+        "Hard_Zeta_Phase_II_Round_AU2d6_Farey_Order_Entropy_Collision_bundle_v0.1.zip"
+      ],
+      "times_shipped": 1
+    }
+  }
+}
