@@ -1,0 +1,161 @@
+{
+  "gate": "src49_archive_integrity.py",
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "findings": [
+      "the shipped `SHA256SUMS.txt` verifies every one of its 16 entries and covers the wrong half. It lists the third-party PDFs, which cannot change; between the two shipped versions of the same pack 3 files differ (notes/04_Reconstructing_68_185_Ceiling.md, scripts/ceiling_law256_constants.py, README.md) and the manifest covers **none** of them — it is byte-identical across the two versions (True). An integrity manifest that only ever certifies the immutable files is a checksum on the part nobody would doubt.",
+      "across the packs that ship a manifest, 16 files are present and uncovered, including the scripts and notes: scripts/ceiling_law256_constants.py, scripts/reproduce_constants.py, sources.json.",
+      "a second pack nests its own predecessor 9 levels deep, and **no level ships a manifest at all** — 83 files reachable only by opening every one of them in turn.",
+      "the archive omits 1 source item(s) older than itself: Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip, by 33 seconds.",
+      "50.0% of the archive by uncompressed bytes is `CPL_` material that exists nowhere else in the source folder — 3 entries an item-by-item sweep would never have opened."
+    ]
+  },
+  "defects": {
+    "D1_entries_are_matched_against_the_wrong_recorded_item": {
+      "caught": true,
+      "expected_failure_named": "has drifted from the standalone item",
+      "reported": [
+        "an archive entry has drifted from the standalone item: ['Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md', 'Collatz_OT_Series_Paper_01_v0.1_bundle.zip', 'Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md', 'Collatz_OT_Series_Papers_01_02_v0.2_bundle.zip', 'Collatz_OT_Series_Papers_01_03_v0.3_bundle.zip', 'Collatz_OT_Series_Papers_01_04_v0.4_bundle.zip', 'Collatz_OT_Series_Papers_01_05_v0.5_bundle.zip', 'Collatz_OT_Series_Papers_01_06_v0.6_bundle.zip', 'Collatz_OT_Series_Papers_01_07_v0.7_bundle.zip', 'Collatz_OT_Series_Papers_01_08_v0.8_bundle.zip', 'Faithful_Global_Quantifier_Compression_Proof_Route_v0.1.1.md', 'Faithful_Global_Quantifier_Compression_Proof_Route_v0.1_bundle.zip', 'NeoK_Crypto_Semiotics_Theory_Compiler_v0.8.zip', 'NeoK_Crypto_Semiotics_Theory_Compiler_v0.9.zip', 'collatz_operation_translation_finite_verification_prototype.zip', 'collatz_operation_translation_v3_threshold_bundle.zip', 'collatz_ot_v3_threshold_benchmark.csv', 'dimension_aware_log_physics_stress_bundle.zip', 'finite_collatz_additive_coordinate_mvp_bundle.zip']"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D2_the_on_disk_comparison_is_dropped": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green",
+      "gate_still_green": true,
+      "failures_seen": []
+    },
+    "D3_the_walk_never_descends": {
+      "caught": true,
+      "expected_failure_named": "recursive walk did not descend",
+      "reported": [
+        "the recursive walk did not descend, so it read nothing"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D4_every_nested_archive_looks_unreadable": {
+      "caught": true,
+      "expected_failure_named": "could not be opened",
+      "reported": [
+        "a nested archive could not be opened: [{'entry': '<archive>', 'why': 'not a readable zip'}]",
+        "the recursive walk did not descend, so it read nothing"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D5_the_depth_limit_stops_the_walk_immediately": {
+      "caught": true,
+      "expected_failure_named": "could not be opened",
+      "reported": [
+        "a nested archive could not be opened: [{'entry': 'CPL_Claude_Research_Pack_v11_2026-08-11/CPL_Claude_Research_Pack_v10_2026-08-11.zip', 'why': 'deeper than MAX_DEPTH'}]",
+        "the recursive walk did not descend, so it read nothing"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D6_the_verification_hashes_with_the_wrong_function": {
+      "caught": true,
+      "expected_failure_named": "does not match its file",
+      "reported": [
+        "an archive entry has drifted from the standalone item: ['Collatz_OT_Series_INDEX_v0.1.md', 'Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md', 'Collatz_OT_Series_Paper_01_v0.1_bundle.zip', 'Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md', 'Collatz_OT_Series_Papers_01_02_v0.2_bundle.zip', 'Collatz_OT_Series_Papers_01_03_v0.3_bundle.zip', 'Collatz_OT_Series_Papers_01_04_v0.4_bundle.zip', 'Collatz_OT_Series_Papers_01_05_v0.5_bundle.zip', 'Collatz_OT_Series_Papers_01_06_v0.6_bundle.zip', 'Collatz_OT_Series_Papers_01_07_v0.7_bundle.zip', 'Collatz_OT_Series_Papers_01_08_v0.8_bundle.zip', 'Faithful_Global_Quantifier_Compression_Proof_Route_v0.1.1.md', 'Faithful_Global_Quantifier_Compression_Proof_Route_v0.1_bundle.zip', 'Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip', 'Hard_Zeta_B_Line_Handoff_v0.1.md', 'Hard_Zeta_Phase_II_Round_AU1_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2a_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2b1_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2b2_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2b3_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2b_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2d1_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2d2_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2d3_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2d_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2e1_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2e2_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2e3_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2e4_bundle.zip', 'Hard_Zeta_Phase_II_Round_AU2e_bundle.zip', 'Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md', 'Hard_Zeta_Phase_I_Round_01_bundle.zip', 'Hard_Zeta_Phase_I_Round_02_Atomic_Hazard_Coefficient_Correction_v0.1.md', 'Hard_Zeta_Phase_I_Round_02_bundle.zip', 'Hard_Zeta_Phase_I_Round_03A1_bundle.zip', 'Hard_Zeta_Phase_I_Round_03A2_bundle.zip', 'Hard_Zeta_Phase_I_Round_03A3_bundle.zip', 'Hard_Zeta_Phase_I_Round_03A4_bundle.zip', 'Hard_Zeta_Phase_I_Round_03A_bundle.zip', 'Hard_Zeta_ROUTE_MAP_v0.2.md', 'NeoK_Crypto_Semiotics_Theory_Compiler_v0.8.zip', 'NeoK_Crypto_Semiotics_Theory_Compiler_v0.9.zip', 'collatz_operation_translation_finite_verification_prototype.zip', 'collatz_operation_translation_v3_threshold_bundle.zip', 'collatz_ot_v3_threshold_benchmark.csv', 'dimension_aware_log_physics_stress_bundle.zip', 'finite_collatz_additive_coordinate_mvp_bundle.zip']",
+        "too few entries were compared against the source folder for this to be a comparison",
+        "a shipped checksum does not match its file",
+        "no shipped manifest was verified, so that check read nothing"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D7_the_manifest_columns_are_read_in_the_wrong_order": {
+      "caught": true,
+      "expected_failure_named": "lists a file the pack does not contain",
+      "reported": [
+        "no shipped manifest was verified, so that check read nothing",
+        "a shipped manifest lists a file the pack does not contain"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D8_no_pack_manifest_is_read_at_all": {
+      "caught": true,
+      "expected_failure_named": "no shipped manifest was verified",
+      "reported": [
+        "no shipped manifest was verified, so that check read nothing"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D9_the_two_pack_versions_are_the_same_pack": {
+      "caught": true,
+      "expected_failure_named": "indistinguishable, so the coverage question",
+      "reported": [
+        "the two pack versions are indistinguishable, so the coverage question was never asked"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D10_the_version_chain_is_not_followed": {
+      "caught": true,
+      "expected_failure_named": "version chain was not followed",
+      "reported": [
+        "the version chain was not followed"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D11_the_composition_prefix_matches_nothing": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green",
+      "gate_still_green": true,
+      "failures_seen": []
+    },
+    "D12_the_composition_prefix_is_never_matched": {
+      "caught": true,
+      "expected_failure_named": "matched no entries",
+      "reported": [
+        "the composition check matched no entries, so its share is a statement about nothing"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D13_the_coverage_set_is_built_from_the_wrong_side": {
+      "caught": true,
+      "expected_failure_named": "not looking at the archive's own contents",
+      "reported": [
+        "most of the items the coverage check selected are absent from the archive, so it is not looking at the archive's own contents"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D14_too_few_entries_are_compared_to_be_a_comparison": {
+      "caught": true,
+      "expected_failure_named": "too few entries were compared",
+      "reported": [
+        "too few entries were compared against the source folder for this to be a comparison"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 14,
+    "caught_by_their_own_check": 14,
+    "missed": 0,
+    "robustness_properties": 2,
+    "malformed": 0,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

@@ -1,0 +1,206 @@
+{
+  "round": "consolidated archive Collatz_OT_Series_Paper.zip",
+  "source_item": 49,
+  "archive_sha256": "d7394cce7b6a877112446d5d4616339bf2b2eda4241f3d6a9010128c288f0d2d",
+  "archive_bytes": 17533734,
+  "entries_against_source": {
+    "entries": 50,
+    "byte_identical_to_the_standalone_item": 47,
+    "differing": [],
+    "entries_with_no_standalone_counterpart": [
+      {
+        "entry": "CPL_Claude_67_25_Research_Pack_2026-08-11.zip",
+        "bytes": 3134839,
+        "on_disk": false
+      },
+      {
+        "entry": "CPL_Claude_67_25_Research_Pack_v2_2026-08-11.zip",
+        "bytes": 3139664,
+        "on_disk": false
+      },
+      {
+        "entry": "CPL_Claude_Research_Pack_v11_2026-08-11.zip",
+        "bytes": 2638627,
+        "on_disk": false
+      }
+    ],
+    "recorded_but_absent_from_disk": []
+  },
+  "coverage": {
+    "archive_mtime": "2026-08-13T14:09:24",
+    "source_items_older_than_the_archive": 48,
+    "of_those_present": 47,
+    "of_those_missing": [
+      {
+        "name": "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip",
+        "mtime_local": "2026-08-13T14:08:51",
+        "seconds_older_than_the_archive": 33
+      }
+    ]
+  },
+  "recursive_integrity": {
+    "files": 964,
+    "nested_zips": 49,
+    "max_depth": 9,
+    "unreadable": []
+  },
+  "shipped_checksums": {
+    "packs_shipping_a_manifest": 2,
+    "packs": {
+      "CPL_Claude_67_25_Research_Pack_2026-08-11.zip": {
+        "files_in_the_pack": 16,
+        "entries_listed": 8,
+        "verified": 8,
+        "mismatched": [],
+        "listed_but_absent": [],
+        "present_but_not_covered": [
+          "README.md",
+          "notes/00_constant_check.txt",
+          "notes/01_Proof_Graph_Claude_67_25.md",
+          "notes/02_CPL_Targets_70_80_90_99.md",
+          "notes/03_Ceiling_Scope_67_25_vs_68_185.md",
+          "scripts/reproduce_constants.py",
+          "sources.json"
+        ],
+        "coverage": "8 of 16",
+        "manifest_sha256": "fa25b9d3fa1409ae"
+      },
+      "CPL_Claude_67_25_Research_Pack_v2_2026-08-11.zip": {
+        "files_in_the_pack": 18,
+        "entries_listed": 8,
+        "verified": 8,
+        "mismatched": [],
+        "listed_but_absent": [],
+        "present_but_not_covered": [
+          "README.md",
+          "notes/00_constant_check.txt",
+          "notes/01_Proof_Graph_Claude_67_25.md",
+          "notes/02_CPL_Targets_70_80_90_99.md",
+          "notes/03_Ceiling_Scope_67_25_vs_68_185.md",
+          "notes/04_Reconstructing_68_185_Ceiling.md",
+          "scripts/ceiling_law256_constants.py",
+          "scripts/reproduce_constants.py",
+          "sources.json"
+        ],
+        "coverage": "8 of 18",
+        "manifest_sha256": "fa25b9d3fa1409ae"
+      }
+    },
+    "total_listed": 16,
+    "total_verified": 16,
+    "total_mismatched": 0,
+    "total_uncovered": 16
+  },
+  "manifest_covers_what_changes": {
+    "older": "CPL_Claude_67_25_Research_Pack_2026-08-11.zip",
+    "newer": "CPL_Claude_67_25_Research_Pack_v2_2026-08-11.zip",
+    "files_added": [
+      "notes/04_Reconstructing_68_185_Ceiling.md",
+      "scripts/ceiling_law256_constants.py"
+    ],
+    "files_removed": [],
+    "files_changed": [
+      "README.md"
+    ],
+    "files_that_differ": 3,
+    "of_those_covered_by_the_manifest": 0,
+    "the_manifest_is_byte_identical_between_the_two_versions": true,
+    "the_manifest_covers_nothing_that_changed": true
+  },
+  "version_chain": {
+    "levels": [
+      {
+        "depth": 0,
+        "label": "CPL_Claude_Research_Pack_v11_2026-08-11.zip",
+        "files": 14,
+        "ships_a_manifest": false
+      },
+      {
+        "depth": 1,
+        "label": "CPL_Claude_Research_Pack_v10_2026-08-11.zip",
+        "files": 8,
+        "ships_a_manifest": false
+      },
+      {
+        "depth": 2,
+        "label": "CPL_Claude_Research_Pack_v9_2026-08-11.zip",
+        "files": 6,
+        "ships_a_manifest": false
+      },
+      {
+        "depth": 3,
+        "label": "CPL_Claude_Research_Pack_v8_2026-08-11.zip",
+        "files": 10,
+        "ships_a_manifest": false
+      },
+      {
+        "depth": 4,
+        "label": "CPL_Claude_Research_Pack_v7_2026-08-11.zip",
+        "files": 4,
+        "ships_a_manifest": false
+      },
+      {
+        "depth": 5,
+        "label": "CPL_Claude_Research_Pack_v6_2026-08-11.zip",
+        "files": 6,
+        "ships_a_manifest": false
+      },
+      {
+        "depth": 6,
+        "label": "CPL_Claude_Research_Pack_v5_2026-08-11.zip",
+        "files": 10,
+        "ships_a_manifest": false
+      },
+      {
+        "depth": 7,
+        "label": "CPL_Claude_Research_Pack_v4_2026-08-11.zip",
+        "files": 9,
+        "ships_a_manifest": false
+      },
+      {
+        "depth": 8,
+        "label": "CPL_Claude_Research_Pack_v3_2026-08-11.zip",
+        "files": 16,
+        "ships_a_manifest": false
+      }
+    ],
+    "chain_depth": 9,
+    "levels_shipping_a_manifest": 0,
+    "files_reachable_through_the_chain": 83
+  },
+  "composition": {
+    "uncompressed_bytes": 17812870,
+    "bytes_under_prefix": 8913130,
+    "prefix": "CPL_",
+    "share_percent": 50.0,
+    "entries_under_prefix": 3
+  },
+  "against_this_trees_archive": {
+    "files_in_this_trees_ot_archive": 57,
+    "markdown_entries_in_the_consolidated_archive": 8,
+    "byte_identical_in_both": [
+      {
+        "archive_entry": "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
+        "in_our_archive_as": "考拉茲猜想既有研究的重新分類與校正.md"
+      },
+      {
+        "archive_entry": "Collatz_OT_Series_Paper_02_Local_Affine_Atlas_Finite_Word_v0.1.md",
+        "in_our_archive_as": "02__Collatz Local Affine Atlas：有限奇偶字的精確仿射化.md"
+      },
+      {
+        "archive_entry": "Faithful_Global_Quantifier_Compression_Proof_Route_v0.1.1.md",
+        "in_our_archive_as": "HZ__忠實全域量詞壓縮：從猜想難度 v0.2 到 Collatz Hard-Zeta Frontier 的證明研究綱領.md"
+      }
+    ],
+    "present_here_but_not_byte_identical_in_ours": 5
+  },
+  "findings": [
+    "the shipped `SHA256SUMS.txt` verifies every one of its 16 entries and covers the wrong half. It lists the third-party PDFs, which cannot change; between the two shipped versions of the same pack 3 files differ (notes/04_Reconstructing_68_185_Ceiling.md, scripts/ceiling_law256_constants.py, README.md) and the manifest covers **none** of them — it is byte-identical across the two versions (True). An integrity manifest that only ever certifies the immutable files is a checksum on the part nobody would doubt.",
+    "across the packs that ship a manifest, 16 files are present and uncovered, including the scripts and notes: scripts/ceiling_law256_constants.py, scripts/reproduce_constants.py, sources.json.",
+    "a second pack nests its own predecessor 9 levels deep, and **no level ships a manifest at all** — 83 files reachable only by opening every one of them in turn.",
+    "the archive omits 1 source item(s) older than itself: Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip, by 33 seconds.",
+    "50.0% of the archive by uncompressed bytes is `CPL_` material that exists nowhere else in the source folder — 3 entries an item-by-item sweep would never have opened."
+  ],
+  "failures": [],
+  "passed": true
+}

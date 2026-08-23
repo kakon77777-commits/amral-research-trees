@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->48 source items and twenty-eight runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->49 source items and twenty-nine runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -405,11 +405,36 @@ instance behind each band.
     list that annotates elsewhere. Drill **16/16**; six of its defects break a
     *locator* rather than a comparison, because a locator that finds nothing
     reports its subject as clean.
-30. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+30. [`reports/RUN-031-CONSOLIDATED-ARCHIVE-INTEGRITY.md`](./reports/RUN-031-CONSOLIDATED-ARCHIVE-INTEGRITY.md) —
+    **964 files open at nine nesting levels, nothing has drifted, and a checksum
+    manifest certifies only the half that cannot change.** Item 49 is a third kind
+    of object: a 17.5 MB consolidated archive of the source folder, which asserts
+    no mathematics and makes no claim about other documents — it is a *container*,
+    so the failure modes are drift, omission, content reachable only from inside,
+    a nested structure that will not open, and an integrity claim aimed at the
+    wrong half. **The archive is faithful:** of **50** entries, **47** have a
+    standalone counterpart and every one is **byte-identical** to the item this
+    sweep verified — checked against both the recorded hash and the file on disk
+    — with **0** drifted, and all **964** files reachable through **49** nested
+    archives open cleanly. **Three findings, none about the Collatz work.** Two
+    entries ship their own `SHA256SUMS.txt`; all **16** listed hashes verify, and
+    they list the **8** third-party PDFs — the files that by construction cannot
+    change. Between two shipped versions of the same pack **3** files differ (two
+    notes/scripts added, the README changed) and the manifest covers **none** of
+    them, being **byte-identical across both versions**: an integrity claim that
+    only ever certifies the immutable files is a checksum on the part nobody
+    would doubt. A sibling pack nests its own predecessor **9 levels deep** with
+    **no manifest at any level**. **50.0%** of the archive by volume is
+    Riemann-zeta material existing nowhere else in the folder — reachable only by
+    opening this item, and explicitly *not* verified here. And the archive omits
+    one source item **33 seconds** older than itself: the bootstrap handoff of
+    RUN-030. Drill **14/14**; six of its defects aim at the non-vacuity guards,
+    because an archive check's defect branches are ones no real input reaches.
+31. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-31. [`code/`](./code/) — the engine, the independent reference, and the gates.
-32. [`data/gate-logs/`](./data/gate-logs/) and
+32. [`code/`](./code/) — the engine, the independent reference, and the gates.
+33. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

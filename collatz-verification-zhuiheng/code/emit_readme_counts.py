@@ -21,14 +21,15 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
 BEGIN, END = "<!-- COUNTS -->", "<!-- /COUNTS -->"
 SWEEP_TOTAL = 73          # items in the subject's source folder
-SWEEP_DONE = 48           # highest item this tree has a report for
+SWEEP_DONE = 49           # highest item this tree has a report for
 
 
 def spell(n: int) -> str:
     words = {16: "sixteen", 17: "seventeen", 18: "eighteen", 19: "nineteen",
              20: "twenty", 21: "twenty-one", 22: "twenty-two",
              23: "twenty-three", 24: "twenty-four", 25: "twenty-five",
-             26: "twenty-six", 27: "twenty-seven", 28: "twenty-eight"}
+             26: "twenty-six", 27: "twenty-seven", 28: "twenty-eight",
+             29: "twenty-nine", 30: "thirty", 31: "thirty-one"}
     return words.get(n, str(n))
 
 
