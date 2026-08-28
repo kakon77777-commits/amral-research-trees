@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->50 source items and thirty runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->51 source items and thirty-one runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -459,11 +459,36 @@ instance behind each band.
     verify, and its declared `input_state_sha256` **closes against RUN-030 and
     RUN-031**. Drill **18/18** — and a killed drill left a planted defect live on
     disk, so drills now keep a pristine sidecar and restore from it.
-32. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+32. [`reports/RUN-033-HARD-ZETA-AU2D5-ANNULAR-RESIDUE.md`](./reports/RUN-033-HARD-ZETA-AU2D5-ANNULAR-RESIDUE.md) —
+    **the exact-code separation holds in both directions, every B-source really is
+    3 mod 4, and one section mixes an unconditional corollary with a cap that is
+    vacuous on real orbits.** A-U.2d.5 adds two more results needing no
+    hypothetical object. §4: for a code `w`, `2^Q z = 3^k x + B_w`, so one code
+    selects one source class mod `2^(Q+1)` and one endpoint class mod `3^k`, and
+    a repeated code forces `|x−x′| ≥ 2^(Q+1)` and `|z−z′| ≥ 2·3^k` — all pure
+    integer arithmetic, **0** violations over **400** codes. Crucially it is
+    checked in **both** directions: **1,200** members drawn from the claimed class
+    *at which the code was never observed* each realize it, **0** failures —
+    without that half the check would pass on a class ten times too large. §6:
+    `L ≥ 2` forces `q_(s+1) = 1` hence `y ≡ 3 (mod 4)`, verified on **27,556**
+    real sources with **0** violations. **Four findings, none mathematical.**
+    §6's own depth cap `r < 1 + U_β(L)/4` rests on the source corridor, a
+    B-survival property: **0 of 10,214** real chains satisfy it, so the cap is
+    vacuous on orbits that exist — one section carrying a result testable on every
+    orbit and one testable on none. The renewal identity and both determinants are
+    the **pair (0,0)** in β-linear integers over **27,556** edges where the
+    shipped checker reports `max_float_residual = 1.93e-12` — **fourth** round in
+    this line reaching for precision where exactness was available. `checker_stdout.txt`
+    is byte-identical to the checker report for the **second** bundle running, and
+    two constants shared with item 50 **moved** between the bundles (item 51's are
+    the exact doubles). And item 51's validation record is a **list** where item
+    50's was a dict, so my reader saw **zero** files and only a non-vacuity guard
+    surfaced it — RUN-028's finding landing on my own code. Drill **18/18**.
+33. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-33. [`code/`](./code/) — the engine, the independent reference, and the gates.
-34. [`data/gate-logs/`](./data/gate-logs/) and
+34. [`code/`](./code/) — the engine, the independent reference, and the gates.
+35. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

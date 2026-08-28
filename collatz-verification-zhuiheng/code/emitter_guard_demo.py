@@ -46,6 +46,7 @@ CASES = [
     ("src48", (0, ("cross_bundle_identity", "distinct_documents"))),
     ("src49", (0, ("recursive_integrity", "files"))),
     ("src50", (0, ("structure", "annulus_edges"))),
+    ("src51", (0, ("orbit_structure", "renewal_edges"))),
 ]
 
 
