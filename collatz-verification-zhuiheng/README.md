@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->52 source items and thirty-two runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->53 source items and thirty-three runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -511,11 +511,54 @@ instance behind each band.
     finding against right arithmetic. Four of the checker's nine claims are
     independently confirmed and the other five are **named**, not implied. Drill
     **19/19 on the first pass** — the first in this sweep needing no re-aiming.
-34. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+34. [`reports/RUN-035-HARD-ZETA-AU2D7-PLATEAU-RESET.md`](./reports/RUN-035-HARD-ZETA-AU2D7-PLATEAU-RESET.md) —
+    **the crossing slope moves by whole numbers, the caps above it rest on a
+    premise almost no real chain meets, and the round's new machine-readable
+    ledger under-reports its own paper.** Section 3 is the cleanest decidable
+    core this sweep has been handed: `xi_i = Q_i/L_i - beta`, and in the
+    difference `xi_{i+1} - xi_i = J_i/(L_i L_{i+1})` the `beta` cancels, so the
+    jump law, the quantization, the plateau form `J_i = Pi_i >= 1`, the
+    strict-drop form, and the characterization of a genuine reset as exactly
+    `J_i < 0` are all settled in integers with no logarithm anywhere. Verified
+    over six figures of renewal edges from real orbits, together with Theorem
+    4.4, Lemma 5.1 and all of section 11, with **zero** disagreements. Sections
+    4.3 to 9 are a different kind of claim: each descends from B-survival
+    inputs, and **one** chain in tens of thousands meets all three, so this run
+    measures the premises and checks the **derivations** on a grid rather than
+    imposing caps on orbits that never agreed to them — the mistake RUN-032 made
+    on 10,214 chains. A drill defect deletes that premise filter and the gate
+    goes red, which is what proves the filter is load-bearing rather than merely
+    exclusive. Section 9's literal hypothesis is common on real chains and its
+    conclusions fail there; the companion survival bound it also needs is
+    declared a section earlier, and this run names that instead of reporting a
+    counterexample. **Three findings, none mathematical:** the new theorem
+    ledger renders the paper's own section 22 lossily — 19 numbered results
+    become 16, seven `NO-GO` headings become six, with `NO-GO 18.2` identified
+    as the gap by reading and by keyword test independently — and it disagrees
+    with the constants frontier on the round's `status`; the frontier's
+    `1/(3 ln2)` is one ulp off while the **paper's** printed value is the
+    correctly rounded double, so the two artifacts disagree at the last bit; and
+    the source-validation record has changed schema for the third time in four
+    bundles. Every bracket is certified in the file that uses it — `ln 2` from
+    its series with an exact tail bound, `log_2 3` from a bit length — after a
+    hard-coded "lower bound" for `beta` turned out to sit above it. The drill's
+    first pass returned **26/27**, and the miss was a hole in this gate, not an
+    escaped defect: derivation failures were collected by matching key-name
+    suffixes, and one counter's name matched none of them, so it could increment
+    unread. Enumerating the counters fixed the instance; making the gate refuse
+    an integer in that block it was never told about fixes the class. Drill
+    **27/27** after that. Running the tree's standing guards then turned up an
+    older one: `audit_drill_anchors.py` knew only the `src07`–`src21` defect-list
+    shape, so it had been reading **zero anchors for 16 of 31 drills** — the
+    whole current sweep — while reporting `ok`. It now discovers shapes, names
+    the 103 defects that are not string replacements, and refuses on an
+    unexplained zero; coverage went from **277** anchors to **502**, none of the
+    225 newly visible ones stale.
+35. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-35. [`code/`](./code/) — the engine, the independent reference, and the gates.
-36. [`data/gate-logs/`](./data/gate-logs/) and
+36. [`code/`](./code/) — the engine, the independent reference, and the gates.
+37. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

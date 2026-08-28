@@ -1,0 +1,272 @@
+{
+  "gate": "src53_plateau_reset.py",
+  "limit": "2200",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "non_vacuity_guards": []
+  },
+  "defects": {
+    "D1_the_chain_is_built_from_delta_records_instead_of_the_stalk": {
+      "caught": true,
+      "expected_named": "slope_quantization.endpoints_not_nested_h_negative",
+      "reported": [
+        "slope_quantization.endpoints_not_nested_h_negative = 70068",
+        "slope_quantization.strict_determinant_below_one = 19619",
+        "slope_quantization.theorem_4_4_violations = 36418",
+        "slope_quantization.A_not_positive = 70068"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_jump_numerator_pairs_each_length_with_its_own_exponent": {
+      "caught": true,
+      "expected_named": "slope_quantization.jump_law_violations",
+      "reported": [
+        "slope_quantization.jump_law_violations = 101686",
+        "slope_quantization.plateau_J_not_equal_to_Pi = 75850",
+        "slope_quantization.strict_J_formula_violations = 25836",
+        "their_claims: ['crossing-slope integer jump xi_{i+1}-xi_i = J_i/(L_i L_{i+1}) on random next-smaller chains', 'plateau J_i = Pi_i >= 1 and strict determinant Delta_i >= 1']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_quantization_test_admits_equality": {
+      "caught": true,
+      "expected_named": "slope_quantization.quantization_violations",
+      "reported": [
+        "slope_quantization.quantization_violations = 3400",
+        "their_claims: ['crossing-slope integer jump xi_{i+1}-xi_i = J_i/(L_i L_{i+1}) on random next-smaller chains']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_plateau_determinant_adds_where_it_subtracts": {
+      "caught": true,
+      "expected_named": "slope_quantization.plateau_J_not_equal_to_Pi",
+      "reported": [
+        "slope_quantization.plateau_J_not_equal_to_Pi = 75850",
+        "slope_quantization.plateau_Pi_two_forms_disagree = 75850",
+        "their_claims: ['global plateau determinant split and sum g_i L_{i+1} < L^2/2 ingredient', 'plateau J_i = Pi_i >= 1 and strict determinant Delta_i >= 1']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_plateau_determinant_second_form_uses_the_parent_length": {
+      "caught": true,
+      "expected_named": "slope_quantization.plateau_Pi_two_forms_disagree",
+      "reported": [
+        "slope_quantization.plateau_Pi_two_forms_disagree = 75850",
+        "their_claims: ['global plateau determinant split and sum g_i L_{i+1} < L^2/2 ingredient']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_strict_determinant_is_off_by_one": {
+      "caught": true,
+      "expected_named": "slope_quantization.strict_determinant_below_one",
+      "reported": [
+        "slope_quantization.strict_determinant_below_one = 4542",
+        "slope_quantization.strict_Delta_two_forms_disagree = 25836",
+        "their_claims: ['plateau J_i = Pi_i >= 1 and strict determinant Delta_i >= 1']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_strict_jump_formula_subtracts_the_endpoint_drop": {
+      "caught": true,
+      "expected_named": "slope_quantization.strict_J_formula_violations",
+      "reported": [
+        "slope_quantization.strict_J_formula_violations = 25836"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_renewal_identity_adds_the_endpoint_slack": {
+      "caught": true,
+      "expected_named": "slope_quantization.renewal_identity_violations",
+      "reported": [
+        "slope_quantization.renewal_identity_violations = 25836"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_theorem_4_4_is_tested_with_its_two_sides_swapped": {
+      "caught": true,
+      "expected_named": "slope_quantization.theorem_4_4_violations",
+      "reported": [
+        "slope_quantization.theorem_4_4_violations = 15548"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_beta_sign_test_is_inverted": {
+      "caught": true,
+      "expected_named": "slope_quantization.A_not_positive",
+      "reported": [
+        "slope_quantization.A_not_positive = 101686",
+        "slope_quantization.D_not_positive = 203372",
+        "slope_quantization.E_not_positive = 25836"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_lemma_5_1_mass_uses_the_parent_length_squared": {
+      "caught": true,
+      "expected_named": "slope_quantization.lemma_5_1_violations",
+      "reported": [
+        "slope_quantization.lemma_5_1_violations = 18362",
+        "their_claims: ['global plateau determinant split and sum g_i L_{i+1} < L^2/2 ingredient']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_reset_orientation_looks_for_the_lower_mediant": {
+      "caught": true,
+      "expected_named": "orientation.reset_mediant_not_above_beta",
+      "reported": [
+        "orientation.reset_mediant_not_above_beta = 130",
+        "their_claims: ['unit strict reset orientation: J<0 implies upper mediant and child-denominator lower bound']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_child_denominator_bound_uses_the_wrong_coefficient": {
+      "caught": true,
+      "expected_named": "orientation.child_denominator_below_2g_plus_h",
+      "reported": [
+        "orientation.child_denominator_below_2g_plus_h = 130",
+        "their_claims: ['unit strict reset orientation: J<0 implies upper mediant and child-denominator lower bound']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_child_slope_is_required_above_its_own_mediant": {
+      "caught": true,
+      "expected_named": "orientation.reset_child_slope_not_between_beta_and_mediant",
+      "reported": [
+        "orientation.reset_child_slope_not_between_beta_and_mediant = 130",
+        "their_claims: ['unit strict reset orientation: J<0 implies upper mediant and child-denominator lower bound']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_farey_neighbour_identity_expects_the_wrong_determinant": {
+      "caught": true,
+      "expected_named": "orientation.farey_neighbour_identity_violations",
+      "reported": [
+        "orientation.farey_neighbour_identity_violations = 4542"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_u_beta_uses_one_bit_too_many": {
+      "caught": true,
+      "expected_named": "premises.u_beta_above_L_over_3",
+      "reported": [
+        "premises.u_beta_above_L_over_3 = 20568",
+        "derivations.B_below_L_over_3_y1_ln2_violations = 54",
+        "derivations.cor_6_2_not_implied_by_thm_6_1 = 378",
+        "derivations.cor_9_3_B_below_one_over_L_violations = 28"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_slope_separation_threshold_is_not_squared": {
+      "caught": true,
+      "expected_named": "premises.distinct_slopes_closer_than_one_over_L_squared",
+      "reported": [
+        "premises.distinct_slopes_closer_than_one_over_L_squared = 63553",
+        "their_claims: ['rational separation threshold 1/L^2 underlying high-source equal-slope collapse']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_caps_are_applied_without_their_premise": {
+      "caught": true,
+      "expected_named": "premises.theorem_4_3_violations",
+      "reported": [
+        "premises.theorem_4_3_violations = 2563",
+        "premises.theorem_5_4_violations = 7704",
+        "premises.theorem_6_1_violations = 6687"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_algebraic_constant_loses_its_factor_of_three": {
+      "caught": true,
+      "expected_named": "2b^2/a is not below 8",
+      "reported": [
+        "derivations: 2b^2/a is not below 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_corollary_6_2_is_compared_the_wrong_way_round": {
+      "caught": true,
+      "expected_named": "derivations.cor_6_2_not_implied_by_thm_6_1",
+      "reported": [
+        "derivations.cor_6_2_not_implied_by_thm_6_1 = 378"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_depth_root_takes_the_wrong_branch": {
+      "caught": true,
+      "expected_named": "derivations.X_r_not_a_root_of_a_x2_plus_b_x",
+      "reported": [
+        "derivations.X_r_not_a_root_of_a_x2_plus_b_x = 378",
+        "derivations.thm_7_1_inversion_violations = 52"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_digest_comparison_is_negated": {
+      "caught": true,
+      "expected_named": "sha256 mismatches",
+      "reported": [
+        "artifacts: 9 sha256 mismatches",
+        "only 0 artifact digests verified"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_item_53_validation_shape_is_not_recognised": {
+      "caught": true,
+      "expected_named": "the validation record shape is unrecognised",
+      "reported": [
+        "artifacts: the validation record shape is unrecognised",
+        "only 0 artifact digests verified"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_a_shipped_example_is_recomputed_with_the_wrong_sign": {
+      "caught": true,
+      "expected_named": "a unit-reset example fails a clause",
+      "reported": [
+        "shipped_examples: a unit-reset example fails a clause"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_only_the_old_report_key_is_read": {
+      "caught": true,
+      "expected_named": "the report key may have been renamed again",
+      "reported": [
+        "only 0 checker claims were read; the report key may have been renamed again"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_paper_ledger_anchor_no_longer_matches": {
+      "caught": true,
+      "expected_named": "the paper's own ledger section was not parsed",
+      "reported": [
+        "the paper's own ledger section was not parsed"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_no_go_heading_echo_is_dropped": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green",
+      "gate_still_green": true,
+      "complaints_seen": []
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 27,
+    "caught_by_their_own_check": 27,
+    "missed": 0,
+    "robustness_properties": 1,
+    "malformed": 0,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
