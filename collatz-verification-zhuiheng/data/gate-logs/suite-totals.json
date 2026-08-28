@@ -1,11 +1,11 @@
 {
   "tool": "suite_totals.py",
   "purpose": "the figure the README and CHARTER cite, emitted rather than typed",
-  "drills": 32,
-  "defects_planted": 646,
-  "defects_caught_by_the_named_check": 646,
-  "controls": 72,
-  "controls_undisturbed": 72,
+  "drills": 33,
+  "defects_planted": 665,
+  "defects_caught_by_the_named_check": 665,
+  "controls": 74,
+  "controls_undisturbed": 74,
   "per_drill": [
     {
       "log": "mutation-drill.json",
@@ -282,6 +282,15 @@
       "ok": true,
       "planted": 18,
       "caught": 18,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src52-drill.json",
+      "ok": true,
+      "planted": 19,
+      "caught": 19,
       "controls": 2,
       "controls_undisturbed": 2,
       "shape": "planted/caught_by_their_own_check"

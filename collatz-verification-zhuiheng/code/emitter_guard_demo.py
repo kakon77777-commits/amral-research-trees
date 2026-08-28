@@ -47,6 +47,7 @@ CASES = [
     ("src49", (0, ("recursive_integrity", "files"))),
     ("src50", (0, ("structure", "annulus_edges"))),
     ("src51", (0, ("orbit_structure", "renewal_edges"))),
+    ("src52", (0, ("capacity", "pairs_enumerated"))),
 ]
 
 

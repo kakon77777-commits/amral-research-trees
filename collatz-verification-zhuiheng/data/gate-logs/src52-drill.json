@@ -1,0 +1,223 @@
+{
+  "gate": "src52_farey_entropy.py",
+  "limit": "1201",
+  "trials": "300",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "findings": [
+      "`checker_stdout.txt` is the checker report plus '\\n' and nothing else -- third bundle shipping the same content twice under two names, and the first where the two are not byte-identical. Items 50 and 51 shipped them identical; here one trailing newline separates them, which is enough to make a byte comparison say they differ and not enough to make them different documents.",
+      "the three inherited exponents are the **exact** nearest doubles of their rationals, as item 51's were and item 50's were not (RUN-032 measured 1 and 2 ulps there). The artifacts have stayed corrected."
+    ]
+  },
+  "defects": {
+    "D1_the_functional_counts_the_ones_on_the_wrong_side": {
+      "caught": true,
+      "expected_failure_named": "binary bridge C(d(w)) = B_w fails",
+      "reported": [
+        "the binary bridge C(d(w)) = B_w fails",
+        "a claim the checker states is contradicted: ['B_w equals the Fernandez-Ibanez binary functional C(d(w)) exactly']",
+        "too few of the checker's claims were independently checked"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D2_the_binary_word_places_its_ones_one_step_late": {
+      "caught": true,
+      "expected_failure_named": "binary bridge C(d(w)) = B_w fails",
+      "reported": [
+        "the binary bridge C(d(w)) = B_w fails",
+        "a claim the checker states is contradicted: ['B_w equals the Fernandez-Ibanez binary functional C(d(w)) exactly']",
+        "too few of the checker's claims were independently checked"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D3_the_affine_numerator_uses_the_wrong_power_of_three": {
+      "caught": true,
+      "expected_failure_named": "binary bridge C(d(w)) = B_w fails",
+      "reported": [
+        "the binary bridge C(d(w)) = B_w fails",
+        "the normalized correction c(w) = B_w/3^g fails",
+        "the concatenation identity fails",
+        "the B-to-B source class modulo 2^(p+2) fails"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D4_the_concatenation_law_uses_the_left_length": {
+      "caught": true,
+      "expected_failure_named": "concatenation identity fails",
+      "reported": [
+        "the concatenation identity fails",
+        "a claim the checker states is contradicted: ['accelerated correction numerator concatenation identity']",
+        "too few of the checker's claims were independently checked"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D5_the_normalized_correction_is_divided_twice": {
+      "caught": true,
+      "expected_failure_named": "normalized correction c(w) = B_w/3^g fails",
+      "reported": [
+        "the normalized correction c(w) = B_w/3^g fails"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D6_the_prefix_constraint_is_dropped_from_the_enumeration": {
+      "caught": true,
+      "expected_failure_named": "capacity formula disagrees with enumeration",
+      "reported": [
+        "the capacity formula disagrees with enumeration: [{'p': 3, 'g': 2, 'enumerated': 2, 'formula': 1}, {'p': 4, 'g': 3, 'enumerated': 3, 'formula': 1}, {'p': 5, 'g': 4, 'enumerated': 4, 'formula': 1}, {'p': 6, 'g': 5, 'enumerated': 5, 'formula': 1}, {'p': 7, 'g': 5, 'enumerated': 15, 'formula': 3}, {'p': 7, 'g': 6, 'enumerated': 6, 'formula': 1}, {'p': 8, 'g': 7, 'enumerated': 7, 'formula': 1}, {'p': 9, 'g': 7, 'enumerated': 28, 'formula': 4}, {'p': 10, 'g': 7, 'enumerated': 84, 'formula': 12}, {'p': 11, 'g': 7, 'enumerated': 210, 'formula': 30}, {'p': 9, 'g': 8, 'enumerated': 8, 'formula': 1}, {'p': 11, 'g': 8, 'enumerated': 120, 'formula': 15}, {'p': 10, 'g': 9, 'enumerated': 9, 'formula': 1}, {'p': 11, 'g': 9, 'enumerated': 45, 'formula': 5}, {'p': 13, 'g': 9, 'enumerated': 495, 'formula': 55}, {'p': 14, 'g': 9, 'enumerated': 1287, 'formula': 143}, {'p': 11, 'g': 10, 'enumerated': 10, 'formula': 1}, {'p': 13, 'g': 10, 'enumerated': 220, 'formula': 22}, {'p': 12, 'g': 11, 'enumerated': 11, 'formula': 1}, {'p': 13, 'g': 11, 'enumerated': 66, 'formula': 6}, {'p': 14, 'g': 11, 'enumerated': 286, 'formula': 26}, {'p': 15, 'g': 11, 'enumerated': 1001, 'formula': 91}, {'p': 16, 'g': 11, 'enumerated': 3003, 'formula': 273}, {'p': 17, 'g': 11, 'enumerated': 8008, 'formula': 728}, {'p': 13, 'g': 12, 'enumerated': 12, 'formula': 1}, {'p': 17, 'g': 12, 'enumerated': 4368, 'formula': 364}, {'p': 19, 'g': 12, 'enumerated': 31824, 'formula': 2652}, {'p': 14, 'g': 13, 'enumerated': 13, 'formula': 1}, {'p': 15, 'g': 13, 'enumerated': 91, 'formula': 7}, {'p': 16, 'g': 13, 'enumerated': 455, 'formula': 35}, {'p': 17, 'g': 13, 'enumerated': 1820, 'formula': 140}, {'p': 18, 'g': 13, 'enumerated': 6188, 'formula': 476}, {'p': 19, 'g': 13, 'enumerated': 18564, 'formula': 1428}, {'p': 20, 'g': 13, 'enumerated': 50388, 'formula': 3876}]",
+        "a claim the checker states is contradicted: ['exact rational-Catalan capacity #W_{p,g}=binom(p,g)/p for tested unit pairs']",
+        "too few of the checker's claims were independently checked"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D7_the_closed_form_divides_by_the_wrong_index": {
+      "caught": true,
+      "expected_failure_named": "two closed forms of the capacity disagree",
+      "reported": [
+        "the two closed forms of the capacity disagree",
+        "a claim the checker states is contradicted: ['exact rational-Catalan capacity #W_{p,g}=binom(p,g)/p for tested unit pairs']",
+        "too few of the checker's claims were independently checked"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D8_the_capacity_window_is_shrunk_back": {
+      "caught": true,
+      "expected_failure_named": "capacity enumeration was too small",
+      "reported": [
+        "the capacity enumeration was too small to discriminate"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D9_the_shipped_capacity_examples_are_checked_against_the_wrong_form": {
+      "caught": true,
+      "expected_failure_named": "shipped capacity example does not recompute",
+      "reported": [
+        "a shipped capacity example does not recompute"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D10_the_B_to_B_modulus_falls_back_to_item_51's": {
+      "caught": true,
+      "expected_failure_named": "B-to-B source class modulo 2^(p+2) fails",
+      "reported": [
+        "the B-to-B source class modulo 2^(p+2) fails",
+        "a claim the checker states is contradicted: ['B-anchor-to-B-anchor residue class modulo 2^(p+2) and repeated-code gaps']",
+        "too few of the checker's claims were independently checked"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D11_the_B_to_B_class_drops_its_factor_of_three": {
+      "caught": true,
+      "expected_failure_named": "B-to-B source class modulo 2^(p+2) fails",
+      "reported": [
+        "the B-to-B source class modulo 2^(p+2) fails",
+        "a claim the checker states is contradicted: ['B-anchor-to-B-anchor residue class modulo 2^(p+2) and repeated-code gaps']",
+        "too few of the checker's claims were independently checked"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D12_the_B_to_B_class_is_never_checked_in_reverse": {
+      "caught": true,
+      "expected_failure_named": "not checked in both directions",
+      "reported": [
+        "the B-to-B class was not checked in both directions"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D13_the_destination_separation_is_asked_for_too_much": {
+      "caught": true,
+      "expected_failure_named": "B-to-B separation fails",
+      "reported": [
+        "the B-to-B separation fails",
+        "a claim the checker states is contradicted: ['B-anchor-to-B-anchor residue class modulo 2^(p+2) and repeated-code gaps']",
+        "too few of the checker's claims were independently checked"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D14_the_certified_terms_are_altered": {
+      "caught": true,
+      "expected_failure_named": "disagrees with the terms RUN-029 certified",
+      "reported": [
+        "the published beta continued fraction disagrees with the terms RUN-029 certified by integer comparison"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D15_theta_is_expected_to_be_one_over_beta_again": {
+      "caught": true,
+      "expected_failure_named": "not beta's shifted",
+      "reported": [
+        "the published theta continued fraction is not beta's shifted, which is what theta = beta - 1 requires"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D16_the_carried_over_residue_result_tests_the_wrong_class": {
+      "caught": true,
+      "expected_failure_named": "3 mod 4 result, which section 6 assumes, fails",
+      "reported": [
+        "item 51's 3 mod 4 result, which section 6 assumes, fails"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D17_the_validation_hashes_use_the_wrong_function": {
+      "caught": true,
+      "expected_failure_named": "validation record does not match its files",
+      "reported": [
+        "the validation record does not match its files"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D18_the_list_shaped_record_is_no_longer_recognised": {
+      "caught": true,
+      "expected_failure_named": "unknown shape",
+      "reported": [
+        "the validation record is in an unknown shape",
+        "the validation record does not match its files"
+      ],
+      "caught_by_something_else_only": false,
+      "hung": false
+    },
+    "D19_the_rho_star_echo_is_dropped": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green",
+      "gate_still_green": true,
+      "failures_seen": []
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 19,
+    "caught_by_their_own_check": 19,
+    "missed": 0,
+    "robustness_properties": 1,
+    "malformed": 0,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

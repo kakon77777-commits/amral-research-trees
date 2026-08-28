@@ -1,0 +1,204 @@
+{
+  "round": "Hard-Zeta Phase II / Round A-U.2d.6",
+  "source_item": 52,
+  "exact_bridge": {
+    "trials": 800,
+    "bridge_violations_C_of_d_equals_B": 0,
+    "normalized_correction_violations": 0,
+    "concatenation_violations_on_B": 0,
+    "concatenation_violations_on_c": 0
+  },
+  "capacity": {
+    "pairs_enumerated": 34,
+    "largest_pair": [
+      20,
+      13
+    ],
+    "largest_count": 3876,
+    "formula_disagreements_between_the_two_forms": [],
+    "enumeration_disagreements": [],
+    "shipped_examples_checked": 5,
+    "shipped_examples_disagreeing": [],
+    "rows": [
+      {
+        "p": 3,
+        "g": 2,
+        "enumerated": 1,
+        "formula": 1
+      },
+      {
+        "p": 4,
+        "g": 3,
+        "enumerated": 1,
+        "formula": 1
+      },
+      {
+        "p": 5,
+        "g": 4,
+        "enumerated": 1,
+        "formula": 1
+      },
+      {
+        "p": 6,
+        "g": 5,
+        "enumerated": 1,
+        "formula": 1
+      },
+      {
+        "p": 7,
+        "g": 5,
+        "enumerated": 3,
+        "formula": 3
+      },
+      {
+        "p": 7,
+        "g": 6,
+        "enumerated": 1,
+        "formula": 1
+      },
+      {
+        "p": 8,
+        "g": 7,
+        "enumerated": 1,
+        "formula": 1
+      },
+      {
+        "p": 9,
+        "g": 7,
+        "enumerated": 4,
+        "formula": 4
+      },
+      {
+        "p": 10,
+        "g": 7,
+        "enumerated": 12,
+        "formula": 12
+      },
+      {
+        "p": 11,
+        "g": 7,
+        "enumerated": 30,
+        "formula": 30
+      },
+      {
+        "p": 9,
+        "g": 8,
+        "enumerated": 1,
+        "formula": 1
+      },
+      {
+        "p": 11,
+        "g": 8,
+        "enumerated": 15,
+        "formula": 15
+      }
+    ]
+  },
+  "b_to_b": {
+    "codes_with_a_B_destination": 376,
+    "class_violations": 0,
+    "class_members_checked_in_reverse": 1128,
+    "class_members_failing_the_code_or_the_residue": 0,
+    "repeated_code_pairs": 376,
+    "source_gap_below_2^(p+2)": 0,
+    "destination_gap_not_a_multiple_of_4*3^g": 0,
+    "pairs_where_the_modulus_is_exactly_twice_item_51's": 376
+  },
+  "continued_fractions": {
+    "beta_terms_published": 30,
+    "beta_first_16_match_the_certified_terms": true,
+    "certified_terms": [
+      1,
+      1,
+      1,
+      2,
+      2,
+      3,
+      1,
+      5,
+      2,
+      23,
+      2,
+      2,
+      1,
+      1,
+      55,
+      1
+    ],
+    "theta_is_defined_as_beta_minus_one_in_the_round": true,
+    "theta_cf_equals_zero_then_beta_cf_shifted": true,
+    "theta_plus_one_equals_beta_as_rationals": true,
+    "theta_is_not_one_over_beta": true
+  },
+  "orbit_carryover": {
+    "sources_with_L_at_least_2": 12419,
+    "not_3_mod_4": 0
+  },
+  "constants": {
+    "rows": {
+      "old_congestion_power": {
+        "exact": "10291/12791",
+        "published": 0.8045500742709718,
+        "ulps_from_the_nearest_double": 0
+      },
+      "disjoint_backbone_power": {
+        "exact": "12791/15291",
+        "published": 0.8365051337388006,
+        "ulps_from_the_nearest_double": 0
+      },
+      "dense_overlap_required_power": {
+        "exact": "2500/15291",
+        "published": 0.1634948662611994,
+        "ulps_from_the_nearest_double": 0
+      }
+    },
+    "off_by_at_least_one_ulp": [],
+    "rho_star_agrees": true
+  },
+  "artifacts": {
+    "validation_record_shape": "list of file records (items 51, 52)",
+    "files_listed": 8,
+    "verified": 8,
+    "mismatched": [],
+    "listed_but_absent": [],
+    "present_but_not_covered": [
+      "SOURCE_VALIDATION_AU2d6.json"
+    ],
+    "the_only_uncovered_file_is_the_record_itself": true,
+    "checker_exit_code": 0,
+    "validation_passed": true,
+    "errors_listed": 0,
+    "report_and_stdout_byte_identical": false,
+    "stdout_is_the_report_plus": "\n"
+  },
+  "their_claims": {
+    "claims_the_checker_states": 9,
+    "independently_confirmed": 4,
+    "independently_contradicted": [],
+    "not_covered_by_this_run": [
+      "unit Farey first-passage prefix domination by rational Christoffel positions",
+      "Christoffel correction maximum and Gamma >= M/24, strict for M>0, on every enumerated unit code",
+      "origin-span correction decomposition and additive Christoffel replacement deficit",
+      "local continued-fraction lower bound ||q beta|| > 1/((M_L+2)q) on tested ranges",
+      "non-unit determinant dichotomy Xi>=2 => A>=1/H or E>=1/g"
+    ],
+    "the_checker_s_own_not_verified_list": [
+      "existence or nonexistence of a divergent Collatz/CASP orbit",
+      "global boundedness/unboundedness of partial quotients of log_2(3)",
+      "asymptotic density claims inherited from earlier Hard-Zeta rounds",
+      "a full contradiction for the Highly Nested B-branch"
+    ]
+  },
+  "scope_discipline": {
+    "the round refuses a full contradiction": true,
+    "the checker names what it did not verify": true,
+    "the headroom telescope is still forbidden": true,
+    "the theta definition is in the paper": true
+  },
+  "findings": [
+    "`checker_stdout.txt` is the checker report plus '\\n' and nothing else -- third bundle shipping the same content twice under two names, and the first where the two are not byte-identical. Items 50 and 51 shipped them identical; here one trailing newline separates them, which is enough to make a byte comparison say they differ and not enough to make them different documents.",
+    "the three inherited exponents are the **exact** nearest doubles of their rationals, as item 51's were and item 50's were not (RUN-032 measured 1 and 2 ulps there). The artifacts have stayed corrected."
+  ],
+  "failures": [],
+  "passed": true
+}

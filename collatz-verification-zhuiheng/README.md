@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->51 source items and thirty-one runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->52 source items and thirty-two runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -484,11 +484,38 @@ instance behind each band.
     the exact doubles). And item 51's validation record is a **list** where item
     50's was a dict, so my reader saw **zero** files and only a non-vacuity guard
     surfaced it — RUN-028's finding landing on my own code. Drill **18/18**.
-33. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+33. [`reports/RUN-034-HARD-ZETA-AU2D6-FAREY-ENTROPY.md`](./reports/RUN-034-HARD-ZETA-AU2D6-FAREY-ENTROPY.md) —
+    **a closed-form count checked against brute-force enumeration, and the extra
+    bit of section 6 is really there.** Most of this sweep compares one
+    computation against another and has to argue the reference is better. §5 does
+    not: `#W_{p,g} = binom(p−1,g−1)/g = binom(p,g)/p` is a closed form for a set
+    that can simply be **enumerated**, so formula-versus-enumeration is decidable
+    with no tolerance and no sampling. **34** coprime pairs with `p/g < β`, up to
+    `(20,13)` with **3,876** members, **0** disagreements — and all **5** shipped
+    capacity examples recompute, including the 129-digit one at `(485,306)`. §3's
+    binary bridge `C(d(w)) = B_w`, its concatenation law, and the rational
+    normalized correction are exact over **800** codes. §6 sharpens item 51's
+    separation by **one bit**, `2^(p+1) → 2^(p+2)` and `2·3^g → 4·3^g`, using
+    item 51's own `3 (mod 4)` result — checked in **both** directions, with
+    **1,128** members drawn from the claimed class *where the code was never
+    observed* each required to realize it and land on a `3 (mod 4)` destination,
+    **0** failures; without that half the check passes on a class twice too
+    large, which is exactly the size of the claim. The carryover was re-verified,
+    not assumed: **12,419** real sources, **0** violations. **Two findings,
+    neither mathematical:** `checker_stdout.txt` is the checker report plus a
+    single trailing newline — third bundle shipping one content under two names,
+    and the first where they are *not* byte-identical; and the inherited
+    exponents are the **exact** nearest doubles, as item 51's were and item 50's
+    were not. A published continued fraction that looked one term short turned
+    out to be correct — the round defines `θ = β − 1`, and reading that stopped a
+    finding against right arithmetic. Four of the checker's nine claims are
+    independently confirmed and the other five are **named**, not implied. Drill
+    **19/19 on the first pass** — the first in this sweep needing no re-aiming.
+34. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-34. [`code/`](./code/) — the engine, the independent reference, and the gates.
-35. [`data/gate-logs/`](./data/gate-logs/) and
+35. [`code/`](./code/) — the engine, the independent reference, and the gates.
+36. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
