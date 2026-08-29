@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->53 source items and thirty-three runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->54 source items and 34 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -554,11 +554,52 @@ instance behind each band.
     the 103 defects that are not string replacements, and refuses on an
     unexplained zero; coverage went from **277** anchors to **502**, none of the
     225 newly visible ones stale.
-35. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+35. [`reports/RUN-036-HARD-ZETA-AU2D8-LOW-SOURCE-SATURATION.md`](./reports/RUN-036-HARD-ZETA-AU2D8-LOW-SOURCE-SATURATION.md) —
+    **a Gamma identity that needs no Gamma, a depth cap no real orbit can be
+    tested against, and two rational constants published as their float64
+    evaluations.** This round trades the additive slack machinery for a
+    multiplicative one and the exchange is a good one: section 3's
+    `z/y = (3^L/2^Q)·prod(1+1/(3Y_j))`, section 4's consecutive-odd envelope and
+    section 5's Gamma representation are all statements about **rationals**, and
+    all hold exactly on every segment swept. The Gamma identity especially: for
+    integer `L` the quotient
+    `Gamma(L+y/2+1/6)Gamma(y/2)/(Gamma(y/2+1/6)Gamma(L+y/2))` **is** the
+    Pochhammer product `prod (y/2+k+1/6)/(y/2+k)`, which is the envelope's own
+    definition — so where the shipped checker reports a worst error of
+    `3.1e-10`, this run's error is **zero**, with no Gamma function evaluated
+    anywhere. Section 4's premise is met by every segment tested; section 9.1's
+    is met by **none**, because it needs `z_1 > y_r` and a first-crossing
+    endpoint is precisely where the slack drops. So 9.1 was measured, not
+    imposed — and since "0 violations of 0 subjects" is exactly what a vacuous
+    filter produces, a drill defect deletes the premise gate and the run must go
+    red. What *is* universal was checked on every chain: 9.1's two forms are one
+    inequality. **Three findings.** `theta_star = 2500/12791` and
+    `mu_star = 2209/63955` are exactly rational, and the published values are
+    bit-for-bit what `1/(4.1164+1)` and `(6*theta-1)/5` give in float64 — 1 and
+    2 ulps out, the second inheriting the first, while every genuinely
+    transcendental constant is the exact nearest double. The theorem ledger
+    under-reports the paper's own section 21 in three places of five, and the
+    missing external input — identified by reading and by a distinctive-word
+    test independently — is the irrationality-measure consequence for `log_2 3`
+    through `rho_star`, the constant both new exponents come from. And, as an
+    **improvement**: the new `CHECKSUMS.sha256` and the validation record agree
+    on every digest, cover everything but one file, and that file is
+    `CHECKSUMS.sha256` itself with the scope note saying so — the direct answer
+    to what RUN-033 found at item 51. Section 15's floors recompute from
+    **A-U.2d.7's Theorem 7.1**, verified in RUN-035, to within two ulps; the
+    inversion is already sharper from depth 8, and the paper's `r >= 9` label
+    belongs to that round's Corollary 7.2 rather than its Theorem 7.1. Three of
+    this gate's own errors were caught before publication — a false 75 ulps from
+    rendering a bracket to too few decimal places, a false 12 from measuring
+    relative error under heavy cancellation, and a false 7,091 from applying 9.1
+    without its premise. The drill's first pass exposed a **vacuous check** and
+    an untested instrument; both are fixed, and the brackets now have an
+    eight-part self-check of their own. Drill **25/25**.
+36. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-36. [`code/`](./code/) — the engine, the independent reference, and the gates.
-37. [`data/gate-logs/`](./data/gate-logs/) and
+37. [`code/`](./code/) — the engine, the independent reference, and the gates.
+38. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

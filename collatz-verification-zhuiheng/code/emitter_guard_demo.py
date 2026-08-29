@@ -49,6 +49,7 @@ CASES = [
     ("src51", (0, ("orbit_structure", "renewal_edges"))),
     ("src52", (0, ("capacity", "pairs_enumerated"))),
     ("src53", (0, ("slope_quantization", "edges"))),
+    ("src54", (0, ("segments", "segments"))),
 ]
 
 

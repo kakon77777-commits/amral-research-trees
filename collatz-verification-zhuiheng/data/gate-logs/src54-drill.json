@@ -1,0 +1,249 @@
+{
+  "gate": "src54_low_source_saturation.py",
+  "limit": "2500",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "non_vacuity_guards": []
+  },
+  "defects": {
+    "D1_the_identity_swaps_its_two_bases": {
+      "caught": true,
+      "expected_named": "segments.product_identity_violations",
+      "reported": [
+        "segments.product_identity_violations = 32207",
+        "segments.two_forms_of_the_identity_disagree = 32207",
+        "their_claims: ['exact_product_identity']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_correction_factor_uses_two_where_the_map_uses_three": {
+      "caught": true,
+      "expected_named": "segments.product_identity_violations",
+      "reported": [
+        "segments.product_identity_violations = 32207",
+        "segments.packing_envelope_violations = 24895",
+        "their_claims: ['exact_product_identity', 'source_minimum_distinct_odd_packing']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_two_printed_forms_stop_being_compared": {
+      "caught": true,
+      "expected_named": "segments.two_forms_of_the_identity_disagree",
+      "reported": [
+        "segments.two_forms_of_the_identity_disagree = 32207"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_envelope_factor_overshoots_by_one": {
+      "caught": true,
+      "expected_named": "segments.gamma_form_disagrees_with_the_product",
+      "reported": [
+        "segments.gamma_form_disagrees_with_the_product = 32207",
+        "gamma.exact_disagreements = 56",
+        "gamma.lgamma_disagreements_beyond_cancellation = 56",
+        "grids.harmonic_envelope_violations = 36"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_envelope_spaces_its_odds_four_apart": {
+      "caught": true,
+      "expected_named": "segments.packing_envelope_violations",
+      "reported": [
+        "segments.packing_envelope_violations = 753",
+        "segments.gamma_form_disagrees_with_the_product = 16238",
+        "gamma.exact_disagreements = 49",
+        "gamma.lgamma_disagreements_beyond_cancellation = 47"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_sorted_state_bound_uses_the_wrong_spacing": {
+      "caught": true,
+      "expected_named": "segments.sorted_state_below_y_plus_2k",
+      "reported": [
+        "segments.sorted_state_below_y_plus_2k = 528",
+        "their_claims: ['source_minimum_distinct_odd_packing']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_pochhammer_shift_is_one_fifth": {
+      "caught": true,
+      "expected_named": "segments.gamma_form_disagrees_with_the_product",
+      "reported": [
+        "segments.gamma_form_disagrees_with_the_product = 32207",
+        "gamma.exact_disagreements = 56",
+        "their_claims: ['gamma_and_log_envelope']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_lgamma_combination_flips_a_sign": {
+      "caught": true,
+      "expected_named": "gamma.lgamma_disagreements_beyond_cancellation",
+      "reported": [
+        "gamma.lgamma_disagreements_beyond_cancellation = 56"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_caps_are_applied_without_their_premise": {
+      "caught": true,
+      "expected_named": "harmonic_depth.theorem_9_1_violations",
+      "reported": [
+        "harmonic_depth.theorem_9_1_violations = 23197"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_two_forms_of_9_1_are_compared_at_different_scales": {
+      "caught": true,
+      "expected_named": "harmonic_depth.the_two_forms_of_9_1_are_not_equivalent",
+      "reported": [
+        "harmonic_depth.the_two_forms_of_9_1_are_not_equivalent = 788"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_harmonic_envelope_halves_its_logarithmic_term": {
+      "caught": true,
+      "expected_named": "grids.harmonic_envelope_violations",
+      "reported": [
+        "grids.harmonic_envelope_violations = 24"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_coarse_envelope_is_ten_times_too_tight": {
+      "caught": true,
+      "expected_named": "grids.coarse_envelope_violations",
+      "reported": [
+        "grids.coarse_envelope_violations = 30"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_sixth_root_cap_loses_an_order_of_magnitude": {
+      "caught": true,
+      "expected_named": "grids.sixth_root_cap_violations",
+      "reported": [
+        "grids.sixth_root_cap_violations = 14"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_mu_star_is_defined_over_six_instead_of_five": {
+      "caught": true,
+      "expected_named": "grids.mu_star_not_six_theta_minus_one_over_five",
+      "reported": [
+        "grids.mu_star_not_six_theta_minus_one_over_five = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_log_series_is_truncated_after_four_terms": {
+      "caught": true,
+      "expected_named": "the bracket could not decide",
+      "reported": [
+        "constants.c_H: the bracket could not decide",
+        "a decimal the paper publishes matches no reference: ['3.7080177783', '3.7080177783204333']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_verification_floor_is_off_by_a_power_of_two": {
+      "caught": true,
+      "expected_named": "au2d7_carryover: 2075*2^60 is not the published floor",
+      "reported": [
+        "au2d7_carryover: 2075*2^60 is not the published floor"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_log_range_reduction_divides_by_three": {
+      "caught": true,
+      "expected_named": "instrument.ln_of_four_is_not_twice_ln_two",
+      "reported": [
+        "instrument.ln_of_two_does_not_contain_the_certified_bracket",
+        "instrument.ln_of_four_is_not_twice_ln_two",
+        "grids.harmonic_envelope_violations = 12",
+        "a decimal the paper publishes matches no reference: ['3.7080177783', '3.7080177783204333']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_checksum_comparison_is_negated": {
+      "caught": true,
+      "expected_named": "artifacts.CHECKSUMS_mismatches",
+      "reported": [
+        "artifacts.CHECKSUMS_mismatches = ['Hard_Zeta_AU2d8_Literature_Notes_v0.1.md', 'Hard_Zeta_AU2d8_checker_report.json', 'Hard_Zeta_AU2d8_constants_frontier.json', 'Hard_Zeta_AU2d8_theorem_ledger.json', 'Hard_Zeta_A_Line_ROUTE_MAP_v2.8_AU2d8.md', 'Hard_Zeta_Phase_II_Round_AU2d8_Quadratic_Low_Source_Corridor_Saturation_v0.1.md', 'SOURCE_VALIDATION_AU2d8.json', 'verify_Hard_Zeta_AU2d8_low_source_saturation.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_cross_manifest_comparison_is_negated": {
+      "caught": true,
+      "expected_named": "artifacts.digests_disagreeing_between_the_two_manifests",
+      "reported": [
+        "artifacts.digests_disagreeing_between_the_two_manifests = ['Hard_Zeta_AU2d8_Literature_Notes_v0.1.md', 'Hard_Zeta_AU2d8_checker_report.json', 'Hard_Zeta_AU2d8_constants_frontier.json', 'Hard_Zeta_AU2d8_theorem_ledger.json', 'Hard_Zeta_A_Line_ROUTE_MAP_v2.8_AU2d8.md', 'Hard_Zeta_Phase_II_Round_AU2d8_Quadratic_Low_Source_Corridor_Saturation_v0.1.md', 'verify_Hard_Zeta_AU2d8_low_source_saturation.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_item_54_validation_shape_is_not_recognised": {
+      "caught": true,
+      "expected_named": "the validation record shape is unrecognised",
+      "reported": [
+        "artifacts: the validation record shape is unrecognised"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_paper_ledger_anchor_no_longer_matches": {
+      "caught": true,
+      "expected_named": "the paper's own ledger sections parsed empty",
+      "reported": [
+        "the paper's own ledger sections parsed empty: ['21.1 proved internally']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_only_a_key_this_report_does_not_use_is_read": {
+      "caught": true,
+      "expected_named": "checker entries were read",
+      "reported": [
+        "only 0 checker entries were read; the report shape may have changed"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_exponential_series_stops_after_two_terms": {
+      "caught": true,
+      "expected_named": "the bracket could not decide",
+      "reported": [
+        "grids.sixth_root_inversion_violations = 1",
+        "constants.C_H: the bracket could not decide",
+        "constants.c_H: the bracket could not decide",
+        "a decimal the paper publishes matches no reference: ['0.3355174869', '3.7080177783', '0.33551748694149397', '3.7080177783204333']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_scope_note_echo_is_dropped": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green",
+      "gate_still_green": true,
+      "complaints_seen": []
+    },
+    "D25_the_nth_root_loses_its_upper_bound": {
+      "caught": true,
+      "expected_named": "instrument.cube_root_of_eight_does_not_contain_two",
+      "reported": [
+        "instrument.cube_root_of_eight_does_not_contain_two"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 25,
+    "caught_by_their_own_check": 25,
+    "missed": 0,
+    "robustness_properties": 1,
+    "malformed": 0,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

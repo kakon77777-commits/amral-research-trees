@@ -1,0 +1,388 @@
+{
+  "tool": "src54_low_source_saturation.py",
+  "round": "A-U.2d.8",
+  "orbit_limit": 2500,
+  "instrument": {
+    "brackets_from": "src53_plateau_reset (certified there, not re-derived)",
+    "one_over_ln2_to_20_places": "1.44269504088896340735",
+    "ln_bracket_from": "2 sum u^(2k+1)/(2k+1) with an exact tail bound"
+  },
+  "instrument_selfcheck": {
+    "checks": 8,
+    "failed": []
+  },
+  "segments": {
+    "orbits": 1249,
+    "segments": 32207,
+    "max_L": 51,
+    "max_source": 425645,
+    "product_identity_violations": 0,
+    "two_forms_of_the_identity_disagree": 0,
+    "sources_that_are_not_the_segment_minimum": 0,
+    "segments_with_a_repeated_state": 0,
+    "segments_meeting_the_packing_premise": 32207,
+    "sorted_state_below_y_plus_2k": 0,
+    "packing_envelope_violations": 0,
+    "gamma_form_disagrees_with_the_product": 0,
+    "envelopes_compared": 32207
+  },
+  "gamma": {
+    "pairs": 56,
+    "exact_disagreements": 0,
+    "largest_L": 400,
+    "worst_lgamma_absolute_error": 9.413270163349807e-11,
+    "worst_error_over_its_cancellation_bound": 0.17020460053705744,
+    "lgamma_disagreements_beyond_cancellation": 0,
+    "rows": [
+      {
+        "y": 3,
+        "L": 1,
+        "log2_P": "0.152003093445",
+        "lgamma_absolute_error": "2.220e-16",
+        "cancellation_bound": "1.001e-12"
+      },
+      {
+        "y": 3,
+        "L": 2,
+        "log2_P": "0.245112497837",
+        "lgamma_absolute_error": "1.110e-15",
+        "cancellation_bound": "1.002e-12"
+      },
+      {
+        "y": 3,
+        "L": 3,
+        "log2_P": "0.312226693695",
+        "lgamma_absolute_error": "0.000e+00",
+        "cancellation_bound": "1.005e-12"
+      },
+      {
+        "y": 3,
+        "L": 5,
+        "log2_P": "0.407762835481",
+        "lgamma_absolute_error": "5.329e-15",
+        "cancellation_bound": "1.011e-12"
+      },
+      {
+        "y": 3,
+        "L": 13,
+        "log2_P": "0.609392389714",
+        "lgamma_absolute_error": "7.105e-15",
+        "cancellation_bound": "1.043e-12"
+      },
+      {
+        "y": 3,
+        "L": 40,
+        "log2_P": "0.866776493145",
+        "lgamma_absolute_error": "1.421e-14",
+        "cancellation_bound": "1.200e-12"
+      }
+    ]
+  },
+  "harmonic_depth": {
+    "chains": 24010,
+    "max_depth": 17,
+    "max_L": 51,
+    "chains_meeting_the_packing_premise": 24010,
+    "chains_where_the_outer_endpoint_exceeds_the_inner_source": 0,
+    "chains_with_4_apart_sources_y_r_ge_y_1_plus_4r_minus_4": 23482,
+    "chains_meeting_the_endpoint_gap_premise": 0,
+    "chains_meeting_every_premise": 0,
+    "theorem_9_1_checked": 0,
+    "theorem_9_1_violations": 0,
+    "the_two_forms_of_9_1_are_not_equivalent": 0,
+    "low_source_chains_3_le_y1_le_L": 4048,
+    "low_source_chains_meeting_every_premise": 0
+  },
+  "grids": {
+    "harmonic_envelope_violations": 0,
+    "coarse_envelope_violations": 0,
+    "sixth_root_cap_violations": 0,
+    "sixth_root_inversion_violations": 0,
+    "mu_star_not_six_theta_minus_one_over_five": 0,
+    "old_exponent_not_theta_over_one_plus_theta": 0,
+    "grid_points": 36,
+    "low_source_grid_points": 14,
+    "theta_star_exact": "2500/12791",
+    "mu_star_exact": "2209/63955",
+    "old_exponent_exact": "2500/15291"
+  },
+  "au2d7_carryover": {
+    "verified_floor_recomputes": true,
+    "verified_floor": 2392312122059207475200,
+    "verified_floor_is_2075_times_2_to_the_60": true,
+    "rows": [
+      {
+        "depth": 5,
+        "published": 50659991084.41252,
+        "recomputed": "50659991084.4125",
+        "decided": true,
+        "nearest_double": 50659991084.41251,
+        "ulps": 1
+      },
+      {
+        "depth": 9,
+        "published": 81834819965.94533,
+        "recomputed": "81834819965.9453",
+        "decided": true,
+        "nearest_double": 81834819965.9453,
+        "ulps": 2
+      },
+      {
+        "depth": 10,
+        "published": 88452959345.04712,
+        "recomputed": "88452959345.0471",
+        "decided": true,
+        "nearest_double": 88452959345.0471,
+        "ulps": 1
+      },
+      {
+        "depth": 100,
+        "published": 367019933202.2054,
+        "recomputed": "367019933202.2053",
+        "decided": true,
+        "nearest_double": 367019933202.2054,
+        "ulps": 0
+      },
+      {
+        "depth": 1000,
+        "published": 1247567355004.7424,
+        "recomputed": "1247567355004.7421",
+        "decided": true,
+        "nearest_double": 1247567355004.7422,
+        "ulps": 1
+      },
+      {
+        "depth": 1000000,
+        "published": 40681166142272.65,
+        "recomputed": "40681166142272.6386",
+        "decided": true,
+        "nearest_double": 40681166142272.64,
+        "ulps": 1
+      }
+    ],
+    "rows_off_by_at_least_one_ulp": [
+      5,
+      9,
+      10,
+      1000,
+      1000000
+    ],
+    "rows_the_bracket_could_not_decide": [],
+    "inversion_sharper_from_depth": 8,
+    "the_paper_tabulates_from_depth": null,
+    "depths_where_the_inversion_is_published_but_weaker": [
+      5
+    ],
+    "high_source_floor": {
+      "decided": true,
+      "nearest_double": 70531363288.07318,
+      "ulps": 0
+    },
+    "log2_floor": {
+      "decided": true,
+      "nearest_double": 71.01889562112164,
+      "ulps": 0
+    }
+  },
+  "constants": {
+    "rows": {
+      "theta_star": {
+        "published": 0.19544992572902825,
+        "exact": "2500/12791",
+        "nearest_double": 0.19544992572902822,
+        "ulps_from_the_nearest_double": 1
+      },
+      "mu_star": {
+        "published": 0.03453991087483388,
+        "exact": "2209/63955",
+        "nearest_double": 0.034539910874833865,
+        "ulps_from_the_nearest_double": 2
+      },
+      "new_dense_overlap_exponent": {
+        "published": 0.19544992572902825,
+        "exact": "2500/12791",
+        "nearest_double": 0.19544992572902822,
+        "ulps_from_the_nearest_double": 1
+      },
+      "old_dense_overlap_exponent": {
+        "published": 0.1634948662611994,
+        "exact": "2500/15291",
+        "nearest_double": 0.1634948662611994,
+        "ulps_from_the_nearest_double": 0
+      }
+    },
+    "off_by_at_least_one_ulp": [
+      "theta_star",
+      "mu_star",
+      "new_dense_overlap_exponent"
+    ],
+    "the_published_value_is_the_float64_evaluation": {
+      "theta_star": true,
+      "mu_star": true
+    },
+    "C_H": {
+      "published": 0.33551748694149397,
+      "recomputed": "0.33551748694149395360",
+      "decided": true,
+      "nearest_double": 0.33551748694149397,
+      "ulps": 0,
+      "closed_form": "e^(1/9) * 3^(1/6) / 4"
+    },
+    "c_H": {
+      "published": 3.7080177783204333,
+      "recomputed": "3.70801777832043371162",
+      "decided": true,
+      "nearest_double": 3.7080177783204338,
+      "ulps": -1,
+      "closed_form": "C_H^(-6/5)"
+    },
+    "rho_star_agrees": true,
+    "new_equals_theta_star": true,
+    "inline_decimals_in_the_paper": {
+      "C_H": {
+        "published_decimals": 17,
+        "digits_correct": 16,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "3551748694149397",
+        "reference_tail": "35517486941493953602",
+        "published": "0.33551748694149397"
+      },
+      "c_H": {
+        "published_decimals": 16,
+        "digits_correct": 15,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "7080177783204333",
+        "reference_tail": "70801777832043371162",
+        "published": "3.7080177783204333"
+      },
+      "theta_star": {
+        "published_decimals": 17,
+        "digits_correct": 16,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "9544992572902825",
+        "reference_tail": "95449925729028222969",
+        "published": "0.19544992572902825"
+      },
+      "old_dense_overlap_exponent": {
+        "published_decimals": 10,
+        "digits_correct": 10,
+        "verdict": "correctly rounded at the last digit",
+        "published": "0.1634948663"
+      },
+      "mu_star": {
+        "published_decimals": 17,
+        "digits_correct": 16,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "3453991087483388",
+        "reference_tail": "34539910874833867563",
+        "published": "0.03453991087483388"
+      }
+    },
+    "published_decimals_this_run_could_not_identify": []
+  },
+  "ledger": {
+    "table": [
+      {
+        "paper_section": "21.1 proved internally",
+        "paper_items": 17,
+        "ledger_key": "proved_internally",
+        "ledger_items": 14,
+        "shortfall": 3
+      },
+      {
+        "paper_section": "21.2 inherited",
+        "paper_items": 7,
+        "ledger_key": "inherited_internal",
+        "ledger_items": 7,
+        "shortfall": 0
+      },
+      {
+        "paper_section": "21.3 external technical",
+        "paper_items": 5,
+        "ledger_key": "external_technical_input",
+        "ledger_items": 4,
+        "shortfall": 1
+      },
+      {
+        "paper_section": "21.4 external live computational",
+        "paper_items": 1,
+        "ledger_key": "live_computational_input",
+        "ledger_items": 1,
+        "shortfall": 0
+      },
+      {
+        "paper_section": "21.5 heuristic / open",
+        "paper_items": 3,
+        "ledger_key": "heuristic_or_open",
+        "ledger_items": 2,
+        "shortfall": 1
+      }
+    ],
+    "sections_where_the_counts_differ": [
+      "21.1 proved internally",
+      "21.3 external technical",
+      "21.5 heuristic / open"
+    ],
+    "paper_no_go_headings": 6,
+    "ledger_no_go_entries": 6,
+    "no_go_shortfall": 0,
+    "paper_no_go_titles_with_no_ledger_entry_sharing_a_keyword": [],
+    "paper_external_inputs_with_no_ledger_entry_sharing_a_keyword": {
+      "bullets": 5,
+      "with_no_ledger_entry": [
+        "inherited irrationality-measure consequence for $\\log_2 3$ through $\\rho_\\star=4.1164$;"
+      ],
+      "undecidable_by_this_test": []
+    },
+    "paper_open_questions_with_no_ledger_entry_sharing_a_keyword": {
+      "bullets": 3,
+      "with_no_ledger_entry": [],
+      "undecidable_by_this_test": []
+    },
+    "round_agrees": "A-U.2d.8",
+    "the_ledger_declares_a_status": false,
+    "the_ledger_declares_a_next_round": false
+  },
+  "artifacts": {
+    "validation_record_shape": "list of file records (items 51, 52, 54)",
+    "files_in_the_bundle": 9,
+    "listed_in_CHECKSUMS": 8,
+    "listed_in_the_validation_record": 7,
+    "CHECKSUMS_mismatches": [],
+    "validation_record_mismatches": [],
+    "digests_disagreeing_between_the_two_manifests": [],
+    "in_CHECKSUMS_but_not_the_validation_record": [
+      "SOURCE_VALIDATION_AU2d8.json"
+    ],
+    "in_the_validation_record_but_not_CHECKSUMS": [],
+    "covered_by_neither_manifest": [
+      "CHECKSUMS.sha256"
+    ],
+    "the_scope_note_declares_the_gap": true,
+    "scope_note": "Manifest and checksum files are generated after content validation and are not self-hashed here.",
+    "the_record_says_all_ok": true,
+    "a_stdout_transcript_is_shipped": false
+  },
+  "their_claims": {
+    "checks_the_report_names": 8,
+    "independently_confirmed": 3,
+    "independently_contradicted": [],
+    "not_covered_by_this_run": [
+      "low_source_sixth_root_envelope",
+      "phase_gate_integer_logic",
+      "interval_mass_identity",
+      "reset_budget_algebra",
+      "max_gamma_log2_abs_error"
+    ],
+    "their_worst_gamma_error": 3.114154424783966e-10,
+    "this_run_s_gamma_error": 0,
+    "the_scope_warning": "Finite checker only. No divergent CASP orbit or B-surviving suffix-minimum first-crossing interval is assumed or computa"
+  },
+  "failures": [],
+  "non_vacuity_guards": [],
+  "passed": true
+}
