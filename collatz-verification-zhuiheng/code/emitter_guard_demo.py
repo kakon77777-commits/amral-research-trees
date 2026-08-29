@@ -50,6 +50,7 @@ CASES = [
     ("src52", (0, ("capacity", "pairs_enumerated"))),
     ("src53", (0, ("slope_quantization", "edges"))),
     ("src54", (0, ("segments", "segments"))),
+    ("src55", (0, ("sieve", "odd_integers_mapped"))),
 ]
 
 

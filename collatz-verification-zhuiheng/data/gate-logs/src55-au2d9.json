@@ -1,0 +1,503 @@
+{
+  "tool": "src55_orbit_packing_deficit.py",
+  "round": "A-U.2d.9",
+  "orbit_limit": 2000,
+  "instrument": {
+    "brackets_from": "src53_plateau_reset and src54_low_source_saturation",
+    "one_over_ln2_to_20_places": "1.44269504088896340735"
+  },
+  "instrument_selfcheck": {
+    "checks": 8,
+    "failed": []
+  },
+  "sieve": {
+    "odd_integers_mapped": 20000,
+    "images_divisible_by_three": 0,
+    "post_entry_states": 24688,
+    "states_not_1_or_5_mod_6": 0,
+    "first_crossing_sources": 24688,
+    "sources_with_L_equal_1": 11775,
+    "post_entry_sources_with_L_at_least_2": 11914,
+    "sources_not_3_mod_4": 0,
+    "sources_not_7_or_11_mod_12": 0,
+    "L_equal_1_sources_not_7_or_11_mod_12": 11775,
+    "pre_entry_sources_excluded": 999
+  },
+  "packing": {
+    "segments": 23689,
+    "max_L": 51,
+    "segments_meeting_the_packing_premise": 23689,
+    "segments_failing_distinctness_or_minimality": 0,
+    "sorted_state_below_its_admissible_position": 0,
+    "explicit_admissible_position_errors": 0,
+    "uniform_lower_bound_a_k_below_y_plus_3k_minus_1": 0,
+    "sieved_envelope_violations": 0,
+    "sieved_envelope_above_the_odd_envelope": 0,
+    "two_progression_form_disagrees_with_the_product": 0
+  },
+  "gamma": {
+    "pairs": 42,
+    "exact_disagreements": 0,
+    "largest_L": 400,
+    "worst_lgamma_absolute_error": 1.1368683772161603e-12,
+    "worst_error_over_its_cancellation_bound": 0.120976467297682,
+    "lgamma_disagreements_beyond_cancellation": 0,
+    "rows": [
+      {
+        "y": 7,
+        "L": 1,
+        "log2_P6": "0.067114195859",
+        "lgamma_absolute_error": "2.012e-16"
+      },
+      {
+        "y": 7,
+        "L": 2,
+        "log2_P6": "0.110182917750",
+        "lgamma_absolute_error": "1.110e-16"
+      },
+      {
+        "y": 7,
+        "L": 3,
+        "log2_P6": "0.146708793776",
+        "lgamma_absolute_error": "4.718e-16"
+      },
+      {
+        "y": 7,
+        "L": 8,
+        "log2_P6": "0.256169656811",
+        "lgamma_absolute_error": "1.332e-15"
+      },
+      {
+        "y": 7,
+        "L": 25,
+        "log2_P6": "0.414941006055",
+        "lgamma_absolute_error": "4.441e-15"
+      }
+    ]
+  },
+  "exponents": {
+    "sources": 4,
+    "rows": [
+      {
+        "y": 7,
+        "L": 200,
+        "sieved_exponent": "0.09645",
+        "odd_exponent": "0.13160",
+        "deficit_exponent": "-0.03515"
+      },
+      {
+        "y": 7,
+        "L": 800,
+        "sieved_exponent": "0.09936",
+        "odd_exponent": "0.13858",
+        "deficit_exponent": "-0.03922"
+      },
+      {
+        "y": 7,
+        "L": 3200,
+        "sieved_exponent": "0.10135",
+        "odd_exponent": "0.14335",
+        "deficit_exponent": "-0.04200"
+      },
+      {
+        "y": 7,
+        "L": 12800,
+        "sieved_exponent": "0.10278",
+        "odd_exponent": "0.14675",
+        "deficit_exponent": "-0.04398"
+      },
+      {
+        "y": 11,
+        "L": 200,
+        "sieved_exponent": "0.08777",
+        "odd_exponent": "0.11626",
+        "deficit_exponent": "-0.02849"
+      },
+      {
+        "y": 11,
+        "L": 800,
+        "sieved_exponent": "0.09242",
+        "odd_exponent": "0.12625",
+        "deficit_exponent": "-0.03382"
+      },
+      {
+        "y": 11,
+        "L": 3200,
+        "sieved_exponent": "0.09559",
+        "odd_exponent": "0.13309",
+        "deficit_exponent": "-0.03750"
+      },
+      {
+        "y": 11,
+        "L": 12800,
+        "sieved_exponent": "0.09786",
+        "odd_exponent": "0.13799",
+        "deficit_exponent": "-0.04013"
+      }
+    ],
+    "sieved_exponent_not_approaching_one_ninth": 0,
+    "odd_exponent_not_approaching_one_sixth": 0,
+    "deficit_exponent_not_negative": 0,
+    "largest_L": 12800
+  },
+  "anchor_gap": {
+    "residue_sets_enumerated": 499149,
+    "spans_below_six_r_minus_eight": 0,
+    "tight_sets_whose_last_anchor_is_not_11_mod_12": 0,
+    "tight_sets_whose_next_admissible_state_is_not_two_higher": 0,
+    "chains": 15832,
+    "chains_where_the_outer_endpoint_exceeds_the_inner_source": 0,
+    "lemma_7_1_checked": 0,
+    "lemma_7_1_violations": 0,
+    "max_depth": 16
+  },
+  "qclass": {
+    "valuations_checked": 10,
+    "valuation_classes_not_exactly_one_mod_2_to_k_plus_1": 0,
+    "capacity_windows": 20,
+    "windows_where_N_k_exceeds_W_over_three_two_to_k_plus_one": 0,
+    "windows_where_the_weighted_capacity_exceeds_17W_over_24_plus_12": 0,
+    "prefixes": 9517,
+    "prefixes_meeting_subcriticality": 9517,
+    "prefixes_failing_subcriticality": 0,
+    "prefixes_with_repeated_states": 0,
+    "theorem_11_2_checked": 9517,
+    "theorem_11_2_violations": 0,
+    "max_prefix_length": 50
+  },
+  "grids": {
+    "theorem_6_1_violations": 0,
+    "corollary_6_2_violations": 0,
+    "corollary_8_2_not_implied_by_8_1": 0,
+    "corollary_8_3_inversion_violations": 0,
+    "mu9_not_nine_theta_minus_one_over_eight": 0,
+    "deficit_exponent_not_one_sixth_minus_one_ninth": 0,
+    "grid_points": 36,
+    "low_source_grid_points": 14,
+    "theta_star_exact": "2500/12791",
+    "mu9_exact": "9709/102328"
+  },
+  "depth_cap": {
+    "chains": 15832,
+    "chains_meeting_the_endpoint_gap_premise": 0,
+    "theorem_8_1_checked": 0,
+    "theorem_8_1_violations": 0,
+    "the_two_forms_of_8_1_are_not_equivalent": 0,
+    "low_source_chains_7_le_y1_le_L": 3060
+  },
+  "constants": {
+    "rows": {
+      "C6_uniform_product": {
+        "decided": true,
+        "nearest_double": 1.2695833698941745,
+        "ulps": 0,
+        "published": 1.2695833698941745,
+        "closed_form": "exp(1/21+1/27) * 4^(1/9)",
+        "recomputed": "1.269583369894174574"
+      },
+      "C9_depth": {
+        "decided": true,
+        "nearest_double": 0.21159722831569577,
+        "ulps": -1,
+        "published": 0.21159722831569575,
+        "closed_form": "C6/6",
+        "recomputed": "0.211597228315695762"
+      },
+      "c9_inversion": {
+        "decided": true,
+        "nearest_double": 5.738538220631227,
+        "ulps": 1,
+        "published": 5.738538220631228,
+        "closed_form": "C9^(-9/8)",
+        "recomputed": "5.738538220631227565"
+      },
+      "qclass_span_mean_spacing_lower": {
+        "decided": true,
+        "nearest_double": 3.40946470486425,
+        "ulps": 1,
+        "published": 3.4094647048642504,
+        "closed_form": "24(4-beta)/17",
+        "recomputed": "3.409464704864250096"
+      },
+      "qclass_span_density_upper": {
+        "decided": true,
+        "nearest_double": 0.2933011738098681,
+        "ulps": 0,
+        "published": 0.2933011738098681,
+        "closed_form": "17/(24(4-beta))",
+        "recomputed": "0.293301173809868081"
+      },
+      "theta_star": {
+        "published": 0.19544992572902825,
+        "closed_form": "1/(rho+1) = 2500/12791",
+        "decided": true,
+        "nearest_double": 0.19544992572902822,
+        "ulps": 1,
+        "recomputed": null
+      },
+      "dense_root_source_floor_exponent_mu9": {
+        "published": 0.09488116644515679,
+        "closed_form": "(9 theta-1)/8 = 9709/102328",
+        "decided": true,
+        "nearest_double": 0.09488116644515675,
+        "ulps": 3,
+        "recomputed": null
+      },
+      "dense_root_source_floor_exponent_mu8": {
+        "published": 0.03453991087483388,
+        "closed_form": "(6 theta-1)/5 = 2209/63955",
+        "decided": true,
+        "nearest_double": 0.034539910874833865,
+        "ulps": 2,
+        "recomputed": null
+      },
+      "old_low_source_product_exponent": {
+        "published": 0.16666666666666666,
+        "closed_form": "1/6",
+        "decided": true,
+        "nearest_double": 0.16666666666666666,
+        "ulps": 0,
+        "recomputed": null
+      },
+      "syracuse_sieved_product_exponent": {
+        "published": 0.1111111111111111,
+        "closed_form": "1/9",
+        "decided": true,
+        "nearest_double": 0.1111111111111111,
+        "ulps": 0,
+        "recomputed": null
+      },
+      "dynamic_deficit_exponent": {
+        "published": 0.05555555555555555,
+        "closed_form": "1/6 - 1/9",
+        "decided": true,
+        "nearest_double": 0.05555555555555555,
+        "ulps": 0,
+        "recomputed": null
+      },
+      "beta_log2_3": {
+        "decided": true,
+        "nearest_double": 1.584962500721156,
+        "ulps": 0,
+        "published": 1.584962500721156,
+        "closed_form": "log2 3",
+        "recomputed": "1.584962500721156181"
+      }
+    },
+    "off_by_at_least_one_ulp": [
+      "C9_depth",
+      "c9_inversion",
+      "dense_root_source_floor_exponent_mu8",
+      "dense_root_source_floor_exponent_mu9",
+      "qclass_span_mean_spacing_lower",
+      "theta_star"
+    ],
+    "the_derivation_chain_in_float64": {
+      "C9_is_the_published_C6_divided_by_six_as_doubles": true,
+      "c9_is_the_published_C9_to_the_minus_nine_eighths_as_doubles": true,
+      "mu9_is_the_float64_theta_star_put_through_its_formula": true,
+      "the_spacing_is_the_float64_reciprocal_of_the_density": true
+    },
+    "constants_the_two_artifacts_disagree_on": [
+      {
+        "constant": "qclass_span_mean_spacing_lower",
+        "checker_report": 3.40946470486425,
+        "frontier": 3.4094647048642504,
+        "ulps_apart": 1
+      }
+    ],
+    "constants_renamed_between_the_two_artifacts": [
+      {
+        "checker_report": "beta",
+        "frontier": "beta_log2_3"
+      },
+      {
+        "checker_report": "new_3_sieved_product_exponent",
+        "frontier": "syracuse_sieved_product_exponent"
+      }
+    ],
+    "inline_decimals_in_the_paper": {
+      "C9_depth": {
+        "published_decimals": 17,
+        "digits_correct": 16,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "1159722831569575",
+        "reference_tail": "11597228315695762436",
+        "published": "0.21159722831569575"
+      },
+      "c9_inversion": {
+        "published_decimals": 15,
+        "digits_correct": 15,
+        "verdict": "correctly rounded at the last digit",
+        "published": "5.738538220631228"
+      },
+      "qclass_span_mean_spacing_lower": {
+        "published_decimals": 14,
+        "digits_correct": 14,
+        "verdict": "exact to every published digit",
+        "published": "3.40946470486425"
+      },
+      "theta_star": {
+        "published_decimals": 17,
+        "digits_correct": 16,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "9544992572902825",
+        "reference_tail": "95449925729028222969",
+        "published": "0.19544992572902825"
+      },
+      "mu8": {
+        "published_decimals": 17,
+        "digits_correct": 16,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "3453991087483388",
+        "reference_tail": "34539910874833867563",
+        "published": "0.03453991087483388"
+      },
+      "mu9": {
+        "published_decimals": 17,
+        "digits_correct": 16,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "9488116644515679",
+        "reference_tail": "94881166445156750840",
+        "published": "0.09488116644515679"
+      },
+      "C6_uniform_product": {
+        "published_decimals": 16,
+        "digits_correct": 16,
+        "verdict": "truncated rather than rounded at the last digit",
+        "published": "1.2695833698941745"
+      },
+      "qclass_span_density_upper": {
+        "published_decimals": 16,
+        "digits_correct": 16,
+        "verdict": "correctly rounded at the last digit",
+        "published": "0.2933011738098681"
+      },
+      "one_sixth": {
+        "published_decimals": 6,
+        "digits_correct": 6,
+        "verdict": "truncated rather than rounded at the last digit",
+        "published": "0.166666"
+      },
+      "one_ninth": {
+        "published_decimals": 6,
+        "digits_correct": 6,
+        "verdict": "exact to every published digit",
+        "published": "0.111111"
+      }
+    },
+    "published_decimals_this_run_could_not_identify": []
+  },
+  "ledger": {
+    "table": [
+      {
+        "paper_section": "18.1 proved internally",
+        "paper_items": 15,
+        "ledger_key": "proved_internally",
+        "ledger_items": 12,
+        "shortfall": 3
+      },
+      {
+        "paper_section": "18.2 inherited",
+        "paper_items": 8,
+        "ledger_key": "inherited_internal",
+        "ledger_items": 0,
+        "shortfall": 8
+      },
+      {
+        "paper_section": "18.3 external grounding",
+        "paper_items": 3,
+        "ledger_key": "external_technical_input",
+        "ledger_items": 0,
+        "shortfall": 3
+      },
+      {
+        "paper_section": "18.4 explicitly open",
+        "paper_items": 5,
+        "ledger_key": "heuristic_or_open",
+        "ledger_items": 3,
+        "shortfall": 2
+      }
+    ],
+    "sections_where_the_counts_differ": [
+      "18.1 proved internally",
+      "18.2 inherited",
+      "18.3 external grounding",
+      "18.4 explicitly open"
+    ],
+    "paper_no_go_headings": 7,
+    "ledger_no_go_entries": 0,
+    "no_go_shortfall": 7,
+    "paper_no_go_titles_with_no_ledger_entry_sharing_a_keyword": [
+      "14.1 all-odd consecutive packing as a dynamically sharp envelope",
+      "14.2 only constant-factor loss from exact transition arithmetic",
+      "14.3 sixth-root low-source exponent as the final local exponent",
+      "14.4 B-anchor spacing remains $4$",
+      "14.5 pure $3$-sieve exhausts the transition geometry",
+      "14.6 diameter improvement may be silently promoted to harmonic improvement",
+      "14.7 any use of the old rotation headroom as a telescope"
+    ],
+    "ledger_keys": [
+      "date",
+      "external_primary_grounding",
+      "heuristic_or_open",
+      "inherited_internal_input",
+      "next_target",
+      "no_go_or_sealed_routes",
+      "proved_internally",
+      "round",
+      "title"
+    ],
+    "round_agrees": "A-U.2d.9"
+  },
+  "artifacts": {
+    "digests_the_record_gives_without_a_filename": 1,
+    "…resolved_by_looking_the_digest_up_among_the_files": [
+      {
+        "block": "checker_script",
+        "resolves_to": "verify_Hard_Zeta_AU2d9_orbit_packing_deficit.py"
+      }
+    ],
+    "…that_match_no_file_in_the_bundle": [],
+    "validation_record_shape": "three purpose-named blocks, no `files` key (item 55): formal_source_validation, json_validation, checker_script",
+    "files_in_the_bundle": 9,
+    "listed_in_CHECKSUMS": 8,
+    "listed_in_the_validation_record": 7,
+    "CHECKSUMS_mismatches": [],
+    "validation_record_mismatches": [],
+    "digests_disagreeing_between_the_two_manifests": [],
+    "covered_by_neither_manifest": [
+      "CHECKSUMS.sha256"
+    ],
+    "the_scope_note_declares_the_gap": false,
+    "the_record_says_all_ok": true,
+    "the_record_says_the_checker_rerun_matches_its_report": true,
+    "the_record_s_own_notes": [
+      "Canonical source validated after fixing malformed quad text in Section 9.",
+      "No claim of Collatz proof or divergent orbit instantiation is made.",
+      "The q-class span theorem is recorded as a diameter result only, not promoted to a harmonic exponent."
+    ],
+    "a_stdout_transcript_is_shipped": false
+  },
+  "their_claims": {
+    "checks_the_report_names": 8,
+    "independently_confirmed": 5,
+    "independently_contradicted": [],
+    "not_covered_by_this_run": [
+      "harmonic_envelope",
+      "b_anchor_endpoint_gap",
+      "asymptotic_exponent_ratio"
+    ],
+    "their_worst_gamma_error": 1.9774418778912632e-13,
+    "this_run_s_gamma_error": 0,
+    "their_max_actual_to_sieved_ratio": 1.0,
+    "the_scope_warning": "Finite checker only. It verifies exact residue, packing, Gamma, q-class, and algebraic finite statements. It d"
+  },
+  "failures": [],
+  "non_vacuity_guards": [],
+  "passed": true
+}

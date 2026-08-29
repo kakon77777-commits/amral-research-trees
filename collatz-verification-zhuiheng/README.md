@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->54 source items and 34 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->55 source items and 35 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -595,11 +595,49 @@ instance behind each band.
     without its premise. The drill's first pass exposed a **vacuous check** and
     an untested instrument; both are fixed, and the brackets now have an
     eight-part self-check of their own. Drill **25/25**.
-36. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+36. [`reports/RUN-037-HARD-ZETA-AU2D9-ORBIT-PACKING-DEFICIT.md`](./reports/RUN-037-HARD-ZETA-AU2D9-ORBIT-PACKING-DEFICIT.md) —
+    **one line of arithmetic closes the previous round's open problem, and for
+    once the round's headline theorem has a premise real orbits actually meet.**
+    A-U.2d.8 listed as open that a genuine orbit ought to beat the
+    consecutive-odd packing envelope, with no quantitative theorem. The answer
+    needs no machinery: `3n+1 = 1 (mod 3)`, so no accelerated image is ever
+    divisible by three, the states pack into the integers coprime to 6 at mean
+    spacing 3 rather than 2, and the local exponent moves `1/6 -> 1/9` with the
+    ratio decaying like `L^(-1/18)`. Two residue refinements fall out of the same
+    congruence — every post-entry state in `{1,5} mod 6`, every post-entry
+    B-anchor in `{7,11} mod 12` — and all of it is decidable in integers. Zero
+    disagreements across the sieve, the residue sets, the admissible positions,
+    the envelope, and the two-progression Gamma form, which — as at RUN-036 — is
+    a Pochhammer quotient at integer parameters, so this run's error is **zero**
+    where the checker reports `2.0e-13`. **Section 11 is why this round is worth
+    more than the last two.** Theorem 11.2 assumes first-crossing subcriticality,
+    `sum q_j < beta m` — not a survival hypothesis but the defining property of a
+    first-crossing interval, decidable as `2^Q < 3^m` — so unlike A-U.2d.8's
+    section 9.1 it was tested on **every** prefix, and holds. Its `17/24` was
+    enumerated rather than accepted: `q(n)=k` selects one class mod `2^(k+1)`,
+    and among `W` consecutive integers the odd **3-free** ones in that class
+    number at most `W/(3*2^k)+1`, which is where the `3` sieve enters; without it
+    the same sum gives `17/16`. Lemma 7.1 needs `z_1 > y_r` and gets the
+    A-U.2d.8 treatment — its combinatorial core enumerated over **499,149**
+    residue sets with zero failures, its orbit half premise-gated. **Two
+    findings.** A rounding chain with four links: `C_6` is exact, but
+    `C_9 = C_6/6` is 1 ulp out, `c_9 = C_9^(-9/8)` another, and
+    `mu9 = (9 theta-1)/8 = 9709/102328` is 3 — and every link reproduces exactly
+    by redoing the arithmetic in float64 on the already-rounded parent. And one
+    constant, `24(4-beta)/17`, is published with **two different values** in one
+    bundle: the checker report and the paper both have the correctly rounded
+    double, the constants frontier is 1 ulp off. The validation record has
+    changed shape for the fifth time in six bundles — three purpose-named blocks
+    with no `files` key — and one of those blocks carries a digest with no
+    filename at all. Two of this gate's own errors were caught first: a false
+    11,775 from applying a `mod 12` refinement to sources with `L = 1`, which its
+    inherited result excludes, and three constants left undecided by a `beta`
+    bracket `1e-6` wide where a double needs far tighter. Drill **31/31**.
+37. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-37. [`code/`](./code/) — the engine, the independent reference, and the gates.
-38. [`data/gate-logs/`](./data/gate-logs/) and
+38. [`code/`](./code/) — the engine, the independent reference, and the gates.
+39. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
