@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->58 source items and 37 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->59 source items and 38 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -706,11 +706,47 @@ instance behind each band.
     and could not reach a population meeting its own guards — and the available
     wrong fix was to lower the guard. The right one was `exp((p/q) ln x)`, which
     took it to twenty seconds. Drill **33/33**.
-39. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+39. [`reports/RUN-040-HARD-ZETA-AU2D12-TRANSPORT-HIERARCHY.md`](./reports/RUN-040-HARD-ZETA-AU2D12-TRANSPORT-HIERARCHY.md) —
+    **a hierarchy that reaches exponent zero, and constants that outrun it.**
+    A-U.2d.11 asked whether its own finite-state exponents tend to zero; this
+    round says three separate times that it does **not** answer that, and
+    instead builds a different hierarchy from what the LP relaxation discards —
+    that one trajectory must realise every overlapping exponent block at once.
+    Almost all of it needs no logarithm: `floor(beta m)` is `(3**m).bit_length()
+    - 1`, and `C_m^- = sum binom(Q-1,m-1)/(3 2^Q)`, `gamma_m = 2^(q_m+1)/3^m -
+    1`, `alpha^_m = (1/3)(1+1/gamma_m)C_m^-` are exact rationals. All six
+    published levels reproduce exactly, and so does the entire **150-level
+    record set**, on every field — including the paper's own caution that the
+    sequence is not monotone (`alpha^` rises at **93** of 150 levels). Lemma
+    10.1 was re-derived by an exact convolution of the geometric law that never
+    mentions the closed form (**zero** violations), and the closed form checked
+    separately against brute-force composition counts. Both halves of the
+    closure hold: Chernoff over 150 levels, tightest at `m = 2` where the truth
+    is **0.558** of the bound, and the Diophantine floor `gamma_m >= (ln2)
+    ||beta m||` over 400. Section 15 turns out to **derive** the source-floor
+    formula `mu = (theta* - alpha)/(1 - alpha)` that RUN-039 could only fit, so
+    the four inherited exponents and the six new ones are all checked against a
+    quoted step. **Four findings, none a mathematical error.** Section 1 states
+    the premise as every state *before* the endpoint being at least `y`, while
+    section 4's sums run to `L` inclusive — under section 1's reading Theorem
+    4.1 fails **221 of 999** times, under section 4's, none. The premise
+    sections 7-8 need, `L >= y`, is met by **one** source in 66,665 (`y = 31`);
+    mean excursion length is 6.3. The exponents fall but the explicit constants
+    rise faster: `B_12 ~ 2.9e4`, `B_48 ~ 3.0e20`, so even giving A-U.2d.11 a
+    constant of zero the `m = 12` certificate only overtakes it past
+    `L/y ~ 10^334677` — their own report renders that ratio as `0.0`, a float64
+    underflow, where the real slack is about **4227 powers of ten**. And
+    `theta* = 1/(rho*+1)` is the exact rational `2500/12791`, but the shipped
+    double is what `1/(1+float(4.1164))` evaluates to, one ulp higher, a single
+    rounding inherited by all six source-floor exponents at **0 ulps** against
+    the float64 chain. RUN-039's builder finding is **fixed** — the builder is
+    in `CHECKSUMS` this time; its ledger finding is not, two rounds running.
+    Drill **35/35**.
+40. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-40. [`code/`](./code/) — the engine, the independent reference, and the gates.
-41. [`data/gate-logs/`](./data/gate-logs/) and
+41. [`code/`](./code/) — the engine, the independent reference, and the gates.
+42. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

@@ -53,6 +53,7 @@ CASES = [
     ("src55", (0, ("sieve", "odd_integers_mapped"))),
     ("src57", (0, ("reciprocal_flow", "edges"))),
     ("src58", (0, ("certificates", "inequalities_checked"))),
+    ("src59", (0, ("results", "orbits", "sliding_block_identities_checked"))),
 ]
 
 

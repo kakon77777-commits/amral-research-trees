@@ -1,0 +1,349 @@
+{
+  "gate": "src59_block_hierarchy.py",
+  "limit": "600",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": true,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_the_floor_of_beta_m_is_off_by_one": {
+      "caught": true,
+      "expected_named": "hierarchy.q_floor_disagreeing_with_floor_beta_m",
+      "reported": [
+        "instrument.failed = ['q_1 = 1', 'C_1^- = 1/6', 'gamma_1 = 1/3', 'alpha^_1 = 2/9', 'no power of two equals a power of three']",
+        "hierarchy.q_floor_disagreeing_with_floor_beta_m = 6",
+        "hierarchy.C_minus_disagreeing_with_the_binomial_sum = 6",
+        "hierarchy.gamma_disagreeing_with_its_definition = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_negative_block_count_uses_the_wrong_binomial": {
+      "caught": true,
+      "expected_named": "hierarchy.C_minus_disagreeing_with_the_binomial_sum",
+      "reported": [
+        "instrument.failed = ['C_1^- = 1/6', 'alpha^_1 = 2/9']",
+        "hierarchy.C_minus_disagreeing_with_the_binomial_sum = 6",
+        "hierarchy.alpha_hat_disagreeing_with_corollary_8_2 = 6",
+        "hierarchy.alpha_hat_float_not_the_nearest_double = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_positive_block_gap_loses_its_extra_power_of_two": {
+      "caught": true,
+      "expected_named": "hierarchy.gamma_disagreeing_with_its_definition",
+      "reported": [
+        "instrument.failed = ['gamma_1 = 1/3', 'alpha^_1 = 2/9']",
+        "hierarchy.gamma_disagreeing_with_its_definition = 6",
+        "hierarchy.alpha_hat_disagreeing_with_corollary_8_2 = 6",
+        "hierarchy.alpha_hat_float_not_the_nearest_double = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_block_exponent_divides_by_two_instead_of_three": {
+      "caught": true,
+      "expected_named": "hierarchy.alpha_hat_disagreeing_with_corollary_8_2",
+      "reported": [
+        "instrument.failed = ['alpha^_1 = 2/9']",
+        "hierarchy.alpha_hat_disagreeing_with_corollary_8_2 = 6",
+        "hierarchy.alpha_hat_float_not_the_nearest_double = 6",
+        "hierarchy.mu_dense_disagreeing_with_the_section_15_formula = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_finance_factor_subtracts_where_it_should_add": {
+      "caught": true,
+      "expected_named": "hierarchy.alpha_hat_disagreeing_with_corollary_8_2",
+      "reported": [
+        "instrument.failed = ['alpha^_1 = 2/9']",
+        "hierarchy.alpha_hat_disagreeing_with_corollary_8_2 = 6",
+        "hierarchy.alpha_hat_float_not_the_nearest_double = 6",
+        "hierarchy.mu_dense_disagreeing_with_the_section_15_formula = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_source_floor_formula_flips_a_sign": {
+      "caught": true,
+      "expected_named": "hierarchy.mu_dense_disagreeing_with_the_section_15_formula",
+      "reported": [
+        "hierarchy.mu_dense_disagreeing_with_the_section_15_formula = 6",
+        "inherited.disagreeing_with_the_formula = 4"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_word_total_runs_one_past_the_subcritical_range": {
+      "caught": true,
+      "expected_named": "hierarchy.B_star_outside_its_bracket",
+      "reported": [
+        "hierarchy.B_star_outside_its_bracket = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_two_over_seven_term_loses_its_two_CRT_phases": {
+      "caught": true,
+      "expected_named": "hierarchy.B_star_outside_its_bracket",
+      "reported": [
+        "hierarchy.B_star_outside_its_bracket = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_additive_constant_drops_its_terminal_positions": {
+      "caught": true,
+      "expected_named": "hierarchy.B_star_outside_its_bracket",
+      "reported": [
+        "hierarchy.B_star_outside_its_bracket = 4"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_published_exponent_float_is_compared_against_a_doubled_value": {
+      "caught": true,
+      "expected_named": "hierarchy.alpha_hat_float_not_the_nearest_double",
+      "reported": [
+        "hierarchy.alpha_hat_float_not_the_nearest_double = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_theta_star_is_built_from_the_wrong_diophantine_exponent": {
+      "caught": true,
+      "expected_named": "hierarchy.mu_dense_disagreeing_with_the_section_15_formula",
+      "reported": [
+        "hierarchy.mu_dense_disagreeing_with_the_section_15_formula = 6",
+        "inherited.disagreeing_with_the_formula = 4"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_a_running_minimum_admits_values_that_are_not_records": {
+      "caught": true,
+      "expected_named": "records.record_set_disagreeing_with_the_report",
+      "reported": [
+        "records.record_set_disagreeing_with_the_report = 1",
+        "records.record_rows_disagreeing_in_a_field = 55"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_each_level_is_truncated_at_its_own_q_m": {
+      "caught": true,
+      "expected_named": "generating.lemma_10_1_violations",
+      "reported": [
+        "generating.lemma_10_1_violations = 55"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_composition_count_is_taken_at_the_wrong_argument": {
+      "caught": true,
+      "expected_named": "generating.N_m_Q_disagreeing_with_composition_enumeration",
+      "reported": [
+        "generating.N_m_Q_disagreeing_with_composition_enumeration = 56"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_capacity_bound_is_tightened_a_hundredfold": {
+      "caught": true,
+      "expected_named": "chernoff.chernoff_capacity_violations",
+      "reported": [
+        "chernoff.chernoff_capacity_violations = 150"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_chernoff_optimum_uses_the_wrong_sign_on_log_two": {
+      "caught": true,
+      "expected_named": "chernoff.optimum_identity_violations",
+      "reported": [
+        "chernoff.optimum_identity_violations = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_rate_function_comes_out_half_its_size": {
+      "caught": true,
+      "expected_named": "constants.I_beta_outside_its_bracket",
+      "reported": [
+        "chernoff.grid_points_beating_I_beta = 24",
+        "chernoff.optimum_identity_violations = 1",
+        "constants.I_beta_outside_its_bracket = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_convexity_step_is_demanded_a_hundred_times_over": {
+      "caught": true,
+      "expected_named": "diophantine.convexity_violations",
+      "reported": [
+        "diophantine.convexity_violations = 199"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_phase_gap_is_required_to_beat_a_thousand_log_twos": {
+      "caught": true,
+      "expected_named": "diophantine.gamma_below_log2_times_epsilon_plus",
+      "reported": [
+        "diophantine.gamma_below_log2_times_epsilon_plus = 400"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_one_sided_phase_is_read_from_the_wrong_side": {
+      "caught": true,
+      "expected_named": "diophantine.gamma_below_log2_times_epsilon_plus",
+      "reported": [
+        "diophantine.gamma_below_log2_times_epsilon_plus = 184"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D35_the_one_sided_phase_is_taken_a_whole_step_too_high": {
+      "caught": true,
+      "expected_named": "diophantine.epsilon_plus_outside_the_unit_interval",
+      "reported": [
+        "diophantine.epsilon_plus_outside_the_unit_interval = 400",
+        "diophantine.gamma_below_log2_times_epsilon_plus = 400"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_an_inherited_exponent_is_quoted_wrongly": {
+      "caught": true,
+      "expected_named": "inherited.disagreeing_with_the_formula",
+      "reported": [
+        "inherited.disagreeing_with_the_formula = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_block_total_valuation_is_one_exponent_short": {
+      "caught": true,
+      "expected_named": "orbits.theorem_3_1_violations",
+      "reported": [
+        "orbits.theorem_3_1_violations = 1402"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_block_correction_omits_its_last_factor": {
+      "caught": true,
+      "expected_named": "orbits.theorem_3_1_violations",
+      "reported": [
+        "orbits.theorem_3_1_violations = 1402"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_boundary_error_bound_is_made_negative": {
+      "caught": true,
+      "expected_named": "orbits.theorem_4_1_violations",
+      "reported": [
+        "orbits.theorem_4_1_violations = 147",
+        "orbits.theorem_5_1_violations = 147"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_suffix_minimum_premise_stops_being_enforced": {
+      "caught": true,
+      "expected_named": "orbits.theorem_4_1_violations",
+      "reported": [
+        "orbits.theorem_4_1_violations = 840",
+        "orbits.theorem_5_1_violations = 257",
+        "orbits.theorem_6_1_violations = 2244"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_finance_inequality_is_scaled_past_its_slack": {
+      "caught": true,
+      "expected_named": "orbits.theorem_5_1_violations",
+      "reported": [
+        "orbits.theorem_5_1_violations = 96"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_exact_word_capacity_loses_four_powers_of_two": {
+      "caught": true,
+      "expected_named": "orbits.theorem_6_1_violations",
+      "reported": [
+        "orbits.theorem_6_1_violations = 47"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_injectivity_is_reported_inside_out": {
+      "caught": true,
+      "expected_named": "orbits.segments_with_a_repeated_state",
+      "reported": [
+        "orbits.segments_with_a_repeated_state = 75",
+        "orbits.sliding_block_identities_checked",
+        "orbits.summed_balances_checked",
+        "orbits.exact_words_checked"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_source_cylinder_is_read_at_too_fine_a_modulus": {
+      "caught": true,
+      "expected_named": "cylinders.words_spanning_more_than_one_class_mod_2Qplus1",
+      "reported": [
+        "cylinders.words_spanning_more_than_one_class_mod_2Qplus1 = 247"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_three_sieve_phase_count_is_read_at_too_fine_a_modulus": {
+      "caught": true,
+      "expected_named": "cylinders.words_spanning_more_than_two_classes_mod_3_2Qplus1",
+      "reported": [
+        "cylinders.words_spanning_more_than_two_classes_mod_3_2Qplus1 = 176"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_a_digest_comparison_is_inverted": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 10"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_a_population_the_theorems_depend_on_is_emptied": {
+      "caught": true,
+      "expected_named": "orbits.theorem_7_1_checked",
+      "reported": [
+        "orbits.theorem_7_1_checked"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_the_orbit_scan_is_reduced_to_a_single_source": {
+      "caught": true,
+      "expected_named": "orbits.",
+      "reported": [
+        "orbits.theorem_7_1_checked"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D34_a_counter_is_added_that_no_list_classifies": {
+      "caught": true,
+      "expected_named": "hierarchy.a_counter_nothing_reads",
+      "reported": [
+        "hierarchy.a_counter_nothing_reads"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "N2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 35,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 35,
+    "caught": 35,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 35,
+    "caught_by_their_own_check": 35,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
