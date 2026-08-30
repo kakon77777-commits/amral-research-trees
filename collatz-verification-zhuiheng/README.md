@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->62 source items and 41 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->63 source items and 42 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -846,11 +846,44 @@ instance behind each band.
     which the ledger abbreviates. Both fixed with invariants and two-sided
     controls, and the corrected heuristic re-verified against RUN-041's genuine
     absence. Drill **30/30**.
-43. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+43. [`reports/RUN-044-HARD-ZETA-AU2D16-RECORD-GAP-TRANSPORT.md`](./reports/RUN-044-HARD-ZETA-AU2D16-RECORD-GAP-TRANSPORT.md) —
+    **the round where the central coordinate turns out to be an integer
+    identity.** A-U.2d.15 proved record sparsity must be paid for in slack;
+    this round identifies the local object carrying the payment — a
+    consecutive suffix-minimum gap — and shows it is nothing like an arbitrary
+    segment: bounded record ratio `1 < z/y < (3y+1)/(2y)`, endpoint below every
+    interior state, a fully suffix-supercritical tail, a two-sided slack spike,
+    bidirectional valuation transport, and an exact landing phase. **The
+    verification hinges on a coordinate change the paper does not spell out.**
+    Section 5 rests on the correction bank `A_n = 2^(-delta_n) Y_n`, which
+    needs `beta`; but `2^(beta n) = 3^n` exactly, so `A_n = 2^K_n Y_n / 3^n`
+    and its monotonicity is the **integer** identity `2^K_{n+1} Y_{n+1} - 3 *
+    2^K_n Y_n = 2^K_n`. Checked on **123,005** steps, zero violations, with no
+    logarithm deciding anything — and Theorem 5.1 is proved THROUGH that
+    coordinate, so it was the one place a bracket could have hidden an error.
+    After three rounds of empty populations, this round's object is everywhere:
+    **4,069** gaps and **11,305** tail suffixes, every claim clean, with
+    Theorem 8.1's ascent bound **attained** (tightest slack exactly 0). The
+    landing phases hold exactly on **3,057** `7 mod 12` and **1,012**
+    `11 mod 12` endpoints, and **both bridges the paper ships in NO-GO 13.7
+    rebuild from the map** — values, words, geometry, suffix-supercriticality,
+    phases. **Three findings, all about the bundle.** `checker_stdout.txt` is
+    **byte-identical** to the checker report beside it. The validation record
+    names four files and digests none — its content has now varied across four
+    consecutive rounds (absent, present, a stdout digest, neither), though
+    `CHECKSUMS` still pins 10 of 11 files. And `3-beta` is published exact
+    while `2-beta` is 2 ulps out: the same subtraction, magnitude loss 2.1x
+    versus 4.8x. The drill found two real holes in this gate — an ascent check
+    written as a two-level guard whose outer test sits exactly at equality and
+    so never opened, and a transport section where nothing depended on WHICH
+    interior point was the peak — plus one defect that was inert for genuine
+    mathematics: `2 = -1 mod 3` has order two, so `2^-q` and `2^q` are the same
+    residue. Drill **37/37**.
+44. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-44. [`code/`](./code/) — the engine, the independent reference, and the gates.
-45. [`data/gate-logs/`](./data/gate-logs/) and
+45. [`code/`](./code/) — the engine, the independent reference, and the gates.
+46. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

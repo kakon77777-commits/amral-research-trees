@@ -57,6 +57,7 @@ CASES = [
     ("src60", (0, ("results", "orbits", "first_crossing_intervals"))),
     ("src61", (0, ("results", "suffix", "suffix_minima"))),
     ("src62", (0, ("results", "q1", "pairs_from_a_suffix_minimum"))),
+    ("src63", (0, ("results", "bank", "steps"))),
 ]
 
 

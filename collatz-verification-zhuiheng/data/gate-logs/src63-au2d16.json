@@ -1,0 +1,301 @@
+{
+  "run": "RUN-044",
+  "round": "A-U.2d.16",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item63",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 9,
+      "failed": []
+    },
+    "constants": {
+      "constants_checked": 7,
+      "disagreeing_with_both_evaluations": 0,
+      "from_the_float64_chain_not_the_nearest_double": 3,
+      "exact_to_the_last_bit": 4,
+      "undecided_brackets": 0,
+      "missing_from_the_frontier": 0,
+      "frontier_and_report_disagreeing": 0,
+      "rows": [
+        {
+          "name": "beta",
+          "published": "1.584962500721156",
+          "nearest_double": "1.584962500721156",
+          "ulps_vs_bracket": 0,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "beta_minus_1",
+          "published": "0.5849625007211561",
+          "nearest_double": "0.5849625007211562",
+          "ulps_vs_bracket": -1,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "two_minus_beta",
+          "published": "0.4150374992788439",
+          "nearest_double": "0.4150374992788438",
+          "ulps_vs_bracket": 2,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "phase7_landing_slack_toll",
+          "published": "0.4150374992788439",
+          "nearest_double": "0.4150374992788438",
+          "ulps_vs_bracket": 2,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "phase11_landing_slack_toll",
+          "published": "1.415037499278844",
+          "nearest_double": "1.415037499278844",
+          "ulps_vs_bracket": 0,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "controlled_total_renewal_support_exponent",
+          "published": "0.8",
+          "nearest_double": "0.8",
+          "ulps_vs_bracket": 0,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "forced_critical_record_gap_exponent",
+          "published": "0.2",
+          "nearest_double": "0.2",
+          "ulps_vs_bracket": 0,
+          "ulps_vs_float64_chain": 0
+        }
+      ],
+      "the_two_tolls_differ_by_exactly_one": 1
+    },
+    "bank": {
+      "orbits": 3969,
+      "steps": 123005,
+      "bank_identity_violations": 0,
+      "bank_not_strictly_increasing": 0,
+      "bank_increment_not_the_claimed_value": 0
+    },
+    "gaps": {
+      "orbits": 1314,
+      "gaps_with_g_at_least_two": 4069,
+      "lemma_4_1_violations": 0,
+      "theorem_4_2_ratio_cap_violations": 0,
+      "first_step_valuation_not_one": 0,
+      "x_not_three_y_plus_one_over_two": 0,
+      "record_values_not_increasing": 0,
+      "theorem_5_1_violations": 0,
+      "corollary_5_2_suffixes_checked": 11305,
+      "corollary_5_2_violations": 0,
+      "theorem_6_1_identity_violations": 0,
+      "tail_excess_not_positive": 0,
+      "net_record_slack_not_below_beta_minus_one": 0,
+      "value_peak_span_violations": 0,
+      "largest_gap_seen": 38
+    },
+    "transport": {
+      "gaps": 4069,
+      "ascent_theorem_8_1_checked": 4069,
+      "ascent_theorem_8_1_violations": 0,
+      "descent_valuation_sum_identity_violations": 0,
+      "descent_slack_identity_violations": 0,
+      "descent_count_bound_checked": 4069,
+      "descent_count_bound_violations": 0,
+      "peaks_at_an_endpoint": 0,
+      "peak_is_not_the_interior_maximum": 0,
+      "tightest_ascent_slack": {
+        "slack": 0.0,
+        "orbit": 235,
+        "s": 13,
+        "u": 14,
+        "N1": 1
+      }
+    },
+    "phases": {
+      "gaps": 4069,
+      "endpoint_outside_7_or_11_mod_12": 0,
+      "landing_valuation_equal_to_one": 0,
+      "phase7_valuation_not_even_at_least_two": 0,
+      "phase11_valuation_not_odd_at_least_three": 0,
+      "landing_toll_below_its_floor": 0,
+      "endpoint_mod_three_disagreeing_with_two_to_the_minus_q": 0,
+      "source_outside_7_or_11_mod_12": 0,
+      "source_phase_not_matching_11_or_17_mod_18": 0,
+      "phase7_endpoints": 3057,
+      "phase11_endpoints": 1012
+    },
+    "examples": {
+      "examples": 2,
+      "x_disagreeing": 0,
+      "z_disagreeing": 0,
+      "exponent_word_disagreeing": 0,
+      "first_step_not_valuation_one": 0,
+      "geometry_violations": 0,
+      "tail_not_suffix_supercritical": 0,
+      "landing_phase_violations": 0,
+      "rows": [
+        {
+          "y": 71,
+          "x": 107,
+          "z": 91,
+          "word": [
+            1,
+            2,
+            2
+          ],
+          "y_mod_12": 11,
+          "z_mod_12": 7,
+          "x_mod_18": 17,
+          "q_t": 2
+        },
+        {
+          "y": 223,
+          "x": 335,
+          "z": 319,
+          "word": [
+            1,
+            1,
+            1,
+            3,
+            2
+          ],
+          "y_mod_12": 7,
+          "z_mod_12": 7,
+          "x_mod_18": 11,
+          "q_t": 2
+        }
+      ]
+    },
+    "exponents": {
+      "trials": 400,
+      "pigeonhole_violations": 0,
+      "pigeonhole_points": 400,
+      "one_minus_four_fifths": "1/5"
+    },
+    "artifacts": {
+      "files_present": 11,
+      "digests_listed": 10,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_per_file_entries": 4,
+      "validation_entries_with_a_digest": 0,
+      "validation_digest_mismatches": 0,
+      "files_absent_from_the_validation_record": [
+        "CHECKSUMS.sha256",
+        "SOURCE_VALIDATION_AU2d16.json",
+        "checker_stdout.txt",
+        "verify_Hard_Zeta_AU2d16_record_gap_transport.py"
+      ],
+      "duplicate_file_pairs": [
+        [
+          "Hard_Zeta_AU2d16_checker_report.json",
+          "checker_stdout.txt"
+        ]
+      ],
+      "validation_passed_flag": true,
+      "validation_top_level_keys": [
+        "checks",
+        "files",
+        "round",
+        "validation_passed"
+      ],
+      "validation_check_entries": 7,
+      "validation_checks_not_true": 0
+    },
+    "ledger": {
+      "paper_proved_items": 16,
+      "ledger_proved_items": 16,
+      "paper_open_items": 5,
+      "ledger_open_items": 5,
+      "paper_no_go_headings": 8,
+      "ledger_no_go_items": 8,
+      "ledger_has_an_open_key": true,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [],
+      "heuristic_failed_its_positive_control": 0,
+      "heuristic_failed_its_negative_control": 0
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "record_ratio_cap",
+          "theirs": 11713,
+          "mine": 4069
+        },
+        {
+          "check": "interior_value_domination",
+          "theirs": 11713,
+          "mine": 4069
+        },
+        {
+          "check": "bank_monotonicity",
+          "theirs": 11713,
+          "mine": 123005
+        },
+        {
+          "check": "interior_slack_domination",
+          "theirs": 11713,
+          "mine": 11305
+        },
+        {
+          "check": "suffix_supercritical_suffixes",
+          "theirs": 36433,
+          "mine": 11305
+        },
+        {
+          "check": "tail_excess_identity",
+          "theirs": 11713,
+          "mine": 4069
+        },
+        {
+          "check": "floor_sieved_packing",
+          "theirs": 11713,
+          "mine": 4069
+        },
+        {
+          "check": "q1_ascent_lower",
+          "theirs": 11713,
+          "mine": 4069
+        },
+        {
+          "check": "descent_surplus_identity",
+          "theirs": 11713,
+          "mine": 4069
+        },
+        {
+          "check": "record_gap_value_span",
+          "theirs": 11713,
+          "mine": 4069
+        },
+        {
+          "check": "landing_phase_toll",
+          "theirs": 5873,
+          "mine": 4069
+        },
+        {
+          "check": "synthetic_ascent_algebra",
+          "theirs": 2300,
+          "mine": 400
+        },
+        {
+          "check": "exact_finite_bridge_examples",
+          "theirs": 5,
+          "mine": 2
+        },
+        {
+          "check": "critical_gap_exponent_arithmetic",
+          "theirs": 1,
+          "mine": 400
+        }
+      ],
+      "checks_i_did_not_reproduce": 0,
+      "checks_they_report_as_zero": 0
+    }
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "gate": "src63_record_gap_transport.py",
+  "limit": "6000",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_the_bank_identity_loses_its_factor_of_three": {
+      "caught": true,
+      "expected_named": "bank.bank_identity_violations",
+      "reported": [
+        "bank.bank_identity_violations = 57509"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_bank_increment_is_expected_one_power_too_high": {
+      "caught": true,
+      "expected_named": "bank.bank_identity_violations",
+      "reported": [
+        "bank.bank_identity_violations = 57509"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_bank_is_required_to_fall": {
+      "caught": true,
+      "expected_named": "bank.bank_not_strictly_increasing",
+      "reported": [
+        "bank.bank_not_strictly_increasing = 57509"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_bank_increment_denominator_is_off_by_one_power": {
+      "caught": true,
+      "expected_named": "bank.bank_increment_not_the_claimed_value",
+      "reported": [
+        "bank.bank_increment_not_the_claimed_value = 57509"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_bank_coordinate_uses_the_wrong_power_of_three": {
+      "caught": true,
+      "expected_named": "bank.",
+      "reported": [
+        "bank.bank_increment_not_the_claimed_value = 57509"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_lemma_4_1_is_tested_inside_out": {
+      "caught": true,
+      "expected_named": "gaps.lemma_4_1_violations",
+      "reported": [
+        "gaps.lemma_4_1_violations = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_ratio_cap_upper_end_is_tightened": {
+      "caught": true,
+      "expected_named": "gaps.theorem_4_2_ratio_cap_violations",
+      "reported": [
+        "gaps.theorem_4_2_ratio_cap_violations = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_ratio_cap_lower_end_is_raised": {
+      "caught": true,
+      "expected_named": "gaps.theorem_4_2_ratio_cap_violations",
+      "reported": [
+        "gaps.theorem_4_2_ratio_cap_violations = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_first_step_valuation_test_is_inverted": {
+      "caught": true,
+      "expected_named": "gaps.first_step_valuation_not_one",
+      "reported": [
+        "gaps.first_step_valuation_not_one = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_post_record_state_is_taken_one_too_high": {
+      "caught": true,
+      "expected_named": "gaps.x_not_three_y_plus_one_over_two",
+      "reported": [
+        "gaps.x_not_three_y_plus_one_over_two = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_record_values_are_required_to_fall": {
+      "caught": true,
+      "expected_named": "gaps.record_values_not_increasing",
+      "reported": [
+        "gaps.record_values_not_increasing = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_interior_slack_domination_is_reversed": {
+      "caught": true,
+      "expected_named": "gaps.theorem_5_1_violations",
+      "reported": [
+        "gaps.theorem_5_1_violations = 5411"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_suffix_supercritical_test_is_reversed": {
+      "caught": true,
+      "expected_named": "gaps.corollary_5_2_violations",
+      "reported": [
+        "gaps.corollary_5_2_violations = 5411"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_tail_identity_loses_a_factor_of_three": {
+      "caught": true,
+      "expected_named": "gaps.theorem_6_1_identity_violations",
+      "reported": [
+        "gaps.theorem_6_1_identity_violations = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_tail_product_omits_its_last_state": {
+      "caught": true,
+      "expected_named": "gaps.theorem_6_1_identity_violations",
+      "reported": [
+        "gaps.theorem_6_1_identity_violations = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_tail_excess_is_required_negative": {
+      "caught": true,
+      "expected_named": "gaps.tail_excess_not_positive",
+      "reported": [
+        "gaps.tail_excess_not_positive = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_net_record_slack_bound_is_reversed": {
+      "caught": true,
+      "expected_named": "gaps.net_record_slack_not_below_beta_minus_one",
+      "reported": [
+        "gaps.net_record_slack_not_below_beta_minus_one = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_value_peak_span_is_demanded_a_hundredfold": {
+      "caught": true,
+      "expected_named": "gaps.value_peak_span_violations",
+      "reported": [
+        "gaps.value_peak_span_violations = 1947"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_ascent_bound_is_raised_by_one": {
+      "caught": true,
+      "expected_named": "transport.ascent_theorem_8_1_violations",
+      "reported": [
+        "transport.ascent_theorem_8_1_violations = 1941"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_ascent_counts_the_wrong_valuation": {
+      "caught": true,
+      "expected_named": "transport.ascent_theorem_8_1_violations",
+      "reported": [
+        "transport.ascent_theorem_8_1_violations = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_descent_valuation_sum_is_taken_at_the_wrong_length": {
+      "caught": true,
+      "expected_named": "transport.descent_valuation_sum_identity_violations",
+      "reported": [
+        "transport.descent_valuation_sum_identity_violations = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_descent_count_bound_drops_its_divisor": {
+      "caught": true,
+      "expected_named": "transport.descent_count_bound_violations",
+      "reported": [
+        "transport.descent_count_bound_violations = 523"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_peak_is_taken_at_the_minimum": {
+      "caught": true,
+      "expected_named": "transport.peak_is_not_the_interior_maximum",
+      "reported": [
+        "transport.peak_is_not_the_interior_maximum = 819"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_endpoint_residue_classes_drop_one": {
+      "caught": true,
+      "expected_named": "phases.endpoint_outside_7_or_11_mod_12",
+      "reported": [
+        "phases.endpoint_outside_7_or_11_mod_12 = 494",
+        "phases.phase11_endpoints"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_phase_seven_valuation_is_required_odd": {
+      "caught": true,
+      "expected_named": "phases.phase7_valuation_not_even_at_least_two",
+      "reported": [
+        "phases.phase7_valuation_not_even_at_least_two = 1457"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_phase_eleven_valuation_floor_is_raised": {
+      "caught": true,
+      "expected_named": "phases.phase11_valuation_not_odd_at_least_three",
+      "reported": [
+        "phases.phase11_valuation_not_odd_at_least_three = 487"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_endpoint_mod_three_lemma_shifts_its_parity": {
+      "caught": true,
+      "expected_named": "phases.endpoint_mod_three_disagreeing_with_two_to_the_minus_q",
+      "reported": [
+        "phases.endpoint_mod_three_disagreeing_with_two_to_the_minus_q = 1951"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_source_phase_mod_eighteen_is_swapped": {
+      "caught": true,
+      "expected_named": "phases.source_phase_not_matching_11_or_17_mod_18",
+      "reported": [
+        "phases.source_phase_not_matching_11_or_17_mod_18 = 726"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_landing_toll_floor_is_taken_from_the_wrong_phase": {
+      "caught": true,
+      "expected_named": "phases.landing_toll_below_its_floor",
+      "reported": [
+        "phases.landing_toll_below_its_floor = 1431"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_a_shipped_example_endpoint_is_mistyped": {
+      "caught": true,
+      "expected_named": "examples.z_disagreeing",
+      "reported": [
+        "examples.z_disagreeing = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_a_shipped_example_word_is_mistyped": {
+      "caught": true,
+      "expected_named": "examples.exponent_word_disagreeing",
+      "reported": [
+        "examples.exponent_word_disagreeing = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_pigeonhole_is_tested_in_the_wrong_direction": {
+      "caught": true,
+      "expected_named": "exponents.pigeonhole_violations",
+      "reported": [
+        "exponents.pigeonhole_violations = 400"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_a_checksum_comparison_is_inverted": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 10"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D34_the_ledger_heuristic_accuses_everything": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_positive_control",
+      "reported": [
+        "ledger.heuristic_failed_its_positive_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D35_the_ledger_heuristic_covers_everything": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_negative_control",
+      "reported": [
+        "ledger.heuristic_failed_its_negative_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D36_the_gap_scan_is_reduced_to_a_single_source": {
+      "caught": true,
+      "expected_named": "gaps.",
+      "reported": [
+        "gaps.orbits",
+        "gaps.gaps_with_g_at_least_two",
+        "gaps.corollary_5_2_suffixes_checked"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D37_a_counter_is_added_that_no_list_classifies": {
+      "caught": true,
+      "expected_named": "bank.a_counter_nothing_reads",
+      "reported": [
+        "bank.a_counter_nothing_reads"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "N2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 37,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 37,
+    "caught": 37,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 37,
+    "caught_by_their_own_check": 37,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
