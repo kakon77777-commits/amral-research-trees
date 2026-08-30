@@ -1,0 +1,451 @@
+{
+  "run": "RUN-041",
+  "round": "A-U.2d.13",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item60\\collatz_hardzeta_work\\AU2d13_bundle",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 12,
+      "failed": []
+    },
+    "exponents": {
+      "constants_checked": 8,
+      "disagreeing_with_both_evaluations": 0,
+      "from_the_float64_chain_not_the_exact_rational": 4,
+      "exact_to_the_last_bit": 4,
+      "missing_from_the_frontier": 0,
+      "frontier_and_report_disagreeing": 0,
+      "rows": [
+        {
+          "name": "theta_star",
+          "published": "0.19544992572902825",
+          "exact": "2500/12791",
+          "exact_decimal": "0.1954499257290282229692",
+          "ulps_vs_exact": 1,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "old_disjoint_backbone_sigma_star",
+          "published": "0.8365051337388005",
+          "exact": "12791/15291",
+          "exact_decimal": "0.8365051337388006016611",
+          "ulps_vs_exact": -1,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "unconditional_support_exponent_kappa13",
+          "published": "0.9632049232448516",
+          "exact": "163609681/169859681",
+          "exact_decimal": "0.9632049232448517314712",
+          "ulps_vs_exact": -1,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "unconditional_log_exponent_lambda13",
+          "published": "0.1882583307100406",
+          "exact": "31977500/169859681",
+          "exact_decimal": "0.1882583307100406011006",
+          "ulps_vs_exact": 0,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "pq_pressure_at_old_sigma",
+          "published": "0.06084188956466748",
+          "exact": "2791/45873",
+          "exact_decimal": "0.0608418895646676694351",
+          "ulps_vs_exact": -27,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "controlled_CF_support_exponent",
+          "published": "0.8",
+          "exact": "4/5",
+          "exact_decimal": "0.8000000000000000000000",
+          "ulps_vs_exact": 0,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "controlled_CF_log_exponent",
+          "published": "0.4",
+          "exact": "2/5",
+          "exact_decimal": "0.4000000000000000000000",
+          "ulps_vs_exact": 0,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "support_PQ_factor_exponent",
+          "published": "0.6",
+          "exact": "3/5",
+          "exact_decimal": "0.6000000000000000000000",
+          "ulps_vs_exact": 0,
+          "ulps_vs_float64_chain": 0
+        }
+      ],
+      "cancellation_factor_in_five_sigma_minus_four": 22.91,
+      "ulp_budget_allowed_for_chi_star": 92
+    },
+    "identities": {
+      "trials": 400,
+      "section_7_exponent_identity_violations": 0,
+      "section_8_exponent_identity_violations": 0,
+      "kappa_from_the_support_inequality_violations": 0,
+      "pq_exponent_from_inversion_violations": 0,
+      "kappa13_from_the_formula": "163609681/169859681",
+      "chi_at_sigma_star": "2791/45873",
+      "pq_exponent_at_kappa_one": "1/3",
+      "four_fifths_from_the_CF_master": "4/5"
+    },
+    "means": {
+      "tuples": 384,
+      "jensen_violations": 0,
+      "am_hm_violations": 0,
+      "tuples_at_rho_star": 40,
+      "jensen_violations_at_rho_star": 0,
+      "undecided_at_rho_star": 0,
+      "equal_gap_cases": 84,
+      "tightest_jensen_slack": {
+        "ratio": 1.000276,
+        "rho": 1,
+        "n": 2
+      }
+    },
+    "overlap": {
+      "families": 400,
+      "lemma_5_1_violations": 0,
+      "short_families_tried": 400,
+      "short_families_that_still_overlap": 18,
+      "pigeonhole_trials": 400,
+      "pigeonhole_violations": 0
+    },
+    "cf_local": {
+      "scales": 3,
+      "q_values_scanned": 111000,
+      "local_cf_bound_violations": 0,
+      "undecided_brackets": 0,
+      "tightest_ratio": 1.0470353323085846,
+      "tightest_at": [
+        1000,
+        665
+      ],
+      "rows": [
+        {
+          "N": 1000,
+          "M_beta_N": 23,
+          "A_N": 25,
+          "tightest_q": 665,
+          "q_times_norm_times_A": 1.047
+        },
+        {
+          "N": 10000,
+          "M_beta_N": 23,
+          "A_N": 25,
+          "tightest_q": 665,
+          "q_times_norm_times_A": 1.047
+        },
+        {
+          "N": 100000,
+          "M_beta_N": 23,
+          "A_N": 25,
+          "tightest_q": 665,
+          "q_times_norm_times_A": 1.047
+        }
+      ],
+      "partial_quotients_used": 14,
+      "largest_partial_quotient": 23
+    },
+    "orbits": {
+      "starts": 998,
+      "orbits_used": 885,
+      "first_crossing_intervals": 25799,
+      "exact_product_identity_violations": 0,
+      "survival_equivalence_violations": 0,
+      "D_not_positive_at_a_first_crossing": 0,
+      "local_cf_slack_checked": 25799,
+      "local_cf_slack_violations": 0,
+      "B_injections": 0,
+      "suffix_minimum_intervals": 25799,
+      "suffix_minimum_sources_outside_7_or_11_mod_12_not_a_counterexample": 11823,
+      "suffix_minimum_sources_checked": 24764,
+      "survival_duration_antecedent_holds": 96,
+      "theorem_4_1_algebra_violations": 0,
+      "largest_z_over_y_reached": {
+        "ratio": 0.9761,
+        "orbit": 703,
+        "y": 3431,
+        "L": 29,
+        "z": 3349
+      },
+      "A_N_used": 25
+    },
+    "localization": {
+      "grid_points": 400,
+      "theorem_4_1_violations": 0,
+      "theorem_4_1_antecedent_satisfiable": 396,
+      "duration_floor_violations": 0,
+      "duration_floor_antecedent_holds": 400,
+      "corridor_implication_points": 400,
+      "corridor_implication_violations": 0,
+      "pigeonhole_points": 400,
+      "pigeonhole_violations": 0
+    },
+    "printed": {
+      "printed": 23,
+      "over_published": 12,
+      "exact_to_every_digit": 10,
+      "correctly_rounded": 0,
+      "truncated": 1,
+      "printed_with_an_ellipsis": 23,
+      "rows": [
+        {
+          "name": "theta_star",
+          "printed": "0.19544992572902825",
+          "exact": "0.195449925729028222969",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 16
+        },
+        {
+          "name": "theta_star",
+          "printed": "0.19544992572902825",
+          "exact": "0.195449925729028222969",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 16
+        },
+        {
+          "name": "sigma_star",
+          "printed": "0.8365051337388005",
+          "exact": "0.83650513373880060166",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 15
+        },
+        {
+          "name": "sigma_star",
+          "printed": "0.8365051337388005",
+          "exact": "0.83650513373880060166",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 15
+        },
+        {
+          "name": "sigma_star",
+          "printed": "0.8365051337388005",
+          "exact": "0.83650513373880060166",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 15
+        },
+        {
+          "name": "kappa13",
+          "printed": "0.9632049232448516",
+          "exact": "0.96320492324485173147",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 15
+        },
+        {
+          "name": "kappa13",
+          "printed": "0.9632049232448516",
+          "exact": "0.96320492324485173147",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 15
+        },
+        {
+          "name": "kappa13",
+          "printed": "0.9632049232",
+          "exact": "0.96320492324485",
+          "ellipsis": true,
+          "verdict": "exact to every published digit",
+          "digits_correct": 10
+        },
+        {
+          "name": "kappa13",
+          "printed": "0.9632049232",
+          "exact": "0.96320492324485",
+          "ellipsis": true,
+          "verdict": "exact to every published digit",
+          "digits_correct": 10
+        },
+        {
+          "name": "kappa13",
+          "printed": "0.9632049232448516",
+          "exact": "0.96320492324485173147",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 15
+        },
+        {
+          "name": "kappa13",
+          "printed": "0.9632049232",
+          "exact": "0.96320492324485",
+          "ellipsis": true,
+          "verdict": "exact to every published digit",
+          "digits_correct": 10
+        },
+        {
+          "name": "kappa13",
+          "printed": "0.9632049232448516",
+          "exact": "0.96320492324485173147",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 15
+        },
+        {
+          "name": "kappa13",
+          "printed": "0.9632049232",
+          "exact": "0.96320492324485",
+          "ellipsis": true,
+          "verdict": "exact to every published digit",
+          "digits_correct": 10
+        },
+        {
+          "name": "kappa13",
+          "printed": "0.9632049232",
+          "exact": "0.96320492324485",
+          "ellipsis": true,
+          "verdict": "exact to every published digit",
+          "digits_correct": 10
+        },
+        {
+          "name": "lambda13",
+          "printed": "0.1882583307100406",
+          "exact": "0.18825833071004060110",
+          "ellipsis": true,
+          "verdict": "exact to every published digit",
+          "digits_correct": 16
+        },
+        {
+          "name": "lambda13",
+          "printed": "0.1882583307100406",
+          "exact": "0.18825833071004060110",
+          "ellipsis": true,
+          "verdict": "exact to every published digit",
+          "digits_correct": 16
+        },
+        {
+          "name": "lambda13",
+          "printed": "0.1882583307",
+          "exact": "0.18825833071004",
+          "ellipsis": true,
+          "verdict": "exact to every published digit",
+          "digits_correct": 10
+        },
+        {
+          "name": "lambda13",
+          "printed": "0.1882583307100406",
+          "exact": "0.18825833071004060110",
+          "ellipsis": true,
+          "verdict": "exact to every published digit",
+          "digits_correct": 16
+        },
+        {
+          "name": "lambda13",
+          "printed": "0.1882583307",
+          "exact": "0.18825833071004",
+          "ellipsis": true,
+          "verdict": "exact to every published digit",
+          "digits_correct": 10
+        },
+        {
+          "name": "chi_star",
+          "printed": "0.06084188956466748",
+          "exact": "0.060841889564667669435",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 15
+        },
+        {
+          "name": "chi_star",
+          "printed": "0.06084188956466748",
+          "exact": "0.060841889564667669435",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 15
+        },
+        {
+          "name": "chi_star",
+          "printed": "0.0608418895",
+          "exact": "0.06084188956466",
+          "ellipsis": true,
+          "verdict": "truncated rather than rounded at the last digit",
+          "digits_correct": 10
+        },
+        {
+          "name": "chi_star",
+          "printed": "0.06084188956466748",
+          "exact": "0.060841889564667669435",
+          "ellipsis": true,
+          "verdict": "OVER-PUBLISHED",
+          "digits_correct": 15
+        }
+      ]
+    },
+    "artifacts": {
+      "files_present": 9,
+      "digests_listed": 8,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_entries_without_a_digest": 7,
+      "validation_files_listed": 7,
+      "validation_reports_its_checker_reran": true,
+      "validation_commit_gate_passed": true,
+      "validation_issues": []
+    },
+    "ledger": {
+      "paper_proved_items": 10,
+      "ledger_proved_items": 10,
+      "paper_open_items": 4,
+      "ledger_open_items": 4,
+      "paper_no_go_headings": 6,
+      "ledger_no_go_items": 5,
+      "ledger_has_an_open_key": true,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [
+        "12.5"
+      ]
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "b_anchor_sequence",
+          "theirs": 20000,
+          "mine": 25799
+        },
+        {
+          "check": "window_common_overlap",
+          "theirs": 10000,
+          "mine": 400
+        },
+        {
+          "check": "cf_local_bound_diagnostic",
+          "theirs": 16100,
+          "mine": 111000
+        },
+        {
+          "check": "support_exponent_algebra",
+          "theirs": 5,
+          "mine": 8
+        },
+        {
+          "check": "pq_pressure_grid",
+          "theirs": 200,
+          "mine": 400
+        },
+        {
+          "check": "localized_scaling_grid",
+          "theirs": 5000,
+          "mine": 400
+        }
+      ],
+      "checks_i_did_not_reproduce": 0
+    }
+  }
+}

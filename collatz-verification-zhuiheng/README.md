@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->59 source items and 38 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->60 source items and 39 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -742,11 +742,46 @@ instance behind each band.
     the float64 chain. RUN-039's builder finding is **fixed** — the builder is
     in `CHECKSUMS` this time; its ledger finding is not, two rounds running.
     Drill **35/35**.
-40. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+40. [`reports/RUN-041-HARD-ZETA-AU2D13-SOURCE-DEPTH-COLLISION.md`](./reports/RUN-041-HARD-ZETA-AU2D13-SOURCE-DEPTH-COLLISION.md) —
+    **a collision assembled from five finite links, and a constants family with
+    one parameter.** The first round in this stretch to prove a branch of the
+    survivor space EMPTY rather than lower an exponent: positive-linear
+    completed B-density is impossible, unconditionally, and section 14 says
+    plainly that this still does not close CASP. The mechanism is a chain —
+    support count → source height → duration floor → localized depth and span →
+    large slack → source-corridor contradiction — and every arrow is finite, so
+    each was checked on its own: the mod-12 source floor, two duration floors,
+    the pigeonhole localization, Jensen and AM-HM on the origin gaps, and the
+    corridor. **The one genuinely arithmetic input**, the local
+    best-approximation bound `||q beta|| > 1/((M_beta(N)+2) q)`, was decided
+    from the integer-comparison continued fraction of `log2 3` over **111,000**
+    values of `q`: **zero** violations, and not slack — its tightest margin is
+    **4.7%**, at the convergent denominator `q = 665`. Two things worth
+    carrying forward. The constants family collapses to one rational parameter,
+    with **`sigma* = 1/(1+theta*)`** and **`kappa13 = 1/(1+theta*^2)`** —
+    closed forms the bundle never states, exact as `12791/15291` and
+    `163609681/169859681`, which turns both headline exponents from numbers one
+    approximates into numbers one decides. And `chi*` sits **27 ulps** from its
+    exact value, not an error but a three-link rounding chain ending in a
+    **22.9-fold** cancellation in `5 sigma - 4`; the gate's allowed budget for
+    it is now derived from that factor rather than chosen. **The object of the
+    round does not occur on a real orbit**: zero B-injections in **460,024**
+    first-crossing intervals, closest ratio `z/y = 0.9761`, so the two
+    conditional theorems are checked as algebra and their antecedent-free
+    "zero violations" is never reported as coverage. Twelve of twenty-three
+    printed decimals over-publish against the exact rationals, all twenty-three
+    with an ellipsis. **RUN-039's ledger finding, still open at RUN-040, is
+    fixed** — the `open` key is back with all four items, the Collatz
+    conjecture among them; NO-GO 12.5 is the one heading still missing, and the
+    validation record is digest-free for a third round. One of this gate's own
+    errors is worth recording: RUN-040's fail-open lesson was written down and
+    then rewritten into the code one round later with the clauses in the wrong
+    order. Drill **33/33**.
+41. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-41. [`code/`](./code/) — the engine, the independent reference, and the gates.
-42. [`data/gate-logs/`](./data/gate-logs/) and
+42. [`code/`](./code/) — the engine, the independent reference, and the gates.
+43. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

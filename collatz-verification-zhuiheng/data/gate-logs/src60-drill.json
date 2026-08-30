@@ -1,0 +1,320 @@
+{
+  "gate": "src60_source_depth_collision.py",
+  "limit": "1200",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_theta_star_uses_the_wrong_diophantine_offset": {
+      "caught": true,
+      "expected_named": "exponents.disagreeing_with_both_evaluations",
+      "reported": [
+        "instrument.failed = ['theta* = 2500/12791', 'kappa13 = 1/(1+theta*^2)', 'lambda13 = kappa13 * theta*', 'chi* = 2791/45873']",
+        "exponents.disagreeing_with_both_evaluations = 5",
+        "printed.printed"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_backbone_exponent_subtracts_where_it_should_add": {
+      "caught": true,
+      "expected_named": "exponents.disagreeing_with_both_evaluations",
+      "reported": [
+        "instrument.failed = ['sigma* = 1/(1+theta*)', 'chi* = 2791/45873']",
+        "exponents.disagreeing_with_both_evaluations = 2"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_support_exponent_loses_theta_from_its_denominator": {
+      "caught": true,
+      "expected_named": "exponents.disagreeing_with_both_evaluations",
+      "reported": [
+        "instrument.failed = ['kappa13 = 1/(1+theta*^2)', 'lambda13 = kappa13 * theta*']",
+        "exponents.disagreeing_with_both_evaluations = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_log_exponent_is_read_from_the_wrong_reciprocal": {
+      "caught": true,
+      "expected_named": "exponents.disagreeing_with_both_evaluations",
+      "reported": [
+        "instrument.failed = ['lambda13 = kappa13 * theta*']",
+        "exponents.disagreeing_with_both_evaluations = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_pq_pressure_constant_is_shifted_by_one": {
+      "caught": true,
+      "expected_named": "exponents.disagreeing_with_both_evaluations",
+      "reported": [
+        "instrument.failed = ['chi* = 2791/45873']",
+        "exponents.disagreeing_with_both_evaluations = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_inherited_diophantine_exponent_is_mistyped": {
+      "caught": true,
+      "expected_named": "exponents.disagreeing_with_both_evaluations",
+      "reported": [
+        "instrument.failed = ['theta* = 2500/12791', 'chi* = 2791/45873']",
+        "exponents.disagreeing_with_both_evaluations = 5",
+        "printed.printed"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_a_constant_shifted_past_its_budget_that_the_chain_still_matches": {
+      "caught": true,
+      "expected_named": "exponents.disagreeing_with_both_evaluations",
+      "reported": [
+        "instrument.failed = ['chi* = 2791/45873']",
+        "exponents.disagreeing_with_both_evaluations = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_ulp_budget_is_taken_from_the_wrong_end": {
+      "caught": true,
+      "expected_named": "exponents.disagreeing_with_both_evaluations",
+      "reported": [
+        "exponents.disagreeing_with_both_evaluations = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_section_7_identity_drops_a_term": {
+      "caught": true,
+      "expected_named": "identities.section_7_exponent_identity_violations",
+      "reported": [
+        "identities.section_7_exponent_identity_violations = 400"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_pq_exponent_is_derived_from_the_wrong_power": {
+      "caught": true,
+      "expected_named": "identities.pq_exponent_from_inversion_violations",
+      "reported": [
+        "identities.pq_exponent_from_inversion_violations = 400"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_kappa_solution_cancels_the_wrong_factor": {
+      "caught": true,
+      "expected_named": "identities.kappa_from_the_support_inequality_violations",
+      "reported": [
+        "identities.kappa_from_the_support_inequality_violations = 400"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_jensen_is_tested_in_the_wrong_direction": {
+      "caught": true,
+      "expected_named": "means.jensen_violations",
+      "reported": [
+        "means.jensen_violations = 1500"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_jensen_right_hand_side_uses_the_wrong_power": {
+      "caught": true,
+      "expected_named": "means.jensen_violations",
+      "reported": [
+        "means.jensen_violations = 579"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_am_hm_is_tested_in_the_wrong_direction": {
+      "caught": true,
+      "expected_named": "means.am_hm_violations",
+      "reported": [
+        "means.am_hm_violations = 300"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_rho_star_power_is_taken_positive": {
+      "caught": true,
+      "expected_named": "means.",
+      "reported": [
+        "means.jensen_violations_at_rho_star = 40"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_overlap_lemma_is_given_intervals_that_are_too_short": {
+      "caught": true,
+      "expected_named": "overlap.lemma_5_1_violations",
+      "reported": [
+        "overlap.lemma_5_1_violations = 371"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_common_point_is_taken_at_the_wrong_end": {
+      "caught": true,
+      "expected_named": "overlap.",
+      "reported": [
+        "overlap.lemma_5_1_violations = 399"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_local_cf_scale_drops_its_plus_two": {
+      "caught": true,
+      "expected_named": "cf_local.local_cf_bound_violations",
+      "reported": [
+        "cf_local.local_cf_bound_violations = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_local_cf_scale_takes_the_smallest_partial_quotient": {
+      "caught": true,
+      "expected_named": "cf_local.local_cf_bound_violations",
+      "reported": [
+        "cf_local.local_cf_bound_violations = 11"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_floor_of_q_beta_is_taken_one_too_high": {
+      "caught": true,
+      "expected_named": "cf_local.undecided_brackets",
+      "reported": [
+        "cf_local.undecided_brackets = 111000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_convergents_stop_far_short_of_the_scale": {
+      "caught": true,
+      "expected_named": "cf_local.local_cf_bound_violations",
+      "reported": [
+        "cf_local.local_cf_bound_violations = 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_product_identity_loses_a_factor_of_three": {
+      "caught": true,
+      "expected_named": "orbits.exact_product_identity_violations",
+      "reported": [
+        "orbits.exact_product_identity_violations = 8851"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_survival_equivalence_is_reversed": {
+      "caught": true,
+      "expected_named": "orbits.survival_equivalence_violations",
+      "reported": [
+        "orbits.survival_equivalence_violations = 8851"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_block_correction_omits_its_last_state": {
+      "caught": true,
+      "expected_named": "orbits.exact_product_identity_violations",
+      "reported": [
+        "orbits.exact_product_identity_violations = 8851"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_slack_bracket_adds_beta_instead_of_subtracting": {
+      "caught": true,
+      "expected_named": "orbits.",
+      "reported": [
+        "orbits.survival_duration_antecedent_holds"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_unconditional_slack_floor_is_demanded_far_too_large": {
+      "caught": true,
+      "expected_named": "orbits.local_cf_slack_violations",
+      "reported": [
+        "orbits.local_cf_slack_violations = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_first_crossing_test_is_inverted": {
+      "caught": true,
+      "expected_named": "orbits.",
+      "reported": [
+        "orbits.D_not_positive_at_a_first_crossing = 6439",
+        "orbits.local_cf_slack_violations = 6439",
+        "orbits.theorem_4_1_algebra_violations = 5533"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_theorem_4_1_is_stated_with_the_wrong_power_of_L": {
+      "caught": true,
+      "expected_named": "localization.theorem_4_1_violations",
+      "reported": [
+        "localization.theorem_4_1_violations = 302"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_duration_floor_uses_the_wrong_exponent": {
+      "caught": true,
+      "expected_named": "localization.duration_floor_violations",
+      "reported": [
+        "localization.duration_floor_violations = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_corridor_implication_forgets_to_subtract_one": {
+      "caught": true,
+      "expected_named": "localization.corridor_implication_violations",
+      "reported": [
+        "localization.corridor_implication_violations = 399"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_a_digest_comparison_is_inverted": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_orbit_scan_is_reduced_to_a_single_source": {
+      "caught": true,
+      "expected_named": "orbits.",
+      "reported": [
+        "orbits.first_crossing_intervals",
+        "orbits.local_cf_slack_checked",
+        "orbits.suffix_minimum_sources_checked",
+        "orbits.survival_duration_antecedent_holds"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_a_counter_is_added_that_no_list_classifies": {
+      "caught": true,
+      "expected_named": "exponents.a_counter_nothing_reads",
+      "reported": [
+        "exponents.a_counter_nothing_reads"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "N2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 33,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 33,
+    "caught": 33,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 33,
+    "caught_by_their_own_check": 33,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
