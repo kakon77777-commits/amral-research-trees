@@ -51,6 +51,7 @@ CASES = [
     ("src53", (0, ("slope_quantization", "edges"))),
     ("src54", (0, ("segments", "segments"))),
     ("src55", (0, ("sieve", "odd_integers_mapped"))),
+    ("src57", (0, ("reciprocal_flow", "edges"))),
 ]
 
 

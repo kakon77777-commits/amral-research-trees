@@ -1,0 +1,334 @@
+{
+  "gate": "src57_valuation_harmonic_deficit.py",
+  "limit": "5000",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "non_vacuity_guards": []
+  },
+  "defects": {
+    "D1_the_identity_drops_its_cross_term": {
+      "caught": true,
+      "expected_named": "reciprocal_flow.identity_violations",
+      "reported": [
+        "reciprocal_flow.identity_violations = 70810",
+        "their_claims: ['exact_reciprocal_flow_identity']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_identity_uses_the_target_where_it_needs_the_source": {
+      "caught": true,
+      "expected_named": "reciprocal_flow.identity_violations",
+      "reported": [
+        "reciprocal_flow.identity_violations = 70810",
+        "their_claims: ['exact_reciprocal_flow_identity']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_telescope_takes_the_wrong_endpoint_sign": {
+      "caught": true,
+      "expected_named": "reciprocal_flow.telescope_violations",
+      "reported": [
+        "reciprocal_flow.telescope_violations = 68311",
+        "their_claims: ['exact_reciprocal_flow_identity']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_flow_weight_subtracts_two_instead_of_three": {
+      "caught": true,
+      "expected_named": "reciprocal_flow.telescope_violations",
+      "reported": [
+        "reciprocal_flow.telescope_violations = 68311",
+        "their_claims: ['exact_reciprocal_flow_identity']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_theorem_4_1_is_applied_without_its_endpoint_premise": {
+      "caught": true,
+      "expected_named": "reciprocal_flow.theorem_4_1_violations",
+      "reported": [
+        "reciprocal_flow.theorem_4_1_violations = 68311",
+        "reciprocal_flow.the_balance_is_not_equivalent_to_the_endpoint_premise = 68311"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_balance_and_the_premise_are_required_to_differ": {
+      "caught": true,
+      "expected_named": "reciprocal_flow.the_balance_is_not_equivalent_to_the_endpoint_premise",
+      "reported": [
+        "reciprocal_flow.the_balance_is_not_equivalent_to_the_endpoint_premise = 68311"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_high_valuation_weight_is_wrong": {
+      "caught": true,
+      "expected_named": "reciprocal_flow.the_balance_is_not_equivalent_to_the_endpoint_premise",
+      "reported": [
+        "reciprocal_flow.the_balance_is_not_equivalent_to_the_endpoint_premise = 22901"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_lemma_5_1_is_applied_without_its_premise": {
+      "caught": true,
+      "expected_named": "reciprocal_flow.cross_term_above_one_over_y_squared_plus_one_over_two_y",
+      "reported": [
+        "reciprocal_flow.cross_term_above_one_over_y_squared_plus_one_over_two_y = 2577",
+        "reciprocal_flow.cross_term_above_nine_over_fourteen_y = 225",
+        "their_claims: ['cross_term_bound']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_premise_span_excludes_the_endpoint": {
+      "caught": true,
+      "expected_named": "reciprocal_flow.cross_term_above_one_over_y_squared_plus_one_over_two_y",
+      "reported": [
+        "reciprocal_flow.cross_term_above_one_over_y_squared_plus_one_over_two_y = 2577",
+        "reciprocal_flow.cross_term_above_nine_over_fourteen_y = 225",
+        "their_claims: ['cross_term_bound']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_q1_capacity_halves_its_logarithmic_term": {
+      "caught": true,
+      "expected_named": "capacities.q1_capacity_violations",
+      "reported": [
+        "capacities.q1_capacity_violations = 15669",
+        "their_claims: ['q1_q2_harmonic_capacity']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_q2_capacity_uses_the_q1_logarithm": {
+      "caught": true,
+      "expected_named": "capacities.q2_capacity_violations",
+      "reported": [
+        "capacities.q2_capacity_violations = 2329",
+        "their_claims: ['q1_q2_harmonic_capacity']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_total_reciprocal_bound_halves_its_leading_term": {
+      "caught": true,
+      "expected_named": "capacities.theorem_7_1_violations",
+      "reported": [
+        "capacities.theorem_7_1_violations = 10775"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_289_over_70_decomposition_is_mis_stated": {
+      "caught": true,
+      "expected_named": "capacities.the_289_over_70_constant_does_not_decompose",
+      "reported": [
+        "capacities.the_289_over_70_constant_does_not_decompose = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_uniform_bound_is_a_thousand_times_too_tight": {
+      "caught": true,
+      "expected_named": "product.corollary_9_1_violations",
+      "reported": [
+        "product.corollary_9_1_violations = 241",
+        "their_claims: ['actual_reciprocal_flow_product_bound']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_deficit_bound_is_a_thousand_times_too_tight": {
+      "caught": true,
+      "expected_named": "product.theorem_9_2_violations",
+      "reported": [
+        "product.theorem_9_2_violations = 241"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_p6_floor_uses_the_wrong_constant": {
+      "caught": true,
+      "expected_named": "product.p6_lower_bound_violations",
+      "reported": [
+        "product.p6_lower_bound_violations = 241",
+        "their_claims: ['actual_reciprocal_flow_product_bound']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_admissible_upper_placement_is_one_too_tight": {
+      "caught": true,
+      "expected_named": "product.admissible_upper_placement_violations",
+      "reported": [
+        "product.admissible_upper_placement_violations = 9432"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_rf_exponent_is_compared_against_one_ninth": {
+      "caught": true,
+      "expected_named": "exponents.rf_exponent_not_approaching_four_forty_fifths",
+      "reported": [
+        "exponents.rf_exponent_not_approaching_four_forty_fifths = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_target_residue_set_is_wrong": {
+      "caught": true,
+      "expected_named": "mod9.targets_not_4_or_7_mod_9",
+      "reported": [
+        "mod9.targets_not_4_or_7_mod_9 = 46656",
+        "their_claims: ['mod9_target_q_table']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_cost_table_is_transcribed_wrongly": {
+      "caught": true,
+      "expected_named": "mod9.cost_table_entries_disagreeing_with_the_valuation_arithmetic",
+      "reported": [
+        "mod9.edges_below_their_target_cost = 24940",
+        "mod9.cost_table_entries_disagreeing_with_the_valuation_arithmetic = 1",
+        "mod9.windows_where_a_cost_class_exceeds_W_over_9_plus_2 = 16",
+        "their_claims: ['mod9_target_q_table']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_class_capacity_drops_its_slack": {
+      "caught": true,
+      "expected_named": "mod9.windows_where_a_cost_class_exceeds_W_over_9_plus_2",
+      "reported": [
+        "mod9.windows_where_a_cost_class_exceeds_W_over_9_plus_2 = 20"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_valuation_floor_charges_the_wrong_baseline": {
+      "caught": true,
+      "expected_named": "mod9.valuation_floor_violations",
+      "reported": [
+        "mod9.valuation_floor_violations = 3017"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_span_bound_loses_its_constant": {
+      "caught": true,
+      "expected_named": "mod9.theorem_15_1_violations",
+      "reported": [
+        "mod9.theorem_15_1_violations = 2832",
+        "their_claims: ['mod9_target_cost_span']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_subcriticality_premise_is_inverted": {
+      "caught": true,
+      "expected_named": "theorem 15.1 was applied to",
+      "reported": [
+        "their_claims: ['mod9_target_cost_span']",
+        "theorem 15.1 was applied to 0 prefixes"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_class_density_is_off_by_a_factor": {
+      "caught": true,
+      "expected_named": "countermodel.class_densities_off",
+      "reported": [
+        "countermodel.class_densities_off = 4"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_density_closed_form_drops_its_three": {
+      "caught": true,
+      "expected_named": "countermodel.density_series_disagrees_with_its_closed_form",
+      "reported": [
+        "countermodel.density_series_disagrees_with_its_closed_form = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_average_closed_form_takes_the_wrong_numerator": {
+      "caught": true,
+      "expected_named": "countermodel.average_series_disagrees_with_its_closed_form",
+      "reported": [
+        "countermodel.average_series_disagrees_with_its_closed_form = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_reported_average_is_compared_against_the_wrong_density": {
+      "caught": true,
+      "expected_named": "countermodel.the_gap_to_the_closed_form_does_not_shrink",
+      "reported": [
+        "countermodel.the_gap_to_the_closed_form_does_not_shrink = 2"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_coarse_beta_bracket_is_used_instead_of_the_tight_one": {
+      "caught": true,
+      "expected_named": "instrument.the_beta_bracket_is_too_wide_to_pin_a_double",
+      "reported": [
+        "instrument.the_beta_bracket_is_too_wide_to_pin_a_double",
+        "constants.mod9_target_span_coefficient: the bracket could not decide",
+        "constants.beta: the bracket could not decide",
+        "constants.static_countermodel_t_beta: the bracket could not decide"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_checksum_comparison_is_negated": {
+      "caught": true,
+      "expected_named": "artifacts.CHECKSUMS_mismatches",
+      "reported": [
+        "artifacts.CHECKSUMS_mismatches = ['Hard_Zeta_AU2d10_Literature_Notes_v0.1.md', 'Hard_Zeta_AU2d10_checker_report.json', 'Hard_Zeta_AU2d10_constants_frontier.json', 'Hard_Zeta_AU2d10_theorem_ledger.json', 'Hard_Zeta_A_Line_ROUTE_MAP_v2.10_AU2d10.md', 'Hard_Zeta_Phase_II_Round_AU2d10_Valuation_Class_Harmonic_Deficit_Rigidity_v0.1.md', 'SOURCE_VALIDATION_AU2d10.json', 'verify_Hard_Zeta_AU2d10_valuation_harmonic_deficit.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_the_validation_dict_shape_is_not_recognised": {
+      "caught": true,
+      "expected_named": "the validation record shape is unrecognised",
+      "reported": [
+        "artifacts: the validation record shape is unrecognised"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_paper_ledger_anchor_no_longer_matches": {
+      "caught": true,
+      "expected_named": "the paper's own ledger sections parsed empty",
+      "reported": [
+        "the paper's own ledger sections parsed empty: ['22.1 proved internally']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_only_a_key_this_report_does_not_use_is_read": {
+      "caught": true,
+      "expected_named": "checker entries were read",
+      "reported": [
+        "only 0 checker entries were read"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D34_the_roots_fall_back_to_the_loose_default": {
+      "caught": true,
+      "expected_named": "matches no reference",
+      "reported": [
+        "constants.C10_uniform_product: the bracket could not decide",
+        "constants.C10_depth: the bracket could not decide",
+        "constants.c10_source_inversion: the bracket could not decide",
+        "constants.relative_deficit_constant: the bracket could not decide"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D35_the_validation_key_echo_is_dropped": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green",
+      "gate_still_green": true,
+      "complaints_seen": []
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 35,
+    "caught_by_their_own_check": 35,
+    "missed": 0,
+    "robustness_properties": 1,
+    "malformed": 0,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

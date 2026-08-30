@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->55 source items and 35 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->57 source items and 36 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -633,11 +633,49 @@ instance behind each band.
     11,775 from applying a `mod 12` refinement to sources with `L = 1`, which its
     inherited result excludes, and three constants left undecided by a `beta`
     bracket `1e-6` wide where a double needs far tighter. Drill **31/31**.
-37. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+37. [`reports/RUN-038-HARD-ZETA-AU2D10-VALUATION-HARMONIC-DEFICIT.md`](./reports/RUN-038-HARD-ZETA-AU2D10-VALUATION-HARMONIC-DEFICIT.md) —
+    **the bridge the previous round refused to build, a countermodel that checks
+    out against its own closed forms, and a ledger that is finer than its
+    paper.** A-U.2d.9 declined to turn its diameter gain into a harmonic one and
+    named the missing piece: a value-order bridge. It turns out to be the edge
+    equation itself — `1/Y_j - 1/Y_{j+1} = (3-2^q)/(3Y_j) + 1/(3Y_jY_{j+1})` —
+    which telescopes to `sum (2^q-3)/Y_j = -3/y + 3/z + C_cross` and couples each
+    edge's valuation to the reciprocal weight of its source. The product exponent
+    moves `1/9 -> 4/45` with a polynomial deficit `1/45`. Everything decidable
+    holds: the identity on **70,810** edges, the telescope and both harmonic
+    capacities on **68,311** segments, the mod-9 target-cost law on every edge
+    with its table **rederived** from `2^q m = 4 or 7 (mod 9)` rather than
+    trusted, and Theorem 15.1's span bound on all **27,345** prefixes meeting its
+    premise — which, as at A-U.2d.9, is what a first-crossing interval already
+    is. Three kinds of premise appear and the gate keeps them apart: the
+    unconditional ones, the two that no real segment meets (Theorem 4.1 needs
+    `z > y`; Lemma 5.1 needs every state including the endpoint above the
+    source), and the one real orbits do meet. Where a theorem is untestable its
+    *equivalence* to its premise is still checked, and Theorem 4.1's holds on all
+    68,311. **The round bounds itself with a countermodel**, and that is checked
+    as carefully as its claims: eliminating `t` between the construction's two
+    closed forms leaves a relation between the round's own reported numbers,
+    `avg_q -> 6|S_X|/X`, satisfied with a gap that shrinks `2.0e-3 -> 7.2e-4 ->
+    1.8e-4` across three sizes, exactly as the `+o(X)` predicts. **Two
+    observations.** The rounding chain recurs for a third round, now with the
+    root drifting too — `C_10` +1 ulp, `C_10/6` +2, `c_10` -1, `mu10` +1 — every
+    link reproducing in float64 from the already-rounded parent; but A-U.2d.9's
+    span coefficient is quoted forward *correctly*, so that round's frontier
+    error did not propagate. And for the first time the JSON ledger is **finer**
+    than the paper rather than lossier: 18 entries to section 22.1's 17, because
+    it splits one prose item into the two halves that item itself names, with no
+    entry lacking a counterpart. Three of this gate's own errors were caught
+    first — a false 352 from applying Lemma 5.1 without its premise, a comparison
+    between two envelopes neither of which bounds the other, and a bracket too
+    loose to identify what it judged. A fourth was speed, and the fix mattered:
+    memoising a per-segment log series took the run from 88s to 26s at a
+    **larger** limit, so the population guards were met rather than lowered.
+    Drill **35/35**.
+38. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-38. [`code/`](./code/) — the engine, the independent reference, and the gates.
-39. [`data/gate-logs/`](./data/gate-logs/) and
+39. [`code/`](./code/) — the engine, the independent reference, and the gates.
+40. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
