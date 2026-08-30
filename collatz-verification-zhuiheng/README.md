@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->60 source items and 39 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->61 source items and 40 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -777,11 +777,44 @@ instance behind each band.
     errors is worth recording: RUN-040's fail-open lesson was written down and
     then rewritten into the code one round later with the clauses in the wrong
     order. Drill **33/33**.
-41. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+41. [`reports/RUN-042-HARD-ZETA-AU2D14-SPARSE-SUPPORT.md`](./reports/RUN-042-HARD-ZETA-AU2D14-SPARSE-SUPPORT.md) —
+    **the round whose central theorem a real orbit can actually be asked
+    about.** A-U.2d.13 made completed B-support sparse; the obvious escape is
+    to hide renewals in intervals that started but never finished, or in the
+    complementary A family, and this round closes both — `B_st(N)=M_N+U_N`
+    with the active backlog bounded twice, and `A_N <<_eps 2^(E_A(N)) N^eps`
+    so a sublogarithmic envelope cannot carry polynomial A support. With
+    envelope, slack and continued-fraction scales all subpolynomial the WHOLE
+    renewal process obeys `R_N <= N^(4/5+o(1))`, and anything above `4/5` pays
+    one of three named prices. **The change that matters for verification**:
+    section 3 is about EVERY suffix minimum, not only B sources. RUN-041 could
+    find zero B-injections in 460,024 intervals; this run finds **16,251**
+    suffix minima and confirms Theorem 3.1 (`q=1`) and Corollary 3.2
+    (`7, 11 mod 12`) on every one, zero violations — along with the `q=1` iff
+    `y=3 mod 4` equivalence they rest on and the `6j-1` ordinal floor. The
+    A-envelope side is equally testable: **1,885** orbits, `E_A = beta*T - Q`
+    everywhere, and the exact product identity `z_A 2^Q = y_A 3^T
+    prod(1+1/(3Y_j))` — written with no `beta` in it — holding on every
+    segment. It also **retro-explains RUN-041's zero**: all 16,251 minima are
+    A-renewals, and a true suffix minimum with a first crossing would be a
+    B-injection by definition, since `Y_e(s) >= Y_s` by minimality and strict
+    by injectivity. One measurement detail worth keeping: a whole convergent
+    orbit has NO suffix minima at all, because it ends at 1; the population
+    exists only on a finite window. **Two findings.** `psi(sigma*)` and
+    `1-sigma*` are the same number, `2500/15291` exactly, and the frontier
+    stores both one ulp apart, adjacent, under `at_old_sigma` — one quantity
+    with two values in the same object, each reproducing its own float64
+    route. And **the three-round finding is fixed**: the source-validation
+    record now carries sha256 digests of its own, and recomputing all six
+    gives zero mismatches. Drill **33/33** — its first pass again found two
+    defects that LOOSENED what they attacked and one that made the gate raise
+    instead of report, plus a threshold check whose sample never straddled its
+    own threshold.
+42. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-42. [`code/`](./code/) — the engine, the independent reference, and the gates.
-43. [`data/gate-logs/`](./data/gate-logs/) and
+43. [`code/`](./code/) — the engine, the independent reference, and the gates.
+44. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

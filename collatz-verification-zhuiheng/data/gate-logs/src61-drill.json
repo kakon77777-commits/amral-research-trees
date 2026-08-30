@@ -1,0 +1,326 @@
+{
+  "gate": "src61_sparse_support_exhaustion.py",
+  "limit": "8000",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_theta_star_uses_the_wrong_offset": {
+      "caught": true,
+      "expected_named": "exponents.disagreeing_with_both_evaluations",
+      "reported": [
+        "instrument.failed = ['theta* = 2500/12791', 'sigma* = 12791/15291', 'chi(sigma*) = 2791/45873', 'zeta(sigma*) = 28082/45873', 'psi(sigma*) = 2500/15291', '1 - theta* = 10291/12791']",
+        "exponents.disagreeing_with_both_evaluations = 9"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_backbone_exponent_subtracts_where_it_should_add": {
+      "caught": true,
+      "expected_named": "instrument.",
+      "reported": [
+        "instrument.failed = ['sigma* = 12791/15291', 'chi(sigma*) = 2791/45873', 'zeta(sigma*) = 28082/45873', 'psi(sigma*) = 1 - sigma*', 'psi(sigma*) = 2500/15291']",
+        "exponents.disagreeing_with_both_evaluations = 5"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_inherited_diophantine_exponent_is_mistyped": {
+      "caught": true,
+      "expected_named": "exponents.disagreeing_with_both_evaluations",
+      "reported": [
+        "instrument.failed = ['theta* = 2500/12791', 'sigma* = 12791/15291', 'chi(sigma*) = 2791/45873', 'zeta(sigma*) = 28082/45873', 'psi(sigma*) = 2500/15291', '1 - theta* = 10291/12791']",
+        "exponents.disagreeing_with_both_evaluations = 9",
+        "printed.printed"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_a_constant_shifted_past_its_budget_that_the_chain_still_matches": {
+      "caught": true,
+      "expected_named": "exponents.disagreeing_with_both_evaluations",
+      "reported": [
+        "exponents.disagreeing_with_both_evaluations = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_pq_escape_exponent_is_shifted": {
+      "caught": true,
+      "expected_named": "instrument.",
+      "reported": [
+        "instrument.failed = ['chi(sigma*) = 2791/45873', 'chi(4/5) = 0']",
+        "exponents.disagreeing_with_both_evaluations = 1",
+        "identities.trichotomy_exponent_identity_violations = 400",
+        "identities.chi_threshold_violations = 30"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_slack_spike_exponent_uses_the_wrong_offset": {
+      "caught": true,
+      "expected_named": "instrument.",
+      "reported": [
+        "instrument.failed = ['zeta(sigma*) = 28082/45873']",
+        "exponents.disagreeing_with_both_evaluations = 1",
+        "identities.trichotomy_exponent_identity_violations = 400",
+        "backlog.trichotomy_case_split_violations = 400"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_active_slack_exponent_flips_a_sign": {
+      "caught": true,
+      "expected_named": "instrument.",
+      "reported": [
+        "instrument.failed = ['psi(sigma*) = 1 - sigma*', 'psi(sigma*) = 2500/15291']",
+        "exponents.disagreeing_with_both_evaluations = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_trichotomy_identity_drops_its_minus_one": {
+      "caught": true,
+      "expected_named": "identities.trichotomy_exponent_identity_violations",
+      "reported": [
+        "identities.trichotomy_exponent_identity_violations = 400"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_theorem_4_1s_step_is_read_as_theta_not_one_minus_theta": {
+      "caught": true,
+      "expected_named": "identities.rho_over_rho_plus_one_violations",
+      "reported": [
+        "identities.rho_over_rho_plus_one_violations = 399"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_psi_inversion_is_taken_at_the_wrong_power": {
+      "caught": true,
+      "expected_named": "identities.psi_from_theorem_4_1_violations",
+      "reported": [
+        "identities.psi_from_theorem_4_1_violations = 400"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_chi_threshold_is_moved_off_four_fifths": {
+      "caught": true,
+      "expected_named": "identities.chi_threshold_violations",
+      "reported": [
+        "identities.chi_threshold_violations = 30"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_suffix_minimum_scan_collects_maxima": {
+      "caught": true,
+      "expected_named": "suffix.theorem_3_1_violations",
+      "reported": [
+        "suffix.theorem_3_1_violations = 3809",
+        "suffix.corollary_3_2_violations = 3679",
+        "suffix.successor_not_greater = 3809",
+        "envelope.orbits_with_two_or_more_A_renewals"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_terminal_index_is_counted_as_a_suffix_minimum": {
+      "caught": true,
+      "expected_named": "suffix.terminal_index_returned_as_a_suffix_minimum",
+      "reported": [
+        "suffix.terminal_index_returned_as_a_suffix_minimum = 835",
+        "envelope.theorem_7_1_floor_violations = 1",
+        "envelope.transfer_inequality_violations = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_theorem_3_1_is_tested_inside_out": {
+      "caught": true,
+      "expected_named": "suffix.theorem_3_1_violations",
+      "reported": [
+        "suffix.theorem_3_1_violations = 6300"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_residue_classes_drop_one_of_the_two": {
+      "caught": true,
+      "expected_named": "suffix.corollary_3_2_violations",
+      "reported": [
+        "suffix.corollary_3_2_violations = 3820"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_valuation_one_equivalence_uses_the_wrong_residue": {
+      "caught": true,
+      "expected_named": "suffix.q_one_not_equivalent_to_three_mod_four",
+      "reported": [
+        "suffix.q_one_not_equivalent_to_three_mod_four = 6300"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_late_ordinal_floor_is_taken_one_too_high": {
+      "caught": true,
+      "expected_named": "suffix.late_ordinal_floor_violations",
+      "reported": [
+        "suffix.late_ordinal_floor_violations = 5"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_successor_test_is_reversed": {
+      "caught": true,
+      "expected_named": "suffix.successor_not_greater",
+      "reported": [
+        "suffix.successor_not_greater = 6300"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_envelope_adds_the_valuation_instead_of_subtracting": {
+      "caught": true,
+      "expected_named": "envelope.E_A_disagreeing_with_beta_T_minus_Q",
+      "reported": [
+        "envelope.E_A_disagreeing_with_beta_T_minus_Q = 695"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_envelope_product_identity_loses_a_factor_of_three": {
+      "caught": true,
+      "expected_named": "envelope.envelope_product_identity_violations",
+      "reported": [
+        "envelope.envelope_product_identity_violations = 695"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_envelope_correction_omits_its_last_state": {
+      "caught": true,
+      "expected_named": "envelope.envelope_product_identity_violations",
+      "reported": [
+        "envelope.envelope_product_identity_violations = 695"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_A_renewal_slack_is_required_to_fall": {
+      "caught": true,
+      "expected_named": "envelope.delta_at_A_renewals_not_increasing",
+      "reported": [
+        "envelope.delta_at_A_renewals_not_increasing = 5523"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_transfer_inequality_is_demanded_far_too_strongly": {
+      "caught": true,
+      "expected_named": "envelope.transfer_inequality_violations",
+      "reported": [
+        "envelope.transfer_inequality_violations = 695"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_A_renewal_test_is_inverted": {
+      "caught": true,
+      "expected_named": "envelope.",
+      "reported": [
+        "envelope.orbits_with_two_or_more_A_renewals",
+        "envelope.transfer_inequality_checked"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_theorem_4_1_is_stated_with_the_wrong_power": {
+      "caught": true,
+      "expected_named": "backlog.theorem_4_1_violations",
+      "reported": [
+        "backlog.theorem_4_1_violations = 89"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_theorem_4_2_loses_its_factor_of_N": {
+      "caught": true,
+      "expected_named": "backlog.theorem_4_2_violations",
+      "reported": [
+        "backlog.theorem_4_2_violations = 400"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_record_times_grow_only_geometrically": {
+      "caught": true,
+      "expected_named": "counterexample.count_disagreeing_with_sqrt_log2_N",
+      "reported": [
+        "counterexample.count_disagreeing_with_sqrt_log2_N = 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_intermediate_values_are_set_below_the_next_record": {
+      "caught": true,
+      "expected_named": "counterexample.",
+      "reported": [
+        "counterexample.suffix_minimum_times_disagreeing_with_t_j = 1",
+        "counterexample.count_disagreeing_with_sqrt_log2_N = 8",
+        "counterexample.intermediate_value_too_small = 24"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_reciprocal_relation_is_taken_at_the_wrong_end": {
+      "caught": true,
+      "expected_named": "criticality.reciprocal_relation_violations",
+      "reported": [
+        "criticality.reciprocal_relation_violations = 200"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_a_checksum_comparison_is_inverted": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_the_validation_digest_comparison_is_inverted": {
+      "caught": true,
+      "expected_named": "artifacts.validation_digest_mismatches",
+      "reported": [
+        "artifacts.validation_digest_mismatches = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_orbit_scan_is_reduced_to_a_single_source": {
+      "caught": true,
+      "expected_named": "suffix.",
+      "reported": [
+        "suffix.orbits",
+        "suffix.suffix_minima"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_a_counter_is_added_that_no_list_classifies": {
+      "caught": true,
+      "expected_named": "exponents.a_counter_nothing_reads",
+      "reported": [
+        "exponents.a_counter_nothing_reads"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "N2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 33,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 33,
+    "caught": 33,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 33,
+    "caught_by_their_own_check": 33,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

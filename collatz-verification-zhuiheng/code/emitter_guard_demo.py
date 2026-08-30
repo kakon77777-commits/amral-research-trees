@@ -55,6 +55,7 @@ CASES = [
     ("src58", (0, ("certificates", "inequalities_checked"))),
     ("src59", (0, ("results", "orbits", "sliding_block_identities_checked"))),
     ("src60", (0, ("results", "orbits", "first_crossing_intervals"))),
+    ("src61", (0, ("results", "suffix", "suffix_minima"))),
 ]
 
 
