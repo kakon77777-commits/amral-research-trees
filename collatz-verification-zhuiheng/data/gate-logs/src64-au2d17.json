@@ -1,0 +1,611 @@
+{
+  "run": "RUN-045",
+  "round": "A-U.2d.17",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item64",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 14,
+      "failed": []
+    },
+    "constants": {
+      "constants_checked": 10,
+      "disagreeing_with_both_evaluations": 0,
+      "from_the_float64_chain_not_the_nearest_double": 6,
+      "exact_to_the_last_bit": 4,
+      "undecided_brackets": 0,
+      "missing_from_the_frontier": 0,
+      "frontier_and_report_disagreeing": 0,
+      "rows": [
+        {
+          "constant": "beta",
+          "published": "1.584962500721156",
+          "budget": 4,
+          "verdict": "exact",
+          "nearest_double": "1.584962500721156"
+        },
+        {
+          "constant": "beta_minus_one",
+          "published": "0.5849625007211561",
+          "budget": 12,
+          "verdict": "-1 ulp, the float64 chain",
+          "nearest_double": "0.5849625007211562"
+        },
+        {
+          "constant": "critical_gap_exponent",
+          "published": "0.2",
+          "budget": 4,
+          "verdict": "exact",
+          "nearest_double": "0.2"
+        },
+        {
+          "constant": "inverse_beta_minus_one",
+          "published": "1.7095112913514552",
+          "budget": 12,
+          "verdict": "+2 ulp, the float64 chain",
+          "nearest_double": "1.7095112913514547"
+        },
+        {
+          "constant": "first_hit_single_cylinder_exponent_limit",
+          "published": "0.341902258270291",
+          "budget": 12,
+          "verdict": "+1 ulp, the float64 chain",
+          "nearest_double": "0.34190225827029097"
+        },
+        {
+          "constant": "first_hit_joint_cylinder_exponent_limit",
+          "published": "0.683804516540582",
+          "budget": 12,
+          "verdict": "+1 ulp, the float64 chain",
+          "nearest_double": "0.6838045165405819"
+        },
+        {
+          "constant": "raw_nearcritical_composition_entropy_bits_per_h",
+          "published": "1.5056438879463003",
+          "budget": 12,
+          "verdict": "-2 ulp, the float64 chain",
+          "nearest_double": "1.5056438879463008"
+        },
+        {
+          "constant": "source_modulus_bits_per_h",
+          "published": "1.584962500721156",
+          "budget": 4,
+          "verdict": "exact",
+          "nearest_double": "1.584962500721156"
+        },
+        {
+          "constant": "source_entropy_rate_gap_bits_per_h",
+          "published": "0.07931861277485575",
+          "budget": 80,
+          "verdict": "+26 ulp, the float64 chain",
+          "nearest_double": "0.07931861277485538"
+        },
+        {
+          "constant": "double_cylinder_modulus_bits_per_h",
+          "published": "3.169925001442312",
+          "budget": 4,
+          "verdict": "exact",
+          "nearest_double": "3.169925001442312"
+        }
+      ]
+    },
+    "bridges": {
+      "bridges": 874,
+      "sources": 821,
+      "longest_tail": 35,
+      "suffixes_checked": 3038,
+      "affine_identity_violations": 0,
+      "b_w_not_matching_the_closed_form": 0,
+      "laplace_identity_violations": 0,
+      "laplace_sum_not_positive": 0,
+      "suffix_not_supercritical": 0,
+      "correction_floor_violations": 0,
+      "excess_floor_theorem_8_3_violations": 0,
+      "excess_floor_decided_by_the_float64_fudge": 0,
+      "phase_gap_violations": 0,
+      "source_outside_11_or_17_mod_18": 0,
+      "endpoint_outside_7_or_11_mod_12": 0,
+      "endpoint_not_below_the_source": 0,
+      "integer_lift_negative": 0,
+      "one_sided_phase_outside_the_unit_interval": 0,
+      "smallest_phase_gap_seen": 16,
+      "smallest_excess_floor_slack": 0.025081034989598676,
+      "integer_lift_zero": 874
+    },
+    "canonical": {
+      "bridges": 874,
+      "source_congruence_violations": 0,
+      "endpoint_congruence_violations": 0,
+      "source_inside_its_modulus": 97,
+      "endpoint_inside_its_modulus": 90,
+      "both_inside_their_moduli": 90,
+      "collapse_violations": 0,
+      "collapse_asserted_outside_the_moduli": 0,
+      "representative_does_not_satisfy_its_congruence": 0
+    },
+    "plateau": {
+      "bridges": 874,
+      "jensen_theorem_6_1_violations": 0,
+      "jensen_with_the_published_weaker_bound_violations": 0,
+      "jensen_weaker_bound_with_a_positive_right_side": 0,
+      "quantile_instances": 10488,
+      "quantile_theorem_6_2_violations": 0,
+      "quantile_instances_that_are_not_vacuous": 0,
+      "sharp_quantile_instances_that_are_not_vacuous": 136,
+      "sharp_quantile_violations": 0,
+      "laplace_sum_not_below_three_z": 0,
+      "laplace_sum_not_below_h": 0
+    },
+    "area": {
+      "bridges": 874,
+      "rearrangement_violations": 0,
+      "triangular_sum_violations": 0,
+      "centre_of_mass_before_the_midpoint": 0,
+      "centre_of_mass_exactly_at_the_midpoint": 520,
+      "centre_of_mass_past_the_midpoint": 354,
+      "surplus_total_not_q_minus_h": 0,
+      "centre_of_mass_undefined": 0,
+      "largest_midpoint_excess_seen": 7.184210526315789
+    },
+    "first_hit": {
+      "orbits": 1321,
+      "first_hits": 607,
+      "first_hit_below_the_threshold": 0,
+      "first_hit_not_minimal": 0,
+      "overshoot_above_one_step": 0,
+      "length_bound_violations": 0,
+      "length_bound_attained_with_no_additive_constant": 309,
+      "slack_step_ratio_violations": 0,
+      "prefix_valuation_below_the_length": 0,
+      "prefix_valuation_not_matching_the_cumulative_sum": 0,
+      "source_inside_its_cylinder": 165,
+      "source_outside_its_cylinder": 442,
+      "endpoint_inside_its_cylinder": 142,
+      "endpoint_outside_its_cylinder": 465,
+      "largest_n_with_the_source_outside": 3995
+    },
+    "their_guards": {
+      "residue_samples": 26654,
+      "residue_source_assert_fired": 2661,
+      "residue_endpoint_assert_fired": 2037,
+      "residue_source_violations": 0,
+      "residue_endpoint_violations": 0,
+      "quantile_samples": 10000,
+      "quantile_jensen_guard_open": 3383,
+      "quantile_bound_not_vacuous": 500,
+      "quantile_jensen_violations": 0,
+      "quantile_markov_violations": 0
+    },
+    "examples": {
+      "examples": 10,
+      "x_disagreeing": 0,
+      "z_disagreeing": 0,
+      "exponent_word_disagreeing": 0,
+      "h_disagreeing": 0,
+      "first_step_not_valuation_one": 0,
+      "laplace_sum_disagreeing": 0,
+      "excess_decimal_disagreeing": 0,
+      "phase_floor_disagreeing": 0,
+      "tail_not_suffix_supercritical": 0,
+      "geometry_violations": 0,
+      "sources_appearing_more_than_once": 1,
+      "excess_verdicts": [
+        {
+          "y": 59,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 2,
+          "budget": 15
+        },
+        {
+          "y": 71,
+          "h": 3,
+          "verdict": "the float64 chain",
+          "ulps": 11,
+          "budget": 77
+        },
+        {
+          "y": 91,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 2,
+          "budget": 15
+        },
+        {
+          "y": 155,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 2,
+          "budget": 15
+        },
+        {
+          "y": 155,
+          "h": 6,
+          "verdict": "the float64 chain",
+          "ulps": 11,
+          "budget": 77
+        },
+        {
+          "y": 187,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 2,
+          "budget": 15
+        },
+        {
+          "y": 223,
+          "h": 5,
+          "verdict": "the float64 chain",
+          "ulps": 38,
+          "budget": 421
+        },
+        {
+          "y": 251,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 2,
+          "budget": 15
+        },
+        {
+          "y": 283,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 2,
+          "budget": 15
+        },
+        {
+          "y": 347,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 2,
+          "budget": 15
+        }
+      ],
+      "phase_floor_verdicts": [
+        {
+          "y": 59,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 4,
+          "budget": 61
+        },
+        {
+          "y": 71,
+          "h": 3,
+          "verdict": "the float64 chain",
+          "ulps": 11,
+          "budget": 77
+        },
+        {
+          "y": 91,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 11,
+          "budget": 95
+        },
+        {
+          "y": 155,
+          "h": 1,
+          "verdict": "exact",
+          "ulps": 0,
+          "budget": 161
+        },
+        {
+          "y": 155,
+          "h": 6,
+          "verdict": "the float64 chain",
+          "ulps": -5,
+          "budget": 135
+        },
+        {
+          "y": 187,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 11,
+          "budget": 194
+        },
+        {
+          "y": 223,
+          "h": 5,
+          "verdict": "the float64 chain",
+          "ulps": -39,
+          "budget": 262
+        },
+        {
+          "y": 251,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 45,
+          "budget": 261
+        },
+        {
+          "y": 283,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": 14,
+          "budget": 294
+        },
+        {
+          "y": 347,
+          "h": 1,
+          "verdict": "the float64 chain",
+          "ulps": -28,
+          "budget": 360
+        }
+      ],
+      "rows": [
+        {
+          "y": 59,
+          "X": 89,
+          "Z": 67,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "laplace_sum": "3/4",
+          "X_minus_Z": 22
+        },
+        {
+          "y": 71,
+          "X": 107,
+          "Z": 91,
+          "h": 3,
+          "word": [
+            1,
+            2,
+            2
+          ],
+          "laplace_sum": "69/32",
+          "X_minus_Z": 16
+        },
+        {
+          "y": 91,
+          "X": 137,
+          "Z": 103,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "laplace_sum": "3/4",
+          "X_minus_Z": 34
+        },
+        {
+          "y": 155,
+          "X": 233,
+          "Z": 175,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "laplace_sum": "3/4",
+          "X_minus_Z": 58
+        },
+        {
+          "y": 155,
+          "X": 233,
+          "Z": 167,
+          "h": 6,
+          "word": [
+            2,
+            1,
+            1,
+            1,
+            2,
+            3
+          ],
+          "laplace_sum": "3453/1024",
+          "X_minus_Z": 66
+        },
+        {
+          "y": 187,
+          "X": 281,
+          "Z": 211,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "laplace_sum": "3/4",
+          "X_minus_Z": 70
+        },
+        {
+          "y": 223,
+          "X": 335,
+          "Z": 319,
+          "h": 5,
+          "word": [
+            1,
+            1,
+            1,
+            3,
+            2
+          ],
+          "laplace_sum": "777/256",
+          "X_minus_Z": 16
+        },
+        {
+          "y": 251,
+          "X": 377,
+          "Z": 283,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "laplace_sum": "3/4",
+          "X_minus_Z": 94
+        },
+        {
+          "y": 283,
+          "X": 425,
+          "Z": 319,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "laplace_sum": "3/4",
+          "X_minus_Z": 106
+        },
+        {
+          "y": 347,
+          "X": 521,
+          "Z": 391,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "laplace_sum": "3/4",
+          "X_minus_Z": 130
+        }
+      ]
+    },
+    "records": {
+      "gaps": 4069,
+      "sources": 44,
+      "affine_identity_violations": 0,
+      "laplace_identity_violations": 0,
+      "phase_gap_violations": 0,
+      "endpoint_outside_7_or_11_mod_12": 0,
+      "endpoint_not_three_mod_four": 0,
+      "suffix_not_supercritical": 0,
+      "suffixes_checked": 11305,
+      "smallest_phase_gap_seen": 16
+    },
+    "entropy": {
+      "levels": 4,
+      "gap_not_shrinking": 0,
+      "rows": [
+        {
+          "h": 50,
+          "Q": 80,
+          "rate": "1.444631",
+          "gap_to_e_beta": 0.06101224952864073
+        },
+        {
+          "h": 200,
+          "Q": 317,
+          "rate": "1.480225",
+          "gap_to_e_beta": 0.025418182246185066
+        },
+        {
+          "h": 800,
+          "Q": 1268,
+          "rate": "1.498080",
+          "gap_to_e_beta": 0.007562931157854669
+        },
+        {
+          "h": 3200,
+          "Q": 5072,
+          "rate": "1.503481",
+          "gap_to_e_beta": 0.0021627165106825118
+        }
+      ],
+      "entropy_rate_above_beta": 0
+    },
+    "artifacts": {
+      "files_present": 11,
+      "digests_listed": 10,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_per_file_entries": 7,
+      "validation_entries_with_a_digest": 7,
+      "validation_digest_mismatches": 0,
+      "validation_size_mismatches": 0,
+      "files_absent_from_the_validation_record": [
+        "CHECKER_STDOUT_AU2d17.txt",
+        "CHECKSUMS.sha256",
+        "SOURCE_VALIDATION_AU2d17.json",
+        "verify_Hard_Zeta_AU2d17_small_endpoint_cylinder.py"
+      ],
+      "duplicate_file_pairs": [],
+      "stdout_is_the_report_plus_trailing_bytes": true,
+      "stdout_extra_bytes": "b'\\n'",
+      "validation_all_ok_flag": true,
+      "validation_top_level_keys": [
+        "all_ok",
+        "canonical_main",
+        "canonical_math_delimiters",
+        "checker_compile",
+        "checker_counts",
+        "checker_execution",
+        "issues",
+        "round",
+        "scope_warning",
+        "source_files"
+      ],
+      "validation_issue_entries": 0,
+      "validation_compile_returncode": 0,
+      "validation_execution_returncode": 0,
+      "validation_counts_disagreeing_with_the_report": 0
+    },
+    "ledger": {
+      "paper_proved_items": 14,
+      "ledger_proved_items": 14,
+      "paper_open_items": 5,
+      "ledger_open_items": 5,
+      "paper_no_go_headings": 7,
+      "ledger_no_go_items": 7,
+      "ledger_has_an_open_key": true,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [],
+      "heuristic_failed_its_positive_control": 0,
+      "heuristic_failed_its_negative_control": 0
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "finite_local_bridges",
+          "theirs": 874,
+          "mine": 874
+        },
+        {
+          "check": "laplace_identities_exact",
+          "theirs": 874,
+          "mine": 874
+        },
+        {
+          "check": "canonical_rep_collapses_finite",
+          "theirs": 90,
+          "mine": 90
+        },
+        {
+          "check": "phase_gap_checks",
+          "theirs": 874,
+          "mine": 874
+        },
+        {
+          "check": "correction_floor_checks",
+          "theirs": 874,
+          "mine": 874
+        },
+        {
+          "check": "suffix_supercritical_suffixes",
+          "theirs": 3038,
+          "mine": 3038
+        },
+        {
+          "check": "weighted_area_identities",
+          "theirs": 874,
+          "mine": 874
+        },
+        {
+          "check": "random_exact_residue_checks",
+          "theirs": 7990,
+          "mine": 26654
+        },
+        {
+          "check": "quantile_jensen_tests",
+          "theirs": 10000,
+          "mine": 10000
+        }
+      ],
+      "checks_i_did_not_reproduce": 0,
+      "checks_they_report_as_zero": 0,
+      "counts_i_reproduce_exactly": 8
+    }
+  }
+}

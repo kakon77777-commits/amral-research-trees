@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->63 source items and 42 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->64 source items and 43 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -879,11 +879,53 @@ instance behind each band.
     interior point was the peak — plus one defect that was inert for genuine
     mathematics: `2 = -1 mod 3` has order two, so `2^-q` and `2^q` are the same
     residue. Drill **37/37**.
-44. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+44. [`reports/RUN-045-HARD-ZETA-AU2D17-SMALL-ENDPOINT-CYLINDER.md`](./reports/RUN-045-HARD-ZETA-AU2D17-SMALL-ENDPOINT-CYLINDER.md) —
+    **the round whose central identity turns out to be a definition, and whose
+    content sits one line below it.** A-U.2d.17 puts the exact two-sided code
+    cylinders on the bridge A-U.2d.16 produced. Its headline is the Exact
+    Endpoint-Laplace Identity `sum_i 2^-H_i = 3(Z - 2^-E X)`; multiply by
+    `2^Q` and it reads `sum_i 3^(h-i) 2^P_i = 3 B_w`, which is term by term
+    the definition of `B_w` in section 3. The identity is true by
+    construction. **The falsifiable content is the affine relation
+    `2^Q Z = 3^h X + B_w` on real orbit data**, and that holds on all **874**
+    bridges, along with the correction floor, the phase gap, Theorem 8.3, the
+    double-canonical congruences, the weighted-area components and the
+    first-hit slice. **Every population count the bundle reports — 874,
+    3,038, 90 — is reproduced exactly from the definition.** Three additions
+    the shipped checker does not make. `h(h+1)/2` is an integer, so
+    `2^(sum H_i) = 2^A / 3^(h(h+1)/2)` and Jensen becomes
+    `2^A S^h >= h^h 3^(h(h+1)/2)` — checked on every bridge, where the bundle
+    checks Jensen only on synthetic random slack lists. The canonical
+    congruences are checked on all 874 rather than the 90 that pass the
+    smallness guard, so a congruence failing on a large bridge could not
+    hide. And **all three of the shipped checker's assertion sites sit behind
+    an `if` while its counters increment once per sample**: measured
+    independently at its own parameters, its source-residue assertion runs on
+    **10.0%** of samples, its endpoint assertion on **7.6%**, its Jensen
+    assertion on **33.8%**, its quantile bound is non-trivial on **5.0%** —
+    and passes wherever a guard opens. **Five findings.** Theorem 6.2 is
+    vacuous on all **10,488** finite instances, while the sharper form its own
+    proof gives — `S` in place of the `3Z` bounding it — is live on **136**.
+    Theorem 7.2's finite content `2(A-M) >= (h+1)(Q-h)` is **exactly attained
+    on 520 of 874**, so a strict test accuses 520 correct bridges. The
+    integer-lift escape of Theorem 9.1 is **empty: `m_h = 0` on all 874**, so
+    every finite bridge's excess IS its one-sided phase. Lemma 8.1's `X-Z>=4`
+    is correct but nowhere near tight — smallest gap **16**, on both
+    populations. And the validation record is the strongest yet: **7 per-file
+    digests and 7 sizes, all matching**, `CHECKSUMS` pinning 10 of 11, though
+    4 files appear in it nowhere and `CHECKER_STDOUT` is still the checker
+    report, now plus one newline. Constants: `beta - e_beta` sits **26 ulps**
+    out and is a rounding travelling down a cancelling subtraction from an
+    already-2-ulp parent, so each constant now carries a budget of
+    `4 x (operand/result)`, tested before the chain excuse. Drill **50/50**,
+    and nine defects needed re-aiming — four probed a counter already reading
+    zero, two loosened what they attacked, and one stayed TRUE after mutation
+    because a congruence mod `m` implies the congruence mod every divisor.
+45. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-45. [`code/`](./code/) — the engine, the independent reference, and the gates.
-46. [`data/gate-logs/`](./data/gate-logs/) and
+46. [`code/`](./code/) — the engine, the independent reference, and the gates.
+47. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

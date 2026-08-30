@@ -1,0 +1,462 @@
+{
+  "gate": "src64_small_endpoint_cylinder.py",
+  "limit": "25000",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_the_affine_identity_loses_the_endpoint_power": {
+      "caught": true,
+      "expected_named": "bridges.affine_identity_violations",
+      "reported": [
+        "bridges.affine_identity_violations = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_running_exponent_inside_b_of_advances_too_fast": {
+      "caught": true,
+      "expected_named": "bridges.affine_identity_violations",
+      "reported": [
+        "bridges.affine_identity_violations = 354",
+        "bridges.b_w_not_matching_the_closed_form = 354",
+        "canonical.source_congruence_violations = 354",
+        "canonical.endpoint_congruence_violations = 346"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_closed_form_for_b_w_shifts_its_power_of_three": {
+      "caught": true,
+      "expected_named": "bridges.b_w_not_matching_the_closed_form",
+      "reported": [
+        "bridges.affine_identity_violations = 874",
+        "bridges.b_w_not_matching_the_closed_form = 874",
+        "canonical.source_congruence_violations = 874",
+        "canonical.endpoint_congruence_violations = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_laplace_numerator_uses_the_wrong_suffix_length": {
+      "caught": true,
+      "expected_named": "bridges.laplace_identity_violations",
+      "reported": [
+        "bridges.laplace_identity_violations = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_laplace_right_side_forgets_its_factor_of_three": {
+      "caught": true,
+      "expected_named": "bridges.laplace_identity_violations",
+      "reported": [
+        "bridges.laplace_identity_violations = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_laplace_sum_is_allowed_to_vanish": {
+      "caught": true,
+      "expected_named": "bridges.laplace_sum_not_positive",
+      "reported": [
+        "bridges.laplace_sum_not_positive = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_suffix_test_compares_against_the_wrong_power": {
+      "caught": true,
+      "expected_named": "bridges.suffix_not_supercritical",
+      "reported": [
+        "bridges.suffix_not_supercritical = 2106"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_population_filter_admits_nothing_at_all": {
+      "caught": true,
+      "expected_named": "bridges.bridges",
+      "reported": [
+        "examples.tail_not_suffix_supercritical = 10",
+        "bridges.bridges",
+        "bridges.sources",
+        "bridges.suffixes_checked"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_correction_floor_is_demanded_a_hundredfold": {
+      "caught": true,
+      "expected_named": "bridges.correction_floor_violations",
+      "reported": [
+        "bridges.correction_floor_violations = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_excess_floor_uses_the_wrong_power_of_two": {
+      "caught": true,
+      "expected_named": "bridges.excess_floor_theorem_8_3_violations",
+      "reported": [
+        "bridges.excess_floor_theorem_8_3_violations = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_excess_floor_numerator_is_five_hundred_not_five": {
+      "caught": true,
+      "expected_named": "bridges.excess_floor_theorem_8_3_violations",
+      "reported": [
+        "bridges.excess_floor_theorem_8_3_violations = 65"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_source_phase_admits_the_wrong_residues": {
+      "caught": true,
+      "expected_named": "bridges.source_outside_11_or_17_mod_18",
+      "reported": [
+        "bridges.source_outside_11_or_17_mod_18 = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_endpoint_phase_admits_the_wrong_residues": {
+      "caught": true,
+      "expected_named": "bridges.endpoint_outside_7_or_11_mod_12",
+      "reported": [
+        "bridges.endpoint_outside_7_or_11_mod_12 = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_phase_gap_floor_is_raised_past_what_is_observed": {
+      "caught": true,
+      "expected_named": "bridges.phase_gap_violations",
+      "reported": [
+        "bridges.phase_gap_violations = 52"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_ordering_of_source_and_endpoint_is_reversed": {
+      "caught": true,
+      "expected_named": "bridges.endpoint_not_below_the_source",
+      "reported": [
+        "bridges.endpoint_not_below_the_source = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_integer_lift_uses_the_floor_instead_of_the_ceiling": {
+      "caught": true,
+      "expected_named": "bridges.integer_lift_negative",
+      "reported": [
+        "bridges.integer_lift_negative = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_one_sided_phase_is_required_above_one": {
+      "caught": true,
+      "expected_named": "bridges.one_sided_phase_outside_the_unit_interval",
+      "reported": [
+        "bridges.one_sided_phase_outside_the_unit_interval = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_source_representative_drops_its_inverse": {
+      "caught": true,
+      "expected_named": "canonical.representative_does_not_satisfy_its_congruence",
+      "reported": [
+        "canonical.source_congruence_violations = 354",
+        "canonical.collapse_violations = 90",
+        "canonical.representative_does_not_satisfy_its_congruence = 354"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_endpoint_representative_uses_the_wrong_modulus": {
+      "caught": true,
+      "expected_named": "canonical.representative_does_not_satisfy_its_congruence",
+      "reported": [
+        "canonical.endpoint_congruence_violations = 874",
+        "canonical.collapse_violations = 90",
+        "canonical.representative_does_not_satisfy_its_congruence = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_source_modulus_gains_a_factor_the_congruence_cannot_carry": {
+      "caught": true,
+      "expected_named": "canonical.source_congruence_violations",
+      "reported": [
+        "canonical.source_congruence_violations = 702",
+        "canonical.collapse_violations = 76"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_collapse_is_asserted_for_the_wrong_value": {
+      "caught": true,
+      "expected_named": "canonical.collapse_violations",
+      "reported": [
+        "canonical.collapse_violations = 90"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_smallness_guard_is_dropped_and_the_collapse_claimed_everywhere": {
+      "caught": true,
+      "expected_named": "canonical.collapse_violations",
+      "reported": [
+        "canonical.collapse_violations = 784"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_jensen_exponent_is_off_by_one": {
+      "caught": true,
+      "expected_named": "plateau.jensen_theorem_6_1_violations",
+      "reported": [
+        "plateau.jensen_theorem_6_1_violations = 314"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_jensen_triangular_exponent_is_wrong": {
+      "caught": true,
+      "expected_named": "plateau.jensen_theorem_6_1_violations",
+      "reported": [
+        "plateau.jensen_theorem_6_1_violations = 871"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_corollary_5_2_is_demanded_a_hundredfold": {
+      "caught": true,
+      "expected_named": "plateau.laplace_sum_not_below_three_z",
+      "reported": [
+        "plateau.laplace_sum_not_below_three_z = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_elementary_bound_on_the_laplace_sum_is_tightened": {
+      "caught": true,
+      "expected_named": "plateau.laplace_sum_not_below_h",
+      "reported": [
+        "plateau.laplace_sum_not_below_h = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_quantile_count_is_taken_the_wrong_way_round": {
+      "caught": true,
+      "expected_named": "plateau.sharp_quantile_violations",
+      "reported": [
+        "plateau.sharp_quantile_violations = 65"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_sharp_quantile_bound_is_divided_by_a_thousand": {
+      "caught": true,
+      "expected_named": "plateau.sharp_quantile_violations",
+      "reported": [
+        "plateau.sharp_quantile_violations = 8864"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_rearrangement_sums_the_wrong_prefix": {
+      "caught": true,
+      "expected_named": "area.rearrangement_violations",
+      "reported": [
+        "area.rearrangement_violations = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_triangular_sum_is_off_by_one_term": {
+      "caught": true,
+      "expected_named": "area.triangular_sum_violations",
+      "reported": [
+        "area.triangular_sum_violations = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_the_surplus_total_forgets_the_baseline": {
+      "caught": true,
+      "expected_named": "area.surplus_total_not_q_minus_h",
+      "reported": [
+        "area.surplus_total_not_q_minus_h = 874"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_centre_of_mass_is_demanded_ten_times_the_midpoint": {
+      "caught": true,
+      "expected_named": "area.centre_of_mass_before_the_midpoint",
+      "reported": [
+        "area.centre_of_mass_before_the_midpoint = 874",
+        "area.centre_of_mass_past_the_midpoint"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_the_first_hit_threshold_is_lowered_after_the_search": {
+      "caught": true,
+      "expected_named": "first_hit.first_hit_below_the_threshold",
+      "reported": [
+        "first_hit.first_hit_below_the_threshold = 607"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D34_the_first_hit_search_starts_one_step_late": {
+      "caught": true,
+      "expected_named": "first_hit.first_hit_not_minimal",
+      "reported": [
+        "first_hit.first_hit_not_minimal = 5",
+        "first_hit.overshoot_above_one_step = 5"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D35_the_overshoot_is_bounded_by_less_than_one_step": {
+      "caught": true,
+      "expected_named": "first_hit.overshoot_above_one_step",
+      "reported": [
+        "first_hit.overshoot_above_one_step = 352"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D36_the_slack_step_ratio_uses_the_previous_valuation": {
+      "caught": true,
+      "expected_named": "first_hit.slack_step_ratio_violations",
+      "reported": [
+        "first_hit.slack_step_ratio_violations = 2484"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D37_the_prefix_valuation_is_read_off_by_one_step": {
+      "caught": true,
+      "expected_named": "first_hit.prefix_valuation_not_matching_the_cumulative_sum",
+      "reported": [
+        "first_hit.prefix_valuation_below_the_length = 309",
+        "first_hit.prefix_valuation_not_matching_the_cumulative_sum = 607"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D38_the_record_affine_identity_loses_its_correction": {
+      "caught": true,
+      "expected_named": "records.affine_identity_violations",
+      "reported": [
+        "records.affine_identity_violations = 4069"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D39_the_record_endpoint_is_required_one_mod_four": {
+      "caught": true,
+      "expected_named": "records.endpoint_not_three_mod_four",
+      "reported": [
+        "records.endpoint_not_three_mod_four = 4069"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D40_the_source_residue_guard_is_widened_past_the_modulus": {
+      "caught": true,
+      "expected_named": "their_guards.residue_source_violations",
+      "reported": [
+        "their_guards.residue_source_violations = 7873"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D41_the_endpoint_residue_guard_is_widened_past_the_modulus": {
+      "caught": true,
+      "expected_named": "their_guards.residue_endpoint_violations",
+      "reported": [
+        "their_guards.residue_endpoint_violations = 6106"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D42_the_composition_count_uses_the_wrong_binomial": {
+      "caught": true,
+      "expected_named": "entropy.entropy_rate_above_beta",
+      "reported": [
+        "entropy.entropy_rate_above_beta = 2"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D42b_the_convergence_test_forgets_the_previous_gap": {
+      "caught": true,
+      "expected_named": "entropy.gap_not_shrinking",
+      "reported": [
+        "entropy.gap_not_shrinking = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D43_the_entropy_rate_forgets_to_divide_by_h": {
+      "caught": true,
+      "expected_named": "entropy.entropy_rate_above_beta",
+      "reported": [
+        "entropy.gap_not_shrinking = 3",
+        "entropy.entropy_rate_above_beta = 4"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D44_log2_int_returns_the_bit_length_and_nothing_else": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['log2_int is strictly above the bit length off a power of two']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D45_binary_entropy_adds_the_term_it_must_subtract": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['h2 decreases on (1/2,1)']",
+        "constants.undecided_brackets = 2",
+        "entropy.gap_not_shrinking = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D46_the_checksum_comparison_is_made_against_itself": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 10"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D47_the_validation_digests_are_compared_to_the_wrong_file": {
+      "caught": true,
+      "expected_named": "artifacts.validation_digest_mismatches",
+      "reported": [
+        "artifacts.validation_digest_mismatches = 7"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D48_the_ledger_coverage_heuristic_accepts_anything": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_negative_control",
+      "reported": [
+        "ledger.heuristic_failed_its_negative_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D49_the_ledger_coverage_heuristic_accepts_nothing": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_positive_control",
+      "reported": [
+        "ledger.heuristic_failed_its_positive_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "N2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 50,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 50,
+    "caught": 50,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 50,
+    "caught_by_their_own_check": 50,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
