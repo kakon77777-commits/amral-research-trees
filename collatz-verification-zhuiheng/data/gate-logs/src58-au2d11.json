@@ -1,0 +1,390 @@
+{
+  "tool": "src58_multistep_transport.py",
+  "round": "A-U.2d.11",
+  "orbit_limit": 3000,
+  "instrument": {
+    "brackets_from": "src53, src54 and src55, certified there"
+  },
+  "instrument_selfcheck": {
+    "checks": 10,
+    "failed": []
+  },
+  "certificates": {
+    "levels": 3,
+    "inequalities_checked": 294,
+    "certificate_inequality_violations": 0,
+    "potentials_not_positive": 0,
+    "multipliers_negative": 0,
+    "residues_with_no_potential": 0,
+    "transitions_leaving_the_unit_group": 0,
+    "multipliers_beyond_the_declared_tail": 0,
+    "levels_where_the_computed_tail_exceeds_the_declared_one": 0,
+    "alpha_disagreeing_with_corollary_5_3": 0,
+    "A_not_three_times_alpha": 0,
+    "report_disagreeing_with_the_certificate_file": 0,
+    "rows": [
+      {
+        "level": 1,
+        "modulus": 3,
+        "units": 2,
+        "multipliers": 4,
+        "declared_tail_k": 4,
+        "tail_settles_from_k": 4,
+        "inequalities": 18,
+        "violations": 0,
+        "alpha": "7/80",
+        "alpha_float": 0.0875
+      },
+      {
+        "level": 2,
+        "modulus": 9,
+        "units": 6,
+        "multipliers": 8,
+        "declared_tail_k": 5,
+        "tail_settles_from_k": 5,
+        "inequalities": 60,
+        "violations": 0,
+        "alpha": "99/1472",
+        "alpha_float": 0.06725543478260869
+      },
+      {
+        "level": 3,
+        "modulus": 27,
+        "units": 18,
+        "multipliers": 18,
+        "declared_tail_k": 7,
+        "tail_settles_from_k": 7,
+        "inequalities": 216,
+        "violations": 0,
+        "alpha": "1373/25856",
+        "alpha_float": 0.05310179455445545
+      }
+    ],
+    "strongest_certified_alpha": "1373/25856",
+    "the_report_agrees_on_the_strongest": true,
+    "eta11_recomputed": "41639/1163520",
+    "eta11_matches_the_reported_float": true,
+    "the_certified_exponents_decrease_with_level": true
+  },
+  "constants": {
+    "rows": {
+      "C11_uniform_product": {
+        "decided": true,
+        "nearest_double": 6.0763970012888,
+        "ulps": 0,
+        "published": 6.0763970012888,
+        "closed_form": "exp(((sum mu)/7 + sum mu ln(1+D)/D + 51 a_max/98)/3)",
+        "recomputed": "6.07639700128880052655"
+      },
+      "C11_depth": {
+        "decided": true,
+        "nearest_double": 1.0127328335481334,
+        "ulps": 0,
+        "published": 1.0127328335481334,
+        "closed_form": "C11/6",
+        "recomputed": "1.01273283354813342109"
+      },
+      "c11_source_inversion": {
+        "decided": true,
+        "nearest_double": 0.9867268764810299,
+        "ulps": 1,
+        "published": 0.98672687648103,
+        "closed_form": "(C11/6)^(-25856/24483)",
+        "recomputed": "0.98672687648102988565"
+      },
+      "theta_star": {
+        "published": 0.19544992572902825,
+        "closed_form": "1/(rho+1)",
+        "decided": true,
+        "nearest_double": 0.19544992572902822,
+        "ulps": 1,
+        "recomputed": null
+      },
+      "alpha_mod3": {
+        "published": 0.0875,
+        "closed_form": "7/80",
+        "decided": true,
+        "nearest_double": 0.0875,
+        "ulps": 0,
+        "recomputed": null
+      },
+      "alpha_mod9": {
+        "published": 0.06725543478260869,
+        "closed_form": "99/1472",
+        "decided": true,
+        "nearest_double": 0.06725543478260869,
+        "ulps": 0,
+        "recomputed": null
+      },
+      "alpha_mod27": {
+        "published": 0.05310179455445545,
+        "closed_form": "1373/25856",
+        "decided": true,
+        "nearest_double": 0.05310179455445545,
+        "ulps": 0,
+        "recomputed": null
+      },
+      "alpha10": {
+        "published": 0.08888888888888889,
+        "closed_form": "4/45",
+        "decided": true,
+        "nearest_double": 0.08888888888888889,
+        "ulps": 0,
+        "recomputed": null
+      },
+      "eta11": {
+        "published": 0.035787094334433445,
+        "closed_form": "4/45 - alpha_27",
+        "decided": true,
+        "nearest_double": 0.035787094334433445,
+        "ulps": 0,
+        "recomputed": null
+      },
+      "dense_root_source_floor_exponent_mu11": {
+        "published": 0.15033097576480636,
+        "closed_form": "(theta-alpha)/(1-alpha) = 47077957/313162053",
+        "decided": true,
+        "nearest_double": 0.15033097576480633,
+        "ulps": 1,
+        "recomputed": null
+      }
+    },
+    "off_by_at_least_one_ulp": [
+      "c11_source_inversion",
+      "dense_root_source_floor_exponent_mu11",
+      "theta_star"
+    ],
+    "exact_rational_strings_reproduce": {
+      "alpha_mod27_exact": true,
+      "A_mod27_exact": true,
+      "eta11_exact": true
+    },
+    "the_derivation_chain_in_float64": {
+      "C11_depth_is_the_published_C11_over_six_as_doubles": true,
+      "c11_is_the_published_C11_depth_to_the_minus_25856_over_24483": true,
+      "mu11_is_the_float64_theta_and_alpha_put_through_the_formula": true
+    },
+    "inline_decimals_in_the_paper": {
+      "alpha10": {
+        "published_decimals": 6,
+        "digits_correct": 6,
+        "verdict": "truncated rather than rounded at the last digit",
+        "published": "0.088888"
+      },
+      "alpha_mod9": {
+        "published_decimals": 10,
+        "digits_correct": 10,
+        "verdict": "truncated rather than rounded at the last digit",
+        "published": "0.0672554347"
+      },
+      "alpha_mod27": {
+        "published_decimals": 17,
+        "digits_correct": 17,
+        "verdict": "correctly rounded at the last digit",
+        "published": "0.05310179455445545"
+      },
+      "eta11": {
+        "published_decimals": 18,
+        "digits_correct": 17,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "5787094334433445",
+        "reference_tail": "57870943344334433443",
+        "published": "0.035787094334433445"
+      },
+      "C11_uniform_product": {
+        "published_decimals": 19,
+        "digits_correct": 19,
+        "verdict": "truncated rather than rounded at the last digit",
+        "published": "6.0763970012888005265"
+      },
+      "C11_depth": {
+        "published_decimals": 16,
+        "digits_correct": 16,
+        "verdict": "exact to every published digit",
+        "published": "1.0127328335481334"
+      },
+      "c11_source_inversion": {
+        "published_decimals": 16,
+        "digits_correct": 15,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "9867268764810297",
+        "reference_tail": "98672687648102988565",
+        "published": "0.9867268764810297"
+      },
+      "mu11": {
+        "published_decimals": 17,
+        "digits_correct": 16,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "5033097576480636",
+        "reference_tail": "50330975764806344528",
+        "published": "0.15033097576480636"
+      },
+      "theta_star": {
+        "published_decimals": 17,
+        "digits_correct": 16,
+        "verdict": "OVER-PUBLISHED",
+        "digits_beyond_the_computation": 1,
+        "published_tail": "9544992572902825",
+        "reference_tail": "95449925729028222969",
+        "published": "0.19544992572902825"
+      },
+      "relative_deficit_vs_P_RF": {
+        "published_decimals": 15,
+        "digits_correct": 15,
+        "verdict": "exact to every published digit",
+        "published": "5.102553714775606"
+      },
+      "mu8_from_AU2d8": {
+        "published_decimals": 10,
+        "digits_correct": 10,
+        "verdict": "truncated rather than rounded at the last digit",
+        "published": "0.0345399108"
+      },
+      "mu9_from_AU2d9": {
+        "published_decimals": 10,
+        "digits_correct": 10,
+        "verdict": "exact to every published digit",
+        "published": "0.0948811664"
+      },
+      "mu10_from_AU2d10": {
+        "published_decimals": 10,
+        "digits_correct": 10,
+        "verdict": "correctly rounded at the last digit",
+        "published": "0.1169572356"
+      }
+    },
+    "published_decimals_this_run_could_not_identify": [],
+    "relative_deficit_vs_P_RF_recomputed": "5.1025537147756061"
+  },
+  "transport": {
+    "orbits": 1499,
+    "segments": 38101,
+    "max_L": 51,
+    "residue_identities_checked": 685818,
+    "transport_identity_violations": 0,
+    "segments_meeting_the_endpoint_premise_z_above_y": 0,
+    "states_outside_the_unit_group": 0
+  },
+  "channel": {
+    "channels_checked": 18,
+    "channels_not_selecting_exactly_one_class": 0,
+    "modulus_disagreeing_with_3h_2k1": 0,
+    "capacity_windows": 54,
+    "capacity_violations": 0
+  },
+  "mass_and_product": {
+    "segments": 38101,
+    "low_source_segments_7_le_y_le_L": 141,
+    "segments_meeting_the_endpoint_premise": 0,
+    "theorem_5_2_checked": 0,
+    "theorem_5_2_violations": 0,
+    "uniform_envelope_violations": 0,
+    "max_L": 51
+  },
+  "hierarchy": {
+    "rows_checked": 7,
+    "rows_where_the_exponent_is_not_the_coefficient_over_three": 0,
+    "rows_not_decreasing_in_h": 0,
+    "certified_levels_disagreeing_with_the_diagnostic": 0,
+    "the_report_labels_them_diagnostics_only": true
+  },
+  "ledger": {
+    "table": [
+      {
+        "paper_section": "17.1 proved internally",
+        "paper_items": 11,
+        "ledger_key": "proved_internal",
+        "ledger_items": 9,
+        "shortfall": 2
+      },
+      {
+        "paper_section": "17.2 inherited",
+        "paper_items": 7,
+        "ledger_key": "inherited_internal",
+        "ledger_items": 9,
+        "shortfall": -2
+      },
+      {
+        "paper_section": "17.3 external grounding",
+        "paper_items": 3,
+        "ledger_key": "external_grounding",
+        "ledger_items": 3,
+        "shortfall": 0
+      },
+      {
+        "paper_section": "17.4 diagnostic / explicitly open",
+        "paper_items": 6,
+        "ledger_key": "diagnostic_only",
+        "ledger_items": 3,
+        "shortfall": 3
+      }
+    ],
+    "sections_where_the_counts_differ": [
+      "17.1 proved internally",
+      "17.2 inherited",
+      "17.4 diagnostic / explicitly open"
+    ],
+    "ledger_keys": [
+      "diagnostic_only",
+      "external_grounding",
+      "inherited_internal",
+      "no_go",
+      "proved_internal"
+    ],
+    "expected_keys_absent": [],
+    "the_ledger_carries_a_list_of_open_problems": false,
+    "paper_no_go_headings": 6,
+    "ledger_no_go_entries": 6,
+    "no_go_shortfall": 0,
+    "no_go_headings_in_the_paper": [
+      "13.1",
+      "13.2",
+      "13.3",
+      "13.4",
+      "13.5",
+      "13.6"
+    ]
+  },
+  "artifacts": {
+    "files_in_the_bundle": 11,
+    "listed_in_CHECKSUMS": 9,
+    "listed_in_the_validation_record": 10,
+    "validation_records_carrying_a_digest": 0,
+    "validation_record_fields": [
+      "control_chars",
+      "forbidden_math_delimiters",
+      "lf_only",
+      "pass",
+      "utf8"
+    ],
+    "CHECKSUMS_mismatches": [],
+    "validation_record_mismatches": [],
+    "in_the_validation_record_but_not_CHECKSUMS": [
+      "build_AU2d11_artifacts.py"
+    ],
+    "files_with_no_digest_anywhere": [
+      "CHECKSUMS.sha256",
+      "build_AU2d11_artifacts.py"
+    ],
+    "the_builder_is_shipped": true,
+    "the_builder_has_a_digest": false,
+    "the_record_says_all_pass": true,
+    "a_stdout_transcript_is_shipped": false
+  },
+  "their_claims": {
+    "checks_the_report_names": 5,
+    "independently_confirmed": 3,
+    "independently_contradicted": [],
+    "not_covered_by_this_run": [
+      "actual_suffix_minimum_growing_segments",
+      "uniform_low_source_segments"
+    ],
+    "the_scope_warning": "Finite exact certificate/checker. The h=1,2,3 rational dual certificates are theorem inputs internal to AU2d11"
+  },
+  "failures": [],
+  "non_vacuity_guards": [],
+  "passed": true
+}

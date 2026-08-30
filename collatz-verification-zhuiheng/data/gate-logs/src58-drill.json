@@ -1,0 +1,311 @@
+{
+  "gate": "src58_multistep_transport.py",
+  "limit": "3000",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "non_vacuity_guards": []
+  },
+  "defects": {
+    "D1_the_certificate_inequality_is_reversed": {
+      "caught": true,
+      "expected_named": "certificates.certificate_inequality_violations",
+      "reported": [
+        "certificates.certificate_inequality_violations = 238",
+        "their_claims: ['dual_inequalities_exact']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_certificate_drops_its_source_potential": {
+      "caught": true,
+      "expected_named": "certificates.certificate_inequality_violations",
+      "reported": [
+        "certificates.certificate_inequality_violations = 66",
+        "their_claims: ['dual_inequalities_exact']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_transition_forgets_to_invert_the_power_of_two": {
+      "caught": true,
+      "expected_named": "certificates.certificate_inequality_violations",
+      "reported": [
+        "certificates.certificate_inequality_violations = 37",
+        "transport.transport_identity_violations = 188394",
+        "their_claims: ['dual_inequalities_exact', 'residue_transport_equalities_exact']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_transition_uses_the_wrong_affine_map": {
+      "caught": true,
+      "expected_named": "certificates.",
+      "reported": [
+        "instrument.the_transition_disagrees_with_its_own_definition",
+        "certificates.certificate_inequality_violations = 34",
+        "transport.transport_identity_violations = 177899",
+        "their_claims: ['dual_inequalities_exact', 'residue_transport_equalities_exact']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_tail_bound_demands_a_million": {
+      "caught": true,
+      "expected_named": "certificates.levels_where_the_computed_tail_exceeds_the_declared_one",
+      "reported": [
+        "certificates.levels_where_the_computed_tail_exceeds_the_declared_one = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_exponent_formula_loses_its_third": {
+      "caught": true,
+      "expected_named": "certificates.alpha_disagreeing_with_corollary_5_3",
+      "reported": [
+        "certificates.alpha_disagreeing_with_corollary_5_3 = 3",
+        "certificates.A_not_three_times_alpha = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_exponent_formula_takes_the_wrong_power_of_two": {
+      "caught": true,
+      "expected_named": "certificates.alpha_disagreeing_with_corollary_5_3",
+      "reported": [
+        "certificates.alpha_disagreeing_with_corollary_5_3 = 3",
+        "certificates.A_not_three_times_alpha = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_A_is_not_required_to_be_three_times_alpha": {
+      "caught": true,
+      "expected_named": "certificates.A_not_three_times_alpha",
+      "reported": [
+        "certificates.A_not_three_times_alpha = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_potentials_are_required_to_exceed_one": {
+      "caught": true,
+      "expected_named": "certificates.potentials_not_positive",
+      "reported": [
+        "certificates.potentials_not_positive = 20"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_strongest_alpha_takes_the_largest": {
+      "caught": true,
+      "expected_named": "certificates: the report's strongest alpha disagrees",
+      "reported": [
+        "certificates: the report's strongest alpha disagrees",
+        "certificates: eta11 does not match the reported float"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_eta11_is_measured_against_the_wrong_predecessor": {
+      "caught": true,
+      "expected_named": "certificates: eta11 does not match the reported float",
+      "reported": [
+        "certificates: eta11 does not match the reported float"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_transport_identity_drops_its_factor_of_three": {
+      "caught": true,
+      "expected_named": "transport.transport_identity_violations",
+      "reported": [
+        "transport.transport_identity_violations = 99173",
+        "their_claims: ['residue_transport_equalities_exact']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_transport_sum_forgets_its_weight": {
+      "caught": true,
+      "expected_named": "transport.transport_identity_violations",
+      "reported": [
+        "transport.transport_identity_violations = 106329",
+        "their_claims: ['residue_transport_equalities_exact']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_boundary_terms_are_swapped": {
+      "caught": true,
+      "expected_named": "transport.transport_identity_violations",
+      "reported": [
+        "transport.transport_identity_violations = 74967",
+        "their_claims: ['residue_transport_equalities_exact']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_cross_term_is_added_where_it_is_subtracted": {
+      "caught": true,
+      "expected_named": "transport.transport_identity_violations",
+      "reported": [
+        "transport.transport_identity_violations = 106329",
+        "their_claims: ['residue_transport_equalities_exact']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_channel_modulus_forgets_the_three_adic_part": {
+      "caught": true,
+      "expected_named": "channel.",
+      "reported": [
+        "channel.channels_not_selecting_exactly_one_class = 10",
+        "channel.modulus_disagreeing_with_3h_2k1 = 18",
+        "their_claims: ['harmonic_capacity_tests']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_channel_modulus_is_off_by_a_power_of_two": {
+      "caught": true,
+      "expected_named": "channel.modulus_disagreeing_with_3h_2k1",
+      "reported": [
+        "channel.modulus_disagreeing_with_3h_2k1 = 18"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_channel_capacity_drops_its_leading_term": {
+      "caught": true,
+      "expected_named": "channel.capacity_violations",
+      "reported": [
+        "channel.capacity_violations = 54",
+        "their_claims: ['harmonic_capacity_tests']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_mass_bound_loses_both_its_premise_and_its_slack": {
+      "caught": true,
+      "expected_named": "mass_and_product.theorem_5_2_violations",
+      "reported": [
+        "mass_and_product.theorem_5_2_violations = 38101"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_multiplier_support_check_shifts_its_cutoff": {
+      "caught": true,
+      "expected_named": "certificates.multipliers_beyond_the_declared_tail",
+      "reported": [
+        "certificates.multipliers_beyond_the_declared_tail = 2"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_uniform_envelope_is_a_thousand_times_too_tight": {
+      "caught": true,
+      "expected_named": "mass_and_product.uniform_envelope_violations",
+      "reported": [
+        "mass_and_product.uniform_envelope_violations = 141"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_reciprocal_branch_forgets_to_flip_the_bracket_end": {
+      "caught": true,
+      "expected_named": "instrument.pow_frac_returns_an_inverted_bracket_below_one",
+      "reported": [
+        "instrument.pow_frac_returns_an_inverted_bracket_below_one",
+        "instrument.pow_frac_of_a_half_does_not_bracket_its_own_square"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_hierarchy_exponent_relation_is_wrong": {
+      "caught": true,
+      "expected_named": "hierarchy.rows_where_the_exponent_is_not_the_coefficient_over_three",
+      "reported": [
+        "hierarchy.rows_where_the_exponent_is_not_the_coefficient_over_three = 7"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_hierarchy_is_required_to_increase": {
+      "caught": true,
+      "expected_named": "hierarchy.rows_not_decreasing_in_h",
+      "reported": [
+        "hierarchy.rows_not_decreasing_in_h = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_certified_levels_are_not_compared_to_the_diagnostic": {
+      "caught": true,
+      "expected_named": "hierarchy.certified_levels_disagreeing_with_the_diagnostic",
+      "reported": [
+        "hierarchy.certified_levels_disagreeing_with_the_diagnostic = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_exact_rational_string_check_is_defeated": {
+      "caught": true,
+      "expected_named": "constants: alpha_mod27_exact does not reproduce",
+      "reported": [
+        "constants: alpha_mod27_exact does not reproduce"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_relative_deficit_constant_uses_the_wrong_roots": {
+      "caught": true,
+      "expected_named": "matches no reference",
+      "reported": [
+        "a decimal the paper publishes matches no reference: ['5.102553714775606']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_checksum_comparison_is_negated": {
+      "caught": true,
+      "expected_named": "artifacts.CHECKSUMS_mismatches",
+      "reported": [
+        "artifacts.CHECKSUMS_mismatches = ['Hard_Zeta_AU2d11_Literature_Notes_v0.1.md', 'Hard_Zeta_AU2d11_checker_report.json', 'Hard_Zeta_AU2d11_constants_frontier.json', 'Hard_Zeta_AU2d11_theorem_ledger.json', 'Hard_Zeta_AU2d11_transport_certificates.json', 'Hard_Zeta_A_Line_ROUTE_MAP_v2.11_AU2d11.md', 'Hard_Zeta_Phase_II_Round_AU2d11_Multi_Step_Reciprocal_Transport_Rigidity_v0.1.md', 'SOURCE_VALIDATION_AU2d11.json', 'verify_Hard_Zeta_AU2d11_multistep_reciprocal_transport.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_only_a_key_this_report_does_not_use_is_read": {
+      "caught": true,
+      "expected_named": "checker entries were read",
+      "reported": [
+        "only 0 checker entries were read"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_paper_ledger_anchor_no_longer_matches": {
+      "caught": true,
+      "expected_named": "the paper's own ledger sections parsed empty",
+      "reported": [
+        "the paper's own ledger sections parsed empty: ['17.1 proved internally']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_the_modular_inverse_self_check_is_defeated": {
+      "caught": true,
+      "expected_named": "instrument.the_modular_inverse_is_wrong",
+      "reported": [
+        "instrument.the_modular_inverse_is_wrong"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_coarse_beta_bracket_is_used_instead_of_the_tight_one": {
+      "caught": true,
+      "expected_named": "instrument.the_beta_bracket_is_too_wide_to_pin_a_double",
+      "reported": [
+        "instrument.the_beta_bracket_is_too_wide_to_pin_a_double"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_the_validation_field_echo_is_dropped": {
+      "caught": true,
+      "kind": "robustness: the gate must stay green",
+      "gate_still_green": true,
+      "complaints_seen": []
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true
+    },
+    "N2_the_gate_is_restored_byte_exactly": {
+      "undisturbed": true
+    }
+  },
+  "counts": {
+    "planted": 33,
+    "caught_by_their_own_check": 33,
+    "missed": 0,
+    "robustness_properties": 1,
+    "malformed": 0,
+    "hung": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

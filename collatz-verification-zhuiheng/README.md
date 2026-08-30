@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->57 source items and 36 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->58 source items and 37 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -671,11 +671,46 @@ instance behind each band.
     memoising a per-segment log series took the run from 88s to 26s at a
     **larger** limit, so the population guards were met rather than lowered.
     Drill **35/35**.
-38. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+38. [`reports/RUN-039-HARD-ZETA-AU2D11-MULTISTEP-TRANSPORT.md`](./reports/RUN-039-HARD-ZETA-AU2D11-MULTISTEP-TRANSPORT.md) —
+    **an exact rational certificate: the first headline number in this sweep
+    that could be checked with no reference of my own.** Every previous round
+    handed over a bound or a constant, and checking it meant computing a
+    reference and then arguing mine was the better one — an argument always
+    available to be wrong. This round's exponent `1373/25856` is instead the
+    value of a **dual certificate**: a positive potential `a_r` on the units mod
+    `3^h` and non-negative multipliers satisfying
+    `-3a_r + 2^k a_T(r,k) + mu_(r,k) >= 1` for every `r` and every `k`, with the
+    exponent read off by `alpha_h = (1/3) sum mu/(3^h 2^(k+1))`. Both halves are
+    finite and rational, so there is nothing to calibrate. All three levels
+    verify: **294** inequalities, **zero** violations, every potential positive,
+    every multiplier non-negative, every transition landing back inside the unit
+    group, and every `alpha` exactly the published rational. The tail is
+    computed rather than accepted — past `K` with `2^K a_min - 3 a_max >= 1` the
+    inequality holds from the transport term alone, and `K` comes out **4, 5, 7**
+    for the three levels, exactly the `tail_k` each certificate declares.
+    `eta11 = 4/45 - 1373/25856 = 41639/1163520` recomputes exactly. Section 3's
+    transport identity holds on every unit residue of every segment; section 4's
+    channel is one class mod `3^h 2^(k+1)` by CRT, enumerated. **Two findings,
+    both about the machine-readable record.** The ledger has **no list of open
+    problems at all** — its section is headed "Diagnostic / explicitly open" and
+    the JSON key is `diagnostic_only`, holding the three diagnostics while the
+    four genuinely open items, the Collatz conjecture among them, go unrecorded;
+    the previous two rounds each carried an `open` list of six. And the bundle
+    ships `build_AU2d11_artifacts.py`, the script that generated every other
+    artifact and the largest file in the bundle — which `CHECKSUMS` does not
+    list and the validation record covers with no digest at all, so the one file
+    nothing pins is the tool the provenance chain hangs on. Against three rounds
+    of over-published last digits, `C_11` is printed to **twenty** correct
+    digits. One of this gate's own errors is worth recording: computing
+    `x^(1373/25856)` by integer power and bisected root took **eight minutes**
+    and could not reach a population meeting its own guards — and the available
+    wrong fix was to lower the guard. The right one was `exp((p/q) ln x)`, which
+    took it to twenty seconds. Drill **33/33**.
+39. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-39. [`code/`](./code/) — the engine, the independent reference, and the gates.
-40. [`data/gate-logs/`](./data/gate-logs/) and
+40. [`code/`](./code/) — the engine, the independent reference, and the gates.
+41. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
