@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->61 source items and 40 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->62 source items and 41 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -810,11 +810,47 @@ instance behind each band.
     defects that LOOSENED what they attacked and one that made the gate raise
     instead of report, plus a threshold check whose sample never straddled its
     own threshold.
-42. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+42. [`reports/RUN-043-HARD-ZETA-AU2D15-RECORD-SPARSITY.md`](./reports/RUN-043-HARD-ZETA-AU2D15-RECORD-SPARSITY.md) —
+    **an inequality that needs no premise, and a checker report that publishes
+    both its honest zeros and their vacuous twins.** A-U.2d.14 ended on a real
+    obstruction — divergence alone permits suffix-minimum times as sparse as
+    `N^o(1)`, so record theory gives no polynomial lower bound. This round
+    supplies the Collatz-specific replacement, enclosing the record count
+    between two slack coordinates, `2^(-Delta_N) N^(1-o(1)) <= R_N <=
+    2^(delta_N) N^o(1)`, hence **`Delta_N + delta_N >= (1-o(1)) log2 N`**; and
+    it collapses one of the previous round's three escapes, since every
+    A-renewal is a suffix minimum and so `E_A(N) <= delta_N + o(log N)`.
+    **The piece testable hardest needs no premise at all**: section 10's
+    `N1(s,g) >= (2-beta)g + (delta_{s+g}-delta_s)` rests only on every non-one
+    valuation being at least two and on the definition of `delta`, so it holds
+    on every segment — **127,813** pairs rooted at suffix minima plus
+    **59,130** rooted anywhere as a control, zero violations, and a tightest
+    slack of exactly **0.0**, so the bound is attained and adding 1 to it turns
+    the gate red. The record process is equally clean: **8,447** edges, exact
+    multiplier with no `beta` in it, product concatenation, Lemma 11.1's
+    `3g-7` span, the `U_6` capacity, the state-ceiling identity. **Three
+    findings.** Their checker report carries the honest zeros
+    `record_slack_drop_edge: 0` and `record_descent_implies_crossing: 0` —
+    and section 18 says the same in prose, which is the right way to publish an
+    empty population — but beside them sit `record_total_down_variation:
+    23,018` and `record_tail_drop: 35,616`, which their own zero makes
+    evaluations of `0 < log2 P`. The source-validation record has **lost the
+    per-file digests it gained one round ago**, keeping a `checker_stdout_sha256`
+    instead — provenance of the output, not the inputs. And `2-beta` is 2 ulps
+    from its true value, 0 from `2.0 - published_beta`. **The drill found two
+    genuine misses in this gate**, the first in several rounds: the record-slack
+    classification had no failure counter at all, so inverting it flipped all
+    8,447 edges silently; and the ledger-coverage lists were read by nothing, so
+    a heuristic that accuses everything went unnoticed — while the honest
+    version had already false-positived on "CASP and the Collatz conjecture",
+    which the ledger abbreviates. Both fixed with invariants and two-sided
+    controls, and the corrected heuristic re-verified against RUN-041's genuine
+    absence. Drill **30/30**.
+43. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-43. [`code/`](./code/) — the engine, the independent reference, and the gates.
-44. [`data/gate-logs/`](./data/gate-logs/) and
+44. [`code/`](./code/) — the engine, the independent reference, and the gates.
+45. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

@@ -1,0 +1,208 @@
+{
+  "run": "RUN-043",
+  "round": "A-U.2d.15",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item62\\collatz_hardzeta_work\\AU2d15_bundle",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 9,
+      "failed": []
+    },
+    "constants": {
+      "constants_checked": 5,
+      "disagreeing_with_both_evaluations": 0,
+      "from_the_float64_chain_not_the_nearest_double": 2,
+      "exact_to_the_last_bit": 3,
+      "undecided_brackets": 0,
+      "missing_from_the_frontier": 0,
+      "frontier_and_report_disagreeing": 0,
+      "rows": [
+        {
+          "name": "beta",
+          "published": "1.584962500721156",
+          "nearest_double": "1.584962500721156",
+          "ulps_vs_bracket": 0,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "q1_density_floor_2_minus_beta",
+          "published": "0.4150374992788439",
+          "nearest_double": "0.4150374992788438",
+          "ulps_vs_bracket": 2,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "theta_star",
+          "published": "0.19544992572902825",
+          "nearest_double": "0.19544992572902822",
+          "ulps_vs_bracket": 1,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "inherited_controlled_renewal_support_exponent",
+          "published": "0.8",
+          "nearest_double": "0.8",
+          "ulps_vs_bracket": 0,
+          "ulps_vs_float64_chain": 0
+        },
+        {
+          "name": "rho_star",
+          "published": "4.1164",
+          "nearest_double": "4.1164",
+          "ulps_vs_bracket": 0,
+          "ulps_vs_float64_chain": 0
+        }
+      ]
+    },
+    "q1": {
+      "orbits": 1314,
+      "pairs_from_a_suffix_minimum": 127813,
+      "exact_inequality_violations": 0,
+      "pairs_from_an_arbitrary_root": 59130,
+      "exact_inequality_violations_off_a_record": 0,
+      "valuation_sum_identity_violations": 0,
+      "a_valuation_below_one": 0,
+      "tightest_slack_in_the_inequality": {
+        "slack": 0.0,
+        "orbit": 703,
+        "s": 0,
+        "g": 1,
+        "N1": 1
+      },
+      "pairs_where_the_floor_alone_would_fail": 0
+    },
+    "records": {
+      "orbits_with_two_or_more_records": 1085,
+      "record_edges": 8447,
+      "exact_multiplier_violations": 0,
+      "product_concatenation_violations": 0,
+      "record_slack_ascending": 8447,
+      "record_slack_descending": 0,
+      "record_slack_undecided": 0,
+      "total_downward_variation_negative": 0,
+      "record_slack_edges_left_unclassified": 0,
+      "total_downward_variation_is_zero": 1085,
+      "theorem_4_1_checked": 0,
+      "theorem_4_1_violations": 0,
+      "record_values_not_increasing": 0,
+      "lemma_11_1_checked": 8447,
+      "lemma_11_1_violations": 0,
+      "tail_checked": 1085,
+      "tail_violations": 0,
+      "tail_descents": 0,
+      "state_ceiling_identity_violations": 0,
+      "gap_duration_above_the_U6_capacity": 0,
+      "largest_record_count": 15
+    },
+    "enclosure": {
+      "grid_points": 400,
+      "enclosure_violations": 0,
+      "antecedent_holds": 291,
+      "corollary_8_2_violations": 0,
+      "support_transfer_inversion_violations": 0
+    },
+    "shallow": {
+      "orbits": 1314,
+      "suffix_minima": 9637,
+      "B_sources_found": 0,
+      "corollary_12_1_checked": 0,
+      "corollary_12_1_violations": 0
+    },
+    "artifacts": {
+      "files_present": 9,
+      "digests_listed": 8,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_per_file_entries": 0,
+      "validation_entries_with_a_digest": 0,
+      "validation_digest_mismatches": 0,
+      "validation_carries_per_file_digests": false,
+      "validation_status": "PASS",
+      "validation_top_level_keys": [
+        "canonical_math",
+        "checker_commit_gate",
+        "checker_stdout_sha256",
+        "date",
+        "issues",
+        "json_parse",
+        "markdown",
+        "python_compile",
+        "round",
+        "status"
+      ],
+      "validation_has_a_checker_stdout_digest": true,
+      "validation_issues": []
+    },
+    "ledger": {
+      "paper_proved_items": 14,
+      "ledger_proved_items": 14,
+      "paper_open_items": 5,
+      "ledger_open_items": 5,
+      "paper_no_go_headings": 8,
+      "ledger_no_go_items": 8,
+      "ledger_has_an_open_key": true,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [],
+      "heuristic_failed_its_positive_control": 0,
+      "heuristic_failed_its_negative_control": 0
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "exact_segment_product_identity",
+          "theirs": 14000,
+          "mine": 8447
+        },
+        {
+          "check": "record_first_step_q1",
+          "theirs": 90759,
+          "mine": 127813
+        },
+        {
+          "check": "record_values_mod12",
+          "theirs": 90759,
+          "mine": 8447
+        },
+        {
+          "check": "record_slack_drop_edge",
+          "theirs": 0,
+          "mine": 0
+        },
+        {
+          "check": "record_total_down_variation",
+          "theirs": 23018,
+          "mine": 0
+        },
+        {
+          "check": "record_tail_drop",
+          "theirs": 35616,
+          "mine": 0
+        },
+        {
+          "check": "q1_density_exact_algebra",
+          "theirs": 90759,
+          "mine": 127813
+        },
+        {
+          "check": "record_free_span_units",
+          "theirs": 90759,
+          "mine": 8447
+        },
+        {
+          "check": "record_descent_implies_crossing",
+          "theirs": 0,
+          "mine": 0
+        }
+      ],
+      "checks_i_did_not_reproduce": 0,
+      "checks_they_report_as_zero": 2,
+      "checks_we_both_report_as_zero": 2
+    }
+  }
+}
