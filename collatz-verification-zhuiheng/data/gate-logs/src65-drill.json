@@ -1,0 +1,480 @@
+{
+  "gate": "src65_lift_cocycle.py",
+  "limit": "35000",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_the_exact_ceiling_returns_the_floor": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['ceil(beta l) brackets beta*l strictly on both sides', 'ceil(beta l) is not the floor', '2^{eps_l} lies strictly between one and two']",
+        "budget.budget_is_not_within_a_factor_two_of_the_identity = 1228",
+        "examples.total_lift_disagreeing = 12",
+        "examples.max_lift_disagreeing = 12"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_mechanical_increment_skips_a_level": {
+      "caught": true,
+      "expected_named": "errors.instrument_raised",
+      "reported": [
+        "errors.instrument_raised = 1",
+        "errors.lift_raised = 1",
+        "errors.cocycle_raised = 1",
+        "errors.abstract_raised = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_phase_power_uses_the_wrong_base": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['2^{eps_l} lies strictly between one and two']",
+        "lift.slack_decomposition_violations = 4337",
+        "budget.reindexing_violations = 1228",
+        "budget.laplace_identity_violations = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_fixed_point_bracket_is_read_at_the_wrong_precision": {
+      "caught": true,
+      "expected_named": "ceiling.fixed_point_undecided",
+      "reported": [
+        "ceiling.fixed_point_undecided = 20000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_fixed_point_route_returns_the_floor_not_the_ceiling": {
+      "caught": true,
+      "expected_named": "ceiling.float_ceiling_disagreements",
+      "reported": [
+        "ceiling.float_ceiling_disagreements = 20000",
+        "ceiling.first_disagreement"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_suffix_sum_walks_the_word_forwards": {
+      "caught": true,
+      "expected_named": "lift.lift_negative",
+      "reported": [
+        "lift.lift_negative = 2962",
+        "lift.lift_nonnegative_disagreeing_with_supercriticality = 2962",
+        "lift.slack_decomposition_violations = 3058",
+        "lift.recurrence_theorem_8_1_violations = 2254"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_lift_subtracts_the_wrong_ceiling": {
+      "caught": true,
+      "expected_named": "lift.lift_negative",
+      "reported": [
+        "lift.lift_negative = 3047",
+        "lift.lift_nonnegative_disagreeing_with_supercriticality = 3047",
+        "lift.slack_decomposition_violations = 4337",
+        "lift.recurrence_theorem_8_1_violations = 3934"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_rank_one_upper_bound_is_tightened_past_the_source": {
+      "caught": true,
+      "expected_named": "lift.rank_one_upper_violations",
+      "reported": [
+        "lift.rank_one_upper_violations = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_rank_one_ordering_is_reversed": {
+      "caught": true,
+      "expected_named": "lift.rank_one_lower_violations",
+      "reported": [
+        "lift.rank_one_lower_violations = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_left_record_is_required_above_the_endpoint": {
+      "caught": true,
+      "expected_named": "lift.left_record_not_below_the_endpoint",
+      "reported": [
+        "lift.left_record_not_below_the_endpoint = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_first_tail_state_is_computed_without_the_plus_one": {
+      "caught": true,
+      "expected_named": "lift.source_not_three_y_plus_one_over_two",
+      "reported": [
+        "lift.source_not_three_y_plus_one_over_two = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_lift_is_required_strictly_positive": {
+      "caught": true,
+      "expected_named": "lift.lift_negative",
+      "reported": [
+        "lift.lift_negative = 2310"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_supercriticality_cross_check_compares_the_wrong_power": {
+      "caught": true,
+      "expected_named": "lift.lift_nonnegative_disagreeing_with_supercriticality",
+      "reported": [
+        "lift.lift_nonnegative_disagreeing_with_supercriticality = 3047"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_slack_decomposition_drops_the_phase": {
+      "caught": true,
+      "expected_named": "lift.slack_decomposition_violations",
+      "reported": [
+        "lift.slack_decomposition_violations = 4337"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_recurrence_forgets_the_mechanical_increment": {
+      "caught": true,
+      "expected_named": "lift.recurrence_theorem_8_1_violations",
+      "reported": [
+        "lift.recurrence_theorem_8_1_violations = 4337"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_every_descent_is_called_a_descent_of_two": {
+      "caught": true,
+      "expected_named": "lift.lift_descends_by_more_than_one",
+      "reported": [
+        "lift.lift_descends_by_more_than_one = 1044"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_a_descent_is_required_at_a_mechanical_one": {
+      "caught": true,
+      "expected_named": "lift.lift_descends_at_a_mechanical_one",
+      "reported": [
+        "lift.lift_descends_at_a_mechanical_one = 1044"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_total_lift_is_read_one_ceiling_out": {
+      "caught": true,
+      "expected_named": "lift.total_lift_not_q_minus_ceil_beta_h",
+      "reported": [
+        "lift.total_lift_not_q_minus_ceil_beta_h = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_reindexing_is_compared_without_reversing": {
+      "caught": true,
+      "expected_named": "budget.reindexing_violations",
+      "reported": [
+        "budget.reindexing_violations = 500"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_laplace_right_side_loses_its_factor_of_three": {
+      "caught": true,
+      "expected_named": "budget.laplace_identity_violations",
+      "reported": [
+        "budget.laplace_identity_violations = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_budget_is_demanded_a_thousandfold": {
+      "caught": true,
+      "expected_named": "budget.budget_theorem_9_1_violations",
+      "reported": [
+        "budget.budget_theorem_9_1_violations = 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_factor_two_sandwich_is_inverted": {
+      "caught": true,
+      "expected_named": "budget.budget_is_not_within_a_factor_two_of_the_identity",
+      "reported": [
+        "budget.budget_is_not_within_a_factor_two_of_the_identity = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_quantile_bound_is_divided_by_a_million": {
+      "caught": true,
+      "expected_named": "budget.quantile_violations",
+      "reported": [
+        "budget.quantile_violations = 4919"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_sharp_quantile_bound_loses_its_exponent": {
+      "caught": true,
+      "expected_named": "budget.sharp_quantile_violations",
+      "reported": [
+        "budget.sharp_quantile_violations = 14319"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_reverse_recursion_drops_its_plus_one": {
+      "caught": true,
+      "expected_named": "cocycle.reverse_recursion_violations",
+      "reported": [
+        "cocycle.reverse_recursion_violations = 4337"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_lifted_cocycle_exponent_forgets_the_lift_increment": {
+      "caught": true,
+      "expected_named": "cocycle.lifted_cocycle_theorem_12_1_violations",
+      "reported": [
+        "cocycle.lifted_cocycle_theorem_12_1_violations = 1850"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_normalized_cocycle_subtracts_the_wrong_power": {
+      "caught": true,
+      "expected_named": "cocycle.normalized_cocycle_theorem_12_2_violations",
+      "reported": [
+        "cocycle.normalized_cocycle_theorem_12_2_violations = 1850"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_closed_form_uses_the_wrong_leading_phase": {
+      "caught": true,
+      "expected_named": "cocycle.closed_form_violations",
+      "reported": [
+        "cocycle.closed_form_violations = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_cocycle_weights_are_demanded_in_a_narrower_band": {
+      "caught": true,
+      "expected_named": "cocycle.weight_outside_one_half_to_two",
+      "reported": [
+        "cocycle.weight_outside_one_half_to_two = 3109"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_reversal_starts_at_the_source_not_the_endpoint": {
+      "caught": true,
+      "expected_named": "cocycle.u_zero_not_the_endpoint",
+      "reported": [
+        "cocycle.u_zero_not_the_endpoint = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_the_zero_lift_boundary_is_taken_at_the_wrong_end": {
+      "caught": true,
+      "expected_named": "cocycle.u_h_not_the_source_on_a_zero_lift_bridge",
+      "reported": [
+        "cocycle.u_h_not_the_source_on_a_zero_lift_bridge = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_residue_parity_is_shifted_by_one": {
+      "caught": true,
+      "expected_named": "cocycle.residue_parity_theorem_13_1_violations",
+      "reported": [
+        "cocycle.residue_parity_theorem_13_1_violations = 4337"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_the_valuation_parity_is_read_from_the_wrong_state": {
+      "caught": true,
+      "expected_named": "cocycle.residue_parity_theorem_13_1_violations",
+      "reported": [
+        "cocycle.residue_parity_theorem_13_1_violations = 2022",
+        "cocycle.residue_parity_not_equal_to_the_valuation_parity = 2022"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D34_the_reverse_state_is_required_to_be_one_mod_three": {
+      "caught": true,
+      "expected_named": "cocycle.reverse_state_outside_one_or_two_mod_three",
+      "reported": [
+        "cocycle.reverse_state_outside_one_or_two_mod_three = 2473"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D35_the_excess_decomposition_drops_the_lift_factor": {
+      "caught": true,
+      "expected_named": "zero_lift.excess_decomposition_violations",
+      "reported": [
+        "zero_lift.excess_decomposition_violations = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D36_the_tail_product_uses_the_wrong_numerator": {
+      "caught": true,
+      "expected_named": "zero_lift.product_identity_violations",
+      "reported": [
+        "zero_lift.product_identity_violations = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D37_the_product_identity_inverts_the_endpoint_ratio": {
+      "caught": true,
+      "expected_named": "zero_lift.product_identity_violations",
+      "reported": [
+        "zero_lift.product_identity_violations = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D38_the_product_ceiling_is_lowered_below_one": {
+      "caught": true,
+      "expected_named": "zero_lift.product_theorem_11_1_violations",
+      "reported": [
+        "zero_lift.product_theorem_11_1_violations = 1228"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D39_the_reciprocal_mass_ceiling_is_divided_by_a_thousand": {
+      "caught": true,
+      "expected_named": "zero_lift.reciprocal_mass_corollary_11_2_violations",
+      "reported": [
+        "zero_lift.reciprocal_mass_corollary_11_2_violations = 14"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D40_the_rise_climbs_two_at_a_time": {
+      "caught": true,
+      "expected_named": "abstract.valuation_outside_one_to_three",
+      "reported": [
+        "abstract.valuation_outside_one_to_three = 6",
+        "countermodels.max_q_disagreeing = 6",
+        "countermodels.lift_sum_disagreeing = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D41_the_descent_fires_at_the_mechanical_ones": {
+      "caught": true,
+      "expected_named": "abstract.lift_not_ending_at_zero",
+      "reported": [
+        "abstract.lift_not_ending_at_zero = 6",
+        "abstract.valuation_outside_one_to_three = 6",
+        "abstract.total_valuation_not_the_ceiling = 6",
+        "abstract.a_height_held_more_than_twice_in_the_descent = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D42_the_total_valuation_is_compared_to_the_wrong_ceiling": {
+      "caught": true,
+      "expected_named": "abstract.total_valuation_not_the_ceiling",
+      "reported": [
+        "abstract.total_valuation_not_the_ceiling = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D43_the_laplace_mass_ceiling_is_lowered_to_three": {
+      "caught": true,
+      "expected_named": "abstract.laplace_mass_at_or_above_six",
+      "reported": [
+        "abstract.laplace_mass_at_or_above_six = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D44_the_rise_component_bound_is_halved": {
+      "caught": true,
+      "expected_named": "abstract.rise_mass_at_or_above_one",
+      "reported": [
+        "abstract.rise_mass_at_or_above_one = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D45_the_plateau_component_bound_is_tightened_by_a_factor_h": {
+      "caught": true,
+      "expected_named": "abstract.plateau_mass_at_or_above_one_over_h",
+      "reported": [
+        "abstract.plateau_mass_at_or_above_one_over_h = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D46_the_descent_component_bound_is_halved": {
+      "caught": true,
+      "expected_named": "abstract.descent_mass_at_or_above_four",
+      "reported": [
+        "abstract.descent_mass_at_or_above_four = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D47_a_height_may_be_held_only_once": {
+      "caught": true,
+      "expected_named": "abstract.a_height_held_more_than_twice_in_the_descent",
+      "reported": [
+        "abstract.a_height_held_more_than_twice_in_the_descent = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D48_the_beta_cancellation_demonstration_evaluates_one_end_twice": {
+      "caught": true,
+      "expected_named": "their_algebra.drop_difference_depends_on_beta",
+      "reported": [
+        "their_algebra.drop_difference_depends_on_beta = 10000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D49_the_checksum_comparison_is_inverted": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D50_the_validation_digests_are_compared_to_a_reversed_string": {
+      "caught": true,
+      "expected_named": "artifacts.validation_digest_mismatches",
+      "reported": [
+        "artifacts.validation_digest_mismatches = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D51_the_ledger_coverage_heuristic_accepts_anything": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_negative_control",
+      "reported": [
+        "ledger.heuristic_failed_its_negative_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D52_the_ledger_coverage_heuristic_accepts_nothing": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_positive_control",
+      "reported": [
+        "ledger.heuristic_failed_its_positive_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "N2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 52,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 52,
+    "caught": 52,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 52,
+    "caught_by_their_own_check": 52,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

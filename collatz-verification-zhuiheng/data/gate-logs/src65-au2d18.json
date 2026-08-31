@@ -1,0 +1,595 @@
+{
+  "run": "RUN-046",
+  "round": "A-U.2d.18",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item65",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 11,
+      "failed": []
+    },
+    "ceiling": {
+      "levels": 20000,
+      "float_ceiling_disagreements": 0,
+      "first_disagreement": null,
+      "fixed_point_undecided": 0,
+      "fixed_point_disagreeing_with_the_exact_route": 0,
+      "exact_levels_cross_checked": 6,
+      "closest_approach_level": 15601,
+      "closest_approach": 2.624924241314022e-05,
+      "float64_error_at_that_level": 7.038647445872375e-12,
+      "margin_ratio": 3729302.059095655
+    },
+    "constants": {
+      "constants_checked": 7,
+      "disagreeing_with_both_evaluations": 0,
+      "from_the_float64_chain_not_the_nearest_double": 4,
+      "exact_to_the_last_bit": 3,
+      "undecided_brackets": 0,
+      "missing_from_the_frontier": 0,
+      "frontier_and_report_disagreeing": 0,
+      "rows": [
+        {
+          "constant": "beta",
+          "published": "1.584962500721156",
+          "budget": 4,
+          "verdict": "exact",
+          "nearest_double": "1.584962500721156"
+        },
+        {
+          "constant": "beta_minus_1",
+          "published": "0.5849625007211561",
+          "budget": 12,
+          "verdict": "-1 ulp, the float64 chain",
+          "nearest_double": "0.5849625007211562"
+        },
+        {
+          "constant": "two_minus_beta",
+          "published": "0.4150374992788439",
+          "budget": 20,
+          "verdict": "+2 ulp, the float64 chain",
+          "nearest_double": "0.4150374992788438"
+        },
+        {
+          "constant": "near_linear_gap_exponent_limit",
+          "published": "1.0",
+          "budget": 4,
+          "verdict": "exact",
+          "nearest_double": "1.0"
+        },
+        {
+          "constant": "first_hit_single_cylinder_exponent_limit",
+          "published": "1.7095112913514552",
+          "budget": 12,
+          "verdict": "+2 ulp, the float64 chain",
+          "nearest_double": "1.7095112913514547"
+        },
+        {
+          "constant": "first_hit_formal_joint_ratio_exponent_limit",
+          "published": "3.4190225827029104",
+          "budget": 12,
+          "verdict": "+2 ulp, the float64 chain",
+          "nearest_double": "3.4190225827029095"
+        },
+        {
+          "constant": "zero_lift_reciprocal_mass_ceiling",
+          "published": "2.772588722239781",
+          "budget": 4,
+          "verdict": "exact",
+          "nearest_double": "2.772588722239781"
+        }
+      ]
+    },
+    "lift": {
+      "bridges": 1228,
+      "sources": 1150,
+      "longest_tail": 42,
+      "profile_positions": 4337,
+      "rank_one_upper_violations": 0,
+      "rank_one_lower_violations": 0,
+      "left_record_not_below_the_endpoint": 0,
+      "source_not_three_y_plus_one_over_two": 0,
+      "lift_negative": 0,
+      "lift_nonnegative_disagreeing_with_supercriticality": 0,
+      "slack_decomposition_violations": 0,
+      "recurrence_theorem_8_1_violations": 0,
+      "lift_descends_by_more_than_one": 0,
+      "lift_descends_at_a_mechanical_one": 0,
+      "total_lift_not_q_minus_ceil_beta_h": 0,
+      "zero_total_lift": 1228,
+      "positive_total_lift": 0,
+      "largest_interior_lift": 8,
+      "descents_seen": 1044
+    },
+    "budget": {
+      "bridges": 1228,
+      "reindexing_violations": 0,
+      "laplace_identity_violations": 0,
+      "budget_theorem_9_1_violations": 0,
+      "budget_is_not_within_a_factor_two_of_the_identity": 0,
+      "quantile_instances": 14736,
+      "quantile_violations": 0,
+      "quantile_instances_that_are_not_vacuous": 0,
+      "sharp_quantile_instances_that_are_not_vacuous": 65,
+      "sharp_quantile_violations": 0,
+      "budget_over_six_z_ratio_smallest": 0.005494505494505495
+    },
+    "cocycle": {
+      "bridges": 1228,
+      "steps": 4337,
+      "reverse_recursion_violations": 0,
+      "lifted_cocycle_theorem_12_1_violations": 0,
+      "normalized_cocycle_theorem_12_2_violations": 0,
+      "closed_form_violations": 0,
+      "weight_outside_one_half_to_two": 0,
+      "u_zero_not_the_endpoint": 0,
+      "u_h_not_the_source_on_a_zero_lift_bridge": 0,
+      "residue_parity_theorem_13_1_violations": 0,
+      "residue_parity_not_equal_to_the_valuation_parity": 0,
+      "reverse_state_outside_one_or_two_mod_three": 0,
+      "zero_lift_bridges": 1228
+    },
+    "zero_lift": {
+      "zero_lift_bridges": 1228,
+      "positive_lift_bridges": 0,
+      "excess_decomposition_violations": 0,
+      "product_identity_violations": 0,
+      "product_theorem_11_1_violations": 0,
+      "reciprocal_mass_corollary_11_2_violations": 0,
+      "reciprocal_mass_decided_by_the_float64_form": 0,
+      "largest_product_seen": 1.0079612322602978,
+      "largest_reciprocal_mass_seen": 0.02382143732666432,
+      "reciprocal_ceiling": 2.772588722239781
+    },
+    "abstract": {
+      "levels": 6,
+      "constructions_that_failed_their_precondition": 0,
+      "lift_not_starting_at_zero": 0,
+      "lift_not_ending_at_zero": 0,
+      "lift_negative": 0,
+      "valuation_outside_one_to_three": 0,
+      "total_valuation_not_the_ceiling": 0,
+      "laplace_mass_at_or_above_six": 0,
+      "rise_mass_at_or_above_one": 0,
+      "plateau_mass_at_or_above_one_over_h": 0,
+      "descent_mass_at_or_above_four": 0,
+      "a_height_held_more_than_twice_in_the_descent": 0,
+      "rows": [
+        {
+          "h": 128,
+          "M": 14,
+          "max_q": 3,
+          "lift_sum": 4.73748779296875,
+          "rise": 0.99993896484375,
+          "plateau": 0.0054931640625,
+          "descent": 3.7320556640625
+        },
+        {
+          "h": 256,
+          "M": 16,
+          "max_q": 3,
+          "lift_sum": 4.467742919921875,
+          "rise": 0.9999847412109375,
+          "plateau": 0.0032501220703125,
+          "descent": 3.464508056640625
+        },
+        {
+          "h": 512,
+          "M": 18,
+          "max_q": 3,
+          "lift_sum": 3.8678932189941406,
+          "rise": 0.9999961853027344,
+          "plateau": 0.00177001953125,
+          "descent": 2.8661270141601562
+        },
+        {
+          "h": 1024,
+          "M": 20,
+          "max_q": 3,
+          "lift_sum": 3.430055618286133,
+          "rise": 0.9999990463256836,
+          "plateau": 0.0009260177612304688,
+          "descent": 2.4291305541992188
+        },
+        {
+          "h": 2048,
+          "M": 22,
+          "max_q": 3,
+          "lift_sum": 3.4296071529388428,
+          "rise": 0.9999997615814209,
+          "plateau": 0.0004744529724121094,
+          "descent": 2.4291329383850098
+        },
+        {
+          "h": 4096,
+          "M": 24,
+          "max_q": 3,
+          "lift_sum": 3.4293739199638367,
+          "rise": 0.9999999403953552,
+          "plateau": 0.000240325927734375,
+          "descent": 2.429133653640747
+        }
+      ]
+    },
+    "their_algebra": {
+      "near_linear_samples": 10000,
+      "near_linear_samples_that_could_have_failed": 0,
+      "near_linear_smallest_left_side": 134322.31578947368,
+      "drop_samples": 10000,
+      "drop_samples_that_could_have_failed": 0,
+      "drop_difference_depends_on_beta": 0,
+      "drop_smallest_margin": 0.0
+    },
+    "first_spike": {
+      "orbits": 1321,
+      "first_hits": 607,
+      "first_hit_below_the_threshold": 0,
+      "first_hit_not_minimal": 0,
+      "overshoot_above_one_step": 0,
+      "length_bound_violations": 0,
+      "length_bound_attained_with_no_additive_constant": 309,
+      "prefix_valuation_below_the_length": 0,
+      "source_inside_its_cylinder": 165,
+      "source_outside_its_cylinder": 442,
+      "endpoint_inside_its_cylinder": 142,
+      "endpoint_outside_its_cylinder": 465
+    },
+    "examples": {
+      "examples": 12,
+      "x_disagreeing": 0,
+      "z_disagreeing": 0,
+      "exponent_word_disagreeing": 0,
+      "h_disagreeing": 0,
+      "total_lift_disagreeing": 0,
+      "max_lift_disagreeing": 0,
+      "lift_sum_disagreeing": 0,
+      "tail_product_disagreeing": 0,
+      "reciprocal_mass_disagreeing": 0,
+      "tail_not_suffix_supercritical": 0,
+      "sources_appearing_more_than_once": 1,
+      "rows": [
+        {
+          "y": 59,
+          "X": 89,
+          "Z": 67,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "lift_sum": "1",
+          "product": "1.003745318"
+        },
+        {
+          "y": 71,
+          "X": 107,
+          "Z": 91,
+          "h": 3,
+          "word": [
+            1,
+            2,
+            2
+          ],
+          "lift_profile": [
+            0,
+            0,
+            0
+          ],
+          "lift_sum": "3",
+          "product": "1.007961232"
+        },
+        {
+          "y": 91,
+          "X": 137,
+          "Z": 103,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "lift_sum": "1",
+          "product": "1.002433090"
+        },
+        {
+          "y": 155,
+          "X": 233,
+          "Z": 175,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "lift_sum": "1",
+          "product": "1.001430615"
+        },
+        {
+          "y": 155,
+          "X": 233,
+          "Z": 167,
+          "h": 6,
+          "word": [
+            2,
+            1,
+            1,
+            1,
+            2,
+            3
+          ],
+          "lift_profile": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "lift_sum": "9/2",
+          "product": "1.006776288"
+        },
+        {
+          "y": 187,
+          "X": 281,
+          "Z": 211,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "lift_sum": "1",
+          "product": "1.001186239"
+        },
+        {
+          "y": 223,
+          "X": 335,
+          "Z": 319,
+          "h": 5,
+          "word": [
+            1,
+            1,
+            1,
+            3,
+            2
+          ],
+          "lift_profile": [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "lift_sum": "4",
+          "product": "1.003181622"
+        },
+        {
+          "y": 251,
+          "X": 377,
+          "Z": 283,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "lift_sum": "1",
+          "product": "1.000884173"
+        },
+        {
+          "y": 283,
+          "X": 425,
+          "Z": 319,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "lift_sum": "1",
+          "product": "1.000784313"
+        },
+        {
+          "y": 347,
+          "X": 521,
+          "Z": 391,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "lift_sum": "1",
+          "product": "1.000639795"
+        },
+        {
+          "y": 379,
+          "X": 569,
+          "Z": 427,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "lift_sum": "1",
+          "product": "1.000585823"
+        },
+        {
+          "y": 443,
+          "X": 665,
+          "Z": 499,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "lift_sum": "1",
+          "product": "1.000501253"
+        }
+      ]
+    },
+    "countermodels": {
+      "rows_published": 6,
+      "rows_i_rebuilt": 6,
+      "h_disagreeing": 0,
+      "m_disagreeing": 0,
+      "max_q_disagreeing": 0,
+      "lift_sum_disagreeing": 0
+    },
+    "collapse": {
+      "bridges": 1228,
+      "source_inside_its_modulus": 132,
+      "endpoint_inside_its_modulus": 125,
+      "both_inside_their_moduli": 125,
+      "source_congruence_violations": 0,
+      "endpoint_congruence_violations": 0,
+      "collapse_violations": 0
+    },
+    "artifacts": {
+      "files_present": 9,
+      "digests_listed": 8,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_per_file_entries": 3,
+      "validation_entries_with_a_digest": 3,
+      "validation_digest_mismatches": 0,
+      "validation_size_mismatches": 0,
+      "files_absent_from_the_validation_record": [
+        "CHECKSUMS.sha256",
+        "SOURCE_VALIDATION_AU2d18.json",
+        "verify_Hard_Zeta_AU2d18_double_canonical_spectral.py"
+      ],
+      "duplicate_file_pairs": [],
+      "validation_all_ok_flag": true,
+      "validation_top_level_keys": [
+        "all_ok",
+        "files",
+        "json_parse",
+        "python_compile",
+        "round"
+      ],
+      "validation_json_parse_entries": 3,
+      "validation_json_parse_not_true": 0,
+      "validation_python_compile_flag": true,
+      "validation_file_ok_flags_not_true": 0
+    },
+    "ledger": {
+      "paper_proved_items": 17,
+      "ledger_proved_items": 14,
+      "paper_open_items": 5,
+      "ledger_open_items": 5,
+      "paper_no_go_headings": 10,
+      "paper_no_go_headings_in_section_18": 8,
+      "ledger_no_go_items": 8,
+      "ledger_has_an_open_key": true,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [],
+      "heuristic_failed_its_positive_control": 0,
+      "heuristic_failed_its_negative_control": 0
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "finite_local_bridges",
+          "theirs": 1228,
+          "mine": 1228
+        },
+        {
+          "check": "rank_one_record_ratio",
+          "theirs": 1228,
+          "mine": 1228
+        },
+        {
+          "check": "lift_profile_nonnegative",
+          "theirs": 1228,
+          "mine": 1228
+        },
+        {
+          "check": "lift_recurrence_exact",
+          "theirs": 4337,
+          "mine": 4337
+        },
+        {
+          "check": "lift_laplace_budget",
+          "theirs": 1228,
+          "mine": 1228
+        },
+        {
+          "check": "mechanical_cocycle_exact",
+          "theirs": 4337,
+          "mine": 4337
+        },
+        {
+          "check": "zero_lift_constant_product",
+          "theirs": 1228,
+          "mine": 1228
+        },
+        {
+          "check": "zero_lift_harmonic_bound",
+          "theirs": 1228,
+          "mine": 1228
+        },
+        {
+          "check": "canonical_collapse_cases",
+          "theirs": 125,
+          "mine": 125
+        },
+        {
+          "check": "abstract_bounded_q_lift_excursions",
+          "theirs": 6,
+          "mine": 6
+        },
+        {
+          "check": "near_linear_gap_algebra",
+          "theirs": 10000,
+          "mine": 10000
+        },
+        {
+          "check": "positive_lift_drop_algebra",
+          "theirs": 10000,
+          "mine": 10000
+        }
+      ],
+      "checks_i_did_not_reproduce": 0,
+      "checks_they_report_as_zero": 0,
+      "counts_i_reproduce_exactly": 12
+    },
+    "errors": {
+      "instrument_raised": 0,
+      "ceiling_raised": 0,
+      "constants_raised": 0,
+      "lift_raised": 0,
+      "budget_raised": 0,
+      "cocycle_raised": 0,
+      "zero_lift_raised": 0,
+      "abstract_raised": 0,
+      "their_algebra_raised": 0,
+      "first_spike_raised": 0,
+      "examples_raised": 0,
+      "countermodels_raised": 0,
+      "collapse_raised": 0,
+      "artifacts_raised": 0,
+      "ledger_raised": 0,
+      "their_claims_raised": 0,
+      "messages": []
+    }
+  }
+}

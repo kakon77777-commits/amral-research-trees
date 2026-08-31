@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->64 source items and 43 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->65 source items and 44 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -921,11 +921,45 @@ instance behind each band.
     and nine defects needed re-aiming — four probed a counter already reading
     zero, two loosened what they attacked, and one stayed TRUE after mutation
     because a congruence mod `m` implies the congruence mod every divisor.
-45. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+45. [`reports/RUN-046-HARD-ZETA-AU2D18-LIFT-COCYCLE.md`](./reports/RUN-046-HARD-ZETA-AU2D18-LIFT-COCYCLE.md) —
+    **the round that turns the slack profile into an integer, and the branch
+    of its own dichotomy that has no finite instance.** A-U.2d.18 rereads
+    A-U.2d.17's real suffix slack from the other end: `m_ell = Q_ell -
+    ceil(beta ell)` with `H_(h-ell) = m_ell + eps_ell`, and full
+    suffix-supercriticality is exactly `m_ell >= 0`. Because `ceil(beta ell) =
+    (3^ell).bit_length()` and `2^eps_ell = 2^ceil(beta ell) / 3^ell`,
+    **sections 7 through 14 are exact rational arithmetic with no logarithm
+    anywhere** — including Theorem 11.1's `P_down < 2`, which the bundle
+    floats, and Theorem 12.2's mechanical cocycle `U_(l+1) = (2^a U_l -
+    2^-m_(l+1))/3`, the round's real contribution. **All twelve of the
+    bundle's counters are reproduced exactly from the definition**: 1228
+    bridges, 4337 recurrence steps, 125 collapse cases, six countermodels,
+    both synthetic blocks. **Three findings.** Every one of the **1228**
+    bridges has zero total lift, so the positive-lift branch of Theorem 15.1
+    and the whole of Theorem 10.1's rarity bound have **no finite instance** —
+    while the interior profile is far from flat, reaching a lift of **8**
+    across **1044** descents, every one by exactly one unit at a mechanical
+    `a=2` position. **Two of their twelve counters test a quantity against
+    itself**: `near_linear_gap_algebra` asserts `N/(R+1) > 0` for `N >= 10^6`
+    (smallest left side measured: 134,322), and `positive_lift_drop_algebra`
+    asserts an inequality in which **beta cancels exactly**, leaving
+    `m + eps >= 1` for an integer `m >= 1` — demonstrated by evaluating it at
+    both ends of a certified bracket and getting the same answer 10,000 times.
+    Twenty thousand assertion executions, no information. And the
+    source-validation record has changed content for the **fifth consecutive
+    round** — 7 per-file digests last round, 3 now, execution return code and
+    counter cross-check gone. Their float64 `ceil(log2(3)*l)` is **safe and
+    now measured**: no disagreement over 20,000 levels, closest approach
+    `2.6e-5` at `l = 15601`, float64 error `7e-12`, a margin of **3.7 million
+    to one**. Drill **52/52**; four defects made the gate RAISE, and the fix
+    was general — every section now reports through an `errors.<section>_raised`
+    counter, and `2^k` is written `p2(k)` so a negative lift is a finding
+    rather than a crash four sections downstream.
+46. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-46. [`code/`](./code/) — the engine, the independent reference, and the gates.
-47. [`data/gate-logs/`](./data/gate-logs/) and
+47. [`code/`](./code/) — the engine, the independent reference, and the gates.
+48. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
