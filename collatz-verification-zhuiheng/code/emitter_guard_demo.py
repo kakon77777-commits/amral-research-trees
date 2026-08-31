@@ -60,6 +60,7 @@ CASES = [
     ("src63", (0, ("results", "bank", "steps"))),
     ("src64", (0, ("results", "bridges", "bridges"))),
     ("src65", (0, ("results", "lift", "bridges"))),
+    ("src66", (0, ("results", "carry", "bridges"))),
 ]
 
 

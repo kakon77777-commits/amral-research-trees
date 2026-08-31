@@ -1,0 +1,410 @@
+{
+  "run": "RUN-047",
+  "round": "A-U.2d.19",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item66",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 9,
+      "failed": []
+    },
+    "constants": {
+      "constants_checked": 2,
+      "disagreeing_with_both_evaluations": 0,
+      "frontier_constants_matching_no_evaluation": 2,
+      "from_the_float64_chain_not_the_nearest_double": 0,
+      "exact_to_the_last_bit": 0,
+      "undecided_brackets": 0,
+      "missing_from_the_frontier": 0,
+      "frontier_and_report_disagreeing": 2,
+      "rows": [
+        {
+          "constant": "beta",
+          "frontier": "1.5849625007211563",
+          "report": "1.584962500721156",
+          "budget": 4,
+          "frontier_minus_report_ulps": 1,
+          "frontier_verdict": "+1 ulp, within budget but matching no evaluation",
+          "report_verdict": "exact",
+          "nearest_double": "1.584962500721156"
+        },
+        {
+          "constant": "beta_minus_1",
+          "frontier": "0.5849625007211563",
+          "report": "0.5849625007211561",
+          "budget": 12,
+          "frontier_minus_report_ulps": 2,
+          "frontier_verdict": "+1 ulp, within budget but matching no evaluation",
+          "report_verdict": "-1 ulp, the float64 chain",
+          "nearest_double": "0.5849625007211562"
+        }
+      ]
+    },
+    "population": {
+      "bridges": 1264,
+      "zero_lift": 1264,
+      "positive_lift": 0,
+      "sources": 1185,
+      "longest_tail": 42
+    },
+    "carry": {
+      "bridges": 1264,
+      "steps": 4433,
+      "positions": 5697,
+      "carry_definition_violations": 0,
+      "carry_recurrence_theorem_3_1_violations": 0,
+      "carry_not_strictly_decreasing": 0,
+      "carry_start_not_the_endpoint": 0,
+      "carry_end_not_the_phased_source": 0,
+      "iterated_carry_form_violations": 0,
+      "carry_band_theorem_4_1_violations": 0,
+      "dyadic_window_corollary_4_2_violations": 0,
+      "sharper_window_lower_violations": 0,
+      "sharper_window_upper_violations": 0,
+      "sharper_window_upper_attained": 1264,
+      "sharper_window_lower_attained": 1264,
+      "state_is_not_the_phased_carry": 0,
+      "smallest_carry_over_z": 0.9921016483516484,
+      "largest_lift_seen": 8
+    },
+    "neutrality": {
+      "intervals": 10000,
+      "telescoping_checks": 100,
+      "telescoping_violations": 0,
+      "band_violations": 0,
+      "phase_form_violations": 0,
+      "mechanical_symbol_outside_one_or_two": 0,
+      "two_consecutive_mechanical_ones": 0,
+      "widest_ratio_seen": 1.9958280925146223,
+      "narrowest_ratio_seen": 0.5126647038784206
+    },
+    "tower": {
+      "bridges": 1264,
+      "levels": 4433,
+      "congruence_theorem_6_1_violations": 0,
+      "archimedean_carry_form_violations": 0,
+      "stabilization_levels": 892,
+      "stabilization_theorem_7_1_violations": 0,
+      "levels_below_the_stabilization_depth": 3541,
+      "representative_at_a_shallow_level_not_z_mod_three_to_the_l": 0,
+      "k0_disagreeing_with_the_least_power": 0,
+      "largest_k0_seen": 10
+    },
+    "aliasing": {
+      "levels": 7,
+      "samples": 7000,
+      "order_violations": 0,
+      "predecessor_not_integral": 0,
+      "aliasing_theorem_8_1_violations": 0,
+      "aliasing_at_a_shorter_period": 0,
+      "aliasing_holds_one_level_deeper": 0
+    },
+    "mesoscopic": {
+      "samples": 10000,
+      "ceiling_definition_violations": 0,
+      "third_assertion_not_implied_by_the_second": 0,
+      "samples_that_could_have_failed": 0,
+      "closest_log_to_an_integer": 4.6010179984179445e-05,
+      "smallest_margin_ratio": 46010179984.17944
+    },
+    "examples": {
+      "examples": 10,
+      "x_disagreeing": 0,
+      "z_disagreeing": 0,
+      "exponent_word_disagreeing": 0,
+      "h_disagreeing": 0,
+      "max_lift_disagreeing": 0,
+      "stabilization_depth_disagreeing": 0,
+      "carry_final_disagreeing": 0,
+      "sources_appearing_more_than_once": 1,
+      "rows": [
+        {
+          "y": 59,
+          "X": 89,
+          "Z": 67,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "k0": 4,
+          "carry_final": "267/4",
+          "carry_over_z": 0.996268656716418
+        },
+        {
+          "y": 71,
+          "X": 107,
+          "Z": 91,
+          "h": 3,
+          "word": [
+            1,
+            2,
+            2
+          ],
+          "lift_profile": [
+            0,
+            0,
+            0
+          ],
+          "k0": 5,
+          "carry_final": "2889/32",
+          "carry_over_z": 0.9921016483516484
+        },
+        {
+          "y": 91,
+          "X": 137,
+          "Z": 103,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "k0": 5,
+          "carry_final": "411/4",
+          "carry_over_z": 0.9975728155339806
+        },
+        {
+          "y": 155,
+          "X": 233,
+          "Z": 175,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "k0": 5,
+          "carry_final": "699/4",
+          "carry_over_z": 0.9985714285714286
+        },
+        {
+          "y": 155,
+          "X": 233,
+          "Z": 167,
+          "h": 6,
+          "word": [
+            2,
+            1,
+            1,
+            1,
+            2,
+            3
+          ],
+          "lift_profile": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "k0": 5,
+          "carry_final": "169857/1024",
+          "carry_over_z": 0.9932693207335329
+        },
+        {
+          "y": 187,
+          "X": 281,
+          "Z": 211,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "k0": 5,
+          "carry_final": "843/4",
+          "carry_over_z": 0.9988151658767772
+        },
+        {
+          "y": 223,
+          "X": 335,
+          "Z": 319,
+          "h": 5,
+          "word": [
+            1,
+            1,
+            1,
+            3,
+            2
+          ],
+          "lift_profile": [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "k0": 6,
+          "carry_final": "81405/256",
+          "carry_over_z": 0.9968284678683386
+        },
+        {
+          "y": 251,
+          "X": 377,
+          "Z": 283,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "k0": 6,
+          "carry_final": "1131/4",
+          "carry_over_z": 0.9991166077738516
+        },
+        {
+          "y": 283,
+          "X": 425,
+          "Z": 319,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "k0": 6,
+          "carry_final": "1275/4",
+          "carry_over_z": 0.9992163009404389
+        },
+        {
+          "y": 347,
+          "X": 521,
+          "Z": 391,
+          "h": 1,
+          "word": [
+            2
+          ],
+          "lift_profile": [
+            0
+          ],
+          "k0": 6,
+          "carry_final": "1563/4",
+          "carry_over_z": 0.9993606138107417
+        }
+      ]
+    },
+    "artifacts": {
+      "files_present": 9,
+      "digests_listed": 8,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_per_file_entries": 6,
+      "validation_entries_with_a_digest": 0,
+      "validation_digest_mismatches": 0,
+      "files_absent_from_the_validation_record": [
+        "CHECKSUMS.sha256",
+        "SOURCE_VALIDATION_AU2d19.json"
+      ],
+      "duplicate_file_pairs": [],
+      "validation_all_ok_flag": true,
+      "validation_top_level_keys": [
+        "all_ok",
+        "canonical_source",
+        "checker_rerun",
+        "json_checks",
+        "markdown_checks",
+        "python_compile",
+        "round"
+      ],
+      "validation_checker_rerun": "PASS",
+      "validation_python_compile_ok": true,
+      "validation_file_ok_flags_not_true": 0,
+      "validation_json_parse_not_true": 0
+    },
+    "ledger": {
+      "paper_proved_items": 10,
+      "ledger_proved_items": 10,
+      "paper_open_items": 5,
+      "ledger_open_items": 5,
+      "paper_no_go_headings": 9,
+      "ledger_no_go_items": 6,
+      "ledger_has_an_open_key": true,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [],
+      "heuristic_failed_its_positive_control": 0,
+      "heuristic_failed_its_negative_control": 0
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "finite_local_bridges",
+          "theirs": 1264,
+          "mine": 1264
+        },
+        {
+          "check": "zero_lift_bridges",
+          "theirs": 1264,
+          "mine": 1264
+        },
+        {
+          "check": "carry_conjugacy_exact",
+          "theirs": 4433,
+          "mine": 4433
+        },
+        {
+          "check": "carry_monotone_band",
+          "theirs": 1264,
+          "mine": 1264
+        },
+        {
+          "check": "state_lift_window",
+          "theirs": 5697,
+          "mine": 5697
+        },
+        {
+          "check": "nested_endpoint_tower",
+          "theirs": 4433,
+          "mine": 4433
+        },
+        {
+          "check": "mechanical_neutrality",
+          "theirs": 10000,
+          "mine": 10000
+        },
+        {
+          "check": "valuation_aliasing",
+          "theirs": 7000,
+          "mine": 7000
+        },
+        {
+          "check": "mesoscopic_modulus_algebra",
+          "theirs": 10000,
+          "mine": 10000
+        }
+      ],
+      "checks_i_did_not_reproduce": 0,
+      "checks_they_report_as_zero": 0,
+      "counts_i_reproduce_exactly": 9
+    },
+    "errors": {
+      "instrument_raised": 0,
+      "constants_raised": 0,
+      "population_raised": 0,
+      "carry_raised": 0,
+      "neutrality_raised": 0,
+      "tower_raised": 0,
+      "aliasing_raised": 0,
+      "mesoscopic_raised": 0,
+      "examples_raised": 0,
+      "artifacts_raised": 0,
+      "ledger_raised": 0,
+      "their_claims_raised": 0,
+      "messages": []
+    }
+  }
+}

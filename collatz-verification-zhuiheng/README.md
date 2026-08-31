@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->65 source items and 44 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->66 source items and 45 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -955,11 +955,46 @@ instance behind each band.
     was general — every section now reports through an `errors.<section>_raised`
     counter, and `2^k` is written `p2(k)` so a negative lift is a finding
     rather than a crash four sections downstream.
-46. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+46. [`reports/RUN-047-HARD-ZETA-AU2D19-CARRY-CONJUGACY.md`](./reports/RUN-047-HARD-ZETA-AU2D19-CARRY-CONJUGACY.md) —
+    **the conjugacy that makes the real cocycle trivial, and the first
+    constant the bundle contradicts itself on.** A-U.2d.18 left the mechanical
+    affine cocycle `U_(l+1) = (2^a U_l - 2^-m_(l+1))/3` and pointed at
+    `2^a/3` as the place to look for spectral contraction. Setting
+    `W_l := 2^-eps_l U_l = 3^l V_l / 2^Q_l` removes the multiplier entirely:
+    `W_(l+1) = W_l - 3^l/2^Q_(l+1)`, a strictly decreasing additive carry.
+    Everything downstream is then exact rational or exact modular arithmetic —
+    the band `Z/2 < W_l <= Z`, the dyadic window, mechanical neutrality
+    `prod 2^a_j/3 = 2^(eps_s-eps_r)`, the nested endpoint tower
+    `Z = sum 3^(j-1) 2^-Q_j mod 3^l` and its Archimedean twin, and valuation
+    aliasing at period `2*3^k`. **All nine of the bundle's counters are
+    reproduced exactly**: 1264 bridges, 4433 carry steps, 5697 window
+    positions, 4433 tower levels, three synthetic blocks. **Three findings.**
+    The constants frontier and the checker report **disagree on `beta`** —
+    frontier `1.5849625007211563`, report `1.584962500721156`, one ulp apart,
+    and the frontier matches neither the nearest double nor the float64 chain;
+    `beta_minus_1` differs by two ulps the same way. First frontier/report
+    disagreement of the sweep; trust the report. Section 4's "sharper exact
+    window" is written with a strict `<` on its upper end and that end is
+    **attained at l = 0** on all 1264 bridges, where `V_0 = Z` exactly —
+    Corollary 4.2's phase-free version, which is what the bundle checks, is
+    strict there and clean. And `mesoscopic_modulus_algebra` — 10,000
+    assertion executions — asserts the defining property of a ceiling three
+    times, its third assertion implied by its second; the closest
+    `log_3(target)` comes to an integer is `4.6e-5` against a `1e-15` float
+    error, a margin of 46 billion to one. Third round running with a large
+    synthetic block that cannot fail. **Added here**: exact divisibility where
+    the bundle floor-divides; the aliasing period checked sharp in BOTH
+    directions (not shorter, not one level deeper); the mechanical alphabet
+    over the whole range rather than on sampled intervals; the stabilization
+    guard counted (it opens on 892 of 4433 levels, 20%); and both completions
+    of Theorem 6.1's identity computed independently. Drill **50/50**, and
+    **zero malformed on the first pass** — the RUN-046 section guards paying
+    off, since the one defect that raised was reported rather than crashing.
+47. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-47. [`code/`](./code/) — the engine, the independent reference, and the gates.
-48. [`data/gate-logs/`](./data/gate-logs/) and
+48. [`code/`](./code/) — the engine, the independent reference, and the gates.
+49. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

@@ -1,0 +1,458 @@
+{
+  "gate": "src66_carry_conjugacy.py",
+  "limit": "36000",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_the_carry_definition_uses_the_wrong_power_of_three": {
+      "caught": true,
+      "expected_named": "carry.carry_definition_violations",
+      "reported": [
+        "carry.carry_definition_violations = 5697",
+        "carry.carry_recurrence_theorem_3_1_violations = 4433",
+        "carry.carry_start_not_the_endpoint = 1264",
+        "carry.carry_end_not_the_phased_source = 1264"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_carry_denominator_is_read_one_level_early": {
+      "caught": true,
+      "expected_named": "carry.carry_definition_violations",
+      "reported": [
+        "carry.carry_definition_violations = 5697"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_carry_starts_at_the_source": {
+      "caught": true,
+      "expected_named": "carry.carry_start_not_the_endpoint",
+      "reported": [
+        "carry.carry_start_not_the_endpoint = 1264"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_final_carry_forgets_its_phase": {
+      "caught": true,
+      "expected_named": "carry.carry_end_not_the_phased_source",
+      "reported": [
+        "carry.carry_end_not_the_phased_source = 1264"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_recurrence_decrement_uses_the_earlier_valuation_sum": {
+      "caught": true,
+      "expected_named": "carry.carry_recurrence_theorem_3_1_violations",
+      "reported": [
+        "carry.carry_recurrence_theorem_3_1_violations = 4433"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_recurrence_adds_where_it_must_subtract": {
+      "caught": true,
+      "expected_named": "carry.carry_recurrence_theorem_3_1_violations",
+      "reported": [
+        "carry.carry_recurrence_theorem_3_1_violations = 4433"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_carry_is_required_to_increase": {
+      "caught": true,
+      "expected_named": "carry.carry_not_strictly_decreasing",
+      "reported": [
+        "carry.carry_not_strictly_decreasing = 4433"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_iterated_form_shifts_its_numerator": {
+      "caught": true,
+      "expected_named": "carry.iterated_carry_form_violations",
+      "reported": [
+        "carry.iterated_carry_form_violations = 4433"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_iterated_form_is_compared_to_the_wrong_side": {
+      "caught": true,
+      "expected_named": "carry.iterated_carry_form_violations",
+      "reported": [
+        "carry.iterated_carry_form_violations = 4433"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_carry_band_floor_is_raised_to_the_endpoint": {
+      "caught": true,
+      "expected_named": "carry.carry_band_theorem_4_1_violations",
+      "reported": [
+        "carry.carry_band_theorem_4_1_violations = 5697"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_carry_band_ceiling_is_made_strict": {
+      "caught": true,
+      "expected_named": "carry.carry_band_theorem_4_1_violations",
+      "reported": [
+        "carry.carry_band_theorem_4_1_violations = 1264"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_dyadic_window_is_narrowed_to_a_point": {
+      "caught": true,
+      "expected_named": "carry.dyadic_window_corollary_4_2_violations",
+      "reported": [
+        "carry.dyadic_window_corollary_4_2_violations = 5697"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_state_is_compared_to_the_unphased_carry": {
+      "caught": true,
+      "expected_named": "carry.state_is_not_the_phased_carry",
+      "reported": [
+        "carry.state_is_not_the_phased_carry = 4433"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_sharper_lower_end_uses_the_endpoint_not_the_source": {
+      "caught": true,
+      "expected_named": "carry.sharper_window_lower_violations",
+      "reported": [
+        "carry.sharper_window_lower_violations = 5697"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_sharper_upper_end_is_halved": {
+      "caught": true,
+      "expected_named": "carry.sharper_window_upper_violations",
+      "reported": [
+        "carry.sharper_window_upper_violations = 5697"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_suffix_sum_walks_the_word_forwards": {
+      "caught": true,
+      "expected_named": "carry.carry_recurrence_theorem_3_1_violations",
+      "reported": [
+        "carry.carry_recurrence_theorem_3_1_violations = 2304",
+        "carry.carry_not_strictly_decreasing = 1152",
+        "carry.iterated_carry_form_violations = 3670",
+        "carry.carry_band_theorem_4_1_violations = 3117"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_ceiling_table_stores_the_floor": {
+      "caught": true,
+      "expected_named": "neutrality.telescoping_violations",
+      "reported": [
+        "neutrality.telescoping_violations = 2",
+        "neutrality.phase_form_violations = 2"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_mechanical_alphabet_is_required_to_be_one_or_three": {
+      "caught": true,
+      "expected_named": "neutrality.mechanical_symbol_outside_one_or_two",
+      "reported": [
+        "neutrality.mechanical_symbol_outside_one_or_two = 3218"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_two_consecutive_twos_are_called_forbidden": {
+      "caught": true,
+      "expected_named": "neutrality.two_consecutive_mechanical_ones",
+      "reported": [
+        "neutrality.two_consecutive_mechanical_ones = 935"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_neutrality_ratio_uses_the_wrong_interval_length": {
+      "caught": true,
+      "expected_named": "neutrality.band_violations",
+      "reported": [
+        "neutrality.band_violations = 9146",
+        "neutrality.phase_form_violations = 100"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_neutrality_band_is_narrowed_to_a_tenth": {
+      "caught": true,
+      "expected_named": "neutrality.band_violations",
+      "reported": [
+        "neutrality.band_violations = 7328"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_phase_form_inverts_its_ratio": {
+      "caught": true,
+      "expected_named": "neutrality.phase_form_violations",
+      "reported": [
+        "neutrality.phase_form_violations = 100"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_mechanical_increment_skips_a_level": {
+      "caught": true,
+      "expected_named": "neutrality.telescoping_violations",
+      "reported": [
+        "neutrality.telescoping_violations = 100"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_tower_sum_uses_the_wrong_power_of_three": {
+      "caught": true,
+      "expected_named": "tower.congruence_theorem_6_1_violations",
+      "reported": [
+        "tower.congruence_theorem_6_1_violations = 4433",
+        "tower.stabilization_theorem_7_1_violations = 892",
+        "tower.representative_at_a_shallow_level_not_z_mod_three_to_the_l = 3541"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_tower_sum_drops_the_modular_inverse": {
+      "caught": true,
+      "expected_named": "tower.congruence_theorem_6_1_violations",
+      "reported": [
+        "tower.congruence_theorem_6_1_violations = 2632",
+        "tower.stabilization_theorem_7_1_violations = 891",
+        "tower.representative_at_a_shallow_level_not_z_mod_three_to_the_l = 1741"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_congruence_is_taken_at_the_wrong_modulus": {
+      "caught": true,
+      "expected_named": "tower.congruence_theorem_6_1_violations",
+      "reported": [
+        "tower.congruence_theorem_6_1_violations = 2181"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_archimedean_form_shifts_its_numerator": {
+      "caught": true,
+      "expected_named": "tower.archimedean_carry_form_violations",
+      "reported": [
+        "tower.archimedean_carry_form_violations = 4433"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_stabilization_guard_opens_one_level_too_early": {
+      "caught": true,
+      "expected_named": "tower.stabilization_theorem_7_1_violations",
+      "reported": [
+        "tower.stabilization_theorem_7_1_violations = 316"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_stabilized_representative_is_compared_to_the_source": {
+      "caught": true,
+      "expected_named": "tower.stabilization_theorem_7_1_violations",
+      "reported": [
+        "tower.stabilization_theorem_7_1_violations = 892"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_shallow_representative_is_compared_without_reduction": {
+      "caught": true,
+      "expected_named": "tower.representative_at_a_shallow_level_not_z_mod_three_to_the_l",
+      "reported": [
+        "tower.representative_at_a_shallow_level_not_z_mod_three_to_the_l = 3541"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_the_stabilization_depth_is_computed_one_power_short": {
+      "caught": true,
+      "expected_named": "tower.k0_disagreeing_with_the_least_power",
+      "reported": [
+        "tower.k0_disagreeing_with_the_least_power = 1264",
+        "examples.stabilization_depth_disagreeing = 10"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_stabilization_depth_bracket_is_one_sided": {
+      "caught": true,
+      "expected_named": "tower.k0_disagreeing_with_the_least_power",
+      "reported": [
+        "tower.k0_disagreeing_with_the_least_power = 1264"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_the_alias_period_is_read_at_the_wrong_modulus": {
+      "caught": true,
+      "expected_named": "aliasing.order_violations",
+      "reported": [
+        "aliasing.order_violations = 7"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D34_the_aliasing_difference_is_tested_at_the_deeper_precision": {
+      "caught": true,
+      "expected_named": "aliasing.aliasing_theorem_8_1_violations",
+      "reported": [
+        "aliasing.aliasing_theorem_8_1_violations = 7000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D35_the_shifted_predecessor_uses_a_third_of_the_period": {
+      "caught": true,
+      "expected_named": "aliasing.aliasing_theorem_8_1_violations",
+      "reported": [
+        "aliasing.aliasing_theorem_8_1_violations = 7000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D36_the_shorter_period_test_accepts_the_full_period": {
+      "caught": true,
+      "expected_named": "aliasing.aliasing_at_a_shorter_period",
+      "reported": [
+        "aliasing.aliasing_at_a_shorter_period = 6000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D37_the_integrality_guard_accepts_a_non_multiple_of_three": {
+      "caught": true,
+      "expected_named": "aliasing.predecessor_not_integral",
+      "reported": [
+        "aliasing.predecessor_not_integral = 4664"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D38_the_ceiling_is_replaced_by_a_floor": {
+      "caught": true,
+      "expected_named": "mesoscopic.ceiling_definition_violations",
+      "reported": [
+        "mesoscopic.ceiling_definition_violations = 10000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D39_the_ceiling_definition_is_demanded_one_level_tighter": {
+      "caught": true,
+      "expected_named": "mesoscopic.ceiling_definition_violations",
+      "reported": [
+        "mesoscopic.ceiling_definition_violations = 10000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D40_the_third_assertion_is_taken_above_the_critical_level": {
+      "caught": true,
+      "expected_named": "mesoscopic.third_assertion_not_implied_by_the_second",
+      "reported": [
+        "mesoscopic.third_assertion_not_implied_by_the_second = 10000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D41_the_example_stabilization_depth_is_shifted": {
+      "caught": true,
+      "expected_named": "examples.stabilization_depth_disagreeing",
+      "reported": [
+        "examples.stabilization_depth_disagreeing = 10"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D42_the_example_carry_is_rendered_upside_down": {
+      "caught": true,
+      "expected_named": "examples.carry_final_disagreeing",
+      "reported": [
+        "examples.carry_final_disagreeing = 10"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D43_the_example_word_drops_its_first_step": {
+      "caught": true,
+      "expected_named": "examples.exponent_word_disagreeing",
+      "reported": [
+        "examples.exponent_word_disagreeing = 10",
+        "examples.h_disagreeing = 10",
+        "examples.carry_final_disagreeing = 10"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D44_the_report_constant_is_read_from_the_frontier": {
+      "caught": true,
+      "expected_named": "constants.disagreeing_with_both_evaluations",
+      "reported": [
+        "constants.disagreeing_with_both_evaluations = 2"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D45_the_beta_bracket_is_widened_past_a_double": {
+      "caught": true,
+      "expected_named": "constants.undecided_brackets",
+      "reported": [
+        "constants.disagreeing_with_both_evaluations = 2",
+        "constants.undecided_brackets = 2"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D46_the_checksum_comparison_is_inverted": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D47_the_validation_markdown_flag_is_read_inverted": {
+      "caught": true,
+      "expected_named": "artifacts.validation_file_ok_flags_not_true",
+      "reported": [
+        "artifacts.validation_file_ok_flags_not_true = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D48_the_validation_json_flag_is_read_inverted": {
+      "caught": true,
+      "expected_named": "artifacts.validation_json_parse_not_true",
+      "reported": [
+        "artifacts.validation_json_parse_not_true = 3"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D49_the_ledger_coverage_heuristic_accepts_anything": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_negative_control",
+      "reported": [
+        "ledger.heuristic_failed_its_negative_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D50_the_ledger_coverage_heuristic_accepts_nothing": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_positive_control",
+      "reported": [
+        "ledger.heuristic_failed_its_positive_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "N2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 50,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 50,
+    "caught": 50,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 50,
+    "caught_by_their_own_check": 50,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
