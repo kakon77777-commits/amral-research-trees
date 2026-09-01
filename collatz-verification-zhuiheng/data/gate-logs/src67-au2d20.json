@@ -1,0 +1,549 @@
+{
+  "run": "RUN-048",
+  "round": "A-U.2d.20",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item67",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 11,
+      "failed": []
+    },
+    "constants": {
+      "constants_checked": 3,
+      "disagreeing_with_both_evaluations": 0,
+      "from_the_float64_chain_not_the_nearest_double": 0,
+      "exact_to_the_last_bit": 3,
+      "undecided_brackets": 0,
+      "missing_from_the_frontier": 0,
+      "frontier_and_report_disagreeing": 0,
+      "duplicate_keys_carrying_the_same_value": 1,
+      "rows": [
+        {
+          "constant": "beta",
+          "frontier": "1.584962500721156",
+          "report": "1.584962500721156",
+          "budget": 4,
+          "verdict": "exact",
+          "nearest_double": "1.584962500721156"
+        },
+        {
+          "constant": "linear_return_loop_mass_constant",
+          "frontier": "0.47167916642628127",
+          "report": "0.47167916642628127",
+          "budget": 12,
+          "verdict": "exact",
+          "nearest_double": "0.47167916642628127"
+        },
+        {
+          "constant": "linear_return_loop_count_coefficient",
+          "frontier": "0.707518749639422",
+          "report": "0.707518749639422",
+          "budget": 12,
+          "verdict": "exact",
+          "nearest_double": "0.707518749639422"
+        }
+      ],
+      "duplicate_key_groups": [
+        [
+          "linear_clean_loop_mass_constant",
+          "linear_clean_loop_mass_constant_decimal"
+        ]
+      ]
+    },
+    "population": {
+      "bridges": 7136,
+      "zero_lift": 7136,
+      "positive_lift": 0,
+      "sources": 6686,
+      "longest_tail": 73
+    },
+    "locality": {
+      "bridges": 7136,
+      "levels": 27337,
+      "truncated_sum_violations": 0,
+      "full_sum_violations": 0,
+      "truncation_changes_the_residue": 0,
+      "tail_term_not_divisible_by_the_modulus": 0,
+      "suffix_representative_violations": 0
+    },
+    "source_budget": {
+      "bridges": 7136,
+      "prefixes": 27337,
+      "left_inequality_violations": 0,
+      "right_inequality_violations": 0,
+      "left_inequality_attained": 13493,
+      "right_inequality_attained": 4933,
+      "largest_prefix_over_r_seen": 2.0,
+      "single_valuation_above_two_r": 0
+    },
+    "labels": {
+      "levels": 5,
+      "pairs": 29282,
+      "sheet_checks": 242,
+      "label_collisions_below_the_period": 0,
+      "no_collision_at_the_period": 0,
+      "more_than_three_sheets": 0,
+      "three_sheets_never_attained": 0,
+      "period_disagreeing_with_two_thirds_m": 0,
+      "residues_with_exactly_three_sheets": 242
+    },
+    "alias": {
+      "bridges": 7136,
+      "levels": 16934,
+      "budget_theorem_6_1_violations": 0,
+      "large_edge_budget_violations": 0,
+      "total_valuation_not_the_ceiling": 0,
+      "levels_with_an_alias_large_edge": 7197,
+      "largest_alias_count_seen": 28
+    },
+    "loops": {
+      "bridges": 7136,
+      "levels": 5652,
+      "loops": 34970,
+      "loop_endpoints_not_congruent": 0,
+      "segment_affine_identity_violations": 0,
+      "certificate_theorem_11_1_violations": 0,
+      "erased_cycle_longer_than_the_period": 0,
+      "segment_longer_than_the_period": 14539,
+      "segment_longer_than_its_erased_cycle": 24798,
+      "longest_erased_cycle_seen": 13,
+      "loop_of_zero_length": 0,
+      "certificate_trivially_zero": 0,
+      "longest_loop_seen": 73,
+      "total_loop_edge_mass": 233773
+    },
+    "clean_mass": {
+      "bridges": 2970,
+      "levels": 3826,
+      "runs": 1802,
+      "mass_below_the_finite_bound": 0,
+      "residual_path_longer_than_the_period": 0,
+      "non_unit_residue_in_a_clean_run": 0,
+      "low_lift_vertex_inside_a_clean_run": 0,
+      "large_edge_inside_a_clean_run": 0,
+      "erasure_accounting_violations": 0,
+      "levels_where_the_bound_is_positive": 4,
+      "levels_where_the_bound_is_attained": 0,
+      "float_depth_disagreeing_with_the_integer_one": 0,
+      "smallest_mass_minus_bound_seen": 21,
+      "total_clean_mass": 6767
+    },
+    "their_algebra": {
+      "high_lift_samples": 10000,
+      "high_lift_gamma_not_below_eta": 0,
+      "high_lift_second_assertion_differing_from_the_first": 0,
+      "high_lift_constant_varying_across_the_loop": 0,
+      "alias_samples": 10000,
+      "alias_repair_fired": 0,
+      "alias_would_have_failed_without_the_repair": 0,
+      "alias_assertion_failed_after_the_repair": 0,
+      "alias_smallest_left_side_before_the_repair": 0.9389079201096653,
+      "alias_smallest_left_side_after_the_repair": 0.9389079201096653
+    },
+    "near_full": {
+      "rows_published": 14,
+      "rows_i_rebuilt": 14,
+      "k_disagreeing": 0,
+      "alias_bound_disagreeing": 0,
+      "faithful_run_disagreeing": 0,
+      "modulus_bracket_violations": 0,
+      "alias_fraction_not_decreasing_end_to_end": 0,
+      "faithful_run_not_increasing_end_to_end": 0,
+      "rows": [
+        {
+          "h_power10": 20,
+          "k": 40,
+          "alias_bound": 19,
+          "alias_fraction": 0.475,
+          "faithful_run": 2
+        },
+        {
+          "h_power10": 40,
+          "k": 81,
+          "alias_bound": 53,
+          "alias_fraction": 0.654320987654321,
+          "faithful_run": 1
+        },
+        {
+          "h_power10": 60,
+          "k": 123,
+          "alias_bound": 48,
+          "alias_fraction": 0.3902439024390244,
+          "faithful_run": 2
+        },
+        {
+          "h_power10": 80,
+          "k": 165,
+          "alias_bound": 44,
+          "alias_fraction": 0.26666666666666666,
+          "faithful_run": 3
+        },
+        {
+          "h_power10": 100,
+          "k": 207,
+          "alias_bound": 40,
+          "alias_fraction": 0.1932367149758454,
+          "faithful_run": 5
+        },
+        {
+          "h_power10": 120,
+          "k": 248,
+          "alias_bound": 112,
+          "alias_fraction": 0.45161290322580644,
+          "faithful_run": 2
+        },
+        {
+          "h_power10": 140,
+          "k": 290,
+          "alias_bound": 102,
+          "alias_fraction": 0.35172413793103446,
+          "faithful_run": 2
+        },
+        {
+          "h_power10": 160,
+          "k": 332,
+          "alias_bound": 93,
+          "alias_fraction": 0.28012048192771083,
+          "faithful_run": 3
+        },
+        {
+          "h_power10": 180,
+          "k": 374,
+          "alias_bound": 85,
+          "alias_fraction": 0.22727272727272727,
+          "faithful_run": 4
+        },
+        {
+          "h_power10": 200,
+          "k": 416,
+          "alias_bound": 78,
+          "alias_fraction": 0.1875,
+          "faithful_run": 5
+        },
+        {
+          "h_power10": 220,
+          "k": 458,
+          "alias_bound": 71,
+          "alias_fraction": 0.15502183406113537,
+          "faithful_run": 6
+        },
+        {
+          "h_power10": 240,
+          "k": 500,
+          "alias_bound": 65,
+          "alias_fraction": 0.13,
+          "faithful_run": 7
+        },
+        {
+          "h_power10": 260,
+          "k": 542,
+          "alias_bound": 59,
+          "alias_fraction": 0.1088560885608856,
+          "faithful_run": 9
+        },
+        {
+          "h_power10": 280,
+          "k": 583,
+          "alias_bound": 163,
+          "alias_fraction": 0.27958833619210977,
+          "faithful_run": 3
+        }
+      ]
+    },
+    "examples": {
+      "examples": 12,
+      "example_not_found_in_my_population": 0,
+      "x_disagreeing": 0,
+      "z_disagreeing": 0,
+      "h_disagreeing": 0,
+      "modulus_disagreeing": 0,
+      "phi_disagreeing": 0,
+      "low_vertex_count_disagreeing": 0,
+      "large_edge_count_disagreeing": 0,
+      "lower_bound_disagreeing": 0,
+      "mass_below_their_lower_bound": 0,
+      "rows": [
+        {
+          "y": 671,
+          "X": 1007,
+          "Z": 767,
+          "h": 13,
+          "M": 3,
+          "phi": 2,
+          "low_vertices": 9,
+          "q_ge_2M": 0,
+          "their_mass": 2,
+          "their_lower_bound": 0
+        },
+        {
+          "y": 671,
+          "X": 1007,
+          "Z": 767,
+          "h": 13,
+          "M": 9,
+          "phi": 6,
+          "low_vertices": 9,
+          "q_ge_2M": 0,
+          "their_mass": 1,
+          "their_lower_bound": 0
+        },
+        {
+          "y": 1051,
+          "X": 1577,
+          "Z": 1067,
+          "h": 11,
+          "M": 3,
+          "phi": 2,
+          "low_vertices": 7,
+          "q_ge_2M": 0,
+          "their_mass": 4,
+          "their_lower_bound": 0
+        },
+        {
+          "y": 1051,
+          "X": 1577,
+          "Z": 1067,
+          "h": 11,
+          "M": 9,
+          "phi": 6,
+          "low_vertices": 7,
+          "q_ge_2M": 0,
+          "their_mass": 4,
+          "their_lower_bound": 0
+        },
+        {
+          "y": 1343,
+          "X": 2015,
+          "Z": 1615,
+          "h": 8,
+          "M": 3,
+          "phi": 2,
+          "low_vertices": 7,
+          "q_ge_2M": 0,
+          "their_mass": 1,
+          "their_lower_bound": 0
+        },
+        {
+          "y": 1583,
+          "X": 2375,
+          "Z": 2287,
+          "h": 17,
+          "M": 3,
+          "phi": 2,
+          "low_vertices": 13,
+          "q_ge_2M": 0,
+          "their_mass": 1,
+          "their_lower_bound": 0
+        },
+        {
+          "y": 1639,
+          "X": 2459,
+          "Z": 1663,
+          "h": 11,
+          "M": 3,
+          "phi": 2,
+          "low_vertices": 8,
+          "q_ge_2M": 0,
+          "their_mass": 1,
+          "their_lower_bound": 0
+        },
+        {
+          "y": 1639,
+          "X": 2459,
+          "Z": 1663,
+          "h": 11,
+          "M": 9,
+          "phi": 6,
+          "low_vertices": 8,
+          "q_ge_2M": 0,
+          "their_mass": 1,
+          "their_lower_bound": 0
+        },
+        {
+          "y": 1663,
+          "X": 2495,
+          "Z": 1687,
+          "h": 11,
+          "M": 3,
+          "phi": 2,
+          "low_vertices": 5,
+          "q_ge_2M": 0,
+          "their_mass": 5,
+          "their_lower_bound": 0
+        },
+        {
+          "y": 1663,
+          "X": 2495,
+          "Z": 1687,
+          "h": 11,
+          "M": 9,
+          "phi": 6,
+          "low_vertices": 5,
+          "q_ge_2M": 0,
+          "their_mass": 5,
+          "their_lower_bound": 0
+        },
+        {
+          "y": 2111,
+          "X": 3167,
+          "Z": 2287,
+          "h": 18,
+          "M": 3,
+          "phi": 2,
+          "low_vertices": 14,
+          "q_ge_2M": 0,
+          "their_mass": 1,
+          "their_lower_bound": 0
+        },
+        {
+          "y": 2815,
+          "X": 4223,
+          "Z": 3383,
+          "h": 8,
+          "M": 3,
+          "phi": 2,
+          "low_vertices": 4,
+          "q_ge_2M": 0,
+          "their_mass": 3,
+          "their_lower_bound": 0
+        }
+      ]
+    },
+    "artifacts": {
+      "files_present": 9,
+      "digests_listed": 8,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_per_file_entries": 3,
+      "validation_entries_with_a_digest": 0,
+      "validation_digest_mismatches": 0,
+      "files_absent_from_the_validation_record": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d20_checker_report.json",
+        "Hard_Zeta_AU2d20_constants_frontier.json",
+        "Hard_Zeta_AU2d20_theorem_ledger.json",
+        "SOURCE_VALIDATION_AU2d20.json",
+        "verify_Hard_Zeta_AU2d20_mesoscopic_return_discrepancy.py"
+      ],
+      "duplicate_file_pairs": [],
+      "validation_status": "PASS",
+      "validation_top_level_keys": [
+        "canonical_source",
+        "files",
+        "issues",
+        "json_parse_ok",
+        "python_compile_ok",
+        "round",
+        "status"
+      ],
+      "validation_issue_entries": 0,
+      "validation_json_parse_ok": true,
+      "validation_python_compile_ok": true,
+      "validation_flags_not_true": 0
+    },
+    "ledger": {
+      "paper_proved_items": 14,
+      "ledger_proved_items": 15,
+      "paper_open_items": 6,
+      "ledger_open_items": 6,
+      "paper_no_go_headings": 8,
+      "ledger_no_go_items": 7,
+      "ledger_has_an_open_key": true,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [],
+      "heuristic_failed_its_positive_control": 0,
+      "heuristic_failed_its_negative_control": 0
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "finite_local_bridges",
+          "theirs": 7136,
+          "mine": 7136
+        },
+        {
+          "check": "zero_lift_bridges",
+          "theirs": 7136,
+          "mine": 7136
+        },
+        {
+          "check": "endpoint_boundary_locality",
+          "theirs": 27337,
+          "mine": 27337
+        },
+        {
+          "check": "source_boundary_valuation_budget",
+          "theirs": 27337,
+          "mine": 27337
+        },
+        {
+          "check": "transition_label_faithfulness",
+          "theirs": 29282,
+          "mine": 29282
+        },
+        {
+          "check": "three_sheet_bound",
+          "theirs": 242,
+          "mine": 242
+        },
+        {
+          "check": "alias_budget_actual",
+          "theirs": 16934,
+          "mine": 16934
+        },
+        {
+          "check": "clean_loop_mass_finite",
+          "theirs": 3826,
+          "mine": 3826
+        },
+        {
+          "check": "clean_loop_cycles",
+          "theirs": 1802,
+          "mine": 1802
+        },
+        {
+          "check": "near_full_boundary_algebra",
+          "theirs": 14,
+          "mine": 14
+        },
+        {
+          "check": "fixed_power_high_lift_algebra",
+          "theirs": 10000,
+          "mine": 10000
+        },
+        {
+          "check": "boundary_alias_no_go_algebra",
+          "theirs": 10000,
+          "mine": 10000
+        }
+      ],
+      "checks_i_did_not_reproduce": 0,
+      "checks_they_report_as_zero": 0,
+      "counts_i_reproduce_exactly": 12
+    },
+    "errors": {
+      "instrument_raised": 0,
+      "constants_raised": 0,
+      "population_raised": 0,
+      "locality_raised": 0,
+      "source_budget_raised": 0,
+      "labels_raised": 0,
+      "alias_raised": 0,
+      "loops_raised": 0,
+      "clean_mass_raised": 0,
+      "their_algebra_raised": 0,
+      "near_full_raised": 0,
+      "examples_raised": 0,
+      "artifacts_raised": 0,
+      "ledger_raised": 0,
+      "their_claims_raised": 0,
+      "messages": []
+    }
+  }
+}

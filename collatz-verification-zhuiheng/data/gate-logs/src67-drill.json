@@ -1,0 +1,464 @@
+{
+  "gate": "src67_return_loops.py",
+  "limit": "200000",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_the_order_of_two_is_read_one_power_high": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['no maximal proper divisor of the order works']",
+        "labels.label_collisions_below_the_period = 58806",
+        "labels.period_disagreeing_with_two_thirds_m = 5",
+        "near_full.alias_bound_disagreeing = 14"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_residue_map_drops_its_affine_shift": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['and no half-period works']",
+        "labels.label_collisions_below_the_period = 19440",
+        "labels.more_than_three_sheets = 242",
+        "labels.three_sheets_never_attained = 5"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_residue_map_advances_by_four_not_two": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['and no half-period works']",
+        "labels.label_collisions_below_the_period = 14520",
+        "labels.more_than_three_sheets = 242",
+        "labels.three_sheets_never_attained = 5"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_truncated_sum_runs_one_term_short": {
+      "caught": true,
+      "expected_named": "locality.truncated_sum_violations",
+      "reported": [
+        "locality.truncated_sum_violations = 27337",
+        "locality.truncation_changes_the_residue = 27337"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_truncated_sum_shifts_its_power_of_three": {
+      "caught": true,
+      "expected_named": "locality.truncated_sum_violations",
+      "reported": [
+        "locality.truncated_sum_violations = 27337",
+        "locality.truncation_changes_the_residue = 27337"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_full_sum_drops_the_modular_inverse": {
+      "caught": true,
+      "expected_named": "locality.full_sum_violations",
+      "reported": [
+        "locality.full_sum_violations = 17094",
+        "locality.truncation_changes_the_residue = 17094"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_tail_term_divisibility_is_read_at_the_wrong_level": {
+      "caught": true,
+      "expected_named": "locality.tail_term_not_divisible_by_the_modulus",
+      "reported": [
+        "locality.tail_term_not_divisible_by_the_modulus = 20201"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_suffix_representative_uses_the_whole_word": {
+      "caught": true,
+      "expected_named": "locality.suffix_representative_violations",
+      "reported": [
+        "locality.suffix_representative_violations = 2970"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_middle_term_is_read_at_the_wrong_suffix": {
+      "caught": true,
+      "expected_named": "source_budget.left_inequality_violations",
+      "reported": [
+        "source_budget.left_inequality_violations = 17999"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_left_inequality_is_made_strict": {
+      "caught": true,
+      "expected_named": "source_budget.left_inequality_violations",
+      "reported": [
+        "source_budget.left_inequality_violations = 13493",
+        "source_budget.left_inequality_attained"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_right_inequality_is_halved": {
+      "caught": true,
+      "expected_named": "source_budget.right_inequality_violations",
+      "reported": [
+        "source_budget.right_inequality_violations = 25134"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_a_single_valuation_is_bounded_by_r_not_two_r": {
+      "caught": true,
+      "expected_named": "source_budget.single_valuation_above_two_r",
+      "reported": [
+        "source_budget.single_valuation_above_two_r = 11493"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_period_is_compared_to_the_wrong_fraction_of_m": {
+      "caught": true,
+      "expected_named": "labels.period_disagreeing_with_two_thirds_m",
+      "reported": [
+        "labels.period_disagreeing_with_two_thirds_m = 5"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_label_uniqueness_scan_runs_past_the_period": {
+      "caught": true,
+      "expected_named": "labels.label_collisions_below_the_period",
+      "reported": [
+        "labels.label_collisions_below_the_period = 242"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_period_collision_is_looked_for_one_step_early": {
+      "caught": true,
+      "expected_named": "labels.no_collision_at_the_period",
+      "reported": [
+        "labels.no_collision_at_the_period = 242"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_sheet_bound_is_lowered_to_two": {
+      "caught": true,
+      "expected_named": "labels.more_than_three_sheets",
+      "reported": [
+        "labels.more_than_three_sheets = 242"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_sheet_scan_stops_at_the_period": {
+      "caught": true,
+      "expected_named": "labels.three_sheets_never_attained",
+      "reported": [
+        "labels.three_sheets_never_attained = 5",
+        "labels.residues_with_exactly_three_sheets"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_alias_budget_counts_the_wrong_edges": {
+      "caught": true,
+      "expected_named": "alias.budget_theorem_6_1_violations",
+      "reported": [
+        "alias.budget_theorem_6_1_violations = 12768"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_large_edge_budget_uses_the_period_not_twice_the_modulus": {
+      "caught": true,
+      "expected_named": "alias.large_edge_budget_violations",
+      "reported": [
+        "alias.large_edge_budget_violations = 16934"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_total_valuation_is_compared_to_the_wrong_ceiling": {
+      "caught": true,
+      "expected_named": "alias.total_valuation_not_the_ceiling",
+      "reported": [
+        "alias.total_valuation_not_the_ceiling = 7136"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_loop_walker_keeps_the_erased_interior_on_the_stack": {
+      "caught": true,
+      "expected_named": "errors.loops_raised",
+      "reported": [
+        "errors.loops_raised = 1",
+        "errors.messages = ['loops: IndexError: list index out of range']",
+        "loops.levels",
+        "loops.loops"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_loop_records_the_wrong_cycle_length": {
+      "caught": true,
+      "expected_named": "loops.erased_cycle_longer_than_the_period",
+      "reported": [
+        "loops.erased_cycle_longer_than_the_period = 2424"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_loop_endpoint_congruence_is_read_at_the_source": {
+      "caught": true,
+      "expected_named": "loops.loop_endpoints_not_congruent",
+      "reported": [
+        "loops.loop_endpoints_not_congruent = 34970"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_segment_affine_identity_drops_its_correction": {
+      "caught": true,
+      "expected_named": "loops.segment_affine_identity_violations",
+      "reported": [
+        "loops.segment_affine_identity_violations = 34970"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_certificate_adds_where_it_must_subtract": {
+      "caught": true,
+      "expected_named": "loops.certificate_theorem_11_1_violations",
+      "reported": [
+        "loops.certificate_theorem_11_1_violations = 4987"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_certificate_uses_the_wrong_return_residue": {
+      "caught": true,
+      "expected_named": "loops.loop_endpoints_not_congruent",
+      "reported": [
+        "loops.loop_endpoints_not_congruent = 21346"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_certificate_correction_spans_the_wrong_edges": {
+      "caught": true,
+      "expected_named": "loops.certificate_theorem_11_1_violations",
+      "reported": [
+        "loops.segment_affine_identity_violations = 31827",
+        "loops.certificate_theorem_11_1_violations = 30163"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_cycle_bound_uses_twice_the_modulus": {
+      "caught": true,
+      "expected_named": "loops.erased_cycle_longer_than_the_period",
+      "reported": [
+        "loops.erased_cycle_longer_than_the_period = 9984"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_low_vertex_lift_is_read_forwards": {
+      "caught": true,
+      "expected_named": "clean_mass.low_lift_vertex_inside_a_clean_run",
+      "reported": [
+        "clean_mass.low_lift_vertex_inside_a_clean_run = 4353"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_bad_edge_test_forgets_one_endpoint": {
+      "caught": true,
+      "expected_named": "clean_mass.low_lift_vertex_inside_a_clean_run",
+      "reported": [
+        "clean_mass.low_lift_vertex_inside_a_clean_run = 3566"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_the_erasure_counts_stack_depth_from_the_bottom": {
+      "caught": true,
+      "expected_named": "clean_mass.erasure_accounting_violations",
+      "reported": [
+        "clean_mass.erasure_accounting_violations = 352"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_finite_lower_bound_demands_every_edge": {
+      "caught": true,
+      "expected_named": "clean_mass.mass_below_the_finite_bound",
+      "reported": [
+        "clean_mass.mass_below_the_finite_bound = 3826"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_the_clean_run_admits_a_large_edge": {
+      "caught": true,
+      "expected_named": "clean_mass.large_edge_inside_a_clean_run",
+      "reported": [
+        "clean_mass.large_edge_inside_a_clean_run = 2"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D34_the_unit_residue_test_admits_multiples_of_three": {
+      "caught": true,
+      "expected_named": "clean_mass.non_unit_residue_in_a_clean_run",
+      "reported": [
+        "clean_mass.non_unit_residue_in_a_clean_run = 1141"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D35_the_residual_path_bound_is_lowered_to_one": {
+      "caught": true,
+      "expected_named": "clean_mass.residual_path_longer_than_the_period",
+      "reported": [
+        "clean_mass.residual_path_longer_than_the_period = 953"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D36_the_integer_depth_multiplies_by_the_wrong_base": {
+      "caught": true,
+      "expected_named": "clean_mass.float_depth_disagreeing_with_the_integer_one",
+      "reported": [
+        "clean_mass.float_depth_disagreeing_with_the_integer_one = 875"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D37_the_arranged_inequality_is_reported_the_wrong_way": {
+      "caught": true,
+      "expected_named": "their_algebra.high_lift_gamma_not_below_eta",
+      "reported": [
+        "their_algebra.high_lift_gamma_not_below_eta = 10000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D38_the_two_assertions_are_compared_against_a_third_thing": {
+      "caught": true,
+      "expected_named": "their_algebra.high_lift_second_assertion_differing_from_the_first",
+      "reported": [
+        "their_algebra.high_lift_second_assertion_differing_from_the_first = 10000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D39_the_loop_invariant_constant_is_recomputed_differently": {
+      "caught": true,
+      "expected_named": "their_algebra.high_lift_constant_varying_across_the_loop",
+      "reported": [
+        "their_algebra.high_lift_constant_varying_across_the_loop = 10000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D40_the_repaired_left_side_is_reported_as_still_failing": {
+      "caught": true,
+      "expected_named": "their_algebra.alias_assertion_failed_after_the_repair",
+      "reported": [
+        "their_algebra.alias_assertion_failed_after_the_repair = 10000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D41_the_near_full_modulus_bracket_is_tightened": {
+      "caught": true,
+      "expected_named": "near_full.modulus_bracket_violations",
+      "reported": [
+        "near_full.modulus_bracket_violations = 14"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D42_the_alias_bound_divides_by_the_modulus_not_the_period": {
+      "caught": true,
+      "expected_named": "near_full.alias_bound_disagreeing",
+      "reported": [
+        "near_full.alias_bound_disagreeing = 14",
+        "near_full.faithful_run_disagreeing = 13"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D43_the_near_full_depth_uses_the_wrong_base": {
+      "caught": true,
+      "expected_named": "near_full.k_disagreeing",
+      "reported": [
+        "near_full.k_disagreeing = 14",
+        "near_full.alias_bound_disagreeing = 14",
+        "near_full.faithful_run_disagreeing = 14",
+        "near_full.modulus_bracket_violations = 14"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D44_the_example_lower_bound_forgets_the_low_vertices": {
+      "caught": true,
+      "expected_named": "examples.lower_bound_disagreeing",
+      "reported": [
+        "examples.lower_bound_disagreeing = 12"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D45_the_example_low_vertex_count_reads_the_forward_lift": {
+      "caught": true,
+      "expected_named": "examples.low_vertex_count_disagreeing",
+      "reported": [
+        "examples.low_vertex_count_disagreeing = 12"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D46_the_example_large_edge_threshold_is_the_period": {
+      "caught": true,
+      "expected_named": "examples.large_edge_count_disagreeing",
+      "reported": [
+        "examples.large_edge_count_disagreeing = 12"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D47_the_example_lookup_forgets_the_endpoint_again": {
+      "caught": true,
+      "expected_named": "examples.example_not_found_in_my_population",
+      "reported": [
+        "examples.example_not_found_in_my_population = 12"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D48_the_checksum_comparison_is_inverted": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D49_the_ledger_coverage_heuristic_accepts_anything": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_negative_control",
+      "reported": [
+        "ledger.heuristic_failed_its_negative_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D50_the_ledger_coverage_heuristic_accepts_nothing": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_positive_control",
+      "reported": [
+        "ledger.heuristic_failed_its_positive_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "N2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 50,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 50,
+    "caught": 50,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 50,
+    "caught_by_their_own_check": 50,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

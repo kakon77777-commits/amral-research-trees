@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->66 source items and 45 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->67 source items and 46 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -990,11 +990,49 @@ instance behind each band.
     of Theorem 6.1's identity computed independently. Drill **50/50**, and
     **zero malformed on the first pass** — the RUN-046 section guards paying
     off, since the one defect that raised was reported rather than crashing.
-47. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+47. [`reports/RUN-048-HARD-ZETA-AU2D20-RETURN-LOOPS.md`](./reports/RUN-048-HARD-ZETA-AU2D20-RETURN-LOOPS.md) —
+    **the round whose central object is a loop, and the two things "loop"
+    turns out to mean.** A-U.2d.19 showed a fixed ternary modulus has too
+    little magnitude resolution; this round asks what a growing one can see
+    and finds two structures with opposite characters — an `O(log h)` endpoint
+    boundary layer that a near-full modulus resolves faithfully, and a bulk
+    carrying linear mass of modular return loops with at most three valuation
+    labels each. **All twelve of the bundle's counters are reproduced
+    exactly**: 7136 bridges, 27,337 boundary levels, 29,282 transition pairs,
+    3,826 loop-mass levels, 1,802 clean runs, three synthetic blocks. The
+    sharpest object in the round is Theorem 11.1's loop certificate
+    `(2^Q_C - 3^L_C) r_C = B_C mod M`, and **the bundle never checks it** —
+    its loop block verifies mass lower bounds only. Built from the real
+    orbits, the certificate holds on **all 34,970** loops, together with the
+    exact integer identity it is a shadow of. **Three findings.** **"Return
+    loop" names two objects and the period bounds one of them**: the erased
+    cycle (0 violations, longest 13) and the orbit segment carrying the
+    certificate, of which **14,539 of 34,970** exceed the period and **24,798**
+    differ from their own cycle — my first version measured the wrong one and
+    reported 973 violations of a theorem that was not being tested. **Theorem
+    9.1's finite bound is positive on 4 of 3,826 levels**, so a comparison
+    against it discriminates almost nothing — and I did not notice until the
+    drill planted four defects in my own section and none of them moved a
+    counter; the repair is three checks that are TOTAL (a clean run contains
+    no low-lift vertex, no `q>=2M` edge, and loop erasure conserves edges).
+    And **a fourth synthetic-block shape**: `fixed_power_high_lift_algebra`
+    asserts one thing arranged by the line above it, one that is the same
+    inequality restated, and one on a loop-invariant constant, while
+    `boundary_alias_no_go_algebra` protects its assertion with a **repair
+    branch that never fires** (0 of 10,000). **Added here**: Theorem 3.1 in
+    its k-term form (the bundle checks the same value by a different
+    sentence); both halves of Theorem 4.1 separately, both attained; the
+    period checked SHARP in both directions, since uniqueness below `s_k`
+    would also hold if the true period were three times longer. Drill
+    **50/50**; the run also produced the sweep's first infrastructure
+    failure — Windows returned `Errno 22` on a restore write mid-drill, the
+    pristine sidecar recovered it and the gate was verified byte-identical,
+    and every gate write now retries.
+48. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-48. [`code/`](./code/) — the engine, the independent reference, and the gates.
-49. [`data/gate-logs/`](./data/gate-logs/) and
+49. [`code/`](./code/) — the engine, the independent reference, and the gates.
+50. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

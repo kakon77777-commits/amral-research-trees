@@ -61,6 +61,11 @@ CASES = [
     ("src64", (0, ("results", "bridges", "bridges"))),
     ("src65", (0, ("results", "lift", "bridges"))),
     ("src66", (0, ("results", "carry", "bridges"))),
+    # not `loops.loops`: it also feeds two percentages, so freezing the
+    # literal leaves the output still tracking the log through them, and
+    # the guard correctly reports the figure as STILL read. The demo needs
+    # a figure that reaches the report exactly once.
+    ("src67", (0, ("results", "loops", "total_loop_edge_mass"))),
 ]
 
 
