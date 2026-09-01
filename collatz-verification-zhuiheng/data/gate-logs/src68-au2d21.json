@@ -1,0 +1,498 @@
+{
+  "run": "RUN-049",
+  "round": "A-U.2d.21",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item68",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 9,
+      "failed": []
+    },
+    "constants": {
+      "constants_checked": 4,
+      "disagreeing_with_both_evaluations": 0,
+      "from_the_float64_chain_not_the_nearest_double": 2,
+      "exact_to_the_last_bit": 2,
+      "undecided_brackets": 0,
+      "missing_from_the_frontier": 0,
+      "frontier_and_report_disagreeing": 0,
+      "rows": [
+        {
+          "constant": "beta",
+          "frontier": "1.584962500721156",
+          "report": "1.584962500721156",
+          "budget": 4,
+          "verdict": "exact",
+          "nearest_double": "1.584962500721156"
+        },
+        {
+          "constant": "fully_faithful_loop_mass_constant",
+          "frontier": "0.4150374992788439",
+          "report": "0.4150374992788439",
+          "budget": 20,
+          "verdict": "+2 ulp, the float64 chain",
+          "nearest_double": "0.4150374992788438"
+        },
+        {
+          "constant": "fully_faithful_loop_count_coefficient",
+          "frontier": "0.6225562489182659",
+          "report": "0.6225562489182659",
+          "budget": 20,
+          "verdict": "+1 ulp, the float64 chain",
+          "nearest_double": "0.6225562489182658"
+        },
+        {
+          "constant": "previous_three_sheet_loop_mass_constant",
+          "frontier": "0.47167916642628127",
+          "report": "0.47167916642628127",
+          "budget": 12,
+          "verdict": "exact",
+          "nearest_double": "0.47167916642628127"
+        }
+      ]
+    },
+    "population": {
+      "bridges": 7845,
+      "zero_lift": 7845,
+      "positive_lift": 0,
+      "sources": 7357,
+      "longest_tail": 73
+    },
+    "surplus": {
+      "bridges": 7845,
+      "levels": 18603,
+      "surplus_identity_violations": 0,
+      "budget_theorem_3_1_violations": 0,
+      "levels_with_an_alias_large_edge": 7910,
+      "levels_where_the_budget_binds": 15022,
+      "largest_alias_count_seen": 28,
+      "smallest_budget_slack_seen": 0
+    },
+    "faithful_core": {
+      "bridges": 7845,
+      "levels": 18603,
+      "cycles": 39395,
+      "edges": 66290,
+      "retained_edge_at_or_above_the_period": 0,
+      "label_not_unique_in_the_faithful_range": 0,
+      "uniqueness_checks": 58619,
+      "mass_below_the_finite_bound": 0,
+      "levels_where_the_bound_is_positive": 2873,
+      "high_lift_mass_below_its_bound": 0,
+      "cycle_longer_than_the_period": 0,
+      "total_faithful_mass": 66290
+    },
+    "defects": {
+      "bridges": 7845,
+      "levels": 6205,
+      "cycles": 38338,
+      "contiguous_cycles": 11198,
+      "spliced_cycles": 27140,
+      "cycle_does_not_return_to_its_residue": 0,
+      "certificate_theorem_9_1_violations": 0,
+      "defect_not_integral": 0,
+      "quotient_lift_violations_on_contiguous_cycles": 0,
+      "quotient_lift_violations_on_spliced_cycles": 27140,
+      "quotient_lift_holds_anyway_on_a_spliced_cycle": 0,
+      "endpoints_not_congruent_to_the_residue": 0,
+      "largest_absolute_defect_seen": 11172119,
+      "defects_that_are_zero": 2832
+    },
+    "semigroup": {
+      "residue_classes": 46,
+      "self_compositions": 157,
+      "distinct_pairs": 218,
+      "true_law_violations_on_self": 0,
+      "true_law_violations_on_distinct_pairs": 0,
+      "swapped_law_disagreeing_on_self": 0,
+      "swapped_law_agreeing_on_distinct_pairs": 0,
+      "swapped_law_disagreeing_on_distinct_pairs": 218,
+      "pair_words_identical": 0,
+      "composite_defect_not_integral": 0,
+      "composed_cycle_does_not_return": 0
+    },
+    "screening": {
+      "real_words": 103,
+      "synthetic_words": 12000,
+      "synthetic_source_words": 12000,
+      "endpoint_screening_violations": 0,
+      "endpoint_suffix_formula_violations": 0,
+      "source_screening_violations": 0,
+      "sharpness_probes": 412,
+      "changes_inside_the_horizon_that_moved_nothing": 0,
+      "changes_outside_the_horizon_that_moved_something": 0
+    },
+    "their_algebra": {
+      "faithful_core_samples": 10000,
+      "faithful_core_gamma_not_below_eta": 0,
+      "faithful_core_second_assertion_differing_from_the_first": 0,
+      "faithful_core_constant_varying_across_the_loop": 0,
+      "horizon_samples": 10000,
+      "horizon_could_have_failed": 0,
+      "horizon_smallest_margin": 92.71406259945046,
+      "near_full_samples": 10000,
+      "near_full_could_have_failed": 0,
+      "near_full_smallest_margin": 0.2056717652757185
+    },
+    "examples": {
+      "examples": 20,
+      "length_disagreeing": 0,
+      "valuation_sum_disagreeing": 0,
+      "defect_disagreeing": 0,
+      "cycle_does_not_return": 0,
+      "certificate_violations": 0,
+      "label_at_or_above_the_period": 0,
+      "rows": [
+        {
+          "M": 3,
+          "r": 2,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 9,
+          "r": 8,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 27,
+          "r": 26,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 3,
+          "r": 2,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 3,
+          "r": 2,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 9,
+          "r": 8,
+          "word": [
+            2,
+            1,
+            1
+          ],
+          "L": 3,
+          "Q": 4,
+          "defect": 13
+        },
+        {
+          "M": 9,
+          "r": 8,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 27,
+          "r": 17,
+          "word": [
+            2,
+            1,
+            1
+          ],
+          "L": 3,
+          "Q": 4,
+          "defect": 8
+        },
+        {
+          "M": 81,
+          "r": 71,
+          "word": [
+            2,
+            1,
+            1
+          ],
+          "L": 3,
+          "Q": 4,
+          "defect": 10
+        },
+        {
+          "M": 3,
+          "r": 2,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 3,
+          "r": 2,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 3,
+          "r": 2,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 9,
+          "r": 8,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 9,
+          "r": 8,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 9,
+          "r": 2,
+          "word": [
+            1,
+            3
+          ],
+          "L": 2,
+          "Q": 4,
+          "defect": -1
+        },
+        {
+          "M": 27,
+          "r": 26,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 3,
+          "r": 2,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 3,
+          "r": 2,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 9,
+          "r": 8,
+          "word": [
+            1
+          ],
+          "L": 1,
+          "Q": 1,
+          "defect": 1
+        },
+        {
+          "M": 9,
+          "r": 2,
+          "word": [
+            1,
+            3
+          ],
+          "L": 2,
+          "Q": 4,
+          "defect": -1
+        }
+      ]
+    },
+    "artifacts": {
+      "files_present": 9,
+      "digests_listed": 8,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_files_named": 3,
+      "validation_entries_with_a_digest": 0,
+      "files_absent_from_the_validation_record": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d21_checker_report.json",
+        "Hard_Zeta_AU2d21_constants_frontier.json",
+        "Hard_Zeta_AU2d21_theorem_ledger.json",
+        "SOURCE_VALIDATION_AU2d21.json",
+        "verify_Hard_Zeta_AU2d21_faithful_loop_boundary_coupling.py"
+      ],
+      "duplicate_file_pairs": [],
+      "validation_status": "PASS",
+      "validation_top_level_keys": [
+        "canonical_math_delimiters_only",
+        "checker_checks",
+        "checker_round",
+        "control_characters_clear",
+        "issues",
+        "json_parse",
+        "lf_only",
+        "python_compile",
+        "round",
+        "status",
+        "utf8_checked_files"
+      ],
+      "validation_issue_entries": 0,
+      "validation_flags_not_true": 0,
+      "validation_counts_disagreeing_with_the_report": 0
+    },
+    "ledger": {
+      "paper_proved_items": 16,
+      "ledger_proved_items": 16,
+      "paper_open_items": 6,
+      "ledger_open_items": 6,
+      "paper_no_go_headings": 9,
+      "ledger_no_go_items": 6,
+      "ledger_has_an_open_key": true,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [],
+      "heuristic_failed_its_positive_control": 0,
+      "heuristic_failed_its_negative_control": 0
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "finite_local_bridges",
+          "theirs": 7845,
+          "mine": 7845
+        },
+        {
+          "check": "zero_lift_bridges",
+          "theirs": 7845,
+          "mine": 7845
+        },
+        {
+          "check": "faithful_surplus_alias_budget",
+          "theirs": 18603,
+          "mine": 18603
+        },
+        {
+          "check": "finite_fully_faithful_loop_mass",
+          "theirs": 18603,
+          "mine": 18603
+        },
+        {
+          "check": "finite_high_lift_faithful_loop_mass",
+          "theirs": 18603,
+          "mine": 18603
+        },
+        {
+          "check": "fully_faithful_graph_cycles",
+          "theirs": 39395,
+          "mine": 39395
+        },
+        {
+          "check": "graph_cycle_certificates",
+          "theirs": 39395,
+          "mine": 39395
+        },
+        {
+          "check": "defect_semigroup_self_composition",
+          "theirs": 20,
+          "mine": 157
+        },
+        {
+          "check": "endpoint_temporal_screening",
+          "theirs": 12000,
+          "mine": 12000
+        },
+        {
+          "check": "source_temporal_screening",
+          "theirs": 12000,
+          "mine": 12000
+        },
+        {
+          "check": "polynomial_precision_horizon_algebra",
+          "theirs": 10000,
+          "mine": 10000
+        },
+        {
+          "check": "near_full_almost_total_loop_algebra",
+          "theirs": 10000,
+          "mine": 10000
+        },
+        {
+          "check": "faithful_core_asymptotic_algebra",
+          "theirs": 10000,
+          "mine": 10000
+        }
+      ],
+      "checks_i_did_not_reproduce": 0,
+      "checks_they_report_as_zero": 0,
+      "counts_i_reproduce_exactly": 12
+    },
+    "errors": {
+      "instrument_raised": 0,
+      "constants_raised": 0,
+      "population_raised": 0,
+      "surplus_raised": 0,
+      "faithful_core_raised": 0,
+      "defects_raised": 0,
+      "semigroup_raised": 0,
+      "screening_raised": 0,
+      "their_algebra_raised": 0,
+      "examples_raised": 0,
+      "artifacts_raised": 0,
+      "ledger_raised": 0,
+      "their_claims_raised": 0,
+      "messages": []
+    }
+  }
+}

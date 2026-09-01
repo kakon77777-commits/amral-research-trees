@@ -66,6 +66,7 @@ CASES = [
     # the guard correctly reports the figure as STILL read. The demo needs
     # a figure that reaches the report exactly once.
     ("src67", (0, ("results", "loops", "total_loop_edge_mass"))),
+    ("src68", (0, ("results", "faithful_core", "total_faithful_mass"))),
 ]
 
 

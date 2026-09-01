@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->67 source items and 46 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->68 source items and 47 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -1028,11 +1028,43 @@ instance behind each band.
     failure — Windows returned `Errno 22` on a restore write mid-drill, the
     pristine sidecar recovered it and the gate was verified byte-identical,
     and every gate write now retries.
-48. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+48. [`reports/RUN-049-HARD-ZETA-AU2D21-LOOP-DEFECT.md`](./reports/RUN-049-HARD-ZETA-AU2D21-LOOP-DEFECT.md) —
+    **the round that names yesterday's finding, and a law that
+    self-composition cannot see.** A-U.2d.21 removes A-U.2d.20's three-sheet
+    ambiguity by cutting at the true unique-label threshold `q >= s_k` and
+    paying out of the SURPLUS `sum(q-1)` rather than the full valuation sum,
+    leaving `(2-beta)h` of fully faithful cycle mass; then it corrects its own
+    programme, because the endpoint modulo `3^K` sees only the final `K`
+    valuations and a polynomial modulus screens the linear-distance bulk.
+    **Twelve of thirteen counters reproduced exactly** (7845 bridges, 18,603
+    budget levels, 39,395 faithful cycles, 12,000 + 12,000 screening words,
+    three synthetic blocks); the thirteenth differs only because I pool 157
+    self-compositions where the bundle runs 20. **Two findings.** The bundle
+    tests Theorem 11.1's defect semigroup law by composing each cycle with
+    **itself**, with the comment "self-composition is enough to check
+    algebra" — and it is not: at `D = C` the law is **symmetric in its two
+    coefficients**, so the coefficient-swapped law gives the same answer.
+    Measured: the swapped law agrees on **all 157** self-compositions and
+    disagrees on **all 218** distinct pairs. And **three of thirteen counters
+    — 30,000 executions — cannot fail**, in three shapes this sweep has
+    already catalogued (arranged, restated, loop-invariant), fifth round
+    running. **The round's NO-GO 12.1 is exactly RUN-048's Finding 1**,
+    reached independently one round earlier by measurement — and the
+    measurement is sharper than the prohibition: over 38,338 graph cycles the
+    certificate holds on **every** one, while the quotient lift holds on
+    **11,198 of 11,198 contiguous** cycles and fails on **27,140 of 27,140
+    spliced** ones, with zero accidental survivals. **Added here**: screening
+    checked for SHARPNESS in both directions (a change inside the horizon must
+    move the residue, one outside must not); the surplus budget measured live
+    and **attained** — binding on 15,022 of 18,603 levels where the previous
+    round's bound managed 4 of 3,826. Drill **50/50**; three re-aims found
+    real gaps in this gate, including one in my own headline finding, where I
+    had guarded only half of a two-halved claim.
+49. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-49. [`code/`](./code/) — the engine, the independent reference, and the gates.
-50. [`data/gate-logs/`](./data/gate-logs/) and
+50. [`code/`](./code/) — the engine, the independent reference, and the gates.
+51. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in
