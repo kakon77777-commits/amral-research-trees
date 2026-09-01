@@ -1,0 +1,393 @@
+{
+  "gate": "src70_quotient_resonance.py",
+  "limit": "180000",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_the_defect_divides_by_the_wrong_modulus": {
+      "caught": true,
+      "expected_named": "resonance.defect_not_integral",
+      "reported": [
+        "resonance.defect_not_integral = 106990",
+        "resonance.quotient_affine_violations = 33279",
+        "reset.reset_violations = 146289",
+        "reset.replenishment_forward_violations = 238004"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_defect_swaps_its_two_powers": {
+      "caught": true,
+      "expected_named": "resonance.defect_not_integral",
+      "reported": [
+        "resonance.defect_not_integral = 110230",
+        "resonance.quotient_affine_violations = 32901",
+        "atomic.atomic_defect_not_zero = 96",
+        "runs.run_defect_not_zero = 840"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_quotient_affine_identity_is_read_backwards": {
+      "caught": true,
+      "expected_named": "resonance.quotient_affine_violations",
+      "reported": [
+        "resonance.quotient_affine_violations = 143131"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_parity_refinement_demands_two_more_binary_digits": {
+      "caught": true,
+      "expected_named": "resonance.parity_refinement_violations",
+      "reported": [
+        "resonance.parity_refinement_violations = 2370"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_output_form_loses_its_factor_of_two": {
+      "caught": true,
+      "expected_named": "resonance.n_out_not_the_refined_form",
+      "reported": [
+        "resonance.n_out_not_the_refined_form = 2862"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_supercriticality_test_is_reversed": {
+      "caught": true,
+      "expected_named": "resonance.zero_defect_not_supercritical",
+      "reported": [
+        "resonance.zero_defect_not_supercritical = 2862",
+        "resonance.float_supercritical_route_disagreeing = 2862"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_float_supercriticality_route_is_given_a_wrong_beta": {
+      "caught": true,
+      "expected_named": "resonance.float_supercritical_route_disagreeing",
+      "reported": [
+        "resonance.float_supercritical_route_disagreeing = 2862"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_binary_transfer_gains_where_it_must_spend": {
+      "caught": true,
+      "expected_named": "resonance.cross_adic_two_violations",
+      "reported": [
+        "resonance.cross_adic_two_violations = 2862"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_ternary_transfer_spends_where_it_must_gain": {
+      "caught": true,
+      "expected_named": "resonance.cross_adic_three_violations",
+      "reported": [
+        "resonance.cross_adic_three_violations = 2862"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_mechanical_ceiling_is_one_lower_than_the_theorem": {
+      "caught": true,
+      "expected_named": "capacity.capacity_violations",
+      "reported": [
+        "capacity.capacity_violations = 12153"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_hmax_bound_is_raised_forty_bits": {
+      "caught": true,
+      "expected_named": "capacity.hmax_violations",
+      "reported": [
+        "capacity.hmax_violations = 6425",
+        "capacity.float_hmax_route_disagreeing = 6425"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_float_hmax_route_is_inverted": {
+      "caught": true,
+      "expected_named": "capacity.float_hmax_route_disagreeing",
+      "reported": [
+        "capacity.float_hmax_route_disagreeing = 6425"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_lift_toll_is_charged_six_bits_too_much": {
+      "caught": true,
+      "expected_named": "delay.lift_toll_violations",
+      "reported": [
+        "delay.lift_toll_violations = 9",
+        "delay.float_toll_route_disagreeing = 9"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_float_toll_route_is_shifted_far_out": {
+      "caught": true,
+      "expected_named": "delay.float_toll_route_disagreeing",
+      "reported": [
+        "delay.float_toll_route_disagreeing = 2862"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_chained_delay_bound_is_raised_forty_bits": {
+      "caught": true,
+      "expected_named": "delay.chained_delay_violations",
+      "reported": [
+        "delay.chained_delay_violations = 2817"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_length_bound_is_raised_forty_bits": {
+      "caught": true,
+      "expected_named": "delay.length_bound_violations",
+      "reported": [
+        "delay.length_bound_violations = 2816",
+        "delay.float_length_route_disagreeing = 2816"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_float_length_route_is_made_unsatisfiable": {
+      "caught": true,
+      "expected_named": "delay.float_length_route_disagreeing",
+      "reported": [
+        "delay.float_length_route_disagreeing = 2862"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_capacity_side_of_the_delay_bound_is_halved": {
+      "caught": true,
+      "expected_named": "delay.capacity_below_the_delay_bound_violations",
+      "reported": [
+        "delay.capacity_below_the_delay_bound_violations = 2862"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_only_atomic_solution_is_named_wrongly": {
+      "caught": true,
+      "expected_named": "atomic.solutions_other_than_q2_r1",
+      "reported": [
+        "atomic.solutions_other_than_q2_r1 = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_atomic_transition_lands_at_the_wrong_state": {
+      "caught": true,
+      "expected_named": "atomic.atomic_target_wrong",
+      "reported": [
+        "atomic.atomic_target_wrong = 96"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_atomic_valuation_is_named_three": {
+      "caught": true,
+      "expected_named": "atomic.atomic_valuation_not_two",
+      "reported": [
+        "atomic.atomic_valuation_not_two = 96"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_run_start_loses_its_parity_bit": {
+      "caught": true,
+      "expected_named": "runs.valuation_not_two",
+      "reported": [
+        "runs.valuation_not_two = 560",
+        "runs.state_not_congruent_to_one = 531",
+        "runs.end_quotient_wrong = 840",
+        "runs.two_adic_spend_wrong = 322"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_run_endpoint_loses_its_factor_of_two": {
+      "caught": true,
+      "expected_named": "runs.end_quotient_wrong",
+      "reported": [
+        "runs.end_quotient_wrong = 840"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_binary_spend_is_charged_once_per_step": {
+      "caught": true,
+      "expected_named": "runs.two_adic_spend_wrong",
+      "reported": [
+        "runs.two_adic_spend_wrong = 840"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_ternary_gain_is_credited_twice_per_step": {
+      "caught": true,
+      "expected_named": "runs.three_adic_gain_wrong",
+      "reported": [
+        "runs.three_adic_gain_wrong = 840"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_ternary_reset_lands_one_level_deep": {
+      "caught": true,
+      "expected_named": "reset.reset_violations",
+      "reported": [
+        "reset.reset_violations = 579075"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_reset_converse_demands_five_more_levels": {
+      "caught": true,
+      "expected_named": "reset.converse_violations",
+      "reported": [
+        "reset.converse_violations = 8641"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_replenishment_congruence_is_three_bits_deeper": {
+      "caught": true,
+      "expected_named": "reset.replenishment_forward_violations",
+      "reported": [
+        "reset.replenishment_forward_violations = 900921"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_replenishment_depth_is_read_three_too_high": {
+      "caught": true,
+      "expected_named": "reset.replenishment_converse_violations",
+      "reported": [
+        "reset.replenishment_converse_violations = 900921"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_telescoping_sum_is_off_by_one": {
+      "caught": true,
+      "expected_named": "synthetic.telescoping_Q_violations",
+      "reported": [
+        "synthetic.telescoping_Q_violations = 20000",
+        "synthetic.telescoping_still_green_on_broken_input"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_the_synthetic_supercriticality_test_doubles_its_length": {
+      "caught": true,
+      "expected_named": "synthetic.supercriticality_violations",
+      "reported": [
+        "synthetic.supercriticality_violations = 19776"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_reservoir_assertion_asks_for_ten_times_the_margin": {
+      "caught": true,
+      "expected_named": "synthetic.reservoir_assertion_violations",
+      "reported": [
+        "synthetic.reservoir_assertion_violations = 3356"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_the_published_parity_form_demands_one_more_bit": {
+      "caught": true,
+      "expected_named": "examples.parity_refinement_violations",
+      "reported": [
+        "examples.parity_refinement_violations = 24"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D34_the_published_valuation_fields_are_read_crosswise": {
+      "caught": true,
+      "expected_named": "examples.valuation_fields_disagreeing",
+      "reported": [
+        "examples.valuation_fields_disagreeing = 24"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D35_the_binary_valuation_of_zero_becomes_a_number": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['v2 and v3 of zero are None, not a large number']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D36_the_digest_is_taken_over_the_file_name": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D37_the_ledger_coverage_heuristic_accepts_anything": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_negative_control",
+      "reported": [
+        "ledger.heuristic_failed_its_negative_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N1_the_reservoir_guard_is_made_to_never_open": {
+      "caught": true,
+      "expected_named": "synthetic.reservoir_guard_opened",
+      "reported": [
+        "synthetic.reservoir_guard_opened"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N2_the_broken_control_input_is_made_identical_to_the_real_one": {
+      "caught": true,
+      "expected_named": "synthetic.supercriticality_red_on_broken_input",
+      "reported": [
+        "synthetic.supercriticality_red_on_broken_input"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N3_every_nonzero_defect_is_called_low_activation": {
+      "caught": true,
+      "expected_named": "reset.high_activation_nodes",
+      "reported": [
+        "reset.reset_violations = 1629",
+        "reset.high_activation_nodes"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N4_the_attained_capacity_population_is_emptied": {
+      "caught": true,
+      "expected_named": "capacity.positions_attaining_the_capacity",
+      "reported": [
+        "capacity.positions_attaining_the_capacity"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N5_the_atomic_solution_population_is_emptied": {
+      "caught": true,
+      "expected_named": "atomic.solutions_found",
+      "reported": [
+        "atomic.solutions_found"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "C1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "C2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 42,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 42,
+    "caught": 42,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 42,
+    "caught_by_their_own_check": 42,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

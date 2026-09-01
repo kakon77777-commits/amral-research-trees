@@ -68,6 +68,7 @@ CASES = [
     ("src67", (0, ("results", "loops", "total_loop_edge_mass"))),
     ("src68", (0, ("results", "faithful_core", "total_faithful_mass"))),
     ("src69", (0, ("results", "quotient_floor", "smallest_quotient_seen"))),
+    ("src70", (0, ("results", "delay", "smallest_prefix_p"))),
 ]
 
 
@@ -80,6 +81,10 @@ def load(stem):
     logs = [module.GATE_LOG, module.DRILL_LOG]
     if hasattr(module, "LIT_LOG"):
         logs.append(module.LIT_LOG)
+    # src70 reads the PREVIOUS round's archived log so its cross-read cites a
+    # run rather than a typed figure; the demo has to pass it too
+    if hasattr(module, "PREV_LOG"):
+        logs.append(module.PREV_LOG)
     return module, [json.loads(p.read_text(encoding="utf-8")) for p in logs]
 
 

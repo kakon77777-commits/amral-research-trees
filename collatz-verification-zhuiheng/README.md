@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->69 source items and 48 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->70 source items and 49 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -1092,11 +1092,41 @@ instance behind each band.
     in exact integers, with their distance to failure — the quotient floor's
     tightest margin is **2.0228x**, nearly attained, the lift toll's 15.17x;
     `u >= 1`, which the paper states and their checker omits. Drill **36/36**.
-50. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+50. [`reports/RUN-051-HARD-ZETA-AU2D23-QUOTIENT-RESONANCE.md`](./reports/RUN-051-HARD-ZETA-AU2D23-QUOTIENT-RESONANCE.md) —
+    **a sharpening confirmed on last round's own data, and a theorem with no
+    counter.** A-U.2d.23 prices the zero-defect return and finds it far more
+    rigid than A-U.2d.22 said: not `n = 2^Q u` but the parity-refined
+    `n = 2^{Q+1} v`, `n' = 2*3^L v`, with an exact cross-adic transfer
+    `nu2(n') = nu2(n) - Q`, `nu3(n') = nu3(n) + L` — a return spends binary
+    divisibility to buy ternary divisibility at a fixed rate. **Confirmed
+    against RUN-050's population before this gate was written**: 2,935
+    zero-defect returns from a different limit and a different walker, every
+    `u` even, zero violations, smallest `v` 5. The previous round's `u >= 1`
+    was loose by exactly this factor, and both populations are now in the gate.
+    **Eight of thirteen counters reproduce exactly**; the rest are covered by
+    larger deterministic enumerations. **Three findings.** **Theorem 7.1 has no
+    counter at all** — its uniqueness half is a `q < 20, r < 100` scan whose
+    assert body is reachable **once in 1,881 iterations**, where a divisor
+    argument (`2^q - 3` must divide 1) decides every `q` in one line. **Their
+    three synthetic blocks are weaker than their counters say**: two accounting
+    assertions stayed green on **20,000 of 20,000** inputs deliberately built
+    to violate the property the block is named for, while the third went red on
+    14,781 — and the reservoir block publishes **two** counters of 20,000 for
+    one block that evaluates 12,176 times, both incrementing outside its guard.
+    **Theorem 5.1's two halves have opposite tightness**: the per-position
+    ceiling is **attained** at 12,153 of 31,035 positions, while its `H_max`
+    corollary's `+1` is not load-bearing — the strictly stronger bound holds on
+    all 6,425 bridges. **Added here**: four `beta`-inequalities re-derived in
+    exact integers under `2^{beta m} = 3^m` (their float64 fudge decides
+    nothing); Theorem 15.1's converse and Theorem 16.1's `only if` half, which
+    their checker leaves uncounted and untested — 8,641 high-activation nodes
+    invisible in their report; and a frontier constant the checker never
+    computes, sharing its value with another. Drill **42/42**.
+51. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-51. [`code/`](./code/) — the engine, the independent reference, and the gates.
-52. [`data/gate-logs/`](./data/gate-logs/) and
+52. [`code/`](./code/) — the engine, the independent reference, and the gates.
+53. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

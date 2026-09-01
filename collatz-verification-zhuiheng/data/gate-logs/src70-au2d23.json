@@ -1,0 +1,579 @@
+{
+  "run": "RUN-051",
+  "round": "A-U.2d.23",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item70",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 9,
+      "failed": []
+    },
+    "constants": {
+      "constants_checked": 8,
+      "disagreeing_with_both_evaluations": 0,
+      "from_the_float64_chain_not_the_nearest_double": 6,
+      "exact_to_the_last_bit": 2,
+      "undecided_brackets": 0,
+      "missing_from_the_frontier": 0,
+      "frontier_and_report_disagreeing": 0,
+      "frontier_constants_the_checker_never_computes": [
+        "ternary_reset_at_faithful_benchmark"
+      ],
+      "frontier_constants_sharing_a_value": [
+        [
+          "faithful_minus_resonance_threshold",
+          "ternary_reset_at_faithful_benchmark"
+        ]
+      ],
+      "rows": [
+        {
+          "constant": "beta",
+          "frontier": "1.584962500721156",
+          "report": "1.584962500721156",
+          "budget": 4,
+          "verdict": "exact"
+        },
+        {
+          "constant": "beta_minus_1",
+          "frontier": "0.5849625007211561",
+          "report": "0.5849625007211561",
+          "budget": 8,
+          "verdict": "-1 ulp, the float64 chain"
+        },
+        {
+          "constant": "resonance_mass_threshold",
+          "frontier": "0.3690702464285425",
+          "report": "0.3690702464285425",
+          "budget": 12,
+          "verdict": "-1 ulp, the float64 chain"
+        },
+        {
+          "constant": "faithful_core_mass",
+          "frontier": "0.4150374992788439",
+          "report": "0.4150374992788439",
+          "budget": 20,
+          "verdict": "+2 ulp, the float64 chain"
+        },
+        {
+          "constant": "faithful_minus_resonance_threshold",
+          "frontier": "0.0459672528503014",
+          "report": "0.0459672528503014",
+          "budget": 40,
+          "verdict": "+21 ulp, the float64 chain"
+        },
+        {
+          "constant": "binary_replenishment_at_faithful_benchmark",
+          "frontier": "0.07285637202889539",
+          "report": "0.07285637202889539",
+          "budget": 40,
+          "verdict": "+16 ulp, the float64 chain"
+        },
+        {
+          "constant": "temporal_delay_L_coefficient",
+          "frontier": "2.709511291351455",
+          "report": "2.709511291351455",
+          "budget": 12,
+          "verdict": "exact"
+        },
+        {
+          "constant": "inverse_beta_minus_1",
+          "frontier": "1.7095112913514552",
+          "report": "1.7095112913514552",
+          "budget": 12,
+          "verdict": "+2 ulp, the float64 chain"
+        }
+      ]
+    },
+    "population": {
+      "bridges": 6425,
+      "sources": 6017,
+      "longest_tail": 73
+    },
+    "resonance": {
+      "bridges": 6425,
+      "windows": 143131,
+      "returns": 143131,
+      "zero_defect_returns": 2862,
+      "defect_not_integral": 0,
+      "quotient_affine_violations": 0,
+      "zero_defect_not_supercritical": 0,
+      "float_supercritical_route_disagreeing": 0,
+      "quotient_not_positive": 0,
+      "parity_refinement_violations": 0,
+      "u_odd_so_the_previous_rounds_form_was_tight": 0,
+      "n_out_not_the_refined_form": 0,
+      "cross_adic_two_violations": 0,
+      "cross_adic_three_violations": 0,
+      "smallest_v": 5,
+      "largest_L": 4
+    },
+    "capacity": {
+      "bridges": 6425,
+      "positions": 31035,
+      "capacity_violations": 0,
+      "hmax_violations": 0,
+      "float_hmax_route_disagreeing": 0,
+      "hmax_violations_without_the_plus_one": 0,
+      "positions_attaining_the_capacity": 12153,
+      "smallest_capacity_slack": 0,
+      "smallest_hmax_slack": 1,
+      "largest_hmax_seen": 12
+    },
+    "delay": {
+      "nodes": 2862,
+      "lift_toll_violations": 0,
+      "capacity_below_the_delay_bound_violations": 0,
+      "chained_delay_violations": 0,
+      "length_bound_violations": 0,
+      "float_toll_route_disagreeing": 0,
+      "float_length_route_disagreeing": 0,
+      "tolls_one_bit_from_failing": 0,
+      "tightest_toll_margin": 7.5833,
+      "smallest_prefix_p": 2
+    },
+    "atomic": {
+      "q_values_decided": 4000,
+      "solutions_found": 1,
+      "solutions_other_than_q2_r1": 0,
+      "q_values_where_the_divisor_exceeds_one": 3998,
+      "bounded_scan_iterations": 1881,
+      "bounded_scan_assert_reached": 1,
+      "transitions_checked": 96,
+      "atomic_valuation_not_two": 0,
+      "atomic_target_wrong": 0,
+      "atomic_defect_not_zero": 0,
+      "atomic_endpoints_not_congruent": 0
+    },
+    "runs": {
+      "runs": 840,
+      "steps": 17220,
+      "valuation_not_two": 0,
+      "state_not_congruent_to_one": 0,
+      "start_quotient_wrong": 0,
+      "end_quotient_wrong": 0,
+      "two_adic_spend_wrong": 0,
+      "three_adic_gain_wrong": 0,
+      "run_defect_not_zero": 0,
+      "longest_run": 40
+    },
+    "reset": {
+      "nonzero_defect_nodes": 587716,
+      "low_activation_nodes": 579075,
+      "high_activation_nodes": 8641,
+      "reset_violations": 0,
+      "converse_violations": 0,
+      "replenishment_forward_violations": 0,
+      "replenishment_converse_violations": 0,
+      "replenishment_probes": 2203444,
+      "largest_b_probed": 7
+    },
+    "synthetic": {
+      "accounting_trials": 20000,
+      "telescoping_Q_violations": 0,
+      "telescoping_L_violations": 0,
+      "supercriticality_violations": 0,
+      "slack_bound_violations": 0,
+      "telescoping_still_green_on_broken_input": 20000,
+      "supercriticality_red_on_broken_input": 14781,
+      "reservoir_trials": 20000,
+      "reservoir_guard_opened": 12176,
+      "reservoir_assertion_violations": 0,
+      "reservoir_counters_incremented_outside_the_guard": 2,
+      "smallest_reservoir_margin": 0.001003
+    },
+    "cross_round": {
+      "bridges": 7845,
+      "zero_defect_returns": 2935,
+      "parity_refinement_violations": 0,
+      "n_out_not_the_refined_form": 0,
+      "cross_adic_two_violations": 0,
+      "cross_adic_three_violations": 0,
+      "u_odd_on_the_previous_population": 0,
+      "smallest_v": 5
+    },
+    "examples": {
+      "zero_rows": 24,
+      "nonzero_rows": 12,
+      "quotient_identity_violations": 0,
+      "parity_refinement_violations": 0,
+      "valuation_fields_disagreeing": 0,
+      "supercriticality_violations": 0,
+      "nonzero_row_defect_valuation_disagreeing": 0,
+      "nonzero_row_quotient_identity_violations": 0,
+      "rows": [
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 2,
+          "n_in": 40,
+          "n_out": 30,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 2,
+          "n_in": 328,
+          "n_out": 246,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 2,
+          "n_in": 472,
+          "n_out": 354,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 4,
+          "n_in": 544,
+          "n_out": 408,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 2,
+          "Q": 4,
+          "p": 4,
+          "n_in": 544,
+          "n_out": 306,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 5,
+          "n_in": 408,
+          "n_out": 306,
+          "m_in": 0
+        },
+        {
+          "M": 9,
+          "L": 1,
+          "Q": 2,
+          "p": 5,
+          "n_in": 136,
+          "n_out": 102,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 3,
+          "n_in": 1120,
+          "n_out": 840,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 2,
+          "Q": 4,
+          "p": 3,
+          "n_in": 1120,
+          "n_out": 630,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 4,
+          "n_in": 840,
+          "n_out": 630,
+          "m_in": 0
+        },
+        {
+          "M": 9,
+          "L": 1,
+          "Q": 2,
+          "p": 4,
+          "n_in": 280,
+          "n_out": 210,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 2,
+          "n_in": 760,
+          "n_out": 570,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 3,
+          "n_in": 1336,
+          "n_out": 1002,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 12,
+          "n_in": 6424,
+          "n_out": 4818,
+          "m_in": 3
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 2,
+          "n_in": 904,
+          "n_out": 678,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 13,
+          "n_in": 6424,
+          "n_out": 4818,
+          "m_in": 3
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 2,
+          "n_in": 1192,
+          "n_out": 894,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 2,
+          "n_in": 1336,
+          "n_out": 1002,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 9,
+          "n_in": 1528,
+          "n_out": 1146,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 2,
+          "n_in": 1624,
+          "n_out": 1218,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 4,
+          "n_in": 1888,
+          "n_out": 1416,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 2,
+          "Q": 4,
+          "p": 4,
+          "n_in": 1888,
+          "n_out": 1062,
+          "m_in": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 2,
+          "p": 5,
+          "n_in": 1416,
+          "n_out": 1062,
+          "m_in": 0
+        },
+        {
+          "M": 9,
+          "L": 1,
+          "Q": 2,
+          "p": 5,
+          "n_in": 472,
+          "n_out": 354,
+          "m_in": 0
+        }
+      ]
+    },
+    "artifacts": {
+      "files_present": 9,
+      "digests_listed": 8,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_per_file_entries": 7,
+      "validation_entries_with_a_digest": 0,
+      "files_absent_from_the_validation_record": [
+        "CHECKSUMS.sha256",
+        "SOURCE_VALIDATION_AU2d23.json"
+      ],
+      "duplicate_file_pairs": [],
+      "validation_all_pass_flag": true,
+      "validation_pass_flag_key": "overall_pass",
+      "validation_records_no_pass_flag_at_all": 0,
+      "validation_top_level_keys": [
+        "canonical_math_delimiters",
+        "files",
+        "overall_pass",
+        "round"
+      ],
+      "validation_file_pass_flags_not_true": 0,
+      "validation_json_parse_not_true": 0,
+      "validation_python_compile_not_true": 0
+    },
+    "ledger": {
+      "paper_proved_items": 15,
+      "ledger_proved_items": 15,
+      "paper_open_items": 8,
+      "ledger_open_items": 8,
+      "paper_no_go_headings": 7,
+      "ledger_no_go_items": 9,
+      "ledger_has_an_open_key": true,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [
+        "20.4"
+      ],
+      "heuristic_failed_its_positive_control": 0,
+      "heuristic_failed_its_negative_control": 0
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "finite_zero_lift_bridges",
+          "theirs": 6425,
+          "mine": 6425,
+          "basis": "same population"
+        },
+        {
+          "check": "mechanical_descent_capacity",
+          "theirs": 31035,
+          "mine": 31035,
+          "basis": "same population"
+        },
+        {
+          "check": "general_quotient_affine_identity",
+          "theirs": 38253,
+          "mine": 143131,
+          "basis": "resonance.returns"
+        },
+        {
+          "check": "zero_defect_actual_returns",
+          "theirs": 2862,
+          "mine": 2862,
+          "basis": "same population"
+        },
+        {
+          "check": "zero_defect_parity_refinement",
+          "theirs": 2862,
+          "mine": 2862,
+          "basis": "same population"
+        },
+        {
+          "check": "zero_defect_cross_adic_transfer",
+          "theirs": 2862,
+          "mine": 2862,
+          "basis": "same population"
+        },
+        {
+          "check": "zero_defect_temporal_delay",
+          "theirs": 2862,
+          "mine": 2862,
+          "basis": "same population"
+        },
+        {
+          "check": "nonzero_defect_ternary_reset",
+          "theirs": 32719,
+          "mine": 579075,
+          "basis": "reset.low_activation_nodes"
+        },
+        {
+          "check": "binary_output_divisibility_identity",
+          "theirs": 38252,
+          "mine": 2203444,
+          "basis": "reset.replenishment_probes"
+        },
+        {
+          "check": "atomic_q2_resonance_runs",
+          "theirs": 840,
+          "mine": 840,
+          "basis": "same population"
+        },
+        {
+          "check": "resonance_accounting_synthetic",
+          "theirs": 20000,
+          "mine": 20000,
+          "basis": "same population"
+        },
+        {
+          "check": "reservoir_to_lift_algebra",
+          "theirs": 20000,
+          "mine": 12176,
+          "basis": "synthetic.reservoir_guard_opened"
+        },
+        {
+          "check": "linear_mass_recharge_threshold_algebra",
+          "theirs": 20000,
+          "mine": 12176,
+          "basis": "synthetic.reservoir_guard_opened"
+        },
+        {
+          "check": "(Theorem 7.1 uniqueness -- no counter of their own)",
+          "theirs": null,
+          "mine": 4000,
+          "basis": "atomic.q_values_decided"
+        }
+      ],
+      "checks_not_covered_at_all": 0,
+      "checks_covered_by_a_different_population": 5,
+      "checks_they_report_as_zero": 0,
+      "counts_i_reproduce_exactly": 8
+    },
+    "errors": {
+      "instrument_raised": 0,
+      "constants_raised": 0,
+      "population_raised": 0,
+      "resonance_raised": 0,
+      "capacity_raised": 0,
+      "delay_raised": 0,
+      "atomic_raised": 0,
+      "runs_raised": 0,
+      "reset_raised": 0,
+      "synthetic_raised": 0,
+      "cross_round_raised": 0,
+      "examples_raised": 0,
+      "artifacts_raised": 0,
+      "ledger_raised": 0,
+      "their_claims_raised": 0,
+      "messages": []
+    }
+  }
+}
