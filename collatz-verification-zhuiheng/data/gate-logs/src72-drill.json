@@ -1,0 +1,366 @@
+{
+  "gate": "src72_primitive_unit.py",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_the_edge_defect_adds_where_it_must_subtract": {
+      "caught": true,
+      "expected_named": "population.malformed_edges",
+      "reported": [
+        "population.malformed_edges = 187769",
+        "errors.instrument_raised = 1",
+        "errors.messages = [\"instrument: TypeError: string indices must be integers, not 'str'\"]",
+        "population.edges"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_quotient_identity_is_read_backwards": {
+      "caught": true,
+      "expected_named": "population.malformed_edges",
+      "reported": [
+        "population.malformed_edges = 183253",
+        "errors.instrument_raised = 1",
+        "errors.messages = [\"instrument: TypeError: string indices must be integers, not 'str'\"]",
+        "strip.zero_defects"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_binary_depth_is_defined_with_its_sign_reversed": {
+      "caught": true,
+      "expected_named": "gates.zero_defect_depths_not_zero",
+      "reported": [
+        "gates.unclassified = 507",
+        "gates.zero_defect_depths_not_zero = 42293",
+        "gates.te_defect_not_two = 21215",
+        "gates.te_valuation_not_one = 9533"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_strip_upper_end_is_pulled_below_its_attained_value": {
+      "caught": true,
+      "expected_named": "strip.strip_upper_violations",
+      "reported": [
+        "strip.strip_upper_violations = 9169"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_strip_lower_end_is_pulled_in_two_bits": {
+      "caught": true,
+      "expected_named": "strip.strip_lower_violations",
+      "reported": [
+        "strip.strip_lower_violations = 57053"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_a_positive_defect_is_allowed_only_the_value_one": {
+      "caught": true,
+      "expected_named": "strip.positive_defect_not_one_or_two",
+      "reported": [
+        "strip.positive_defect_not_one_or_two = 9169"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_inherited_block_bound_is_tightened": {
+      "caught": true,
+      "expected_named": "strip.block_bound_from_the_previous_round_violations",
+      "reported": [
+        "strip.block_bound_from_the_previous_round_violations = 160954"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_atomic_reset_defect_is_named_one": {
+      "caught": true,
+      "expected_named": "gates.te_defect_not_two",
+      "reported": [
+        "gates.te_defect_not_two = 4310"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_atomic_reset_valuation_is_named_two": {
+      "caught": true,
+      "expected_named": "gates.te_valuation_not_one",
+      "reported": [
+        "gates.te_valuation_not_one = 4310"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_atomic_reset_output_depths_are_demanded_positive": {
+      "caught": true,
+      "expected_named": "gates.te_depths_wrong",
+      "reported": [
+        "gates.te_depths_wrong = 4310"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_binary_exclusive_defect_is_demanded_positive": {
+      "caught": true,
+      "expected_named": "gates.be_defect_not_negative",
+      "reported": [
+        "gates.be_defect_not_negative = 9527"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_binary_exclusive_valuation_floor_is_raised": {
+      "caught": true,
+      "expected_named": "gates.be_valuation_below_two",
+      "reported": [
+        "gates.be_valuation_below_two = 8870"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_binary_exclusive_ternary_depth_is_demanded_deeper": {
+      "caught": true,
+      "expected_named": "gates.be_ternary_not_deeper",
+      "reported": [
+        "gates.be_ternary_not_deeper = 9358"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_reservoir_bound_is_charged_four_extra_ternary_levels": {
+      "caught": true,
+      "expected_named": "gates.be_reservoir_bound_violations",
+      "reported": [
+        "gates.be_reservoir_bound_violations = 9434",
+        "gates.float_reservoir_route_disagreeing = 9434"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_float_reservoir_route_is_shifted_far_out": {
+      "caught": true,
+      "expected_named": "gates.float_reservoir_route_disagreeing",
+      "reported": [
+        "gates.float_reservoir_route_disagreeing = 9527"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_synchronized_cylinder_swaps_its_two_units": {
+      "caught": true,
+      "expected_named": "gates.sync_cylinder_violations",
+      "reported": [
+        "gates.sync_cylinder_violations = 117762"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_positive_normal_form_demands_the_other_parity": {
+      "caught": true,
+      "expected_named": "gates.sync_positive_normal_form_violations",
+      "reported": [
+        "gates.sync_positive_normal_form_violations = 75737"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_negative_reservoir_bound_is_charged_four_extra_levels": {
+      "caught": true,
+      "expected_named": "gates.sync_negative_reservoir_violations",
+      "reported": [
+        "gates.sync_negative_reservoir_violations = 55174",
+        "gates.float_reservoir_route_disagreeing = 55174"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_transport_law_inverts_its_relative_defect_factor": {
+      "caught": true,
+      "expected_named": "transport.transport_violations",
+      "reported": [
+        "transport.transport_violations = 145476"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_transport_law_reads_its_ternary_depth_as_the_binary_one": {
+      "caught": true,
+      "expected_named": "transport.transport_violations",
+      "reported": [
+        "transport.transport_violations = 99044"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_seesaw_is_read_in_the_wrong_direction": {
+      "caught": true,
+      "expected_named": "transport.exclusive_seesaw_violations",
+      "reported": [
+        "transport.exclusive_seesaw_violations = 4310"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_correction_product_swaps_its_two_powers": {
+      "caught": true,
+      "expected_named": "windows.correction_product_violations",
+      "reported": [
+        "windows.correction_product_violations = 2798"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_window_unit_transport_is_shifted_by_one": {
+      "caught": true,
+      "expected_named": "windows.unit_window_transport_violations",
+      "reported": [
+        "windows.unit_window_transport_violations = 3006"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_triangle_bound_is_asserted_with_its_terms_swapped": {
+      "caught": true,
+      "expected_named": "windows.triangle_terms_with_negative_slack",
+      "reported": [
+        "windows.triangle_terms_with_negative_slack = 17206"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_synthetic_sync_equation_is_read_backwards": {
+      "caught": true,
+      "expected_named": "synthetic.sync_equation_violations",
+      "reported": [
+        "synthetic.sync_equation_violations = 1594"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_synthetic_TE_formula_loses_its_offset": {
+      "caught": true,
+      "expected_named": "synthetic.te_not_increasing",
+      "reported": [
+        "synthetic.te_not_increasing = 20000"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_synthetic_BE_pump_loses_its_multiplier": {
+      "caught": true,
+      "expected_named": "synthetic.be_not_decreasing",
+      "reported": [
+        "synthetic.be_not_decreasing = 15253"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_published_depths_are_recomputed_with_reversed_signs": {
+      "caught": true,
+      "expected_named": "examples.depth_fields_disagreeing",
+      "reported": [
+        "examples.depth_fields_disagreeing = 21"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_published_strip_is_pulled_below_its_attained_value": {
+      "caught": true,
+      "expected_named": "examples.strip_violations",
+      "reported": [
+        "examples.strip_violations = 6"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_valuation_of_zero_becomes_a_number": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['vp of zero is None']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_the_digest_is_taken_over_the_file_name": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_ledger_coverage_heuristic_accepts_anything": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_negative_control",
+      "reported": [
+        "ledger.heuristic_failed_its_negative_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N1_the_attained_upper_end_population_is_emptied": {
+      "caught": true,
+      "expected_named": "strip.upper_end_attained",
+      "reported": [
+        "strip.upper_end_attained"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N2_the_broken_window_control_is_made_whole_again": {
+      "caught": true,
+      "expected_named": "windows.broken_correction_product_failures",
+      "reported": [
+        "windows.broken_correction_product_failures",
+        "windows.broken_unit_transport_failures"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N3_the_synthetic_sync_control_is_given_the_divisibility_back": {
+      "caught": true,
+      "expected_named": "synthetic.sync_equation_violations_when_the_divisibility_is_dropped",
+      "reported": [
+        "synthetic.sync_equation_violations_when_the_divisibility_is_dropped"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N4_the_synthetic_TE_control_is_given_its_multiplier_back": {
+      "caught": true,
+      "expected_named": "synthetic.te_not_increasing_when_the_offset_is_removed",
+      "reported": [
+        "synthetic.te_not_increasing_when_the_offset_is_removed"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N5_the_synthetic_BE_control_is_given_its_pump_back": {
+      "caught": true,
+      "expected_named": "synthetic.be_not_decreasing_when_the_pump_is_removed",
+      "reported": [
+        "synthetic.be_not_decreasing_when_the_pump_is_removed"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N6_the_positive_synchronized_population_is_emptied": {
+      "caught": true,
+      "expected_named": "gates.sync_positive",
+      "reported": [
+        "gates.sync_positive"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N7_the_ternary_exclusive_class_is_emptied": {
+      "caught": true,
+      "expected_named": "gates.ternary_exclusive",
+      "reported": [
+        "gates.unclassified = 4310",
+        "gates.ternary_exclusive"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "C1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "C2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 39,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 39,
+    "caught": 39,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 39,
+    "caught_by_their_own_check": 39,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

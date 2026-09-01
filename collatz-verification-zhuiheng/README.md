@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->71 source items and 50 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->72 source items and 51 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -1150,11 +1150,35 @@ instance behind each band.
     exactly its construction broken (427 of 1,184 partitions fail, 12,069 of
     20,000 quadrant draws fail), with both controls themselves drilled. Drill
     **38/38**.
-52. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+52. [`reports/RUN-053-HARD-ZETA-AU2D25-PRIMITIVE-UNIT.md`](./reports/RUN-053-HARD-ZETA-AU2D25-PRIMITIVE-UNIT.md) —
+    **a bound that is finally sharp, and three synthetic blocks that restate
+    their own setup.** A-U.2d.25 specialises the previous round's block bound
+    to a single edge and gets `-2^q < d < 3` with `d > 0 => d in {1,2}` —
+    sharp at BOTH ends, `d = 2` attained 9,169 times and the lower end reached
+    to within 126/128, the opposite of A-U.2d.24 where two boxed inequalities
+    each carried a spare factor of three. It then collapses the compensation
+    types into exact gates and gives the primitive unit an exact transport law
+    `u'/u = 2^-c2 3^c3 (1 + d/(3n))`. **Thirteen of sixteen counters reproduce
+    exactly** plus the 187,769-edge total. **Three findings.** **All three
+    synthetic blocks restate their own construction** — each `assert`
+    re-derives the line above it — defused here by breaking exactly that line:
+    26,677, 20,000 and 15,253 failures against 0 as shipped. **Their window
+    triangle bound is implied edge by edge** by Theorem 5.1 plus the triangle
+    inequality; measured per term over 17,206 edges, zero negative slack, so
+    the summed form could not have failed. **The self-validation record changed
+    shape a twelfth time** — pass flag now the STRING `PASS`, and no file list
+    of any kind, so nothing records what was validated — while the theorem
+    ledger has dropped its no-go key entirely against the paper's nine NO-GO
+    headings. **Added here**: two float-guarded reservoir bounds re-derived in
+    exact integers (65,429 tests, both routes agree); both strip ends scored
+    for attainment; every by-construction block given a control, including
+    both window telescopings (2,581 and 1,938 of 2,599 fail once one interior
+    edge is dropped). Drill **39/39**.
+53. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-53. [`code/`](./code/) — the engine, the independent reference, and the gates.
-54. [`data/gate-logs/`](./data/gate-logs/) and
+54. [`code/`](./code/) — the engine, the independent reference, and the gates.
+55. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

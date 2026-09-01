@@ -1,0 +1,333 @@
+{
+  "run": "RUN-053",
+  "round": "A-U.2d.25",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item72",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 7,
+      "failed": []
+    },
+    "constants": {
+      "constants_checked": 4,
+      "disagreeing_with_both_evaluations": 0,
+      "from_the_float64_chain_not_the_nearest_double": 3,
+      "exact_to_the_last_bit": 1,
+      "undecided_brackets": 0,
+      "missing_from_the_frontier": 0,
+      "frontier_and_report_disagreeing": 0,
+      "frontier_constants_with_no_closed_form_here": [
+        "rho_star_inherited"
+      ],
+      "rows": [
+        {
+          "constant": "beta",
+          "frontier": "1.584962500721156",
+          "budget": 4,
+          "verdict": "exact"
+        },
+        {
+          "constant": "beta_minus_1",
+          "frontier": "0.5849625007211561",
+          "budget": 8,
+          "verdict": "-1 ulp, the float64 chain"
+        },
+        {
+          "constant": "two_minus_beta",
+          "frontier": "0.4150374992788439",
+          "budget": 20,
+          "verdict": "+2 ulp, the float64 chain"
+        },
+        {
+          "constant": "resonance_threshold_inherited",
+          "frontier": "0.3690702464285425",
+          "budget": 12,
+          "verdict": "-1 ulp, the float64 chain"
+        }
+      ]
+    },
+    "population": {
+      "edges": 187769,
+      "moduli": 5,
+      "sources": 6034,
+      "malformed_edges": 0
+    },
+    "strip": {
+      "edges": 187769,
+      "strip_upper_violations": 0,
+      "strip_lower_violations": 0,
+      "positive_defect_not_one_or_two": 0,
+      "positive_defects": 80047,
+      "negative_defects": 65429,
+      "zero_defects": 42293,
+      "upper_end_attained": 9169,
+      "largest_lower_ratio_numerator": 126,
+      "largest_lower_ratio_denominator": 128,
+      "block_bound_from_the_previous_round_violations": 0
+    },
+    "gates": {
+      "zero": 42293,
+      "sync": 131639,
+      "binary_exclusive": 9527,
+      "ternary_exclusive": 4310,
+      "unclassified": 0,
+      "zero_defect_unit_not_invariant": 0,
+      "zero_defect_depths_not_zero": 0,
+      "te_defect_not_two": 0,
+      "te_valuation_not_one": 0,
+      "te_output_not_coprime": 0,
+      "te_depths_wrong": 0,
+      "te_unit_formula_violations": 0,
+      "te_unit_not_increasing": 0,
+      "be_defect_not_negative": 0,
+      "be_valuation_below_two": 0,
+      "be_ternary_not_deeper": 0,
+      "be_defect_valuation_wrong": 0,
+      "be_xi_not_odd_positive": 0,
+      "be_unit_formula_violations": 0,
+      "be_unit_not_decreasing": 0,
+      "be_reservoir_bound_violations": 0,
+      "sync_defect_valuations_wrong": 0,
+      "sync_omega_not_coprime": 0,
+      "sync_cylinder_violations": 0,
+      "sync_positive_normal_form_violations": 0,
+      "sync_negative_omega_not_negative": 0,
+      "sync_negative_reservoir_violations": 0,
+      "float_reservoir_route_disagreeing": 0,
+      "reservoir_tests": 65429,
+      "sync_positive": 75737,
+      "sync_negative": 55902
+    },
+    "transport": {
+      "edges": 187769,
+      "transport_violations": 0,
+      "zero_defect_transport_not_trivial": 0,
+      "exclusive_seesaw_violations": 0,
+      "seesaw_population": 13837
+    },
+    "windows": {
+      "windows": 3006,
+      "edges_in_windows": 17206,
+      "correction_product_violations": 0,
+      "unit_window_transport_violations": 0,
+      "triangle_bound_violations": 0,
+      "triangle_terms": 17206,
+      "triangle_terms_with_negative_slack": 0,
+      "broken_windows": 2599,
+      "broken_correction_product_failures": 2581,
+      "broken_unit_transport_failures": 1938
+    },
+    "synthetic": {
+      "sync_attempts": 30000,
+      "sync_constructions": 1594,
+      "sync_equation_violations": 0,
+      "sync_equation_violations_when_the_divisibility_is_dropped": 26677,
+      "te_trials": 20000,
+      "te_not_increasing": 0,
+      "te_not_increasing_when_the_offset_is_removed": 20000,
+      "be_trials": 20000,
+      "be_not_decreasing": 0,
+      "be_not_decreasing_when_the_pump_is_removed": 15253
+    },
+    "examples": {
+      "rows": 30,
+      "groups": 5,
+      "quotient_identity_violations": 0,
+      "depth_fields_disagreeing": 0,
+      "unit_fields_disagreeing": 0,
+      "strip_violations": 0,
+      "class_disagreeing_with_the_defect_sign": 0
+    },
+    "artifacts": {
+      "files_present": 9,
+      "digests_listed": 8,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_per_file_entries": 0,
+      "validation_entries_with_a_digest": 0,
+      "files_absent_from_the_validation_record": [
+        "CHECKSUMS.sha256",
+        "Hard_Zeta_AU2d25_Literature_Notes_v0.1.md",
+        "Hard_Zeta_AU2d25_checker_report.json",
+        "Hard_Zeta_AU2d25_constants_frontier.json",
+        "Hard_Zeta_AU2d25_theorem_ledger.json",
+        "Hard_Zeta_A_Line_ROUTE_MAP_v2.25_AU2d25.md",
+        "Hard_Zeta_Phase_II_Round_AU2d25_Primitive_Defect_Cylinder_Compensation_Seesaw_Discrepancy_Rigidity_v0.1.md",
+        "SOURCE_VALIDATION_AU2d25.json",
+        "verify_Hard_Zeta_AU2d25_primitive_unit_discrepancy.py"
+      ],
+      "duplicate_file_pairs": [],
+      "validation_names_files_as_a_bare_list": 0,
+      "validation_pass_flag_key": "status",
+      "validation_all_pass_flag": "PASS",
+      "validation_pass_flag_is_a_string": 1,
+      "validation_pass_flag_not_passing": 0,
+      "validation_problems_listed": 0,
+      "validation_names_no_files_at_all": 1,
+      "validation_records_no_pass_flag_at_all": 0,
+      "validation_top_level_keys": [
+        "canonical_math_delimiters",
+        "checker_rerun",
+        "control_chars_free",
+        "json_parse",
+        "lf_only",
+        "problems",
+        "python_compile",
+        "round",
+        "status",
+        "utf8"
+      ],
+      "validation_top_level_flags_not_true": 0,
+      "validation_file_pass_flags_not_true": 0
+    },
+    "ledger": {
+      "paper_proved_items": 16,
+      "ledger_proved_items": 16,
+      "paper_open_items": 5,
+      "ledger_open_items": 6,
+      "paper_no_go_headings": 9,
+      "ledger_no_go_items": 0,
+      "ledger_has_an_open_key": true,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [
+        "12.5",
+        "12.8",
+        "12.9"
+      ],
+      "ledger_has_no_no_go_key": 1,
+      "heuristic_failed_its_positive_control": 0,
+      "heuristic_failed_its_negative_control": 0
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "sharp_one_step_defect_strip",
+          "theirs": 187769,
+          "mine": 187769,
+          "basis": "same population"
+        },
+        {
+          "check": "primitive_unit_transport_exact",
+          "theirs": 187769,
+          "mine": 187769,
+          "basis": "same population"
+        },
+        {
+          "check": "zero_defect_unit_invariance",
+          "theirs": 42293,
+          "mine": 42293,
+          "basis": "same population"
+        },
+        {
+          "check": "positive_defect_is_1_or_2",
+          "theirs": 80047,
+          "mine": 80047,
+          "basis": "same population"
+        },
+        {
+          "check": "synchronized_primitive_gate",
+          "theirs": 131639,
+          "mine": 131639,
+          "basis": "same population"
+        },
+        {
+          "check": "positive_sync_unit_defect",
+          "theirs": 75737,
+          "mine": 75737,
+          "basis": "same population"
+        },
+        {
+          "check": "negative_sync_low_reservoir",
+          "theirs": 55902,
+          "mine": 55902,
+          "basis": "same population"
+        },
+        {
+          "check": "quotient_correction_product_exact",
+          "theirs": 30155,
+          "mine": 3006,
+          "basis": "windows.windows"
+        },
+        {
+          "check": "primitive_unit_window_transport_exact",
+          "theirs": 30155,
+          "mine": 3006,
+          "basis": "windows.windows"
+        },
+        {
+          "check": "unit_variation_triangle_bound",
+          "theirs": 30155,
+          "mine": 3006,
+          "basis": "windows.windows"
+        },
+        {
+          "check": "binary_exclusive_negative_pump",
+          "theirs": 9527,
+          "mine": 9527,
+          "basis": "same population"
+        },
+        {
+          "check": "exclusive_unit_monotonicity",
+          "theirs": 13837,
+          "mine": 13837,
+          "basis": "same population"
+        },
+        {
+          "check": "ternary_exclusive_atomic_reset",
+          "theirs": 4310,
+          "mine": 4310,
+          "basis": "same population"
+        },
+        {
+          "check": "synthetic_primitive_sync_equations",
+          "theirs": 1668,
+          "mine": 1594,
+          "basis": "synthetic.sync_constructions"
+        },
+        {
+          "check": "synthetic_TE_unit_reset",
+          "theirs": 20000,
+          "mine": 20000,
+          "basis": "same population"
+        },
+        {
+          "check": "synthetic_BE_unit_pump",
+          "theirs": 20000,
+          "mine": 20000,
+          "basis": "same population"
+        },
+        {
+          "check": "actual_quotient_active_edges",
+          "theirs": 187769,
+          "mine": 187769,
+          "basis": "same population"
+        }
+      ],
+      "checks_not_covered_at_all": 0,
+      "checks_covered_by_a_different_population": 4,
+      "checks_they_report_as_zero": 0,
+      "counts_i_reproduce_exactly": 13
+    },
+    "errors": {
+      "instrument_raised": 0,
+      "constants_raised": 0,
+      "population_raised": 0,
+      "strip_raised": 0,
+      "gates_raised": 0,
+      "transport_raised": 0,
+      "windows_raised": 0,
+      "synthetic_raised": 0,
+      "examples_raised": 0,
+      "artifacts_raised": 0,
+      "ledger_raised": 0,
+      "their_claims_raised": 0,
+      "messages": []
+    }
+  }
+}
