@@ -1,0 +1,365 @@
+{
+  "gate": "src69_defect_tree.py",
+  "limit": "220000",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_the_defect_divides_by_the_wrong_modulus": {
+      "caught": true,
+      "expected_named": "calculus.defect_not_integral",
+      "reported": [
+        "calculus.defect_not_integral = 279584",
+        "calculus.quotient_lift_theorem_3_2_violations = 38192",
+        "tree.node_span_defect_not_integral = 27053",
+        "depth.depth_equivalence_violations = 7529"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_defect_swaps_its_two_powers": {
+      "caught": true,
+      "expected_named": "calculus.defect_not_integral",
+      "reported": [
+        "calculus.defect_not_integral = 335279",
+        "calculus.quotient_lift_theorem_3_2_violations = 20722",
+        "tree.node_span_defect_not_integral = 26554",
+        "depth.depth_equivalence_violations = 5013"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_defect_adds_where_it_must_subtract": {
+      "caught": true,
+      "expected_named": "calculus.defect_not_integral",
+      "reported": [
+        "calculus.defect_not_integral = 356001",
+        "tree.node_span_defect_not_integral = 26590",
+        "errors.root_raised = 1",
+        "errors.their_claims_raised = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_product_attaches_each_coefficient_to_the_other_operand": {
+      "caught": true,
+      "expected_named": "calculus.composition_theorem_4_1_violations",
+      "reported": [
+        "calculus.composition_theorem_4_1_violations = 92888",
+        "tree.tree_matrix_disagreeing_with_the_direct_one = 11013",
+        "tree.node_matrix_disagreeing_with_its_span = 4355"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_product_adds_its_diagonal": {
+      "caught": true,
+      "expected_named": "calculus.diagonal_not_multiplicative",
+      "reported": [
+        "instrument.failed = ['the product is upper triangular with the right diagonal']",
+        "calculus.composition_theorem_4_1_violations = 106265",
+        "calculus.diagonal_not_multiplicative = 106265",
+        "tree.tree_matrix_disagreeing_with_the_direct_one = 11026"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_eraser_retains_the_first_occurrence_as_AU2d21_did": {
+      "caught": true,
+      "expected_named": "tree.intervals_sharing_a_left_endpoint",
+      "reported": [
+        "tree.intervals_sharing_a_left_endpoint = 130140",
+        "retention.kept_shared_left_endpoint = 130140",
+        "retention.levels_where_the_two_rules_differ"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_interval_starts_one_step_after_its_residue": {
+      "caught": true,
+      "expected_named": "tree.interval_endpoints_not_congruent",
+      "reported": [
+        "tree.interval_endpoints_not_congruent = 14016",
+        "tree.interval_not_contiguous = 33844",
+        "retention.kept_non_contiguous = 33844",
+        "retention.kept_misanchored = 14016"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_parent_is_the_outermost_enclosing_interval": {
+      "caught": true,
+      "expected_named": "tree.tree_matrix_disagreeing_with_the_direct_one",
+      "reported": [
+        "tree.tree_matrix_disagreeing_with_the_direct_one = 211",
+        "tree.node_matrix_disagreeing_with_its_span = 223"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_tree_composes_its_children_in_reverse": {
+      "caught": true,
+      "expected_named": "tree.tree_matrix_disagreeing_with_the_direct_one",
+      "reported": [
+        "tree.tree_matrix_disagreeing_with_the_direct_one = 9399",
+        "tree.node_matrix_disagreeing_with_its_span = 4355"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_gap_before_a_child_reads_its_endpoints_backwards": {
+      "caught": true,
+      "expected_named": "tree.node_span_defect_not_integral",
+      "reported": [
+        "tree.node_span_defect_not_integral = 9784"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_canonical_modulus_stops_a_full_power_early": {
+      "caught": true,
+      "expected_named": "root.canonical_modulus_not_above_both_endpoints",
+      "reported": [
+        "root.canonical_modulus_not_above_both_endpoints = 7845",
+        "root.expansion_theorem_7_2_violations = 23535",
+        "root.ultrametric_minimum_not_paired = 21838"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_root_defect_reads_its_endpoints_backwards": {
+      "caught": true,
+      "expected_named": "root.root_defect_not_zero",
+      "reported": [
+        "root.root_defect_not_zero = 7845"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_weighted_expansion_drops_its_two_power": {
+      "caught": true,
+      "expected_named": "root.expansion_theorem_7_2_violations",
+      "reported": [
+        "root.expansion_theorem_7_2_violations = 4806"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_weighted_expansion_counts_its_three_power_forwards": {
+      "caught": true,
+      "expected_named": "root.expansion_theorem_7_2_violations",
+      "reported": [
+        "root.expansion_theorem_7_2_violations = 4806",
+        "root.ultrametric_minimum_not_paired = 4806"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_ultrametric_pairing_looks_at_the_deepest_block": {
+      "caught": true,
+      "expected_named": "root.ultrametric_minimum_not_paired",
+      "reported": [
+        "root.ultrametric_minimum_not_paired = 1154"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_prefix_coboundary_drops_its_power": {
+      "caught": true,
+      "expected_named": "root.prefix_defect_not_the_coboundary",
+      "reported": [
+        "root.prefix_defect_not_the_coboundary = 3796"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_suffix_coboundary_loses_its_sign": {
+      "caught": true,
+      "expected_named": "root.suffix_defect_not_the_coboundary",
+      "reported": [
+        "root.suffix_defect_not_the_coboundary = 3796"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_depth_equivalence_excludes_its_own_valuation": {
+      "caught": true,
+      "expected_named": "depth.depth_equivalence_violations",
+      "reported": [
+        "depth.depth_equivalence_violations = 42544"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_depth_probe_never_deepens_its_modulus": {
+      "caught": true,
+      "expected_named": "depth.depth_equivalence_violations",
+      "reported": [
+        "depth.depth_equivalence_violations = 42539"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_sign_law_reverses_its_supercriticality_test": {
+      "caught": true,
+      "expected_named": "sign.sign_law_violations",
+      "reported": [
+        "sign.sign_law_violations = 9829",
+        "sign.negative_defect_not_supercritical = 9829",
+        "sign.float_sign_route_disagreeing_with_the_exact_one = 47860",
+        "sign.zero_defect_not_supercritical = 2935"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_float_route_is_given_a_wrong_beta": {
+      "caught": true,
+      "expected_named": "sign.float_sign_route_disagreeing_with_the_exact_one",
+      "reported": [
+        "sign.float_sign_route_disagreeing_with_the_exact_one = 227"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_resonance_divides_each_side_by_the_other_power": {
+      "caught": true,
+      "expected_named": "sign.resonance_parameters_disagreeing",
+      "reported": [
+        "sign.resonance_parameters_disagreeing = 2935"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_resonance_divisibility_test_is_swapped": {
+      "caught": true,
+      "expected_named": "sign.resonance_n_not_a_multiple",
+      "reported": [
+        "sign.resonance_n_not_a_multiple = 2806"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_inbound_toll_is_charged_six_bits_too_much": {
+      "caught": true,
+      "expected_named": "sign.lift_toll_in_violations",
+      "reported": [
+        "sign.lift_toll_in_violations = 2",
+        "sign.float_toll_route_disagreeing_with_the_exact_one = 2"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_outbound_toll_is_charged_six_bits_too_much": {
+      "caught": true,
+      "expected_named": "sign.lift_toll_out_violations",
+      "reported": [
+        "sign.lift_toll_out_violations = 1",
+        "sign.float_toll_route_disagreeing_with_the_exact_one = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_quotient_floor_is_raised_three_bits": {
+      "caught": true,
+      "expected_named": "quotient_floor.quotient_floor_violations",
+      "reported": [
+        "quotient_floor.quotient_floor_violations = 4496",
+        "quotient_floor.float_route_disagreeing_with_the_exact_one = 4496"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_float_floor_route_is_reversed": {
+      "caught": true,
+      "expected_named": "quotient_floor.float_route_disagreeing_with_the_exact_one",
+      "reported": [
+        "quotient_floor.float_route_disagreeing_with_the_exact_one = 4496"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_corollary_parameter_window_is_left_unsatisfiable": {
+      "caught": true,
+      "expected_named": "corollary.parameter_window_empty",
+      "reported": [
+        "corollary.parameter_window_empty = 1",
+        "corollary.bridges",
+        "corollary.retained_vertices",
+        "corollary.retained_high_lift_vertices"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_retained_vertex_floor_is_raised_six_bits": {
+      "caught": true,
+      "expected_named": "corollary.retained_high_lift_vertex_below_the_floor",
+      "reported": [
+        "corollary.retained_high_lift_vertex_below_the_floor = 3203"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_published_lift_identity_is_read_backwards": {
+      "caught": true,
+      "expected_named": "examples.zero_node_lift_identity_violations",
+      "reported": [
+        "examples.zero_node_lift_identity_violations = 20"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D33_the_valuation_of_zero_becomes_a_number": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['v3 of zero is None, not a large integer']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D34_the_digest_is_taken_over_the_file_name": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 8"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D35_the_ledger_coverage_heuristic_accepts_anything": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_negative_control",
+      "reported": [
+        "ledger.heuristic_failed_its_negative_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_the_order_sensitive_population_is_emptied": {
+      "caught": true,
+      "expected_named": "calculus.order_sensitive_compositions",
+      "reported": [
+        "calculus.order_sensitive_compositions"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D36_the_comparison_rule_is_made_identical_to_the_paper_rule": {
+      "caught": true,
+      "expected_named": "retention.levels_where_the_two_rules_differ",
+      "reported": [
+        "retention.levels_where_the_two_rules_differ",
+        "retention.first_shared_left_endpoint"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_nesting_population_is_emptied": {
+      "caught": true,
+      "expected_named": "tree.nested_pairs",
+      "reported": [
+        "tree.nested_pairs",
+        "tree.levels_with_a_nested_pair"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "N1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "N2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 36,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 36,
+    "caught": 36,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 36,
+    "caught_by_their_own_check": 36,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

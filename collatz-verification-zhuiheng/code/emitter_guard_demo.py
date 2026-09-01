@@ -67,6 +67,7 @@ CASES = [
     # a figure that reaches the report exactly once.
     ("src67", (0, ("results", "loops", "total_loop_edge_mass"))),
     ("src68", (0, ("results", "faithful_core", "total_faithful_mass"))),
+    ("src69", (0, ("results", "quotient_floor", "smallest_quotient_seen"))),
 ]
 
 

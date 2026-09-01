@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->68 source items and 47 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->69 source items and 48 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -1060,11 +1060,43 @@ instance behind each band.
     round's bound managed 4 of 3,826. Drill **50/50**; three re-aims found
     real gaps in this gate, including one in my own headline finding, where I
     had guarded only half of a two-halved claim.
-49. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+49. [`reports/RUN-050-HARD-ZETA-AU2D22-DEFECT-TREE.md`](./reports/RUN-050-HARD-ZETA-AU2D22-DEFECT-TREE.md) —
+    **the strongest checker of the sweep, and the one claim it leaves out.**
+    A-U.2d.22 closes A-U.2d.21's semantic gap by changing the object: the
+    general path defect `d_M(P;r,s)` is defined for arbitrary endpoints, its
+    quotient-affine matrix `[[3^L, d], [0, 2^Q]]` composes exactly, and loop
+    erasure retaining the CURRENT occurrence yields contiguous laminar return
+    intervals, so the quotient-layer identity applies to them. **Its sixteen
+    counters contain no synthetic block that cannot fail** — the first round
+    in six for which that is true, and worth saying plainly. **Eleven
+    reproduce exactly**; the other five come from a seeded RNG and are covered
+    here by larger deterministic enumerations (249,736 spans, 106,265
+    products, 23,535 partitions, 94,204 depth probes). **Three findings.**
+    **Corollary 13.2, which names the frontier constant `2-beta`, has no
+    counter at all** — and its content is a *conjunction* the bundle only
+    tests as two separate theorems. Measured: the intersection is real
+    (**3,203 of 9,445** retained vertices high-lift, **0** below the floor)
+    but **empty on 240 of 1,080 bridges**; the mass half carries an `o(1)`, so
+    the trend is the test, and both deviations shrink with `h` — below-constant
+    falls 42.3% → 0%, the vacuity gone by `h >= 30`. **Theorem 5.1's proof
+    credits the retention rule with more than it does**: both rules give **0**
+    crossings, **0** non-contiguous intervals and **0** reconstruction
+    failures, so laminarity does not depend on it; what it controls is the
+    tree's shape — **8,796 nested pairs against 153,929**, of which 130,140
+    share a left endpoint under the wrong rule and none under the paper's.
+    And **their laminarity counter cannot fail structurally**, not weakly: the
+    stack truncation makes a crossing unrepresentable, so the predicate is
+    exercised by hand instead. **Added here**: order-sensitivity of the
+    composition measured before the law is believed (92,888 of 106,265
+    products distinguish the two orders); two float64 inequalities re-derived
+    in exact integers, with their distance to failure — the quotient floor's
+    tightest margin is **2.0228x**, nearly attained, the lift toll's 15.17x;
+    `u >= 1`, which the paper states and their checker omits. Drill **36/36**.
+50. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-50. [`code/`](./code/) — the engine, the independent reference, and the gates.
-51. [`data/gate-logs/`](./data/gate-logs/) and
+51. [`code/`](./code/) — the engine, the independent reference, and the gates.
+52. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

@@ -1,0 +1,567 @@
+{
+  "run": "RUN-050",
+  "round": "A-U.2d.22",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item69",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 11,
+      "failed": []
+    },
+    "constants": {
+      "constants_checked": 2,
+      "disagreeing_with_both_evaluations": 0,
+      "from_the_float64_chain_not_the_nearest_double": 1,
+      "exact_to_the_last_bit": 1,
+      "undecided_brackets": 0,
+      "missing_from_the_frontier": 0,
+      "frontier_and_report_disagreeing": 0,
+      "rows": [
+        {
+          "constant": "beta",
+          "frontier": "1.584962500721156",
+          "report": "1.584962500721156",
+          "budget": 4,
+          "verdict": "exact",
+          "nearest_double": "1.584962500721156"
+        },
+        {
+          "constant": "faithful_loop_mass_constant",
+          "frontier": "0.4150374992788439",
+          "report": "None",
+          "budget": 20,
+          "verdict": "+2 ulp, the float64 chain",
+          "nearest_double": "0.4150374992788438"
+        }
+      ]
+    },
+    "population": {
+      "bridges": 7845,
+      "zero_lift": 7845,
+      "positive_lift": 0,
+      "sources": 7357,
+      "longest_tail": 73
+    },
+    "calculus": {
+      "bridges": 7845,
+      "levels": 18603,
+      "spans": 249736,
+      "compositions": 106265,
+      "defect_not_integral": 0,
+      "quotient_lift_theorem_3_2_violations": 0,
+      "composition_theorem_4_1_violations": 0,
+      "matrix_form_disagreeing_with_the_defect_form": 0,
+      "diagonal_not_multiplicative": 0,
+      "compositions_where_the_two_orders_agree": 13377,
+      "order_sensitive_compositions": 92888
+    },
+    "tree": {
+      "bridges": 7845,
+      "levels": 18603,
+      "intervals": 47860,
+      "nodes": 47860,
+      "interval_endpoints_not_congruent": 0,
+      "interval_not_contiguous": 0,
+      "crossing_pairs": 0,
+      "intervals_sharing_a_left_endpoint": 0,
+      "nested_pairs": 8796,
+      "levels_with_a_nested_pair": 3084,
+      "tree_matrix_disagreeing_with_the_direct_one": 0,
+      "node_span_defect_not_integral": 0,
+      "node_matrix_disagreeing_with_its_span": 0,
+      "root_matrix_disagreeing": 0
+    },
+    "root": {
+      "bridges": 7845,
+      "partitions": 23535,
+      "cuts": 8641,
+      "root_defect_not_zero": 0,
+      "canonical_modulus_not_above_both_endpoints": 0,
+      "expansion_theorem_7_2_violations": 0,
+      "expansion_block_not_integral": 0,
+      "partitions_with_a_nonzero_block": 4806,
+      "ultrametric_minimum_not_paired": 0,
+      "prefix_defect_not_the_coboundary": 0,
+      "suffix_defect_not_the_coboundary": 0,
+      "coboundary_sum_not_zero": 0
+    },
+    "retention": {
+      "levels": 18603,
+      "levels_where_the_two_rules_differ": 7302,
+      "kept_intervals": 47860,
+      "kept_crossings": 0,
+      "kept_non_contiguous": 0,
+      "kept_misanchored": 0,
+      "kept_nested_pairs": 8796,
+      "kept_shared_left_endpoint": 0,
+      "kept_total_span": 91524,
+      "first_intervals": 47860,
+      "first_crossings": 0,
+      "first_non_contiguous": 0,
+      "first_misanchored": 0,
+      "first_nested_pairs": 153929,
+      "first_shared_left_endpoint": 130140,
+      "first_total_span": 282503,
+      "reconstruction_failures_under_the_first_rule": 0
+    },
+    "depth": {
+      "intervals": 42544,
+      "probes": 94204,
+      "depth_equivalence_violations": 0,
+      "probes_at_or_below_the_valuation": 51665,
+      "probes_above_the_valuation": 42539,
+      "intervals_whose_upper_half_was_never_probed": 5,
+      "intervals_the_bundle_cap_would_not_probe_above": 34,
+      "largest_valuation_seen": 5
+    },
+    "sign": {
+      "intervals": 47860,
+      "zero_defect_intervals": 2935,
+      "sign_law_violations": 0,
+      "negative_defect_not_supercritical": 0,
+      "float_sign_route_disagreeing_with_the_exact_one": 0,
+      "zero_defect_not_supercritical": 0,
+      "resonance_n_not_a_multiple": 0,
+      "resonance_parameters_disagreeing": 0,
+      "resonance_parameter_not_positive": 0,
+      "smallest_resonance_parameter": 10,
+      "lift_toll_in_violations": 0,
+      "lift_toll_out_violations": 0,
+      "float_toll_route_disagreeing_with_the_exact_one": 0,
+      "tolls_one_lift_bit_from_failing": 0,
+      "smallest_toll_slack_bits": 4,
+      "tightest_toll_margin": 15.1667,
+      "defects_that_are_negative": 6894,
+      "largest_absolute_defect_seen": 163800860699537762527940150138
+    },
+    "quotient_floor": {
+      "positions": 4496,
+      "bridges": 1080,
+      "quotient_floor_violations": 0,
+      "float_route_disagreeing_with_the_exact_one": 0,
+      "positions_where_the_floor_is_positive": 4496,
+      "floors_within_a_factor_of_two_of_failing": 0,
+      "smallest_floor_slack_bits": 1,
+      "tightest_floor_margin": 2.0228,
+      "smallest_quotient_seen": 1498
+    },
+    "corollary": {
+      "bridges": 1080,
+      "parameter_window_empty": 0,
+      "retained_vertices": 9445,
+      "retained_high_lift_vertices": 3203,
+      "bridges_with_no_high_lift_retained_vertex": 240,
+      "retained_high_lift_vertex_below_the_floor": 0,
+      "levels_where_the_mass_ratio_is_below_the_constant": 432,
+      "smallest_mass_ratio": 0.090909,
+      "largest_mass_ratio": 0.875,
+      "bands": [
+        {
+          "h_from": 0,
+          "h_to": 9,
+          "bridges": 248,
+          "mean_mass_ratio": 0.4642,
+          "below_the_constant_pct": 42.3,
+          "no_high_lift_retained_pct": 31.5
+        },
+        {
+          "h_from": 10,
+          "h_to": 19,
+          "bridges": 604,
+          "mean_mass_ratio": 0.4558,
+          "below_the_constant_pct": 40.7,
+          "no_high_lift_retained_pct": 25.3
+        },
+        {
+          "h_from": 20,
+          "h_to": 29,
+          "bridges": 145,
+          "mean_mass_ratio": 0.4507,
+          "below_the_constant_pct": 41.4,
+          "no_high_lift_retained_pct": 6.2
+        },
+        {
+          "h_from": 30,
+          "h_to": 39,
+          "bridges": 55,
+          "mean_mass_ratio": 0.4542,
+          "below_the_constant_pct": 34.5,
+          "no_high_lift_retained_pct": 0.0
+        },
+        {
+          "h_from": 40,
+          "h_to": 49,
+          "bridges": 15,
+          "mean_mass_ratio": 0.4834,
+          "below_the_constant_pct": 6.7,
+          "no_high_lift_retained_pct": 0.0
+        },
+        {
+          "h_from": 50,
+          "h_to": 59,
+          "bridges": 4,
+          "mean_mass_ratio": 0.4581,
+          "below_the_constant_pct": 25.0,
+          "no_high_lift_retained_pct": 0.0
+        },
+        {
+          "h_from": 60,
+          "h_to": 69,
+          "bridges": 7,
+          "mean_mass_ratio": 0.4644,
+          "below_the_constant_pct": 0.0,
+          "no_high_lift_retained_pct": 0.0
+        },
+        {
+          "h_from": 70,
+          "h_to": 79,
+          "bridges": 2,
+          "mean_mass_ratio": 0.479,
+          "below_the_constant_pct": 0.0,
+          "no_high_lift_retained_pct": 0.0
+        }
+      ]
+    },
+    "examples": {
+      "nonzero_nodes": 20,
+      "zero_nodes": 20,
+      "length_disagreeing": 0,
+      "v3_disagreeing": 0,
+      "defect_sign_wrong": 0,
+      "zero_node_not_supercritical": 0,
+      "zero_node_resonance_disagreeing": 0,
+      "zero_node_defect_not_zero": 0,
+      "zero_node_endpoints_not_congruent": 0,
+      "zero_node_lift_identity_violations": 0,
+      "rows": [
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 1,
+          "r": 2,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 9,
+          "L": 1,
+          "Q": 1,
+          "r": 8,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 27,
+          "L": 1,
+          "Q": 1,
+          "r": 26,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 3,
+          "L": 2,
+          "Q": 3,
+          "r": 2,
+          "defect": 3,
+          "v3": 1
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 1,
+          "r": 2,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 1,
+          "r": 2,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 3,
+          "L": 2,
+          "Q": 5,
+          "r": 2,
+          "defect": -13,
+          "v3": 0
+        },
+        {
+          "M": 9,
+          "L": 3,
+          "Q": 4,
+          "r": 8,
+          "defect": 13,
+          "v3": 0
+        },
+        {
+          "M": 9,
+          "L": 1,
+          "Q": 1,
+          "r": 8,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 27,
+          "L": 3,
+          "Q": 4,
+          "r": 17,
+          "defect": 8,
+          "v3": 0
+        },
+        {
+          "M": 81,
+          "L": 3,
+          "Q": 4,
+          "r": 71,
+          "defect": 10,
+          "v3": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 1,
+          "r": 2,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 1,
+          "r": 2,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 1,
+          "r": 2,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 3,
+          "r": 2,
+          "defect": -3,
+          "v3": 1
+        },
+        {
+          "M": 9,
+          "L": 1,
+          "Q": 1,
+          "r": 8,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 9,
+          "L": 1,
+          "Q": 1,
+          "r": 8,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 9,
+          "L": 4,
+          "Q": 6,
+          "r": 2,
+          "defect": 11,
+          "v3": 0
+        },
+        {
+          "M": 27,
+          "L": 1,
+          "Q": 1,
+          "r": 26,
+          "defect": 1,
+          "v3": 0
+        },
+        {
+          "M": 3,
+          "L": 1,
+          "Q": 1,
+          "r": 2,
+          "defect": 1,
+          "v3": 0
+        }
+      ]
+    },
+    "artifacts": {
+      "files_present": 9,
+      "digests_listed": 8,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_per_file_entries": 3,
+      "validation_entries_with_a_digest": 0,
+      "files_absent_from_the_validation_record": [
+        "CHECKSUMS.sha256",
+        "SOURCE_VALIDATION_AU2d22.json"
+      ],
+      "duplicate_file_pairs": [],
+      "validation_all_pass_flag": true,
+      "validation_top_level_keys": [
+        "all_pass",
+        "canonical_math_delimiters",
+        "date",
+        "files",
+        "json_parse",
+        "python_compile",
+        "round"
+      ],
+      "validation_file_pass_flags_not_true": 0,
+      "validation_json_parse_not_true": 0,
+      "validation_python_compile_not_true": 0
+    },
+    "ledger": {
+      "paper_proved_items": 16,
+      "ledger_proved_items": 15,
+      "paper_open_items": 6,
+      "ledger_open_items": 6,
+      "paper_no_go_headings": 8,
+      "ledger_no_go_items": 6,
+      "ledger_has_an_open_key": true,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [],
+      "heuristic_failed_its_positive_control": 0,
+      "heuristic_failed_its_negative_control": 0
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "finite_local_bridges",
+          "theirs": 7845,
+          "mine": 7845,
+          "basis": "same population"
+        },
+        {
+          "check": "zero_lift_bridges",
+          "theirs": 7845,
+          "mine": 7845,
+          "basis": "same population"
+        },
+        {
+          "check": "general_path_defect_integrality",
+          "theirs": 46643,
+          "mine": 249736,
+          "basis": "calculus.spans"
+        },
+        {
+          "check": "general_defect_composition",
+          "theirs": 36953,
+          "mine": 106265,
+          "basis": "calculus.compositions"
+        },
+        {
+          "check": "contiguous_loop_tree_laminarity",
+          "theirs": 18603,
+          "mine": 18603,
+          "basis": "same population"
+        },
+        {
+          "check": "tree_matrix_reconstruction",
+          "theirs": 18603,
+          "mine": 18603,
+          "basis": "same population"
+        },
+        {
+          "check": "root_zero_defect_at_canonical_modulus",
+          "theirs": 7845,
+          "mine": 7845,
+          "basis": "same population"
+        },
+        {
+          "check": "prefix_suffix_coboundary",
+          "theirs": 8641,
+          "mine": 8641,
+          "basis": "same population"
+        },
+        {
+          "check": "weighted_defect_expansion",
+          "theirs": 11903,
+          "mine": 23535,
+          "basis": "root.partitions"
+        },
+        {
+          "check": "ultrametric_minimum_pairing",
+          "theirs": 8068,
+          "mine": 4806,
+          "basis": "root.partitions_with_a_nonzero_block"
+        },
+        {
+          "check": "defect_extra_return_depth",
+          "theirs": 99421,
+          "mine": 94204,
+          "basis": "depth.probes"
+        },
+        {
+          "check": "return_defect_sign_law",
+          "theirs": 47860,
+          "mine": 47860,
+          "basis": "same population"
+        },
+        {
+          "check": "zero_defect_supercritical",
+          "theirs": 2935,
+          "mine": 2935,
+          "basis": "same population"
+        },
+        {
+          "check": "zero_defect_quotient_resonance",
+          "theirs": 2935,
+          "mine": 2935,
+          "basis": "same population"
+        },
+        {
+          "check": "zero_defect_lift_toll",
+          "theirs": 2935,
+          "mine": 2935,
+          "basis": "same population"
+        },
+        {
+          "check": "high_lift_quotient_floor",
+          "theirs": 4496,
+          "mine": 4496,
+          "basis": "same population"
+        }
+      ],
+      "checks_not_covered_at_all": 0,
+      "checks_covered_by_a_different_population": 5,
+      "checks_they_report_as_zero": 0,
+      "counts_i_reproduce_exactly": 11
+    },
+    "errors": {
+      "instrument_raised": 0,
+      "constants_raised": 0,
+      "population_raised": 0,
+      "calculus_raised": 0,
+      "tree_raised": 0,
+      "root_raised": 0,
+      "retention_raised": 0,
+      "depth_raised": 0,
+      "sign_raised": 0,
+      "quotient_floor_raised": 0,
+      "corollary_raised": 0,
+      "examples_raised": 0,
+      "artifacts_raised": 0,
+      "ledger_raised": 0,
+      "their_claims_raised": 0,
+      "messages": []
+    }
+  }
+}
