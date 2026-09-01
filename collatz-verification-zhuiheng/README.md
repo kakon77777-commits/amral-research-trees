@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->70 source items and 49 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->71 source items and 50 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -1122,11 +1122,39 @@ instance behind each band.
     their checker leaves uncounted and untested — 8,641 high-activation nodes
     invisible in their report; and a frontier constant the checker never
     computes, sharing its value with another. Drill **42/42**.
-51. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+51. [`reports/RUN-052-HARD-ZETA-AU2D24-COMPENSATION.md`](./reports/RUN-052-HARD-ZETA-AU2D24-COMPENSATION.md) —
+    **every counter reproduced, two theorems with none, and two bounds carrying
+    the same spare three.** A-U.2d.24 prices the nonzero-defect regions that
+    must perform A-U.2d.23's replenishment, through compensation depths
+    `c2 = Q + A' - A` and `c3 = L + B - B'` measured against the pure
+    multiplier: `d = 0` exactly when both vanish, the quadrant `c2,c3 <= 0`
+    holds no nonzero defect, and a synchronized event carries an exact
+    primitive cylinder equation `2^c2 u' = 3^c3 u + omega` in a small CRT
+    window. Their enumeration is fully deterministic, so **eleven of eleven
+    counters reproduce exactly**, plus their published 233,432-segment total —
+    the strongest reproduction of the sweep. **Four findings.** **Theorems 7.1
+    and 7.2 have no counter** — the ultrametric alignment laws are asserted
+    inside their validator and incremented nowhere, on the round's two largest
+    populations (219,440 and 217,771 segments, against 216,114 synchronized
+    events that get two counters). **Two assertions restate their own
+    hypotheses**: `c3 <= 0` IS `B' >= B + L` by the definition of `c3`, and
+    `c2 <= 0` IS `A - A' >= Q` — 466,864 comparisons, zero disagreements.
+    **Two boxed inequalities carry the same spare factor of three**: the defect
+    barrier's largest ratio is exactly 1/3 and the CRT window's is exactly 1/3,
+    and both sharp forms are attained (1,213 and 261 times) while Theorem 4.1's
+    bound is attained 42,602 times — the round holds both kinds and only one
+    reads as tight. **The self-validation record changed shape an eleventh
+    time**, now naming files as a bare list and carrying no pass flag at all.
+    **Added here**: both alignment laws counted; the sharp forms with their
+    attainment counts; and each of their two by-construction blocks re-run with
+    exactly its construction broken (427 of 1,184 partitions fail, 12,069 of
+    20,000 quadrant draws fail), with both controls themselves drilled. Drill
+    **38/38**.
+52. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-52. [`code/`](./code/) — the engine, the independent reference, and the gates.
-53. [`data/gate-logs/`](./data/gate-logs/) and
+53. [`code/`](./code/) — the engine, the independent reference, and the gates.
+54. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

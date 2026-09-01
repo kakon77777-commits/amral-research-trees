@@ -69,6 +69,7 @@ CASES = [
     ("src68", (0, ("results", "faithful_core", "total_faithful_mass"))),
     ("src69", (0, ("results", "quotient_floor", "smallest_quotient_seen"))),
     ("src70", (0, ("results", "delay", "smallest_prefix_p"))),
+    ("src71", (0, ("results", "bounds", "sharpened_barrier_attained"))),
 ]
 
 

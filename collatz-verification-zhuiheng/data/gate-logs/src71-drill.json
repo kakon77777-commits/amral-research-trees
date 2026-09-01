@@ -1,0 +1,364 @@
+{
+  "gate": "src71_compensation.py",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_the_defect_adds_where_it_must_subtract": {
+      "caught": true,
+      "expected_named": "population.malformed_segments",
+      "reported": [
+        "population.malformed_segments = 233432",
+        "population.segments",
+        "population.sources",
+        "bounds.segments"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_affine_identity_is_read_backwards": {
+      "caught": true,
+      "expected_named": "population.malformed_segments",
+      "reported": [
+        "population.malformed_segments = 273672",
+        "population.segments",
+        "population.sources",
+        "bounds.segments"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_binary_depth_is_defined_with_its_sign_reversed": {
+      "caught": true,
+      "expected_named": "equivalence.equivalence_violations",
+      "reported": [
+        "equivalence.equivalence_violations = 12404",
+        "equivalence.zero_defect_with_nonzero_compensation = 12335",
+        "equivalence.zero_compensation_with_nonzero_defect = 69",
+        "equivalence.double_deficit_violations = 118"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_ternary_depth_is_defined_with_its_sign_reversed": {
+      "caught": true,
+      "expected_named": "equivalence.equivalence_violations",
+      "reported": [
+        "equivalence.equivalence_violations = 12336",
+        "equivalence.zero_defect_with_nonzero_compensation = 12335",
+        "equivalence.zero_compensation_with_nonzero_defect = 1",
+        "equivalence.double_deficit_violations = 279"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_affine_upper_bound_is_halved": {
+      "caught": true,
+      "expected_named": "bounds.affine_upper_bound_violations",
+      "reported": [
+        "bounds.affine_upper_bound_violations = 71475"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_the_affine_lower_bound_is_inverted": {
+      "caught": true,
+      "expected_named": "bounds.affine_lower_bound_violations",
+      "reported": [
+        "bounds.affine_lower_bound_violations = 233432"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_defect_barrier_is_tightened_past_its_spare_factor": {
+      "caught": true,
+      "expected_named": "bounds.barrier_violations",
+      "reported": [
+        "bounds.barrier_violations = 74618"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_sharpened_barrier_is_tightened_nine_fold": {
+      "caught": true,
+      "expected_named": "bounds.sharpened_barrier_violations",
+      "reported": [
+        "bounds.sharpened_barrier_violations = 59483"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_zero_compensation_needs_only_one_depth_to_vanish": {
+      "caught": true,
+      "expected_named": "equivalence.equivalence_violations",
+      "reported": [
+        "equivalence.equivalence_violations = 2595",
+        "equivalence.zero_compensation_with_nonzero_defect = 2595"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_no_double_deficit_test_demands_both_depths": {
+      "caught": true,
+      "expected_named": "equivalence.double_deficit_violations",
+      "reported": [
+        "equivalence.double_deficit_violations = 4983"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_binary_alignment_valuation_is_one_too_deep": {
+      "caught": true,
+      "expected_named": "alignment.binary_valuation_violations",
+      "reported": [
+        "alignment.binary_valuation_violations = 219440"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_binary_alignment_congruence_loses_its_sign": {
+      "caught": true,
+      "expected_named": "alignment.binary_congruence_violations",
+      "reported": [
+        "alignment.binary_congruence_violations = 201644"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_ternary_alignment_valuation_is_one_too_deep": {
+      "caught": true,
+      "expected_named": "alignment.ternary_valuation_violations",
+      "reported": [
+        "alignment.ternary_valuation_violations = 217771"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_ternary_alignment_congruence_loses_its_sign": {
+      "caught": true,
+      "expected_named": "alignment.ternary_congruence_violations",
+      "reported": [
+        "alignment.ternary_congruence_violations = 217771"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_cylinder_equation_swaps_its_two_units": {
+      "caught": true,
+      "expected_named": "primitive.cylinder_equation_violations",
+      "reported": [
+        "primitive.cylinder_equation_violations = 197779"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_primitive_omega_is_divided_by_the_wrong_ternary_power": {
+      "caught": true,
+      "expected_named": "primitive.omega_not_coprime_to_six",
+      "reported": [
+        "primitive.omega_not_coprime_to_six = 70599",
+        "primitive.cylinder_equation_violations = 84917",
+        "primitive.binary_residue_violations = 83458",
+        "primitive.ternary_residue_violations = 84800"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_primitive_unit_keeps_its_ternary_part": {
+      "caught": true,
+      "expected_named": "primitive.u_not_coprime_to_six",
+      "reported": [
+        "primitive.u_not_coprime_to_six = 70632",
+        "primitive.cylinder_equation_violations = 70632",
+        "primitive.binary_residue_violations = 62194"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_crt_window_is_tightened_past_its_spare_factor": {
+      "caught": true,
+      "expected_named": "primitive.crt_window_violations",
+      "reported": [
+        "primitive.crt_window_violations = 90870"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_sharpened_window_is_tightened_three_fold": {
+      "caught": true,
+      "expected_named": "primitive.sharpened_window_violations",
+      "reported": [
+        "primitive.sharpened_window_violations = 22932"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_ternary_overdrain_demands_five_more_levels": {
+      "caught": true,
+      "expected_named": "trichotomy.ternary_overdrain_violations",
+      "reported": [
+        "trichotomy.ternary_overdrain_violations = 3326"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_binary_overdrain_demands_five_more_levels": {
+      "caught": true,
+      "expected_named": "trichotomy.binary_overdrain_violations",
+      "reported": [
+        "trichotomy.binary_overdrain_violations = 1622"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_ternary_predicate_comparison_is_shifted_by_one": {
+      "caught": true,
+      "expected_named": "trichotomy.c3_nonpositive_disagreeing_with_B_prime_bound",
+      "reported": [
+        "trichotomy.c3_nonpositive_disagreeing_with_B_prime_bound = 14707"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_binary_predicate_comparison_is_shifted_by_one": {
+      "caught": true,
+      "expected_named": "trichotomy.c2_nonpositive_disagreeing_with_A_bound",
+      "reported": [
+        "trichotomy.c2_nonpositive_disagreeing_with_A_bound = 12558"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_binary_telescoping_adds_where_it_must_subtract": {
+      "caught": true,
+      "expected_named": "telescoping.binary_telescoping_violations",
+      "reported": [
+        "telescoping.binary_telescoping_violations = 706"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_ternary_telescoping_adds_where_it_must_subtract": {
+      "caught": true,
+      "expected_named": "telescoping.ternary_telescoping_violations",
+      "reported": [
+        "telescoping.ternary_telescoping_violations = 582"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_random_word_bound_is_halved": {
+      "caught": true,
+      "expected_named": "synthetic.word_upper_bound_violations",
+      "reported": [
+        "synthetic.word_upper_bound_violations = 386"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_quadrant_divisibility_modulus_gains_a_seven": {
+      "caught": true,
+      "expected_named": "synthetic.quadrant_divisibility_violations",
+      "reported": [
+        "synthetic.quadrant_divisibility_violations = 17204"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_published_depths_are_recomputed_with_reversed_signs": {
+      "caught": true,
+      "expected_named": "examples.depth_fields_disagreeing",
+      "reported": [
+        "examples.depth_fields_disagreeing = 15"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_published_barrier_is_tightened_past_its_spare_factor": {
+      "caught": true,
+      "expected_named": "examples.barrier_violations",
+      "reported": [
+        "examples.barrier_violations = 12"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_valuation_of_zero_becomes_a_number": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['vp of zero is None, not a raise and not a sentinel']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D31_the_digest_is_taken_over_the_file_name": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 9"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D32_the_ledger_coverage_heuristic_accepts_anything": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_negative_control",
+      "reported": [
+        "ledger.heuristic_failed_its_negative_control = 1"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N1_the_attained_affine_bound_population_is_emptied": {
+      "caught": true,
+      "expected_named": "bounds.affine_upper_bound_attained",
+      "reported": [
+        "bounds.affine_upper_bound_attained"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N2_the_attained_sharpened_barrier_population_is_emptied": {
+      "caught": true,
+      "expected_named": "bounds.sharpened_barrier_attained",
+      "reported": [
+        "bounds.sharpened_barrier_attained"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N3_the_broken_partition_control_is_made_consecutive_again": {
+      "caught": true,
+      "expected_named": "telescoping.broken_binary_telescoping_failures",
+      "reported": [
+        "telescoping.broken_binary_telescoping_failures"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N4_the_free_quadrant_control_is_given_the_constraint_back": {
+      "caught": true,
+      "expected_named": "synthetic.free_quadrant_divisibility_failures",
+      "reported": [
+        "synthetic.free_quadrant_divisibility_failures"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N5_the_binary_exclusive_class_is_emptied": {
+      "caught": true,
+      "expected_named": "trichotomy.binary_exclusive",
+      "reported": [
+        "trichotomy.trichotomy_classes_unaccounted = 3326",
+        "trichotomy.binary_exclusive"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N6_the_binary_alignment_population_is_emptied": {
+      "caught": true,
+      "expected_named": "alignment.binary_alignment_population",
+      "reported": [
+        "alignment.binary_alignment_population"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "C1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    },
+    "C2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": []
+    }
+  },
+  "anchors_matching_once": 38,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 38,
+    "caught": 38,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 38,
+    "caught_by_their_own_check": 38,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}
