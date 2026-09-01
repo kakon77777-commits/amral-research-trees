@@ -71,6 +71,7 @@ CASES = [
     ("src70", (0, ("results", "delay", "smallest_prefix_p"))),
     ("src71", (0, ("results", "bounds", "sharpened_barrier_attained"))),
     ("src72", (0, ("results", "strip", "upper_end_attained"))),
+    ("src73", (0, ("results", "cf", "certified_partial_quotients"))),
 ]
 
 

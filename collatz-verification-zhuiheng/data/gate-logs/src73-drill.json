@@ -1,0 +1,390 @@
+{
+  "gate": "src73_unit_sync.py",
+  "a_previous_run_was_interrupted_and_the_gate_was_restored": false,
+  "baseline": {
+    "passed": true,
+    "failures": [],
+    "empty_populations": []
+  },
+  "defects": {
+    "D1_the_edge_defect_adds_where_it_must_subtract": {
+      "caught": true,
+      "expected_named": "population.malformed_edges",
+      "reported": [
+        "population.malformed_edges = 140178",
+        "population.edges",
+        "population.sources",
+        "population.zero"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D2_the_quotient_identity_is_read_backwards": {
+      "caught": true,
+      "expected_named": "population.malformed_edges",
+      "reported": [
+        "population.malformed_edges = 133529",
+        "population.zero",
+        "population.binary_exclusive",
+        "population.ternary_exclusive"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D3_the_ternary_depth_is_defined_with_its_sign_reversed": {
+      "caught": true,
+      "expected_named": "sync_toll.reservoir_depth_disagreeing_with_a_nonneg_valuation",
+      "reported": [
+        "population.unclassified = 928",
+        "transport.exact_transport_violations = 65459",
+        "transport.float_transport_violations_at_their_tolerance = 65459",
+        "sync_toll.reservoir_depth_violations = 5448"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D4_the_transport_law_inverts_its_relative_defect_factor": {
+      "caught": true,
+      "expected_named": "transport.exact_transport_violations",
+      "reported": [
+        "transport.exact_transport_violations = 109986",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D5_the_transport_law_reads_its_ternary_depth_as_the_binary_one": {
+      "caught": true,
+      "expected_named": "transport.exact_transport_violations",
+      "reported": [
+        "transport.exact_transport_violations = 75981",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D6_their_float_tolerance_is_tightened_past_the_error_it_covers": {
+      "caught": true,
+      "expected_named": "transport.float_transport_violations_at_their_tolerance",
+      "reported": [
+        "transport.float_transport_violations_at_their_tolerance = 64653",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D7_the_depth_clause_demands_two_more_levels": {
+      "caught": true,
+      "expected_named": "sync_toll.reservoir_depth_violations",
+      "reported": [
+        "sync_toll.reservoir_depth_violations = 100378",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D8_the_quotient_floor_is_raised_two_powers": {
+      "caught": true,
+      "expected_named": "sync_toll.quotient_floor_violations",
+      "reported": [
+        "sync_toll.quotient_floor_violations = 37976",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D9_the_c3_floor_is_raised": {
+      "caught": true,
+      "expected_named": "sync_toll.c3_below_one",
+      "reported": [
+        "sync_toll.c3_below_one = 92907",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D10_the_depth_comparison_is_shifted_by_one": {
+      "caught": true,
+      "expected_named": "sync_toll.reservoir_depth_disagreeing_with_a_nonneg_valuation",
+      "reported": [
+        "sync_toll.reservoir_depth_disagreeing_with_a_nonneg_valuation = 98028",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D11_the_branch_comparison_is_shifted_by_one": {
+      "caught": true,
+      "expected_named": "sync_toll.c3_at_least_one_disagreeing_with_the_branch",
+      "reported": [
+        "sync_toll.c3_at_least_one_disagreeing_with_the_branch = 71651",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D12_the_per_term_reverse_triangle_is_asserted_the_wrong_way": {
+      "caught": true,
+      "expected_named": "variation.terms_with_negative_slack",
+      "reported": [
+        "variation.terms_with_negative_slack = 140178",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D13_the_window_bound_is_tightened_far_past_its_slack": {
+      "caught": true,
+      "expected_named": "variation.window_violations",
+      "reported": [
+        "variation.window_violations = 2342",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D14_the_separation_is_compared_against_the_wrong_side": {
+      "caught": true,
+      "expected_named": "cf.separation_violations",
+      "reported": [
+        "cf.separation_violations = 67",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D15_the_local_partial_quotient_maximum_is_taken_too_small": {
+      "caught": true,
+      "expected_named": "cf.separation_violations",
+      "reported": [
+        "cf.separation_violations = 19",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D16_the_nearest_integer_is_rounded_from_the_wrong_end": {
+      "caught": true,
+      "expected_named": "cf.b_values_the_bracket_could_not_decide",
+      "reported": [
+        "cf.b_values_the_bracket_could_not_decide = 20000",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D17_the_certified_prefix_accepts_a_term_that_is_actually_wrong": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['the emitted prefix is common to both ends of the bracket']",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D18_the_gate_count_master_is_raised_a_hundredfold": {
+      "caught": true,
+      "expected_named": "masters.gate_count_master_violations",
+      "reported": [
+        "masters.gate_count_master_violations = 10",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D19_the_workload_depth_master_is_raised_a_hundredfold": {
+      "caught": true,
+      "expected_named": "masters.workload_depth_master_violations",
+      "reported": [
+        "masters.workload_depth_master_violations = 1",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D20_the_monotone_run_bound_drops_its_run_count": {
+      "caught": true,
+      "expected_named": "masters.monotone_run_violations",
+      "reported": [
+        "masters.monotone_run_violations = 11989",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D21_the_coarea_identity_is_tightened_past_float_noise": {
+      "caught": true,
+      "expected_named": "masters.coarea_identity_violations",
+      "reported": [
+        "masters.coarea_identity_violations = 6961",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D22_the_coarea_crossing_bound_drops_its_maximum": {
+      "caught": true,
+      "expected_named": "masters.coarea_max_crossing_violations",
+      "reported": [
+        "masters.coarea_max_crossing_violations = 11989",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D23_the_exponent_half_space_is_asserted_above_its_own_threshold": {
+      "caught": true,
+      "expected_named": "exponent.half_space_violations",
+      "reported": [
+        "exponent.half_space_violations = 8342",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D24_the_guard_implication_is_read_the_wrong_way": {
+      "caught": true,
+      "expected_named": "exponent.assert_not_implied",
+      "reported": [
+        "exponent.assert_not_implied = 1745",
+        "exponent.assert_implied_by_its_own_guard",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D25_the_published_depths_are_recomputed_one_off": {
+      "caught": true,
+      "expected_named": "examples.depth_fields_disagreeing",
+      "reported": [
+        "examples.depth_fields_disagreeing = 8",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D26_the_published_rows_are_required_to_be_unsynchronized": {
+      "caught": true,
+      "expected_named": "examples.class_not_synchronized",
+      "reported": [
+        "examples.class_not_synchronized = 8",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D27_the_published_quotient_identity_is_read_backwards": {
+      "caught": true,
+      "expected_named": "examples.quotient_identity_violations",
+      "reported": [
+        "examples.quotient_identity_violations = 1",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D28_the_digest_is_taken_over_the_file_name": {
+      "caught": true,
+      "expected_named": "artifacts.digest_mismatches",
+      "reported": [
+        "artifacts.digest_mismatches = 9",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']",
+        "artifacts.digest_mismatches = 9"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D29_the_ledger_coverage_heuristic_accepts_anything": {
+      "caught": true,
+      "expected_named": "ledger.heuristic_failed_its_negative_control",
+      "reported": [
+        "ledger.heuristic_failed_its_negative_control = 1",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "D30_the_valuation_of_zero_becomes_a_number": {
+      "caught": true,
+      "expected_named": "instrument.failed",
+      "reported": [
+        "instrument.failed = ['vp of zero is None']",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N1_the_certified_prefix_is_cut_to_nothing": {
+      "caught": true,
+      "expected_named": "cf.certified_partial_quotients",
+      "reported": [
+        "cf.b_values_the_bracket_could_not_decide = 20000",
+        "errors.instrument_raised = 1",
+        "errors.messages = ['instrument: IndexError: list index out of range']",
+        "cf.certified_partial_quotients"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N2_the_broken_window_control_is_left_unbroken": {
+      "caught": true,
+      "expected_named": "variation.broken_window_failures",
+      "reported": [
+        "variation.broken_window_failures",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N3_the_exponent_assert_is_never_reached": {
+      "caught": true,
+      "expected_named": "exponent.reached_the_assert",
+      "reported": [
+        "exponent.half_space_violations = 1745",
+        "exponent.reached_the_assert",
+        "exponent.assert_implied_by_its_own_guard",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N4_the_monotone_run_guard_never_opens": {
+      "caught": true,
+      "expected_named": "masters.run_guard_opened",
+      "reported": [
+        "masters.run_guard_opened",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N5_the_synchronized_population_is_emptied": {
+      "caught": true,
+      "expected_named": "sync_toll.sync_edges",
+      "reported": [
+        "sync_toll.sync_edges",
+        "sync_toll.predicate_pairs_compared",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "N6_the_provenance_note_is_looked_for_under_the_wrong_name": {
+      "caught": true,
+      "expected_named": "constants.provenance_note_present",
+      "reported": [
+        "constants.provenance_note_present",
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ],
+      "caught_by_something_else_only": false
+    },
+    "A1_the_validation_record_check_reports_every_file_it_names": {
+      "caught": true,
+      "expected_named": "artifacts.validation_names_a_file_not_in_the_bundle",
+      "reported": [
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['Hard_Zeta_AU2d26_Literature_Notes_v0.1.md', 'Hard_Zeta_AU2d26_checker_report.json', 'Hard_Zeta_AU2d26_constants_frontier.json', 'Hard_Zeta_AU2d26_theorem_ledger.json', 'Hard_Zeta_A_Line_ROUTE_MAP_v2.26_AU2d26.md', 'Hard_Zeta_Phase_II_Round_AU2d26_Primitive_Unit_Oscillation_Critical_Slope_Synchronization_Rigidity_v0.1.md', 'PROVENANCE_REPAIR_AU2d26.md', 'verify_Hard_Zeta_AU2d26_unit_sync_rigidity.py']"
+      ],
+      "caught_by_something_else_only": false
+    }
+  },
+  "controls": {
+    "C1_a_trailing_comment_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": [
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ]
+    },
+    "C2_a_blank_line_is_not_a_defect": {
+      "undisturbed": true,
+      "reported": [
+        "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+      ]
+    }
+  },
+  "anchors_matching_once": 37,
+  "anchors_not_unique": {},
+  "totals": {
+    "defects": 37,
+    "caught": 37,
+    "malformed": 0,
+    "missed": 0,
+    "caught_but_by_another_counter": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "counts": {
+    "planted": 37,
+    "caught_by_their_own_check": 37,
+    "missed": 0,
+    "malformed": 0,
+    "controls": 2,
+    "controls_undisturbed": 2
+  },
+  "ok": true
+}

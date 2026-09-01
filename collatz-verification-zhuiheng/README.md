@@ -48,7 +48,7 @@ can fail to be. A body of mathematics can be highly complete *as mathematics* an
 still not reduce cleanly to a machine, and where it fails to reduce, the first
 hypothesis should not be that the theory is wrong.
 
-Across <!-- COUNTS -->72 source items and 51 runs<!-- /COUNTS -->, **nothing in the source
+Across <!-- COUNTS -->73 source items and 52 runs<!-- /COUNTS -->, **nothing in the source
 mathematics failed a check**. The defects clustered in the *realizations* — two
 in the subject's own computational apparatus, considerably more in this arm's
 code, which is what the 304-defect mutation suite exists to catch. But the
@@ -1174,11 +1174,38 @@ instance behind each band.
     for attainment; every by-construction block given a control, including
     both window telescopings (2,581 and 1,938 of 2,599 fail once one interior
     edge is dropped). Drill **39/39**.
-53. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
+53. [`reports/RUN-054-HARD-ZETA-AU2D26-UNIT-SYNC.md`](./reports/RUN-054-HARD-ZETA-AU2D26-UNIT-SYNC.md) —
+    **a withdrawn constant, a certificate rebuilt from exact rationals, and a
+    PASS for a file that isn't there. The last item of the source sweep.**
+    A-U.2d.26 withdraws `rho* = 4.1164` — the numerical Diophantine input
+    carried since A-U.2d.3 — because the Wu-Wang theorem behind it is about
+    `log 3`, not about `beta = log3/log2`, and re-derives everything from
+    finite continued fractions of beta instead. **Eleven of twelve compared
+    figures reproduce exactly.** **Three findings.** **RUN-029 raised this
+    exact hypothesis and refuted it**, on a secondary source attributing the
+    same bound to `log2/log3`; both readings cannot be right, and no
+    recomputation gate can settle which — the arithmetic was checkable and was
+    checked, the attribution never was. Eight of my reports carry exponents
+    derived from it; every one verified the chain and none certified the
+    source, which RUN-029 said at the time. **Their replacement route is
+    checkable, and is verified here in exact rationals** rather than their
+    90-digit floats: 41 certified partial quotients against the 12 published,
+    terms taken only where both ends of a certified bracket agree, and the
+    separation `|a - beta b| > 1/(Q_D b)` decided by integer
+    cross-multiplication over 20,000 values — 0 violations, 0 undecidable,
+    tightest ratio 1.047. **The self-validation record attests `PASS` for
+    `build_AU2d26.py`, a file the bundle does not contain** and CHECKSUMS does
+    not list — reported in the gate's own `artifact_defects` field, since
+    `passed` has meant *the mathematics reproduces* for thirty-one reports. No
+    earlier gate checked that direction. **Added here**: Theorem 3.1 as an
+    exact Fraction, where their `2e-11` allowance is 11,258x the error it
+    absorbs; three definitional clauses measured against the facts they reduce
+    to (200,898 comparisons, zero disagreements). Drill **37/37**.
+54. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
    logs by `code/build_results.py`, never typed by hand.
-54. [`code/`](./code/) — the engine, the independent reference, and the gates.
-55. [`data/gate-logs/`](./data/gate-logs/) and
+55. [`code/`](./code/) — the engine, the independent reference, and the gates.
+56. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 
 How to cite this tree, and its CTCL timestamp, are in

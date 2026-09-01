@@ -1,0 +1,262 @@
+{
+  "run": "RUN-054",
+  "round": "A-U.2d.26",
+  "bundle": "C:\\Users\\kakon\\AppData\\Local\\Temp\\claude\\D--Ai\\45ed5e05-fb04-46ef-9036-07cbfbbf58b6\\scratchpad\\item73",
+  "passed": true,
+  "failures": [],
+  "empty_populations": [],
+  "artifact_defects_the_mathematics_does_not_depend_on": [
+    "artifacts.validation_names_a_file_not_in_the_bundle = ['build_AU2d26.py']"
+  ],
+  "counters_not_in_the_failure_or_population_lists": [],
+  "results": {
+    "instrument": {
+      "checks": 11,
+      "failed": []
+    },
+    "constants": {
+      "constants_checked": 1,
+      "disagreeing_with_both_evaluations": 0,
+      "from_the_float64_chain_not_the_nearest_double": 0,
+      "exact_to_the_last_bit": 1,
+      "undecided_brackets": 0,
+      "missing_from_the_frontier": 0,
+      "withdrawn_exponent_in_the_frontier": 0,
+      "withdrawn_exponent_in_the_checker_report": 1,
+      "withdrawn_exponent_in_the_paper_outside_its_no_go": 2,
+      "frontier_declares_the_exponent_unused": 1,
+      "provenance_note_present": 1,
+      "rows": [
+        {
+          "constant": "beta",
+          "frontier": "1.584962500721156",
+          "verdict": "exact"
+        }
+      ],
+      "oscillation_threshold_is_one_half": 1
+    },
+    "population": {
+      "edges": 140178,
+      "moduli": 5,
+      "sources": 4587,
+      "malformed_edges": 0,
+      "zero": 30192,
+      "sync": 100449,
+      "binary_exclusive": 5541,
+      "ternary_exclusive": 3996,
+      "unclassified": 0
+    },
+    "transport": {
+      "edges": 140178,
+      "exact_transport_violations": 0,
+      "float_transport_violations_at_their_tolerance": 0,
+      "largest_float_error_exponent": -15,
+      "their_tolerance_over_the_largest_error": 11258
+    },
+    "sync_toll": {
+      "sync_edges": 100449,
+      "c3_below_one": 0,
+      "reservoir_depth_violations": 0,
+      "quotient_floor_violations": 0,
+      "output_ternary_valuation_negative": 0,
+      "reservoir_depth_disagreeing_with_a_nonneg_valuation": 0,
+      "c3_at_least_one_disagreeing_with_the_branch": 0,
+      "largest_sync_c3": 7,
+      "predicate_pairs_compared": 200898
+    },
+    "variation": {
+      "terms": 140178,
+      "terms_with_negative_slack": 0,
+      "windows": 2354,
+      "window_violations": 0,
+      "broken_windows": 2029,
+      "broken_window_failures": 2029
+    },
+    "cf": {
+      "certified_partial_quotients": 41,
+      "published_prefix_length": 12,
+      "m_beta_at_D": 23,
+      "q_local": 25,
+      "b_values_tested": 20000,
+      "separation_violations": 0,
+      "b_values_the_bracket_could_not_decide": 0,
+      "tightest_separation_ratio": 1.047,
+      "largest_convergent_denominator_at_or_below_D": 15601
+    },
+    "masters": {
+      "batches": 12000,
+      "gate_count_master_violations": 0,
+      "workload_depth_master_violations": 0,
+      "counters_their_block_increments": 2,
+      "run_trials": 12000,
+      "run_guard_opened": 12000,
+      "monotone_run_violations": 0,
+      "coarea_identity_violations": 0,
+      "coarea_max_crossing_violations": 0,
+      "run_counters_their_block_increments": 2
+    },
+    "exponent": {
+      "trials": 20000,
+      "reached_the_assert": 1745,
+      "assert_implied_by_its_own_guard": 1745,
+      "assert_not_implied": 0,
+      "half_space_violations": 0,
+      "samples_in_the_half_space": 18255
+    },
+    "examples": {
+      "rows": 8,
+      "groups": 1,
+      "quotient_identity_violations": 0,
+      "depth_fields_disagreeing": 0,
+      "unit_fields_disagreeing": 0,
+      "class_not_synchronized": 0
+    },
+    "artifacts": {
+      "files_present": 10,
+      "digests_listed": 9,
+      "digest_mismatches": 0,
+      "checksum_lines_naming_a_missing_file": 0,
+      "files_with_no_digest_anywhere": [
+        "CHECKSUMS.sha256"
+      ],
+      "validation_per_file_entries": 9,
+      "validation_entries_with_a_digest": 0,
+      "files_absent_from_the_validation_record": [
+        "CHECKSUMS.sha256",
+        "SOURCE_VALIDATION_AU2d26.json"
+      ],
+      "duplicate_file_pairs": [],
+      "validation_file_pass_flags_not_true": 0,
+      "validation_names_a_file_not_in_the_bundle": [
+        "build_AU2d26.py"
+      ],
+      "validation_pass_flag_key": "status",
+      "validation_all_pass_flag": "PASS",
+      "validation_records_no_pass_flag_at_all": 0,
+      "validation_pass_flag_not_passing": 0,
+      "validation_top_level_keys": [
+        "canonical_math",
+        "checks",
+        "date",
+        "rho_star_4_1164_used",
+        "round",
+        "status"
+      ],
+      "validation_declares_the_withdrawn_exponent_unused": 1,
+      "validation_top_level_flags_not_true": 0
+    },
+    "ledger": {
+      "paper_proved_items": 13,
+      "ledger_proved_items": 13,
+      "paper_open_items": 7,
+      "ledger_open_items": 8,
+      "paper_no_go_headings": 5,
+      "ledger_no_go_items": 0,
+      "ledger_has_an_open_key": true,
+      "ledger_has_no_no_go_key": 1,
+      "open_items_absent_from_the_ledger": [],
+      "no_go_headings_absent_from_the_ledger": [
+        "14.2",
+        "14.5"
+      ],
+      "heuristic_failed_its_positive_control": 0,
+      "heuristic_failed_its_negative_control": 0
+    },
+    "their_claims": {
+      "rows": [
+        {
+          "check": "primitive_log_transport_exact",
+          "theirs": 140178,
+          "mine": 140178,
+          "basis": "same population"
+        },
+        {
+          "check": "sync_ternary_reservoir_toll_base",
+          "theirs": 100449,
+          "mine": 100449,
+          "basis": "same population"
+        },
+        {
+          "check": "variation_transfer_triangle",
+          "theirs": 17296,
+          "mine": 2354,
+          "basis": "variation.windows"
+        },
+        {
+          "check": "monotone_run_bound",
+          "theirs": 12000,
+          "mine": 12000,
+          "basis": "masters.run_guard_opened"
+        },
+        {
+          "check": "coarea_crossing_identity",
+          "theirs": 12000,
+          "mine": 12000,
+          "basis": "masters.run_guard_opened"
+        },
+        {
+          "check": "finite_CF_separation",
+          "theirs": 20000,
+          "mine": 20000,
+          "basis": "same population"
+        },
+        {
+          "check": "CF_gate_count_master",
+          "theirs": 12000,
+          "mine": 12000,
+          "basis": "masters.batches"
+        },
+        {
+          "check": "CF_workload_depth_master",
+          "theirs": 12000,
+          "mine": 12000,
+          "basis": "masters.batches"
+        },
+        {
+          "check": "exponent_master_algebra",
+          "theirs": 20000,
+          "mine": 20000,
+          "basis": "same population"
+        },
+        {
+          "check": "actual_quotient_active_edges",
+          "theirs": 140178,
+          "mine": 140178,
+          "basis": "same population"
+        },
+        {
+          "check": "actual_sync_edges",
+          "theirs": 100449,
+          "mine": 100449,
+          "basis": "same population"
+        },
+        {
+          "check": "actual_sync_max_c3",
+          "theirs": 7,
+          "mine": 7,
+          "basis": "same population"
+        }
+      ],
+      "checks_not_covered_at_all": 0,
+      "checks_covered_by_a_different_population": 5,
+      "checks_they_report_as_zero": 0,
+      "counts_i_reproduce_exactly": 11
+    },
+    "errors": {
+      "instrument_raised": 0,
+      "constants_raised": 0,
+      "population_raised": 0,
+      "transport_raised": 0,
+      "sync_toll_raised": 0,
+      "variation_raised": 0,
+      "cf_raised": 0,
+      "masters_raised": 0,
+      "exponent_raised": 0,
+      "examples_raised": 0,
+      "artifacts_raised": 0,
+      "ledger_raised": 0,
+      "their_claims_raised": 0,
+      "messages": []
+    }
+  }
+}
