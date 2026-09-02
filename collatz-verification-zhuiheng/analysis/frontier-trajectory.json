@@ -1,0 +1,243 @@
+{
+  "rounds_with_a_frontier": 18,
+  "branch_counts": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    4,
+    1,
+    2,
+    2,
+    3,
+    3,
+    3,
+    3,
+    5,
+    5,
+    5
+  ],
+  "total_killed": 29,
+  "total_born": 34,
+  "minimum_reached": 1,
+  "round_at_minimum": "A-U.2d.15",
+  "final_branches": [
+    "Critical-Slope Synchronized Primitive Process",
+    "Current-Slack Escape",
+    "Linear Lift Mesa",
+    "Logarithmically Rare Positive-Lift Bridge",
+    "Primitive-Unit Oscillation"
+  ],
+  "reading": "The disjunction does not converge. Almost every round kills branches and births about as many, and the count ends higher than it began. The one exception collapsed it to a single conjunctive branch -- and that round added a GLOBAL COUNTING constraint (record sparsity) rather than pricing a local mechanism more finely. Every round since has priced mechanisms exactly, and each exact price revealed another currency the survivor could pay in. An exact identity is a change of coordinates, not an obstruction.",
+  "per_round": [
+    {
+      "round": "A-U.2d.5",
+      "branches": 3,
+      "killed": [],
+      "born": [
+        "CASP B-branch => Sparse",
+        "Huge Partial Quotients",
+        "Residue-Dispersive Laminar Farey Ladder"
+      ]
+    },
+    {
+      "round": "A-U.2d.7",
+      "branches": 3,
+      "killed": [
+        "Residue-Dispersive Laminar Farey Ladder"
+      ],
+      "born": [
+        "Depth-Squeezed Bi-Defective Farey Ladder"
+      ]
+    },
+    {
+      "round": "A-U.2d.8",
+      "branches": 3,
+      "killed": [
+        "Depth-Squeezed Bi-Defective Farey Ladder"
+      ],
+      "born": [
+        "Harmonic-Saturated Low-Source Bi-Defective Farey Ladder"
+      ]
+    },
+    {
+      "round": "A-U.2d.9",
+      "branches": 3,
+      "killed": [
+        "Harmonic-Saturated Low-Source Bi-Defective Farey Ladder"
+      ],
+      "born": [
+        "Syracuse-Sieved Valuation-Stretched Harmonic Ladder"
+      ]
+    },
+    {
+      "round": "A-U.2d.10",
+      "branches": 3,
+      "killed": [
+        "Syracuse-Sieved Valuation-Stretched Harmonic Ladder"
+      ],
+      "born": [
+        "Reciprocal-Flow-Saturated Syracuse Ladder"
+      ]
+    },
+    {
+      "round": "A-U.2d.11",
+      "branches": 3,
+      "killed": [
+        "Reciprocal-Flow-Saturated Syracuse Ladder"
+      ],
+      "born": [
+        "Mod-27 Transport-Saturated Syracuse Ladder"
+      ]
+    },
+    {
+      "round": "A-U.2d.12",
+      "branches": 3,
+      "killed": [
+        "CASP B-branch => Sparse",
+        "Mod-27 Transport-Saturated Syracuse Ladder"
+      ],
+      "born": [
+        "Sparse",
+        "Subpolynomial Block-Transport Syracuse Ladder"
+      ]
+    },
+    {
+      "round": "A-U.2d.14",
+      "branches": 4,
+      "killed": [
+        "Huge Partial Quotients",
+        "Sparse",
+        "Subpolynomial Block-Transport Syracuse Ladder"
+      ],
+      "born": [
+        "A-Envelope Escape",
+        "CASP => Global Renewal Sparsity",
+        "Current-Slack Spike Escape",
+        "Polynomial Huge Partial Quotients"
+      ]
+    },
+    {
+      "round": "A-U.2d.15",
+      "branches": 1,
+      "killed": [
+        "A-Envelope Escape",
+        "CASP => Global Renewal Sparsity",
+        "Current-Slack Spike Escape",
+        "Polynomial Huge Partial Quotients"
+      ],
+      "born": [
+        "CASP survivor => Slack-Enclosed Sparse Record Process with B/Partial-Quotient Pressure"
+      ]
+    },
+    {
+      "round": "A-U.2d.16",
+      "branches": 2,
+      "killed": [
+        "CASP survivor => Slack-Enclosed Sparse Record Process with B/Partial-Quotient Pressure"
+      ],
+      "born": [
+        "CASP survivor => Current-Slack / Huge-PQ Escape",
+        "Critical Record-Gap Bridge Process"
+      ]
+    },
+    {
+      "round": "A-U.2d.17",
+      "branches": 2,
+      "killed": [
+        "CASP survivor => Current-Slack / Huge-PQ Escape",
+        "Critical Record-Gap Bridge Process"
+      ],
+      "born": [
+        "CASP survivor => Current-Slack/Huge-PQ Escape",
+        "Double-Canonical Density-One Critical Bridge"
+      ]
+    },
+    {
+      "round": "A-U.2d.18",
+      "branches": 3,
+      "killed": [
+        "CASP survivor => Current-Slack/Huge-PQ Escape",
+        "Double-Canonical Density-One Critical Bridge"
+      ],
+      "born": [
+        "CASP survivor => Current-Slack Escape",
+        "Near-Linear Critical Record Bridge Process; each closed near-linear bridge => Zero-Lift Mechanical Cocycle",
+        "logarithmically rare Positive-Lift Bridge"
+      ]
+    },
+    {
+      "round": "A-U.2d.20",
+      "branches": 3,
+      "killed": [
+        "CASP survivor => Current-Slack Escape",
+        "Near-Linear Critical Record Bridge Process; each closed near-linear bridge => Zero-Lift Mechanical Cocycle",
+        "logarithmically rare Positive-Lift Bridge"
+      ],
+      "born": [
+        "Current-Slack Escape",
+        "Logarithmically Rare Positive-Lift Bridge",
+        "[Near-Full Sparse-Defect Canonical Boundary + Linear Three-Sheet High-Lift Return-Loop Core]"
+      ]
+    },
+    {
+      "round": "A-U.2d.21",
+      "branches": 3,
+      "killed": [
+        "[Near-Full Sparse-Defect Canonical Boundary + Linear Three-Sheet High-Lift Return-Loop Core]"
+      ],
+      "born": [
+        "Screened Fully Faithful Return-Cycle Process"
+      ]
+    },
+    {
+      "round": "A-U.2d.22",
+      "branches": 3,
+      "killed": [
+        "Screened Fully Faithful Return-Cycle Process"
+      ],
+      "born": [
+        "Loop-Tree Quotient-Resonance Process"
+      ]
+    },
+    {
+      "round": "A-U.2d.23",
+      "branches": 5,
+      "killed": [
+        "Loop-Tree Quotient-Resonance Process"
+      ],
+      "born": [
+        "Cross-Adic Recharge Process",
+        "Linear Lift Mesa",
+        "Nonzero Defect-Carry Process"
+      ]
+    },
+    {
+      "round": "A-U.2d.24",
+      "branches": 5,
+      "killed": [
+        "Cross-Adic Recharge Process",
+        "Nonzero Defect-Carry Process"
+      ],
+      "born": [
+        "Exclusive Compensation-Seesaw Process",
+        "Primitive Cross-Adic Defect-Cylinder Process"
+      ]
+    },
+    {
+      "round": "A-U.2d.25",
+      "branches": 5,
+      "killed": [
+        "Exclusive Compensation-Seesaw Process",
+        "Primitive Cross-Adic Defect-Cylinder Process"
+      ],
+      "born": [
+        "Critical-Slope Synchronized Primitive Process",
+        "Primitive-Unit Oscillation"
+      ]
+    }
+  ]
+}
