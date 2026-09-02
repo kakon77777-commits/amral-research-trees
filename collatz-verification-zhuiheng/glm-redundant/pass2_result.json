@@ -1,0 +1,102 @@
+{
+  "totals": {
+    "dispatched": 9,
+    "answered": 2,
+    "no_usable_answer": 7,
+    "controls_answered": 1,
+    "controls_correct": 0,
+    "findings_answered": 1,
+    "findings_confirmed": 1,
+    "glm_ever_said_can_fail": false,
+    "verdict": "the worker said cannot-fail to every question in both passes; its agreement carries no information"
+  },
+  "rows": [
+    {
+      "task_id": "collatz-judge2-010",
+      "pass1_id": "collatz-judge-010",
+      "round": "au2d25",
+      "line": "assert (2**c2)*up==(3**c3)*u+omega",
+      "my_verdict": "cannot_fail",
+      "context_bytes": 8117,
+      "glm_can_fail": false,
+      "glm_why": "In verify_edge's sync branch the preceding asserts vp(d,2)==A and vp(d,3)==Bp make omega=d/(2^A*3^Bp) exactly, and the asserted edge relation (2**q)*np==3*n+d combined with the definitions n=2^A*3^B*u, np=2^Ap*3^Bp*up, c2=q+Ap-A, c3=1+B-Bp ",
+      "correct": true
+    },
+    {
+      "task_id": "collatz-judge2-014",
+      "pass1_id": "collatz-judge-014",
+      "round": "au2d25",
+      "line": "assert -(2**q) < d < 3",
+      "my_verdict": "can_fail",
+      "context_bytes": 3919,
+      "glm_can_fail": false,
+      "glm_why": "Since D comes from edge_data where r=x%M∈[0,M) and s=z%M∈[0,M) with M≥1, and d=(1+3r−2^q·s)/M exactly (num%M==0 is asserted first), we get 1+3r−2^q·s ≤ 1+3(M−1) = 3M−2 < 3M so d<3, and 1+3r−2^q·s+2^q·M = 1+3r+2^q(M−s) ≥ 1+2^q > 0 so d>−2^q,",
+      "correct": false
+    }
+  ],
+  "unanswered": [
+    {
+      "task_id": "collatz-judge2-002",
+      "pass1_id": "collatz-judge-002",
+      "round": "au2d25",
+      "line": "assert sum(dU)+sum(abs(x) for x in eps)+1e-10 >= sum(imb)",
+      "my_verdict": "cannot_fail",
+      "context_bytes": 5132,
+      "problem": "length"
+    },
+    {
+      "task_id": "collatz-judge2-004",
+      "pass1_id": "collatz-judge-004",
+      "round": "au2d24",
+      "line": "assert (d==0) == (c2==0 and c3==0)",
+      "my_verdict": "can_fail",
+      "context_bytes": 2448,
+      "problem": "length"
+    },
+    {
+      "task_id": "collatz-judge2-005",
+      "pass1_id": "collatz-judge-005",
+      "round": "au2d26",
+      "line": "assert J*QD*S+1e-10>=N*N",
+      "my_verdict": "can_fail",
+      "context_bytes": 8273,
+      "problem": "length"
+    },
+    {
+      "task_id": "collatz-judge2-013",
+      "pass1_id": "collatz-judge-013",
+      "round": "au2d24",
+      "line": "assert abs(d) < (2**Q)*(3**L)",
+      "my_verdict": "can_fail",
+      "context_bytes": 2448,
+      "problem": "length"
+    },
+    {
+      "task_id": "collatz-judge2-015",
+      "pass1_id": "collatz-judge-015",
+      "round": "au2d24",
+      "line": "assert 0 < Bcode <= bound",
+      "my_verdict": "can_fail",
+      "context_bytes": 2448,
+      "problem": "length"
+    },
+    {
+      "task_id": "collatz-judge2-022",
+      "pass1_id": "collatz-judge-022",
+      "round": "au2d26",
+      "line": "assert abs(tv-J)<=E+2e-10",
+      "my_verdict": "cannot_fail",
+      "context_bytes": 8273,
+      "problem": "length"
+    },
+    {
+      "task_id": "collatz-judge2-028",
+      "pass1_id": "collatz-judge-028",
+      "round": "au2d26",
+      "line": "assert abs(lhs-rhs)<2e-11",
+      "my_verdict": "can_fail",
+      "context_bytes": 8273,
+      "problem": "length"
+    }
+  ]
+}

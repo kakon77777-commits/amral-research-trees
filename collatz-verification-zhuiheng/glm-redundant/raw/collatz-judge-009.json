@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-009",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"The assertion only runs under the enclosing guard `c2>0 and c3<=0`, and since c3 = L + Bt - Bp, the guard condition c3<=0 is exactly equivalent to Bp >= Bt+L, making the assertion a tautology whenever it is reached.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 2964,
+      "completion_tokens": 442,
+      "total_tokens": 3406,
+      "cached_tokens": 0,
+      "reasoning_tokens": 366
+    },
+    "currency_cost_usd": 0.0006655999999999999,
+    "promotional_price_estimated_usd": 0.00033279999999999996,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "202609030011181aa55443a3c341fe",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 2964,
+      "output_tokens": 442,
+      "reasoning_tokens": 366,
+      "cached_tokens": 0,
+      "duration_ms": 9879,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

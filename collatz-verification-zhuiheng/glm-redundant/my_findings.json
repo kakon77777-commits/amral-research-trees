@@ -1,0 +1,125 @@
+{
+  "purpose": "The cannot-fail assertions this arm found in rounds A-U.2d.24/25/26, written down BEFORE reading GLM's candidates so the comparison is mechanical rather than retrospective. Each entry names the round, the assertion as it appears in the bundle's own checker, the counter it is reported under, and the RUN report that recorded it.",
+  "recorded_at": "2026-09-02",
+  "findings": [
+    {
+      "round": "au2d24",
+      "line": "assert Bp >= Bt+L",
+      "counter": "binary_exclusive_overcharge",
+      "why": "reached only under `c3<=0`, and c3 is DEFINED as L+Bt-Bp, so the assertion is its own guard",
+      "run": "RUN-052"
+    },
+    {
+      "round": "au2d24",
+      "line": "assert A-Ap >= Q",
+      "counter": "ternary_exclusive_overdrain",
+      "why": "reached only under `c2<=0`, and c2 is DEFINED as Q+Ap-A, so the assertion is its own guard",
+      "run": "RUN-052"
+    },
+    {
+      "round": "au2d24",
+      "line": "assert sumc2 == Q + AJ - A0",
+      "counter": "compensation_telescoping",
+      "why": "consecutive blocks share an endpoint, so the intermediate valuations cancel by construction of the partition",
+      "run": "RUN-052"
+    },
+    {
+      "round": "au2d24",
+      "line": "assert sumc3 == L + B0 - BJ",
+      "counter": "compensation_telescoping",
+      "why": "same telescoping, on the ternary side",
+      "run": "RUN-052"
+    },
+    {
+      "round": "au2d24",
+      "line": "assert d % ((2**Q)*(3**L)) == 0",
+      "counter": "synthetic_double_deficit_product_divisibility",
+      "why": "the generator forces A>=Q+Ap and Bp>=Bt+L, so both terms of d carry 2^(Q+Ap) 3^(Bt+L)",
+      "run": "RUN-052"
+    },
+    {
+      "round": "au2d24",
+      "line": "assert abs(d) >= (2**Q)*(3**L)",
+      "counter": "synthetic_double_deficit_product_divisibility",
+      "why": "immediate from the divisibility asserted on the line above, given d != 0",
+      "run": "RUN-052"
+    },
+    {
+      "round": "au2d25",
+      "line": "assert (2**c2)*up==(3**c3)*u+omega",
+      "counter": "synthetic_primitive_sync_equations",
+      "why": "up was just defined as num//(2**c2) under a test that 2**c2 divides num, so this restates integer division",
+      "run": "RUN-053"
+    },
+    {
+      "round": "au2d25",
+      "line": "assert up>u",
+      "counter": "synthetic_TE_unit_reset",
+      "why": "up is built as a positive multiple of u plus one",
+      "run": "RUN-053"
+    },
+    {
+      "round": "au2d25",
+      "line": "assert ub>upb",
+      "counter": "synthetic_BE_unit_pump",
+      "why": "ub is built as xi>=1 plus a multiplier of at least 2 times upb",
+      "run": "RUN-053"
+    },
+    {
+      "round": "au2d25",
+      "line": "assert sum(dU)+sum(abs(x) for x in eps)+1e-10 >= sum(imb)",
+      "counter": "unit_variation_triangle_bound",
+      "why": "Theorem 5.1 makes |c2-beta c3| = |log2(u'/u) - eps| on each edge, so the triangle inequality gives every term and the sum of non-negative slacks cannot go negative",
+      "run": "RUN-053"
+    },
+    {
+      "round": "au2d25",
+      "line": "assert Fraction(n1,n0) == Fraction(3**L,2**Q)*prod",
+      "counter": "quotient_correction_product_exact",
+      "why": "telescopes by construction because the window's edges chain",
+      "run": "RUN-053"
+    },
+    {
+      "round": "au2d25",
+      "line": "assert unit_ratio==unit_prod",
+      "counter": "primitive_unit_window_transport_exact",
+      "why": "same telescoping, on the unit side",
+      "run": "RUN-053"
+    },
+    {
+      "round": "au2d26",
+      "line": "assert D['c3']>=1",
+      "counter": "sync_ternary_reservoir_toll_base",
+      "why": "reached only under typ=='sync', which requires c3>0, and c3 is an integer",
+      "run": "RUN-054"
+    },
+    {
+      "round": "au2d26",
+      "line": "assert D['B']>=D['c3']-1",
+      "counter": "sync_ternary_reservoir_toll_base",
+      "why": "c3 = 1+B-Bp, so this is exactly Bp>=0, which a 3-adic valuation always is",
+      "run": "RUN-054"
+    },
+    {
+      "round": "au2d26",
+      "line": "assert D['n']>=3**(D['c3']-1)",
+      "counter": "sync_ternary_reservoir_toll_base",
+      "why": "3^B divides n and B >= c3-1 by the previous clause",
+      "run": "RUN-054"
+    },
+    {
+      "round": "au2d26",
+      "line": "assert abs(tv-J)<=E+2e-10",
+      "counter": "variation_transfer_triangle",
+      "why": "implied term by term by the transport identity plus the reverse triangle inequality",
+      "run": "RUN-054"
+    },
+    {
+      "round": "au2d26",
+      "line": "assert alpha+chi+2*mu<1+1e-12",
+      "counter": "exponent_master_algebra",
+      "why": "reached only when lhs < 1-1e-12, which is strictly stronger than the assertion",
+      "run": "RUN-054"
+    }
+  ]
+}

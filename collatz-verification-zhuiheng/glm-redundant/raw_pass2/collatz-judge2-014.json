@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge2-014",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"Since D comes from edge_data where r=x%M∈[0,M) and s=z%M∈[0,M) with M≥1, and d=(1+3r−2^q·s)/M exactly (num%M==0 is asserted first), we get 1+3r−2^q·s ≤ 1+3(M−1) = 3M−2 < 3M so d<3, and 1+3r−2^q·s+2^q·M = 1+3r+2^q(M−s) ≥ 1+2^q > 0 so d>−2^q, making the strip condition true for every constructible input.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 1851,
+      "completion_tokens": 3837,
+      "total_tokens": 5688,
+      "cached_tokens": 0,
+      "reasoning_tokens": 3671
+    },
+    "currency_cost_usd": 0.00219615,
+    "promotional_price_estimated_usd": 0.001098075,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "20260903004423dd512210496e4ce4",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 1851,
+      "output_tokens": 3837,
+      "reasoning_tokens": 3671,
+      "cached_tokens": 0,
+      "duration_ms": 108616,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

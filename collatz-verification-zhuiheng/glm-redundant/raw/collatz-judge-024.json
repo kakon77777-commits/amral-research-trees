@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-024",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"The assert only runs when c2=Q+Ap-A>0, and since seg's earlier assert guarantees d=2^Q*np-3^L*n with np=2^Ap*u, n=2^A*v (u,v odd), d=2^A*(even - odd) has exact 2-adic valuation min(A, Q+Ap)=A, so vp(d,2)==A is forced whenever the guard is entered.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 2963,
+      "completion_tokens": 2344,
+      "total_tokens": 5307,
+      "cached_tokens": 2944,
+      "reasoning_tokens": 2238
+    },
+    "currency_cost_usd": 0.00161645,
+    "promotional_price_estimated_usd": 0.000808225,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "202609030034179e8fee8fbe534cc5",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 2963,
+      "output_tokens": 2344,
+      "reasoning_tokens": 2238,
+      "cached_tokens": 2944,
+      "duration_ms": 64774,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

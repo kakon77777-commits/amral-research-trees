@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-012",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"The assertion is B>=c3-1 with c3=1+B-Bp, so it reduces to Bp=vp(np,3)>=0, which is always true because np>0 is guaranteed by the early 'n<=0 or np<=0: return None' guard and vp of a positive integer is non-negative.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 3074,
+      "completion_tokens": 1037,
+      "total_tokens": 4111,
+      "cached_tokens": 0,
+      "reasoning_tokens": 956
+    },
+    "currency_cost_usd": 0.0009796,
+    "promotional_price_estimated_usd": 0.0004898,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "202609030013457e67dffae6734338",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 3074,
+      "output_tokens": 1037,
+      "reasoning_tokens": 956,
+      "cached_tokens": 0,
+      "duration_ms": 28335,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

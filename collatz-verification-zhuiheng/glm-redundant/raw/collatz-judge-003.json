@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-003",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"The assertion sits inside the guard `if c2<=0 and c3>0`, and since c2 is defined as Q+Ap-A, the guard condition c2<=0 is algebraically identical to A-Ap>=Q, making the asserted inequality tautologically true for every input that reaches it.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 2962,
+      "completion_tokens": 737,
+      "total_tokens": 3699,
+      "cached_tokens": 0,
+      "reasoning_tokens": 661
+    },
+    "currency_cost_usd": 0.0008127999999999999,
+    "promotional_price_estimated_usd": 0.00040639999999999996,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "202609030006018977a5f2587142ed",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 2962,
+      "output_tokens": 737,
+      "reasoning_tokens": 661,
+      "cached_tokens": 0,
+      "duration_ms": 20052,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

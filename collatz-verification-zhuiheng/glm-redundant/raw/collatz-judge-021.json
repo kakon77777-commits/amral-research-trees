@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-021",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"The assertion is an exact rational-arithmetic telescoping identity: each row satisfies up/u = 3^c3/2^c2 · (3n+d)/(3n) as a pure algebraic consequence of the asserted 2^q·np = 3n+d and the unit-part decompositions, and consecutive rows share identical values (rows[i]['np'] == rows[i+1]['n'] since the same modulus M and remainder x%M are used), so the product telescopes exactly to up(rows[-1])/u(rows[0]) == unit_ratio, with no floating point or contingent mathematics involved.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 3196,
+      "completion_tokens": 2833,
+      "total_tokens": 6029,
+      "cached_tokens": 0,
+      "reasoning_tokens": 2694
+    },
+    "currency_cost_usd": 0.0018959,
+    "promotional_price_estimated_usd": 0.00094795,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "20260903002417b2c9a902bc0d4f87",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 3196,
+      "output_tokens": 2833,
+      "reasoning_tokens": 2694,
+      "cached_tokens": 0,
+      "duration_ms": 57728,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

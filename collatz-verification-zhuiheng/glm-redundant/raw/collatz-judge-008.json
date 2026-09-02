@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-008",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"The assertion sits inside 'if not feasible:' where feasible=(alpha+chi+2*mu>=1-1e-12), so when reached, lhs < 1-1e-12 < 1+1e-12 for the very same float value, making the condition guaranteed true.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 3076,
+      "completion_tokens": 636,
+      "total_tokens": 3712,
+      "cached_tokens": 0,
+      "reasoning_tokens": 560
+    },
+    "currency_cost_usd": 0.0007794,
+    "promotional_price_estimated_usd": 0.0003897,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "202609030011067bbf70ab09fe457b",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 3076,
+      "output_tokens": 636,
+      "reasoning_tokens": 560,
+      "cached_tokens": 0,
+      "duration_ms": 12097,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

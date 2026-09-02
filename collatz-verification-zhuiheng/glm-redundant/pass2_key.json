@@ -1,0 +1,77 @@
+{
+  "note": "pass 2 = same questions, reduced context. A DIFFERENT condition from pass 1; scored separately, never pooled.",
+  "items": [
+    {
+      "task_id": "collatz-judge2-002",
+      "pass1_id": "collatz-judge-002",
+      "round": "au2d25",
+      "line": "assert sum(dU)+sum(abs(x) for x in eps)+1e-10 >= sum(imb)",
+      "my_verdict": "cannot_fail",
+      "context_bytes": 5132
+    },
+    {
+      "task_id": "collatz-judge2-004",
+      "pass1_id": "collatz-judge-004",
+      "round": "au2d24",
+      "line": "assert (d==0) == (c2==0 and c3==0)",
+      "my_verdict": "can_fail",
+      "context_bytes": 2448
+    },
+    {
+      "task_id": "collatz-judge2-005",
+      "pass1_id": "collatz-judge-005",
+      "round": "au2d26",
+      "line": "assert J*QD*S+1e-10>=N*N",
+      "my_verdict": "can_fail",
+      "context_bytes": 8273
+    },
+    {
+      "task_id": "collatz-judge2-010",
+      "pass1_id": "collatz-judge-010",
+      "round": "au2d25",
+      "line": "assert (2**c2)*up==(3**c3)*u+omega",
+      "my_verdict": "cannot_fail",
+      "context_bytes": 8117
+    },
+    {
+      "task_id": "collatz-judge2-013",
+      "pass1_id": "collatz-judge-013",
+      "round": "au2d24",
+      "line": "assert abs(d) < (2**Q)*(3**L)",
+      "my_verdict": "can_fail",
+      "context_bytes": 2448
+    },
+    {
+      "task_id": "collatz-judge2-014",
+      "pass1_id": "collatz-judge-014",
+      "round": "au2d25",
+      "line": "assert -(2**q) < d < 3",
+      "my_verdict": "can_fail",
+      "context_bytes": 3919
+    },
+    {
+      "task_id": "collatz-judge2-015",
+      "pass1_id": "collatz-judge-015",
+      "round": "au2d24",
+      "line": "assert 0 < Bcode <= bound",
+      "my_verdict": "can_fail",
+      "context_bytes": 2448
+    },
+    {
+      "task_id": "collatz-judge2-022",
+      "pass1_id": "collatz-judge-022",
+      "round": "au2d26",
+      "line": "assert abs(tv-J)<=E+2e-10",
+      "my_verdict": "cannot_fail",
+      "context_bytes": 8273
+    },
+    {
+      "task_id": "collatz-judge2-028",
+      "pass1_id": "collatz-judge-028",
+      "round": "au2d26",
+      "line": "assert abs(lhs-rhs)<2e-11",
+      "my_verdict": "can_fail",
+      "context_bytes": 8273
+    }
+  ]
+}

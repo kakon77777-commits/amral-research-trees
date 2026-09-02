@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-028",
+  "status": "candidate_failure",
+  "answer": "",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 3071,
+      "completion_tokens": 4096,
+      "total_tokens": 7167,
+      "cached_tokens": 0,
+      "reasoning_tokens": 4096
+    },
+    "currency_cost_usd": 0.0025086500000000003,
+    "promotional_price_estimated_usd": 0.0012543250000000001,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "GLM response finish_reason must be stop"
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "2026090300300174504000485a4671",
+    "finish_reason": "length",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 3071,
+      "output_tokens": 4096,
+      "reasoning_tokens": 4096,
+      "cached_tokens": 0,
+      "duration_ms": 90806,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    },
+    "failure_type": "ProviderProtocolError"
+  }
+}

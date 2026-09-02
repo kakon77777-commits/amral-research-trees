@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-027",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"The guard 'sync' gives c3=1+B-Bp with Bp=vp(np,3)>=0, so c3-1=B-Bp<=B, and since 3^B divides n (B=vp(n,3)) and edge_data guarantees n>=1, we have n>=3^B>=3^(c3-1), making the condition unconditionally true.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 3077,
+      "completion_tokens": 1589,
+      "total_tokens": 4666,
+      "cached_tokens": 3072,
+      "reasoning_tokens": 1495
+    },
+    "currency_cost_usd": 0.0012560499999999999,
+    "promotional_price_estimated_usd": 0.0006280249999999999,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "20260903003523d2d2462c70b14200",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 3077,
+      "output_tokens": 1589,
+      "reasoning_tokens": 1495,
+      "cached_tokens": 3072,
+      "duration_ms": 35371,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

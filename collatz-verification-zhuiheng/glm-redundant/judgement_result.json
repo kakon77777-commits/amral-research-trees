@@ -1,0 +1,295 @@
+{
+  "totals": {
+    "assertions_put_to_glm": 28,
+    "answered": 19,
+    "no_usable_answer": 9,
+    "my_cannot_fail_findings": 19,
+    "confirmed_by_glm": 16,
+    "disputed_by_glm": 0,
+    "controls": 9,
+    "controls_glm_got_right": 0,
+    "controls_glm_called_cannot_fail": 3,
+    "findings_with_no_answer": 3,
+    "controls_with_no_answer": 6,
+    "agreement_on_my_findings": "16/16",
+    "control_accuracy": "0/3",
+    "glm_said_cannot_fail_on_everything": true
+  },
+  "confirmed": [
+    {
+      "task_id": "collatz-judge-001",
+      "round": "au2d24",
+      "line": "assert abs(d) >= (2**Q)*(3**L)",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "The construction guarantees A >= Q+Ap (so 2^Q | n) and Bp >= Bt+L (so 3^L | np), making d = 2^Q*np - 3^L*n an exact multiple of 2^Q*3^L; inside the guard d != 0, d is therefore a nonzero multiple of 2^Q*3^L, so |d| >= 2^Q*3^L always holds."
+    },
+    {
+      "task_id": "collatz-judge-003",
+      "round": "au2d24",
+      "line": "assert A-Ap >= Q",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "The assertion sits inside the guard `if c2<=0 and c3>0`, and since c2 is defined as Q+Ap-A, the guard condition c2<=0 is algebraically identical to A-Ap>=Q, making the asserted inequality tautologically true for every input that reaches it."
+    },
+    {
+      "task_id": "collatz-judge-006",
+      "round": "au2d24",
+      "line": "assert sumc2 == Q + AJ - A0",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "Each row's c2 is defined in seg() as Q+Ap-A, and consecutive segments share boundary points with the same M so row k's np equals row k+1's n (both equal st[boundary]//M, with nonpositive quotients already filtered out by returning None), ma"
+    },
+    {
+      "task_id": "collatz-judge-008",
+      "round": "au2d26",
+      "line": "assert alpha+chi+2*mu<1+1e-12",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "The assertion sits inside 'if not feasible:' where feasible=(alpha+chi+2*mu>=1-1e-12), so when reached, lhs < 1-1e-12 < 1+1e-12 for the very same float value, making the condition guaranteed true."
+    },
+    {
+      "task_id": "collatz-judge-009",
+      "round": "au2d24",
+      "line": "assert Bp >= Bt+L",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "The assertion only runs under the enclosing guard `c2>0 and c3<=0`, and since c3 = L + Bt - Bp, the guard condition c3<=0 is exactly equivalent to Bp >= Bt+L, making the assertion a tautology whenever it is reached."
+    },
+    {
+      "task_id": "collatz-judge-011",
+      "round": "au2d26",
+      "line": "assert D['c3']>=1",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "The assertion only executes inside the `if D['typ']=='sync'` guard, and 'sync' is assigned in edge_data exactly when c2>0 and c3>0; since c3 = 1+B-Bp is always an integer, c3>0 implies c3>=1, making the condition guaranteed true."
+    },
+    {
+      "task_id": "collatz-judge-012",
+      "round": "au2d26",
+      "line": "assert D['B']>=D['c3']-1",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "The assertion is B>=c3-1 with c3=1+B-Bp, so it reduces to Bp=vp(np,3)>=0, which is always true because np>0 is guaranteed by the early 'n<=0 or np<=0: return None' guard and vp of a positive integer is non-negative."
+    },
+    {
+      "task_id": "collatz-judge-016",
+      "round": "au2d24",
+      "line": "assert sumc3 == L + B0 - BJ",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "Each row's c3 is defined in seg as L+Bt-Bp, and consecutive rows share the same cut-point orbit value with the same M, so the next row's n equals the previous row's np (both equal x//M); hence the per-row Bt/Bp terms telescope exactly to Bt"
+    },
+    {
+      "task_id": "collatz-judge-018",
+      "round": "au2d25",
+      "line": "assert Fraction(n1,n0) == Fraction(3**L,2**Q)*prod",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "Since edge_data enforces 3n+d = 2^q·np with n,np>0, the product telescopes exactly: Fraction(3**L,2**Q)*prod equals ∏(np_i/n_i), where all intermediate st[a+j]//M factors cancel, leaving exactly n1/n0 = (st[b]//M)/(st[a]//M), so the identit"
+    },
+    {
+      "task_id": "collatz-judge-020",
+      "round": "au2d25",
+      "line": "assert lhs==rhs",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "Every D reaching verify_edge satisfies edge_data's prior assert (2**q)*np == 3*n+d (itself forced exactly by the orbit relation 2^q*z = 3*x+1 and the modular split x=nM+r, z=npM+s), and substituting that plus c2=q+Ap-A, c3=1+B-Bp reduces rh"
+    },
+    {
+      "task_id": "collatz-judge-021",
+      "round": "au2d25",
+      "line": "assert unit_ratio==unit_prod",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "The assertion is an exact rational-arithmetic telescoping identity: each row satisfies up/u = 3^c3/2^c2 · (3n+d)/(3n) as a pure algebraic consequence of the asserted 2^q·np = 3n+d and the unit-part decompositions, and consecutive rows share"
+    },
+    {
+      "task_id": "collatz-judge-023",
+      "round": "au2d25",
+      "line": "assert up>u",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "In both places this assertion appears (the TE branch of verify_edge and the synthetic TE loop), it is immediately preceded by up being constructed (and in verify_edge asserted) as up = (2**(A-1))*(3**(B+1))*u + 1 with A>=1, B>=0, and u>=1, "
+    },
+    {
+      "task_id": "collatz-judge-024",
+      "round": "au2d24",
+      "line": "assert vp(d,2)==A",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "The assert only runs when c2=Q+Ap-A>0, and since seg's earlier assert guarantees d=2^Q*np-3^L*n with np=2^Ap*u, n=2^A*v (u,v odd), d=2^A*(even - odd) has exact 2-adic valuation min(A, Q+Ap)=A, so vp(d,2)==A is forced whenever the guard is e"
+    },
+    {
+      "task_id": "collatz-judge-025",
+      "round": "au2d24",
+      "line": "assert d % ((2**Q)*(3**L)) == 0",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "Since A >= Q+Ap >= Q and Bp >= Bt+L >= L, the term 3^L*n is divisible by 2^Q (as 2^A | n) and the term 2^Q*np is divisible by 3^L (as 3^Bp | np), so with gcd(2^Q,3^L)=1 both terms of d = 2^Q*np - 3^L*n are divisible by (2^Q)*(3^L), guarante"
+    },
+    {
+      "task_id": "collatz-judge-026",
+      "round": "au2d25",
+      "line": "assert ub>upb",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "xi >= 1 (randrange(1,100,2)), c2b >= 1 and g >= 0 make (2**c2b)*(3**g) >= 2, and upb >= 1, so ub = xi + (2**c2b)*(3**g)*upb >= 1 + 2*upb > upb is guaranteed for every input the loop can produce."
+    },
+    {
+      "task_id": "collatz-judge-027",
+      "round": "au2d26",
+      "line": "assert D['n']>=3**(D['c3']-1)",
+      "my_verdict": "cannot_fail",
+      "glm_can_fail": false,
+      "glm_why": "The guard 'sync' gives c3=1+B-Bp with Bp=vp(np,3)>=0, so c3-1=B-Bp<=B, and since 3^B divides n (B=vp(n,3)) and edge_data guarantees n>=1, we have n>=3^B>=3^(c3-1), making the condition unconditionally true."
+    }
+  ],
+  "control_held": [],
+  "glm_disputes": [],
+  "glm_overcalls": [
+    {
+      "task_id": "collatz-judge-007",
+      "round": "au2d25",
+      "line": "assert up == (2**(A-1))*(3**(B+1))*u + 1",
+      "my_verdict": "can_fail",
+      "glm_can_fail": false,
+      "glm_why": "Whenever this line is reached, the prior asserts (edge_data's 2^q·np = 3n+d, plus d==2, q==1, A>=1, Ap==0, Bp==0) force np = (3n+2)/2 = 2^(A-1)·3^(B+1)·u + 1 and up = np (since Ap=Bp=0), making the condition an algebraic identity."
+    },
+    {
+      "task_id": "collatz-judge-017",
+      "round": "au2d25",
+      "line": "assert xi>=1 and xi%2==1",
+      "my_verdict": "can_fail",
+      "glm_can_fail": false,
+      "glm_why": "In the BE branch the preceding asserts `d<0`, `vp(d,2)==A` (exact 2-adic valuation of -d is A), and `(-d)%((2**A)*(3**(B+1)))==0` guarantee xi is the exact quotient (-d)/(2^A·3^(B+1)), which is a positive integer (so xi>=1) and odd (removin"
+    },
+    {
+      "task_id": "collatz-judge-019",
+      "round": "au2d26",
+      "line": "assert TV<=runs*H+1e-10",
+      "my_verdict": "can_fail",
+      "glm_can_fail": false,
+      "glm_why": "Each same-sign run of significant diffs telescopes to a net change bounded by the global range H, and the only discarded diffs (|d|<=1e-15, at most 79 of them) plus float rounding contribute far less than the 1e-10 slack, so TV<=runs*H+1e-1"
+    }
+  ],
+  "no_answer": [
+    {
+      "task_id": "collatz-judge-002",
+      "round": "au2d25",
+      "line": "assert sum(dU)+sum(abs(x) for x in eps)+1e-10 >= sum(imb)",
+      "my_verdict": "cannot_fail",
+      "problem": {
+        "status": "candidate_failure",
+        "finish_reason": "length",
+        "warnings": [
+          "GLM response finish_reason must be stop"
+        ]
+      }
+    },
+    {
+      "task_id": "collatz-judge-004",
+      "round": "au2d24",
+      "line": "assert (d==0) == (c2==0 and c3==0)",
+      "my_verdict": "can_fail",
+      "problem": {
+        "status": "candidate_failure",
+        "finish_reason": "length",
+        "warnings": [
+          "GLM response finish_reason must be stop"
+        ]
+      }
+    },
+    {
+      "task_id": "collatz-judge-005",
+      "round": "au2d26",
+      "line": "assert J*QD*S+1e-10>=N*N",
+      "my_verdict": "can_fail",
+      "problem": {
+        "status": "candidate_failure",
+        "finish_reason": "length",
+        "warnings": [
+          "GLM response finish_reason must be stop"
+        ]
+      }
+    },
+    {
+      "task_id": "collatz-judge-010",
+      "round": "au2d25",
+      "line": "assert (2**c2)*up==(3**c3)*u+omega",
+      "my_verdict": "cannot_fail",
+      "problem": {
+        "status": "candidate_failure",
+        "finish_reason": "length",
+        "warnings": [
+          "GLM response finish_reason must be stop"
+        ]
+      }
+    },
+    {
+      "task_id": "collatz-judge-013",
+      "round": "au2d24",
+      "line": "assert abs(d) < (2**Q)*(3**L)",
+      "my_verdict": "can_fail",
+      "problem": {
+        "status": "candidate_failure",
+        "finish_reason": "length",
+        "warnings": [
+          "GLM response finish_reason must be stop"
+        ]
+      }
+    },
+    {
+      "task_id": "collatz-judge-014",
+      "round": "au2d25",
+      "line": "assert -(2**q) < d < 3",
+      "my_verdict": "can_fail",
+      "problem": {
+        "status": "candidate_failure",
+        "finish_reason": "length",
+        "warnings": [
+          "GLM response finish_reason must be stop"
+        ]
+      }
+    },
+    {
+      "task_id": "collatz-judge-015",
+      "round": "au2d24",
+      "line": "assert 0 < Bcode <= bound",
+      "my_verdict": "can_fail",
+      "problem": {
+        "status": "candidate_failure",
+        "finish_reason": "length",
+        "warnings": [
+          "GLM response finish_reason must be stop"
+        ]
+      }
+    },
+    {
+      "task_id": "collatz-judge-022",
+      "round": "au2d26",
+      "line": "assert abs(tv-J)<=E+2e-10",
+      "my_verdict": "cannot_fail",
+      "problem": {
+        "status": "candidate_failure",
+        "finish_reason": "length",
+        "warnings": [
+          "GLM response finish_reason must be stop"
+        ]
+      }
+    },
+    {
+      "task_id": "collatz-judge-028",
+      "round": "au2d26",
+      "line": "assert abs(lhs-rhs)<2e-11",
+      "my_verdict": "can_fail",
+      "problem": {
+        "status": "candidate_failure",
+        "finish_reason": "length",
+        "warnings": [
+          "GLM response finish_reason must be stop"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-001",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"The construction guarantees A >= Q+Ap (so 2^Q | n) and Bp >= Bt+L (so 3^L | np), making d = 2^Q*np - 3^L*n an exact multiple of 2^Q*3^L; inside the guard d != 0, d is therefore a nonzero multiple of 2^Q*3^L, so |d| >= 2^Q*3^L always holds.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 2970,
+      "completion_tokens": 1825,
+      "total_tokens": 4795,
+      "cached_tokens": 0,
+      "reasoning_tokens": 1711
+    },
+    "currency_cost_usd": 0.001358,
+    "promotional_price_estimated_usd": 0.000679,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "2026090300033979dc1b1731044f5a",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 2970,
+      "output_tokens": 1825,
+      "reasoning_tokens": 1711,
+      "cached_tokens": 0,
+      "duration_ms": 32308,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

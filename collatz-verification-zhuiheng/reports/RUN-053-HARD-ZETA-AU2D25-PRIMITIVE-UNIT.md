@@ -21,6 +21,23 @@ which is a much stronger statement and, measured, a sharp one. It then collapses
 
 That last identity is the round's real content: the compensation slope `c₂ − βc₃` *is* the negative primitive-unit log drift, up to an exact relative-defect correction. Everything downstream is priced from it.
 
+## Correction, 2026-09-03 — the strip is forced by the residue ranges
+
+The section below reads the strip's sharpness as a result of this round. It is
+not. With `r = x%M`, `s = z%M` in `[0, M)` and `d = (1+3r−2^q s)/M`, the upper
+end follows from `1+3r−2^q s ≤ 3M−2 < 3M` and the lower from
+`1+3r+2^q(M−s) ≥ 1+2^q > 0`. Verified on 33,281 integral cases from arbitrary
+`(M, q, r, s)` with no orbit involved: 0 violations. The bound is sharp because
+the residue ranges are sharp.
+
+The theorem is true and still useful downstream. What is wrong is presenting
+187,769 verified edges as evidence for it, and contrasting its sharpness with
+the previous round's loose bounds as if they were the same kind of claim — those
+were estimates, this is a range computation.
+
+**Found by GLM**, in the redundant layer, on a control I had audited and kept.
+See [`glm-redundant/corrections.md`](../glm-redundant/corrections.md).
+
 ## The strip is sharp, and that is worth saying
 
 Measured over all 187,769 quotient-active edges:
@@ -80,6 +97,26 @@ Eleven previous rounds have each carried a differently-shaped self-validation re
 * digests remain at zero, twelve rounds running.
 
 Separately, the theorem ledger has **no no-go key at all** this round, against the paper's nine NO-GO headings, three of which (12.5, 12.8, 12.9) have no textual counterpart anywhere in it. The proved list matches exactly, 16 to 16.
+
+### Correction, 2026-09-03 — the synchronized alignment clauses cannot fail
+
+Theorem 5.1 itself is also forced. With `n = 2^A 3^B u`, `n′ = 2^{A′}3^{B′}u′`
+and `𝔡 := 2^q n′ − 3n`, the transport law is an algebraic rearrangement of those
+definitions — tested on 200,000 arbitrary triples with no orbit involved, 0
+violations. The report above calls it "the round's real content", which is fair
+about its *meaning*; presenting 187,769 verified edges as evidence for it is not,
+since no input could have produced anything else.
+
+This round's synchronized branch asserts `vp(d,2)==A`, `vp(d,3)==Bp` and
+`gcd(omega,6)==1` on 131,639 edges, and this gate counts them among the checks
+that hold. They are forced by the definitions: `c₂ > 0` **is** `q + A′ > A` and
+`c₃ > 0` **is** `1 + B > B′`, so the ultrametric law fixes both valuations, and
+the coprimality follows from dividing out exactly those. Both premises hold on
+131,639 of 131,639 — because each is its own branch condition.
+
+The zeros are real; they are not evidence about the paper. Found while building
+the GLM redundant layer; see
+[`glm-redundant/corrections.md`](../glm-redundant/corrections.md).
 
 ## What this gate adds beyond theirs
 

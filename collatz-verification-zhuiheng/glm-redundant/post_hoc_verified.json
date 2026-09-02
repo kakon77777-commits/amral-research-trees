@@ -1,0 +1,40 @@
+{
+  "note": "Assertions the pre-registered key calls `can_fail` that this arm has SINCE demonstrated to be forced. Listing them here rather than editing judgement_key.json keeps the pre-registration intact: the key records what I believed before the answers, this file records what I proved afterwards, and the scorer reports the two separately. An entry here means GLM's `cannot_fail` was CORRECT and my control was wrong — a successful challenge, not a worker error.",
+  "recorded": "2026-09-03",
+  "entries": [
+    {
+      "line": "assert -(2**q) < d < 3",
+      "round": "au2d25",
+      "who_found_it": "GLM, in pass 2 (collatz-judge2-014)",
+      "why_forced": "r = x%M and s = z%M lie in [0,M), and d = (1+3r-2^q s)/M, so 1+3r-2^q s <= 3M-2 < 3M gives d < 3, and 1+3r+2^q(M-s) >= 1+2^q > 0 gives d > -2^q.",
+      "verified_by": "33,281 integral cases from arbitrary (M, q, r, s) with no Collatz orbit involved, 0 violations at either end",
+      "consequence": "RUN-053 made this the round's headline as 'a bound that is finally sharp'; the sharpness is that of the residue ranges. Correction 5 in corrections.md."
+    },
+    {
+      "line": "assert up == (2**(A-1))*(3**(B+1))*u + 1",
+      "round": "au2d25",
+      "who_found_it": "this arm, pre-dispatch; GLM independently agreed (collatz-judge-007)",
+      "why_forced": "the preceding asserts d==2, q==1, Ap==0, Bp==0 plus n = 2^A 3^B u force n' = (3n+2)/2 = 2^(A-1) 3^(B+1) u + 1, and up = n' since Ap=Bp=0.",
+      "verified_by": "200,000 arbitrary (A,B,u), 0 violations",
+      "consequence": "documented as a borderline case and deliberately left in the key; see corrections.md"
+    },
+    {
+      "line": "assert xi>=1 and xi%2==1",
+      "round": "au2d25",
+      "who_found_it": "this arm, pre-dispatch; GLM independently agreed (collatz-judge-017)",
+      "why_forced": "the preceding d<0, vp(d,2)==A and the asserted divisibility make xi the exact quotient (-d)/(2^A 3^(B+1)), whose 2-adic valuation is 0.",
+      "verified_by": "200,000 constructed cases, 0 violations",
+      "consequence": "documented as a borderline case and deliberately left in the key; see corrections.md"
+    }
+  ],
+  "criterion_disagreements": [
+    {
+      "line": "assert TV<=runs*H+1e-10",
+      "round": "au2d26",
+      "glm_verdict": "cannot_fail",
+      "my_verdict": "can_fail",
+      "status": "unresolved, and reported as such",
+      "why": "GLM argues each monotone run telescopes to a net change bounded by H, which is correct bookkeeping on the definitions of TV, runs and H. This arm counts it as a control because it is the paper's own Lemma 5.1 and the inputs are random rather than constructed. The disagreement is about where the line falls between 'trivial consequence of the definitions' and 'a stated lemma being tested', not about the mathematics. Neither reading is scored as an error."
+    }
+  ]
+}

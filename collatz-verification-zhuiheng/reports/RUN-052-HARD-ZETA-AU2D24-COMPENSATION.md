@@ -34,6 +34,25 @@ The populations are not small — they are the two largest in the round: 219,440
 
 This is the second round running with an uncounted theorem, after A-U.2d.23's Theorem 7.1. The pattern is the same: a claim asserted inside a validator, with the counter attached to something adjacent.
 
+### Correction, 2026-09-03 — the four clauses cannot fail
+
+The counts above are right; the reading of them was not. **All four clauses are
+forced by the definitions**, so their zeros are not evidence about the paper.
+
+From `𝔡 = 2^Q n′ − 3^L n` alone: `ν₂(3^L n) = A` and `ν₂(2^Q n′) = Q + A′`,
+and the hypothesis `c₂ > 0` **is** `Q + A′ > A`, so the ultrametric law gives
+`ν₂(𝔡) = A`; dividing by `2^A` makes the binary congruence `2^{c₂}·odd`. The
+ternary pair follows the same way from `c₃ > 0` being `L + B > B′`. Measured:
+the premise `Q + A′ > A` holds on 219,440 of 219,440 — because it is the branch
+condition in different variables.
+
+The finding that these theorems carry **no counter** is unaffected. What changes
+is its weight: a counter for them would have counted a restatement.
+
+Found while building the GLM redundant layer, by auditing my own controls before
+they were dispatched — not by GLM. Full record in
+[`glm-redundant/corrections.md`](../glm-redundant/corrections.md).
+
 ## Finding 2 — two assertions restate their own hypotheses
 
 Their validator ends with:

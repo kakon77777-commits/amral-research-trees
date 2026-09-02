@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-019",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"Each same-sign run of significant diffs telescopes to a net change bounded by the global range H, and the only discarded diffs (|d|<=1e-15, at most 79 of them) plus float rounding contribute far less than the 1e-10 slack, so TV<=runs*H+1e-10 is deterministically guaranteed for every random draw.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 3072,
+      "completion_tokens": 1826,
+      "total_tokens": 4898,
+      "cached_tokens": 0,
+      "reasoning_tokens": 1735
+    },
+    "currency_cost_usd": 0.0013737999999999999,
+    "promotional_price_estimated_usd": 0.0006868999999999999,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "202609030022134b8080da0ac64b5d",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 3072,
+      "output_tokens": 1826,
+      "reasoning_tokens": 1735,
+      "cached_tokens": 0,
+      "duration_ms": 42384,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-018",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"Since edge_data enforces 3n+d = 2^q·np with n,np>0, the product telescopes exactly: Fraction(3**L,2**Q)*prod equals ∏(np_i/n_i), where all intermediate st[a+j]//M factors cancel, leaving exactly n1/n0 = (st[b]//M)/(st[a]//M), so the identity holds by exact rational construction whenever the assertion is reached.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 3209,
+      "completion_tokens": 2297,
+      "total_tokens": 5506,
+      "cached_tokens": 0,
+      "reasoning_tokens": 2190
+    },
+    "currency_cost_usd": 0.00162985,
+    "promotional_price_estimated_usd": 0.000814925,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "20260903003325ae5952aa835a452f",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 3209,
+      "output_tokens": 2297,
+      "reasoning_tokens": 2190,
+      "cached_tokens": 0,
+      "duration_ms": 51516,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

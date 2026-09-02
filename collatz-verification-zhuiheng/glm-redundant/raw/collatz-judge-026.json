@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-026",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"xi >= 1 (randrange(1,100,2)), c2b >= 1 and g >= 0 make (2**c2b)*(3**g) >= 2, and upb >= 1, so ub = xi + (2**c2b)*(3**g)*upb >= 1 + 2*upb > upb is guaranteed for every input the loop can produce.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 3195,
+      "completion_tokens": 587,
+      "total_tokens": 3782,
+      "cached_tokens": 0,
+      "reasoning_tokens": 486
+    },
+    "currency_cost_usd": 0.00077275,
+    "promotional_price_estimated_usd": 0.000386375,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "20260903002909955c5917be6c41ac",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 3195,
+      "output_tokens": 587,
+      "reasoning_tokens": 486,
+      "cached_tokens": 0,
+      "duration_ms": 10534,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-011",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"The assertion only executes inside the `if D['typ']=='sync'` guard, and 'sync' is assigned in edge_data exactly when c2>0 and c3>0; since c3 = 1+B-Bp is always an integer, c3>0 implies c3>=1, making the condition guaranteed true.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 3069,
+      "completion_tokens": 604,
+      "total_tokens": 3673,
+      "cached_tokens": 0,
+      "reasoning_tokens": 523
+    },
+    "currency_cost_usd": 0.0007623499999999999,
+    "promotional_price_estimated_usd": 0.00038117499999999993,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "202609030031395c1bf94ea3bd41a3",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 3069,
+      "output_tokens": 604,
+      "reasoning_tokens": 523,
+      "cached_tokens": 0,
+      "duration_ms": 15398,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}

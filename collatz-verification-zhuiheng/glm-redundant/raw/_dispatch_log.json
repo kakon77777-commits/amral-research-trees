@@ -1,0 +1,142 @@
+[
+  {
+    "task": "collatz-judge-001",
+    "status": "candidate_success",
+    "seconds": 32.9
+  },
+  {
+    "task": "collatz-judge-002",
+    "status": "candidate_failure",
+    "seconds": 109.7
+  },
+  {
+    "task": "collatz-judge-003",
+    "status": "candidate_success",
+    "seconds": 20.6
+  },
+  {
+    "task": "collatz-judge-004",
+    "status": "candidate_failure",
+    "seconds": 91.9
+  },
+  {
+    "task": "collatz-judge-005",
+    "status": "candidate_failure",
+    "seconds": 83.8
+  },
+  {
+    "task": "collatz-judge-006",
+    "status": "candidate_success",
+    "seconds": 49.1
+  },
+  {
+    "task": "collatz-judge-007",
+    "status": "candidate_success",
+    "seconds": 59.0
+  },
+  {
+    "task": "collatz-judge-008",
+    "status": "candidate_success",
+    "seconds": 12.6
+  },
+  {
+    "task": "collatz-judge-009",
+    "status": "candidate_success",
+    "seconds": 10.4
+  },
+  {
+    "task": "collatz-judge-010",
+    "status": "candidate_failure",
+    "seconds": 93.2
+  },
+  {
+    "task": "collatz-judge-011",
+    "status": "unparsed",
+    "seconds": 42.9
+  },
+  {
+    "task": "collatz-judge-012",
+    "status": "candidate_success",
+    "seconds": 28.9
+  },
+  {
+    "task": "collatz-judge-013",
+    "status": "candidate_failure",
+    "seconds": 97.7
+  },
+  {
+    "task": "collatz-judge-014",
+    "status": "candidate_failure",
+    "seconds": 102.4
+  },
+  {
+    "task": "collatz-judge-015",
+    "status": "unparsed",
+    "seconds": 82.5
+  },
+  {
+    "task": "collatz-judge-016",
+    "status": "candidate_success",
+    "seconds": 70.5
+  },
+  {
+    "task": "collatz-judge-017",
+    "status": "candidate_success",
+    "seconds": 50.3
+  },
+  {
+    "task": "collatz-judge-018",
+    "status": "unparsed",
+    "seconds": 75.8
+  },
+  {
+    "task": "collatz-judge-019",
+    "status": "candidate_success",
+    "seconds": 42.9
+  },
+  {
+    "task": "collatz-judge-020",
+    "status": "candidate_success",
+    "seconds": 80.8
+  },
+  {
+    "task": "collatz-judge-021",
+    "status": "candidate_success",
+    "seconds": 58.3
+  },
+  {
+    "task": "collatz-judge-022",
+    "status": "candidate_failure",
+    "seconds": 94.6
+  },
+  {
+    "task": "collatz-judge-023",
+    "status": "candidate_success",
+    "seconds": 50.3
+  },
+  {
+    "task": "collatz-judge-024",
+    "status": "unparsed",
+    "seconds": 65.0
+  },
+  {
+    "task": "collatz-judge-025",
+    "status": "candidate_success",
+    "seconds": 23.9
+  },
+  {
+    "task": "collatz-judge-026",
+    "status": "candidate_success",
+    "seconds": 11.1
+  },
+  {
+    "task": "collatz-judge-027",
+    "status": "unparsed",
+    "seconds": 41.2
+  },
+  {
+    "task": "collatz-judge-028",
+    "status": "candidate_failure",
+    "seconds": 91.4
+  }
+]

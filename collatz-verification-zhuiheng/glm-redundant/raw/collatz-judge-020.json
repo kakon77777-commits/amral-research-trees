@@ -1,0 +1,43 @@
+{
+  "task_id": "collatz-judge-020",
+  "status": "candidate_success",
+  "answer": "{\"can_fail\": false, \"why\": \"Every D reaching verify_edge satisfies edge_data's prior assert (2**q)*np == 3*n+d (itself forced exactly by the orbit relation 2^q*z = 3*x+1 and the modular split x=nM+r, z=npM+s), and substituting that plus c2=q+Ap-A, c3=1+B-Bp reduces rhs to 2^(A-Ap)*3^(B-Bp)*np/n, which is exactly up/u computed in exact Fraction arithmetic, so lhs==rhs is an algebraic identity for all producible inputs.\"}",
+  "artifacts": [],
+  "changes": [],
+  "evidence": [],
+  "tool_events": [],
+  "cost": {
+    "usage": {
+      "prompt_tokens": 3194,
+      "completion_tokens": 3688,
+      "total_tokens": 6882,
+      "cached_tokens": 0,
+      "reasoning_tokens": 3555
+    },
+    "currency_cost_usd": 0.0023231,
+    "promotional_price_estimated_usd": 0.00116155,
+    "promotional_price_observed_on": "2026-08-27",
+    "cost_kind": "estimated",
+    "pricing_basis_version": "zai-2026-08-27"
+  },
+  "warnings": [
+    "Unverified GLM output; acceptance is separate.",
+    "Cost uses conservative list pricing; the dated promotional estimate may be lower."
+  ],
+  "provider_meta": {
+    "provider": "glm_flash_worker",
+    "model": "glm-5.3-flash",
+    "response_id": "20260903002256ca58d2953b704815",
+    "finish_reason": "stop",
+    "wire_format": "zai_chat_completions",
+    "metrics": {
+      "input_tokens": 3194,
+      "output_tokens": 3688,
+      "reasoning_tokens": 3555,
+      "cached_tokens": 0,
+      "duration_ms": 80197,
+      "cost_kind": "estimated",
+      "pricing_basis_version": "zai-2026-08-27"
+    }
+  }
+}
