@@ -62,9 +62,41 @@ Everything in the envelope, plus:
 | `verified_claims` | non-empty array; every entry has both `id` and `claim` |
 | `explicit_non_claims` | non-empty array of non-empty strings |
 
-A profile is only evaluated once its prerequisite holds: `results-claims/1`
-cannot be reported satisfied on a document whose envelope is broken, however
-good its claims fields look.
+### `results-pairs/1`
+
+Everything in the envelope, plus a non-empty `render_pairs` array. Each entry
+names two dotted paths that must resolve, in this document, to numbers:
+
+| key | requirement |
+| --- | --- |
+| `value` | dotted path to the figure a page would naturally show |
+| `against` | dotted path to the figure that gives it meaning |
+| `why` | a stated reason; a pair nobody can review is a rule nobody can challenge |
+
+**Why this profile exists.** The sub-site's first build rendered *"1441 defects
+caught"*, *"121 controls undisturbed"* and *"72 items rechecked"*. Every one of
+those numbers was correct against source. Every one of them was missing the
+figure that gives it meaning: **"1441 defects caught" reads identically whether
+1441 or 2000 were planted**, and the drill's entire claim is that those two are
+equal.
+
+A build-time check comparing each rendered number against source cannot catch
+this. That check verifies **fidelity**; what is wrong here is **sufficiency**.
+Nothing rendered was incorrect — the field that mattered simply was not
+rendered, and a check can only check what is there. It is the same shape as a
+link checker that confirms every link resolves while a page is missing a link
+entirely.
+
+Which of two numbers is load-bearing is a fact about the *line*, not something
+a renderer can infer, and a list of pairs kept in the renderer would be a
+second copy of this tree's semantics. So the line declares it, and
+`build_results.py` resolves every declared pair against the finished document
+before writing: **a declaration pointing at a renamed field is worse than no
+declaration**, because the renderer's own check would then pass vacuously.
+
+A profile is only evaluated once its prerequisite holds: `results-claims/1` and
+`results-pairs/1` cannot be reported satisfied on a document whose envelope is
+broken, however good their own fields look.
 
 ---
 
@@ -83,8 +115,15 @@ Current measurement, from `data/gate-logs/results-profiles.json`:
 
 | line | satisfies | claim-box source |
 | --- | --- | --- |
-| `collatz-verification-zhuiheng` | envelope + claims | `verified_claims` + `explicit_non_claims` |
+| `collatz-verification-zhuiheng` | envelope + claims + pairs | `verified_claims` + `explicit_non_claims` |
 | `erdos-885-k5-chengxu` | envelope only | `global_status.statement` and report prose |
+
+For a line satisfying `results-pairs/1`, the validator also returns
+`figures_that_must_not_be_shown_alone` — read it and refuse to render a `value`
+without its `against`. This line currently declares five pairs, including one
+found while writing this document: `coverage` publishes both
+`odd_starts_checked` and `odd_starts_expected`, and the first build of the
+sub-site rendered only the former.
 
 **Failing a profile is not an error.** It is the branch a renderer should take.
 A line outside `results-claims/1` still states its boundaries — the ERDOS-885
@@ -119,7 +158,7 @@ so a line can carry whatever else it needs.
 ## The checks behind this document
 
 `code/validate_results_profiles.py` is exercised by
-`code/validate_results_profiles_drill.py`: **8 planted defects, each required
+`code/validate_results_profiles_drill.py`: **12 planted defects, each required
 to be refused by the rule named for it, and 4 controls undisturbed.** One of
 the controls is there to keep an honest line safe — a document satisfying the
 envelope and nothing more must pass as a *legal state*, so the validator can

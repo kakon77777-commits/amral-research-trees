@@ -37,17 +37,40 @@
       "declared_schema_version": 1,
       "satisfies": [
         "results-envelope/1",
-        "results-claims/1"
+        "results-claims/1",
+        "results-pairs/1"
       ],
-      "gaps": {
-        "results-pairs/1": [
-          "render_pairs must be a non-empty array"
-        ]
-      },
+      "gaps": {},
       "declared": [],
       "declared_but_not_satisfied": [],
       "renders_claim_box_from": "verified_claims + explicit_non_claims",
-      "figures_that_must_not_be_shown_alone": []
+      "figures_that_must_not_be_shown_alone": [
+        {
+          "value": "paper_sweep.defects_caught_by_the_named_check",
+          "against": "paper_sweep.defects_planted",
+          "label": "planted defects, caught by the check named for each"
+        },
+        {
+          "value": "paper_sweep.controls_undisturbed",
+          "against": "paper_sweep.controls",
+          "label": "controls, undisturbed"
+        },
+        {
+          "value": "paper_sweep.rechecked_by_this_tree",
+          "against": "paper_sweep.source_items",
+          "label": "source items rechecked by this tree"
+        },
+        {
+          "value": "coverage.odd_starts_checked",
+          "against": "coverage.odd_starts_expected",
+          "label": "odd starts checked, against the count the interval requires"
+        },
+        {
+          "value": "gates.mutation_drill.defects_caught",
+          "against": "gates.mutation_drill.defects_planted",
+          "label": "engine defects planted and caught"
+        }
+      ]
     }
   ],
   "counts": {
@@ -55,7 +78,7 @@
     "unreadable": 0,
     "satisfying_envelope": 2,
     "satisfying_claims": 1,
-    "satisfying_pairs": 0,
+    "satisfying_pairs": 1,
     "declared_but_not_satisfied": 0
   },
   "ok": true

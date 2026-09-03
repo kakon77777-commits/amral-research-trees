@@ -103,8 +103,8 @@
     "unprocessed": [],
     "run_reports": 52,
     "drills": 55,
-    "defects_planted": 1441,
-    "defects_caught_by_the_named_check": 1441,
+    "defects_planted": 1445,
+    "defects_caught_by_the_named_check": 1445,
     "controls": 121,
     "controls_undisturbed": 121,
     "why_these_figures_can_be_trusted_to_be_complete": "code/suite_totals.py reads every archived drill log, classifies each one's tally shape explicitly, and exits non-zero if it meets a shape it cannot interpret - so a drill it does not understand stops the build instead of contributing zero. code/build_source_manifest.py derives each Hard-Zeta round's status from the gate log and RUN report on disk rather than a hand-kept table, which is what had drifted: the table still read 39 of 73 long after the sweep passed them.",
@@ -1123,8 +1123,8 @@
       "against": "paper_sweep.defects_planted",
       "label": "planted defects, caught by the check named for each",
       "why": "the drill's claim is that these are equal; the caught count alone cannot show whether any defect survived",
-      "value_is": 1441,
-      "against_is": 1441
+      "value_is": 1445,
+      "against_is": 1445
     },
     {
       "value": "paper_sweep.controls_undisturbed",
