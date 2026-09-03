@@ -4,43 +4,44 @@
   "profiles": {
     "results-envelope/1": "the six keys every existing file agrees on",
     "results-claims/1": "envelope plus structured verified_claims and explicit_non_claims",
-    "results-pairs/1": "envelope plus render_pairs: the figures this line says must never be shown without the number that gives them meaning"
+    "results-pairs/1": "envelope plus render_pairs: the figures this line says must never be shown without the number that gives them meaning",
+    "results-figures/1": "envelope plus headline_figures: which of this line's numbers are its own headlines, and under what label, so a renderer need understand no line's internal structure"
   },
   "not_an_error": "failing a profile a file never declared is information for a renderer, not a defect: that line states its boundaries elsewhere and must still be rendered with them",
   "files": [
     {
-      "ref": "origin/agent/archive-chengxu-erdos-885-k5",
-      "path": "erdos-885-k5-chengxu/data/results.v1.json",
-      "research_line_id": "erdos-885-k5-chengxu",
-      "declared_schema_version": 1,
-      "satisfies": [
-        "results-envelope/1",
-        "results-claims/1"
-      ],
-      "gaps": {
-        "results-pairs/1": [
-          "render_pairs must be a non-empty array"
-        ]
-      },
-      "declared": [],
-      "declared_but_not_satisfied": [],
-      "renders_claim_box_from": "verified_claims + explicit_non_claims",
-      "figures_that_must_not_be_shown_alone": []
-    },
-    {
-      "ref": "origin/agent/collatz-verification-zhuiheng",
-      "path": "collatz-verification-zhuiheng/data/results.v1.json",
+      "ref": null,
+      "path": "data/results.v1.json",
       "research_line_id": "collatz-verification-zhuiheng",
       "declared_schema_version": 1,
       "satisfies": [
         "results-envelope/1",
         "results-claims/1",
-        "results-pairs/1"
+        "results-pairs/1",
+        "results-figures/1"
       ],
       "gaps": {},
       "declared": [],
       "declared_but_not_satisfied": [],
       "renders_claim_box_from": "verified_claims + explicit_non_claims",
+      "headline_figures_to_render": [
+        {
+          "path": "paper_sweep.run_reports",
+          "label": "run reports"
+        },
+        {
+          "path": "paper_sweep.drills",
+          "label": "falsifiability drills"
+        },
+        {
+          "path": "coverage.chunks",
+          "label": "separately logged chunks"
+        },
+        {
+          "path": "coverage.total_engine_seconds",
+          "label": "engine seconds"
+        }
+      ],
       "figures_that_must_not_be_shown_alone": [
         {
           "value": "paper_sweep.defects_caught_by_the_named_check",
@@ -71,11 +72,12 @@
     }
   ],
   "counts": {
-    "files": 2,
+    "files": 1,
     "unreadable": 0,
-    "satisfying_envelope": 2,
-    "satisfying_claims": 2,
+    "satisfying_envelope": 1,
+    "satisfying_claims": 1,
     "satisfying_pairs": 1,
+    "satisfying_figures": 1,
     "declared_but_not_satisfied": 0
   },
   "ok": true

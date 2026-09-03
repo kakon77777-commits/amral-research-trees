@@ -22,6 +22,10 @@ be touched, for its capabilities to be described correctly.
                       1441 or 2000 were planted; which of the two is
                       load-bearing is a fact about the line, not something a
                       renderer can infer.
+  results-figures/1   envelope, plus headline_figures: which of this line's
+                      numbers are its own headlines and under what label, so a
+                      renderer need understand no line's internal structure.
+                      Nothing declared here may also belong to a pair.
 
 Not satisfying a profile is not an error. It tells a renderer which branch to
 take: a line outside `results-claims/1` still states its boundaries, in
@@ -167,14 +171,60 @@ def check_pairs(doc: dict) -> list[str]:
     return missing
 
 
+def check_figures(doc: dict) -> list[str]:
+    """Missing requirements for results-figures/1, beyond the envelope.
+
+    A renderer that has to guess which fields are a line's headline numbers
+    ends up hardcoding one line's shape. That is not hypothetical: the
+    verification sub-site knew `paper_sweep.*` and `coverage.*`, so the second
+    line to arrive rendered its entire body of work as two empty section
+    headings. A line says which figures are its own headlines, and a renderer
+    needs to understand no line's internal structure.
+    """
+    missing = []
+    figs = doc.get("headline_figures")
+    if not isinstance(figs, list) or not figs:
+        missing.append("headline_figures must be a non-empty array")
+        return missing
+    pairs = doc.get("render_pairs")
+    claimed = set()
+    if isinstance(pairs, list):
+        for p in pairs:
+            if isinstance(p, dict):
+                claimed |= {p.get("value"), p.get("against")}
+    for i, f in enumerate(figs):
+        if not isinstance(f, dict):
+            missing.append(f"headline_figures[{i}] must be an object")
+            continue
+        path = f.get("path")
+        if not isinstance(path, str) or not path:
+            missing.append(f"headline_figures[{i}].path must be a dotted path")
+        else:
+            if path in claimed:
+                missing.append(
+                    f"headline_figures[{i}] {path} is also part of a render "
+                    "pair; showing it alone is the defect the pair prevents")
+            got = _resolve(doc, path)
+            if got is None:
+                missing.append(f"headline_figures[{i}].path does not resolve: {path}")
+            elif isinstance(got, bool) or not isinstance(got, (int, float)):
+                missing.append(f"headline_figures[{i}].path is not a number: {path}")
+        if not f.get("label"):
+            missing.append(f"headline_figures[{i}] needs a label: a bare number "
+                           "under no heading is not a figure")
+    return missing
+
+
 PROFILES = {
     "results-envelope/1": check_envelope,
     "results-claims/1": check_claims,
     "results-pairs/1": check_pairs,
+    "results-figures/1": check_figures,
 }
 # a profile is only reachable once its prerequisite holds
 REQUIRES = {"results-claims/1": "results-envelope/1",
-            "results-pairs/1": "results-envelope/1"}
+            "results-pairs/1": "results-envelope/1",
+            "results-figures/1": "results-envelope/1"}
 
 
 def evaluate(doc: dict) -> dict:
@@ -200,6 +250,11 @@ def evaluate(doc: dict) -> dict:
         "renders_claim_box_from": ("verified_claims + explicit_non_claims"
                                    if "results-claims/1" in satisfied
                                    else "global_status.statement and report prose"),
+        "headline_figures_to_render": [
+            {"path": f.get("path"), "label": f.get("label")}
+            for f in (doc.get("headline_figures") or [])
+            if isinstance(f, dict)
+        ] if "results-figures/1" in satisfied else [],
         "figures_that_must_not_be_shown_alone": [
             {"value": p.get("value"), "against": p.get("against"),
              "label": p.get("label")}
@@ -253,6 +308,10 @@ def main() -> int:
             "results-pairs/1": ("envelope plus render_pairs: the figures this "
                                 "line says must never be shown without the "
                                 "number that gives them meaning"),
+            "results-figures/1": ("envelope plus headline_figures: which of "
+                                  "this line's numbers are its own headlines, "
+                                  "and under what label, so a renderer need "
+                                  "understand no line's internal structure"),
         },
         "not_an_error": (
             "failing a profile a file never declared is information for a "
@@ -268,6 +327,8 @@ def main() -> int:
                                      if "results-claims/1" in r.get("satisfies", [])),
             "satisfying_pairs": sum(1 for r in rows
                                     if "results-pairs/1" in r.get("satisfies", [])),
+            "satisfying_figures": sum(1 for r in rows
+                                      if "results-figures/1" in r.get("satisfies", [])),
             "declared_but_not_satisfied": len(lying),
         },
         "ok": not unreadable and not lying,

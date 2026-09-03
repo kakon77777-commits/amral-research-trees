@@ -2,10 +2,10 @@
   "tool": "suite_totals.py",
   "purpose": "the figure the README and CHARTER cite, emitted rather than typed",
   "drills": 55,
-  "defects_planted": 1445,
-  "defects_caught_by_the_named_check": 1445,
-  "controls": 121,
-  "controls_undisturbed": 121,
+  "defects_planted": 1449,
+  "defects_caught_by_the_named_check": 1449,
+  "controls": 122,
+  "controls_undisturbed": 122,
   "per_drill": [
     {
       "log": "build-results-guard-drill.json",
@@ -37,10 +37,10 @@
     {
       "log": "results-profiles-drill.json",
       "ok": true,
-      "planted": 12,
-      "caught": 12,
-      "controls": 4,
-      "controls_undisturbed": 4,
+      "planted": 16,
+      "caught": 16,
+      "controls": 5,
+      "controls_undisturbed": 5,
       "shape": "defects_planted/defects_caught_by_the_named_check"
     },
     {

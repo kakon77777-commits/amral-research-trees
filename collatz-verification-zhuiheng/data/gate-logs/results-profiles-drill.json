@@ -98,6 +98,38 @@
       "reported": [
         "render_pairs must be a non-empty array"
       ]
+    },
+    "D13_a_figure_pointing_at_a_field_that_is_not_there": {
+      "why": "a renamed field must break the declaration, not render blank",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "headline_figures[0].path does not resolve: counts.gone"
+      ]
+    },
+    "D14_a_figure_with_no_label": {
+      "why": "a bare number under no heading is not a figure",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "headline_figures[0] needs a label: a bare number under no heading is not a figure"
+      ]
+    },
+    "D15_a_figure_that_is_also_half_of_a_pair": {
+      "why": "offering a paired value standalone is the bare-numerator defect reintroduced by the mechanism meant to prevent it",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "headline_figures[0] counts.caught is also part of a render pair; showing it alone is the defect the pair prevents"
+      ]
+    },
+    "D16_headline_figures_present_but_empty": {
+      "why": "an empty array must not read as 'figures declared'",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "headline_figures must be a non-empty array"
+      ]
     }
   },
   "controls": {
@@ -118,7 +150,17 @@
       ]
     },
     "C3_this_tree_s_real_published_file": {
-      "why": "the file a renderer will actually read must satisfy all three, or it loses the protection this tree asked for",
+      "why": "the file a renderer will actually read must satisfy all four, or it loses the protection this tree asked for",
+      "undisturbed": true,
+      "satisfies": [
+        "results-envelope/1",
+        "results-claims/1",
+        "results-pairs/1",
+        "results-figures/1"
+      ]
+    },
+    "C6_declaring_pairs_without_figures_is_a_legal_state": {
+      "why": "a line may protect its ratios without nominating headlines; the profiles are independent, not a ladder",
       "undisturbed": true,
       "satisfies": [
         "results-envelope/1",
@@ -135,10 +177,10 @@
     }
   },
   "counts": {
-    "defects_planted": 12,
-    "defects_caught_by_the_named_check": 12,
-    "controls": 4,
-    "controls_undisturbed": 4
+    "defects_planted": 16,
+    "defects_caught_by_the_named_check": 16,
+    "controls": 5,
+    "controls_undisturbed": 5
   },
   "ok": true
 }

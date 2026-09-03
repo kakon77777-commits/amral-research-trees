@@ -94,9 +94,39 @@ second copy of this tree's semantics. So the line declares it, and
 before writing: **a declaration pointing at a renamed field is worse than no
 declaration**, because the renderer's own check would then pass vacuously.
 
-A profile is only evaluated once its prerequisite holds: `results-claims/1` and
-`results-pairs/1` cannot be reported satisfied on a document whose envelope is
-broken, however good their own fields look.
+### `results-figures/1`
+
+Everything in the envelope, plus a non-empty `headline_figures` array:
+
+| key | requirement |
+| --- | --- |
+| `path` | dotted path resolving to a number in this document |
+| `label` | what to show it under; a bare number under no heading is not a figure |
+
+**And the rule that carries this profile:** a path declared here must **not**
+also appear in `render_pairs`, on either side. A figure that belongs to a pair
+and is *also* offered standalone reintroduces the bare-numerator defect through
+the mechanism built to prevent it — which is not hypothetical: the sub-site
+rendered `odd_starts_checked` paired in one section and bare in another, and
+its build passed.
+
+**Why this profile exists.** A renderer that has to guess which fields are a
+line's headline numbers ends up hardcoding one line's shape. The sub-site knew
+`paper_sweep.*` and `coverage.*` — this line's structure — so when a second
+line arrived, its entire body of work (18,003,000 canonical anchors,
+209,917,507 pair-fiber rows, 71 archived packets) rendered as **two empty
+section headings**. Its numbers appeared nowhere except inside the prose of
+hand-written claim sentences, where they carry no source path at all.
+
+The line knows which of its numbers are headlines. The renderer cannot. So the
+line says so, and a renderer needs to understand no line's internal structure.
+
+A profile is only evaluated once its prerequisite holds: `results-claims/1`,
+`results-pairs/1` and `results-figures/1` cannot be reported satisfied on a
+document whose envelope is broken, however good their own fields look. They are
+otherwise **independent, not a ladder** — a line may protect its ratios without
+nominating headlines, or the reverse, and a drill control keeps that a legal
+state.
 
 ---
 
@@ -115,7 +145,7 @@ Current measurement, from `data/gate-logs/results-profiles.json`:
 
 | line | satisfies | claim-box source |
 | --- | --- | --- |
-| `collatz-verification-zhuiheng` | envelope + claims + pairs | `verified_claims` + `explicit_non_claims` |
+| `collatz-verification-zhuiheng` | envelope + claims + pairs + figures | `verified_claims` + `explicit_non_claims` |
 | `erdos-885-k5-chengxu` | envelope + claims | `verified_claims` + `explicit_non_claims` |
 
 The second line satisfied only the envelope until 2026-09-03, when its claims
@@ -127,9 +157,12 @@ recomputed and no other file in that tree was touched. The envelope-only
 rendering branch remains the correct behaviour for any line that has not done
 this, and must not be removed.
 
-For a line satisfying `results-pairs/1`, the validator also returns
+For a line satisfying `results-pairs/1`, the validator returns
 `figures_that_must_not_be_shown_alone` — read it and refuse to render a `value`
-without its `against`. This line currently declares five pairs, including one
+without its `against`. For a line satisfying `results-figures/1` it also returns
+`headline_figures_to_render` — the standalone numbers, with their labels, which
+is what a "verification scale" section should be built from rather than from
+field names a renderer happens to know. This line currently declares five pairs, including one
 found while writing this document: `coverage` publishes both
 `odd_starts_checked` and `odd_starts_expected`, and the first build of the
 sub-site rendered only the former.
@@ -167,8 +200,8 @@ so a line can carry whatever else it needs.
 ## The checks behind this document
 
 `code/validate_results_profiles.py` is exercised by
-`code/validate_results_profiles_drill.py`: **12 planted defects, each required
-to be refused by the rule named for it, and 4 controls undisturbed.** One of
+`code/validate_results_profiles_drill.py`: **16 planted defects, each required
+to be refused by the rule named for it, and 5 controls undisturbed.** One of
 the controls is there to keep an honest line safe — a document satisfying the
 envelope and nothing more must pass as a *legal state*, so the validator can
 never become a gate that excludes a line for describing itself differently.

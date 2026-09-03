@@ -106,6 +106,41 @@ RENDER_PAIRS = [
 ]
 
 
+# Figures a renderer may show on their own, with the label to show them under.
+# Declared because a renderer that has to guess which fields are headline
+# numbers ends up hardcoding one line's shape — which is what happened: the
+# sub-site knew `paper_sweep.*` and `coverage.*`, so a second line arrived and
+# its entire body of work rendered as two empty section headings.
+#
+# Nothing here may also appear in RENDER_PAIRS. A figure that belongs to a pair
+# and is ALSO offered standalone is the bare-numerator defect reintroduced by
+# the mechanism meant to prevent it.
+HEADLINE_FIGURES = [
+    {"path": "paper_sweep.run_reports", "label": "run reports"},
+    {"path": "paper_sweep.drills", "label": "falsifiability drills"},
+    {"path": "coverage.chunks", "label": "separately logged chunks"},
+    {"path": "coverage.total_engine_seconds", "label": "engine seconds"},
+]
+
+
+def check_headline_figures(doc: dict, pairs: list[dict]) -> list[dict]:
+    """Resolve each headline figure, and refuse any that belongs to a pair."""
+    claimed = {p["value"] for p in pairs} | {p["against"] for p in pairs}
+    out = []
+    for fig in HEADLINE_FIGURES:
+        if fig["path"] in claimed:
+            raise SweepInputError(
+                f"headline figure {fig['path']} is also part of a render pair. "
+                "Showing it alone is the defect the pair exists to prevent; "
+                "drop it here or drop the pair.")
+        got = resolve(doc, fig["path"])              # KeyError is the refusal
+        if not isinstance(got, (int, float)) or isinstance(got, bool):
+            raise SweepInputError(
+                f"headline figure {fig['path']} is not a number: {got!r}")
+        out.append({**fig, "is": got})
+    return out
+
+
 def resolve(doc: dict, dotted: str):
     """Follow a dotted path, or raise if any segment is absent."""
     cur = doc
@@ -667,10 +702,12 @@ def main() -> int:
     # at a field this build did not actually emit.
     try:
         results["render_pairs"] = check_render_pairs(results)
+        results["headline_figures"] = check_headline_figures(
+            results, results["render_pairs"])
     except KeyError as exc:
         raise SystemExit(
-            f"a render pair points at a field this summary does not contain: "
-            f"{exc}. Fix the path or drop the pair; a declaration that does not "
+            f"a declaration points at a field this summary does not contain: "
+            f"{exc}. Fix the path or drop it; a declaration that does not "
             f"resolve tells a renderer to look for something absent.") from exc
     except SweepInputError as exc:
         raise SystemExit(str(exc)) from exc

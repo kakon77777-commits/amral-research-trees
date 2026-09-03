@@ -32,6 +32,7 @@ import validate_results_profiles as V  # noqa: E402
 ENVELOPE = "results-envelope/1"
 CLAIMS = "results-claims/1"
 PAIRS = "results-pairs/1"
+FIGURES = "results-figures/1"
 
 
 def good_doc() -> dict:
@@ -166,6 +167,48 @@ def main() -> int:
                lambda d: d.__setitem__("render_pairs", []),
                "non-empty array")
 
+    # D13-D16 - results-figures/1. The load-bearing rule is the last one: a
+    # figure that belongs to a pair and is ALSO offered standalone reintroduces
+    # the bare-numerator defect through the mechanism built to prevent it.
+    def figured(doc: dict) -> dict:
+        doc = paired(doc)
+        doc["counts"]["runs"] = 52
+        doc["headline_figures"] = [{"path": "counts.runs", "label": "run reports"}]
+        return doc
+
+    def plant_fig(name: str, why: str, mutate, needle: str):
+        doc = figured(good_doc())
+        mutate(doc)
+        res = V.evaluate(doc)
+        missing = res["gaps"].get(FIGURES, [])
+        defects[name] = {
+            "why": why,
+            "refused": FIGURES not in res["satisfies"],
+            "named_check": any(needle in m for m in missing),
+            "reported": missing,
+        }
+
+    plant_fig("D13_a_figure_pointing_at_a_field_that_is_not_there",
+              "a renamed field must break the declaration, not render blank",
+              lambda d: d["headline_figures"][0].__setitem__("path", "counts.gone"),
+              "does not resolve")
+
+    plant_fig("D14_a_figure_with_no_label",
+              "a bare number under no heading is not a figure",
+              lambda d: d["headline_figures"][0].pop("label"),
+              "needs a label")
+
+    plant_fig("D15_a_figure_that_is_also_half_of_a_pair",
+              "offering a paired value standalone is the bare-numerator defect "
+              "reintroduced by the mechanism meant to prevent it",
+              lambda d: d["headline_figures"][0].__setitem__("path", "counts.caught"),
+              "also part of a render pair")
+
+    plant_fig("D16_headline_figures_present_but_empty",
+              "an empty array must not read as 'figures declared'",
+              lambda d: d.__setitem__("headline_figures", []),
+              "non-empty array")
+
     controls: dict[str, dict] = {}
 
     def control(name: str, why: str, doc: dict, expect: list[str]):
@@ -190,9 +233,15 @@ def main() -> int:
 
     real = json.loads((ROOT / "data" / "results.v1.json").read_text(encoding="utf-8"))
     control("C3_this_tree_s_real_published_file",
-            "the file a renderer will actually read must satisfy all three, or "
+            "the file a renderer will actually read must satisfy all four, or "
             "it loses the protection this tree asked for",
-            real, [ENVELOPE, CLAIMS, PAIRS])
+            real, [ENVELOPE, CLAIMS, PAIRS, FIGURES])
+
+    pairs_no_figs = paired(good_doc())
+    control("C6_declaring_pairs_without_figures_is_a_legal_state",
+            "a line may protect its ratios without nominating headlines; the "
+            "profiles are independent, not a ladder",
+            pairs_no_figs, [ENVELOPE, CLAIMS, PAIRS])
 
     envelope_only = good_doc()
     envelope_only.pop("verified_claims")
