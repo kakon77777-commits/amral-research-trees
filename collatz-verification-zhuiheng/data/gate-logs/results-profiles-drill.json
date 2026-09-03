@@ -130,6 +130,30 @@
       "reported": [
         "headline_figures must be a non-empty array"
       ]
+    },
+    "D17_a_range_declared_as_a_number": {
+      "why": "an interval shown through a number renderer is not a figure",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "headline_figures[0] is declared a number and is not: counts.span"
+      ]
+    },
+    "D18_a_number_declared_as_a_range": {
+      "why": "a renderer told to draw two ends will find one and draw neither",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "headline_figures[0] is declared a range and must resolve to exactly two numbers: counts.runs"
+      ]
+    },
+    "D19_an_unknown_kind": {
+      "why": "a renderer must never be asked to guess how to draw something",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "headline_figures[0] has an unknown kind 'sparkline'; a renderer cannot guess how to draw it"
+      ]
     }
   },
   "controls": {
@@ -177,8 +201,8 @@
     }
   },
   "counts": {
-    "defects_planted": 16,
-    "defects_caught_by_the_named_check": 16,
+    "defects_planted": 19,
+    "defects_caught_by_the_named_check": 19,
     "controls": 5,
     "controls_undisturbed": 5
   },

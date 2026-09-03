@@ -11,7 +11,7 @@
   "files": [
     {
       "ref": null,
-      "path": "data/results.v1.json",
+      "path": "collatz-verification-zhuiheng/data/results.v1.json",
       "research_line_id": "collatz-verification-zhuiheng",
       "declared_schema_version": 1,
       "satisfies": [

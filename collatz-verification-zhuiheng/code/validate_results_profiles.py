@@ -25,7 +25,9 @@ be touched, for its capabilities to be described correctly.
   results-figures/1   envelope, plus headline_figures: which of this line's
                       numbers are its own headlines and under what label, so a
                       renderer need understand no line's internal structure.
-                      Nothing declared here may also belong to a pair.
+                      Nothing declared here may also belong to a pair, and
+                      each declares its kind: a plain number, or a range that
+                      resolves to exactly two numbers shown together.
 
 Not satisfying a profile is not an error. It tells a renderer which branch to
 take: a line outside `results-claims/1` still states its boundaries, in
@@ -205,10 +207,23 @@ def check_figures(doc: dict) -> list[str]:
                     f"headline_figures[{i}] {path} is also part of a render "
                     "pair; showing it alone is the defect the pair prevents")
             got = _resolve(doc, path)
+            kind = f.get("kind", "number")
+            num = lambda v: isinstance(v, (int, float)) and not isinstance(v, bool)
             if got is None:
                 missing.append(f"headline_figures[{i}].path does not resolve: {path}")
-            elif isinstance(got, bool) or not isinstance(got, (int, float)):
-                missing.append(f"headline_figures[{i}].path is not a number: {path}")
+            elif kind == "number":
+                if not num(got):
+                    missing.append(f"headline_figures[{i}] is declared a number "
+                                   f"and is not: {path}")
+            elif kind == "range":
+                if (not isinstance(got, list) or len(got) != 2
+                        or not all(num(x) for x in got)):
+                    missing.append(f"headline_figures[{i}] is declared a range "
+                                   f"and must resolve to exactly two numbers: "
+                                   f"{path}")
+            else:
+                missing.append(f"headline_figures[{i}] has an unknown kind "
+                               f"{kind!r}; a renderer cannot guess how to draw it")
         if not f.get("label"):
             missing.append(f"headline_figures[{i}] needs a label: a bare number "
                            "under no heading is not a figure")
@@ -251,7 +266,8 @@ def evaluate(doc: dict) -> dict:
                                    if "results-claims/1" in satisfied
                                    else "global_status.statement and report prose"),
         "headline_figures_to_render": [
-            {"path": f.get("path"), "label": f.get("label")}
+            {"path": f.get("path"), "label": f.get("label"),
+             "kind": f.get("kind", "number")}
             for f in (doc.get("headline_figures") or [])
             if isinstance(f, dict)
         ] if "results-figures/1" in satisfied else [],

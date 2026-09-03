@@ -120,24 +120,52 @@ HEADLINE_FIGURES = [
     {"path": "paper_sweep.drills", "label": "falsifiability drills"},
     {"path": "coverage.chunks", "label": "separately logged chunks"},
     {"path": "coverage.total_engine_seconds", "label": "engine seconds"},
+    # An interval is one figure with two ends. Declaring it as two separate
+    # numbers would let a renderer show a lower bound with no upper one, which
+    # is the bare-numerator defect wearing different clothes.
+    {"path": "coverage.covered_interval", "label": "domain verified",
+     "kind": "range"},
 ]
 
 
+def _is_number(v) -> bool:
+    return isinstance(v, (int, float)) and not isinstance(v, bool)
+
+
 def check_headline_figures(doc: dict, pairs: list[dict]) -> list[dict]:
-    """Resolve each headline figure, and refuse any that belongs to a pair."""
+    """Resolve each headline figure, and refuse any that belongs to a pair.
+
+    `kind` defaults to "number". "range" means the path resolves to exactly two
+    numbers that must be shown together. The declared kind is checked against
+    what actually resolves, so a renderer never has to type-switch on a value
+    it was told something different about.
+    """
     claimed = {p["value"] for p in pairs} | {p["against"] for p in pairs}
     out = []
     for fig in HEADLINE_FIGURES:
-        if fig["path"] in claimed:
+        path, kind = fig["path"], fig.get("kind", "number")
+        if path in claimed:
             raise SweepInputError(
-                f"headline figure {fig['path']} is also part of a render pair. "
+                f"headline figure {path} is also part of a render pair. "
                 "Showing it alone is the defect the pair exists to prevent; "
                 "drop it here or drop the pair.")
-        got = resolve(doc, fig["path"])              # KeyError is the refusal
-        if not isinstance(got, (int, float)) or isinstance(got, bool):
+        got = resolve(doc, path)                     # KeyError is the refusal
+        if kind == "number":
+            if not _is_number(got):
+                raise SweepInputError(
+                    f"headline figure {path} is declared a number and is not: "
+                    f"{got!r}")
+        elif kind == "range":
+            if (not isinstance(got, (list, tuple)) or len(got) != 2
+                    or not all(_is_number(x) for x in got)):
+                raise SweepInputError(
+                    f"headline figure {path} is declared a range and must "
+                    f"resolve to exactly two numbers: {got!r}")
+        else:
             raise SweepInputError(
-                f"headline figure {fig['path']} is not a number: {got!r}")
-        out.append({**fig, "is": got})
+                f"headline figure {path} has an unknown kind {kind!r}; a "
+                "renderer cannot be asked to guess how to draw it")
+        out.append({**fig, "kind": kind, "is": list(got) if kind == "range" else got})
     return out
 
 

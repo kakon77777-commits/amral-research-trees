@@ -103,8 +103,8 @@
     "unprocessed": [],
     "run_reports": 52,
     "drills": 55,
-    "defects_planted": 1449,
-    "defects_caught_by_the_named_check": 1449,
+    "defects_planted": 1452,
+    "defects_caught_by_the_named_check": 1452,
     "controls": 122,
     "controls_undisturbed": 122,
     "why_these_figures_can_be_trusted_to_be_complete": "code/suite_totals.py reads every archived drill log, classifies each one's tally shape explicitly, and exits non-zero if it meets a shape it cannot interpret - so a drill it does not understand stops the build instead of contributing zero. code/build_source_manifest.py derives each Hard-Zeta round's status from the gate log and RUN report on disk rather than a hand-kept table, which is what had drifted: the table still read 39 of 73 long after the sweep passed them.",
@@ -1102,7 +1102,7 @@
     "code/mutation_drill.py": "45e4f84a668c5e57e0ec2b7b116dcd0f0bf419bb64e38ff4685f3ff7cfeae7a7",
     "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
     "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
-    "code/build_results.py": "afc40c0fa5d19466f56161cf35c6501f94ada1fe1f54556eba54b0be5837774f",
+    "code/build_results.py": "83d8cdeb10910216cd3673f03f0e3fe6e5ebd97b752c797217a524812cffcc77",
     "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab",
     "code/ot_paper01_recheck.py": "66074146e8de77d6949b2a81d44add031b39f1b1fe825c98ef5068c7beb25355",
     "code/ot_paper02_recheck.py": "50b3b733ced47a25078b16a71f7c120696d0ce60d43822b464abbc2f0010591d",
@@ -1123,8 +1123,8 @@
       "against": "paper_sweep.defects_planted",
       "label": "planted defects, caught by the check named for each",
       "why": "the drill's claim is that these are equal; the caught count alone cannot show whether any defect survived",
-      "value_is": 1449,
-      "against_is": 1449
+      "value_is": 1452,
+      "against_is": 1452
     },
     {
       "value": "paper_sweep.controls_undisturbed",
@@ -1163,22 +1163,35 @@
     {
       "path": "paper_sweep.run_reports",
       "label": "run reports",
+      "kind": "number",
       "is": 52
     },
     {
       "path": "paper_sweep.drills",
       "label": "falsifiability drills",
+      "kind": "number",
       "is": 55
     },
     {
       "path": "coverage.chunks",
       "label": "separately logged chunks",
+      "kind": "number",
       "is": 16
     },
     {
       "path": "coverage.total_engine_seconds",
       "label": "engine seconds",
+      "kind": "number",
       "is": 981.508
+    },
+    {
+      "path": "coverage.covered_interval",
+      "label": "domain verified",
+      "kind": "range",
+      "is": [
+        3,
+        1099511627776
+      ]
     }
   ]
 }

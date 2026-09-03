@@ -209,6 +209,26 @@ def main() -> int:
               lambda d: d.__setitem__("headline_figures", []),
               "non-empty array")
 
+    # D17-D19 - the `kind` discriminator. A range declared as a number would
+    # render as "[3, 1099511627776]"; a number declared as a range would render
+    # as nothing at all. Both are silent, so the declared kind is checked
+    # against what actually resolves rather than trusted.
+    plant_fig("D17_a_range_declared_as_a_number",
+              "an interval shown through a number renderer is not a figure",
+              lambda d: (d["counts"].__setitem__("span", [3, 40]),
+                         d["headline_figures"][0].update(path="counts.span")),
+              "declared a number and is not")
+
+    plant_fig("D18_a_number_declared_as_a_range",
+              "a renderer told to draw two ends will find one and draw neither",
+              lambda d: d["headline_figures"][0].update(kind="range"),
+              "must resolve to exactly two numbers")
+
+    plant_fig("D19_an_unknown_kind",
+              "a renderer must never be asked to guess how to draw something",
+              lambda d: d["headline_figures"][0].update(kind="sparkline"),
+              "unknown kind")
+
     controls: dict[str, dict] = {}
 
     def control(name: str, why: str, doc: dict, expect: list[str]):

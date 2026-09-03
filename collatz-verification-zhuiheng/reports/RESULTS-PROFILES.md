@@ -100,8 +100,17 @@ Everything in the envelope, plus a non-empty `headline_figures` array:
 
 | key | requirement |
 | --- | --- |
-| `path` | dotted path resolving to a number in this document |
+| `path` | dotted path resolving, in this document, to whatever `kind` says |
 | `label` | what to show it under; a bare number under no heading is not a figure |
+| `kind` | optional, `"number"` (default) or `"range"`; a range resolves to exactly two numbers |
+
+`kind` exists because an interval is **one figure with two ends**. Declaring
+`[3, 1099511627776]` as two separate numbers would let a renderer show a lower
+bound with no upper one — the bare-numerator defect wearing different clothes.
+The declared kind is checked against what actually resolves, so a renderer is
+never told one thing and handed another: a range declared as a number would
+render as a raw array, and a number declared as a range would render as
+nothing, and both failures are silent.
 
 **And the rule that carries this profile:** a path declared here must **not**
 also appear in `render_pairs`, on either side. A figure that belongs to a pair
@@ -200,7 +209,7 @@ so a line can carry whatever else it needs.
 ## The checks behind this document
 
 `code/validate_results_profiles.py` is exercised by
-`code/validate_results_profiles_drill.py`: **16 planted defects, each required
+`code/validate_results_profiles_drill.py`: **19 planted defects, each required
 to be refused by the rule named for it, and 5 controls undisturbed.** One of
 the controls is there to keep an honest line safe — a document satisfying the
 envelope and nothing more must pass as a *legal state*, so the validator can
