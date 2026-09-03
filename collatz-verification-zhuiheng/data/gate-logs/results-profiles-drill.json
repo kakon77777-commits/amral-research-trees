@@ -1,0 +1,111 @@
+{
+  "tool": "validate_results_profiles_drill.py",
+  "subject": "code/validate_results_profiles.py evaluate()",
+  "note": "each defect must be refused by the rule named for it; the envelope-only control exists because NOT satisfying a profile must stay a legal state, or the validator becomes a gate that excludes an honest line",
+  "defects": {
+    "D1_no_boundary_statement": {
+      "why": "a results file with no stated boundary must not pass the envelope",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "global_status.statement must be a non-empty string"
+      ]
+    },
+    "D2_solved_is_a_string_not_a_boolean": {
+      "why": "'false' is truthy; the solved flag must be typed, not merely present",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "global_status.solved must be a boolean"
+      ]
+    },
+    "D3_a_verified_claim_without_its_text": {
+      "why": "an id with no claim renders as an empty claim-box row",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "verified_claims[0] needs both id and claim"
+      ]
+    },
+    "D4_an_empty_non_claim_string": {
+      "why": "a blank non-claim is worse than none: it renders as a silent boundary",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "every explicit_non_claims entry must be a non-empty string"
+      ]
+    },
+    "D5_verified_claims_present_but_empty": {
+      "why": "an empty array must not read as 'claims satisfied'",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "verified_claims must be a non-empty array"
+      ]
+    },
+    "D6_no_researcher": {
+      "why": "a results file with no attributable author fails the envelope",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "researcher.display_name is required"
+      ]
+    },
+    "D7_claims_must_not_pass_over_a_broken_envelope": {
+      "why": "a renderer told 'claims ok' would trust an unidentifiable file",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "requires results-envelope/1, which is not satisfied"
+      ]
+    },
+    "D8_declares_a_profile_it_does_not_satisfy": {
+      "why": "an inferred gap is information; a false declaration is a lie",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "results-claims/1"
+      ]
+    }
+  },
+  "controls": {
+    "C1_a_document_meeting_both_profiles": {
+      "why": "the healthy shape must pass, or the drill above proves nothing",
+      "undisturbed": true,
+      "satisfies": [
+        "results-envelope/1",
+        "results-claims/1"
+      ]
+    },
+    "C2_line_specific_sections_are_not_policed": {
+      "why": "profiles constrain the shared envelope, never a line's own content",
+      "undisturbed": true,
+      "satisfies": [
+        "results-envelope/1",
+        "results-claims/1"
+      ]
+    },
+    "C3_this_tree_s_real_published_file": {
+      "why": "the file a renderer will actually read must satisfy both",
+      "undisturbed": true,
+      "satisfies": [
+        "results-envelope/1",
+        "results-claims/1"
+      ]
+    },
+    "C4_envelope_only_is_a_valid_state_not_a_failure": {
+      "why": "a line outside results-claims/1 is a rendering branch, not a defect",
+      "undisturbed": true,
+      "satisfies": [
+        "results-envelope/1"
+      ]
+    }
+  },
+  "counts": {
+    "defects_planted": 8,
+    "defects_caught_by_the_named_check": 8,
+    "controls": 4,
+    "controls_undisturbed": 4
+  },
+  "ok": true
+}

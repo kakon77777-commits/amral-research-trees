@@ -1226,11 +1226,22 @@ instance behind each band.
 
    Neither file is wrong: each was written for its own line before there was a
    second one to agree with. But a consumer that dispatches on
-   `schema_version == 1` will break on one of them, and the shared six keys are
-   the only part it can rely on today. Recorded here rather than resolved,
-   because the fix is a decision about the monorepo rather than about this
-   tree — and recorded *now*, while two lines have diverged and the reconcilable
-   set is still small.
+   `schema_version == 1` will break on one of them.
+
+   **Resolved without renumbering, and without touching another line's tree**:
+   see [`reports/RESULTS-PROFILES.md`](./reports/RESULTS-PROFILES.md). Two named
+   profiles — `results-envelope/1` (the six keys both files already satisfy) and
+   `results-claims/1` (envelope plus structured `verified_claims` and
+   `explicit_non_claims`) — are **inferred from content** by
+   `code/validate_results_profiles.py`, so a renderer asks the validator instead
+   of trusting a version integer, and no file has to change for its capabilities
+   to be described correctly. Failing a profile is a rendering branch, not a
+   defect: a line outside `results-claims/1` states its boundaries elsewhere and
+   must still be rendered with them.
+58. [`reports/RESULTS-PROFILES.md`](./reports/RESULTS-PROFILES.md) — what a
+   consumer of any line's `results.v*.json` can rely on, and why it must not
+   dispatch on `schema_version`. Two profiles, inferred rather than declared,
+   so no line has to change for its capabilities to be described correctly.
 55. [`code/`](./code/) — the engine, the independent reference, and the gates.
 56. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.

@@ -1,0 +1,51 @@
+{
+  "tool": "validate_results_profiles.py",
+  "what_it_measures": "which named profile each results file satisfies, inferred from content, so no file and no other line's tree needs to change",
+  "profiles": {
+    "results-envelope/1": "the six keys every existing file agrees on",
+    "results-claims/1": "envelope plus structured verified_claims and explicit_non_claims"
+  },
+  "not_an_error": "failing a profile a file never declared is information for a renderer, not a defect: that line states its boundaries elsewhere and must still be rendered with them",
+  "files": [
+    {
+      "ref": "origin/agent/archive-chengxu-erdos-885-k5",
+      "path": "erdos-885-k5-chengxu/data/results.v1.json",
+      "research_line_id": "erdos-885-k5-chengxu",
+      "declared_schema_version": 1,
+      "satisfies": [
+        "results-envelope/1"
+      ],
+      "gaps": {
+        "results-claims/1": [
+          "verified_claims must be a non-empty array",
+          "explicit_non_claims must be a non-empty array"
+        ]
+      },
+      "declared": [],
+      "declared_but_not_satisfied": [],
+      "renders_claim_box_from": "global_status.statement and report prose"
+    },
+    {
+      "ref": "origin/agent/collatz-verification-zhuiheng",
+      "path": "collatz-verification-zhuiheng/data/results.v1.json",
+      "research_line_id": "collatz-verification-zhuiheng",
+      "declared_schema_version": 1,
+      "satisfies": [
+        "results-envelope/1",
+        "results-claims/1"
+      ],
+      "gaps": {},
+      "declared": [],
+      "declared_but_not_satisfied": [],
+      "renders_claim_box_from": "verified_claims + explicit_non_claims"
+    }
+  ],
+  "counts": {
+    "files": 2,
+    "unreadable": 0,
+    "satisfying_envelope": 2,
+    "satisfying_claims": 1,
+    "declared_but_not_satisfied": 0
+  },
+  "ok": true
+}

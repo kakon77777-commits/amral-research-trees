@@ -1,0 +1,129 @@
+# Results profiles — what a renderer can rely on
+
+**Arm:** 數學戰士「墜衡」 / AMRAL Research Lab
+**For:** anyone building a page, sub-site or tool that reads a research line's
+`data/results.v*.json` in this monorepo.
+
+---
+
+## The problem this exists to solve
+
+`schema_version: 1` does not identify a shape.
+
+Measured 2026-09-03 across every branch of this repository — two such files
+exist, enumerated by `git ls-tree`, not by a list anyone typed:
+
+| file | declares | actually shares |
+| --- | --- | --- |
+| `collatz-verification-zhuiheng/data/results.v1.json` | `schema_version: 1` | six keys |
+| `erdos-885-k5-chengxu/data/results.v1.json` | `schema_version: 1` | the same six |
+
+After those six keys the two documents have **nothing in common**. One
+continues with `verified_claims`, `explicit_non_claims`, `coverage`,
+`paper_sweep`, `gates`, `subject_verification`; the other with
+`exact_reduction`, `exact_certificates`, `bounded_searches`. The second has no
+`verified_claims` and no `explicit_non_claims` **at all**.
+
+Neither file is wrong. Each was written for its own line before there was a
+second one to agree with. But **a renderer that dispatches on the version
+integer will break on one of them.**
+
+---
+
+## The fix, and why it is not a renumbering
+
+Renumbering would require every line to move at once, and no line's tree may
+edit another line's provenance. So instead of asking a file what it is,
+**measure what it satisfies**:
+
+### `results-envelope/1`
+
+Present and well-typed:
+
+| key | requirement |
+| --- | --- |
+| `schema_version` | integer |
+| `research_line_id` | non-empty string |
+| `researcher.display_name` | present |
+| `date` | non-empty string |
+| `problem.id` | present |
+| `global_status.solved` | **boolean**, not a string |
+| `global_status.statement` | non-empty string |
+
+`global_status.solved` must be typed because `"false"` is truthy — a renderer
+reading a string here would print "solved" for a line that claims nothing.
+
+### `results-claims/1`
+
+Everything in the envelope, plus:
+
+| key | requirement |
+| --- | --- |
+| `verified_claims` | non-empty array; every entry has both `id` and `claim` |
+| `explicit_non_claims` | non-empty array of non-empty strings |
+
+A profile is only evaluated once its prerequisite holds: `results-claims/1`
+cannot be reported satisfied on a document whose envelope is broken, however
+good its claims fields look.
+
+---
+
+## How to use this when rendering
+
+**Do not dispatch on `schema_version`.** Ask
+`code/validate_results_profiles.py`, which infers profiles from content — so a
+file needs no change, and no other line's tree needs to be touched, for its
+capabilities to be described correctly.
+
+```
+python code/validate_results_profiles.py
+```
+
+Current measurement, from `data/gate-logs/results-profiles.json`:
+
+| line | satisfies | claim-box source |
+| --- | --- | --- |
+| `collatz-verification-zhuiheng` | envelope + claims | `verified_claims` + `explicit_non_claims` |
+| `erdos-885-k5-chengxu` | envelope only | `global_status.statement` and report prose |
+
+**Failing a profile is not an error.** It is the branch a renderer should take.
+A line outside `results-claims/1` still states its boundaries — the ERDOS-885
+line states its own in one sentence, *"The `k=5` problem is not solved here"* —
+and **must still be rendered with them**. Dropping a boundary because it was
+not in the field you expected is the one failure mode this whole contract
+exists to prevent.
+
+The only hard failure is a file that **declares** a profile in an optional
+`profiles` array and does not satisfy it. An inferred gap is information; a
+false declaration is a claim about itself that is untrue, and the validator
+exits non-zero on it.
+
+---
+
+## Adopting `results-claims/1` in another line
+
+Nothing here asks a line to restructure. It needs two additions, and the
+content for both usually already exists in that line's report prose:
+
+1. `verified_claims` — one entry per claim actually established, each with an
+   `id` and the claim in a sentence.
+2. `explicit_non_claims` — the boundaries, as strings. What the line does not
+   establish, said plainly.
+
+That is the whole migration. Line-specific sections are never policed by these
+profiles: a drill control exists precisely to keep unknown top-level keys legal,
+so a line can carry whatever else it needs.
+
+---
+
+## The checks behind this document
+
+`code/validate_results_profiles.py` is exercised by
+`code/validate_results_profiles_drill.py`: **8 planted defects, each required
+to be refused by the rule named for it, and 4 controls undisturbed.** One of
+the controls is there to keep an honest line safe — a document satisfying the
+envelope and nothing more must pass as a *legal state*, so the validator can
+never become a gate that excludes a line for describing itself differently.
+
+Logs: [`../data/gate-logs/results-profiles.json`](../data/gate-logs/results-profiles.json)
+· [`../data/gate-logs/results-profiles-drill.json`](../data/gate-logs/results-profiles-drill.json)
