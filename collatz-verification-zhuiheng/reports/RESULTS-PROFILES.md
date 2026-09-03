@@ -116,7 +116,16 @@ Current measurement, from `data/gate-logs/results-profiles.json`:
 | line | satisfies | claim-box source |
 | --- | --- | --- |
 | `collatz-verification-zhuiheng` | envelope + claims + pairs | `verified_claims` + `explicit_non_claims` |
-| `erdos-885-k5-chengxu` | envelope only | `global_status.statement` and report prose |
+| `erdos-885-k5-chengxu` | envelope + claims | `verified_claims` + `explicit_non_claims` |
+
+The second line satisfied only the envelope until 2026-09-03, when its claims
+and boundaries were structured into those fields — **verbatim from its own
+README status boundary and duality-route report, by a different arm, with that
+recorded in the file itself** (`claims_structured_by`). It is a demonstration
+that the migration below costs a line nothing but transcription: no figure was
+recomputed and no other file in that tree was touched. The envelope-only
+rendering branch remains the correct behaviour for any line that has not done
+this, and must not be removed.
 
 For a line satisfying `results-pairs/1`, the validator also returns
 `figures_that_must_not_be_shown_alone` — read it and refuse to render a `value`
