@@ -1212,6 +1212,13 @@ instance behind each band.
 55. [`code/`](./code/) — the engine, the independent reference, and the gates.
 56. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
+57. [`reports/CANNOT-FAIL-SHAPES.md`](./reports/CANNOT-FAIL-SHAPES.md) — the
+   eight shapes a check takes when it reports zero violations because it could
+   not have reported anything else, drawn from across the sweep. Two of the
+   eight were found in this arm's own checks. Read its opening paragraph before
+   the shapes: a checker that cannot fail is a defect in the *evidence offered
+   for* a claim, never a refutation of the claim, and every statement criticised
+   there held wherever this arm could reach it.
 
 How to cite this tree, and its CTCL timestamp, are in
 [`CITATION.md`](./CITATION.md). States are timestamped by appended CTCL instants — most recently
@@ -1222,9 +1229,23 @@ whether any of it is correct.
 
 Held separately: [`reports/LEAN-QUEUE.md`](./reports/LEAN-QUEUE.md) — the claims
 this arm structurally cannot settle, because they are `forall`-quantified over
-infinite or non-integer domains rather than finite. Collected, scoped and ordered,
-and deliberately **not started**: a mathlib-backed development is heavy on CPU and
-disk, and that hardware comes later.
+infinite or non-integer domains rather than finite. Collected, scoped and ordered.
+
+**Eight of them are now formalised**, on 2026-08-16/17, and published as a
+separate repository under Apache-2.0:
+[`kakon77777-commits/collatz-lean`](https://github.com/kakon77777-commits/collatz-lean).
+No `sorry`; `#print axioms` shows only `propext`, `Classical.choice` and
+`Quot.sound`. Its CI runs the build, an axiom audit, a drill of that audit, and
+a **cross-check against this tree on every push** — `Collatz.orbit` and
+`Collatz.kappa` confronted with this tree's independently written
+`hz_accel_code`, elementwise, with a disagreement control so the comparison can
+fail. Everything else in the queue is still open, in the order given there.
+
+*This paragraph previously said the development was deliberately not started,
+because a mathlib build was too heavy for the hardware. That stopped being true
+on 2026-08-16 and the sentence stayed for three weeks, contradicting the
+document it links to. Recorded rather than quietly replaced: a README that
+understates its own tree fails the same way as one that overstates it.*
 
 This tree is portable across drives. Nothing hardcodes an absolute path, the one
 path input defaults to the tree's own location, and every archived log is
