@@ -20,8 +20,21 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
 BEGIN, END = "<!-- COUNTS -->", "<!-- /COUNTS -->"
-SWEEP_TOTAL = 73          # items in the subject's source folder
-SWEEP_DONE = 73           # highest item this tree has a report for
+MANIFEST = ROOT / "data" / "source-manifest.v1.json"
+
+
+def sweep_counts() -> tuple[int, int]:
+    """(items in the source folder, items this sweep has dispositioned).
+
+    These were two hardcoded 73s, which is the same failure the docstring above
+    describes one level up: the constants would still read 73 after a
+    seventy-fourth item landed in the folder. Both now come from the manifest,
+    where the first is the file count and the second is everything either
+    rechecked here or explicitly owned by a sibling tree. An item that is
+    neither leaves the two numbers unequal, which is the point.
+    """
+    m = json.loads(MANIFEST.read_text(encoding="utf-8"))
+    return m["item_count"], m["processed_count"] + m["belongs_to_another_line"]
 
 
 def spell(n: int) -> str:
@@ -40,7 +53,8 @@ def main() -> int:
     if BEGIN not in text or END not in text:
         print(json.dumps({"error": "no COUNTS span in the README"}, indent=2))
         return 2
-    span = "%d source items and %s runs" % (SWEEP_DONE, spell(len(runs)))
+    sweep_total, sweep_done = sweep_counts()
+    span = "%d source items and %s runs" % (sweep_done, spell(len(runs)))
     head, rest = text.split(BEGIN, 1)
     _old, tail = rest.split(END, 1)
     new = head + BEGIN + span + END + tail
@@ -54,9 +68,11 @@ def main() -> int:
         README.write_text(new, encoding="utf-8", newline="\n")
     print(json.dumps({"tool": "emit_readme_counts.py", "mode": "emit",
                       "rewritten": new != text, "span": span,
-                      "runs_found": len(runs), "sweep": "%d/%d" % (SWEEP_DONE, SWEEP_TOTAL),
-                      "ok": True}, indent=2))
-    return 0
+                      "runs_found": len(runs),
+                      "sweep": "%d/%d" % (sweep_done, sweep_total),
+                      "sweep_counts_derived_from": MANIFEST.name,
+                      "ok": sweep_done == sweep_total}, indent=2))
+    return 0 if sweep_done == sweep_total else 1
 
 
 if __name__ == "__main__":

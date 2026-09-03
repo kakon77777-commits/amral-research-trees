@@ -1,12 +1,21 @@
 {
   "tool": "suite_totals.py",
   "purpose": "the figure the README and CHARTER cite, emitted rather than typed",
-  "drills": 33,
-  "defects_planted": 665,
-  "defects_caught_by_the_named_check": 665,
-  "controls": 74,
-  "controls_undisturbed": 74,
+  "drills": 54,
+  "defects_planted": 1433,
+  "defects_caught_by_the_named_check": 1433,
+  "controls": 117,
+  "controls_undisturbed": 117,
   "per_drill": [
+    {
+      "log": "build-results-guard-drill.json",
+      "ok": true,
+      "planted": 5,
+      "caught": 5,
+      "controls": 3,
+      "controls_undisturbed": 3,
+      "shape": "defects_planted/defects_caught_by_the_named_check"
+    },
     {
       "log": "mutation-drill.json",
       "ok": true,
@@ -291,6 +300,186 @@
       "ok": true,
       "planted": 19,
       "caught": 19,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src53-drill.json",
+      "ok": true,
+      "planted": 27,
+      "caught": 27,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src54-drill.json",
+      "ok": true,
+      "planted": 25,
+      "caught": 25,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src55-drill.json",
+      "ok": true,
+      "planted": 31,
+      "caught": 31,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src57-drill.json",
+      "ok": true,
+      "planted": 35,
+      "caught": 35,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src58-drill.json",
+      "ok": true,
+      "planted": 33,
+      "caught": 33,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src59-drill.json",
+      "ok": true,
+      "planted": 35,
+      "caught": 35,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src60-drill.json",
+      "ok": true,
+      "planted": 33,
+      "caught": 33,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src61-drill.json",
+      "ok": true,
+      "planted": 33,
+      "caught": 33,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src62-drill.json",
+      "ok": true,
+      "planted": 30,
+      "caught": 30,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src63-drill.json",
+      "ok": true,
+      "planted": 37,
+      "caught": 37,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src64-drill.json",
+      "ok": true,
+      "planted": 50,
+      "caught": 50,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src65-drill.json",
+      "ok": true,
+      "planted": 52,
+      "caught": 52,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src66-drill.json",
+      "ok": true,
+      "planted": 50,
+      "caught": 50,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src67-drill.json",
+      "ok": true,
+      "planted": 50,
+      "caught": 50,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src68-drill.json",
+      "ok": true,
+      "planted": 50,
+      "caught": 50,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src69-drill.json",
+      "ok": true,
+      "planted": 36,
+      "caught": 36,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src70-drill.json",
+      "ok": true,
+      "planted": 42,
+      "caught": 42,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src71-drill.json",
+      "ok": true,
+      "planted": 38,
+      "caught": 38,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src72-drill.json",
+      "ok": true,
+      "planted": 39,
+      "caught": 39,
+      "controls": 2,
+      "controls_undisturbed": 2,
+      "shape": "planted/caught_by_their_own_check"
+    },
+    {
+      "log": "src73-drill.json",
+      "ok": true,
+      "planted": 37,
+      "caught": 37,
       "controls": 2,
       "controls_undisturbed": 2,
       "shape": "planted/caught_by_their_own_check"

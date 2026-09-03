@@ -343,7 +343,57 @@ PROCESSED = {
         "../collatz-ot-series-neok/early-experiments/; rechecked by "
         "code/src01_additive_coordinate_recheck.py"
     ),
+    "Hard_Zeta_Collatz_New_Chat_Handoff_v1.0.zip": (
+        "item 48. not a round: a handoff document, checked for fidelity to the "
+        "rounds it compresses rather than re-derived. 132 documents reshipped "
+        "across 27 bundles confirmed byte-identical; gate log "
+        "data/gate-logs/src48-handoff.json, drill data/gate-logs/src48-drill.json, "
+        "report reports/RUN-030-HARD-ZETA-HANDOFF-FIDELITY.md"
+    ),
+    "Collatz_OT_Series_Paper.zip": (
+        "item 49. a consolidated archive of the source folder itself; checked for "
+        "archive integrity rather than mathematics. Gate log "
+        "data/gate-logs/src49-archive.json, drill data/gate-logs/src49-drill.json, "
+        "report reports/RUN-031-CONSOLIDATED-ARCHIVE-INTEGRITY.md"
+    ),
 }
+
+# Items whose verification belongs to a SIBLING tree, not this one. They are not
+# gaps in this sweep, and counting them as unprocessed would misreport it.
+OTHER_LINE = {
+    "NeoK_Crypto_Semiotics_Theory_Compiler_v0.9.zip": (
+        "crypto-semiotics line; verified in the sibling tree "
+        "../neok-crypto-semiotics-verification/, not here"
+    ),
+}
+
+GATES = ROOT / "data" / "gate-logs"
+REPORTS = ROOT / "reports"
+ROUND_TAG = re.compile(r"Round_(AU2[A-Za-z]\d*)", re.I)
+
+
+def derive_processed(name: str) -> str | None:
+    """Point a Hard-Zeta round at its own gate log and RUN report.
+
+    PROCESSED above is hand-written and stays authoritative where it has an
+    entry. This fills in the rest from artifacts on disk, because a hand-kept
+    table is exactly what drifted: it covered 39 of 73 items long after the
+    sweep had passed them, so `processed_count` understated the tree's own work.
+
+    A round counts as processed only when BOTH the gate log and the RUN report
+    exist, and only when the tag matches exactly one of each — an ambiguous
+    match returns None rather than a pointer that might name the wrong round.
+    """
+    m = ROUND_TAG.search(name)
+    if not m:
+        return None
+    tag = m.group(1).lower()
+    logs = sorted(p.name for p in GATES.glob("src*-" + tag + ".json"))
+    reps = sorted(p.name for p in REPORTS.glob("RUN-*-HARD-ZETA-" + tag.upper() + "-*.md"))
+    if len(logs) != 1 or len(reps) != 1:
+        return None
+    return (f"Hard-Zeta round {tag.upper()}; rechecked independently, "
+            f"gate log data/gate-logs/{logs[0]}, report reports/{reps[0]}")
 
 
 def classify(name: str) -> dict:
@@ -398,6 +448,8 @@ def main() -> int:
                     key=lambda q: q.stat().st_mtime):
         st = p.stat()
         raw = p.read_bytes()
+        hand = PROCESSED.get(p.name)
+        derived = None if hand else derive_processed(p.name)
         entry = {
             "name": p.relative_to(src).as_posix(),
             "mtime_local": datetime.datetime.fromtimestamp(st.st_mtime).isoformat(
@@ -405,7 +457,10 @@ def main() -> int:
             "bytes": st.st_size,
             "sha256": hashlib.sha256(raw).hexdigest(),
             **classify(p.name),
-            "processed_by_this_tree": PROCESSED.get(p.name),
+            "processed_by_this_tree": hand or derived,
+            "processed_entry_source": ("hand" if hand else
+                                       "derived" if derived else None),
+            "processed_by_another_line": OTHER_LINE.get(p.name),
         }
         rk = round_key(p.name)
         if rk:
@@ -435,6 +490,15 @@ def main() -> int:
         "latest": items[-1]["mtime_local"] if items else None,
         "items_per_line": lines,
         "processed_count": sum(1 for i in items if i["processed_by_this_tree"]),
+        "processed_by_hand_entry": sum(1 for i in items
+                                       if i["processed_entry_source"] == "hand"),
+        "processed_by_derivation": sum(1 for i in items
+                                       if i["processed_entry_source"] == "derived"),
+        "belongs_to_another_line": sum(1 for i in items
+                                       if i["processed_by_another_line"]),
+        "unprocessed": [i["name"] for i in items
+                        if not i["processed_by_this_tree"]
+                        and not i["processed_by_another_line"]],
         "items": items,
     }
     out = ROOT / "data" / "source-manifest.v1.json"

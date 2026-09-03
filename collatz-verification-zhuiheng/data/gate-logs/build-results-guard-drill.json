@@ -1,0 +1,62 @@
+{
+  "tool": "build_results_guard_drill.py",
+  "subject": "code/build_results.py check_sweep_inputs() and code/emit_readme_counts.py sweep_counts()",
+  "note": "each defect must be refused by the check named for it; a refusal with the wrong message counts as a survivor",
+  "defects": {
+    "D1_totals_report_themselves_red": {
+      "why": "suite_totals.py exiting non-zero must not become a published figure",
+      "refused": true,
+      "named_check": true,
+      "message": "suite totals gate is red; refusing to emit a summary"
+    },
+    "D2_a_drill_log_was_not_interpreted": {
+      "why": "an unclassified drill contributes zero; the total would look plausible",
+      "refused": true,
+      "named_check": true,
+      "message": "suite totals could not interpret ['src99-drill.json']; refusing to emit a summary that silently undercounts"
+    },
+    "D3_a_source_item_was_never_processed": {
+      "why": "the figure this tree cites as 73/73 must not survive a real gap",
+      "refused": true,
+      "named_check": true,
+      "message": "source items with no recheck and no owning line: ['Some_Round_That_Was_Never_Touched_bundle.zip']; refusing to report the sweep as complete"
+    },
+    "D4_the_ok_field_is_missing_entirely": {
+      "why": "a truncated gate log must refuse, not read as unset-therefore-fine",
+      "refused": true,
+      "named_check": true,
+      "message": "suite totals gate is red; refusing to emit a summary"
+    },
+    "D5_the_readme_counter_over_an_unhandled_item": {
+      "why": "'Across N source items' must stop being N when one is unaccounted for",
+      "refused": true,
+      "named_check": true,
+      "message": "item_count=73, dispositioned=72"
+    }
+  },
+  "controls": {
+    "C3_the_readme_counter_on_the_real_manifest": {
+      "why": "the tree's actual state must read as complete",
+      "undisturbed": true,
+      "message": "item_count=73, dispositioned=73"
+    },
+    "C1_the_real_archived_inputs": {
+      "why": "the state the tree is actually in must build",
+      "undisturbed": true,
+      "message": null
+    },
+    "C2_unrelated_new_fields_and_an_empty_gap_list": {
+      "why": "an empty `unprocessed` is the healthy state, not a missing key",
+      "undisturbed": true,
+      "message": null
+    }
+  },
+  "counts": {
+    "defects_planted": 5,
+    "defects_caught_by_the_named_check": 5,
+    "defects_refused_by_any_check": 5,
+    "controls": 3,
+    "controls_undisturbed": 3
+  },
+  "ok": true
+}

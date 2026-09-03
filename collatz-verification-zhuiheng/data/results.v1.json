@@ -7,7 +7,8 @@
     "agent_role": "local verification and computation arm",
     "route": "instrument, not theory"
   },
-  "date": "2026-08-14",
+  "date": "2026-09-03",
+  "interval_verification_date": "2026-08-14",
   "problem": {
     "id": "COLLATZ",
     "name": "Collatz conjecture (3x+1 problem)",
@@ -42,7 +43,10 @@
     "nothing about any n > the domain upper bound",
     "nothing about cycles containing an element above the domain upper bound",
     "no support, evidence, or suggestion regarding the conjecture itself",
-    "no independent confirmation of the published 2^71 frontier - only that the citation for it resolves correctly"
+    "no independent confirmation of the published 2^71 frontier - only that the citation for it resolves correctly",
+    "nothing in the paper sweep bears on the conjecture either: every bundle claim rechecked there is a finite statement about finite objects",
+    "the sweep rechecks the series' own claims and its own checking apparatus; it does not assess whether the series' program can close the conjecture",
+    "a defect found in a bundle's checker is a defect in the evidence offered for a claim, not a refutation of the claim"
   ],
   "coverage": {
     "tool": "verify_run_logs.py",
@@ -90,6 +94,21 @@
     },
     "problems": [],
     "ok": true
+  },
+  "paper_sweep": {
+    "what_it_is": "the item-by-item recheck of the source folder, one bundle at a time in chronological order. Separate from the exhaustive interval verification above: that one is a claim about integers, this one is a claim about the series' finite statements and the scripts the bundles ship to check themselves.",
+    "source_items": 73,
+    "rechecked_by_this_tree": 72,
+    "belongs_to_another_research_line": 1,
+    "unprocessed": [],
+    "run_reports": 52,
+    "drills": 54,
+    "defects_planted": 1433,
+    "defects_caught_by_the_named_check": 1433,
+    "controls": 117,
+    "controls_undisturbed": 117,
+    "why_these_figures_can_be_trusted_to_be_complete": "code/suite_totals.py reads every archived drill log, classifies each one's tally shape explicitly, and exits non-zero if it meets a shape it cannot interpret - so a drill it does not understand stops the build instead of contributing zero. code/build_source_manifest.py derives each Hard-Zeta round's status from the gate log and RUN report on disk rather than a hand-kept table, which is what had drifted: the table still read 39 of 73 long after the sweep passed them.",
+    "one_item_is_not_this_tree_s": "the crypto-semiotics compiler bundle sits in the same source folder but is verified in the sibling tree ../neok-crypto-semiotics-verification/. It is reported separately rather than counted as a gap here."
   },
   "gates": {
     "self_test": {
@@ -1083,7 +1102,7 @@
     "code/mutation_drill.py": "45e4f84a668c5e57e0ec2b7b116dcd0f0bf419bb64e38ff4685f3ff7cfeae7a7",
     "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
     "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
-    "code/build_results.py": "8125bf8527a43a4d4c49161a9cb61eef5efa8a3dc0a6df1ddc975888c1c757b0",
+    "code/build_results.py": "5b4ce5fa0b5c88ac124a114340c4ddc53b8b34039579d5e5d476db2a04567710",
     "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab",
     "code/ot_paper01_recheck.py": "66074146e8de77d6949b2a81d44add031b39f1b1fe825c98ef5068c7beb25355",
     "code/ot_paper02_recheck.py": "50b3b733ced47a25078b16a71f7c120696d0ce60d43822b464abbc2f0010591d",
@@ -1094,6 +1113,8 @@
     "code/ot_paper07_recheck.py": "0e438242e202d6027317ce50eb1964577b2ecd982e960151af4fcd2c066c5e7f",
     "code/ot_paper08_recheck.py": "80055c5b6331131f4eef34e0bfa2597fbe4b386ff4e18c31d4026a4faf631cf9",
     "code/ot_paper09_recheck.py": "69d8b6225bf14447758a415dd6b4350b157c4f603fb9140105817d4787f41c88",
-    "code/ot_recheck_drill.py": "fb0a6b910f961e7baea7fe50c2cd4e83c85fa7459aa55d19ddf13e23e4e78acc"
+    "code/ot_recheck_drill.py": "fb0a6b910f961e7baea7fe50c2cd4e83c85fa7459aa55d19ddf13e23e4e78acc",
+    "code/suite_totals.py": "35b95203a416529493217a5102206721ca81c70a151d5ba4d80dc1e8ed52bfff",
+    "code/build_source_manifest.py": "38a327ad6e1f64925bb8c5279c76c26a7c7104fd1a831ef0ba61b2df07764e35"
   }
 }

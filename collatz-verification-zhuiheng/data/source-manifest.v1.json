@@ -12,7 +12,11 @@
     "Hard-Zeta": 53,
     "other project": 2
   },
-  "processed_count": 39,
+  "processed_count": 72,
+  "processed_by_hand_entry": 41,
+  "processed_by_derivation": 31,
+  "belongs_to_another_line": 1,
+  "unprocessed": [],
   "items": [
     {
       "name": "Collatz_OT_Series_INDEX_v0.1.md",
@@ -21,7 +25,9 @@
       "sha256": "cfc6191f27f64e511d19e18efa6d4f592cc8a9b0da43f620e502f2a845a5a042",
       "line": "nine-paper series",
       "role": "loose manuscript or index",
-      "processed_by_this_tree": "loose series index beside the bundles; confirmed byte-identical to the bundled copy by code/src05_provenance_chain_recheck.py"
+      "processed_by_this_tree": "loose series index beside the bundles; confirmed byte-identical to the bundled copy by code/src05_provenance_chain_recheck.py",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null
     },
     {
       "name": "Collatz_OT_Series_Paper_01_Reclassification_and_Calibration_v0.1.md",
@@ -30,7 +36,9 @@
       "sha256": "e5e26511f01a7e4c34e5980886d9833e89df530940220191d65a291e3a60ba51",
       "line": "nine-paper series",
       "role": "loose manuscript or index",
-      "processed_by_this_tree": "loose Paper 01 beside the bundles; confirmed byte-identical to the bundled copy by code/src05_provenance_chain_recheck.py"
+      "processed_by_this_tree": "loose Paper 01 beside the bundles; confirmed byte-identical to the bundled copy by code/src05_provenance_chain_recheck.py",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null
     },
     {
       "name": "finite_collatz_additive_coordinate_mvp_bundle.zip",
@@ -40,6 +48,8 @@
       "line": "early experiments",
       "role": "prototype / benchmark",
       "processed_by_this_tree": "item 01. archived byte-exact at ../collatz-ot-series-neok/early-experiments/; rechecked by code/src01_additive_coordinate_recheck.py",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 3,
       "zip_uncompressed_bytes": 14441,
       "zip_top_level": [
@@ -56,6 +66,8 @@
       "line": "early experiments",
       "role": "prototype / benchmark",
       "processed_by_this_tree": "item 02. archived byte-exact at ../collatz-ot-series-neok/early-experiments/; rechecked by code/src02_log_physics_recheck.py. Not a Collatz item.",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 3,
       "zip_uncompressed_bytes": 11816,
       "zip_top_level": [
@@ -72,6 +84,8 @@
       "line": "early experiments",
       "role": "prototype / benchmark",
       "processed_by_this_tree": "item 03. archived byte-exact at ../collatz-ot-series-neok/early-experiments/; all 58651 certificate rows rechecked by code/src03_finite_prototype_recheck.py, scaling cross-checked against the Rust engine",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 7,
       "zip_uncompressed_bytes": 1399614,
       "zip_top_level": [
@@ -90,7 +104,9 @@
       "sha256": "3c536f05ddbc7abcc19c3c08415879a50eda88265aef42d74feff4855b4e0e51",
       "line": "early experiments",
       "role": "prototype / benchmark",
-      "processed_by_this_tree": "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, each cross-checked against the Rust engine; prune ratios confirmed to be Paper 05's P_k = A_k/2^k, and the non-monotonicity in k reproduced from the closed form"
+      "processed_by_this_tree": "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; all 15 (k, domain) rows rechecked by code/src04_v3_threshold_recheck.py, each cross-checked against the Rust engine; prune ratios confirmed to be Paper 05's P_k = A_k/2^k, and the non-monotonicity in k reproduced from the closed form",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null
     },
     {
       "name": "collatz_operation_translation_v3_threshold_bundle.zip",
@@ -100,6 +116,8 @@
       "line": "early experiments",
       "role": "prototype / benchmark",
       "processed_by_this_tree": "archived byte-exact at ../collatz-ot-series-neok/early-experiments/; rechecked with the benchmark by code/src04_v3_threshold_recheck.py",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 4,
       "zip_uncompressed_bytes": 4847,
       "zip_top_level": [
@@ -117,6 +135,8 @@
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
       "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 2,
       "zip_uncompressed_bytes": 28483,
       "zip_top_level": [
@@ -131,7 +151,9 @@
       "sha256": "d7dcd08a4334007d93448ac3484414ef9a9cea13e4c58bed225d3b1954dfcd61",
       "line": "nine-paper series",
       "role": "loose manuscript or index",
-      "processed_by_this_tree": "loose Paper 02 beside the bundles; confirmed byte-identical to the bundled copy by code/src05_provenance_chain_recheck.py"
+      "processed_by_this_tree": "loose Paper 02 beside the bundles; confirmed byte-identical to the bundled copy by code/src05_provenance_chain_recheck.py",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null
     },
     {
       "name": "Collatz_OT_Series_Papers_01_02_v0.2_bundle.zip",
@@ -141,6 +163,8 @@
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
       "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 3,
       "zip_uncompressed_bytes": 48778,
       "zip_top_level": [
@@ -157,6 +181,8 @@
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
       "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 4,
       "zip_uncompressed_bytes": 71558,
       "zip_top_level": [
@@ -174,6 +200,8 @@
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
       "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 5,
       "zip_uncompressed_bytes": 96189,
       "zip_top_level": [
@@ -192,6 +220,8 @@
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
       "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 6,
       "zip_uncompressed_bytes": 121612,
       "zip_top_level": [
@@ -211,6 +241,8 @@
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
       "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 7,
       "zip_uncompressed_bytes": 148000,
       "zip_top_level": [
@@ -230,6 +262,8 @@
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
       "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 8,
       "zip_uncompressed_bytes": 174019,
       "zip_top_level": [
@@ -249,6 +283,8 @@
       "line": "nine-paper series",
       "role": "incremental bundle, superseded by SSSP v1.0",
       "processed_by_this_tree": "the draft chain; rechecked for provenance by code/src05_provenance_chain_recheck.py — strictly additive, and byte-identical to the SSSP provenance/original text",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 9,
       "zip_uncompressed_bytes": 207866,
       "zip_top_level": [
@@ -268,6 +304,8 @@
       "line": "Hard-Zeta",
       "role": "proof-route origin",
       "processed_by_this_tree": "item 17, the Hard-Zeta origin. Rechecked by code/src06_hardzeta_origin_recheck.py: Z_k(s) measured on [2, 2^32) with two-sided bounds, the L = 1 uniform route refuted, and the ROUTE MAP's missing monotonicity hypothesis reported; see reports/RUN-004-HARD-ZETA-ORIGIN.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 2,
       "zip_uncompressed_bytes": 30667,
       "zip_top_level": [
@@ -282,7 +320,9 @@
       "sha256": "fe8ea2204b0a04f7e543a0e438ea45bc5c55f672913a28ae1d1e509787654333",
       "line": "Hard-Zeta",
       "role": "proof-route origin",
-      "processed_by_this_tree": "item 18. Rechecked with item 17: byte-identical to the SSSP package's archived HZ original, and the v0.1 -> v0.1.1 -> v0.1.2 chain counted — v0.1.1 fixed one of the two unrestricted unions, the E_k^C one survived"
+      "processed_by_this_tree": "item 18. Rechecked with item 17: byte-identical to the SSSP package's archived HZ original, and the v0.1 -> v0.1.1 -> v0.1.2 chain counted — v0.1.1 fixed one of the two unrestricted unions, the E_k^C one survived",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null
     },
     {
       "name": "Hard_Zeta_Phase_I_Round_01_Exact_Refinement_v0.1.md",
@@ -292,6 +332,8 @@
       "line": "Hard-Zeta",
       "role": "Phase I round",
       "processed_by_this_tree": "item 19. Rechecked by code/src07_hardzeta_round01_recheck.py against direct iteration: the child recursion, recursive hard height, four-way refinement identity, exact mass conservation, trichotomy, zero-loss zone, the per-chart No-Go construction and the U^k closed form all hold; see reports/RUN-005-HARD-ZETA-ROUND-01.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "",
         1,
@@ -307,6 +349,8 @@
       "line": "Hard-Zeta",
       "role": "Phase I round",
       "processed_by_this_tree": "item 20. Rechecked with item 19; the bundled Round 01 is byte-identical to the loose copy, and the exact Z_k(s) from this chart algebra lands inside RUN-004's independently measured bracket at all 22 depths",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "",
         1,
@@ -328,6 +372,8 @@
       "line": "Hard-Zeta",
       "role": "Phase I round",
       "processed_by_this_tree": "item 21. Rechecked by code/src08_hardzeta_round02_recheck.py: the quotient-coordinate thresholds, beta_k zones and parity-restricted sums all agree with Round 01; the mass-weighted hazard is the right object by up to 94x; Terras's RCOT reformulation holds on all 81,119 first-crossing words to length 24; see reports/RUN-006-HARD-ZETA-ROUND-02.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "",
         2,
@@ -342,7 +388,9 @@
       "sha256": "963aa2dd1631c3a1a6e882c4bec65b522e8d4fba7967317e9ae013cfe7052bc6",
       "line": "Hard-Zeta",
       "role": "route map",
-      "processed_by_this_tree": "item 22. Rechecked with item 21. Unlike v0.1's map this one states the C/R split rather than the general weighted bridge, so RUN-004's finding about the missing monotonicity hypothesis does not carry over"
+      "processed_by_this_tree": "item 22. Rechecked with item 21. Unlike v0.1's map this one states the C/R split rather than the general weighted bridge, so RUN-004's finding about the missing monotonicity hypothesis does not carry over",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null
     },
     {
       "name": "Hard_Zeta_Phase_I_Round_02_bundle.zip",
@@ -352,6 +400,8 @@
       "line": "Hard-Zeta",
       "role": "Phase I round",
       "processed_by_this_tree": "item 23. Rechecked with items 21-22; both loose files are byte-identical to the bundled copies, and the bundle also carries Round 01",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "",
         2,
@@ -374,6 +424,8 @@
       "line": "Hard-Zeta",
       "role": "Phase I round",
       "processed_by_this_tree": "item 24. Rechecked by code/src09_hardzeta_round03a_recheck.py: the irrational ballot tree, survivor DP, Beatty event schedule, exact Hurwitz-zeta mass, anchor ejection, event-loss operator and Head-Tail Reduction all hold. Headline: the minimum surviving anchor m_k measured from 23 tau_c records on [2, 2^32), giving rigorous upper bounds on the true C_k(s); see reports/RUN-007-HARD-ZETA-ROUND-03A.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "",
         3,
@@ -397,6 +449,8 @@
       "line": "Hard-Zeta",
       "role": "Phase I round",
       "processed_by_this_tree": "item 25. Rechecked by code/src10_hardzeta_round03a1_recheck.py against direct iteration: the accelerated exact code, affine endpoint formula, source congruence, nested lift digits, monotonicity, residue-rate gap, mechanical code and both §30-§31 counterexamples all hold. §34's table reproduced exactly and extended from m=8 to m=60; a_m shown to be the same anchor sequence RUN-007 measured for m_k, switching at k = K_m; see reports/RUN-008-HARD-ZETA-ROUND-03A1.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "",
         3,
@@ -421,6 +475,8 @@
       "line": "Hard-Zeta",
       "role": "Phase I round",
       "processed_by_this_tree": "item 26. Rechecked by code/src11_hardzeta_round03a2_recheck.py: the exact 2-3 bridge, Q_m positivity, coarse/exact split, synchronization bit and §12's three equivalent bits all hold; §30's finite diagnostic reproduces to the digit; §22's redundancy boundary confirmed on all three anchors. Finding: §24's endpoint-parity route is equivalent to CST, not cheaper - the longest odd-M runs are held by the ANCHORED codes; see reports/RUN-009-HARD-ZETA-ROUND-03A2.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "",
         3,
@@ -446,6 +502,8 @@
       "line": "Hard-Zeta",
       "role": "Phase I round",
       "processed_by_this_tree": "item 27. Rechecked by code/src12_hardzeta_round03a3_recheck.py over 13,929 node/exponent pairs: the endpoint 2-adic state, bit-selection theorem, cut-and-shift recurrence, Unique Zero-Lift Edge and Spine Ejection Criterion all hold, and no node ever had two source-preserving children. §13's parity-only example reproduces to the digit. Measured: spine length = the canonical source's own subcritical lifetime minus node depth; see reports/RUN-010-HARD-ZETA-ROUND-03A3.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "",
         3,
@@ -471,6 +529,8 @@
       "line": "Hard-Zeta",
       "role": "Phase I round",
       "processed_by_this_tree": "item 28. Rechecked by code/src13_hardzeta_round03a4_recheck.py: the deficit queue, Sturmian credit ledger, valuation cylinders and occupancy bound, the excursion identity (in exact integers), the logarithmic and bounded-deficit brackets, and the Legendre gate all hold; beta's continued fraction anchored against 19/12 and 84/53. Measured: the gate opens on 2 of 168 depths, so CF tools reach almost none of the spine; see reports/RUN-011-HARD-ZETA-ROUND-03A4.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "",
         3,
@@ -495,7 +555,9 @@
       "sha256": "03edbbc0ebba0f9641c01d92c9ff1be0168888bc7cdafc90cb31f52364c400ff",
       "line": "Hard-Zeta",
       "role": "handoff",
-      "processed_by_this_tree": "item 29. Rechecked by code/src14_hardzeta_bline_aline_closure_recheck.py. Its integer slack Lambda(w) = Delta_w nu(w) - b_w holds on all 81,119 first-crossing words to length 24, and reproduces RUN-006's 19/39 at UUUDUUDD by a different formula. Measured: sup R(w) is attained at LENGTH 8 (251/507), and no length 10-24 comes within a factor of ten; section 11's warning that b-extremal is not slack-extremal has 41 witnesses. See reports/RUN-012-HARD-ZETA-A-LINE-CLOSURE.md"
+      "processed_by_this_tree": "item 29. Rechecked by code/src14_hardzeta_bline_aline_closure_recheck.py. Its integer slack Lambda(w) = Delta_w nu(w) - b_w holds on all 81,119 first-crossing words to length 24, and reproduces RUN-006's 19/39 at UUUDUUDD by a different formula. Measured: sup R(w) is attained at LENGTH 8 (251/507), and no length 10-24 comes within a factor of ten; section 11's warning that b-extremal is not slack-extremal has 41 witnesses. See reports/RUN-012-HARD-ZETA-A-LINE-CLOSURE.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null
     },
     {
       "name": "Hard_Zeta_A_Line_COMPLETE_Rounds_01_03A5_v1.0.zip",
@@ -505,6 +567,8 @@
       "line": "Hard-Zeta",
       "role": "Phase I A-line consolidation",
       "processed_by_this_tree": "item 30. Rechecked by the same tool. The closure is correctly scoped: 'A line reduction program complete', explicitly NOT a proof of Terras or Collatz, with CASP left open. Its one external dependency (Lopez-Stoll, arXiv:2101.12747) was fetched and the claimed liminf equality appears verbatim in that abstract; archived at data/external/. Measured: section 5's witness 2^(m+1)-1 is up to 5e9 times larger than the cheapest start with the same subcritical reach (n=27), and spines die having spent 93-98% of the Sturmian budget, so sections 19-20's near-saturation is the normal end state. See reports/RUN-012-HARD-ZETA-A-LINE-CLOSURE.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 10,
       "zip_uncompressed_bytes": 180513,
       "zip_top_level": [
@@ -524,6 +588,8 @@
       "line": "Hard-Zeta",
       "role": "Phase II round",
       "processed_by_this_tree": "item 31. Rechecked by code/src15_hardzeta_au1_recheck.py. A NEGATIVE round and it holds: the Critical Invariant-Limit Theorem's finite arithmetic checks out, and both countermodels behind the Pure Occupation No-Go are verified exactly — the Bernoulli measure's mean is 1+p, and the mechanical code telescopes to floor(beta m), stays in {1,2}, is subcritical at every prefix to m=300, and its 2-density reaches gamma to 8.8e-5 by m=8000. Its formula agrees with the implementation RUN-008 wrote from Round 03-A.1. Measured: the anchor cocycle separates them — every genuine integer's lift digits settle by m=11, while the mechanical code still lifts at m=59 and its source grows 13 to 93 bits. See reports/RUN-013-HARD-ZETA-AU1-ANCHOR-ERASURE.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         1,
@@ -547,6 +613,8 @@
       "line": "Hard-Zeta",
       "role": "Phase II round",
       "processed_by_this_tree": "item 32. Rechecked by code/src16_hardzeta_au2a_recheck.py. Almost all exact algebra and all of it holds: the inverse-code series and its functional equation, the Source Block-Digit Theorem (the lift IS a binary block of the source), the amplification law Etilde-E = 2t*3^m, the X/Z/C recurrences, the Decoupling (C is identical for every source in a cylinder), the synchronization bound, the flux balance, and both rival completions (the negative one reaches -1 on exact rationals). Measured: the A-U.1 countermodel has POSITIVE lift flux (lambda-bar ~0.34 stable to M=400), so it sits in the class the Zero-Flux Boundary Theorem already excludes — it is not a witness for the sparse class A-U.2b must handle. See reports/RUN-014-HARD-ZETA-AU2A-LIFT-COUPLING.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -570,6 +638,8 @@
       "line": "Hard-Zeta",
       "role": "Phase II round",
       "processed_by_this_tree": "item 33. Rechecked by code/src17_hardzeta_au2b_recheck.py. The FIRST positive round of Phase II — it eliminates classes instead of blocking routes, and it settles what RUN-014 left open: the mechanical code is unanchored because d_m = 0 identically, a different argument from the lift-flux one. The whole result turns on Lambda_gamma = 2.83951373049775... < 3, verified at 60 digits, and on two explicit inequalities at c=0.645 that clear by 1.0e-4 and 6.0e-4. Also verified: return separation, the complexity-peak law, the excursion bound, the Sturmian complexity p(r)=r+1, and negative sources for periodic tails. Measured: the same proof scheme supports eps ~ 0.0150, not just the published 0.01 — a 50% gain with no new idea, which is what A-U.2b.1 asks for. See reports/RUN-015-HARD-ZETA-AU2B-SPARSE-LIFT-RIGIDITY.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -594,6 +664,8 @@
       "line": "Hard-Zeta",
       "role": "Phase II round",
       "processed_by_this_tree": "item 34. Rechecked by code/src18_hardzeta_au2b1_recheck.py. The FIRST round to ship its own numerical artifact (a script + an 80-digit constants JSON), so it is checked as one: the constants are recomputed from scratch by decimal bisection against the subject's mpmath findroot, and agree to 80-83 digits — every digit published. c_pack = 0.03585676003404867, which is 2.388x the ceiling RUN-015 measured for the PREVIOUS round's scheme; the new argument is multi-occurrence packing, exactly the kind of change RUN-015 said would be needed. Also verified: both entropy identities, the variational supremum, and §27's optimality as TWO exhibited failures rather than an assertion. This round publishes AT its supremum where the previous published 67% of its own. See reports/RUN-016-HARD-ZETA-AU2B1-PACKING-THRESHOLD.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -619,6 +691,8 @@
       "line": "Hard-Zeta",
       "role": "Phase II round",
       "processed_by_this_tree": "item 35. Rechecked by code/src19_hardzeta_au2b2_recheck.py. Pulls the FIRST of A-U.2b.1's five levers (queue entropy) and it returns ZERO at first order — that is the round's own Prefix-Constraint No-Gain theorem, and the queue rate climbs monotonically to within 0.00246 of beta at r=5000. The second-order gain came from the Stirling prefactor instead, which was not on the list; four levers remain untried. Their queue DP was checked by REIMPLEMENTATION (opposite accumulation direction, exact integer credits, validated against brute force first) and all nine rows reproduce. Constants agree to 80-82 digits, and the block-scale optimum sits exactly at s=0 with d_pack — third round running published at its own supremum. FINDING: the shipped JSON was NOT produced by the shipped script (9 rows vs 8, renamed fields), though every number in it is correct — a stale generator/output pairing, a realization defect with the mathematics intact. See reports/RUN-017-HARD-ZETA-AU2B2-QUEUE-ENTROPY.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -644,6 +718,8 @@
       "line": "Hard-Zeta",
       "role": "Phase II round",
       "processed_by_this_tree": "item 36. Rechecked by code/src20_hardzeta_au2b3_recheck.py. THE SUBJECT CORRECTED A DEFECT THIS ARM REPRODUCED FAITHFULLY AND DID NOT NOTICE: A-U.2b.2's queue DP counted POINTED paths where its own section 4 defined an UNPOINTED word set (66 vs 48 at r=4,D=2). RUN-017 verified the program against a brute force written from the program's reading, so both shared the misreading. Everything here is implemented from the PROSE definitions instead, and Q = P_D - P_(D-1) is checked against a direct enumeration of WORDS. Cost to RUN-017: the label, not the conclusion — the rate shifts by at most 1.5e-3, and 1.4e-4 at r=5000, so first-order saturation stands and the second-order barrier never used the DP at all. All nine diagnostic rows reproduce with worst deviation exactly 0. Measured: the pointing ratio P/Q settles at 1.638, which is why the correction cannot move the exponential rate. The packing branch is declared closed. See reports/RUN-018-HARD-ZETA-AU2B3-PREFACTOR-SATURATION.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -669,6 +745,8 @@
       "line": "Hard-Zeta",
       "role": "Phase II round",
       "processed_by_this_tree": "item 37. Rechecked by code/src21_hardzeta_au2e_recheck.py. Every exact identity holds: the deviation identity d_m - d_(m-1) = a_m - q_m, the directional split U - W = d_N with U counting skipped credits exactly, the Reset Affine Identity cleared to INTEGERS at 1554 windows with no floating point, and the deficit-drop slope identity. THE ROUND'S TWO INEQUALITIES TURN OUT TO BE ONE LINE: the contamination bound is informative only when J_N < (N-2r)/r, which is exactly the packing theorem's floor — verified row by row with 0 disagreements. Every computable spine sits on the vacuous side of it: J_N/N runs 0.55-0.69 while the floor is 0.08-1.50, so the barrier pins only 3.1%-6.7% of the mismatches present and CANNOT FAIL at these sizes; the drill says so instead of implying coverage. By contrast the reset geometry does bind — across 190 first-return windows Y_b reaches 0.203-0.938 of its cap — but its affine correction is never what makes the bound true (0 windows need it; it moves the worst case by 4.6e-4). See reports/RUN-019-HARD-ZETA-AU2E-MULTISCALE-RETURN.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -693,6 +771,8 @@
       "line": "other project",
       "role": "not Collatz; parked here",
       "processed_by_this_tree": "item 38. THE SWEEP LEAVES HARD-ZETA HERE — a different subject, so the instruments changed. Verified in a separate tree: ../neok-crypto-semiotics-verification/, RUN-020. Every countable figure reproduces (264 claims / 2490 obligations / 608 evidence gaps / 714 dependency edges), their three pytest suites reproduce CROSS-PLATFORM (18 passed on Windows against their Linux capture), and the CTCL trust model re-derives from its own TLA+ at 10 states with 0 cloud-only secrecy violations. TWO THINGS DO NOT, both artifacts never re-run against the layer after them: (1) the shipped PersistentSecurityRuntime.tla pins authorized and verificationOK TRUE with no action changing them, so it reaches 16 states and Rollback is UNREACHABLE against the reported 62 — adding the two environment actions their Python takes reproduces 62 exactly with both safety properties intact, so the gap is coverage not correctness; (2) exactly 1 profile of 264 is rejected by the shipped JSON Schema (CL-N21-005, promotion_decision 'ready_at_target'), and it is the SAME claim that is the only exception to the prose gate rule. Also: readiness_score is the v0.8 report's headline metric and cannot be re-derived from the package at all. Payload NOT mirrored (23.9 MiB); source sha256 recorded. See ../neok-crypto-semiotics-verification/reports/RUN-020-CRYPTO-SEMIOTICS-V08.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 290,
       "zip_uncompressed_bytes": 25088868,
       "zip_top_level": [
@@ -707,6 +787,8 @@
       "line": "other project",
       "role": "not Collatz; parked here",
       "processed_by_this_tree": null,
+      "processed_entry_source": null,
+      "processed_by_another_line": "crypto-semiotics line; verified in the sibling tree ../neok-crypto-semiotics-verification/, not here",
       "zip_entries": 306,
       "zip_uncompressed_bytes": 25109231,
       "zip_top_level": [
@@ -720,7 +802,9 @@
       "sha256": "87ebfb93f05c64fd1c81307dd3dcdeedd45eaaa53c342508cd39cfce33a4ffde",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2E1; rechecked independently, gate log data/gate-logs/src22-au2e1.json, report reports/RUN-022-HARD-ZETA-AU2E1-RESET-BLOCK.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -743,7 +827,9 @@
       "sha256": "29c6cac193ed2966e6bf2a9c8535b40532e43ee642f48dd1e0d8f3369dc4fa47",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2E2; rechecked independently, gate log data/gate-logs/src41-au2e2.json, report reports/RUN-023-HARD-ZETA-AU2E2-FIRST-CROSSING-SURVIVAL.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -766,7 +852,9 @@
       "sha256": "48ef7e50c5d84542be2c67ae4983dfe277c94eeabaf2894af4a25d190142577c",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2E3; rechecked independently, gate log data/gate-logs/src42-au2e3.json, report reports/RUN-024-HARD-ZETA-AU2E3-INFINITE-SUPPORT.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -790,7 +878,9 @@
       "sha256": "6a4736ee36eff2b69780e61b41f85c3da5c3106927f10c061755b82f80ab6712",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2E4; rechecked independently, gate log data/gate-logs/src43-au2e4.json, report reports/RUN-025-HARD-ZETA-AU2E4-RENEWAL-RIGIDITY.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -814,7 +904,9 @@
       "sha256": "218d74d18dd543cd45b1ae46fb76bd7e884d86864221b4c1afcfd8d7d920fabe",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D; rechecked independently, gate log data/gate-logs/src44-au2d.json, report reports/RUN-026-HARD-ZETA-AU2D-SOURCE-FREEZE.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -839,7 +931,9 @@
       "sha256": "c77b3582354aa5ec7ec88ef038c4d2abf0441cb503ce4ab5f1ab1325af14ba01",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D1; rechecked independently, gate log data/gate-logs/src45-au2d1.json, report reports/RUN-027-HARD-ZETA-AU2D1-ROTATION-CAP.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -864,7 +958,9 @@
       "sha256": "0953f398ecf77d3d9aa08ad75452bf5ecb180e7cd74ee907aabe0db96f9cf011",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D2; rechecked independently, gate log data/gate-logs/src46-au2d2.json, report reports/RUN-028-HARD-ZETA-AU2D2-ATTAINABILITY.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -889,7 +985,9 @@
       "sha256": "d3c4f818bb7bb39fa2ddc4b65339ece8d17f37b01effc96fc26dd5eca2b8b0b4",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D3; rechecked independently, gate log data/gate-logs/src47-au2d3.json, report reports/RUN-029-HARD-ZETA-AU2D3-SURVIVAL-CLOSURE.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -914,7 +1012,9 @@
       "sha256": "799fad5e0614c598157b4748e0b1033585f11194d80824051ac12e3a5730acdd",
       "line": "Hard-Zeta",
       "role": "handoff",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 48. not a round: a handoff document, checked for fidelity to the rounds it compresses rather than re-derived. 132 documents reshipped across 27 bundles confirmed byte-identical; gate log data/gate-logs/src48-handoff.json, drill data/gate-logs/src48-drill.json, report reports/RUN-030-HARD-ZETA-HANDOFF-FIDELITY.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 8,
       "zip_uncompressed_bytes": 80981,
       "zip_top_level": [
@@ -933,7 +1033,9 @@
       "sha256": "d7394cce7b6a877112446d5d4616339bf2b2eda4241f3d6a9010128c288f0d2d",
       "line": "nine-paper series",
       "role": "large consolidated archive",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "item 49. a consolidated archive of the source folder itself; checked for archive integrity rather than mathematics. Gate log data/gate-logs/src49-archive.json, drill data/gate-logs/src49-drill.json, report reports/RUN-031-CONSOLIDATED-ARCHIVE-INTEGRITY.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 50,
       "zip_uncompressed_bytes": 17812870,
       "zip_top_level": [
@@ -952,7 +1054,9 @@
       "sha256": "900f40b19b049f50aa43b2274746de5733099ba7d5681f2867b817f9a614cf47",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D4; rechecked independently, gate log data/gate-logs/src50-au2d4.json, report reports/RUN-032-HARD-ZETA-AU2D4-CONGESTION-RIGIDITY.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -977,7 +1081,9 @@
       "sha256": "fc35593c2c1b011cbc0d1c39a05b75c57d42f5a9b577b73eb635e33291d8a44f",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D5; rechecked independently, gate log data/gate-logs/src51-au2d5.json, report reports/RUN-033-HARD-ZETA-AU2D5-ANNULAR-RESIDUE.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1002,7 +1108,9 @@
       "sha256": "5148fdfda532e2fdf76f087f11727aa442befaf3713a4cc1db294481c3058f71",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D6; rechecked independently, gate log data/gate-logs/src52-au2d6.json, report reports/RUN-034-HARD-ZETA-AU2D6-FAREY-ENTROPY.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1027,7 +1135,9 @@
       "sha256": "41d3fb11ac53d90c812d6a0292d360aabb4f8cca0ab29700985025cb89d684d5",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D7; rechecked independently, gate log data/gate-logs/src53-au2d7.json, report reports/RUN-035-HARD-ZETA-AU2D7-PLATEAU-RESET.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1052,7 +1162,9 @@
       "sha256": "1b7fe89302cb98319ccc0ed487ecb195d87ce686890c445d5d2c42c89ba1910c",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D8; rechecked independently, gate log data/gate-logs/src54-au2d8.json, report reports/RUN-036-HARD-ZETA-AU2D8-LOW-SOURCE-SATURATION.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1077,7 +1189,9 @@
       "sha256": "0680d614159e52d79a27ac286d43da199723d116550fab1efea0e1785b2c2a55",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D9; rechecked independently, gate log data/gate-logs/src55-au2d9.json, report reports/RUN-037-HARD-ZETA-AU2D9-ORBIT-PACKING-DEFICIT.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1103,6 +1217,8 @@
       "line": "nine-paper series",
       "role": "final repaired package",
       "processed_by_this_tree": "archived as ../collatz-ot-series-neok/ and fully rechecked; see reports/RUN-002-OT-SERIES.md",
+      "processed_entry_source": "hand",
+      "processed_by_another_line": null,
       "zip_entries": 50,
       "zip_uncompressed_bytes": 1659888,
       "zip_top_level": [
@@ -1116,7 +1232,9 @@
       "sha256": "4116305d00886a1569146ceb8e5254886135e556b0981f86d2ff527c06be9045",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D10; rechecked independently, gate log data/gate-logs/src57-au2d10.json, report reports/RUN-038-HARD-ZETA-AU2D10-VALUATION-HARMONIC-DEFICIT.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1141,7 +1259,9 @@
       "sha256": "3dd23e969a2ca0517738c7878e1f25bbdff77eb487e7120d944135914235e7d5",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D11; rechecked independently, gate log data/gate-logs/src58-au2d11.json, report reports/RUN-039-HARD-ZETA-AU2D11-MULTISTEP-TRANSPORT.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1161,7 +1281,9 @@
       "sha256": "53cd7c2fcf5954cfe1ff684b807ace463eba64d032e32d1d405af662a961ba9b",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D12; rechecked independently, gate log data/gate-logs/src59-au2d12.json, report reports/RUN-040-HARD-ZETA-AU2D12-TRANSPORT-HIERARCHY.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1186,7 +1308,9 @@
       "sha256": "1f02613b3e73b47d3fab42185f6e0ccd296ea2e7ab023cab0617429166a5d427",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D13; rechecked independently, gate log data/gate-logs/src60-au2d13.json, report reports/RUN-041-HARD-ZETA-AU2D13-SOURCE-DEPTH-COLLISION.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1206,7 +1330,9 @@
       "sha256": "2089742a1daf745794e3df331eae504ba91372393eb5d32f6d7770f4fa24613c",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D14; rechecked independently, gate log data/gate-logs/src61-au2d14.json, report reports/RUN-042-HARD-ZETA-AU2D14-SPARSE-SUPPORT.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1231,7 +1357,9 @@
       "sha256": "a3062bad6f642d44556ff7c2bb9d749d2509e20fd36803864d521501642f245a",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D15; rechecked independently, gate log data/gate-logs/src62-au2d15.json, report reports/RUN-043-HARD-ZETA-AU2D15-RECORD-SPARSITY.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1251,7 +1379,9 @@
       "sha256": "72fb061204e1bd3e0125d4fe3b9e59f82cdea41029f9b984aaed377d27554ebe",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D16; rechecked independently, gate log data/gate-logs/src63-au2d16.json, report reports/RUN-044-HARD-ZETA-AU2D16-RECORD-GAP-TRANSPORT.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1276,7 +1406,9 @@
       "sha256": "ec15c779b6ba88f2649016e2b867521e046681e51d14bd2c5a1d5f61c826a6b4",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D17; rechecked independently, gate log data/gate-logs/src64-au2d17.json, report reports/RUN-045-HARD-ZETA-AU2D17-SMALL-ENDPOINT-CYLINDER.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1301,7 +1433,9 @@
       "sha256": "686ade47d6aa17dd1a8fd813309170bbffcdda7b1f9c51163ede0afaf1c491cb",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D18; rechecked independently, gate log data/gate-logs/src65-au2d18.json, report reports/RUN-046-HARD-ZETA-AU2D18-LIFT-COCYCLE.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1326,7 +1460,9 @@
       "sha256": "f2baa17dfa595ddf405d1c667000a6dfe35d928cc4fe1dd87a5cd725da1b0a8d",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D19; rechecked independently, gate log data/gate-logs/src66-au2d19.json, report reports/RUN-047-HARD-ZETA-AU2D19-CARRY-CONJUGACY.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1351,7 +1487,9 @@
       "sha256": "c8ac2b9ecc8345acc3794b37bffd5967ce4ea631bfbcd145dd8cfff597c06426",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D20; rechecked independently, gate log data/gate-logs/src67-au2d20.json, report reports/RUN-048-HARD-ZETA-AU2D20-RETURN-LOOPS.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1376,7 +1514,9 @@
       "sha256": "f7dabb16001d82e9d9b9f856501f1ea45017a5edc43ccce9a2f6d6663005bda2",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D21; rechecked independently, gate log data/gate-logs/src68-au2d21.json, report reports/RUN-049-HARD-ZETA-AU2D21-LOOP-DEFECT.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1401,7 +1541,9 @@
       "sha256": "fea2a56786b683e79dfcd5aa6be3a60bbb91a8779640f38c21bdf5905bd4e66a",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D22; rechecked independently, gate log data/gate-logs/src69-au2d22.json, report reports/RUN-050-HARD-ZETA-AU2D22-DEFECT-TREE.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1426,7 +1568,9 @@
       "sha256": "13c20b1f7f015bab2ed01cb952d1e1f9ef3a519fa4657ce278f5a7d8ee78fad3",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D23; rechecked independently, gate log data/gate-logs/src70-au2d23.json, report reports/RUN-051-HARD-ZETA-AU2D23-QUOTIENT-RESONANCE.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1451,7 +1595,9 @@
       "sha256": "5a2f3d2f83485d336c8e8031bf433b8374a55087bcac051d6cedc20fba043bb2",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D24; rechecked independently, gate log data/gate-logs/src71-au2d24.json, report reports/RUN-052-HARD-ZETA-AU2D24-COMPENSATION.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1476,7 +1622,9 @@
       "sha256": "a672808bc79c046d3eb2afc02d355cbaf7138fb33e7b693517f2b2228a5a06eb",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D25; rechecked independently, gate log data/gate-logs/src72-au2d25.json, report reports/RUN-053-HARD-ZETA-AU2D25-PRIMITIVE-UNIT.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,
@@ -1501,7 +1649,9 @@
       "sha256": "b40fff78db994737961158e48fc7d9c59a4da13f9647024e78e64bb3bd85cff2",
       "line": "Hard-Zeta",
       "role": "Phase II round",
-      "processed_by_this_tree": null,
+      "processed_by_this_tree": "Hard-Zeta round AU2D26; rechecked independently, gate log data/gate-logs/src73-au2d26.json, report reports/RUN-054-HARD-ZETA-AU2D26-UNIT-SYNC.md",
+      "processed_entry_source": "derived",
+      "processed_by_another_line": null,
       "round_sort_key": [
         "au",
         2,

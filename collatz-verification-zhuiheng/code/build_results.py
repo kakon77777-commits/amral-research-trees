@@ -13,6 +13,7 @@ Usage:  python code/build_results.py --tag t40 --expect-to 1099511627776
 from __future__ import annotations
 
 import argparse
+import datetime
 import hashlib
 import json
 import pathlib
@@ -41,6 +42,8 @@ CODE_FILES = [
     "code/ot_paper08_recheck.py",
     "code/ot_paper09_recheck.py",
     "code/ot_recheck_drill.py",
+    "code/suite_totals.py",
+    "code/build_source_manifest.py",
 ]
 
 
@@ -53,6 +56,30 @@ def load_gate(name: str) -> dict:
     if not path.exists():
         raise SystemExit(f"missing gate log: {path}. Run the gate and archive its output.")
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+class SweepInputError(Exception):
+    """A sweep figure could be silently incomplete, so no summary is emitted."""
+
+
+def check_sweep_inputs(totals: dict, manifest: dict) -> None:
+    """Refuse the three ways the sweep section could quietly understate itself.
+
+    Split out of main() so it can be driven with crafted inputs by
+    code/build_results_guard_drill.py. A guard nothing ever exercises is the
+    same shape this tree spent the sweep cataloguing: it reads like a check and
+    is only a comment.
+    """
+    if not totals.get("ok"):
+        raise SweepInputError("suite totals gate is red; refusing to emit a summary")
+    if totals.get("uninterpreted"):
+        raise SweepInputError(
+            f"suite totals could not interpret {totals['uninterpreted']}; "
+            "refusing to emit a summary that silently undercounts")
+    if manifest.get("unprocessed"):
+        raise SweepInputError(
+            f"source items with no recheck and no owning line: "
+            f"{manifest['unprocessed']}; refusing to report the sweep as complete")
 
 
 def main() -> int:
@@ -85,6 +112,18 @@ def main() -> int:
     ot_p09 = load_gate("ot-paper09-recheck.json")
     ot_drill = load_gate("ot-recheck-drill.json")
     ot_block = load_gate("ot-paper05-block-benchmark.json")
+    totals = load_gate("suite-totals.json")
+
+    manifest_path = ROOT / "data" / "source-manifest.v1.json"
+    if not manifest_path.exists():
+        raise SystemExit(f"missing {manifest_path}. Run code/build_source_manifest.py.")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    run_reports = sorted(p.name for p in (ROOT / "reports").glob("RUN-*.md"))
+
+    try:
+        check_sweep_inputs(totals, manifest)
+    except SweepInputError as exc:
+        raise SystemExit(str(exc)) from exc
 
     if not anchors.get("all_match"):
         raise SystemExit("anchor gate did not match; refusing to emit a summary")
@@ -120,7 +159,8 @@ def main() -> int:
             "agent_role": "local verification and computation arm",
             "route": "instrument, not theory",
         },
-        "date": "2026-08-14",
+        "date": datetime.date.today().isoformat(),
+        "interval_verification_date": "2026-08-14",
         "problem": {
             "id": "COLLATZ",
             "name": "Collatz conjecture (3x+1 problem)",
@@ -171,8 +211,46 @@ def main() -> int:
             "nothing about cycles containing an element above the domain upper bound",
             "no support, evidence, or suggestion regarding the conjecture itself",
             "no independent confirmation of the published 2^71 frontier - only that the citation for it resolves correctly",
+            "nothing in the paper sweep bears on the conjecture either: every bundle claim rechecked there is a finite statement about finite objects",
+            "the sweep rechecks the series' own claims and its own checking apparatus; it does not assess whether the series' program can close the conjecture",
+            "a defect found in a bundle's checker is a defect in the evidence offered for a claim, not a refutation of the claim",
         ],
         "coverage": coverage,
+        "paper_sweep": {
+            "what_it_is": (
+                "the item-by-item recheck of the source folder, one bundle at a time "
+                "in chronological order. Separate from the exhaustive interval "
+                "verification above: that one is a claim about integers, this one is "
+                "a claim about the series' finite statements and the scripts the "
+                "bundles ship to check themselves."
+            ),
+            "source_items": manifest["item_count"],
+            "rechecked_by_this_tree": manifest["processed_count"],
+            "belongs_to_another_research_line": manifest["belongs_to_another_line"],
+            "unprocessed": manifest["unprocessed"],
+            "run_reports": len(run_reports),
+            "drills": totals["drills"],
+            "defects_planted": totals["defects_planted"],
+            "defects_caught_by_the_named_check": totals["defects_caught_by_the_named_check"],
+            "controls": totals["controls"],
+            "controls_undisturbed": totals["controls_undisturbed"],
+            "why_these_figures_can_be_trusted_to_be_complete": (
+                "code/suite_totals.py reads every archived drill log, classifies each "
+                "one's tally shape explicitly, and exits non-zero if it meets a shape "
+                "it cannot interpret - so a drill it does not understand stops the "
+                "build instead of contributing zero. code/build_source_manifest.py "
+                "derives each Hard-Zeta round's status from the gate log and RUN "
+                "report on disk rather than a hand-kept table, which is what had "
+                "drifted: the table still read 39 of 73 long after the sweep passed "
+                "them."
+            ),
+            "one_item_is_not_this_tree_s": (
+                "the crypto-semiotics compiler bundle sits in the same source folder "
+                "but is verified in the sibling tree "
+                "../neok-crypto-semiotics-verification/. It is reported separately "
+                "rather than counted as a gap here."
+            ),
+        },
         "gates": {
             "self_test": {"ok": selftest["ok"]},
             "reference_cross_check": reference,
