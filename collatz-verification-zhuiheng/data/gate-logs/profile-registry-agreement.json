@@ -1,0 +1,29 @@
+{
+  "tool": "check_profile_registry.py",
+  "registry_home": "SEDB/projects/amral-results-profiles - the registry governs every AMRAL line, so it does not live in one line's tree",
+  "mirror_present": true,
+  "live_registry_present": true,
+  "read_from": "live",
+  "profiles": {
+    "registered_not_implemented": [],
+    "implemented_not_registered": [],
+    "agree": true,
+    "count": 4
+  },
+  "measurement": {
+    "comparable": true,
+    "lines_measured": [
+      "collatz-verification-zhuiheng",
+      "erdos-885-k5-chengxu"
+    ],
+    "lines_in_registry": [
+      "collatz-verification-zhuiheng",
+      "erdos-885-k5-chengxu"
+    ],
+    "drifted": [],
+    "agree": true
+  },
+  "mirror_matches_live": true,
+  "state": "agree",
+  "ok": true
+}

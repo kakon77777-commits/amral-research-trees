@@ -1,0 +1,114 @@
+{
+  "tool": "check_profile_registry_drill.py",
+  "subject": "code/check_profile_registry.py",
+  "note": "each defect must be refused by the comparison named for it. D5 is the load-bearing one: an unreachable registry must report `unmeasured`, never agreement",
+  "defects": {
+    "D1_a_registered_profile_nobody_implements": {
+      "why": "a renderer told a profile exists would ask for a verdict no code can produce",
+      "refused": true,
+      "named_check": true,
+      "reported": {
+        "registered_not_implemented": [
+          "results-invented/9"
+        ],
+        "implemented_not_registered": [],
+        "agree": false,
+        "count": 5
+      }
+    },
+    "D2_an_implemented_profile_nobody_registered": {
+      "why": "a rule with no registered reason is a rule nobody agreed to; the registry exists so a profile cannot appear without one",
+      "refused": true,
+      "named_check": true,
+      "reported": {
+        "registered_not_implemented": [],
+        "implemented_not_registered": [
+          "results-pairs/1"
+        ],
+        "agree": false,
+        "count": 3
+      }
+    },
+    "D3_registry_satisfaction_drifted_from_the_measurement": {
+      "why": "the registry is built from that log; drift means one was regenerated without the other and the registry now describes a state that does not hold",
+      "refused": true,
+      "named_check": true,
+      "reported": {
+        "comparable": true,
+        "lines_measured": [
+          "line-a"
+        ],
+        "lines_in_registry": [
+          "line-a"
+        ],
+        "drifted": [
+          "line-a"
+        ],
+        "agree": false
+      }
+    },
+    "D4_a_measured_line_missing_from_the_registry": {
+      "why": "a line the registry has never heard of is not a governed line",
+      "refused": true,
+      "named_check": true,
+      "reported": {
+        "comparable": true,
+        "lines_measured": [
+          "line-a"
+        ],
+        "lines_in_registry": [],
+        "drifted": [
+          "line-a"
+        ],
+        "agree": false
+      }
+    },
+    "D5_no_registry_reachable_is_unmeasured_not_agreement": {
+      "why": "a check that cannot run has no verdict; reporting agreement there is worse than not checking at all",
+      "refused": true,
+      "named_check": true,
+      "reported": {
+        "exit": 1,
+        "state": "unmeasured",
+        "ok": false
+      }
+    }
+  },
+  "controls": {
+    "C1_the_healthy_registry_agrees": {
+      "why": "the real state must pass, or the drill above proves nothing",
+      "undisturbed": true,
+      "detail": {
+        "registered_not_implemented": [],
+        "implemented_not_registered": [],
+        "agree": true,
+        "count": 4
+      }
+    },
+    "C2_status_and_prose_are_the_registry_s_to_change": {
+      "why": "this check owns the SET of profiles, not their lifecycle or wording; over-reaching would make the registry unable to govern the thing it was moved out to govern",
+      "undisturbed": true,
+      "detail": {
+        "registered_not_implemented": [],
+        "implemented_not_registered": [],
+        "agree": true,
+        "count": 4
+      }
+    },
+    "C3_an_absent_measurement_is_reported_not_assumed": {
+      "why": "with nothing to compare against, the answer is 'not comparable', which the caller treats as failure rather than silently as agreement",
+      "undisturbed": true,
+      "detail": {
+        "comparable": false,
+        "why": "no archived cross-branch measurement to compare against"
+      }
+    }
+  },
+  "counts": {
+    "defects_planted": 5,
+    "defects_caught_by_the_named_check": 5,
+    "controls": 3,
+    "controls_undisturbed": 3
+  },
+  "ok": true
+}

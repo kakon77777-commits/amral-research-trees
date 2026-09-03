@@ -139,6 +139,35 @@ state.
 
 ---
 
+## Where this registry lives
+
+**Not in this tree.** The registry — which profiles exist, what each requires,
+why it was proposed, its lifecycle status, and which line satisfies which — is
+a SEDB database at `SEDB/projects/amral-results-profiles/`, exported as plain
+JSON that consumers read without needing SEDB installed.
+
+It moved on 2026-09-03 for one reason that outweighs the rest: SEDB's
+`field_events.reason` is `NOT NULL`, so **a profile's status cannot change
+without a recorded reason**. Before that, those reasons lived in commit
+messages — discipline rather than structure, and discipline is what fails
+quietly. It had also been governing every AMRAL line from inside one of them,
+which with a third line would have become the second truth this whole contract
+exists to prevent.
+
+**What did not move is the logic.** Whether a file satisfies a profile is
+decided by the predicates in `code/validate_results_profiles.py`. Those are
+executable checks, not data.
+
+Two artifacts, therefore, and one check keeping them a single truth:
+`code/check_profile_registry.py` refuses if the registered set and the
+implemented set differ, if the registry's satisfaction has drifted from this
+tree's own measurement, or if the mirror under `data/external/` has drifted
+from the live export. With no registry reachable it reports **`unmeasured`,
+never agreement** — a check that cannot run has no verdict, and a green light
+there would be worse than no check at all.
+
+---
+
 ## How to use this when rendering
 
 **Do not dispatch on `schema_version`.** Ask
