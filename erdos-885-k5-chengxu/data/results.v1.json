@@ -58,13 +58,152 @@
     "literature novelty is not claimed; in particular the main K_(6,3) packet independently rediscovered here is already present on Thomas Egense's public 2019 4x6 square-sumset page",
     "a no-hit result at one level does not assert uniqueness at that level"
   ],
+  "render_pairs": [
+    {
+      "value": "bounded_searches.direct_K_(6,4).K_(6,4)_hits",
+      "against": "bounded_searches.direct_K_(6,4).anchors",
+      "label": "K_(6,4) hits, against canonical anchors searched",
+      "why": "this line's central no-hit statement. Without the anchor count it reads as an impossibility theorem, which this line's own status boundary explicitly disclaims",
+      "value_is": 0,
+      "against_is": 18003000
+    },
+    {
+      "value": "bounded_searches.direct_K_(6,4).K_(5,4)_hits",
+      "against": "bounded_searches.direct_K_(6,4).anchors",
+      "label": "K_(5,4) hits, against canonical anchors searched",
+      "why": "the same exclusion at the lower level, and the same reason",
+      "value_is": 0,
+      "against_is": 18003000
+    },
+    {
+      "value": "bounded_searches.public_4x6_closure.exact_root_to_positive_shift",
+      "against": "bounded_searches.public_4x6_closure.dataset_packets",
+      "label": "packets exact under root-to-positive-shift",
+      "why": "an exact-match count carries no information without the dataset size",
+      "value_is": 71,
+      "against_is": 71
+    },
+    {
+      "value": "bounded_searches.public_4x6_closure.exact_positive_shift_to_root",
+      "against": "bounded_searches.public_4x6_closure.dataset_packets",
+      "label": "packets exact under positive-shift-to-root",
+      "why": "an exact-match count carries no information without the dataset size",
+      "value_is": 71,
+      "against_is": 71
+    },
+    {
+      "value": "bounded_searches.public_4x6_closure.exact_signed_factor_difference",
+      "against": "bounded_searches.public_4x6_closure.dataset_packets",
+      "label": "packets exact under signed factor difference",
+      "why": "an exact-match count carries no information without the dataset size",
+      "value_is": 71,
+      "against_is": 71
+    },
+    {
+      "value": "bounded_searches.public_4x6_closure.fifth_difference_hits",
+      "against": "bounded_searches.public_4x6_closure.five_root_subsets_checked",
+      "label": "fifth-difference hits, against subsets checked",
+      "why": "a zero-hit result is vacuous without the population it searched",
+      "value_is": 0,
+      "against_is": 426
+    },
+    {
+      "value": "bounded_searches.signed_scalar_closure.signed_closure_entries",
+      "against": "bounded_searches.signed_scalar_closure.expected_inherited_entries",
+      "label": "signed closure entries, against entries expected by inheritance",
+      "why": "the claim is that these are equal; the observed count alone cannot show whether anything unexpected appeared",
+      "value_is": 284000,
+      "against_is": 284000
+    },
+    {
+      "value": "bounded_searches.signed_scalar_closure.new_fifth_differences",
+      "against": "bounded_searches.signed_scalar_closure.packet_multiplier_pairs",
+      "label": "new fifth differences, against packet-multiplier pairs scanned",
+      "why": "a zero-hit result is vacuous without the population it searched",
+      "value_is": 0,
+      "against_is": 71000
+    },
+    {
+      "value": "bounded_searches.signed_scalar_closure.extended_smallest_core_new_fifth_differences",
+      "against": "bounded_searches.signed_scalar_closure.extended_smallest_core_closure_entries",
+      "label": "new fifth differences in the extended scan, against its entries",
+      "why": "a zero-hit result is vacuous without the population it searched",
+      "value_is": 0,
+      "against_is": 40000
+    },
+    {
+      "value": "bounded_searches.choudhry_positive_parameter_box.candidate_hits",
+      "against": "bounded_searches.choudhry_positive_parameter_box.parameter_tuples",
+      "label": "candidate hits, against parameter tuples enumerated",
+      "why": "a zero-hit result is vacuous without the population it searched",
+      "value_is": 0,
+      "against_is": 279936
+    }
+  ],
+  "headline_figures": [
+    {
+      "path": "bounded_searches.direct_K_(6,4).eligible_pair_fibers",
+      "label": "eligible pair fibers",
+      "kind": "number",
+      "is": 14040082
+    },
+    {
+      "path": "bounded_searches.direct_K_(6,4).pair_fiber_rows",
+      "label": "pair-fiber rows",
+      "kind": "number",
+      "is": 209917507
+    },
+    {
+      "path": "bounded_searches.direct_K_(6,4).retained_differences",
+      "label": "retained differences",
+      "kind": "number",
+      "is": 465004
+    },
+    {
+      "path": "bounded_searches.direct_K_(6,4).four_row_support_updates",
+      "label": "four-row support updates",
+      "kind": "number",
+      "is": 767726
+    },
+    {
+      "path": "bounded_searches.public_4x6_closure.largest_signed_shift_closure",
+      "label": "largest signed-shift closure",
+      "kind": "number",
+      "is": 4
+    },
+    {
+      "path": "bounded_searches.signed_scalar_closure.full_divisors_enumerated",
+      "label": "divisors enumerated",
+      "kind": "number",
+      "is": 847896082
+    },
+    {
+      "path": "bounded_searches.choudhry_positive_parameter_box.nondegenerate_packets",
+      "label": "nondegenerate packets",
+      "kind": "number",
+      "is": 116720
+    },
+    {
+      "path": "bounded_searches.choudhry_positive_parameter_box.unique_exact_packets",
+      "label": "unique exact packets",
+      "kind": "number",
+      "is": 10777
+    },
+    {
+      "path": "bounded_searches.choudhry_positive_parameter_box.maximum_positive_shift_closure",
+      "label": "maximum positive-shift closure",
+      "kind": "number",
+      "is": 2
+    }
+  ],
   "claims_structured_by": {
     "arm": "數學戰士「墜衡」 / collatz-verification-zhuiheng",
     "date": "2026-09-03",
     "authorised_by": "Neo.K",
     "basis": "verbatim or near-verbatim from this line's own README status boundary and reports/CHENGXU_DUALITY_ROUTE_REPORT.md. No claim was originated here and no other file in this tree was touched",
     "why": "to satisfy results-claims/1, so a renderer shows this line's boundaries in the same structured place as every other line's rather than only in prose",
-    "spec": "collatz-verification-zhuiheng/reports/RESULTS-PROFILES.md"
+    "spec": "collatz-verification-zhuiheng/reports/RESULTS-PROFILES.md",
+    "also_declared": "render_pairs and headline_figures: which of this line's figures must never be rendered without the number that gives them meaning, and which stand on their own. The paths and the pairing are structural facts about data this line already publishes; no figure was added, changed or recomputed, and no other file in this tree was touched. Spec: collatz-verification-zhuiheng/reports/RESULTS-PROFILES.md"
   },
   "exact_reduction": {
     "source_target": "K_(5,5)",
