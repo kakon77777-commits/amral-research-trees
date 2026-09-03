@@ -16,21 +16,113 @@
       "declared_schema_version": 1,
       "satisfies": [
         "results-envelope/1",
-        "results-claims/1"
+        "results-claims/1",
+        "results-pairs/1",
+        "results-figures/1"
       ],
-      "gaps": {
-        "results-pairs/1": [
-          "render_pairs must be a non-empty array"
-        ],
-        "results-figures/1": [
-          "headline_figures must be a non-empty array"
-        ]
-      },
+      "gaps": {},
       "declared": [],
       "declared_but_not_satisfied": [],
       "renders_claim_box_from": "verified_claims + explicit_non_claims",
-      "headline_figures_to_render": [],
-      "figures_that_must_not_be_shown_alone": []
+      "headline_figures_to_render": [
+        {
+          "path": "bounded_searches.direct_K_(6,4).eligible_pair_fibers",
+          "label": "eligible pair fibers",
+          "kind": "number"
+        },
+        {
+          "path": "bounded_searches.direct_K_(6,4).pair_fiber_rows",
+          "label": "pair-fiber rows",
+          "kind": "number"
+        },
+        {
+          "path": "bounded_searches.direct_K_(6,4).retained_differences",
+          "label": "retained differences",
+          "kind": "number"
+        },
+        {
+          "path": "bounded_searches.direct_K_(6,4).four_row_support_updates",
+          "label": "four-row support updates",
+          "kind": "number"
+        },
+        {
+          "path": "bounded_searches.public_4x6_closure.largest_signed_shift_closure",
+          "label": "largest signed-shift closure",
+          "kind": "number"
+        },
+        {
+          "path": "bounded_searches.signed_scalar_closure.full_divisors_enumerated",
+          "label": "divisors enumerated",
+          "kind": "number"
+        },
+        {
+          "path": "bounded_searches.choudhry_positive_parameter_box.nondegenerate_packets",
+          "label": "nondegenerate packets",
+          "kind": "number"
+        },
+        {
+          "path": "bounded_searches.choudhry_positive_parameter_box.unique_exact_packets",
+          "label": "unique exact packets",
+          "kind": "number"
+        },
+        {
+          "path": "bounded_searches.choudhry_positive_parameter_box.maximum_positive_shift_closure",
+          "label": "maximum positive-shift closure",
+          "kind": "number"
+        }
+      ],
+      "figures_that_must_not_be_shown_alone": [
+        {
+          "value": "bounded_searches.direct_K_(6,4).K_(6,4)_hits",
+          "against": "bounded_searches.direct_K_(6,4).anchors",
+          "label": "K_(6,4) hits, against canonical anchors searched"
+        },
+        {
+          "value": "bounded_searches.direct_K_(6,4).K_(5,4)_hits",
+          "against": "bounded_searches.direct_K_(6,4).anchors",
+          "label": "K_(5,4) hits, against canonical anchors searched"
+        },
+        {
+          "value": "bounded_searches.public_4x6_closure.exact_root_to_positive_shift",
+          "against": "bounded_searches.public_4x6_closure.dataset_packets",
+          "label": "packets exact under root-to-positive-shift"
+        },
+        {
+          "value": "bounded_searches.public_4x6_closure.exact_positive_shift_to_root",
+          "against": "bounded_searches.public_4x6_closure.dataset_packets",
+          "label": "packets exact under positive-shift-to-root"
+        },
+        {
+          "value": "bounded_searches.public_4x6_closure.exact_signed_factor_difference",
+          "against": "bounded_searches.public_4x6_closure.dataset_packets",
+          "label": "packets exact under signed factor difference"
+        },
+        {
+          "value": "bounded_searches.public_4x6_closure.fifth_difference_hits",
+          "against": "bounded_searches.public_4x6_closure.five_root_subsets_checked",
+          "label": "fifth-difference hits, against subsets checked"
+        },
+        {
+          "value": "bounded_searches.signed_scalar_closure.signed_closure_entries",
+          "against": "bounded_searches.signed_scalar_closure.expected_inherited_entries",
+          "label": "signed closure entries, against entries expected by inheritance"
+        },
+        {
+          "value": "bounded_searches.signed_scalar_closure.new_fifth_differences",
+          "against": "bounded_searches.signed_scalar_closure.packet_multiplier_pairs",
+          "label": "new fifth differences, against packet-multiplier pairs scanned"
+        },
+        {
+          "value": "bounded_searches.signed_scalar_closure.extended_smallest_core_new_fifth_differences",
+          "against": "bounded_searches.signed_scalar_closure.extended_smallest_core_closure_entries",
+          "label": "new fifth differences in the extended scan, against its entries"
+        },
+        {
+          "value": "bounded_searches.choudhry_positive_parameter_box.candidate_hits",
+          "against": "bounded_searches.choudhry_positive_parameter_box.parameter_tuples",
+          "label": "candidate hits, against parameter tuples enumerated"
+        }
+      ]
     },
     {
       "ref": "origin/agent/collatz-verification-zhuiheng",
@@ -108,8 +200,8 @@
     "unreadable": 0,
     "satisfying_envelope": 2,
     "satisfying_claims": 2,
-    "satisfying_pairs": 1,
-    "satisfying_figures": 1,
+    "satisfying_pairs": 2,
+    "satisfying_figures": 2,
     "declared_but_not_satisfied": 0
   },
   "ok": true

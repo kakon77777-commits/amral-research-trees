@@ -154,17 +154,26 @@ Current measurement, from `data/gate-logs/results-profiles.json`:
 
 | line | satisfies | claim-box source |
 | --- | --- | --- |
-| `collatz-verification-zhuiheng` | envelope + claims + pairs + figures | `verified_claims` + `explicit_non_claims` |
-| `erdos-885-k5-chengxu` | envelope + claims | `verified_claims` + `explicit_non_claims` |
+| `collatz-verification-zhuiheng` | all four | `verified_claims` + `explicit_non_claims` |
+| `erdos-885-k5-chengxu` | all four | `verified_claims` + `explicit_non_claims` |
 
-The second line satisfied only the envelope until 2026-09-03, when its claims
-and boundaries were structured into those fields — **verbatim from its own
-README status boundary and duality-route report, by a different arm, with that
-recorded in the file itself** (`claims_structured_by`). It is a demonstration
-that the migration below costs a line nothing but transcription: no figure was
-recomputed and no other file in that tree was touched. The envelope-only
-rendering branch remains the correct behaviour for any line that has not done
-this, and must not be removed.
+The second line satisfied only the envelope on the morning of 2026-09-03. Its
+claims, boundaries, pairs and headline figures were structured into those
+fields the same day — **verbatim or structurally, from its own README status
+boundary, duality-route report and existing counts, by a different arm, with
+that recorded in the file itself** (`claims_structured_by`). No figure was
+recomputed and no other file in that tree was touched, which is the whole cost
+of the migration.
+
+Its sharpest pair is worth naming: `K_(6,4)_hits` is `0`, and shown alone that
+zero reads as an impossibility theorem — which that line's own status boundary
+explicitly disclaims. Against `anchors` at 18,003,000 it reads as what the line
+actually says, a bounded exclusion.
+
+**Both lines now satisfy every profile, which means no line is currently
+exercising the envelope-only rendering branch.** That branch remains correct
+and must not be removed: it is the state a third line will arrive in, and a
+branch nothing exercises is a branch that quietly stops working.
 
 For a line satisfying `results-pairs/1`, the validator returns
 `figures_that_must_not_be_shown_alone` — read it and refuse to render a `value`
@@ -209,8 +218,8 @@ so a line can carry whatever else it needs.
 ## The checks behind this document
 
 `code/validate_results_profiles.py` is exercised by
-`code/validate_results_profiles_drill.py`: **19 planted defects, each required
-to be refused by the rule named for it, and 5 controls undisturbed.** One of
+`code/validate_results_profiles_drill.py`: **21 planted defects, each required
+to be refused by the rule named for it, and 6 controls undisturbed.** One of
 the controls is there to keep an honest line safe — a document satisfying the
 envelope and nothing more must pass as a *legal state*, so the validator can
 never become a gate that excludes a line for describing itself differently.
