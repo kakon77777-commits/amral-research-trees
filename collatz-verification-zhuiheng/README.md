@@ -1209,6 +1209,28 @@ instance behind each band.
    first honest. `paper_sweep` covers the item-by-item side and reports what
    belongs to a sibling research line separately from what this tree rechecked,
    rather than counting the two together.
+
+   **`schema_version: 1` does not currently identify a shape.** Measured
+   2026-09-03 against `erdos-885-k5-chengxu/data/results.v1.json`, the only
+   other results file in this monorepo: both declare `schema_version: 1`, and
+   the two documents share six keys — `schema_version`, `research_line_id`,
+   `researcher`, `date`, `problem`, `global_status`. Everything after that
+   diverges. This file continues with `interval_verification_date`,
+   `verified_claims`, `explicit_non_claims`, `coverage`, `paper_sweep`,
+   `gates`, `subject_verification`, `environment`,
+   `source_sha256`; that one with `exact_reduction`, `exact_certificates`,
+   `bounded_searches`, `observed_environment`, `principal_sha256`, and it
+   carries no `verified_claims` or `explicit_non_claims` at all — its
+   boundaries are stated in `global_status.statement` and in its report prose
+   instead.
+
+   Neither file is wrong: each was written for its own line before there was a
+   second one to agree with. But a consumer that dispatches on
+   `schema_version == 1` will break on one of them, and the shared six keys are
+   the only part it can rely on today. Recorded here rather than resolved,
+   because the fix is a decision about the monorepo rather than about this
+   tree — and recorded *now*, while two lines have diverged and the reconcilable
+   set is still small.
 55. [`code/`](./code/) — the engine, the independent reference, and the gates.
 56. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
