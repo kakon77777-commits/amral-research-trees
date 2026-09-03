@@ -1203,7 +1203,12 @@ instance behind each band.
     to (200,898 comparisons, zero disagreements). Drill **37/37**.
 54. [`data/results.v1.json`](./data/results.v1.json) — machine-readable claims,
    bounds, gate outcomes, and source digests. Generated from the archived gate
-   logs by `code/build_results.py`, never typed by hand.
+   logs by `code/build_results.py`, never typed by hand. Anything rendering this
+   file should carry `explicit_non_claims` wherever it carries `verified_claims`:
+   the two are one statement, and the second half is the half that keeps the
+   first honest. `paper_sweep` covers the item-by-item side and reports what
+   belongs to a sibling research line separately from what this tree rechecked,
+   rather than counting the two together.
 55. [`code/`](./code/) — the engine, the independent reference, and the gates.
 56. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.

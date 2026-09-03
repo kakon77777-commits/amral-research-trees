@@ -9,6 +9,10 @@
 | `mutation_drill.py` | Plants defects in the engine one at a time, rebuilds, and checks that the gates catch each one — plus controls that must be caught by nothing. |
 | `verify_run_logs.py` | Reads only the archived chunk logs and decides whether they actually tile `[3, N]`. Refuses to aggregate logs with a gap, an overlap, or a bad count. |
 | `build_results.py` | Assembles `../data/results.v1.json` from archived gate logs only. Fails rather than emit a summary with a hole in it. |
+| `build_results_guard_drill.py` | Drills the three refusals in `build_results.py` and the completeness check in `emit_readme_counts.py`. They are silent on every real input, and a guard that has only ever been silent is indistinguishable from a comment. |
+| `suite_totals.py` | Suite-wide drill totals across every archived drill log. Classifies each log's tally shape explicitly and exits non-zero on one it cannot interpret, so an unrecognised drill stops the build instead of contributing zero. |
+| `suite_totals_drill.py` | Drills the above: an unreadable log, a surviving defect, a disturbed control, and each tally shape going unread. |
+| `emit_readme_counts.py` | Emits the README's sweep counters from the manifest and the report files, so neither is a number typed into prose. |
 | `run_verification.sh` | Drives a full run as disjoint, separately logged chunks. |
 | `build_source_manifest.py` | Reads Neo.K's source folder and writes a chronological, hashed manifest of every item with its research line and processing status. Reads only — never extracts. |
 | `hz_route_probe.py` | First bridge to the Hard-Zeta route map: measures the coefficient stopping time `tau_c` against `sigma`, and splits the hard set `E_k` into `C_k` and `R_k`. |
