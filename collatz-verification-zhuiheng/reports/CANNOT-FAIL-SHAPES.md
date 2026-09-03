@@ -26,7 +26,7 @@ That distinction is the whole point of the catalogue. A reader who takes "their
 checker cannot fail" to mean "their theorem is wrong" has learned the opposite of
 what these findings say.
 
-Two of the eight shapes below were found in **this arm's own** checks, not in
+Two of the nine shapes below were found in **this arm's own** checks, not in
 anyone else's. They are marked. A catalogue of other people's blind spots that
 contains none of your own is not a catalogue; it is an accusation.
 
@@ -61,7 +61,7 @@ false.**
 
 ---
 
-## The eight shapes
+## The nine shapes
 
 ### 1. The assertion restates its own guard
 
@@ -173,6 +173,14 @@ an identity two sections earlier, so it cost nothing.
 the asymptotic argument needs, which means the last relaxation has already been
 applied. That relaxation is exactly what makes it vacuous at finite scale.
 
+**And it recurs.** The next round's quantile corollary reads `#{ℓ : m_ℓ < A} <
+6Z·2^A` — the same statement with the constant doubled. Across **14,736
+instances, not one was non-vacuous**; substituting the sum the bound actually
+relaxes gives **65**. The ceiling was loose by a factor of about 182 at its
+tightest. Finding a shape once is a finding; finding the same shape one round
+later, one factor of two worse, says it is structural to how the bound is
+written rather than to that particular bound.
+
 **What to do:** read the proof, not the boxed line. The quantity the proof
 bounds is one step back and is often already in the checker's memory.
 
@@ -214,17 +222,24 @@ if Fraction(n1) < (2 - b_hi) * l_up + h_hi:      # outer: "could this fail?"
         violations += 1
 ```
 
-The drill planted `+ 1` on the inner threshold and reported **changes nothing**.
-The reason is the population's own shape: the bound is **attained**, tightest
-slack exactly `0.0`. At the case that matters, the outer guard is a strict `<`
-evaluated at equality, so it is `False`, and the inner line is unreachable in
-exactly the situation it exists for. Every other case has slack far larger than
-the tightening. The check was decorative at its only interesting point.
+The drill planted `+ 1` on the inner threshold and **saw nothing**. The reason is
+the population's own shape: Theorem 8.1's ascent bound is **attained** on those
+4,069 gaps, tightest slack exactly `0.0`. At the case that matters the outer test
+sits exactly at equality, so a strict `<` is `False`, and the inner line is
+unreachable in precisely the situation it exists for. Every other case has slack
+far larger than the tightening. The check was decorative at its only interesting
+point.
 
-**What to do:** one comparison against the *certain* end of the bracket, not two
-against opposite ends. And measure attainment: a bound whose tightest slack is
-`0.0` is a different object from one with room, and the difference is invisible
-in a violation count.
+**What to do:** a bracketed inequality needs **one** comparison, against the
+certain end of the right-hand side, not two against opposite ends. Flattened that
+way, the same planted defect turns it red. And measure attainment separately: a
+bound whose tightest slack is `0.0` is a different object from one with room, and
+the difference is invisible in a violation count.
+
+Worth contrasting with the round before it, where the same figure meant the
+opposite. RUN-043 also reported a bound attained at slack exactly `0.0` — and
+there, adding one to the right-hand side *did* turn it red. **Attainment is not
+the defect.** The defect is the two-level bracket that hides it.
 
 ---
 
@@ -277,6 +292,33 @@ the construction is impossible, say "structural"; if it merely never occurs, say
 
 ---
 
+### 9. A named object nothing depends on — *the one a drill found, not a reading*
+
+Every shape above was found by reading the checker and asking the criterion's
+question. This one was found the other way, and that is why it is worth keeping
+separate.
+
+A transport section named an object — the **interior peak** of a gap — and used
+it throughout. The drill replaced `max` by `min` in the choice of that peak.
+**No counter moved at all.** Not one.
+
+The reason is that every counter the choice could touch was either a violation
+count that stayed at zero regardless, or a population size that does not depend
+on which interior point is picked. The object was named, carried through a
+section, and constrained by nothing. A reader would reasonably assume the
+section's results were about *the peak*; they were about the gap.
+
+This is the same lesson the round before it had already taught in a different
+place, which is what makes it a shape rather than an incident: **a group of
+observations needs an invariant somewhere.**
+
+**What to do:** for every named object, assert its *defining property* — here,
+that the peak really is the interior maximum, as a failure counter. And when a
+mutation moves nothing, do not file it as "the code is robust". Robustness and
+irrelevance produce the same output, and only one of them is good news.
+
+---
+
 ## What this catalogue does not claim
 
 Stated as plainly as the findings, because a reader who takes only the headline
@@ -288,8 +330,10 @@ away will take the wrong thing:
 * **It says nothing about the Collatz conjecture.** Every claim rechecked across
   all seventy-three items is a finite statement about finite objects.
 * **It is not a completeness claim.** These are the shapes that were found. A
-  ninth almost certainly exists; the eighth was found only after five rounds had
-  trained a reflex that the eighth then broke.
+  tenth almost certainly exists. It was eight shapes until the citations in the
+  closing table were checked one by one against the reports they name — that pass
+  corrected one attribution and turned up the ninth, which had been sitting in a
+  drill result nobody had generalised.
 * **It is not an accusation of carelessness.** Shapes 4 and 5 arise from
   ordinary, correct mathematical writing — stating a bound in the form the
   asymptotic argument needs, boxing the identity a reader should carry. The
@@ -311,7 +355,7 @@ away will take the wrong thing:
 5. **Measure attainment.** Tightest slack `0.0` changes what a guard does.
 6. **Try to construct a violation of any zero before reporting it**, so a
    structural zero is not filed as a weak one.
-7. **Run the same seven steps against your own checks.** Two of the eight shapes
+7. **Run the same six steps against your own checks.** Two of the nine shapes
    here came from this arm's own scripts, and the drill would have scored them
    green forever.
 
@@ -332,9 +376,17 @@ but the report each one is quoted from.
 | 3 · counts samples, not tests | [RUN-045](./RUN-045-HARD-ZETA-AU2D17-SMALL-ENDPOINT-CYLINDER.md) |
 | 4 · vacuous on every finite instance | [RUN-045](./RUN-045-HARD-ZETA-AU2D17-SMALL-ENDPOINT-CYLINDER.md) |
 | 5 · identity that is a definition | [RUN-045](./RUN-045-HARD-ZETA-AU2D17-SMALL-ENDPOINT-CYLINDER.md) |
-| 6 · guard at exact equality | [RUN-043](./RUN-043-HARD-ZETA-AU2D15-RECORD-SPARSITY.md) |
+| 6 · guard at exact equality | [RUN-044](./RUN-044-HARD-ZETA-AU2D16-RECORD-GAP-TRANSPORT.md) |
 | 7 · empty by domain, not by rarity | [RUN-042](./RUN-042-HARD-ZETA-AU2D14-SPARSE-SUPPORT.md) |
 | 8 · structural zero | [RUN-050](./RUN-050-HARD-ZETA-AU2D22-DEFECT-TREE.md) |
+| 9 · a named object nothing depends on | [RUN-044](./RUN-044-HARD-ZETA-AU2D16-RECORD-GAP-TRANSPORT.md) |
+
+Shape 6 was first published here citing RUN-043, which is wrong and is left
+recorded rather than quietly swapped. RUN-043 does report a bound attained at
+tightest slack `0.0` — the same figure — but there the planted defect **did**
+turn the check red. The two-level bracket that swallows the defect is RUN-044's.
+A citation that merely contains the right number is not a citation, which is the
+same error one level up as a figure that merely looks emitted.
 
 The suite-level counts in the header — 73 items, 52 reports, 54 drills, 1,433
 defects — *are* emitted, by `code/suite_totals.py` and

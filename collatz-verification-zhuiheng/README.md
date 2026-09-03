@@ -1213,9 +1213,9 @@ instance behind each band.
 56. [`data/gate-logs/`](./data/gate-logs/) and
    [`data/raw-logs/`](./data/raw-logs/) — the evidence the above is built from.
 57. [`reports/CANNOT-FAIL-SHAPES.md`](./reports/CANNOT-FAIL-SHAPES.md) — the
-   eight shapes a check takes when it reports zero violations because it could
+   nine shapes a check takes when it reports zero violations because it could
    not have reported anything else, drawn from across the sweep. Two of the
-   eight were found in this arm's own checks. Read its opening paragraph before
+   nine were found in this arm's own checks. Read its opening paragraph before
    the shapes: a checker that cannot fail is a defect in the *evidence offered
    for* a claim, never a refutation of the claim, and every statement criticised
    there held wherever this arm could reach it.
