@@ -1,0 +1,17 @@
+record extra_count=1 anchor=[4, 3001] rows=[4016012, 29789760, 277022732] extra=[8644]
+record extra_count=2 anchor=[448, 3003] rows=[12594960, 116762688, 671381568] extra=[19968, 29568]
+record extra_count=3 anchor=[534, 3050] rows=[2514375, 15992775, 24135111] extra=[6330, 10950, 55830]
+progress q=3100 range=[3001,4500] anchors=305050 eligible=280008
+progress q=3200 range=[3001,4500] anchors=620100 eligible=569396
+progress q=3300 range=[3001,4500] anchors=945150 eligible=868167
+progress q=3400 range=[3001,4500] anchors=1280200 eligible=1176617
+progress q=3500 range=[3001,4500] anchors=1625250 eligible=1494458
+progress q=3600 range=[3001,4500] anchors=1980300 eligible=1821715
+progress q=3700 range=[3001,4500] anchors=2345350 eligible=2158372
+progress q=3800 range=[3001,4500] anchors=2720400 eligible=2504509
+progress q=3900 range=[3001,4500] anchors=3105450 eligible=2860021
+progress q=4000 range=[3001,4500] anchors=3500500 eligible=3225218
+progress q=4100 range=[3001,4500] anchors=3905550 eligible=3599779
+progress q=4200 range=[3001,4500] anchors=4320600 eligible=3983565
+progress q=4300 range=[3001,4500] anchors=4745650 eligible=4377038
+record extra_count=4 anchor=[2988, 4356] rows=[4148640, 34418880, 300736800] extra=[5787, 11164, 17046, 23948]

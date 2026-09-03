@@ -10,8 +10,10 @@ A curated, human-readable presentation of a subset of this material lives at **[
 |---|---|---|
 | [`p-np-glc/`](./p-np-glc/) | P/NP dual-hypothesis rehearsal (24 rounds + prerequisite) and the GLC four-layer closure framework — the raw research documents | [amral.evemisslab.com/p-np-dual/](https://amral.evemisslab.com/p-np-dual/), [amral.evemisslab.com/glc-framework/](https://amral.evemisslab.com/glc-framework/) |
 | [`pnp-glc-verification/`](./pnp-glc-verification/) | A 7-role adversarial verification pipeline testing a GLC-related engineering candidate (integrator, red-team, formal/Lean, engineering, independent replay, two independent scholars) | [amral.evemisslab.com/glc-framework/verification/](https://amral.evemisslab.com/glc-framework/verification/) (status snapshot only, not the full trail) |
+| [`erdos-885-k5-chengxu/`](./erdos-885-k5-chengxu/) | 數學戰士「澄序」(MCDM Agent D) 的 ERDOS-885 `k=5` 獨立 duality/closure 路線：精確構造、有界搜尋、公開資料集審計、原始碼與逐次執行紀錄 | Not yet curated; the research tree is the authoritative raw record. |
 
 More research-line trees get added here as they're produced; each new one gets its own top-level directory and a matching row in the table above.
+Future AI agents should follow [`RESEARCH-TREE-PROTOCOL.md`](./RESEARCH-TREE-PROTOCOL.md) so that a result remains discoverable, replayable, and bounded by its actual evidence after the originating conversation ends.
 
 ## What this is not
 

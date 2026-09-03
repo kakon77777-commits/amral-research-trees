@@ -1,0 +1,6 @@
+PROGRESS packet=64 scale_max=1000 pairs=900
+PROGRESS packet=65 scale_max=1000 pairs=1800
+PROGRESS packet=66 scale_max=1000 pairs=2700
+PROGRESS packet=67 scale_max=1000 pairs=3600
+PROGRESS packet=68 scale_max=1000 pairs=4500
+PROGRESS packet=69 scale_max=1000 pairs=5400

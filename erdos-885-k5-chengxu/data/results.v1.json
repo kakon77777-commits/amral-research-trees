@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "research_line_id": "erdos-885-k5-chengxu",
+  "researcher": {
+    "display_name": "數學戰士-澄序",
+    "agent_role": "MCDM Agent D",
+    "route": "independent extra route"
+  },
+  "date": "2026-08-13",
+  "problem": {
+    "id": "ERDOS-885",
+    "k": 5,
+    "url": "https://www.erdosproblems.com/885"
+  },
+  "global_status": {
+    "solved": false,
+    "literature_novelty_claimed": false,
+    "statement": "Exact reductions and certificates plus bounded exhaustive searches; no global k=5 witness or impossibility theorem."
+  },
+  "verified_claims": [
+    {
+      "id": "V1",
+      "claim": "an ERDOS-885 K_(5,5) witness transposes to a K_(6,4) factor-difference packet",
+      "kind": "exact algebraic reduction",
+      "source": "reports/CHENGXU_DUALITY_ROUTE_REPORT.md section 1"
+    },
+    {
+      "id": "V2",
+      "claim": "the displayed integer packets are exact: a K_(6,3) precursor, a transposed K_(4,5), and a K_(4,4)",
+      "kind": "exact integer facts",
+      "source": "results.v1.json exact_certificates"
+    },
+    {
+      "id": "V3",
+      "claim": "no K_(6,4) and no K_(5,4) exists over every canonical anchor 0 <= p < q <= 6000, every compatible row, every four-row subset — 0 and 0 hits across 18003000 canonical anchors",
+      "kind": "bounded exhaustive search",
+      "exhaustive_within_domain": true,
+      "relative_to_implementation": true,
+      "source": "reports/CHENGXU_DUALITY_ROUTE_REPORT.md section 3"
+    },
+    {
+      "id": "V4",
+      "claim": "that finite search implies the bounded necessary condition sqrt(d0^2 + 4*N_min) > 3000, equivalently d0^2 + 4*N_min > 9,000,000",
+      "kind": "bounded necessary condition",
+      "source": "reports/CHENGXU_DUALITY_ROUTE_REPORT.md section 3"
+    },
+    {
+      "id": "V5",
+      "claim": "across the 71 archived public 4x6 packets, root-to-positive-shift and positive-shift-to-root are exact on all 71, and 426 five-root subsets produced 0 fifth-difference hits",
+      "kind": "closure audit over a snapshotted public dataset",
+      "source": "results.v1.json bounded_searches.public_4x6_closure"
+    }
+  ],
+  "explicit_non_claims": [
+    "ERDOS-885 k=5 is not solved here",
+    "search exclusions are exhaustive only inside their stated bounds and relative to the checked implementations; they are not global impossibility theorems",
+    "the direct search yields a bounded necessary condition, not a global obstruction",
+    "literature novelty is not claimed; in particular the main K_(6,3) packet independently rediscovered here is already present on Thomas Egense's public 2019 4x6 square-sumset page",
+    "a no-hit result at one level does not assert uniqueness at that level"
+  ],
+  "render_pairs": [
+    {
+      "value": "bounded_searches.direct_K_(6,4).K_(6,4)_hits",
+      "against": "bounded_searches.direct_K_(6,4).anchors",
+      "label": "K_(6,4) hits, against canonical anchors searched",
+      "why": "this line's central no-hit statement. Without the anchor count it reads as an impossibility theorem, which this line's own status boundary explicitly disclaims",
+      "value_is": 0,
+      "against_is": 18003000
+    },
+    {
+      "value": "bounded_searches.direct_K_(6,4).K_(5,4)_hits",
+      "against": "bounded_searches.direct_K_(6,4).anchors",
+      "label": "K_(5,4) hits, against canonical anchors searched",
+      "why": "the same exclusion at the lower level, and the same reason",
+      "value_is": 0,
+      "against_is": 18003000
+    },
+    {
+      "value": "bounded_searches.public_4x6_closure.exact_root_to_positive_shift",
+      "against": "bounded_searches.public_4x6_closure.dataset_packets",
+      "label": "packets exact under root-to-positive-shift",
+      "why": "an exact-match count carries no information without the dataset size",
+      "value_is": 71,
+      "against_is": 71
+    },
+    {
+      "value": "bounded_searches.public_4x6_closure.exact_positive_shift_to_root",
+      "against": "bounded_searches.public_4x6_closure.dataset_packets",
+      "label": "packets exact under positive-shift-to-root",
+      "why": "an exact-match count carries no information without the dataset size",
+      "value_is": 71,
+      "against_is": 71
+    },
+    {
+      "value": "bounded_searches.public_4x6_closure.exact_signed_factor_difference",
+      "against": "bounded_searches.public_4x6_closure.dataset_packets",
+      "label": "packets exact under signed factor difference",
+      "why": "an exact-match count carries no information without the dataset size",
+      "value_is": 71,
+      "against_is": 71
+    },
+    {
+      "value": "bounded_searches.public_4x6_closure.fifth_difference_hits",
+      "against": "bounded_searches.public_4x6_closure.five_root_subsets_checked",
+      "label": "fifth-difference hits, against subsets checked",
+      "why": "a zero-hit result is vacuous without the population it searched",
+      "value_is": 0,
+      "against_is": 426
+    },
+    {
+      "value": "bounded_searches.signed_scalar_closure.signed_closure_entries",
+      "against": "bounded_searches.signed_scalar_closure.expected_inherited_entries",
+      "label": "signed closure entries, against entries expected by inheritance",
+      "why": "the claim is that these are equal; the observed count alone cannot show whether anything unexpected appeared",
+      "value_is": 284000,
+      "against_is": 284000
+    },
+    {
+      "value": "bounded_searches.signed_scalar_closure.new_fifth_differences",
+      "against": "bounded_searches.signed_scalar_closure.packet_multiplier_pairs",
+      "label": "new fifth differences, against packet-multiplier pairs scanned",
+      "why": "a zero-hit result is vacuous without the population it searched",
+      "value_is": 0,
+      "against_is": 71000
+    },
+    {
+      "value": "bounded_searches.signed_scalar_closure.extended_smallest_core_new_fifth_differences",
+      "against": "bounded_searches.signed_scalar_closure.extended_smallest_core_closure_entries",
+      "label": "new fifth differences in the extended scan, against its entries",
+      "why": "a zero-hit result is vacuous without the population it searched",
+      "value_is": 0,
+      "against_is": 40000
+    },
+    {
+      "value": "bounded_searches.choudhry_positive_parameter_box.candidate_hits",
+      "against": "bounded_searches.choudhry_positive_parameter_box.parameter_tuples",
+      "label": "candidate hits, against parameter tuples enumerated",
+      "why": "a zero-hit result is vacuous without the population it searched",
+      "value_is": 0,
+      "against_is": 279936
+    }
+  ],
+  "headline_figures": [
+    {
+      "path": "bounded_searches.direct_K_(6,4).eligible_pair_fibers",
+      "label": "eligible pair fibers",
+      "kind": "number",
+      "is": 14040082
+    },
+    {
+      "path": "bounded_searches.direct_K_(6,4).pair_fiber_rows",
+      "label": "pair-fiber rows",
+      "kind": "number",
+      "is": 209917507
+    },
+    {
+      "path": "bounded_searches.direct_K_(6,4).retained_differences",
+      "label": "retained differences",
+      "kind": "number",
+      "is": 465004
+    },
+    {
+      "path": "bounded_searches.direct_K_(6,4).four_row_support_updates",
+      "label": "four-row support updates",
+      "kind": "number",
+      "is": 767726
+    },
+    {
+      "path": "bounded_searches.public_4x6_closure.largest_signed_shift_closure",
+      "label": "largest signed-shift closure",
+      "kind": "number",
+      "is": 4
+    },
+    {
+      "path": "bounded_searches.signed_scalar_closure.full_divisors_enumerated",
+      "label": "divisors enumerated",
+      "kind": "number",
+      "is": 847896082
+    },
+    {
+      "path": "bounded_searches.choudhry_positive_parameter_box.nondegenerate_packets",
+      "label": "nondegenerate packets",
+      "kind": "number",
+      "is": 116720
+    },
+    {
+      "path": "bounded_searches.choudhry_positive_parameter_box.unique_exact_packets",
+      "label": "unique exact packets",
+      "kind": "number",
+      "is": 10777
+    },
+    {
+      "path": "bounded_searches.choudhry_positive_parameter_box.maximum_positive_shift_closure",
+      "label": "maximum positive-shift closure",
+      "kind": "number",
+      "is": 2
+    }
+  ],
+  "claims_structured_by": {
+    "arm": "數學戰士「墜衡」 / collatz-verification-zhuiheng",
+    "date": "2026-09-03",
+    "authorised_by": "Neo.K",
+    "basis": "verbatim or near-verbatim from this line's own README status boundary and reports/CHENGXU_DUALITY_ROUTE_REPORT.md. No claim was originated here and no other file in this tree was touched",
+    "why": "to satisfy results-claims/1, so a renderer shows this line's boundaries in the same structured place as every other line's rather than only in prose",
+    "spec": "collatz-verification-zhuiheng/reports/RESULTS-PROFILES.md",
+    "also_declared": "render_pairs and headline_figures: which of this line's figures must never be rendered without the number that gives them meaning, and which stand on their own. The paths and the pairing are structural facts about data this line already publishes; no figure was added, changed or recomputed, and no other file in this tree was touched. Spec: collatz-verification-zhuiheng/reports/RESULTS-PROFILES.md"
+  },
+  "exact_reduction": {
+    "source_target": "K_(5,5)",
+    "dual_target": "K_(6,4)",
+    "bounded_implication_from_direct_search": "sqrt(d0^2 + 4*N_min) > 3000"
+  },
+  "exact_certificates": [
+    {
+      "type": "K_(6,3)",
+      "rows": [
+        4148640,
+        34418880,
+        300736800
+      ],
+      "differences": [
+        2988,
+        4356,
+        5787,
+        11164,
+        17046,
+        23948
+      ],
+      "novel": false
+    },
+    {
+      "type": "transposed_K_(4,5)",
+      "rows": [
+        10046592,
+        24561225,
+        115706752,
+        281637972,
+        564578560
+      ],
+      "differences": [
+        5976,
+        10104,
+        24216,
+        69624
+      ],
+      "target_shortfall": "one common difference"
+    },
+    {
+      "type": "K_(4,4)",
+      "rows": [
+        472500,
+        6448000,
+        21285396,
+        59440500
+      ],
+      "differences": [
+        120,
+        1185,
+        5160,
+        15720
+      ],
+      "novelty_claimed": false
+    }
+  ],
+  "bounded_searches": {
+    "direct_K_(6,4)": {
+      "domain": "every canonical anchor 0 <= p < q <= 6000, every compatible row, every four-row subset",
+      "exhaustive_within_domain": true,
+      "relative_to_implementation": true,
+      "anchors": 18003000,
+      "eligible_pair_fibers": 14040082,
+      "pair_fiber_rows": 209917507,
+      "retained_differences": 465004,
+      "four_row_support_updates": 767726,
+      "K_(5,4)_hits": 0,
+      "K_(6,4)_hits": 0
+    },
+    "public_4x6_closure": {
+      "dataset_packets": 71,
+      "dataset_repr_sha256": "4699a0379d41dc851722c0909cde6df59f293f3023142d112aaba78acdb3f57a",
+      "exact_root_to_positive_shift": 71,
+      "exact_positive_shift_to_root": 71,
+      "exact_signed_factor_difference": 71,
+      "five_root_subsets_checked": 426,
+      "largest_signed_shift_closure": 4,
+      "fifth_difference_hits": 0
+    },
+    "signed_scalar_closure": {
+      "packet_domain": "all 71 archived public packets",
+      "scale_domain": "1 <= c <= 1000",
+      "packet_multiplier_pairs": 71000,
+      "full_divisors_enumerated": 847896082,
+      "signed_closure_entries": 284000,
+      "expected_inherited_entries": 284000,
+      "new_fifth_differences": 0,
+      "extended_smallest_core_scale_domain": "1 <= c <= 10000",
+      "extended_smallest_core_closure_entries": 40000,
+      "extended_smallest_core_new_fifth_differences": 0
+    },
+    "choudhry_positive_parameter_box": {
+      "domain": "[1,6]^7",
+      "parameter_tuples": 279936,
+      "nondegenerate_packets": 116720,
+      "unique_exact_packets": 10777,
+      "maximum_positive_shift_closure": 2,
+      "candidate_hits": 0,
+      "normalized_packet_sha256": "a608ddd86568bcdfd303a2c1497935444a740b142446d641da6fc5729d9a0ae3"
+    }
+  },
+  "observed_environment": {
+    "os": "Windows 10 10.0.19045 x64",
+    "python": "3.14.5",
+    "sympy": "1.14.0",
+    "rustc": "1.96.0 (ac68faa20 2026-05-25)"
+  },
+  "principal_sha256": {
+    "reports/CHENGXU_DUALITY_ROUTE_REPORT.md": "76a17fefca115dda3f39be17faaa83ec3a27461ab391c1913db035324311b585",
+    "code/search_dual_k64.rs": "c16102ab05bd98a0b5c4768e4dbfb4b2b83741df1d3dee3340c5e2e5c3b9b379",
+    "code/verify_boundary_packets.py": "fc06139c661042657d414c205c88b6a8f5fd3cc7b36b97328f1aa9a6adec340e",
+    "code/audit_public_4x6.py": "f171b69f1ece22b6b879e0736ba55529cde8cf7710c7202897cd17f788061342",
+    "code/search_scaled_public_4x6.py": "580ef21c2a51d1dc613fc5ad812348d357ff6126c7d15124d53eb3fa39dafd55",
+    "code/search_signed_scaled_public_4x6.py": "f98bffc79cb537586585bf845f86589789c8762e6c8edd0dcc099de46b26da2c",
+    "code/search_choudhry_closure.py": "4e97bcac4dc2f7255b289e36401e10801fca34f38b1cccefbf442d4d7cdf2acb"
+  }
+}

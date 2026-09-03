@@ -1,0 +1,12 @@
+record extra_count=1 anchor=[4, 4244] rows=[3659565, 10381280, 975562752, 1405800032] extra=[56236]
+progress q=4300 range=[4244,5196] anchors=243504 eligible=192091
+record extra_count=2 anchor=[872, 4328] rows=[515504, 3542528, 6010004, 19523504] extra=[5003, 11672]
+progress q=4400 range=[4244,5196] anchors=678554 eligible=535861
+progress q=4500 range=[4244,5196] anchors=1123604 eligible=887770
+progress q=4600 range=[4244,5196] anchors=1578654 eligible=1248262
+progress q=4700 range=[4244,5196] anchors=2043704 eligible=1617261
+progress q=4800 range=[4244,5196] anchors=2518754 eligible=1994277
+
+thread 'main' (29724) panicked at C:\Users\kakon\AppData\Local\Temp\codex-erdos885-independent-20260813\search_dual_k64.rs:228:17:
+pair fiber exceeds u128 mask capacity: 143
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace

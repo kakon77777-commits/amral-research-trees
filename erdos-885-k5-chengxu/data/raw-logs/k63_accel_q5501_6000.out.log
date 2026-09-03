@@ -1,0 +1,16 @@
+STATUS=NO_K63_WITH_CANONICAL_SECOND_DIFFERENCE_IN_[5501,6000]
+anchors=2875250
+eligible_fibers=2679403
+fiber_entries=37077597
+retained_differences=907368
+max_fiber=159
+max_retained=139
+max_mask_support=9
+quad_support_updates=1207495
+quartets_with_exactly_1_extra=1201860
+quartets_with_exactly_2_extra=2798
+quartets_with_exactly_3_extra=13
+best_near_extra_count=3
+best_near_anchor=[480, 5520]
+best_near_rows=[5559300, 106444800, 988416000]
+best_near_extra_differences=[20320, 36912, 61680]
