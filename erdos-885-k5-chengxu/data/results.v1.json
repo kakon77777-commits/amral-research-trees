@@ -17,6 +17,55 @@
     "literature_novelty_claimed": false,
     "statement": "Exact reductions and certificates plus bounded exhaustive searches; no global k=5 witness or impossibility theorem."
   },
+  "verified_claims": [
+    {
+      "id": "V1",
+      "claim": "an ERDOS-885 K_(5,5) witness transposes to a K_(6,4) factor-difference packet",
+      "kind": "exact algebraic reduction",
+      "source": "reports/CHENGXU_DUALITY_ROUTE_REPORT.md section 1"
+    },
+    {
+      "id": "V2",
+      "claim": "the displayed integer packets are exact: a K_(6,3) precursor, a transposed K_(4,5), and a K_(4,4)",
+      "kind": "exact integer facts",
+      "source": "results.v1.json exact_certificates"
+    },
+    {
+      "id": "V3",
+      "claim": "no K_(6,4) and no K_(5,4) exists over every canonical anchor 0 <= p < q <= 6000, every compatible row, every four-row subset — 0 and 0 hits across 18003000 canonical anchors",
+      "kind": "bounded exhaustive search",
+      "exhaustive_within_domain": true,
+      "relative_to_implementation": true,
+      "source": "reports/CHENGXU_DUALITY_ROUTE_REPORT.md section 3"
+    },
+    {
+      "id": "V4",
+      "claim": "that finite search implies the bounded necessary condition sqrt(d0^2 + 4*N_min) > 3000, equivalently d0^2 + 4*N_min > 9,000,000",
+      "kind": "bounded necessary condition",
+      "source": "reports/CHENGXU_DUALITY_ROUTE_REPORT.md section 3"
+    },
+    {
+      "id": "V5",
+      "claim": "across the 71 archived public 4x6 packets, root-to-positive-shift and positive-shift-to-root are exact on all 71, and 426 five-root subsets produced 0 fifth-difference hits",
+      "kind": "closure audit over a snapshotted public dataset",
+      "source": "results.v1.json bounded_searches.public_4x6_closure"
+    }
+  ],
+  "explicit_non_claims": [
+    "ERDOS-885 k=5 is not solved here",
+    "search exclusions are exhaustive only inside their stated bounds and relative to the checked implementations; they are not global impossibility theorems",
+    "the direct search yields a bounded necessary condition, not a global obstruction",
+    "literature novelty is not claimed; in particular the main K_(6,3) packet independently rediscovered here is already present on Thomas Egense's public 2019 4x6 square-sumset page",
+    "a no-hit result at one level does not assert uniqueness at that level"
+  ],
+  "claims_structured_by": {
+    "arm": "數學戰士「墜衡」 / collatz-verification-zhuiheng",
+    "date": "2026-09-03",
+    "authorised_by": "Neo.K",
+    "basis": "verbatim or near-verbatim from this line's own README status boundary and reports/CHENGXU_DUALITY_ROUTE_REPORT.md. No claim was originated here and no other file in this tree was touched",
+    "why": "to satisfy results-claims/1, so a renderer shows this line's boundaries in the same structured place as every other line's rather than only in prose",
+    "spec": "collatz-verification-zhuiheng/reports/RESULTS-PROFILES.md"
+  },
   "exact_reduction": {
     "source_target": "K_(5,5)",
     "dual_target": "K_(6,4)",
@@ -25,20 +74,52 @@
   "exact_certificates": [
     {
       "type": "K_(6,3)",
-      "rows": [4148640, 34418880, 300736800],
-      "differences": [2988, 4356, 5787, 11164, 17046, 23948],
+      "rows": [
+        4148640,
+        34418880,
+        300736800
+      ],
+      "differences": [
+        2988,
+        4356,
+        5787,
+        11164,
+        17046,
+        23948
+      ],
       "novel": false
     },
     {
       "type": "transposed_K_(4,5)",
-      "rows": [10046592, 24561225, 115706752, 281637972, 564578560],
-      "differences": [5976, 10104, 24216, 69624],
+      "rows": [
+        10046592,
+        24561225,
+        115706752,
+        281637972,
+        564578560
+      ],
+      "differences": [
+        5976,
+        10104,
+        24216,
+        69624
+      ],
       "target_shortfall": "one common difference"
     },
     {
       "type": "K_(4,4)",
-      "rows": [472500, 6448000, 21285396, 59440500],
-      "differences": [120, 1185, 5160, 15720],
+      "rows": [
+        472500,
+        6448000,
+        21285396,
+        59440500
+      ],
+      "differences": [
+        120,
+        1185,
+        5160,
+        15720
+      ],
       "novelty_claimed": false
     }
   ],
