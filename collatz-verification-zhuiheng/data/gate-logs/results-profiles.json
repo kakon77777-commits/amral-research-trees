@@ -9,29 +9,7 @@
   "not_an_error": "failing a profile a file never declared is information for a renderer, not a defect: that line states its boundaries elsewhere and must still be rendered with them",
   "files": [
     {
-      "ref": "origin/agent/archive-chengxu-erdos-885-k5",
-      "path": "erdos-885-k5-chengxu/data/results.v1.json",
-      "research_line_id": "erdos-885-k5-chengxu",
-      "declared_schema_version": 1,
-      "satisfies": [
-        "results-envelope/1"
-      ],
-      "gaps": {
-        "results-claims/1": [
-          "verified_claims must be a non-empty array",
-          "explicit_non_claims must be a non-empty array"
-        ],
-        "results-pairs/1": [
-          "render_pairs must be a non-empty array"
-        ]
-      },
-      "declared": [],
-      "declared_but_not_satisfied": [],
-      "renders_claim_box_from": "global_status.statement and report prose",
-      "figures_that_must_not_be_shown_alone": []
-    },
-    {
-      "ref": "origin/agent/collatz-verification-zhuiheng",
+      "ref": null,
       "path": "collatz-verification-zhuiheng/data/results.v1.json",
       "research_line_id": "collatz-verification-zhuiheng",
       "declared_schema_version": 1,
@@ -74,9 +52,9 @@
     }
   ],
   "counts": {
-    "files": 2,
+    "files": 1,
     "unreadable": 0,
-    "satisfying_envelope": 2,
+    "satisfying_envelope": 1,
     "satisfying_claims": 1,
     "satisfying_pairs": 1,
     "declared_but_not_satisfied": 0
