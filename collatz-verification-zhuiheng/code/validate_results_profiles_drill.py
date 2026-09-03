@@ -229,6 +229,32 @@ def main() -> int:
               lambda d: d["headline_figures"][0].update(kind="sparkline"),
               "unknown kind")
 
+    # D20-D21 - the archive guard. This one is not hypothetical either: an
+    # ad-hoc `--paths` run twice replaced the cross-branch measurement with a
+    # one-file one, and the second time the file was under a temp directory, so
+    # the archived gate log briefly cited a scratchpad path as this tree's
+    # evidence. Neither run reported anything wrong, because nothing was: the
+    # measurement was accurate about the file it was handed.
+    from_git = [{"ref": "origin/agent/x", "path": "x/data/results.v1.json"}]
+
+    msg = V.why_not_archivable(from_git, True)
+    defects["D20_an_ad_hoc_paths_run_must_not_archive"] = {
+        "why": "an ad-hoc query and the archived measurement are different artifacts",
+        "refused": msg is not None,
+        "named_check": bool(msg and "--paths" in msg),
+        "reported": msg,
+    }
+
+    msg = V.why_not_archivable(
+        [{"ref": None, "path": "C:/tmp/scratch/results.v1.json"}], False)
+    defects["D21_a_file_not_read_from_a_git_ref_must_not_archive"] = {
+        "why": ("the archived log must cite what a consumer cloning this "
+                "repository receives, never a path on one machine"),
+        "refused": msg is not None,
+        "named_check": bool(msg and "not read from a git ref" in msg),
+        "reported": msg,
+    }
+
     controls: dict[str, dict] = {}
 
     def control(name: str, why: str, doc: dict, expect: list[str]):
@@ -269,6 +295,15 @@ def main() -> int:
     control("C4_envelope_only_is_a_valid_state_not_a_failure",
             "a line outside results-claims/1 is a rendering branch, not a defect",
             envelope_only, [ENVELOPE])
+
+    from_git = [{"ref": "origin/agent/x", "path": "x/data/results.v1.json"}]
+    ok_msg = V.why_not_archivable(from_git, False)
+    controls["C7_a_full_cross_branch_scan_must_archive"] = {
+        "why": ("the guard must not become a refusal that never lets the "
+                "canonical measurement be written at all"),
+        "undisturbed": ok_msg is None,
+        "message": ok_msg,
+    }
 
     planted = len(defects)
     caught = sum(1 for d in defects.values() if d["refused"] and d["named_check"])

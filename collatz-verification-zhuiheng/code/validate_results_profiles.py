@@ -242,6 +242,32 @@ REQUIRES = {"results-claims/1": "results-envelope/1",
             "results-figures/1": "results-envelope/1"}
 
 
+def why_not_archivable(rows: list[dict], explicit_paths: bool) -> str | None:
+    """Reason this run must not overwrite the archived log, or None.
+
+    Learned the expensive way, twice. Running with `--paths` to check one file
+    replaced the canonical cross-branch measurement with a one-file one — and
+    the second time the one file was a throwaway under a temp directory, so the
+    archived gate log briefly cited `.../scratchpad/dryrun/...` as this tree's
+    evidence. Neither run said anything was wrong, because nothing was: the
+    measurement was accurate about the file it was given.
+
+    An ad-hoc query and the archived measurement are different artifacts. The
+    second condition is the load-bearing one: it refuses on the SHAPE of what
+    was measured rather than on which flag was passed, so a future code path
+    that reaches here another way is refused too.
+    """
+    if explicit_paths:
+        return ("run with --paths: an ad-hoc query over chosen files is not "
+                "the cross-branch measurement this log records")
+    stray = [r["path"] for r in rows if not r.get("ref")]
+    if stray:
+        return (f"measured files not read from a git ref: {stray}. The archived "
+                "log must cite what a consumer cloning this repository "
+                "receives, never a path on one machine")
+    return None
+
+
 def evaluate(doc: dict) -> dict:
     satisfied, gaps = [], {}
     for name, check in PROFILES.items():
@@ -349,8 +375,12 @@ def main() -> int:
         },
         "ok": not unreadable and not lying,
     }
-    OUT.write_text(json.dumps(log, indent=2, ensure_ascii=False) + "\n",
-                   encoding="utf-8", newline="\n")
+    archive_refusal = why_not_archivable(rows, bool(args.paths))
+    if archive_refusal is None:
+        OUT.write_text(json.dumps(log, indent=2, ensure_ascii=False) + "\n",
+                       encoding="utf-8", newline="\n")
+    else:
+        log["not_archived"] = archive_refusal
 
     for r in rows:
         if "unreadable" in r:
@@ -364,7 +394,10 @@ def main() -> int:
             print(f"    misses {name}: {'; '.join(missing)}")
         print(f"    claim-box source: {r['renders_claim_box_from']}")
     print(json.dumps(log["counts"], indent=2))
-    print(f"wrote {OUT}")
+    if archive_refusal is None:
+        print(f"wrote {OUT}")
+    else:
+        print(f"NOT archived to {OUT.name} - {archive_refusal}")
     return 0 if log["ok"] else 1
 
 
