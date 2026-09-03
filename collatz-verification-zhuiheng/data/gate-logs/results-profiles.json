@@ -3,7 +3,8 @@
   "what_it_measures": "which named profile each results file satisfies, inferred from content, so no file and no other line's tree needs to change",
   "profiles": {
     "results-envelope/1": "the six keys every existing file agrees on",
-    "results-claims/1": "envelope plus structured verified_claims and explicit_non_claims"
+    "results-claims/1": "envelope plus structured verified_claims and explicit_non_claims",
+    "results-pairs/1": "envelope plus render_pairs: the figures this line says must never be shown without the number that gives them meaning"
   },
   "not_an_error": "failing a profile a file never declared is information for a renderer, not a defect: that line states its boundaries elsewhere and must still be rendered with them",
   "files": [
@@ -19,11 +20,15 @@
         "results-claims/1": [
           "verified_claims must be a non-empty array",
           "explicit_non_claims must be a non-empty array"
+        ],
+        "results-pairs/1": [
+          "render_pairs must be a non-empty array"
         ]
       },
       "declared": [],
       "declared_but_not_satisfied": [],
-      "renders_claim_box_from": "global_status.statement and report prose"
+      "renders_claim_box_from": "global_status.statement and report prose",
+      "figures_that_must_not_be_shown_alone": []
     },
     {
       "ref": "origin/agent/collatz-verification-zhuiheng",
@@ -34,10 +39,15 @@
         "results-envelope/1",
         "results-claims/1"
       ],
-      "gaps": {},
+      "gaps": {
+        "results-pairs/1": [
+          "render_pairs must be a non-empty array"
+        ]
+      },
       "declared": [],
       "declared_but_not_satisfied": [],
-      "renders_claim_box_from": "verified_claims + explicit_non_claims"
+      "renders_claim_box_from": "verified_claims + explicit_non_claims",
+      "figures_that_must_not_be_shown_alone": []
     }
   ],
   "counts": {
@@ -45,6 +55,7 @@
     "unreadable": 0,
     "satisfying_envelope": 2,
     "satisfying_claims": 1,
+    "satisfying_pairs": 0,
     "declared_but_not_satisfied": 0
   },
   "ok": true

@@ -58,6 +58,84 @@ def load_gate(name: str) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+# Figures that mean nothing on their own. A renderer showing the first without
+# the second states a number where the source states a ratio: "1441 defects
+# caught" reads identically whether 1441 or 2000 were planted, and the whole
+# claim of a falsifiability drill is that those two are equal.
+#
+# Declared as data rather than left to a renderer's judgement, because the
+# renderer cannot know which of two numbers is load-bearing, and a list of
+# pairs kept in the renderer would be a second copy of this tree's semantics.
+RENDER_PAIRS = [
+    {
+        "value": "paper_sweep.defects_caught_by_the_named_check",
+        "against": "paper_sweep.defects_planted",
+        "label": "planted defects, caught by the check named for each",
+        "why": ("the drill's claim is that these are equal; the caught count "
+                "alone cannot show whether any defect survived"),
+    },
+    {
+        "value": "paper_sweep.controls_undisturbed",
+        "against": "paper_sweep.controls",
+        "label": "controls, undisturbed",
+        "why": ("a disturbed control means the drill's defects were not the "
+                "only thing moving; the undisturbed count alone hides that"),
+    },
+    {
+        "value": "paper_sweep.rechecked_by_this_tree",
+        "against": "paper_sweep.source_items",
+        "label": "source items rechecked by this tree",
+        "why": ("the remainder is not a gap: see "
+                "paper_sweep.belongs_to_another_research_line, which accounts "
+                "for it. Without the denominator a reader cannot tell whether "
+                "the sweep is complete"),
+    },
+    {
+        "value": "coverage.odd_starts_checked",
+        "against": "coverage.odd_starts_expected",
+        "label": "odd starts checked, against the count the interval requires",
+        "why": ("the coverage claim is that these are equal; the checked count "
+                "alone cannot show whether the interval was fully tiled"),
+    },
+    {
+        "value": "gates.mutation_drill.defects_caught",
+        "against": "gates.mutation_drill.defects_planted",
+        "label": "engine defects planted and caught",
+        "why": "same as the sweep drill, for the engine's own mutation drill",
+    },
+]
+
+
+def resolve(doc: dict, dotted: str):
+    """Follow a dotted path, or raise if any segment is absent."""
+    cur = doc
+    for part in dotted.split("."):
+        if not isinstance(cur, dict) or part not in cur:
+            raise KeyError(dotted)
+        cur = cur[part]
+    return cur
+
+
+def check_render_pairs(doc: dict) -> list[dict]:
+    """Every declared pair must resolve to two numbers, or nothing is emitted.
+
+    A declaration pointing at a field that has been renamed is worse than no
+    declaration: it tells a renderer to look for something that is not there,
+    and the renderer's own check would then pass vacuously.
+    """
+    out = []
+    for pair in RENDER_PAIRS:
+        entry = dict(pair)
+        for side in ("value", "against"):
+            got = resolve(doc, pair[side])          # KeyError is the refusal
+            if not isinstance(got, (int, float)) or isinstance(got, bool):
+                raise SweepInputError(
+                    f"render pair {pair[side]} is not a number: {got!r}")
+            entry[side + "_is"] = got
+        out.append(entry)
+    return out
+
+
 class SweepInputError(Exception):
     """A sweep figure could be silently incomplete, so no summary is emitted."""
 
@@ -584,6 +662,18 @@ def main() -> int:
         },
         "source_sha256": {f: sha256(ROOT / f) for f in CODE_FILES},
     }
+
+    # Resolved against the finished document, so a declaration can never point
+    # at a field this build did not actually emit.
+    try:
+        results["render_pairs"] = check_render_pairs(results)
+    except KeyError as exc:
+        raise SystemExit(
+            f"a render pair points at a field this summary does not contain: "
+            f"{exc}. Fix the path or drop the pair; a declaration that does not "
+            f"resolve tells a renderer to look for something absent.") from exc
+    except SweepInputError as exc:
+        raise SystemExit(str(exc)) from exc
 
     out = ROOT / "data" / "results.v1.json"
     out.write_text(json.dumps(results, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

@@ -16,6 +16,12 @@ be touched, for its capabilities to be described correctly.
   results-envelope/1  the six keys both existing files already agree on
   results-claims/1    envelope, plus structured verified_claims and
                       explicit_non_claims — what a claim-box UI needs
+  results-pairs/1     envelope, plus render_pairs: the figures this line says
+                      must never be shown without the number that gives them
+                      meaning. "1441 defects caught" reads identically whether
+                      1441 or 2000 were planted; which of the two is
+                      load-bearing is a fact about the line, not something a
+                      renderer can infer.
 
 Not satisfying a profile is not an error. It tells a renderer which branch to
 take: a line outside `results-claims/1` still states its boundaries, in
@@ -119,12 +125,56 @@ def check_claims(doc: dict) -> list[str]:
     return missing
 
 
+def _resolve(doc: dict, dotted: str):
+    cur = doc
+    for part in dotted.split("."):
+        if not isinstance(cur, dict) or part not in cur:
+            return None
+        cur = cur[part]
+    return cur
+
+
+def check_pairs(doc: dict) -> list[str]:
+    """Missing requirements for results-pairs/1, beyond the envelope.
+
+    A figure like "1441 defects caught" reads identically whether 1441 or 2000
+    were planted. Which of two numbers is load-bearing is a fact about the
+    line, not something a renderer can infer, so a line that wants that
+    protection declares its pairs and a renderer refuses to show one alone.
+    """
+    missing = []
+    pairs = doc.get("render_pairs")
+    if not isinstance(pairs, list) or not pairs:
+        missing.append("render_pairs must be a non-empty array")
+        return missing
+    for i, p in enumerate(pairs):
+        if not isinstance(p, dict):
+            missing.append(f"render_pairs[{i}] must be an object")
+            continue
+        for side in ("value", "against"):
+            path = p.get(side)
+            if not isinstance(path, str) or not path:
+                missing.append(f"render_pairs[{i}].{side} must be a dotted path")
+                continue
+            got = _resolve(doc, path)
+            if got is None:
+                missing.append(f"render_pairs[{i}].{side} does not resolve: {path}")
+            elif isinstance(got, bool) or not isinstance(got, (int, float)):
+                missing.append(f"render_pairs[{i}].{side} is not a number: {path}")
+        if not p.get("why"):
+            missing.append(f"render_pairs[{i}] needs a why: a pair with no stated "
+                           "reason cannot be reviewed")
+    return missing
+
+
 PROFILES = {
     "results-envelope/1": check_envelope,
     "results-claims/1": check_claims,
+    "results-pairs/1": check_pairs,
 }
 # a profile is only reachable once its prerequisite holds
-REQUIRES = {"results-claims/1": "results-envelope/1"}
+REQUIRES = {"results-claims/1": "results-envelope/1",
+            "results-pairs/1": "results-envelope/1"}
 
 
 def evaluate(doc: dict) -> dict:
@@ -150,6 +200,12 @@ def evaluate(doc: dict) -> dict:
         "renders_claim_box_from": ("verified_claims + explicit_non_claims"
                                    if "results-claims/1" in satisfied
                                    else "global_status.statement and report prose"),
+        "figures_that_must_not_be_shown_alone": [
+            {"value": p.get("value"), "against": p.get("against"),
+             "label": p.get("label")}
+            for p in (doc.get("render_pairs") or [])
+            if isinstance(p, dict)
+        ] if "results-pairs/1" in satisfied else [],
     }
 
 
@@ -194,6 +250,9 @@ def main() -> int:
             "results-envelope/1": "the six keys every existing file agrees on",
             "results-claims/1": ("envelope plus structured verified_claims and "
                                  "explicit_non_claims"),
+            "results-pairs/1": ("envelope plus render_pairs: the figures this "
+                                "line says must never be shown without the "
+                                "number that gives them meaning"),
         },
         "not_an_error": (
             "failing a profile a file never declared is information for a "
@@ -207,6 +266,8 @@ def main() -> int:
                                        if "results-envelope/1" in r.get("satisfies", [])),
             "satisfying_claims": sum(1 for r in rows
                                      if "results-claims/1" in r.get("satisfies", [])),
+            "satisfying_pairs": sum(1 for r in rows
+                                    if "results-pairs/1" in r.get("satisfies", [])),
             "declared_but_not_satisfied": len(lying),
         },
         "ok": not unreadable and not lying,

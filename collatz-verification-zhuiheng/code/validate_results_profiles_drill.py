@@ -31,6 +31,7 @@ import validate_results_profiles as V  # noqa: E402
 
 ENVELOPE = "results-envelope/1"
 CLAIMS = "results-claims/1"
+PAIRS = "results-pairs/1"
 
 
 def good_doc() -> dict:
@@ -122,6 +123,49 @@ def main() -> int:
         "reported": res["declared_but_not_satisfied"],
     }
 
+    # D9-D12 - results-pairs/1. A declaration that does not resolve is worse
+    # than no declaration: it tells a renderer to look for something absent,
+    # and the renderer's own check then passes vacuously.
+    def paired(doc: dict) -> dict:
+        doc["render_pairs"] = [{
+            "value": "counts.caught", "against": "counts.planted",
+            "label": "planted and caught", "why": "the claim is that they are equal",
+        }]
+        doc["counts"] = {"caught": 10, "planted": 10}
+        return doc
+
+    def plant_pair(name: str, why: str, mutate, needle: str):
+        doc = paired(good_doc())
+        mutate(doc)
+        res = V.evaluate(doc)
+        missing = res["gaps"].get(PAIRS, [])
+        defects[name] = {
+            "why": why,
+            "refused": PAIRS not in res["satisfies"],
+            "named_check": any(needle in m for m in missing),
+            "reported": missing,
+        }
+
+    plant_pair("D9_a_pair_pointing_at_a_field_that_is_not_there",
+               "a renamed field must break the declaration loudly, not silently",
+               lambda d: d["render_pairs"][0].__setitem__("against", "counts.gone"),
+               "does not resolve")
+
+    plant_pair("D10_a_pair_pointing_at_something_that_is_not_a_number",
+               "a boolean denominator renders as a ratio against true",
+               lambda d: d["counts"].__setitem__("planted", True),
+               "is not a number")
+
+    plant_pair("D11_a_pair_with_no_stated_reason",
+               "a pair nobody can review is a rule nobody can challenge",
+               lambda d: d["render_pairs"][0].pop("why"),
+               "needs a why")
+
+    plant_pair("D12_render_pairs_present_but_empty",
+               "an empty array must not read as 'pairs declared'",
+               lambda d: d.__setitem__("render_pairs", []),
+               "non-empty array")
+
     controls: dict[str, dict] = {}
 
     def control(name: str, why: str, doc: dict, expect: list[str]):
@@ -146,8 +190,9 @@ def main() -> int:
 
     real = json.loads((ROOT / "data" / "results.v1.json").read_text(encoding="utf-8"))
     control("C3_this_tree_s_real_published_file",
-            "the file a renderer will actually read must satisfy both",
-            real, [ENVELOPE, CLAIMS])
+            "the file a renderer will actually read must satisfy all three, or "
+            "it loses the protection this tree asked for",
+            real, [ENVELOPE, CLAIMS, PAIRS])
 
     envelope_only = good_doc()
     envelope_only.pop("verified_claims")

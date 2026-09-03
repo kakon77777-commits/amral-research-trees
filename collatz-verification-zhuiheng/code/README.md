@@ -10,7 +10,7 @@
 | `verify_run_logs.py` | Reads only the archived chunk logs and decides whether they actually tile `[3, N]`. Refuses to aggregate logs with a gap, an overlap, or a bad count. |
 | `build_results.py` | Assembles `../data/results.v1.json` from archived gate logs only. Fails rather than emit a summary with a hole in it. |
 | `validate_results_profiles.py` | Measures which named profile each research line's `results.v*.json` satisfies, inferred from content, enumerating the files from git across every branch. A renderer asks this rather than trusting `schema_version`, which does not identify a shape. |
-| `validate_results_profiles_drill.py` | Drills the above: eight crafted documents, each refused by the rule named for it, plus a control keeping envelope-only a legal state so the validator cannot become a gate that excludes an honest line. |
+| `validate_results_profiles_drill.py` | Drills the above: twelve crafted documents, each refused by the rule named for it, plus a control keeping envelope-only a legal state so the validator cannot become a gate that excludes an honest line. |
 | `build_results_guard_drill.py` | Drills the three refusals in `build_results.py` and the completeness check in `emit_readme_counts.py`. They are silent on every real input, and a guard that has only ever been silent is indistinguishable from a comment. |
 | `suite_totals.py` | Suite-wide drill totals across every archived drill log. Classifies each log's tally shape explicitly and exits non-zero on one it cannot interpret, so an unrecognised drill stops the build instead of contributing zero. |
 | `suite_totals_drill.py` | Drills the above: an unreadable log, a surviving defect, a disturbed control, and each tally shape going unread. |

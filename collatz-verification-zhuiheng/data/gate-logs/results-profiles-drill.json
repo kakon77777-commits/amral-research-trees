@@ -66,6 +66,38 @@
       "reported": [
         "results-claims/1"
       ]
+    },
+    "D9_a_pair_pointing_at_a_field_that_is_not_there": {
+      "why": "a renamed field must break the declaration loudly, not silently",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "render_pairs[0].against does not resolve: counts.gone"
+      ]
+    },
+    "D10_a_pair_pointing_at_something_that_is_not_a_number": {
+      "why": "a boolean denominator renders as a ratio against true",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "render_pairs[0].against is not a number: counts.planted"
+      ]
+    },
+    "D11_a_pair_with_no_stated_reason": {
+      "why": "a pair nobody can review is a rule nobody can challenge",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "render_pairs[0] needs a why: a pair with no stated reason cannot be reviewed"
+      ]
+    },
+    "D12_render_pairs_present_but_empty": {
+      "why": "an empty array must not read as 'pairs declared'",
+      "refused": true,
+      "named_check": true,
+      "reported": [
+        "render_pairs must be a non-empty array"
+      ]
     }
   },
   "controls": {
@@ -86,11 +118,12 @@
       ]
     },
     "C3_this_tree_s_real_published_file": {
-      "why": "the file a renderer will actually read must satisfy both",
+      "why": "the file a renderer will actually read must satisfy all three, or it loses the protection this tree asked for",
       "undisturbed": true,
       "satisfies": [
         "results-envelope/1",
-        "results-claims/1"
+        "results-claims/1",
+        "results-pairs/1"
       ]
     },
     "C4_envelope_only_is_a_valid_state_not_a_failure": {
@@ -102,8 +135,8 @@
     }
   },
   "counts": {
-    "defects_planted": 8,
-    "defects_caught_by_the_named_check": 8,
+    "defects_planted": 12,
+    "defects_caught_by_the_named_check": 12,
     "controls": 4,
     "controls_undisturbed": 4
   },

@@ -1102,7 +1102,7 @@
     "code/mutation_drill.py": "45e4f84a668c5e57e0ec2b7b116dcd0f0bf419bb64e38ff4685f3ff7cfeae7a7",
     "code/reference_crosscheck.py": "4a97f0c0d547e3887a774aac64c2ee681f969554f0f513fe011db510a4dec13a",
     "code/verify_run_logs.py": "15c8d31830c00b47af931d1de8bdc74698459ca0656314d95061e2e0f1964182",
-    "code/build_results.py": "5b4ce5fa0b5c88ac124a114340c4ddc53b8b34039579d5e5d476db2a04567710",
+    "code/build_results.py": "6a24a13178a87fa652dc0699ad7af2311d6f4e56ceb2ca783b9f28e5a8e26b09",
     "code/run_verification.sh": "ffb2a7c0946adb911707c8145738143dcd593692c14ad192732e88f22a3cc3ab",
     "code/ot_paper01_recheck.py": "66074146e8de77d6949b2a81d44add031b39f1b1fe825c98ef5068c7beb25355",
     "code/ot_paper02_recheck.py": "50b3b733ced47a25078b16a71f7c120696d0ce60d43822b464abbc2f0010591d",
@@ -1116,5 +1116,47 @@
     "code/ot_recheck_drill.py": "fb0a6b910f961e7baea7fe50c2cd4e83c85fa7459aa55d19ddf13e23e4e78acc",
     "code/suite_totals.py": "35b95203a416529493217a5102206721ca81c70a151d5ba4d80dc1e8ed52bfff",
     "code/build_source_manifest.py": "38a327ad6e1f64925bb8c5279c76c26a7c7104fd1a831ef0ba61b2df07764e35"
-  }
+  },
+  "render_pairs": [
+    {
+      "value": "paper_sweep.defects_caught_by_the_named_check",
+      "against": "paper_sweep.defects_planted",
+      "label": "planted defects, caught by the check named for each",
+      "why": "the drill's claim is that these are equal; the caught count alone cannot show whether any defect survived",
+      "value_is": 1441,
+      "against_is": 1441
+    },
+    {
+      "value": "paper_sweep.controls_undisturbed",
+      "against": "paper_sweep.controls",
+      "label": "controls, undisturbed",
+      "why": "a disturbed control means the drill's defects were not the only thing moving; the undisturbed count alone hides that",
+      "value_is": 121,
+      "against_is": 121
+    },
+    {
+      "value": "paper_sweep.rechecked_by_this_tree",
+      "against": "paper_sweep.source_items",
+      "label": "source items rechecked by this tree",
+      "why": "the remainder is not a gap: see paper_sweep.belongs_to_another_research_line, which accounts for it. Without the denominator a reader cannot tell whether the sweep is complete",
+      "value_is": 72,
+      "against_is": 73
+    },
+    {
+      "value": "coverage.odd_starts_checked",
+      "against": "coverage.odd_starts_expected",
+      "label": "odd starts checked, against the count the interval requires",
+      "why": "the coverage claim is that these are equal; the checked count alone cannot show whether the interval was fully tiled",
+      "value_is": 549755813887,
+      "against_is": 549755813887
+    },
+    {
+      "value": "gates.mutation_drill.defects_caught",
+      "against": "gates.mutation_drill.defects_planted",
+      "label": "engine defects planted and caught",
+      "why": "same as the sweep drill, for the engine's own mutation drill",
+      "value_is": 10,
+      "against_is": 10
+    }
+  ]
 }
