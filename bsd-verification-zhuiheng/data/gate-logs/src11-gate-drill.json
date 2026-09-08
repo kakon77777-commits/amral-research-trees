@@ -6,7 +6,8 @@
     "src10_phase2_density_and_base",
     "src12_p5_localization",
     "src13_algorithm2_twists",
-    "src14_globalizer_faithfulness"
+    "src14_globalizer_faithfulness",
+    "src15_phase2_anchor"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -32,7 +33,10 @@
     "frobenius-at-3": true,
     "psi3-and-roots": true,
     "reducibility-sieve": true,
-    "globalizer-exact": true
+    "globalizer-exact": true,
+    "anchor-11a1": true,
+    "anchor-rank-one": true,
+    "E1-vs-mpmath": true
   },
   "defects": [
     {
@@ -433,6 +437,80 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "E1 drops the Euler-Mascheroni constant",
+      "kind": "code",
+      "named_check": "E1-vs-mpmath",
+      "checks_that_went_red": [
+        "E1-vs-mpmath"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "E1 uses its small-x series everywhere",
+      "kind": "code",
+      "named_check": "E1-vs-mpmath",
+      "checks_that_went_red": [
+        "anchor-rank-one",
+        "E1-vs-mpmath"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "AGM stops after a single step",
+      "kind": "code",
+      "named_check": "anchor-11a1",
+      "checks_that_went_red": [
+        "anchor-11a1",
+        "anchor-rank-one"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the real period drops the second component when Δ > 0",
+      "kind": "code",
+      "named_check": "anchor-rank-one",
+      "checks_that_went_red": [
+        "anchor-rank-one"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "Hecke recursion loses its -p·a_{p^{k-1}} term",
+      "kind": "code",
+      "named_check": "anchor-11a1",
+      "checks_that_went_red": [
+        "anchor-11a1"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "L(E,1) forgets its factor of two",
+      "kind": "code",
+      "named_check": "anchor-11a1",
+      "checks_that_went_red": [
+        "anchor-11a1"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the split/non-split test is inverted",
+      "kind": "code",
+      "named_check": "anchor-11a1",
+      "checks_that_went_red": [
+        "anchor-11a1"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "torsion bound includes primes of bad reduction",
+      "kind": "code",
+      "named_check": "anchor-11a1",
+      "checks_that_went_red": [
+        "anchor-11a1"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "discriminant: the -27*b6^2 term becomes -26*b6^2",
       "kind": "code",
       "named_check": "disc-formula",
@@ -500,7 +578,8 @@
       "kind": "code",
       "named_check": "reducibility-sieve",
       "checks_that_went_red": [
-        "reducibility-sieve"
+        "reducibility-sieve",
+        "anchor-11a1"
       ],
       "caught_by_the_named_check": true
     },
@@ -587,8 +666,8 @@
     }
   ],
   "totals": {
-    "defects": 51,
-    "caught_by_the_named_check": 51,
+    "defects": 59,
+    "caught_by_the_named_check": 59,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
     "controls": 14,

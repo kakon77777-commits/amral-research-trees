@@ -82,8 +82,8 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-013:
-  `src04`–`src10`, `src12`–`src14` are drilled — 51 defects, 51 caught by the
+  been green is indistinguishable from a comment. **Position as of RUN-014:
+  `src04`–`src10`, `src12`–`src15` are drilled — 59 defects, 59 caught by the
   named check, 14 controls undisturbed. `src00`–`src03`, the corpus-scanning
   gates, are not.** This line read "every gate" for nine rounds while the tree
   had none; it is narrowed to what is true rather than the gap being left
@@ -111,6 +111,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [011](./reports/RUN-011-P5-LOCALIZATION.md) | P5 — 389.a1 at `p = 11` | `src12` | the v1.1 localization matrix `[[1,2],[1,4]]` recomputed from scratch, det `2 ≠ 0` |
 | [012](./reports/RUN-012-ALGORITHM2-TWISTS.md) | Algorithm 2's twist maps | `src13`, `src11` | all 247,391 twists rebuilt, 36,687 of 36,687 lists exact; a docstring that contradicts its own code |
 | [013](./reports/RUN-013-GLOBALIZER-FAITHFULNESS.md) | Phase 0's Certificate Globalizer | `src14` | all four claims hold in ℚ; the faithfulness fails in float64 at a computable index |
+| [014](./reports/RUN-014-PHASE2-ANCHOR.md) | the Phase 2 anchor, 696.e1 | `src15` | `N = 696` and `r_an = 0` both computed; `L(E,1)/Ω = 1` to one ulp |
 
 ## Layout
 

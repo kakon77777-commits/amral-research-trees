@@ -1,4 +1,4 @@
-"""Drill for gates 04-10, 12-14 — plant a defect, demand the named check catch it.
+"""Drill for gates 04-10, 12-15 — plant a defect, demand the named check catch it.
 
 數學戰士「墜衡」 / AMRAL Research Lab.
 
@@ -80,6 +80,7 @@ from __future__ import annotations
 
 import copy
 import json
+import math
 import pathlib
 import sys
 from fractions import Fraction
@@ -95,6 +96,7 @@ import src05_frobenius_at_three as frob5                 # noqa: E402
 import src06_three_isogeny_sieve as iso6                 # noqa: E402
 import src07_isogeny_reducibility_sieve as red7          # noqa: E402
 import src14_globalizer_faithfulness as glob14           # noqa: E402
+import src15_phase2_anchor as anchor15                   # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -388,6 +390,57 @@ def check_globalizer() -> bool:
     return 7.3e7 < idx < 7.5e7
 
 
+def check_anchor_11a1() -> bool:
+    """Gate 15 on 11a1, whose BSD data is fixed outside this tree.
+
+    Torsion Z/5, c_11 = 5, Ш trivial, so L(E,1)/Ω must be exactly 5/25 = 1/5,
+    the root number must come out +1, and the real period is 1.26920930…
+    """
+    # The tolerances are set to the computation's actual precision, not to a
+    # round number. Undisturbed, |L/Ω − 1/5| is 2.8e-17 and the AGM is stable to
+    # the last bit — so a 1e-9 window, which an earlier version of this check
+    # used, was wide enough to hide a one-step AGM (1.4e-12 off) and an inverted
+    # split/non-split test (2.6e-10 off). A tolerance looser than the quantity's
+    # precision is a check that cannot see a real defect.
+    r = anchor15.analyse("11a1", [0, -1, 1, -10, -20], 11, limit=4000)
+    return (r["root_number"] == 1
+            and abs(r["L_over_Omega"] - 0.2) < 1e-12
+            and abs(r["real_period"] - 1.2692093042795534) < 1e-13
+            and r["torsion_bound_gcd"] == 5)
+
+
+def check_anchor_rank_one() -> bool:
+    """37a1 has rank 1: the sign must come out −1 and L(E,1) must be 0.
+
+    This is the case that separates a vanishing sum from a vanishing sign —
+    Σ(a_n/n)e^{−2πn/√N} is 0.19 there, so reading it as L(E,1) would report a
+    rank-1 curve as rank 0.
+    """
+    # Δ = 37 > 0, so E(R) has two components and the real period is twice the
+    # identity component's — 11.97383458…, not 5.98691729…. This is the only
+    # curve here that can see that factor at all.
+    r = anchor15.analyse("37a1", [0, 0, 1, -1, 0], 37, limit=4000)
+    return (r["root_number"] == -1 and r["L_at_1"] == 0.0
+            and abs(r["real_period"] - 11.973834584927838) < 1e-10)
+
+
+def check_E1_against_an_independent_implementation() -> bool:
+    """E₁ is implemented in the gate with no dependencies; mpmath checks it.
+
+    The gate stays standard-library only — the outside implementation belongs
+    in the drill, where disagreement is the finding.
+    """
+    try:
+        import mpmath
+    except ImportError:                                   # pragma: no cover
+        return True
+    for x in (0.05, 0.238, 0.9, 1.9, 2.1, 5.0, 12.0, 40.0, 120.0):
+        ref = float(mpmath.e1(x))
+        if abs(anchor15.E1(x) - ref) > 1e-12 * abs(ref):
+            return False
+    return True
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -407,6 +460,9 @@ CHECKS = {
     "psi3-and-roots": check_psi3_and_roots,
     "reducibility-sieve": check_reducibility_sieve,
     "globalizer-exact": check_globalizer,
+    "anchor-11a1": check_anchor_11a1,
+    "anchor-rank-one": check_anchor_rank_one,
+    "E1-vs-mpmath": check_E1_against_an_independent_implementation,
 }
 
 
@@ -581,6 +637,27 @@ DEFECTS = [
      lambda: patch(glob14, "invisibility_index",
                    lambda s, ref: max(1, int((ref * 2.0 ** -24) ** (-1.0 / s))))),
 
+    # ---- gate 15 -------------------------------------------------------------
+    ("E1 drops the Euler-Mascheroni constant", "code", "E1-vs-mpmath",
+     lambda: patch(anchor15, "E1", _E1_no_gamma)),
+    ("E1 uses its small-x series everywhere", "code", "E1-vs-mpmath",
+     lambda: patch(anchor15, "E1", _E1_series_only)),
+    ("AGM stops after a single step", "code", "anchor-11a1",
+     lambda: patch(anchor15, "agm",
+                   lambda x, y: ((x + y) / 2.0 + math.sqrt(x * y)) / 2.0)),
+    ("the real period drops the second component when Δ > 0", "code",
+     "anchor-rank-one", lambda: patch(anchor15, "real_period",
+                                      _period_one_component)),
+    ("Hecke recursion loses its -p·a_{p^{k-1}} term", "code", "anchor-11a1",
+     lambda: patch(anchor15, "coefficients", _coeffs_no_hecke)),
+    ("L(E,1) forgets its factor of two", "code", "anchor-11a1",
+     lambda: patch(anchor15, "l_value_at_one",
+                   lambda a, N, w, limit=600: _true_L1(a, N, w, limit) / 2)),
+    ("the split/non-split test is inverted", "code", "anchor-11a1",
+     lambda: patch(anchor15, "bad_prime_data", _bad_prime_inverted)),
+    ("torsion bound includes primes of bad reduction", "code", "anchor-11a1",
+     lambda: patch(anchor15, "torsion_bound", _torsion_with_bad_primes)),
+
     # ---- gates 04-07, undrilled until now ------------------------------------
     ("discriminant: the -27*b6^2 term becomes -26*b6^2", "code", "disc-formula",
      lambda: patch(arith4, "discriminant",
@@ -659,6 +736,96 @@ CONTROLS = [
 
 
 _true_mass_exact = glob14.mass_exact
+_true_L1 = anchor15.l_value_at_one
+_true_period = anchor15.real_period
+_true_bad_prime = anchor15.bad_prime_data
+
+
+def _E1_no_gamma(x):
+    if x < 2.0:
+        s_, term = -math.log(x), 1.0
+        for k in range(1, 60):
+            term *= -x / k
+            s_ -= term / k
+        return s_
+    return anchor15.E1(x) if False else _E1_lentz(x)
+
+
+def _E1_lentz(x):
+    tiny = 1e-300
+    b, c, d = x + 1.0, 1e300, 1.0 / (x + 1.0)
+    h = d
+    for i in range(1, 300):
+        a = -i * i
+        b += 2.0
+        d = 1.0 / (a * d + b) if abs(a * d + b) > tiny else 1.0 / tiny
+        c = b + a / c if abs(b + a / c) > tiny else tiny
+        delta = c * d
+        h *= delta
+        if abs(delta - 1.0) < 1e-17:
+            break
+    return h * math.exp(-x)
+
+
+def _E1_series_only(x):
+    s_, term = -0.5772156649015328606 - math.log(x), 1.0
+    for k in range(1, 60):
+        term *= -x / k
+        s_ -= term / k
+    return s_
+
+
+def _period_one_component(ainvs):
+    b2, b4, b6, _b8, disc = anchor15.b_invariants(ainvs)
+    if disc <= 0:
+        return _true_period(ainvs)
+    e1, e2, e3 = anchor15.real_cubic_roots(b2, b4, b6)
+    return 2 * math.pi / anchor15.agm(math.sqrt(e1 - e3), math.sqrt(e1 - e2))
+
+
+def _coeffs_no_hecke(ainvs, bad, limit):
+    primes = anchor15.sieve(limit)
+    ap = {q: (bad[q] if q in bad else anchor15.point_count_ap(ainvs, q))
+          for q in primes}
+    a = [0] * (limit + 1)
+    a[1] = 1
+    for q in primes:
+        pk, prev1 = q, ap[q]
+        while pk <= limit:
+            a[pk] = prev1
+            prev1 = ap[q] * prev1          # the -p term dropped
+            pk *= q
+    for n in range(2, limit + 1):
+        if a[n]:
+            continue
+        for q in primes:
+            if q * q > n:
+                break
+            if n % q == 0:
+                r_, m = 1, n
+                while m % q == 0:
+                    m //= q
+                    r_ *= q
+                a[n] = a[r_] * a[m]
+                break
+    return a
+
+
+def _bad_prime_inverted(ainvs, q):
+    d = dict(_true_bad_prime(ainvs, q))
+    if d["type"] == "split multiplicative":
+        d["type"], d["a_p"] = "non-split multiplicative", -1
+    elif d["type"] == "non-split multiplicative":
+        d["type"], d["a_p"] = "split multiplicative", 1
+    return d
+
+
+def _torsion_with_bad_primes(ainvs, N):
+    g = 0
+    for q in anchor15.sieve(120):
+        if q > 2:
+            g = math.gcd(g, anchor15.point_count(ainvs, q))
+    return g
 _true_kronecker = alg2.kronecker
 _true_point_count = alg2.point_count
 _true_valuation = arith4.valuation
@@ -948,7 +1115,8 @@ def main() -> int:
                    "src10_phase2_density_and_base",
                    "src12_p5_localization",
                    "src13_algorithm2_twists",
-                   "src14_globalizer_faithfulness"],
+                   "src14_globalizer_faithfulness",
+                   "src15_phase2_anchor"],
         "rule": ("a planted defect must be caught by the check NAMED for it, "
                  "not merely by some check; and controls must disturb nothing"),
         "two_kinds": {

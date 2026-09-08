@@ -1,0 +1,167 @@
+{
+  "gate": "src15_phase2_anchor",
+  "subject": "21_Base_BSD_Anchor_Repair — the repair moves the weight of the Phase 2 family theorem onto N = 696 and r_an = 0 for 696.e1, both of which are computable",
+  "why_the_root_number_is_measured_not_assumed": "L(E,1) = 2Σ(a_n/n)e^{−2πn/√N} holds only for w = +1. 37a1 has rank 1, so L(E,1) = 0, and that same sum is 0.19 — a nonzero sum is no evidence of a nonzero L-value. The sign is instead read off by matching the smoothed Λ(2) against Σ a_n n^{−2}, which converges absolutely and uses no functional equation",
+  "self_check": [
+    {
+      "curve": "11a1",
+      "expected_w": 1,
+      "got_w": 1,
+      "w_ok": true,
+      "expected_L_over_Omega": 0.2,
+      "got_L_over_Omega": 0.20000000000000004,
+      "ratio_ok": true,
+      "real_period": 1.2692093042795534,
+      "torsion_bound": 5
+    },
+    {
+      "curve": "37a1",
+      "expected_w": -1,
+      "got_w": -1,
+      "w_ok": true,
+      "expected_L_over_Omega": 0.0,
+      "got_L_over_Omega": 0.0,
+      "ratio_ok": true,
+      "real_period": 11.973834584927838,
+      "torsion_bound": 1
+    },
+    {
+      "curve": "389a1",
+      "expected_w": 1,
+      "got_w": 1,
+      "w_ok": true,
+      "expected_L_over_Omega": 0.0,
+      "got_L_over_Omega": -1.888304134773475e-17,
+      "ratio_ok": true,
+      "real_period": 9.96085024342022,
+      "torsion_bound": 1
+    }
+  ],
+  "conductor_selected_by_the_functional_equation": {
+    "candidates": [
+      {
+        "N": 174,
+        "best_w": 1,
+        "residual": 0.020852672597392763
+      },
+      {
+        "N": 348,
+        "best_w": 1,
+        "residual": 0.012869299447008986
+      },
+      {
+        "N": 696,
+        "best_w": 1,
+        "residual": 7.282778402339929e-06
+      },
+      {
+        "N": 1044,
+        "best_w": 1,
+        "residual": 0.004815636284562386
+      },
+      {
+        "N": 1392,
+        "best_w": 1,
+        "residual": 0.006445573891108669
+      },
+      {
+        "N": 2088,
+        "best_w": 1,
+        "residual": 0.006456601146803909
+      },
+      {
+        "N": 4176,
+        "best_w": 1,
+        "residual": 0.0024690414482186895
+      }
+    ],
+    "selected": {
+      "N": 696,
+      "best_w": 1,
+      "residual": 7.282778402339929e-06
+    },
+    "runner_up": {
+      "N": 4176,
+      "best_w": 1,
+      "residual": 0.0024690414482186895
+    },
+    "separation": 339.02465677458974,
+    "meaning": "the functional equation only closes with the right conductor, so this verifies N = 696 without Tate's algorithm"
+  },
+  "anchor": {
+    "label": "696.e1 / 696b1",
+    "a_invariants": [
+      0,
+      1,
+      0,
+      8,
+      -16
+    ],
+    "conductor_used": 696,
+    "discriminant": -178176,
+    "bad_primes": [
+      {
+        "prime": 2,
+        "smooth_points": 2,
+        "type": "additive",
+        "a_p": 0
+      },
+      {
+        "prime": 3,
+        "smooth_points": 2,
+        "type": "split multiplicative",
+        "a_p": 1
+      },
+      {
+        "prime": 29,
+        "smooth_points": 30,
+        "type": "non-split multiplicative",
+        "a_p": -1
+      }
+    ],
+    "root_number": 1,
+    "root_number_evidence": {
+      "candidates": {
+        "1": 1.068630093568064,
+        "-1": 0.9428654447433833
+      },
+      "dirichlet_series": 1.0686373763464663,
+      "residual": 7.282778402339929e-06,
+      "gap_to_the_other_sign": 0.12577193160308298
+    },
+    "real_period": 1.6317277400715688,
+    "L_at_1": 1.631727740071569,
+    "analytic_rank_is_zero": true,
+    "torsion_bound_gcd": 1,
+    "tamagawa": {
+      "2": {
+        "c_p": null,
+        "from": "additive — needs Tate's algorithm"
+      },
+      "3": {
+        "c_p": 1,
+        "from": "v_p(Δ), split"
+      },
+      "29": {
+        "c_p": 1,
+        "from": "gcd(2, v_p(Δ)), non-split"
+      }
+    },
+    "product_of_known_tamagawa": 1,
+    "L_over_Omega": 1.0000000000000002,
+    "residual_unknown_factor": 1.0000000000000002
+  },
+  "bsd_at_rank_zero": {
+    "formula": "L(E,1)/Ω = #Ш · ∏c_p / #E(Q)_tors²  when the rank is 0",
+    "L_over_Omega": 1.0000000000000002,
+    "torsion": 1,
+    "c_3_times_c_29": 1,
+    "c_2_times_Sha": 1.0000000000000002,
+    "reading": "with trivial torsion and c_3 = c_29 = 1, the measured ratio forces c_2 · #Ш = 1; both are positive integers, so c_2 = 1 and Ш is trivial. This is a consistency reading under the BSD formula that Creutz–Miller supplies for this curve, not an independent proof of either factor"
+  },
+  "not_computed_here": {
+    "c_2": "the reduction at 2 is additive and its Tamagawa number needs Tate's algorithm, which this gate does not implement",
+    "Sha": "not computed; only the product c_2·#Ш is measured"
+  },
+  "ok": true
+}
