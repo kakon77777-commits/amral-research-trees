@@ -1,0 +1,34 @@
+{
+  "gate": "src04_curve_arithmetic_recompute",
+  "source_table": "D:\\我的研究\\學術討論\\論文\\數學\\BSD\\BSD_Phase1_Banwait_Huang_Exact_Census_v0.5_2026-08-12\\inputs\\metadata\\old_base_curve_arithmetic.json",
+  "provenance_of_the_table": "ecdata allcurves/alllabels extraction and exact integer discriminant factor valuations",
+  "ecdata_commit": "25cec5ecfec8b9f016eb1631ac633194c2bed39f",
+  "arithmetic": "exact integers throughout; no floating point",
+  "counts": {
+    "curves_in_table": 40749,
+    "discriminants_recomputed": 40749,
+    "discriminant_mismatches": 0,
+    "valuations_recomputed": 135787,
+    "valuation_mismatches": 0,
+    "conductor_prime_divisibility_checks": 135787,
+    "conductor_primes_not_dividing_the_discriminant": 0,
+    "isogeny_classes_seen": 40749,
+    "isogeny_classes_with_more_than_one_rank": 0,
+    "isogeny_classes_with_more_than_one_curve": 0,
+    "labels_that_did_not_parse": 0,
+    "records_with_no_readable_rank": 0
+  },
+  "discriminant_mismatches": [],
+  "valuation_mismatches": [],
+  "conductor_primes_not_dividing_the_discriminant": [],
+  "isogeny_classes_with_more_than_one_rank": {},
+  "isogeny_class_size_distribution": {
+    "1": 40749
+  },
+  "check_4_verdict": "VACUOUS",
+  "why_check_4_is_vacuous_here": "this table is the census's BASE curves — one representative per isogeny class, every label ending in 1 — so no class holds two curves and none could have disagreed. Zero split classes is therefore not evidence that rank is constant on a class; it is the shape of the table. Testing doc 01 §6 needs a table carrying the whole class.",
+  "what_check_4_tests": "Phase 0 doc 01 §6 asserts rank is constant across an isogeny class. Cremona labels carry the class, so this is measured on every class present rather than assumed.",
+  "one_direction_only": "check 3 tests that every conductor prime divides the discriminant, which is a theorem. The converse is false — a prime can divide Δ with good reduction after a change of model — so it is not checked and its absence is not a gap.",
+  "ok": true,
+  "checks_that_carried_evidence": 3
+}
