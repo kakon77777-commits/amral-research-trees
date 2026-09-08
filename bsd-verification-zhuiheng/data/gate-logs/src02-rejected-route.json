@@ -1,0 +1,326 @@
+{
+  "gate": "src02_rejected_route_recurrence",
+  "verdict_audited": "Phase 0 doc 05: archive as exploratory analogy; do not use as Phase 1 proof route",
+  "what_a_hit_means": "a mention is not a violation. Doc 05 itself keeps four engineering ideas from the rejected route and says so. This gate reports where to look, with the line, and refuses to call a hit a defect — that judgement needs reading, and is made in the report, not here.",
+  "counts": {
+    "documents_scanned": 85,
+    "route_signal_hits_total": 61,
+    "hits_inside_the_audit_itself": 21,
+    "hits_outside_the_audit": 40,
+    "documents_outside_the_audit_with_a_hit": 8,
+    "GR_condition_mentions_outside_the_audit": 0,
+    "GR_conditions_claimed_met_anywhere": 0
+  },
+  "documents_outside_the_audit_with_a_hit": {
+    "p5/BSD_P5_Anomalous_Norm_Localization_389a1_p11_v1.1.md": [
+      "grid/lattice object"
+    ],
+    "p5/BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md": [
+      "grid/lattice object"
+    ],
+    "p5/BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md": [
+      "grid/lattice object"
+    ],
+    "p5/BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md": [
+      "grid/lattice object",
+      "lattice L-function",
+      "the a -> 0 limit"
+    ],
+    "p5/P5_E1_ETNC_ESCAPE_AUDIT.md": [
+      "grid/lattice object"
+    ],
+    "phase0/00_README.md": [
+      "grid/lattice object"
+    ],
+    "phase0/04_External_Route_Matrix.md": [
+      "grid/lattice object"
+    ],
+    "phase0/08_Local_Agent_Handoff_Prompts.md": [
+      "grid/lattice object"
+    ]
+  },
+  "hits_outside_the_audit": [
+    {
+      "subline": "phase0",
+      "name": "00_README.md",
+      "signal": "grid/lattice object",
+      "line_no": 20,
+      "line": "5. 審計 Neo.K 舊稿中的「格點秩收斂」主張；"
+    },
+    {
+      "subline": "phase0",
+      "name": "04_External_Route_Matrix.md",
+      "signal": "grid/lattice object",
+      "line_no": 13,
+      "line": "| 格點秩收斂 | 理論上想連 rank 與 zero order | 低 | 隱藏 equality、離散量不連續 | 紅燈 |"
+    },
+    {
+      "subline": "phase0",
+      "name": "08_Local_Agent_Handoff_Prompts.md",
+      "signal": "grid/lattice object",
+      "line_no": 124,
+      "line": "審計 Neo.K 舊格點／PRC 稿與 BSD 的關係。"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_Anomalous_Norm_Localization_389a1_p11_v1.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 135,
+      "line": "Burns--Kurihara--Sano impose, in their Hypothesis 2.2(iii), the condition that the chosen prime $p$ not divide the relevant reduction orders. Under that conditi"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_Anomalous_Norm_Localization_389a1_p11_v1.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 367,
+      "line": "Equivalently, the two anomalous ramified directions together separate the full rank-$2$ Mordell--Weil lattice modulo $11$."
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_Anomalous_Norm_Localization_389a1_p11_v1.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 471,
+      "line": "This last statement concerns the original restricted-lattice setup; it must not be confused with the symmetric regulator on the full $11$-adic Mordell--Weil lat"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_Anomalous_Norm_Localization_389a1_p11_v1.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 537,
+      "line": "Construct an integral anomalous finite Bockstein/extended-height regulator for the rank-$2$ Mordell--Weil lattice and the ramification set"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_Anomalous_Norm_Localization_389a1_p11_v1.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 603,
+      "line": "Role: classical Mazur--Tate pairing, restricted lattice $E^S(\\mathbb Q)$, Bockstein reinterpretation, and the non-anomalous Hypothesis 2.2 used by their main co"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+      "signal": "grid/lattice object",
+      "line_no": 273,
+      "line": "Let $x_1,\\ldots,x_r$ be a basis of the free Mordell--Weil lattice, with $r=2$. BKS define a Bockstein regulator"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+      "signal": "grid/lattice object",
+      "line_no": 401,
+      "line": "5. if $R_\\omega^{\\mathrm{Boc}}\\neq0$ and the rank-$2$ Generalized Perrin--Riou equality holds for $(E,11)$, then the classical $11$-part BSD lattice equality $\\"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+      "signal": "grid/lattice object",
+      "line_no": 458,
+      "line": "2. attack the rank-$2$ GPR equality, or prove a weaker one-prime lattice version sufficient for $\\mathrm{P5\\!\\!-LAT}_{11}$."
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+      "signal": "grid/lattice object",
+      "line_no": 19,
+      "line": "Second, the full Generalized Perrin--Riou equality is stronger than is needed for a single-prime BSD statement. Once the v0.5 Iwasawa/Bockstein hypotheses are f"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+      "signal": "grid/lattice object",
+      "line_no": 23,
+      "line": "Thus the project frontier is no longer ``rank-$2$ BSD'' in bulk. For $(389.a1,11)$ it is the two-bit lattice problem"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+      "signal": "grid/lattice object",
+      "line_no": 143,
+      "line": "be its distinguished integral $\\mathbb Z_{11}$-lattice."
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+      "signal": "grid/lattice object",
+      "line_no": 239,
+      "line": "The v0.5 IMC/BKS branch identifies the arithmetic determinant lattice with the lattice generated by $\\kappa_\\infty$, up to a unit. The nonvanishing of $R_{11}$ "
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+      "signal": "grid/lattice object",
+      "line_no": 252,
+      "line": "The theorem is a **reduction theorem**, not a proof of the remaining lattice equality. Its role is to remove unnecessary information: the exact scalar required "
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+      "signal": "grid/lattice object",
+      "line_no": 469,
+      "line": "3. the remaining one-prime target is equivalent to a unit-level lattice comparison;"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 17,
+      "line": "本文整理一條針對橢圓曲線 Birch–Swinnerton-Dyer 猜想（BSD）的全域研究路線。研究的出發點不是再次重述 BSD，而是將近年的 rank-$0/1$ Iwasawa、zeta element、$p$-part BSD、quadratic-twist family theorem 與可算法化證書工作，"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 56,
+      "line": "接著證明兩個方法論 no-go。第一，任何對全體橢圓曲線的 faithful positive atomic compression 雖可把全域量詞壓成單一非負量，但「缺陷量為零」本身仍需要新的算術消失機制；量詞壓縮不是證明複雜度崩塌。第二，函數近似或格點極限不保持零點重數：即使 $f_a\\to f_0$ 極好地收斂，"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 99,
+      "line": "- 普通 grid/function convergence 不保證 order-of-vanishing stabilization；"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 728,
+      "line": "# 9. Grid / continuum route 的 multiplicity no-go"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 730,
+      "line": "舊有格點化思路可能試圖："
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 802,
+      "line": "任何 grid-BSD proof 若要從："
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 818,
+      "line": "類似地，若定義某種 grid rank："
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 834,
+      "line": "因此舊 grid route 的 gap 不是 computation precision，而是 missing stabilization theorem。"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 923,
+      "line": "其中 integral lattice 應能記錄："
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 1020,
+      "line": "相對於 canonical Mordell–Weil lattice 的 index。"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 1030,
+      "line": "落入 canonical integral arithmetic determinant lattice，且其 generator/index relation exactly 對應 $p$-primary Selmer complex。"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 1040,
+      "line": "> zeta object 在正確的 arithmetic determinant lattice 中生成 BSD/ETNC 所預測的 integral line。"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 1042,
+      "line": "因此非平凡 $\\Sha$、Tamagawa factors 與 torsion 可以作為 lattice/index data 出現。"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "grid/lattice object",
+      "line_no": 1669,
+      "line": "| grid convergence $\\Rightarrow$ multiplicity stabilization | FALSE IN GENERAL | 有明確反例 |"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "the a -> 0 limit",
+      "line_no": 784,
+      "line": "uniformly as $a\\to0$。"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "lattice L-function",
+      "line_no": 733,
+      "line": "L_a(E,s)\\to L(E,s)"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "lattice L-function",
+      "line_no": 739,
+      "line": "\\operatorname{ord}_{s=1}L_a(E,s)"
+    },
+    {
+      "subline": "p5",
+      "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+      "signal": "lattice L-function",
+      "line_no": 805,
+      "line": "L_a(E,s)\\to L(E,s)"
+    },
+    {
+      "subline": "p5",
+      "name": "P5_E1_ETNC_ESCAPE_AUDIT.md",
+      "signal": "grid/lattice object",
+      "line_no": 19,
+      "line": "The first escape question is whether a proved equivariant Tamagawa number conjecture or determinant-line theorem can place this scalar in a rational lattice **w"
+    },
+    {
+      "subline": "p5",
+      "name": "P5_E1_ETNC_ESCAPE_AUDIT.md",
+      "signal": "grid/lattice object",
+      "line_no": 33,
+      "line": "integral zeta-element lattice       THEOREM TECHNOLOGY AVAILABLE"
+    },
+    {
+      "subline": "p5",
+      "name": "P5_E1_ETNC_ESCAPE_AUDIT.md",
+      "signal": "grid/lattice object",
+      "line_no": 94,
+      "line": "\\text{ with the Neron--Tate lattice identified}."
+    },
+    {
+      "subline": "p5",
+      "name": "P5_E1_ETNC_ESCAPE_AUDIT.md",
+      "signal": "grid/lattice object",
+      "line_no": 98,
+      "line": "A proof of `P5-DERPER` with an integral lattice immediately implies the required algebraicity/rationality gate and may also yield an effective denominator bound"
+    },
+    {
+      "subline": "p5",
+      "name": "P5_E1_ETNC_ESCAPE_AUDIT.md",
+      "signal": "grid/lattice object",
+      "line_no": 117,
+      "line": "2. a Bockstein regulator theorem identifying the determinant lattice with the classical Néron--Tate regulator in rank $2$;"
+    }
+  ],
+  "GR_conditions_claimed_met": [],
+  "ok": true
+}

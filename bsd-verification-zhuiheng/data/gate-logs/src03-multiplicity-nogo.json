@@ -1,0 +1,81 @@
+{
+  "gate": "src03_multiplicity_nogo",
+  "subject": "Phase 0 doc 05 §3, and the counterexample supplied later by p5/BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1 §9.1",
+  "counterexample": "f_a(z) = z^2 + a z = z (z + a)",
+  "arithmetic": "exact rationals throughout; no floating point. The claim is about an integer-valued order and a limit, and a float would answer a different question",
+  "measured": [
+    {
+      "a": "1",
+      "order_at_0": 1,
+      "roots": [
+        "0",
+        "-1"
+      ],
+      "roots_inside_disc_radius_r": 1,
+      "sup_norm_difference_from_f0_on_|z|<=1": "1"
+    },
+    {
+      "a": "1/10",
+      "order_at_0": 1,
+      "roots": [
+        "0",
+        "-1/10"
+      ],
+      "roots_inside_disc_radius_r": 1,
+      "sup_norm_difference_from_f0_on_|z|<=1": "1/10"
+    },
+    {
+      "a": "1/1000",
+      "order_at_0": 1,
+      "roots": [
+        "0",
+        "-1/1000"
+      ],
+      "roots_inside_disc_radius_r": 2,
+      "sup_norm_difference_from_f0_on_|z|<=1": "1/1000"
+    },
+    {
+      "a": "1/1000000",
+      "order_at_0": 1,
+      "roots": [
+        "0",
+        "-1/1000000"
+      ],
+      "roots_inside_disc_radius_r": 2,
+      "sup_norm_difference_from_f0_on_|z|<=1": "1/1000000"
+    },
+    {
+      "a": "1/1000000000000",
+      "order_at_0": 1,
+      "roots": [
+        "0",
+        "-1/1000000000000"
+      ],
+      "roots_inside_disc_radius_r": 2,
+      "sup_norm_difference_from_f0_on_|z|<=1": "1/1000000000000"
+    },
+    {
+      "a": "-1/1000000",
+      "order_at_0": 1,
+      "roots": [
+        "0",
+        "1/1000000"
+      ],
+      "roots_inside_disc_radius_r": 2,
+      "sup_norm_difference_from_f0_on_|z|<=1": "1/1000000"
+    }
+  ],
+  "order_of_the_limit_f0": 2,
+  "checks": {
+    "order_at_0_is_1_for_every_a_nonzero": true,
+    "order_at_0_of_the_limit_is_2": true,
+    "so_the_order_does_not_converge": true,
+    "neighbourhood_count_is_2_for_every_small_a": true,
+    "neighbourhood_count_equals_the_limit_order": true,
+    "uniform_convergence_bound_is_|a|*R_and_tends_to_0": true
+  },
+  "what_the_source_states": "the order of vanishing at a point is not preserved by ordinary uniform convergence — confirmed exactly here",
+  "what_this_gate_adds": "the zero COUNT in a fixed neighbourhood IS preserved: f_a has roots 0 and -a, both inside |z| < r once |a| < r, so the count is 2 for every such a and equals the limit's order at the point. That is Hurwitz, and it is why doc 05's remedy list asks for analytic control in a NEIGHBOURHOOD of s=1 rather than at s=1. The failure is not imprecision — a method that measures the neighbourhood and reports the point is wrong at infinite precision.",
+  "not_a_claim_about_L_functions": "this is a polynomial in one variable. It refutes the general inference, which is all doc 05 and §9.1 claim it does. Whether any particular L_a behaves this way is a separate question neither document asserts.",
+  "ok": true
+}
