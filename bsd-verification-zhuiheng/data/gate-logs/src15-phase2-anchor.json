@@ -131,6 +131,9 @@
     },
     "real_period": 1.6317277400715688,
     "L_at_1": 1.631727740071569,
+    "terms_used": 20000,
+    "first_dropped_term_scale": 0.0,
+    "L_at_1_converged": true,
     "analytic_rank_is_zero": true,
     "torsion_bound_gcd": 1,
     "tamagawa": {

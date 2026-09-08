@@ -243,12 +243,28 @@ def root_number(a, N: int, limit: int):
                "gap_to_the_other_sign": abs(cand[-w] - direct)}
 
 
-def l_value_at_one(a, N: int, w: int, limit: int = 600) -> float:
+def truncation_scale(N: int, terms: int) -> float:
+    """exp(−2π·M/√N) — the size of the first dropped term of the L(1) sum."""
+    return math.exp(-2 * math.pi * terms / math.sqrt(N))
+
+
+def l_value_at_one(a, N: int, w: int, limit: int | None = None):
+    """L(E,1) for w = +1, or None when the available terms do not converge.
+
+    The number of terms needed grows like √N, so a fixed limit silently
+    under-converges once the conductor is large: at N ≈ 1.2 × 10⁶ a 600-term
+    sum drops a first term of size 0.03. The guard is on the quantity that
+    actually matters — the size of the first dropped term — and returns None
+    rather than a number when it is not small.
+    """
     if w != 1:
         return 0.0
+    M = (len(a) - 1) if limit is None else min(limit, len(a) - 1)
+    if truncation_scale(N, M) > 1e-14:
+        return None
     rN = math.sqrt(N)
     return 2.0 * sum(a[n] / n * math.exp(-2 * math.pi * n / rN)
-                     for n in range(1, limit + 1) if a[n])
+                     for n in range(1, M + 1) if a[n])
 
 
 def torsion_bound(ainvs, N: int) -> int:
@@ -268,6 +284,7 @@ def analyse(label: str, ainvs, N: int, limit: int = TERMS) -> dict:
     w, wdata = root_number(a, N, limit)
     omega = real_period(ainvs)
     L1 = l_value_at_one(a, N, w)
+    tail = truncation_scale(N, limit)
     tors = torsion_bound(ainvs, N)
     _b2, _b4, _b6, _b8, disc = b_invariants(ainvs)
     tamagawa = {}
@@ -289,7 +306,7 @@ def analyse(label: str, ainvs, N: int, limit: int = TERMS) -> dict:
     prod_known = 1
     for c in known:
         prod_known *= c
-    ratio = L1 / omega if omega else None
+    ratio = (L1 / omega) if (omega and L1 is not None) else None
     return {
         "label": label, "a_invariants": ainvs, "conductor_used": N,
         "discriminant": disc,
@@ -297,7 +314,10 @@ def analyse(label: str, ainvs, N: int, limit: int = TERMS) -> dict:
         "root_number": w, "root_number_evidence": wdata,
         "real_period": omega,
         "L_at_1": L1,
-        "analytic_rank_is_zero": w == 1 and abs(L1) > 1e-9,
+        "terms_used": limit,
+        "first_dropped_term_scale": tail,
+        "L_at_1_converged": L1 is not None,
+        "analytic_rank_is_zero": w == 1 and L1 is not None and abs(L1) > 1e-9,
         "torsion_bound_gcd": tors,
         "tamagawa": tamagawa,
         "product_of_known_tamagawa": prod_known,

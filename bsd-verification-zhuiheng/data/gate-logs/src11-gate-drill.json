@@ -7,7 +7,9 @@
     "src12_p5_localization",
     "src13_algorithm2_twists",
     "src14_globalizer_faithfulness",
-    "src15_phase2_anchor"
+    "src15_phase2_anchor",
+    "src16_twist_family_lvalues",
+    "src17_family_prime_router"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -36,7 +38,12 @@
     "globalizer-exact": true,
     "anchor-11a1": true,
     "anchor-rank-one": true,
-    "E1-vs-mpmath": true
+    "E1-vs-mpmath": true,
+    "kronecker": true,
+    "family-root-number": true,
+    "family-ordinary": true,
+    "twist-model": true,
+    "membership-in-P": true
   },
   "defects": [
     {
@@ -267,7 +274,9 @@
       "checks_that_went_red": [
         "cubic-discriminant",
         "frobenius-pinning",
-        "density-1-over-24"
+        "density-1-over-24",
+        "family-ordinary",
+        "membership-in-P"
       ],
       "caught_by_the_named_check": true
     },
@@ -278,7 +287,9 @@
       "checks_that_went_red": [
         "cubic-discriminant",
         "frobenius-pinning",
-        "density-1-over-24"
+        "density-1-over-24",
+        "family-ordinary",
+        "membership-in-P"
       ],
       "caught_by_the_named_check": true
     },
@@ -287,7 +298,9 @@
       "kind": "code",
       "named_check": "density-1-over-24",
       "checks_that_went_red": [
-        "density-1-over-24"
+        "density-1-over-24",
+        "family-ordinary",
+        "membership-in-P"
       ],
       "caught_by_the_named_check": true
     },
@@ -441,7 +454,8 @@
       "kind": "code",
       "named_check": "E1-vs-mpmath",
       "checks_that_went_red": [
-        "E1-vs-mpmath"
+        "E1-vs-mpmath",
+        "family-root-number"
       ],
       "caught_by_the_named_check": true
     },
@@ -451,7 +465,8 @@
       "named_check": "E1-vs-mpmath",
       "checks_that_went_red": [
         "anchor-rank-one",
-        "E1-vs-mpmath"
+        "E1-vs-mpmath",
+        "family-root-number"
       ],
       "caught_by_the_named_check": true
     },
@@ -507,6 +522,34 @@
       "named_check": "anchor-11a1",
       "checks_that_went_red": [
         "anchor-11a1"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "Kronecker symbol drops its 3,5 mod 8 sign rule at the prime 2",
+      "kind": "code",
+      "named_check": "kronecker",
+      "checks_that_went_red": [
+        "kronecker"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "Kronecker symbol drops the reciprocity sign flip",
+      "kind": "code",
+      "named_check": "kronecker",
+      "checks_that_went_red": [
+        "kronecker",
+        "family-root-number"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the twist uses d instead of d^2 on a4",
+      "kind": "code",
+      "named_check": "twist-model",
+      "checks_that_went_red": [
+        "twist-model"
       ],
       "caught_by_the_named_check": true
     },
@@ -663,14 +706,24 @@
       "control": "rational-root theorem forgets the denominator 3, which decides nothing here",
       "checks_that_went_red": [],
       "undisturbed": true
+    },
+    {
+      "control": "twisted coefficients swap chi's arguments, which d = 1 mod 4 makes equal",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "membership drops the (q/29) condition, which the other two imply",
+      "checks_that_went_red": [],
+      "undisturbed": true
     }
   ],
   "totals": {
-    "defects": 59,
-    "caught_by_the_named_check": 59,
+    "defects": 62,
+    "caught_by_the_named_check": 62,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 14,
+    "controls": 16,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

@@ -1,0 +1,363 @@
+{
+  "gate": "src16_twist_family_lvalues",
+  "subject": "29_Theorem_Note_v1.0 Theorem 1.1 part (2): L(E^(q),1) ≠ 0 for every q in P — untested when RUN-009 verified part (1)",
+  "why_the_first_two_conditions_of_P_exist": "w(E^(d)) = w(E)·χ_d(−N) with N = 696 and w(E) = +1 gives w(E^(q)) = (−696/q) = (−1/q)(2/q)(3/q)(29/q). q ≡ 1 (mod 24) makes the first three symbols 1, and (q/29) = 1 makes the fourth 1 by reciprocity. The first two conditions hold the root number at +1; the third, f₂ irreducible mod q, is the Zhai inertness condition and does not touch the sign",
+  "twisting_relation_checked": [
+    {
+      "d": 5,
+      "n_checked": 200,
+      "agrees_off_the_twisting_prime": true,
+      "sample": {
+        "2": [
+          0,
+          0
+        ],
+        "3": [
+          -1,
+          -1
+        ],
+        "5": [
+          0,
+          0
+        ],
+        "7": [
+          -1,
+          -1
+        ],
+        "11": [
+          -2,
+          -2
+        ],
+        "13": [
+          -4,
+          -4
+        ]
+      }
+    },
+    {
+      "d": 13,
+      "n_checked": 200,
+      "agrees_off_the_twisting_prime": true,
+      "sample": {
+        "2": [
+          0,
+          0
+        ],
+        "3": [
+          1,
+          1
+        ],
+        "5": [
+          3,
+          3
+        ],
+        "7": [
+          -1,
+          -1
+        ],
+        "11": [
+          2,
+          2
+        ],
+        "13": [
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "root_number_formula_measured": [
+    {
+      "d": 5,
+      "conductor": 17400,
+      "measured_w": 1,
+      "predicted_w": 1,
+      "agrees": true,
+      "residual": 4.461657012178044e-06,
+      "gap_to_the_other_sign": 0.008322513879361115,
+      "L_at_1": 0.7297308295144272
+    },
+    {
+      "d": 13,
+      "conductor": 117624,
+      "measured_w": -1,
+      "predicted_w": -1,
+      "agrees": true,
+      "residual": 1.3277608043260614e-05,
+      "gap_to_the_other_sign": 0.00985318135179325,
+      "L_at_1": 0.0
+    },
+    {
+      "d": 17,
+      "conductor": 201144,
+      "measured_w": 1,
+      "predicted_w": 1,
+      "agrees": true,
+      "residual": 1.2179960170888293e-05,
+      "gap_to_the_other_sign": 0.007772585080106698,
+      "L_at_1": 3.5617689659464293
+    },
+    {
+      "d": 37,
+      "conductor": 952824,
+      "measured_w": 1,
+      "predicted_w": 1,
+      "agrees": true,
+      "residual": 2.16946174491639e-06,
+      "gap_to_the_other_sign": 0.007761661955002497,
+      "L_at_1": 0.26825438802582535
+    },
+    {
+      "d": 41,
+      "conductor": 1169976,
+      "measured_w": 1,
+      "predicted_w": 1,
+      "agrees": true,
+      "residual": 2.3174456857066872e-05,
+      "gap_to_the_other_sign": 0.0018092426326412614,
+      "L_at_1": 0.25483305954497076
+    }
+  ],
+  "every_member_has_root_number_plus_one": {
+    "members_below_20000": 87,
+    "members": [
+      241,
+      313,
+      457,
+      673,
+      937,
+      1009,
+      1153,
+      1753,
+      2017,
+      2089,
+      2113,
+      2137,
+      2617,
+      2713,
+      3049,
+      3457,
+      3529,
+      3769,
+      3793,
+      4201,
+      4297,
+      4441,
+      4801,
+      5113,
+      5233,
+      5569,
+      5689,
+      5857,
+      5881,
+      6529,
+      6577,
+      6961,
+      7129,
+      7321,
+      7417,
+      7681,
+      8017,
+      8329,
+      8353,
+      8377,
+      8521,
+      8641,
+      9049,
+      9337,
+      9769,
+      10273,
+      10369,
+      10729,
+      11113,
+      11833,
+      11953,
+      12073,
+      12289,
+      12457,
+      12553,
+      12697,
+      12841,
+      12889,
+      13249,
+      13513,
+      13681,
+      14281,
+      14449,
+      14593,
+      14737,
+      14929,
+      15073,
+      15241,
+      15313,
+      15601,
+      15937,
+      16033,
+      16057,
+      16249,
+      16273,
+      16369,
+      16633,
+      16729,
+      16993,
+      18097,
+      18121,
+      18217,
+      18457,
+      18553,
+      18793,
+      19753,
+      19777
+    ],
+    "all_have_w_plus_1": true,
+    "signs": {
+      "241": 1,
+      "313": 1,
+      "457": 1,
+      "673": 1,
+      "937": 1,
+      "1009": 1,
+      "1153": 1,
+      "1753": 1,
+      "2017": 1,
+      "2089": 1,
+      "2113": 1,
+      "2137": 1,
+      "2617": 1,
+      "2713": 1,
+      "3049": 1,
+      "3457": 1,
+      "3529": 1,
+      "3769": 1,
+      "3793": 1,
+      "4201": 1,
+      "4297": 1,
+      "4441": 1,
+      "4801": 1,
+      "5113": 1,
+      "5233": 1,
+      "5569": 1,
+      "5689": 1,
+      "5857": 1,
+      "5881": 1,
+      "6529": 1,
+      "6577": 1,
+      "6961": 1,
+      "7129": 1,
+      "7321": 1,
+      "7417": 1,
+      "7681": 1,
+      "8017": 1,
+      "8329": 1,
+      "8353": 1,
+      "8377": 1,
+      "8521": 1,
+      "8641": 1,
+      "9049": 1,
+      "9337": 1,
+      "9769": 1,
+      "10273": 1,
+      "10369": 1,
+      "10729": 1,
+      "11113": 1,
+      "11833": 1,
+      "11953": 1,
+      "12073": 1,
+      "12289": 1,
+      "12457": 1,
+      "12553": 1,
+      "12697": 1,
+      "12841": 1,
+      "12889": 1,
+      "13249": 1,
+      "13513": 1,
+      "13681": 1,
+      "14281": 1,
+      "14449": 1,
+      "14593": 1,
+      "14737": 1,
+      "14929": 1,
+      "15073": 1,
+      "15241": 1,
+      "15313": 1,
+      "15601": 1,
+      "15937": 1,
+      "16033": 1,
+      "16057": 1,
+      "16249": 1,
+      "16273": 1,
+      "16369": 1,
+      "16633": 1,
+      "16729": 1,
+      "16993": 1,
+      "18097": 1,
+      "18121": 1,
+      "18217": 1,
+      "18457": 1,
+      "18553": 1,
+      "18793": 1,
+      "19753": 1,
+      "19777": 1
+    }
+  },
+  "L_values": [
+    {
+      "d": 241,
+      "conductor": 40424376,
+      "sqrt_N": 6358.016671887547,
+      "predicted_root_number": 1,
+      "terms_available": 46000,
+      "first_dropped_term_scale": 1.8095963942870594e-20,
+      "L_at_1": 0.1051088236249152,
+      "L_converged": true,
+      "real_period": 0.10510882362491536,
+      "L_over_Omega": 0.9999999999999986,
+      "omega_matches_base_over_sqrt_d": true,
+      "torsion_bound": 1,
+      "reduction_types": {
+        "2": "additive",
+        "3": "split multiplicative",
+        "29": "non-split multiplicative"
+      },
+      "c_q_times_Sha": 0.9999999999999986,
+      "c_q_in_1_2_4_and_Sha_a_square": [
+        {
+          "c_q": 1,
+          "Sha": 1,
+          "Sha_is_a_square": true
+        }
+      ],
+      "reading": "with trivial torsion and c_2 = c_3 = c_29 = 1 unchanged by the twist, L/Ω = c_q · #Ш; additive reduction bounds c_q in {1,2,4} and Cassels makes #Ш a square, which together leave the listed factorisations"
+    },
+    {
+      "d": 313,
+      "conductor": 68186424,
+      "sqrt_N": 8257.507129878848,
+      "predicted_root_number": 1,
+      "terms_available": 46000,
+      "first_dropped_term_scale": 6.294607781624876e-16,
+      "L_at_1": 4.519304541603226,
+      "L_converged": true,
+      "real_period": 0.09223070493067811,
+      "L_over_Omega": 48.999999999999986,
+      "omega_matches_base_over_sqrt_d": true,
+      "torsion_bound": 1,
+      "reduction_types": {
+        "2": "additive",
+        "3": "split multiplicative",
+        "29": "non-split multiplicative"
+      },
+      "c_q_times_Sha": 48.999999999999986,
+      "c_q_in_1_2_4_and_Sha_a_square": [
+        {
+          "c_q": 1,
+          "Sha": 49,
+          "Sha_is_a_square": true
+        }
+      ],
+      "reading": "with trivial torsion and c_2 = c_3 = c_29 = 1 unchanged by the twist, L/Ω = c_q · #Ш; additive reduction bounds c_q in {1,2,4} and Cassels makes #Ш a square, which together leave the listed factorisations"
+    }
+  ],
+  "coefficient_limit": 46000,
+  "ok": true
+}

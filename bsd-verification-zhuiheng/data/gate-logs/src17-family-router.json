@@ -1,0 +1,277 @@
+{
+  "gate": "src17_family_prime_router",
+  "automatic_ordinary": {
+    "claim": "q ∈ 𝒫 ⟹ a_q(E) is odd ⟹ q is good ordinary for E",
+    "primes_tested": 2259,
+    "a_p_odd_exactly_when_f2_is_irreducible": true,
+    "counterexamples": [],
+    "density_of_odd_a_p": 0.3289065958388668,
+    "chebotarev_prediction": 0.3333333333333333,
+    "why_that_matters": "if a_p were odd for every p the derivation would be true and empty; the mod-2 image is all of S₃, so odd a_p has density 1/3 and the condition is doing real work",
+    "members_of_P_below_scan": 87,
+    "all_members_have_odd_a_q": true,
+    "all_members_are_ordinary": true,
+    "members": [
+      {
+        "q": 241,
+        "a_q": -7,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 313,
+        "a_q": -21,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 457,
+        "a_q": 27,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 673,
+        "a_q": -5,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 937,
+        "a_q": 7,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 1009,
+        "a_q": 21,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 1153,
+        "a_q": 47,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 1753,
+        "a_q": 63,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 2017,
+        "a_q": 41,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 2089,
+        "a_q": 29,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 2113,
+        "a_q": -37,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 2137,
+        "a_q": 79,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 2617,
+        "a_q": 21,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 2713,
+        "a_q": -31,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 3049,
+        "a_q": 79,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 3457,
+        "a_q": 33,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 3529,
+        "a_q": 1,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 3769,
+        "a_q": -91,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 3793,
+        "a_q": 45,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 4201,
+        "a_q": 61,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 4297,
+        "a_q": -87,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 4441,
+        "a_q": 3,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 4801,
+        "a_q": -73,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 5113,
+        "a_q": 41,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 5233,
+        "a_q": -23,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 5569,
+        "a_q": -109,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 5689,
+        "a_q": 77,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 5857,
+        "a_q": -35,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 5881,
+        "a_q": 37,
+        "a_q_odd": true,
+        "ordinary": true
+      },
+      {
+        "q": 6529,
+        "a_q": -53,
+        "a_q_odd": true,
+        "ordinary": true
+      }
+    ]
+  },
+  "second_condition_is_implied": {
+    "claim": "𝒫's condition (q/29) = 1 is implied by q ≡ 1 (mod 24) together with f₂ irreducible mod q",
+    "derivation": "f₂ irreducible ⟹ Frobenius is a 3-cycle ⟹ Frob ∈ A₃ ⟹ (disc(f₂)/q) = 1; squarefree part of disc(f₂) is −174 = (−6)·29 and q ≡ 1 (mod 24) gives (−6/q) = 1, so (29/q) = 1",
+    "primes_q_equiv_1_mod_24_below": 200000,
+    "cross_tabulation": {
+      "f2_irreducible=False, (q/29)=1 is False": 1097,
+      "f2_irreducible=False, (q/29)=1 is True": 355,
+      "f2_irreducible=True, (q/29)=1 is True": 760
+    },
+    "irreducible_but_non_residue": 0,
+    "counterexamples": [],
+    "condition_is_redundant": true,
+    "P_f2_irreducible_given_first_condition": 0.3435804701627486,
+    "consequence_for_the_density": "RUN-009 read δ(𝒫) = (1/8)·(1/2)·(2/3); with the redundancy the same number is (1/8)·(1/3), where the 1/3 already contains the 1/2 that the second condition was supplying. The density is unchanged and the derivation is one step shorter",
+    "not_an_error": "the set 𝒫 is the same either way — the theorem states three conditions where two determine the set"
+  },
+  "explicit_numbers": {
+    "document_states_a_241": -7,
+    "recomputed_a_241": -7,
+    "agrees": true,
+    "241_mod_24": 1,
+    "241_mod_29": 9,
+    "241_mod_29_is_a_square": true,
+    "f2_irreducible_mod_241": true,
+    "241_is_in_P": true
+  },
+  "all_prime_router_exhaustion": {
+    "curve": "E^(241)",
+    "conductor": 40424376,
+    "odd_primes_below": 3000,
+    "classes": {
+      "multiplicative at 3": 1,
+      "good ordinary": 422,
+      "good supersingular": 4,
+      "multiplicative at 29": 1,
+      "p = q, additive": 1
+    },
+    "total_classified": 429,
+    "unclassified": [],
+    "exhaustion_holds": true,
+    "note": "every odd prime below the scan falls in exactly one of the four classes the router names; p = 2 is outside its scope"
+  },
+  "no_rational_prime_degree_isogeny": {
+    "j": "24334/87",
+    "degrees_checked": [
+      {
+        "n": 2,
+        "decided": true,
+        "has_rational_isogeny": false
+      },
+      {
+        "n": 3,
+        "decided": true,
+        "has_rational_isogeny": false
+      },
+      {
+        "n": 5,
+        "decided": true,
+        "has_rational_isogeny": false
+      },
+      {
+        "n": 7,
+        "decided": true,
+        "has_rational_isogeny": false
+      }
+    ],
+    "degrees_not_checked": [
+      11,
+      13,
+      17,
+      19,
+      37,
+      43,
+      67,
+      163
+    ],
+    "none_of_the_checked_degrees_occurs": true,
+    "scope": "Mazur allows prime degrees 2, 3, 5, 7, 11, 13, 17, 19, 37, 43, 67, 163; the X₀(n) method here is built for the genus-0 cases it was validated on, so eight of the twelve are not covered and are named rather than passed over"
+  },
+  "ok": true
+}

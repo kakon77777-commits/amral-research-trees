@@ -1,4 +1,4 @@
-"""Drill for gates 04-10, 12-15 — plant a defect, demand the named check catch it.
+"""Drill for gates 04-10, 12-17 — plant a defect, demand the named check catch it.
 
 數學戰士「墜衡」 / AMRAL Research Lab.
 
@@ -97,6 +97,8 @@ import src06_three_isogeny_sieve as iso6                 # noqa: E402
 import src07_isogeny_reducibility_sieve as red7          # noqa: E402
 import src14_globalizer_faithfulness as glob14           # noqa: E402
 import src15_phase2_anchor as anchor15                   # noqa: E402
+import src16_twist_family_lvalues as fam16               # noqa: E402
+import src17_family_prime_router as route17              # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -441,6 +443,96 @@ def check_E1_against_an_independent_implementation() -> bool:
     return True
 
 
+def check_kronecker() -> bool:
+    """The Kronecker symbol, against a fixed table and against sympy.
+
+    The table was written by hand first and one entry was wrong — (6/35) is −1,
+    not +1, because 6 ≡ −1 (mod 7) and 7 ≡ 3 (mod 4). The gate's implementation
+    was right and the expectation was not. Both halves are kept: the table so
+    the drill needs no dependency, and the sympy comparison because a
+    hand-written table is exactly the thing that was wrong once.
+    """
+    cases = {(5, 11): 1, (11, 5): 1, (-1, 5): 1, (-1, 7): -1, (2, 7): 1,
+             (2, 5): -1, (-696, 241): 1, (-696, 13): -1, (3, 11): 1,
+             (6, 35): -1, (0, 1): 1, (5, 25): 0, (-3, 7): 1, (7, 15): -1,
+             (-696, 5): 1,
+             # every n above is odd, so the prime-2 branch of the symbol was
+             # untested until these were added and a mutation to it went unseen
+             (3, 8): -1, (5, 8): -1, (7, 8): 1, (3, 4): 1, (-1, 4): 1,
+             (5, 12): -1, (7, 24): 1}
+    if not all(fam16.kronecker(a, n) == v for (a, n), v in cases.items()):
+        return False
+    try:
+        from sympy import kronecker_symbol
+    except ImportError:                                   # pragma: no cover
+        return True
+    return all(fam16.kronecker(a, n) == int(kronecker_symbol(a, n))
+               for (a, n) in cases)
+
+
+def check_family_root_number() -> bool:
+    """w(E^d) = w(E)·χ_d(−696) on twists whose sign is measurable numerically.
+
+    d = 13 is the load-bearing one: it predicts −1, and a formula that always
+    returned +1 would agree with the other four.
+    """
+    base = fam16.base_coefficients(30000)
+    for d, want in ((5, 1), (13, -1), (17, 1), (37, 1), (41, 1)):
+        if fam16.kronecker(-fam16.BASE_N, d) != want:
+            return False
+        a = fam16.twisted_coefficients(base[:30001], d)
+        w, _ = anchor15.root_number(a, fam16.BASE_N * d * d, 30000)
+        if w != want:
+            return False
+    return True
+
+
+def check_twist_model() -> bool:
+    """The twisted model itself, which the root-number check never touches.
+
+    E^(d) = [0, a₂d, 0, a₄d², a₆d³] scales the discriminant by exactly d⁶ and
+    the real period by 1/√d. Nothing in `family-root-number` reads the model —
+    it works off character-multiplied coefficients — so a wrong power of d on a₄
+    was invisible there.
+    """
+    base_disc = anchor15.b_invariants(fam16.BASE)[4]
+    base_omega = anchor15.real_period(fam16.BASE)
+    for d in (5, 13, 241):
+        inv = fam16.twist(fam16.BASE, d)
+        if anchor15.b_invariants(inv)[4] != base_disc * d ** 6:
+            return False
+        if abs(anchor15.real_period(inv) - base_omega / math.sqrt(d)) > 1e-9:
+            return False
+    return True
+
+
+def check_membership_in_P() -> bool:
+    """𝒫's three conditions, by the members they actually select below 4,000."""
+    members = [q for q in anchor15.sieve(4000) if fam16.in_P(q)]
+    return members == [241, 313, 457, 673, 937, 1009, 1153, 1753, 2017, 2089,
+                       2113, 2137, 2617, 2713, 3049, 3457, 3529, 3769, 3793]
+
+
+def check_family_ordinary() -> bool:
+    """a_p(696.e1) is odd exactly when f₂ is irreducible mod p — and not always.
+
+    The second half matters: an argument that a_q is odd for q ∈ 𝒫 is worth
+    nothing if a_p is odd for every p. Measured density is 0.3289 against
+    Chebotarev's 1/3.
+    """
+    base = fam16.base_coefficients(4000)
+    odd = tested = 0
+    for p in anchor15.sieve(4000):
+        if p <= 3 or fam16.BASE_N % p == 0:
+            continue
+        tested += 1
+        is_odd = base[p] % 2 != 0
+        odd += is_odd
+        if is_odd != (ph2.cubic_root_count(ph2.F2, p) == 0):
+            return False
+    return tested > 200 and 0.25 < odd / tested < 0.42
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -463,6 +555,11 @@ CHECKS = {
     "anchor-11a1": check_anchor_11a1,
     "anchor-rank-one": check_anchor_rank_one,
     "E1-vs-mpmath": check_E1_against_an_independent_implementation,
+    "kronecker": check_kronecker,
+    "family-root-number": check_family_root_number,
+    "family-ordinary": check_family_ordinary,
+    "twist-model": check_twist_model,
+    "membership-in-P": check_membership_in_P,
 }
 
 
@@ -658,6 +755,16 @@ DEFECTS = [
     ("torsion bound includes primes of bad reduction", "code", "anchor-11a1",
      lambda: patch(anchor15, "torsion_bound", _torsion_with_bad_primes)),
 
+    # ---- gates 16 and 17 -----------------------------------------------------
+    ("Kronecker symbol drops its 3,5 mod 8 sign rule at the prime 2", "code",
+     "kronecker", lambda: patch(fam16, "kronecker", _kronecker_no_two_rule)),
+    ("Kronecker symbol drops the reciprocity sign flip", "code", "kronecker",
+     lambda: patch(fam16, "kronecker", _kronecker_no_reciprocity)),
+    ("the twist uses d instead of d^2 on a4", "code", "twist-model",
+     lambda: patch(fam16, "twist",
+                   lambda inv, d: [0, inv[1] * d, 0, inv[3] * d,
+                                   inv[4] * d ** 3])),
+
     # ---- gates 04-07, undrilled until now ------------------------------------
     ("discriminant: the -27*b6^2 term becomes -26*b6^2", "code", "disc-formula",
      lambda: patch(arith4, "discriminant",
@@ -732,10 +839,76 @@ CONTROLS = [
     # be caught through the verdict, which is all the gate exposes.
     ("rational-root theorem forgets the denominator 3, which decides nothing here",
      lambda: patch(iso6, "rational_root_exists", _root_exists_v1_only)),
+    # A fourth no-op, and this one is a fact about the family rather than about
+    # a curve: every twisting discriminant here is ≡ 1 (mod 4), and Kronecker
+    # reciprocity makes (d/n) = (n/d) for exactly those d. Swapping the
+    # arguments cannot change a coefficient anywhere this gate looks.
+    ("twisted coefficients swap chi's arguments, which d = 1 mod 4 makes equal",
+     lambda: patch(fam16, "twisted_coefficients",
+                   lambda base, d: [0] + [fam16.kronecker(n, abs(d)) * base[n]
+                                          for n in range(1, len(base))])),
+    # And a fifth, which is a statement about the theorem rather than the code:
+    # 𝒫's second condition is IMPLIED by its first and third. f₂ irreducible
+    # mod q puts Frobenius in A₃, so (disc(f₂)/q) = 1; disc(f₂) has squarefree
+    # part −174 = (−6)·29, and q ≡ 1 (mod 24) already gives (−6/q) = 1. Hence
+    # (29/q) = 1 comes for free. Measured over every prime q ≡ 1 (mod 24) below
+    # 200,000: 760 have f₂ irreducible and every one of them has (q/29) = 1,
+    # with the opposite cell empty. Dropping the condition cannot change the
+    # membership of 𝒫, so this belongs here rather than in the defect list.
+    ("membership drops the (q/29) condition, which the other two imply",
+     lambda: patch(fam16, "in_P", _in_P_no_29)),
 ]
 
 
 _true_mass_exact = glob14.mass_exact
+_true_kron = fam16.kronecker
+
+
+def _kronecker_no_two_rule(a, n):
+    if n <= 0:
+        raise ValueError
+    result = 1
+    while n % 2 == 0:
+        n //= 2
+        if a % 2 == 0:
+            return 0                       # the 3,5 mod 8 flip dropped
+    a %= n
+    while a:
+        while a % 2 == 0:
+            a //= 2
+            if n % 8 in (3, 5):
+                result = -result
+        a, n = n, a
+        if a % 4 == 3 and n % 4 == 3:
+            result = -result
+        a %= n
+    return result if n == 1 else 0
+
+
+def _kronecker_no_reciprocity(a, n):
+    if n <= 0:
+        raise ValueError
+    result = 1
+    while n % 2 == 0:
+        n //= 2
+        if a % 2 == 0:
+            return 0
+        if a % 8 in (3, 5):
+            result = -result
+    a %= n
+    while a:
+        while a % 2 == 0:
+            a //= 2
+            if n % 8 in (3, 5):
+                result = -result
+        a, n = n, a                        # the 3,3 mod 4 flip dropped
+        a %= n
+    return result if n == 1 else 0
+
+
+def _in_P_no_29(q):
+    return (q % 24 == 1 and q != 29
+            and ph2.cubic_root_count(ph2.F2, q) == 0)
 _true_L1 = anchor15.l_value_at_one
 _true_period = anchor15.real_period
 _true_bad_prime = anchor15.bad_prime_data
@@ -1116,7 +1289,9 @@ def main() -> int:
                    "src12_p5_localization",
                    "src13_algorithm2_twists",
                    "src14_globalizer_faithfulness",
-                   "src15_phase2_anchor"],
+                   "src15_phase2_anchor",
+                   "src16_twist_family_lvalues",
+                   "src17_family_prime_router"],
         "rule": ("a planted defect must be caught by the check NAMED for it, "
                  "not merely by some check; and controls must disturb nothing"),
         "two_kinds": {
