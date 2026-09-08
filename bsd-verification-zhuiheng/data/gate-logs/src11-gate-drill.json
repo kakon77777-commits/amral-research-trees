@@ -1,0 +1,341 @@
+{
+  "gate": "src11_gate_drill",
+  "covers": [
+    "src08_modular_curve_confirmation",
+    "src09_kept_curves_removal_gate",
+    "src10_phase2_density_and_base"
+  ],
+  "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
+  "two_kinds": {
+    "code": "break the gate's own arithmetic, demand a check notice",
+    "data": "hand a validating check the bad input it exists to reject — a validator that has only seen good data has not been tested either"
+  },
+  "positive_control_on_the_drill": "replacing f2 with x^3+x+1, whose quadratic resolvent Q(sqrt-31) is NOT inside Q(zeta24, sqrt29), must make the pinning check go red — otherwise gate 10's 'zero violations over 79,204 primes' would be indistinguishable from a check that cannot fire",
+  "baseline_all_green": {
+    "x0n-self-check": true,
+    "x0n-hard-fixture": true,
+    "disc-valuations": true,
+    "partition": true,
+    "cubic-discriminant": true,
+    "frobenius-pinning": true,
+    "reduction-type": true,
+    "factorisation": true,
+    "uv-pairs-agree": true,
+    "density-1-over-24": true
+  },
+  "defects": [
+    {
+      "defect": "X0(3) constant 27 becomes 26",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "X0(3) cube becomes a square",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "X0(3) pole order 1 becomes 2",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "X0(5) coefficient 250 becomes 205",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "X0(5) constant 3125 becomes 3120",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "X0(5) pole order 5 becomes 4",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "X0(7) coefficient 13 becomes 31",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "X0(7) constant 2401 becomes 2400",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "X0(2) constant 256 becomes 255",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "X0(2) pole order 2 becomes 3",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "j-invariant: a1a3a4 term in b8 flips sign",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "search window narrowed below what a real root needs",
+      "kind": "code",
+      "named_check": "x0n-self-check",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "candidate budget cut to zero: 'none found' replaces 'not finished'",
+      "kind": "code",
+      "named_check": "x0n-hard-fixture",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "factorisation drops its large cofactor instead of returning None",
+      "kind": "code",
+      "named_check": "x0n-hard-fixture",
+      "checks_that_went_red": [
+        "x0n-self-check",
+        "x0n-hard-fixture",
+        "factorisation"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "nth_root off by one, so the no-factoring fallback misses",
+      "kind": "code",
+      "named_check": "uv-pairs-agree",
+      "checks_that_went_red": [
+        "uv-pairs-agree"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "primality test always says prime, corrupting every factorisation",
+      "kind": "code",
+      "named_check": "factorisation",
+      "checks_that_went_red": [
+        "factorisation"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "valuation exponent wrong by one",
+      "kind": "data",
+      "named_check": "disc-valuations",
+      "checks_that_went_red": [
+        "disc-valuations"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a prime of the discriminant omitted",
+      "kind": "data",
+      "named_check": "disc-valuations",
+      "checks_that_went_red": [
+        "disc-valuations"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a prime that does not divide the discriminant added",
+      "kind": "data",
+      "named_check": "disc-valuations",
+      "checks_that_went_red": [
+        "disc-valuations"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "valuations absent entirely",
+      "kind": "data",
+      "named_check": "disc-valuations",
+      "checks_that_went_red": [
+        "disc-valuations"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "kept and removed overlap",
+      "kind": "data",
+      "named_check": "partition",
+      "checks_that_went_red": [
+        "partition"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a base curve in neither kept nor removed",
+      "kind": "data",
+      "named_check": "partition",
+      "checks_that_went_red": [
+        "partition"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a kept label absent from the base",
+      "kind": "data",
+      "named_check": "partition",
+      "checks_that_went_red": [
+        "partition"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "cubic discriminant formula: 18abcd term dropped",
+      "kind": "code",
+      "named_check": "cubic-discriminant",
+      "checks_that_went_red": [
+        "cubic-discriminant",
+        "frobenius-pinning",
+        "density-1-over-24"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "f2 replaced by x^3+x+1, whose resolvent escapes Q(zeta24, sqrt29)",
+      "kind": "code",
+      "named_check": "frobenius-pinning",
+      "checks_that_went_red": [
+        "cubic-discriminant",
+        "frobenius-pinning",
+        "density-1-over-24"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "x^q computed without the squaring step",
+      "kind": "code",
+      "named_check": "density-1-over-24",
+      "checks_that_went_red": [
+        "density-1-over-24"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "singular point never subtracted from the point count",
+      "kind": "code",
+      "named_check": "reduction-type",
+      "checks_that_went_red": [
+        "reduction-type"
+      ],
+      "caught_by_the_named_check": true
+    }
+  ],
+  "controls": [
+    {
+      "control": "search window widened",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "candidate budget raised",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "different random seed for the factorisation",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "rho budget raised",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "label-file header length re-read as the same value",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "valuations given in a different key order",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "partition sets given as different objects with the same members",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "no change at all",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    }
+  ],
+  "totals": {
+    "defects": 27,
+    "caught_by_the_named_check": 27,
+    "UNCAUGHT_BY_ANY_CHECK": [],
+    "CAUGHT_BY_THE_WRONG_CHECK": [],
+    "controls": 8,
+    "controls_that_disturbed_a_check": []
+  },
+  "state_restored_afterwards": true,
+  "ok": true
+}

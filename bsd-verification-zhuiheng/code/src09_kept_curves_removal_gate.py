@@ -85,6 +85,34 @@ def discriminant(ainvs: list[int]) -> int:
     return -b2 * b2 * b8 - 8 * b4 ** 3 - 27 * b6 * b6 + 9 * b2 * b4 * b6
 
 
+def verify_discriminant_valuations(rec: dict) -> tuple[bool, int, list[int]]:
+    """Does ∏ p^{v_p} reproduce the Δ computed from this record's a-invariants?
+
+    Returns (agrees, rebuilt, usable_primes). On disagreement the prime list
+    comes back empty: an unverified factorisation must not be used as one.
+    """
+    disc = discriminant(rec["ainvs"])
+    vals = rec.get("discriminant_valuations") or {}
+    rebuilt = 1
+    for p, e in vals.items():
+        rebuilt *= int(p) ** int(e)
+    agrees = rebuilt == abs(disc)
+    return agrees, rebuilt, ([int(p) for p in vals] if agrees else [])
+
+
+def verify_partition(kept: set, removed: set, old: set) -> dict:
+    """kept ⊔ removed = old base, recomputed rather than read."""
+    return {
+        "kept": len(kept),
+        "removed": len(removed),
+        "old_base": len(old),
+        "overlap": len(kept & removed),
+        "union_equals_old_base": (kept | removed) == old,
+        "arithmetic_present_for_every_kept_curve": kept <= old,
+        "ok": (not (kept & removed)) and (kept | removed) == old and kept <= old,
+    }
+
+
 def read_kept_labels() -> list[str]:
     out = []
     with KEPT_LABELS.open(encoding="utf-8") as fh:
@@ -117,19 +145,10 @@ def main() -> int:
     recs = json.loads(x0n.ARITH.read_text(encoding="utf-8"))["records"]
     old = {r["curve_label"]: r for r in recs}
 
-    partition = {
-        "kept_labels_read": len(kept_list),
-        "kept_labels_unique": len(kept) == len(kept_list),
-        "removed_rows": len(removed),
-        "old_base_records": len(old),
-        "kept_and_removed_overlap": len(kept & removed),
-        "kept_union_removed_equals_old_base": (kept | removed) == set(old),
-        "arithmetic_present_for_every_kept_curve": kept <= set(old),
-    }
-    if not (partition["kept_labels_unique"]
-            and partition["kept_and_removed_overlap"] == 0
-            and partition["kept_union_removed_equals_old_base"]
-            and partition["arithmetic_present_for_every_kept_curve"]):
+    partition = verify_partition(kept, removed, set(old))
+    partition["kept_labels_read"] = len(kept_list)
+    partition["kept_labels_unique"] = len(kept) == len(kept_list)
+    if not (partition["ok"] and partition["kept_labels_unique"]):
         raise SystemExit(f"partition is not what the package describes: "
                          f"{json.dumps(partition, indent=2)}")
     print(f"  partition: {len(kept):,} kept ⊔ {len(removed):,} removed = "
@@ -160,21 +179,16 @@ def main() -> int:
         if is_kept and abs(inv[2]) == 3:
             a3_hits.append({"label": label, "a3": inv[2]})
 
-        disc = discriminant(inv)
-        vals = rec.get("discriminant_valuations") or {}
-        rebuilt = 1
-        for p, e in vals.items():
-            rebuilt *= int(p) ** int(e)
-        primes = [int(p) for p in vals]
-        if rebuilt == abs(disc):
+        agrees, rebuilt, primes = verify_discriminant_valuations(rec)
+        if agrees:
             disc_val_ok += 1
         else:
             disc_val_bad += 1
             if len(disc_val_disagreements) < 20:
                 disc_val_disagreements.append(
-                    {"label": label, "computed_abs_disc": str(abs(disc)),
+                    {"label": label,
+                     "computed_abs_disc": str(abs(discriminant(inv))),
                      "rebuilt_from_valuations": str(rebuilt)})
-            primes = []                       # do not use an unverified set
 
         j = x0n.j_invariant(inv)
         if j is None:

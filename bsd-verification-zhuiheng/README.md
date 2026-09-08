@@ -80,14 +80,33 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 
 * **Recompute; never re-run their script.** A bundle's own verifier passing
   shows the bundle is self-consistent, not that it is right.
-* **Every gate gets a mutation drill**, and a planted defect must be caught by
+* **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment.
+  been green is indistinguishable from a comment. **Position as of RUN-010:
+  `src08`, `src09`, `src10` are drilled — 27 defects, 27 caught by the named
+  check, 8 controls undisturbed. `src00`–`src07` are not.** This line read
+  "every gate" for nine rounds while the tree had none; it is narrowed to what
+  is true rather than the gap being left unsaid.
 * **Controls, or the drill measures nothing.** Something that must not trip.
 * **`unmeasured` is a verdict.** A check that could not run has no result, and
   reporting one would be worse than not checking.
 * **Numbers are emitted, never typed.** Any figure in a report traces to an
   archived gate log.
+
+## Rounds
+
+| round | subject | gate | headline |
+| --- | --- | --- | --- |
+| [001](./reports/RUN-001-CORPUS-IDENTITY.md) | where the corpus actually lives | `src00` | 85 curated docs on the site, 292 in the tree; four locations reconciled by content hash |
+| [002](./reports/RUN-002-LADDER-VOCABULARY.md) | certificate-ladder vocabulary | `src01` | rung usage across all 85 documents |
+| [003](./reports/RUN-003-REJECTED-ROUTE.md) | the route Phase 0 rejected | `src02` | the lattice-point rank idea does not recur after its own audit |
+| [004](./reports/RUN-004-CURVE-ARITHMETIC.md) | 40,749 discriminants, 135,787 valuations | `src04` | recomputed; the fourth check reported **vacuous** rather than passed |
+| [005](./reports/RUN-005-FROBENIUS-AT-THREE.md) | `a₃` over `F₃`, all 4,062 removed curves | `src05` | a bucket was holding two kinds of number |
+| [006](./reports/RUN-006-THREE-ISOGENY.md) | the 3-isogeny column | `src06` | 4,062 of 4,062, and two errors of mine caught by a second derivation |
+| [007](./reports/RUN-007-FIVE-AND-SEVEN-ISOGENY.md) | the 5- and 7-isogeny columns | `src07`, `src08` | all 12,186 determinations decided both ways via `X₀(n)`; zero disagreements |
+| [008](./reports/RUN-008-KEPT-CURVES.md) | the 36,687 curves the census **kept** | `src09` | the direction the census's own checks are blind to; and the base is two populations |
+| [009](./reports/RUN-009-PHASE2-DENSITY.md) | Phase 2 Theorem 1.1(1) | `src10` | the density is `1/24`; the obvious answer `1/48` is wrong |
+| [010](./reports/RUN-010-GATE-DRILL.md) | **this arm's own gates** | `src11` | 27 defects / 27 caught by the named check — after the first run caught only 24 |
 
 ## Layout
 

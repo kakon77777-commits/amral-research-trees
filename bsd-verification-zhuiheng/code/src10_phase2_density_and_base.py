@@ -153,13 +153,25 @@ def legendre(a: int, p: int) -> int:
     return 1 if pow(a, (p - 1) // 2, p) == 1 else -1
 
 
+def cubic_discriminant(f: list[int]) -> int:
+    """Discriminant of a cubic given ascending as [d, c, b, a] for ax^3+bx^2+cx+d."""
+    d, c, b, a = f
+    return (18 * a * b * c * d - 4 * b ** 3 * d + b * b * c * c
+            - 4 * a * c ** 3 - 27 * a * a * d * d)
+
+
 def cubic_root_count(f4: list[int], q: int) -> int:
-    """Number of distinct roots of the monic cubic f4 in F_q, for q ∤ disc."""
+    """Number of distinct roots of the monic cubic f4 in F_q, for q ∤ disc.
+
+    The discriminant is derived from f4 rather than pinned to a constant: a
+    hard-coded −11136 would keep agreeing with itself if the polynomial were
+    ever changed, which is the shape of an error a gate cannot catch.
+    """
     f = [c % q for c in f4[:3]]
     xq = x_pow_q(f, q)
     if xq == [0, 1, 0]:                   # x^q ≡ x  ⇒  splits completely
         return 3
-    return 0 if legendre(-11136, q) == 1 else 1
+    return 0 if legendre(cubic_discriminant(f4), q) == 1 else 1
 
 
 def sieve(n: int):
@@ -169,6 +181,50 @@ def sieve(n: int):
         if flags[i]:
             flags[i * i::i] = bytearray(len(flags[i * i::i]))
     return flags
+
+
+def scan(limit: int, verbose: bool = False) -> dict:
+    """Walk the primes below `limit`, testing the pinning and the density.
+
+    The pinning is the falsifiable half: for q ≡ 1 (mod 24) with (q/29) = 1,
+    Frobenius is confined to A3, so f2 mod q has 0 or 3 roots and never 1.
+    """
+    flags = sieve(limit)
+    primes_total = cond12 = in_P = 0
+    root_counts = {0: 0, 1: 0, 3: 0}
+    violations = []
+    checkpoints = []
+    marks = [m for m in (10 ** 5, 10 ** 6, 10 ** 7) if m < limit] + [limit]
+    mark_i = 0
+
+    for q in range(2, limit + 1):
+        if not flags[q]:
+            continue
+        primes_total += 1
+        if q % 24 == 1 and q != 29 and legendre(29, q) == 1:
+            cond12 += 1
+            r = cubic_root_count(F2, q)
+            root_counts[r] = root_counts.get(r, 0) + 1
+            if r == 1 and len(violations) < 20:
+                violations.append({"q": q, "roots": r})
+            if r == 0:
+                in_P += 1
+        while mark_i < len(marks) and q >= marks[mark_i]:
+            x = marks[mark_i]
+            checkpoints.append({
+                "x": x, "primes_up_to_x": primes_total, "in_P": in_P,
+                "empirical_density": in_P / primes_total,
+                "times_24": in_P / primes_total * 24,
+                "times_48": in_P / primes_total * 48,
+            })
+            mark_i += 1
+            if verbose:
+                print(f"    x = {x:>12,}   |P|/pi(x) = {in_P/primes_total:.6f}"
+                      f"   x24 = {in_P/primes_total*24:.4f}"
+                      f"   x48 = {in_P/primes_total*48:.4f}", file=sys.stderr)
+    return {"primes_total": primes_total, "cond12": cond12, "in_P": in_P,
+            "root_counts": root_counts, "violations": violations,
+            "checkpoints": checkpoints}
 
 
 def main() -> int:
@@ -214,8 +270,7 @@ def main() -> int:
 
     # ---- the cubic and the entanglement ----------------------------------
     d_f2 = -11136
-    recomputed = (18 * 1 * 1 * 8 * (-16) - 4 * 1 ** 3 * (-16) + 1 * 64
-                  - 4 * 8 ** 3 - 27 * (-16) ** 2)
+    recomputed = cubic_discriminant(F2)
     sqfree, m = 1, abs(d_f2)
     for p, e in factor_small(d_f2).items():
         if e % 2:
@@ -239,41 +294,13 @@ def main() -> int:
     assert cubic["formula_agrees"], "cubic discriminant formula disagrees"
 
     # ---- the prediction, and the density ---------------------------------
-    flags = sieve(LIMIT)
-    primes_total = 0
-    cond12 = 0                       # q ≡ 1 mod 24 and (q/29) = 1
-    in_P = 0
-    root_counts = {0: 0, 1: 0, 3: 0}
-    violations = []
-    checkpoints, marks = [], [10 ** k for k in (5, 6, 7)] + [LIMIT]
-    mark_i = 0
-
-    for q in range(2, LIMIT + 1):
-        if not flags[q]:
-            continue
-        primes_total += 1
-        if q % 24 == 1 and q != 29 and legendre(29, q) == 1:
-            cond12 += 1
-            r = cubic_root_count(F2, q)
-            root_counts[r] = root_counts.get(r, 0) + 1
-            if r == 1 and len(violations) < 20:
-                violations.append({"q": q, "roots": r})
-            if r == 0:
-                in_P += 1
-        while mark_i < len(marks) and q >= marks[mark_i]:
-            x = marks[mark_i]
-            checkpoints.append({
-                "x": x, "primes_up_to_x": primes_total,
-                "in_P": in_P,
-                "empirical_density": in_P / primes_total,
-                "times_24": in_P / primes_total * 24,
-                "times_48": in_P / primes_total * 48,
-            })
-            mark_i += 1
-            print(f"    x = {x:>12,}   |P|/π(x) = {in_P/primes_total:.6f}"
-                  f"   ×24 = {in_P/primes_total*24:.4f}"
-                  f"   ×48 = {in_P/primes_total*48:.4f}", file=sys.stderr)
-
+    scan_result = scan(LIMIT, verbose=True)
+    primes_total = scan_result["primes_total"]
+    cond12 = scan_result["cond12"]
+    in_P = scan_result["in_P"]
+    root_counts = scan_result["root_counts"]
+    violations = scan_result["violations"]
+    checkpoints = scan_result["checkpoints"]
     density = in_P / primes_total
     log = {
         "gate": "src10_phase2_density_and_base",
