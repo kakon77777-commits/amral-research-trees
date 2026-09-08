@@ -13,6 +13,13 @@
     "results": [
       {
         "curve": "11a1",
+        "n": 2,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "11a1",
         "n": 3,
         "expected": false,
         "got": false,
@@ -37,6 +44,15 @@
       },
       {
         "curve": "14a1",
+        "n": 2,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-32768/343"
+        ]
+      },
+      {
+        "curve": "14a1",
         "n": 3,
         "expected": true,
         "got": true,
@@ -55,6 +71,45 @@
       {
         "curve": "14a1",
         "n": 7,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "15a1",
+        "n": 2,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-36864/625",
+          "225",
+          "102400/81"
+        ]
+      },
+      {
+        "curve": "15a1",
+        "n": 3,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "15a1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "15a1",
+        "n": 7,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26a1",
+        "n": 2,
         "expected": false,
         "got": false,
         "t": []
@@ -85,6 +140,13 @@
       },
       {
         "curve": "26b1",
+        "n": 2,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26b1",
         "n": 3,
         "expected": false,
         "got": false,
@@ -104,6 +166,15 @@
         "got": true,
         "t": [
           "-98/13"
+        ]
+      },
+      {
+        "curve": "49a1",
+        "n": 2,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-4096"
         ]
       },
       {
@@ -128,6 +199,13 @@
         "t": [
           "-7"
         ]
+      },
+      {
+        "curve": "37a1",
+        "n": 2,
+        "expected": false,
+        "got": false,
+        "t": []
       },
       {
         "curve": "37a1",

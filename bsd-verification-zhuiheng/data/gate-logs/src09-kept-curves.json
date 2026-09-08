@@ -1,0 +1,413 @@
+{
+  "gate": "src09_kept_curves_removal_gate",
+  "claim_under_test": "Algorithm 1 removes a base curve for a rational 3/5/7-isogeny or for |a₃| = 3, and reports 0 unexplained removals — so every one of the 36,687 curves it KEPT must fail both conditions",
+  "why_this_direction_matters": "the removed curves carry rows saying why; the kept ones carry nothing. A missed isogeny wrongly keeps a curve, and the package's own algorithm1_all_removed_explained check is structurally blind to it — it audits only what was removed",
+  "partition_recomputed_here": {
+    "kept_labels_read": 36687,
+    "kept_labels_unique": true,
+    "removed_rows": 4062,
+    "old_base_records": 40749,
+    "kept_and_removed_overlap": 0,
+    "kept_union_removed_equals_old_base": true,
+    "arithmetic_present_for_every_kept_curve": true
+  },
+  "discriminant_valuations_cross_check": {
+    "policy": "den(j) divides Δ and for a minimal model Δ's primes are the conductor's, so the package's discriminant_valuations makes a 48-digit denominator factorable without any search — but only after ∏p^v is reconstructed and compared to the Δ this gate computes from the a-invariants itself",
+    "agree": 40749,
+    "disagree": 0,
+    "disagreements": [],
+    "curves_needing_a_general_factorisation_instead": 0
+  },
+  "self_check": {
+    "results": [
+      {
+        "curve": "11a1",
+        "n": 2,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "11a1",
+        "n": 3,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "11a1",
+        "n": 5,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-1375",
+          "-11"
+        ]
+      },
+      {
+        "curve": "11a1",
+        "n": 7,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "14a1",
+        "n": 2,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-32768/343"
+        ]
+      },
+      {
+        "curve": "14a1",
+        "n": 3,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-729/28",
+          "-64/7"
+        ]
+      },
+      {
+        "curve": "14a1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "14a1",
+        "n": 7,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "15a1",
+        "n": 2,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-36864/625",
+          "225",
+          "102400/81"
+        ]
+      },
+      {
+        "curve": "15a1",
+        "n": 3,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "15a1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "15a1",
+        "n": 7,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26a1",
+        "n": 2,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26a1",
+        "n": 3,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-729/26",
+          "-8/13"
+        ]
+      },
+      {
+        "curve": "26a1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26a1",
+        "n": 7,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26b1",
+        "n": 2,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26b1",
+        "n": 3,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26b1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26b1",
+        "n": 7,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-98/13"
+        ]
+      },
+      {
+        "curve": "49a1",
+        "n": 2,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-4096"
+        ]
+      },
+      {
+        "curve": "49a1",
+        "n": 3,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "49a1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "49a1",
+        "n": 7,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-7"
+        ]
+      },
+      {
+        "curve": "37a1",
+        "n": 2,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "37a1",
+        "n": 3,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "37a1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "37a1",
+        "n": 7,
+        "expected": false,
+        "got": false,
+        "t": []
+      }
+    ]
+  },
+  "counts": {
+    "kept_curves": 36687,
+    "isogeny_determinations_attempted": 110061,
+    "KEPT_BUT_HAS_A_RATIONAL_ISOGENY": {
+      "n=3": 0,
+      "n=5": 0,
+      "n=7": 0
+    },
+    "confirmed_no_isogeny": {
+      "n=3": 36687,
+      "n=5": 36687,
+      "n=7": 36687
+    },
+    "undecided_search_cut": {
+      "n=3": 0,
+      "n=5": 0,
+      "n=7": 0
+    },
+    "set_aside_j_is_0_or_1728": 0,
+    "KEPT_BUT_ABS_A3_IS_3": 0
+  },
+  "kept_but_has_isogeny": {
+    "n=3": [],
+    "n=5": [],
+    "n=7": []
+  },
+  "undecided": {
+    "n=3": [],
+    "n=5": [],
+    "n=7": []
+  },
+  "set_aside": [],
+  "base_selection_criterion_no_2_torsion": {
+    "claim": "37,002 of the 40,749 base curves carry source \"Zha16_no_2_tors\". A rational 2-isogeny is exactly a rational 2-torsion point, and X₀(2) decides it by the same complete method — so the label is testable, over the whole base rather than only the kept part",
+    "by_source": {
+      "Zha16_no_2_tors": {
+        "curves": 37002,
+        "has_2_torsion": 0,
+        "undecided": 0
+      },
+      "CLZ20": {
+        "curves": 3747,
+        "has_2_torsion": 3747,
+        "undecided": 0
+      }
+    },
+    "hits": [
+      {
+        "label": "100018a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "121265324086473/51209216"
+      },
+      {
+        "label": "10002c1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "115714886617/320064"
+      },
+      {
+        "label": "100221c1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "18631754641032625/1996979292297"
+      },
+      {
+        "label": "100226b1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "126816226147521/3207232"
+      },
+      {
+        "label": "100373a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "424072554697/1304849"
+      },
+      {
+        "label": "100482a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "125849416792897/3215424"
+      },
+      {
+        "label": "1005a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "2912566550041/254390625"
+      },
+      {
+        "label": "100631a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "18087890625/10364993"
+      },
+      {
+        "label": "100645a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "8253429989329/503225"
+      },
+      {
+        "label": "1006b1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "52734375/32192"
+      },
+      {
+        "label": "100717c1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "61023377953/2920793"
+      },
+      {
+        "label": "100722a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "66256721246332425817/17109576843264"
+      },
+      {
+        "label": "101013a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "389544809526937/225407378097"
+      },
+      {
+        "label": "1011b1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "57066625/3033"
+      },
+      {
+        "label": "101605b1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "6149609290161/317515625"
+      },
+      {
+        "label": "101714a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "148077869117625/833241088"
+      },
+      {
+        "label": "101778a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "127848872932633/52110336"
+      },
+      {
+        "label": "10178e1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "54254852261793/21344813056"
+      },
+      {
+        "label": "101811a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "16665604298979270882625/86263300616001273"
+      },
+      {
+        "label": "101874a1",
+        "source": "CLZ20",
+        "kept": true,
+        "j": "95059184908866625/7510966272"
+      }
+    ]
+  },
+  "kept_but_abs_a3_is_3": [],
+  "ok": true
+}

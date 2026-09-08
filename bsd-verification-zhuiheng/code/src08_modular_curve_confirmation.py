@@ -95,8 +95,15 @@ def polypow(a: list[int], k: int) -> list[int]:
     return out
 
 
-# N(t) ascending, and m = the pole order at t = 0.
+# N(t) ascending, and m = the pole order at t = 0. N(0) is a pure power of n in
+# every row — 2²⁴, 3⁶, 5¹⁵, 7¹⁴ — which is what makes the denominator bound work.
+#
+# n = 2 is here for the base's own selection criterion rather than the census's
+# removal gate. It is sound for the same reason: E[2] is unchanged by a quadratic
+# twist (χ_d lands in {±1}, and −1 = +1 in F₂), so a rational 2-isogeny — which
+# for order 2 is exactly a rational 2-torsion point — again depends only on j.
 PARAM: dict[int, tuple[list[int], int]] = {
+    2: (polypow([256, 1], 3), 2),
     3: (polymul([27, 1], polypow([3, 1], 3)), 1),
     5: (polypow([3125, 250, 1], 3), 5),
     7: (polymul([49, 13, 1], polypow([2401, 245, 1], 3)), 7),
@@ -179,6 +186,24 @@ def _rho(v: int) -> int | None:
     return None
 
 
+def factorise_over(v: int, primes) -> dict[int, int] | None:
+    """Factorisation of v > 0 over a supplied prime set, or None if v does not
+    factor completely over it.
+
+    den(j) divides the discriminant, and for a minimal model the primes of the
+    discriminant are known — so a 48-digit denominator needs no search at all,
+    provided the supplied set is checked rather than trusted. None on any
+    leftover cofactor: a partial answer here would silently shrink the candidate
+    set and turn an unfinished search into a false 'no rational point'.
+    """
+    fac: dict[int, int] = {}
+    for p in primes:
+        while v % p == 0:
+            fac[p] = fac.get(p, 0) + 1
+            v //= p
+    return fac if v == 1 else None
+
+
 def factorise(v: int) -> dict[int, int] | None:
     """Full factorisation of v > 0, or None if it could not be completed.
 
@@ -256,11 +281,17 @@ def rational_points(j: Fraction, n: int, fac: dict[int, int] | None
     D = d - m
     num, den = j.numerator, j.denominator
 
-    dn, s = den, 0
+    dn = den
     while dn % n == 0:
         dn //= n
-        s += 1
-    pairs = uv_pairs(dn, fac, D, m)
+    # The n-part must come out of the factorisation too, not just out of dn:
+    # u' is by definition n-free, and leaving n in would ask uv_pairs to solve
+    # D·b + m·a = v_n(den), which for other (D, m) can have no solution at all
+    # and would return an empty candidate set — a false negative rather than a
+    # slower search. (With D = 1 or m = 1, as here, it is always solvable, so
+    # this changes no result in RUN-007; it removes the hazard, not a defect.)
+    fac_n_free = None if fac is None else {p: e for p, e in fac.items() if p != n}
+    pairs = uv_pairs(dn, fac_n_free, D, m)
     if pairs is None:
         return None
 
@@ -294,13 +325,21 @@ def rational_points(j: Fraction, n: int, fac: dict[int, int] | None
 # ---------------------------------------------------------- known-answer check
 
 KNOWN: list[tuple[str, list[int], dict[int, bool]]] = [
-    # label, a-invariants, the answer that is known independently of this gate
-    ("11a1", [0, -1, 1, -10, -20], {3: False, 5: True, 7: False}),
-    ("14a1", [1, 0, 1, 4, -6], {3: True, 5: False, 7: False}),
-    ("26a1", [1, 0, 1, -5, -8], {3: True, 5: False, 7: False}),
-    ("26b1", [1, -1, 1, -3, 3], {3: False, 5: False, 7: True}),
-    ("49a1", [1, -1, 0, -2, -1], {3: False, 5: False, 7: True}),
-    ("37a1", [0, 0, 1, -1, 0], {3: False, 5: False, 7: False}),
+    # label, a-invariants, the answer that is known independently of this gate.
+    #
+    # The n = 2 column is a rational 2-torsion point, checked by hand against the
+    # 2-division polynomial 4x³ + b₂x² + 2b₄x + b₆ rather than assumed from the
+    # shape of the isogeny class. 49a1 is why: it was entered here as False, the
+    # gate said True, and the gate was right — 4x³ − 3x² − 8x − 4 vanishes at
+    # x = 2, giving the rational point (2, −1). The expectation was corrected
+    # after computing it, not after seeing the gate's answer.
+    ("11a1", [0, -1, 1, -10, -20], {2: False, 3: False, 5: True, 7: False}),
+    ("14a1", [1, 0, 1, 4, -6], {2: True, 3: True, 5: False, 7: False}),
+    ("15a1", [1, 1, 1, -10, -10], {2: True, 3: False, 5: False, 7: False}),
+    ("26a1", [1, 0, 1, -5, -8], {2: False, 3: True, 5: False, 7: False}),
+    ("26b1", [1, -1, 1, -3, 3], {2: False, 3: False, 5: False, 7: True}),
+    ("49a1", [1, -1, 0, -2, -1], {2: True, 3: False, 5: False, 7: True}),
+    ("37a1", [0, 0, 1, -1, 0], {2: False, 3: False, 5: False, 7: False}),
 ]
 
 
