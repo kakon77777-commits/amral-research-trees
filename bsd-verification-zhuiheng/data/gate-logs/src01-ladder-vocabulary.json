@@ -1,0 +1,102 @@
+{
+  "gate": "src01_ladder_vocabulary",
+  "framework_document": "public\\bsd\\phase0\\files\\03_BSD_Certificate_Ladder.md",
+  "rungs_defined": {
+    "C0": "Identity",
+    "C1": "Local arithmetic",
+    "C2": "Numerical analytic rank",
+    "C3": "Rigorous analytic rank",
+    "C4": "Algebraic lower bound",
+    "C5": "Algebraic upper bound",
+    "C6": "Weak BSD certificate",
+    "C7": "Single-prime strong BSD",
+    "C8": "$\\Sha$ finite and exact",
+    "C9": "Full strong BSD",
+    "C10": "Family theorem"
+  },
+  "counts": {
+    "rungs_defined": 11,
+    "documents_naming_a_rung": 5,
+    "documents_using_an_undefined_rung": 0,
+    "rungs_never_used_outside_the_framework": 0
+  },
+  "rungs_never_used_outside_the_framework": [],
+  "documents_using_an_undefined_rung": [],
+  "coverage_by_rung": {
+    "C0": 4,
+    "C1": 3,
+    "C2": 3,
+    "C3": 3,
+    "C4": 3,
+    "C5": 3,
+    "C6": 4,
+    "C7": 3,
+    "C8": 3,
+    "C9": 3,
+    "C10": 4
+  },
+  "summaries": [
+    {
+      "where": "agent/bsd tree README",
+      "readable": true,
+      "rungs_named": [
+        "C0",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "defined_rungs_dropped": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "drops_the_evidence_proof_boundary": true
+    },
+    {
+      "where": "this arm's own README",
+      "readable": true,
+      "rungs_named": [
+        "C0",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "defined_rungs_dropped": [],
+      "drops_the_evidence_proof_boundary": false
+    },
+    {
+      "where": "the public BSD page's own summary",
+      "readable": true,
+      "rungs_named": [
+        "C0",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "defined_rungs_dropped": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "drops_the_evidence_proof_boundary": true
+    }
+  ],
+  "why_C2_and_C3_matter": "C2 is numerical analytic rank, whose own status line reads `evidence` and which the framework says need not carry a rigorous zero-order certificate; C3 is the rigorous one. Doc 03's 絕對禁止 list forbids treating an integer returned by rank() as a proof. A summary that renders the ladder as C0 → C6 → … drops both, and with them the boundary the ladder exists to hold.",
+  "not_a_defect": "a rung no document outside the framework uses is not necessarily unused work — the corpus may simply not have reached it. It is reported as coverage, not as a finding.",
+  "ok": true
+}

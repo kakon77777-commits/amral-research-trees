@@ -12,14 +12,27 @@ what it cannot.
 **Nothing here bears on the Birch and Swinnerton-Dyer conjecture.** No package
 in the subject corpus claims to prove BSD, and this tree makes no claim the
 corpus does not. Every result is of the form *"curve X, prime p, reached rung
-CN"* on the corpus's own certificate ladder:
+CN"* on the corpus's own certificate ladder, which Phase 0 doc 03 defines with
+**eleven** rungs:
 
-```
-C0 (identity) → C6 (weak BSD) → C7 (single prime, strong)
-→ C8 (Sha finite and exact) → C9 (full strong BSD) → C10 (family theorem)
-```
+| | | |
+| --- | --- | --- |
+| **C0** identity | **C1** local arithmetic | **C2** numerical analytic rank |
+| **C3** rigorous analytic rank | **C4** algebraic lower bound | **C5** algebraic upper bound |
+| **C6** weak BSD | **C7** single-prime strong | **C8** Sha finite and exact |
+| **C9** full strong BSD | **C10** family theorem | |
 
 Never a bare true/false verdict, because the subject does not state one.
+
+**C2 and C3 are written out deliberately.** This README first carried the
+abbreviated chain `C0 -> C6 -> C7 -> C8 -> C9 -> C10`, copied from a derived
+summary without reading doc 03 — and that abbreviation drops the rung boundary
+the ladder exists to hold. C2 is *numerical* analytic rank, whose own status
+line in doc 03 reads `evidence` and which the framework says need not carry a
+rigorous zero-order certificate; C3 is the rigorous one. Doc 03's own 絕對禁止
+list forbids treating an integer returned by `rank()` as a proof.
+[RUN-002](./reports/RUN-002-LADDER-VOCABULARY.md) measures where else that
+abbreviation appears.
 
 ## The corpus, and where it actually lives
 
