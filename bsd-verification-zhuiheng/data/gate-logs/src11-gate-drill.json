@@ -9,7 +9,9 @@
     "src14_globalizer_faithfulness",
     "src15_phase2_anchor",
     "src16_twist_family_lvalues",
-    "src17_family_prime_router"
+    "src17_family_prime_router",
+    "src18_tate_algorithm",
+    "src19_conductor_census"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -43,7 +45,10 @@
     "family-root-number": true,
     "family-ordinary": true,
     "twist-model": true,
-    "membership-in-P": true
+    "membership-in-P": true,
+    "tate": true,
+    "tate-i0star-reachable": true,
+    "ogg-formula": true
   },
   "defects": [
     {
@@ -423,6 +428,56 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "step-7 normalisation over-tightened so I0* becomes unreachable",
+      "kind": "code",
+      "named_check": "tate-i0star-reachable",
+      "checks_that_went_red": [
+        "tate-i0star-reachable",
+        "ogg-formula"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the p >= 5 type table reads III as II",
+      "kind": "code",
+      "named_check": "tate",
+      "checks_that_went_red": [
+        "tate",
+        "ogg-formula"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the additive conductor exponent is taken as 1 instead of 2",
+      "kind": "code",
+      "named_check": "ogg-formula",
+      "checks_that_went_red": [
+        "tate",
+        "tate-i0star-reachable",
+        "ogg-formula"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "type II* is given f = v(disc) - 7 instead of - 8",
+      "kind": "code",
+      "named_check": "ogg-formula",
+      "checks_that_went_red": [
+        "tate",
+        "ogg-formula"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the singular point is not moved to the origin",
+      "kind": "code",
+      "named_check": "tate",
+      "checks_that_went_red": [
+        "tate"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "unresolved mass summed in floats instead of exact rationals",
       "kind": "code",
       "named_check": "globalizer-exact",
@@ -549,7 +604,8 @@
       "kind": "code",
       "named_check": "twist-model",
       "checks_that_went_red": [
-        "twist-model"
+        "twist-model",
+        "tate-i0star-reachable"
       ],
       "caught_by_the_named_check": true
     },
@@ -719,8 +775,8 @@
     }
   ],
   "totals": {
-    "defects": 62,
-    "caught_by_the_named_check": 62,
+    "defects": 67,
+    "caught_by_the_named_check": 67,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
     "controls": 16,

@@ -82,8 +82,8 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-015:
-  `src04`–`src10`, `src12`–`src17` are drilled — 62 defects, 62 caught by the
+  been green is indistinguishable from a comment. **Position as of RUN-016:
+  `src04`–`src10`, `src12`–`src19` are drilled — 67 defects, 67 caught by the
   named check, 16 controls undisturbed. `src00`–`src03`, the corpus-scanning
   gates, are not.** This line read "every gate" for nine rounds while the tree
   had none; it is narrowed to what is true rather than the gap being left
@@ -113,6 +113,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [013](./reports/RUN-013-GLOBALIZER-FAITHFULNESS.md) | Phase 0's Certificate Globalizer | `src14` | all four claims hold in ℚ; the faithfulness fails in float64 at a computable index |
 | [014](./reports/RUN-014-PHASE2-ANCHOR.md) | the Phase 2 anchor, 696.e1 | `src15` | `N = 696` and `r_an = 0` both computed; `L(E,1)/Ω = 1` to one ulp |
 | [015](./reports/RUN-015-TWIST-FAMILY.md) | Theorem 1.1(2) and the family's structure | `src16`, `src17` | `L(E^(q),1) ≠ 0` on the two smallest members, `Ш(E^(313)) = 7²`; one of 𝒫's conditions is implied by the others |
+| [016](./reports/RUN-016-TATE-AND-CONDUCTORS.md) | Tate's algorithm | `src18`, `src19` | 40,749 conductors recomputed, 0 disagreements; `c₂ = 1` closes the carve-out; the base has no additive prime in it |
 
 ## Layout
 

@@ -1,4 +1,4 @@
-"""Drill for gates 04-10, 12-17 — plant a defect, demand the named check catch it.
+"""Drill for gates 04-10, 12-19 — plant a defect, demand the named check catch it.
 
 數學戰士「墜衡」 / AMRAL Research Lab.
 
@@ -99,6 +99,7 @@ import src14_globalizer_faithfulness as glob14           # noqa: E402
 import src15_phase2_anchor as anchor15                   # noqa: E402
 import src16_twist_family_lvalues as fam16               # noqa: E402
 import src17_family_prime_router as route17              # noqa: E402
+import src18_tate_algorithm as tate18                    # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -533,6 +534,94 @@ def check_family_ordinary() -> bool:
     return tested > 200 and 0.25 < odd / tested < 0.42
 
 
+TATE_FIXTURE = [
+    # curve, a-invariants, conductor, {p: (Kodaira type, c_p)} — all fixed
+    # outside this tree. 11a1's c_11 = 5 is the sharpest, because RUN-014
+    # derived it independently from L/Ω = 1/5, torsion 5 and trivial Ш.
+    ([0, -1, 1, -10, -20], 11, {11: ("I5", 5)}),
+    ([1, 0, 1, 4, -6], 14, {2: ("I6", 2), 7: ("I3", 3)}),
+    ([1, 1, 1, -10, -10], 15, {3: ("I4", 2), 5: ("I4", 4)}),
+    ([0, 0, 1, 0, -7], 27, {3: ("IV*", 3)}),
+    ([0, 0, 0, 4, 0], 32, {2: ("I3*", 4)}),
+    ([0, 0, 0, 0, 1], 36, {2: ("IV", 3), 3: ("III", 2)}),
+    ([0, 0, 0, -4, 0], 64, {2: ("I2*", 4)}),
+    ([0, 1, 0, 8, -16], 696, {2: ("II*", 1), 3: ("I1", 1), 29: ("I1", 1)}),
+    # additive at a prime >= 5, so the (v(c4), v(c6), v(disc)) table is used
+    ([1, -1, 0, -2, -1], 49, {7: ("III", 2)}),
+]
+
+
+def check_tate() -> bool:
+    """Conductor, Kodaira type and Tamagawa number on curves fixed elsewhere.
+
+    The conductor is the demanding half: it is the product of the conductor
+    exponents, so any wrong exponent shows up in it. 696.e1 at p = 2 is type
+    II* with f = 3, which is what makes N = 696 rather than 1392.
+    """
+    for inv, N, expect in TATE_FIXTURE:
+        primes = [q for q in (2, 3, 5, 7, 11, 13, 29, 37) if N % q == 0]
+        got = {q: tate18.reduction_data(inv, q, want_c=True) for q in primes}
+        prod = 1
+        for q, d in got.items():
+            prod *= q ** d["f"]
+        if prod != N:
+            return False
+        for q, (kod, c) in expect.items():
+            if got[q]["kodaira"] != kod or got[q]["c"] != c:
+                return False
+    return True
+
+
+def check_tate_i0star_reachable() -> bool:
+    """Type I0* must be returnable at all, on BOTH code paths.
+
+    A first version of the step-7 normalisation demanded p³|a4 and p⁴|a6, which
+    forces the cubic to T²(T+b) and makes I0* unreachable — and thirteen
+    hand-picked curves plus two thousand census conductors all passed anyway.
+    The twists of 696.e1 are I0* at their twisting prime, but that prime is
+    ≥ 5 and never touches the step-7 search; only p = 2 and 3 do. So a curve
+    that is I0* at 2 is here as well, and it is the one the over-tightening
+    defect trips.
+    """
+    for q in (241, 313, 457):
+        d = tate18.reduction_data(fam16.twist(fam16.BASE, q), q, want_c=True)
+        if d["kodaira"] != "I0*" or d["f"] != 2 or d["c"] != 1:
+            return False
+    d = tate18.tate([0, -3, 0, -12, -8], 2)
+    return d["kodaira"] == "I0*" and d["f"] == 4
+
+
+def check_ogg() -> bool:
+    """Ogg's formula f = v(Δ) − m + 1, which the gate never uses.
+
+    m is the number of components of the special fibre and is a function of the
+    Kodaira type alone. The algorithm computes f branch by branch and never
+    consults this relation, so requiring it is an independent constraint on
+    every exponent it returns rather than a restatement of one.
+    """
+    curves = [([0, -1, 1, -10, -20], 11), ([1, 0, 1, 4, -6], 2),
+              ([1, 0, 1, 4, -6], 7), ([0, 0, 1, 0, -7], 3),
+              ([0, 0, 0, 4, 0], 2), ([0, 0, 0, 0, 1], 2),
+              ([0, 0, 0, 0, 1], 3), ([0, 0, 0, -4, 0], 2),
+              ([0, 1, 0, 8, -16], 2), ([0, 1, 0, 8, -16], 3),
+              ([0, 1, 0, 8, -16], 29), ([1, -1, 0, -2, -1], 7),
+              ([0, -3, 0, -12, -8], 2)]
+    for inv, q in curves:
+        d = tate18.reduction_data(inv, q)
+        kod = d["kodaira"]
+        if kod.endswith("*") and kod[1:-1].isdigit():
+            m = 5 + int(kod[1:-1])
+        elif kod.startswith("I") and kod[1:].isdigit():
+            m = max(1, int(kod[1:]))
+        else:
+            m = tate18.COMPONENTS.get(kod)
+        if m is None:
+            return False
+        if d["f"] != d["v_disc"] - m + 1:
+            return False
+    return True
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -560,6 +649,9 @@ CHECKS = {
     "family-ordinary": check_family_ordinary,
     "twist-model": check_twist_model,
     "membership-in-P": check_membership_in_P,
+    "tate": check_tate,
+    "tate-i0star-reachable": check_tate_i0star_reachable,
+    "ogg-formula": check_ogg,
 }
 
 
@@ -719,6 +811,21 @@ DEFECTS = [
     ("the twist bound is cut below what the artifact used", "code",
      "alg2-fixture", lambda: patch(alg2, "BOUND", 500)),
 
+    # ---- gates 18 and 19 -----------------------------------------------------
+    ("step-7 normalisation over-tightened so I0* becomes unreachable", "code",
+     "tate-i0star-reachable",
+     lambda: patch(tate18, "normalise_for_step7", _normalise_too_strong)),
+    ("the p >= 5 type table reads III as II", "code", "tate",
+     lambda: patch(tate18, "kodaira_from_valuations", _kodaira_shifted)),
+    ("the additive conductor exponent is taken as 1 instead of 2", "code",
+     "ogg-formula", lambda: patch(tate18, "kodaira_from_valuations",
+                                  lambda vc4, vc6, vd:
+                                  (_true_kodaira(vc4, vc6, vd)[0], 1))),
+    ("type II* is given f = v(disc) - 7 instead of - 8", "code", "ogg-formula",
+     lambda: patch(tate18, "_after_triple", _after_triple_off_by_one)),
+    ("the singular point is not moved to the origin", "code", "tate",
+     lambda: patch(tate18, "singular_point", lambda a, q: (0, 0))),
+
     # ---- gate 14 -------------------------------------------------------------
     ("unresolved mass summed in floats instead of exact rationals", "code",
      "globalizer-exact",
@@ -861,6 +968,42 @@ CONTROLS = [
 
 
 _true_mass_exact = glob14.mass_exact
+_true_kodaira = tate18.kodaira_from_valuations
+_true_normalise = tate18.normalise_for_step7
+_true_after_triple = tate18._after_triple
+
+
+def _normalise_too_strong(a, q):
+    a1, a2, a3, a4, a6 = a
+    for s_ in range(q * q):
+        if (a1 + 2 * s_) % q:
+            continue
+        b = tate18.translate(a, 0, s_, 0)
+        for r in range(q ** 4):
+            if (b[1] + 3 * r) % q:
+                continue
+            c = tate18.translate(b, r, 0, 0)
+            if c[0] % q or c[1] % q:
+                continue
+            for t in range(q ** 3):
+                d = tate18.translate(c, 0, 0, t)
+                if (d[2] % q ** 2 == 0 and d[3] % q ** 3 == 0
+                        and d[4] % q ** 4 == 0):
+                    return d
+    return None
+
+
+def _kodaira_shifted(vc4, vc6, vd):
+    kod, f = _true_kodaira(vc4, vc6, vd)
+    return ("II" if kod == "III" else kod), f
+
+
+def _after_triple_off_by_one(a, q, n, scalings):
+    res = _true_after_triple(a, q, n, scalings)
+    if isinstance(res, dict) and res["kodaira"] == "II*":
+        res = dict(res)
+        res["f"] = n - 7
+    return res
 _true_kron = fam16.kronecker
 
 
@@ -1291,7 +1434,9 @@ def main() -> int:
                    "src14_globalizer_faithfulness",
                    "src15_phase2_anchor",
                    "src16_twist_family_lvalues",
-                   "src17_family_prime_router"],
+                   "src17_family_prime_router",
+                   "src18_tate_algorithm",
+                   "src19_conductor_census"],
         "rule": ("a planted defect must be caught by the check NAMED for it, "
                  "not merely by some check; and controls must disturb nothing"),
         "two_kinds": {

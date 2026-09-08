@@ -1,0 +1,375 @@
+{
+  "gate": "src19_conductor_census",
+  "self_check": [
+    {
+      "curve": "11a1",
+      "conductor": 11,
+      "recomputed": 11,
+      "conductor_ok": true,
+      "types": {
+        "11": [
+          "I5",
+          5
+        ]
+      },
+      "expected": {
+        "11": [
+          "I5",
+          5
+        ]
+      },
+      "types_ok": true
+    },
+    {
+      "curve": "14a1",
+      "conductor": 14,
+      "recomputed": 14,
+      "conductor_ok": true,
+      "types": {
+        "2": [
+          "I6",
+          2
+        ],
+        "7": [
+          "I3",
+          3
+        ]
+      },
+      "expected": {
+        "2": [
+          "I6",
+          2
+        ],
+        "7": [
+          "I3",
+          3
+        ]
+      },
+      "types_ok": true
+    },
+    {
+      "curve": "15a1",
+      "conductor": 15,
+      "recomputed": 15,
+      "conductor_ok": true,
+      "types": {
+        "3": [
+          "I4",
+          2
+        ],
+        "5": [
+          "I4",
+          4
+        ]
+      },
+      "expected": {
+        "3": [
+          "I4",
+          2
+        ],
+        "5": [
+          "I4",
+          4
+        ]
+      },
+      "types_ok": true
+    },
+    {
+      "curve": "27a1",
+      "conductor": 27,
+      "recomputed": 27,
+      "conductor_ok": true,
+      "types": {
+        "3": [
+          "IV*",
+          3
+        ]
+      },
+      "expected": {
+        "3": [
+          "IV*",
+          3
+        ]
+      },
+      "types_ok": true
+    },
+    {
+      "curve": "32a1",
+      "conductor": 32,
+      "recomputed": 32,
+      "conductor_ok": true,
+      "types": {
+        "2": [
+          "I3*",
+          4
+        ]
+      },
+      "expected": {
+        "2": [
+          "I3*",
+          4
+        ]
+      },
+      "types_ok": true
+    },
+    {
+      "curve": "36a1",
+      "conductor": 36,
+      "recomputed": 36,
+      "conductor_ok": true,
+      "types": {
+        "2": [
+          "IV",
+          3
+        ],
+        "3": [
+          "III",
+          2
+        ]
+      },
+      "expected": {
+        "2": [
+          "IV",
+          3
+        ],
+        "3": [
+          "III",
+          2
+        ]
+      },
+      "types_ok": true
+    },
+    {
+      "curve": "37a1",
+      "conductor": 37,
+      "recomputed": 37,
+      "conductor_ok": true,
+      "types": {
+        "37": [
+          "I1",
+          1
+        ]
+      },
+      "expected": {
+        "37": [
+          "I1",
+          1
+        ]
+      },
+      "types_ok": true
+    },
+    {
+      "curve": "64a1",
+      "conductor": 64,
+      "recomputed": 64,
+      "conductor_ok": true,
+      "types": {
+        "2": [
+          "I2*",
+          4
+        ]
+      },
+      "expected": {
+        "2": [
+          "I2*",
+          4
+        ]
+      },
+      "types_ok": true
+    },
+    {
+      "curve": "389a1",
+      "conductor": 389,
+      "recomputed": 389,
+      "conductor_ok": true,
+      "types": {
+        "389": [
+          "I1",
+          1
+        ]
+      },
+      "expected": {
+        "389": [
+          "I1",
+          1
+        ]
+      },
+      "types_ok": true
+    }
+  ],
+  "base_conductors": {
+    "curves": 40749,
+    "recomputed_agrees": 40749,
+    "DISAGREES": 0,
+    "mismatches": [],
+    "route": "Tate's algorithm from the a-invariants; nothing is read but the curve. RUN-014 verified one conductor by which N makes the functional equation close — a different route entirely, and they agree on 696"
+  },
+  "the_base_is_entirely_semistable": {
+    "curves_with_a_non_squarefree_conductor": 0,
+    "sample": [],
+    "every_bad_prime_is_multiplicative": true,
+    "why_it_matters": "a curve is semistable exactly when its conductor is squarefree, equivalently when every bad prime is multiplicative. Not one of the 40,749 base curves fails that, over all 135,787 bad primes — so the Banwait–Huang census reaches no non-semistable curve at all. That is precisely the gap the Phase 2 line exists to address, and 696.e1 with its additive prime 2 sits outside the base by construction rather than by choice"
+  },
+  "kodaira_distribution": {
+    "all_bad_primes": {
+      "I_n": 135787
+    },
+    "at_p_in_2_3": {
+      "I_n": 40995
+    },
+    "additive_prime_counts": {}
+  },
+  "anchor_696e1": {
+    "types": {
+      "2": {
+        "kodaira": "II*",
+        "f": 3,
+        "c": 1
+      },
+      "3": {
+        "kodaira": "I1",
+        "f": 1,
+        "c": 1
+      },
+      "29": {
+        "kodaira": "I1",
+        "f": 1,
+        "c": 1
+      }
+    },
+    "conductor_recomputed": 696,
+    "product_of_tamagawa": 1,
+    "c_2": 1,
+    "closes": "RUN-014 measured L(E,1)/Ω = 1 and read c_2·#Ш = 1 from it; Tate gives c_2 = 1 outright, so #Ш = 1 follows without the reading. Two independent routes to the same pair"
+  },
+  "family_at_the_twisting_prime": [
+    {
+      "q": 241,
+      "kodaira_at_q": "I0*",
+      "f_at_q": 2,
+      "c_q": 1,
+      "f2_roots_mod_q": 0,
+      "potential_reduction_at_q": "potentially good",
+      "types_at_2_3_29": {
+        "2": "II*",
+        "3": "I1",
+        "29": "I1"
+      }
+    },
+    {
+      "q": 313,
+      "kodaira_at_q": "I0*",
+      "f_at_q": 2,
+      "c_q": 1,
+      "f2_roots_mod_q": 0,
+      "potential_reduction_at_q": "potentially good",
+      "types_at_2_3_29": {
+        "2": "II*",
+        "3": "I1",
+        "29": "I1"
+      }
+    },
+    {
+      "q": 457,
+      "kodaira_at_q": "I0*",
+      "f_at_q": 2,
+      "c_q": 1,
+      "f2_roots_mod_q": 0,
+      "potential_reduction_at_q": "potentially good",
+      "types_at_2_3_29": {
+        "2": "II*",
+        "3": "I1",
+        "29": "I1"
+      }
+    },
+    {
+      "q": 673,
+      "kodaira_at_q": "I0*",
+      "f_at_q": 2,
+      "c_q": 1,
+      "f2_roots_mod_q": 0,
+      "potential_reduction_at_q": "potentially good",
+      "types_at_2_3_29": {
+        "2": "II*",
+        "3": "I1",
+        "29": "I1"
+      }
+    },
+    {
+      "q": 937,
+      "kodaira_at_q": "I0*",
+      "f_at_q": 2,
+      "c_q": 1,
+      "f2_roots_mod_q": 0,
+      "potential_reduction_at_q": "potentially good",
+      "types_at_2_3_29": {
+        "2": "II*",
+        "3": "I1",
+        "29": "I1"
+      }
+    },
+    {
+      "q": 1009,
+      "kodaira_at_q": "I0*",
+      "f_at_q": 2,
+      "c_q": 1,
+      "f2_roots_mod_q": 0,
+      "potential_reduction_at_q": "potentially good",
+      "types_at_2_3_29": {
+        "2": "II*",
+        "3": "I1",
+        "29": "I1"
+      }
+    },
+    {
+      "q": 1153,
+      "kodaira_at_q": "I0*",
+      "f_at_q": 2,
+      "c_q": 1,
+      "f2_roots_mod_q": 0,
+      "potential_reduction_at_q": "potentially good",
+      "types_at_2_3_29": {
+        "2": "II*",
+        "3": "I1",
+        "29": "I1"
+      }
+    },
+    {
+      "q": 1753,
+      "kodaira_at_q": "I0*",
+      "f_at_q": 2,
+      "c_q": 1,
+      "f2_roots_mod_q": 0,
+      "potential_reduction_at_q": "potentially good",
+      "types_at_2_3_29": {
+        "2": "II*",
+        "3": "I1",
+        "29": "I1"
+      }
+    }
+  ],
+  "doc05_potentially_multiplicative_no_go": {
+    "exact_no_go": "05_Kodaira_Prefilters_and_NoGo: additive AND potentially multiplicative ⟹ FW17_H2_FAIL",
+    "at_the_twisting_prime": "E has good reduction at q, so its quadratic twist has potentially GOOD reduction there — v_q(j) = v_q(j(E)) ≥ 0. The no-go does not fire, and that is a fact about the family rather than a hope",
+    "measured": {
+      "241": "potentially good",
+      "313": "potentially good",
+      "457": "potentially good",
+      "673": "potentially good",
+      "937": "potentially good",
+      "1009": "potentially good",
+      "1153": "potentially good",
+      "1753": "potentially good"
+    },
+    "no_go_fires_anywhere": false
+  },
+  "doc01_manin_kodaira_exclusion": {
+    "condition": "01_Odd_Additive_Period_Barrier: the published Manin sufficient condition excludes additive potentially ordinary of Kodaira type II, III or IV",
+    "types_found_at_q": [
+      "I0*"
+    ],
+    "any_in_the_excluded_set": false
+  },
+  "c_q_two_ways": "RUN-015 derived c_q = 1 from L/Ω = 49, trivial torsion, Cassels's square theorem and c_q ∈ {1,2,4}. Tate gives type I0*, whose c = 1 + #roots of the step-7 cubic mod q — and 𝒫's third condition is exactly that f₂ is irreducible mod q, i.e. zero roots. The two routes share nothing",
+  "ok": true
+}
