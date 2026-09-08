@@ -1,0 +1,69 @@
+{
+  "gate": "src05_frobenius_at_three",
+  "what_a3_is": "the trace of Frobenius at p=3, NOT the Weierstrass coefficient a_3. Settled from the package's own columns: 14a1 records a3=-2 beside projective_point_count_at_3=6, and 3+1-6 = -2",
+  "arithmetic": "exhaustive counting over F_3 and exact integers; no float",
+  "counts": {
+    "removed_curves_in_census": 4062,
+    "a_invariants_found": 4062,
+    "projective_counts_recomputed": 4062,
+    "projective_count_mismatches": 0,
+    "nonsingular_count_mismatches": 0,
+    "curves_with_good_reduction_at_3": 3998,
+    "a3_mismatches": 0,
+    "ecdata_aplist_disagreements": 0,
+    "histogram_buckets_disagreeing": 0,
+    "values_outside_the_hasse_range": 0,
+    "curves_with_bad_reduction_at_3": 64,
+    "bad_reduction_a3_mismatches": 0,
+    "bad_reduction_unclassified": 0,
+    "ecdata_tokens_not_numeric": 64,
+    "ecdata_tokens_compared": 3998
+  },
+  "recomputed_a3_histogram": {
+    "-3": 910,
+    "-2": 622,
+    "-1": 56,
+    "1": 675,
+    "3": 1799
+  },
+  "stored_a3_histogram": {
+    "-3": 910,
+    "-2": 622,
+    "-1": 56,
+    "1": 675,
+    "3": 1799
+  },
+  "histogram_disagreements": {},
+  "failure_class_distribution": {
+    "ISOGENY_ONLY": 1353,
+    "BOTH": 2,
+    "A3_ONLY": 2707
+  },
+  "bad_reduction_at_3_by_nonsingular_count": {
+    "2": 64
+  },
+  "reduction_type_key": {
+    "2": "split multiplicative, a_3 = +1",
+    "3": "additive, a_3 = 0",
+    "4": "non-split multiplicative, a_3 = -1"
+  },
+  "ecdata_nonnumeric_tokens_seen": {
+    "-": 64
+  },
+  "bad_reduction_a3_mismatches": [],
+  "bad_reduction_unclassified": [],
+  "accounting_identities": {
+    "a3_only + isogeny_only + both == removed": true,
+    "old - removed + added == new": true,
+    "individual_isogeny_counts == isogeny_only + both": true,
+    "isogeny_combination_counts.NONE == a3_only": true,
+    "unexplained == 0": true
+  },
+  "projective_count_mismatches": [],
+  "nonsingular_count_mismatches": [],
+  "a3_mismatches": [],
+  "ecdata_aplist_disagreements": [],
+  "curves_with_no_a_invariants": [],
+  "hasse_note": "|a_3| <= 2*sqrt(3) < 4, so a_3 lies in {-3..3}. Any recomputed value outside that range would be an error in this gate, not a finding about the data.",
+  "ok": true
+}
