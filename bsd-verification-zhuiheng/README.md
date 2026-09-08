@@ -82,11 +82,12 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-010:
-  `src08`, `src09`, `src10` are drilled — 27 defects, 27 caught by the named
-  check, 8 controls undisturbed. `src00`–`src07` are not.** This line read
-  "every gate" for nine rounds while the tree had none; it is narrowed to what
-  is true rather than the gap being left unsaid.
+  been green is indistinguishable from a comment. **Position as of RUN-011:
+  `src08`, `src09`, `src10`, `src12` are drilled — 33 defects, 33 caught by the
+  named check, 11 controls undisturbed. `src00`–`src07` are not.** This line
+  read "every gate" for nine rounds while the tree had none; it is narrowed to
+  what is true rather than the gap being left unsaid. Gates written after
+  RUN-010 ship with their drill in the same commit.
 * **Controls, or the drill measures nothing.** Something that must not trip.
 * **`unmeasured` is a verdict.** A check that could not run has no result, and
   reporting one would be worse than not checking.
@@ -107,6 +108,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [008](./reports/RUN-008-KEPT-CURVES.md) | the 36,687 curves the census **kept** | `src09` | the direction the census's own checks are blind to; and the base is two populations |
 | [009](./reports/RUN-009-PHASE2-DENSITY.md) | Phase 2 Theorem 1.1(1) | `src10` | the density is `1/24`; the obvious answer `1/48` is wrong |
 | [010](./reports/RUN-010-GATE-DRILL.md) | **this arm's own gates** | `src11` | 27 defects / 27 caught by the named check — after the first run caught only 24 |
+| [011](./reports/RUN-011-P5-LOCALIZATION.md) | P5 — 389.a1 at `p = 11` | `src12` | the v1.1 localization matrix `[[1,2],[1,4]]` recomputed from scratch, det `2 ≠ 0` |
 
 ## Layout
 

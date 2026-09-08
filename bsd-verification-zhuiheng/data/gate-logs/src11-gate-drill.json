@@ -3,7 +3,8 @@
   "covers": [
     "src08_modular_curve_confirmation",
     "src09_kept_curves_removal_gate",
-    "src10_phase2_density_and_base"
+    "src10_phase2_density_and_base",
+    "src12_p5_localization"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -21,7 +22,9 @@
     "reduction-type": true,
     "factorisation": true,
     "uv-pairs-agree": true,
-    "density-1-over-24": true
+    "density-1-over-24": true,
+    "p5-localization": true,
+    "p5-short-model": true
   },
   "defects": [
     {
@@ -284,6 +287,61 @@
         "reduction-type"
       ],
       "caught_by_the_named_check": true
+    },
+    {
+      "defect": "group law: doubling drops its 2*a2*x term",
+      "kind": "code",
+      "named_check": "p5-localization",
+      "checks_that_went_red": [
+        "p5-localization"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "group law: y3 drops the a3 correction",
+      "kind": "code",
+      "named_check": "p5-localization",
+      "checks_that_went_red": [
+        "p5-localization"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "scalar multiplication never doubles its accumulator",
+      "kind": "code",
+      "named_check": "p5-localization",
+      "checks_that_went_red": [
+        "p5-localization"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "point count forgets the point at infinity",
+      "kind": "code",
+      "named_check": "p5-localization",
+      "checks_that_went_red": [
+        "p5-localization"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "b2 formula uses 2*a2 instead of 4*a2",
+      "kind": "code",
+      "named_check": "p5-short-model",
+      "checks_that_went_red": [
+        "p5-short-model"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the wrong generators are used for the localization",
+      "kind": "data",
+      "named_check": "p5-localization",
+      "checks_that_went_red": [
+        "p5-localization",
+        "p5-short-model"
+      ],
+      "caught_by_the_named_check": true
     }
   ],
   "controls": [
@@ -326,14 +384,29 @@
       "control": "no change at all",
       "checks_that_went_red": [],
       "undisturbed": true
+    },
+    {
+      "control": "gate 12's admissible-prime scan limit changed",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the two ramified directions given in the other order",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "group law: the -a1*y term removed, which a1 = 0 makes a no-op",
+      "checks_that_went_red": [],
+      "undisturbed": true
     }
   ],
   "totals": {
-    "defects": 27,
-    "caught_by_the_named_check": 27,
+    "defects": 33,
+    "caught_by_the_named_check": 33,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 8,
+    "controls": 11,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

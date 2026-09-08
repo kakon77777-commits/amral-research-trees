@@ -1,4 +1,4 @@
-"""Drill for gates 08, 09 and 10 — plant a defect, demand the named check catch it.
+"""Drill for gates 08, 09, 10 and 12 — plant a defect, demand the named check catch it.
 
 數學戰士「墜衡」 / AMRAL Research Lab.
 
@@ -9,9 +9,10 @@ This tree's README has stated since RUN-001 that
     been green is indistinguishable from a comment.
 
 and until now the BSD line had none. Ten gates, zero drills, and a method section
-saying otherwise. This closes that for the three gates carrying the substantive
-claims — the X₀(n) engine under RUN-007 and RUN-008, the kept-curve checks, and
-the Phase 2 density.
+saying otherwise. This closes that for the gates carrying the substantive claims
+— the X₀(n) engine under RUN-007 and RUN-008, the kept-curve checks, the Phase 2
+density, and the P5 localization matrix. Gates written after RUN-010 arrive with
+their drill in the same commit; that is what stopped the claim drifting again.
 
 TWO KINDS OF DEFECT, because the gates make two kinds of claim.
 
@@ -34,6 +35,11 @@ CONTROLS are perturbations that must leave every check green: a wider search
 window, a larger candidate budget, a different random seed for the randomised
 factorisation, the same valuations in a different key order. Without them the
 drill only shows that the checks are sensitive to *something*.
+
+One control is there for a different reason and is worth reading as a scope
+statement: 389.a1 has a1 = 0, so removing the −a1·y term from the group law is
+identically a no-op. No drill on that curve can test that branch, and a defect
+list that quietly left it out would read as coverage it does not have.
 
 WHAT THE FIRST RUN FOUND, which is the reason to write drills rather than assume
 them. Three defects were caught by nothing at all — an off-by-one in `nth_root`,
@@ -61,6 +67,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import src08_modular_curve_confirmation as x0n            # noqa: E402
 import src09_kept_curves_removal_gate as kept             # noqa: E402
 import src10_phase2_density_and_base as ph2               # noqa: E402
+import src12_p5_localization as p5                       # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -204,6 +211,24 @@ def check_density_one_over_24() -> bool:
     return abs(d - 1 / 24) < abs(d - 1 / 48) and abs(d * 24 - 1) < 0.05
 
 
+def check_p5_localization() -> bool:
+    """Gate 12 recomputes P5 v1.1's matrix; it must come back [[1,2],[1,4]]."""
+    rows = [p5.localization_row(e).get("row_normalised") for e in p5.DIRECTIONS]
+    if rows != [[1, 2], [1, 4]]:
+        return False
+    return (rows[1][1] - rows[0][1]) % 11 != 0
+
+
+def check_p5_short_model() -> bool:
+    """The short model and the images of P and Q, derived rather than copied."""
+    sm = p5.short_model()
+    return (sm["A"] == -3024 and sm["B"] == 46224
+            and sm["images"]["P"]["short_model"] == [12, 108]
+            and sm["images"]["Q"]["short_model"] == [48, 108]
+            and all(sm["images"][k]["satisfies_short_model"] for k in "PQ")
+            and p5.on_curve(p5.P0) and p5.on_curve(p5.Q0))
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -215,6 +240,8 @@ CHECKS = {
     "factorisation": check_factorisation,
     "uv-pairs-agree": check_uv_pairs_agree,
     "density-1-over-24": check_density_one_over_24,
+    "p5-localization": check_p5_localization,
+    "p5-short-model": check_p5_short_model,
 }
 
 
@@ -337,6 +364,21 @@ DEFECTS = [
     ("singular point never subtracted from the point count", "code",
      "reduction-type",
      lambda: patch(ph2, "singular_point_count", _no_singular_subtraction)),
+
+    # ---- gate 12 -------------------------------------------------------------
+    ("group law: doubling drops its 2*a2*x term", "code", "p5-localization",
+     lambda: patch(p5, "ec_add", _bad_double)),
+    ("group law: y3 drops the a3 correction", "code", "p5-localization",
+     lambda: patch(p5, "ec_add", _bad_y3)),
+    ("scalar multiplication never doubles its accumulator", "code",
+     "p5-localization",
+     lambda: patch(p5, "ec_mul", lambda k, A, ell: A if k else None)),
+    ("point count forgets the point at infinity", "code", "p5-localization",
+     lambda: patch(p5, "npoints", _npoints_no_infinity)),
+    ("b2 formula uses 2*a2 instead of 4*a2", "code", "p5-short-model",
+     lambda: patch(p5, "short_model", _bad_short_model)),
+    ("the wrong generators are used for the localization", "data",
+     "p5-localization", lambda: patch(p5, "Q0", (0, -1))),
 ]
 
 CONTROLS = [
@@ -353,7 +395,60 @@ CONTROLS = [
      lambda: _partition_patch((set(["a", "b"]), set(["c"]),
                                set(["c", "b", "a"])))),
     ("no change at all", lambda: (lambda: None)),
+    ("gate 12's admissible-prime scan limit changed",
+     lambda: patch(p5, "SCAN", 5_000)),
+    ("the two ramified directions given in the other order",
+     lambda: patch(p5, "DIRECTIONS", (397, 991))),
+    # This one is a control on purpose, and the reason is a scope statement:
+    # 389.a1 has a1 = 0, so the −a1·y term of the doubling formula is
+    # identically zero and removing it cannot change any answer. No drill on
+    # this curve can test that branch, and a defect list that quietly omitted
+    # it would read as coverage it does not have.
+    ("group law: the -a1*y term removed, which a1 = 0 makes a no-op",
+     lambda: patch(p5, "ec_add", _a1_branch_removed)),
 ]
+
+
+def _a1_branch_removed(A, B, ell):
+    a1, a2, a3, a4, _ = p5.AINVS
+    if A is None:
+        return B
+    if B is None:
+        return A
+    x1, y1 = A
+    x2, y2 = B
+    if x1 == x2 and (y1 + y2 + a1 * x2 + a3) % ell == 0:
+        return None
+    if A == B:
+        num = (3 * x1 * x1 + 2 * a2 * x1 + a4) % ell
+        den = (2 * y1 + a1 * x1 + a3) % ell
+    else:
+        num = (y2 - y1) % ell
+        den = (x2 - x1) % ell
+    lam = num * pow(den, -1, ell) % ell
+    nu = (y1 - lam * x1) % ell
+    x3 = (lam * lam + a1 * lam - a2 - x1 - x2) % ell
+    y3 = (-(lam + a1) * x3 - nu - a3) % ell
+    return (x3, y3)
+
+
+def _bad_short_model():
+    a1, a2, a3, a4, a6 = p5.AINVS
+    b2 = a1 * a1 + 2 * a2                                    # 4*a2 -> 2*a2
+    b4 = 2 * a4 + a1 * a3
+    b6 = a3 * a3 + 4 * a6
+    b8 = a1 * a1 * a6 + 4 * a2 * a6 - a1 * a3 * a4 + a2 * a3 * a3 - a4 * a4
+    c4 = b2 * b2 - 24 * b4
+    c6 = -b2 ** 3 + 36 * b2 * b4 - 216 * b6
+    A, B = -27 * c4, -54 * c6
+    images = {}
+    for name, (x, y) in (("P", p5.P0), ("Q", p5.Q0)):
+        X = 36 * x + 3 * b2
+        Y = 216 * y + 108 * a1 * x + 108 * a3
+        images[name] = {"minimal_model": [x, y], "short_model": [X, Y],
+                        "satisfies_short_model": Y * Y == X ** 3 + A * X + B}
+    return {"b2": b2, "c4": c4, "c6": c6, "disc": 0, "A": A, "B": B,
+            "images": images}
 
 
 _true_nth_root = x0n.nth_root
@@ -396,6 +491,64 @@ def _bad_x_pow_q(f, q):
             result = ph2.poly_mulmod(result, base, f, q)
         e >>= 1                          # base never squared
     return result
+
+
+def _bad_double(A, B, ell):
+    """Doubling formula missing its 2·a2·x term (a2 = 1 on 389.a1)."""
+    a1, a2, a3, a4, _ = p5.AINVS
+    if A is None:
+        return B
+    if B is None:
+        return A
+    x1, y1 = A
+    x2, y2 = B
+    if x1 == x2 and (y1 + y2 + a1 * x2 + a3) % ell == 0:
+        return None
+    if A == B:
+        num = (3 * x1 * x1 + a4 - a1 * y1) % ell            # 2·a2·x1 dropped
+        den = (2 * y1 + a1 * x1 + a3) % ell
+    else:
+        num = (y2 - y1) % ell
+        den = (x2 - x1) % ell
+    lam = num * pow(den, -1, ell) % ell
+    nu = (y1 - lam * x1) % ell
+    x3 = (lam * lam + a1 * lam - a2 - x1 - x2) % ell
+    y3 = (-(lam + a1) * x3 - nu - a3) % ell
+    return (x3, y3)
+
+
+def _bad_y3(A, B, ell):
+    """y3 without the a3 correction."""
+    a1, a2, a3, a4, _ = p5.AINVS
+    if A is None:
+        return B
+    if B is None:
+        return A
+    x1, y1 = A
+    x2, y2 = B
+    if x1 == x2 and (y1 + y2 + a1 * x2 + a3) % ell == 0:
+        return None
+    if A == B:
+        num = (3 * x1 * x1 + 2 * a2 * x1 + a4 - a1 * y1) % ell
+        den = (2 * y1 + a1 * x1 + a3) % ell
+    else:
+        num = (y2 - y1) % ell
+        den = (x2 - x1) % ell
+    lam = num * pow(den, -1, ell) % ell
+    nu = (y1 - lam * x1) % ell
+    x3 = (lam * lam + a1 * lam - a2 - x1 - x2) % ell
+    y3 = (-(lam + a1) * x3 - nu) % ell                      # a3 dropped
+    return (x3, y3)
+
+
+def _npoints_no_infinity(ell):
+    a1, a2, a3, a4, a6 = (c % ell for c in p5.AINVS)
+    total = 0                                                # O never counted
+    for x in range(ell):
+        d = ((a1 * x + a3) ** 2
+             + 4 * (x ** 3 + a2 * x * x + a4 * x + a6)) % ell
+        total += 1 + p5.legendre(d, ell)
+    return total
 
 
 def run_checks() -> dict[str, bool]:
@@ -467,7 +620,8 @@ def main() -> int:
         "gate": "src11_gate_drill",
         "covers": ["src08_modular_curve_confirmation",
                    "src09_kept_curves_removal_gate",
-                   "src10_phase2_density_and_base"],
+                   "src10_phase2_density_and_base",
+                   "src12_p5_localization"],
         "rule": ("a planted defect must be caught by the check NAMED for it, "
                  "not merely by some check; and controls must disturb nothing"),
         "two_kinds": {

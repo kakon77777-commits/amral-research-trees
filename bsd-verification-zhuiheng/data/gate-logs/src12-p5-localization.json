@@ -1,0 +1,360 @@
+{
+  "gate": "src12_p5_localization",
+  "curve": {
+    "label": "389.a1",
+    "a_invariants": [
+      0,
+      1,
+      1,
+      -2,
+      0
+    ],
+    "conductor_claimed": 389,
+    "conductor_is_prime": true,
+    "discriminant": 389,
+    "c4": 112,
+    "c6": -856,
+    "P_on_curve": true,
+    "Q_on_curve": true,
+    "torsion_gcd_of_point_counts": 1,
+    "torsion_is_trivial": true
+  },
+  "short_model": {
+    "A": -3024,
+    "B": 46224,
+    "document_states": {
+      "A": -3024,
+      "B": 46224
+    },
+    "agrees": true
+  },
+  "generator_images": {
+    "P": {
+      "minimal_model": [
+        0,
+        0
+      ],
+      "short_model": [
+        12,
+        108
+      ],
+      "satisfies_short_model": true
+    },
+    "Q": {
+      "minimal_model": [
+        1,
+        0
+      ],
+      "short_model": [
+        48,
+        108
+      ],
+      "satisfies_short_model": true
+    },
+    "document_states": {
+      "P'": [
+        12,
+        108
+      ],
+      "Q'": [
+        48,
+        108
+      ]
+    },
+    "agrees": true
+  },
+  "working_prime": {
+    "p": 11,
+    "good": true,
+    "point_count_over_F_p": 16,
+    "a_p": -4,
+    "ordinary": true,
+    "anomalous_in_the_Mazur_sense": false,
+    "note": "E is ordinary but NOT anomalous at 11 in the classical a_p ≡ 1 (mod p) sense. The corpus's 'anomalous' refers to the ramified directions being anomalous for the Mazur–Tate height setup, a different condition"
+  },
+  "ramified_directions": {
+    "criterion": "ell ≡ 1 (mod 11) so the degree-11 real cyclotomic subfield exists — automatic once ell ≡ 1 (mod 11), since ell − 1 = 11k with k even — tame since ell ≠ 11, and 11 | #E(F_ell), which is the Kurihara/Kolyvagin condition a_ell ≡ ell + 1 (mod 11)",
+    "rows": {
+      "397": {
+        "ell": 397,
+        "point_count": 374,
+        "point_count_factored": {
+          "2": 1,
+          "11": 1,
+          "17": 1
+        },
+        "v_11_of_point_count": 1,
+        "cofactor": 34,
+        "m_times_P": [
+          217,
+          30
+        ],
+        "m_times_Q": [
+          11,
+          115
+        ],
+        "both_are_11_torsion": true,
+        "k_with_mQ_equals_k_mP": 2,
+        "row_normalised": [
+          1,
+          2
+        ],
+        "usable": true
+      },
+      "991": {
+        "ell": 991,
+        "point_count": 1045,
+        "point_count_factored": {
+          "5": 1,
+          "11": 1,
+          "19": 1
+        },
+        "v_11_of_point_count": 1,
+        "cofactor": 95,
+        "m_times_P": [
+          744,
+          133
+        ],
+        "m_times_Q": [
+          822,
+          620
+        ],
+        "both_are_11_torsion": true,
+        "k_with_mQ_equals_k_mP": 4,
+        "row_normalised": [
+          1,
+          4
+        ],
+        "usable": true
+      }
+    },
+    "checks": {
+      "397": {
+        "ell_is_1_mod_11": true,
+        "tame": true,
+        "kurihara_condition_a_ell_equals_ell_plus_1_mod_11": true,
+        "eleven_divides_exactly_once": true
+      },
+      "991": {
+        "ell_is_1_mod_11": true,
+        "tame": true,
+        "kurihara_condition_a_ell_equals_ell_plus_1_mod_11": true,
+        "eleven_divides_exactly_once": true
+      }
+    }
+  },
+  "localization_matrix": {
+    "recomputed_rows": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "document_states": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "agrees": true,
+    "determinant_mod_11": 2,
+    "determinant_nonzero": true,
+    "consequence": "a nonzero determinant makes localization injective on E(Q)/11E(Q); with trivial torsion that forces rank ≥ 2"
+  },
+  "how_special_are_397_and_991": {
+    "scanned_primes_below": 20000,
+    "admissible_count": 25,
+    "admissible": [
+      {
+        "ell": 397,
+        "point_count": 374,
+        "a_ell": 24,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 991,
+        "point_count": 1045,
+        "a_ell": -53,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 1321,
+        "point_count": 1320,
+        "a_ell": 2,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 2113,
+        "point_count": 2167,
+        "a_ell": -53,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 3389,
+        "point_count": 3465,
+        "a_ell": -75,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 3433,
+        "point_count": 3421,
+        "a_ell": 13,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 4643,
+        "point_count": 4763,
+        "a_ell": -119,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 5501,
+        "point_count": 5577,
+        "a_ell": -75,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 6029,
+        "point_count": 5896,
+        "a_ell": 134,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 6337,
+        "point_count": 6259,
+        "a_ell": 79,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 9769,
+        "point_count": 9900,
+        "a_ell": -130,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 11177,
+        "point_count": 11000,
+        "a_ell": 178,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 11243,
+        "point_count": 11154,
+        "a_ell": 90,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 11903,
+        "point_count": 12056,
+        "a_ell": -152,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 12541,
+        "point_count": 12551,
+        "a_ell": -9,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 13553,
+        "point_count": 13684,
+        "a_ell": -130,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 14411,
+        "point_count": 14476,
+        "a_ell": -64,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 15401,
+        "point_count": 15455,
+        "a_ell": -53,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 15511,
+        "point_count": 15433,
+        "a_ell": 79,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 16633,
+        "point_count": 16445,
+        "a_ell": 189,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 17491,
+        "point_count": 17380,
+        "a_ell": 112,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 17623,
+        "point_count": 17820,
+        "a_ell": -196,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 18217,
+        "point_count": 18216,
+        "a_ell": 2,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 19009,
+        "point_count": 18909,
+        "a_ell": 101,
+        "a_ell_mod_11": 2,
+        "v_11": 1
+      },
+      {
+        "ell": 19867,
+        "point_count": 19965,
+        "a_ell": -97,
+        "a_ell_mod_11": 2,
+        "v_11": 3
+      }
+    ],
+    "the_two_used_are_the_smallest": true
+  },
+  "not_checked_here": {
+    "Sha[11] = 0": "carried by the P5 documents as an INHERITED dependency and labelled as such; nothing in this gate bears on it",
+    "Sel_11 ≅ (Z/11)^2": "follows from rank 2, trivial torsion and that vanishing. This gate supplies the first two",
+    "the OPEN comparison": "analytic leading term against algebraic regulator — the target the whole sub-line names as open in every package"
+  },
+  "ok": true
+}
