@@ -1,0 +1,128 @@
+{
+  "gate": "src10_phase2_density_and_base",
+  "subject": "29_Theorem_Note_v1.0, Theorem 1.1 part (1): the set P has natural density 1/24",
+  "scope": "parts (2) and (3) — L(E^(q),1) ≠ 0 and strong BSD for every q in P — rest on cited theorems this gate does not recompute and does not claim to have checked. Only part (1) is tested",
+  "base_curve": {
+    "a_invariants": [
+      0,
+      1,
+      0,
+      8,
+      -16
+    ],
+    "equation": "y^2 = x^3 + x^2 + 8x - 16",
+    "discriminant": -178176,
+    "discriminant_factored": {
+      "2": 11,
+      "3": 1,
+      "29": 1
+    },
+    "c4": -368,
+    "note_claims_conductor": 696,
+    "conductor_factored": {
+      "2": 3,
+      "3": 1,
+      "29": 1
+    },
+    "conductor_is_squarefree": false,
+    "NOT_SEMISTABLE": true,
+    "model_minimal_at_2": true,
+    "v2": {
+      "c4": 4,
+      "disc": 11,
+      "conductor": 3
+    },
+    "reduction": {
+      "2": {
+        "v_disc": 11,
+        "v_conductor": 3,
+        "type": "additive"
+      },
+      "3": {
+        "v_disc": 1,
+        "v_conductor": 1,
+        "type": "multiplicative",
+        "E_ns_point_count": 2,
+        "split": true,
+        "nonsplit": false
+      },
+      "29": {
+        "v_disc": 1,
+        "v_conductor": 1,
+        "type": "multiplicative",
+        "E_ns_point_count": 30,
+        "split": false,
+        "nonsplit": true
+      }
+    }
+  },
+  "cubic": {
+    "f2": "x^3 + x^2 + 8x - 16",
+    "discriminant": -11136,
+    "discriminant_recomputed_from_the_formula": -11136,
+    "formula_agrees": true,
+    "discriminant_factored": {
+      "2": 7,
+      "3": 1,
+      "29": 1
+    },
+    "squarefree_part": -174,
+    "quadratic_subfield_of_the_splitting_field": "Q(sqrt(-174))",
+    "galois_group": "S3 (disc is not a square, and f2 has no rational root)",
+    "entanglement": "-174 = (-6)·29, and q ≡ 1 (mod 24) forces (-6/q) = 1 while (29/q) = 1 is the second condition — so (disc/q) = 1 for every q already passing them, pinning Frobenius inside A3"
+  },
+  "naive_independent_product": {
+    "q ≡ 1 mod 24": "1/8",
+    "(q/29) = 1": "1/2",
+    "f2 irreducible mod q": "1/3 for an S3 cubic",
+    "product": "1/48",
+    "verdict": "wrong — the three conditions are not independent, and the note's 1/24 is the correct value"
+  },
+  "prediction_tested": {
+    "statement": "for q ≡ 1 (mod 24) with (q/29) = 1, Frobenius lies in A3, so f2 mod q has 0 or 3 roots and NEVER exactly 1",
+    "primes_satisfying_the_first_two_conditions": 79204,
+    "root_count_histogram": {
+      "0": 52889,
+      "1": 0,
+      "3": 26315
+    },
+    "VIOLATIONS_exactly_one_root": 0,
+    "violation_sample": [],
+    "conditional_density_of_irreducibility": 0.6677566789556083,
+    "expected_conditional_density": 0.6666666666666666
+  },
+  "density_measured": {
+    "limit": 20000000,
+    "primes_up_to_limit": 1270607,
+    "size_of_P": 52889,
+    "empirical_density": 0.04162498711245885,
+    "one_over_density": 24.024031462118778,
+    "checkpoints": [
+      {
+        "x": 100000,
+        "primes_up_to_x": 9593,
+        "in_P": 403,
+        "empirical_density": 0.042009798811633484,
+        "times_24": 1.0082351714792037,
+        "times_48": 2.0164703429584074
+      },
+      {
+        "x": 1000000,
+        "primes_up_to_x": 78499,
+        "in_P": 3226,
+        "empirical_density": 0.041096064918024436,
+        "times_24": 0.9863055580325865,
+        "times_48": 1.972611116065173
+      },
+      {
+        "x": 10000000,
+        "primes_up_to_x": 664580,
+        "in_P": 27667,
+        "empirical_density": 0.0416308044178278,
+        "times_24": 0.9991393060278673,
+        "times_48": 1.9982786120557345
+      }
+    ]
+  },
+  "ok": true
+}
