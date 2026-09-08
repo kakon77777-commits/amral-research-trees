@@ -5,7 +5,8 @@
     "src09_kept_curves_removal_gate",
     "src10_phase2_density_and_base",
     "src12_p5_localization",
-    "src13_algorithm2_twists"
+    "src13_algorithm2_twists",
+    "src14_globalizer_faithfulness"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -30,7 +31,8 @@
     "disc-formula": true,
     "frobenius-at-3": true,
     "psi3-and-roots": true,
-    "reducibility-sieve": true
+    "reducibility-sieve": true,
+    "globalizer-exact": true
   },
   "defects": [
     {
@@ -404,6 +406,33 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "unresolved mass summed in floats instead of exact rationals",
+      "kind": "code",
+      "named_check": "globalizer-exact",
+      "checks_that_went_red": [
+        "globalizer-exact"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the empty unresolved set is given nonzero mass",
+      "kind": "code",
+      "named_check": "globalizer-exact",
+      "checks_that_went_red": [
+        "globalizer-exact"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "invisibility measured at single precision instead of double",
+      "kind": "code",
+      "named_check": "globalizer-exact",
+      "checks_that_went_red": [
+        "globalizer-exact"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "discriminant: the -27*b6^2 term becomes -26*b6^2",
       "kind": "code",
       "named_check": "disc-formula",
@@ -558,8 +587,8 @@
     }
   ],
   "totals": {
-    "defects": 48,
-    "caught_by_the_named_check": 48,
+    "defects": 51,
+    "caught_by_the_named_check": 51,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
     "controls": 14,

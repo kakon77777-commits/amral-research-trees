@@ -1,0 +1,97 @@
+{
+  "gate": "src14_globalizer_faithfulness",
+  "subject": "Phase 0 07_BSD_Certificate_Globalizer — the faithful unresolved mass 𝔅_k(s) = Σ_{i∈H_k} i^{-s}, s > 1",
+  "claims_verified_exactly": {
+    "(1) a single uncertified class leaves positive mass": true,
+    "(2) 𝔅 = 0 iff H is empty": true,
+    "(3) monotone certification cannot raise the mass": true,
+    "singleton_masses_at_s_2": {
+      "1": "1",
+      "7": "1/49",
+      "4062": "1/16499844",
+      "40749": "1/1660481001"
+    },
+    "monotone_chain_masses": [
+      "3121579929551692678469635660835626209661709/1920815367859463099600511526151929560192000",
+      "46252969210499754415427421586309/28546916554875489385168794240000",
+      "10569323516905392683966428786309/28546916554875489385168794240000",
+      "2297348274998561946892560966709/28546916554875489385168794240000",
+      "1/1600",
+      "0"
+    ]
+  },
+  "the_monotonicity_hypothesis_is_not_needed": {
+    "document_says": "若 certificate system monotone，則 lim 𝔅_k = 0 表示每個固定 class 最終離開 unresolved frontier",
+    "why_it_is_unnecessary": "s > 1 makes Σ i^{-s} convergent, so dominated convergence gives the implication from pointwise departure alone",
+    "witness_sequence_is_monotone": false,
+    "every_index_still_leaves": true,
+    "mass_still_tends_to_zero": {
+      "39": 0.012736653330629085,
+      "401": 0.0012461038264460576,
+      "4001": 0.00012496094758968063,
+      "40001": 1.2499609385091032e-05
+    },
+    "rate_note": "this family's mass falls like 1/(2k), so it is sampled at k = 39, 401, 4001, 40001 rather than asserted at a single k",
+    "holds_without_the_hypothesis": true
+  },
+  "faithfulness_is_exact_but_not_numerical": {
+    "the_design_goal": "§0 — a control quantity that will not swallow a single uncertified curve just because most are certified",
+    "why_it_is_only_exact": "a class at index i leaves mass i^{-s}, positive in Q but below the last representable bit of the running sum past some index; beyond it a float64 benchmark reports the same number whether that curve is resolved or not",
+    "first_invisible_index_by_s": {
+      "11/10": {
+        "s": 1.1,
+        "reference_mass_zeta_s": 10.584448464950803,
+        "first_invisible_index": 37381432770190
+      },
+      "3/2": {
+        "s": 1.5,
+        "reference_mass_zeta_s": 2.612375348685488,
+        "first_invisible_index": 22822828256
+      },
+      "2": {
+        "s": 2.0,
+        "reference_mass_zeta_s": 1.6449340668482264,
+        "first_invisible_index": 73998112
+      },
+      "3": {
+        "s": 3.0,
+        "reference_mass_zeta_s": 1.2020569031595942,
+        "first_invisible_index": 195684
+      }
+    },
+    "on_this_corpus_enumeration": {
+      "2": {
+        "curves_in_enumeration": 40749,
+        "mass_of_the_whole_enumeration": 1.6449095266698226,
+        "mass_of_the_single_last_curve_exact": "1/1660481001",
+        "mass_of_the_single_last_curve_float": 6.022351351191401e-10,
+        "sum_over_all_but_the_last": 1.6449095260675874,
+        "sum_over_all": 1.6449095266698226,
+        "the_last_curve_changed_the_ascending_sum": true,
+        "difference": 6.02235150637398e-10
+      },
+      "3": {
+        "curves_in_enumeration": 40749,
+        "mass_of_the_whole_enumeration": 1.2020569028584904,
+        "mass_of_the_single_last_curve_exact": "1/67662940309749",
+        "mass_of_the_single_last_curve_float": 1.4779139000199763e-14,
+        "sum_over_all_but_the_last": 1.2020569028584756,
+        "sum_over_all": 1.2020569028584904,
+        "the_last_curve_changed_the_ascending_sum": true,
+        "difference": 1.4876988529977098e-14
+      }
+    }
+  },
+  "the_use_case_the_weight_inverts": {
+    "forgetful_tail": {
+      "unresolved_classes": 10750,
+      "mass": 8.793710489196217e-06
+    },
+    "one_stubborn_early_curve": {
+      "unresolved_classes": 1,
+      "mass": 0.02040816326530612
+    },
+    "comparison": "10,750 unresolved classes carry mass 8.79371e-06, while ONE unresolved class at index 7 carries 0.0204082 — larger by a factor of 2320.77. 𝔅 ranks a single early failure as worse than ten thousand late ones, which is a property of the weight i^-s and not a defect — but it is the opposite of what §5's 'are high-conductor curves permanently forgotten?' use case needs, and the document does not say so."
+  },
+  "ok": true
+}

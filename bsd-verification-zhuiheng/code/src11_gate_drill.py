@@ -1,4 +1,4 @@
-"""Drill for gates 04-10, 12, 13 — plant a defect, demand the named check catch it.
+"""Drill for gates 04-10, 12-14 — plant a defect, demand the named check catch it.
 
 數學戰士「墜衡」 / AMRAL Research Lab.
 
@@ -94,6 +94,7 @@ import src04_curve_arithmetic_recompute as arith4        # noqa: E402
 import src05_frobenius_at_three as frob5                 # noqa: E402
 import src06_three_isogeny_sieve as iso6                 # noqa: E402
 import src07_isogeny_reducibility_sieve as red7          # noqa: E402
+import src14_globalizer_faithfulness as glob14           # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -367,6 +368,26 @@ def check_reducibility_sieve() -> bool:
             and red7.divides_discriminant([0, 1, 0, 8, -16], 29))
 
 
+def check_globalizer() -> bool:
+    """Gate 14's exact-arithmetic claims about the faithful unresolved mass."""
+    F = Fraction
+    if glob14.mass_exact([], F(2)) != 0:
+        return False
+    if glob14.mass_exact([40749], F(2)) != F(1, 40749 ** 2):
+        return False
+    if glob14.mass_exact([1, 2], F(2)) != F(5, 4):
+        return False
+    # monotone certification cannot raise the mass
+    a = glob14.mass_exact(range(1, 20), F(3))
+    b = glob14.mass_exact(range(5, 20), F(3))
+    if not (b < a):
+        return False
+    # and the invisibility index must land where double precision actually runs
+    # out: one part in 2^53 of the reference, not one part in anything else
+    idx = glob14.invisibility_index(2.0, 1.6449340668482264)
+    return 7.3e7 < idx < 7.5e7
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -385,6 +406,7 @@ CHECKS = {
     "frobenius-at-3": check_frobenius_at_three,
     "psi3-and-roots": check_psi3_and_roots,
     "reducibility-sieve": check_reducibility_sieve,
+    "globalizer-exact": check_globalizer,
 }
 
 
@@ -544,6 +566,21 @@ DEFECTS = [
     ("the twist bound is cut below what the artifact used", "code",
      "alg2-fixture", lambda: patch(alg2, "BOUND", 500)),
 
+    # ---- gate 14 -------------------------------------------------------------
+    ("unresolved mass summed in floats instead of exact rationals", "code",
+     "globalizer-exact",
+     lambda: patch(glob14, "mass_exact",
+                   lambda ix, s: Fraction(glob14.mass_float(
+                       list(ix), float(s))).limit_denominator(10 ** 6))),
+    ("the empty unresolved set is given nonzero mass", "code",
+     "globalizer-exact",
+     lambda: patch(glob14, "mass_exact",
+                   lambda ix, s: _true_mass_exact(ix, s) + Fraction(1, 10 ** 9))),
+    ("invisibility measured at single precision instead of double", "code",
+     "globalizer-exact",
+     lambda: patch(glob14, "invisibility_index",
+                   lambda s, ref: max(1, int((ref * 2.0 ** -24) ** (-1.0 / s))))),
+
     # ---- gates 04-07, undrilled until now ------------------------------------
     ("discriminant: the -27*b6^2 term becomes -26*b6^2", "code", "disc-formula",
      lambda: patch(arith4, "discriminant",
@@ -621,6 +658,7 @@ CONTROLS = [
 ]
 
 
+_true_mass_exact = glob14.mass_exact
 _true_kronecker = alg2.kronecker
 _true_point_count = alg2.point_count
 _true_valuation = arith4.valuation
@@ -909,7 +947,8 @@ def main() -> int:
                    "src09_kept_curves_removal_gate",
                    "src10_phase2_density_and_base",
                    "src12_p5_localization",
-                   "src13_algorithm2_twists"],
+                   "src13_algorithm2_twists",
+                   "src14_globalizer_faithfulness"],
         "rule": ("a planted defect must be caught by the check NAMED for it, "
                  "not merely by some check; and controls must disturb nothing"),
         "two_kinds": {
