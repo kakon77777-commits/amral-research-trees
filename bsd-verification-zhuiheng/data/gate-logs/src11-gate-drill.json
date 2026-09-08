@@ -4,7 +4,8 @@
     "src08_modular_curve_confirmation",
     "src09_kept_curves_removal_gate",
     "src10_phase2_density_and_base",
-    "src12_p5_localization"
+    "src12_p5_localization",
+    "src13_algorithm2_twists"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -24,7 +25,12 @@
     "uv-pairs-agree": true,
     "density-1-over-24": true,
     "p5-localization": true,
-    "p5-short-model": true
+    "p5-short-model": true,
+    "alg2-fixture": true,
+    "disc-formula": true,
+    "frobenius-at-3": true,
+    "psi3-and-roots": true,
+    "reducibility-sieve": true
   },
   "defects": [
     {
@@ -342,6 +348,141 @@
         "p5-short-model"
       ],
       "caught_by_the_named_check": true
+    },
+    {
+      "defect": "Kronecker symbol at 2 accepts 3 and 5 mod 8",
+      "kind": "code",
+      "named_check": "alg2-fixture",
+      "checks_that_went_red": [
+        "alg2-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "point count omits the point at infinity",
+      "kind": "code",
+      "named_check": "alg2-fixture",
+      "checks_that_went_red": [
+        "alg2-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "coprimality asks gcd(M, N) instead of gcd(M, 3N)",
+      "kind": "code",
+      "named_check": "alg2-fixture",
+      "checks_that_went_red": [
+        "alg2-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "squarefree set admits squares",
+      "kind": "code",
+      "named_check": "alg2-fixture",
+      "checks_that_went_red": [
+        "alg2-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the 2-division cubic is tested for roots with the wrong leading term",
+      "kind": "code",
+      "named_check": "alg2-fixture",
+      "checks_that_went_red": [
+        "alg2-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the twist bound is cut below what the artifact used",
+      "kind": "code",
+      "named_check": "alg2-fixture",
+      "checks_that_went_red": [
+        "alg2-fixture"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "discriminant: the -27*b6^2 term becomes -26*b6^2",
+      "kind": "code",
+      "named_check": "disc-formula",
+      "checks_that_went_red": [
+        "disc-formula"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "valuation returns one too many",
+      "kind": "code",
+      "named_check": "disc-formula",
+      "checks_that_went_red": [
+        "disc-formula"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "point count over F_3 forgets the point at infinity",
+      "kind": "code",
+      "named_check": "frobenius-at-3",
+      "checks_that_went_red": [
+        "frobenius-at-3"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "singularity test drops one partial derivative",
+      "kind": "code",
+      "named_check": "frobenius-at-3",
+      "checks_that_went_red": [
+        "frobenius-at-3"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "psi3: the 3*b4 coefficient becomes b4",
+      "kind": "code",
+      "named_check": "psi3-and-roots",
+      "checks_that_went_red": [
+        "psi3-and-roots"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "monic scan uses 9*b8 where the substitution gives 27*b8",
+      "kind": "code",
+      "named_check": "psi3-and-roots",
+      "checks_that_went_red": [
+        "psi3-and-roots"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a_p keeps counts Hasse cannot accommodate",
+      "kind": "code",
+      "named_check": "reducibility-sieve",
+      "checks_that_went_red": [
+        "reducibility-sieve"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "Legendre symbol uses the wrong exponent",
+      "kind": "code",
+      "named_check": "reducibility-sieve",
+      "checks_that_went_red": [
+        "reducibility-sieve"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "square-test mod n skips the residue 0",
+      "kind": "code",
+      "named_check": "reducibility-sieve",
+      "checks_that_went_red": [
+        "reducibility-sieve"
+      ],
+      "caught_by_the_named_check": true
     }
   ],
   "controls": [
@@ -399,14 +540,29 @@
       "control": "group law: the -a1*y term removed, which a1 = 0 makes a no-op",
       "checks_that_went_red": [],
       "undisturbed": true
+    },
+    {
+      "control": "gate 13's factor table rebuilt with the same contents",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "square-test mod n drops its last residue, which (n-1)^2 = 1^2 makes redundant",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "rational-root theorem forgets the denominator 3, which decides nothing here",
+      "checks_that_went_red": [],
+      "undisturbed": true
     }
   ],
   "totals": {
-    "defects": 33,
-    "caught_by_the_named_check": 33,
+    "defects": 48,
+    "caught_by_the_named_check": 48,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 11,
+    "controls": 14,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

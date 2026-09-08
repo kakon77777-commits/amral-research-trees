@@ -82,12 +82,12 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-011:
-  `src08`, `src09`, `src10`, `src12` are drilled — 33 defects, 33 caught by the
-  named check, 11 controls undisturbed. `src00`–`src07` are not.** This line
-  read "every gate" for nine rounds while the tree had none; it is narrowed to
-  what is true rather than the gap being left unsaid. Gates written after
-  RUN-010 ship with their drill in the same commit.
+  been green is indistinguishable from a comment. **Position as of RUN-012:
+  `src04`–`src10`, `src12`, `src13` are drilled — 48 defects, 48 caught by the
+  named check, 14 controls undisturbed. `src00`–`src03`, the corpus-scanning
+  gates, are not.** This line read "every gate" for nine rounds while the tree
+  had none; it is narrowed to what is true rather than the gap being left
+  unsaid. Gates written after RUN-010 ship with their drill in the same commit.
 * **Controls, or the drill measures nothing.** Something that must not trip.
 * **`unmeasured` is a verdict.** A check that could not run has no result, and
   reporting one would be worse than not checking.
@@ -109,6 +109,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [009](./reports/RUN-009-PHASE2-DENSITY.md) | Phase 2 Theorem 1.1(1) | `src10` | the density is `1/24`; the obvious answer `1/48` is wrong |
 | [010](./reports/RUN-010-GATE-DRILL.md) | **this arm's own gates** | `src11` | 27 defects / 27 caught by the named check — after the first run caught only 24 |
 | [011](./reports/RUN-011-P5-LOCALIZATION.md) | P5 — 389.a1 at `p = 11` | `src12` | the v1.1 localization matrix `[[1,2],[1,4]]` recomputed from scratch, det `2 ≠ 0` |
+| [012](./reports/RUN-012-ALGORITHM2-TWISTS.md) | Algorithm 2's twist maps | `src13`, `src11` | all 247,391 twists rebuilt, 36,687 of 36,687 lists exact; a docstring that contradicts its own code |
 
 ## Layout
 

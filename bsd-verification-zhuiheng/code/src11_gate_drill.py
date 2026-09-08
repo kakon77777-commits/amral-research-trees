@@ -1,4 +1,4 @@
-"""Drill for gates 08, 09, 10 and 12 — plant a defect, demand the named check catch it.
+"""Drill for gates 04-10, 12, 13 — plant a defect, demand the named check catch it.
 
 數學戰士「墜衡」 / AMRAL Research Lab.
 
@@ -9,10 +9,12 @@ This tree's README has stated since RUN-001 that
     been green is indistinguishable from a comment.
 
 and until now the BSD line had none. Ten gates, zero drills, and a method section
-saying otherwise. This closes that for the gates carrying the substantive claims
-— the X₀(n) engine under RUN-007 and RUN-008, the kept-curve checks, the Phase 2
-density, and the P5 localization matrix. Gates written after RUN-010 arrive with
-their drill in the same commit; that is what stopped the claim drifting again.
+saying otherwise. RUN-010 closed that for the three gates then carrying the
+substantive claims; RUN-011 and RUN-012 added their own gates' drills in the same
+commit as the gates, and RUN-012 went back for src04 through src07 — the
+Weierstrass arithmetic, the Frobenius counts over F₃, ψ₃ and its two root tests,
+and the reducibility sieve. Only the four corpus-scanning gates src00–src03,
+whose claims are about text rather than arithmetic, remain undrilled.
 
 TWO KINDS OF DEFECT, because the gates make two kinds of claim.
 
@@ -41,8 +43,26 @@ statement: 389.a1 has a1 = 0, so removing the −a1·y term from the group law i
 identically a no-op. No drill on that curve can test that branch, and a defect
 list that quietly left it out would read as coverage it does not have.
 
-WHAT THE FIRST RUN FOUND, which is the reason to write drills rather than assume
-them. Three defects were caught by nothing at all — an off-by-one in `nth_root`,
+WHAT THE RUNS FOUND, which is the reason to write drills rather than assume them.
+The first pass caught 24 of 27; the pass that added gates 04-07 and 13 caught 44
+of 49. Every miss was one of two things, and both are worth more than the passes.
+
+Some were checks that could not see a real defect, and they were fixed: a
+relational assertion on the F₃ point counts survived subtracting one from both;
+a fixture with 3 ∤ N could not exercise gcd(M, 3N); the Hasse guard in RUN-007's
+a_p was **unreachable** — at a prime of bad reduction a_p is 0 or ±1, always
+inside Hasse, so the branch was dead and its comment was false. It is now the
+condition it was pretending to be, and RUN-007's log re-runs byte-identical.
+
+The rest were mutations that are no-ops on the actual population, and they moved
+to CONTROLS with the reason attached rather than being dropped. 389.a1 has
+a₁ = 0. (n−1)² ≡ 1² (mod n). And dropping the denominator-3 half of RUN-006's
+rational root theorem changes no verdict on any of the 4,062 census curves —
+1,232 stay True, 2,805 stay False, 25 stay undecided — because every curve with a
+root of denominator 3 also has an integer root. A defect list that quietly
+omitted these would read as coverage the tree does not have.
+
+The first run's three misses, kept here because they are the clearest case — an off-by-one in `nth_root`,
 a primality test stubbed to always say "prime", and `x^q` computed without its
 squaring step. None of them changed a single verdict on any fixture curve. The
 first two live on the no-factoring fallback, a path the census never needed
@@ -62,12 +82,18 @@ import copy
 import json
 import pathlib
 import sys
+from fractions import Fraction
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import src08_modular_curve_confirmation as x0n            # noqa: E402
 import src09_kept_curves_removal_gate as kept             # noqa: E402
 import src10_phase2_density_and_base as ph2               # noqa: E402
 import src12_p5_localization as p5                       # noqa: E402
+import src13_algorithm2_twists as alg2                   # noqa: E402
+import src04_curve_arithmetic_recompute as arith4        # noqa: E402
+import src05_frobenius_at_three as frob5                 # noqa: E402
+import src06_three_isogeny_sieve as iso6                 # noqa: E402
+import src07_isogeny_reducibility_sieve as red7          # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -229,6 +255,118 @@ def check_p5_short_model() -> bool:
             and p5.on_curve(p5.P0) and p5.on_curve(p5.Q0))
 
 
+# Twist lists the corpus states for two named curves, in
+# 03_Algorithm2_Independent_Reproduction — 7 for 46a1 on the CLZ branch and 21
+# for 106d1 on the Zhai branch. Fixed outside this gate, so they can test it.
+ALG2_FIXTURE = {
+    "46a1": {"ainvs": [1, -1, 0, -10, -12], "conductor": 46,
+             "conductor_primes": [2, 23], "source": "CLZ20",
+             "twists": [1, 185, 265, 305, 745, 785, 905]},
+    # 100457b1 is in the shrink_only class: its OLD twist list carried 177,
+    # 501 and 669, all divisible by 3, which the gcd(M, 3N) tightening removed.
+    # Nothing else in this fixture exercises that condition — 3 ∤ N for both
+    # curves below, and on the CLZ branch 3 ≢ 1 (mod 4) kills every multiple of
+    # 3 anyway, so the gcd is redundant there.
+    "100457b1": {"ainvs": [1, 0, 1, -11, 19], "conductor": 100457,
+                 "conductor_primes": [7, 113, 127],
+                 "source": "Zha16_no_2_tors",
+                 "twists": [1, 149, 389, 569, 653, 709, 809]},
+    "106d1": {"ainvs": [1, 1, 0, -27, -67], "conductor": 106,
+              "conductor_primes": [2, 53], "source": "Zha16_no_2_tors",
+              "twists": [1, 17, 89, 97, 113, 241, 281, 409, 473, 505, 521,
+                         545, 577, 649, 673, 713, 785, 857, 865, 929, 937]},
+}
+
+
+def check_alg2_fixture() -> bool:
+    """Both branches of Algorithm 2 rebuilt, against the corpus's own fixture."""
+    for _label, f in ALG2_FIXTURE.items():
+        rec = {k: f[k] for k in ("ainvs", "conductor", "conductor_primes",
+                                 "source")}
+        if alg2.admissible(rec) != f["twists"]:
+            return False
+    return True
+
+
+# Curves whose Weierstrass arithmetic is fixed outside this tree.
+ARITH_FIXTURE = [
+    ("14a1", [1, 0, 1, 4, -6], -21952),
+    ("389a1", [0, 1, 1, -2, 0], 389),
+    ("696b1", [0, 1, 0, 8, -16], -178176),
+    ("37a1", [0, 0, 1, -1, 0], 37),
+]
+
+
+def check_discriminant_formula() -> bool:
+    """src04's Δ, against curves whose discriminant is known independently."""
+    for _label, inv, disc in ARITH_FIXTURE:
+        if arith4.discriminant(*inv) != disc:
+            return False
+    return arith4.valuation(-21952, 2) == 6 and arith4.valuation(-21952, 7) == 3
+
+
+def check_frobenius_at_three() -> bool:
+    """src05's point counts over F₃, split by singularity.
+
+    37a1 has good reduction at 3 (3 ∤ 37), so every projective point is
+    nonsingular and the two counts agree. 696b1 has additive reduction at 3
+    dividing its conductor, so they must not.
+    """
+    # Pinned absolutely, not by relation: subtracting one from both counts
+    # preserves "equal" and "differ by one", so a relational check cannot see a
+    # dropped point at infinity. The first drill run proved exactly that.
+    return (frob5.point_counts(0, 0, 1, -1, 0) == (7, 7)
+            and frob5.point_counts(0, 1, 0, 8, -16) == (3, 2))
+
+
+def check_psi3_and_roots() -> bool:
+    """src06's ψ₃ and its two root tests, on the curve RUN-006 settled by hand.
+
+    183430x1 has the rational 3-isogeny whose root x = 163100 a floating-point
+    scan missed; 37a1's isogeny class is trivial, so ψ₃ must have no rational
+    root there. Both tests are asked, because the gate has two.
+    """
+    hard = [1, 0, 1, -35912323909, 2502914884498672]
+    c = iso6.psi3_coeffs(*hard)
+    if sum(x * 163100 ** k for k, x in enumerate(c)) != 0:
+        return False
+    if not iso6.rational_root_by_monic_scan(c):
+        return False
+    trivial = iso6.psi3_coeffs(0, 0, 1, -1, 0)
+    if iso6.rational_root_by_monic_scan(trivial):
+        return False
+    if iso6.rational_root_exists(trivial) is not False:
+        return False
+    # 14a1's ψ₃ root is −1/3, so this is the only thing here that exercises the
+    # denominator-3 half of the rational root theorem. Without it, dropping
+    # v = 3 from the search changes no answer in the fixture.
+    denom3 = iso6.psi3_coeffs(1, 0, 1, 4, -6)
+    return (iso6.rational_root_exists(denom3) is True
+            and sum(x * Fraction(-1, 3) ** k
+                    for k, x in enumerate(denom3)) == 0)
+
+
+def check_reducibility_sieve() -> bool:
+    """src07's a_p and its residue test, against values computed here.
+
+    a_p for 37a1 at the first few good primes, and the fact that a_p² − 4p is
+    negative and so never a square in Z — the test must be modular, not integral.
+    """
+    for q, want in ((5, -2), (7, -1), (11, -5), (13, -2)):
+        if red7.a_p([0, 0, 1, -1, 0], q) != want:
+            return False
+    if red7.legendre(4, 7) != 1 or red7.legendre(3, 7) != -1:
+        return False
+    # The bad-reduction refusal, which nothing exercised until now: at p = 37
+    # the old Hasse-based guard returned −1, comfortably inside Hasse, because
+    # a singular reduction always has a_p in {0, ±1}.
+    if red7.a_p([0, 0, 1, -1, 0], 37) is not None:
+        return False
+    return (red7.is_square_mod(4, 5) and not red7.is_square_mod(2, 5)
+            and red7.is_square_mod(0, 5)
+            and red7.divides_discriminant([0, 1, 0, 8, -16], 29))
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -242,6 +380,11 @@ CHECKS = {
     "density-1-over-24": check_density_one_over_24,
     "p5-localization": check_p5_localization,
     "p5-short-model": check_p5_short_model,
+    "alg2-fixture": check_alg2_fixture,
+    "disc-formula": check_discriminant_formula,
+    "frobenius-at-3": check_frobenius_at_three,
+    "psi3-and-roots": check_psi3_and_roots,
+    "reducibility-sieve": check_reducibility_sieve,
 }
 
 
@@ -379,6 +522,57 @@ DEFECTS = [
      lambda: patch(p5, "short_model", _bad_short_model)),
     ("the wrong generators are used for the localization", "data",
      "p5-localization", lambda: patch(p5, "Q0", (0, -1))),
+
+    # ---- gate 13 -------------------------------------------------------------
+    ("Kronecker symbol at 2 accepts 3 and 5 mod 8", "code", "alg2-fixture",
+     lambda: patch(alg2, "kronecker",
+                   lambda a, n: (0 if a % 2 == 0 else 1) if n == 2
+                   else _true_kronecker(a, n))),
+    ("point count omits the point at infinity", "code", "alg2-fixture",
+     lambda: patch(alg2, "point_count",
+                   lambda inv, q: _true_point_count(inv, q) - 1)),
+    ("coprimality asks gcd(M, N) instead of gcd(M, 3N)", "code",
+     "alg2-fixture", lambda: patch(alg2, "_gcd", _gcd_ignoring_three)),
+    ("squarefree set admits squares", "code", "alg2-fixture",
+     lambda: patch(alg2, "SQUAREFREE", set(range(1, alg2.BOUND + 1)))),
+    ("the 2-division cubic is tested for roots with the wrong leading term",
+     "code", "alg2-fixture",
+     lambda: patch(alg2, "cubic_irreducible_mod",
+                   lambda c, q: not any(
+                       (((1 * x + c[1]) * x + c[2]) * x + c[3]) % q == 0
+                       for x in range(q)))),
+    ("the twist bound is cut below what the artifact used", "code",
+     "alg2-fixture", lambda: patch(alg2, "BOUND", 500)),
+
+    # ---- gates 04-07, undrilled until now ------------------------------------
+    ("discriminant: the -27*b6^2 term becomes -26*b6^2", "code", "disc-formula",
+     lambda: patch(arith4, "discriminant",
+                   lambda a1, a2, a3, a4, a6: _disc_wrong(a1, a2, a3, a4, a6))),
+    ("valuation returns one too many", "code", "disc-formula",
+     lambda: patch(arith4, "valuation",
+                   lambda n, q: _true_valuation(n, q) + 1)),
+    ("point count over F_3 forgets the point at infinity", "code",
+     "frobenius-at-3",
+     lambda: patch(frob5, "point_counts",
+                   lambda *inv: tuple(c - 1 for c in _true_counts(*inv)))),
+    ("singularity test drops one partial derivative", "code",
+     "frobenius-at-3", lambda: patch(frob5, "point_counts", _counts_one_partial)),
+    ("psi3: the 3*b4 coefficient becomes b4", "code", "psi3-and-roots",
+     lambda: patch(iso6, "psi3_coeffs", _psi3_wrong)),
+    ("monic scan uses 9*b8 where the substitution gives 27*b8", "code",
+     "psi3-and-roots", lambda: patch(iso6, "rational_root_by_monic_scan",
+                                     _monic_scan_nine)),
+    ("a_p keeps counts Hasse cannot accommodate", "code",
+     "reducibility-sieve",
+     lambda: patch(red7, "a_p", lambda inv, q: _true_ap(inv, q) or 0)),
+    ("Legendre symbol uses the wrong exponent", "code", "reducibility-sieve",
+     lambda: patch(red7, "legendre",
+                   lambda a, q: 0 if a % q == 0
+                   else (1 if pow(a, (q - 1), q) == 1 else -1))),
+    ("square-test mod n skips the residue 0", "code", "reducibility-sieve",
+     lambda: patch(red7, "is_square_mod",
+                   lambda a, n: any((r * r) % n == a % n
+                                    for r in range(1, n)))),
 ]
 
 CONTROLS = [
@@ -406,7 +600,100 @@ CONTROLS = [
     # it would read as coverage it does not have.
     ("group law: the -a1*y term removed, which a1 = 0 makes a no-op",
      lambda: patch(p5, "ec_add", _a1_branch_removed)),
+    ("gate 13's factor table rebuilt with the same contents",
+     lambda: patch(alg2, "FACTORS", dict(alg2.FACTORS))),
+    # Another control on purpose: (n−1)² ≡ 1² (mod n), so the last residue of
+    # the square test is always redundant and dropping it cannot change an
+    # answer. Listed with the reason rather than left out.
+    ("square-test mod n drops its last residue, which (n-1)^2 = 1^2 makes redundant",
+     lambda: patch(red7, "is_square_mod",
+                   lambda a, n: any((r * r) % n == a % n
+                                    for r in range(max(0, n - 1))))),
+    # And a third, measured rather than assumed. Dropping the denominator-3 half
+    # of RUN-006's rational root theorem changes no verdict on ANY of the 4,062
+    # census curves: 1,232 stay True, 2,805 stay False, 25 stay undecided. Every
+    # curve with a root of denominator 3 also has an integer root, so that
+    # branch never decided anything. The gate still computes it, and the check
+    # still asserts it computes it correctly — but no defect planted in it can
+    # be caught through the verdict, which is all the gate exposes.
+    ("rational-root theorem forgets the denominator 3, which decides nothing here",
+     lambda: patch(iso6, "rational_root_exists", _root_exists_v1_only)),
 ]
+
+
+_true_kronecker = alg2.kronecker
+_true_point_count = alg2.point_count
+_true_valuation = arith4.valuation
+_true_counts = frob5.point_counts
+_true_ap = red7.a_p
+_true_psi3 = iso6.psi3_coeffs
+
+
+def _disc_wrong(a1, a2, a3, a4, a6):
+    b2 = a1 * a1 + 4 * a2
+    b4 = 2 * a4 + a1 * a3
+    b6 = a3 * a3 + 4 * a6
+    b8 = a1 * a1 * a6 + 4 * a2 * a6 - a1 * a3 * a4 + a2 * a3 * a3 - a4 * a4
+    return -b2 * b2 * b8 - 8 * b4 ** 3 - 26 * b6 * b6 + 9 * b2 * b4 * b6
+
+
+def _counts_one_partial(a1, a2, a3, a4, a6):
+    a1, a2, a3, a4, a6 = (c % 3 for c in (a1, a2, a3, a4, a6))
+    total = nonsingular = 1
+    for x in range(3):
+        for y in range(3):
+            f = (y * y + a1 * x * y + a3 * y
+                 - (x ** 3 + a2 * x * x + a4 * x + a6)) % 3
+            if f:
+                continue
+            total += 1
+            if (2 * y + a1 * x + a3) % 3:          # df/dx never consulted
+                nonsingular += 1
+    return total, nonsingular
+
+
+def _psi3_wrong(a1, a2, a3, a4, a6):
+    c = list(_true_psi3(a1, a2, a3, a4, a6))
+    c[2] //= 3                                     # 3*b4 -> b4
+    return c
+
+
+def _monic_scan_nine(coeffs):
+    """The exact mistake RUN-006 made: the substitution y = 3x gives a constant
+    term 27*b8, and the first version of that gate multiplied by 9."""
+    b8, tb6, tb4, b2, _ = coeffs
+    mono = [9 * b8, 9 * (tb6 // 3), 3 * (tb4 // 3) * 3, b2, 1]
+    bound = 1 + sum(abs(c) for c in mono[:-1])
+    step = 1
+    for w in range(-min(bound, 400000), min(bound, 400000) + 1, step):
+        if sum(c * w ** k for k, c in enumerate(mono)) == 0:
+            return True
+    return False
+
+
+def _root_exists_v1_only(coeffs):
+    from fractions import Fraction
+    c0 = coeffs[0]
+    if c0 == 0:
+        return True
+    divs = iso6.divisors_within_budget(c0)
+    if divs is None:
+        return None
+    for u in divs:
+        for su in (u, -u):
+            x = Fraction(su, 1)                    # v = 3 never tried
+            if sum(Fraction(c) * x ** k for k, c in enumerate(coeffs)) == 0:
+                return True
+    return False
+
+
+def _gcd_ignoring_three(a, b):
+    while a % 3 == 0 and b % 3 == 0:
+        b //= 3
+    x, y = a, b
+    while y:
+        x, y = y, x % y
+    return x
 
 
 def _a1_branch_removed(A, B, ell):
@@ -621,7 +908,8 @@ def main() -> int:
         "covers": ["src08_modular_curve_confirmation",
                    "src09_kept_curves_removal_gate",
                    "src10_phase2_density_and_base",
-                   "src12_p5_localization"],
+                   "src12_p5_localization",
+                   "src13_algorithm2_twists"],
         "rule": ("a planted defect must be caught by the check NAMED for it, "
                  "not merely by some check; and controls must disturb nothing"),
         "two_kinds": {

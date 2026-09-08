@@ -1,0 +1,72 @@
+{
+  "gate": "src13_algorithm2_twists",
+  "subject": "the 247,391 admissible twist pairs of Algorithm 2, rebuilt from the stated criteria for every base curve",
+  "branch_condition": "Algorithm 2 routes by source — CLZ20 for curves with a rational 2-torsion point, Zha16_no_2_tors for those without. RUN-008 measured that split from the arithmetic alone before knowing what it was a split of",
+  "recomputed_not_rerun": "point counts by Legendre symbols, Kronecker symbols from scratch, squarefreeness by trial division, inertness from the 2-division cubic. The generator source was read for the definitions and nothing else",
+  "counts": {
+    "curves": 36687,
+    "twist_pairs_in_artifact": 247391,
+    "by_branch": {
+      "Zha16_no_2_tors": 32944,
+      "CLZ20": 3743
+    },
+    "EXACT_LIST_MATCH": {
+      "Zha16_no_2_tors": 32944,
+      "CLZ20": 3743
+    },
+    "curves_where_criteria_admit_more": 0,
+    "curves_where_artifact_lists_more": 0
+  },
+  "criteria_admit_more": [],
+  "artifact_lists_more": [],
+  "the_2_adic_condition_is_stated_twice": {
+    "docstring": "ord_2(a_p) = 1 for all p | M",
+    "code": "(p + 1 - a_p).valuation(2) == 1, i.e. ord_2(#E(F_p)) = 1",
+    "these_differ": "p = 5 with a_p = 2 gives ord_2(a_p) = 1 but ord_2(#E(F_p)) = ord_2(4) = 2",
+    "CLZ_curves_matched_by_the_code_reading": 3743,
+    "CLZ_curves_matched_by_the_docstring_reading": 19
+  },
+  "entry_level_census": {
+    "old_keys": 39394,
+    "new_keys": 36687,
+    "stable": 36687,
+    "keys_only_in_old": 2707,
+    "keys_only_in_new": 0,
+    "classes": {
+      "unchanged": 31250,
+      "shrink_only": 5437
+    },
+    "twist_entries_removed": 21306,
+    "twist_entries_ADDED": 0,
+    "every_removed_entry_divisible_by_3": true,
+    "smallest_removed_entries": [
+      21,
+      33,
+      57,
+      69,
+      93,
+      105,
+      129,
+      141,
+      165,
+      177,
+      201,
+      213
+    ],
+    "curves_where_new_equals_old_with_multiples_of_3_dropped": 36687,
+    "expand_branch_verdict": "the deletion of disc_valuation_condition added ZERO twist entries across every stable curve, so the non-monotone branch that document warned about is real in the code and empty in the output; the 1,899 added diff lines are structural, not new twists"
+  },
+  "negative_twists": {
+    "Zhai_branch_curves_with_negative_discriminant": 22858,
+    "in_scope": "the Zhai loop runs M from −1000 and skips negative M only when Δ_E > 0, so curves with negative discriminant admit negative twists",
+    "negatives_in_the_artifact": 0,
+    "curves_whose_criteria_admit_a_negative_twist": 0,
+    "sample": []
+  },
+  "inertness_caveat": {
+    "exact_direction": "irreducible mod p ⟹ p inert, always — an irreducible polynomial over F_p is separable, so Dedekind applies whatever the index",
+    "where_it_can_differ": "the converse can fail when p divides the index, which requires p | disc(cubic)",
+    "curve_prime_pairs_at_risk": 109497
+  },
+  "ok": true
+}

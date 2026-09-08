@@ -72,18 +72,6 @@ def legendre(a: int, p: int) -> int:
     return 1 if pow(a, (p - 1) // 2, p) == 1 else -1
 
 
-def a_p(ainvs: list[int], p: int) -> int | None:
-    """Trace of Frobenius at p, or None if the reduction is singular there."""
-    a1, a2, a3, a4, a6 = (c % p for c in ainvs)
-    total = 1                                   # point at infinity
-    for x in range(p):
-        d = ((a1 * x + a3) ** 2 + 4 * (x * x * x + a2 * x * x + a4 * x + a6)) % p
-        total += 1 + legendre(d, p)
-    # a singular reduction shows up as a count that Hasse cannot accommodate
-    ap = p + 1 - total
-    return ap if abs(ap) * abs(ap) <= 4 * p else None
-
-
 def divides_discriminant(ainvs: list[int], p: int) -> bool:
     a1, a2, a3, a4, a6 = ainvs
     b2 = a1 * a1 + 4 * a2
@@ -92,6 +80,32 @@ def divides_discriminant(ainvs: list[int], p: int) -> bool:
     b8 = a1 * a1 * a6 + 4 * a2 * a6 - a1 * a3 * a4 + a2 * a3 * a3 - a4 * a4
     disc = -b2 * b2 * b8 - 8 * b4 ** 3 - 27 * b6 * b6 + 9 * b2 * b4 * b6
     return disc % p == 0
+
+
+def a_p(ainvs: list[int], p: int) -> int | None:
+    """Trace of Frobenius at p, or None where the reduction is singular.
+
+    The singular case is decided by the discriminant, not by Hasse. An earlier
+    version of this function returned None when |a_p|² > 4p, with a comment
+    saying "a singular reduction shows up as a count that Hasse cannot
+    accommodate." **That comment was false and the branch was dead.** At a
+    prime of bad reduction a_p is 0 or ±1 — split multiplicative +1, non-split
+    −1, additive 0 — which satisfies |a_p| ≤ 2√p for every p ≥ 1. The guard
+    could never fire, so it never distinguished anything.
+
+    RUN-007's verdicts are unaffected: its caller filters bad primes with
+    divides_discriminant() before ever reaching here, so the dead guard was
+    never load-bearing. It is replaced by the condition it was pretending to
+    be, which the drill now exercises at a bad prime.
+    """
+    if divides_discriminant(ainvs, p):
+        return None
+    a1, a2, a3, a4, a6 = (c % p for c in ainvs)
+    total = 1                                   # point at infinity
+    for x in range(p):
+        d = ((a1 * x + a3) ** 2 + 4 * (x * x * x + a2 * x * x + a4 * x + a6)) % p
+        total += 1 + legendre(d, p)
+    return p + 1 - total
 
 
 def is_square_mod(a: int, n: int) -> bool:
