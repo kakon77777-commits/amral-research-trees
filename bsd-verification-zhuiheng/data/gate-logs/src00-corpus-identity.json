@@ -1,0 +1,72 @@
+{
+  "gate": "src00_corpus_identity",
+  "question": "does every curated BSD document exist byte-identically in the archived research packages?",
+  "matched_by": "content sha256, never filename",
+  "why_not_filename": "curated copies carry ordering prefixes the originals do not, so a name comparison would report renames as mismatches and could match two different documents sharing a name across packages",
+  "counts": {
+    "curated_documents": 85,
+    "archived_md": 292,
+    "matched_byte_identical": 84,
+    "matched_but_renamed": 4,
+    "curated_without_an_archived_original": 1,
+    "archived_not_curated": 201
+  },
+  "curated_without_an_archived_original": [
+    {
+      "subline": "phase2",
+      "name": "07_Local_Agent_Implementation_Spec.md",
+      "bytes": 1917,
+      "sha256": "7b024f34ecc42bc098a912ad5464d09108b117597909e98dfe644b6fdb478525"
+    }
+  ],
+  "matched_but_renamed": [
+    {
+      "curated": "00_README.md",
+      "subline": "phase0",
+      "archived_as": [
+        "bsd/BSD_Global_Enclosure_Phase0_2026-08-12/README.md"
+      ]
+    },
+    {
+      "curated": "29_Theorem_Note_v1.0.md",
+      "subline": "phase2",
+      "archived_as": [
+        "bsd/BSD_696e1_Theorem_Note_v1.0_2026-08-13/paper.md"
+      ]
+    },
+    {
+      "curated": "30_Two_Witness_Criterion_v0.1.md",
+      "subline": "phase2",
+      "archived_as": [
+        "bsd/BSD_Two_Witness_NonSemistable_Criterion_v0.1_2026-08-13/paper.md"
+      ]
+    },
+    {
+      "curated": "31_Witness_Network_Criterion_v0.2.md",
+      "subline": "phase2",
+      "archived_as": [
+        "bsd/BSD_Witness_Network_Finite_Exception_Criterion_v0.2_2026-08-13/paper.md"
+      ]
+    }
+  ],
+  "per_subline": {
+    "phase0": {
+      "curated": 10,
+      "witnessed": 10
+    },
+    "p5": {
+      "curated": 10,
+      "witnessed": 10
+    },
+    "phase1": {
+      "curated": 25,
+      "witnessed": 25
+    },
+    "phase2": {
+      "curated": 40,
+      "witnessed": 39
+    }
+  },
+  "not_a_defect": "an archived document that is not curated is expected: the site presents a selected reading path, and the packages also carry READMEs, handoffs and intermediate notes. Only the other direction is a finding.",
+  "ok": false
+}
