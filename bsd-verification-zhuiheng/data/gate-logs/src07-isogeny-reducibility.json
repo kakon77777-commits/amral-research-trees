@@ -1,0 +1,194 @@
+{
+  "gate": "src07_isogeny_reducibility_sieve",
+  "criterion": "a rational n-isogeny makes the mod-n representation reducible, so x² - a_p x + p has a root mod n for every good p ≠ n, i.e. a_p² - 4p is a square mod n",
+  "one_sided": "a non-residue at some good prime refutes; passing everywhere is NOT evidence of an isogeny and is reported unresolved",
+  "why_not_psi_n_roots": "for n ≥ 5 an order-n subgroup has (n-1)/2 distinct x-coordinates and Galois need only preserve the set, so an isogeny is a degree-(n-1)/2 rational FACTOR of ψ_n, not a rational root. RUN-006's method is special to n = 3",
+  "primes_tested": [
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29,
+    31,
+    37,
+    41,
+    43,
+    47,
+    53,
+    59,
+    61,
+    67,
+    71,
+    73,
+    79,
+    83,
+    89,
+    97,
+    101,
+    103,
+    107,
+    109,
+    113
+  ],
+  "counts": {
+    "n=3": {
+      "package_says_true": 1233,
+      "refuted_by_a_prime": 2829,
+      "of_those_contradicting_the_package": 0,
+      "confirmed_false": 2829,
+      "unresolved": 1233,
+      "unresolved_that_package_calls_false": 0
+    },
+    "n=5": {
+      "package_says_true": 115,
+      "refuted_by_a_prime": 3947,
+      "of_those_contradicting_the_package": 0,
+      "confirmed_false": 3947,
+      "unresolved": 115,
+      "unresolved_that_package_calls_false": 0
+    },
+    "n=7": {
+      "package_says_true": 7,
+      "refuted_by_a_prime": 4055,
+      "of_those_contradicting_the_package": 0,
+      "confirmed_false": 4055,
+      "unresolved": 7,
+      "unresolved_that_package_calls_false": 0
+    }
+  },
+  "control_n3_against_RUN006": {
+    "ran": true,
+    "violations": [],
+    "meaning": "RUN-006 decided all 4,062 curves exactly. Any curve refuted here that RUN-006 proved has a rational 3-isogeny would indict this gate's criterion or its arithmetic, not the package."
+  },
+  "contradicting_the_package": {
+    "n=3": [],
+    "n=5": [],
+    "n=7": []
+  },
+  "witness_prime_distribution": {
+    "n=3": {
+      "5": 1285,
+      "7": 363,
+      "11": 557,
+      "13": 176,
+      "17": 224,
+      "19": 71,
+      "23": 71,
+      "29": 40,
+      "31": 14,
+      "37": 5,
+      "41": 12,
+      "43": 1,
+      "47": 4,
+      "53": 4,
+      "59": 1,
+      "61": 1
+    },
+    "n=5": {
+      "7": 1830,
+      "11": 624,
+      "13": 709,
+      "17": 425,
+      "19": 141,
+      "23": 105,
+      "29": 38,
+      "31": 20,
+      "37": 33,
+      "41": 9,
+      "43": 7,
+      "47": 2,
+      "53": 2,
+      "61": 1,
+      "67": 1
+    },
+    "n=7": {
+      "5": 1593,
+      "11": 926,
+      "13": 762,
+      "17": 351,
+      "19": 230,
+      "23": 65,
+      "29": 41,
+      "31": 45,
+      "37": 21,
+      "41": 9,
+      "43": 4,
+      "47": 4,
+      "53": 2,
+      "61": 2
+    }
+  },
+  "unresolved_sample": {
+    "n=3": [
+      {
+        "label": "14a1",
+        "package_says": true
+      },
+      {
+        "label": "26a1",
+        "package_says": true
+      },
+      {
+        "label": "34a1",
+        "package_says": true
+      },
+      {
+        "label": "35a1",
+        "package_says": true
+      },
+      {
+        "label": "38a1",
+        "package_says": true
+      }
+    ],
+    "n=5": [
+      {
+        "label": "38b1",
+        "package_says": true
+      },
+      {
+        "label": "66c1",
+        "package_says": true
+      },
+      {
+        "label": "186b1",
+        "package_says": true
+      },
+      {
+        "label": "203a1",
+        "package_says": true
+      },
+      {
+        "label": "246b1",
+        "package_says": true
+      }
+    ],
+    "n=7": [
+      {
+        "label": "26b1",
+        "package_says": true
+      },
+      {
+        "label": "174b1",
+        "package_says": true
+      },
+      {
+        "label": "1230k1",
+        "package_says": true
+      },
+      {
+        "label": "5010h1",
+        "package_says": true
+      },
+      {
+        "label": "6690j1",
+        "package_says": true
+      }
+    ]
+  },
+  "ok": true
+}

@@ -1,0 +1,270 @@
+{
+  "gate": "src08_modular_curve_confirmation",
+  "what_is_new": "first complete method in this line — it decides yes AND no, so it closes the positive claims RUN-006 and RUN-007 could only leave unresolved, and re-derives the negative ones independently",
+  "criterion": "a rational n-isogeny survives quadratic twist, so it depends only on j(E); X₀(3), X₀(5), X₀(7) are genus 0 with a rational point, so E has a rational n-isogeny iff j(E) = f_n(t) for some rational t ≠ 0",
+  "parametrisations": {
+    "X0(3)": "j = (t+27)(t+3)^3 / t",
+    "X0(5)": "j = (t^2+250t+3125)^3 / t^5",
+    "X0(7)": "j = (t^2+13t+49)(t^2+245t+2401)^3 / t^7"
+  },
+  "why_a_26_digit_denominator_is_searchable": "writing t = u/v in lowest terms gives j = A/(v^D u^m) with gcd(A,v) = 1 and every prime of gcd(A,u) dividing N(0), which is a pure power of n. Hence den(j) = v^D · |u'|^m · n^w with u' the n-free part of u — the n-free part of the denominator factors as v'^D·|u'|^m and nothing else, and the leftover power of n is bounded by the archimedean size of j",
+  "self_check": {
+    "policy": "the gate reproduces answers known independently before it is allowed to run on the census, and exits rather than report if any is wrong",
+    "results": [
+      {
+        "curve": "11a1",
+        "n": 3,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "11a1",
+        "n": 5,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-1375",
+          "-11"
+        ]
+      },
+      {
+        "curve": "11a1",
+        "n": 7,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "14a1",
+        "n": 3,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-729/28",
+          "-64/7"
+        ]
+      },
+      {
+        "curve": "14a1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "14a1",
+        "n": 7,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26a1",
+        "n": 3,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-729/26",
+          "-8/13"
+        ]
+      },
+      {
+        "curve": "26a1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26a1",
+        "n": 7,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26b1",
+        "n": 3,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26b1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "26b1",
+        "n": 7,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-98/13"
+        ]
+      },
+      {
+        "curve": "49a1",
+        "n": 3,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "49a1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "49a1",
+        "n": 7,
+        "expected": true,
+        "got": true,
+        "t": [
+          "-7"
+        ]
+      },
+      {
+        "curve": "37a1",
+        "n": 3,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "37a1",
+        "n": 5,
+        "expected": false,
+        "got": false,
+        "t": []
+      },
+      {
+        "curve": "37a1",
+        "n": 7,
+        "expected": false,
+        "got": false,
+        "t": []
+      }
+    ]
+  },
+  "counts": {
+    "n=3": {
+      "package_says_true": 1233,
+      "CONFIRMED_true_rational_point_found": 1233,
+      "CONFIRMED_false_no_rational_point": 2829,
+      "DISAGREES_with_the_package": 0,
+      "undecided_search_cut": 0,
+      "set_aside_j_is_0_or_1728": 0
+    },
+    "n=5": {
+      "package_says_true": 115,
+      "CONFIRMED_true_rational_point_found": 115,
+      "CONFIRMED_false_no_rational_point": 3947,
+      "DISAGREES_with_the_package": 0,
+      "undecided_search_cut": 0,
+      "set_aside_j_is_0_or_1728": 0
+    },
+    "n=7": {
+      "package_says_true": 7,
+      "CONFIRMED_true_rational_point_found": 7,
+      "CONFIRMED_false_no_rational_point": 4055,
+      "DISAGREES_with_the_package": 0,
+      "undecided_search_cut": 0,
+      "set_aside_j_is_0_or_1728": 0
+    }
+  },
+  "control_n3_against_RUN006": {
+    "ran": true,
+    "RUN006_verdict": "all 4,062 agree with the package, 0 refuted",
+    "this_gate_decided": 4062,
+    "this_gate_disagreements_with_package": 0,
+    "consistent_with_RUN006": true,
+    "meaning": "RUN-006 and this gate share no arithmetic — one finds rational roots of ψ₃, the other rational points on X₀(3). Both agreeing with the package on every curve they decide is a genuine cross-check; either disagreeing would indict a gate before it indicted the census."
+  },
+  "disagreements": {
+    "n=3": [],
+    "n=5": [],
+    "n=7": []
+  },
+  "undecided": {
+    "n=3": [],
+    "n=5": [],
+    "n=7": []
+  },
+  "set_aside": {
+    "n=3": [],
+    "n=5": [],
+    "n=7": []
+  },
+  "confirmed_sample": {
+    "n=3": [
+      {
+        "label": "14a1",
+        "t": [
+          "-729/28",
+          "-64/7"
+        ]
+      },
+      {
+        "label": "26a1",
+        "t": [
+          "-729/26",
+          "-8/13"
+        ]
+      },
+      {
+        "label": "34a1",
+        "t": [
+          "17/4"
+        ]
+      }
+    ],
+    "n=5": [
+      {
+        "label": "38b1",
+        "t": [
+          "-250/19"
+        ]
+      },
+      {
+        "label": "66c1",
+        "t": [
+          "1500/11"
+        ]
+      },
+      {
+        "label": "186b1",
+        "t": [
+          "-750/31"
+        ]
+      }
+    ],
+    "n=7": [
+      {
+        "label": "26b1",
+        "t": [
+          "-98/13"
+        ]
+      },
+      {
+        "label": "174b1",
+        "t": [
+          "-294/29"
+        ]
+      },
+      {
+        "label": "1230k1",
+        "t": [
+          "-1470/41"
+        ]
+      }
+    ]
+  },
+  "denominators_not_factored": 0,
+  "ok": true
+}
