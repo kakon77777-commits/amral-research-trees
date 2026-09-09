@@ -1,0 +1,263 @@
+{
+  "gate": "src43 — the finite exceptional prime problem, computed",
+  "source": "04_Finite_Exceptional_Prime_Problem",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "conductor": 696,
+  "P_red": {
+    "bounded_by": "Mazur's theorem — the only possible prime degrees",
+    "degrees": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      37,
+      43,
+      67,
+      163
+    ],
+    "rows": [
+      {
+        "n": 2,
+        "witness": null,
+        "refuted": true,
+        "how": "sieve structurally vacuous (every element of F2 is a square); settled by X_0(2), RUN-007",
+        "all_of_F2_is_square": true
+      },
+      {
+        "n": 3,
+        "witness": 11,
+        "a_ell": -2,
+        "refuted": true,
+        "how": "reducibility sieve witness"
+      },
+      {
+        "n": 5,
+        "witness": 7,
+        "a_ell": 1,
+        "refuted": true,
+        "how": "reducibility sieve witness"
+      },
+      {
+        "n": 7,
+        "witness": 5,
+        "a_ell": -3,
+        "refuted": true,
+        "how": "reducibility sieve witness"
+      },
+      {
+        "n": 11,
+        "witness": 7,
+        "a_ell": 1,
+        "refuted": true,
+        "how": "reducibility sieve witness"
+      },
+      {
+        "n": 13,
+        "witness": 5,
+        "a_ell": -3,
+        "refuted": true,
+        "how": "reducibility sieve witness"
+      },
+      {
+        "n": 17,
+        "witness": 5,
+        "a_ell": -3,
+        "refuted": true,
+        "how": "reducibility sieve witness"
+      },
+      {
+        "n": 19,
+        "witness": 5,
+        "a_ell": -3,
+        "refuted": true,
+        "how": "reducibility sieve witness"
+      },
+      {
+        "n": 37,
+        "witness": 17,
+        "a_ell": 7,
+        "refuted": true,
+        "how": "reducibility sieve witness"
+      },
+      {
+        "n": 43,
+        "witness": 5,
+        "a_ell": -3,
+        "refuted": true,
+        "how": "reducibility sieve witness"
+      },
+      {
+        "n": 67,
+        "witness": 11,
+        "a_ell": -2,
+        "refuted": true,
+        "how": "reducibility sieve witness"
+      },
+      {
+        "n": 163,
+        "witness": 11,
+        "a_ell": -2,
+        "refuted": true,
+        "how": "reducibility sieve witness"
+      }
+    ],
+    "set": [],
+    "is_empty": true,
+    "claim_is_universal": true,
+    "why_universal": "Mazur's theorem makes the twelve exhaustive, so refuting all twelve empties the set for every prime, not up to a bound"
+  },
+  "P_ram": {
+    "W_minus": [
+      29
+    ],
+    "valuations": {
+      "29": 1
+    },
+    "per_ell_divisor_sets": {
+      "29": []
+    },
+    "formula_set": [],
+    "formula_says_empty": true,
+    "criterion_actually_obstructed_at": [
+      29
+    ],
+    "formula_misses": [
+      29
+    ],
+    "documents_own_warning": "此式只能作 compiler heuristic，不能直接當 theorem",
+    "the_warning_was_exact": true,
+    "what_the_formula_lacks": "a term for the `ell != p` clause. It models the ramification condition and not the requirement that the witness be a different prime, which is what bites at a singleton W_-"
+  },
+  "P_loc": {
+    "bounded_at": 6000,
+    "set_below_the_bound": [
+      7,
+      113,
+      211,
+      1433,
+      1811,
+      2693,
+      3209,
+      3529
+    ],
+    "size": 8,
+    "is_empty": false,
+    "has_not_stopped": true,
+    "buckets": [
+      {
+        "range": "(0, 1500]",
+        "failures": [
+          7,
+          113,
+          211,
+          1433
+        ],
+        "count": 4
+      },
+      {
+        "range": "(1500, 3000]",
+        "failures": [
+          1811,
+          2693
+        ],
+        "count": 2
+      },
+      {
+        "range": "(3000, 4500]",
+        "failures": [
+          3209,
+          3529
+        ],
+        "count": 2
+      },
+      {
+        "range": "(4500, 6000]",
+        "failures": [],
+        "count": 0
+      }
+    ],
+    "claim_is_universal": false,
+    "what_is_claimed": "that the set has not stopped below 6,000. Whether it is infinite is Lang–Trotter's heuristic and is not claimed here",
+    "criterion": "a_p(E)^2 = 1 (mod p), from 10, exact for good ordinary p"
+  },
+  "success_criterion": {
+    "criterion": "p not in P_red ∪ P_loc ∪ P_ram  =>  FW(E, p), with all three finite, effectively computable and certificate-producing",
+    "P_red": {
+      "empty": true,
+      "universal": true
+    },
+    "P_ram": {
+      "formula_empty": true,
+      "true_obstruction": [
+        29
+      ]
+    },
+    "P_loc": {
+      "empty": false,
+      "size": 8,
+      "bounded_at": 6000,
+      "known_finite": false
+    },
+    "two_of_three_are_empty": true,
+    "achieved_for_all_odd_p": false,
+    "which_factor_blocks_it": "P_loc",
+    "why": "P_loc is non-empty and not known finite, so the mother problem's finite certificate is not obtained for all odd p by this route"
+  },
+  "the_routing_answer": {
+    "P_loc_below_bound": [
+      7,
+      113,
+      211,
+      1433,
+      1811,
+      2693,
+      3209,
+      3529
+    ],
+    "the_FW_branch_supersingular": [
+      23,
+      251,
+      1061,
+      2297,
+      5479,
+      5591
+    ],
+    "intersection": [],
+    "P_loc_is_disjoint_from_the_FW_branch": true,
+    "why_disjoint": "P_loc is defined by a_p^2 = 1 mod p at ORDINARY primes, and the FW branch is the SUPERSINGULAR ones; a prime cannot be both",
+    "reading": "04's mother problem is not solved for all odd p, and the family theorem does not need it to be: the primes that block it are routed to the ordinary theorem by 12's P2, never to FW"
+  },
+  "degradation_rule": {
+    "rule": "不得用「tested up to B」替代全稱量詞",
+    "P_red": {
+      "claim": "empty for every odd p",
+      "universal": true,
+      "licensed_by": "Mazur's theorem makes twelve degrees exhaustive; all twelve refuted"
+    },
+    "P_ram_formula": {
+      "claim": "empty",
+      "universal": true,
+      "licensed_by": "v_29(Δ) = 1 has no prime divisors at all",
+      "but": "the formula is a heuristic, and the true obstruction is [29]"
+    },
+    "P_loc": {
+      "claim": "8 members below 6000, and it has not stopped",
+      "universal": false,
+      "bounded_at": 6000,
+      "not_claimed": "that the set is infinite"
+    },
+    "no_bounded_test_is_reported_as_universal": true
+  },
+  "headline": "all three of `04`'s sets are now computed for 696.e1: P_red empty and universally so, P_ram's formula empty but the formula a heuristic whose exact failure RUN-037 found, and P_loc non-empty and not stopped. The mother problem is NOT solved for all odd p, and the family theorem does not need it to be — the blocking primes are ordinary, and the corpus's own router never asks FW for those",
+  "ok": true
+}
