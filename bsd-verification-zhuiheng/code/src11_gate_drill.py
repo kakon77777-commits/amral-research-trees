@@ -118,6 +118,7 @@ import src28_rank1_bsd_identity as r1bsd                  # noqa: E402
 import src29_sweep_coverage as cov29                      # noqa: E402
 import src30_phase1_numeric_crosscheck as p1num           # noqa: E402
 import src31_q9_census_closure as q9                      # noqa: E402
+import src32_696e1_certificate as cert32                  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1607,6 +1608,67 @@ def check_q9_census_closure() -> bool:
     return q9.base_without_twists(old)["difference"] == 1355
 
 
+_CERT_MEMO: dict = {}
+
+
+def check_certificate_696e1() -> bool:
+    """The 696.e1 certificate: its rows recomputed here, and its labels intact.
+
+    The certificate is built at 4,000 L-series terms rather than the gate's
+    46,000 — 193 seconds against 1.6, and every row already agrees to its stated
+    tolerance there. The algebraic rows are recomputed inline from the
+    a-invariants, independently of the gate's own `agrees` flag, because a
+    certificate whose self-report is the only thing checking it is the summary
+    it was written to replace.
+
+    The two label assertions are the point of the artefact as much as the
+    numbers: the Sha row must still say ANALYTIC, and the cited-not-verified
+    list must still name the rank and the analytic order. A certificate that
+    lost those would read as more than it is.
+    """
+    # The memo is KEYED ON WHAT THE CERTIFICATE DEPENDS ON, not cleared by hand.
+    # The first wiring cleared it inside each defect's setup, so the defect run
+    # repopulated it with corrupted rows and the restore put back only the
+    # patched attribute — every later check then read the stale certificate.
+    # The drill's own "state restored afterwards" guard caught it: 20 of 20
+    # controls disturbed a check. RUN-018's memo was safe because nothing
+    # patched its inputs; this one has three defects that do.
+    key = (tuple(cert32.AINVS), id(cert32.certificate))
+    if _CERT_MEMO.get("key") != key:
+        _CERT_MEMO["key"] = key
+        _CERT_MEMO["c"] = cert32.certificate(limit=4000)
+    c = _CERT_MEMO["c"]
+    if not c["every_row_agrees"] or len(c["rows"]) < 18:
+        return False
+    by = {r["quantity"]: r for r in c["rows"]}
+    # recomputed here, not read from the certificate's own verdict
+    b2, b4, b6, b8, disc = anchor15.b_invariants(cert32.AINVS)
+    want = {"discriminant": disc, "c4": b2 * b2 - 24 * b4,
+            "c6": -b2 ** 3 + 36 * b2 * b4 - 216 * b6,
+            "conductor": 696, "product_of_tamagawa_numbers": 1,
+            "torsion_order": 1, "degree_of_K_E": 16, "e_E": 2}
+    for k, v in want.items():
+        r = by.get(k)
+        if r is None:
+            return False
+        got = r.get("recomputed_here", r.get("value"))
+        if got != v:
+            return False
+    if by["density_of_the_support_set"].get("recomputed_here") != [1, 24]:
+        return False
+    # the labels
+    sha = by.get("analytic_order_of_Sha")
+    if sha is None or "ANALYTIC" not in sha["derivation"]:
+        return False
+    if "analytic order" not in (sha.get("note") or ""):
+        return False
+    cited = cert32.still_cited()
+    if len(cited) < 4:
+        return False
+    joined = " ".join(cited)
+    return "RANK" in joined.upper() and "ANALYTIC" in joined.upper()
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -1665,6 +1727,7 @@ CHECKS = {
     "sweep-coverage": check_sweep_coverage,
     "phase1-numeric-crosscheck": check_phase1_numeric_crosscheck,
     "q9-census-closure": check_q9_census_closure,
+    "certificate-696e1": check_certificate_696e1,
 }
 
 
@@ -1969,6 +2032,15 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("the certificate is built for a different curve", "code",
+     "certificate-696e1",
+     lambda: patch(cert32, "AINVS", [0, 1, 1, -2, 0])),
+    ("the certificate's cited-not-verified list is emptied", "code",
+     "certificate-696e1",
+     lambda: patch(cert32, "still_cited", lambda: [])),
+    ("the Sha row stops saying it is the analytic order", "code",
+     "certificate-696e1",
+     lambda: patch(cert32, "certificate", _certificate_unlabelled)),
 
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
@@ -2241,6 +2313,20 @@ def _classify_body_first(doc, src):
               "named in gate code" if gates else "not mentioned")
     return {"subline": doc["subline"], "name": doc["name"], "bucket": bucket,
             "subject_of": subj, "cited_in": body[:6], "named_in_gates": gates[:6]}
+
+
+_true_certificate = cert32.certificate
+
+
+def _certificate_unlabelled(limit=None):
+    """The Sha row with its ANALYTIC marking stripped from both places — the
+    numbers unchanged, so only the labelling assertions can see it."""
+    c = _true_certificate(limit) if limit else _true_certificate()
+    for r in c["rows"]:
+        if r["quantity"] == "analytic_order_of_Sha":
+            r["derivation"] = "L/Omega * |E(Q)_tors|^2 / prod c_p"
+            r.pop("note", None)
+    return c
 
 
 _true_decompose = q9.decompose

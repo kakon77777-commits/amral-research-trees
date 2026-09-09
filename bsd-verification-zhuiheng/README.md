@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-029:
-  every gate is drilled — `src00`–`src10` and `src12`–`src31`, 121 defects, 121
-  caught by the named check, 20 controls undisturbed, over 57 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-030:
+  every gate is drilled — `src00`–`src10` and `src12`–`src32`, 124 defects, 124
+  caught by the named check, 20 controls undisturbed, over 58 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -132,6 +132,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [027](./reports/RUN-027-SWEEP-COVERAGE.md) | this line's own progress, measured | `src29` | of the 85 documents **21 are the subject of a round, 8 are cited, 56 are not mentioned anywhere**; **Phase 1 has 0 subjects** although six rounds verified its arithmetic — they named the artefacts, never the documents |
 | [028](./reports/RUN-028-PHASE1-NUMERIC-CROSSCHECK.md) | Phase 1's stated arithmetic against this tree's own | `src30` | 15 of 23 stated integers appear in our gate logs; **§Q9's accounting identity checks out and four of its six inputs are ours**, the two that are not being tied so one measurement closes both; and the round's own scanner failed in **both** directions |
 | [029](./reports/RUN-029-Q9-CENSUS-CLOSURE.md) | §Q9's twist accounting, measured | `src31` | **all eight terms measured from the artefacts**, so the identity is a check and not a definition of its last two; the `1,355` RUN-028 could not place is `40,749 − 39,394`; and a check of mine went red **on success**, having frozen a finding as an invariant |
+| [030](./reports/RUN-030-696E1-CERTIFICATE.md) | the machine-checkable arithmetic certificate for `696.e1` | `src32` | `28_Submission_Gate`'s fourth box **delivered** — 20 quantities each recomputed from the a-invariants alone; the first draft quoted its author and **three of three were wrong**; and the drill's state guard caught a memo that outlived the defect it was computed under |
 
 ## Layout
 

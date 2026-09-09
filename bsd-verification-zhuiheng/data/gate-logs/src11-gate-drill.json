@@ -79,7 +79,8 @@
     "height-level-selection": true,
     "sweep-coverage": true,
     "phase1-numeric-crosscheck": true,
-    "q9-census-closure": true
+    "q9-census-closure": true,
+    "certificate-696e1": true
   },
   "defects": [
     {
@@ -975,6 +976,33 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the certificate is built for a different curve",
+      "kind": "code",
+      "named_check": "certificate-696e1",
+      "checks_that_went_red": [
+        "certificate-696e1"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the certificate's cited-not-verified list is emptied",
+      "kind": "code",
+      "named_check": "certificate-696e1",
+      "checks_that_went_red": [
+        "certificate-696e1"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the Sha row stops saying it is the analytic order",
+      "kind": "code",
+      "named_check": "certificate-696e1",
+      "checks_that_went_red": [
+        "certificate-696e1"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "x-only duplication drops the -2*b6*x term",
       "kind": "code",
       "named_check": "regulator",
@@ -1377,8 +1405,8 @@
     }
   ],
   "totals": {
-    "defects": 121,
-    "caught_by_the_named_check": 121,
+    "defects": 124,
+    "caught_by_the_named_check": 124,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
     "controls": 20,
