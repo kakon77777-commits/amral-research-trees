@@ -1,0 +1,172 @@
+{
+  "gate": "src34 — Referee A's checklist, run",
+  "source": "19_Independent_Referee_Handoff, Referee A",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "base_checklist": [
+    {
+      "line": "optimal",
+      "machine_checkable": false,
+      "status": "cited",
+      "note": "RUN-031 closed its premise (no rational n-isogeny at any of Mazur's twelve), but which curve the modular parametrisation lands on is not computed here"
+    },
+    {
+      "line": "odd Manin",
+      "machine_checkable": false,
+      "status": "cited",
+      "note": "the Manin constant, from 24_Manin_Period_Audit"
+    },
+    {
+      "line": "analytic rank 0",
+      "machine_checkable": true,
+      "measured": 0,
+      "status": "PASS",
+      "from": "RUN-014, recomputed here"
+    },
+    {
+      "line": "BSD(E,2) rigorous source",
+      "machine_checkable": false,
+      "status": "cited",
+      "note": "the verification of BSD to conductor 5000; a source, not a computation"
+    },
+    {
+      "line": "E(Q)[2]=0",
+      "machine_checkable": true,
+      "measured": "no rational root of the 2-division cubic",
+      "status": "PASS",
+      "from": "the 2-division cubic, and RUN-007's X_0(2) independently"
+    },
+    {
+      "line": "Delta<0",
+      "machine_checkable": true,
+      "measured": -178176,
+      "status": "PASS",
+      "from": "RUN-014"
+    },
+    {
+      "line": "v2(Lalg)=0",
+      "machine_checkable": true,
+      "measured": 0,
+      "status": "PASS",
+      "from": "L/Omega = 1 (RUN-014); ord_2(1) = 0",
+      "note": "L^alg here is L(E,1)/Omega, the reading RUN-018 and RUN-020 used"
+    }
+  ],
+  "base_lines_machine_checkable": 4,
+  "base_lines_cited": 3,
+  "base_verdict": "PASS",
+  "base_verdict_scope": "over the four lines that are arithmetic. The three cited lines are reported as cited, not scored — a checklist that marked a citation PASS would be reporting a source as a check",
+  "support_set": {
+    "bound": 4000,
+    "members": 19,
+    "all_members_pass_all_five": true,
+    "first_members": [
+      241,
+      313,
+      457,
+      673,
+      937,
+      1009,
+      1153,
+      1753,
+      2017,
+      2089,
+      2113,
+      2137
+    ],
+    "sample": [
+      {
+        "q": 241,
+        "lines": {
+          "squarefree": true,
+          "gcd(q,696)=1": true,
+          "q mod 4 = 1": true,
+          "2,3,29 split in Q(sqrt(q))": true,
+          "q inert in 2-division cubic": true
+        },
+        "all_pass": true,
+        "splits": {
+          "2": true,
+          "3": true,
+          "29": true
+        }
+      },
+      {
+        "q": 313,
+        "lines": {
+          "squarefree": true,
+          "gcd(q,696)=1": true,
+          "q mod 4 = 1": true,
+          "2,3,29 split in Q(sqrt(q))": true,
+          "q inert in 2-division cubic": true
+        },
+        "all_pass": true,
+        "splits": {
+          "2": true,
+          "3": true,
+          "29": true
+        }
+      },
+      {
+        "q": 457,
+        "lines": {
+          "squarefree": true,
+          "gcd(q,696)=1": true,
+          "q mod 4 = 1": true,
+          "2,3,29 split in Q(sqrt(q))": true,
+          "q inert in 2-division cubic": true
+        },
+        "all_pass": true,
+        "splits": {
+          "2": true,
+          "3": true,
+          "29": true
+        }
+      },
+      {
+        "q": 673,
+        "lines": {
+          "squarefree": true,
+          "gcd(q,696)=1": true,
+          "q mod 4 = 1": true,
+          "2,3,29 split in Q(sqrt(q))": true,
+          "q inert in 2-division cubic": true
+        },
+        "all_pass": true,
+        "splits": {
+          "2": true,
+          "3": true,
+          "29": true
+        }
+      },
+      {
+        "q": 937,
+        "lines": {
+          "squarefree": true,
+          "gcd(q,696)=1": true,
+          "q mod 4 = 1": true,
+          "2,3,29 split in Q(sqrt(q))": true,
+          "q inert in 2-division cubic": true
+        },
+        "all_pass": true,
+        "splits": {
+          "2": true,
+          "3": true,
+          "29": true
+        }
+      }
+    ]
+  },
+  "converse_direction": {
+    "primes_1_mod_4_rejected_by_the_membership_test": 200,
+    "of_those_passing_all_five_of_Referee_As_conditions": [],
+    "agree": true,
+    "why_this_matters": "if a prime the membership test rejects passes Referee A's five, then the checklist and the corpus's own 𝒫 disagree about who is in the family. Checking only the members would never see it"
+  },
+  "ok": true
+}
