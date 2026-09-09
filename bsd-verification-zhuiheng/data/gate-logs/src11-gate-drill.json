@@ -41,7 +41,9 @@
     "src39_fw_h3_compiler",
     "src40_fw_h2_ordinary",
     "src41_derived_supersingular_bridge",
-    "src42_odd_additive_period_barrier"
+    "src42_odd_additive_period_barrier",
+    "src43_finite_exceptional_primes",
+    "src44_base_certificate_compare"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -117,7 +119,9 @@
     "fw-h3-compiler": true,
     "fw-h2-ordinary": true,
     "derived-bridge": true,
-    "odd-additive-barrier": true
+    "odd-additive-barrier": true,
+    "finite-exceptional": true,
+    "base-certificate": true
   },
   "defects": [
     {
@@ -557,7 +561,8 @@
       "named_check": "ogg-formula",
       "checks_that_went_red": [
         "tate",
-        "ogg-formula"
+        "ogg-formula",
+        "base-certificate"
       ],
       "caught_by_the_named_check": true
     },
@@ -824,7 +829,8 @@
         "analytic-classification",
         "rank2-real-period",
         "rank2-bsd-identity",
-        "rank1-identity"
+        "rank1-identity",
+        "base-certificate"
       ],
       "caught_by_the_named_check": true
     },
@@ -1032,6 +1038,78 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the P_ram heuristic is reported as exact",
+      "kind": "code",
+      "named_check": "finite-exceptional",
+      "checks_that_went_red": [
+        "finite-exceptional"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the structural vacuity at n = 2 is treated as an unfound witness",
+      "kind": "code",
+      "named_check": "finite-exceptional",
+      "checks_that_went_red": [
+        "finite-exceptional"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the bounded local measurement is reported as universal",
+      "kind": "code",
+      "named_check": "finite-exceptional",
+      "checks_that_went_red": [
+        "finite-exceptional"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a supersingular prime is put into P_loc, so the branches overlap",
+      "kind": "code",
+      "named_check": "finite-exceptional",
+      "checks_that_went_red": [
+        "finite-exceptional"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the cited certificate rows are scored as computed",
+      "kind": "code",
+      "named_check": "base-certificate",
+      "checks_that_went_red": [
+        "base-certificate"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the discriminant is compared by value instead of square class",
+      "kind": "code",
+      "named_check": "base-certificate",
+      "checks_that_went_red": [
+        "base-certificate"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the document is never read, so the refusal is assumed",
+      "kind": "code",
+      "named_check": "base-certificate",
+      "checks_that_went_red": [
+        "base-certificate"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the certificate is compared against a different curve",
+      "kind": "code",
+      "named_check": "base-certificate",
+      "checks_that_went_red": [
+        "base-certificate"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "H1 and H2 are relabelled as computed here",
       "kind": "code",
       "named_check": "derived-bridge",
@@ -1109,7 +1187,8 @@
       "named_check": "fw-h3-compiler",
       "checks_that_went_red": [
         "fw-h3-compiler",
-        "derived-bridge"
+        "derived-bridge",
+        "finite-exceptional"
       ],
       "caught_by_the_named_check": true
     },
@@ -1119,7 +1198,8 @@
       "named_check": "fw-h3-compiler",
       "checks_that_went_red": [
         "fw-h3-compiler",
-        "derived-bridge"
+        "derived-bridge",
+        "finite-exceptional"
       ],
       "caught_by_the_named_check": true
     },
@@ -1175,7 +1255,8 @@
       "kind": "code",
       "named_check": "fw-h2-ordinary",
       "checks_that_went_red": [
-        "fw-h2-ordinary"
+        "fw-h2-ordinary",
+        "finite-exceptional"
       ],
       "caught_by_the_named_check": true
     },
@@ -1268,7 +1349,8 @@
         "gcd-witness-lemmas",
         "fw-h3-compiler",
         "fw-h2-ordinary",
-        "derived-bridge"
+        "derived-bridge",
+        "finite-exceptional"
       ],
       "caught_by_the_named_check": true
     },
@@ -1334,7 +1416,8 @@
       "checks_that_went_red": [
         "reducibility-sieve",
         "mazur-degrees",
-        "mod-ell-surjectivity"
+        "mod-ell-surjectivity",
+        "finite-exceptional"
       ],
       "caught_by_the_named_check": true
     },
@@ -1487,7 +1570,8 @@
         "analytic-classification",
         "rank1-leading-derivative",
         "rank1-identity",
-        "derived-bridge"
+        "derived-bridge",
+        "base-certificate"
       ],
       "caught_by_the_named_check": true
     },
@@ -1544,7 +1628,8 @@
         "bsd-sweep",
         "analytic-classification",
         "rank1-leading-derivative",
-        "rank1-identity"
+        "rank1-identity",
+        "base-certificate"
       ],
       "caught_by_the_named_check": true
     },
@@ -1555,7 +1640,8 @@
       "checks_that_went_red": [
         "anchor-11a1",
         "bsd-sweep",
-        "analytic-classification"
+        "analytic-classification",
+        "base-certificate"
       ],
       "caught_by_the_named_check": true
     },
@@ -1566,7 +1652,8 @@
       "checks_that_went_red": [
         "anchor-11a1",
         "bsd-sweep",
-        "analytic-classification"
+        "analytic-classification",
+        "base-certificate"
       ],
       "caught_by_the_named_check": true
     },
@@ -1687,7 +1774,8 @@
         "mazur-degrees",
         "twist-bridge",
         "fw-h2-ordinary",
-        "derived-bridge"
+        "derived-bridge",
+        "base-certificate"
       ],
       "caught_by_the_named_check": true
     },
@@ -1704,6 +1792,16 @@
     }
   ],
   "controls": [
+    {
+      "control": "the local bound widened from 1500 to 2000",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the certificate's L-series truncation raised from 2000 to 3000",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
     {
       "control": "the supersingular bound widened from 1500 to 2500",
       "checks_that_went_red": [],
@@ -1846,11 +1944,11 @@
     }
   ],
   "totals": {
-    "defects": 160,
-    "caught_by_the_named_check": 160,
+    "defects": 168,
+    "caught_by_the_named_check": 168,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 28,
+    "controls": 30,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

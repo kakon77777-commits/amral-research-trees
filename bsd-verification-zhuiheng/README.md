@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-040:
-  every gate is drilled — `src00`–`src10` and `src12`–`src42`, 160 defects, 160
-  caught by the named check, 28 controls undisturbed, over 68 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-042:
+  every gate is drilled — `src00`–`src10` and `src12`–`src44`, 168 defects, 168
+  caught by the named check, 30 controls undisturbed, over 70 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -143,6 +143,8 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [038](./reports/RUN-038-FW-H2-ORDINARY.md) | `10`'s ordinary obstruction and the branch FW is left | `src40` | the exact criterion `a_p² ≡ 1 (mod p)` run over 780 good primes: **8 ordinary primes fail H2**, every one with `a_p = ±1`, spread across the range — so no finite exception list can cover them, which is the document's own reason for the routing; the FW branch is **6 supersingular primes**, H3 cleared at each, and RUN-037's exception provably cannot reach them |
 | [039](./reports/RUN-039-DERIVED-SUPERSINGULAR-BRIDGE.md) | `11`'s derived supersingular FW bridge, assembled | `src41` | all three residual hypotheses at **6 good supersingular primes** — H3 computed with witness `ℓ = 29`, H1 and H2 kept marked *cited*; `L(E,1) = 1.6317…` recomputed; and `11`'s uniform form is shown true where RUN-037 found `09`'s false — **the same gcd, one quantifier apart**, since `W₋` is made of bad primes and this range is good ones. `c_E = 1` stays **OPEN**, named in the log |
 | [040](./reports/RUN-040-ODD-ADDITIVE-BARRIER.md) | `01`'s odd-additive period barrier | `src42` | empty for the base (its only additive prime is 2); each member meets it at exactly `q`, where the twist **forces** `(v(c₄), v(c₆), v(Δ)) = (2,3,6)` — Kodaira `I₀*`, never II/III/IV — so `01`'s condition holds 19 of 19; the excluded types are **constructed** and the condition fails at each; `p ∤ c` is the weaker piece RUN-039's `c_E = 1` was avoiding |
+| [041](./reports/RUN-041-FINITE-EXCEPTIONAL-PRIMES.md) | Phase 2's mother problem, with all three sets computed | `src43` | `P_red = ∅` **universally** (Mazur + RUN-031 + RUN-036), `P_ram = ∅` by the document's formula, `P_loc` **not** empty and not stopped — so `04`'s criterion is **not achieved for all odd `p`**, blocked by `P_loc`; the family theorem does not need it, the blocking primes being ordinary and computed **disjoint** from the FW branch; and `04`'s own warning that its `P_ram` formula is a heuristic turns out **exact** — it misses precisely the `ℓ ≠ p` clause RUN-037 found |
+| [042](./reports/RUN-042-BASE-CERTIFICATE-COMPARE.md) | the corpus's own base certificate, row by row | `src44` | **22 rows: 17 recomputed here, all agree; 5 marked not computable rather than scored**; and the 2-division cubic needed comparing by **square class** — `15`'s `disc = −11136` and RUN-036's `−45,613,056` differ by `64²`, so a value comparison would have reported a disagreement between two correct models; the document's refusal of the circular `Ш` inference is **read from the file**, not assumed |
 
 ## Layout
 

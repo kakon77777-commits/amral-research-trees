@@ -129,6 +129,8 @@ import src39_fw_h3_compiler as h3c39                      # noqa: E402
 import src40_fw_h2_ordinary as h2o40                      # noqa: E402
 import src41_derived_supersingular_bridge as brg41        # noqa: E402
 import src42_odd_additive_period_barrier as bar42         # noqa: E402
+import src43_finite_exceptional_primes as fin43           # noqa: E402
+import src44_base_certificate_compare as cmp44            # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -2087,12 +2089,96 @@ def check_odd_additive_barrier() -> bool:
 
 
 
+def check_finite_exceptional() -> bool:
+    """`04_Finite_Exceptional_Prime_Problem`'s three sets, and its §5 rule.
+
+    Run at 1,500 with two buckets rather than the gate's 6,000 with four: 0.23s
+    against 2.9s, and both facts the check needs — a non-empty P_loc that has
+    not stopped — hold there. The gate itself still runs at 6,000.
+
+    P_red must be empty and marked UNIVERSAL, since Mazur's theorem is what
+    licenses that. P_ram's formula must be empty AND the criterion must still be
+    obstructed at 29, so the document's own warning keeps being confirmed rather
+    than quietly dropped. P_loc must be non-empty — an empty local set would
+    make the whole routing argument unnecessary — and must be marked NOT
+    universal, which is `04` §5's rule applied to this arm's own reporting. And
+    the blocking primes must be computed disjoint from the branch FW is used on.
+    """
+    r = fin43.p_red()
+    if not r["is_empty"] or r["set"] or not r["claim_is_universal"]:
+        return False
+    if len(r["rows"]) != 12:
+        return False
+    m = fin43.p_ram()
+    if not m["formula_says_empty"]:
+        return False
+    if m["criterion_actually_obstructed_at"] != [29]:
+        return False
+    if m["formula_misses"] != [29] or not m["the_warning_was_exact"]:
+        return False
+    l = fin43.p_loc(1500, 2)
+    if l["is_empty"] or not l["has_not_stopped"]:
+        return False
+    if l["claim_is_universal"]:
+        return False
+    sc = fin43.success_criterion(1500, 2)
+    if sc["achieved_for_all_odd_p"] is not False:
+        return False
+    if sc["which_factor_blocks_it"] != "P_loc":
+        return False
+    rt = fin43.the_routing_answer(1500)
+    if not rt["P_loc_is_disjoint_from_the_FW_branch"] or rt["intersection"]:
+        return False
+    dr = fin43.degradation_rule(1500, 2)
+    return (dr["no_bounded_test_is_reported_as_universal"]
+            and dr["P_red"]["universal"] and not dr["P_loc"]["universal"])
+
+
+def check_base_certificate() -> bool:
+    """`15_696e1_Base_Certificate` against this tree, row by row.
+
+    Run at 2,000 L-series terms rather than the gate's 20,000: 0.38s against
+    29s, and RUN-032 measured the arithmetic verdicts identical at both.
+
+    Every recomputed row must agree, and the rows this arm CANNOT compute must
+    stay marked as such — algebraic rank, optimality, the Manin constant and the
+    analytic Sha. A certificate that scored those would be reporting citations
+    as checks. The discriminant row must still carry the square-class
+    explanation, since comparing by value would report a disagreement between
+    two correct models. And the document's refusal of the circular Sha inference
+    must be read from the file rather than assumed.
+    """
+    rows = cmp44.compare(2000)
+    if len(rows) < 20:
+        return False
+    computed = [r for r in rows if r["kind"].startswith("computed")]
+    if len(computed) < 14:
+        return False
+    if any(r["agree"] is not True for r in computed):
+        return False
+    must_stay_cited = ("algebraic rank 0", "optimal", "Manin constant = 1",
+                       "Ш_an = 1")
+    for name in must_stay_cited:
+        hit = [r for r in rows if r["row"] == name]
+        if len(hit) != 1 or hit[0]["kind"].startswith("computed"):
+            return False
+    disc = [r for r in rows if r["row"].startswith("disc(f₂) =")]
+    if len(disc) != 1 or "SQUARE CLASS" not in disc[0].get("note", ""):
+        return False
+    res = [r for r in rows if r["row"].startswith("quadratic resolvent")]
+    if len(res) != 1 or res[0]["recomputed_here"] != -174:
+        return False
+    ref = cmp44.the_refusal()
+    return ref.get("document_found") and ref.get("refusal_is_in_the_document")
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
     net22, p5u, led24, cv25, r2bsd, agent27, r1bsd, cov29, p1num, q9, cert32,
     mazur33, refA34, gcd35, nogo36, bridge37, surj38, h3c39,
-    h2o40, brg41, bar42))
+    h2o40, brg41, bar42, fin43, cmp44))
 
 
 CHECKS = {
@@ -2164,6 +2250,8 @@ CHECKS = {
     "fw-h2-ordinary": check_fw_h2_ordinary,
     "derived-bridge": check_derived_bridge,
     "odd-additive-barrier": check_odd_additive_barrier,
+    "finite-exceptional": check_finite_exceptional,
+    "base-certificate": check_base_certificate,
 }
 
 
@@ -2468,6 +2556,24 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("the P_ram heuristic is reported as exact", "code",
+     "finite-exceptional", lambda: patch(fin43, "p_ram", _p_ram_exact)),
+    ("the structural vacuity at n = 2 is treated as an unfound witness", "code",
+     "finite-exceptional", lambda: patch(fin43, "p_red", _p_red_no_vacuity)),
+    ("the bounded local measurement is reported as universal", "code",
+     "finite-exceptional", lambda: patch(fin43, "p_loc", _p_loc_universal)),
+    ("a supersingular prime is put into P_loc, so the branches overlap", "code",
+     "finite-exceptional",
+     lambda: patch(fin43, "the_routing_answer", _routing_overlap)),
+    ("the cited certificate rows are scored as computed", "code",
+     "base-certificate", lambda: patch(cmp44, "compare", _compare_all_computed)),
+    ("the discriminant is compared by value instead of square class", "code",
+     "base-certificate", lambda: patch(cmp44, "squarefree", _squarefree_identity)),
+    ("the document is never read, so the refusal is assumed", "code",
+     "base-certificate",
+     lambda: patch(cmp44, "DOC", cmp44.DOC.parent / "no_such_file.md")),
+    ("the certificate is compared against a different curve", "code",
+     "base-certificate", lambda: patch(cmp44, "BASE", [0, 0, 1, -1, 0])),
     ("H1 and H2 are relabelled as computed here", "code", "derived-bridge",
      lambda: patch(brg41, "per_prime", _per_prime_all_computed)),
     ("the safe period condition reports itself closed", "code",
@@ -2680,6 +2786,11 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("the local bound widened from 1500 to 2000",
+     lambda: patch(fin43, "p_loc",
+                   lambda bound=2000, blocks=2: _true_p_loc(2000, 2))),
+    ("the certificate's L-series truncation raised from 2000 to 3000",
+     lambda: patch(cmp44, "compare", lambda limit=3000: _true_compare(3000))),
     ("the supersingular bound widened from 1500 to 2500",
      lambda: patch(brg41, "per_prime",
                    lambda bound=2500: _true_per_prime(2500))),
@@ -2872,6 +2983,62 @@ def _classify_body_first(doc, src):
               "named in gate code" if gates else "not mentioned")
     return {"subline": doc["subline"], "name": doc["name"], "bucket": bucket,
             "subject_of": subj, "cited_in": body[:6], "named_in_gates": gates[:6]}
+
+
+_true_p_ram = fin43.p_ram
+_true_p_red = fin43.p_red
+_true_p_loc = fin43.p_loc
+_true_routing = fin43.the_routing_answer
+_true_compare = cmp44.compare
+_true_squarefree = cmp44.squarefree
+
+
+def _p_ram_exact():
+    """The heuristic promoted to a theorem: the formula's empty set reported as
+    the whole obstruction, which is what `04` warns against."""
+    d = dict(_true_p_ram())
+    d["formula_misses"] = []
+    d["the_warning_was_exact"] = False
+    d["criterion_actually_obstructed_at"] = []
+    return d
+
+
+def _p_red_no_vacuity():
+    """n = 2 reported as an unfound witness rather than a structural vacuity, so
+    P_red comes back non-empty for a reason that is not arithmetic."""
+    d = dict(_true_p_red())
+    d["rows"] = [dict(r, refuted=False) if r["n"] == 2 else r
+                 for r in d["rows"]]
+    d["set"] = [r["n"] for r in d["rows"] if not r["refuted"]]
+    d["is_empty"] = not d["set"]
+    return d
+
+
+def _p_loc_universal(bound=1500, blocks=2):
+    """A bounded measurement claimed for every prime — exactly the substitution
+    `04` §5 forbids."""
+    d = dict(_true_p_loc(bound, blocks))
+    d["claim_is_universal"] = True
+    return d
+
+
+def _routing_overlap(bound=1500):
+    d = dict(_true_routing(bound))
+    d["intersection"] = [23]
+    d["P_loc_is_disjoint_from_the_FW_branch"] = False
+    return d
+
+
+def _compare_all_computed(limit=cmp44.TERMS):
+    """Every row scored as a computation, citations included."""
+    rows = [dict(r, kind="computed", agree=True) for r in _true_compare(limit)]
+    return rows
+
+
+def _squarefree_identity(n):
+    """No square part extracted, so the resolvent row compares raw
+    discriminants and two correct models look like a disagreement."""
+    return (n, 1)
 
 
 _true_per_prime = brg41.per_prime
