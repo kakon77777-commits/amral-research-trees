@@ -1,0 +1,1332 @@
+{
+  "gate": "src22_witness_network",
+  "section_5_squarefree_products": {
+    "claim": "any positive squarefree d supported on 𝒫° satisfies d ≡ 1 (mod 8) and has every conductor prime split in Q(√d), so the family is not only prime twists",
+    "products_checked": 24,
+    "all_are_1_mod_8": true,
+    "all_split_at_every_conductor_prime": true,
+    "all_factors_inert_in_the_cubic": true,
+    "sample": [
+      {
+        "factors": [
+          241,
+          313
+        ],
+        "d": 75433,
+        "d_mod_8": 1,
+        "d_is_1_mod_8": true,
+        "splits_at_every_conductor_prime": true,
+        "every_factor_inert_in_the_cubic": true
+      },
+      {
+        "factors": [
+          241,
+          457
+        ],
+        "d": 110137,
+        "d_mod_8": 1,
+        "d_is_1_mod_8": true,
+        "splits_at_every_conductor_prime": true,
+        "every_factor_inert_in_the_cubic": true
+      },
+      {
+        "factors": [
+          241,
+          673
+        ],
+        "d": 162193,
+        "d_mod_8": 1,
+        "d_is_1_mod_8": true,
+        "splits_at_every_conductor_prime": true,
+        "every_factor_inert_in_the_cubic": true
+      },
+      {
+        "factors": [
+          241,
+          937
+        ],
+        "d": 225817,
+        "d_mod_8": 1,
+        "d_is_1_mod_8": true,
+        "splits_at_every_conductor_prime": true,
+        "every_factor_inert_in_the_cubic": true
+      },
+      {
+        "factors": [
+          241,
+          1009
+        ],
+        "d": 243169,
+        "d_mod_8": 1,
+        "d_is_1_mod_8": true,
+        "splits_at_every_conductor_prime": true,
+        "every_factor_inert_in_the_cubic": true
+      },
+      {
+        "factors": [
+          241,
+          1153
+        ],
+        "d": 277873,
+        "d_mod_8": 1,
+        "d_is_1_mod_8": true,
+        "splits_at_every_conductor_prime": true,
+        "every_factor_inert_in_the_cubic": true
+      }
+    ],
+    "note": "RUN-015 established these one prime at a time; this is the composite case the 2-primary theorem actually needs"
+  },
+  "finite_deletion_at_696e1": {
+    "R_mult_union_R_minus": [],
+    "why": "n_3 = n_29 = 1, so both gcds are 1 and neither has an odd divisor",
+    "ramified_primes_of_L_E_K_E": [
+      2,
+      3,
+      29
+    ],
+    "members_below_4000_removed_by_the_deletion": [],
+    "deletion_is_vacuous_here": true
+  },
+  "lemmas_2_1_and_2_2": {
+    "statement": "for odd p ∉ M: some ℓ ∈ M has p ∤ n_ℓ  ⟺  p ∤ gcd_{ℓ∈M} n_ℓ",
+    "instances_checked": 203745,
+    "failures": 0,
+    "note": "elementary — the failure of every witness is exactly p | n_ℓ for all ℓ, which is p dividing the gcd. Checked rather than asserted because the statement needs M ≠ ∅ for the gcd to exist at all"
+  },
+  "leave_one_out": {
+    "statement": "LOO(p): some ℓ ≠ p in M has p ∤ n_ℓ; equivalently p ∤ gcd over M∖{p}, when that set is non-empty",
+    "gcd_form_agrees": 110146,
+    "gcd_form_disagrees": 0,
+    "LOO_fails_at_some_fixed_multiplicative_prime": 2457,
+    "note": "a failure is not an error in the theorem — it is a prime the network must route individually, which is what makes the exception set finite rather than empty"
+  },
+  "gcd_statistics_over_the_base": {
+    "curves_with_a_multiplicative_prime": 40749,
+    "odd_part_of_g_mult": {
+      "1": 40733,
+      "3": 16
+    },
+    "odd_part_of_g_minus": {
+      "1": 29301,
+      "3": 2659,
+      "5": 1222,
+      "7": 693,
+      "9": 322,
+      "11": 192,
+      "13": 121,
+      "15": 58,
+      "17": 44,
+      "19": 24
+    },
+    "curves_with_no_nonsplit_multiplicative_prime": 6053,
+    "size_of_R_mult_union_R_minus": {
+      "0": 35350,
+      "1": 5313,
+      "2": 86
+    },
+    "fraction_with_a_nonempty_exceptional_set": 0.13249404893371616,
+    "caveat": "the base is entirely semistable (RUN-016), so neither criterion applies to any of these curves. The gcd statistic is still computable, and this is the largest population this arm has to compute it on",
+    "examples": [
+      {
+        "label": "14a1",
+        "M": {
+          "7": 3
+        },
+        "M_minus": {},
+        "R": [
+          3
+        ]
+      },
+      {
+        "label": "26a1",
+        "M": {
+          "13": 3
+        },
+        "M_minus": {},
+        "R": [
+          3
+        ]
+      },
+      {
+        "label": "35a1",
+        "M": {
+          "5": 3,
+          "7": 3
+        },
+        "M_minus": {
+          "5": 3
+        },
+        "R": [
+          3
+        ]
+      },
+      {
+        "label": "38a1",
+        "M": {
+          "19": 3
+        },
+        "M_minus": {},
+        "R": [
+          3
+        ]
+      },
+      {
+        "label": "77c1",
+        "M": {
+          "7": 3,
+          "11": 2
+        },
+        "M_minus": {
+          "7": 3
+        },
+        "R": [
+          3
+        ]
+      },
+      {
+        "label": "114b1",
+        "M": {
+          "3": 5,
+          "19": 1
+        },
+        "M_minus": {
+          "3": 5
+        },
+        "R": [
+          5
+        ]
+      },
+      {
+        "label": "115a1",
+        "M": {
+          "5": 5,
+          "23": 1
+        },
+        "M_minus": {
+          "5": 5
+        },
+        "R": [
+          5
+        ]
+      },
+      {
+        "label": "141b1",
+        "M": {
+          "3": 6,
+          "47": 1
+        },
+        "M_minus": {
+          "3": 6
+        },
+        "R": [
+          3
+        ]
+      },
+      {
+        "label": "182c1",
+        "M": {
+          "7": 7,
+          "13": 1
+        },
+        "M_minus": {
+          "7": 7
+        },
+        "R": [
+          7
+        ]
+      },
+      {
+        "label": "182e1",
+        "M": {
+          "7": 1,
+          "13": 5
+        },
+        "M_minus": {
+          "13": 5
+        },
+        "R": [
+          5
+        ]
+      }
+    ]
+  },
+  "is_the_generalisation_non_empty": {
+    "search": "a1 ∈ {0,1}, a2 ∈ {−1,0,1}, a3 ∈ {0,1}, |a4| ≤ 30, |a6| ≤ 30",
+    "conditions": "Δ < 0, no rational 2-torsion, S₃ two-division field, additive reduction only at 2, M and M⁻ both non-empty",
+    "candidates_found": 4063,
+    "both_gcds_a_power_of_2": 4025,
+    "an_odd_gcd_divisor_present": 38,
+    "network_only_sample": [
+      {
+        "ainvs": [
+          0,
+          -1,
+          0,
+          -15,
+          -23
+        ],
+        "discriminant": -109760,
+        "bad_primes": [
+          2,
+          5,
+          7
+        ],
+        "M": {
+          "5": 1,
+          "7": 3
+        },
+        "M_minus": {
+          "7": 3
+        },
+        "g_mult": 1,
+        "g_minus": 3,
+        "exceptional_set_empty": false,
+        "R": [
+          3
+        ]
+      },
+      {
+        "ainvs": [
+          0,
+          -1,
+          0,
+          -11,
+          -18
+        ],
+        "discriminant": -111024,
+        "bad_primes": [
+          2,
+          3,
+          257
+        ],
+        "M": {
+          "3": 3,
+          "257": 1
+        },
+        "M_minus": {
+          "3": 3
+        },
+        "g_mult": 1,
+        "g_minus": 3,
+        "exceptional_set_empty": false,
+        "R": [
+          3
+        ]
+      },
+      {
+        "ainvs": [
+          0,
+          -1,
+          0,
+          -10,
+          -17
+        ],
+        "discriminant": -109296,
+        "bad_primes": [
+          2,
+          3,
+          11,
+          23
+        ],
+        "M": {
+          "3": 3,
+          "11": 1,
+          "23": 1
+        },
+        "M_minus": {
+          "3": 3
+        },
+        "g_mult": 1,
+        "g_minus": 3,
+        "exceptional_set_empty": false,
+        "R": [
+          3
+        ]
+      },
+      {
+        "ainvs": [
+          0,
+          -1,
+          0,
+          -9,
+          27
+        ],
+        "discriminant": -195264,
+        "bad_primes": [
+          2,
+          3,
+          113
+        ],
+        "M": {
+          "3": 3,
+          "113": 1
+        },
+        "M_minus": {
+          "3": 3
+        },
+        "g_mult": 1,
+        "g_minus": 3,
+        "exceptional_set_empty": false,
+        "R": [
+          3
+        ]
+      },
+      {
+        "ainvs": [
+          0,
+          -1,
+          0,
+          -8,
+          -15
+        ],
+        "discriminant": -98928,
+        "bad_primes": [
+          2,
+          3,
+          229
+        ],
+        "M": {
+          "3": 3,
+          "229": 1
+        },
+        "M_minus": {
+          "3": 3
+        },
+        "g_mult": 1,
+        "g_minus": 3,
+        "exceptional_set_empty": false,
+        "R": [
+          3
+        ]
+      },
+      {
+        "ainvs": [
+          0,
+          -1,
+          0,
+          -5,
+          -30
+        ],
+        "discriminant": -425520,
+        "bad_primes": [
+          2,
+          3,
+          5,
+          197
+        ],
+        "M": {
+          "3": 3,
+          "5": 1,
+          "197": 1
+        },
+        "M_minus": {
+          "3": 3
+        },
+        "g_mult": 1,
+        "g_minus": 3,
+        "exceptional_set_empty": false,
+        "R": [
+          3
+        ]
+      },
+      {
+        "ainvs": [
+          0,
+          -1,
+          0,
+          -5,
+          24
+        ],
+        "discriminant": -204336,
+        "bad_primes": [
+          2,
+          3,
+          11,
+          43
+        ],
+        "M": {
+          "3": 3,
+          "11": 1,
+          "43": 1
+        },
+        "M_minus": {
+          "3": 3
+        },
+        "g_mult": 1,
+        "g_minus": 3,
+        "exceptional_set_empty": false,
+        "R": [
+          3
+        ]
+      },
+      {
+        "ainvs": [
+          0,
+          -1,
+          0,
+          -4,
+          22
+        ],
+        "discriminant": -177984,
+        "bad_primes": [
+          2,
+          3,
+          103
+        ],
+        "M": {
+          "3": 3,
+          "103": 1
+        },
+        "M_minus": {
+          "3": 3
+        },
+        "g_mult": 1,
+        "g_minus": 3,
+        "exceptional_set_empty": false,
+        "R": [
+          3
+        ]
+      },
+      {
+        "ainvs": [
+          0,
+          -1,
+          0,
+          -2,
+          18
+        ],
+        "discriminant": -127872,
+        "bad_primes": [
+          2,
+          3,
+          37
+        ],
+        "M": {
+          "3": 3,
+          "37": 1
+        },
+        "M_minus": {
+          "3": 3
+        },
+        "g_mult": 1,
+        "g_minus": 3,
+        "exceptional_set_empty": false,
+        "R": [
+          3
+        ]
+      },
+      {
+        "ainvs": [
+          0,
+          -1,
+          0,
+          -1,
+          -26
+        ],
+        "discriminant": -301104,
+        "bad_primes": [
+          2,
+          3,
+          17,
+          41
+        ],
+        "M": {
+          "3": 3,
+          "17": 1,
+          "41": 1
+        },
+        "M_minus": {
+          "3": 3
+        },
+        "g_mult": 1,
+        "g_minus": 3,
+        "exceptional_set_empty": false,
+        "R": [
+          3
+        ]
+      }
+    ],
+    "network_only_on_the_analytic_side": {
+      "examined": 38,
+      "tested": 31,
+      "not_tested": [
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            18,
+            27
+          ],
+          "conductor": 91248,
+          "why": "conductor 91248 above the cap"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            19,
+            12
+          ],
+          "conductor": 62256,
+          "why": "conductor 62256 above the cap"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            23,
+            -5
+          ],
+          "conductor": 83136,
+          "why": "conductor 83136 above the cap"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            24,
+            18
+          ],
+          "conductor": 126528,
+          "why": "conductor 126528 above the cap"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            28,
+            -6
+          ],
+          "conductor": 151104,
+          "why": "conductor 151104 above the cap"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            29,
+            21
+          ],
+          "conductor": 76480,
+          "why": "conductor 76480 above the cap"
+        },
+        {
+          "ainvs": [
+            0,
+            1,
+            0,
+            29,
+            -20
+          ],
+          "conductor": 75440,
+          "why": "conductor 75440 above the cap"
+        }
+      ],
+      "with_rank_zero_and_consistent": 14,
+      "and_with_ord_2_L_alg_zero": 13,
+      "note": "ord₂ L^alg = 0 is (T1)'s own condition; a candidate that is rank 0 but has L/Ω even fails the certificate, so the second number is the one that bounds the criterion's domain",
+      "rows": [
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            -15,
+            -23
+          ],
+          "conductor": 2240,
+          "M": {
+            "5": 1,
+            "7": 3
+          },
+          "M_minus": {
+            "7": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "5": 1,
+            "7": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 1.0000000000000002,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 1.0000000000000002,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            -11,
+            -18
+          ],
+          "conductor": 12336,
+          "root_number": null,
+          "status": "root number undecided at this truncation"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            -10,
+            -17
+          ],
+          "conductor": 12144,
+          "root_number": null,
+          "status": "root number undecided at this truncation"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            -9,
+            27
+          ],
+          "conductor": 21696,
+          "M": {
+            "3": 3,
+            "113": 1
+          },
+          "M_minus": {
+            "3": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "3": 1,
+            "113": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 0.9999999999999999,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 0.9999999999999999,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            -8,
+            -15
+          ],
+          "conductor": 5496,
+          "root_number": -1,
+          "status": "w = −1, so the rank is odd"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            -5,
+            -30
+          ],
+          "conductor": 11820,
+          "root_number": null,
+          "status": "root number undecided at this truncation"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            -5,
+            24
+          ],
+          "conductor": 22704,
+          "M": {
+            "3": 3,
+            "11": 1,
+            "43": 1
+          },
+          "M_minus": {
+            "3": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "3": 1,
+            "11": 1,
+            "43": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 0.9999999999999999,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 0.9999999999999999,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            -4,
+            22
+          ],
+          "conductor": 19776,
+          "M": {
+            "3": 3,
+            "103": 1
+          },
+          "M_minus": {
+            "3": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "3": 1,
+            "103": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 0.9999999999999997,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 0.9999999999999997,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            -2,
+            18
+          ],
+          "conductor": 14208,
+          "root_number": null,
+          "status": "root number undecided at this truncation"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            -1,
+            -26
+          ],
+          "conductor": 8364,
+          "M": {
+            "3": 3,
+            "17": 1,
+            "41": 1
+          },
+          "M_minus": {
+            "3": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "3": 1,
+            "17": 1,
+            "41": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 1.0000000000000002,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 1.0000000000000002,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            -1,
+            28
+          ],
+          "conductor": 36528,
+          "root_number": -1,
+          "status": "w = −1, so the rank is odd"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            0,
+            -27
+          ],
+          "conductor": 17592,
+          "M": {
+            "3": 3,
+            "733": 1
+          },
+          "M_minus": {
+            "3": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 2,
+            "3": 1,
+            "733": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 2.0,
+          "ord_2_L_alg_is_zero": false,
+          "quotient": 1.0,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            0,
+            27
+          ],
+          "conductor": 6960,
+          "root_number": -1,
+          "status": "w = −1, so the rank is odd"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            1,
+            21
+          ],
+          "conductor": 21696,
+          "M": {
+            "3": 3,
+            "113": 1
+          },
+          "M_minus": {
+            "3": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "3": 1,
+            "113": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 0.9999999999999998,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 0.9999999999999998,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            6,
+            18
+          ],
+          "conductor": 20352,
+          "M": {
+            "3": 3,
+            "53": 1
+          },
+          "M_minus": {
+            "3": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "3": 1,
+            "53": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 0.9999999999999998,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 0.9999999999999998,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            8,
+            19
+          ],
+          "conductor": 25584,
+          "root_number": null,
+          "status": "root number undecided at this truncation"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            9,
+            27
+          ],
+          "conductor": 23808,
+          "root_number": 1,
+          "status": "w = +1 but L(E,1) vanishes — rank ≥ 2"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            10,
+            -26
+          ],
+          "conductor": 1664,
+          "M": {
+            "13": 3
+          },
+          "M_minus": {
+            "13": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "13": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 1.0000000000000002,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 1.0000000000000002,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            11,
+            7
+          ],
+          "conductor": 14016,
+          "M": {
+            "3": 3,
+            "73": 1
+          },
+          "M_minus": {
+            "3": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "3": 1,
+            "73": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 1.0,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 1.0,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            12,
+            -9
+          ],
+          "conductor": 1392,
+          "M": {
+            "3": 5,
+            "29": 1
+          },
+          "M_minus": {
+            "3": 5
+          },
+          "R": [
+            5
+          ],
+          "tamagawa": {
+            "2": 1,
+            "3": 1,
+            "29": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 1.0,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 1.0,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            12,
+            18
+          ],
+          "conductor": 34368,
+          "root_number": -1,
+          "status": "w = −1, so the rank is odd"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            14,
+            -10
+          ],
+          "conductor": 7040,
+          "root_number": -1,
+          "status": "w = −1, so the rank is odd"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            18,
+            11
+          ],
+          "conductor": 496,
+          "M": {
+            "31": 3
+          },
+          "M_minus": {
+            "31": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "31": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 1.0,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 1.0,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            23,
+            -24
+          ],
+          "conductor": 17584,
+          "root_number": -1,
+          "status": "w = −1, so the rank is odd"
+        },
+        {
+          "ainvs": [
+            0,
+            -1,
+            0,
+            25,
+            -9
+          ],
+          "conductor": 53376,
+          "root_number": null,
+          "status": "root number undecided at this truncation"
+        },
+        {
+          "ainvs": [
+            0,
+            0,
+            0,
+            2,
+            14
+          ],
+          "conductor": 704,
+          "M": {
+            "11": 3
+          },
+          "M_minus": {
+            "11": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "11": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 0.9999999999999998,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 0.9999999999999998,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            0,
+            0,
+            28,
+            -10
+          ],
+          "conductor": 11968,
+          "root_number": null,
+          "status": "root number undecided at this truncation"
+        },
+        {
+          "ainvs": [
+            0,
+            1,
+            0,
+            10,
+            26
+          ],
+          "conductor": 1664,
+          "root_number": -1,
+          "status": "w = −1, so the rank is odd"
+        },
+        {
+          "ainvs": [
+            0,
+            1,
+            0,
+            14,
+            11
+          ],
+          "conductor": 3696,
+          "M": {
+            "3": 1,
+            "7": 3,
+            "11": 1
+          },
+          "M_minus": {
+            "7": 3
+          },
+          "R": [
+            3
+          ],
+          "tamagawa": {
+            "2": 1,
+            "3": 1,
+            "7": 1,
+            "11": 1
+          },
+          "torsion_bound": 1,
+          "L_over_Omega": 1.0,
+          "ord_2_L_alg_is_zero": true,
+          "quotient": 1.0,
+          "nearest_integer": 1,
+          "numerics_consistent": true,
+          "status": "rank 0"
+        },
+        {
+          "ainvs": [
+            0,
+            1,
+            0,
+            19,
+            25
+          ],
+          "conductor": 22720,
+          "root_number": null,
+          "status": "root number undecided at this truncation"
+        },
+        {
+          "ainvs": [
+            0,
+            1,
+            0,
+            21,
+            -17
+          ],
+          "conductor": 16576,
+          "root_number": null,
+          "status": "root number undecided at this truncation"
+        }
+      ]
+    },
+    "which_criterion_reaches_each_candidate": {
+      "counts": {
+        "both": 3925,
+        "31 only, exceptional set empty": 100,
+        "31 only, an odd exceptional prime": 38
+      },
+      "candidates_30_cannot_phrase": 138,
+      "T5_unsatisfiable": 138,
+      "T4_unsatisfiable": 4,
+      "impossible_cell": 0,
+      "reading": "(T4) and (T5) holding forces both gcds to 1, so the fourth cell must be empty; it is measured rather than assumed. The 38 with an odd exceptional prime are the ones §3's sentence is about, and they are not the whole gap"
+    },
+    "anchor_696e1_in_the_search": [
+      {
+        "ainvs": [
+          0,
+          1,
+          0,
+          8,
+          -16
+        ],
+        "discriminant": -178176,
+        "bad_primes": [
+          2,
+          3,
+          29
+        ],
+        "M": {
+          "3": 1,
+          "29": 1
+        },
+        "M_minus": {
+          "29": 1
+        },
+        "g_mult": 1,
+        "g_minus": 1,
+        "exceptional_set_empty": true,
+        "R": []
+      }
+    ],
+    "verdict": "the generalisation is NOT vacuous"
+  },
+  "ok": true
+}

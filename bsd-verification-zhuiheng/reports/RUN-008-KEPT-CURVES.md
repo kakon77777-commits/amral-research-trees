@@ -100,7 +100,7 @@ Two further properties of the population, both exact and neither obvious:
 
 That last line is not a curiosity. RUN-007 and this round both decide isogenies
 from `j` alone, and the step that licenses it is Phase 2's
-[`03_Quadratic_Twist_Invariance_Bridge`](../../amral/public/bsd/phase2/files/03_Quadratic_Twist_Invariance_Bridge.md)
+[`03_Quadratic_Twist_Invariance_Bridge`](../../../amral/public/bsd/phase2/files/03_Quadratic_Twist_Invariance_Bridge.md)
 Candidate Lemma A — irreducibility of `ρ̄_{E,p}` is invariant under twisting by a
 character. If that failed, two curves sharing a `j` could differ in isogeny
 status, and a `j`-only method could not match a per-curve source on both.
@@ -123,7 +123,7 @@ RUN-007 derived, independently, why RUN-006's method stops at `n = 3`: for
 `n ≥ 5` a Galois-stable subgroup has `(n−1)/2` distinct x-coordinates and Galois
 need only preserve the set, so an isogeny is a rational *factor* of `ψ_n`, not a
 rational root. Phase 2's
-[`04_Local_p_Isogeny_Kernel_Criterion`](../../amral/public/bsd/phase2/files/04_Local_p_Isogeny_Kernel_Criterion.md)
+[`04_Local_p_Isogeny_Kernel_Criterion`](../../../amral/public/bsd/phase2/files/04_Local_p_Isogeny_Kernel_Criterion.md)
 states the same thing at the local level: `x(P) ∈ Q_p ⟺ λ² = 1`, so the kernel
 polynomial has a linear factor exactly when the kernel character is quadratic —
 which for `n = 3` is automatic, the kernel polynomial being linear already.

@@ -111,7 +111,7 @@ arithmetic — so it is checked rather than carried.
   They depend on four cited theorems this gate does not touch. A verified part
   (1) is not partial credit toward the rest.
 * **It does not check the novelty question**, which
-  [`20_Adversarial_Referee_Verdict`](../../amral/public/bsd/phase2/files/20_Adversarial_Referee_Verdict.md)
+  [`20_Adversarial_Referee_Verdict`](../../../amral/public/bsd/phase2/files/20_Adversarial_Referee_Verdict.md)
   already separates from validity and routes to its own gate.
 * **It does not verify the citation repair** that the same document records —
   "Miller *most* ≠ all conductor < 5000", repaired by Creutz–Miller Theorem 1.1.

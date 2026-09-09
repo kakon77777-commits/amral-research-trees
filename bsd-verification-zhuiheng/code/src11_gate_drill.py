@@ -1,4 +1,4 @@
-"""Drill for gates 04-10, 12-21 — plant a defect, demand the named check catch it.
+"""Drill for gates 04-10, 12-22 — plant a defect, demand the named check catch it.
 
 數學戰士「墜衡」 / AMRAL Research Lab.
 
@@ -102,6 +102,7 @@ import src17_family_prime_router as route17              # noqa: E402
 import src18_tate_algorithm as tate18                    # noqa: E402
 import src20_bsd_consistency as bsd20                    # noqa: E402
 import src21_two_witness_certificate as tw21             # noqa: E402
+import src22_witness_network as net22                    # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -742,6 +743,152 @@ def check_two_witness_degrees() -> bool:
                              for g in gens])
 
 
+TRUNCATION = 1_200          # measured: see check_analytic_classification
+_CANDIDATE_MEMO = []
+
+
+def _candidates():
+    """`certificate_candidates(30, 30)`, computed once.
+
+    The two checks that use it test the CLASSIFIERS that read a candidate, not
+    the search that produces one, so the list is taken at baseline and reused.
+    That is a scope statement rather than an optimisation excuse: neither check
+    can see a defect planted inside the search, and neither claims to. The cost
+    matters — the drill runs every check once per defect, so a 1.5-second scan
+    inside a check is a 2‑minute tax on the run.
+    """
+    if not _CANDIDATE_MEMO:
+        _CANDIDATE_MEMO.extend(net22.certificate_candidates(30, 30))
+    return _CANDIDATE_MEMO
+
+
+def check_witness_lemmas() -> bool:
+    """Lemmas 2.1/2.2 and the leave-one-out form, on witness sets built here.
+
+    These are elementary — "no ℓ has p ∤ n_ℓ" is "p divides every n_ℓ" is
+    "p | gcd" — so the fixtures are chosen to hit the places an implementation
+    slips: a single multiplicative prime (where the gcd is that one value), a
+    set whose gcd is even but not a power of two, and the leave-one-out form at
+    a prime that is itself in M.
+    """
+    cases = [
+        ({"M": {3: 1, 29: 1}, "M_minus": {29: 1}}, [], 1, 1),
+        ({"M": {3: 3, 5: 6}, "M_minus": {5: 6}}, [3], 3, 6),
+        ({"M": {7: 4, 11: 2}, "M_minus": {11: 2}}, [], 2, 2),
+        ({"M": {5: 15}, "M_minus": {5: 15}}, [3, 5], 15, 15),
+    ]
+    for ws, want_R, want_g, want_gm in cases:
+        g = net22.gcds(ws)
+        if g["g_mult"] != want_g or g["g_minus"] != want_gm:
+            return False
+        if g["R"] != want_R:
+            return False
+        for q in (3, 5, 7, 11, 13):
+            if not net22.lemma_21_holds(ws, q):
+                return False
+        for q in ws["M"]:
+            r = net22.loo(ws, q)
+            if "gcd_form_agrees" in r and not r["gcd_form_agrees"]:
+                return False
+    # M∖{p} empty must be reported as a failure, not silently as a pass
+    if net22.loo({"M": {5: 15}, "M_minus": {5: 15}}, 5)["holds"] is not False:
+        return False
+    # and the one shape that separates "leave p out" from "keep p in": every
+    # OTHER valuation divisible by p, while n_p itself is not. Without this the
+    # two behave identically on every fixture above.
+    ws = {"M": {3: 1, 5: 3, 7: 6}, "M_minus": {5: 3}}
+    return net22.loo(ws, 3)["holds"] is False
+
+
+def check_analytic_classification() -> bool:
+    """The four outcomes `analytic_side` has to keep apart, on real candidates.
+
+    Non-emptiness of `31`'s domain is a claim about the whole certificate, not
+    only its arithmetic half, so the analytic verdict is load-bearing and its
+    failure modes are the interesting part: an undecided root number must not
+    be read as +1, and (T1)'s ord₂ condition is about L^alg = L/Ω and not about
+    the BSD quotient. The fixtures are four of the 38 network-only candidates,
+    one per outcome, and the two that reach rank 0 disagree on ord₂ — which is
+    what makes the second count separable from the first.
+
+    Run at 1,200 terms, which is **measured, not chosen**: it is the smallest
+    truncation at which all four verdicts agree with the 4,000-term run. At 800
+    the `w = −1` curve is still undecided and at 400 the rank-0 one reads as
+    rank ≥ 2, so a looser fixture would test a different classification than the
+    gate reports.
+    """
+    want = {
+        (0, -1, 0, -11, -18): "root number undecided at this truncation",
+        (0, -1, 0, -8, -15): "w = −1, so the rank is odd",
+        (0, -1, 0, 0, -27): "rank 0",
+        (0, -1, 0, 18, 11): "rank 0",
+    }
+    fix = [c for c in _candidates() if tuple(c["ainvs"]) in want]
+    if len(fix) != 4:
+        return False
+    r = net22.analytic_side(fix, limit=TRUNCATION)
+    if {row["status"] for row in r["rows"]} != set(want.values()):
+        return False
+    for row in r["rows"]:
+        if want[tuple(row["ainvs"])] != row["status"]:
+            return False
+    # two reach rank 0, and exactly one of those two has ord₂ L^alg = 0:
+    # [0,−1,0,0,−27] has c₂ = 2 and L/Ω = 2, so its BSD quotient is 1 — odd —
+    # while the quantity (T1) actually names is even.
+    if not (r["with_rank_zero_and_consistent"] == 2
+            and r["and_with_ord_2_L_alg_zero"] == 1):
+        return False
+    # The sign condition here is INHERITED from src15, not enforced locally:
+    # `analyse` returns L = None when the root number is undecided and L = 0.0
+    # exactly when w = −1. Gate 22 relies on that, so it is asserted rather than
+    # assumed — see the matching control. It is a statement about src15's return
+    # shape and not about these curves, so it is asserted on the cheapest pair
+    # that produces both branches: 37a1 has w = −1, and 100 terms leaves the
+    # sign of 696.e1 undecided.
+    odd = anchor15.analyse("37a1", [0, 0, 1, -1, 0], 37, limit=400)
+    if odd["root_number"] != -1 or odd["L_at_1"] != 0.0:
+        return False
+    vague = anchor15.analyse("696.e1", [0, 1, 0, 8, -16], 696, limit=100)
+    return not (vague["root_number_undecided"] and vague["L_at_1"] is not None)
+
+
+def check_criterion_reach() -> bool:
+    """Which of `30`, `31` reaches a candidate — the round's headline number.
+
+    Four hand-built witness sets, one per cell, where the answer is decidable by
+    reading it: (T4) wants an odd multiplicative prime of valuation exactly 1,
+    (T5) wants a NONSPLIT one of valuation exactly 1, and the two sets are not
+    the same set. Then the invariant, asserted over the whole search population
+    rather than the fixtures: (T4) and (T5) each supply a valuation 1, so both
+    gcds collapse to 1 and the exceptional set MUST be empty whenever `30`
+    applies. A classifier that read (T5) against M instead of M⁻, or accepted
+    any odd valuation, would put candidates in that impossible cell.
+    """
+    cases = [
+        ({"M": {3: 1, 29: 1}, "M_minus": {29: 1}}, [], True, True, True),
+        ({"M": {5: 1, 7: 3}, "M_minus": {7: 3}}, [3], True, False, False),
+        ({"M": {3: 1, 11: 2}, "M_minus": {11: 2}}, [], True, False, False),
+        ({"M": {3: 2, 11: 2}, "M_minus": {11: 2}}, [], False, False, False),
+    ]
+    for ws, want_R, t4, t5, thirty in cases:
+        c = {"M": {str(k): v for k, v in ws["M"].items()},
+             "M_minus": {str(k): v for k, v in ws["M_minus"].items()},
+             "R": want_R}
+        v = net22.which_criterion_applies(c)
+        if (v["T4_satisfiable"], v["T5_satisfiable"],
+                v["criterion_30_applies"]) != (t4, t5, thirty):
+            return False
+        if v["exceptional_set_empty"] != (not want_R):
+            return False
+    cands = _candidates()
+    if len(cands) < 100:
+        return False
+    impossible = sum(1 for c in cands
+                     if net22.which_criterion_applies(c)["criterion_30_applies"]
+                     and c["R"])
+    return impossible == 0
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -776,6 +923,9 @@ CHECKS = {
     "regulator": check_regulator,
     "bsd-sweep": check_bsd_sweep,
     "two-witness-degrees": check_two_witness_degrees,
+    "witness-lemmas": check_witness_lemmas,
+    "analytic-classification": check_analytic_classification,
+    "criterion-reach": check_criterion_reach,
 }
 
 
@@ -960,6 +1110,22 @@ DEFECTS = [
      "two-witness-degrees", lambda: patch(tw21, "in_span",
                                           lambda t, v: True)),
 
+    # ---- gate 22 -------------------------------------------------------------
+    ("the witness gcd is computed as an lcm", "code", "witness-lemmas",
+     lambda: patch(net22, "gcds", _gcds_lcm)),
+    ("the exceptional set keeps the prime 2", "code", "witness-lemmas",
+     lambda: patch(net22, "odd_prime_divisors", _divisors_with_two)),
+    ("leave-one-out forgets to leave p out", "code", "witness-lemmas",
+     lambda: patch(net22, "loo", _loo_keeps_p)),
+    ("(T1)'s ord₂ condition is asserted rather than measured", "code",
+     "analytic-classification",
+     lambda: patch(net22, "ord_2_l_alg_is_zero", lambda *a, **k: True)),
+    ("(T5) read against M instead of M⁻", "code", "criterion-reach",
+     lambda: patch(net22, "which_criterion_applies", _t5_on_the_wrong_set)),
+    ("(T5) accepts any odd valuation, not valuation one", "code",
+     "criterion-reach",
+     lambda: patch(net22, "which_criterion_applies", _t5_accepts_odd)),
+
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
      lambda: patch(bsd20, "x_double", _x_double_missing_term)),
@@ -1073,6 +1239,18 @@ CONTROLS = [
     # it would read as coverage it does not have.
     ("group law: the -a1*y term removed, which a1 = 0 makes a no-op",
      lambda: patch(p5, "ec_add", _a1_branch_removed)),
+    # A fourth, and the reason is a contract rather than a curve. Dropping the
+    # root-number requirement from `is_analytic_rank_zero` changes no verdict,
+    # because src15's `analyse` already encodes the sign INTO the L-value: it
+    # returns L = None when the sign is undecided and L = 0.0 exactly when
+    # w = −1. So "L is a non-zero number" and "decided, w = +1, L ≠ 0" are the
+    # same predicate and no fixture can separate them. That is worth stating
+    # rather than omitting: the sign condition in gate 22 is inherited, not
+    # independently enforced, and if src15 ever returned a raw partial sum for
+    # w = −1 this would stop being a no-op. `analytic-classification` now
+    # asserts that contract directly so the day it changes is a red check.
+    ("rank 0 stops requiring w = +1, which src15's L = 0 contract makes a no-op",
+     lambda: patch(net22, "is_analytic_rank_zero", _rank_zero_ignores_the_sign)),
     ("gate 13's factor table rebuilt with the same contents",
      lambda: patch(alg2, "FACTORS", dict(alg2.FACTORS))),
     # Another control on purpose: (n−1)² ≡ 1² (mod n), so the last residue of
@@ -1132,7 +1310,70 @@ CONTROLS = [
 
 
 _true_mass_exact = glob14.mass_exact
+_true_divisors = net22.odd_prime_divisors
 _true_squarefree = tw21.squarefree_part
+_true_gcds = net22.gcds
+_true_loo = net22.loo
+
+
+def _gcds_lcm(ws):
+    import math as _m
+    M, Mm = ws["M"], ws["M_minus"]
+
+    def _l(vals):
+        vals = list(vals)
+        if not vals:
+            return None
+        out = vals[0]
+        for v in vals[1:]:
+            out = out * v // _m.gcd(out, v)
+        return out
+    gm, gn = _l(M.values()), _l(Mm.values())
+    R = set()
+    for g in (gm, gn):
+        if g is not None:
+            R |= net22.odd_prime_divisors(g)
+    return {"g_mult": gm, "g_minus": gn, "R": sorted(R),
+            "exceptional_set_empty": not R}
+
+
+def _divisors_with_two(n):
+    out = set(_true_divisors(n))
+    if n and n % 2 == 0:
+        out.add(2)
+    return out
+
+
+def _t5_on_the_wrong_set(c):
+    M = {int(k): v for k, v in c["M"].items()}
+    t4 = any(v == 1 for v in M.values())
+    t5 = any(v == 1 for v in M.values())        # M, not M-minus
+    return {"criterion_30_applies": t4 and t5, "T4_satisfiable": t4,
+            "T5_satisfiable": t5, "exceptional_set_empty": not c["R"]}
+
+
+def _t5_accepts_odd(c):
+    M = {int(k): v for k, v in c["M"].items()}
+    Mm = {int(k): v for k, v in c["M_minus"].items()}
+    t4 = any(v == 1 for v in M.values())
+    t5 = any(v % 2 == 1 for v in Mm.values())   # odd, not one
+    return {"criterion_30_applies": t4 and t5, "T4_satisfiable": t4,
+            "T5_satisfiable": t5, "exceptional_set_empty": not c["R"]}
+
+
+def _rank_zero_ignores_the_sign(res):
+    return res["L_at_1"] is not None and abs(res["L_at_1"]) > 1e-9
+
+
+def _loo_keeps_p(ws, p):
+    import math as _m
+    rest = dict(ws["M"])                  # p not removed
+    if not rest:
+        return {"holds": False, "why": "M is empty"}
+    exists = any(n % p for n in rest.values())
+    g = _m.gcd(*rest.values()) if len(rest) > 1 else next(iter(rest.values()))
+    return {"holds": exists, "gcd_form_agrees": exists == (g % p != 0),
+            "gcd_without_p": g}
 _true_x_double = bsd20.x_double
 _true_canon = bsd20.canonical_height
 _true_sweep = bsd20.sweep
@@ -1672,7 +1913,8 @@ def main() -> int:
                    "src18_tate_algorithm",
                    "src19_conductor_census",
                    "src20_bsd_consistency",
-                   "src21_two_witness_certificate"],
+                   "src21_two_witness_certificate",
+                   "src22_witness_network"],
         "rule": ("a planted defect must be caught by the check NAMED for it, "
                  "not merely by some check; and controls must disturb nothing"),
         "two_kinds": {

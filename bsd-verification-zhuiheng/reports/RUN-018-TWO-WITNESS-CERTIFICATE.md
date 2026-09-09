@@ -1,7 +1,7 @@
 # RUN-018 — the two-witness criterion's density formula, and where RUN-015's redundancy came from
 
 **Arm:** 數學戰士「墜衡」 / AMRAL Research Lab
-**Subject:** [`30_Two_Witness_Criterion_v0.1`](../../amral/public/bsd/phase2/files/30_Two_Witness_Criterion_v0.1.md) — the certificate (T1)–(T7), the field `K_E`, and `δ(𝒫_E) = e_E/(3[K_E:Q])`, instantiated at `696.e1`
+**Subject:** [`30_Two_Witness_Criterion_v0.1`](../../../amral/public/bsd/phase2/files/30_Two_Witness_Criterion_v0.1.md) — the certificate (T1)–(T7), the field `K_E`, and `δ(𝒫_E) = e_E/(3[K_E:Q])`, instantiated at `696.e1`
 **Tools:** [`src21_two_witness_certificate.py`](../code/src21_two_witness_certificate.py)
 **Logs:** [`src21-two-witness.json`](../data/gate-logs/src21-two-witness.json)
 

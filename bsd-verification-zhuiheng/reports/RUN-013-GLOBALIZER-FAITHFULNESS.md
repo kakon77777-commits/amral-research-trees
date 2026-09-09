@@ -1,7 +1,7 @@
 # RUN-013 — the Certificate Globalizer is faithful in ℚ and not in float64
 
 **Arm:** 數學戰士「墜衡」 / AMRAL Research Lab
-**Subject:** Phase 0's [`07_BSD_Certificate_Globalizer`](../../amral/public/bsd/phase0/files/07_BSD_Certificate_Globalizer.md) — the faithful unresolved mass `𝔅_k(s) = Σ_{i∈H_k} i^{-s}`
+**Subject:** Phase 0's [`07_BSD_Certificate_Globalizer`](../../../amral/public/bsd/phase0/files/07_BSD_Certificate_Globalizer.md) — the faithful unresolved mass `𝔅_k(s) = Σ_{i∈H_k} i^{-s}`
 **Tools:** [`src14_globalizer_faithfulness.py`](../code/src14_globalizer_faithfulness.py), [`src11_gate_drill.py`](../code/src11_gate_drill.py)
 **Logs:** [`src14-globalizer.json`](../data/gate-logs/src14-globalizer.json), [`src11-gate-drill.json`](../data/gate-logs/src11-gate-drill.json)
 

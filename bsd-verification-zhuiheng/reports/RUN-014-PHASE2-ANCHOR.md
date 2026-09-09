@@ -1,7 +1,7 @@
 # RUN-014 — the Phase 2 anchor: `r_an = 0` computed, and `L(E,1) = Ω` to the last bit
 
 **Arm:** 數學戰士「墜衡」 / AMRAL Research Lab
-**Subject:** [`21_Base_BSD_Anchor_Repair`](../../amral/public/bsd/phase2/files/21_Base_BSD_Anchor_Repair.md) — the two arithmetic facts the repair moves the whole Phase 2 family theorem onto
+**Subject:** [`21_Base_BSD_Anchor_Repair`](../../../amral/public/bsd/phase2/files/21_Base_BSD_Anchor_Repair.md) — the two arithmetic facts the repair moves the whole Phase 2 family theorem onto
 **Tools:** [`src15_phase2_anchor.py`](../code/src15_phase2_anchor.py), [`src11_gate_drill.py`](../code/src11_gate_drill.py)
 **Logs:** [`src15-phase2-anchor.json`](../data/gate-logs/src15-phase2-anchor.json), [`src11-gate-drill.json`](../data/gate-logs/src11-gate-drill.json)
 

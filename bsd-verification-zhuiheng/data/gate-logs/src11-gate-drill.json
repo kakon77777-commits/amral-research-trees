@@ -13,7 +13,8 @@
     "src18_tate_algorithm",
     "src19_conductor_census",
     "src20_bsd_consistency",
-    "src21_two_witness_certificate"
+    "src21_two_witness_certificate",
+    "src22_witness_network"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -54,7 +55,10 @@
     "ogg-formula": true,
     "regulator": true,
     "bsd-sweep": true,
-    "two-witness-degrees": true
+    "two-witness-degrees": true,
+    "witness-lemmas": true,
+    "analytic-classification": true,
+    "criterion-reach": true
   },
   "defects": [
     {
@@ -480,7 +484,8 @@
       "named_check": "tate",
       "checks_that_went_red": [
         "tate",
-        "bsd-sweep"
+        "bsd-sweep",
+        "analytic-classification"
       ],
       "caught_by_the_named_check": true
     },
@@ -508,6 +513,60 @@
       "named_check": "two-witness-degrees",
       "checks_that_went_red": [
         "two-witness-degrees"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the witness gcd is computed as an lcm",
+      "kind": "code",
+      "named_check": "witness-lemmas",
+      "checks_that_went_red": [
+        "witness-lemmas"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the exceptional set keeps the prime 2",
+      "kind": "code",
+      "named_check": "witness-lemmas",
+      "checks_that_went_red": [
+        "witness-lemmas"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "leave-one-out forgets to leave p out",
+      "kind": "code",
+      "named_check": "witness-lemmas",
+      "checks_that_went_red": [
+        "witness-lemmas"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "(T1)'s ord₂ condition is asserted rather than measured",
+      "kind": "code",
+      "named_check": "analytic-classification",
+      "checks_that_went_red": [
+        "analytic-classification"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "(T5) read against M instead of M⁻",
+      "kind": "code",
+      "named_check": "criterion-reach",
+      "checks_that_went_red": [
+        "criterion-reach"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "(T5) accepts any odd valuation, not valuation one",
+      "kind": "code",
+      "named_check": "criterion-reach",
+      "checks_that_went_red": [
+        "criterion-reach"
       ],
       "caught_by_the_named_check": true
     },
@@ -584,7 +643,8 @@
         "anchor-rank-one",
         "E1-vs-mpmath",
         "family-root-number",
-        "bsd-sweep"
+        "bsd-sweep",
+        "analytic-classification"
       ],
       "caught_by_the_named_check": true
     },
@@ -596,7 +656,8 @@
         "anchor-11a1",
         "anchor-rank-one",
         "real-period-vs-integration",
-        "bsd-sweep"
+        "bsd-sweep",
+        "analytic-classification"
       ],
       "caught_by_the_named_check": true
     },
@@ -628,7 +689,8 @@
       "named_check": "anchor-11a1",
       "checks_that_went_red": [
         "anchor-11a1",
-        "bsd-sweep"
+        "bsd-sweep",
+        "analytic-classification"
       ],
       "caught_by_the_named_check": true
     },
@@ -638,7 +700,8 @@
       "named_check": "anchor-11a1",
       "checks_that_went_red": [
         "anchor-11a1",
-        "bsd-sweep"
+        "bsd-sweep",
+        "analytic-classification"
       ],
       "caught_by_the_named_check": true
     },
@@ -648,7 +711,8 @@
       "named_check": "anchor-11a1",
       "checks_that_went_red": [
         "anchor-11a1",
-        "bsd-sweep"
+        "bsd-sweep",
+        "analytic-classification"
       ],
       "caught_by_the_named_check": true
     },
@@ -762,7 +826,8 @@
         "reducibility-sieve",
         "anchor-11a1",
         "anchor-rank-one",
-        "bsd-sweep"
+        "bsd-sweep",
+        "analytic-classification"
       ],
       "caught_by_the_named_check": true
     },
@@ -833,6 +898,11 @@
       "undisturbed": true
     },
     {
+      "control": "rank 0 stops requiring w = +1, which src15's L = 0 contract makes a no-op",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
       "control": "gate 13's factor table rebuilt with the same contents",
       "checks_that_went_red": [],
       "undisturbed": true
@@ -869,11 +939,11 @@
     }
   ],
   "totals": {
-    "defects": 74,
-    "caught_by_the_named_check": 74,
+    "defects": 80,
+    "caught_by_the_named_check": 80,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 18,
+    "controls": 19,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,
