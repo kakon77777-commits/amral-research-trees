@@ -1,0 +1,598 @@
+{
+  "gate": "src36 — Kodaira prefilters and the exact no-go, run",
+  "source": "05_Kodaira_Prefilters_and_NoGo",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "conductor": 696,
+  "the_no_gos_domain_in_this_family": {
+    "base_additive_primes": [
+      2
+    ],
+    "base": [
+      {
+        "p": 2,
+        "kodaira": "II*",
+        "f": 3,
+        "v_disc": 11,
+        "reduction": "additive",
+        "split": null,
+        "potential_reduction": "potentially good",
+        "decided_by": "v_p(j) < 0, not the Kodaira symbol",
+        "no_go_fires": false,
+        "verdict": "no-go silent here",
+        "why": "antecedent not met — additive, potentially good"
+      }
+    ],
+    "members": 19,
+    "rows": [
+      {
+        "q": 241,
+        "additive_primes": [
+          2,
+          241
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            241,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 313,
+        "additive_primes": [
+          2,
+          313
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            313,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 457,
+        "additive_primes": [
+          2,
+          457
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            457,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 673,
+        "additive_primes": [
+          2,
+          673
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            673,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 937,
+        "additive_primes": [
+          2,
+          937
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            937,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 1009,
+        "additive_primes": [
+          2,
+          1009
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            1009,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 1153,
+        "additive_primes": [
+          2,
+          1153
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            1153,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 1753,
+        "additive_primes": [
+          2,
+          1753
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            1753,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 2017,
+        "additive_primes": [
+          2,
+          2017
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            2017,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 2089,
+        "additive_primes": [
+          2,
+          2089
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            2089,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 2113,
+        "additive_primes": [
+          2,
+          2113
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            2113,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 2137,
+        "additive_primes": [
+          2,
+          2137
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            2137,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 2617,
+        "additive_primes": [
+          2,
+          2617
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            2617,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 2713,
+        "additive_primes": [
+          2,
+          2713
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            2713,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 3049,
+        "additive_primes": [
+          2,
+          3049
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            3049,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 3457,
+        "additive_primes": [
+          2,
+          3457
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            3457,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 3529,
+        "additive_primes": [
+          2,
+          3529
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            3529,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 3769,
+        "additive_primes": [
+          2,
+          3769
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            3769,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      },
+      {
+        "q": 3793,
+        "additive_primes": [
+          2,
+          3793
+        ],
+        "types": [
+          [
+            2,
+            "II*",
+            "potentially good"
+          ],
+          [
+            3793,
+            "I0*",
+            "potentially good"
+          ]
+        ],
+        "any_fires": false
+      }
+    ],
+    "no_go_fires_anywhere_in_the_family": false,
+    "additive_primes_are_always_2_and_q": true
+  },
+  "where_it_does_fire": {
+    "rows": [
+      {
+        "d": 2,
+        "base_reduction_at_d": "additive",
+        "twist_kodaira_at_d": "I7*",
+        "twist_reduction_at_d": "additive",
+        "twist_potential_at_d": "potentially good",
+        "no_go_fires": false
+      },
+      {
+        "d": 3,
+        "base_reduction_at_d": "multiplicative",
+        "twist_kodaira_at_d": "I1*",
+        "twist_reduction_at_d": "additive",
+        "twist_potential_at_d": "potentially multiplicative",
+        "no_go_fires": true
+      },
+      {
+        "d": 5,
+        "base_reduction_at_d": "good",
+        "twist_kodaira_at_d": "I0*",
+        "twist_reduction_at_d": "additive",
+        "twist_potential_at_d": "potentially good",
+        "no_go_fires": false
+      },
+      {
+        "d": 7,
+        "base_reduction_at_d": "good",
+        "twist_kodaira_at_d": "I0*",
+        "twist_reduction_at_d": "additive",
+        "twist_potential_at_d": "potentially good",
+        "no_go_fires": false
+      },
+      {
+        "d": 11,
+        "base_reduction_at_d": "good",
+        "twist_kodaira_at_d": "I0*",
+        "twist_reduction_at_d": "additive",
+        "twist_potential_at_d": "potentially good",
+        "no_go_fires": false
+      },
+      {
+        "d": 13,
+        "base_reduction_at_d": "good",
+        "twist_kodaira_at_d": "I0*",
+        "twist_reduction_at_d": "additive",
+        "twist_potential_at_d": "potentially good",
+        "no_go_fires": false
+      },
+      {
+        "d": 23,
+        "base_reduction_at_d": "good",
+        "twist_kodaira_at_d": "I0*",
+        "twist_reduction_at_d": "additive",
+        "twist_potential_at_d": "potentially good",
+        "no_go_fires": false
+      },
+      {
+        "d": 29,
+        "base_reduction_at_d": "multiplicative",
+        "twist_kodaira_at_d": "I1*",
+        "twist_reduction_at_d": "additive",
+        "twist_potential_at_d": "potentially multiplicative",
+        "no_go_fires": true
+      },
+      {
+        "d": 31,
+        "base_reduction_at_d": "good",
+        "twist_kodaira_at_d": "I0*",
+        "twist_reduction_at_d": "additive",
+        "twist_potential_at_d": "potentially good",
+        "no_go_fires": false
+      },
+      {
+        "d": 241,
+        "base_reduction_at_d": "good",
+        "twist_kodaira_at_d": "I0*",
+        "twist_reduction_at_d": "additive",
+        "twist_potential_at_d": "potentially good",
+        "no_go_fires": false
+      },
+      {
+        "d": 313,
+        "base_reduction_at_d": "good",
+        "twist_kodaira_at_d": "I0*",
+        "twist_reduction_at_d": "additive",
+        "twist_potential_at_d": "potentially good",
+        "no_go_fires": false
+      }
+    ],
+    "fires_at": [
+      3,
+      29
+    ],
+    "base_multiplicative_at": [
+      3,
+      29
+    ],
+    "fires_exactly_where_the_base_is_multiplicative": true,
+    "excluded_by_gcd_condition": [
+      2,
+      3,
+      29
+    ],
+    "gcd_condition_covers_every_firing_d": true,
+    "reading": "𝒫 requires gcd(q, 696) = 1, which removes exactly the primes dividing the conductor — and every d at which the no-go fires divides the conductor, because firing requires the base to be multiplicative there"
+  },
+  "p_equals_3_character_structure": {
+    "rows": [
+      {
+        "p": 2,
+        "size_of_F_p_star": 1,
+        "exponent": 1,
+        "every_character_is_quadratic_or_trivial": true
+      },
+      {
+        "p": 3,
+        "size_of_F_p_star": 2,
+        "exponent": 2,
+        "every_character_is_quadratic_or_trivial": true
+      },
+      {
+        "p": 5,
+        "size_of_F_p_star": 4,
+        "exponent": 4,
+        "every_character_is_quadratic_or_trivial": false
+      },
+      {
+        "p": 7,
+        "size_of_F_p_star": 6,
+        "exponent": 6,
+        "every_character_is_quadratic_or_trivial": false
+      },
+      {
+        "p": 11,
+        "size_of_F_p_star": 10,
+        "exponent": 10,
+        "every_character_is_quadratic_or_trivial": false
+      },
+      {
+        "p": 13,
+        "size_of_F_p_star": 12,
+        "exponent": 12,
+        "every_character_is_quadratic_or_trivial": false
+      },
+      {
+        "p": 17,
+        "size_of_F_p_star": 16,
+        "exponent": 16,
+        "every_character_is_quadratic_or_trivial": false
+      }
+    ],
+    "holds_at": [
+      2,
+      3
+    ],
+    "special_to_3_among_odd_primes": true,
+    "note": "p = 2 also has exponent 1, trivially; the document's argument is stated for 3 and the measurement says 3 is the only odd prime where it is available"
+  },
+  "local_torsion_clause": {
+    "global_rational_torsion_order_bound": 1,
+    "global_torsion_trivial": true,
+    "local_condition_computed": false,
+    "local_condition": "E(Q_p)[p] != 0",
+    "the_documents_own_non_converse": "NO rational p-torsion != H2 PASS",
+    "what_this_licenses": "nothing. The absence of the antecedent is recorded in the same slot RUN-031 put n = 2: a criterion with no domain here, not a criterion that passed"
+  },
+  "self_audit_against_the_forbidden_table": {
+    "forbidden": [
+      "potentially supersingular => PASS",
+      "potentially good ordinary => FAIL/PASS",
+      "Kodaira X => automatic H2"
+    ],
+    "this_gate_decides_the_antecedent_by": "v_p(j) < 0",
+    "kodaira_symbols_are": "reported alongside, never consulted",
+    "commits_a_forbidden_inference": false,
+    "why_it_matters": "the finding below is stated as I₀* against I₁*, which reads like a Kodaira table. It is not one: the split is computed from the j-invariant and the symbols happen to track it, which is a correlate and not a criterion"
+  },
+  "headline": "the exact no-go has no domain in this family, and the reason is 𝒫's own gcd(q, 696) = 1: firing at d requires the base to be multiplicative at d, and those d divide the conductor",
+  "ok": true
+}

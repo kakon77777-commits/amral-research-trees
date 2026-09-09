@@ -119,6 +119,10 @@ import src29_sweep_coverage as cov29                      # noqa: E402
 import src30_phase1_numeric_crosscheck as p1num           # noqa: E402
 import src31_q9_census_closure as q9                      # noqa: E402
 import src32_696e1_certificate as cert32                  # noqa: E402
+import src33_mazur_degrees_closed as mazur33              # noqa: E402
+import src34_referee_a_checklist as refA34                # noqa: E402
+import src35_gcd_witness_lemmas as gcd35                  # noqa: E402
+import src36_kodaira_prefilters_nogo as nogo36            # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1669,6 +1673,182 @@ def check_certificate_696e1() -> bool:
     return "RANK" in joined.upper() and "ANALYTIC" in joined.upper()
 
 
+_MAZUR_PRIMES = None
+
+
+def _mazur_primes():
+    global _MAZUR_PRIMES
+    if _MAZUR_PRIMES is None:
+        _MAZUR_PRIMES = mazur33.small_primes(600)
+    return _MAZUR_PRIMES
+
+
+def check_mazur_degrees() -> bool:
+    """All twelve of Mazur's degrees settled for 696.e1, and the two structural
+    facts the closure rests on.
+
+    A witness must exist at every degree the sieve can reach; `n = 2` must be
+    reported as **vacuous** rather than unwitnessed, since every element of F2
+    is a square and no search length changes that; and the twist invariance of
+    `a^2 - 4l` must be demonstrated where `a_l` actually flips sign, because on
+    primes where it does not the invariance is trivially true and the check
+    would be measuring nothing.
+    """
+    primes = _mazur_primes()
+    for n in (11, 13, 17, 19, 37, 43, 67, 163):
+        w = mazur33.witness(mazur33.ANCHOR, n, primes)
+        if w is None:
+            return False
+        a, ell = w["a_ell"], w["ell"]
+        if mazur33.sieve.is_square_mod((a * a - 4 * ell) % n, n):
+            return False
+    if mazur33.witness(mazur33.ANCHOR, 2, primes) is not None:
+        return False
+    v = mazur33.vacuity_at_2()
+    if not v["all_of_F2"]:
+        return False
+    tw = mazur33.twist_invariance(primes)
+    if not tw["all_identical"] or tw["sign_flips_observed"] < 10:
+        return False
+    return all(r["good_primes_compared"] >= 20 for r in tw["rows"])
+
+
+_REFA_MEMO: dict = {}
+
+
+def _refa():
+    # Keyed on BOTH patchable entry points. RUN-030 recorded that a cache is a
+    # piece of state and a drill that mutates state must restore it; the first
+    # version of this key covered only `q_checklist`, so the `base_checklist`
+    # defect left a corrupted base in the memo and the baseline went red on the
+    # next run. The lesson was one round old.
+    key = (id(refA34.q_checklist), id(refA34.base_checklist))
+    if _REFA_MEMO.get("key") != key:
+        _REFA_MEMO["key"] = key
+        # 2,000 L-series terms rather than the gate's 20,000. MEASURED, not
+        # chosen: 0.34s against 29.59s, and all four arithmetic verdicts are
+        # identical at both truncations (rank 0, no rational 2-torsion,
+        # Delta = -178176, v2 = 0). The gate itself still runs at 20,000.
+        _REFA_MEMO["base"] = refA34.base_checklist(limit=2000)
+        _REFA_MEMO["members"] = [q for q in anchor15.sieve(4000) if fam16.in_P(q)]
+        _REFA_MEMO["rejected"] = [q for q in anchor15.sieve(4000)
+                                  if q % 4 == 1 and not fam16.in_P(q)][:200]
+    return _REFA_MEMO
+
+
+def check_referee_a_checklist() -> bool:
+    """Referee A's checklist, and the converse direction it does not ask for.
+
+    Three of the seven base lines are citations and must stay marked as such: a
+    checklist that scored them PASS would report a source as a check. And the
+    rejected sample must be non-empty before "0 disagreements" means anything —
+    an empty converse test agrees with everything.
+    """
+    m = _refa()
+    base = m["base"]
+    cited = {r["line"] for r in base if not r["machine_checkable"]}
+    if cited != {"optimal", "odd Manin", "BSD(E,2) rigorous source"}:
+        return False
+    checkable = [r for r in base if r["machine_checkable"]]
+    if len(checkable) != 4 or any(r["status"] != "PASS" for r in checkable):
+        return False
+    members = m["members"]
+    if len(members) < 15 or members[:2] != [241, 313]:
+        return False
+    if not all(refA34.q_checklist(q)["all_pass"] for q in members):
+        return False
+    rejected = m["rejected"]
+    if len(rejected) < 100:                    # an empty converse agrees with all
+        return False
+    return not any(refA34.q_checklist(q)["all_pass"] for q in rejected)
+
+
+def check_gcd_witness_lemmas() -> bool:
+    """`00_GCD_Witness_Lemmas`'s three lemmas, and the empty set they hide.
+
+    The multiplicative primes must be found from the discriminant and come out
+    as 3 and 29 with n = 1 each, 2 additive; the split/nonsplit classification
+    must be computed, not quoted; each lemma's gcd must be 1. And the last
+    clause is the one that matters: `empty_set_search` must actually exhibit a
+    curve whose nonsplit set is empty, where lemma 1 passes and lemma 3's gcd
+    is 0 — the failure set being *every* odd prime, since p | 0 always. Without
+    that exhibit, "gcd = 1, no failures" on the anchor is a fact about one
+    curve and not a test of the lemma.
+    """
+    md = gcd35.multiplicative_data(gcd35.BASE)
+    if {r["p"]: r["n"] for r in md["multiplicative"]} != {3: 1, 29: 1}:
+        return False
+    if [r["p"] for r in md["additive"]] != [2]:
+        return False
+    if {r["p"]: r["split"] for r in md["multiplicative"]} != {3: True,
+                                                              29: False}:
+        return False
+    l1 = gcd35.generic_witness(md)
+    if l1["gcd"] != 1 or l1["failure_set"] != []:
+        return False
+    l2 = gcd35.leave_one_out(md)
+    if not l2["all_have_a_distinct_witness"]:
+        return False
+    if {r["p"]: r["witness"] for r in l2["rows"]} != {3: 29, 29: 3}:
+        return False
+    l3 = gcd35.nonsplit_witness(md)
+    if [r["p"] for r in md["nonsplit"]] != [29] or l3["gcd"] != 1:
+        return False
+    e = gcd35.empty_set_search()
+    a = e["multiplicative_but_all_split"]
+    if a is None or a["lemma1_gcd"] != 1 or a["lemma3_gcd"] != 0:
+        return False
+    if not isinstance(a["lemma3_failure_set"], str):   # not an empty list
+        return False
+    f = gcd35.family()
+    return (f["members"] >= 15 and f["every_member_matches_case_C"]
+            and f["every_member_has_q_additive"] and f["gcds_all_one"])
+
+
+def check_kodaira_nogo() -> bool:
+    """`05_Kodaira_Prefilters_and_NoGo`'s exact no-go, and its domain.
+
+    The no-go must be silent on the base and on every member's twist, and the
+    additive primes must come out as exactly 2 and q. But a no-go that fires
+    nowhere at all has not been exercised, so the firing set must be non-empty
+    and must coincide with the primes where the base is multiplicative — the
+    check that the two are the *same* set, not merely both small. The p = 3
+    character fact must stay special to 3 (F5ˣ has exponent 4), and the gate
+    must still say it has not computed the local torsion condition: a
+    limitation that quietly stops being stated is a claim that grew.
+    """
+    fr = nogo36.anchor_and_family()
+    if fr["base_additive_primes"] != [2] or fr["members"] < 15:
+        return False
+    if any(r["no_go_fires"] for r in fr["base"]):
+        return False
+    if not fr["additive_primes_are_always_2_and_q"]:
+        return False
+    if fr["no_go_fires_anywhere_in_the_family"]:
+        return False
+    f = nogo36.where_it_fires()
+    if not f["fires_at"]:               # a no-go that never fires is untested
+        return False
+    if f["fires_at"] != f["base_multiplicative_at"]:
+        return False
+    if not f["gcd_condition_covers_every_firing_d"]:
+        return False
+    c = nogo36.character_structure()
+    if not c["special_to_3_among_odd_primes"]:
+        return False
+    if {r["p"]: r["exponent"] for r in c["rows"]}.get(5) != 4:
+        return False
+    t = nogo36.torsion_clause()
+    return t["global_torsion_trivial"] and not t["local_condition_computed"]
+
+
+COVERS = sorted(m.__name__ for m in (
+    corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
+    ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
+    net22, p5u, led24, cv25, r2bsd, agent27, r1bsd, cov29, p1num, q9, cert32,
+    mazur33, refA34, gcd35, nogo36))
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -1728,6 +1908,10 @@ CHECKS = {
     "phase1-numeric-crosscheck": check_phase1_numeric_crosscheck,
     "q9-census-closure": check_q9_census_closure,
     "certificate-696e1": check_certificate_696e1,
+    "mazur-degrees": check_mazur_degrees,
+    "referee-a-checklist": check_referee_a_checklist,
+    "gcd-witness-lemmas": check_gcd_witness_lemmas,
+    "kodaira-nogo": check_kodaira_nogo,
 }
 
 
@@ -2032,6 +2216,40 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("the gcd of an empty set reports no failures instead of all of them",
+     "code", "gcd-witness-lemmas",
+     lambda: patch(gcd35, "odd_prime_divisors", lambda n, bound=10_000: [])),
+    ("every multiplicative prime is reported split, emptying the nonsplit set",
+     "code", "gcd-witness-lemmas",
+     lambda: patch(gcd35, "multiplicative_data", _md_all_split)),
+    ("the empty-set search is given nothing to search",
+     "code", "gcd-witness-lemmas",
+     lambda: patch(gcd35, "small_curves", lambda box=0: iter(()))),
+    ("the leave-one-out lets a prime be its own witness", "code",
+     "gcd-witness-lemmas",
+     lambda: patch(gcd35, "leave_one_out", _leave_one_out_self)),
+    ("the no-go is decided by the Kodaira symbol, which 05 forbids", "code",
+     "kodaira-nogo", lambda: patch(nogo36, "no_go", _no_go_by_symbol)),
+    ("every prime is reported potentially good, so nothing ever fires", "code",
+     "kodaira-nogo", lambda: patch(nogo36, "local_type", _local_type_pot_good)),
+    ("the p = 3 character fact is reported as holding at every prime", "code",
+     "kodaira-nogo",
+     lambda: patch(nogo36, "character_structure", _chars_flat)),
+    ("the twist probe contains only good primes, so the no-go is never "
+     "offered a chance to fire", "code", "kodaira-nogo",
+     lambda: patch(nogo36, "where_it_fires", _fires_good_probe_only)),
+    ("the square test mod n always says yes, so no witness is ever found",
+     "code", "mazur-degrees",
+     lambda: patch(mazur33.sieve, "is_square_mod", lambda a, n: True)),
+    ("the quadratic twist returns the curve unchanged", "code",
+     "mazur-degrees",
+     lambda: patch(mazur33, "quadratic_twist", lambda ainvs, d: list(ainvs))),
+    ("Referee A's q-conditions drop the 2-division-cubic inertness", "code",
+     "referee-a-checklist",
+     lambda: patch(refA34, "q_checklist", _q_checklist_no_inertness)),
+    ("Referee A's cited lines are scored as machine-checkable", "code",
+     "referee-a-checklist",
+     lambda: patch(refA34, "base_checklist", _base_all_checkable)),
     ("the certificate is built for a different curve", "code",
      "certificate-696e1",
      lambda: patch(cert32, "AINVS", [0, 1, 1, -2, 0])),
@@ -2152,6 +2370,12 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("the empty-set search box widened",
+     lambda: patch(gcd35, "small_curves", lambda box=8: _true_small_curves(8))),
+    ("the twist probe given in a different order",
+     lambda: patch(nogo36, "where_it_fires",
+                   lambda probe=(313, 29, 2, 241, 31, 23, 13, 11, 7, 5, 3):
+                   _true_where_it_fires(probe))),
     ("search window widened", lambda: patch(x0n, "GAMMA_PAD", 12)),
     ("candidate budget raised", lambda: patch(x0n, "MAX_CANDIDATES", 400_000)),
     ("different random seed for the factorisation",
@@ -2212,10 +2436,19 @@ CONTROLS = [
     # Another control on purpose: (n−1)² ≡ 1² (mod n), so the last residue of
     # the square test is always redundant and dropping it cannot change an
     # answer. Listed with the reason rather than left out.
-    ("square-test mod n drops its last residue, which (n-1)^2 = 1^2 makes redundant",
+    # RUN-033: the redundancy argument holds only for n >= 3. At n = 2 the
+    # residue being dropped IS the 1 rather than a duplicate of it, since
+    # (n-1)^2 = 1^2 degenerates to 1 = 1, and the set of squares mod 2 loses a
+    # member. `mazur-degrees` made that visible the round it arrived, because
+    # RUN-031 turned the vacuity at n = 2 into a load-bearing fact. A control
+    # whose stated reason is false is not a control, so the reason is corrected
+    # rather than the check that caught it weakened.
+    ("square-test mod n drops its last residue for n >= 3, which "
+     "(n-1)^2 = 1^2 makes redundant there",
      lambda: patch(red7, "is_square_mod",
                    lambda a, n: any((r * r) % n == a % n
-                                    for r in range(max(0, n - 1))))),
+                                    for r in range(n if n < 3
+                                                   else max(0, n - 1))))),
     # And a third, measured rather than assumed. Dropping the denominator-3 half
     # of RUN-006's rational root theorem changes no verdict on ANY of the 4,062
     # census curves: 1,232 stay True, 2,805 stay False, 25 stay undecided. Every
@@ -2313,6 +2546,107 @@ def _classify_body_first(doc, src):
               "named in gate code" if gates else "not mentioned")
     return {"subline": doc["subline"], "name": doc["name"], "bucket": bucket,
             "subject_of": subj, "cited_in": body[:6], "named_in_gates": gates[:6]}
+
+
+_true_small_curves = gcd35.small_curves
+_true_multiplicative_data = gcd35.multiplicative_data
+_true_leave_one_out = gcd35.leave_one_out
+_true_local_type = nogo36.local_type
+_true_where_it_fires = nogo36.where_it_fires
+_true_no_go = nogo36.no_go
+
+
+def _md_all_split(ainvs):
+    """The split/nonsplit classification thrown away in the safe-looking
+    direction: everything called split. Lemma 3 then restricts to an empty set,
+    whose gcd is 0, so every odd prime becomes a failure."""
+    md = _true_multiplicative_data(ainvs)
+    if md.get("singular"):
+        return md
+    for r in md["multiplicative"]:
+        r["split"] = True
+    md["nonsplit"] = []
+    return md
+
+
+def _leave_one_out_self(md):
+    """Lemma 2 without the word "distinct": a multiplicative p is allowed to be
+    its own witness, which makes the leave-one-out trivially satisfiable."""
+    mult = md["multiplicative"]
+    rows = []
+    for r in mult:
+        p = r["p"]
+        chosen = next((s["p"] for s in mult if s["n"] % p), None)
+        rows.append({"p": p, "others": [s["p"] for s in mult],
+                     "gcd_of_others": 1, "witness": chosen,
+                     "n_at_witness": next((s["n"] for s in mult
+                                           if s["p"] == chosen), None),
+                     "ok": chosen is not None})
+    return {"lemma": "fixed multiplicative (leave-one-out)", "rows": rows,
+            "all_have_a_distinct_witness": all(r["ok"] for r in rows)}
+
+
+def _no_go_by_symbol(ainvs, p):
+    """Exactly the inference 05 forbids: read the verdict off the Kodaira
+    symbol instead of the j-invariant. I0* is potentially good and I1* is not,
+    but both are starred, so this fires everywhere the reduction is additive."""
+    t = _true_local_type(ainvs, p)
+    fires = bool(t["kodaira"]) and t["kodaira"].endswith("*")
+    return {**t, "no_go_fires": fires,
+            "verdict": "FW17_H2_FAIL" if fires else "no-go silent here",
+            "why": "read off the Kodaira symbol"}
+
+
+def _local_type_pot_good(ainvs, p):
+    t = _true_local_type(ainvs, p)
+    t["potential_reduction"] = "potentially good"
+    return t
+
+
+def _chars_flat(primes=nogo36.CHARACTER_PRIMES):
+    return {"rows": [{"p": p, "size_of_F_p_star": p - 1, "exponent": 2,
+                      "every_character_is_quadratic_or_trivial": True}
+                     for p in primes],
+            "holds_at": list(primes),
+            "special_to_3_among_odd_primes": True,
+            "note": "flattened"}
+
+
+def _fires_good_probe_only(probe=(5, 7, 11, 13, 23, 31)):
+    """A probe with no multiplicative prime in it. Both sides of the comparison
+    then come out empty and agree, which is the vacuity the check must refuse."""
+    return _true_where_it_fires(probe)
+
+
+_true_q_checklist = refA34.q_checklist
+_true_base_checklist = refA34.base_checklist
+
+
+def _q_checklist_no_inertness(q):
+    """The five conditions with the 2-division-cubic inertness dropped, which is
+    the one that does the discriminating: without it primes P rejects begin to
+    pass."""
+    d = _true_q_checklist(q)
+    d["lines"].pop("q inert in 2-division cubic", None)
+    d["all_pass"] = all(d["lines"].values())
+    return d
+
+
+def _base_all_checkable(limit=None):
+    """Every base line marked machine-checkable and PASS — the three citations
+    scored as though they were checks.
+
+    Takes the same `limit` the real one takes: a stand-in that cannot be called
+    the way the check calls it produces a TypeError, and RUN-030 recorded that a
+    defect which raises is not a defect a check caught.
+    """
+    rows = (_true_base_checklist() if limit is None
+            else _true_base_checklist(limit=limit))
+    for r in rows:
+        if not r["machine_checkable"]:
+            r["machine_checkable"] = True
+            r["status"] = "PASS"
+    return rows
 
 
 _true_certificate = cert32.certificate
@@ -3103,20 +3437,7 @@ def main() -> int:
     after = run_checks()
     log = {
         "gate": "src11_gate_drill",
-        "covers": ["src08_modular_curve_confirmation",
-                   "src09_kept_curves_removal_gate",
-                   "src10_phase2_density_and_base",
-                   "src12_p5_localization",
-                   "src13_algorithm2_twists",
-                   "src14_globalizer_faithfulness",
-                   "src15_phase2_anchor",
-                   "src16_twist_family_lvalues",
-                   "src17_family_prime_router",
-                   "src18_tate_algorithm",
-                   "src19_conductor_census",
-                   "src20_bsd_consistency",
-                   "src21_two_witness_certificate",
-                   "src22_witness_network"],
+        "covers": COVERS,
         "rule": ("a planted defect must be caught by the check NAMED for it, "
                  "not merely by some check; and controls must disturb nothing"),
         "two_kinds": {

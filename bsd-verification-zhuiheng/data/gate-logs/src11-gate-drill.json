@@ -1,6 +1,14 @@
 {
   "gate": "src11_gate_drill",
   "covers": [
+    "src00_corpus_identity",
+    "src01_ladder_vocabulary",
+    "src02_rejected_route_recurrence",
+    "src03_multiplicity_nogo",
+    "src04_curve_arithmetic_recompute",
+    "src05_frobenius_at_three",
+    "src06_three_isogeny_sieve",
+    "src07_isogeny_reducibility_sieve",
     "src08_modular_curve_confirmation",
     "src09_kept_curves_removal_gate",
     "src10_phase2_density_and_base",
@@ -11,10 +19,23 @@
     "src16_twist_family_lvalues",
     "src17_family_prime_router",
     "src18_tate_algorithm",
-    "src19_conductor_census",
     "src20_bsd_consistency",
     "src21_two_witness_certificate",
-    "src22_witness_network"
+    "src22_witness_network",
+    "src23_p5_local_units",
+    "src24_p5_status_ledger",
+    "src25_p5_core_vertex",
+    "src26_rank2_bsd_identity",
+    "src27_agent_experiment_audit",
+    "src28_rank1_bsd_identity",
+    "src29_sweep_coverage",
+    "src30_phase1_numeric_crosscheck",
+    "src31_q9_census_closure",
+    "src32_696e1_certificate",
+    "src33_mazur_degrees_closed",
+    "src34_referee_a_checklist",
+    "src35_gcd_witness_lemmas",
+    "src36_kodaira_prefilters_nogo"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -80,7 +101,11 @@
     "sweep-coverage": true,
     "phase1-numeric-crosscheck": true,
     "q9-census-closure": true,
-    "certificate-696e1": true
+    "certificate-696e1": true,
+    "mazur-degrees": true,
+    "referee-a-checklist": true,
+    "gcd-witness-lemmas": true,
+    "kodaira-nogo": true
   },
   "defects": [
     {
@@ -313,7 +338,10 @@
         "frobenius-pinning",
         "density-1-over-24",
         "family-ordinary",
-        "membership-in-P"
+        "membership-in-P",
+        "referee-a-checklist",
+        "gcd-witness-lemmas",
+        "kodaira-nogo"
       ],
       "caught_by_the_named_check": true
     },
@@ -326,7 +354,10 @@
         "frobenius-pinning",
         "density-1-over-24",
         "family-ordinary",
-        "membership-in-P"
+        "membership-in-P",
+        "referee-a-checklist",
+        "gcd-witness-lemmas",
+        "kodaira-nogo"
       ],
       "caught_by_the_named_check": true
     },
@@ -337,7 +368,8 @@
       "checks_that_went_red": [
         "density-1-over-24",
         "family-ordinary",
-        "membership-in-P"
+        "membership-in-P",
+        "referee-a-checklist"
       ],
       "caught_by_the_named_check": true
     },
@@ -470,7 +502,8 @@
       "named_check": "tate-i0star-reachable",
       "checks_that_went_red": [
         "tate-i0star-reachable",
-        "ogg-formula"
+        "ogg-formula",
+        "gcd-witness-lemmas"
       ],
       "caught_by_the_named_check": true
     },
@@ -491,7 +524,9 @@
       "checks_that_went_red": [
         "tate",
         "tate-i0star-reachable",
-        "ogg-formula"
+        "ogg-formula",
+        "gcd-witness-lemmas",
+        "kodaira-nogo"
       ],
       "caught_by_the_named_check": true
     },
@@ -976,6 +1011,117 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the gcd of an empty set reports no failures instead of all of them",
+      "kind": "code",
+      "named_check": "gcd-witness-lemmas",
+      "checks_that_went_red": [
+        "gcd-witness-lemmas"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "every multiplicative prime is reported split, emptying the nonsplit set",
+      "kind": "code",
+      "named_check": "gcd-witness-lemmas",
+      "checks_that_went_red": [
+        "gcd-witness-lemmas"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the empty-set search is given nothing to search",
+      "kind": "code",
+      "named_check": "gcd-witness-lemmas",
+      "checks_that_went_red": [
+        "gcd-witness-lemmas"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the leave-one-out lets a prime be its own witness",
+      "kind": "code",
+      "named_check": "gcd-witness-lemmas",
+      "checks_that_went_red": [
+        "gcd-witness-lemmas"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the no-go is decided by the Kodaira symbol, which 05 forbids",
+      "kind": "code",
+      "named_check": "kodaira-nogo",
+      "checks_that_went_red": [
+        "kodaira-nogo"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "every prime is reported potentially good, so nothing ever fires",
+      "kind": "code",
+      "named_check": "kodaira-nogo",
+      "checks_that_went_red": [
+        "kodaira-nogo"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the p = 3 character fact is reported as holding at every prime",
+      "kind": "code",
+      "named_check": "kodaira-nogo",
+      "checks_that_went_red": [
+        "kodaira-nogo"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the twist probe contains only good primes, so the no-go is never offered a chance to fire",
+      "kind": "code",
+      "named_check": "kodaira-nogo",
+      "checks_that_went_red": [
+        "kodaira-nogo"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the square test mod n always says yes, so no witness is ever found",
+      "kind": "code",
+      "named_check": "mazur-degrees",
+      "checks_that_went_red": [
+        "reducibility-sieve",
+        "mazur-degrees"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the quadratic twist returns the curve unchanged",
+      "kind": "code",
+      "named_check": "mazur-degrees",
+      "checks_that_went_red": [
+        "mazur-degrees",
+        "gcd-witness-lemmas",
+        "kodaira-nogo"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "Referee A's q-conditions drop the 2-division-cubic inertness",
+      "kind": "code",
+      "named_check": "referee-a-checklist",
+      "checks_that_went_red": [
+        "referee-a-checklist"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "Referee A's cited lines are scored as machine-checkable",
+      "kind": "code",
+      "named_check": "referee-a-checklist",
+      "checks_that_went_red": [
+        "referee-a-checklist"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "the certificate is built for a different curve",
       "kind": "code",
       "named_check": "certificate-696e1",
@@ -1288,7 +1434,8 @@
         "bsd-sweep",
         "analytic-classification",
         "rank1-leading-derivative",
-        "rank1-identity"
+        "rank1-identity",
+        "mazur-degrees"
       ],
       "caught_by_the_named_check": true
     },
@@ -1297,12 +1444,23 @@
       "kind": "code",
       "named_check": "reducibility-sieve",
       "checks_that_went_red": [
-        "reducibility-sieve"
+        "reducibility-sieve",
+        "mazur-degrees"
       ],
       "caught_by_the_named_check": true
     }
   ],
   "controls": [
+    {
+      "control": "the empty-set search box widened",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the twist probe given in a different order",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
     {
       "control": "search window widened",
       "checks_that_went_red": [],
@@ -1379,7 +1537,7 @@
       "undisturbed": true
     },
     {
-      "control": "square-test mod n drops its last residue, which (n-1)^2 = 1^2 makes redundant",
+      "control": "square-test mod n drops its last residue for n >= 3, which (n-1)^2 = 1^2 makes redundant there",
       "checks_that_went_red": [],
       "undisturbed": true
     },
@@ -1405,11 +1563,11 @@
     }
   ],
   "totals": {
-    "defects": 124,
-    "caught_by_the_named_check": 124,
+    "defects": 136,
+    "caught_by_the_named_check": 136,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 20,
+    "controls": 22,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

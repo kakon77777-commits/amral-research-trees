@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-030:
-  every gate is drilled — `src00`–`src10` and `src12`–`src32`, 124 defects, 124
-  caught by the named check, 20 controls undisturbed, over 58 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-034:
+  every gate is drilled — `src00`–`src10` and `src12`–`src36`, 136 defects, 136
+  caught by the named check, 22 controls undisturbed, over 62 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -133,6 +133,10 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [028](./reports/RUN-028-PHASE1-NUMERIC-CROSSCHECK.md) | Phase 1's stated arithmetic against this tree's own | `src30` | 15 of 23 stated integers appear in our gate logs; **§Q9's accounting identity checks out and four of its six inputs are ours**, the two that are not being tied so one measurement closes both; and the round's own scanner failed in **both** directions |
 | [029](./reports/RUN-029-Q9-CENSUS-CLOSURE.md) | §Q9's twist accounting, measured | `src31` | **all eight terms measured from the artefacts**, so the identity is a check and not a definition of its last two; the `1,355` RUN-028 could not place is `40,749 − 39,394`; and a check of mine went red **on success**, having frozen a finding as an invariant |
 | [030](./reports/RUN-030-696E1-CERTIFICATE.md) | the machine-checkable arithmetic certificate for `696.e1` | `src32` | `28_Submission_Gate`'s fourth box **delivered** — 20 quantities each recomputed from the a-invariants alone; the first draft quoted its author and **three of three were wrong**; and the drill's state guard caught a memo that outlived the defect it was computed under |
+| [031](./reports/RUN-031-MAZUR-DEGREES-CLOSED.md) | Mazur's twelve isogeny degrees, for `696.e1` and every twist of it | `src33` | **all twelve settled** — eleven refuted by an explicit witness prime, and `n = 2`, where the sieve is **structurally vacuous**, settled by `X₀(2)`; the refutation transfers to the whole family, identical on 27 of 27 good primes across three twists with 14–16 sign flips in `a_ℓ`; and a drill control's stated reason turned out **false at `n = 2`** |
+| [032](./reports/RUN-032-REFEREE-A-CHECKLIST.md) | Referee A's checklist, run as a program | `src34` | **PASS over the four of seven base lines that are arithmetic**, the other three reported as *cited* rather than scored; all 19 support-set members pass all five `q` conditions; and 200 primes the membership test **rejects** were put through the checklist — 0 pass, so the checklist and `𝒫` agree about who is in the family |
+| [033](./reports/RUN-033-GCD-WITNESS-LEMMAS.md) | the GCD witness lemmas under both prime routers | `src35` | all three run with **computed inputs** — 3 split, 29 **nonsplit**, `n_ℓ = 1` each, every gcd 1; the nonsplit restriction leaves **one witness and no spare**; and a searched-for curve where **lemma 1 passes while lemma 3's gcd is 0**, because the gcd of an empty set is 0 and every prime divides 0 |
+| [034](./reports/RUN-034-KODAIRA-NOGO-DOMAIN.md) | `05`'s one exact no-go, and where it can fire | `src36` | the no-go **never fires in this family**, and `𝒫`'s own `gcd(q, 696) = 1` is why — firing at `d` needs the base multiplicative at `d`, measured to be exactly `{3, 29}`; and `p = 3`'s character argument is measured **special to 3 among odd primes** |
 
 ## Layout
 
