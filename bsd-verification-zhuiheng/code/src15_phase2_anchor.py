@@ -133,12 +133,22 @@ def real_cubic_roots(b2, b4, b6):
 
 
 def real_period(ainvs) -> float:
-    """∫ over E(R) of the Néron differential — both components when Δ > 0."""
+    """∫ over E(R) of the Néron differential — both components when Δ > 0.
+
+    The Δ > 0 branch carried a spurious factor of 2 until RUN-017. Its value had
+    only ever been checked against itself: RUN-014's drill froze Ω(37a1) as a
+    regression baseline taken from this function, so the branch was never
+    compared with anything outside it. Numerical integration over E(R) — added
+    to the drill at the same time — puts the two conventions apart at once.
+
+    Everything RUN-014 and RUN-015 concluded is on curves with Δ < 0, where the
+    two agree exactly, so none of it moves.
+    """
     b2, b4, b6, _b8, disc = b_invariants(ainvs)
     roots = real_cubic_roots(b2, b4, b6)
     if disc > 0:
         e1, e2, e3 = roots
-        return 2 * (2 * math.pi / agm(math.sqrt(e1 - e3), math.sqrt(e1 - e2)))
+        return 2 * math.pi / agm(math.sqrt(e1 - e3), math.sqrt(e1 - e2))
     e1 = roots[0]
     p_ = b2 / 4.0 + e1
     q_ = b4 / 2.0 + e1 * p_
@@ -236,11 +246,29 @@ def smoothed_and_direct(a, N: int, limit: int):
 
 
 def root_number(a, N: int, limit: int):
+    """The sign, with an error estimate the series makes about itself.
+
+    The residual |smoothed − direct| is NOT an error estimate: it can be small
+    by accident, and on 795b1 it was 2.1e-4 against a candidate gap of 8.6e-3,
+    which reads as a confident answer for no reason. What the comparison is
+    actually limited by is how far the Dirichlet series still has to move, so
+    that is measured directly — the sum is evaluated at limit, limit/2 and
+    limit/4, and the spread between them is the error. A sign is only reported
+    as decided when the gap between the two candidates clears it.
+    """
     cand, direct = smoothed_and_direct(a, N, limit)
+    partials = [sum(a[n] / (n * n) for n in range(1, m + 1))
+                for m in (limit // 4, limit // 2, limit)]
+    drift = max(abs(partials[i] - partials[-1]) for i in range(2))
     w = min(cand, key=lambda k: abs(cand[k] - direct))
+    gap = abs(cand[-w] - direct) - abs(cand[w] - direct)
     return w, {"candidates": cand, "dirichlet_series": direct,
                "residual": abs(cand[w] - direct),
-               "gap_to_the_other_sign": abs(cand[-w] - direct)}
+               "gap_to_the_other_sign": abs(cand[-w] - direct),
+               "separation": gap,
+               "series_drift": drift,
+               "decided": gap > 20 * max(drift, 1e-15),
+               "partial_sums": partials}
 
 
 def truncation_scale(N: int, terms: int) -> float:
@@ -283,7 +311,7 @@ def analyse(label: str, ainvs, N: int, limit: int = TERMS) -> dict:
     a = coefficients(ainvs, bad, limit)
     w, wdata = root_number(a, N, limit)
     omega = real_period(ainvs)
-    L1 = l_value_at_one(a, N, w)
+    L1 = l_value_at_one(a, N, w) if wdata["decided"] else None
     tail = truncation_scale(N, limit)
     tors = torsion_bound(ainvs, N)
     _b2, _b4, _b6, _b8, disc = b_invariants(ainvs)
@@ -311,13 +339,16 @@ def analyse(label: str, ainvs, N: int, limit: int = TERMS) -> dict:
         "label": label, "a_invariants": ainvs, "conductor_used": N,
         "discriminant": disc,
         "bad_primes": details,
-        "root_number": w, "root_number_evidence": wdata,
+        "root_number": w if wdata["decided"] else None,
+        "root_number_undecided": not wdata["decided"],
+        "root_number_evidence": wdata,
         "real_period": omega,
         "L_at_1": L1,
         "terms_used": limit,
         "first_dropped_term_scale": tail,
         "L_at_1_converged": L1 is not None,
-        "analytic_rank_is_zero": w == 1 and L1 is not None and abs(L1) > 1e-9,
+        "analytic_rank_is_zero": (wdata["decided"] and w == 1
+                                  and L1 is not None and abs(L1) > 1e-9),
         "torsion_bound_gcd": tors,
         "tamagawa": tamagawa,
         "product_of_known_tamagawa": prod_known,

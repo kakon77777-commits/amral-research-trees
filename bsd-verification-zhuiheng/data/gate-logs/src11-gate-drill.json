@@ -11,7 +11,8 @@
     "src16_twist_family_lvalues",
     "src17_family_prime_router",
     "src18_tate_algorithm",
-    "src19_conductor_census"
+    "src19_conductor_census",
+    "src20_bsd_consistency"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -41,6 +42,7 @@
     "anchor-11a1": true,
     "anchor-rank-one": true,
     "E1-vs-mpmath": true,
+    "real-period-vs-integration": true,
     "kronecker": true,
     "family-root-number": true,
     "family-ordinary": true,
@@ -48,7 +50,9 @@
     "membership-in-P": true,
     "tate": true,
     "tate-i0star-reachable": true,
-    "ogg-formula": true
+    "ogg-formula": true,
+    "regulator": true,
+    "bsd-sweep": true
   },
   "defects": [
     {
@@ -473,7 +477,35 @@
       "kind": "code",
       "named_check": "tate",
       "checks_that_went_red": [
-        "tate"
+        "tate",
+        "bsd-sweep"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "x-only duplication drops the -2*b6*x term",
+      "kind": "code",
+      "named_check": "regulator",
+      "checks_that_went_red": [
+        "regulator"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "Richardson extrapolates against 1/2^n instead of 1/4^n",
+      "kind": "code",
+      "named_check": "regulator",
+      "checks_that_went_red": [
+        "regulator"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the BSD ratio drops the torsion square",
+      "kind": "code",
+      "named_check": "bsd-sweep",
+      "checks_that_went_red": [
+        "bsd-sweep"
       ],
       "caught_by_the_named_check": true
     },
@@ -519,9 +551,11 @@
       "kind": "code",
       "named_check": "E1-vs-mpmath",
       "checks_that_went_red": [
+        "anchor-11a1",
         "anchor-rank-one",
         "E1-vs-mpmath",
-        "family-root-number"
+        "family-root-number",
+        "bsd-sweep"
       ],
       "caught_by_the_named_check": true
     },
@@ -531,16 +565,31 @@
       "named_check": "anchor-11a1",
       "checks_that_went_red": [
         "anchor-11a1",
-        "anchor-rank-one"
+        "anchor-rank-one",
+        "real-period-vs-integration",
+        "bsd-sweep"
       ],
       "caught_by_the_named_check": true
     },
     {
       "defect": "the real period drops the second component when Δ > 0",
       "kind": "code",
-      "named_check": "anchor-rank-one",
+      "named_check": "real-period-vs-integration",
       "checks_that_went_red": [
-        "anchor-rank-one"
+        "anchor-rank-one",
+        "real-period-vs-integration",
+        "bsd-sweep"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the real period doubles the Δ > 0 branch, as it used to",
+      "kind": "code",
+      "named_check": "real-period-vs-integration",
+      "checks_that_went_red": [
+        "anchor-rank-one",
+        "real-period-vs-integration",
+        "bsd-sweep"
       ],
       "caught_by_the_named_check": true
     },
@@ -549,7 +598,8 @@
       "kind": "code",
       "named_check": "anchor-11a1",
       "checks_that_went_red": [
-        "anchor-11a1"
+        "anchor-11a1",
+        "bsd-sweep"
       ],
       "caught_by_the_named_check": true
     },
@@ -558,7 +608,8 @@
       "kind": "code",
       "named_check": "anchor-11a1",
       "checks_that_went_red": [
-        "anchor-11a1"
+        "anchor-11a1",
+        "bsd-sweep"
       ],
       "caught_by_the_named_check": true
     },
@@ -567,7 +618,8 @@
       "kind": "code",
       "named_check": "anchor-11a1",
       "checks_that_went_red": [
-        "anchor-11a1"
+        "anchor-11a1",
+        "bsd-sweep"
       ],
       "caught_by_the_named_check": true
     },
@@ -576,7 +628,8 @@
       "kind": "code",
       "named_check": "anchor-11a1",
       "checks_that_went_red": [
-        "anchor-11a1"
+        "anchor-11a1",
+        "bsd-sweep"
       ],
       "caught_by_the_named_check": true
     },
@@ -678,7 +731,9 @@
       "named_check": "reducibility-sieve",
       "checks_that_went_red": [
         "reducibility-sieve",
-        "anchor-11a1"
+        "anchor-11a1",
+        "anchor-rank-one",
+        "bsd-sweep"
       ],
       "caught_by_the_named_check": true
     },
@@ -772,14 +827,19 @@
       "control": "membership drops the (q/29) condition, which the other two imply",
       "checks_that_went_red": [],
       "undisturbed": true
+    },
+    {
+      "control": "naive height reads the numerator only, below the regulator's precision",
+      "checks_that_went_red": [],
+      "undisturbed": true
     }
   ],
   "totals": {
-    "defects": 67,
-    "caught_by_the_named_check": 67,
+    "defects": 71,
+    "caught_by_the_named_check": 71,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 16,
+    "controls": 17,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

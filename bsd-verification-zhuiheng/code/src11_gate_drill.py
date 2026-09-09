@@ -1,4 +1,4 @@
-"""Drill for gates 04-10, 12-19 — plant a defect, demand the named check catch it.
+"""Drill for gates 04-10, 12-20 — plant a defect, demand the named check catch it.
 
 數學戰士「墜衡」 / AMRAL Research Lab.
 
@@ -100,6 +100,7 @@ import src15_phase2_anchor as anchor15                   # noqa: E402
 import src16_twist_family_lvalues as fam16               # noqa: E402
 import src17_family_prime_router as route17              # noqa: E402
 import src18_tate_algorithm as tate18                    # noqa: E402
+import src20_bsd_consistency as bsd20                    # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -419,12 +420,13 @@ def check_anchor_rank_one() -> bool:
     Σ(a_n/n)e^{−2πn/√N} is 0.19 there, so reading it as L(E,1) would report a
     rank-1 curve as rank 0.
     """
-    # Δ = 37 > 0, so E(R) has two components and the real period is twice the
-    # identity component's — 11.97383458…, not 5.98691729…. This is the only
-    # curve here that can see that factor at all.
+    # Δ = 37 > 0, so E(R) has two components. The value below is 5.98691729…,
+    # which is what ∫_{E(R)}|ω| actually is — an earlier version froze twice
+    # that, taken from the gate's own output and never compared with anything
+    # outside it. See check_real_period_against_integration.
     r = anchor15.analyse("37a1", [0, 0, 1, -1, 0], 37, limit=4000)
     return (r["root_number"] == -1 and r["L_at_1"] == 0.0
-            and abs(r["real_period"] - 11.973834584927838) < 1e-10)
+            and abs(r["real_period"] - 5.986917292463919) < 1e-10)
 
 
 def check_E1_against_an_independent_implementation() -> bool:
@@ -622,6 +624,76 @@ def check_ogg() -> bool:
     return True
 
 
+def check_real_period_against_integration() -> bool:
+    """Ω by AGM against Ω by numerical integration over E(R).
+
+    The AGM branch for Δ > 0 was wrong by a factor of two and no check could
+    see it, because the only thing it was ever compared with was itself: a
+    drill baseline frozen from this same function. Integrating dx/√(4x³+b₂x²+
+    2b₄x+b₆) over the real locus — the unbounded component substituted
+    x = e₁ + t², the egg substituted x = e₃ + (e₂−e₃)sin²u — shares no code
+    with the AGM and settles it.
+    """
+    try:
+        from scipy import integrate
+    except ImportError:                                   # pragma: no cover
+        return True
+    for inv in ([0, -1, 1, -10, -20], [0, 0, 1, -1, 0], [0, 1, 1, -2, 0],
+                [0, 1, 0, 8, -16], [1, 0, 0, -3, 1]):
+        b2, b4, b6, _b8, disc = anchor15.b_invariants(inv)
+
+        def f(x):
+            return 4 * x ** 3 + b2 * x * x + 2 * b4 * x + b6
+
+        roots = anchor15.real_cubic_roots(b2, b4, b6)
+        e1 = roots[0]
+        total, _ = integrate.quad(
+            lambda t: 4 * t / math.sqrt(f(e1 + t * t)), 0, math.inf, limit=800)
+        if len(roots) == 3:
+            _e1, e2, e3 = roots
+            span = e2 - e3
+            egg, _ = integrate.quad(
+                lambda u: 4 * span * math.sin(u) * math.cos(u)
+                / math.sqrt(max(f(e3 + span * math.sin(u) ** 2), 1e-300)),
+                0, math.pi / 2, limit=800)
+            total += egg
+        if abs(anchor15.real_period(inv) - total) > 1e-7 * total:
+            return False
+    return True
+
+
+def check_regulator() -> bool:
+    """389.a1's height regulator, guarded by an identity the method never uses.
+
+    The parallelogram law ĥ(P+Q) + ĥ(P−Q) = 2ĥ(P) + 2ĥ(Q) is not an input to
+    the limit that computes ĥ, so requiring it constrains the whole computation
+    from outside. The regulator value is pinned as well, but the law is what
+    makes the value mean something.
+    """
+    r = bsd20.regulator(bsd20.P5_CURVE, bsd20.P5_GENERATORS)
+    return (abs(r["parallelogram_law_residual"]) < 1e-4
+            and abs(r["regulator"] - 0.152460306865) < 1e-6
+            and r["independent"])
+
+
+def check_bsd_sweep() -> bool:
+    """The rank-0 BSD identity must close on an integer square — and on 1.
+
+    Six curves, not a sweep: this runs once per defect and once per control, so
+    the full sweep that gate 20 reports would cost more here than every other
+    check put together. The identity is the same one either way, and it is the
+    thing that puts four independently computed quantities — the L-value, the
+    real period, the torsion bound and every Tamagawa number — into a single
+    equation that must land on an integer.
+    """
+    curves = [r for r in json.loads(x0n.ARITH.read_text(encoding="utf-8"))["records"]
+              if r["curve_label"] in ("14a1", "26a1", "34a1", "38b1",
+                                      "46a1", "94a1")]
+    sw = bsd20.sweep(curves)
+    return (sw["tally"].get("BSD closes: a positive integer square", 0) == 6
+            and sw["Sha_values_where_it_closes"] == {"1": 6})
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -644,6 +716,7 @@ CHECKS = {
     "anchor-11a1": check_anchor_11a1,
     "anchor-rank-one": check_anchor_rank_one,
     "E1-vs-mpmath": check_E1_against_an_independent_implementation,
+    "real-period-vs-integration": check_real_period_against_integration,
     "kronecker": check_kronecker,
     "family-root-number": check_family_root_number,
     "family-ordinary": check_family_ordinary,
@@ -652,6 +725,8 @@ CHECKS = {
     "tate": check_tate,
     "tate-i0star-reachable": check_tate_i0star_reachable,
     "ogg-formula": check_ogg,
+    "regulator": check_regulator,
+    "bsd-sweep": check_bsd_sweep,
 }
 
 
@@ -826,6 +901,14 @@ DEFECTS = [
     ("the singular point is not moved to the origin", "code", "tate",
      lambda: patch(tate18, "singular_point", lambda a, q: (0, 0))),
 
+    # ---- gate 20 -------------------------------------------------------------
+    ("x-only duplication drops the -2*b6*x term", "code", "regulator",
+     lambda: patch(bsd20, "x_double", _x_double_missing_term)),
+    ("Richardson extrapolates against 1/2^n instead of 1/4^n", "code",
+     "regulator", lambda: patch(bsd20, "canonical_height", _canon_wrong_richardson)),
+    ("the BSD ratio drops the torsion square", "code", "bsd-sweep",
+     lambda: patch(bsd20, "sweep", _sweep_no_torsion)),
+
     # ---- gate 14 -------------------------------------------------------------
     ("unresolved mass summed in floats instead of exact rationals", "code",
      "globalizer-exact",
@@ -850,8 +933,11 @@ DEFECTS = [
      lambda: patch(anchor15, "agm",
                    lambda x, y: ((x + y) / 2.0 + math.sqrt(x * y)) / 2.0)),
     ("the real period drops the second component when Δ > 0", "code",
-     "anchor-rank-one", lambda: patch(anchor15, "real_period",
-                                      _period_one_component)),
+     "real-period-vs-integration",
+     lambda: patch(anchor15, "real_period", _period_one_component)),
+    ("the real period doubles the Δ > 0 branch, as it used to", "code",
+     "real-period-vs-integration",
+     lambda: patch(anchor15, "real_period", _period_doubled)),
     ("Hecke recursion loses its -p·a_{p^{k-1}} term", "code", "anchor-11a1",
      lambda: patch(anchor15, "coefficients", _coeffs_no_hecke)),
     ("L(E,1) forgets its factor of two", "code", "anchor-11a1",
@@ -964,10 +1050,78 @@ CONTROLS = [
     # membership of 𝒫, so this belongs here rather than in the defect list.
     ("membership drops the (q/29) condition, which the other two imply",
      lambda: patch(fam16, "in_P", _in_P_no_29)),
+    # A sixth, and the mirror image of RUN-014's lesson. Reading only the
+    # numerator of x rather than max(|num|, den) IS wrong — there are steps in
+    # 389.a1's doubling orbits where the denominator is larger — but it moves
+    # the regulator by 1.16e-07, and the regulator is only known to about
+    # 1.6e-06, which is what the parallelogram-law residual measures. RUN-014's
+    # mistake was tolerances looser than the precision; tightening this one past
+    # the precision would be the same mistake pointed the other way, so the
+    # defect is recorded here as one the computation cannot resolve.
+    ("naive height reads the numerator only, below the regulator's precision",
+     lambda: patch(bsd20, "log_height",
+                   lambda x: math.log(max(1, abs(x.numerator))))),
 ]
 
 
 _true_mass_exact = glob14.mass_exact
+_true_x_double = bsd20.x_double
+_true_canon = bsd20.canonical_height
+_true_sweep = bsd20.sweep
+
+
+def _x_double_missing_term(ainvs, x):
+    from fractions import Fraction as _F
+    b2, b4, b6, b8 = anchor15.b_invariants(ainvs)[:4]
+    num = x ** 4 - b4 * x * x - b8              # -2*b6*x dropped
+    den = 4 * x ** 3 + b2 * x * x + 2 * b4 * x + b6
+    return None if den == 0 else _F(num, den)
+
+
+def _canon_wrong_richardson(ainvs, P, depth=10):
+    x = P[0]
+    raw = []
+    for _ in range(depth):
+        x = bsd20.x_double(ainvs, x)
+        if x is None:
+            break
+        raw.append(bsd20.log_height(x))
+    seq = [v / 4 ** (i + 1) for i, v in enumerate(raw)]
+    r1 = [(2 * seq[i + 1] - seq[i]) for i in range(len(seq) - 1)]
+    r2 = [(2 * r1[i + 1] - r1[i]) for i in range(len(r1) - 1)]
+    return {"raw_last": seq[-1], "richardson1": r1[-1], "richardson2": r2[-1],
+            "steps": len(seq)}
+
+
+def _sweep_no_torsion(records):
+    import collections as _c
+    import math as _m
+    tally = _c.Counter()
+    shas = _c.Counter()
+    for r in records:
+        inv, N = r["ainvs"], r["conductor"]
+        res = anchor15.analyse(r["curve_label"], inv, N, limit=bsd20.TERMS)
+        if res["root_number"] is None or res["root_number"] != 1:
+            continue
+        L = res["L_at_1"]
+        if L is None or abs(L) < 1e-8:
+            continue
+        prod = 1
+        for q in r["conductor_primes"]:
+            c = tate18.reduction_data(inv, q, want_c=True)["c"]
+            if c is None:
+                prod = None
+                break
+            prod *= c
+        if prod is None:
+            continue
+        ratio = L / (res["real_period"] * prod)     # torsion square dropped
+        near = round(ratio)
+        if near > 0 and _m.isqrt(near) ** 2 == near and abs(ratio - near) < 1e-6:
+            tally["BSD closes: a positive integer square"] += 1
+            shas[near] += 1
+    return {"tally": dict(tally), "Sha_values_where_it_closes":
+            {str(k): v for k, v in shas.items()}, "non_closing_sample": []}
 _true_kodaira = tate18.kodaira_from_valuations
 _true_normalise = tate18.normalise_for_step7
 _true_after_triple = tate18._after_triple
@@ -1091,12 +1245,24 @@ def _E1_series_only(x):
     return s_
 
 
+def _period_doubled(ainvs):
+    b2, b4, b6, _b8, disc = anchor15.b_invariants(ainvs)
+    v = _true_period(ainvs)
+    return 2 * v if disc > 0 else v
+
+
 def _period_one_component(ainvs):
+    """Only the identity component of E(R) — half the real period when Δ > 0.
+
+    Before RUN-017 fixed the AGM branch, this mutation returned what is now the
+    correct value, so it was a no-op the moment the bug was gone. It is written
+    against the truth rather than against the old defect.
+    """
     b2, b4, b6, _b8, disc = anchor15.b_invariants(ainvs)
     if disc <= 0:
         return _true_period(ainvs)
     e1, e2, e3 = anchor15.real_cubic_roots(b2, b4, b6)
-    return 2 * math.pi / anchor15.agm(math.sqrt(e1 - e3), math.sqrt(e1 - e2))
+    return math.pi / anchor15.agm(math.sqrt(e1 - e3), math.sqrt(e1 - e2))
 
 
 def _coeffs_no_hecke(ainvs, bad, limit):
@@ -1436,7 +1602,8 @@ def main() -> int:
                    "src16_twist_family_lvalues",
                    "src17_family_prime_router",
                    "src18_tate_algorithm",
-                   "src19_conductor_census"],
+                   "src19_conductor_census",
+                   "src20_bsd_consistency"],
         "rule": ("a planted defect must be caught by the check NAMED for it, "
                  "not merely by some check; and controls must disturb nothing"),
         "two_kinds": {

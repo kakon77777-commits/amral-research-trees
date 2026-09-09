@@ -1,0 +1,202 @@
+{
+  "gate": "src20_bsd_consistency",
+  "rank_zero_bsd_as_a_joint_test": {
+    "formula": "L(E,1)/Ω = #Ш · ∏c_p / #E(Q)_tors², with #Ш a square",
+    "what_it_tests_at_once": "the L-value from point counts, the real period by AGM, the torsion by a gcd bound, and every c_p by Tate's algorithm — four separately computed quantities whose combination must land on a positive integer square",
+    "conductor_cap": 2000,
+    "curves": 420,
+    "tally": {
+      "BSD closes: a positive integer square": 285,
+      "BSD does not close": 103,
+      "sign undecided by the guard": 26,
+      "sign says -1": 6
+    },
+    "Sha_values_where_it_closes": {
+      "1": 285
+    },
+    "non_closing_sample": [
+      {
+        "label": "35a1",
+        "N": 35,
+        "ratio": 0.6989270017441712,
+        "torsion": 3,
+        "prod_c": 3
+      },
+      {
+        "label": "69a1",
+        "N": 69,
+        "ratio": 0.6307696114202481,
+        "torsion": 2,
+        "prod_c": 2
+      },
+      {
+        "label": "77c1",
+        "N": 77,
+        "ratio": 0.6302062619085392,
+        "torsion": 2,
+        "prod_c": 2
+      },
+      {
+        "label": "115a1",
+        "N": 115,
+        "ratio": 0.3158054663899444,
+        "torsion": 1,
+        "prod_c": 1
+      },
+      {
+        "label": "141e1",
+        "N": 141,
+        "ratio": 0.31725377329132115,
+        "torsion": 1,
+        "prod_c": 1
+      },
+      {
+        "label": "187b1",
+        "N": 187,
+        "ratio": 0.3024989584148207,
+        "torsion": 1,
+        "prod_c": 1
+      },
+      {
+        "label": "195b1",
+        "N": 195,
+        "ratio": 0.30551706855470834,
+        "torsion": 1,
+        "prod_c": 1
+      },
+      {
+        "label": "195c1",
+        "N": 195,
+        "ratio": 0.2956437249224085,
+        "torsion": 1,
+        "prod_c": 3
+      },
+      {
+        "label": "195d1",
+        "N": 195,
+        "ratio": 0.2697696340848018,
+        "torsion": 1,
+        "prod_c": 1
+      },
+      {
+        "label": "203c1",
+        "N": 203,
+        "ratio": 0.5764890498575247,
+        "torsion": 2,
+        "prod_c": 2
+      },
+      {
+        "label": "205c1",
+        "N": 205,
+        "ratio": 0.5721091957783963,
+        "torsion": 2,
+        "prod_c": 2
+      },
+      {
+        "label": "213a1",
+        "N": 213,
+        "ratio": 0.5584633203506368,
+        "torsion": 2,
+        "prod_c": 2
+      },
+      {
+        "label": "235c1",
+        "N": 235,
+        "ratio": 0.30148871497863106,
+        "torsion": 1,
+        "prod_c": 1
+      },
+      {
+        "label": "259a1",
+        "N": 259,
+        "ratio": 0.5422316239964888,
+        "torsion": 2,
+        "prod_c": 6
+      },
+      {
+        "label": "267b1",
+        "N": 267,
+        "ratio": 0.5915804441661122,
+        "torsion": 1,
+        "prod_c": 1
+      },
+      {
+        "label": "291d1",
+        "N": 291,
+        "ratio": 0.2552699622602838,
+        "torsion": 1,
+        "prod_c": 1
+      },
+      {
+        "label": "323a1",
+        "N": 323,
+        "ratio": 0.6214512589343928,
+        "torsion": 1,
+        "prod_c": 1
+      },
+      {
+        "label": "339b1",
+        "N": 339,
+        "ratio": 0.2645191713232633,
+        "torsion": 1,
+        "prod_c": 1
+      },
+      {
+        "label": "355a1",
+        "N": 355,
+        "ratio": 0.5278402566448637,
+        "torsion": 3,
+        "prod_c": 3
+      },
+      {
+        "label": "371b1",
+        "N": 371,
+        "ratio": 0.2822172299618524,
+        "torsion": 1,
+        "prod_c": 3
+      }
+    ]
+  },
+  "regulator_of_389a1": {
+    "curve": [
+      0,
+      1,
+      1,
+      -2,
+      0
+    ],
+    "generators": [
+      "(0,0)",
+      "(1,0)"
+    ],
+    "heights": {
+      "P": 0.32700170477884055,
+      "Q": 0.47671084279212533,
+      "P+Q": 0.92075871648459,
+      "P-Q": 0.6866679824179148
+    },
+    "P_plus_Q": [
+      "-2",
+      "-1"
+    ],
+    "P_minus_Q": [
+      "-1",
+      "-2"
+    ],
+    "parallelogram_law_residual": 1.603760573010149e-06,
+    "pairing_PQ": 0.05852308445681201,
+    "regulator": 0.15246030686524367,
+    "independent": true,
+    "method": "ĥ(P) = lim h(x(2ⁿP))/4ⁿ by x-only duplication, two Richardson steps on the 1/4ⁿ error",
+    "check": "the parallelogram law ĥ(P+Q)+ĥ(P−Q) = 2ĥ(P)+2ĥ(Q), an identity the computation never uses",
+    "third_independent_proof_of_rank_2": "a non-zero height regulator makes P and Q independent, after RUN-011's localization determinant det M_loc = 2 ≠ 0 in F₁₁ reached the same conclusion by a route sharing no arithmetic"
+  },
+  "what_this_says_about_RUN_014s_sign_test": {
+    "the_method": "compare a smoothed Λ(2) against Σ a_n n^{-2} and keep whichever sign matches",
+    "the_error_it_reported": "a 'residual' and a 'gap', whose ratio was presented as a confidence. It is not one: the residual can be small by accident, and so can the drift between partial sums",
+    "the_honest_bound": "the Dirichlet truncation is about 2·log M/√M, which at these conductors is COMPARABLE to the gap being measured — so the test is much weaker than it was presented as",
+    "why_the_anchor_survives": "not because of that comparison. L(696.e1,1)/Ω came out 1 to sixteen digits with torsion and every c_p computed independently, which would be an absurd coincidence if L(E,1) were zero. The BSD identity is the stronger sign test",
+    "how_it_showed_up": "the curves where the sweep fails to close are exactly the ones whose sign was mis-called: their ratios spread across a range with none near an integer square, which is what a wrong sign produces and what a wrong period or Tamagawa number would not"
+  },
+  "ok": true
+}

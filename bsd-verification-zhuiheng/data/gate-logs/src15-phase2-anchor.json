@@ -22,7 +22,7 @@
       "expected_L_over_Omega": 0.0,
       "got_L_over_Omega": 0.0,
       "ratio_ok": true,
-      "real_period": 11.973834584927838,
+      "real_period": 5.986917292463919,
       "torsion_bound": 1
     },
     {
@@ -31,9 +31,9 @@
       "got_w": 1,
       "w_ok": true,
       "expected_L_over_Omega": 0.0,
-      "got_L_over_Omega": -1.888304134773475e-17,
+      "got_L_over_Omega": -3.77660826954695e-17,
       "ratio_ok": true,
-      "real_period": 9.96085024342022,
+      "real_period": 4.98042512171011,
       "torsion_bound": 1
     }
   ],
