@@ -105,6 +105,16 @@ this round's own finding turned into a fixture: **stem matching must find
 strictly more than link matching**, 29 against 17. A future narrowing of the
 alias set would go red instead of quietly reporting a smaller sweep.
 
+> **Correction, same day.** This round's own commit message shipped with
+> `20 controls ... over 56 checks` — the numbers **predicted** before the drill
+> ran, not the `19` and `55` it measured. A placeholder had been put in this
+> report precisely so a prediction could not ship as a measurement, and the
+> commit message was written from the same prediction and not re-read against
+> the log. That is the round's own subject failing in the round's own record.
+> The commit is pushed and is not being rewritten; this note and commit
+> `HEAD` carry the correction. The counts here, in the README and in
+> `src11-gate-drill.json` are the measured ones.
+
 ## What this round does not claim
 
 * **A bucket measures attention, not correctness.** Being the subject of a round
