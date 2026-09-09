@@ -1,0 +1,319 @@
+{
+  "gate": "src39 — the FW-H3 compiler, run",
+  "source": "09_FW_H3_Exact_Compiler",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "conductor": 696,
+  "the_certificate": {
+    "W_minus": [
+      29
+    ],
+    "valuations": {
+      "29": 1
+    },
+    "g_minus": 1,
+    "g_minus_is_a_power_of_two": true,
+    "premise_holds": true,
+    "boxed_conclusion": "for all p > 2, FW-H3(E, p) = PASS",
+    "odd_p_tested": 77,
+    "p_where_the_criterion_FAILS": [
+      29
+    ],
+    "why_they_fail": [
+      {
+        "p": 29,
+        "reason": "W_- = [29] and the ell != p clause removes [29], leaving no candidate"
+      }
+    ],
+    "conclusion_holds_as_stated": false,
+    "the_gap": "the gcd argument establishes the third clause only. The second, ell != p, is invisible to it, and when W_- is a singleton it removes the only candidate"
+  },
+  "does_the_gap_reach_the_family": {
+    "failing_p": [
+      29
+    ],
+    "rows": [
+      {
+        "p": 29,
+        "is_a_fixed_multiplicative_prime": true,
+        "router_branch": "P3 (fixed multiplicative)",
+        "P3_witness": 3,
+        "P3_witness_is_split": true,
+        "covered": true
+      }
+    ],
+    "every_failing_p_is_routed_away": true,
+    "reading": "the gap is real in the document's stated generality and does not reach this family, because every p where FW-H3 has no witness is a fixed multiplicative prime that P3 takes instead — with a witness FW-H3 could not have used, since it is split"
+  },
+  "the_family": {
+    "members": 19,
+    "rows": [
+      {
+        "q": 241,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 313,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 457,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 673,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 937,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 1009,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 1153,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 1753,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 2017,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 2089,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 2113,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 2137,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 2617,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 2713,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 3049,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 3457,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 3529,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 3769,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      },
+      {
+        "q": 3793,
+        "W_minus": [
+          29
+        ],
+        "g_minus": 1,
+        "premise_holds": true,
+        "failing_p": [
+          29
+        ]
+      }
+    ],
+    "W_minus_identical_to_the_base_for_every_member": true,
+    "g_minus_identical": true,
+    "same_failing_set": true,
+    "base_W_minus": [
+      29
+    ],
+    "base_g_minus": 1
+  },
+  "where_the_premise_refuses": {
+    "models_scanned": 408,
+    "W_minus_empty": {
+      "ainvs": [
+        0,
+        -1,
+        0,
+        -8,
+        -8
+      ],
+      "W_minus": [],
+      "g_minus": 0,
+      "premise_holds": false,
+      "note": "gcd of an empty set is 0, which is not a power of two, so the document's own premise refuses"
+    },
+    "g_minus_with_an_odd_factor": {
+      "ainvs": [
+        0,
+        -1,
+        1,
+        -1,
+        -6
+      ],
+      "W_minus": [
+        3
+      ],
+      "valuations": {
+        "3": 3
+      },
+      "g_minus": 3,
+      "an_odd_prime_dividing_it": 3,
+      "criterion_at_that_p": {
+        "p": 3,
+        "witness": null,
+        "pass": false,
+        "candidates_excluded_by_ell_neq_p": [
+          3
+        ]
+      },
+      "premise_holds": false
+    },
+    "why": "the premise must be shown to refuse somewhere, or 'the premise holds here' is not a test of it"
+  },
+  "headline": "the boxed 'for all p > 2, FW-H3 = PASS' is false at p = 29 for this curve, because W_- is the singleton {29} and the ell != p clause removes its only member. The gcd argument cannot see that clause. The family theorem is unaffected: 29 is a fixed multiplicative prime the router sends to P3, whose witness is 3 — split, and so not usable by FW-H3 anyway",
+  "ok": true
+}
