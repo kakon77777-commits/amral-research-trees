@@ -117,6 +117,7 @@ import src27_agent_experiment_audit as agent27            # noqa: E402
 import src28_rank1_bsd_identity as r1bsd                  # noqa: E402
 import src29_sweep_coverage as cov29                      # noqa: E402
 import src30_phase1_numeric_crosscheck as p1num           # noqa: E402
+import src31_q9_census_closure as q9                      # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1456,9 +1457,14 @@ def check_sweep_coverage() -> bool:
     times smaller — the same silent under-report this tree produced in four
     consecutive rounds. Pinning the gap keeps a future narrowing visible.
 
-    And Phase 1 must still read 0 subjects and 23 unmentioned, because that row
-    is the finding: six rounds verified that line's arithmetic and named its
-    artefacts, never its documents.
+    What is NOT pinned, and the reason is a mistake this check made: RUN-027's
+    Phase 1 row — 0 subjects, 23 unmentioned — was written in here as an
+    invariant. It is a **finding**, and the point of later rounds is to move it.
+    RUN-028 and RUN-029 named `V0_5_EXACT_CENSUS_REPORT` on their subject lines
+    and the check went red on the baseline, on success. A check that freezes a
+    measurement the work is meant to change will fail exactly when the work
+    succeeds, so the Phase 1 figures are data in the log and the classifier's
+    ability to tell the buckets apart is asserted on a fixture instead.
     """
     docs = cov29.documents()
     if len(docs) != 85:
@@ -1473,11 +1479,22 @@ def check_sweep_coverage() -> bool:
         return False
     if counts["subject of a report"] < 21 or counts["not mentioned"] > 56:
         return False
-    ph1 = [r for r in rows if r["subline"] == "phase1"]
-    if len(ph1) != 25:
+    if len([r for r in rows if r["subline"] == "phase1"]) != 25:
         return False
-    if sum(1 for r in ph1 if r["bucket"] == "subject of a report") != 0:
-        return False
+    # the classifier must actually separate the buckets, tested where the answer
+    # is fixed by construction rather than by the state of the sweep
+    fx = {"reports": {
+              "A.md": {"subject": "aimed at 99_Target", "body": "aimed at 99_Target"},
+              "B.md": {"subject": "something else", "body": "mentions 98_Other"}},
+          "gates": {"g.py": "# 97_OnlyHere"}}
+    for name, want in (("99_Target.md", "subject of a report"),
+                       ("98_Other.md", "cited in a report"),
+                       ("97_OnlyHere.md", "named in gate code"),
+                       ("96_Nowhere.md", "not mentioned")):
+        doc = {"subline": "phase1", "name": name,
+               "aliases": cov29.aliases("phase1", name)}
+        if cov29.classify(doc, fx)["bucket"] != want:
+            return False
     # the alias set: the stem and the Phase 0 `doc NN` form must both be there,
     # since four rounds name their subject only that way
     al = cov29.aliases("phase0", "05_Internal_Grid_Rank_Audit.md")
@@ -1491,7 +1508,13 @@ def check_sweep_coverage() -> bool:
         for m in re.findall(r"\]\(([^)]*amral/public/bsd/[^)]+)\)", r["body"]):
             link_only.add(m.rsplit("/", 1)[-1])
     touched = sum(1 for r in rows if r["bucket"] != "not mentioned")
-    return len(link_only) <= 17 and touched >= 29
+    # The RELATION, not the absolutes. `link_only <= 17` was frozen here too and
+    # broke for the same reason as the Phase 1 row: RUN-028 and RUN-029 added
+    # markdown links to corpus documents, so the link count rose and a check
+    # written against yesterday's number went red on today's work. What the
+    # round actually claimed is that stem matching finds strictly more, and that
+    # is what is asserted.
+    return len(link_only) < touched and touched >= 29
 
 
 def check_phase1_numeric_crosscheck() -> bool:
@@ -1530,6 +1553,58 @@ def check_phase1_numeric_crosscheck() -> bool:
     if q["lhs_recomputed"] != 46091 or q["rhs_recomputed"] != 46091:
         return False
     return len(q["inputs_this_tree_computed"]) == 4
+
+
+_Q9_MEMO: dict = {}
+
+
+def _q9_artefacts():
+    """The two twist artefacts, read once from the archive branch.
+
+    They are immutable blobs on a branch this tree does not write to, and
+    reading them costs 0.41s — a per-defect tax of a minute over a full run.
+    The scope statement: this check tests the counting and the decomposition,
+    not the reading, and a defect planted in `load` would not be seen.
+    """
+    if not _Q9_MEMO:
+        _Q9_MEMO["old"] = q9.load("old")[1]
+        _Q9_MEMO["new"] = q9.load("new")[1]
+    return _Q9_MEMO["old"], _Q9_MEMO["new"]
+
+
+def check_q9_census_closure() -> bool:
+    """§Q9's eight terms, measured, and the calibration that makes them mean
+    the same thing the document means.
+
+    The calibration is the part worth pinning. The artefact lists the trivial
+    twist `d = 1`, so "twist pairs" could be the sum of list lengths or that
+    minus one per label — 247,391 against 210,704 on the new artefact. The rule
+    is fixed by RUN-012's already-verified 247,391 and then applied unchanged to
+    the old one, so it cannot have been chosen to make the old count come out
+    right. A check that only compared the eight totals would pass on a
+    calibration picked after the fact.
+    """
+    old, new = _q9_artefacts()
+    cal = q9.calibrate(new)
+    if cal["rule"] != "inclusive" or not cal["calibrated"]:
+        return False
+    if cal["pairs_excluding_trivial_twist"] == cal["verified_value_from_RUN_012"]:
+        return False                                     # the two must differ
+    dec = q9.decompose(old, new)
+    if not (dec["all_agree"] and dec["identity_holds"]):
+        return False
+    if dec["labels"] != {"old": 39394, "new": 36687, "dropped": 2707,
+                         "added": 0, "common": 36687}:
+        return False
+    # the decomposition on a synthetic pair, where the four terms are separable
+    # by hand: L1 dropped entirely, L2 loses one and gains one, L3 is new
+    syn_old = {"L1": [1, 5], "L2": [1, 7, 9]}
+    syn_new = {"L2": [1, 7, 11], "L3": [1, 3]}
+    d = q9.decompose(syn_old, syn_new)["measured"]
+    if (d["upstream_removed"], d["stable_removed"],
+            d["stable_added"], d["newbase_added"]) != (2, 1, 1, 2):
+        return False
+    return q9.base_without_twists(old)["difference"] == 1355
 
 
 CHECKS = {
@@ -1589,6 +1664,7 @@ CHECKS = {
     "height-level-selection": check_height_level_selection,
     "sweep-coverage": check_sweep_coverage,
     "phase1-numeric-crosscheck": check_phase1_numeric_crosscheck,
+    "q9-census-closure": check_q9_census_closure,
 }
 
 
@@ -1886,6 +1962,13 @@ DEFECTS = [
      "phase1-numeric-crosscheck",
      lambda: patch(p1num, "Q9_STATED", dict(p1num.Q9_STATED,
                                             upstream_removed=24875))),
+    ("the twist-pair rule is calibrated on the trivial-twist-excluding count",
+     "code", "q9-census-closure",
+     lambda: patch(q9, "STATED", dict(q9.STATED, new_total_twist_pairs=210704))),
+    ("the decomposition swaps removed and added on the common labels", "code",
+     "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
+    ("the base-curve count gate 31 subtracts from is wrong", "code",
+     "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
 
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
@@ -2158,6 +2241,23 @@ def _classify_body_first(doc, src):
               "named in gate code" if gates else "not mentioned")
     return {"subline": doc["subline"], "name": doc["name"], "bucket": bucket,
             "subject_of": subj, "cited_in": body[:6], "named_in_gates": gates[:6]}
+
+
+_true_decompose = q9.decompose
+
+
+def _decompose_swapped(old, new):
+    """stable_removed and stable_added exchanged — 21,306 becomes 0 and 0
+    becomes 21,306, while lhs and the two label-level terms are untouched."""
+    d = _true_decompose(old, new)
+    m = d["measured"]
+    m["stable_removed"], m["stable_added"] = m["stable_added"], m["stable_removed"]
+    m["rhs"] = (m["upstream_removed"] + m["stable_removed"]
+                - m["stable_added"] - m["newbase_added"])
+    d["agreement"] = {k: m[k] == q9.STATED[k] for k in q9.STATED}
+    d["all_agree"] = all(d["agreement"].values())
+    d["identity_holds"] = m["lhs"] == m["rhs"]
+    return d
 
 
 _true_leading = r1bsd.leading_derivative

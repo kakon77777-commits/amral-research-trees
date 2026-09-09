@@ -1,0 +1,73 @@
+{
+  "gate": "src31 — §Q9's twist accounting, measured from the artefacts",
+  "provenance": {
+    "branch": "origin/agent/bsd",
+    "old_blob": "67809e1210d95d13e69b731bcb458a711602e456",
+    "new_blob": "2135e1dd979fbcfb643923e5a11e0bf7e50fd244",
+    "path": "bsd/BSD_Phase1_Banwait_Huang_Exact_Census_v0.5_2026-08-12/inputs"
+  },
+  "calibration": {
+    "pairs_counting_trivial_twist": 247391,
+    "pairs_excluding_trivial_twist": 210704,
+    "verified_value_from_RUN_012": 247391,
+    "rule": "inclusive",
+    "calibrated": true,
+    "note": "the rule is fixed by a number this tree already verified, not chosen to make the old count come out right"
+  },
+  "decomposition": {
+    "labels": {
+      "old": 39394,
+      "new": 36687,
+      "dropped": 2707,
+      "added": 0,
+      "common": 36687
+    },
+    "measured": {
+      "old_total_twist_pairs": 293482,
+      "new_total_twist_pairs": 247391,
+      "lhs": 46091,
+      "upstream_removed": 24785,
+      "stable_removed": 21306,
+      "stable_added": 0,
+      "newbase_added": 0,
+      "rhs": 46091
+    },
+    "stated": {
+      "old_total_twist_pairs": 293482,
+      "new_total_twist_pairs": 247391,
+      "lhs": 46091,
+      "upstream_removed": 24785,
+      "stable_removed": 21306,
+      "stable_added": 0,
+      "newbase_added": 0,
+      "rhs": 46091
+    },
+    "agreement": {
+      "old_total_twist_pairs": true,
+      "new_total_twist_pairs": true,
+      "lhs": true,
+      "upstream_removed": true,
+      "stable_removed": true,
+      "stable_added": true,
+      "newbase_added": true,
+      "rhs": true
+    },
+    "all_agree": true,
+    "identity_holds": true,
+    "every_term_measured": true,
+    "reading": "RUN-028 could check the identity's arithmetic and four of its six inputs. All six are measured here, so the identity is a check rather than a definition of its last two terms"
+  },
+  "base_curves_without_twist_entries": {
+    "base_curves_RUN_004": 40749,
+    "labels_in_the_old_twist_artefact": 39394,
+    "difference": 1355,
+    "matches_the_1355_RUN_028_could_not_place": true,
+    "reading": "the twist artefact does not cover the whole census: 1,355 base labels have no twist entry, which is the figure the replay document reports and RUN-028 listed as having no counterpart here"
+  },
+  "closes": [
+    "old_total_twist_pairs",
+    "upstream_removed",
+    "the 1355 of RUN-028's absent list"
+  ],
+  "ok": true
+}

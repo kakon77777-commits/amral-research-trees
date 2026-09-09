@@ -78,7 +78,8 @@
     "rank1-identity": true,
     "height-level-selection": true,
     "sweep-coverage": true,
-    "phase1-numeric-crosscheck": true
+    "phase1-numeric-crosscheck": true,
+    "q9-census-closure": true
   },
   "defects": [
     {
@@ -947,6 +948,33 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the twist-pair rule is calibrated on the trivial-twist-excluding count",
+      "kind": "code",
+      "named_check": "q9-census-closure",
+      "checks_that_went_red": [
+        "q9-census-closure"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the decomposition swaps removed and added on the common labels",
+      "kind": "code",
+      "named_check": "q9-census-closure",
+      "checks_that_went_red": [
+        "q9-census-closure"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the base-curve count gate 31 subtracts from is wrong",
+      "kind": "code",
+      "named_check": "q9-census-closure",
+      "checks_that_went_red": [
+        "q9-census-closure"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "x-only duplication drops the -2*b6*x term",
       "kind": "code",
       "named_check": "regulator",
@@ -1349,8 +1377,8 @@
     }
   ],
   "totals": {
-    "defects": 118,
-    "caught_by_the_named_check": 118,
+    "defects": 121,
+    "caught_by_the_named_check": 121,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
     "controls": 20,
