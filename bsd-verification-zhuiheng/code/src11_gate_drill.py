@@ -123,6 +123,8 @@ import src33_mazur_degrees_closed as mazur33              # noqa: E402
 import src34_referee_a_checklist as refA34                # noqa: E402
 import src35_gcd_witness_lemmas as gcd35                  # noqa: E402
 import src36_kodaira_prefilters_nogo as nogo36            # noqa: E402
+import src37_twist_invariance_bridge as bridge37          # noqa: E402
+import src38_mod_ell_surjectivity as surj38               # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1842,11 +1844,94 @@ def check_kodaira_nogo() -> bool:
     return t["global_torsion_trivial"] and not t["local_condition_computed"]
 
 
+def check_twist_bridge() -> bool:
+    """`03_Quadratic_Twist_Invariance_Bridge`'s lemma C, both sides, and lemma B
+    left where the document leaves it.
+
+    The split side must preserve every local invariant on every member; the
+    inert side must genuinely *move* at the multiplicative conductor primes, and
+    specifically must flip the split flag rather than merely differ somewhere.
+    A conductor prime that could not move must carry a stated reason instead of
+    passing silently. Lemma A's shadow must show sign flips — the invariance
+    measured where it could have failed. And lemma B must still be reported
+    unestablished: a limitation that quietly stops being stated is a claim that
+    grew.
+    """
+    c = bridge37.lemma_C()
+    if c["members"] < 15:
+        return False
+    if not (c["every_member_splits_at_2_3_29"]
+            and c["every_member_preserves_all_local_data"]):
+        return False
+    cc = bridge37.lemma_C_converse()
+    if not cc["moved_at_every_multiplicative_conductor_prime"]:
+        return False
+    for ell in ("3", "29"):
+        m = cc["per_prime"][ell]["moved"]
+        if not m or not m["split_flag_flipped"]:
+            return False
+    for e in cc["untestable_primes"]:               # never silent
+        if not cc["per_prime"][str(e)]["why_not"]:
+            return False
+    w = bridge37.the_witness_that_depends_on_it()
+    if not (w["base_29_is_nonsplit"] and w["witness_would_be_lost_there"]
+            and w["29_stays_nonsplit_for_every_member"]):
+        return False
+    a = bridge37.lemma_A_shadow()
+    if not (a["all_identical"] and a["flips_seen"]):
+        return False
+    return bridge37.lemma_B_status()["established_here"] is False
+
+
+def check_mod_ell_surjectivity() -> bool:
+    """`24_Manin_Period_Audit`'s asserted maximality, certified where it can be.
+
+    Every ℓ from 5 to the bound must have all six maximal classes refuted, and
+    the witnesses must survive an independent re-derivation — the Borel witness
+    really has `a² − 4ℓ'` a non-residue. `ℓ = 2` must be decided by the cubic
+    rather than asserted, and its verdict must follow from its own two inputs.
+    And `ℓ = 3` must stay UNcertified with both structural blocks intact: `S₄`
+    unrefutable because it is the whole projective group, and the nonsplit
+    Cartan test vacuous over all four residue classes. A gate that quietly
+    promoted `ℓ = 3` would be reporting a partial check as a whole one.
+    """
+    two = surj38.ell_two()
+    if two["surjective"] != (two["irreducible"]
+                             and not two["discriminant_is_a_square"]):
+        return False
+    if not two["surjective"] or two["rational_roots"]:
+        return False
+    primes = surj38.good_primes(surj38.SEARCH)
+    if len(primes) < 50:
+        return False
+    ells = [e for e in mazur33.small_primes(surj38.ELL_BOUND) if e > 3]
+    if len(ells) < 30:
+        return False
+    for ell in ells:
+        r = surj38.certify(ell, primes)
+        if not r["surjective"] or r["undecided"]:
+            return False
+        b = r["witnesses"]["borel"]
+        a, lp = b["a"], b["ell_prime"]
+        # Re-derived by Euler's criterion here rather than by calling the gate's
+        # own square test: checking a witness with the function that produced it
+        # is re-running their script, which is the one thing this arm does not do.
+        v = (a * a - 4 * lp) % ell
+        if v == 0 or pow(v, (ell - 1) // 2, ell) != ell - 1:
+            return False
+    three = surj38.certify(3, primes)
+    if sorted(three["undecided"]) != ["S4", "nonsplit_cartan_normalizer"]:
+        return False
+    v = surj38.vacuity_at_3()
+    return v["structurally_vacuous"] and not v["any_case_refutes"]
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
     net22, p5u, led24, cv25, r2bsd, agent27, r1bsd, cov29, p1num, q9, cert32,
-    mazur33, refA34, gcd35, nogo36))
+    mazur33, refA34, gcd35, nogo36, bridge37, surj38))
 
 
 CHECKS = {
@@ -1912,6 +1997,8 @@ CHECKS = {
     "referee-a-checklist": check_referee_a_checklist,
     "gcd-witness-lemmas": check_gcd_witness_lemmas,
     "kodaira-nogo": check_kodaira_nogo,
+    "twist-bridge": check_twist_bridge,
+    "mod-ell-surjectivity": check_mod_ell_surjectivity,
 }
 
 
@@ -2216,6 +2303,25 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("every prime is reported split, so the inert side never moves", "code",
+     "twist-bridge",
+     lambda: patch(bridge37, "chi_trivial_at", lambda d, ell: True)),
+    ("the local invariants drop the split flag, hiding the one thing that "
+     "flips", "code", "twist-bridge",
+     lambda: patch(bridge37, "local_invariants", _local_no_split_flag)),
+    ("lemma B is reported as established", "code", "twist-bridge",
+     lambda: patch(bridge37, "lemma_B_status", _lemma_B_established)),
+    ("the twist invariance is measured against the curve itself", "code",
+     "twist-bridge", lambda: patch(bridge37, "lemma_A_shadow", _shadow_self)),
+    ("every Frobenius is given projective order 6, so S4 is refuted at 3 "
+     "where it is the whole group", "code", "mod-ell-surjectivity",
+     lambda: patch(surj38, "projective_order", lambda a, lp, ell: 6)),
+    ("the nonsplit-Cartan vacuity at 3 is reported refutable", "code",
+     "mod-ell-surjectivity", lambda: patch(surj38, "vacuity_at_3", _vac3_false)),
+    ("a class with no witness is counted as refuted", "code",
+     "mod-ell-surjectivity", lambda: patch(surj38, "certify", _certify_lax)),
+    ("the mod-2 verdict stops following from the cubic", "code",
+     "mod-ell-surjectivity", lambda: patch(surj38, "ell_two", _ell_two_asserted)),
     ("the gcd of an empty set reports no failures instead of all of them",
      "code", "gcd-witness-lemmas",
      lambda: patch(gcd35, "odd_prime_divisors", lambda n, bound=10_000: [])),
@@ -2370,6 +2476,11 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("the inert search bound widened",
+     lambda: patch(bridge37, "lemma_C_converse",
+                   lambda bound=6000: _true_converse(6000))),
+    ("the surjectivity witness pool enlarged",
+     lambda: patch(surj38, "good_primes", lambda limit=900: _true_good(900))),
     ("the empty-set search box widened",
      lambda: patch(gcd35, "small_curves", lambda box=8: _true_small_curves(8))),
     ("the twist probe given in a different order",
@@ -2546,6 +2657,62 @@ def _classify_body_first(doc, src):
               "named in gate code" if gates else "not mentioned")
     return {"subline": doc["subline"], "name": doc["name"], "bucket": bucket,
             "subject_of": subj, "cited_in": body[:6], "named_in_gates": gates[:6]}
+
+
+_true_converse = bridge37.lemma_C_converse
+_true_good = surj38.good_primes
+_true_local_invariants = bridge37.local_invariants
+_true_lemma_B = bridge37.lemma_B_status
+_true_vac3 = surj38.vacuity_at_3
+_true_certify = surj38.certify
+_true_ell_two = surj38.ell_two
+
+
+def _local_no_split_flag(ainvs, ell):
+    d = dict(_true_local_invariants(ainvs, ell))
+    d.pop("split_multiplicative", None)
+    return d
+
+
+def _lemma_B_established():
+    """The document's own 候選 status quietly promoted to established."""
+    d = dict(_true_lemma_B())
+    d["established_here"] = True
+    return d
+
+
+def _shadow_self(limit=300):
+    """The twist compared against the base curve itself: identical everywhere
+    and no sign flips, so the invariance is 'confirmed' where it could not
+    fail."""
+    rows = [{"d": d, "good_primes_compared": 50,
+             "discriminant_identical": 50, "a_ell_sign_flips": 0}
+            for d in (241, 313)]
+    return {"lemma": "A", "status": "cited", "rows": rows,
+            "all_identical": True, "flips_seen": False}
+
+
+def _vac3_false():
+    """The structural vacuity at 3 reported as an ordinary refutable class."""
+    v = dict(_true_vac3())
+    v["structurally_vacuous"] = False
+    v["any_case_refutes"] = True
+    return v
+
+
+def _certify_lax(ell, primes):
+    r = _true_certify(ell, primes)
+    r["undecided"] = []
+    r["surjective"] = True
+    return r
+
+
+def _ell_two_asserted():
+    d = dict(_true_ell_two())
+    d["rational_roots"] = [1]
+    d["irreducible"] = False
+    d["surjective"] = True          # verdict no longer follows from the cubic
+    return d
 
 
 _true_small_curves = gcd35.small_curves

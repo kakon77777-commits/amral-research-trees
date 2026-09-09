@@ -1,0 +1,1757 @@
+{
+  "gate": "src38 — mod-ℓ surjectivity, certified where it can be",
+  "source": "24_Manin_Period_Audit: 'base 696.e1 mod-ℓ images maximal for all ℓ'",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "method": "refute every maximal class that a proper subgroup with surjective determinant could lie in; one Frobenius suffices per class, and the certificate is one-sided",
+  "good_primes_searched": 106,
+  "search_bound": 600,
+  "ell_2": {
+    "ell": 2,
+    "cubic": [
+      1,
+      4,
+      128,
+      -1024
+    ],
+    "rational_roots": [],
+    "irreducible": true,
+    "discriminant": -45613056,
+    "discriminant_is_a_square": false,
+    "squarefree_part": -174,
+    "square_part": 262144,
+    "surjective": true,
+    "why": "GL₂(F₂) ≅ S₃; the image is all of S₃ exactly when the 2-division cubic is irreducible and its discriminant is not a square"
+  },
+  "ell_3": {
+    "ell": 3,
+    "witnesses": {
+      "borel": {
+        "ell_prime": 11,
+        "a": -2,
+        "a2_minus_4l_mod_ell": 2,
+        "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+      },
+      "split_cartan_normalizer": {
+        "ell_prime": 11,
+        "a": -2,
+        "a2_minus_4l_mod_ell": 2,
+        "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+      },
+      "nonsplit_cartan_normalizer": null,
+      "A4": {
+        "ell_prime": 11,
+        "a": -2,
+        "projective_order": 4,
+        "reason": "projective order 4 is outside [1, 2, 3]"
+      },
+      "S4": null,
+      "A5": {
+        "ell_prime": 11,
+        "a": -2,
+        "projective_order": 4,
+        "reason": "projective order 4 is outside [1, 2, 3, 5]"
+      }
+    },
+    "undecided": [
+      "nonsplit_cartan_normalizer",
+      "S4"
+    ],
+    "surjective": false,
+    "S4_is_the_whole_group": true,
+    "nonsplit_cartan_vacuity": {
+      "cases": [
+        {
+          "a mod 3": 1,
+          "ell' mod 3": 1,
+          "a^2 - 4 ell' mod 3": 0,
+          "nonzero square mod 3": false
+        },
+        {
+          "a mod 3": 1,
+          "ell' mod 3": 2,
+          "a^2 - 4 ell' mod 3": 2,
+          "nonzero square mod 3": false
+        },
+        {
+          "a mod 3": 2,
+          "ell' mod 3": 1,
+          "a^2 - 4 ell' mod 3": 0,
+          "nonzero square mod 3": false
+        },
+        {
+          "a mod 3": 2,
+          "ell' mod 3": 2,
+          "a^2 - 4 ell' mod 3": 2,
+          "nonzero square mod 3": false
+        }
+      ],
+      "any_case_refutes": false,
+      "structurally_vacuous": true,
+      "why": "a nonzero trace forces a^2 = 1 mod 3 and 4 = 1, so a^2 - 4 ell' = 1 - ell'; that is the nonzero square 1 only when 3 divides ell', which the test excludes"
+    },
+    "scope": "two structural obstructions, not a short search: PGL₂(F₃) ≅ S₄, so 'projective image S₄' IS surjectivity and cannot be refuted; and the nonsplit-Cartan test is vacuous mod 3, proved by exhausting the four residue cases. A₄, A₅, the Borel and the split Cartan normaliser are all refuted. This ℓ is reported partially certified, not certified",
+    "partially_certified": [
+      "borel",
+      "split_cartan_normalizer",
+      "A4",
+      "A5"
+    ]
+  },
+  "ell_5_to_100": [
+    {
+      "ell": 5,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 3,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 3,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 13,
+          "a": 4,
+          "a2_minus_4l_mod_ell": 4,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 7,
+          "a": 1,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 7,
+          "a": 1,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 7,
+          "a": 1,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 7,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 3,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 3,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 2,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 11,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 6,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 6,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 17,
+          "a": 7,
+          "a2_minus_4l_mod_ell": 3,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 7,
+          "a": 1,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 7,
+          "a": 1,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 7,
+          "a": 1,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 13,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 2,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 2,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 12,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 17,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 6,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 6,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 13,
+          "a": 4,
+          "a2_minus_4l_mod_ell": 15,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 19,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 8,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 8,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 11,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 5,
+          "reason": "projective order 5 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 5,
+          "reason": "projective order 5 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 7,
+          "a": 1,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 23,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 19,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 19,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 12,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 29,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 18,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 18,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 13,
+          "a": 4,
+          "a2_minus_4l_mod_ell": 22,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 31,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 22,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 22,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 20,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 37,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 17,
+          "a": 7,
+          "a2_minus_4l_mod_ell": 18,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 17,
+          "a": 7,
+          "a2_minus_4l_mod_ell": 18,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 26,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 41,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 30,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 30,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 1,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 43,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 32,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 32,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 16,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 47,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 20,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 20,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 36,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 53,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 26,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 26,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 42,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 59,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 32,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 32,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 48,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 61,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 50,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 50,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 34,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 67,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 27,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 27,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 56,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 71,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 44,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 44,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 60,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 73,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 62,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 62,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 46,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 79,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 68,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 68,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 52,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 83,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 72,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 72,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 17,
+          "a": 7,
+          "a2_minus_4l_mod_ell": 64,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 89,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 62,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 62,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 78,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 97,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 57,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 57,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 86,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 101,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 90,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 90,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 13,
+          "a": 4,
+          "a2_minus_4l_mod_ell": 65,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 103,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 13,
+          "a": 4,
+          "a2_minus_4l_mod_ell": 67,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 13,
+          "a": 4,
+          "a2_minus_4l_mod_ell": 67,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 92,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 107,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 96,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 96,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 43,
+          "a": 9,
+          "a2_minus_4l_mod_ell": 16,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 109,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 98,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 98,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 82,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 113,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 86,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 86,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 102,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 127,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 116,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 116,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 100,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 131,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 120,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 120,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 91,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 137,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 110,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 110,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 126,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 139,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 128,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 128,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 112,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 149,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 138,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 138,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 13,
+          "a": 4,
+          "a2_minus_4l_mod_ell": 113,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 151,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 140,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 140,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 7,
+          "a": 1,
+          "a2_minus_4l_mod_ell": 124,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 157,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 23,
+          "a": 0,
+          "a2_minus_4l_mod_ell": 65,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 37,
+          "a": -5,
+          "a2_minus_4l_mod_ell": 34,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 146,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 163,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 123,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 123,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 152,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    },
+    {
+      "ell": 167,
+      "witnesses": {
+        "borel": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 156,
+          "reason": "a² − 4ℓ' is a non-residue, so the characteristic polynomial is irreducible mod ℓ"
+        },
+        "split_cartan_normalizer": {
+          "ell_prime": 5,
+          "a": -3,
+          "a2_minus_4l_mod_ell": 156,
+          "reason": "trace ≢ 0 puts Frob in the Cartan itself, and a split Cartan needs a² − 4ℓ' to be a residue"
+        },
+        "nonsplit_cartan_normalizer": {
+          "ell_prime": 11,
+          "a": -2,
+          "a2_minus_4l_mod_ell": 127,
+          "reason": "trace ≢ 0 and a² − 4ℓ' a nonzero residue: Frob is in a split Cartan, which a nonsplit one excludes"
+        },
+        "A4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3]"
+        },
+        "S4": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 4]"
+        },
+        "A5": {
+          "ell_prime": 5,
+          "a": -3,
+          "projective_order": 6,
+          "reason": "projective order 6 is outside [1, 2, 3, 5]"
+        }
+      },
+      "undecided": [],
+      "surjective": true
+    }
+  ],
+  "certified_surjective": [
+    2,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29,
+    31,
+    37,
+    41,
+    43,
+    47,
+    53,
+    59,
+    61,
+    67,
+    71,
+    73,
+    79,
+    83,
+    89,
+    97,
+    101,
+    103,
+    107,
+    109,
+    113,
+    127,
+    131,
+    137,
+    139,
+    149,
+    151,
+    157,
+    163,
+    167
+  ],
+  "not_certified": {
+    "3": "two structural obstructions, not a short search: PGL₂(F₃) ≅ S₄, so 'projective image S₄' IS surjectivity and cannot be refuted; and the nonsplit-Cartan test is vacuous mod 3, proved by exhausting the four residue cases. A₄, A₅, the Borel and the split Cartan normaliser are all refuted. This ℓ is reported partially certified, not certified"
+  },
+  "mazur_degrees_certified": [
+    2,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    37,
+    43,
+    67,
+    163
+  ],
+  "what_stays_cited": "'for all ℓ' is Serre's theorem for a non-CM curve — all but finitely many ℓ have surjective ρ̄_ℓ — and that theorem is cited, not proved. This gate certifies a finite range and says which ℓ it did not reach",
+  "ok": true
+}

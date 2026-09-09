@@ -35,7 +35,9 @@
     "src33_mazur_degrees_closed",
     "src34_referee_a_checklist",
     "src35_gcd_witness_lemmas",
-    "src36_kodaira_prefilters_nogo"
+    "src36_kodaira_prefilters_nogo",
+    "src37_twist_invariance_bridge",
+    "src38_mod_ell_surjectivity"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -105,7 +107,9 @@
     "mazur-degrees": true,
     "referee-a-checklist": true,
     "gcd-witness-lemmas": true,
-    "kodaira-nogo": true
+    "kodaira-nogo": true,
+    "twist-bridge": true,
+    "mod-ell-surjectivity": true
   },
   "defects": [
     {
@@ -341,7 +345,8 @@
         "membership-in-P",
         "referee-a-checklist",
         "gcd-witness-lemmas",
-        "kodaira-nogo"
+        "kodaira-nogo",
+        "twist-bridge"
       ],
       "caught_by_the_named_check": true
     },
@@ -357,7 +362,8 @@
         "membership-in-P",
         "referee-a-checklist",
         "gcd-witness-lemmas",
-        "kodaira-nogo"
+        "kodaira-nogo",
+        "twist-bridge"
       ],
       "caught_by_the_named_check": true
     },
@@ -1011,6 +1017,78 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "every prime is reported split, so the inert side never moves",
+      "kind": "code",
+      "named_check": "twist-bridge",
+      "checks_that_went_red": [
+        "twist-bridge"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the local invariants drop the split flag, hiding the one thing that flips",
+      "kind": "code",
+      "named_check": "twist-bridge",
+      "checks_that_went_red": [
+        "twist-bridge"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "lemma B is reported as established",
+      "kind": "code",
+      "named_check": "twist-bridge",
+      "checks_that_went_red": [
+        "twist-bridge"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the twist invariance is measured against the curve itself",
+      "kind": "code",
+      "named_check": "twist-bridge",
+      "checks_that_went_red": [
+        "twist-bridge"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "every Frobenius is given projective order 6, so S4 is refuted at 3 where it is the whole group",
+      "kind": "code",
+      "named_check": "mod-ell-surjectivity",
+      "checks_that_went_red": [
+        "mod-ell-surjectivity"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the nonsplit-Cartan vacuity at 3 is reported refutable",
+      "kind": "code",
+      "named_check": "mod-ell-surjectivity",
+      "checks_that_went_red": [
+        "mod-ell-surjectivity"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a class with no witness is counted as refuted",
+      "kind": "code",
+      "named_check": "mod-ell-surjectivity",
+      "checks_that_went_red": [
+        "mod-ell-surjectivity"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the mod-2 verdict stops following from the cubic",
+      "kind": "code",
+      "named_check": "mod-ell-surjectivity",
+      "checks_that_went_red": [
+        "mod-ell-surjectivity"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "the gcd of an empty set reports no failures instead of all of them",
       "kind": "code",
       "named_check": "gcd-witness-lemmas",
@@ -1088,7 +1166,8 @@
       "named_check": "mazur-degrees",
       "checks_that_went_red": [
         "reducibility-sieve",
-        "mazur-degrees"
+        "mazur-degrees",
+        "mod-ell-surjectivity"
       ],
       "caught_by_the_named_check": true
     },
@@ -1099,7 +1178,8 @@
       "checks_that_went_red": [
         "mazur-degrees",
         "gcd-witness-lemmas",
-        "kodaira-nogo"
+        "kodaira-nogo",
+        "twist-bridge"
       ],
       "caught_by_the_named_check": true
     },
@@ -1435,7 +1515,8 @@
         "analytic-classification",
         "rank1-leading-derivative",
         "rank1-identity",
-        "mazur-degrees"
+        "mazur-degrees",
+        "twist-bridge"
       ],
       "caught_by_the_named_check": true
     },
@@ -1445,12 +1526,23 @@
       "named_check": "reducibility-sieve",
       "checks_that_went_red": [
         "reducibility-sieve",
-        "mazur-degrees"
+        "mazur-degrees",
+        "mod-ell-surjectivity"
       ],
       "caught_by_the_named_check": true
     }
   ],
   "controls": [
+    {
+      "control": "the inert search bound widened",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the surjectivity witness pool enlarged",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
     {
       "control": "the empty-set search box widened",
       "checks_that_went_red": [],
@@ -1563,11 +1655,11 @@
     }
   ],
   "totals": {
-    "defects": 136,
-    "caught_by_the_named_check": 136,
+    "defects": 144,
+    "caught_by_the_named_check": 144,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 22,
+    "controls": 24,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-034:
-  every gate is drilled — `src00`–`src10` and `src12`–`src36`, 136 defects, 136
-  caught by the named check, 22 controls undisturbed, over 62 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-036:
+  every gate is drilled — `src00`–`src10` and `src12`–`src38`, 144 defects, 144
+  caught by the named check, 24 controls undisturbed, over 64 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -137,6 +137,8 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [032](./reports/RUN-032-REFEREE-A-CHECKLIST.md) | Referee A's checklist, run as a program | `src34` | **PASS over the four of seven base lines that are arithmetic**, the other three reported as *cited* rather than scored; all 19 support-set members pass all five `q` conditions; and 200 primes the membership test **rejects** were put through the checklist — 0 pass, so the checklist and `𝒫` agree about who is in the family |
 | [033](./reports/RUN-033-GCD-WITNESS-LEMMAS.md) | the GCD witness lemmas under both prime routers | `src35` | all three run with **computed inputs** — 3 split, 29 **nonsplit**, `n_ℓ = 1` each, every gcd 1; the nonsplit restriction leaves **one witness and no spare**; and a searched-for curve where **lemma 1 passes while lemma 3's gcd is 0**, because the gcd of an empty set is 0 and every prime divides 0 |
 | [034](./reports/RUN-034-KODAIRA-NOGO-DOMAIN.md) | `05`'s one exact no-go, and where it can fire | `src36` | the no-go **never fires in this family**, and `𝒫`'s own `gcd(q, 696) = 1` is why — firing at `d` needs the base multiplicative at `d`, measured to be exactly `{3, 29}`; and `p = 3`'s character argument is measured **special to 3 among odd primes** |
+| [035](./reports/RUN-035-TWIST-INVARIANCE-BRIDGE.md) | the quadratic-twist invariance bridge, lemma by lemma | `src37` | lemma C measured on **both** sides — preserved at every split conductor prime on 19 of 19 members, and the split flag **flips** at an inert one; `ℓ = 2` reported **untestable** after 139 inert `d`, not passing; and RUN-033's lone FW-H3 witness is kept alive by exactly `𝒫`'s split condition, since `d = 17` would turn 29 split. **Lemma B is where the document leaves it, so the bridge is not established** |
+| [036](./reports/RUN-036-MOD-ELL-SURJECTIVITY.md) | `24_Manin_Period_Audit`'s asserted "mod-`ℓ` images maximal for all `ℓ`" | `src38` | **surjectivity certified at `ℓ = 2` and every prime `5 ≤ ℓ ≤ 167`** — 38 in all, six maximal classes refuted each by a named Frobenius; **11 of Mazur's twelve** rise from irreducible to surjective; and `ℓ = 3` is blocked by two **structural** facts, `PGL₂(F₃) ≅ S₄` and a nonsplit-Cartan test that is vacuous mod 3 |
 
 ## Layout
 
