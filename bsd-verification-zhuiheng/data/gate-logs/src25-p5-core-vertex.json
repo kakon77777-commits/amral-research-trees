@@ -1,0 +1,419 @@
+{
+  "gate": "src25 — P5 norm-Selmer core vertex",
+  "selmer_cube": {
+    "rows": {
+      "397": [
+        1,
+        2
+      ],
+      "991": [
+        1,
+        4
+      ]
+    },
+    "kernel_lines_as_(a,b)_in_aP_plus_bQ": {
+      "397": [
+        9,
+        1
+      ],
+      "991": [
+        7,
+        1
+      ]
+    },
+    "kernel_lines_as_written_by_the_document": {
+      "397": "Q - 2P",
+      "991": "Q - 4P"
+    },
+    "determinant": 2,
+    "dimensions": {
+      "empty": 2,
+      "397": 1,
+      "991": 1,
+      "both": 0
+    },
+    "cardinalities": [
+      121,
+      11,
+      1
+    ],
+    "document_says": {
+      "Sel_397": "F_11 (Q - 2P)",
+      "Sel_991": "F_11 (Q - 4P)",
+      "Sel_both": 0,
+      "dimension_cube": "2 -> 1, 2 -> 1, 1 ∩ 1 -> 0",
+      "cardinalities": "121 -> 11 -> 1",
+      "det": 2
+    },
+    "agrees": true
+  },
+  "three_statements_one_determinant": {
+    "rows_are_normalised_to_(1,k)": true,
+    "k": {
+      "397": 2,
+      "991": 4
+    },
+    "det_equals_k_difference": true,
+    "selmer_both_vanishes": true,
+    "faces_are_transverse": true,
+    "bockstein_determinant_nonzero_v1_3": true,
+    "all_three_agree": true,
+    "reading": "the three are the same determinant. Their agreement is arithmetic, not evidence — a gate that reported them as three independent confirmations would be counting one fact three times"
+  },
+  "how_special_is_the_chosen_pair": {
+    "admissible_directions": 23,
+    "directions": [
+      397,
+      991,
+      1321,
+      2113,
+      3389,
+      3433,
+      4643,
+      5501,
+      6029,
+      6337,
+      9769,
+      11177,
+      11243,
+      11903,
+      12541,
+      13553,
+      14411,
+      15401,
+      15511,
+      16633,
+      17491,
+      17623,
+      18217
+    ],
+    "directions_with_a_(0,1)_row": [],
+    "k_per_direction": {
+      "397": 2,
+      "991": 4,
+      "1321": 6,
+      "2113": 4,
+      "3389": 5,
+      "3433": 7,
+      "4643": 9,
+      "5501": 7,
+      "6029": 1,
+      "6337": 10,
+      "9769": 10,
+      "11177": 8,
+      "11243": 2,
+      "11903": 0,
+      "12541": 10,
+      "13553": 4,
+      "14411": 0,
+      "15401": 10,
+      "15511": 0,
+      "16633": 1,
+      "17491": 1,
+      "17623": 2,
+      "18217": 10
+    },
+    "distribution_of_k": {
+      "0": 3,
+      "1": 3,
+      "2": 3,
+      "4": 3,
+      "5": 1,
+      "6": 1,
+      "7": 2,
+      "8": 1,
+      "9": 1,
+      "10": 5
+    },
+    "distinct_k_values": 10,
+    "pairs_total": 253,
+    "pairs_giving_a_core_vertex": 230,
+    "pairs_that_degenerate": 23,
+    "degenerate_pairs": [
+      {
+        "pair": [
+          397,
+          11243
+        ],
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "pair": [
+          397,
+          17623
+        ],
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      {
+        "pair": [
+          991,
+          2113
+        ],
+        "rows": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            4
+          ]
+        ]
+      },
+      {
+        "pair": [
+          991,
+          13553
+        ],
+        "rows": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            4
+          ]
+        ]
+      },
+      {
+        "pair": [
+          2113,
+          13553
+        ],
+        "rows": [
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            4
+          ]
+        ]
+      },
+      {
+        "pair": [
+          3433,
+          5501
+        ],
+        "rows": [
+          [
+            1,
+            7
+          ],
+          [
+            1,
+            7
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6029,
+          16633
+        ],
+        "rows": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6029,
+          17491
+        ],
+        "rows": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6337,
+          9769
+        ],
+        "rows": [
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            10
+          ]
+        ]
+      },
+      {
+        "pair": [
+          6337,
+          12541
+        ],
+        "rows": [
+          [
+            1,
+            10
+          ],
+          [
+            1,
+            10
+          ]
+        ]
+      }
+    ],
+    "fraction_usable": 0.9090909090909091,
+    "chosen_pair_397_991": {
+      "k": [
+        2,
+        4
+      ],
+      "det": 2
+    },
+    "reading": "among rows of the form (1, k) a pair degenerates exactly when the two k agree; a (0, 1) row pairs non-degenerately with every (1, k) row, since that determinant is 1. So the distribution of k over the normalisable directions decides everything. 397 and 991 are the two smallest admissible primes and they happen to differ; whether that is typical is what the distribution answers",
+    "expected_degenerate_if_k_were_uniform": 23.0,
+    "examples": [
+      {
+        "pair": [
+          397,
+          991
+        ],
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "det": 2
+      },
+      {
+        "pair": [
+          397,
+          1321
+        ],
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            6
+          ]
+        ],
+        "det": 4
+      },
+      {
+        "pair": [
+          397,
+          2113
+        ],
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            4
+          ]
+        ],
+        "det": 2
+      },
+      {
+        "pair": [
+          397,
+          3389
+        ],
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        "det": 3
+      },
+      {
+        "pair": [
+          397,
+          3433
+        ],
+        "rows": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            7
+          ]
+        ],
+        "det": 5
+      }
+    ]
+  },
+  "directions_skipped": {
+    "by_reason": {
+      "v_11 = 0": 199,
+      "both generators land in 11·E(F_l); the direction imposes no condition": 1,
+      "v_11(#E(F_l)) = 3, not 1": 1
+    },
+    "not_merely_v_11_zero": [
+      {
+        "ell": 19009,
+        "why": "both generators land in 11·E(F_l); the direction imposes no condition"
+      },
+      {
+        "ell": 19867,
+        "why": "v_11(#E(F_l)) = 3, not 1"
+      }
+    ]
+  },
+  "row_shapes": {
+    "(1, k)": 23,
+    "(0, 0)": 1
+  },
+  "corrections_to_RUN_011": {
+    "usable_flag": "src12's `usable` means the row normalises to (1, k), not that a row exists. Its exclusion at l = 19009 is right in effect but its stated reason stops at P: what makes that direction vacuous is that Q dies too, so the row is (0, 0) and no condition is imposed. Its both_are_11_torsion flag is vacuously true there, the identity being 11-torsion",
+    "admissible_count": "RUN-011's log reports 25 admissible directions while its own row computation rejects l = 19867, where v_11(#E(F_l)) = 3. The list's criterion asks only that 11 divide the order; the row computation asks that it divide it once. This gate uses the second",
+    "corrected_count": 23
+  },
+  "ok": true
+}

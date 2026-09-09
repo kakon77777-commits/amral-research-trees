@@ -64,7 +64,9 @@
     "p5-chain-inputs": true,
     "p5-ledger-extraction": true,
     "p5-ledger-reconcile": true,
-    "p5-gates-closed-here": true
+    "p5-gates-closed-here": true,
+    "p5-selmer-cube": true,
+    "p5-core-vertex-pairs": true
   },
   "defects": [
     {
@@ -339,7 +341,8 @@
       "kind": "code",
       "named_check": "p5-localization",
       "checks_that_went_red": [
-        "p5-localization"
+        "p5-localization",
+        "p5-core-vertex-pairs"
       ],
       "caught_by_the_named_check": true
     },
@@ -348,7 +351,8 @@
       "kind": "code",
       "named_check": "p5-localization",
       "checks_that_went_red": [
-        "p5-localization"
+        "p5-localization",
+        "p5-core-vertex-pairs"
       ],
       "caught_by_the_named_check": true
     },
@@ -357,7 +361,8 @@
       "kind": "code",
       "named_check": "p5-localization",
       "checks_that_went_red": [
-        "p5-localization"
+        "p5-localization",
+        "p5-core-vertex-pairs"
       ],
       "caught_by_the_named_check": true
     },
@@ -366,7 +371,8 @@
       "kind": "code",
       "named_check": "p5-localization",
       "checks_that_went_red": [
-        "p5-localization"
+        "p5-localization",
+        "p5-core-vertex-pairs"
       ],
       "caught_by_the_named_check": true
     },
@@ -385,7 +391,8 @@
       "named_check": "p5-localization",
       "checks_that_went_red": [
         "p5-localization",
-        "p5-short-model"
+        "p5-short-model",
+        "p5-core-vertex-pairs"
       ],
       "caught_by_the_named_check": true
     },
@@ -678,6 +685,42 @@
       "named_check": "p5-gates-closed-here",
       "checks_that_went_red": [
         "p5-gates-closed-here"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the kernel line drops the sign, giving Q + kP",
+      "kind": "code",
+      "named_check": "p5-selmer-cube",
+      "checks_that_went_red": [
+        "p5-selmer-cube"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the 2x2 determinant is computed as a permanent",
+      "kind": "code",
+      "named_check": "p5-selmer-cube",
+      "checks_that_went_red": [
+        "p5-selmer-cube"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the admissibility test accepts any positive 11-valuation",
+      "kind": "code",
+      "named_check": "p5-core-vertex-pairs",
+      "checks_that_went_red": [
+        "p5-core-vertex-pairs"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a pair is counted as a core vertex when the determinant vanishes",
+      "kind": "code",
+      "named_check": "p5-core-vertex-pairs",
+      "checks_that_went_red": [
+        "p5-core-vertex-pairs"
       ],
       "caught_by_the_named_check": true
     },
@@ -1055,8 +1098,8 @@
     }
   ],
   "totals": {
-    "defects": 91,
-    "caught_by_the_named_check": 91,
+    "defects": 95,
+    "caught_by_the_named_check": 95,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
     "controls": 20,

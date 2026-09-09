@@ -106,6 +106,7 @@ import src21_two_witness_certificate as tw21             # noqa: E402
 import src22_witness_network as net22                    # noqa: E402
 import src23_p5_local_units as p5u                       # noqa: E402
 import src24_p5_status_ledger as led24                    # noqa: E402
+import src25_p5_core_vertex as cv25                        # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1057,6 +1058,71 @@ def check_p5_gates_closed_here() -> bool:
     return len(a["cited_and_not_checked"]) >= 4
 
 
+def check_p5_selmer_cube() -> bool:
+    """v1.2's boxed Selmer cube, from the two localization rows.
+
+    Every number the document boxes is pinned separately, because they are all
+    consequences of one determinant and a check that asserted only the last of
+    them would pass on wrong intermediate lines whose errors cancelled: the two
+    kernel lines `Q − 2P` and `Q − 4P`, the dimensions `2 → 1, 2 → 1, 1∩1 → 0`,
+    the cardinalities `121 → 11 → 1`, and `det = 2`.
+    """
+    rows = {397: (1, 2), 991: (1, 4)}
+    c = cv25.selmer_cube(rows)
+    if c["determinant"] != 2 or not c["agrees"]:
+        return False
+    if c["kernel_lines_as_written_by_the_document"] != {"397": "Q - 2P",
+                                                        "991": "Q - 4P"}:
+        return False
+    if c["cardinalities"] != [121, 11, 1]:
+        return False
+    if c["dimensions"] != {"empty": 2, "397": 1, "991": 1, "both": 0}:
+        return False
+    # a degenerate pair must collapse the cube rather than silently keep it
+    d = cv25.selmer_cube({397: (1, 2), 991: (1, 2)})
+    if d["determinant"] != 0 or d["dimensions"]["both"] != 1:
+        return False
+    one = cv25.the_three_statements_are_one(rows)
+    return (one["det_equals_k_difference"] and one["all_three_agree"]
+            and one["selmer_both_vanishes"] and one["faces_are_transverse"])
+
+
+def check_p5_core_vertex_pairs() -> bool:
+    """Row shapes and the pair arithmetic, on real directions and synthetic ones.
+
+    Run at scan 3,000 rather than the gate's 20,000: below 6,000 every row is
+    `(1, k)` and the only skip reason is `v₁₁ = 0`, so the real data exercises
+    the common path and nothing else. The two structural cases the corpus only
+    produces near 20,000 — a `(0, 1)` row and a `(0, 0)` one — are supplied as
+    fixtures, because a classifier whose other branches are never taken is not
+    tested by the scan that never reaches them.
+    """
+    # the valuation predicate, tested directly: 19867 is the only prime below
+    # 20,000 with v >= 2, so no fixture cheap enough to run per defect reaches
+    # that branch through the scan
+    if [cv25.admissible_valuation(v) for v in (0, 1, 2, 3)] != [False, True,
+                                                                False, False]:
+        return False
+    adm = cv25.admissible_rows(3000)
+    if len(adm["rows"]) != 4 or adm["row_shapes"] != {"(1, k)": 4}:
+        return False
+    if 397 not in adm["rows"] or adm["rows"][397] != (1, 2):
+        return False
+    if 991 not in adm["rows"] or adm["rows"][991] != (1, 4):
+        return False
+    s = cv25.pair_scan(adm["rows"])
+    if s["pairs_total"] != 6 or s["pairs_giving_a_core_vertex"] > 6:
+        return False
+    # a (0, 1) row pairs non-degenerately with every (1, k) row: det = 1
+    synth = cv25.pair_scan({7: (1, 3), 11: (1, 3), 13: (0, 1)})
+    if synth["pairs_total"] != 3 or synth["pairs_that_degenerate"] != 1:
+        return False
+    if synth["directions_with_a_(0,1)_row"] != [13]:
+        return False
+    # and equal k must degenerate
+    return cv25.pair_scan({7: (1, 5), 11: (1, 5)})["pairs_giving_a_core_vertex"] == 0
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -1100,6 +1166,8 @@ CHECKS = {
     "p5-ledger-extraction": check_p5_ledger_extraction,
     "p5-ledger-reconcile": check_p5_ledger_reconcile,
     "p5-gates-closed-here": check_p5_gates_closed_here,
+    "p5-selmer-cube": check_p5_selmer_cube,
+    "p5-core-vertex-pairs": check_p5_core_vertex_pairs,
 }
 
 
@@ -1326,6 +1394,16 @@ DEFECTS = [
     ("X_0(11)'s non-cuspidal list loses its third j-invariant", "code",
      "p5-gates-closed-here",
      lambda: patch(led24, "X0_11_NONCUSPIDAL_J", (-11 * 131 ** 3, -2 ** 15))),
+    ("the kernel line drops the sign, giving Q + kP", "code", "p5-selmer-cube",
+     lambda: patch(cv25, "kernel_line", _kernel_line_no_sign)),
+    ("the 2x2 determinant is computed as a permanent", "code",
+     "p5-selmer-cube", lambda: patch(cv25, "selmer_cube", _cube_permanent)),
+    ("the admissibility test accepts any positive 11-valuation", "code",
+     "p5-core-vertex-pairs",
+     lambda: patch(cv25, "admissible_valuation", lambda v: v >= 1)),
+    ("a pair is counted as a core vertex when the determinant vanishes",
+     "code", "p5-core-vertex-pairs",
+     lambda: patch(cv25, "pair_scan", _pairs_counted_backwards)),
 
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
@@ -1551,6 +1629,38 @@ def _divisors_with_two(n):
     out = set(_true_divisors(n))
     if n and n % 2 == 0:
         out.add(2)
+    return out
+
+
+_true_kernel_line = cv25.kernel_line
+_true_cube = cv25.selmer_cube
+_true_pairs = cv25.pair_scan
+
+
+def _kernel_line_no_sign(row):
+    """a = +b·r1/r0 instead of −b·r1/r0 — the line reflected."""
+    r0, r1 = row[0] % 11, row[1] % 11
+    if r0 == 0 and r1 == 0:
+        return None
+    if r0 == 0:
+        return (1, 0)
+    return ((pow(r0, -1, 11) * r1) % 11, 1)
+
+
+def _cube_permanent(rows):
+    """ad + bc instead of ad − bc."""
+    out = _true_cube(rows)
+    labels = sorted(rows)
+    r1, r2 = rows[labels[0]], rows[labels[1]]
+    out["determinant"] = (r1[0] * r2[1] + r1[1] * r2[0]) % 11
+    return out
+
+
+def _pairs_counted_backwards(rows):
+    """Good and degenerate swapped."""
+    out = _true_pairs(rows)
+    out["pairs_giving_a_core_vertex"], out["pairs_that_degenerate"] = (
+        out["pairs_that_degenerate"], out["pairs_giving_a_core_vertex"])
     return out
 
 
