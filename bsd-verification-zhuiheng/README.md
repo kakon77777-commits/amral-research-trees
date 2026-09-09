@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-038:
-  every gate is drilled — `src00`–`src10` and `src12`–`src40`, 152 defects, 152
-  caught by the named check, 26 controls undisturbed, over 66 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-040:
+  every gate is drilled — `src00`–`src10` and `src12`–`src42`, 160 defects, 160
+  caught by the named check, 28 controls undisturbed, over 68 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -141,6 +141,8 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [036](./reports/RUN-036-MOD-ELL-SURJECTIVITY.md) | `24_Manin_Period_Audit`'s asserted "mod-`ℓ` images maximal for all `ℓ`" | `src38` | **surjectivity certified at `ℓ = 2` and every prime `5 ≤ ℓ ≤ 167`** — 38 in all, six maximal classes refuted each by a named Frobenius; **11 of Mazur's twelve** rise from irreducible to surjective; and `ℓ = 3` is blocked by two **structural** facts, `PGL₂(F₃) ≅ S₄` and a nonsplit-Cartan test that is vacuous mod 3 |
 | [037](./reports/RUN-037-FW-H3-COMPILER.md) | `09_FW_H3_Exact_Compiler`'s boxed uniform certificate | `src39` | the premise holds — `W₋ = {29}`, `g₋ = 1 = 2⁰` — and the boxed **`∀p>2, FW-H3 = PASS` is false at `p = 29`**: the gcd argument never sees the `ℓ ≠ p` clause, which empties a singleton `W₋`. The family theorem survives, and that is computed too — 29 is routed to P3, whose witness `ℓ = 3` is **split** and so was never available to FW-H3 |
 | [038](./reports/RUN-038-FW-H2-ORDINARY.md) | `10`'s ordinary obstruction and the branch FW is left | `src40` | the exact criterion `a_p² ≡ 1 (mod p)` run over 780 good primes: **8 ordinary primes fail H2**, every one with `a_p = ±1`, spread across the range — so no finite exception list can cover them, which is the document's own reason for the routing; the FW branch is **6 supersingular primes**, H3 cleared at each, and RUN-037's exception provably cannot reach them |
+| [039](./reports/RUN-039-DERIVED-SUPERSINGULAR-BRIDGE.md) | `11`'s derived supersingular FW bridge, assembled | `src41` | all three residual hypotheses at **6 good supersingular primes** — H3 computed with witness `ℓ = 29`, H1 and H2 kept marked *cited*; `L(E,1) = 1.6317…` recomputed; and `11`'s uniform form is shown true where RUN-037 found `09`'s false — **the same gcd, one quantifier apart**, since `W₋` is made of bad primes and this range is good ones. `c_E = 1` stays **OPEN**, named in the log |
+| [040](./reports/RUN-040-ODD-ADDITIVE-BARRIER.md) | `01`'s odd-additive period barrier | `src42` | empty for the base (its only additive prime is 2); each member meets it at exactly `q`, where the twist **forces** `(v(c₄), v(c₆), v(Δ)) = (2,3,6)` — Kodaira `I₀*`, never II/III/IV — so `01`'s condition holds 19 of 19; the excluded types are **constructed** and the condition fails at each; `p ∤ c` is the weaker piece RUN-039's `c_E = 1` was avoiding |
 
 ## Layout
 

@@ -39,7 +39,9 @@
     "src37_twist_invariance_bridge",
     "src38_mod_ell_surjectivity",
     "src39_fw_h3_compiler",
-    "src40_fw_h2_ordinary"
+    "src40_fw_h2_ordinary",
+    "src41_derived_supersingular_bridge",
+    "src42_odd_additive_period_barrier"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -113,7 +115,9 @@
     "twist-bridge": true,
     "mod-ell-surjectivity": true,
     "fw-h3-compiler": true,
-    "fw-h2-ordinary": true
+    "fw-h2-ordinary": true,
+    "derived-bridge": true,
+    "odd-additive-barrier": true
   },
   "defects": [
     {
@@ -351,7 +355,8 @@
         "gcd-witness-lemmas",
         "kodaira-nogo",
         "twist-bridge",
-        "fw-h3-compiler"
+        "fw-h3-compiler",
+        "odd-additive-barrier"
       ],
       "caught_by_the_named_check": true
     },
@@ -369,7 +374,8 @@
         "gcd-witness-lemmas",
         "kodaira-nogo",
         "twist-bridge",
-        "fw-h3-compiler"
+        "fw-h3-compiler",
+        "odd-additive-barrier"
       ],
       "caught_by_the_named_check": true
     },
@@ -526,7 +532,8 @@
       "named_check": "tate",
       "checks_that_went_red": [
         "tate",
-        "ogg-formula"
+        "ogg-formula",
+        "odd-additive-barrier"
       ],
       "caught_by_the_named_check": true
     },
@@ -539,7 +546,8 @@
         "tate-i0star-reachable",
         "ogg-formula",
         "gcd-witness-lemmas",
-        "kodaira-nogo"
+        "kodaira-nogo",
+        "odd-additive-barrier"
       ],
       "caught_by_the_named_check": true
     },
@@ -1024,11 +1032,84 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "H1 and H2 are relabelled as computed here",
+      "kind": "code",
+      "named_check": "derived-bridge",
+      "checks_that_went_red": [
+        "derived-bridge"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the safe period condition reports itself closed",
+      "kind": "code",
+      "named_check": "derived-bridge",
+      "checks_that_went_red": [
+        "derived-bridge"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the contrast with 09 is emptied, so 11's range excludes nothing",
+      "kind": "code",
+      "named_check": "derived-bridge",
+      "checks_that_went_red": [
+        "derived-bridge"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the rank-zero corollary reports the period question closed",
+      "kind": "code",
+      "named_check": "derived-bridge",
+      "checks_that_went_red": [
+        "derived-bridge"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the barrier's p >= 11 floor is raised above the family",
+      "kind": "code",
+      "named_check": "odd-additive-barrier",
+      "checks_that_went_red": [
+        "odd-additive-barrier"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the excluded Kodaira types come back unreachable",
+      "kind": "code",
+      "named_check": "odd-additive-barrier",
+      "checks_that_went_red": [
+        "odd-additive-barrier"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the even additive prime is counted as an odd one",
+      "kind": "code",
+      "named_check": "odd-additive-barrier",
+      "checks_that_went_red": [
+        "odd-additive-barrier"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the twist valuations are read off the untwisted model",
+      "kind": "code",
+      "named_check": "odd-additive-barrier",
+      "checks_that_went_red": [
+        "odd-additive-barrier"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "FW-H3 drops the ell != p clause, so the gap disappears",
       "kind": "code",
       "named_check": "fw-h3-compiler",
       "checks_that_went_red": [
-        "fw-h3-compiler"
+        "fw-h3-compiler",
+        "derived-bridge"
       ],
       "caught_by_the_named_check": true
     },
@@ -1037,7 +1118,8 @@
       "kind": "code",
       "named_check": "fw-h3-compiler",
       "checks_that_went_red": [
-        "fw-h3-compiler"
+        "fw-h3-compiler",
+        "derived-bridge"
       ],
       "caught_by_the_named_check": true
     },
@@ -1073,7 +1155,8 @@
       "kind": "code",
       "named_check": "fw-h2-ordinary",
       "checks_that_went_red": [
-        "fw-h2-ordinary"
+        "fw-h2-ordinary",
+        "derived-bridge"
       ],
       "caught_by_the_named_check": true
     },
@@ -1082,7 +1165,8 @@
       "kind": "code",
       "named_check": "fw-h2-ordinary",
       "checks_that_went_red": [
-        "fw-h2-ordinary"
+        "fw-h2-ordinary",
+        "derived-bridge"
       ],
       "caught_by_the_named_check": true
     },
@@ -1183,7 +1267,8 @@
       "checks_that_went_red": [
         "gcd-witness-lemmas",
         "fw-h3-compiler",
-        "fw-h2-ordinary"
+        "fw-h2-ordinary",
+        "derived-bridge"
       ],
       "caught_by_the_named_check": true
     },
@@ -1261,7 +1346,8 @@
         "mazur-degrees",
         "gcd-witness-lemmas",
         "kodaira-nogo",
-        "twist-bridge"
+        "twist-bridge",
+        "odd-additive-barrier"
       ],
       "caught_by_the_named_check": true
     },
@@ -1400,7 +1486,8 @@
         "bsd-sweep",
         "analytic-classification",
         "rank1-leading-derivative",
-        "rank1-identity"
+        "rank1-identity",
+        "derived-bridge"
       ],
       "caught_by_the_named_check": true
     },
@@ -1599,7 +1686,8 @@
         "rank1-identity",
         "mazur-degrees",
         "twist-bridge",
-        "fw-h2-ordinary"
+        "fw-h2-ordinary",
+        "derived-bridge"
       ],
       "caught_by_the_named_check": true
     },
@@ -1616,6 +1704,16 @@
     }
   ],
   "controls": [
+    {
+      "control": "the supersingular bound widened from 1500 to 2500",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the excluded-type probe primes given in a different order",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
     {
       "control": "the FW-H3 odd-p test bound widened",
       "checks_that_went_red": [],
@@ -1748,11 +1846,11 @@
     }
   ],
   "totals": {
-    "defects": 152,
-    "caught_by_the_named_check": 152,
+    "defects": 160,
+    "caught_by_the_named_check": 160,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 26,
+    "controls": 28,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

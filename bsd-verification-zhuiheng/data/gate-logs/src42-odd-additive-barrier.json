@@ -1,0 +1,1180 @@
+{
+  "gate": "src42 — the odd-additive period barrier, run",
+  "source": "01_Odd_Additive_Period_Barrier",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "conductor": 696,
+  "the_condition": [
+    "p >= 11",
+    "local reduction not additive potentially ordinary of Kodaira type II, III or IV",
+    "the twist is optimal (cited)"
+  ],
+  "base_curve": {
+    "additive_primes": [
+      2
+    ],
+    "odd_additive_primes": [],
+    "barrier_applies": false,
+    "why": "the only additive prime of 696.e1 is 2, and `01`'s obstruction is about a fixed ODD additive prime. p = 2 is routed to Banwait–Huang by 12's P0 and never reaches the period argument this document is about"
+  },
+  "the_family": {
+    "members": 19,
+    "rows": [
+      {
+        "q": 241,
+        "odd_additive_primes": [
+          241
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 241,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 313,
+        "odd_additive_primes": [
+          313
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 313,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 457,
+        "odd_additive_primes": [
+          457
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 457,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 673,
+        "odd_additive_primes": [
+          673
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 673,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 937,
+        "odd_additive_primes": [
+          937
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 937,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 1009,
+        "odd_additive_primes": [
+          1009
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 1009,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 1153,
+        "odd_additive_primes": [
+          1153
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 1153,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 1753,
+        "odd_additive_primes": [
+          1753
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 1753,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 2017,
+        "odd_additive_primes": [
+          2017
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 2017,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 2089,
+        "odd_additive_primes": [
+          2089
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 2089,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 2113,
+        "odd_additive_primes": [
+          2113
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 2113,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 2137,
+        "odd_additive_primes": [
+          2137
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 2137,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 2617,
+        "odd_additive_primes": [
+          2617
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 2617,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 2713,
+        "odd_additive_primes": [
+          2713
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 2713,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 3049,
+        "odd_additive_primes": [
+          3049
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 3049,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 3457,
+        "odd_additive_primes": [
+          3457
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 3457,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 3529,
+        "odd_additive_primes": [
+          3529
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 3529,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 3769,
+        "odd_additive_primes": [
+          3769
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 3769,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      },
+      {
+        "q": 3793,
+        "odd_additive_primes": [
+          3793
+        ],
+        "is_exactly_q": true,
+        "rows": [
+          {
+            "p": 3793,
+            "kodaira": "I0*",
+            "valuations": {
+              "v_c4": 2,
+              "v_c6": 3,
+              "v_disc": 6
+            },
+            "p_at_least_11": true,
+            "kodaira_is_excluded": false,
+            "potentially_ordinary_computed": false,
+            "condition_met": true,
+            "optimality": "cited",
+            "conclusion_if_met": "p does not divide c — the known Manin-constant result, cited",
+            "note": "the excluded set is additive POTENTIALLY ORDINARY of type II, III or IV. The ordinarity is not computed here and is not needed: the type already places this prime outside the set"
+          }
+        ],
+        "all_conditions_met": true,
+        "kodaira": [
+          "I0*"
+        ],
+        "valuations": [
+          {
+            "v_c4": 2,
+            "v_c6": 3,
+            "v_disc": 6
+          }
+        ]
+      }
+    ],
+    "odd_additive_prime_is_always_q": true,
+    "every_member_meets_the_condition": true,
+    "kodaira_always_I0star": true,
+    "valuations_are_forced_2_3_6": true,
+    "why_forced": "for d squarefree, coprime to N and good for E, the twist scales c4 by d², c6 by d³ and Δ by d⁶, so at p = d the valuations are exactly (2, 3, 6) — which is I0*, and never II, III or IV"
+  },
+  "the_excluded_types_are_reachable": {
+    "probes": [
+      {
+        "p": 11,
+        "curve": "y² = x³ + p",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          11
+        ],
+        "kodaira": "II"
+      },
+      {
+        "p": 11,
+        "curve": "y² = x³ + px",
+        "ainvs": [
+          0,
+          0,
+          0,
+          11,
+          0
+        ],
+        "kodaira": "III"
+      },
+      {
+        "p": 11,
+        "curve": "y² = x³ + p²",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          121
+        ],
+        "kodaira": "IV"
+      },
+      {
+        "p": 11,
+        "curve": "y² = x³ + p²x",
+        "ainvs": [
+          0,
+          0,
+          0,
+          121,
+          0
+        ],
+        "kodaira": "I0*"
+      },
+      {
+        "p": 13,
+        "curve": "y² = x³ + p",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          13
+        ],
+        "kodaira": "II"
+      },
+      {
+        "p": 13,
+        "curve": "y² = x³ + px",
+        "ainvs": [
+          0,
+          0,
+          0,
+          13,
+          0
+        ],
+        "kodaira": "III"
+      },
+      {
+        "p": 13,
+        "curve": "y² = x³ + p²",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          169
+        ],
+        "kodaira": "IV"
+      },
+      {
+        "p": 13,
+        "curve": "y² = x³ + p²x",
+        "ainvs": [
+          0,
+          0,
+          0,
+          169,
+          0
+        ],
+        "kodaira": "I0*"
+      },
+      {
+        "p": 17,
+        "curve": "y² = x³ + p",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          17
+        ],
+        "kodaira": "II"
+      },
+      {
+        "p": 17,
+        "curve": "y² = x³ + px",
+        "ainvs": [
+          0,
+          0,
+          0,
+          17,
+          0
+        ],
+        "kodaira": "III"
+      },
+      {
+        "p": 17,
+        "curve": "y² = x³ + p²",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          289
+        ],
+        "kodaira": "IV"
+      },
+      {
+        "p": 17,
+        "curve": "y² = x³ + p²x",
+        "ainvs": [
+          0,
+          0,
+          0,
+          289,
+          0
+        ],
+        "kodaira": "I0*"
+      },
+      {
+        "p": 19,
+        "curve": "y² = x³ + p",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          19
+        ],
+        "kodaira": "II"
+      },
+      {
+        "p": 19,
+        "curve": "y² = x³ + px",
+        "ainvs": [
+          0,
+          0,
+          0,
+          19,
+          0
+        ],
+        "kodaira": "III"
+      },
+      {
+        "p": 19,
+        "curve": "y² = x³ + p²",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          361
+        ],
+        "kodaira": "IV"
+      },
+      {
+        "p": 19,
+        "curve": "y² = x³ + p²x",
+        "ainvs": [
+          0,
+          0,
+          0,
+          361,
+          0
+        ],
+        "kodaira": "I0*"
+      },
+      {
+        "p": 23,
+        "curve": "y² = x³ + p",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          23
+        ],
+        "kodaira": "II"
+      },
+      {
+        "p": 23,
+        "curve": "y² = x³ + px",
+        "ainvs": [
+          0,
+          0,
+          0,
+          23,
+          0
+        ],
+        "kodaira": "III"
+      },
+      {
+        "p": 23,
+        "curve": "y² = x³ + p²",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          529
+        ],
+        "kodaira": "IV"
+      },
+      {
+        "p": 23,
+        "curve": "y² = x³ + p²x",
+        "ainvs": [
+          0,
+          0,
+          0,
+          529,
+          0
+        ],
+        "kodaira": "I0*"
+      },
+      {
+        "p": 29,
+        "curve": "y² = x³ + p",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          29
+        ],
+        "kodaira": "II"
+      },
+      {
+        "p": 29,
+        "curve": "y² = x³ + px",
+        "ainvs": [
+          0,
+          0,
+          0,
+          29,
+          0
+        ],
+        "kodaira": "III"
+      },
+      {
+        "p": 29,
+        "curve": "y² = x³ + p²",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          841
+        ],
+        "kodaira": "IV"
+      },
+      {
+        "p": 29,
+        "curve": "y² = x³ + p²x",
+        "ainvs": [
+          0,
+          0,
+          0,
+          841,
+          0
+        ],
+        "kodaira": "I0*"
+      },
+      {
+        "p": 31,
+        "curve": "y² = x³ + p",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          31
+        ],
+        "kodaira": "II"
+      },
+      {
+        "p": 31,
+        "curve": "y² = x³ + px",
+        "ainvs": [
+          0,
+          0,
+          0,
+          31,
+          0
+        ],
+        "kodaira": "III"
+      },
+      {
+        "p": 31,
+        "curve": "y² = x³ + p²",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          961
+        ],
+        "kodaira": "IV"
+      },
+      {
+        "p": 31,
+        "curve": "y² = x³ + p²x",
+        "ainvs": [
+          0,
+          0,
+          0,
+          961,
+          0
+        ],
+        "kodaira": "I0*"
+      },
+      {
+        "p": 37,
+        "curve": "y² = x³ + p",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          37
+        ],
+        "kodaira": "II"
+      },
+      {
+        "p": 37,
+        "curve": "y² = x³ + px",
+        "ainvs": [
+          0,
+          0,
+          0,
+          37,
+          0
+        ],
+        "kodaira": "III"
+      },
+      {
+        "p": 37,
+        "curve": "y² = x³ + p²",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          1369
+        ],
+        "kodaira": "IV"
+      },
+      {
+        "p": 37,
+        "curve": "y² = x³ + p²x",
+        "ainvs": [
+          0,
+          0,
+          0,
+          1369,
+          0
+        ],
+        "kodaira": "I0*"
+      }
+    ],
+    "excluded_types_found": [
+      "II",
+      "III",
+      "IV"
+    ],
+    "examples": {
+      "II": {
+        "p": 11,
+        "curve": "y² = x³ + p",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          11
+        ],
+        "kodaira": "II",
+        "valuations": {
+          "v_c4": 1000000000,
+          "v_c6": 1,
+          "v_disc": 2
+        },
+        "condition_met": false
+      },
+      "III": {
+        "p": 11,
+        "curve": "y² = x³ + px",
+        "ainvs": [
+          0,
+          0,
+          0,
+          11,
+          0
+        ],
+        "kodaira": "III",
+        "valuations": {
+          "v_c4": 1,
+          "v_c6": 1000000000,
+          "v_disc": 3
+        },
+        "condition_met": false
+      },
+      "IV": {
+        "p": 11,
+        "curve": "y² = x³ + p²",
+        "ainvs": [
+          0,
+          0,
+          0,
+          0,
+          121
+        ],
+        "kodaira": "IV",
+        "valuations": {
+          "v_c4": 1000000000,
+          "v_c6": 2,
+          "v_disc": 4
+        },
+        "condition_met": false
+      }
+    },
+    "all_three_reachable": true,
+    "at_least_one_reachable": true,
+    "and_the_condition_fails_there": true
+  },
+  "link_to_RUN_039": {
+    "RUN_039_left_open": "c_E = 1, `11`'s safe period condition",
+    "what_01_offers_instead": "p does not divide c, at the odd additive prime, under a published sufficient condition",
+    "weaker_but_enough": "the p-part of BSD needs p not to divide the Manin constant, not the constant to be 1",
+    "still_cited": "the Manin-constant result itself. This gate checks the condition's hypotheses and never the theorem they feed",
+    "c_E_is_still_not_computed": true
+  },
+  "headline": "the barrier is empty for the base — its only additive prime is 2 — and each of the 19 members meets it at exactly one prime, q itself, where the Kodaira type is I0* for every member because the twist forces the valuations to (2, 3, 6). I0* is not among II, III, IV, so `01`'s sufficient condition is met throughout and p does not divide c follows from the cited Manin-constant result",
+  "ok": true
+}

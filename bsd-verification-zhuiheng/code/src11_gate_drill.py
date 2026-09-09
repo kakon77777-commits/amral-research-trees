@@ -127,6 +127,8 @@ import src37_twist_invariance_bridge as bridge37          # noqa: E402
 import src38_mod_ell_surjectivity as surj38               # noqa: E402
 import src39_fw_h3_compiler as h3c39                      # noqa: E402
 import src40_fw_h2_ordinary as h2o40                      # noqa: E402
+import src41_derived_supersingular_bridge as brg41        # noqa: E402
+import src42_odd_additive_period_barrier as bar42         # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -2010,12 +2012,87 @@ def check_fw_h2_ordinary() -> bool:
 
 
 
+def check_derived_bridge() -> bool:
+    """`11_Derived_Supersingular_FW_Bridge`, assembled — and its supports kept
+    apart.
+
+    Run at 1,500 rather than the gate's 6,000: 0.21s against 2.7s, and the
+    supersingular set is already non-empty there. The gate itself still runs at
+    6,000.
+
+    Three things must survive. H1 and H2 must stay marked **cited** while H3 is
+    computed — a bridge whose supports are of two kinds must not report one
+    verdict. The contrast with `09` must stay real: RUN-037's failing set has to
+    be non-empty, or "11's range excludes it" is a statement about nothing. And
+    the open item must stay open — neither the safe period condition nor the
+    rank-zero corollary may report itself closed here.
+    """
+    h = brg41.hypotheses()
+    if h["W_minus"] != [29] or h["valuations"] != {"29": 1}:
+        return False
+    if h["g_minus"] != 1 or not h["g_minus_is_a_power_of_two"]:
+        return False
+    q = brg41.quantifier_ranges(1500)
+    if not q["the_09_failing_set"]:            # the contrast must be real
+        return False
+    if not (q["W_minus_and_supersingular_are_disjoint"]
+            and q["every_09_failure_is_outside_11s_range"]):
+        return False
+    pp = brg41.per_prime(1500)
+    if not (pp["branch_is_non_empty"] and pp["every_prime_has_all_three"]):
+        return False
+    for r in pp["rows"]:
+        if "cited" not in r["H1"]["source"] or "cited" not in r["H2"]["source"]:
+            return False
+        if r["H3"]["source"] != "computed here":
+            return False
+    rz = brg41.rank_zero_corollary(2000)
+    if not (rz["L_is_nonzero"] and rz["analytic_rank_is_zero"]):
+        return False
+    if rz["closed_here"] is not False:
+        return False
+    sp = brg41.safe_period_condition()
+    if sp["computed_in_this_tree"] is not False:
+        return False
+    return any("Manin" in k for k in brg41.CITED)
+
+
+def check_odd_additive_barrier() -> bool:
+    """`01_Odd_Additive_Period_Barrier`'s condition, run on the family.
+
+    The base must have an EMPTY barrier for the stated reason — its only
+    additive prime is 2, which is not odd. Each member must meet the barrier at
+    exactly `q`, with the twist valuations forced to (2, 3, 6) and the Kodaira
+    type `I0*`. And the excluded types must be shown reachable: a condition
+    whose excluded set is never exhibited has not been tested, so all three of
+    II, III and IV must be produced and the condition must fail at each.
+    """
+    b = bar42.base_curve()
+    if b["barrier_applies"] or b["additive_primes"] != [2]:
+        return False
+    f = bar42.family()
+    if f["members"] < 15:
+        return False
+    if not (f["odd_additive_prime_is_always_q"] and f["kodaira_always_I0star"]
+            and f["valuations_are_forced_2_3_6"]
+            and f["every_member_meets_the_condition"]):
+        return False
+    ex = bar42.the_excluded_types_are_reachable()
+    if not ex["all_three_reachable"] or not ex["and_the_condition_fails_there"]:
+        return False
+    for r in f["rows"]:
+        if any(x["potentially_ordinary_computed"] for x in r["rows"]):
+            return False                       # the limitation stays stated
+    return bar42.link_to_run_039()["c_E_is_still_not_computed"]
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
     net22, p5u, led24, cv25, r2bsd, agent27, r1bsd, cov29, p1num, q9, cert32,
     mazur33, refA34, gcd35, nogo36, bridge37, surj38, h3c39,
-    h2o40))
+    h2o40, brg41, bar42))
 
 
 CHECKS = {
@@ -2085,6 +2162,8 @@ CHECKS = {
     "mod-ell-surjectivity": check_mod_ell_surjectivity,
     "fw-h3-compiler": check_fw_h3_compiler,
     "fw-h2-ordinary": check_fw_h2_ordinary,
+    "derived-bridge": check_derived_bridge,
+    "odd-additive-barrier": check_odd_additive_barrier,
 }
 
 
@@ -2389,6 +2468,28 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("H1 and H2 are relabelled as computed here", "code", "derived-bridge",
+     lambda: patch(brg41, "per_prime", _per_prime_all_computed)),
+    ("the safe period condition reports itself closed", "code",
+     "derived-bridge",
+     lambda: patch(brg41, "safe_period_condition", _period_closed)),
+    ("the contrast with 09 is emptied, so 11's range excludes nothing", "code",
+     "derived-bridge",
+     lambda: patch(brg41, "quantifier_ranges", _quantifier_no_contrast)),
+    ("the rank-zero corollary reports the period question closed", "code",
+     "derived-bridge",
+     lambda: patch(brg41, "rank_zero_corollary", _rank_zero_closed)),
+    ("the barrier's p >= 11 floor is raised above the family", "code",
+     "odd-additive-barrier", lambda: patch(bar42, "MIN_P", 1000)),
+    ("the excluded Kodaira types come back unreachable", "code",
+     "odd-additive-barrier",
+     lambda: patch(bar42, "the_excluded_types_are_reachable", _no_excluded)),
+    ("the even additive prime is counted as an odd one", "code",
+     "odd-additive-barrier",
+     lambda: patch(bar42, "odd_additive_primes", _additive_including_two)),
+    ("the twist valuations are read off the untwisted model", "code",
+     "odd-additive-barrier",
+     lambda: patch(bar42, "valuations_at", _valuations_of_the_base)),
     ("FW-H3 drops the ell != p clause, so the gap disappears", "code",
      "fw-h3-compiler", lambda: patch(h3c39, "h3", _h3_no_ell_neq_p)),
     ("W_- admits the split multiplicative primes too", "code",
@@ -2579,6 +2680,11 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("the supersingular bound widened from 1500 to 2500",
+     lambda: patch(brg41, "per_prime",
+                   lambda bound=2500: _true_per_prime(2500))),
+    ("the excluded-type probe primes given in a different order",
+     lambda: patch(bar42, "PROBE_PRIMES", (37, 31, 29, 23, 19, 17, 13, 11))),
     ("the FW-H3 odd-p test bound widened",
      lambda: patch(h3c39, "uniform_certificate",
                    lambda ainvs, bound=800: _true_cert(ainvs, bound))),
@@ -2766,6 +2872,71 @@ def _classify_body_first(doc, src):
               "named in gate code" if gates else "not mentioned")
     return {"subline": doc["subline"], "name": doc["name"], "bucket": bucket,
             "subject_of": subj, "cited_in": body[:6], "named_in_gates": gates[:6]}
+
+
+_true_per_prime = brg41.per_prime
+_true_quantifier = brg41.quantifier_ranges
+_true_rank_zero = brg41.rank_zero_corollary
+_true_period_cond = brg41.safe_period_condition
+_true_excluded = bar42.the_excluded_types_are_reachable
+_true_odd_additive = bar42.odd_additive_primes
+_true_valuations_at = bar42.valuations_at
+
+
+def _per_prime_all_computed(bound=brg41.SS_BOUND):
+    """H1 and H2 given the same provenance as H3. The bridge then reports one
+    verdict over supports of two different kinds."""
+    d = _true_per_prime(bound)
+    for r in d["rows"]:
+        r["H1"] = dict(r["H1"], source="computed here")
+        r["H2"] = dict(r["H2"], source="computed here")
+    d["computed_versus_cited"] = "all computed"
+    return d
+
+
+def _period_closed():
+    d = dict(_true_period_cond())
+    d["computed_in_this_tree"] = True
+    d["status"] = "closed"
+    return d
+
+
+def _quantifier_no_contrast(bound=brg41.SS_BOUND):
+    """09's failing set emptied. 11's range then excludes nothing, and the
+    disjointness is a statement about an empty set."""
+    d = dict(_true_quantifier(bound))
+    d["the_09_failing_set"] = []
+    d["every_09_failure_is_outside_11s_range"] = True
+    return d
+
+
+def _rank_zero_closed(limit=brg41.TERMS):
+    d = dict(_true_rank_zero(limit))
+    d["closed_here"] = True
+    return d
+
+
+def _no_excluded():
+    d = dict(_true_excluded())
+    d["excluded_types_found"] = []
+    d["examples"] = {}
+    d["all_three_reachable"] = False
+    d["at_least_one_reachable"] = False
+    d["and_the_condition_fails_there"] = True   # vacuously, over nothing
+    return d
+
+
+def _additive_including_two(ainvs):
+    md = gcd35.multiplicative_data(ainvs)
+    if md.get("singular"):
+        return []
+    return [r["p"] for r in md["additive"]]
+
+
+def _valuations_of_the_base(ainvs, p):
+    """The valuations taken from the untwisted curve, where p is a GOOD prime
+    and every valuation is 0 — so the (2, 3, 6) forcing cannot be seen."""
+    return _true_valuations_at(bar42.BASE, p)
 
 
 _true_cert = h3c39.uniform_certificate
