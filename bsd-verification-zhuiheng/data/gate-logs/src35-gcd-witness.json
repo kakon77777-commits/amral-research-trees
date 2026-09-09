@@ -1,0 +1,627 @@
+{
+  "gate": "src35 — the GCD witness lemmas, run",
+  "source": "00_GCD_Witness_Lemmas, used by 12_Hybrid_Odd_Prime_Router and 17_696e1_All_Prime_Router",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "bad_primes_found_from_the_discriminant": [
+    {
+      "p": 2,
+      "kodaira": "II*",
+      "v_disc": 11,
+      "f": 3,
+      "c": 1,
+      "type": "additive"
+    },
+    {
+      "p": 3,
+      "kodaira": "I1",
+      "v_disc": 1,
+      "f": 1,
+      "c": 1,
+      "split": true,
+      "n": 1,
+      "type": "multiplicative"
+    },
+    {
+      "p": 29,
+      "kodaira": "I1",
+      "v_disc": 1,
+      "f": 1,
+      "c": 1,
+      "split": false,
+      "n": 1,
+      "type": "multiplicative"
+    }
+  ],
+  "lemma_1_generic": {
+    "lemma": "generic witness",
+    "multiplicative_primes": [
+      3,
+      29
+    ],
+    "n_ell": {
+      "3": 1,
+      "29": 1
+    },
+    "gcd": 1,
+    "failure_set": [],
+    "witness_exists_for_every_odd_nonmultiplicative_p": true
+  },
+  "lemma_2_leave_one_out": {
+    "lemma": "fixed multiplicative (leave-one-out)",
+    "rows": [
+      {
+        "p": 3,
+        "others": [
+          29
+        ],
+        "gcd_of_others": 1,
+        "witness": 29,
+        "n_at_witness": 1,
+        "ok": true
+      },
+      {
+        "p": 29,
+        "others": [
+          3
+        ],
+        "gcd_of_others": 1,
+        "witness": 3,
+        "n_at_witness": 1,
+        "ok": true
+      }
+    ],
+    "all_have_a_distinct_witness": true
+  },
+  "lemma_3_nonsplit": {
+    "lemma": "nonsplit FW witness",
+    "multiplicative_primes": [
+      3,
+      29
+    ],
+    "nonsplit_primes": [
+      29
+    ],
+    "survived_the_restriction": "1 of 2",
+    "gcd": 1,
+    "failure_set": [],
+    "redundancy": "none — a single witness; if it were split too the set would be empty and every odd p would fail"
+  },
+  "the_empty_set": {
+    "models_scanned": 31,
+    "no_multiplicative_primes": {
+      "ainvs": [
+        0,
+        -1,
+        0,
+        -4,
+        -1
+      ],
+      "discriminant": 2704,
+      "bad": [
+        [
+          2,
+          "additive",
+          "II"
+        ],
+        [
+          13,
+          "additive",
+          "II"
+        ]
+      ],
+      "lemma1_gcd": 0,
+      "lemma1_failure_set": "every odd prime (gcd of an empty set is 0, and p | 0 always)"
+    },
+    "multiplicative_but_all_split": {
+      "ainvs": [
+        0,
+        -1,
+        0,
+        -6,
+        -2
+      ],
+      "discriminant": 9088,
+      "multiplicative": [
+        71
+      ],
+      "all_split": true,
+      "lemma1_gcd": 1,
+      "lemma1_failure_set": [],
+      "lemma3_gcd": 0,
+      "lemma3_failure_set": "every odd prime (gcd of an empty set is 0, and p | 0 always)"
+    },
+    "why": "without these two the gate would report gcd = 1 for 696.e1 and never show that a different curve makes the same lemma say every odd prime fails"
+  },
+  "the_family": {
+    "bound": 4000,
+    "members": 19,
+    "rows": [
+      {
+        "q": 241,
+        "twist_ainvs": [
+          0,
+          964,
+          0,
+          7434368,
+          -14333461504
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          241
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 313,
+        "twist_ainvs": [
+          0,
+          1252,
+          0,
+          12540032,
+          -31400240128
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          313
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 457,
+        "twist_ainvs": [
+          0,
+          1828,
+          0,
+          26732672,
+          -97734648832
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          457
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 673,
+        "twist_ainvs": [
+          0,
+          2692,
+          0,
+          57974912,
+          -312136926208
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          673
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 937,
+        "twist_ainvs": [
+          0,
+          3748,
+          0,
+          112380032,
+          -842400719872
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          937
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 1009,
+        "twist_ainvs": [
+          0,
+          4036,
+          0,
+          130314368,
+          -1051897578496
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          1009
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 1153,
+        "twist_ainvs": [
+          0,
+          4612,
+          0,
+          170164352,
+          -1569595982848
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          1153
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 1753,
+        "twist_ainvs": [
+          0,
+          7012,
+          0,
+          393345152,
+          -5516272411648
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          1753
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 2017,
+        "twist_ainvs": [
+          0,
+          8068,
+          0,
+          520740992,
+          -8402676646912
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          2017
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 2089,
+        "twist_ainvs": [
+          0,
+          8356,
+          0,
+          558581888,
+          -9335020512256
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          2089
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 2113,
+        "twist_ainvs": [
+          0,
+          8452,
+          0,
+          571490432,
+          -9660474262528
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          2113
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 2137,
+        "twist_ainvs": [
+          0,
+          8548,
+          0,
+          584546432,
+          -9993405801472
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          2137
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 2617,
+        "twist_ainvs": [
+          0,
+          10468,
+          0,
+          876632192,
+          -18353171571712
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          2617
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 2713,
+        "twist_ainvs": [
+          0,
+          10852,
+          0,
+          942127232,
+          -20447929443328
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          2713
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 3049,
+        "twist_ainvs": [
+          0,
+          12196,
+          0,
+          1189939328,
+          -29025000088576
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          3049
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 3457,
+        "twist_ainvs": [
+          0,
+          13828,
+          0,
+          1529708672,
+          -42305623032832
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          3457
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 3529,
+        "twist_ainvs": [
+          0,
+          14116,
+          0,
+          1594091648,
+          -45004395406336
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          3529
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 3769,
+        "twist_ainvs": [
+          0,
+          15076,
+          0,
+          1818286208,
+          -54824965743616
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          3769
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      },
+      {
+        "q": 3793,
+        "twist_ainvs": [
+          0,
+          15172,
+          0,
+          1841516672,
+          -55878981895168
+        ],
+        "multiplicative": {
+          "3": 1,
+          "29": 1
+        },
+        "nonsplit": [
+          29
+        ],
+        "additive": [
+          2,
+          3793
+        ],
+        "q_is_additive_for_the_twist": true,
+        "lemma1_gcd": 1,
+        "lemma3_gcd": 1,
+        "matches_case_C": true
+      }
+    ],
+    "every_member_matches_case_C": true,
+    "every_member_has_q_additive": true,
+    "gcds_all_one": true
+  },
+  "what_this_settles": "every witness the two routers pick is an instance of one of these three lemmas, and all three now have computed inputs: the multiplicative primes are found from the discriminant, the split/nonsplit classification is computed rather than quoted, and the gcd is taken over what was found",
+  "ok": true
+}
