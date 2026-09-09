@@ -1,0 +1,230 @@
+{
+  "gate": "src28 — the rank-1 BSD identity",
+  "why": "R1 is the one group of 06_Phase1_Agent_Experiment §3 this arm had never verified. At rank 1 every term of the identity is computable here, which is not true at rank 2",
+  "curves": [
+    {
+      "label": "37a1",
+      "a_invariants": [
+        0,
+        0,
+        1,
+        -1,
+        0
+      ],
+      "conductor_recomputed": 37,
+      "conductor_agrees": true,
+      "reduction": {
+        "37": {
+          "kodaira": "I1",
+          "f": 1,
+          "c": 1
+        }
+      },
+      "product_of_tamagawa": 1,
+      "torsion_bound": 1,
+      "L_prime": {
+        "root_number": -1,
+        "root_number_decided": true,
+        "formula": "L'(E,1) = 2 * sum_n (a_n/n) E_1(2 pi n / sqrt N)",
+        "valid_only_for_w_minus_1": true,
+        "truncations": {
+          "5000": 0.30599977383405214,
+          "10000": 0.30599977383405214,
+          "20000": 0.30599977383405214
+        },
+        "value": 0.30599977383405214,
+        "converged_to": 0.0,
+        "bad_primes": [
+          37
+        ]
+      },
+      "period": {
+        "discriminant": 37,
+        "real_components": 2,
+        "agm": 5.986917292463919,
+        "real_roots": [
+          -1.1071598716887676,
+          0.26959443640544456,
+          0.8375654352833231
+        ],
+        "bounded_component": 2.993458646158004,
+        "unbounded_component": 2.993458646245113,
+        "integrated_full_real_locus": 5.986917292403117,
+        "integration_vs_agm": 6.080203007741147e-11,
+        "relative": 1.0155815941193396e-11
+      },
+      "height": {
+        "generator": [
+          0,
+          0
+        ],
+        "value": 0.051111408154312685,
+        "chosen_level": "raw",
+        "self_consistency": 1.5574347367319774e-13,
+        "level_gaps": {
+          "raw": 1.5574347367319774e-13,
+          "richardson1": 1.946706684741173e-13,
+          "richardson2": 2.433261925283148e-13
+        },
+        "at_each_level": {
+          "raw_last": 0.051111408154312685,
+          "richardson1": 0.0511114081543646,
+          "richardson2": 0.051111408154429494
+        }
+      },
+      "identity": {
+        "formula": "L'(E,1) = Omega * h(P) * prod(c_p) / tors^2, with Sha = 1",
+        "predicted": 0.30599977332123596,
+        "computed_L_prime": 0.30599977383405214,
+        "ratio": 1.000000001675871,
+        "relative_difference": 1.6758711027309757e-09,
+        "by_doubling_depth": {
+          "10": {
+            "height": 0.05111140815411797,
+            "level": "raw",
+            "self_consistency": 9.742207041085749e-15,
+            "predicted": 0.3059997733200702,
+            "ratio": 1.0000000016796806,
+            "relative_difference": 1.67968069435665e-09
+          },
+          "11": {
+            "height": 0.05111140815415694,
+            "level": "raw",
+            "self_consistency": 3.8968828164342995e-14,
+            "predicted": 0.30599977332030354,
+            "ratio": 1.0000000016789183,
+            "relative_difference": 1.67891823180414e-09
+          },
+          "12": {
+            "height": 0.051111408154312685,
+            "level": "raw",
+            "self_consistency": 1.5574347367319774e-13,
+            "predicted": 0.30599977332123596,
+            "ratio": 1.000000001675871,
+            "relative_difference": 1.6758711027309757e-09
+          }
+        },
+        "limiting_term": "the canonical height. Its self-consistency and the identity's relative difference move together across depths 10, 11, 12; the L-derivative is converged to machine precision and the period agrees with an independent integration to 1e-11"
+      },
+      "ok": true
+    },
+    {
+      "label": "43a1",
+      "a_invariants": [
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "conductor_recomputed": 43,
+      "conductor_agrees": true,
+      "reduction": {
+        "43": {
+          "kodaira": "I1",
+          "f": 1,
+          "c": 1
+        }
+      },
+      "product_of_tamagawa": 1,
+      "torsion_bound": 1,
+      "L_prime": {
+        "root_number": -1,
+        "root_number_decided": true,
+        "formula": "L'(E,1) = 2 * sum_n (a_n/n) E_1(2 pi n / sqrt N)",
+        "valid_only_for_w_minus_1": true,
+        "truncations": {
+          "5000": 0.3435239746184784,
+          "10000": 0.3435239746184784,
+          "20000": 0.3435239746184784
+        },
+        "value": 0.3435239746184784,
+        "converged_to": 0.0,
+        "bad_primes": [
+          43
+        ]
+      },
+      "period": {
+        "discriminant": -43,
+        "real_components": 1,
+        "agm": 5.468689529967584,
+        "real_roots": [
+          -1.179652042985888
+        ],
+        "integrated_full_real_locus": 5.468689529954884,
+        "integration_vs_agm": 1.270006322329209e-11,
+        "relative": 2.3223229539175123e-12
+      },
+      "height": {
+        "generator": [
+          0,
+          0
+        ],
+        "value": 0.0628165070334112,
+        "chosen_level": "richardson2",
+        "self_consistency": 1.0270955211333366e-08,
+        "level_gaps": {
+          "raw": 4.0980978485705144e-08,
+          "richardson1": 1.2692576642492348e-08,
+          "richardson2": 1.0270955211333366e-08
+        },
+        "at_each_level": {
+          "raw_last": 0.06281648914222615,
+          "richardson1": 0.06281650280255231,
+          "richardson2": 0.0628165070334112
+        }
+      },
+      "identity": {
+        "formula": "L'(E,1) = Omega * h(P) * prod(c_p) / tors^2, with Sha = 1",
+        "predicted": 0.3435239743227509,
+        "computed_L_prime": 0.3435239746184784,
+        "ratio": 1.0000000008608643,
+        "relative_difference": 8.608642187891933e-10,
+        "by_doubling_depth": {
+          "10": {
+            "height": 0.06281632231506365,
+            "level": "raw",
+            "self_consistency": 4.4351241326734403e-07,
+            "predicted": 0.3435229641554577,
+            "ratio": 1.000002941471535,
+            "relative_difference": 2.9414628828252193e-06
+          },
+          "11": {
+            "height": 0.06281649010997567,
+            "level": "richardson1",
+            "self_consistency": 1.9957440935969295e-08,
+            "predicted": 0.3435238817737362,
+            "ratio": 1.0000002702715796,
+            "relative_difference": 2.7027150659661476e-07
+          },
+          "12": {
+            "height": 0.0628165070334112,
+            "level": "richardson2",
+            "self_consistency": 1.0270955211333366e-08,
+            "predicted": 0.3435239743227509,
+            "ratio": 1.0000000008608643,
+            "relative_difference": 8.608642187891933e-10
+          }
+        },
+        "limiting_term": "the canonical height. Its self-consistency and the identity's relative difference move together across depths 10, 11, 12; the L-derivative is converged to machine precision and the period agrees with an independent integration to 1e-11"
+      },
+      "ok": true
+    }
+  ],
+  "height_extrapolation_repair": {
+    "was": "canonical_height returned richardson2 unconditionally",
+    "why_that_was_wrong": "on 37a1 the raw sequence's last two entries agree to 1.0e-14 while richardson1's differ by 2.5e-07 — r1 is not monotone — and richardson2 is built from r1's last two, so it takes a value correct to 3e-15 and returns one wrong by 8.4e-08",
+    "now": "regulator chooses the level by the parallelogram law, uniformly across all four heights; canonical_height chooses by its own sequence's last-two agreement",
+    "Reg_389a1_now": 0.15246013936831948,
+    "Reg_389a1_RUN_017": 0.152460306865,
+    "level_chosen": "raw_last",
+    "residual_now": 9.445788151651868e-09,
+    "residual_at_each_level": {
+      "raw_last": 9.445788151651868e-09,
+      "richardson1": 1.6346439535297463e-08,
+      "richardson2": 1.603760573010149e-06
+    },
+    "reading": "both agree to seven significant figures, so nothing RUN-017 concluded moves; what was over-reported is the precision — it printed twelve digits and claimed a 1.6e-06 residual that was its own extrapolation's fault, not the method's"
+  },
+  "ok": true
+}

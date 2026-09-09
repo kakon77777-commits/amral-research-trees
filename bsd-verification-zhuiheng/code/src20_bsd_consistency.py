@@ -119,7 +119,28 @@ def log_height(x: Fraction) -> float:
 
 
 def canonical_height(ainvs, P, depth: int = 10) -> dict:
-    """ĥ(P) = lim h(x(2ⁿP))/4ⁿ, with two Richardson steps on the 1/4ⁿ error."""
+    """ĥ(P) = lim h(x(2ⁿP))/4ⁿ, with the extrapolation level chosen by measurement.
+
+    Two Richardson steps are computed, and **which of the three sequences to
+    believe is decided from their own last-two agreement** rather than assumed.
+    RUN-026 found that assuming the deepest is best is wrong here, and not
+    marginally:
+
+        37a1, depth 10 — raw's last two agree to 1.0e-14, while r1's last two
+        differ by 2.5e-07 because r1 is not monotone in n. `richardson2` is
+        built from r1's last two, so it takes a value already correct to 3e-15
+        and returns one wrong by 8.4e-08.
+
+    On 389.a1 the same defect cost the regulator two orders of magnitude: the
+    parallelogram-law residual read 1.6e-06 from `richardson2` and reads 9.4e-09
+    from the level the sequences themselves select. RUN-017 reported that 1.6e-06
+    as the method's precision; it was this.
+
+    The underlying reason the second step misbehaves is that `h(x(2ⁿP))/4ⁿ` has
+    no clean 1/4ⁿ error expansion for these curves — the local contributions at
+    bad primes do not decay that way — so r1 carries structure a second
+    extrapolation misreads. Rather than model that, the gate measures it.
+    """
     x = P[0]
     raw = []
     for _ in range(depth):
@@ -130,8 +151,15 @@ def canonical_height(ainvs, P, depth: int = 10) -> dict:
     seq = [v / 4 ** (i + 1) for i, v in enumerate(raw)]
     r1 = [(4 * seq[i + 1] - seq[i]) / 3 for i in range(len(seq) - 1)]
     r2 = [(4 * r1[i + 1] - r1[i]) / 3 for i in range(len(r1) - 1)]
+    levels = {"raw": seq, "richardson1": r1, "richardson2": r2}
+    gaps = {k: (abs(v[-1] - v[-2]) if len(v) >= 2 else float("inf"))
+            for k, v in levels.items()}
+    best = min(gaps, key=gaps.get)
     return {"raw_last": seq[-1], "richardson1": r1[-1], "richardson2": r2[-1],
-            "steps": len(seq)}
+            "steps": len(seq),
+            "level_gaps": gaps, "chosen_level": best,
+            "value": levels[best][-1],
+            "self_consistency": gaps[best]}
 
 
 def regulator(ainvs, gens, depth: int = 10) -> dict:
@@ -146,16 +174,45 @@ def regulator(ainvs, gens, depth: int = 10) -> dict:
     P, Q = gens
     PQ = ec_add(ainvs, P, Q)
     PmQ = ec_add(ainvs, P, ec_neg(ainvs, Q))
-    h = {name: canonical_height(ainvs, pt, depth)["richardson2"]
-         for name, pt in (("P", P), ("Q", Q), ("P+Q", PQ), ("P-Q", PmQ))}
-    parallelogram = h["P+Q"] + h["P-Q"] - 2 * h["P"] - 2 * h["Q"]
-    pair = (h["P+Q"] - h["P"] - h["Q"]) / 2
-    det = h["P"] * h["Q"] - pair * pair
-    return {"heights": h, "P_plus_Q": [str(PQ[0]), str(PQ[1])],
+    full = {name: canonical_height(ainvs, pt, depth)
+            for name, pt in (("P", P), ("Q", Q), ("P+Q", PQ), ("P-Q", PmQ))}
+
+    # THE LEVEL IS CHOSEN BY THE PARALLELOGRAM LAW, AND UNIFORMLY.
+    #
+    # ĥ(P+Q) + ĥ(P−Q) = 2ĥ(P) + 2ĥ(Q) holds exactly for the true heights, so the
+    # residual is an external measure of how good a level is — and it is the
+    # right one here, where letting each height pick its own level made things
+    # worse rather than better. The law is only exact when all four are computed
+    # the same way; a mixed selection breaks the very identity being used to
+    # judge it, and on 389.a1 at depth 10 that cost an order of magnitude
+    # (residual −5.0e-07 mixed, 9.4e-09 uniform).
+    #
+    # Fixing the level to `richardson2`, as this gate did through RUN-025, was
+    # worse still: 1.6e-06 at depth 10 and −2.4e-05 at depth 8, never the best
+    # at either. RUN-017 reported that 1.6e-06 as the method's precision.
+    candidates = {}
+    for level in ("raw_last", "richardson1", "richardson2"):
+        hh = {n: d[level] for n, d in full.items()}
+        res = hh["P+Q"] + hh["P-Q"] - 2 * hh["P"] - 2 * hh["Q"]
+        pr = (hh["P+Q"] - hh["P"] - hh["Q"]) / 2
+        candidates[level] = {"heights": hh, "residual": res,
+                             "pairing": pr,
+                             "regulator": hh["P"] * hh["Q"] - pr * pr}
+    best = min(candidates, key=lambda k: abs(candidates[k]["residual"]))
+    chosen = candidates[best]
+    return {"heights": chosen["heights"],
+            "extrapolation_level": best,
+            "level_chosen_by": "smallest parallelogram-law residual, uniformly",
+            "residual_at_each_level": {k: v["residual"]
+                                       for k, v in candidates.items()},
+            "regulator_at_each_level": {k: v["regulator"]
+                                        for k, v in candidates.items()},
+            "P_plus_Q": [str(PQ[0]), str(PQ[1])],
             "P_minus_Q": [str(PmQ[0]), str(PmQ[1])],
-            "parallelogram_law_residual": parallelogram,
-            "pairing_PQ": pair, "regulator": det, "depth": depth,
-            "independent": abs(det) > 1e-6}
+            "parallelogram_law_residual": chosen["residual"],
+            "pairing_PQ": chosen["pairing"],
+            "regulator": chosen["regulator"], "depth": depth,
+            "independent": abs(chosen["regulator"]) > 1e-6}
 
 
 # --------------------------------------------------------- the rank-0 BSD sweep

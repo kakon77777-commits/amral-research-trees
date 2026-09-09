@@ -35,10 +35,10 @@
     "which_convention_the_identity_needs": "the FULL real locus. One component is exactly half the AGM value, so a gate that integrated the identity component alone would be out by the same factor of two RUN-017 removed"
   },
   "regulator": {
-    "ours_depth_10": 0.15246030686524367,
+    "ours_depth_10": 0.15246013936831948,
     "parallelogram_residual": null,
     "document": 0.15246017794314376,
-    "difference": 1.2892209991233194e-07,
+    "difference": 3.857482427926939e-08,
     "inside_our_own_residual": true
   },
   "rank_2_bsd_identity": {
@@ -53,11 +53,11 @@
     },
     "with_our_regulator": {
       "omega": 4.98042512171011,
-      "regulator": 0.15246030686524367,
-      "predicted_L2": 0.7593171423752919,
+      "regulator": 0.15246013936831948,
+      "predicted_L2": 0.7593163081694029,
       "document_L2": 0.7593165002884268,
-      "ratio": 0.9999991543890829,
-      "relative_difference": 8.456116321421338e-07
+      "ratio": 1.000000253015801,
+      "relative_difference": 2.530157369671686e-07
     },
     "with_the_integrated_period": {
       "omega": 4.980425121754241,

@@ -170,10 +170,22 @@
       "(1,0)"
     ],
     "heights": {
-      "P": 0.32700170477884055,
-      "Q": 0.47671084279212533,
-      "P+Q": 0.92075871648459,
-      "P-Q": 0.6866679824179148
+      "P": 0.32700076250449767,
+      "Q": 0.47671154733659554,
+      "P+Q": 0.9207576020223028,
+      "P-Q": 0.6866670271056716
+    },
+    "extrapolation_level": "raw_last",
+    "level_chosen_by": "smallest parallelogram-law residual, uniformly",
+    "residual_at_each_level": {
+      "raw_last": 9.445788151651868e-09,
+      "richardson1": 1.6346439535297463e-08,
+      "richardson2": 1.603760573010149e-06
+    },
+    "regulator_at_each_level": {
+      "raw_last": 0.15246013936831948,
+      "richardson1": 0.15246039071853312,
+      "richardson2": 0.15246030686524367
     },
     "P_plus_Q": [
       "-2",
@@ -183,9 +195,10 @@
       "-1",
       "-2"
     ],
-    "parallelogram_law_residual": 1.603760573010149e-06,
-    "pairing_PQ": 0.05852308445681201,
-    "regulator": 0.15246030686524367,
+    "parallelogram_law_residual": 9.445788151651868e-09,
+    "pairing_PQ": 0.05852264609060484,
+    "regulator": 0.15246013936831948,
+    "depth": 10,
     "independent": true,
     "method": "ĥ(P) = lim h(x(2ⁿP))/4ⁿ by x-only duplication, two Richardson steps on the 1/4ⁿ error",
     "check": "the parallelogram law ĥ(P+Q)+ĥ(P−Q) = 2ĥ(P)+2ĥ(Q), an identity the computation never uses",

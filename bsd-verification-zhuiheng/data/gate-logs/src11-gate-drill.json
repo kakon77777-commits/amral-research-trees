@@ -73,7 +73,10 @@
     "ladder-rungs": true,
     "rejected-route-verdicts": true,
     "multiplicity-order": true,
-    "sha-labelling": true
+    "sha-labelling": true,
+    "rank1-leading-derivative": true,
+    "rank1-identity": true,
+    "height-level-selection": true
   },
   "defects": [
     {
@@ -760,7 +763,8 @@
         "bsd-sweep",
         "analytic-classification",
         "rank2-real-period",
-        "rank2-bsd-identity"
+        "rank2-bsd-identity",
+        "rank1-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -855,22 +859,73 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "E1 replaced by its crude large-x approximation",
+      "kind": "code",
+      "named_check": "rank1-leading-derivative",
+      "checks_that_went_red": [
+        "E1-vs-mpmath",
+        "family-root-number",
+        "rank1-leading-derivative",
+        "rank1-identity"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the rank-1 leading term drops its factor of 2",
+      "kind": "code",
+      "named_check": "rank1-leading-derivative",
+      "checks_that_went_red": [
+        "rank1-leading-derivative",
+        "rank1-identity"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the canonical height goes back to always returning richardson2",
+      "kind": "code",
+      "named_check": "height-level-selection",
+      "checks_that_went_red": [
+        "rank1-identity",
+        "height-level-selection"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the regulator picks a level per height instead of uniformly",
+      "kind": "code",
+      "named_check": "height-level-selection",
+      "checks_that_went_red": [
+        "height-level-selection"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "x-only duplication drops the -2*b6*x term",
       "kind": "code",
       "named_check": "regulator",
       "checks_that_went_red": [
         "regulator",
-        "rank2-bsd-identity"
+        "rank2-bsd-identity",
+        "rank1-identity",
+        "height-level-selection"
       ],
       "caught_by_the_named_check": true
     },
     {
       "defect": "Richardson extrapolates against 1/2^n instead of 1/4^n",
       "kind": "code",
-      "named_check": "regulator",
+      "named_check": "height-level-selection",
       "checks_that_went_red": [
-        "regulator",
-        "rank2-bsd-identity"
+        "height-level-selection"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "naive height reads the numerator only",
+      "kind": "code",
+      "named_check": "rank1-identity",
+      "checks_that_went_red": [
+        "rank1-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -916,7 +971,9 @@
       "named_check": "E1-vs-mpmath",
       "checks_that_went_red": [
         "E1-vs-mpmath",
-        "family-root-number"
+        "family-root-number",
+        "rank1-leading-derivative",
+        "rank1-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -930,7 +987,9 @@
         "E1-vs-mpmath",
         "family-root-number",
         "bsd-sweep",
-        "analytic-classification"
+        "analytic-classification",
+        "rank1-leading-derivative",
+        "rank1-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -945,7 +1004,8 @@
         "bsd-sweep",
         "analytic-classification",
         "rank2-real-period",
-        "rank2-bsd-identity"
+        "rank2-bsd-identity",
+        "rank1-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -958,7 +1018,8 @@
         "real-period-vs-integration",
         "bsd-sweep",
         "rank2-real-period",
-        "rank2-bsd-identity"
+        "rank2-bsd-identity",
+        "rank1-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -971,7 +1032,8 @@
         "real-period-vs-integration",
         "bsd-sweep",
         "rank2-real-period",
-        "rank2-bsd-identity"
+        "rank2-bsd-identity",
+        "rank1-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -982,7 +1044,9 @@
       "checks_that_went_red": [
         "anchor-11a1",
         "bsd-sweep",
-        "analytic-classification"
+        "analytic-classification",
+        "rank1-leading-derivative",
+        "rank1-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -1119,7 +1183,9 @@
         "anchor-11a1",
         "anchor-rank-one",
         "bsd-sweep",
-        "analytic-classification"
+        "analytic-classification",
+        "rank1-leading-derivative",
+        "rank1-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -1225,22 +1291,17 @@
       "undisturbed": true
     },
     {
-      "control": "naive height reads the numerator only, below the regulator's precision",
-      "checks_that_went_red": [],
-      "undisturbed": true
-    },
-    {
       "control": "the ell* sign convention is inverted, which sqrt(-1) in K_E makes a no-op",
       "checks_that_went_red": [],
       "undisturbed": true
     }
   ],
   "totals": {
-    "defects": 108,
-    "caught_by_the_named_check": 108,
+    "defects": 113,
+    "caught_by_the_named_check": 113,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 20,
+    "controls": 19,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

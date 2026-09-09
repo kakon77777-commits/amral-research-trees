@@ -82,9 +82,12 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-025:
-  every gate is drilled — `src00`–`src10` and `src12`–`src27`, 108 defects, 108
-  caught by the named check, 20 controls undisturbed, over 51 checks.** This
+  been green is indistinguishable from a comment. **Position as of RUN-026:
+  every gate is drilled — `src00`–`src10` and `src12`–`src28`, 113 defects, 113
+  caught by the named check, 19 controls undisturbed, over 54 checks.** RUN-026's
+  first run went **red**, and the two things it found are in that round's report:
+  a control whose stated reason had been a consequence of the defect that round
+  repaired, and a defect the repaired computation had learned to route around. This
   line read "every gate" for nine rounds while the tree had none; RUN-010
   narrowed it to what was true, and it carried "the corpus-scanning gates are
   not" for fourteen rounds after that. RUN-024 closed it, and drilling those
@@ -116,7 +119,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [014](./reports/RUN-014-PHASE2-ANCHOR.md) | the Phase 2 anchor, 696.e1 | `src15` | `N = 696` and `r_an = 0` both computed; `L(E,1)/Ω = 1` to one ulp |
 | [015](./reports/RUN-015-TWIST-FAMILY.md) | Theorem 1.1(2) and the family's structure | `src16`, `src17` | `L(E^(q),1) ≠ 0` on the two smallest members, `Ш(E^(313)) = 7²`; one of 𝒫's conditions is implied by the others |
 | [016](./reports/RUN-016-TATE-AND-CONDUCTORS.md) | Tate's algorithm | `src18`, `src19` | 40,749 conductors recomputed, 0 disagreements; `c₂ = 1` closes the carve-out; the base has no additive prime in it |
-| [017](./reports/RUN-017-BSD-CONSISTENCY.md) | **this arm's own analytic machinery** | `src20` | a real period wrong for three rounds, found by the rank-0 BSD identity; 285 curves close on `#Ш = 1`; `Reg(389.a1) = 0.152460306865` |
+| [017](./reports/RUN-017-BSD-CONSISTENCY.md) | **this arm's own analytic machinery** | `src20` | a real period wrong for three rounds, found by the rank-0 BSD identity; 285 curves close on `#Ш = 1`; `Reg(389.a1) = 0.152460306865` — **corrected to `0.15246013936831948` by [026](./reports/RUN-026-RANK1-BSD-IDENTITY.md)** |
 | [018](./reports/RUN-018-TWO-WITNESS-CERTIFICATE.md) | the two-witness criterion | `src21` | `[K_E:Q] = 16`, `e_E = 2`, `δ = 1/24` by exact F₂ rank — and RUN-015's redundancy **is** the factor `e_E` |
 | [019](./reports/RUN-019-WITNESS-NETWORK.md) | the witness-network generalisation, and §6's stop rule turned on this arm | `src22` | `31` reaches 138 of 4,063 small models that `30` cannot, all of them failing (T5); 13 meet the whole certificate; LOO fails at 2,457 primes; RUN-017's `#Ш = 1` headline audited as **not progress** |
 | [020](./reports/RUN-020-P5-LOCAL-UNITS.md) | P5's explicit local-unit cancellation at `389.a1`, `p = 11` | `src23` | every boxed statement of v0.8 reproduced, including `v₁₁(t(16P′)) = 1` on a 38-digit point — and `R ↦ [t(16R)/11]` is a **homomorphism** with an index-11 kernel, so §6's valuation clause is basis-dependent while its rationality equivalence is not |
@@ -125,6 +128,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [023](./reports/RUN-023-RANK2-BSD-IDENTITY.md) | the rank-2 BSD identity at `389.a1` | `src26` | `L′′/2! = Ω·Reg` closes at **ratio 1.0** with this arm's own period — the **first external test** of RUN-017's `Δ > 0` repair; the period confirmed again by integrating both real components, which agree to `5.8e−12` |
 | [024](./reports/RUN-024-CORPUS-GATES-DRILLED.md) | the last four undrilled gates, `src00`–`src03` | `src11`, `src02` | **every gate is now drilled**; drilling them found `src02`'s salvage detector was **structurally incapable of firing** — a same-line window that could never reach a verdict four lines away, and a vocabulary that read `未滿足` as `滿足`; now 6 stated unmet, 0 claimed met, 0 unread |
 | [025](./reports/RUN-025-AGENT-EXPERIMENT-AUDIT.md) | the Phase 1 agent experiment against its own §6/§7 conditions | `src27` | the freeze condition 「將 analytic Ш 當 actual Ш」 is **not triggered** — 36 numeric Ш claims, all labelled, 5 of them **in the notation itself**; and the scanner needed **three corrections** before it measured anything |
+| [026](./reports/RUN-026-RANK1-BSD-IDENTITY.md) | the rank-1 BSD identity, and this tree's height extrapolation | `src28`, `src20` | the identity closes at `37a1` and `43a1` with **every term computed here**, ratios `1.0000000017` and `1.0000000009`; and `canonical_height` was returning the **worst** of its three extrapolation levels, which corrects RUN-017's regulator precision by two orders of magnitude |
 
 ## Layout
 

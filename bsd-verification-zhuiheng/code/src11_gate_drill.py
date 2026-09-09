@@ -114,6 +114,7 @@ import src01_ladder_vocabulary as ladder01                 # noqa: E402
 import src02_rejected_route_recurrence as route02          # noqa: E402
 import src03_multiplicity_nogo as nogo03                   # noqa: E402
 import src27_agent_experiment_audit as agent27            # noqa: E402
+import src28_rank1_bsd_identity as r1bsd                  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1333,6 +1334,112 @@ def check_sha_labelling() -> bool:
             and c.get("stated as a hypothesis", 0) == 9)
 
 
+def check_rank1_leading_derivative() -> bool:
+    """L'(E,1) = 2 Σ (a_n/n) E₁(2πn/√N) at 37a1, and the pieces it stands on.
+
+    Run at 800 terms, which is **measured, not chosen**: `E₁(2πn/√37)` decays
+    exponentially and the sum is at full double precision by then — 800 terms
+    give the identical value to 20,000, at 0.07s against 32.
+    """
+    d = r1bsd.leading_derivative([0, 0, 1, -1, 0], 37, limit=800)
+    if d["root_number"] != -1 or not d["root_number_decided"]:
+        return False
+    if abs(d["value"] - 0.30599977383405214) > 1e-13:
+        return False
+    if d["converged_to"] != 0.0:
+        return False
+    # E₁ itself, against values it must reproduce: E₁(1) = 0.2193839344,
+    # and the two branches must agree across the x = 2 switch
+    if abs(anchor15.E1(1.0) - 0.21938393439552029) > 1e-12:
+        return False
+    lo = anchor15.E1(1.9999999)
+    hi = anchor15.E1(2.0000001)
+    return abs(lo - hi) < 1e-7
+
+
+def check_rank1_identity() -> bool:
+    """Ω·ĥ(P)·∏c_p/#tors² against L'(E,1), at 37a1 and 43a1.
+
+    Both period branches: 37a1 has Δ > 0 and two real components, 43a1 has
+    Δ < 0 and one, so a fault in either branch of `real_period` shows here.
+
+    Run at doubling depth 10 with **per-curve tolerances set to what depth 10
+    delivers**, not to what the gate achieves: 37a1 closes to 1.7e-09 there and
+    43a1 only to 2.9e-06, because 43a1's height needs depth 12 to converge. A
+    single loose tolerance would let a real 37a1 regression through; a single
+    tight one would fail on 43a1's own settings. The gate itself runs depths 10,
+    11 and 12 and reports the trend.
+    """
+    for ainvs, N, gen, want, tol in (
+            ([0, 0, 1, -1, 0], 37, [0, 0], 0.30599977383405214, 1e-8),
+            ([0, 1, 1, 0, 0], 43, [0, 0], 0.3435239746184784, 1e-5)):
+        d = r1bsd.leading_derivative(ainvs, N, limit=800)
+        if abs(d["value"] - want) > 1e-12:
+            return False
+        omega = anchor15.real_period(ainvs)
+        h = bsd20.canonical_height(ainvs, gen, depth=10)["value"]
+        prod_c = 1
+        for p in anchor15.sieve(N):
+            if N % p == 0:
+                prod_c *= tate18.reduction_data(ainvs, p, want_c=True)["c"]
+        tors = anchor15.torsion_bound(ainvs, N)
+        pred = omega * h * prod_c / (tors ** 2)
+        if abs(d["value"] / pred - 1.0) > tol:
+            return False
+        # and the sensitivity, so a doubled period cannot pass quietly
+        if abs(d["value"] / (2 * pred) - 0.5) > tol:
+            return False
+    return True
+
+
+def check_height_level_selection() -> bool:
+    """The extrapolation level is chosen by measurement, not fixed at the deepest.
+
+    RUN-026 found `richardson2` returned unconditionally, and wrong: at 37a1 the
+    raw sequence's last two agree to ~1e-14 while r1's differ by ~2.5e-07, and
+    r2 is built from r1's last two. So the check pins that the gaps really are
+    ordered that way, that `raw` is chosen, and that the regulator's uniform
+    parallelogram selection beats every fixed level.
+    """
+    h = bsd20.canonical_height([0, 0, 1, -1, 0], [0, 0], depth=10)
+    g = h["level_gaps"]
+    if h["chosen_level"] != "raw" or g["raw"] > 1e-12:
+        return False
+    if not (g["richardson1"] > 1e-8 and g["richardson2"] > 1e-8):
+        return False
+    if abs(h["value"] - h["raw_last"]) > 0:
+        return False
+    if abs(h["richardson2"] - h["raw_last"]) < 1e-9:      # they really differ
+        return False
+    r = bsd20.regulator([0, 1, 1, -2, 0], [[0, 0], [1, 0]], depth=8)
+    res = r["residual_at_each_level"]
+    chosen = r["extrapolation_level"]
+    # All three levels must be present and the choice must be one of them.
+    # Without this the comparison below is satisfied by any single-element
+    # dict — a mixed-level regulator reporting only its own residual passed
+    # this check vacuously on its first writing, which is the third time this
+    # tree has produced a condition that a degenerate input satisfies for free.
+    if set(res) != {"raw_last", "richardson1", "richardson2"}:
+        return False
+    if chosen not in res:
+        return False
+    if abs(res[chosen]) != min(abs(v) for v in res.values()):
+        return False
+    # and the choice must actually beat the level this gate used to fix
+    if abs(res[chosen]) >= abs(res["richardson2"]):
+        return False
+    if chosen == "richardson2":                           # never the best here
+        return False
+    # THE LEVELS MUST BE GOOD, NOT MERELY RANKED. Everything above tests the
+    # selection logic and nothing about what it selects from, so a corrupted
+    # Richardson step passed all of it — the selector simply fell back to `raw`
+    # and reported a worse regulator without complaint. The threshold is
+    # measured: at depth 8 an intact first Richardson step reaches a residual of
+    # 5.1e-07 and the fallback to raw reaches 1.4e-05, so 5e-06 separates them
+    # and nothing tighter is claimed.
+    return abs(res[chosen]) < 5e-6
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -1385,6 +1492,9 @@ CHECKS = {
     "rejected-route-verdicts": check_rejected_route_verdicts,
     "multiplicity-order": check_multiplicity_order,
     "sha-labelling": check_sha_labelling,
+    "rank1-leading-derivative": check_rank1_leading_derivative,
+    "rank1-identity": check_rank1_identity,
+    "height-level-selection": check_height_level_selection,
 }
 
 
@@ -1657,12 +1767,45 @@ DEFECTS = [
      lambda: patch(agent27, "HYPOTHESIS", re.compile(r"(?!x)x"))),
     ("provenance stops counting as a label", "code", "sha-labelling",
      lambda: patch(agent27, "PROVENANCE", re.compile(r"(?!x)x"))),
+    ("E1 replaced by its crude large-x approximation", "code",
+     "rank1-leading-derivative",
+     lambda: patch(anchor15, "E1", lambda x: __import__("math").exp(-x) / x)),
+    ("the rank-1 leading term drops its factor of 2", "code",
+     "rank1-leading-derivative",
+     lambda: patch(r1bsd, "leading_derivative", _leading_without_the_two)),
+    ("the canonical height goes back to always returning richardson2", "code",
+     "height-level-selection",
+     lambda: patch(bsd20, "canonical_height", _height_always_richardson2)),
+    ("the regulator picks a level per height instead of uniformly", "code",
+     "height-level-selection",
+     lambda: patch(bsd20, "regulator", _regulator_mixed_levels)),
 
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
      lambda: patch(bsd20, "x_double", _x_double_missing_term)),
+    # Named for `height-level-selection` since RUN-026, not for `regulator`, and
+    # the re-naming is a finding rather than bookkeeping. The regulator now picks
+    # its extrapolation level by the parallelogram law, so a broken Richardson
+    # step is simply not chosen — the regulator ROUTES AROUND the defect and its
+    # check stops seeing it. Robustness bought insensitivity, and the check that
+    # owns Richardson's correctness is the one that inspects the levels
+    # themselves. The drill reported this as caught-by-the-wrong-check before it
+    # was moved.
     ("Richardson extrapolates against 1/2^n instead of 1/4^n", "code",
-     "regulator", lambda: patch(bsd20, "canonical_height", _canon_wrong_richardson)),
+     "height-level-selection",
+     lambda: patch(bsd20, "canonical_height", _canon_wrong_richardson)),
+    # Promoted from CONTROLS by RUN-026, and the reason is the repair itself.
+    # Reading only the numerator of x rather than max(|num|, den) IS wrong —
+    # there are steps in 389.a1's doubling orbits where the denominator is
+    # larger — and it moves the regulator by 1.16e-07. It sat in the controls
+    # because "the regulator is only known to about 1.6e-06", which was
+    # `richardson2`'s error and not the method's. With the level chosen by the
+    # parallelogram law the regulator is known to 9.4e-09, the perturbation is
+    # two orders of magnitude ABOVE that, and a defect the computation could not
+    # resolve became one it can.
+    ("naive height reads the numerator only", "code", "rank1-identity",
+     lambda: patch(bsd20, "log_height",
+                   lambda x: math.log(max(1, abs(x.numerator))))),
     ("the BSD ratio drops the torsion square", "code", "bsd-sweep",
      lambda: patch(bsd20, "sweep", _sweep_no_torsion)),
 
@@ -1828,17 +1971,6 @@ CONTROLS = [
     # membership of 𝒫, so this belongs here rather than in the defect list.
     ("membership drops the (q/29) condition, which the other two imply",
      lambda: patch(fam16, "in_P", _in_P_no_29)),
-    # A sixth, and the mirror image of RUN-014's lesson. Reading only the
-    # numerator of x rather than max(|num|, den) IS wrong — there are steps in
-    # 389.a1's doubling orbits where the denominator is larger — but it moves
-    # the regulator by 1.16e-07, and the regulator is only known to about
-    # 1.6e-06, which is what the parallelogram-law residual measures. RUN-014's
-    # mistake was tolerances looser than the precision; tightening this one past
-    # the precision would be the same mistake pointed the other way, so the
-    # defect is recorded here as one the computation cannot resolve.
-    ("naive height reads the numerator only, below the regulator's precision",
-     lambda: patch(bsd20, "log_height",
-                   lambda x: math.log(max(1, abs(x.numerator))))),
     # A seventh, and it is a fact about the field rather than about the code.
     # K_E contains ζ₈, hence √−1, so √ℓ and √−ℓ differ by an element already
     # present: adjoining ℓ* or ℓ gives the SAME field, and inverting the sign
@@ -1883,6 +2015,42 @@ def _divisors_with_two(n):
     if n and n % 2 == 0:
         out.add(2)
     return out
+
+
+_true_leading = r1bsd.leading_derivative
+_true_height = bsd20.canonical_height
+
+
+def _leading_without_the_two(ainvs, N, limit=None):
+    """The classical rank-1 sum without its leading factor 2."""
+    d = _true_leading(ainvs, N, limit) if limit else _true_leading(ainvs, N)
+    d["value"] = d["value"] / 2
+    return d
+
+
+def _height_always_richardson2(ainvs, P, depth=10):
+    d = _true_height(ainvs, P, depth)
+    d["value"] = d["richardson2"]
+    d["chosen_level"] = "richardson2"
+    return d
+
+
+def _regulator_mixed_levels(ainvs, gens, depth=10):
+    """Each height picks its own level — which breaks the parallelogram law,
+    the very identity used to judge the choice."""
+    P, Q = gens
+    PQ = bsd20.ec_add(ainvs, P, Q)
+    PmQ = bsd20.ec_add(ainvs, P, bsd20.ec_neg(ainvs, Q))
+    full = {n: _true_height(ainvs, pt, depth)
+            for n, pt in (("P", P), ("Q", Q), ("P+Q", PQ), ("P-Q", PmQ))}
+    h = {n: d["value"] for n, d in full.items()}
+    res = h["P+Q"] + h["P-Q"] - 2 * h["P"] - 2 * h["Q"]
+    pair = (h["P+Q"] - h["P"] - h["Q"]) / 2
+    return {"heights": h, "extrapolation_level": "mixed",
+            "residual_at_each_level": {"mixed": res},
+            "parallelogram_law_residual": res, "pairing_PQ": pair,
+            "regulator": h["P"] * h["Q"] - pair * pair, "depth": depth,
+            "independent": True}
 
 
 _true_sha256 = corpus00.sha256_bytes
@@ -2094,8 +2262,17 @@ def _canon_wrong_richardson(ainvs, P, depth=8):
     seq = [v / 4 ** (i + 1) for i, v in enumerate(raw)]
     r1 = [(2 * seq[i + 1] - seq[i]) for i in range(len(seq) - 1)]
     r2 = [(2 * r1[i + 1] - r1[i]) for i in range(len(r1) - 1)]
+    # The full return shape, including the level machinery RUN-026 added. A
+    # defect that returns a smaller dict makes the check raise a KeyError, and a
+    # check that goes red on a KeyError has caught nothing — the same lesson
+    # RUN-020 recorded when two defects recursed instead of computing.
+    levels = {"raw": seq, "richardson1": r1, "richardson2": r2}
+    gaps = {k: (abs(v[-1] - v[-2]) if len(v) >= 2 else float("inf"))
+            for k, v in levels.items()}
+    best = min(gaps, key=gaps.get)
     return {"raw_last": seq[-1], "richardson1": r1[-1], "richardson2": r2[-1],
-            "steps": len(seq)}
+            "steps": len(seq), "level_gaps": gaps, "chosen_level": best,
+            "value": levels[best][-1], "self_consistency": gaps[best]}
 
 
 def _sweep_no_torsion(records):

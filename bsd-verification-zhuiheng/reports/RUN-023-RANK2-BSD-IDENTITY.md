@@ -41,6 +41,16 @@ moves it by `8.5 × 10⁻⁷`, which is what doubling depth 10 delivers. Our
 regulator and the document's differ by `1.29 × 10⁻⁷`, inside RUN-017's own
 stated residual of `1.6 × 10⁻⁶`.
 
+> **Corrected by [RUN-026](./RUN-026-RANK1-BSD-IDENTITY.md).** The two regulator
+> figures in this section — `1.29 × 10⁻⁷` and `8.5 × 10⁻⁷` — were computed with
+> `canonical_height` fixed at `richardson2`, which RUN-026 found to be the worst
+> of the three extrapolation levels at every depth tested. With the level chosen
+> by the parallelogram law they read **`3.86 × 10⁻⁸`** and **`2.53 × 10⁻⁷`**, and
+> the gate log in this repository now carries the corrected values. The
+> conclusion of this round is unaffected: the identity closed at ratio `1.0` on
+> the document's regulator either way, and the limiting term is still ours. What
+> was wrong is how imprecise this round said its own regulator was.
+
 ## The period, three ways
 
 `Δ = 389 > 0`, so `E(R)` has two components. The cubic

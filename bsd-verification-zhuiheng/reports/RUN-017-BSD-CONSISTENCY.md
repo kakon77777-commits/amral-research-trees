@@ -121,6 +121,20 @@ Richardson steps against the `1/4ⁿ` error:
 The parallelogram law `ĥ(P+Q) + ĥ(P−Q) = 2ĥ(P) + 2ĥ(Q)` is not an input to the
 limit, so requiring it constrains the computation from outside.
 
+> **Corrected by [RUN-026](./RUN-026-RANK1-BSD-IDENTITY.md).** Every height in
+> this table, and the residual and regulator built from them, came from
+> `canonical_height` fixed at `richardson2` — which RUN-026 found to be the
+> **worst** of the three extrapolation levels at every depth tested, because the
+> `richardson1` sequence it extrapolates from is not monotone. Selecting the
+> level by this very parallelogram law instead gives
+> **`Reg(389.a1) = 0.15246013936831948`** with a residual of
+> **`9.4 × 10⁻⁹`**, not `1.6 × 10⁻⁶`, and lands `3.9 × 10⁻⁸` from the
+> independent value later found in `BSD_Rank_Uniform_Zeta_Primitivity_Reduction`
+> §6. The two agree to seven significant figures, so the conclusion drawn here —
+> a non-zero regulator, hence independence — is untouched. What was wrong is the
+> precision this round claimed: it printed twelve digits and blamed the method
+> for a residual that was its own extrapolation's.
+
 A non-zero regulator makes `P` and `Q` independent, so this is a **third**
 independent proof that `389.a1` has rank ≥ 2 — after RUN-011's localization
 determinant `det M_loc = 2 ≠ 0` in `F₁₁`, which shares no arithmetic with it.
