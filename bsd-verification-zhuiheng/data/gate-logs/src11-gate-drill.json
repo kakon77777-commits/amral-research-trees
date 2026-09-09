@@ -43,7 +43,9 @@
     "src41_derived_supersingular_bridge",
     "src42_odd_additive_period_barrier",
     "src43_finite_exceptional_primes",
-    "src44_base_certificate_compare"
+    "src44_base_certificate_compare",
+    "src45_claim_ladder_position",
+    "src46_chebotarev_audit"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -121,7 +123,9 @@
     "derived-bridge": true,
     "odd-additive-barrier": true,
     "finite-exceptional": true,
-    "base-certificate": true
+    "base-certificate": true,
+    "claim-ladder": true,
+    "chebotarev-audit": true
   },
   "defects": [
     {
@@ -1038,6 +1042,78 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the ladder position is reported as C2",
+      "kind": "code",
+      "named_check": "claim-ladder",
+      "checks_that_went_red": [
+        "claim-ladder"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "H1 is reported as executable here, so C1 reads as complete",
+      "kind": "code",
+      "named_check": "claim-ladder",
+      "checks_that_went_red": [
+        "claim-ladder"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the forbidden-upgrade audit stops reading the logs",
+      "kind": "code",
+      "named_check": "claim-ladder",
+      "checks_that_went_red": [
+        "claim-ladder"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the stop rule reports untriggered while its own rounds are not new",
+      "kind": "code",
+      "named_check": "claim-ladder",
+      "checks_that_went_red": [
+        "claim-ladder"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "every quadratic field is called a subfield of Q(zeta_24)",
+      "kind": "code",
+      "named_check": "chebotarev-audit",
+      "checks_that_went_red": [
+        "chebotarev-audit"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the support condition asks for a transposition",
+      "kind": "code",
+      "named_check": "chebotarev-audit",
+      "checks_that_went_red": [
+        "chebotarev-audit"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the squarefree part is not extracted",
+      "kind": "code",
+      "named_check": "chebotarev-audit",
+      "checks_that_went_red": [
+        "chebotarev-audit"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "every subgroup is counted as normal",
+      "kind": "code",
+      "named_check": "chebotarev-audit",
+      "checks_that_went_red": [
+        "chebotarev-audit"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "the P_ram heuristic is reported as exact",
       "kind": "code",
       "named_check": "finite-exceptional",
@@ -1793,6 +1869,16 @@
   ],
   "controls": [
     {
+      "control": "the stop rule's window widened from three rounds to four",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "S3 enumerated in a different order, so the other 3-cycle is picked",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
       "control": "the local bound widened from 1500 to 2000",
       "checks_that_went_red": [],
       "undisturbed": true
@@ -1944,11 +2030,11 @@
     }
   ],
   "totals": {
-    "defects": 168,
-    "caught_by_the_named_check": 168,
+    "defects": 176,
+    "caught_by_the_named_check": 176,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 30,
+    "controls": 32,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

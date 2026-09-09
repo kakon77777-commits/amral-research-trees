@@ -131,6 +131,8 @@ import src41_derived_supersingular_bridge as brg41        # noqa: E402
 import src42_odd_additive_period_barrier as bar42         # noqa: E402
 import src43_finite_exceptional_primes as fin43           # noqa: E402
 import src44_base_certificate_compare as cmp44            # noqa: E402
+import src45_claim_ladder_position as ladder45            # noqa: E402
+import src46_chebotarev_audit as cheb46                   # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -2173,12 +2175,101 @@ def check_base_certificate() -> bool:
 
 
 
+def check_claim_ladder() -> bool:
+    """`07_Stop_Rules_and_Claim_Ladder`, applied to this line.
+
+    The rung must stay C1 and partial: H2 and H3 executable, H1 cited, and C2
+    NOT reached. A gate that reported C2 would be committing `07`'s fifth
+    forbidden upgrade in this arm's own voice, which is the one thing this check
+    exists to prevent. The five guards must be found in the archived logs rather
+    than assumed — a stand-in that stops reading the logs must turn this red.
+    The stop rule must be answered from real sources, and every report must
+    carry an explicit statement of what it does not claim.
+    """
+    hm = ladder45.hypothesis_meanings()
+    if hm["C1_reached"] or not hm["C1_partial"]:
+        return False
+    if sorted(hm["executable"]) != ["H2", "H3"] or hm["cited"] != ["H1"]:
+        return False
+    pos = ladder45.position()
+    if not pos["C0"]["reached"] or not pos["C1"]["partial"]:
+        return False
+    if pos["C2"]["reached"] is not False:
+        return False
+    if not pos["C2"]["FW_is_listed_as_cited"]:
+        return False
+    if any(pos[r]["reached"] for r in ("C3", "C4", "C5", "C6")):
+        return False
+    if pos["honest_rung"] != "C1 (partial)":
+        return False
+    fu = ladder45.forbidden_upgrades()
+    if len(fu["rows"]) != 5 or not fu["all_guards_present"]:
+        return False
+    sr = ladder45.stop_rule()
+    if sr["rule_triggered"]:
+        return False
+    if len(sr["last_three"]) < 3:
+        return False
+    if not sr["each_of_the_last_three_compiled_a_new_document"]:
+        return False
+    rc = ladder45.reports_carry_their_limits()
+    return rc["reports"] >= 40 and rc["every_report_carries_its_limits"]
+
+
+def check_chebotarev_audit() -> bool:
+    """`25_Chebotarev_Referee_Audit`, every step run.
+
+    The chain must reproduce `disc = -11136`, the squarefree part `-174`, the
+    containments — `Q(sqrt -6)` inside `Q(zeta_24)` and `Q(sqrt 29)` NOT inside,
+    which is why it has to be adjoined — `[K:Q] = 16`, S_3's single nontrivial
+    proper normal subgroup, `[LK:Q] = 48`, class size 2 and `delta = 1/24`. And
+    the compatibility must still be exhibited against a case where it FAILS: a
+    transposition has sign -1, contradicts the identity on `F_0`, and would give
+    density 0. A gate that only ever showed the compatible side would not have
+    tested the step the derivation most depends on.
+    """
+    c = cheb46.the_cubic()
+    if c["discriminant"] != -11136 or not c["factorisation_check"]:
+        return False
+    if not c["irreducible"] or c["discriminant_is_a_square"]:
+        return False
+    if c["galois_group"] != "S_3" or c["squarefree_part"] != -174:
+        return False
+    f = cheb46.the_fields()
+    if not f["factorisation_holds"] or not f["degree_K_is_16"]:
+        return False
+    if not f["sqrt_minus_6_in_cyclotomic_24"]["inside"]:
+        return False
+    if f["sqrt_29_in_cyclotomic_24"]["inside"]:
+        return False
+    if f["F0_in_cyclotomic_24"]["inside"] or not f["F0_inside_K"]:
+        return False
+    i = cheb46.the_intersection()
+    if not i["unique_nontrivial_proper_normal_subgroup"]:
+        return False
+    if i["its_degree"] != 2 or i["normal_subgroup_orders"] != [1, 3, 6]:
+        return False
+    d = cheb46.the_class_and_density()
+    if not d["compatible"] or d["class_size"] != 2:
+        return False
+    if d["transposition_acts_trivially_on_F0"]:      # the failing side
+        return False
+    if d["incompatible_alternative_density"] != 0:
+        return False
+    if not d["degree_LK_is_48"] or not d["delta_is_one_over_24"]:
+        return False
+    from fractions import Fraction
+    x = cheb46.cross_checks(Fraction(d["delta"]))
+    return x["agrees_with_RUN_018"] and x["within_one_percent"]
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
     net22, p5u, led24, cv25, r2bsd, agent27, r1bsd, cov29, p1num, q9, cert32,
     mazur33, refA34, gcd35, nogo36, bridge37, surj38, h3c39,
-    h2o40, brg41, bar42, fin43, cmp44))
+    h2o40, brg41, bar42, fin43, cmp44, ladder45, cheb46))
 
 
 CHECKS = {
@@ -2252,6 +2343,8 @@ CHECKS = {
     "odd-additive-barrier": check_odd_additive_barrier,
     "finite-exceptional": check_finite_exceptional,
     "base-certificate": check_base_certificate,
+    "claim-ladder": check_claim_ladder,
+    "chebotarev-audit": check_chebotarev_audit,
 }
 
 
@@ -2556,6 +2649,26 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("the ladder position is reported as C2", "code", "claim-ladder",
+     lambda: patch(ladder45, "position", _position_C2)),
+    ("H1 is reported as executable here, so C1 reads as complete", "code",
+     "claim-ladder",
+     lambda: patch(ladder45, "hypothesis_meanings", _h1_executable)),
+    ("the forbidden-upgrade audit stops reading the logs", "code",
+     "claim-ladder", lambda: patch(ladder45, "_load", lambda name: None)),
+    ("the stop rule reports untriggered while its own rounds are not new",
+     "code", "claim-ladder",
+     lambda: patch(ladder45, "stop_rule", _stop_rule_stale)),
+    ("every quadratic field is called a subfield of Q(zeta_24)", "code",
+     "chebotarev-audit",
+     lambda: patch(cheb46, "inside_cyclotomic", _always_inside)),
+    ("the support condition asks for a transposition", "code",
+     "chebotarev-audit",
+     lambda: patch(cheb46, "the_class_and_density", _class_by_transposition)),
+    ("the squarefree part is not extracted", "code", "chebotarev-audit",
+     lambda: patch(cheb46, "squarefree", lambda n: n)),
+    ("every subgroup is counted as normal", "code", "chebotarev-audit",
+     lambda: patch(cheb46, "normal_subgroups", _all_subgroups)),
     ("the P_ram heuristic is reported as exact", "code",
      "finite-exceptional", lambda: patch(fin43, "p_ram", _p_ram_exact)),
     ("the structural vacuity at n = 2 is treated as an unfound witness", "code",
@@ -2786,6 +2899,10 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("the stop rule's window widened from three rounds to four",
+     lambda: patch(ladder45, "stop_rule", _stop_rule_four)),
+    ("S3 enumerated in a different order, so the other 3-cycle is picked",
+     lambda: patch(cheb46, "s3", lambda: list(reversed(_true_s3())))),
     ("the local bound widened from 1500 to 2000",
      lambda: patch(fin43, "p_loc",
                    lambda bound=2000, blocks=2: _true_p_loc(2000, 2))),
@@ -2983,6 +3100,86 @@ def _classify_body_first(doc, src):
               "named in gate code" if gates else "not mentioned")
     return {"subline": doc["subline"], "name": doc["name"], "bucket": bucket,
             "subject_of": subj, "cited_in": body[:6], "named_in_gates": gates[:6]}
+
+
+_true_s3 = cheb46.s3
+
+
+def _stop_rule_four(window=4):
+    """The same rule over four rounds instead of three. All four compiled a new
+    corpus document, so the verdict cannot move."""
+    return _true_stop_rule(4)
+
+
+_true_position = ladder45.position
+_true_meanings = ladder45.hypothesis_meanings
+_true_stop_rule = ladder45.stop_rule
+_true_class_density = cheb46.the_class_and_density
+
+
+def _position_C2():
+    """The rung claimed one higher than anything computed supports."""
+    d = _true_position()
+    d["C2"] = dict(d["C2"], reached=True)
+    d["honest_rung"] = "C2"
+    return d
+
+
+def _h1_executable():
+    """H1 relabelled executable, which makes C1 read as complete while nothing
+    in the tree computes the niveau-2 argument."""
+    d = _true_meanings()
+    d["rows"] = [dict(r, executable_here=True) if r["hypothesis"] == "H1" else r
+                 for r in d["rows"]]
+    d["executable"] = [r["hypothesis"] for r in d["rows"]]
+    d["cited"] = []
+    d["C1_reached"] = True
+    return d
+
+
+def _stop_rule_stale(window=3):
+    """The verdict kept while the evidence for it is removed."""
+    d = _true_stop_rule(window)
+    d["last_three"] = [dict(r, is_new=False) for r in d["last_three"]]
+    d["each_of_the_last_three_compiled_a_new_document"] = False
+    d["rule_triggered"] = False
+    return d
+
+
+def _always_inside(m, n):
+    """Every quadratic field declared a subfield of the cyclotomic one, which
+    collapses [K:Q] from 16 to 8 because sqrt 29 stops needing adjoining."""
+    d = cheb46.quadratic_discriminant(m)
+    return {"m": m, "discriminant": d, "abs": abs(d), "n": n,
+            "divides": True, "inside": True}
+
+
+def _class_by_transposition():
+    """The support condition read as a transposition instead of a 3-cycle: sign
+    -1, nontrivial on F_0, incompatible with the identity on K."""
+    d = dict(_true_class_density())
+    d["compatible"] = False
+    d["transposition_acts_trivially_on_F0"] = True
+    d["class_size"] = 3
+    d["delta"] = "1/16"
+    d["delta_is_one_over_24"] = False
+    return d
+
+
+def _all_subgroups(group):
+    """Every subgroup counted, normal or not. S_3's three order-2 subgroups are
+    not normal, so the 'unique nontrivial proper' step stops holding."""
+    import itertools as _it
+    out = []
+    ident = tuple(range(3))
+    for r in range(1, len(group) + 1):
+        for sub in _it.combinations(group, r):
+            ss = set(sub)
+            if ident not in ss:
+                continue
+            if all(cheb46.compose(a, b) in ss for a in ss for b in ss):
+                out.append(sorted(ss))
+    return out
 
 
 _true_p_ram = fin43.p_ram

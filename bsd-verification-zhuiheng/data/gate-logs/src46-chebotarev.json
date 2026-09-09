@@ -1,0 +1,117 @@
+{
+  "gate": "src46 — 25_Chebotarev_Referee_Audit, run",
+  "source": "25_Chebotarev_Referee_Audit",
+  "the_cubic": {
+    "cubic": [
+      1,
+      1,
+      8,
+      -16
+    ],
+    "discriminant": -11136,
+    "factorisation_check": true,
+    "rational_roots": [],
+    "irreducible": true,
+    "discriminant_is_a_square": false,
+    "galois_group": "S_3",
+    "squarefree_part": -174,
+    "F0": "Q(sqrt -174)"
+  },
+  "the_fields": {
+    "F0_squarefree": -174,
+    "factors_as": "-174 = -6 x 29",
+    "factorisation_holds": true,
+    "sqrt_minus_6_in_cyclotomic_24": {
+      "m": -6,
+      "discriminant": -24,
+      "abs": 24,
+      "n": 24,
+      "divides": true,
+      "inside": true
+    },
+    "sqrt_29_in_cyclotomic_24": {
+      "m": 29,
+      "discriminant": 29,
+      "abs": 29,
+      "n": 24,
+      "divides": false,
+      "inside": false
+    },
+    "F0_in_cyclotomic_24": {
+      "m": -174,
+      "discriminant": -696,
+      "abs": 696,
+      "n": 24,
+      "divides": false,
+      "inside": false
+    },
+    "phi_24": 8,
+    "degree_K": 16,
+    "degree_K_is_16": true,
+    "F0_inside_K": true,
+    "why_F0_inside_K": "sqrt -174 = sqrt -6 * sqrt 29; the first is in Q(zeta_24) and the second is adjoined, so the product is in K — while F_0 itself is NOT in Q(zeta_24), its discriminant being -696",
+    "an_observation": "|disc(F_0)| = 696 equals the conductor 696. The odd part matching is structural — the 2-division field ramifies only at bad primes — but the 2-part agreeing is not explained by anything in this tree, and is recorded as an observation"
+  },
+  "the_intersection": {
+    "group": "S_3",
+    "order": 6,
+    "normal_subgroup_orders": [
+      1,
+      3,
+      6
+    ],
+    "galois_subfields_of_L": [
+      "degree 6",
+      "degree 2",
+      "degree 1"
+    ],
+    "unique_nontrivial_proper_normal_subgroup": true,
+    "its_order": 3,
+    "so_L_has_one_nontrivial_proper_Galois_subfield": true,
+    "its_degree": 2,
+    "K_is_abelian": true,
+    "why": "K = Q(zeta_24, sqrt 29) is a compositum of abelian extensions, so L ∩ K is abelian and Galois over Q, hence contained in the unique degree-2 one; and F_0 is inside K, so the intersection is exactly F_0"
+  },
+  "the_class_and_density": {
+    "three_cycle": [
+      1,
+      2,
+      0
+    ],
+    "sign": 1,
+    "acts_trivially_on_F0": true,
+    "class_size": 2,
+    "transposition": [
+      0,
+      2,
+      1
+    ],
+    "transposition_sign": -1,
+    "transposition_acts_trivially_on_F0": false,
+    "transposition_class_size": 3,
+    "compatible": true,
+    "incompatible_alternative_density": 0,
+    "why_both_are_shown": "the class is non-empty only because the two conditions agree on F_0. The transposition shows what incompatibility looks like: density 0",
+    "degrees": {
+      "L": 6,
+      "K": 16,
+      "F0": 2,
+      "LK": 48
+    },
+    "degree_LK_is_48": true,
+    "delta": "1/24",
+    "delta_float": 0.041666666666666664,
+    "delta_is_one_over_24": true
+  },
+  "cross_checks": {
+    "RUN_018_formula": "delta = e_E / (3 [K_E:Q]) = 2 / (3 x 16)",
+    "RUN_018_value": "1/24",
+    "agrees_with_RUN_018": true,
+    "RUN_009_measurement": "0.999 x 1/24 over primes below 2x10^7",
+    "RUN_009_relative": 0.999,
+    "within_one_percent": true,
+    "three_routes_one_number": true
+  },
+  "headline": "every step of `25`'s derivation is computed: `f₂` irreducible with non-square discriminant -11136, `F₀ = Q(√−174)`, `[K:Q] = 16`, `L ∩ K = F₀` from S₃'s single nontrivial proper normal subgroup, `[LK:Q] = 48`, class size 2, and `δ = 1/24`. The compatibility that makes the class non-empty is shown against a transposition, where it fails and the density would be 0",
+  "ok": true
+}

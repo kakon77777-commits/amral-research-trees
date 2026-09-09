@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-042:
-  every gate is drilled — `src00`–`src10` and `src12`–`src44`, 168 defects, 168
-  caught by the named check, 30 controls undisturbed, over 70 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-044:
+  every gate is drilled — `src00`–`src10` and `src12`–`src46`, 176 defects, 176
+  caught by the named check, 32 controls undisturbed, over 72 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -145,6 +145,8 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [040](./reports/RUN-040-ODD-ADDITIVE-BARRIER.md) | `01`'s odd-additive period barrier | `src42` | empty for the base (its only additive prime is 2); each member meets it at exactly `q`, where the twist **forces** `(v(c₄), v(c₆), v(Δ)) = (2,3,6)` — Kodaira `I₀*`, never II/III/IV — so `01`'s condition holds 19 of 19; the excluded types are **constructed** and the condition fails at each; `p ∤ c` is the weaker piece RUN-039's `c_E = 1` was avoiding |
 | [041](./reports/RUN-041-FINITE-EXCEPTIONAL-PRIMES.md) | Phase 2's mother problem, with all three sets computed | `src43` | `P_red = ∅` **universally** (Mazur + RUN-031 + RUN-036), `P_ram = ∅` by the document's formula, `P_loc` **not** empty and not stopped — so `04`'s criterion is **not achieved for all odd `p`**, blocked by `P_loc`; the family theorem does not need it, the blocking primes being ordinary and computed **disjoint** from the FW branch; and `04`'s own warning that its `P_ram` formula is a heuristic turns out **exact** — it misses precisely the `ℓ ≠ p` clause RUN-037 found |
 | [042](./reports/RUN-042-BASE-CERTIFICATE-COMPARE.md) | the corpus's own base certificate, row by row | `src44` | **22 rows: 17 recomputed here, all agree; 5 marked not computable rather than scored**; and the 2-division cubic needed comparing by **square class** — `15`'s `disc = −11136` and RUN-036's `−45,613,056` differ by `64²`, so a value comparison would have reported a disagreement between two correct models; the document's refusal of the circular `Ш` inference is **read from the file**, not assumed |
+| [043](./reports/RUN-043-CLAIM-LADDER-POSITION.md) | this line's own position on `07`'s claim ladder | `src45` | **C1, and partial** — H2 and H3 have exact executable meaning here, **H1 is cited**, and **C2 is not reached at all**: this arm checks residual hypotheses and cites the theorem that consumes them, and reporting higher would be `07`'s own fifth forbidden upgrade. All five forbidden-upgrade guards audited **against the archived logs, not the prose**; the three-round stop rule **not triggered**; 42 of 42 reports carry an explicit limits section |
+| [044](./reports/RUN-044-CHEBOTAREV-AUDIT.md) | `25`'s density derivation, every field-theoretic step | `src46` | `disc(f₂) = −11136`, `F₀ = Q(√−174)`, `Q(√−6) ⊂ Q(ζ₂₄)` but `Q(√29)` not, `[K:Q] = 16`, `S₃`'s single nontrivial proper normal subgroup, `[LK:Q] = 48`, class size 2, **`δ = 1/24`** — and the compatibility is shown **against a transposition, where it fails and the density would be 0**. Three routes to `1/24`: this one, RUN-018's `e_E/(3[K_E:Q])`, RUN-009's measurement |
 
 ## Layout
 
