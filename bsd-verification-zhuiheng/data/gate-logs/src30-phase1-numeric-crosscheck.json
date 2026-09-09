@@ -1,0 +1,441 @@
+{
+  "gate": "src30 — Phase 1's stated numbers against this tree's computed ones",
+  "documents": 25,
+  "gate_logs_read": 29,
+  "distinct_integers_in_our_logs": 343,
+  "counts": {
+    "occurrences_in_the_documents": 57,
+    "distinct_values": 23,
+    "confirmed_occurrences": 38,
+    "confirmed_distinct": 15,
+    "absent_occurrences": 19,
+    "absent_distinct": 8,
+    "malformed": 1,
+    "masked_as_sha_or_curve_label": 32
+  },
+  "confirmed_values": [
+    247391,
+    40749,
+    39394,
+    36687,
+    31250,
+    21306,
+    10000,
+    5437,
+    4062,
+    2707,
+    2026,
+    1899,
+    1353,
+    1233,
+    1000
+  ],
+  "absent_values": [
+    500000,
+    293482,
+    53404,
+    46091,
+    24785,
+    4064,
+    2024,
+    1355
+  ],
+  "absent_by_document": {
+    "V0_5_EXACT_CENSUS_REPORT.md": 8,
+    "15_Fresh_Algorithm2_Semantic_Replay.md": 3,
+    "11_500K_One_Commit_Global_Impact.md": 2,
+    "16_Phase1_Closure_and_Phase2_Interface.md": 2,
+    "00_Phase1_Consensus.md": 1,
+    "04_500K_Preflight.md": 1,
+    "04_Algorithm1_Environment_and_Gaps.md": 1,
+    "13_500K_Twist_Output_NonMonotonicity.md": 1
+  },
+  "absent_rows": [
+    {
+      "document": "00_Phase1_Consensus.md",
+      "written": "500000",
+      "line": 120,
+      "context": "； 3. 2-descent pass/fail certificate； 4. 官方 12 曲線與 twist JSON 完整 diff； 5. 再擴到 conductor $<500000$。",
+      "value": 500000,
+      "in_our_logs": false
+    },
+    {
+      "document": "04_500K_Preflight.md",
+      "written": "500000",
+      "line": 11,
+      "context": "y 13條 first-failure replay； 4. discrepancy four exact rejection replay； 5. 才跑 conductor `<500000`。 500K run必須輸出： ```text passed.csv failed.csv unknown.csv predicate_trace",
+      "value": 500000,
+      "in_our_logs": false
+    },
+    {
+      "document": "04_Algorithm1_Environment_and_Gaps.md",
+      "written": "500000",
+      "line": 23,
+      "context": "-- # 本環境未完成 本輪沒有： - 連線本地 LMFDB PostgreSQL； - 執行 Sage； - 執行 2-descent； - 重掃 conductor $<500000$； - 獨立證明官方 36,687 curve count。 因此不能寫： ```text Full Algorithm 1 independently",
+      "value": 500000,
+      "in_our_logs": false
+    },
+    {
+      "document": "11_500K_One_Commit_Global_Impact.md",
+      "written": "4064",
+      "line": 45,
+      "context": "5686\\%. $$ --- ## 2. One-commit effect Git compare： ```text ec_labels_500k.txt +2 / -4064 ``` 同一個 commit 的 Algorithm1 predicate change是單調收緊。 輸出 writer 未改，與 `<150` 文件相同，兩個",
+      "value": 4064,
+      "in_our_logs": false
+    },
+    {
+      "document": "11_500K_One_Commit_Global_Impact.md",
+      "written": "4064",
+      "line": 55,
+      "context": "change是單調收緊。 輸出 writer 未改，與 `<150` 文件相同，兩個變動 metadata行是 timestamp/runtime 類資訊。 因此： $$ 4064-2=4062 $$ 條 curve rows被移除。 重建舊 accepted count： $$ 40{,}749. $$ --- ## 3. Impact",
+      "value": 4064,
+      "in_our_logs": false
+    },
+    {
+      "document": "13_500K_Twist_Output_NonMonotonicity.md",
+      "written": "53404",
+      "line": 9,
+      "context": "utput Non-Monotonicity ## 觀測 同一 commit： ```text twists_of_ec_labels_500k.json +1899 / -53404 ``` 而 Algorithm1 base-curve set只會縮小。 如果 twist JSON只因 base curve被刪除而改變： $$ \\te",
+      "value": 53404,
+      "in_our_logs": false
+    },
+    {
+      "document": "15_Fresh_Algorithm2_Semantic_Replay.md",
+      "written": "1,355",
+      "line": 295,
+      "context": "r twist entries，因此本 replay不能在不重新執行 Algorithm2 common gates 的情況下重建其 OLD-source output。 但這 1,355 curves全部已被 CURRENT Algorithm1 strict isogeny gate排除。 所以對**當前 theorem-qualif",
+      "value": 1355,
+      "in_our_logs": false
+    },
+    {
+      "document": "15_Fresh_Algorithm2_Semantic_Replay.md",
+      "written": "1,355",
+      "line": 305,
+      "context": "**當前 theorem-qualified universe**： $$ \\boxed{ \\text{stable semantic replay已閉合。} } $$ 補那 1,355 條只具有歷史重建價值，不是 current BSD research 的必要依賴。 --- ## 9. 停止規則 此 reproduction line",
+      "value": 1355,
+      "in_our_logs": false
+    },
+    {
+      "document": "15_Fresh_Algorithm2_Semantic_Replay.md",
+      "written": "1,355",
+      "line": 326,
+      "context": "rce semantic replay} $$ 完成三層閉合。 若沒有新的 theorem discrepancy，繼續做： - 更細 Git archaeology； - 1,355 條歷史曲線重建； - 更多 formatting replay； 應標： `ENGINEERING / HISTORICAL ONLY` 而不是 BSD ",
+      "value": 1355,
+      "in_our_logs": false
+    },
+    {
+      "document": "16_Phase1_Closure_and_Phase2_Interface.md",
+      "written": "1,355",
+      "line": 26,
+      "context": "因此 Phase 1 可封頂： $$ \\boxed{ \\text{Banwait–Huang Reproduction = COMPLETE} } $$ ## 不值得再主攻 1,355 OLD-only curves的 historical twist reconstruction可做，但它們已不在 CURRENT Algorithm1 ",
+      "value": 1355,
+      "in_our_logs": false
+    },
+    {
+      "document": "16_Phase1_Closure_and_Phase2_Interface.md",
+      "written": "2024",
+      "line": 49,
+      "context": "/ p-parts； - leading coefficient。 ### Route B — Strong-BSD Coverage Expansion 問： > 能否用 2024–2026 已知 theorem把 Banwait–Huang Algorithm1 的 eligible family再擴張，而不是只重現原算法？ 這才開始",
+      "value": 2024,
+      "in_our_logs": false
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "1355",
+      "line": 14,
+      "context": "commit later contains `40749` base labels but retains the same twist JSON blob, leaving `1355` base labels without a materialized twist entry. The OLD commit also changed",
+      "value": 1355,
+      "in_our_logs": false
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "1355",
+      "line": 20,
+      "context": "ut artifact, not evidence of a fresh end-to-end execution of the OLD source tree. Those `1355` labels are listed in `old_base_curves_missing_from_old_twist_map.csv`; they",
+      "value": 1355,
+      "in_our_logs": false
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "24785",
+      "line": 69,
+      "context": "csv` (header only when zero). ## Q4 — Upstream Algorithm 1 twist removals `R_upstream = 24785` twist pairs. These are isolated in `twists_removed_by_upstream_base_deletio",
+      "value": 24785,
+      "in_our_logs": false
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "1355",
+      "line": 73,
+      "context": "orithm 2 removals. This is the exact number present in the archived OLD twist JSON. The `1355` OLD base curves absent from that JSON contribute no materialized pairs; the",
+      "value": 1355,
+      "in_our_logs": false
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "293482",
+      "line": 115,
+      "context": "from concentration. ## Q9 — Global accounting identity ```text old_total_twist_pairs = 293482 new_total_twist_pairs = 247391 lhs = 46091 upstream_removed = 24",
+      "value": 293482,
+      "in_our_logs": false
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "46091",
+      "line": 117,
+      "context": "xt old_total_twist_pairs = 293482 new_total_twist_pairs = 247391 lhs = 46091 upstream_removed = 24785 stable_removed = 21306 stable_added = 0",
+      "value": 46091,
+      "in_our_logs": false
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "24785",
+      "line": 118,
+      "context": "82 new_total_twist_pairs = 247391 lhs = 46091 upstream_removed = 24785 stable_removed = 21306 stable_added = 0 newbase_added = 0 rhs",
+      "value": 24785,
+      "in_our_logs": false
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "46091",
+      "line": 122,
+      "context": "= 21306 stable_added = 0 newbase_added = 0 rhs = 46091 accounting identity = PASS ``` ## Priority cases ### Top 10 shrink | curve | remove",
+      "value": 46091,
+      "in_our_logs": false
+    }
+  ],
+  "malformed_rows": [
+    {
+      "document": "00_Phase1_Consensus.md",
+      "written": "1,185,265,305,745,785,905",
+      "line": 55,
+      "context": "ch $$ 46a1: \\quad E=[1,-1,0,-10,-12], \\qquad N=46. $$ 在： $$ 1\\le d\\le1000 $$ 得到： $$ [1,185,265,305,745,785,905]. $$ ## Zha16 branch $$ 106d1: \\quad E=[1,1,0,-27,-67], \\qq",
+      "why": "19 digits — a run-together table column, not a count"
+    }
+  ],
+  "masked_rows": [
+    {
+      "document": "07_One_Commit_Semantic_Autopsy.md",
+      "written": "0489",
+      "line": 7,
+      "masked_by": "1a0489c3c3099dd0c248624e6621df73ae8f0d43"
+    },
+    {
+      "document": "07_One_Commit_Semantic_Autopsy.md",
+      "written": "3099",
+      "line": 7,
+      "masked_by": "1a0489c3c3099dd0c248624e6621df73ae8f0d43"
+    },
+    {
+      "document": "07_One_Commit_Semantic_Autopsy.md",
+      "written": "248624",
+      "line": 7,
+      "masked_by": "1a0489c3c3099dd0c248624e6621df73ae8f0d43"
+    },
+    {
+      "document": "07_One_Commit_Semantic_Autopsy.md",
+      "written": "6621",
+      "line": 7,
+      "masked_by": "1a0489c3c3099dd0c248624e6621df73ae8f0d43"
+    },
+    {
+      "document": "07_One_Commit_Semantic_Autopsy.md",
+      "written": "0383",
+      "line": 11,
+      "masked_by": "31fae20c8df3f1f0383f41112b914d4995d5809d"
+    },
+    {
+      "document": "07_One_Commit_Semantic_Autopsy.md",
+      "written": "41112",
+      "line": 11,
+      "masked_by": "31fae20c8df3f1f0383f41112b914d4995d5809d"
+    },
+    {
+      "document": "07_One_Commit_Semantic_Autopsy.md",
+      "written": "4995",
+      "line": 11,
+      "masked_by": "31fae20c8df3f1f0383f41112b914d4995d5809d"
+    },
+    {
+      "document": "07_One_Commit_Semantic_Autopsy.md",
+      "written": "5809",
+      "line": 11,
+      "masked_by": "31fae20c8df3f1f0383f41112b914d4995d5809d"
+    },
+    {
+      "document": "09_Algorithm2_Twist_Semantic_Diff.md",
+      "written": "3,138",
+      "line": 59,
+      "masked_by": "(3,138)"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "0489",
+      "line": 5,
+      "masked_by": "1a0489c3c3099dd0c248624e6621df73ae8f0d43"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "3099",
+      "line": 5,
+      "masked_by": "1a0489c3c3099dd0c248624e6621df73ae8f0d43"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "248624",
+      "line": 5,
+      "masked_by": "1a0489c3c3099dd0c248624e6621df73ae8f0d43"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "6621",
+      "line": 5,
+      "masked_by": "1a0489c3c3099dd0c248624e6621df73ae8f0d43"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "0383",
+      "line": 6,
+      "masked_by": "31fae20c8df3f1f0383f41112b914d4995d5809d"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "41112",
+      "line": 6,
+      "masked_by": "31fae20c8df3f1f0383f41112b914d4995d5809d"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "4995",
+      "line": 6,
+      "masked_by": "31fae20c8df3f1f0383f41112b914d4995d5809d"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "5809",
+      "line": 6,
+      "masked_by": "31fae20c8df3f1f0383f41112b914d4995d5809d"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "72867942",
+      "line": 11,
+      "masked_by": "72867942accf94b9513857a2c0bae3895af8e9bc"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "9513857",
+      "line": 11,
+      "masked_by": "72867942accf94b9513857a2c0bae3895af8e9bc"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "3895",
+      "line": 11,
+      "masked_by": "72867942accf94b9513857a2c0bae3895af8e9bc"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "1631",
+      "line": 61,
+      "masked_by": "25cec5ecfec8b9f016eb1631ac633194c2bed39f"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "633194",
+      "line": 61,
+      "masked_by": "25cec5ecfec8b9f016eb1631ac633194c2bed39f"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "66166",
+      "line": 132,
+      "masked_by": "66166b1"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "104474",
+      "line": 133,
+      "masked_by": "104474a1"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "156854",
+      "line": 134,
+      "masked_by": "156854b1"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "302606",
+      "line": 135,
+      "masked_by": "302606a1"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "10349",
+      "line": 136,
+      "masked_by": "10349a1"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "39731",
+      "line": 137,
+      "masked_by": "39731a1"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "41869",
+      "line": 138,
+      "masked_by": "41869a1"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "62102",
+      "line": 139,
+      "masked_by": "62102a1"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "69074",
+      "line": 140,
+      "masked_by": "69074a1"
+    },
+    {
+      "document": "V0_5_EXACT_CENSUS_REPORT.md",
+      "written": "77579",
+      "line": 141,
+      "masked_by": "77579b1"
+    }
+  ],
+  "why_masking_is_reported": "the first version of this gate reported 30 absent values, most of them digit runs inside a git SHA or an LMFDB curve label. The four rounds before this one produced silent UNDER-reports; that was the same fault pointed the other way. Both directions are visible here",
+  "what_a_confirmation_is_worth": "a coincidence of integers, not a proof. Two different quantities can share a value, so the contexts are kept and the report reads the ones that carry weight rather than counting them all as agreement",
+  "q9_accounting_identity": {
+    "stated": {
+      "old_total_twist_pairs": 293482,
+      "new_total_twist_pairs": 247391,
+      "lhs": 46091,
+      "upstream_removed": 24785,
+      "stable_removed": 21306,
+      "stable_added": 0,
+      "newbase_added": 0,
+      "rhs": 46091
+    },
+    "lhs_recomputed": 46091,
+    "lhs_agrees": true,
+    "rhs_recomputed": 46091,
+    "rhs_agrees": true,
+    "identity_holds": true,
+    "inputs_this_tree_computed": {
+      "new_total_twist_pairs": "RUN-012 rebuilt all 247,391 twist pairs",
+      "stable_removed": "RUN-012: 21,306 removed at entry level",
+      "stable_added": "RUN-012: 0 added",
+      "newbase_added": "RUN-012: the expansion branch is empty over the whole domain"
+    },
+    "inputs_this_tree_has_not": {
+      "old_total_twist_pairs": "no round has counted the pre-change twist census",
+      "upstream_removed": "no round has counted Algorithm 1's own twist removals"
+    },
+    "reading": "the identity is correct arithmetic and four of its inputs are independently ours. The two that are not are tied by the identity, so one measurement would close both — that is the cheapest open item this round found"
+  },
+  "ok": true
+}

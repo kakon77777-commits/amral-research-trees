@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-027:
-  every gate is drilled — `src00`–`src10` and `src12`–`src29`, 116 defects, 116
-  caught by the named check, 19 controls undisturbed, over 55 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-028:
+  every gate is drilled — `src00`–`src10` and `src12`–`src30`, 118 defects, 118
+  caught by the named check, 20 controls undisturbed, over 56 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -130,6 +130,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [025](./reports/RUN-025-AGENT-EXPERIMENT-AUDIT.md) | the Phase 1 agent experiment against its own §6/§7 conditions | `src27` | the freeze condition 「將 analytic Ш 當 actual Ш」 is **not triggered** — 36 numeric Ш claims, all labelled, 5 of them **in the notation itself**; and the scanner needed **three corrections** before it measured anything |
 | [026](./reports/RUN-026-RANK1-BSD-IDENTITY.md) | the rank-1 BSD identity, and this tree's height extrapolation | `src28`, `src20` | the identity closes at `37a1` and `43a1` with **every term computed here**, ratios `1.0000000017` and `1.0000000009`; and `canonical_height` was returning the **worst** of its three extrapolation levels, which corrects RUN-017's regulator precision by two orders of magnitude |
 | [027](./reports/RUN-027-SWEEP-COVERAGE.md) | this line's own progress, measured | `src29` | of the 85 documents **21 are the subject of a round, 8 are cited, 56 are not mentioned anywhere**; **Phase 1 has 0 subjects** although six rounds verified its arithmetic — they named the artefacts, never the documents |
+| [028](./reports/RUN-028-PHASE1-NUMERIC-CROSSCHECK.md) | Phase 1's stated arithmetic against this tree's own | `src30` | 15 of 23 stated integers appear in our gate logs; **§Q9's accounting identity checks out and four of its six inputs are ours**, the two that are not being tied so one measurement closes both; and the round's own scanner failed in **both** directions |
 
 ## Layout
 

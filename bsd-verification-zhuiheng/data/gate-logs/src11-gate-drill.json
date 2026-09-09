@@ -77,7 +77,8 @@
     "rank1-leading-derivative": true,
     "rank1-identity": true,
     "height-level-selection": true,
-    "sweep-coverage": true
+    "sweep-coverage": true,
+    "phase1-numeric-crosscheck": true
   },
   "defects": [
     {
@@ -928,6 +929,24 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the git-SHA mask stops matching",
+      "kind": "code",
+      "named_check": "phase1-numeric-crosscheck",
+      "checks_that_went_red": [
+        "phase1-numeric-crosscheck"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "Q9's stated upstream_removed is corrupted",
+      "kind": "code",
+      "named_check": "phase1-numeric-crosscheck",
+      "checks_that_went_red": [
+        "phase1-numeric-crosscheck"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "x-only duplication drops the -2*b6*x term",
       "kind": "code",
       "named_check": "regulator",
@@ -1294,6 +1313,11 @@
       "undisturbed": true
     },
     {
+      "control": "gate 30's curve-label mask disabled, which the SHA mask makes redundant",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
       "control": "gate 13's factor table rebuilt with the same contents",
       "checks_that_went_red": [],
       "undisturbed": true
@@ -1325,11 +1349,11 @@
     }
   ],
   "totals": {
-    "defects": 116,
-    "caught_by_the_named_check": 116,
+    "defects": 118,
+    "caught_by_the_named_check": 118,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 19,
+    "controls": 20,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

@@ -116,6 +116,7 @@ import src03_multiplicity_nogo as nogo03                   # noqa: E402
 import src27_agent_experiment_audit as agent27            # noqa: E402
 import src28_rank1_bsd_identity as r1bsd                  # noqa: E402
 import src29_sweep_coverage as cov29                      # noqa: E402
+import src30_phase1_numeric_crosscheck as p1num           # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1493,6 +1494,44 @@ def check_sweep_coverage() -> bool:
     return len(link_only) <= 17 and touched >= 29
 
 
+def check_phase1_numeric_crosscheck() -> bool:
+    """Phase 1's stated numbers against ours, and the two masks that make the
+    comparison mean anything.
+
+    The masks are the check's substance. Without them the gate reported 30
+    values with no counterpart, of which most were digit runs inside a git SHA
+    or an LMFDB curve label — a loud over-report, where this tree's four
+    previous scanning faults were silent under-reports. Both directions come
+    from the same root, so both are pinned: a SHA and a label must contribute no
+    count, and the masked list must not be empty either, since a mask that
+    matches nothing is a filter that is not running.
+    """
+    good, malformed, masked = p1num.document_numbers()
+    if not good or not masked:
+        return False
+    if len(masked) < 20:                                 # the corpus has ~31
+        return False
+    ours = p1num.our_numbers()
+    absent = {r["value"] for r in good if r["value"] not in ours}
+    if len(absent) > 12:                                 # 9 today; a mask that
+        return False                                     # stopped working blows past this
+    # the masks themselves, on strings that are only ever one or the other
+    sha = "1a0489c3c3099dd0c248624e6621df73ae8f0d43"
+    if not p1num._masked_spans(sha):
+        return False
+    if not p1num._masked_spans("| 302606a1 | 15 | 0 |"):
+        return False
+    if p1num._masked_spans("old_total_twist_pairs = 293482"):
+        return False                                     # a real count, unmasked
+    # the Q9 accounting identity, and its sensitivity to one corrupted input
+    q = p1num.q9_accounting_identity()
+    if not (q["identity_holds"] and q["lhs_agrees"] and q["rhs_agrees"]):
+        return False
+    if q["lhs_recomputed"] != 46091 or q["rhs_recomputed"] != 46091:
+        return False
+    return len(q["inputs_this_tree_computed"]) == 4
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -1549,6 +1588,7 @@ CHECKS = {
     "rank1-identity": check_rank1_identity,
     "height-level-selection": check_height_level_selection,
     "sweep-coverage": check_sweep_coverage,
+    "phase1-numeric-crosscheck": check_phase1_numeric_crosscheck,
 }
 
 
@@ -1840,6 +1880,12 @@ DEFECTS = [
      "sweep-coverage", lambda: patch(cov29, "aliases", _aliases_no_doc_nn)),
     ("coverage reads a report's body before its subject line", "code",
      "sweep-coverage", lambda: patch(cov29, "classify", _classify_body_first)),
+    ("the git-SHA mask stops matching", "code", "phase1-numeric-crosscheck",
+     lambda: patch(p1num, "SHA_LIKE", re.compile(r"(?!x)x"))),
+    ("Q9's stated upstream_removed is corrupted", "code",
+     "phase1-numeric-crosscheck",
+     lambda: patch(p1num, "Q9_STATED", dict(p1num.Q9_STATED,
+                                            upstream_removed=24875))),
 
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
@@ -1996,6 +2042,16 @@ CONTROLS = [
     # Worth writing down, because a reader of that pattern would guess wrong.
     ("the ledger row separator relaxed to one space, which the name class makes a no-op",
      lambda: patch(led24, "ROW", _ROW_SINGLE_SPACE)),
+    # A sixth control, measured at exactly zero. Gate 30 masks two kinds of
+    # digit run: a git SHA and an LMFDB curve label. On this corpus the label
+    # mask is redundant — every label in the Phase 1 documents (66166b1,
+    # 302606a1, 156854b1) is a valid hexadecimal string, so the SHA pattern
+    # already covers it, and the number of occurrences the label mask catches
+    # ALONE is 0. It is kept because an isogeny class letter past `f` would
+    # break that coincidence, and it is recorded here rather than left in the
+    # defect list as coverage this corpus cannot provide.
+    ("gate 30's curve-label mask disabled, which the SHA mask makes redundant",
+     lambda: patch(p1num, "CURVE_LABEL", re.compile(r"(?!x)x"))),
     ("gate 13's factor table rebuilt with the same contents",
      lambda: patch(alg2, "FACTORS", dict(alg2.FACTORS))),
     # Another control on purpose: (n−1)² ≡ 1² (mod n), so the last residue of
