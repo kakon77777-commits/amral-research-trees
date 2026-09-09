@@ -45,7 +45,9 @@
     "src43_finite_exceptional_primes",
     "src44_base_certificate_compare",
     "src45_claim_ladder_position",
-    "src46_chebotarev_audit"
+    "src46_chebotarev_audit",
+    "src47_fw_hypothesis_compiler",
+    "src48_h2_chain_and_h3_dispute"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -125,7 +127,9 @@
     "finite-exceptional": true,
     "base-certificate": true,
     "claim-ladder": true,
-    "chebotarev-audit": true
+    "chebotarev-audit": true,
+    "fw-compiler": true,
+    "h2-chain": true
   },
   "defects": [
     {
@@ -1042,6 +1046,78 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "Level 2 reports the quantifier compression achieved",
+      "kind": "code",
+      "named_check": "fw-compiler",
+      "checks_that_went_red": [
+        "fw-compiler"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the H3 rows stop naming which formulation decided them",
+      "kind": "code",
+      "named_check": "fw-compiler",
+      "checks_that_went_red": [
+        "fw-compiler"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "H1 is reported PASS beyond the range RUN-036 certified",
+      "kind": "code",
+      "named_check": "fw-compiler",
+      "checks_that_went_red": [
+        "fw-compiler"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the certificate emits keys the specification does not have",
+      "kind": "code",
+      "named_check": "fw-compiler",
+      "checks_that_went_red": [
+        "fw-compiler"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the 03-08 equivalence is asserted without exhausting anything",
+      "kind": "code",
+      "named_check": "h2-chain",
+      "checks_that_went_red": [
+        "h2-chain"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "10's congruence is called complete at p = 3 as well",
+      "kind": "code",
+      "named_check": "h2-chain",
+      "checks_that_went_red": [
+        "h2-chain"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the H3 disagreement is reported resolved",
+      "kind": "code",
+      "named_check": "h2-chain",
+      "checks_that_went_red": [
+        "h2-chain"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "02's cautionary line is reported absent, so there is no disagreement",
+      "kind": "code",
+      "named_check": "h2-chain",
+      "checks_that_went_red": [
+        "h2-chain"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "the ladder position is reported as C2",
       "kind": "code",
       "named_check": "claim-ladder",
@@ -1264,7 +1340,8 @@
       "checks_that_went_red": [
         "fw-h3-compiler",
         "derived-bridge",
-        "finite-exceptional"
+        "finite-exceptional",
+        "fw-compiler"
       ],
       "caught_by_the_named_check": true
     },
@@ -1275,7 +1352,8 @@
       "checks_that_went_red": [
         "fw-h3-compiler",
         "derived-bridge",
-        "finite-exceptional"
+        "finite-exceptional",
+        "fw-compiler"
       ],
       "caught_by_the_named_check": true
     },
@@ -1426,7 +1504,8 @@
         "fw-h3-compiler",
         "fw-h2-ordinary",
         "derived-bridge",
-        "finite-exceptional"
+        "finite-exceptional",
+        "fw-compiler"
       ],
       "caught_by_the_named_check": true
     },
@@ -1851,7 +1930,8 @@
         "twist-bridge",
         "fw-h2-ordinary",
         "derived-bridge",
-        "base-certificate"
+        "base-certificate",
+        "fw-compiler"
       ],
       "caught_by_the_named_check": true
     },
@@ -1868,6 +1948,16 @@
     }
   ],
   "controls": [
+    {
+      "control": "the Level-1 bound raised from 200 to 260",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the character-group exhaustion widened from 40 to 55",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
     {
       "control": "the stop rule's window widened from three rounds to four",
       "checks_that_went_red": [],
@@ -2030,11 +2120,11 @@
     }
   ],
   "totals": {
-    "defects": 176,
-    "caught_by_the_named_check": 176,
+    "defects": 184,
+    "caught_by_the_named_check": 184,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 32,
+    "controls": 34,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

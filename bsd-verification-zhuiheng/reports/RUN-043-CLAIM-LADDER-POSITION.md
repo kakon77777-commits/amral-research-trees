@@ -9,6 +9,16 @@
 
 ---
 
+> **Correction note added at RUN-046.** One of the 176 defects in the drill this
+> round cites — *squarefree part drops the sign* — went red by raising a
+> `TypeError`, not by dropping a sign. Two drill helpers named `_true_squarefree`
+> had been bound to functions with different return types, and the later binding
+> shadowed the one that defect needed. **A defect that produces a traceback is
+> not a defect a check caught**, so one of the 176 was a crash-catch. The names
+> are repaired, the drill now refuses to run with any shadowed `_true_*` helper,
+> and RUN-046's run re-exercises that defect as a real catch. Every other figure
+> in this round stands.
+
 ## The ladder, and the honest rung
 
 | | | this line |

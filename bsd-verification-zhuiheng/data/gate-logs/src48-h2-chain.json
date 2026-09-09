@@ -1,0 +1,150 @@
+{
+  "gate": "src48 — the H2 chain, and the H3 disagreement",
+  "source": "03_FW_H2_Jordan_Holder_Lemma, 08_FW_Weight2_Exact_Translation",
+  "equivalence_03_08": {
+    "character_group_orders_exhausted": 40,
+    "pairs_checked": 22140,
+    "mismatches": 0,
+    "equivalent": true,
+    "counterexamples": [],
+    "shared_input": "lambda mu = omega, from det E[p] = chi_cyc — the Weil pairing, which both documents cite and neither this gate nor either document proves",
+    "why_exhaustive": "the two statements are algebra about a pair of characters with a fixed product; exhausting the finite case is a check, restating the derivation is not"
+  },
+  "ordinary_case_completeness": {
+    "rows": [
+      {
+        "p": 2,
+        "order_of_chi_cyc_on_inertia": 1,
+        "chi_cyc_squared_trivial_on_inertia": true,
+        "second_case_possible": true,
+        "10s_criterion_is_complete": false
+      },
+      {
+        "p": 3,
+        "order_of_chi_cyc_on_inertia": 2,
+        "chi_cyc_squared_trivial_on_inertia": true,
+        "second_case_possible": true,
+        "10s_criterion_is_complete": false
+      },
+      {
+        "p": 5,
+        "order_of_chi_cyc_on_inertia": 4,
+        "chi_cyc_squared_trivial_on_inertia": false,
+        "second_case_possible": false,
+        "10s_criterion_is_complete": true
+      },
+      {
+        "p": 7,
+        "order_of_chi_cyc_on_inertia": 6,
+        "chi_cyc_squared_trivial_on_inertia": false,
+        "second_case_possible": false,
+        "10s_criterion_is_complete": true
+      },
+      {
+        "p": 11,
+        "order_of_chi_cyc_on_inertia": 10,
+        "chi_cyc_squared_trivial_on_inertia": false,
+        "second_case_possible": false,
+        "10s_criterion_is_complete": true
+      },
+      {
+        "p": 13,
+        "order_of_chi_cyc_on_inertia": 12,
+        "chi_cyc_squared_trivial_on_inertia": false,
+        "second_case_possible": false,
+        "10s_criterion_is_complete": true
+      },
+      {
+        "p": 17,
+        "order_of_chi_cyc_on_inertia": 16,
+        "chi_cyc_squared_trivial_on_inertia": false,
+        "second_case_possible": false,
+        "10s_criterion_is_complete": true
+      },
+      {
+        "p": 19,
+        "order_of_chi_cyc_on_inertia": 18,
+        "chi_cyc_squared_trivial_on_inertia": false,
+        "second_case_possible": false,
+        "10s_criterion_is_complete": true
+      },
+      {
+        "p": 23,
+        "order_of_chi_cyc_on_inertia": 22,
+        "chi_cyc_squared_trivial_on_inertia": false,
+        "second_case_possible": false,
+        "10s_criterion_is_complete": true
+      }
+    ],
+    "primes_where_the_second_case_survives": [
+      2,
+      3
+    ],
+    "complete_for_every_p_at_least_5": true,
+    "the_exception_is_3": true,
+    "reading": "`10`'s a_p^2 = 1 (mod p) is the whole of H2 failure at every good ordinary p >= 5. At p = 3 it is not, which is the same prime `05` gives its own section and the same prime RUN-036 could not certify"
+  },
+  "the_chain": {
+    "links": [
+      {
+        "from": "08 (representation level)",
+        "to": "03 (Jordan–Hölder level)",
+        "status": "VERIFIED HERE",
+        "how": "exhausted over finite character groups"
+      },
+      {
+        "from": "03 (Jordan–Hölder level)",
+        "to": "10 (ordinary case)",
+        "status": "VERIFIED HERE, with its range",
+        "how": "the second JH case needs chi_cyc^2 unramified, impossible for p >= 5"
+      },
+      {
+        "from": "10 (ordinary case)",
+        "to": "RUN-038's predicate",
+        "status": "the corpus's own derivation, cited",
+        "how": "alpha-bar unramified with Frobenius value a_p mod p, so alpha-bar^2 = 1 is a_p^2 = 1 (mod p)"
+      },
+      {
+        "from": "Fouquet–Wan Theorem 1.7",
+        "to": "08",
+        "status": "CITED",
+        "how": "the theorem's forbidden local form; external to this tree"
+      }
+    ],
+    "verified_here": 2,
+    "cited": 2,
+    "note": "a chain is only as strong as its weakest link, and the weakest here is the theorem itself, which no round of this arm proves"
+  },
+  "the_h3_dispute": {
+    "02_says": "Fouquet–Wan 的 exact local condition 更細，不能直接把這一條當完整 H3",
+    "02_line_present": true,
+    "08_says": "FW-H3(E,p) <=> exists ell || N with the three conditions — boxed as an iff, under the title 'Exact Translation'",
+    "08_title_present": true,
+    "09_says": "the same three conditions, as the definition of FW-H3",
+    "09_present": true,
+    "the_three_conditions": [
+      "ell || N",
+      "E nonsplit multiplicative at ell",
+      "ell != p",
+      "p does not divide v_ell(Delta_min)"
+    ],
+    "08_and_09_state_the_same_conditions": true,
+    "two_of_three_treat_it_as_H3": true,
+    "the_disagreement_is_real": true,
+    "what_changes_under_each_reading": {
+      "under_08": "RUN-037's and RUN-039's H3 verdicts are verdicts on H3 itself, and RUN-037's gap at p = 29 is a gap in FW-H3 for this curve",
+      "under_02": "they are verdicts on a compilation, and the exact condition is unexamined at every prime",
+      "what_does_not_change": "no computed value. The criterion's verdicts, the witness ell = 29, and the failure at p = 29 are the same either way"
+    },
+    "affected_verdicts": {
+      "primes_tested": 77,
+      "criterion_fails_at": [
+        29
+      ]
+    },
+    "this_gate_does_not_resolve_it": true,
+    "why_not": "resolving it means reading Fouquet–Wan Theorem 1.7's exact local condition, which is an external theorem this arm does not hold. Naming the disagreement is what an independent arm can do; settling it is not"
+  },
+  "headline": "`03`'s Jordan–Hölder lemma and `08`'s ratio test are the same statement, verified over 22,140 character pairs with 0 mismatches; `10`'s single congruence is the whole of the condition at every good ordinary p >= 5, and NOT at p = 3, because chi_cyc^2 is unramified exactly when p - 1 divides 2. And the corpus disagrees with itself about H3: `02` forbids equating the divisibility criterion with it, `08` and `09` do exactly that. The disagreement is reported, not resolved",
+  "ok": true
+}

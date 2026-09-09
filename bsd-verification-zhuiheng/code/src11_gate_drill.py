@@ -133,6 +133,8 @@ import src43_finite_exceptional_primes as fin43           # noqa: E402
 import src44_base_certificate_compare as cmp44            # noqa: E402
 import src45_claim_ladder_position as ladder45            # noqa: E402
 import src46_chebotarev_audit as cheb46                   # noqa: E402
+import src47_fw_hypothesis_compiler as comp47             # noqa: E402
+import src48_h2_chain_and_h3_dispute as chain48           # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -2264,12 +2266,95 @@ def check_chebotarev_audit() -> bool:
 
 
 
+def check_fw_compiler() -> bool:
+    """`02_Fouquet_Wan_Hypothesis_Compiler`'s Level-1 certificate.
+
+    The keys must be exactly the ones `02` specifies — a compiler that invents
+    fields is not emitting the document's format. All three claim values must
+    occur: a compiler that only ever says FW_APPLICABLE has not been exercised,
+    and the rows that say otherwise are the ones carrying RUN-036's, RUN-037's
+    and RUN-038's findings. Level 2 must stay unachieved and emit the string the
+    document mandates for that state. And every H3 row must carry the
+    formulation it was decided under, `02`'s third prohibition being the one
+    this arm had to repair.
+    """
+    l1 = comp47.level1()
+    if not l1["rows"] or not l1["keys_match_the_specification"]:
+        return False
+    by_p = {r["p"]: r for r in l1["rows"]}
+    if by_p[3]["H1_absolute_irreducible"] != "UNKNOWN":
+        return False
+    if by_p[3]["H2_local_nondegenerate"] != "FAIL":
+        return False
+    if by_p[29]["H2_local_nondegenerate"] != "FAIL":
+        return False
+    if by_p[29]["H3_auxiliary_prime"] != "FAIL":
+        return False
+    if by_p[7]["H2_local_nondegenerate"] != "FAIL":
+        return False
+    if by_p[5]["claim"] != "FW_APPLICABLE":
+        return False
+    for v in ("FW_APPLICABLE", "FW_NOT_APPLICABLE", "UNKNOWN"):
+        if not l1["tally"].get(v):
+            return False
+    for d in l1["detail"]:
+        if not d["H3"].get("formulation"):
+            return False
+        if not d["H3"].get("gap_to_the_exact_condition"):
+            return False
+    l2 = comp47.level2()
+    if l2["achieved"] is not False:
+        return False
+    if l2["this_gate_outputs"] != "FW verified for tested primes":
+        return False
+    pr = comp47.prohibitions(l1)
+    return all(v["obeyed"] for k, v in pr.items() if isinstance(v, dict))
+
+
+def check_h2_chain() -> bool:
+    """The H2 chain's internal consistency and the H3 disagreement.
+
+    The equivalence must be EXHAUSTED, not asserted — a stand-in that reports
+    equivalence without checking pairs must turn this red. `10`'s single
+    congruence must come out complete for every good ordinary p >= 5 and NOT at
+    3, since that asymmetry is the finding. And the disagreement between `02` and
+    `08` must still be found in the files, and must still be reported unresolved:
+    a gate that quietly picked the reading flattering this arm's own earlier
+    verdicts would be doing the opposite of its job.
+    """
+    eq = chain48.equivalence_03_08()
+    if not eq["equivalent"] or eq["mismatches"]:
+        return False
+    if eq["pairs_checked"] < 10_000:
+        return False
+    oc = chain48.ordinary_case_completeness()
+    if not oc["complete_for_every_p_at_least_5"]:
+        return False
+    if not oc["the_exception_is_3"]:
+        return False
+    if oc["primes_where_the_second_case_survives"] != [2, 3]:
+        return False
+    ch = chain48.the_chain()
+    if ch["verified_here"] != 2 or ch["cited"] != 2:
+        return False
+    hd = chain48.the_h3_dispute()
+    if not hd["02_line_present"] or not hd["08_title_present"]:
+        return False
+    if not hd["the_disagreement_is_real"]:
+        return False
+    if not hd["08_and_09_state_the_same_conditions"]:
+        return False
+    return hd["this_gate_does_not_resolve_it"] is True
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
     net22, p5u, led24, cv25, r2bsd, agent27, r1bsd, cov29, p1num, q9, cert32,
     mazur33, refA34, gcd35, nogo36, bridge37, surj38, h3c39,
-    h2o40, brg41, bar42, fin43, cmp44, ladder45, cheb46))
+    h2o40, brg41, bar42, fin43, cmp44, ladder45, cheb46,
+    comp47, chain48))
 
 
 CHECKS = {
@@ -2345,6 +2430,8 @@ CHECKS = {
     "base-certificate": check_base_certificate,
     "claim-ladder": check_claim_ladder,
     "chebotarev-audit": check_chebotarev_audit,
+    "fw-compiler": check_fw_compiler,
+    "h2-chain": check_h2_chain,
 }
 
 
@@ -2649,6 +2736,24 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("Level 2 reports the quantifier compression achieved", "code",
+     "fw-compiler", lambda: patch(comp47, "level2", _level2_achieved)),
+    ("the H3 rows stop naming which formulation decided them", "code",
+     "fw-compiler", lambda: patch(comp47, "h3", _h3_unlabelled)),
+    ("H1 is reported PASS beyond the range RUN-036 certified", "code",
+     "fw-compiler", lambda: patch(comp47, "h1", _h1_always_pass)),
+    ("the certificate emits keys the specification does not have", "code",
+     "fw-compiler", lambda: patch(comp47, "level1", _level1_extra_keys)),
+    ("the 03-08 equivalence is asserted without exhausting anything", "code",
+     "h2-chain",
+     lambda: patch(chain48, "equivalence_03_08", _equivalence_asserted)),
+    ("10's congruence is called complete at p = 3 as well", "code", "h2-chain",
+     lambda: patch(chain48, "ordinary_case_completeness", _complete_at_3)),
+    ("the H3 disagreement is reported resolved", "code", "h2-chain",
+     lambda: patch(chain48, "the_h3_dispute", _dispute_resolved)),
+    ("02's cautionary line is reported absent, so there is no disagreement",
+     "code", "h2-chain",
+     lambda: patch(chain48, "the_h3_dispute", _dispute_absent)),
     ("the ladder position is reported as C2", "code", "claim-ladder",
      lambda: patch(ladder45, "position", _position_C2)),
     ("H1 is reported as executable here, so C1 reads as complete", "code",
@@ -2899,6 +3004,11 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("the Level-1 bound raised from 200 to 260",
+     lambda: patch(comp47, "level1", lambda bound=260: _true_level1(260))),
+    ("the character-group exhaustion widened from 40 to 55",
+     lambda: patch(chain48, "equivalence_03_08",
+                   lambda bound=55: _true_equivalence(55))),
     ("the stop rule's window widened from three rounds to four",
      lambda: patch(ladder45, "stop_rule", _stop_rule_four)),
     ("S3 enumerated in a different order, so the other 3-cycle is picked",
@@ -3102,6 +3212,71 @@ def _classify_body_first(doc, src):
             "subject_of": subj, "cited_in": body[:6], "named_in_gates": gates[:6]}
 
 
+_true_level1 = comp47.level1
+_true_level2 = comp47.level2
+_true_h1 = comp47.h1
+_true_comp47_h3 = comp47.h3
+_true_equivalence = chain48.equivalence_03_08
+_true_ordinary_complete = chain48.ordinary_case_completeness
+_true_dispute = chain48.the_h3_dispute
+
+
+def _level2_achieved():
+    d = dict(_true_level2())
+    d["achieved"] = True
+    d["this_gate_outputs"] = "P_E finite"
+    return d
+
+
+def _h3_unlabelled(p, w):
+    """The verdict kept, the formulation dropped — which is exactly the shape
+    RUN-037 and RUN-039 shipped before RUN-045 named it."""
+    d = dict(_true_comp47_h3(p, w))
+    d.pop("formulation", None)
+    d.pop("gap_to_the_exact_condition", None)
+    return d
+
+
+def _h1_always_pass(p, certified):
+    return {"verdict": "PASS", "basis": "computed_here",
+            "how": "asserted beyond the certified range"}
+
+
+def _level1_extra_keys(bound=comp47.P_BOUND):
+    d = dict(_true_level1(bound))
+    d["rows"] = [dict(r, confidence=0.99) for r in d["rows"]]
+    d["keys_match_the_specification"] = all(
+        tuple(r) == comp47.LEVEL1_KEYS for r in d["rows"])
+    return d
+
+
+def _equivalence_asserted(bound=chain48.ORDER_BOUND):
+    """Equivalence claimed with nothing exhausted."""
+    return {"character_group_orders_exhausted": 0, "pairs_checked": 0,
+            "mismatches": 0, "equivalent": True, "counterexamples": [],
+            "shared_input": "asserted", "why_exhaustive": "not exhausted"}
+
+
+def _complete_at_3(primes=chain48.RAMIFICATION_PRIMES):
+    d = dict(_true_ordinary_complete(primes))
+    d["primes_where_the_second_case_survives"] = [2]
+    d["the_exception_is_3"] = False
+    return d
+
+
+def _dispute_resolved():
+    d = dict(_true_dispute())
+    d["this_gate_does_not_resolve_it"] = False
+    return d
+
+
+def _dispute_absent():
+    d = dict(_true_dispute())
+    d["02_line_present"] = False
+    d["the_disagreement_is_real"] = False
+    return d
+
+
 _true_s3 = cheb46.s3
 
 
@@ -3187,7 +3362,7 @@ _true_p_red = fin43.p_red
 _true_p_loc = fin43.p_loc
 _true_routing = fin43.the_routing_answer
 _true_compare = cmp44.compare
-_true_squarefree = cmp44.squarefree
+_true_cmp44_squarefree = cmp44.squarefree
 
 
 def _p_ram_exact():
@@ -3723,14 +3898,14 @@ def _residue_without_inverse(q, p):
     return u.numerator % p
 
 
-_true_point_count = p5u.point_count
+_true_p5u_point_count = p5u.point_count
 _true_residue_hom = p5u.residue_homomorphism
 
 
 def _count_without_O(a, p):
     """#E(F_p) without the point at infinity. Bound to the original, not the
     patched attribute — see _mul_drops_last_add."""
-    return _true_point_count(a, p) - 1
+    return _true_p5u_point_count(a, p) - 1
 
 
 def _phi_wrong_sign(A, n11):
@@ -4244,6 +4419,28 @@ def _npoints_no_infinity(ell):
     return total
 
 
+def _assert_no_shadowed_helpers() -> list[str]:
+    """A flat `_true_*` namespace can be shadowed silently, and was.
+
+    `_true_squarefree` was bound to two different functions with different
+    return types, so a defect that meant to drop a sign raised a TypeError
+    instead — a crash counted as a catch, which is the one thing this drill must
+    not do. `_true_point_count` was bound to two independently written point
+    counters that happen to agree, so the defect using it computed the right
+    number through the wrong module.
+
+    Both are repaired by name. This guard is the structural part: the drill
+    reads its own source and refuses to run if any `_true_*` name is assigned
+    twice, so the next collision is loud.
+    """
+    src = pathlib.Path(__file__).read_text(encoding="utf-8")
+    names = re.findall(r"^(_true_\w+) = ", src, re.M)
+    dupes = sorted({n for n in names if names.count(n) > 1})
+    if dupes:
+        raise SystemExit(f"shadowed drill helpers, refusing to run: {dupes}")
+    return names
+
+
 def run_checks() -> dict[str, bool]:
     out = {}
     for name, fn in CHECKS.items():
@@ -4265,6 +4462,8 @@ def main() -> int:
     except AttributeError:                               # pragma: no cover
         pass
 
+    helpers = _assert_no_shadowed_helpers()
+    print(f"  {len(helpers)} _true_* helpers, none shadowed")
     baseline = run_checks()
     if not all(baseline.values()):
         raise SystemExit(f"the undisturbed gates are not green: {baseline}")
