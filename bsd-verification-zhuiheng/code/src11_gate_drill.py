@@ -107,6 +107,7 @@ import src22_witness_network as net22                    # noqa: E402
 import src23_p5_local_units as p5u                       # noqa: E402
 import src24_p5_status_ledger as led24                    # noqa: E402
 import src25_p5_core_vertex as cv25                        # noqa: E402
+import src26_rank2_bsd_identity as r2bsd                   # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1123,6 +1124,64 @@ def check_p5_core_vertex_pairs() -> bool:
     return cv25.pair_scan({7: (1, 5), 11: (1, 5)})["pairs_giving_a_core_vertex"] == 0
 
 
+_RANK2_ROOTS = (-2.040302200338, 0.135409240240, 0.904892960098)
+
+
+def check_rank2_real_period() -> bool:
+    """389.a1's real period, three ways, on the Δ > 0 branch RUN-017 repaired.
+
+    The two real components must agree with each other and their sum with the
+    AGM, and one component must be **exactly half** the AGM value — that last
+    equality is the whole content of RUN-017's fix, and pinning it means the
+    factor of two cannot come back silently.
+
+    The unbounded integral's `2/T` tail is asserted by running two different
+    cut-offs: a wrong closed form would leave a T-dependent residue, which one
+    cut-off alone cannot see.
+    """
+    e3, e2, e1 = _RANK2_ROOTS
+    if len(r2bsd.cubic_real_roots(4, 4, -8, 1)) != 3:    # b2 = 4, 2b4 = −8, b6 = 1
+        return False
+    egg = r2bsd.period_bounded_component(e3, e2, e1, n=4000)
+    u1 = r2bsd.period_unbounded_component(e3, e2, e1, n=20_000, T=1000.0)
+    u2 = r2bsd.period_unbounded_component(e3, e2, e1, n=20_000, T=2000.0)
+    if abs(u1["corrected"] - u2["corrected"]) > 1e-6:     # the tail form
+        return False
+    if abs(egg - u1["corrected"]) > 1e-6:
+        return False
+    agm = anchor15.real_period(r2bsd.AINVS)
+    if abs((egg + u1["corrected"]) - agm) > 1e-6:
+        return False
+    return abs(egg / agm - 0.5) < 1e-9
+
+
+def check_rank2_bsd_identity() -> bool:
+    """L''(E,1)/2! = Ω·Reg·∏c_p/#tors² at 389.a1, with the document's numbers.
+
+    Closes to machine precision with this arm's AGM period and the rank-uniform
+    document's regulator. The sensitivity is asserted alongside the agreement:
+    halving the period must send the ratio to 2, which is exactly the failure
+    RUN-017 found and is the reason this check exists on a Δ > 0 curve.
+    """
+    agm = anchor15.real_period(r2bsd.AINVS)
+    pred = agm * r2bsd.DOC_REG * r2bsd.DOC_TAMAGAWA / (r2bsd.DOC_TORSION ** 2)
+    if abs(r2bsd.DOC_L2 / pred - 1.0) > 1e-12:
+        return False
+    halved = (agm / 2) * r2bsd.DOC_REG
+    if abs(r2bsd.DOC_L2 / halved - 2.0) > 1e-12:
+        return False
+    # And our own regulator must land inside its own accuracy. Run at doubling
+    # depth 8, whose cost is 0.17s against depth 10's 30s — the drill runs every
+    # check once per defect, so depth 10 here would add three quarters of an
+    # hour. The tolerance is set to what depth 8 MEASURES: the differences from
+    # the document's value are 2.4e-04, 5.8e-05, 7.0e-06, 1.3e-07 at depths
+    # 6, 7, 8, 10, so 2e-05 passes depth 8 and fails depth 7. A tolerance of
+    # 2e-06 would be depth 10's and would make this check fail on its own
+    # settings; the gate still reports the depth-10 value.
+    reg = bsd20.regulator(r2bsd.AINVS, r2bsd.GENS, depth=8)["regulator"]
+    return abs(reg - r2bsd.DOC_REG) < 2e-5
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -1168,6 +1227,8 @@ CHECKS = {
     "p5-gates-closed-here": check_p5_gates_closed_here,
     "p5-selmer-cube": check_p5_selmer_cube,
     "p5-core-vertex-pairs": check_p5_core_vertex_pairs,
+    "rank2-real-period": check_rank2_real_period,
+    "rank2-bsd-identity": check_rank2_bsd_identity,
 }
 
 
@@ -1404,6 +1465,19 @@ DEFECTS = [
     ("a pair is counted as a core vertex when the determinant vanishes",
      "code", "p5-core-vertex-pairs",
      lambda: patch(cv25, "pair_scan", _pairs_counted_backwards)),
+    ("the egg integral drops its sin-theta Jacobian", "code",
+     "rank2-real-period",
+     lambda: patch(r2bsd, "period_bounded_component", _egg_without_jacobian)),
+    ("the unbounded integral omits its closed-form tail", "code",
+     "rank2-real-period",
+     lambda: patch(r2bsd, "period_unbounded_component", _unbounded_no_tail)),
+    ("the real period is doubled again on the Delta > 0 branch", "code",
+     "rank2-bsd-identity",
+     lambda: patch(anchor15, "real_period",
+                   lambda a: 2 * _true_real_period(a))),
+    ("the BSD identity divides by the regulator instead of multiplying",
+     "code", "rank2-bsd-identity",
+     lambda: patch(r2bsd, "DOC_REG", 1.0 / r2bsd.DOC_REG)),
 
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
@@ -1630,6 +1704,33 @@ def _divisors_with_two(n):
     if n and n % 2 == 0:
         out.add(2)
     return out
+
+
+_true_real_period = anchor15.real_period
+_true_egg = r2bsd.period_bounded_component
+_true_unbounded = r2bsd.period_unbounded_component
+
+
+def _egg_without_jacobian(e3, e2, e1, n=400_000):
+    """The Chebyshev substitution kept and its Jacobian dropped — the endpoint
+    singularities stop cancelling and the integral diverges upward."""
+    import math as _m
+    mid, half = (e3 + e2) / 2, (e2 - e3) / 2
+    tot = 0.0
+    for i in range(n):
+        th = (i + 0.5) * _m.pi / n
+        x = mid + half * _m.cos(th)
+        v = 4 * (x - e1) * (x - e2) * (x - e3)
+        if v > 0:
+            tot += half / _m.sqrt(v) * (_m.pi / n)
+    return 2 * tot
+
+
+def _unbounded_no_tail(e3, e2, e1, n=2_000_000, T=4000.0):
+    """The truncation reported as the answer, with no 2/T correction."""
+    d = _true_unbounded(e3, e2, e1, n=n, T=T)
+    d["corrected"] = d["truncated_at_T"]
+    return d
 
 
 _true_kernel_line = cv25.kernel_line

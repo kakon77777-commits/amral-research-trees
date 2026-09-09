@@ -66,7 +66,9 @@
     "p5-ledger-reconcile": true,
     "p5-gates-closed-here": true,
     "p5-selmer-cube": true,
-    "p5-core-vertex-pairs": true
+    "p5-core-vertex-pairs": true,
+    "rank2-real-period": true,
+    "rank2-bsd-identity": true
   },
   "defects": [
     {
@@ -725,11 +727,54 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the egg integral drops its sin-theta Jacobian",
+      "kind": "code",
+      "named_check": "rank2-real-period",
+      "checks_that_went_red": [
+        "rank2-real-period"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the unbounded integral omits its closed-form tail",
+      "kind": "code",
+      "named_check": "rank2-real-period",
+      "checks_that_went_red": [
+        "rank2-real-period"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the real period is doubled again on the Delta > 0 branch",
+      "kind": "code",
+      "named_check": "rank2-bsd-identity",
+      "checks_that_went_red": [
+        "anchor-11a1",
+        "anchor-rank-one",
+        "real-period-vs-integration",
+        "bsd-sweep",
+        "analytic-classification",
+        "rank2-real-period",
+        "rank2-bsd-identity"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the BSD identity divides by the regulator instead of multiplying",
+      "kind": "code",
+      "named_check": "rank2-bsd-identity",
+      "checks_that_went_red": [
+        "rank2-bsd-identity"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "x-only duplication drops the -2*b6*x term",
       "kind": "code",
       "named_check": "regulator",
       "checks_that_went_red": [
-        "regulator"
+        "regulator",
+        "rank2-bsd-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -738,7 +783,8 @@
       "kind": "code",
       "named_check": "regulator",
       "checks_that_went_red": [
-        "regulator"
+        "regulator",
+        "rank2-bsd-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -811,7 +857,9 @@
         "anchor-rank-one",
         "real-period-vs-integration",
         "bsd-sweep",
-        "analytic-classification"
+        "analytic-classification",
+        "rank2-real-period",
+        "rank2-bsd-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -822,7 +870,9 @@
       "checks_that_went_red": [
         "anchor-rank-one",
         "real-period-vs-integration",
-        "bsd-sweep"
+        "bsd-sweep",
+        "rank2-real-period",
+        "rank2-bsd-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -833,7 +883,9 @@
       "checks_that_went_red": [
         "anchor-rank-one",
         "real-period-vs-integration",
-        "bsd-sweep"
+        "bsd-sweep",
+        "rank2-real-period",
+        "rank2-bsd-identity"
       ],
       "caught_by_the_named_check": true
     },
@@ -1098,8 +1150,8 @@
     }
   ],
   "totals": {
-    "defects": 95,
-    "caught_by_the_named_check": 95,
+    "defects": 99,
+    "caught_by_the_named_check": 99,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
     "controls": 20,

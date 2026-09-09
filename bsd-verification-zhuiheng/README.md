@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-022:
-  `src04`–`src10`, `src12`–`src25` are drilled — 95 defects, 95 caught by the
-  named check, 20 controls undisturbed, over 44 checks. `src00`–`src03`, the corpus-scanning
+  been green is indistinguishable from a comment. **Position as of RUN-023:
+  `src04`–`src10`, `src12`–`src26` are drilled — 99 defects, 99 caught by the
+  named check, 20 controls undisturbed, over 46 checks. `src00`–`src03`, the corpus-scanning
   gates, are not.** This line read "every gate" for nine rounds while the tree
   had none; it is narrowed to what is true rather than the gap being left
   unsaid. Gates written after RUN-010 ship with their drill in the same commit.
@@ -120,6 +120,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [020](./reports/RUN-020-P5-LOCAL-UNITS.md) | P5's explicit local-unit cancellation at `389.a1`, `p = 11` | `src23` | every boxed statement of v0.8 reproduced, including `v₁₁(t(16P′)) = 1` on a 38-digit point — and `R ↦ [t(16R)/11]` is a **homomorphism** with an index-11 kernel, so §6's valuation clause is basis-dependent while its rationality equivalence is not |
 | [021](./reports/RUN-021-P5-STATUS-LEDGER.md) | the P5 chain's status ledger, reconciled across ten documents | `src24` | 44 rows, 39 gates, 5 with two statuses and **all five explained**; the blocking graph is acyclic; `P5-LAT11 BLOCKED BY … GPR11` is **ambiguous between three declared gates**; and `P5-BOC-NZ11` and `P5-RESIDUAL-IRR11` are closed **here** by this tree's own computation rather than by the ledgers' citation |
 | [022](./reports/RUN-022-P5-CORE-VERTEX.md) | P5's norm-Selmer core vertex | `src25` | the cube reproduced exactly — and §3's `Sel = 0`, §5's transversality and `v1.3`'s `det(𝓑_N) ≠ 0` are **one determinant three times**; `{397, 991}` is **not special**, 230 of 253 admissible pairs give a core vertex |
+| [023](./reports/RUN-023-RANK2-BSD-IDENTITY.md) | the rank-2 BSD identity at `389.a1` | `src26` | `L′′/2! = Ω·Reg` closes at **ratio 1.0** with this arm's own period — the **first external test** of RUN-017's `Δ > 0` repair; the period confirmed again by integrating both real components, which agree to `5.8e−12` |
 
 ## Layout
 

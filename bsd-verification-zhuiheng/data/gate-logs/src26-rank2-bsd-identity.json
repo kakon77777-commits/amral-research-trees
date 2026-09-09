@@ -1,0 +1,78 @@
+{
+  "gate": "src26 — the rank-2 BSD identity at 389.a1",
+  "curve": {
+    "a_invariants": [
+      0,
+      1,
+      1,
+      -2,
+      0
+    ],
+    "discriminant": 389,
+    "discriminant_positive": true,
+    "real_components": 2,
+    "note": "Delta > 0 is the branch RUN-017 found doubled. Every result this arm had already published used Delta < 0, so the repair had never been tested against an external number on a curve that uses it"
+  },
+  "real_locus": {
+    "cubic_real_roots": [
+      -2.0403022002854634,
+      0.13540924022175344,
+      0.9048929600637102
+    ],
+    "bounded_egg_component": 2.4902125608800123,
+    "unbounded_component": {
+      "truncated_at_T": 2.4897125608742288,
+      "T": 4000.0,
+      "analytic_tail_2_over_T": 0.0005,
+      "corrected": 2.490212560874229
+    },
+    "the_two_components_agree_to": 5.7833737798773655e-12,
+    "full_real_locus": 4.980425121754241,
+    "agm_from_src15": 4.98042512171011,
+    "integration_vs_agm": 4.413092113964012e-11,
+    "relative": 8.860874335258966e-12,
+    "one_component_over_agm": 0.5000000000050111,
+    "which_convention_the_identity_needs": "the FULL real locus. One component is exactly half the AGM value, so a gate that integrated the identity component alone would be out by the same factor of two RUN-017 removed"
+  },
+  "regulator": {
+    "ours_depth_10": 0.15246030686524367,
+    "parallelogram_residual": null,
+    "document": 0.15246017794314376,
+    "difference": 1.2892209991233194e-07,
+    "inside_our_own_residual": true
+  },
+  "rank_2_bsd_identity": {
+    "formula": "L''(E,1)/2! = Omega * Reg * prod(c_p) / #tors^2, with Sha = 1",
+    "with_the_documents_regulator": {
+      "omega": 4.98042512171011,
+      "regulator": 0.15246017794314376,
+      "predicted_L2": 0.7593165002884268,
+      "document_L2": 0.7593165002884268,
+      "ratio": 1.0,
+      "relative_difference": 0.0
+    },
+    "with_our_regulator": {
+      "omega": 4.98042512171011,
+      "regulator": 0.15246030686524367,
+      "predicted_L2": 0.7593171423752919,
+      "document_L2": 0.7593165002884268,
+      "ratio": 0.9999991543890829,
+      "relative_difference": 8.456116321421338e-07
+    },
+    "with_the_integrated_period": {
+      "omega": 4.980425121754241,
+      "regulator": 0.15246017794314376,
+      "predicted_L2": 0.759316500295155,
+      "document_L2": 0.7593165002884268,
+      "ratio": 0.9999999999911392,
+      "relative_difference": 8.860828878705616e-12
+    },
+    "limiting_term": "our regulator, not our period: substituting the document's regulator closes the identity to machine precision while substituting ours moves it by about 1e-6, which is the depth-10 regulator's own accuracy"
+  },
+  "what_this_does_not_settle": {
+    "independence": "whether the document's three numbers were computed independently of each other cannot be read off the document. What is established here is that THIS arm's period, computed from the curve and sharing no code with the source, satisfies the identity their L'' and Reg define",
+    "analytic_rank": "no second derivative of L is computed here. The document itself marks analytic rank 2 as still requiring an independent rigorous certificate",
+    "sha": "Sha = 1 is BSD-inferred in the document and assumed here to state the identity. Nothing below computes Sha"
+  },
+  "ok": true
+}
