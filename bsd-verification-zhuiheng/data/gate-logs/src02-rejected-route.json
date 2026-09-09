@@ -322,5 +322,55 @@
     }
   ],
   "GR_conditions_claimed_met": [],
+  "GR_verdicts": [
+    {
+      "condition": "GR-1",
+      "verdict": "stated unmet",
+      "evidence": "quality不能預設 BSD。  目前四項皆未完成。  ---",
+      "subline": "phase0",
+      "name": "05_Internal_Grid_Rank_Audit.md"
+    },
+    {
+      "condition": "GR-2",
+      "verdict": "stated unmet",
+      "evidence": "quality不能預設 BSD。  目前四項皆未完成。  ---",
+      "subline": "phase0",
+      "name": "05_Internal_Grid_Rank_Audit.md"
+    },
+    {
+      "condition": "GR-3",
+      "verdict": "stated unmet",
+      "evidence": "quality不能預設 BSD。  目前四項皆未完成。  ---",
+      "subline": "phase0",
+      "name": "05_Internal_Grid_Rank_Audit.md"
+    },
+    {
+      "condition": "GR-4",
+      "verdict": "stated unmet",
+      "evidence": "quality不能預設 BSD。  目前四項皆未完成。  ---",
+      "subline": "phase0",
+      "name": "05_Internal_Grid_Rank_Audit.md"
+    },
+    {
+      "condition": "GR-2",
+      "verdict": "stated unmet",
+      "evidence": "quality不能預設 BSD。  目前四項皆未完成。  ---",
+      "subline": "phase0",
+      "name": "05_Internal_Grid_Rank_Audit.md"
+    },
+    {
+      "condition": "GR-3",
+      "verdict": "stated unmet",
+      "evidence": "quality不能預設 BSD。  目前四項皆未完成。  ---",
+      "subline": "phase0",
+      "name": "05_Internal_Grid_Rank_Audit.md"
+    }
+  ],
+  "GR_verdict_counts": {
+    "claimed met": 0,
+    "stated unmet": 6,
+    "no verdict nearby": 0
+  },
+  "why_the_counts_matter": "an empty claimed-met list is evidence only when the other buckets show the detector had something to read. Before RUN-024 this list was empty because the pattern was same-line only and GR-n appears in the corpus solely as section headings, with the verdict four lines below",
   "ok": true
 }

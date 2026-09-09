@@ -68,7 +68,11 @@
     "p5-selmer-cube": true,
     "p5-core-vertex-pairs": true,
     "rank2-real-period": true,
-    "rank2-bsd-identity": true
+    "rank2-bsd-identity": true,
+    "corpus-hashing": true,
+    "ladder-rungs": true,
+    "rejected-route-verdicts": true,
+    "multiplicity-order": true
   },
   "defects": [
     {
@@ -769,6 +773,51 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the corpus hash is truncated to sixteen hex digits",
+      "kind": "code",
+      "named_check": "corpus-hashing",
+      "checks_that_went_red": [
+        "corpus-hashing"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the rung pattern loses its word boundaries, so C1 matches inside C10",
+      "kind": "code",
+      "named_check": "ladder-rungs",
+      "checks_that_went_red": [
+        "ladder-rungs"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the salvage window shrinks back to the same line",
+      "kind": "code",
+      "named_check": "rejected-route-verdicts",
+      "checks_that_went_red": [
+        "rejected-route-verdicts"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the salvage classifier loses its negations",
+      "kind": "code",
+      "named_check": "rejected-route-verdicts",
+      "checks_that_went_red": [
+        "rejected-route-verdicts"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the order at zero is read as the degree",
+      "kind": "code",
+      "named_check": "multiplicity-order",
+      "checks_that_went_red": [
+        "multiplicity-order"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "x-only duplication drops the -2*b6*x term",
       "kind": "code",
       "named_check": "regulator",
@@ -1150,8 +1199,8 @@
     }
   ],
   "totals": {
-    "defects": 99,
-    "caught_by_the_named_check": 99,
+    "defects": 104,
+    "caught_by_the_named_check": 104,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
     "controls": 20,

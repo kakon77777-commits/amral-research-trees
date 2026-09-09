@@ -78,6 +78,7 @@ Usage:  python code/src11_gate_drill.py
 
 from __future__ import annotations
 
+import collections
 import copy
 import json
 import math
@@ -108,6 +109,10 @@ import src23_p5_local_units as p5u                       # noqa: E402
 import src24_p5_status_ledger as led24                    # noqa: E402
 import src25_p5_core_vertex as cv25                        # noqa: E402
 import src26_rank2_bsd_identity as r2bsd                   # noqa: E402
+import src00_corpus_identity as corpus00                   # noqa: E402
+import src01_ladder_vocabulary as ladder01                 # noqa: E402
+import src02_rejected_route_recurrence as route02          # noqa: E402
+import src03_multiplicity_nogo as nogo03                   # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1182,6 +1187,110 @@ def check_rank2_bsd_identity() -> bool:
     return abs(reg - r2bsd.DOC_REG) < 2e-5
 
 
+def check_corpus_hashing() -> bool:
+    """Gate 00 matches the corpus by CONTENT, and its hash is a real SHA-256.
+
+    The whole gate rests on one property: two documents are the same document
+    when their bytes are, whatever they are called. So the check pins a known
+    SHA-256 vector, then the two cases the property is about — the same bytes
+    under different names must collide, different bytes under the same name must
+    not — and finally that the curated corpus is the 85 documents every later
+    round assumes.
+    """
+    if corpus00.sha256_bytes(b"") != (
+            "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"):
+        return False
+    if corpus00.sha256_bytes(b"abc") != (
+            "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad"):
+        return False
+    if corpus00.sha256_bytes(b"x") == corpus00.sha256_bytes(b"y"):
+        return False
+    docs = corpus00.curated_docs()
+    if len(docs) != 85:
+        return False
+    if {d["subline"] for d in docs} != {"phase0", "p5", "phase1", "phase2"}:
+        return False
+    return all(len(d["sha256"]) == 64 and d["bytes"] > 0 for d in docs)
+
+
+def check_ladder_rungs() -> bool:
+    """Gate 01's eleven rungs, and the boundary C1 must not steal from C10.
+
+    The ladder's whole purpose is the C2/C3 split between evidence and proof, so
+    a rung vocabulary that miscounts is a vocabulary that can hide the split.
+    """
+    rungs = ladder01.defined_rungs()
+    if set(rungs) != {f"C{i}" for i in range(11)}:
+        return False
+    if ladder01.rungs_in("reached C3 after C2") != {"C2", "C3"}:
+        return False
+    if ladder01.rungs_in("C10 only") != {"C10"}:          # not also C1
+        return False
+    # The word boundaries, tested where they actually decide something. A
+    # greedy \d{1,2} already reads "C10" as one token, so that fixture cannot
+    # tell `\bC(\d{1,2})\b` from `C(\d{1,2})`. These two can: without the
+    # trailing boundary "C123" yields a spurious C12, and without the leading
+    # one "ABC10" yields a C10 that is not a rung reference at all.
+    if ladder01.rungs_in("the constant C123 appears") != set():
+        return False
+    if ladder01.rungs_in("variable ABC10 in a formula") != set():
+        return False
+    # code fences must NOT be stripped — the abbreviated ladders in this corpus
+    # all live inside them, and an earlier version went blind by filtering
+    fenced = "text\n```\nC0 -> C1 -> C10\n```\n"
+    return ladder01.rungs_in(fenced) == {"C0", "C1", "C10"}
+
+
+def check_rejected_route_verdicts() -> bool:
+    """Gate 02's salvage-condition verdicts, negation and distance included.
+
+    Both faults this check exists for are pinned. A same-line window cannot
+    reach the corpus's verdict, which sits four lines below the last `GR-n`
+    heading — so all six mentions must come back `stated unmet`, never `no
+    verdict nearby`. And a detector without negation reads 未滿足 as 滿足 — so
+    the fixtures put the two side by side.
+    """
+    fx = route02.classify_salvage("## GR-1: something\n\nGR-1 已滿足。")
+    if [r["verdict"] for r in fx] != ["claimed met", "claimed met"]:
+        return False
+    fx = route02.classify_salvage("## GR-2: something\n\n目前四項皆未完成。")
+    if any(r["verdict"] != "stated unmet" for r in fx):
+        return False
+    fx = route02.classify_salvage("GR-3 appears with no verdict anywhere near it")
+    if [r["verdict"] for r in fx] != ["no verdict nearby"]:
+        return False
+    audit = (route02.CURATED / "phase0" / "files" / route02.AUDIT)
+    rows = route02.classify_salvage(audit.read_text(encoding="utf-8"))
+    if len(rows) != 6:
+        return False
+    counts = collections.Counter(r["verdict"] for r in rows)
+    return (counts["stated unmet"] == 6 and counts["claimed met"] == 0
+            and counts["no verdict nearby"] == 0)
+
+
+def check_multiplicity_order() -> bool:
+    """Gate 03's order at zero, on exact rationals.
+
+    The no-go it recomputes is about an integer-valued order, so a float would
+    answer a different question; the fixtures are Fractions and include the one
+    that separates order from degree.
+    """
+    F = Fraction
+    if nogo03.order_at_zero({1: F(1), 2: F(1)}) != 1:      # z(z + 1)
+        return False
+    if nogo03.order_at_zero({2: F(1)}) != 2:               # z^2
+        return False
+    if nogo03.order_at_zero({1: F(0), 2: F(1)}) != 2:      # a zero coefficient
+        return False
+    if nogo03.order_at_zero({0: F(3), 5: F(1)}) != 0:      # order 0, degree 5
+        return False
+    try:
+        nogo03.order_at_zero({0: F(0), 3: F(0)})
+    except ValueError:
+        return True
+    return False
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -1229,6 +1338,10 @@ CHECKS = {
     "p5-core-vertex-pairs": check_p5_core_vertex_pairs,
     "rank2-real-period": check_rank2_real_period,
     "rank2-bsd-identity": check_rank2_bsd_identity,
+    "corpus-hashing": check_corpus_hashing,
+    "ladder-rungs": check_ladder_rungs,
+    "rejected-route-verdicts": check_rejected_route_verdicts,
+    "multiplicity-order": check_multiplicity_order,
 }
 
 
@@ -1478,6 +1591,20 @@ DEFECTS = [
     ("the BSD identity divides by the regulator instead of multiplying",
      "code", "rank2-bsd-identity",
      lambda: patch(r2bsd, "DOC_REG", 1.0 / r2bsd.DOC_REG)),
+    ("the corpus hash is truncated to sixteen hex digits", "code",
+     "corpus-hashing",
+     lambda: patch(corpus00, "sha256_bytes",
+                   lambda b: _true_sha256(b)[:16])),
+    ("the rung pattern loses its word boundaries, so C1 matches inside C10",
+     "code", "ladder-rungs",
+     lambda: patch(ladder01, "RUNG", re.compile(r"C(\d{1,2})"))),
+    ("the salvage window shrinks back to the same line", "code",
+     "rejected-route-verdicts", lambda: patch(route02, "CONTEXT", 0)),
+    ("the salvage classifier loses its negations", "code",
+     "rejected-route-verdicts",
+     lambda: patch(route02, "NEGATIONS", re.compile(r"(?!x)x"))),
+    ("the order at zero is read as the degree", "code", "multiplicity-order",
+     lambda: patch(nogo03, "order_at_zero", _order_is_degree)),
 
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
@@ -1704,6 +1831,17 @@ def _divisors_with_two(n):
     if n and n % 2 == 0:
         out.add(2)
     return out
+
+
+_true_sha256 = corpus00.sha256_bytes
+
+
+def _order_is_degree(coeffs):
+    """max power instead of min — degree, not order at zero."""
+    nz = sorted(k for k, v in coeffs.items() if v != 0)
+    if not nz:
+        raise ValueError("the zero polynomial has no well-defined order")
+    return nz[-1]
 
 
 _true_real_period = anchor15.real_period

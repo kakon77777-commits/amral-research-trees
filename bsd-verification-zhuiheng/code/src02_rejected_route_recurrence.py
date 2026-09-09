@@ -49,7 +49,61 @@ ROUTE = {
 }
 # The four salvage conditions. Doc 05: 目前四項皆未完成.
 SALVAGE = re.compile(r"\bGR-?([1-4])\b")
-CLAIMED_MET = re.compile(r"(GR-?[1-4])[^\n]{0,60}?(PASS|closed|已完成|成立|滿足|proved)", re.I)
+
+# The met/not-met vocabulary, and the negations that invert it. Both are needed:
+# a pattern that only knows the positive words reads 「未滿足」 as 滿足.
+MET_WORDS = re.compile(r"(PASS|closed|proved|已完成|成立|滿足|完成)", re.I)
+NEGATIONS = re.compile(r"(未|尚未|不|沒有|無法|皆未|not\s|no\s|un(?:proved|met|closed))",
+                       re.I)
+# How far a verdict may sit from the condition it judges. The corpus's own
+# audit puts 「目前四項皆未完成」 four LINES below the last GR-n heading, so a
+# same-line window can never reach it — see CONTEXT below.
+CONTEXT = 400
+
+# The previous pattern was
+#     (GR-?[1-4])[^\n]{0,60}?(PASS|closed|已完成|成立|滿足|proved)
+# and it had two independent faults, both found by drilling this gate in
+# RUN-024 rather than by any run of it.
+#
+# It was SAME-LINE ONLY. GR-1..GR-4 occur in exactly one document,
+# 05_Internal_Grid_Rank_Audit.md, and only as section headings; the verdict
+# 「目前四項皆未完成」 is on its own line four lines further down. So the
+# detector could not reach a verdict about GR-n from a GR-n heading under any
+# corpus content, and its empty result said nothing about the documents. It
+# would have returned the same empty list had the audit declared all four met.
+#
+# And it had NO NEGATION HANDLING. Had the verdict been on the same line, the
+# detector would have matched 滿足 inside 未滿足 and reported the audit as
+# claiming the very conditions it says are unmet.
+
+
+def classify_salvage(text: str) -> list[dict]:
+    """Every GR-n mention, with the verdict the surrounding text gives it.
+
+    Three outcomes, all reported: `claimed met`, `stated unmet`, `no verdict
+    nearby`. Reporting all three is the point — an empty "claimed met" list is
+    only evidence when the other two buckets show the detector had something to
+    read. The window spans lines, because the corpus's own verdict does.
+    """
+    out = []
+    for m in SALVAGE.finditer(text):
+        lo = max(0, m.start() - CONTEXT)
+        hi = min(len(text), m.end() + CONTEXT)
+        window = text[lo:hi]
+        met = MET_WORDS.search(window)
+        if not met:
+            verdict = "no verdict nearby"
+            evidence = ""
+        else:
+            # a negation anywhere in the clause running up to the met-word
+            clause_start = max(0, met.start() - 24)
+            verdict = ("stated unmet"
+                       if NEGATIONS.search(window[clause_start:met.end()])
+                       else "claimed met")
+            evidence = window[clause_start:met.end() + 8].replace("\n", " ").strip()
+        out.append({"condition": "GR-" + m.group(1), "verdict": verdict,
+                    "evidence": evidence[:120]})
+    return out
 
 
 def main() -> int:
@@ -74,7 +128,7 @@ def main() -> int:
             f"{AUDIT} is not in the corpus. This gate measures whether a verdict "
             "held; without the verdict there is nothing to measure.")
 
-    hits, salvage_hits, claimed = [], [], []
+    hits, salvage_hits, claimed, verdicts = [], [], [], []
     for sub, m in docs:
         text = m.read_text(encoding="utf-8")
         lines = text.splitlines()
@@ -86,9 +140,11 @@ def main() -> int:
         for mm in SALVAGE.finditer(text):
             salvage_hits.append({"subline": sub, "name": m.name,
                                  "condition": "GR-" + mm.group(1)})
-        for mm in CLAIMED_MET.finditer(text):
-            claimed.append({"subline": sub, "name": m.name,
-                            "text": mm.group(0).strip()[:120]})
+        for row in classify_salvage(text):
+            row.update({"subline": sub, "name": m.name})
+            verdicts.append(row)
+            if row["verdict"] == "claimed met":
+                claimed.append(row)
 
     outside = [h for h in hits if h["name"] != AUDIT]
     by_doc: dict[str, list[str]] = {}
@@ -118,7 +174,16 @@ def main() -> int:
             k: sorted(set(v)) for k, v in sorted(by_doc.items())},
         "hits_outside_the_audit": outside,
         "GR_conditions_claimed_met": claimed,
-        "ok": len(claimed) == 0,
+        "GR_verdicts": verdicts,
+        "GR_verdict_counts": {k: sum(1 for v in verdicts if v["verdict"] == k)
+                              for k in ("claimed met", "stated unmet",
+                                        "no verdict nearby")},
+        "why_the_counts_matter": (
+            "an empty claimed-met list is evidence only when the other "
+            "buckets show the detector had something to read. Before "
+            "RUN-024 this list was empty because the pattern was "
+            "same-line only and GR-n appears in the corpus solely as "
+            "section headings, with the verdict four lines below"),        "ok": len(claimed) == 0,
     }
     OUT.write_text(json.dumps(log, indent=2, ensure_ascii=False) + "\n",
                    encoding="utf-8", newline="\n")
