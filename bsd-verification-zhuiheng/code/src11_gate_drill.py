@@ -113,6 +113,7 @@ import src00_corpus_identity as corpus00                   # noqa: E402
 import src01_ladder_vocabulary as ladder01                 # noqa: E402
 import src02_rejected_route_recurrence as route02          # noqa: E402
 import src03_multiplicity_nogo as nogo03                   # noqa: E402
+import src27_agent_experiment_audit as agent27            # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1291,6 +1292,47 @@ def check_multiplicity_order() -> bool:
     return False
 
 
+def check_sha_labelling() -> bool:
+    """Gate 27's analytic-vs-actual Sha scan, and the three ways it went wrong.
+
+    Each correction the gate needed is now a fixture, because each was a silent
+    under-report rather than an error:
+
+      * the claim pattern must survive a NESTED subscript. `_{\\mathrm{an}}` has
+        an inner brace, and a `[^}]` class stops at it — five real analytic
+        claims were lost that way, including the specification document's own.
+      * `\\Sha_{\\rm an}` is analytic **by its notation**, before any
+        surrounding vocabulary is consulted.
+      * a required hypothesis and an inherited value are labelled, in their own
+        ways, and counting them as unlabelled inflates the finding.
+    """
+    C = agent27.SHA_CLAIM
+    if not C.search(r"\Sha_{\mathrm{an}}=1"):
+        return False
+    if not C.search(r"\Sha_{\rm an}(E')=0"):
+        return False
+    if not C.search(r"#\Sha(E/\mathbb Q)[11^\infty]=1"):
+        return False
+    if C.search(r"\text{P4 Sha-control closed at }p=11"):   # not a claim
+        return False
+    m = C.search(r"\Sha_{\mathrm{an}}=1")
+    if agent27.classify_claim("no vocabulary here", m.group("sub"))[1] != "analytic":
+        return False
+    if agent27.classify_claim("再要求", None)[1] != "hypothesis":
+        return False
+    if agent27.classify_claim("the inherited closure gives", None)[1] != "provenance":
+        return False
+    if agent27.classify_claim("this is not proved anywhere", None)[1] != "":
+        return False
+    s = agent27.scan()
+    c = s["verdict_counts"]
+    if s["numeric_Sha_claims_found"] < 36:
+        return False
+    return (c.get("analytic by its own subscript", 0) == 5
+            and c.get("unlabelled in window", 0) == 3
+            and c.get("stated as a hypothesis", 0) == 9)
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -1342,6 +1384,7 @@ CHECKS = {
     "ladder-rungs": check_ladder_rungs,
     "rejected-route-verdicts": check_rejected_route_verdicts,
     "multiplicity-order": check_multiplicity_order,
+    "sha-labelling": check_sha_labelling,
 }
 
 
@@ -1605,6 +1648,15 @@ DEFECTS = [
      lambda: patch(route02, "NEGATIONS", re.compile(r"(?!x)x"))),
     ("the order at zero is read as the degree", "code", "multiplicity-order",
      lambda: patch(nogo03, "order_at_zero", _order_is_degree)),
+    ("the Sha subscript pattern cannot nest, dropping mathrm-an", "code",
+     "sha-labelling",
+     lambda: patch(agent27, "SHA_CLAIM", _SHA_CLAIM_FLAT_SUBSCRIPT)),
+    ("an `an` subscript stops meaning analytic", "code", "sha-labelling",
+     lambda: patch(agent27, "ANALYTIC_SUBSCRIPT", re.compile(r"(?!x)x"))),
+    ("a required hypothesis is counted as a claim", "code", "sha-labelling",
+     lambda: patch(agent27, "HYPOTHESIS", re.compile(r"(?!x)x"))),
+    ("provenance stops counting as a label", "code", "sha-labelling",
+     lambda: patch(agent27, "PROVENANCE", re.compile(r"(?!x)x"))),
 
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
@@ -1834,6 +1886,9 @@ def _divisors_with_two(n):
 
 
 _true_sha256 = corpus00.sha256_bytes
+_SHA_CLAIM_FLAT_SUBSCRIPT = re.compile(
+    agent27.SHA_CLAIM.pattern.replace(
+        r"_\{(?:[^{}]|\{[^{}]*\})*\}", r"_\{[^}]{0,30}\}"))
 
 
 def _order_is_degree(coeffs):

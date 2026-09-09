@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-024:
-  every gate is drilled — `src00`–`src10` and `src12`–`src26`, 104 defects, 104
-  caught by the named check, 20 controls undisturbed, over 50 checks.** This
+  been green is indistinguishable from a comment. **Position as of RUN-025:
+  every gate is drilled — `src00`–`src10` and `src12`–`src27`, 108 defects, 108
+  caught by the named check, 20 controls undisturbed, over 51 checks.** This
   line read "every gate" for nine rounds while the tree had none; RUN-010
   narrowed it to what was true, and it carried "the corpus-scanning gates are
   not" for fourteen rounds after that. RUN-024 closed it, and drilling those
@@ -124,6 +124,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [022](./reports/RUN-022-P5-CORE-VERTEX.md) | P5's norm-Selmer core vertex | `src25` | the cube reproduced exactly — and §3's `Sel = 0`, §5's transversality and `v1.3`'s `det(𝓑_N) ≠ 0` are **one determinant three times**; `{397, 991}` is **not special**, 230 of 253 admissible pairs give a core vertex |
 | [023](./reports/RUN-023-RANK2-BSD-IDENTITY.md) | the rank-2 BSD identity at `389.a1` | `src26` | `L′′/2! = Ω·Reg` closes at **ratio 1.0** with this arm's own period — the **first external test** of RUN-017's `Δ > 0` repair; the period confirmed again by integrating both real components, which agree to `5.8e−12` |
 | [024](./reports/RUN-024-CORPUS-GATES-DRILLED.md) | the last four undrilled gates, `src00`–`src03` | `src11`, `src02` | **every gate is now drilled**; drilling them found `src02`'s salvage detector was **structurally incapable of firing** — a same-line window that could never reach a verdict four lines away, and a vocabulary that read `未滿足` as `滿足`; now 6 stated unmet, 0 claimed met, 0 unread |
+| [025](./reports/RUN-025-AGENT-EXPERIMENT-AUDIT.md) | the Phase 1 agent experiment against its own §6/§7 conditions | `src27` | the freeze condition 「將 analytic Ш 當 actual Ш」 is **not triggered** — 36 numeric Ш claims, all labelled, 5 of them **in the notation itself**; and the scanner needed **three corrections** before it measured anything |
 
 ## Layout
 

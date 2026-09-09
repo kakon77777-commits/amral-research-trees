@@ -1,0 +1,394 @@
+{
+  "gate": "src27 — the Phase 1 agent experiment against its own conditions",
+  "spec": "06_Phase1_Agent_Experiment.md",
+  "documents_scanned": 85,
+  "sha_labelling": {
+    "numeric_Sha_claims_found": 36,
+    "documents_carrying_one": 14,
+    "verdict_counts": {
+      "analytic by its own subscript": 5,
+      "unlabelled in window": 3,
+      "both labels present": 7,
+      "labelled actual": 7,
+      "stated as a hypothesis": 9,
+      "labelled by provenance": 1,
+      "labelled analytic": 4
+    },
+    "unlabelled_by_document": {
+      "p5/BSD_P5_Determinantal_Kurihara_Semilocal_389a1_p11_v1.3.md": 1,
+      "p5/BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md": 1,
+      "p5/BSD_P5_Rank2_Scalar_Collapse_389a1_p11_v0.3.md": 1
+    },
+    "unlabelled_sample": [
+      {
+        "subline": "p5",
+        "name": "BSD_P5_Determinantal_Kurihara_Semilocal_389a1_p11_v1.3.md",
+        "line_no": 324,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]&=0",
+        "verdict": "unlabelled in window",
+        "kind": ""
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+        "line_no": 94,
+        "claim": "#\\Sha(E/\\mathbb Q)[11^\\infty]=1",
+        "verdict": "unlabelled in window",
+        "kind": ""
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_Rank2_Scalar_Collapse_389a1_p11_v0.3.md",
+        "line_no": 129,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "unlabelled in window",
+        "kind": ""
+      }
+    ],
+    "what_an_unlabelled_claim_is_not": "a violation. The label may sit in a heading, a status line, or outside the 300-character window. This gate reports where to look and refuses to call a hit a failure; the count is the measurement",
+    "rows": [
+      {
+        "subline": "phase0",
+        "name": "06_Phase1_Agent_Experiment.md",
+        "line_no": 202,
+        "claim": "\\Sha_{\\mathrm{an}}=1",
+        "verdict": "analytic by its own subscript",
+        "kind": "analytic"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_Determinantal_Kurihara_Semilocal_389a1_p11_v1.3.md",
+        "line_no": 324,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]&=0",
+        "verdict": "unlabelled in window",
+        "kind": ""
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+        "line_no": 19,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "both labels present",
+        "kind": "analytic+actual"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+        "line_no": 41,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "labelled actual",
+        "kind": "actual"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+        "line_no": 94,
+        "claim": "#\\Sha(E/\\mathbb Q)[11^\\infty]=1",
+        "verdict": "unlabelled in window",
+        "kind": ""
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+        "line_no": 236,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "stated as a hypothesis",
+        "kind": "hypothesis"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+        "line_no": 392,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "stated as a hypothesis",
+        "kind": "hypothesis"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_Norm_Selmer_Core_Vertex_389a1_p11_v1.2.md",
+        "line_no": 6,
+        "claim": "\\Sha(E/\\mathbb Q)[11]=0",
+        "verdict": "both labels present",
+        "kind": "analytic+actual"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_Norm_Selmer_Core_Vertex_389a1_p11_v1.2.md",
+        "line_no": 73,
+        "claim": "\\Sha(E/\\mathbb Q)[11]=0",
+        "verdict": "labelled by provenance",
+        "kind": "provenance"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_Norm_Selmer_Core_Vertex_389a1_p11_v1.2.md",
+        "line_no": 268,
+        "claim": "\\Sha(E/\\mathbb Q)[11]=0",
+        "verdict": "labelled actual",
+        "kind": "actual"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_Norm_Selmer_Core_Vertex_389a1_p11_v1.2.md",
+        "line_no": 414,
+        "claim": "\\Sha(E/\\mathbb Q)[11]&=0",
+        "verdict": "labelled actual",
+        "kind": "actual"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_Rank2_Scalar_Collapse_389a1_p11_v0.3.md",
+        "line_no": 16,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "both labels present",
+        "kind": "analytic+actual"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_Rank2_Scalar_Collapse_389a1_p11_v0.3.md",
+        "line_no": 90,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "stated as a hypothesis",
+        "kind": "hypothesis"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_Rank2_Scalar_Collapse_389a1_p11_v0.3.md",
+        "line_no": 129,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "unlabelled in window",
+        "kind": ""
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+        "line_no": 45,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "labelled actual",
+        "kind": "actual"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+        "line_no": 355,
+        "claim": "\\Sha(E/\\mathbb Q)[p]=0",
+        "verdict": "both labels present",
+        "kind": "analytic+actual"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_Rank_Uniform_Zeta_Primitivity_Reduction_v0.1.md",
+        "line_no": 1035,
+        "claim": "#\\Sha=1",
+        "verdict": "labelled analytic",
+        "kind": "analytic"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_RUGZPB_P2_P4_389a1_p11_v0.2.md",
+        "line_no": 33,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "labelled actual",
+        "kind": "actual"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_RUGZPB_P2_P4_389a1_p11_v0.2.md",
+        "line_no": 341,
+        "claim": "\\Sha(E/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "labelled actual",
+        "kind": "actual"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_RUGZPB_P2_P4_389a1_p11_v0.2.md",
+        "line_no": 463,
+        "claim": "\\Sha(389.a1/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "stated as a hypothesis",
+        "kind": "hypothesis"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_RUGZPB_P2_P4_389a1_p11_v0.2.md",
+        "line_no": 486,
+        "claim": "\\Sha[11^\\infty]=0",
+        "verdict": "stated as a hypothesis",
+        "kind": "hypothesis"
+      },
+      {
+        "subline": "p5",
+        "name": "BSD_RUGZPB_P2_P4_389a1_p11_v0.2.md",
+        "line_no": 604,
+        "claim": "\\Sha(389.a1/\\mathbb Q)[11^\\infty]=0",
+        "verdict": "labelled analytic",
+        "kind": "analytic"
+      },
+      {
+        "subline": "phase1",
+        "name": "01_Theorem_2_18_Condition_Map.md",
+        "line_no": 134,
+        "claim": "\\Sha(E')[2]=0",
+        "verdict": "stated as a hypothesis",
+        "kind": "hypothesis"
+      },
+      {
+        "subline": "phase1",
+        "name": "02_Paper_vs_Current_Code_Audit.md",
+        "line_no": 34,
+        "claim": "\\Sha[2]=2",
+        "verdict": "labelled actual",
+        "kind": "actual"
+      },
+      {
+        "subline": "phase1",
+        "name": "02_Paper_vs_Current_Code_Audit.md",
+        "line_no": 46,
+        "claim": "#\\Sha=4",
+        "verdict": "both labels present",
+        "kind": "analytic+actual"
+      },
+      {
+        "subline": "phase1",
+        "name": "02_Paper_vs_Current_Code_Audit.md",
+        "line_no": 59,
+        "claim": "#\\Sha_{\\mathrm{an}}=0",
+        "verdict": "analytic by its own subscript",
+        "kind": "analytic"
+      },
+      {
+        "subline": "phase1",
+        "name": "02_Paper_vs_Current_Code_Audit.md",
+        "line_no": 65,
+        "claim": "\\Sha[2]=0",
+        "verdict": "stated as a hypothesis",
+        "kind": "hypothesis"
+      },
+      {
+        "subline": "phase1",
+        "name": "02_Paper_vs_Current_Code_Audit.md",
+        "line_no": 85,
+        "claim": "\\Sha(E')[2]=0",
+        "verdict": "stated as a hypothesis",
+        "kind": "hypothesis"
+      },
+      {
+        "subline": "phase1",
+        "name": "02_Paper_vs_Current_Code_Audit.md",
+        "line_no": 99,
+        "claim": "\\Sha_{\\mathrm{an}}(E')=0",
+        "verdict": "analytic by its own subscript",
+        "kind": "analytic"
+      },
+      {
+        "subline": "phase1",
+        "name": "02_Paper_vs_Current_Code_Audit.md",
+        "line_no": 105,
+        "claim": "\\Sha(E')[2]=0",
+        "verdict": "stated as a hypothesis",
+        "kind": "hypothesis"
+      },
+      {
+        "subline": "phase1",
+        "name": "03_Algorithm1_Soundness_Gates.md",
+        "line_no": 18,
+        "claim": "\\Sha[2]=0",
+        "verdict": "labelled analytic",
+        "kind": "analytic"
+      },
+      {
+        "subline": "phase1",
+        "name": "05_Agent_Regression_Protocol.md",
+        "line_no": 25,
+        "claim": "Sha = 1",
+        "verdict": "labelled analytic",
+        "kind": "analytic"
+      },
+      {
+        "subline": "phase2",
+        "name": "14_Candidate_Sieve.md",
+        "line_no": 34,
+        "claim": "\\Sha_{\\rm an}=1",
+        "verdict": "analytic by its own subscript",
+        "kind": "analytic"
+      },
+      {
+        "subline": "phase2",
+        "name": "15_696e1_Base_Certificate.md",
+        "line_no": 64,
+        "claim": "Sha = 1",
+        "verdict": "both labels present",
+        "kind": "analytic+actual"
+      },
+      {
+        "subline": "phase2",
+        "name": "15_696e1_Base_Certificate.md",
+        "line_no": 64,
+        "claim": "Sha = 1",
+        "verdict": "both labels present",
+        "kind": "analytic+actual"
+      },
+      {
+        "subline": "phase2",
+        "name": "15_696e1_Base_Certificate.md",
+        "line_no": 76,
+        "claim": "\\Sha_{\\rm an}=1",
+        "verdict": "analytic by its own subscript",
+        "kind": "analytic"
+      }
+    ]
+  },
+  "success_conditions_section_6": [
+    {
+      "condition": "1. 完整 schema",
+      "this_arm": "not measured. A schema's completeness is a reading of the spec's Steps A-E against the artefacts, not a computation"
+    },
+    {
+      "condition": "2. 至少三類曲線的證書",
+      "this_arm": "partly. R2+ is 389.a1, verified in RUN-011, RUN-020, RUN-022 and RUN-023. R0 is 696.e1, whose analytic rank 0 was established in RUN-014. No R1 certificate has passed through this arm"
+    },
+    {
+      "condition": "3. Banwait-Huang 算法可重現",
+      "this_arm": "MET, and independently. RUN-007 and RUN-008 closed 122,247 isogeny determinations both ways; RUN-012 rebuilt all 247,391 twist pairs exactly, 36,687 of 36,687 curves agreeing. Reproduction by a second implementation is a stronger reading of this condition than the experiment asserting it"
+    },
+    {
+      "condition": "4. 每個結果能區分 evidence / theorem",
+      "this_arm": "measurable and measured elsewhere: this is src01's ladder vocabulary check, and RUN-021's ledger separated computation from citation across the P5 chain"
+    },
+    {
+      "condition": "5. 找到高秩前三大共同瓶頸",
+      "this_arm": "the corpus names them. P5_E1_ETNC_ESCAPE_AUDIT §6 lists four targets, and its blocking chain roots at P5-DERPER; whether that is the right three is not a computation"
+    }
+  ],
+  "freeze_conditions_section_7": [
+    {
+      "condition": "只抄 LMFDB",
+      "this_arm": "not triggered as far as this arm can see: RUN-004 recomputed 40,749 discriminants and 135,787 valuations, RUN-016 recomputed 40,749 conductors, and all agreed. A corpus that only copied would still agree, so this is consistency and not proof of independence"
+    },
+    {
+      "condition": "只算數值比",
+      "this_arm": "not triggered: the corpus carries exact finite certificates (det M_loc = 2, the Selmer cube, the localization rows) that RUN-011 and RUN-022 recomputed in exact arithmetic"
+    },
+    {
+      "condition": "無法追溯 theorem hypotheses",
+      "this_arm": "not triggered: RUN-021 traced every P5 gate to either an exact finite computation or a named external theorem, and found no gate that could not be traced"
+    },
+    {
+      "condition": "將 analytic Sha 當 actual Sha",
+      "this_arm": "MEASURED HERE. 36 numeric Sha claims across the corpus; 3 carry neither label within 300 characters. An unlabelled claim is not a violation — see the gate's own caveat — but the count is what makes the separation a measurement",
+      "counts": {
+        "analytic by its own subscript": 5,
+        "unlabelled in window": 3,
+        "both labels present": 7,
+        "labelled actual": 7,
+        "stated as a hypothesis": 9,
+        "labelled by provenance": 1,
+        "labelled analytic": 4
+      }
+    },
+    {
+      "condition": "無法分辨 weak / strong / p-part",
+      "this_arm": "not triggered: the three appear as distinct headings in 01_BSD_Statement_and_Quantifier_Audit §1.1-1.3 and are used distinctly downstream"
+    }
+  ],
+  "ok": true
+}

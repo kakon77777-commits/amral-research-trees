@@ -72,7 +72,8 @@
     "corpus-hashing": true,
     "ladder-rungs": true,
     "rejected-route-verdicts": true,
-    "multiplicity-order": true
+    "multiplicity-order": true,
+    "sha-labelling": true
   },
   "defects": [
     {
@@ -818,6 +819,42 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the Sha subscript pattern cannot nest, dropping mathrm-an",
+      "kind": "code",
+      "named_check": "sha-labelling",
+      "checks_that_went_red": [
+        "sha-labelling"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "an `an` subscript stops meaning analytic",
+      "kind": "code",
+      "named_check": "sha-labelling",
+      "checks_that_went_red": [
+        "sha-labelling"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a required hypothesis is counted as a claim",
+      "kind": "code",
+      "named_check": "sha-labelling",
+      "checks_that_went_red": [
+        "sha-labelling"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "provenance stops counting as a label",
+      "kind": "code",
+      "named_check": "sha-labelling",
+      "checks_that_went_red": [
+        "sha-labelling"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "x-only duplication drops the -2*b6*x term",
       "kind": "code",
       "named_check": "regulator",
@@ -1199,8 +1236,8 @@
     }
   ],
   "totals": {
-    "defects": 104,
-    "caught_by_the_named_check": 104,
+    "defects": 108,
+    "caught_by_the_named_check": 108,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
     "controls": 20,
