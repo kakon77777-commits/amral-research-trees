@@ -134,11 +134,19 @@ def canonical_height(ainvs, P, depth: int = 10) -> dict:
             "steps": len(seq)}
 
 
-def regulator(ainvs, gens) -> dict:
+def regulator(ainvs, gens, depth: int = 10) -> dict:
+    """The height regulator. `depth` is the doubling depth of the limit.
+
+    Cost grows brutally with depth — the x-coordinate of 2ⁿP has about 4ⁿ·ĥ/ln 10
+    digits, so depth 10 means 145,000-digit numerators and a Fraction gcd on
+    every step: 30 seconds against 0.17 at depth 8. The drill runs this once per
+    defect and once per control, so it uses depth 8 with a tolerance set to what
+    depth 8 actually delivers.
+    """
     P, Q = gens
     PQ = ec_add(ainvs, P, Q)
     PmQ = ec_add(ainvs, P, ec_neg(ainvs, Q))
-    h = {name: canonical_height(ainvs, pt)["richardson2"]
+    h = {name: canonical_height(ainvs, pt, depth)["richardson2"]
          for name, pt in (("P", P), ("Q", Q), ("P+Q", PQ), ("P-Q", PmQ))}
     parallelogram = h["P+Q"] + h["P-Q"] - 2 * h["P"] - 2 * h["Q"]
     pair = (h["P+Q"] - h["P"] - h["Q"]) / 2
@@ -146,19 +154,20 @@ def regulator(ainvs, gens) -> dict:
     return {"heights": h, "P_plus_Q": [str(PQ[0]), str(PQ[1])],
             "P_minus_Q": [str(PmQ[0]), str(PmQ[1])],
             "parallelogram_law_residual": parallelogram,
-            "pairing_PQ": pair, "regulator": det,
+            "pairing_PQ": pair, "regulator": det, "depth": depth,
             "independent": abs(det) > 1e-6}
 
 
 # --------------------------------------------------------- the rank-0 BSD sweep
 
-def sweep(records) -> dict:
+def sweep(records, limit: int | None = None) -> dict:
     tally = collections.Counter()
     shas = collections.Counter()
     non_closing = []
     for r in records:
         inv, N = r["ainvs"], r["conductor"]
-        res = anchor.analyse(r["curve_label"], inv, N, limit=TERMS)
+        res = anchor.analyse(r["curve_label"], inv, N,
+                             limit=limit or TERMS)
         if res["root_number"] is None:
             tally["sign undecided by the guard"] += 1
             continue

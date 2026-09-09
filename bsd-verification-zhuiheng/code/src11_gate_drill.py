@@ -1,4 +1,4 @@
-"""Drill for gates 04-10, 12-20 — plant a defect, demand the named check catch it.
+"""Drill for gates 04-10, 12-21 — plant a defect, demand the named check catch it.
 
 數學戰士「墜衡」 / AMRAL Research Lab.
 
@@ -101,6 +101,7 @@ import src16_twist_family_lvalues as fam16               # noqa: E402
 import src17_family_prime_router as route17              # noqa: E402
 import src18_tate_algorithm as tate18                    # noqa: E402
 import src20_bsd_consistency as bsd20                    # noqa: E402
+import src21_two_witness_certificate as tw21             # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -173,7 +174,10 @@ def check_cubic_discriminant() -> bool:
 
 def check_frobenius_pinning() -> bool:
     """For q ≡ 1 (24) with (q/29) = 1, f₂ mod q never has exactly one root."""
-    r = ph2.scan(60_000)
+    # 20,000 rather than 60,000: this runs once per defect and once per
+    # control, and the pinning either holds on every admissible prime or
+    # fails on the first few — a longer scan buys no discrimination here.
+    r = ph2.scan(20_000)
     return not r["violations"] and r["cond12"] > 0
 
 
@@ -237,7 +241,9 @@ def check_density_one_over_24() -> bool:
     violations" cannot detect a broken x^q. The density can: it is what
     distinguishes 0 roots from 3.
     """
-    r = ph2.scan(300_000)
+    # 60,000 rather than 300,000, for the same reason: 1/24 and 1/48 are a
+    # factor of two apart and the count separates them long before here.
+    r = ph2.scan(60_000)
     if not r["primes_total"]:
         return False
     d = r["in_P"] / r["primes_total"]
@@ -479,13 +485,17 @@ def check_family_root_number() -> bool:
     d = 13 is the load-bearing one: it predicts −1, and a formula that always
     returned +1 would agree with the other four.
     """
-    base = fam16.base_coefficients(30000)
+    # 8,000 terms, not 30,000: the separations here run from 8e-3 to 2e-1 and
+    # the series' drift is well below that, so the shorter sum decides the same
+    # signs. This check runs once per defect and once per control, and at 30,000
+    # it cost more E₁ evaluations than every other check put together.
+    base = fam16.base_coefficients(8000)
     for d, want in ((5, 1), (13, -1), (17, 1), (37, 1), (41, 1)):
         if fam16.kronecker(-fam16.BASE_N, d) != want:
             return False
-        a = fam16.twisted_coefficients(base[:30001], d)
-        w, _ = anchor15.root_number(a, fam16.BASE_N * d * d, 30000)
-        if w != want:
+        a = fam16.twisted_coefficients(base[:8001], d)
+        w, ev = anchor15.root_number(a, fam16.BASE_N * d * d, 8000)
+        if w != want or not ev["decided"]:
             return False
     return True
 
@@ -670,9 +680,13 @@ def check_regulator() -> bool:
     from outside. The regulator value is pinned as well, but the law is what
     makes the value mean something.
     """
-    r = bsd20.regulator(bsd20.P5_CURVE, bsd20.P5_GENERATORS)
+    # depth 8, not the gate's 10: the limit's cost grows with 4ⁿ-digit integers
+    # and this runs once per defect and once per control — 0.17s against 30s.
+    # The tolerances are what depth 8 delivers (parallelogram residual 2.4e-5,
+    # regulator within 7e-6 of the depth-10 value), not what depth 10 does.
+    r = bsd20.regulator(bsd20.P5_CURVE, bsd20.P5_GENERATORS, depth=8)
     return (abs(r["parallelogram_law_residual"]) < 1e-4
-            and abs(r["regulator"] - 0.152460306865) < 1e-6
+            and abs(r["regulator"] - 0.152460306865) < 2e-5
             and r["independent"])
 
 
@@ -681,7 +695,8 @@ def check_bsd_sweep() -> bool:
 
     Six curves, not a sweep: this runs once per defect and once per control, so
     the full sweep that gate 20 reports would cost more here than every other
-    check put together. The identity is the same one either way, and it is the
+    check put together — and 1,200 terms rather than 3,000, which still decides
+    every sign in this set and cuts the point counting by an order of magnitude. The identity is the same one either way, and it is the
     thing that puts four independently computed quantities — the L-value, the
     real period, the torsion bound and every Tamagawa number — into a single
     equation that must land on an integer.
@@ -689,9 +704,42 @@ def check_bsd_sweep() -> bool:
     curves = [r for r in json.loads(x0n.ARITH.read_text(encoding="utf-8"))["records"]
               if r["curve_label"] in ("14a1", "26a1", "34a1", "38b1",
                                       "46a1", "94a1")]
-    sw = bsd20.sweep(curves)
+    sw = bsd20.sweep(curves, limit=1200)
     return (sw["tally"].get("BSD closes: a positive integer square", 0) == 6
             and sw["Sha_values_where_it_closes"] == {"1": 6})
+
+
+def check_two_witness_degrees() -> bool:
+    """[K_E:Q], e_E and the density for 696.e1, by exact F₂ linear algebra.
+
+    A multiquadratic field's degree is 2^r with r the F₂-rank of the exponent
+    vectors of the squarefree parts, and the same rank decides whether the
+    quadratic resolvent lies inside K_E. Both are integers, so this check has no
+    tolerance at all.
+    """
+    coords = [-1, 2, 3, 29]
+    gens = [-1, 2, tw21.star(3), tw21.star(29)]
+    vecs = [tw21.exponent_vector(tw21.squarefree_part(g), coords) for g in gens]
+    if any(v is None for v in vecs):
+        return False
+    if tw21.f2_rank(vecs) != 4:
+        return False
+    # the sign convention cannot matter: √−1 is already in K_E, so ℓ* and ℓ
+    # generate the same extension. Measured rather than asserted.
+    flipped = [tw21.exponent_vector(tw21.squarefree_part(g), coords)
+               for g in (-1, 2, 3, -29)]
+    if tw21.f2_rank(flipped) != 4:
+        return False
+    resolvent = tw21.squarefree_part(-11136 * 16)        # disc of 4x³+b₂x²+…
+    if tw21.squarefree_part(-174) != -174:
+        return False
+    if not tw21.in_span(tw21.exponent_vector(-174, coords), vecs):
+        return False
+    # and a resolvent that is NOT inside must be reported as not inside
+    return not tw21.in_span(tw21.exponent_vector(-7, [-1, 2, 3, 7, 29]),
+                            [tw21.exponent_vector(tw21.squarefree_part(g),
+                                                  [-1, 2, 3, 7, 29])
+                             for g in gens])
 
 
 CHECKS = {
@@ -727,6 +775,7 @@ CHECKS = {
     "ogg-formula": check_ogg,
     "regulator": check_regulator,
     "bsd-sweep": check_bsd_sweep,
+    "two-witness-degrees": check_two_witness_degrees,
 }
 
 
@@ -901,6 +950,16 @@ DEFECTS = [
     ("the singular point is not moved to the origin", "code", "tate",
      lambda: patch(tate18, "singular_point", lambda a, q: (0, 0))),
 
+    # ---- gate 21 -------------------------------------------------------------
+    ("F2 rank returns the number of vectors instead of the rank", "code",
+     "two-witness-degrees", lambda: patch(tw21, "f2_rank", len)),
+    ("squarefree part drops the sign", "code", "two-witness-degrees",
+     lambda: patch(tw21, "squarefree_part",
+                   lambda n: abs(_true_squarefree(n)))),
+    ("membership in the span always answers yes", "code",
+     "two-witness-degrees", lambda: patch(tw21, "in_span",
+                                          lambda t, v: True)),
+
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
      lambda: patch(bsd20, "x_double", _x_double_missing_term)),
@@ -1061,10 +1120,19 @@ CONTROLS = [
     ("naive height reads the numerator only, below the regulator's precision",
      lambda: patch(bsd20, "log_height",
                    lambda x: math.log(max(1, abs(x.numerator))))),
+    # A seventh, and it is a fact about the field rather than about the code.
+    # K_E contains ζ₈, hence √−1, so √ℓ and √−ℓ differ by an element already
+    # present: adjoining ℓ* or ℓ gives the SAME field, and inverting the sign
+    # convention cannot change [K_E:Q] or what lies inside it. The ℓ* in the
+    # definition is there for the reciprocity step of Lemma 3.2, which rewrites
+    # (ℓ*/q) = 1 as (q/ℓ) = 1 — not for the field.
+    ("the ell* sign convention is inverted, which sqrt(-1) in K_E makes a no-op",
+     lambda: patch(tw21, "star", lambda e: -e if e % 4 == 1 else e)),
 ]
 
 
 _true_mass_exact = glob14.mass_exact
+_true_squarefree = tw21.squarefree_part
 _true_x_double = bsd20.x_double
 _true_canon = bsd20.canonical_height
 _true_sweep = bsd20.sweep
@@ -1078,7 +1146,7 @@ def _x_double_missing_term(ainvs, x):
     return None if den == 0 else _F(num, den)
 
 
-def _canon_wrong_richardson(ainvs, P, depth=10):
+def _canon_wrong_richardson(ainvs, P, depth=8):
     x = P[0]
     raw = []
     for _ in range(depth):
@@ -1603,7 +1671,8 @@ def main() -> int:
                    "src17_family_prime_router",
                    "src18_tate_algorithm",
                    "src19_conductor_census",
-                   "src20_bsd_consistency"],
+                   "src20_bsd_consistency",
+                   "src21_two_witness_certificate"],
         "rule": ("a planted defect must be caught by the check NAMED for it, "
                  "not merely by some check; and controls must disturb nothing"),
         "two_kinds": {

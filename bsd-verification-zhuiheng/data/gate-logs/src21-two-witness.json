@@ -1,0 +1,86 @@
+{
+  "gate": "src21_two_witness_certificate",
+  "subject": "30_Two_Witness_Criterion_v0.1 — the certificate (T1)–(T7), the field K_E, and the density formula, at 696.e1",
+  "K_E": {
+    "definition": "Q(ζ₈, √(ℓ*) : ℓ | N_E odd), ℓ* = (−1)^((ℓ−1)/2)·ℓ",
+    "generators_as_square_roots": [
+      -1,
+      2,
+      -3,
+      29
+    ],
+    "coordinate_primes": [
+      -1,
+      2,
+      3,
+      29
+    ],
+    "F2_rank": 4,
+    "degree": 16,
+    "document_states": 16,
+    "agrees": true,
+    "note": "a multiquadratic field's degree is 2^r with r the F₂-rank of the exponent vectors — exact linear algebra, not an estimate"
+  },
+  "quadratic_resolvent": {
+    "disc_of_the_2_division_cubic": -2850816,
+    "squarefree_part": -174,
+    "lies_inside_K_E": true,
+    "e_E": 2,
+    "document_states": 2,
+    "agrees": true
+  },
+  "density": {
+    "formula": "e_E / (3·[K_E:Q])",
+    "computed": "1/24",
+    "document_states": "1/24",
+    "agrees": true,
+    "measured_in_RUN_009": "0.04162499 over primes below 2×10⁷, which is 0.99900 × 1/24"
+  },
+  "why_RUN_015s_redundancy_is_this_e_E": {
+    "finding": "RUN-015 showed 𝒫's stated (q/29) = 1 follows from the other two conditions",
+    "explanation": "the 3-cycle condition forces Frobenius trivial on the quadratic resolvent Q(√-174), which lies inside K_E — so the two Chebotarev conditions overlap in a subgroup of index e_E. The redundancy IS the factor e_E = 2, and it is why the density is 1/24 rather than 1/48",
+    "members_below_4000_with_the_condition": 19,
+    "members_below_4000_without_it": 19,
+    "same_set": true
+  },
+  "certificate_conditions": {
+    "T1 partial — E(Q)[2] = 0": true,
+    "T1 partial — Δ_E < 0": true,
+    "T1 partial — analytic rank 0": "verified in RUN-014 (w = +1, L(E,1) = 1.6317… ≠ 0)",
+    "T1 partial — ord_2 L^alg(E,1) = 0": "L/Ω = 1 exactly (RUN-014), and ord_2(1) = 0",
+    "T1 not checked": [
+      "the Manin constant is odd",
+      "BSD(E,2) is known — cited from Creutz–Miller"
+    ],
+    "T2 — f_E irreducible with Galois group S₃": {
+      "disc_cubic": -2850816,
+      "squarefree_resolvent": -174,
+      "not_a_square": true,
+      "verified_in": "RUN-009"
+    },
+    "T3 — the only additive prime is 2": {
+      "2": "II*",
+      "3": "I1",
+      "29": "I1"
+    },
+    "T4 — 3 multiplicative with v₃(Δ) = 1": true,
+    "T5 — λ = 29 nonsplit multiplicative with v₂₉(Δ) = 1": true,
+    "T6/T7 — no rational isogeny, as far as X₀(n) reaches": {
+      "2": false,
+      "3": false,
+      "5": false,
+      "7": false
+    },
+    "T6/T7 degrees not covered": [
+      11,
+      13,
+      17,
+      19,
+      37,
+      43,
+      67,
+      163
+    ]
+  },
+  "ok": true
+}
