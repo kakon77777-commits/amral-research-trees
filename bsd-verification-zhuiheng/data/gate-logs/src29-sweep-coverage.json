@@ -1,8 +1,8 @@
 {
   "gate": "src29 — the sweep's own coverage",
   "documents": 85,
-  "reports_read": 26,
-  "gates_read": 30,
+  "reports_read": 40,
+  "gates_read": 43,
   "matching": "by filename stem and, for Phase 0, the `doc NN` form. Only 17 of the 85 are cited as markdown links, so a link scan would report a sweep four times smaller than it is",
   "bucket_order_strongest_first": [
     "subject of a report",
@@ -11,10 +11,10 @@
     "not mentioned"
   ],
   "counts": {
-    "subject of a report": 21,
-    "cited in a report": 8,
-    "named in gate code": 0,
-    "not mentioned": 56
+    "subject of a report": 32,
+    "cited in a report": 5,
+    "named in gate code": 1,
+    "not mentioned": 47
   },
   "per_subline": {
     "phase0": {
@@ -30,16 +30,16 @@
       "not mentioned": 3
     },
     "phase1": {
-      "subject of a report": 0,
+      "subject of a report": 1,
       "cited in a report": 2,
       "named in gate code": 0,
-      "not mentioned": 23
+      "not mentioned": 22
     },
     "phase2": {
-      "subject of a report": 7,
-      "cited in a report": 6,
-      "named in gate code": 0,
-      "not mentioned": 27
+      "subject of a report": 17,
+      "cited in a report": 3,
+      "named in gate code": 1,
+      "not mentioned": 19
     }
   },
   "not_mentioned": [
@@ -71,41 +71,33 @@
     "phase1/14_Phase1_Next_Low_Cost_Gate.md",
     "phase1/15_Fresh_Algorithm2_Semantic_Replay.md",
     "phase1/16_Phase1_Closure_and_Phase2_Interface.md",
-    "phase1/V0_5_EXACT_CENSUS_REPORT.md",
     "phase2/00_Phase2_Global_Enclosure_Consensus.md",
     "phase2/01_Phase2_Route_Matrix.md",
     "phase2/02_Fouquet_Wan_Hypothesis_Compiler.md",
     "phase2/02_Next_Compiler_Targets.md",
     "phase2/03_FW_H2_Jordan_Holder_Lemma.md",
     "phase2/04_Finite_Exceptional_Prime_Problem.md",
-    "phase2/05_NonSemistable_Family_Theorem_Schema.md",
     "phase2/06_Phase2_Agent_Experiment.md",
     "phase2/06_Witness_Network_v03_Integration.md",
     "phase2/07_Stop_Rules_and_Claim_Ladder.md",
     "phase2/08_FW_Weight2_Exact_Translation.md",
-    "phase2/09_FW_H3_Exact_Compiler.md",
-    "phase2/10_FW_H2_and_Ordinary_Obstruction.md",
-    "phase2/11_Derived_Supersingular_FW_Bridge.md",
-    "phase2/12_Hybrid_Odd_Prime_Router.md",
     "phase2/13_Candidate_NonSemistable_Strong_BSD_Family.md",
     "phase2/14_Candidate_Sieve.md",
     "phase2/15_696e1_Base_Certificate.md",
     "phase2/18_Provisional_Derived_Theorem.md",
-    "phase2/19_Independent_Referee_Handoff.md",
     "phase2/22_Odd_Prime_Source_Audit.md",
     "phase2/23_FW_Supersingular_Source_Audit.md",
-    "phase2/24_Manin_Period_Audit.md",
     "phase2/25_Chebotarev_Referee_Audit.md",
     "phase2/26_Novelty_Search_Log.md",
-    "phase2/27_Revised_Derived_Theorem_Candidate.md",
-    "phase2/28_Submission_Gate.md"
+    "phase2/27_Revised_Derived_Theorem_Candidate.md"
   ],
   "caveat": "a bucket is a measure of attention, not of correctness. Being the subject of a round says a round was aimed at the document; what that round actually settled is in its own 'what this round does not claim' section, every time",
   "second_axis_data_artefacts": {
-    "reports_naming_a_data_artefact": 26,
-    "distinct_artefacts_named": 31,
+    "reports_naming_a_data_artefact": 40,
+    "distinct_artefacts_named": 46,
     "artefacts": [
       "SHA256SUMS.json",
+      "algorithm1_removed_census.csv",
       "results/algorithm1_removed_census.csv",
       "results/summary.json",
       "src00-corpus-identity.json",
@@ -135,7 +127,15 @@
       "src25-p5-core-vertex.json",
       "src26-rank2-bsd-identity.json",
       "src27-agent-experiment-audit.json",
-      "src28-rank1-bsd-identity.json"
+      "src28-rank1-bsd-identity.json",
+      "src29-sweep-coverage.json",
+      "src30-phase1-numeric-crosscheck.json",
+      "src31-q9-census-closure.json",
+      "src32-696e1-certificate.json",
+      "src33-mazur-degrees.json",
+      "src34-referee-a.json",
+      "src35-gcd-witness.json",
+      "src36-kodaira-nogo.json"
     ],
     "by_report": {
       "RUN-001-CORPUS-IDENTITY.md": [
@@ -237,6 +237,65 @@
         "src11-gate-drill.json",
         "src20-bsd-consistency.json",
         "src28-rank1-bsd-identity.json"
+      ],
+      "RUN-027-SWEEP-COVERAGE.md": [
+        "algorithm1_removed_census.csv",
+        "results/algorithm1_removed_census.csv",
+        "results/summary.json",
+        "src11-gate-drill.json",
+        "src29-sweep-coverage.json"
+      ],
+      "RUN-028-PHASE1-NUMERIC-CROSSCHECK.md": [
+        "src11-gate-drill.json",
+        "src30-phase1-numeric-crosscheck.json"
+      ],
+      "RUN-029-Q9-CENSUS-CLOSURE.md": [
+        "src11-gate-drill.json",
+        "src31-q9-census-closure.json"
+      ],
+      "RUN-030-696E1-CERTIFICATE.md": [
+        "src11-gate-drill.json",
+        "src32-696e1-certificate.json"
+      ],
+      "RUN-031-MAZUR-DEGREES-CLOSED.md": [
+        "src11-gate-drill.json",
+        "src33-mazur-degrees.json"
+      ],
+      "RUN-032-REFEREE-A-CHECKLIST.md": [
+        "src11-gate-drill.json",
+        "src34-referee-a.json"
+      ],
+      "RUN-033-GCD-WITNESS-LEMMAS.md": [
+        "src11-gate-drill.json",
+        "src35-gcd-witness.json"
+      ],
+      "RUN-034-KODAIRA-NOGO-DOMAIN.md": [
+        "src11-gate-drill.json",
+        "src36-kodaira-nogo.json"
+      ],
+      "RUN-035-TWIST-INVARIANCE-BRIDGE.md": [
+        "src11-gate-drill.json",
+        "src37-twist-bridge.json"
+      ],
+      "RUN-036-MOD-ELL-SURJECTIVITY.md": [
+        "src11-gate-drill.json",
+        "src38-mod-ell-surjectivity.json"
+      ],
+      "RUN-037-FW-H3-COMPILER.md": [
+        "src11-gate-drill.json",
+        "src39-fw-h3.json"
+      ],
+      "RUN-038-FW-H2-ORDINARY.md": [
+        "src11-gate-drill.json",
+        "src40-fw-h2-ordinary.json"
+      ],
+      "RUN-039-DERIVED-SUPERSINGULAR-BRIDGE.md": [
+        "src11-gate-drill.json",
+        "src41-derived-bridge.json"
+      ],
+      "RUN-040-ODD-ADDITIVE-BARRIER.md": [
+        "src11-gate-drill.json",
+        "src42-odd-additive-barrier.json"
       ]
     }
   },
@@ -253,15 +312,16 @@
       ],
       "cited_in": [
         "RUN-019-WITNESS-NETWORK.md",
-        "RUN-024-CORPUS-GATES-DRILLED.md"
+        "RUN-024-CORPUS-GATES-DRILLED.md",
+        "RUN-027-SWEEP-COVERAGE.md"
       ],
       "named_in_gates": [
         "src01_ladder_vocabulary.py",
         "src02_rejected_route_recurrence.py",
         "src03_multiplicity_nogo.py",
         "src04_curve_arithmetic_recompute.py",
-        "src19_conductor_census.py",
-        "src29_sweep_coverage.py"
+        "src11_gate_drill.py",
+        "src19_conductor_census.py"
       ]
     },
     {
@@ -274,15 +334,16 @@
         "RUN-004-CURVE-ARITHMETIC.md"
       ],
       "cited_in": [
-        "RUN-024-CORPUS-GATES-DRILLED.md"
+        "RUN-024-CORPUS-GATES-DRILLED.md",
+        "RUN-027-SWEEP-COVERAGE.md"
       ],
       "named_in_gates": [
         "src01_ladder_vocabulary.py",
         "src02_rejected_route_recurrence.py",
         "src03_multiplicity_nogo.py",
         "src04_curve_arithmetic_recompute.py",
-        "src19_conductor_census.py",
-        "src29_sweep_coverage.py"
+        "src11_gate_drill.py",
+        "src19_conductor_census.py"
       ]
     },
     {
@@ -316,7 +377,9 @@
       "subject_of": [
         "RUN-002-LADDER-VOCABULARY.md"
       ],
-      "cited_in": [],
+      "cited_in": [
+        "RUN-027-SWEEP-COVERAGE.md"
+      ],
       "named_in_gates": [
         "src01_ladder_vocabulary.py",
         "src29_sweep_coverage.py"
@@ -342,6 +405,7 @@
       "named_in_gates": [
         "src02_rejected_route_recurrence.py",
         "src03_multiplicity_nogo.py",
+        "src11_gate_drill.py",
         "src19_conductor_census.py",
         "src29_sweep_coverage.py"
       ]
@@ -692,20 +756,35 @@
     {
       "subline": "phase1",
       "name": "V0_5_EXACT_CENSUS_REPORT.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-028-PHASE1-NUMERIC-CROSSCHECK.md",
+        "RUN-029-Q9-CENSUS-CLOSURE.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src30_phase1_numeric_crosscheck.py",
+        "src31_q9_census_closure.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "00_GCD_Witness_Lemmas.md",
       "bucket": "subject of a report",
       "subject_of": [
-        "RUN-019-WITNESS-NETWORK.md"
+        "RUN-019-WITNESS-NETWORK.md",
+        "RUN-033-GCD-WITNESS-LEMMAS.md"
       ],
-      "cited_in": [],
-      "named_in_gates": []
+      "cited_in": [
+        "RUN-037-FW-H3-COMPILER.md"
+      ],
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src35_gcd_witness_lemmas.py",
+        "src37_twist_invariance_bridge.py",
+        "src39_fw_h3_compiler.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -718,14 +797,18 @@
     {
       "subline": "phase2",
       "name": "01_Odd_Additive_Period_Barrier.md",
-      "bucket": "cited in a report",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-040-ODD-ADDITIVE-BARRIER.md"
+      ],
       "cited_in": [
         "RUN-016-TATE-AND-CONDUCTORS.md"
       ],
       "named_in_gates": [
+        "src11_gate_drill.py",
         "src18_tate_algorithm.py",
-        "src19_conductor_census.py"
+        "src19_conductor_census.py",
+        "src42_odd_additive_period_barrier.py"
       ]
     },
     {
@@ -763,12 +846,17 @@
     {
       "subline": "phase2",
       "name": "03_Quadratic_Twist_Invariance_Bridge.md",
-      "bucket": "cited in a report",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-035-TWIST-INVARIANCE-BRIDGE.md"
+      ],
       "cited_in": [
         "RUN-008-KEPT-CURVES.md"
       ],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src37_twist_invariance_bridge.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -791,23 +879,29 @@
     {
       "subline": "phase2",
       "name": "05_Kodaira_Prefilters_and_NoGo.md",
-      "bucket": "cited in a report",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-034-KODAIRA-NOGO-DOMAIN.md"
+      ],
       "cited_in": [
         "RUN-016-TATE-AND-CONDUCTORS.md"
       ],
       "named_in_gates": [
+        "src11_gate_drill.py",
         "src18_tate_algorithm.py",
-        "src19_conductor_census.py"
+        "src19_conductor_census.py",
+        "src36_kodaira_prefilters_nogo.py"
       ]
     },
     {
       "subline": "phase2",
       "name": "05_NonSemistable_Family_Theorem_Schema.md",
-      "bucket": "not mentioned",
+      "bucket": "named in gate code",
       "subject_of": [],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src11_gate_drill.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -854,34 +948,64 @@
     {
       "subline": "phase2",
       "name": "09_FW_H3_Exact_Compiler.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-037-FW-H3-COMPILER.md"
+      ],
+      "cited_in": [
+        "RUN-039-DERIVED-SUPERSINGULAR-BRIDGE.md"
+      ],
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src39_fw_h3_compiler.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "10_FW_H2_and_Ordinary_Obstruction.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-038-FW-H2-ORDINARY.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src40_fw_h2_ordinary.py",
+        "src41_derived_supersingular_bridge.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "11_Derived_Supersingular_FW_Bridge.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-039-DERIVED-SUPERSINGULAR-BRIDGE.md"
+      ],
+      "cited_in": [
+        "RUN-040-ODD-ADDITIVE-BARRIER.md"
+      ],
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src41_derived_supersingular_bridge.py",
+        "src42_odd_additive_period_barrier.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "12_Hybrid_Odd_Prime_Router.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-033-GCD-WITNESS-LEMMAS.md"
+      ],
+      "cited_in": [
+        "RUN-034-KODAIRA-NOGO-DOMAIN.md",
+        "RUN-037-FW-H3-COMPILER.md",
+        "RUN-040-ODD-ADDITIVE-BARRIER.md"
+      ],
+      "named_in_gates": [
+        "src35_gcd_witness_lemmas.py",
+        "src39_fw_h3_compiler.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -924,11 +1048,15 @@
       "name": "17_696e1_All_Prime_Router.md",
       "bucket": "subject of a report",
       "subject_of": [
-        "RUN-015-TWIST-FAMILY.md"
+        "RUN-015-TWIST-FAMILY.md",
+        "RUN-033-GCD-WITNESS-LEMMAS.md"
       ],
-      "cited_in": [],
+      "cited_in": [
+        "RUN-034-KODAIRA-NOGO-DOMAIN.md"
+      ],
       "named_in_gates": [
-        "src17_family_prime_router.py"
+        "src17_family_prime_router.py",
+        "src35_gcd_witness_lemmas.py"
       ]
     },
     {
@@ -942,10 +1070,14 @@
     {
       "subline": "phase2",
       "name": "19_Independent_Referee_Handoff.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-032-REFEREE-A-CHECKLIST.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src34_referee_a_checklist.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -988,10 +1120,21 @@
     {
       "subline": "phase2",
       "name": "24_Manin_Period_Audit.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-031-MAZUR-DEGREES-CLOSED.md",
+        "RUN-036-MOD-ELL-SURJECTIVITY.md"
+      ],
+      "cited_in": [
+        "RUN-032-REFEREE-A-CHECKLIST.md"
+      ],
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src33_mazur_degrees_closed.py",
+        "src34_referee_a_checklist.py",
+        "src38_mod_ell_surjectivity.py",
+        "src41_derived_supersingular_bridge.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -1020,10 +1163,14 @@
     {
       "subline": "phase2",
       "name": "28_Submission_Gate.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-030-696E1-CERTIFICATE.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src32_696e1_certificate.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -1048,7 +1195,9 @@
       "subject_of": [
         "RUN-018-TWO-WITNESS-CERTIFICATE.md"
       ],
-      "cited_in": [],
+      "cited_in": [
+        "RUN-027-SWEEP-COVERAGE.md"
+      ],
       "named_in_gates": [
         "src21_two_witness_certificate.py",
         "src29_sweep_coverage.py"
