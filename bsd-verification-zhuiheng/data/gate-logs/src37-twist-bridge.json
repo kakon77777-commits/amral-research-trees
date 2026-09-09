@@ -1,0 +1,917 @@
+{
+  "gate": "src37 — the quadratic-twist invariance bridge",
+  "source": "03_Quadratic_Twist_Invariance_Bridge",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "conductor": 696,
+  "lemma_A": {
+    "lemma": "A — irreducibility invariance",
+    "status": "representation theory, cited",
+    "computable_shadow": "a_ell^2 - 4 ell, the sieve's input",
+    "rows": [
+      {
+        "d": 241,
+        "good_primes_compared": 58,
+        "discriminant_identical": 58,
+        "a_ell_sign_flips": 31
+      },
+      {
+        "d": 313,
+        "good_primes_compared": 59,
+        "discriminant_identical": 59,
+        "a_ell_sign_flips": 33
+      }
+    ],
+    "all_identical": true,
+    "flips_seen": true
+  },
+  "lemma_B": {
+    "lemma": "B — local semisimplification degeneracy invariance",
+    "documents_own_status": "標準表示論推導候選；正式文件需逐 theorem version 核對",
+    "established_here": false,
+    "why_not": "the document marks it a candidate derivation needing per-theorem-version checking, and this arm has no way to check a theorem version it does not hold",
+    "consequence_for_the_bridge": "A ∧ B ∧ C is what gives FW(E,p) ⟹ FW(E_d,p). With B open the bridge is not established, and C being measured does not change that"
+  },
+  "lemma_C": {
+    "base": {
+      "2": {
+        "kodaira": "II*",
+        "f": 3,
+        "c": 1,
+        "v_disc": 11,
+        "split_multiplicative": null
+      },
+      "3": {
+        "kodaira": "I1",
+        "f": 1,
+        "c": 1,
+        "v_disc": 1,
+        "split_multiplicative": true
+      },
+      "29": {
+        "kodaira": "I1",
+        "f": 1,
+        "c": 1,
+        "v_disc": 1,
+        "split_multiplicative": false
+      }
+    },
+    "members": 19,
+    "rows": [
+      {
+        "q": 241,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 313,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 457,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 673,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 937,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 1009,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 1153,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 1753,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 2017,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 2089,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 2113,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 2137,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 2617,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 2713,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 3049,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 3457,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 3529,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 3769,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      },
+      {
+        "q": 3793,
+        "all_conductor_primes_split": true,
+        "all_local_data_preserved": true,
+        "per_prime": {
+          "2": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "II*",
+              "f": 3,
+              "c": 1,
+              "v_disc": 11,
+              "split_multiplicative": null
+            }
+          },
+          "3": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": true
+            }
+          },
+          "29": {
+            "chi_trivial_on_G_Q_ell": true,
+            "identical_to_base": true,
+            "twist": {
+              "kodaira": "I1",
+              "f": 1,
+              "c": 1,
+              "v_disc": 1,
+              "split_multiplicative": false
+            }
+          }
+        }
+      }
+    ],
+    "every_member_splits_at_2_3_29": true,
+    "every_member_preserves_all_local_data": true
+  },
+  "lemma_C_converse": {
+    "per_prime": {
+      "2": {
+        "inert_d_tried": 139,
+        "moved": null,
+        "reduction": "additive",
+        "testable": false,
+        "why_not": "every invariant available here is forced at 2: q ≡ 1 (mod 4) makes the twist unramified there, so the Kodaira type II* and v(Δ) = 11 are preserved; that type has Tamagawa number 1 for every curve carrying it; and additive reduction has no split flag. 139 inert d were tried and none moved anything"
+      },
+      "3": {
+        "inert_d_tried": 1,
+        "moved": {
+          "d": 5,
+          "base": {
+            "kodaira": "I1",
+            "f": 1,
+            "c": 1,
+            "v_disc": 1,
+            "split_multiplicative": true
+          },
+          "twist": {
+            "kodaira": "I1",
+            "f": 1,
+            "c": 1,
+            "v_disc": 1,
+            "split_multiplicative": false
+          },
+          "changed_fields": [
+            "split_multiplicative"
+          ],
+          "split_flag_flipped": true
+        },
+        "reduction": "multiplicative",
+        "testable": true,
+        "why_not": null
+      },
+      "29": {
+        "inert_d_tried": 1,
+        "moved": {
+          "d": 17,
+          "base": {
+            "kodaira": "I1",
+            "f": 1,
+            "c": 1,
+            "v_disc": 1,
+            "split_multiplicative": false
+          },
+          "twist": {
+            "kodaira": "I1",
+            "f": 1,
+            "c": 1,
+            "v_disc": 1,
+            "split_multiplicative": true
+          },
+          "changed_fields": [
+            "split_multiplicative"
+          ],
+          "split_flag_flipped": true
+        },
+        "reduction": "multiplicative",
+        "testable": true,
+        "why_not": null
+      }
+    },
+    "moved_at_every_multiplicative_conductor_prime": true,
+    "untestable_primes": [
+      2
+    ],
+    "why": "preservation at a split prime is only a finding if the same computation moves at an inert one — otherwise a constant would pass lemma C. Where no available invariant can move, the prime is reported untestable, not passing"
+  },
+  "the_witness_that_depends_on_it": {
+    "base_29_is_nonsplit": true,
+    "a_d_with_29_inert": 17,
+    "its_twist_at_29": {
+      "kodaira": "I1",
+      "f": 1,
+      "c": 1,
+      "v_disc": 1,
+      "split_multiplicative": true
+    },
+    "witness_would_be_lost_there": true,
+    "29_stays_nonsplit_for_every_member": true,
+    "members_checked": 19,
+    "reading": "the FW-H3 witness survives the family because 𝒫 requires 29 to split in Q(sqrt q); a twist by a d where 29 is inert turns it split and there is no second nonsplit prime to fall back on"
+  },
+  "bridge_status": "NOT established. C is measured on both sides and A's computable shadow holds, but the document itself marks B a candidate, and the bridge needs all three",
+  "ok": true
+}
