@@ -115,6 +115,7 @@ import src02_rejected_route_recurrence as route02          # noqa: E402
 import src03_multiplicity_nogo as nogo03                   # noqa: E402
 import src27_agent_experiment_audit as agent27            # noqa: E402
 import src28_rank1_bsd_identity as r1bsd                  # noqa: E402
+import src29_sweep_coverage as cov29                      # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1440,6 +1441,58 @@ def check_height_level_selection() -> bool:
     return abs(res[chosen]) < 5e-6
 
 
+def check_sweep_coverage() -> bool:
+    """The sweep's own coverage, and the alias set that makes it measurable.
+
+    Three things are pinned, and the middle one is this round's whole point.
+
+    The four buckets must **partition** the 85: a classifier that let a document
+    fall into two, or into none, would report a sweep that does not add up.
+
+    Stem matching must find strictly more than link matching. Only 17 of the 85
+    are cited anywhere as a markdown link and 29 are touched in total, so a scan
+    written from the form the author remembers writing would report a sweep four
+    times smaller — the same silent under-report this tree produced in four
+    consecutive rounds. Pinning the gap keeps a future narrowing visible.
+
+    And Phase 1 must still read 0 subjects and 23 unmentioned, because that row
+    is the finding: six rounds verified that line's arithmetic and named its
+    artefacts, never its documents.
+    """
+    docs = cov29.documents()
+    if len(docs) != 85:
+        return False
+    src = cov29.sources()
+    rows = [cov29.classify(d, src) for d in docs]
+    counts = collections.Counter(r["bucket"] for r in rows)
+    if sum(counts.values()) != 85:
+        return False
+    if set(counts) - {"subject of a report", "cited in a report",
+                      "named in gate code", "not mentioned"}:
+        return False
+    if counts["subject of a report"] < 21 or counts["not mentioned"] > 56:
+        return False
+    ph1 = [r for r in rows if r["subline"] == "phase1"]
+    if len(ph1) != 25:
+        return False
+    if sum(1 for r in ph1 if r["bucket"] == "subject of a report") != 0:
+        return False
+    # the alias set: the stem and the Phase 0 `doc NN` form must both be there,
+    # since four rounds name their subject only that way
+    al = cov29.aliases("phase0", "05_Internal_Grid_Rank_Audit.md")
+    if "05_Internal_Grid_Rank_Audit" not in al or "doc 05" not in al:
+        return False
+    if "doc 05" in cov29.aliases("phase2", "05_NonSemistable_Family_Theorem_Schema.md"):
+        return False                                     # the form is Phase 0's
+    # and stem matching must beat link matching, measured
+    link_only = set()
+    for r in src["reports"].values():
+        for m in re.findall(r"\]\(([^)]*amral/public/bsd/[^)]+)\)", r["body"]):
+            link_only.add(m.rsplit("/", 1)[-1])
+    touched = sum(1 for r in rows if r["bucket"] != "not mentioned")
+    return len(link_only) <= 17 and touched >= 29
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -1495,6 +1548,7 @@ CHECKS = {
     "rank1-leading-derivative": check_rank1_leading_derivative,
     "rank1-identity": check_rank1_identity,
     "height-level-selection": check_height_level_selection,
+    "sweep-coverage": check_sweep_coverage,
 }
 
 
@@ -1779,6 +1833,13 @@ DEFECTS = [
     ("the regulator picks a level per height instead of uniformly", "code",
      "height-level-selection",
      lambda: patch(bsd20, "regulator", _regulator_mixed_levels)),
+    ("the coverage alias set keeps only the filename, not the stem", "code",
+     "sweep-coverage",
+     lambda: patch(cov29, "aliases", lambda sub, name: [name])),
+    ("the coverage alias set drops the Phase 0 doc-NN form", "code",
+     "sweep-coverage", lambda: patch(cov29, "aliases", _aliases_no_doc_nn)),
+    ("coverage reads a report's body before its subject line", "code",
+     "sweep-coverage", lambda: patch(cov29, "classify", _classify_body_first)),
 
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
@@ -2015,6 +2076,32 @@ def _divisors_with_two(n):
     if n and n % 2 == 0:
         out.add(2)
     return out
+
+
+def _aliases_no_doc_nn(sub, name):
+    """Filename and stem only — the `doc NN` form dropped, which misfiles the
+    four rounds whose subject line names a Phase 0 document only that way."""
+    stem = name[:-3] if name.endswith(".md") else name
+    return [name, stem]
+
+
+def _classify_body_first(doc, src):
+    """Body before subject, so a round aimed at a document is filed as merely
+    having cited it — the strongest bucket silently emptied into the next."""
+    subj, body, gates = [], [], []
+    for rname, r in src["reports"].items():
+        if any(a in r["body"] for a in doc["aliases"]):
+            body.append(rname)
+        elif any(a in r["subject"] for a in doc["aliases"]):
+            subj.append(rname)
+    for gname, text in src["gates"].items():
+        if any(a in text for a in doc["aliases"]):
+            gates.append(gname)
+    bucket = ("subject of a report" if subj else
+              "cited in a report" if body else
+              "named in gate code" if gates else "not mentioned")
+    return {"subline": doc["subline"], "name": doc["name"], "bucket": bucket,
+            "subject_of": subj, "cited_in": body[:6], "named_in_gates": gates[:6]}
 
 
 _true_leading = r1bsd.leading_derivative

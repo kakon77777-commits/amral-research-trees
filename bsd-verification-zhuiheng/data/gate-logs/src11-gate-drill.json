@@ -76,7 +76,8 @@
     "sha-labelling": true,
     "rank1-leading-derivative": true,
     "rank1-identity": true,
-    "height-level-selection": true
+    "height-level-selection": true,
+    "sweep-coverage": true
   },
   "defects": [
     {
@@ -900,6 +901,33 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the coverage alias set keeps only the filename, not the stem",
+      "kind": "code",
+      "named_check": "sweep-coverage",
+      "checks_that_went_red": [
+        "sweep-coverage"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the coverage alias set drops the Phase 0 doc-NN form",
+      "kind": "code",
+      "named_check": "sweep-coverage",
+      "checks_that_went_red": [
+        "sweep-coverage"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "coverage reads a report's body before its subject line",
+      "kind": "code",
+      "named_check": "sweep-coverage",
+      "checks_that_went_red": [
+        "sweep-coverage"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "x-only duplication drops the -2*b6*x term",
       "kind": "code",
       "named_check": "regulator",
@@ -1297,8 +1325,8 @@
     }
   ],
   "totals": {
-    "defects": 113,
-    "caught_by_the_named_check": 113,
+    "defects": 116,
+    "caught_by_the_named_check": 116,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
     "controls": 19,

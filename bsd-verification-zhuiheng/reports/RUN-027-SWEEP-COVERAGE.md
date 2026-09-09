@@ -96,7 +96,14 @@ a measurement, and the plan's own unit is the one being counted.
 
 ## The drill
 
-*(TALLY PENDING — filled from the drill log before this round is committed)*
+**116 defects, 116 caught by the check named for each — none uncaught, none
+caught by the wrong check. 19 controls, none disturbed, over 55 checks. Nineteen
+minutes and thirty-one seconds.**
+
+Gate 29 contributes one check and three defects, and the middle assertion is
+this round's own finding turned into a fixture: **stem matching must find
+strictly more than link matching**, 29 against 17. A future narrowing of the
+alias set would go red instead of quietly reporting a smaller sweep.
 
 ## What this round does not claim
 
