@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-036:
-  every gate is drilled — `src00`–`src10` and `src12`–`src38`, 144 defects, 144
-  caught by the named check, 24 controls undisturbed, over 64 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-038:
+  every gate is drilled — `src00`–`src10` and `src12`–`src40`, 152 defects, 152
+  caught by the named check, 26 controls undisturbed, over 66 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -139,6 +139,8 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [034](./reports/RUN-034-KODAIRA-NOGO-DOMAIN.md) | `05`'s one exact no-go, and where it can fire | `src36` | the no-go **never fires in this family**, and `𝒫`'s own `gcd(q, 696) = 1` is why — firing at `d` needs the base multiplicative at `d`, measured to be exactly `{3, 29}`; and `p = 3`'s character argument is measured **special to 3 among odd primes** |
 | [035](./reports/RUN-035-TWIST-INVARIANCE-BRIDGE.md) | the quadratic-twist invariance bridge, lemma by lemma | `src37` | lemma C measured on **both** sides — preserved at every split conductor prime on 19 of 19 members, and the split flag **flips** at an inert one; `ℓ = 2` reported **untestable** after 139 inert `d`, not passing; and RUN-033's lone FW-H3 witness is kept alive by exactly `𝒫`'s split condition, since `d = 17` would turn 29 split. **Lemma B is where the document leaves it, so the bridge is not established** |
 | [036](./reports/RUN-036-MOD-ELL-SURJECTIVITY.md) | `24_Manin_Period_Audit`'s asserted "mod-`ℓ` images maximal for all `ℓ`" | `src38` | **surjectivity certified at `ℓ = 2` and every prime `5 ≤ ℓ ≤ 167`** — 38 in all, six maximal classes refuted each by a named Frobenius; **11 of Mazur's twelve** rise from irreducible to surjective; and `ℓ = 3` is blocked by two **structural** facts, `PGL₂(F₃) ≅ S₄` and a nonsplit-Cartan test that is vacuous mod 3 |
+| [037](./reports/RUN-037-FW-H3-COMPILER.md) | `09_FW_H3_Exact_Compiler`'s boxed uniform certificate | `src39` | the premise holds — `W₋ = {29}`, `g₋ = 1 = 2⁰` — and the boxed **`∀p>2, FW-H3 = PASS` is false at `p = 29`**: the gcd argument never sees the `ℓ ≠ p` clause, which empties a singleton `W₋`. The family theorem survives, and that is computed too — 29 is routed to P3, whose witness `ℓ = 3` is **split** and so was never available to FW-H3 |
+| [038](./reports/RUN-038-FW-H2-ORDINARY.md) | `10`'s ordinary obstruction and the branch FW is left | `src40` | the exact criterion `a_p² ≡ 1 (mod p)` run over 780 good primes: **8 ordinary primes fail H2**, every one with `a_p = ±1`, spread across the range — so no finite exception list can cover them, which is the document's own reason for the routing; the FW branch is **6 supersingular primes**, H3 cleared at each, and RUN-037's exception provably cannot reach them |
 
 ## Layout
 

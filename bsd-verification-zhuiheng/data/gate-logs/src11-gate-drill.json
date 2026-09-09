@@ -37,7 +37,9 @@
     "src35_gcd_witness_lemmas",
     "src36_kodaira_prefilters_nogo",
     "src37_twist_invariance_bridge",
-    "src38_mod_ell_surjectivity"
+    "src38_mod_ell_surjectivity",
+    "src39_fw_h3_compiler",
+    "src40_fw_h2_ordinary"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -109,7 +111,9 @@
     "gcd-witness-lemmas": true,
     "kodaira-nogo": true,
     "twist-bridge": true,
-    "mod-ell-surjectivity": true
+    "mod-ell-surjectivity": true,
+    "fw-h3-compiler": true,
+    "fw-h2-ordinary": true
   },
   "defects": [
     {
@@ -346,7 +350,8 @@
         "referee-a-checklist",
         "gcd-witness-lemmas",
         "kodaira-nogo",
-        "twist-bridge"
+        "twist-bridge",
+        "fw-h3-compiler"
       ],
       "caught_by_the_named_check": true
     },
@@ -363,7 +368,8 @@
         "referee-a-checklist",
         "gcd-witness-lemmas",
         "kodaira-nogo",
-        "twist-bridge"
+        "twist-bridge",
+        "fw-h3-compiler"
       ],
       "caught_by_the_named_check": true
     },
@@ -509,7 +515,8 @@
       "checks_that_went_red": [
         "tate-i0star-reachable",
         "ogg-formula",
-        "gcd-witness-lemmas"
+        "gcd-witness-lemmas",
+        "fw-h3-compiler"
       ],
       "caught_by_the_named_check": true
     },
@@ -1017,6 +1024,78 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "FW-H3 drops the ell != p clause, so the gap disappears",
+      "kind": "code",
+      "named_check": "fw-h3-compiler",
+      "checks_that_went_red": [
+        "fw-h3-compiler"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "W_- admits the split multiplicative primes too",
+      "kind": "code",
+      "named_check": "fw-h3-compiler",
+      "checks_that_went_red": [
+        "fw-h3-compiler"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "g_- is reported as 1 whatever the valuations are",
+      "kind": "code",
+      "named_check": "fw-h3-compiler",
+      "checks_that_went_red": [
+        "fw-h3-compiler"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "every gcd is called a power of two, so the premise never refuses",
+      "kind": "code",
+      "named_check": "fw-h3-compiler",
+      "checks_that_went_red": [
+        "fw-h3-compiler"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the H2 criterion tests a_p = 1 and forgets a_p = -1",
+      "kind": "code",
+      "named_check": "fw-h2-ordinary",
+      "checks_that_went_red": [
+        "fw-h2-ordinary"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the supersingular set comes back empty",
+      "kind": "code",
+      "named_check": "fw-h2-ordinary",
+      "checks_that_went_red": [
+        "fw-h2-ordinary"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a bad prime is admitted into the good supersingular branch",
+      "kind": "code",
+      "named_check": "fw-h2-ordinary",
+      "checks_that_went_red": [
+        "fw-h2-ordinary"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the ordinary failure set comes back empty, so the routing argument rests on nothing",
+      "kind": "code",
+      "named_check": "fw-h2-ordinary",
+      "checks_that_went_red": [
+        "fw-h2-ordinary"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "every prime is reported split, so the inert side never moves",
       "kind": "code",
       "named_check": "twist-bridge",
@@ -1102,7 +1181,9 @@
       "kind": "code",
       "named_check": "gcd-witness-lemmas",
       "checks_that_went_red": [
-        "gcd-witness-lemmas"
+        "gcd-witness-lemmas",
+        "fw-h3-compiler",
+        "fw-h2-ordinary"
       ],
       "caught_by_the_named_check": true
     },
@@ -1111,7 +1192,8 @@
       "kind": "code",
       "named_check": "gcd-witness-lemmas",
       "checks_that_went_red": [
-        "gcd-witness-lemmas"
+        "gcd-witness-lemmas",
+        "fw-h3-compiler"
       ],
       "caught_by_the_named_check": true
     },
@@ -1516,7 +1598,8 @@
         "rank1-leading-derivative",
         "rank1-identity",
         "mazur-degrees",
-        "twist-bridge"
+        "twist-bridge",
+        "fw-h2-ordinary"
       ],
       "caught_by_the_named_check": true
     },
@@ -1533,6 +1616,16 @@
     }
   ],
   "controls": [
+    {
+      "control": "the FW-H3 odd-p test bound widened",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the good-prime scan starts at 7, which p = 5 being ordinary with a_5 = -3 makes a no-op",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
     {
       "control": "the inert search bound widened",
       "checks_that_went_red": [],
@@ -1655,11 +1748,11 @@
     }
   ],
   "totals": {
-    "defects": 144,
-    "caught_by_the_named_check": 144,
+    "defects": 152,
+    "caught_by_the_named_check": 152,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 24,
+    "controls": 26,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

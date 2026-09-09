@@ -1,0 +1,272 @@
+{
+  "gate": "src40 — the FW-H2 compiler and the ordinary obstruction",
+  "source": "10_FW_H2_and_Ordinary_Obstruction",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "conductor": 696,
+  "classification": {
+    "bound": 6000,
+    "good_odd_primes": 780,
+    "supersingular": [
+      {
+        "p": 23,
+        "a_p": 0
+      },
+      {
+        "p": 251,
+        "a_p": 0
+      },
+      {
+        "p": 1061,
+        "a_p": 0
+      },
+      {
+        "p": 2297,
+        "a_p": 0
+      },
+      {
+        "p": 5479,
+        "a_p": 0
+      },
+      {
+        "p": 5591,
+        "a_p": 0
+      }
+    ],
+    "ordinary_H2_failures": [
+      {
+        "p": 7,
+        "a_p": 1
+      },
+      {
+        "p": 113,
+        "a_p": 1
+      },
+      {
+        "p": 211,
+        "a_p": -1
+      },
+      {
+        "p": 1433,
+        "a_p": -1
+      },
+      {
+        "p": 1811,
+        "a_p": -1
+      },
+      {
+        "p": 2693,
+        "a_p": 1
+      },
+      {
+        "p": 3209,
+        "a_p": 1
+      },
+      {
+        "p": 3529,
+        "a_p": 1
+      }
+    ]
+  },
+  "hasse_refinement": {
+    "failures": [
+      {
+        "p": 7,
+        "a_p": 1,
+        "is_plus_or_minus_one": true
+      },
+      {
+        "p": 113,
+        "a_p": 1,
+        "is_plus_or_minus_one": true
+      },
+      {
+        "p": 211,
+        "a_p": -1,
+        "is_plus_or_minus_one": true
+      },
+      {
+        "p": 1433,
+        "a_p": -1,
+        "is_plus_or_minus_one": true
+      },
+      {
+        "p": 1811,
+        "a_p": -1,
+        "is_plus_or_minus_one": true
+      },
+      {
+        "p": 2693,
+        "a_p": 1,
+        "is_plus_or_minus_one": true
+      },
+      {
+        "p": 3209,
+        "a_p": 1,
+        "is_plus_or_minus_one": true
+      },
+      {
+        "p": 3529,
+        "a_p": 1,
+        "is_plus_or_minus_one": true
+      }
+    ],
+    "all_are_plus_or_minus_one": true,
+    "failures_below_7": [],
+    "the_bound_where_it_becomes_forced": 7,
+    "why": "p - 1 <= 2 sqrt p holds only for p <= 5, so below 7 the congruence could also be met by a_p = 1 - p; above it the Hasse interval is too narrow and a_p = +-1 exactly"
+  },
+  "no_finite_exception": {
+    "buckets": [
+      {
+        "range": "(0, 1500]",
+        "failures": [
+          7,
+          113,
+          211,
+          1433
+        ],
+        "count": 4
+      },
+      {
+        "range": "(1500, 3000]",
+        "failures": [
+          1811,
+          2693
+        ],
+        "count": 2
+      },
+      {
+        "range": "(3000, 4500]",
+        "failures": [
+          3209,
+          3529
+        ],
+        "count": 2
+      },
+      {
+        "range": "(4500, 6000]",
+        "failures": [],
+        "count": 0
+      }
+    ],
+    "ranges_with_at_least_one_failure": 3,
+    "of": 4,
+    "keeps_producing": true,
+    "total": 8,
+    "reading": "the failure set is not a finite list that a theorem could except away below this bound, which is the document's stated reason for keeping ordinary primes on the ordinary theorem"
+  },
+  "supersingular_branch": {
+    "count": 6,
+    "primes": [
+      23,
+      251,
+      1061,
+      2297,
+      5479,
+      5591
+    ],
+    "rows": [
+      {
+        "p": 23,
+        "a_p": 0,
+        "H1": "PASS (cited)",
+        "H2": "PASS (cited)",
+        "H3": true,
+        "H3_witness": 29
+      },
+      {
+        "p": 251,
+        "a_p": 0,
+        "H1": "PASS (cited)",
+        "H2": "PASS (cited)",
+        "H3": true,
+        "H3_witness": 29
+      },
+      {
+        "p": 1061,
+        "a_p": 0,
+        "H1": "PASS (cited)",
+        "H2": "PASS (cited)",
+        "H3": true,
+        "H3_witness": 29
+      },
+      {
+        "p": 2297,
+        "a_p": 0,
+        "H1": "PASS (cited)",
+        "H2": "PASS (cited)",
+        "H3": true,
+        "H3_witness": 29
+      },
+      {
+        "p": 5479,
+        "a_p": 0,
+        "H1": "PASS (cited)",
+        "H2": "PASS (cited)",
+        "H3": true,
+        "H3_witness": 29
+      },
+      {
+        "p": 5591,
+        "a_p": 0,
+        "H1": "PASS (cited)",
+        "H2": "PASS (cited)",
+        "H3": true,
+        "H3_witness": 29
+      }
+    ],
+    "branch_is_non_empty": true,
+    "H3_passes_at_every_one": true,
+    "the_H3_exception_cannot_reach_here": true,
+    "why": "gate 39 found FW-H3's boxed certificate false at the one p inside W_-, and W_- consists of bad primes while this branch consists of good ones, so the two never meet"
+  },
+  "potentially_multiplicative_branch": {
+    "bad_primes": [
+      {
+        "p": 2,
+        "reduction": "additive",
+        "potential": "potentially good"
+      },
+      {
+        "p": 3,
+        "reduction": "multiplicative",
+        "potential": "potentially multiplicative"
+      },
+      {
+        "p": 29,
+        "reduction": "multiplicative",
+        "potential": "potentially multiplicative"
+      }
+    ],
+    "potentially_multiplicative": [
+      3,
+      29
+    ],
+    "additive_and_potentially_multiplicative": [],
+    "branch_is_empty_for_this_curve": true,
+    "agrees_with_RUN_034": true,
+    "note": "3 and 29 are potentially multiplicative because they ARE multiplicative; the branch `10` and `05` both exclude is the additive one, and it is empty here"
+  },
+  "routing": {
+    "boxed": "ordinary primes keep the ordinary theorem; FW is left to additive + supersingular",
+    "ordinary_cannot_go_to_FW_because": "8 ordinary primes below 6000 fail H2, spread over 3 of 4 ranges",
+    "FW_branch_is_not_vacuous": true,
+    "supersingular_primes": [
+      23,
+      251,
+      1061,
+      2297,
+      5479,
+      5591
+    ],
+    "supported_by_measurement": true
+  },
+  "headline": "`10`'s exact ordinary criterion a_p² ≡ 1 (mod p) is run: 8 ordinary primes below 6000 fail FW-H2, every one with a_p = ±1, and they keep appearing across the range. That is the document's reason for keeping ordinary primes off FW, measured. The branch FW is left — 6 supersingular primes — is non-empty and clears H3 at every one",
+  "ok": true
+}

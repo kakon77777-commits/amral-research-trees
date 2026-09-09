@@ -125,6 +125,8 @@ import src35_gcd_witness_lemmas as gcd35                  # noqa: E402
 import src36_kodaira_prefilters_nogo as nogo36            # noqa: E402
 import src37_twist_invariance_bridge as bridge37          # noqa: E402
 import src38_mod_ell_surjectivity as surj38               # noqa: E402
+import src39_fw_h3_compiler as h3c39                      # noqa: E402
+import src40_fw_h2_ordinary as h2o40                      # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -1927,11 +1929,93 @@ def check_mod_ell_surjectivity() -> bool:
 
 
 
+def check_fw_h3_compiler() -> bool:
+    """`09_FW_H3_Exact_Compiler`'s certificate, and the gap it must keep finding.
+
+    The inputs must come out as RUN-033 measured them — W_- = {29}, v = 1,
+    g_- = 1 — and the document's premise must hold. Then the boxed conclusion
+    must still be **false at exactly p = 29**: the whole point of this gate is
+    that testing the criterion finds what the gcd argument cannot see, so a
+    version that stopped finding it has lost the finding, not fixed it. The
+    routing answer must show every failing p taken by another branch whose
+    witness FW-H3 could not have used. And the premise must be shown refusing
+    somewhere, with the refused conclusion actually false there.
+    """
+    c = h3c39.uniform_certificate(h3c39.BASE)
+    if c["W_minus"] != [29] or c["valuations"] != {"29": 1}:
+        return False
+    if c["g_minus"] != 1 or not c["premise_holds"]:
+        return False
+    if c["odd_p_tested"] < 50:
+        return False
+    if c["p_where_the_criterion_FAILS"] != [29]:   # the gap must survive
+        return False
+    if c["conclusion_holds_as_stated"]:
+        return False
+    r = h3c39.routing_answer()
+    if not r["every_failing_p_is_routed_away"]:
+        return False
+    if not all(x["P3_witness_is_split"] for x in r["rows"]):
+        return False
+    f = h3c39.family()
+    if f["members"] < 15:
+        return False
+    if not (f["W_minus_identical_to_the_base_for_every_member"]
+            and f["g_minus_identical"] and f["same_failing_set"]):
+        return False
+    pf = h3c39.premise_failures()
+    e, o = pf["W_minus_empty"], pf["g_minus_with_an_odd_factor"]
+    if e is None or o is None:
+        return False
+    if e["premise_holds"] or o["premise_holds"]:
+        return False
+    return not o["criterion_at_that_p"]["pass"]
+
+
+def check_fw_h2_ordinary() -> bool:
+    """`10_FW_H2_and_Ordinary_Obstruction`'s exact ordinary criterion, run.
+
+    Run at 1,500 rather than the gate's 6,000: 0.21s against 2.9s, and both sets
+    the check needs are already non-empty there — the four smallest H2 failures
+    and the three smallest supersingular primes. The gate itself still runs at
+    6,000.
+
+    Both sets must be NON-EMPTY. A criterion that never fires would make the
+    document's routing argument rest on nothing, and a supersingular branch that
+    is empty would make "FW is left to additive + supersingular" vacuous. Every
+    failure must have a_p = +-1, which is the Hasse refinement. And no prime of
+    bad reduction may appear in the good supersingular branch — that is what
+    keeps RUN-037's single H3 exception away from it.
+    """
+    c = h2o40.classify(1500)
+    fails = [(r["p"], r["a_p"]) for r in c["ordinary_H2_failures"]]
+    if fails != [(7, 1), (113, 1), (211, -1), (1433, -1)]:
+        return False
+    if [r["p"] for r in c["supersingular"]] != [23, 251, 1061]:
+        return False
+    hr = h2o40.hasse_refinement(c)
+    if not hr["all_are_plus_or_minus_one"] or not hr["failures"]:
+        return False
+    ne = h2o40.no_finite_exception(c, blocks=2)
+    if not ne["keeps_producing"] or ne["total"] < 4:
+        return False
+    ss = h2o40.supersingular_branch(c)
+    if not (ss["branch_is_non_empty"] and ss["H3_passes_at_every_one"]
+            and ss["the_H3_exception_cannot_reach_here"]):
+        return False
+    pm = h2o40.potentially_multiplicative_branch()
+    if not pm["branch_is_empty_for_this_curve"]:
+        return False
+    return h2o40.routing(c, blocks=2)["supported_by_measurement"]
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
     net22, p5u, led24, cv25, r2bsd, agent27, r1bsd, cov29, p1num, q9, cert32,
-    mazur33, refA34, gcd35, nogo36, bridge37, surj38))
+    mazur33, refA34, gcd35, nogo36, bridge37, surj38, h3c39,
+    h2o40))
 
 
 CHECKS = {
@@ -1999,6 +2083,8 @@ CHECKS = {
     "kodaira-nogo": check_kodaira_nogo,
     "twist-bridge": check_twist_bridge,
     "mod-ell-surjectivity": check_mod_ell_surjectivity,
+    "fw-h3-compiler": check_fw_h3_compiler,
+    "fw-h2-ordinary": check_fw_h2_ordinary,
 }
 
 
@@ -2303,6 +2389,23 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("FW-H3 drops the ell != p clause, so the gap disappears", "code",
+     "fw-h3-compiler", lambda: patch(h3c39, "h3", _h3_no_ell_neq_p)),
+    ("W_- admits the split multiplicative primes too", "code",
+     "fw-h3-compiler", lambda: patch(h3c39, "w_minus", _w_minus_all_mult)),
+    ("g_- is reported as 1 whatever the valuations are", "code",
+     "fw-h3-compiler", lambda: patch(h3c39, "g_minus", lambda w: 1)),
+    ("every gcd is called a power of two, so the premise never refuses", "code",
+     "fw-h3-compiler", lambda: patch(h3c39, "is_power_of_two", lambda n: True)),
+    ("the H2 criterion tests a_p = 1 and forgets a_p = -1", "code",
+     "fw-h2-ordinary", lambda: patch(h2o40, "classify", _classify_plus_only)),
+    ("the supersingular set comes back empty", "code", "fw-h2-ordinary",
+     lambda: patch(h2o40, "classify", _classify_no_supersingular)),
+    ("a bad prime is admitted into the good supersingular branch", "code",
+     "fw-h2-ordinary", lambda: patch(h2o40, "classify", _classify_admits_29)),
+    ("the ordinary failure set comes back empty, so the routing argument "
+     "rests on nothing", "code", "fw-h2-ordinary",
+     lambda: patch(h2o40, "classify", _classify_no_failures)),
     ("every prime is reported split, so the inert side never moves", "code",
      "twist-bridge",
      lambda: patch(bridge37, "chi_trivial_at", lambda d, ell: True)),
@@ -2476,6 +2579,12 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("the FW-H3 odd-p test bound widened",
+     lambda: patch(h3c39, "uniform_certificate",
+                   lambda ainvs, bound=800: _true_cert(ainvs, bound))),
+    ("the good-prime scan starts at 7, which p = 5 being ordinary with "
+     "a_5 = -3 makes a no-op",
+     lambda: patch(h2o40, "classify", _classify_from_seven)),
     ("the inert search bound widened",
      lambda: patch(bridge37, "lemma_C_converse",
                    lambda bound=6000: _true_converse(6000))),
@@ -2657,6 +2766,69 @@ def _classify_body_first(doc, src):
               "named in gate code" if gates else "not mentioned")
     return {"subline": doc["subline"], "name": doc["name"], "bucket": bucket,
             "subject_of": subj, "cited_in": body[:6], "named_in_gates": gates[:6]}
+
+
+_true_cert = h3c39.uniform_certificate
+_true_h3 = h3c39.h3
+_true_w_minus = h3c39.w_minus
+_true_classify = h2o40.classify
+
+
+def _h3_no_ell_neq_p(w, p):
+    """The criterion with its second clause deleted. The certificate then reads
+    as the gcd argument alone, and RUN-037's finding vanishes."""
+    usable = [r for r in w if r["v_disc"] % p]
+    return {"p": p, "witness": usable[0]["ell"] if usable else None,
+            "pass": bool(usable), "candidates_excluded_by_ell_neq_p": []}
+
+
+def _w_minus_all_mult(ainvs):
+    """W_- taken over all multiplicative primes rather than the nonsplit ones,
+    which is the restriction the FW-H3 witness actually requires."""
+    md = gcd35.multiplicative_data(ainvs)
+    if md.get("singular"):
+        return []
+    return [{"ell": r["p"], "v_disc": r["n"]} for r in md["multiplicative"]]
+
+
+def _classify_plus_only(bound=h2o40.P_BOUND):
+    c = _true_classify(bound)
+    c["ordinary_H2_failures"] = [r for r in c["ordinary_H2_failures"]
+                                 if (r["a_p"] - 1) % r["p"] == 0]
+    return c
+
+
+def _classify_no_supersingular(bound=h2o40.P_BOUND):
+    c = _true_classify(bound)
+    c["supersingular"] = []
+    return c
+
+
+def _classify_admits_29(bound=h2o40.P_BOUND):
+    """29 is a prime of BAD reduction and a member of W_-. Letting it into the
+    good supersingular branch is exactly what would bring RUN-037's H3
+    exception into a branch that cannot survive it."""
+    c = _true_classify(bound)
+    c["supersingular"] = [{"p": 29, "a_p": 0}] + c["supersingular"]
+    return c
+
+
+def _classify_no_failures(bound=h2o40.P_BOUND):
+    c = _true_classify(bound)
+    c["ordinary_H2_failures"] = []
+    return c
+
+
+def _classify_from_seven(bound=h2o40.P_BOUND):
+    """p = 5 dropped from the scan. a_5 = -3 is ordinary and H2-passing, so
+    neither set the check reads can move."""
+    c = _true_classify(bound)
+    c["rows"] = [r for r in c["rows"] if r["p"] > 5]
+    c["good_odd_primes"] = len(c["rows"])
+    c["supersingular"] = [r for r in c["supersingular"] if r["p"] > 5]
+    c["ordinary_H2_failures"] = [r for r in c["ordinary_H2_failures"]
+                                 if r["p"] > 5]
+    return c
 
 
 _true_converse = bridge37.lemma_C_converse
