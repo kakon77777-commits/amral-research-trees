@@ -103,6 +103,7 @@ import src18_tate_algorithm as tate18                    # noqa: E402
 import src20_bsd_consistency as bsd20                    # noqa: E402
 import src21_two_witness_certificate as tw21             # noqa: E402
 import src22_witness_network as net22                    # noqa: E402
+import src23_p5_local_units as p5u                       # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -889,6 +890,84 @@ def check_criterion_reach() -> bool:
     return impossible == 0
 
 
+def check_p5_formal_group() -> bool:
+    """v0.8's boxed chain at 389.a1, p = 11, from the group law up.
+
+    The load-bearing step is v_11(t(16P')) = 1 with t(16P')/11 ≡ 7 (mod 11):
+    16 = #E(F_11) puts 16P' in the formal group, and the residue is what makes
+    the later cancellation exact rather than approximate. Everything the
+    document boxes is derived from that one number, so the fixture pins the
+    number and each derived residue separately — a check that only asserted
+    u_loc ≡ 4 would pass on a wrong t whose errors cancelled.
+    """
+    from fractions import Fraction
+    A, B, Ps = p5u.minimal_to_short(p5u.AINVS, (Fraction(0), Fraction(0)))
+    if (A, B) != (-3024, 46224) or Ps != (Fraction(12), Fraction(108)):
+        return False
+    if Ps[1] ** 2 != Ps[0] ** 3 + A * Ps[0] + B:
+        return False
+    n11 = p5u.point_count(p5u.AINVS, 11)
+    if n11 != 16:
+        return False
+    # the inverse change of model is used to name 3P + Q on the minimal model,
+    # so it round-trips rather than being trusted
+    for pt in ((Fraction(0), Fraction(0)), (Fraction(1), Fraction(0))):
+        if p5u.short_to_minimal(p5u.minimal_to_short(p5u.AINVS, pt)[2]) != pt:
+            return False
+    R = p5u.short_mul(A, n11, Ps)
+    t = -Fraction(R[0]) / Fraction(R[1])
+    v, _ = p5u.valuation(t, 11)
+    if v != 1 or p5u.unit_residue(t / 11, 11) != 7:
+        return False
+    # the two derived residues, each pinned rather than inferred
+    inv16 = pow(n11 % 11, -1, 11)
+    if (7 * inv16) % 11 != 8:                       # log_{omega'}(P')/11
+        return False
+    if (8 * 6) % 11 != 4:                           # the factor 6 from omega'/omega
+        return False
+    trunc = (Fraction(1) - Fraction(11 + 1 - n11, 11) + Fraction(1, 11)) *             (Fraction(1) - Fraction(1, 389))
+    vt, _ = p5u.valuation(trunc, 11)
+    return vt == -1 and p5u.unit_residue(trunc * 11, 11) == 1
+
+
+def check_p5_residue_homomorphism() -> bool:
+    """R ↦ [t(16R)/11] is a homomorphism E(Q) → Z/11 with an index-11 kernel.
+
+    This is what makes v0.8's "exactly one positive power of 11" a statement
+    about the chosen basis vector rather than about the curve, so the check
+    pins both halves: the homomorphism law on every small combination, and an
+    explicit Z-basis whose first vector lands in the kernel.
+    """
+    A = -3024
+    h = p5u.residue_homomorphism(A, 16)
+    if not h["generators_are_on_the_curve"] or not h["is_a_homomorphism"]:
+        return False
+    if (h["phi(P)"], h["phi(Q)"]) != (7, 1) or not h["surjective"]:
+        return False
+    if h["combinations_tested"] < 40 or h["mismatches"]:
+        return False
+    ab = h["an_alternative_Z_basis"]
+    return (ab["is_a_basis"] and abs(ab["determinant"]) == 1
+            and ab["v_11_of_the_first_vector"] == 2)
+
+
+def check_p5_chain_inputs() -> bool:
+    """`IMC_Closure_and_GPR_Bridge_v0.5` §1.2's declared inputs, recomputed.
+
+    N = 389, a single bad prime of type I_1 with c = 1 so the Tamagawa product
+    is 1, trivial torsion, and 11 good ordinary. The check also pins that the
+    gate still LISTS what it did not check — a version that quietly dropped the
+    cited-not-verified list would read as more coverage than there is.
+    """
+    ci = p5u.imported_curve_data()
+    if not (ci["conductor_agrees"] and ci["prod_c_agrees"]
+            and ci["torsion_agrees"] and ci["good_ordinary_at_11"]):
+        return False
+    if ci["bad_primes"] != [389] or ci["a_11"] != -4:
+        return False
+    return len(ci["still_cited_not_checked"]) >= 4
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -926,6 +1005,9 @@ CHECKS = {
     "witness-lemmas": check_witness_lemmas,
     "analytic-classification": check_analytic_classification,
     "criterion-reach": check_criterion_reach,
+    "p5-formal-group": check_p5_formal_group,
+    "p5-residue-homomorphism": check_p5_residue_homomorphism,
+    "p5-chain-inputs": check_p5_chain_inputs,
 }
 
 
@@ -1125,6 +1207,20 @@ DEFECTS = [
     ("(T5) accepts any odd valuation, not valuation one", "code",
      "criterion-reach",
      lambda: patch(net22, "which_criterion_applies", _t5_accepts_odd)),
+    ("the short model uses b2 where it needs 3*b2", "code", "p5-formal-group",
+     lambda: patch(p5u, "minimal_to_short", _short_model_wrong_shift)),
+    ("valuation ignores the denominator", "code", "p5-formal-group",
+     lambda: patch(p5u, "valuation", _valuation_numerator_only)),
+    ("scalar multiplication drops its final addition", "code",
+     "p5-formal-group", lambda: patch(p5u, "short_mul", _mul_drops_last_add)),
+    ("the unit residue forgets to invert the denominator", "code",
+     "p5-formal-group",
+     lambda: patch(p5u, "unit_residue", _residue_without_inverse)),
+    ("point counting forgets the point at infinity", "code",
+     "p5-chain-inputs", lambda: patch(p5u, "point_count", _count_without_O)),
+    ("the homomorphism law is predicted with the wrong sign", "code",
+     "p5-residue-homomorphism",
+     lambda: patch(p5u, "residue_homomorphism", _phi_wrong_sign)),
 
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
@@ -1342,6 +1438,65 @@ def _divisors_with_two(n):
     if n and n % 2 == 0:
         out.add(2)
     return out
+
+
+def _short_model_wrong_shift(a, pt):
+    a1, _a2, a3, _a4, _a6 = a
+    b2, *_ = p5u.b_invariants(a)
+    c4, c6 = p5u.c_invariants(a)
+    x, y = pt
+    return -27 * c4, -54 * c6, (36 * x + b2, 108 * (2 * y + a1 * x + a3))
+
+
+def _valuation_numerator_only(q, p):
+    from fractions import Fraction
+    n, v = q.numerator, 0
+    while n % p == 0:
+        n //= p
+        v += 1
+    return v, Fraction(n, q.denominator)
+
+
+_true_short_mul = p5u.short_mul
+
+
+def _mul_drops_last_add(A, n, Pt):
+    """n·P computed as (n-1)·P — an off-by-one in the multiplier.
+
+    Bound to the ORIGINAL short_mul, not to the patched module attribute: a
+    defect that calls the name it is replacing recurses instead of computing,
+    and a RecursionError is not a check catching anything.
+    """
+    return _true_short_mul(A, max(n - 1, 1), Pt)
+
+
+def _residue_without_inverse(q, p):
+    v, u = p5u.valuation(q, p)
+    if v != 0:
+        raise ValueError("not a unit")
+    return u.numerator % p
+
+
+_true_point_count = p5u.point_count
+_true_residue_hom = p5u.residue_homomorphism
+
+
+def _count_without_O(a, p):
+    """#E(F_p) without the point at infinity. Bound to the original, not the
+    patched attribute — see _mul_drops_last_add."""
+    return _true_point_count(a, p) - 1
+
+
+def _phi_wrong_sign(A, n11):
+    """The homomorphism law predicted with a minus: phi(aP + bQ) = 7a - b.
+
+    It agrees with the truth on every b = 0 combination and on nothing else, so
+    a check that only pinned phi(P) would not see it."""
+    h = _true_residue_hom(A, n11)
+    h["homomorphism_law"] = f"phi(aP + bQ) = {h['phi(P)']}a - {h['phi(Q)']}b (mod 11)"
+    h["mismatches"] = [{"a": 1, "b": 1, "note": "sign"}]
+    h["is_a_homomorphism"] = False
+    return h
 
 
 def _t5_on_the_wrong_set(c):

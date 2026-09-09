@@ -1,0 +1,344 @@
+{
+  "gate": "src23 — P5 explicit local-unit cancellation, 389.a1 at p = 11",
+  "section_2_exact_curve_data": {
+    "minimal_model": "y^2 + y = x^3 + x^2 - 2x",
+    "a_invariants": [
+      0,
+      1,
+      1,
+      -2,
+      0
+    ],
+    "b_invariants": [
+      4,
+      -4,
+      1,
+      -3
+    ],
+    "c_invariants": [
+      112,
+      -856
+    ],
+    "discriminant": 389,
+    "discriminant_is_389": true,
+    "11_is_good": true,
+    "point_count_at_11": 16,
+    "a_11": -4,
+    "document_says": {
+      "Delta_E": 389,
+      "#E(F_11)": 16,
+      "a_11": -4
+    },
+    "agrees": true,
+    "reduction_at_389": {
+      "kodaira": "I1",
+      "f": 1,
+      "c_p": 1,
+      "v_389_of_discriminant": 1,
+      "split": true
+    }
+  },
+  "section_3_truncation_factor": {
+    "L_11(E,1)^-1": "16/11",
+    "L_389(E,1)^-1": "388/389",
+    "product": "6208/4279",
+    "v_11_of_the_product": -1,
+    "document_says": {
+      "L_11": "16/11",
+      "L_389": "388/389",
+      "v_11": -1
+    },
+    "agrees": true,
+    "not_independent_evidence": {
+      "identity": "1 - a_p/p + 1/p = (p + 1 - a_p)/p = #E(F_p)/p",
+      "holds": true,
+      "reading": "the document's 16/11 and its separately stated #E(F_11) = 16 are the same computation. Their agreement confirms nothing"
+    }
+  },
+  "section_4_formal_group": {
+    "short_model": "Y^2 = X^3 + -3024 X + 46224",
+    "document_says_short_model": "Y^2 = X^3 - 3024 X + 46224",
+    "short_model_agrees": true,
+    "P_on_short_model": [
+      "12",
+      "108"
+    ],
+    "document_says_P_prime": [
+      12,
+      108
+    ],
+    "P_prime_agrees": true,
+    "P_prime_is_on_the_curve": true,
+    "omega_prime_over_omega": "1/6",
+    "document_says_omega_ratio": "1/6",
+    "omega_ratio_agrees": true,
+    "multiplier_used": 16,
+    "digits_in_x_of_16P": 38,
+    "v_11_of_t_of_16P": 1,
+    "t_of_16P_over_11_mod_11": 7,
+    "document_says": {
+      "v_11": 1,
+      "residue": 7
+    },
+    "agrees": true
+  },
+  "formal_logarithm_truncation": {
+    "claim": "log_{omega'}(t) ≡ t (mod 11^2) for t in 11 Z_11",
+    "argument": "the n-th term of the formal logarithm is c_n t^n / n with c_n integral at a prime of good reduction, so its valuation is at least n - v_11(n)",
+    "n_with_valuation_below_2": [],
+    "holds": true,
+    "checked_to_n": 199
+  },
+  "section_5_local_cancellation": {
+    "16_inverse_mod_11": 9,
+    "log_omega'(P')_over_11_mod_11": 8,
+    "document_says": 8,
+    "log_omega(P)_over_11_mod_11": 4,
+    "document_says_after_the_factor_6": 4,
+    "v_11(log_omega(P))": 1,
+    "(16/11)(388/389)·11 as a unit, mod 11": 1,
+    "document_says_16·388/389_mod_11": 1,
+    "v_11(u_loc)": 0,
+    "u_loc_mod_11": 4,
+    "document_says_u_loc": {
+      "v_11": 0,
+      "residue": 4
+    },
+    "agrees": true
+  },
+  "the_second_basis_vector": {
+    "searched": true,
+    "x_bound": 40,
+    "integral_points_found": 16,
+    "rows": [
+      {
+        "point": [
+          "-2",
+          "0"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 3
+      },
+      {
+        "point": [
+          "-2",
+          "-1"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 8
+      },
+      {
+        "point": [
+          "-1",
+          "1"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 5
+      },
+      {
+        "point": [
+          "-1",
+          "-2"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 6
+      },
+      {
+        "point": [
+          "0",
+          "0"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 7
+      },
+      {
+        "point": [
+          "0",
+          "-1"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 4
+      },
+      {
+        "point": [
+          "1",
+          "0"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 1
+      },
+      {
+        "point": [
+          "1",
+          "-1"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 10
+      },
+      {
+        "point": [
+          "3",
+          "5"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 3
+      },
+      {
+        "point": [
+          "3",
+          "-6"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 8
+      },
+      {
+        "point": [
+          "4",
+          "8"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 9
+      },
+      {
+        "point": [
+          "4",
+          "-9"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 2
+      },
+      {
+        "point": [
+          "6",
+          "-16"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 2
+      },
+      {
+        "point": [
+          "6",
+          "15"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 9
+      },
+      {
+        "point": [
+          "39",
+          "-247"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 6
+      },
+      {
+        "point": [
+          "39",
+          "246"
+        ],
+        "v_11_of_t": 1,
+        "residue_of_t/11": 5
+      }
+    ],
+    "distinct_valuations": [
+      1
+    ],
+    "reading": "if every small point gives valuation 1 then 'exactly one positive power of 11' is a property of the formal group at 11 — 16P lands in the first formal neighbourhood and no deeper — and not of the basis choice. A point with valuation 2 or more would mean the document's boxed statement depends on which vector is called P, which it does not say"
+  },
+  "the_residue_is_a_homomorphism": {
+    "generators_used": {
+      "P": [
+        "0",
+        "0"
+      ],
+      "Q": [
+        "1",
+        "0"
+      ]
+    },
+    "generators_are_on_the_curve": true,
+    "phi(P)": 7,
+    "phi(Q)": 1,
+    "phi_matches_the_documents_boxed_residue": true,
+    "homomorphism_law": "phi(aP + bQ) = 7a + 1b (mod 11)",
+    "combinations_tested": 48,
+    "mismatches": [],
+    "is_a_homomorphism": true,
+    "surjective": true,
+    "kernel": "{aP + bQ : 7a + 1b ≡ 0 (mod 11)} — index 11",
+    "kernel_members_found": [
+      "-3P + -1Q",
+      "-2P + 3Q",
+      "2P + -3Q",
+      "3P + 1Q"
+    ],
+    "an_alternative_Z_basis": {
+      "basis": "{3P + Q, P}",
+      "determinant": -1,
+      "is_a_basis": true,
+      "v_11_of_the_first_vector": 2
+    },
+    "what_this_does_and_does_not_touch": {
+      "survives": "§6's boxed equivalence β_ξ u_loc ∈ Q_11 ⟺ β_ξ ∈ Q_11. It needs only u_loc ≠ 0, which holds for every basis vector R with 16R ≠ O",
+      "does_not_survive": "§6's parenthetical that multiplication by u_loc 'neither changes the field-of-definition gate nor the 11-valuation'. In the basis {3P + Q, P} the first vector has v_11(log) = 2, so v_11(u_loc) = 1 and multiplication by it does change the 11-valuation",
+      "reading": "the rationality half of §6 is basis-robust and the valuation half is not, and the document does not separate them"
+    }
+  },
+  "chain_inputs_v0_5_section_1_2": {
+    "conductor": 389,
+    "document_says_N": 389,
+    "conductor_agrees": true,
+    "bad_primes": [
+      389
+    ],
+    "reduction": {
+      "389": {
+        "kodaira": "I1",
+        "f": 1,
+        "c": 1
+      }
+    },
+    "product_of_tamagawa_numbers": 1,
+    "document_says_prod_c": 1,
+    "prod_c_agrees": true,
+    "point_counts_at_good_primes": {
+      "5": 9,
+      "7": 13,
+      "11": 16,
+      "13": 17,
+      "17": 24,
+      "19": 15
+    },
+    "torsion_order_divides": 1,
+    "document_says_torsion": "trivial",
+    "torsion_agrees": true,
+    "a_11": -4,
+    "document_says_a_11": -4,
+    "good_ordinary_at_11": true,
+    "still_cited_not_checked": [
+      "rank E(Q) = 2 — this gate does not compute a rank; RUN-017 computed Reg(389.a1) from two given generators, which assumes it",
+      "the Manin constant c_E = 1",
+      "maximal l-adic image for EVERY prime l. RUN-007's X_0(n) method rules out a rational isogeny of degree 2, 3, 5 and 7, which gives irreducibility at those four primes and nothing about the other eight of Mazur's twelve, nor about surjectivity",
+      "the Chan-Ho Kim Selmer structure theorem and the Kurihara witness that together give Sha[11^inf] = 0"
+    ]
+  },
+  "regulator_is_basis_invariant": {
+    "3P+Q_on_the_minimal_model": [
+      "-14/25",
+      "-216/125"
+    ],
+    "is_on_the_curve": true,
+    "depth": 8,
+    "regulators": {
+      "{P, Q}": 0.15246718601116538,
+      "{3P+Q, P}": 0.15251015695969783
+    },
+    "absolute_spread": 4.2970948532450315e-05,
+    "tolerance": 0.001,
+    "agree": true,
+    "smallest_index_that_would_show": 2,
+    "ratio_if_index_2_were_true": 4.0,
+    "reading": "agreement to the method's precision rules out every index k > 1, since the regulator of an index-k subgroup is k^2 times larger. {3P + Q, P} is a basis"
+  },
+  "ok": true
+}

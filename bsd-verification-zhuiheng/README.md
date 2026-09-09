@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-019:
-  `src04`–`src10`, `src12`–`src22` are drilled — 80 defects, 80 caught by the
-  named check, 19 controls undisturbed, over 36 checks. `src00`–`src03`, the corpus-scanning
+  been green is indistinguishable from a comment. **Position as of RUN-020:
+  `src04`–`src10`, `src12`–`src23` are drilled — 86 defects, 86 caught by the
+  named check, 19 controls undisturbed, over 39 checks. `src00`–`src03`, the corpus-scanning
   gates, are not.** This line read "every gate" for nine rounds while the tree
   had none; it is narrowed to what is true rather than the gap being left
   unsaid. Gates written after RUN-010 ship with their drill in the same commit.
@@ -117,6 +117,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [017](./reports/RUN-017-BSD-CONSISTENCY.md) | **this arm's own analytic machinery** | `src20` | a real period wrong for three rounds, found by the rank-0 BSD identity; 285 curves close on `#Ш = 1`; `Reg(389.a1) = 0.152460306865` |
 | [018](./reports/RUN-018-TWO-WITNESS-CERTIFICATE.md) | the two-witness criterion | `src21` | `[K_E:Q] = 16`, `e_E = 2`, `δ = 1/24` by exact F₂ rank — and RUN-015's redundancy **is** the factor `e_E` |
 | [019](./reports/RUN-019-WITNESS-NETWORK.md) | the witness-network generalisation, and §6's stop rule turned on this arm | `src22` | `31` reaches 138 of 4,063 small models that `30` cannot, all of them failing (T5); 13 meet the whole certificate; LOO fails at 2,457 primes; RUN-017's `#Ш = 1` headline audited as **not progress** |
+| [020](./reports/RUN-020-P5-LOCAL-UNITS.md) | P5's explicit local-unit cancellation at `389.a1`, `p = 11` | `src23` | every boxed statement of v0.8 reproduced, including `v₁₁(t(16P′)) = 1` on a 38-digit point — and `R ↦ [t(16R)/11]` is a **homomorphism** with an index-11 kernel, so §6's valuation clause is basis-dependent while its rationality equivalence is not |
 
 ## Layout
 

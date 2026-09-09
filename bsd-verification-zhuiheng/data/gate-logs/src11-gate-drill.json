@@ -58,7 +58,10 @@
     "two-witness-degrees": true,
     "witness-lemmas": true,
     "analytic-classification": true,
-    "criterion-reach": true
+    "criterion-reach": true,
+    "p5-formal-group": true,
+    "p5-residue-homomorphism": true,
+    "p5-chain-inputs": true
   },
   "defects": [
     {
@@ -571,6 +574,64 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the short model uses b2 where it needs 3*b2",
+      "kind": "code",
+      "named_check": "p5-formal-group",
+      "checks_that_went_red": [
+        "p5-formal-group",
+        "p5-residue-homomorphism"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "valuation ignores the denominator",
+      "kind": "code",
+      "named_check": "p5-formal-group",
+      "checks_that_went_red": [
+        "p5-formal-group"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "scalar multiplication drops its final addition",
+      "kind": "code",
+      "named_check": "p5-formal-group",
+      "checks_that_went_red": [
+        "p5-formal-group",
+        "p5-residue-homomorphism"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the unit residue forgets to invert the denominator",
+      "kind": "code",
+      "named_check": "p5-formal-group",
+      "checks_that_went_red": [
+        "p5-formal-group",
+        "p5-residue-homomorphism"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "point counting forgets the point at infinity",
+      "kind": "code",
+      "named_check": "p5-chain-inputs",
+      "checks_that_went_red": [
+        "p5-formal-group",
+        "p5-chain-inputs"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the homomorphism law is predicted with the wrong sign",
+      "kind": "code",
+      "named_check": "p5-residue-homomorphism",
+      "checks_that_went_red": [
+        "p5-residue-homomorphism"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "x-only duplication drops the -2*b6*x term",
       "kind": "code",
       "named_check": "regulator",
@@ -939,8 +1000,8 @@
     }
   ],
   "totals": {
-    "defects": 80,
-    "caught_by_the_named_check": 80,
+    "defects": 86,
+    "caught_by_the_named_check": 86,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
     "controls": 19,
