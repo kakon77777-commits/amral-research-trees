@@ -1,0 +1,155 @@
+{
+  "gate": "src45 — this line's position on `07`'s claim ladder",
+  "source": "07_Stop_Rules_and_Claim_Ladder",
+  "ladder": {
+    "C0": "literature map — which theorems might be relevant",
+    "C1": "hypothesis compiler — every FW hypothesis has exact executable meaning",
+    "C2": "fixed (E,p) certificate — FW(E,p) rigorously proved",
+    "C3": "twist-uniform fixed p — for all d in D(E), FW(E_d, p)",
+    "C4": "finite exceptional-prime reduction — p not in P_E => FW(E,p), P_E finite and computable",
+    "C5": "all odd primes — P_E closed item by item",
+    "C6": "full strong-BSD twist family"
+  },
+  "hypothesis_meanings": {
+    "rows": [
+      {
+        "hypothesis": "H1",
+        "executable_here": false,
+        "what_this_tree_has": "nothing; `10`'s niveau-2 argument, cited",
+        "evidence": "src41's cited list names it"
+      },
+      {
+        "hypothesis": "H2",
+        "executable_here": true,
+        "what_this_tree_has": "a_p(E)^2 = 1 (mod p), run over every good ordinary prime below the bound",
+        "evidence": "src40-fw-h2-ordinary.json"
+      },
+      {
+        "hypothesis": "H3",
+        "executable_here": true,
+        "what_this_tree_has": "the criterion including the ell != p clause, run at every odd p below the bound",
+        "evidence": "src39-fw-h3.json"
+      }
+    ],
+    "executable": [
+      "H2",
+      "H3"
+    ],
+    "cited": [
+      "H1"
+    ],
+    "C1_reached": false,
+    "C1_partial": true,
+    "brg_cited_list_present": true
+  },
+  "position": {
+    "C0": {
+      "reached": true,
+      "evidence": "42 rounds, each naming its source document"
+    },
+    "C1": {
+      "reached": false,
+      "partial": true,
+      "executable": [
+        "H2",
+        "H3"
+      ],
+      "cited": [
+        "H1"
+      ],
+      "note": "H2 and H3 executable; H1 cited"
+    },
+    "C2": {
+      "reached": false,
+      "why_not": "this arm never proves FW(E,p). It checks the residual hypotheses and cites the theorem that consumes them — which is the fifth forbidden upgrade if it were reported otherwise",
+      "FW_is_listed_as_cited": true
+    },
+    "C3": {
+      "reached": false,
+      "why_not": "follows C2, which is not reached"
+    },
+    "C4": {
+      "reached": false,
+      "why_not": "RUN-041 evaluated `04`'s criterion and found it not achieved: P_loc is non-empty and not known finite"
+    },
+    "C5": {
+      "reached": false,
+      "why_not": "follows C4"
+    },
+    "C6": {
+      "reached": false,
+      "why_not": "follows C5"
+    },
+    "honest_rung": "C1 (partial)",
+    "must_not_report_above": "C1"
+  },
+  "forbidden_upgrades": {
+    "rows": [
+      {
+        "forbidden": "testing p < 1000 is not C4 or C5",
+        "guard_in_the_logs": "src43 tags P_loc bounded_at and claim_is_universal: false",
+        "present": true
+      },
+      {
+        "forbidden": "99.9% of primes is not C5",
+        "guard_in_the_logs": "src40 reports the failure set by range with counts, never as a percentage",
+        "present": true
+      },
+      {
+        "forbidden": "a residual image that looks generic is not a theorem",
+        "guard_in_the_logs": "src38 records a named Frobenius witness for every refuted maximal class at every ell",
+        "present": true
+      },
+      {
+        "forbidden": "a non-semistable sample is not all non-semistable curves",
+        "guard_in_the_logs": "every family claim in this tree is bounded at 4,000 and says so; no round generalises from a sample of non-semistable curves",
+        "present": true,
+        "note": "asserted from the family bound, which every family gate carries in its log"
+      },
+      {
+        "forbidden": "the Fouquet–Wan theorem existing is not the same as its being algorithmized",
+        "guard_in_the_logs": "src41 lists the Fouquet–Wan theorem in what_stays_cited",
+        "present": true
+      }
+    ],
+    "all_guards_present": true,
+    "why_logs_not_prose": "a report can say anything; a log records what a gate computed, so the audit reads the archived fields that carry the discipline"
+  },
+  "stop_rule": {
+    "gate_logs_with_a_source": 15,
+    "window": 3,
+    "last_three": [
+      {
+        "log": "src46-chebotarev.json",
+        "source": "25_Chebotarev_Referee_Audit",
+        "is_new": true
+      },
+      {
+        "log": "src47-fw-compiler.json",
+        "source": "02_Fouquet_Wan_Hypothesis_Compiler",
+        "is_new": true
+      },
+      {
+        "log": "src48-h2-chain.json",
+        "source": "03_FW_H2_Jordan_Holder_Lemma",
+        "is_new": true
+      }
+    ],
+    "each_of_the_last_three_compiled_a_new_document": true,
+    "rule_triggered": false,
+    "the_rule": "若連續三輪只增加 checked primes / curves 而 H2/H3 exact meaning 沒有進展，則凍結 database scaling",
+    "proxy": "a round that compiles a corpus document no earlier round did has advanced meaning; a round that only raises a bound has not"
+  },
+  "reports_carry_their_limits": {
+    "reports": 46,
+    "with_a_not_claimed_section": 46,
+    "missing": [],
+    "still_pending_a_tally": [
+      "RUN-045-FW-HYPOTHESIS-COMPILER.md",
+      "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md"
+    ],
+    "every_report_carries_its_limits": true
+  },
+  "headline": "C1, and partial: H2 and H3 have exact executable meaning in this tree, H1 is cited. C2 is not reached at all — this arm never proves FW(E,p), and reporting otherwise would be `07`'s fifth forbidden upgrade in this arm's own voice. All five guards are present in the archived logs and the three-round stop rule is not triggered",
+  "ok": true
+}
