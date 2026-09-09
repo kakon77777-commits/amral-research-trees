@@ -1,0 +1,1592 @@
+{
+  "gate": "src47 — 02_Fouquet_Wan_Hypothesis_Compiler, run",
+  "source": "02_Fouquet_Wan_Hypothesis_Compiler",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "label": "696.e1",
+  "conductor": 696,
+  "level_1": {
+    "bound": 200,
+    "rows": [
+      {
+        "curve": "696.e1",
+        "p": 3,
+        "H1_absolute_irreducible": "UNKNOWN",
+        "H2_local_nondegenerate": "FAIL",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_NOT_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 5,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 7,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "FAIL",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_NOT_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 11,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 13,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 17,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 19,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 23,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 29,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "FAIL",
+        "H3_auxiliary_prime": "FAIL",
+        "witness_ell": null,
+        "claim": "FW_NOT_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 31,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 37,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 41,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 43,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 47,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 53,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 59,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 61,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 67,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 71,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 73,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 79,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 83,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 89,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 97,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 101,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 103,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 107,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 109,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 113,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "FAIL",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_NOT_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 127,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 131,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 137,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 139,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 149,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 151,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 157,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 163,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 167,
+        "H1_absolute_irreducible": "PASS",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "FW_APPLICABLE"
+      },
+      {
+        "curve": "696.e1",
+        "p": 173,
+        "H1_absolute_irreducible": "UNKNOWN",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "UNKNOWN"
+      },
+      {
+        "curve": "696.e1",
+        "p": 179,
+        "H1_absolute_irreducible": "UNKNOWN",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "UNKNOWN"
+      },
+      {
+        "curve": "696.e1",
+        "p": 181,
+        "H1_absolute_irreducible": "UNKNOWN",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "UNKNOWN"
+      },
+      {
+        "curve": "696.e1",
+        "p": 191,
+        "H1_absolute_irreducible": "UNKNOWN",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "UNKNOWN"
+      },
+      {
+        "curve": "696.e1",
+        "p": 193,
+        "H1_absolute_irreducible": "UNKNOWN",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "UNKNOWN"
+      },
+      {
+        "curve": "696.e1",
+        "p": 197,
+        "H1_absolute_irreducible": "UNKNOWN",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "UNKNOWN"
+      },
+      {
+        "curve": "696.e1",
+        "p": 199,
+        "H1_absolute_irreducible": "UNKNOWN",
+        "H2_local_nondegenerate": "PASS",
+        "H3_auxiliary_prime": "PASS",
+        "witness_ell": 29,
+        "claim": "UNKNOWN"
+      }
+    ],
+    "detail": [
+      {
+        "p": 3,
+        "reduction": "multiplicative",
+        "H1": {
+          "verdict": "UNKNOWN",
+          "basis": "not_settled",
+          "how": "irreducible for every p by Mazur plus RUN-031's twelve refutations, but ABSOLUTE irreducibility is certified only where RUN-036 reached"
+        },
+        "H2": {
+          "verdict": "FAIL",
+          "basis": "cited_theorem",
+          "reduction": "multiplicative",
+          "how": "`10`'s third box: a potentially multiplicative prime's local semisimplification is already the forbidden psi + psi chi_cyc"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "not_settled"
+      },
+      {
+        "p": 5,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 7,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "FAIL",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 11,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 13,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 17,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 19,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 23,
+        "reduction": "good supersingular",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good supersingular",
+          "how": "`10`'s first box: niveau-2 fundamental characters make the local residual type irreducible"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 29,
+        "reduction": "multiplicative",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "FAIL",
+          "basis": "cited_theorem",
+          "reduction": "multiplicative",
+          "how": "`10`'s third box: a potentially multiplicative prime's local semisimplification is already the forbidden psi + psi chi_cyc"
+        },
+        "H3": {
+          "verdict": "FAIL",
+          "basis": "corpus_compilation",
+          "witness_ell": null,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 31,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 37,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 41,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 43,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 47,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 53,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 59,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 61,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 67,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 71,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 73,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 79,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 83,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 89,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 97,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 101,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 103,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 107,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 109,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 113,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "FAIL",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 127,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 131,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 137,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 139,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 149,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 151,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 157,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 163,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 167,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "PASS",
+          "basis": "computed_here",
+          "how": "RUN-036 refuted all six maximal classes with named Frobenius witnesses, so the image is all of GL2(F_p)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "corpus_compilation"
+      },
+      {
+        "p": 173,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "UNKNOWN",
+          "basis": "not_settled",
+          "how": "irreducible for every p by Mazur plus RUN-031's twelve refutations, but ABSOLUTE irreducibility is certified only where RUN-036 reached"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "not_settled"
+      },
+      {
+        "p": 179,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "UNKNOWN",
+          "basis": "not_settled",
+          "how": "irreducible for every p by Mazur plus RUN-031's twelve refutations, but ABSOLUTE irreducibility is certified only where RUN-036 reached"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "not_settled"
+      },
+      {
+        "p": 181,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "UNKNOWN",
+          "basis": "not_settled",
+          "how": "irreducible for every p by Mazur plus RUN-031's twelve refutations, but ABSOLUTE irreducibility is certified only where RUN-036 reached"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "not_settled"
+      },
+      {
+        "p": 191,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "UNKNOWN",
+          "basis": "not_settled",
+          "how": "irreducible for every p by Mazur plus RUN-031's twelve refutations, but ABSOLUTE irreducibility is certified only where RUN-036 reached"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "not_settled"
+      },
+      {
+        "p": 193,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "UNKNOWN",
+          "basis": "not_settled",
+          "how": "irreducible for every p by Mazur plus RUN-031's twelve refutations, but ABSOLUTE irreducibility is certified only where RUN-036 reached"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "not_settled"
+      },
+      {
+        "p": 197,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "UNKNOWN",
+          "basis": "not_settled",
+          "how": "irreducible for every p by Mazur plus RUN-031's twelve refutations, but ABSOLUTE irreducibility is certified only where RUN-036 reached"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "not_settled"
+      },
+      {
+        "p": 199,
+        "reduction": "good ordinary",
+        "H1": {
+          "verdict": "UNKNOWN",
+          "basis": "not_settled",
+          "how": "irreducible for every p by Mazur plus RUN-031's twelve refutations, but ABSOLUTE irreducibility is certified only where RUN-036 reached"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "basis": "cited_theorem",
+          "reduction": "good ordinary",
+          "how": "`10` derives H2 failure from the ordinary semisimplification alpha-bar + chi_cyc alpha-bar^-1 and only then compiles it to a_p^2 = 1 (mod p) — derived first, predicate second, which is the order `02` demands"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "basis": "corpus_compilation",
+          "witness_ell": 29,
+          "formulation": "09_FW_H3_Exact_Compiler: exists ell in W_-, ell != p, p does not divide v_ell(Delta_min)",
+          "gap_to_the_exact_condition": "`02` states that Fouquet–Wan's exact local condition is finer than this divisibility criterion, so a PASS here is a PASS on the corpus's compilation of H3, not on H3",
+          "also_derived_in": "11_Derived_Supersingular_FW_Bridge, which flags itself a derived proposition"
+        },
+        "weakest_basis": "not_settled"
+      }
+    ],
+    "keys_match_the_specification": true,
+    "tally": {
+      "FW_NOT_APPLICABLE": 4,
+      "FW_APPLICABLE": 34,
+      "UNKNOWN": 7
+    },
+    "applicable_primes": [
+      5,
+      11,
+      13,
+      17,
+      19,
+      23,
+      31,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      61,
+      67,
+      71,
+      73,
+      79,
+      83,
+      89,
+      97,
+      101,
+      103,
+      107,
+      109,
+      127,
+      131,
+      137,
+      139,
+      149,
+      151,
+      157,
+      163,
+      167
+    ],
+    "not_applicable_primes": [
+      3,
+      7,
+      29,
+      113
+    ],
+    "unknown_primes": [
+      173,
+      179,
+      181,
+      191,
+      193,
+      197,
+      199
+    ],
+    "no_row_rests_on_a_basis_stronger_than_its_weakest_link": true
+  },
+  "level_2": {
+    "goal": "exists P_E finite: p not in P_E => FW(E,p)",
+    "achieved": false,
+    "which_factor_blocks_it": "P_loc",
+    "mandated_output_when_not_achieved": "FW verified for tested primes",
+    "this_gate_outputs": "FW verified for tested primes",
+    "may_not_upgrade_to_full_BSD": true,
+    "the_documents_words": "不能升級 full BSD"
+  },
+  "prohibitions": {
+    "H1_not_guessed_from_a_few_traces": {
+      "prohibition": "不得自己用少量 Frobenius traces 猜",
+      "obeyed": true,
+      "how": "RUN-031 refuted all twelve of Mazur's degrees, which his theorem makes exhaustive, and RUN-036 refuted every maximal class with a named witness. Neither is a guess, and primes RUN-036 did not reach are marked UNKNOWN rather than assumed"
+    },
+    "H2_derived_before_compiled": {
+      "prohibition": "不得用 a_p != something 自行猜等價條件",
+      "obeyed": true,
+      "how": "the predicate is `10`'s, derived there from the ordinary semisimplification and compiled second. This arm did not invent a congruence on a_p and call it H2"
+    },
+    "H3_not_equated_with_the_divisibility_criterion": {
+      "prohibition": "不能直接把 p ∤ ord_ell(Delta) 當完整 H3",
+      "obeyed": true,
+      "how": "every H3 row carries the formulation it was decided under and the gap to the exact condition. RUN-037 and RUN-039 reported H3 as computed and PASS without that label; the verdicts stand, their scope was overstated, and this gate is where the scope is written down"
+    },
+    "all_three_obeyed": true
+  },
+  "headline": "the Level-1 certificate is emitted in `02`'s own keys for every odd prime below 200: 34 applicable, 4 not applicable, 7 unknown. Level 2 is NOT achieved, so the mandated output is 'FW verified for tested primes' and no upgrade to full BSD. And `02`'s third prohibition lands on this arm's own labels: what RUN-037 and RUN-039 called H3 is `09`'s compilation of H3, which `02` says is not the complete condition",
+  "ok": true
+}

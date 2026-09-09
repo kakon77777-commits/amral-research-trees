@@ -9,6 +9,15 @@
 
 ---
 
+> **Scope note added at RUN-046.** The corpus disagrees with itself about
+> whether the divisibility criterion IS H3.
+> `02_Fouquet_Wan_Hypothesis_Compiler` says it is not — 「不能直接把這一條
+> 當完整 H3」 — while `08_FW_Weight2_Exact_Translation` boxes exactly that
+> criterion as an **iff** and calls itself the exact weight-2 translation. This
+> round's verdicts are correct under `08` and are verdicts on a formulation
+> under `02`. No number moves either way; what was missing was the label, and
+> RUN-045 and RUN-046 carry it.
+
 ## The document says what it is
 
 `11` opens with its own status line, and it is the right one:
