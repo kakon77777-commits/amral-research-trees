@@ -82,6 +82,7 @@ import copy
 import json
 import math
 import pathlib
+import re
 import sys
 from fractions import Fraction
 
@@ -104,6 +105,7 @@ import src20_bsd_consistency as bsd20                    # noqa: E402
 import src21_two_witness_certificate as tw21             # noqa: E402
 import src22_witness_network as net22                    # noqa: E402
 import src23_p5_local_units as p5u                       # noqa: E402
+import src24_p5_status_ledger as led24                    # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -968,6 +970,93 @@ def check_p5_chain_inputs() -> bool:
     return len(ci["still_cited_not_checked"]) >= 4
 
 
+def check_p5_ledger_extraction() -> bool:
+    """The ledger scan finds every fenced status row, including the awkward ones.
+
+    The row count is pinned deliberately. The first version of the gate's status
+    pattern used a word boundary, which does not match inside
+    `CLOSED_BY_PUBLISHED_COMPUTATION`, and it silently dropped fourteen rows —
+    among them both readings of the one gate the reconciliation exists to
+    compare. A scan that under-reports produces a shorter table, not an error,
+    so the count is the check.
+    """
+    per_doc = led24.extract_rows()
+    total = sum(len(v) for v in per_doc.values())
+    if len(per_doc) < 4 or total < 44:
+        return False
+    flat = {(r["gate"], r["status"]) for rows in per_doc.values() for r in rows}
+    needed = {
+        ("P5-BOC-NZ11", "PENDING FINITE SAGEMATH REPLAY"),
+        ("P5-BOC-NZ11", "CLOSED_BY_PUBLISHED_COMPUTATION"),
+        ("P5-LAT11", "EQUIVALENT_TO_uGPR11"),
+        ("P5-RAT", "BLOCKED BY P5-DERPER"),
+        ("P5-IMC11", "CLOSED"),
+    }
+    return needed <= flat
+
+
+def check_p5_ledger_reconcile() -> bool:
+    """The verdict rule, the name canonicalisation and the cycle detector.
+
+    `OPEN` and `BLOCKED BY X` are the same verdict at different resolution, so a
+    reconciliation that called their difference a conflict would report noise;
+    `CLOSED` against either is real. The canonicaliser restores a `P5-` prefix
+    only when exactly one declared gate matches, which is what leaves
+    `P5-LAT11 -> GPR11` visible as ambiguous instead of silently resolved.
+    """
+    if led24._verdict("CLOSED_BY_PUBLISHED_COMPUTATION") != "CLOSED":
+        return False
+    if led24._verdict("BLOCKED BY P5-RAT") != "NOT-CLOSED":
+        return False
+    if led24._verdict("OPEN / ARCHIMEDEAN RANK-2 PERIOD COMPARISON") != "NOT-CLOSED":
+        return False
+    if led24._verdict("PENDING FINITE SAGEMATH REPLAY") != "NOT-CLOSED":
+        return False
+    names = {"P5-GPR11", "P5-FULL-GPR11", "P5-uGPR11", "P5-BOC-NZ11"}
+    if led24._canon("BOC-NZ11", names) != "P5-BOC-NZ11":
+        return False
+    if led24._canon("GPR11", names) != "GPR11":       # three candidates: unresolved
+        return False
+    per_doc = led24.extract_rows()
+    g = led24.blocking_graph(per_doc)
+    if not g["is_acyclic"] or len(g["edges_whose_target_is_ambiguous"]) != 1:
+        return False
+    amb = g["edges_whose_target_is_ambiguous"][0]
+    if sorted(amb["candidates"]) != ["P5-FULL-GPR11", "P5-GPR11", "P5-uGPR11"]:
+        return False
+    # the cycle detector on a synthetic input, since the corpus has no cycle and
+    # a detector that never fires would pass every real-data check
+    fake = {"f.md": [{"gate": "A", "status": "BLOCKED BY B", "line": ""},
+                     {"gate": "B", "status": "BLOCKED BY A", "line": ""}]}
+    return led24.blocking_graph(fake)["is_acyclic"] is False
+
+
+def check_p5_gates_closed_here() -> bool:
+    """The two gates this arm closes on its own evidence, and why they hold.
+
+    `P5-RESIDUAL-IRR11` because `j(389.a1) = 1404928/389` is not one of the three
+    non-cuspidal `j` on `X₀(11)` — it is not even an integer — and separately
+    because the curve is semistable. `P5-BOC-NZ11` because RUN-011 recomputed
+    `det(M_loc) = 2`. The check pins the arithmetic, not the prose.
+    """
+    from fractions import Fraction
+    a = led24.gates_this_arm_can_close()
+    ind = {g["gate"]: g for g in a["closed_here_on_independent_grounds"]}
+    if set(ind) != {"P5-RESIDUAL-IRR11", "P5-BOC-NZ11"}:
+        return False
+    irr = ind["P5-RESIDUAL-IRR11"]
+    r1 = irr["route_1_X0_11"]
+    if r1["j"] != "1404928/389" or r1["j_is_an_integer"] or r1["j_is_one_of_them"]:
+        return False
+    if sorted(r1["three_non_cuspidal_j_on_X0(11)"]) != [-24729001, -32768, -121]:
+        return False
+    if not irr["route_2_semistability_and_Mazur"]["semistable"]:
+        return False
+    if not all(g["closed_by_this_arm"] for g in ind.values()):
+        return False
+    return len(a["cited_and_not_checked"]) >= 4
+
+
 CHECKS = {
     "x0n-self-check": check_x0n_self_check,
     "x0n-hard-fixture": check_x0n_hard_fixture,
@@ -1008,6 +1097,9 @@ CHECKS = {
     "p5-formal-group": check_p5_formal_group,
     "p5-residue-homomorphism": check_p5_residue_homomorphism,
     "p5-chain-inputs": check_p5_chain_inputs,
+    "p5-ledger-extraction": check_p5_ledger_extraction,
+    "p5-ledger-reconcile": check_p5_ledger_reconcile,
+    "p5-gates-closed-here": check_p5_gates_closed_here,
 }
 
 
@@ -1221,6 +1313,19 @@ DEFECTS = [
     ("the homomorphism law is predicted with the wrong sign", "code",
      "p5-residue-homomorphism",
      lambda: patch(p5u, "residue_homomorphism", _phi_wrong_sign)),
+    ("the status pattern gets its word boundary back, dropping underscore rows",
+     "code", "p5-ledger-extraction",
+     lambda: patch(led24, "STATUS_WORD", _STATUS_WITH_WORD_BOUNDARY)),
+    ("the ledger row pattern loses the hyphen from its gate-name class",
+     "code", "p5-ledger-extraction",
+     lambda: patch(led24, "ROW", _ROW_NO_HYPHEN)),
+    ("BLOCKED counts as CLOSED in the verdict rule", "code",
+     "p5-ledger-reconcile", lambda: patch(led24, "_verdict", _verdict_blocked_is_closed)),
+    ("an ambiguous gate name is resolved to its first candidate", "code",
+     "p5-ledger-reconcile", lambda: patch(led24, "_canon", _canon_guesses)),
+    ("X_0(11)'s non-cuspidal list loses its third j-invariant", "code",
+     "p5-gates-closed-here",
+     lambda: patch(led24, "X0_11_NONCUSPIDAL_J", (-11 * 131 ** 3, -2 ** 15))),
 
     # ---- gate 20 -------------------------------------------------------------
     ("x-only duplication drops the -2*b6*x term", "code", "regulator",
@@ -1347,6 +1452,15 @@ CONTROLS = [
     # asserts that contract directly so the day it changes is a red check.
     ("rank 0 stops requiring w = +1, which src15's L = 0 contract makes a no-op",
      lambda: patch(net22, "is_analytic_rank_zero", _rank_zero_ignores_the_sign)),
+    # A fifth control, and the reason is about the regex rather than the corpus.
+    # `ROW` separates a gate name from its status with `\s{2,}`, which reads as
+    # load-bearing and is not: the gate-name character class already permits a
+    # space, so with a single-space separator the non-greedy quantifier plus the
+    # later `.strip()` reproduce exactly the same split on every row in the
+    # corpus. What actually does the work is the non-greedy name and the strip.
+    # Worth writing down, because a reader of that pattern would guess wrong.
+    ("the ledger row separator relaxed to one space, which the name class makes a no-op",
+     lambda: patch(led24, "ROW", _ROW_SINGLE_SPACE)),
     ("gate 13's factor table rebuilt with the same contents",
      lambda: patch(alg2, "FACTORS", dict(alg2.FACTORS))),
     # Another control on purpose: (n−1)² ≡ 1² (mod n), so the last residue of
@@ -1438,6 +1552,29 @@ def _divisors_with_two(n):
     if n and n % 2 == 0:
         out.add(2)
     return out
+
+
+_STATUS_WITH_WORD_BOUNDARY = re.compile(
+    r"\b(CLOSED|OPEN|BLOCKED|PENDING|AVAILABLE|PARTIALLY|EQUIVALENT|REDUCED|"
+    r"NOT CLAIMED|CIRCULAR|EXTERNAL|THEOREM TECHNOLOGY|ARITHMETIC TARGET)\b")
+_ROW_SINGLE_SPACE = re.compile(r"^\s*([A-Za-z0-9][A-Za-z0-9\-/_\[\]^ .]*?)\s([^\s].*?)\s*$")
+_ROW_NO_HYPHEN = re.compile(r"^\s*([A-Za-z0-9][A-Za-z0-9/_\[\]^ .]*?)\s{2,}(\S.*?)\s*$")
+_true_verdict = led24._verdict
+
+
+def _verdict_blocked_is_closed(status):
+    """BLOCKED read as a kind of closure — the confusion the rule exists to stop."""
+    return "CLOSED" if _true_verdict(status) in ("CLOSED", "NOT-CLOSED") else "OTHER"
+
+
+def _canon_guesses(target, names):
+    """Resolve an ambiguous target to its first candidate instead of leaving it."""
+    if target in names:
+        return target
+    hits = sorted(n for n in names
+                  if n == "P5-" + target or n.endswith("-" + target)
+                  or n.endswith(target))
+    return hits[0] if hits else target
 
 
 def _short_model_wrong_shift(a, pt):

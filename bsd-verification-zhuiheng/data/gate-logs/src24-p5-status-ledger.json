@@ -1,0 +1,506 @@
+{
+  "gate": "src24 — the P5 status ledger, reconciled",
+  "documents_with_a_ledger": [
+    "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+    "BSD_P5_Rank2_Scalar_Collapse_389a1_p11_v0.3.md",
+    "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+    "P5_E1_ETNC_ESCAPE_AUDIT.md"
+  ],
+  "rows_extracted_verbatim": {
+    "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md": [
+      {
+        "gate": "P4-SHA11",
+        "status": "CLOSED (imported exact project certificate)",
+        "line": "P4-SHA11                 CLOSED (imported exact project certificate)"
+      },
+      {
+        "gate": "P5-GOOD-ORD11",
+        "status": "CLOSED (curve data)",
+        "line": "P5-GOOD-ORD11            CLOSED (curve data)"
+      },
+      {
+        "gate": "P5-RESIDUAL-IRR11",
+        "status": "CLOSED (maximal 11-adic image)",
+        "line": "P5-RESIDUAL-IRR11        CLOSED (maximal 11-adic image)"
+      },
+      {
+        "gate": "P5-BCS-IM-CONDITION",
+        "status": "CLOSED (explicit unipotent certificate)",
+        "line": "P5-BCS-IM-CONDITION      CLOSED (explicit unipotent certificate)"
+      },
+      {
+        "gate": "P5-IMC11",
+        "status": "CLOSED (Burungale--Castella--Skinner)",
+        "line": "P5-IMC11                 CLOSED (Burungale--Castella--Skinner)"
+      },
+      {
+        "gate": "P5-BKS-HYP11",
+        "status": "CLOSED",
+        "line": "P5-BKS-HYP11             CLOSED"
+      },
+      {
+        "gate": "P5-ALG11",
+        "status": "CLOSED UP TO Z_11^x",
+        "line": "P5-ALG11                 CLOSED UP TO Z_11^x"
+      },
+      {
+        "gate": "P5-PADIC-BSD11",
+        "status": "CLOSED UP TO Z_11^x",
+        "line": "P5-PADIC-BSD11           CLOSED UP TO Z_11^x"
+      },
+      {
+        "gate": "P5-DISCRETE-SELMER11",
+        "status": "CLOSED",
+        "line": "P5-DISCRETE-SELMER11     CLOSED"
+      },
+      {
+        "gate": "P5-MAZUR-TATE-WEAK11",
+        "status": "CLOSED AS EXTERNAL THEOREM INPUT",
+        "line": "P5-MAZUR-TATE-WEAK11     CLOSED AS EXTERNAL THEOREM INPUT"
+      },
+      {
+        "gate": "P5-BOC-NZ11",
+        "status": "PENDING FINITE SAGEMATH REPLAY",
+        "line": "P5-BOC-NZ11              PENDING FINITE SAGEMATH REPLAY"
+      },
+      {
+        "gate": "P5-GPR11",
+        "status": "OPEN CONCEPTUAL GATE",
+        "line": "P5-GPR11                 OPEN CONCEPTUAL GATE"
+      },
+      {
+        "gate": "P5-LAT11",
+        "status": "BLOCKED BY BOC-NZ11 + GPR11",
+        "line": "P5-LAT11                 BLOCKED BY BOC-NZ11 + GPR11"
+      },
+      {
+        "gate": "FULL BSD",
+        "status": "NOT CLAIMED",
+        "line": "FULL BSD                  NOT CLAIMED"
+      }
+    ],
+    "BSD_P5_Rank2_Scalar_Collapse_389a1_p11_v0.3.md": [
+      {
+        "gate": "order-of-vanishing machinery",
+        "status": "EXTERNAL_THEOREM_INPUT",
+        "line": "order-of-vanishing machinery       EXTERNAL_THEOREM_INPUT"
+      },
+      {
+        "gate": "higher-rank leading-term bridge",
+        "status": "CIRCULAR_WITH_BSD for present goal",
+        "line": "higher-rank leading-term bridge    CIRCULAR_WITH_BSD for present goal"
+      },
+      {
+        "gate": "generalized Kato class technology",
+        "status": "EXTERNAL_THEOREM_INPUT",
+        "line": "generalized Kato class technology  EXTERNAL_THEOREM_INPUT"
+      },
+      {
+        "gate": "rank-2 p-adic height bridge",
+        "status": "EXTERNAL_THEOREM_INPUT",
+        "line": "rank-2 p-adic height bridge         EXTERNAL_THEOREM_INPUT"
+      },
+      {
+        "gate": "Selmer structure",
+        "status": "CLOSED_ENOUGH_FOR_P4",
+        "line": "Selmer structure                    CLOSED_ENOUGH_FOR_P4"
+      },
+      {
+        "gate": "Kurihara/Kolyvagin comparison",
+        "status": "CLOSED_ENOUGH_FOR_P4",
+        "line": "Kurihara/Kolyvagin comparison       CLOSED_ENOUGH_FOR_P4"
+      },
+      {
+        "gate": "discrete Selmer determinant",
+        "status": "EXTERNAL_THEOREM_INPUT",
+        "line": "discrete Selmer determinant         EXTERNAL_THEOREM_INPUT"
+      },
+      {
+        "gate": "rank/module structure",
+        "status": "EXTERNAL_THEOREM_INPUT",
+        "line": "rank/module structure               EXTERNAL_THEOREM_INPUT"
+      },
+      {
+        "gate": "P5-RAT",
+        "status": "OPEN / ARCHIMEDEAN RANK-2 PERIOD COMPARISON",
+        "line": "P5-RAT      OPEN / ARCHIMEDEAN RANK-2 PERIOD COMPARISON"
+      },
+      {
+        "gate": "P5-VAL11",
+        "status": "ARITHMETIC TARGET = 0, BUT BLOCKED BY P5-RAT",
+        "line": "P5-VAL11    ARITHMETIC TARGET = 0, BUT BLOCKED BY P5-RAT"
+      },
+      {
+        "gate": "P5 OVERALL",
+        "status": "REDUCED, NOT PROVED",
+        "line": "P5 OVERALL  REDUCED, NOT PROVED"
+      }
+    ],
+    "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md": [
+      {
+        "gate": "P4 / Sha[11^infinity]",
+        "status": "CLOSED_IN_PROJECT_THEOREM_CHAIN",
+        "line": "P4 / Sha[11^infinity]      CLOSED_IN_PROJECT_THEOREM_CHAIN"
+      },
+      {
+        "gate": "P5-IMC11",
+        "status": "CLOSED",
+        "line": "P5-IMC11                   CLOSED"
+      },
+      {
+        "gate": "P5-BKS-HYP",
+        "status": "CLOSED",
+        "line": "P5-BKS-HYP                 CLOSED"
+      },
+      {
+        "gate": "P5-IWASAWA-TO-BOC11",
+        "status": "CLOSED_UP_TO_UNIT",
+        "line": "P5-IWASAWA-TO-BOC11        CLOSED_UP_TO_UNIT"
+      },
+      {
+        "gate": "P5-BOC-NZ11",
+        "status": "CLOSED_BY_PUBLISHED_COMPUTATION",
+        "line": "P5-BOC-NZ11                CLOSED_BY_PUBLISHED_COMPUTATION"
+      },
+      {
+        "gate": "P5-FULL-GPR11",
+        "status": "OPEN_STRONGER_THAN_NEEDED",
+        "line": "P5-FULL-GPR11              OPEN_STRONGER_THAN_NEEDED"
+      },
+      {
+        "gate": "P5-uGPR11",
+        "status": "OPEN_MINIMAL_CONCEPTUAL_GATE",
+        "line": "P5-uGPR11                  OPEN_MINIMAL_CONCEPTUAL_GATE"
+      },
+      {
+        "gate": "P5-INT11",
+        "status": "OPEN",
+        "line": "P5-INT11                   OPEN"
+      },
+      {
+        "gate": "P5-PRIM11",
+        "status": "OPEN",
+        "line": "P5-PRIM11                  OPEN"
+      },
+      {
+        "gate": "P5-LAT11",
+        "status": "EQUIVALENT_TO_uGPR11",
+        "line": "P5-LAT11                   EQUIVALENT_TO_uGPR11"
+      }
+    ],
+    "P5_E1_ETNC_ESCAPE_AUDIT.md": [
+      {
+        "gate": "fundamental-line existence",
+        "status": "THEOREM TECHNOLOGY AVAILABLE",
+        "line": "fundamental-line existence          THEOREM TECHNOLOGY AVAILABLE"
+      },
+      {
+        "gate": "integral zeta-element lattice",
+        "status": "THEOREM TECHNOLOGY AVAILABLE",
+        "line": "integral zeta-element lattice       THEOREM TECHNOLOGY AVAILABLE"
+      },
+      {
+        "gate": "specialization in Hecke families",
+        "status": "THEOREM TECHNOLOGY AVAILABLE",
+        "line": "specialization in Hecke families    THEOREM TECHNOLOGY AVAILABLE"
+      },
+      {
+        "gate": "ordinary critical-value periods",
+        "status": "THEOREM TECHNOLOGY AVAILABLE",
+        "line": "ordinary critical-value periods     THEOREM TECHNOLOGY AVAILABLE"
+      },
+      {
+        "gate": "P5-ETNC-FUNDAMENTAL-LINE",
+        "status": "AVAILABLE IN BROAD THEOREM FRAMEWORKS",
+        "line": "P5-ETNC-FUNDAMENTAL-LINE   AVAILABLE IN BROAD THEOREM FRAMEWORKS"
+      },
+      {
+        "gate": "P5-DERIVED-SPECIALIZATION",
+        "status": "PARTIALLY AVAILABLE p-ADICALLY",
+        "line": "P5-DERIVED-SPECIALIZATION  PARTIALLY AVAILABLE p-ADICALLY"
+      },
+      {
+        "gate": "P5-DERPER",
+        "status": "OPEN FOR THIS CLASSICAL RANK-2 TARGET",
+        "line": "P5-DERPER                  OPEN FOR THIS CLASSICAL RANK-2 TARGET"
+      },
+      {
+        "gate": "P5-RAT",
+        "status": "BLOCKED BY P5-DERPER",
+        "line": "P5-RAT                     BLOCKED BY P5-DERPER"
+      },
+      {
+        "gate": "P5-VAL11",
+        "status": "BLOCKED BY P5-RAT",
+        "line": "P5-VAL11                   BLOCKED BY P5-RAT"
+      }
+    ]
+  },
+  "reconciliation": {
+    "distinct_gate_names": 39,
+    "gates_with_more_than_one_status": 5,
+    "explained_by_version_order": [
+      {
+        "gate": "P5-IMC11",
+        "readings": [
+          {
+            "doc": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+            "version": [
+              0,
+              5
+            ],
+            "status": "CLOSED (Burungale--Castella--Skinner)"
+          },
+          {
+            "doc": "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+            "version": [
+              0,
+              6
+            ],
+            "status": "CLOSED"
+          }
+        ],
+        "verdicts": [
+          "CLOSED"
+        ],
+        "explained_by": "same verdict at different resolution — every reading is CLOSED",
+        "explained_by_version_order": true,
+        "latest": "CLOSED"
+      },
+      {
+        "gate": "P5-BOC-NZ11",
+        "readings": [
+          {
+            "doc": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+            "version": [
+              0,
+              5
+            ],
+            "status": "PENDING FINITE SAGEMATH REPLAY"
+          },
+          {
+            "doc": "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+            "version": [
+              0,
+              6
+            ],
+            "status": "CLOSED_BY_PUBLISHED_COMPUTATION"
+          }
+        ],
+        "verdicts": [
+          "CLOSED",
+          "NOT-CLOSED"
+        ],
+        "explained_by": "version order, and the verdict moved",
+        "explained_by_version_order": true,
+        "latest": "CLOSED_BY_PUBLISHED_COMPUTATION"
+      },
+      {
+        "gate": "P5-LAT11",
+        "readings": [
+          {
+            "doc": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+            "version": [
+              0,
+              5
+            ],
+            "status": "BLOCKED BY BOC-NZ11 + GPR11"
+          },
+          {
+            "doc": "BSD_P5_uGPR_Minimal_Gate_389a1_p11_v0.6.md",
+            "version": [
+              0,
+              6
+            ],
+            "status": "EQUIVALENT_TO_uGPR11"
+          }
+        ],
+        "verdicts": [
+          "NOT-CLOSED",
+          "OTHER"
+        ],
+        "explained_by": "version order, and the verdict moved",
+        "explained_by_version_order": true,
+        "latest": "EQUIVALENT_TO_uGPR11"
+      },
+      {
+        "gate": "P5-RAT",
+        "readings": [
+          {
+            "doc": "BSD_P5_Rank2_Scalar_Collapse_389a1_p11_v0.3.md",
+            "version": [
+              0,
+              3
+            ],
+            "status": "OPEN / ARCHIMEDEAN RANK-2 PERIOD COMPARISON"
+          },
+          {
+            "doc": "P5_E1_ETNC_ESCAPE_AUDIT.md",
+            "version": null,
+            "status": "BLOCKED BY P5-DERPER"
+          }
+        ],
+        "verdicts": [
+          "NOT-CLOSED"
+        ],
+        "explained_by": "same verdict at different resolution — every reading is NOT-CLOSED",
+        "explained_by_version_order": true,
+        "latest": "BLOCKED BY P5-DERPER"
+      },
+      {
+        "gate": "P5-VAL11",
+        "readings": [
+          {
+            "doc": "BSD_P5_Rank2_Scalar_Collapse_389a1_p11_v0.3.md",
+            "version": [
+              0,
+              3
+            ],
+            "status": "ARITHMETIC TARGET = 0, BUT BLOCKED BY P5-RAT"
+          },
+          {
+            "doc": "P5_E1_ETNC_ESCAPE_AUDIT.md",
+            "version": null,
+            "status": "BLOCKED BY P5-RAT"
+          }
+        ],
+        "verdicts": [
+          "NOT-CLOSED"
+        ],
+        "explained_by": "same verdict at different resolution — every reading is NOT-CLOSED",
+        "explained_by_version_order": true,
+        "latest": "BLOCKED BY P5-RAT"
+      }
+    ],
+    "not_explained_by_version_order": [],
+    "all_conflicts_explained": true
+  },
+  "blocking_graph": {
+    "edges": [
+      {
+        "from": "P5-LAT11",
+        "to": "P5-BOC-NZ11",
+        "written_as": "BOC-NZ11",
+        "doc": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md"
+      },
+      {
+        "from": "P5-LAT11",
+        "to": "GPR11",
+        "written_as": "GPR11",
+        "doc": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md"
+      },
+      {
+        "from": "P5-VAL11",
+        "to": "P5-RAT",
+        "written_as": "P5-RAT",
+        "doc": "BSD_P5_Rank2_Scalar_Collapse_389a1_p11_v0.3.md"
+      },
+      {
+        "from": "P5-RAT",
+        "to": "P5-DERPER",
+        "written_as": "P5-DERPER",
+        "doc": "P5_E1_ETNC_ESCAPE_AUDIT.md"
+      },
+      {
+        "from": "P5-VAL11",
+        "to": "P5-RAT",
+        "written_as": "P5-RAT",
+        "doc": "P5_E1_ETNC_ESCAPE_AUDIT.md"
+      }
+    ],
+    "is_acyclic": true,
+    "cycles": [],
+    "roots_of_the_blocking_chain": [
+      "GPR11",
+      "P5-BOC-NZ11",
+      "P5-DERPER"
+    ],
+    "edges_whose_target_is_ambiguous": [
+      {
+        "edge": "P5-LAT11 -> GPR11",
+        "doc": "BSD_P5_IMC_Closure_and_GPR_Bridge_v0.5.md",
+        "candidates": [
+          "P5-FULL-GPR11",
+          "P5-GPR11",
+          "P5-uGPR11"
+        ]
+      }
+    ],
+    "reading": "an un-prefixed target that matches more than one declared gate name is left as written rather than guessed at. Which gate is meant changes what theorem an attack has to go and find"
+  },
+  "what_this_arm_can_close_itself": {
+    "closed_here_on_independent_grounds": [
+      {
+        "gate": "P5-RESIDUAL-IRR11",
+        "ledger_says": "CLOSED (maximal 11-adic image) — v0.5",
+        "why_that_is_weak": "maximal image for EVERY l is a much stronger claim than irreducibility at 11, and RUN-020 recorded it as cited and unverified",
+        "route_1_X0_11": {
+          "j": "1404928/389",
+          "j_is_an_integer": false,
+          "three_non_cuspidal_j_on_X0(11)": [
+            -24729001,
+            -32768,
+            -121
+          ],
+          "j_is_one_of_them": false,
+          "conclusion": "X_0(11) is the curve 11a1 with Mordell-Weil group Z/5 — two cusps and three non-cuspidal rational points. A rational 11-isogeny would put j among those three. j(389.a1) is not even an integer"
+        },
+        "route_2_semistability_and_Mazur": {
+          "bad_primes": [
+            389
+          ],
+          "reduction": {
+            "389": "I1"
+          },
+          "semistable": true,
+          "conclusion": "Mazur's isogeny theorem: a semistable E/Q admits a rational p-isogeny only for p in {2, 3, 5, 7}. The semistability is recomputed here; the theorem is cited"
+        },
+        "closed_by_this_arm": true,
+        "independent_of_the_ledgers_justification": true
+      },
+      {
+        "gate": "P5-BOC-NZ11",
+        "ledger_says": {
+          "v0.5": "PENDING FINITE SAGEMATH REPLAY",
+          "v0.6": "CLOSED_BY_PUBLISHED_COMPUTATION"
+        },
+        "what_it_needs": "det(B_N) != 0. v1.3 §3 gives det(B_N)(P^Q) = det(M_loc)(e_397 ^ e_991) (x) X_397 X_991, so it is exactly det(M_loc) != 0",
+        "this_arm": "RUN-011 recomputed the localization matrix [[1,2],[1,4]] from the group law up and got determinant 2 mod 11 — src12-p5-localization.json",
+        "closed_by_this_arm": true,
+        "independent_of_the_ledgers_justification": true
+      }
+    ],
+    "closed_here_but_agreeing_with_the_ledger": [
+      {
+        "gate": "P5-GOOD-ORD11",
+        "ledger_says": "CLOSED (curve data)",
+        "this_arm": "RUN-020: Delta = 389, 11 does not divide it; a_11 = -4, 11 does not divide that either",
+        "closed_by_this_arm": true,
+        "independent_of_the_ledgers_justification": false
+      }
+    ],
+    "cited_and_not_checked": [
+      {
+        "gate": "P4-SHA11",
+        "ledger_says": "CLOSED (imported exact project certificate)",
+        "this_arm": "not checked — the Kurihara witness at n = 397·991 plus the Chan-Ho Kim Selmer structure theorem"
+      },
+      {
+        "gate": "P5-IMC11",
+        "ledger_says": "CLOSED (Burungale--Castella--Skinner)",
+        "this_arm": "not checked — an external theorem"
+      },
+      {
+        "gate": "P5-BCS-IM-CONDITION",
+        "ledger_says": "CLOSED (explicit unipotent certificate)",
+        "this_arm": "not checked — the certificate is not reproduced here"
+      },
+      {
+        "gate": "P5-MAZUR-TATE-WEAK11",
+        "ledger_says": "CLOSED AS EXTERNAL THEOREM INPUT",
+        "this_arm": "not checked — the ledger already labels it external"
+      }
+    ]
+  },
+  "ok": true
+}

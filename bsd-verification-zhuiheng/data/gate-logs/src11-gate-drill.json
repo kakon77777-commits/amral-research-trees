@@ -61,7 +61,10 @@
     "criterion-reach": true,
     "p5-formal-group": true,
     "p5-residue-homomorphism": true,
-    "p5-chain-inputs": true
+    "p5-chain-inputs": true,
+    "p5-ledger-extraction": true,
+    "p5-ledger-reconcile": true,
+    "p5-gates-closed-here": true
   },
   "defects": [
     {
@@ -632,6 +635,53 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "the status pattern gets its word boundary back, dropping underscore rows",
+      "kind": "code",
+      "named_check": "p5-ledger-extraction",
+      "checks_that_went_red": [
+        "p5-ledger-extraction",
+        "p5-ledger-reconcile"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the ledger row pattern loses the hyphen from its gate-name class",
+      "kind": "code",
+      "named_check": "p5-ledger-extraction",
+      "checks_that_went_red": [
+        "p5-ledger-extraction",
+        "p5-ledger-reconcile"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "BLOCKED counts as CLOSED in the verdict rule",
+      "kind": "code",
+      "named_check": "p5-ledger-reconcile",
+      "checks_that_went_red": [
+        "p5-ledger-reconcile"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "an ambiguous gate name is resolved to its first candidate",
+      "kind": "code",
+      "named_check": "p5-ledger-reconcile",
+      "checks_that_went_red": [
+        "p5-ledger-reconcile"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "X_0(11)'s non-cuspidal list loses its third j-invariant",
+      "kind": "code",
+      "named_check": "p5-gates-closed-here",
+      "checks_that_went_red": [
+        "p5-gates-closed-here"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "x-only duplication drops the -2*b6*x term",
       "kind": "code",
       "named_check": "regulator",
@@ -964,6 +1014,11 @@
       "undisturbed": true
     },
     {
+      "control": "the ledger row separator relaxed to one space, which the name class makes a no-op",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
       "control": "gate 13's factor table rebuilt with the same contents",
       "checks_that_went_red": [],
       "undisturbed": true
@@ -1000,11 +1055,11 @@
     }
   ],
   "totals": {
-    "defects": 86,
-    "caught_by_the_named_check": 86,
+    "defects": 91,
+    "caught_by_the_named_check": 91,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 19,
+    "controls": 20,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,
