@@ -1,0 +1,185 @@
+{
+  "gate": "src41 — the derived supersingular FW bridge, assembled",
+  "source": "11_Derived_Supersingular_FW_Bridge",
+  "documents_own_status": "由現有外部定理拼接出的 derived proposition；不是原論文命名定理",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "conductor": 696,
+  "hypotheses": {
+    "W_minus": [
+      29
+    ],
+    "valuations": {
+      "29": 1
+    },
+    "hypothesis_1_exists_nonsplit_multiplicative_ell": true,
+    "g_minus": 1,
+    "g_minus_is_a_power_of_two": true
+  },
+  "why_11_survives_what_09_does_not": {
+    "W_minus": [
+      29
+    ],
+    "good_supersingular_below_bound": [
+      23,
+      251,
+      1061,
+      2297,
+      5479,
+      5591
+    ],
+    "the_09_failing_set": [
+      29
+    ],
+    "W_minus_and_supersingular_are_disjoint": true,
+    "every_09_failure_is_outside_11s_range": true,
+    "why": "W_- is defined by ell || N, so its members are primes of bad reduction; the supersingular branch is by definition primes of good reduction. The two cannot meet, which is why 11's boxed line is true where 09's is false",
+    "the_difference_is_the_quantifier": "09 says 'for all p > 2'; 11 says 'all good supersingular odd primes'. Same gcd, same curve, different range"
+  },
+  "per_supersingular_prime": {
+    "bound": 6000,
+    "count": 6,
+    "rows": [
+      {
+        "p": 23,
+        "a_p": 0,
+        "H1": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness": 29,
+          "source": "computed here"
+        },
+        "all_three": true
+      },
+      {
+        "p": 251,
+        "a_p": 0,
+        "H1": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness": 29,
+          "source": "computed here"
+        },
+        "all_three": true
+      },
+      {
+        "p": 1061,
+        "a_p": 0,
+        "H1": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness": 29,
+          "source": "computed here"
+        },
+        "all_three": true
+      },
+      {
+        "p": 2297,
+        "a_p": 0,
+        "H1": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness": 29,
+          "source": "computed here"
+        },
+        "all_three": true
+      },
+      {
+        "p": 5479,
+        "a_p": 0,
+        "H1": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness": 29,
+          "source": "computed here"
+        },
+        "all_three": true
+      },
+      {
+        "p": 5591,
+        "a_p": 0,
+        "H1": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H2": {
+          "verdict": "PASS",
+          "source": "cited (niveau-2)"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness": 29,
+          "source": "computed here"
+        },
+        "all_three": true
+      }
+    ],
+    "every_prime_has_all_three": true,
+    "branch_is_non_empty": true,
+    "computed_versus_cited": "H3 computed; H1 and H2 cited"
+  },
+  "rank_zero_corollary": {
+    "L_at_1": 1.631727740071569,
+    "real_period": 1.6317277400715688,
+    "analytic_rank_is_zero": true,
+    "L_is_nonzero": true,
+    "terms": 20000,
+    "the_caveat_verbatim": "period normalization / Manin constant 需另外閉合",
+    "closed_here": false
+  },
+  "safe_period_condition": {
+    "condition": "c_E = 1",
+    "why_the_document_wants_it": "avoids the modular-period / Néron-period splicing ambiguity",
+    "computed_in_this_tree": false,
+    "what_this_tree_does_have": "the real period by AGM, confirmed against direct integration in RUN-017; the Manin constant is a different quantity",
+    "status": "OPEN — the one hypothesis of the derived proposition this arm cannot close"
+  },
+  "what_stays_cited": {
+    "the Fouquet–Wan theorem": "external; this arm checks its residual hypotheses, never the theorem",
+    "H1 and H2 at good supersingular p": "10_FW_H2_and_Ordinary_Obstruction's niveau-2 argument, cited in RUN-038",
+    "the Manin constant c_E": "not computed anywhere in this tree; 24_Manin_Period_Audit and RUN-030's certificate both list it as cited",
+    "optimality of the twist": "a statement about X_0(696), cited since RUN-031"
+  },
+  "headline": "the derived proposition's residual hypotheses hold at every one of the 6 good supersingular primes below 6000 — H3 computed, H1 and H2 cited — and L(E,1) != 0 is recomputed. Its uniform form survives the failure RUN-037 found in 09's, and only because its quantifier ranges over good primes while W_- is made of bad ones. The period condition c_E = 1 stays OPEN",
+  "ok": true
+}
