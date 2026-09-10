@@ -1,0 +1,262 @@
+{
+  "gate": "src55 — 04's local p-isogeny kernel criterion",
+  "source": "04_Local_p_Isogeny_Kernel_Criterion",
+  "document_found": true,
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "derivation_chain": {
+    "assumption": "E[p]|_{G_{Q_p}} reducible; C ≅ Z/p stable; σ(P) = λ(σ)P on a generator P of C",
+    "steps": [
+      {
+        "step": "x(P) = x(-P)",
+        "why": "the x-coordinate is invariant under negation on any Weierstrass model",
+        "hypothesis": "none — this holds for every point on every such model"
+      },
+      {
+        "step": "x(P) ∈ Q_p  <=>  σ(P) = ±P for all σ",
+        "why": "Galois fixes x(P) exactly when it moves P to a point with the same x-coordinate, and the only such points are ±P",
+        "hypothesis": "p ODD. At p = 2 every P satisfies P = -P, so the right side is vacuously true and the equivalence carries no information"
+      },
+      {
+        "step": "σ(P) = ±P for all σ  <=>  λ(G_{Q_p}) ⊆ {±1}",
+        "why": "λ is defined by σ(P) = λ(σ)P on the generator P of C",
+        "hypothesis": "C is Galois-stable and cyclic of order p"
+      },
+      {
+        "step": "λ(G_{Q_p}) ⊆ {±1}  <=>  λ² = 1",
+        "why": "{±1} is exactly the 2-torsion of F_p^×",
+        "hypothesis": "none"
+      },
+      {
+        "step": "λ² = 1  <=>  ker φ's kernel polynomial has a Q_p-linear factor",
+        "why": "`04`'s boxed statement, assembled from the four above",
+        "hypothesis": "E[p]|_{G_Q_p} REDUCIBLE — without a stable line there is no λ"
+      }
+    ],
+    "the_box": "FW17-H2 FAIL <=> phi or dual(phi)'s kernel polynomial has a Q_p-linear factor",
+    "dual_character": "mu = omega * lambda^{-1}",
+    "steps_count": 5
+  },
+  "p_odd_is_load_bearing": {
+    "negation": "-(x, y) = (x, -y - a1*x - a3)",
+    "a1": 0,
+    "a3": 0,
+    "two_torsion_condition": "2y + a1*x + a3 = 0",
+    "so_at_p_2": "every P in E[2] satisfies P = -P",
+    "the_clause_becomes": "sigma(P) = ±P holds for every sigma with no Galois input, so the criterion would report lambda^2 = 1 unconditionally",
+    "p_odd_is_load_bearing": true,
+    "and_at_odd_p": "P has order p > 2, so P != -P and the clause genuinely constrains sigma"
+  },
+  "cyclotomic_order": {
+    "why_surjective": "Q_p(zeta_p)/Q_p is totally ramified of degree p - 1, so omega's image is all of (Z/p)^*",
+    "primes_checked": 46,
+    "bound": 200,
+    "omega_squared_trivial_at": [
+      2,
+      3
+    ],
+    "and_that_is_exactly": "(p - 1) | 2",
+    "agrees_with_the_divisibility": true,
+    "rows": [
+      {
+        "p": 2,
+        "order_of_image": 1,
+        "omega_squared_trivial": true,
+        "p_minus_1_divides_2": true
+      },
+      {
+        "p": 3,
+        "order_of_image": 2,
+        "omega_squared_trivial": true,
+        "p_minus_1_divides_2": true
+      },
+      {
+        "p": 5,
+        "order_of_image": 4,
+        "omega_squared_trivial": false,
+        "p_minus_1_divides_2": false
+      },
+      {
+        "p": 7,
+        "order_of_image": 6,
+        "omega_squared_trivial": false,
+        "p_minus_1_divides_2": false
+      },
+      {
+        "p": 11,
+        "order_of_image": 10,
+        "omega_squared_trivial": false,
+        "p_minus_1_divides_2": false
+      },
+      {
+        "p": 13,
+        "order_of_image": 12,
+        "omega_squared_trivial": false,
+        "p_minus_1_divides_2": false
+      },
+      {
+        "p": 17,
+        "order_of_image": 16,
+        "omega_squared_trivial": false,
+        "p_minus_1_divides_2": false
+      },
+      {
+        "p": 19,
+        "order_of_image": 18,
+        "omega_squared_trivial": false,
+        "p_minus_1_divides_2": false
+      },
+      {
+        "p": 23,
+        "order_of_image": 22,
+        "omega_squared_trivial": false,
+        "p_minus_1_divides_2": false
+      },
+      {
+        "p": 29,
+        "order_of_image": 28,
+        "omega_squared_trivial": false,
+        "p_minus_1_divides_2": false
+      },
+      {
+        "p": 31,
+        "order_of_image": 30,
+        "omega_squared_trivial": false,
+        "p_minus_1_divides_2": false
+      },
+      {
+        "p": 37,
+        "order_of_image": 36,
+        "omega_squared_trivial": false,
+        "p_minus_1_divides_2": false
+      }
+    ]
+  },
+  "mutual_exclusivity": {
+    "argument": "lambda * mu = omega (Weil pairing / det E[p] = omega); lambda^2 = mu^2 = 1 => (lambda*mu)^2 = omega^2 = 1",
+    "odd_primes_checked": 45,
+    "bound": 200,
+    "both_tests_can_fire_at": [
+      3
+    ],
+    "mutually_exclusive_at_every_p_ge_5": true,
+    "so": "at every odd p >= 5, at most one of phi and dual(phi) has a Q_p-linear factor. `04`'s 'one isogeny + dual is enough' is tight in a stronger sense than it states: the second test is only ever consulted after the first fails, and the two can never both confirm",
+    "at_p_3": "both CAN hold — (Z/3)^* = {1, 2} and 1^2 = 2^2 = 1 mod 3, so omega^2 = 1 there",
+    "not_claimed": "this constrains the two tests' JOINT behaviour. It does not decide either one, and does not tell you whether FW17-H2 fails"
+  },
+  "p_minus_1_divides_2_appearances": {
+    "patterns": [
+      "p\\s*[−-]\\s*1\\s*[|∣]\\s*2",
+      "chi_cyc.{0,3}2",
+      "χ_cyc.{0,3}2"
+    ],
+    "reports_carrying_it": [
+      "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md"
+    ],
+    "count_of_reports": 1,
+    "hits": [
+      {
+        "report": "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md",
+        "pattern": "p\\s*[−-]\\s*1\\s*[|∣]\\s*2",
+        "context": "mod-`p` cyclotomic character has order `p − 1` on inertia, so that happens exactly when `p − 1 ∣ 2` — at `p = 2` and `p = 3` only. **So `10`'s single congruence is the whole criter"
+      },
+      {
+        "report": "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md",
+        "pattern": "p\\s*[−-]\\s*1\\s*[|∣]\\s*2",
+        "context": "p − 1`** — standard, cited, not derived here. What is computed is which primes satisfy `p − 1 ∣ 2`. * **`10`'s completeness above 5 is about `10`'s criterion**, not about H2 being "
+      }
+    ],
+    "reading": "the same structural fact — the mod-p cyclotomic character has order p - 1 on inertia — reached from a different document by a different route. RUN-046 got there through `10`'s ordinary congruence needing chi_cyc^2 unramified; this round gets there through `04`'s two kernel characters multiplying to omega"
+  },
+  "precondition": {
+    "criterion_assumes": "E[p]|_{G_{Q_p}} reducible",
+    "decided_here": false,
+    "what_RUN_036_gives": "GLOBAL surjectivity at 38 primes, hence global irreducibility",
+    "global_surjectivity_does_not_settle_this": true,
+    "why": "a globally surjective representation restricts to a decomposition group at p that may well be reducible — that is the ordinary case. The global certificate is about a different group",
+    "so_the_criterion_is": "NOT RUN HERE — its hypothesis is undecided",
+    "the_substitution_this_refuses": "reading the 38 certified primes as deciding the local question, which is `00` §6's third prohibition one level down"
+  },
+  "three_cases": {
+    "rows": [
+      {
+        "case": "nonsplit reducible extension",
+        "what_happens": "the original E[p] has only ONE stable line, and the quotient constituent shows up in the DUAL's kernel",
+        "consequence": "phi catches the sub, dual(phi) catches the quotient"
+      },
+      {
+        "case": "split representation",
+        "what_happens": "both Jordan-Holder constituents are already lines in E[p]",
+        "consequence": "phi and dual(phi) catch them directly"
+      },
+      {
+        "case": "either way",
+        "what_happens": "no enumeration of all local p-isogenies is needed",
+        "consequence": "two tests suffice, and by mutual_exclusivity at p >= 5 they never both fire"
+      }
+    ],
+    "count": 3,
+    "and_this_round_adds": "the two are mutually exclusive at p >= 5, which `04` does not state"
+  },
+  "what_it_would_cost": {
+    "members": 19,
+    "rows": [
+      {
+        "q": 241,
+        "kernel_polynomial_degree": 120,
+        "p_division_polynomial_degree": 29040
+      },
+      {
+        "q": 313,
+        "kernel_polynomial_degree": 156,
+        "p_division_polynomial_degree": 48984
+      },
+      {
+        "q": 457,
+        "kernel_polynomial_degree": 228,
+        "p_division_polynomial_degree": 104424
+      },
+      {
+        "q": 673,
+        "kernel_polynomial_degree": 336,
+        "p_division_polynomial_degree": 226464
+      },
+      {
+        "q": 937,
+        "kernel_polynomial_degree": 468,
+        "p_division_polynomial_degree": 438984
+      },
+      {
+        "q": 1009,
+        "kernel_polynomial_degree": 504,
+        "p_division_polynomial_degree": 509040
+      }
+    ],
+    "smallest_member": 241,
+    "kernel_degree_range": [
+      120,
+      1896
+    ],
+    "division_degree_range": [
+      29040,
+      7193424
+    ],
+    "the_honest_statement": "the kernel polynomial itself is small — degree (q-1)/2. FINDING it means locating a Galois-stable line, i.e. factoring the q-division polynomial of degree (q^2-1)/2 over Q_q. Neither is attempted here, and the precondition is undecided anyway"
+  },
+  "citation_history": {
+    "document": "04_Local_p_Isogeny_Kernel_Criterion",
+    "reports_naming_it": [
+      "RUN-008-KEPT-CURVES.md"
+    ],
+    "count": 1,
+    "v03_branch_3_state_at_RUN_052": "NOT COMPUTED HERE",
+    "the_finding": "`04` is the instrument RUN-052 recorded as missing. It was in the corpus the whole time, named in one earlier report, and the v0.3 procedure that needed it does not cite it"
+  },
+  "headline": "`04`'s chain checks out step by step, and `p` odd is load-bearing at step 2 — at p = 2 every point is its own negative and the clause carries no information. The consequence `04` does not state: lambda*mu = omega, so both tests firing forces omega^2 = 1, which over 46 primes happens at exactly [2, 3] — so AT EVERY p >= 5 THE TWO TESTS ARE MUTUALLY EXCLUSIVE. That is (p-1)|2 again, reached from a different document than RUN-046's. The criterion is NOT run on the family: its precondition is local reducibility, RUN-036's global surjectivity does not decide it, and reading it as if it did would be `00` §6's forbidden substitution one level down",
+  "ok": true
+}
