@@ -51,7 +51,9 @@
     "src49_provisional_vs_revised",
     "src50_candidate_schema_and_sieve",
     "src51_source_audits",
-    "src52_novelty_and_routes"
+    "src52_novelty_and_routes",
+    "src53_consensus_and_experiment",
+    "src54_compiler_targets_and_v03"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -137,7 +139,9 @@
     "provisional-vs-revised": true,
     "candidate-schema": true,
     "source-audits": true,
-    "novelty-and-routes": true
+    "novelty-and-routes": true,
+    "consensus-and-experiment": true,
+    "compiler-targets": true
   },
   "defects": [
     {
@@ -377,7 +381,8 @@
         "twist-bridge",
         "fw-h3-compiler",
         "odd-additive-barrier",
-        "provisional-vs-revised"
+        "provisional-vs-revised",
+        "compiler-targets"
       ],
       "caught_by_the_named_check": true
     },
@@ -397,7 +402,8 @@
         "twist-bridge",
         "fw-h3-compiler",
         "odd-additive-barrier",
-        "provisional-vs-revised"
+        "provisional-vs-revised",
+        "compiler-targets"
       ],
       "caught_by_the_named_check": true
     },
@@ -570,7 +576,8 @@
         "ogg-formula",
         "gcd-witness-lemmas",
         "kodaira-nogo",
-        "odd-additive-barrier"
+        "odd-additive-barrier",
+        "compiler-targets"
       ],
       "caught_by_the_named_check": true
     },
@@ -1057,6 +1064,87 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "00 §6's third guard is reported present with RUN-045's UNKNOWN rows gone",
+      "kind": "code",
+      "named_check": "consensus-and-experiment",
+      "checks_that_went_red": [
+        "consensus-and-experiment"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "06's success gate is reported met at four of four",
+      "kind": "code",
+      "named_check": "consensus-and-experiment",
+      "checks_that_went_red": [
+        "consensus-and-experiment"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "00 §5's prime quantifier is reported closed",
+      "kind": "code",
+      "named_check": "consensus-and-experiment",
+      "checks_that_went_red": [
+        "consensus-and-experiment"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "06's step 4 warning is reported obeyed by the corpus",
+      "kind": "code",
+      "named_check": "consensus-and-experiment",
+      "checks_that_went_red": [
+        "consensus-and-experiment"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "v0.3's two local branches are reported computed in this tree",
+      "kind": "code",
+      "named_check": "compiler-targets",
+      "checks_that_went_red": [
+        "compiler-targets"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the base curve is reported carrying an odd additive prime",
+      "kind": "code",
+      "named_check": "compiler-targets",
+      "checks_that_went_red": [
+        "compiler-targets"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "02's target 3 is scored achieved where its domain is empty",
+      "kind": "code",
+      "named_check": "compiler-targets",
+      "checks_that_went_red": [
+        "compiler-targets"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the census detector goes back to matching on the filename",
+      "kind": "code",
+      "named_check": "compiler-targets",
+      "checks_that_went_red": [
+        "compiler-targets"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the census detector stops excluding this gate's own log, which carries the five status names it searches for",
+      "kind": "code",
+      "named_check": "compiler-targets",
+      "checks_that_went_red": [
+        "compiler-targets"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "a_29 comes back +1, so 23's weight-2 sign stops selecting the nonsplit prime",
       "kind": "code",
       "named_check": "source-audits",
@@ -1103,6 +1191,33 @@
     },
     {
       "defect": "the classified novelty quotations are unpinned",
+      "kind": "code",
+      "named_check": "novelty-and-routes",
+      "checks_that_went_red": [
+        "novelty-and-routes"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the refusal test goes back to reading unflattened text, so a refusal broken by a line wrap is invisible",
+      "kind": "code",
+      "named_check": "novelty-and-routes",
+      "checks_that_went_red": [
+        "novelty-and-routes"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "refusal words go back to matching as substrings, so \"nothing\" and \"another\" both count as \"not\"",
+      "kind": "code",
+      "named_check": "novelty-and-routes",
+      "checks_that_went_red": [
+        "novelty-and-routes"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the drill's own check name is left in the prose it scans, so every drill table counts as a mention",
       "kind": "code",
       "named_check": "novelty-and-routes",
       "checks_that_went_red": [
@@ -1475,7 +1590,8 @@
       "kind": "code",
       "named_check": "odd-additive-barrier",
       "checks_that_went_red": [
-        "odd-additive-barrier"
+        "odd-additive-barrier",
+        "compiler-targets"
       ],
       "caught_by_the_named_check": true
     },
@@ -1509,7 +1625,8 @@
         "derived-bridge",
         "finite-exceptional",
         "fw-compiler",
-        "provisional-vs-revised"
+        "provisional-vs-revised",
+        "compiler-targets"
       ],
       "caught_by_the_named_check": true
     },
@@ -1663,7 +1780,8 @@
         "finite-exceptional",
         "fw-compiler",
         "provisional-vs-revised",
-        "candidate-schema"
+        "candidate-schema",
+        "compiler-targets"
       ],
       "caught_by_the_named_check": true
     },
@@ -1745,7 +1863,8 @@
         "gcd-witness-lemmas",
         "kodaira-nogo",
         "twist-bridge",
-        "odd-additive-barrier"
+        "odd-additive-barrier",
+        "compiler-targets"
       ],
       "caught_by_the_named_check": true
     },
@@ -2111,6 +2230,16 @@
   ],
   "controls": [
     {
+      "control": "06's four success-gate conditions listed in reverse order",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "06 v0.3 and 𝒜_odd run at bound 5000 instead of 4000 — 23 members, not 19",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
       "control": "Mazur's twelve degrees listed in a different order",
       "checks_that_went_red": [],
       "undisturbed": true
@@ -2307,11 +2436,11 @@
     }
   ],
   "totals": {
-    "defects": 200,
-    "caught_by_the_named_check": 200,
+    "defects": 212,
+    "caught_by_the_named_check": 212,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 39,
+    "controls": 41,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

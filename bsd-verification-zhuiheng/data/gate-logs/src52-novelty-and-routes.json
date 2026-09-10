@@ -17,16 +17,19 @@
     "so": "`26`'s own box is the finding: a search that returned nothing is not a proof of novelty, and this arm can neither extend the search nor score the box as passed"
   },
   "no_round_claims_novelty": {
-    "reports_scanned": 50,
-    "mentions": 21,
-    "refusals": 11,
-    "classified_descriptive": 10,
+    "reports_scanned": 52,
+    "mentions": 30,
+    "refusals": 15,
+    "refused_by_substring_only": 0,
+    "the_substring_accidents": [],
+    "classified_descriptive": 15,
     "unaccounted": [],
     "no_unaccounted_mention": true,
     "rows": [
       {
         "report": "RUN-009-PHASE2-DENSITY.md",
         "refused": true,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": false,
         "why_not_a_claim": null,
         "sentence": "* **It does not check the novelty question**, which [`20_Adversarial_Referee_Verdict`](../../../amral/public/bsd/phase2/files/20_Adversarial_Referee_V"
@@ -34,6 +37,7 @@
       {
         "report": "RUN-019-WITNESS-NETWORK.md",
         "refused": false,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": true,
         "why_not_a_claim": "quoting Phase 0's own freeze rule",
         "sentence": "Phase 0's `00_BSD_Global_Enclosure_Consensus` §6 freezes any route that for three consecutive rounds only increases numerical precision, restates BSD,"
@@ -41,6 +45,7 @@
       {
         "report": "RUN-030-696E1-CERTIFICATE.md",
         "refused": false,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": true,
         "why_not_a_claim": "quoting `28_Submission_Gate`'s checklist, whose boxes this arm does not tick",
         "sentence": "```text [ ] Independent expert referee reproduces all source mappings [ ] Check latest versions/publication status of BSTW and Fouquet–Wan [ ] MathSci"
@@ -48,6 +53,7 @@
       {
         "report": "RUN-030-696E1-CERTIFICATE.md",
         "refused": true,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": false,
         "why_not_a_claim": null,
         "sentence": "| box | this arm | | --- | --- | | independent expert referee | **not ours.** A referee is a person | | BSTW / Fouquet–Wan publication status | **not "
@@ -55,6 +61,7 @@
       {
         "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
         "refused": false,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": true,
         "why_not_a_claim": "describing what `27` defers, not claiming the result is novel",
         "sentence": "**Of the five items `18` hands to a referee, `27` answers one — its proof router *is* the citation chain `18` asked for — defers one to a novelty audi"
@@ -62,6 +69,7 @@
       {
         "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
         "refused": false,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": true,
         "why_not_a_claim": "reporting the labels the documents carry",
         "sentence": "The claim label is consistent across all three documents: `18` says *Provisional Derived Theorem*, `20` upgrades to *DERIVED THEOREM CANDIDATE* while "
@@ -69,6 +77,7 @@
       {
         "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
         "refused": true,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": false,
         "why_not_a_claim": null,
         "sentence": "| item | `27` | status | | --- | --- | --- | | exact convention match between FW's modular representation and elliptic `E[p]` at the nonsplit multipli"
@@ -76,6 +85,7 @@
       {
         "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
         "refused": true,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": false,
         "why_not_a_claim": null,
         "sentence": "* `18`: **Provisional Derived Theorem**, explicitly not *Established New Theorem* — and it says why: not a visible mathematical gap, but the stage whe"
@@ -83,6 +93,7 @@
       {
         "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
         "refused": true,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": false,
         "why_not_a_claim": null,
         "sentence": "* `20`: upgrades to **DERIVED THEOREM CANDIDATE**, refusing **NEW THEOREM** because novelty is a separate gate."
@@ -90,6 +101,7 @@
       {
         "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
         "refused": false,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": true,
         "why_not_a_claim": "quoting `27`'s own next rung",
         "sentence": "* `27`: carries **DERIVED THEOREM CANDIDATE** and names **PREPRINT CANDIDATE** as what a novelty/citation referee could unlock."
@@ -97,6 +109,7 @@
       {
         "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
         "refused": true,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": false,
         "why_not_a_claim": null,
         "sentence": "* **Novelty is untouched.** `26_Novelty_Search_Log` is not a subject of any round in this tree, and whether the result is new is not a question this a"
@@ -104,12 +117,84 @@
       {
         "report": "RUN-050-NOVELTY-AND-ROUTES.md",
         "refused": true,
+        "refused_by_substring_only": false,
         "classified_as_descriptive": false,
         "why_not_a_claim": null,
         "sentence": "# RUN-050 — The novelty rule this arm cannot advance, and the route matrix it does not follow"
       }
     ],
     "why_scanned_this_way": "a mention is not a claim, and a crude refusal-word test called five quotations assertions. Every sentence carrying a novelty term must be a refusal or one of the classified quotations; a new one is unaccounted and turns the check red"
+  },
+  "classifier_fixtures": {
+    "rows": [
+      {
+        "sentence": "The 4 planted for this gate, each turning `novelty-and-routes` red:",
+        "why": "the check's own identifier, which is not prose",
+        "expected": {
+          "mention": false,
+          "refused": false
+        },
+        "got": {
+          "mention": false,
+          "refused": false
+        },
+        "ok": true
+      },
+      {
+        "sentence": "This result is a novelty.",
+        "why": "a bare claim, unrefused",
+        "expected": {
+          "mention": true,
+          "refused": false
+        },
+        "got": {
+          "mention": true,
+          "refused": false
+        },
+        "ok": true
+      },
+      {
+        "sentence": "Nothing about novelty is claimed here.",
+        "why": "a refusal whose word is `nothing`, which contains `not` by accident",
+        "expected": {
+          "mention": true,
+          "refused": true
+        },
+        "got": {
+          "mention": true,
+          "refused": true
+        },
+        "ok": true
+      },
+      {
+        "sentence": "This is not a novelty claim.",
+        "why": "a plain refusal",
+        "expected": {
+          "mention": true,
+          "refused": true
+        },
+        "got": {
+          "mention": true,
+          "refused": true
+        },
+        "ok": true
+      },
+      {
+        "sentence": "A note on another gate's novelty scan.",
+        "why": "`another` contains `not`; a substring test would call this a refusal",
+        "expected": {
+          "mention": true,
+          "refused": false
+        },
+        "got": {
+          "mention": true,
+          "refused": false
+        },
+        "ok": true
+      }
+    ],
+    "all_ok": true,
+    "why_a_fixture": "the drill runs before the finaliser writes the drill tables, so the reports cannot exhibit the check-name case at the moment it is tested"
   },
   "route_matrix": {
     "rows": [
@@ -214,7 +299,7 @@
     "primary_go_is_the_most_covered": true,
     "stop_route_untouched": true,
     "the_mapping_is_a_judgement": "documents are assigned to routes by reading, not by a field in the corpus. What is computed is the count given that assignment",
-    "documents_subject_total": 26
+    "documents_subject_total": 30
   },
   "off_priority_rounds": {
     "rows": [
@@ -234,6 +319,6 @@
     "count": 2,
     "reading": "`01` orders routes by extensibility of the family theorem. A verification arm orders by what has been written down and is checkable. The two orderings are different and should be — but the difference is worth measuring rather than assuming, and these two rounds are where it shows"
   },
-  "headline": "`26`'s box — NO HIT is not a novelty proof — stands, and none of the four steps it still requires is work this arm can do: all four are external literature searches, and the standing rule forbids routing unpublished work to a third party. 21 sentences across 50 reports carry a novelty term and every one is a refusal or a classified quotation. `01`'s PRIMARY GO route is the most covered at 8 of 8 and its STOP route is untouched — but two rounds worked routes marked HOLD and separate Phase later, which is named rather than defended",
+  "headline": "`26`'s box — NO HIT is not a novelty proof — stands, and none of the four steps it still requires is work this arm can do: all four are external literature searches, and the standing rule forbids routing unpublished work to a third party. 30 sentences across 52 reports carry a novelty term and every one is a refusal or a classified quotation. `01`'s PRIMARY GO route is the most covered at 8 of 8 and its STOP route is untouched — but two rounds worked routes marked HOLD and separate Phase later, which is named rather than defended",
   "ok": true
 }

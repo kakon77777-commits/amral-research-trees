@@ -45,8 +45,17 @@ DOCS = ROOT.parent.parent / "amral" / "public" / "bsd"
 OUT = LOGS / "src52-novelty-and-routes.json"
 
 NOVELTY_TERMS = ("novelty", "new theorem", "priority claim", "first to prove")
-REFUSAL_WORDS = ("not", "never", "untouched", "deferred", "cited", "no round",
-                 "cannot", "does not", "separate")
+REFUSAL_WORDS = ("not", "nothing", "never", "untouched", "deferred", "cited",
+                 "no round", "cannot", "does not", "separate")
+
+# This drill check is called `novelty-and-routes`, so every drill table that
+# names it carries a novelty term for a purely mechanical reason. A code
+# identifier is not prose about novelty, and pinning each occurrence forever
+# would grow the pin list once per round without ever saying anything. The
+# identifier is removed before the term test — narrowly, by exact name, not by
+# stripping every backticked span, because `26_Novelty_Search_Log` IS the
+# subject of a round and must stay visible to the scan.
+CHECK_NAME = "`novelty-and-routes`"
 
 REMAINING_STEPS = (
     "MathSciNet / zbMATH / Google Scholar citation chaining",
@@ -109,6 +118,23 @@ CLASSIFIED_MENTIONS = (
     # would have written itself a loophole, so they are pinned like the rest.
     ("RUN-050", "26_Novelty_Search_Log`](../../../amral",
      "this round's own subject line"),
+    # A sixth, which nothing could have caught in RUN-050 itself: the drill
+    # table is written into the report AFTER the gate has run, so the scan
+    # never sees its own round's tally. RUN-050's planted-defect names became
+    # visible to the scan only at RUN-051.
+    ("RUN-050", "the classified novelty quota",
+     "the drill table's row naming a planted defect, written into the report "
+     "after the gate that scans it had already run"),
+    # And two in RUN-051, which reports the guard firing and therefore has to
+    # name it. Same rule as the round that built the scan: pinned, not exempt.
+    ("RUN-051", "sentences in the section you are reading carry a novelty",
+     "this round's own account of the guard firing on it"),
+    ("RUN-051", "sentences carrying a novelty term across",
+     "this round's own tally row"),
+    ("RUN-051", "turns red on any novelty-term sentence",
+     "stating the rule the scan enforces, which is a refusal in form"),
+    ("RUN-051", "on a sentence inside RUN-050's own report",
+     "reporting where the guard fired, not claiming a result is novel"),
     ("RUN-050", "is the finding, and it stands",
      "reporting that `26`'s box holds, which is a refusal to claim novelty"),
     ("RUN-050", "a first, cruder version",
@@ -140,19 +166,79 @@ def novelty_rule() -> dict:
                    "extend the search nor score the box as passed")}
 
 
+def _classify(sentence: str) -> dict:
+    """The scan's own decision on one sentence, so it can be tested on a
+    fixture instead of only on whatever the corpus happens to contain."""
+    flat = " ".join(sentence.split())
+    low = flat.lower().replace(CHECK_NAME, " ")
+    mention = any(t in low for t in NOVELTY_TERMS)
+    refused = mention and any(re.search(r"\b" + re.escape(w) + r"\b", low)
+                              for w in REFUSAL_WORDS)
+    return {"mention": mention, "refused": refused}
+
+
+# Fixtures. The reports this scan reads carry no drill table at the moment the
+# drill runs — the table is written afterwards, by the finaliser — so a defect
+# planted in the check-name handling changes nothing the corpus can show, and
+# a drill would call it a no-op for a reason that is about timing rather than
+# about the code. These sentences exhibit the cases directly.
+FIXTURES = (
+    ("The 4 planted for this gate, each turning `novelty-and-routes` red:",
+     False, False, "the check's own identifier, which is not prose"),
+    ("This result is a novelty.", True, False, "a bare claim, unrefused"),
+    ("Nothing about novelty is claimed here.", True, True,
+     "a refusal whose word is `nothing`, which contains `not` by accident"),
+    ("This is not a novelty claim.", True, True, "a plain refusal"),
+    ("A note on another gate's novelty scan.", True, False,
+     "`another` contains `not`; a substring test would call this a refusal"),
+)
+
+
+def check_name_is_not_prose() -> dict:
+    """Run the classifier on the fixtures. Content-independent."""
+    rows = []
+    for sent, mention, refused, why in FIXTURES:
+        got = _classify(sent)
+        rows.append({"sentence": sent, "why": why,
+                     "expected": {"mention": mention, "refused": refused},
+                     "got": got,
+                     "ok": got == {"mention": mention, "refused": refused}})
+    return {"rows": rows, "all_ok": all(r["ok"] for r in rows),
+            "why_a_fixture": ("the drill runs before the finaliser writes the "
+                              "drill tables, so the reports cannot exhibit the "
+                              "check-name case at the moment it is tested")}
+
+
 def no_round_claims_novelty() -> dict:
     """Every mention of novelty in this line's reports must be a refusal."""
     rows = []
     for f in sorted(REPORTS.glob("RUN-*.md")):
         text = f.read_text(encoding="utf-8")
         for sent in re.split(r"(?<=[.!?])\s+|\n\n", text):
-            low = sent.lower()
+            # Flatten BEFORE testing. The reports are hard-wrapped, so a
+            # refusal phrase can fall across a line break — "no round" arriving
+            # as "no\nround" — and a test run on the raw sentence cannot see
+            # it. The pinning test already used the flattened text; the refusal
+            # test did not, and read one of this line's own refusals as an
+            # unaccounted mention.
+            flat = " ".join(sent.split())
+            low = flat.lower().replace(CHECK_NAME, " ")
             if any(t in low for t in NOVELTY_TERMS):
-                refused = any(w in low for w in REFUSAL_WORDS)
-                flat = " ".join(sent.split())
+                # Word boundaries, not substrings. "nothing" contains "not"
+                # and "another" contains "not", so a substring test read three
+                # sentences as refusals that had refused nothing — the same
+                # mistake as matching a census by its filename.
+                refused = any(re.search(r"\b" + re.escape(w) + r"\b", low)
+                              for w in REFUSAL_WORDS)
+                # Measured, not merely fixed: how many sentences the old
+                # substring test would have called refusals that the boundary
+                # test does not. A repair nobody counts is a repair nobody can
+                # keep — the check asserts this is zero.
+                loose = any(w in low for w in REFUSAL_WORDS)
                 cls = next((c for c in CLASSIFIED_MENTIONS
                             if c[0] in f.name and c[1] in flat), None)
                 rows.append({"report": f.name, "refused": refused,
+                             "refused_by_substring_only": loose and not refused,
                              "classified_as_descriptive": bool(cls),
                              "why_not_a_claim": cls[2] if cls else None,
                              "sentence": flat[:150]})
@@ -161,6 +247,10 @@ def no_round_claims_novelty() -> dict:
     return {"reports_scanned": len(list(REPORTS.glob("RUN-*.md"))),
             "mentions": len(rows),
             "refusals": sum(r["refused"] for r in rows),
+            "refused_by_substring_only": sum(r["refused_by_substring_only"]
+                                             for r in rows),
+            "the_substring_accidents": [r["sentence"] for r in rows
+                                        if r["refused_by_substring_only"]],
             "classified_descriptive": sum(r["classified_as_descriptive"]
                                           for r in rows),
             "unaccounted": unaccounted,
@@ -239,8 +329,11 @@ def main() -> int:
     routes = route_matrix()
     off = off_priority_rounds()
 
+    fx = check_name_is_not_prose()
     ok = (nov["document_found"] and nov["box_present"]
           and not nov["steps_this_arm_can_do"]
+          and fx["all_ok"]
+          and claims["refused_by_substring_only"] == 0
           and claims["no_unaccounted_mention"]
           and claims["classified_descriptive"] == len(CLASSIFIED_MENTIONS)
           and routes["stop_route_untouched"]
@@ -252,6 +345,7 @@ def main() -> int:
         "source": "26_Novelty_Search_Log, 01_Phase2_Route_Matrix",
         "novelty_rule": nov,
         "no_round_claims_novelty": claims,
+        "classifier_fixtures": fx,
         "route_matrix": routes,
         "off_priority_rounds": off,
         "headline": (f"`26`'s box — NO HIT is not a novelty proof — stands, and "

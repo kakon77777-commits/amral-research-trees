@@ -1,8 +1,8 @@
 {
   "gate": "src29 — the sweep's own coverage",
   "documents": 85,
-  "reports_read": 50,
-  "gates_read": 53,
+  "reports_read": 52,
+  "gates_read": 55,
   "matching": "by filename stem and, for Phase 0, the `doc NN` form. Only 17 of the 85 are cited as markdown links, so a link scan would report a sweep four times smaller than it is",
   "bucket_order_strongest_first": [
     "subject of a report",
@@ -11,10 +11,10 @@
     "not mentioned"
   ],
   "counts": {
-    "subject of a report": 48,
+    "subject of a report": 52,
     "cited in a report": 4,
     "named in gate code": 1,
-    "not mentioned": 32
+    "not mentioned": 28
   },
   "per_subline": {
     "phase0": {
@@ -36,10 +36,10 @@
       "not mentioned": 22
     },
     "phase2": {
-      "subject of a report": 33,
+      "subject of a report": 37,
       "cited in a report": 2,
       "named in gate code": 1,
-      "not mentioned": 4
+      "not mentioned": 0
     }
   },
   "not_mentioned": [
@@ -70,16 +70,12 @@
     "phase1/12_Delta_Only_Algorithm1_Verifier.md",
     "phase1/14_Phase1_Next_Low_Cost_Gate.md",
     "phase1/15_Fresh_Algorithm2_Semantic_Replay.md",
-    "phase1/16_Phase1_Closure_and_Phase2_Interface.md",
-    "phase2/00_Phase2_Global_Enclosure_Consensus.md",
-    "phase2/02_Next_Compiler_Targets.md",
-    "phase2/06_Phase2_Agent_Experiment.md",
-    "phase2/06_Witness_Network_v03_Integration.md"
+    "phase1/16_Phase1_Closure_and_Phase2_Interface.md"
   ],
   "caveat": "a bucket is a measure of attention, not of correctness. Being the subject of a round says a round was aimed at the document; what that round actually settled is in its own 'what this round does not claim' section, every time",
   "second_axis_data_artefacts": {
-    "reports_naming_a_data_artefact": 50,
-    "distinct_artefacts_named": 56,
+    "reports_naming_a_data_artefact": 52,
+    "distinct_artefacts_named": 58,
     "artefacts": [
       "SHA256SUMS.json",
       "algorithm1_removed_census.csv",
@@ -324,6 +320,15 @@
       "RUN-050-NOVELTY-AND-ROUTES.md": [
         "src11-gate-drill.json",
         "src52-novelty-and-routes.json"
+      ],
+      "RUN-051-CONSENSUS-AND-EXPERIMENT.md": [
+        "src11-gate-drill.json",
+        "src53-consensus-and-experiment.json"
+      ],
+      "RUN-052-COMPILER-TARGETS-AND-V03.md": [
+        "src11-gate-drill.json",
+        "src19-conductor-census.json",
+        "src54-compiler-targets.json"
       ]
     }
   },
@@ -819,10 +824,14 @@
     {
       "subline": "phase2",
       "name": "00_Phase2_Global_Enclosure_Consensus.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-051-CONSENSUS-AND-EXPERIMENT.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src53_consensus_and_experiment.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -876,10 +885,14 @@
     {
       "subline": "phase2",
       "name": "02_Next_Compiler_Targets.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-052-COMPILER-TARGETS-AND-V03.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src54_compiler_targets_and_v03.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -891,7 +904,8 @@
       "cited_in": [],
       "named_in_gates": [
         "src48_h2_chain_and_h3_dispute.py",
-        "src52_novelty_and_routes.py"
+        "src52_novelty_and_routes.py",
+        "src53_consensus_and_experiment.py"
       ]
     },
     {
@@ -906,7 +920,8 @@
       ],
       "named_in_gates": [
         "src11_gate_drill.py",
-        "src37_twist_invariance_bridge.py"
+        "src37_twist_invariance_bridge.py",
+        "src53_consensus_and_experiment.py"
       ]
     },
     {
@@ -922,7 +937,8 @@
       "named_in_gates": [
         "src11_gate_drill.py",
         "src43_finite_exceptional_primes.py",
-        "src52_novelty_and_routes.py"
+        "src52_novelty_and_routes.py",
+        "src53_consensus_and_experiment.py"
       ]
     },
     {
@@ -943,13 +959,15 @@
         "RUN-034-KODAIRA-NOGO-DOMAIN.md"
       ],
       "cited_in": [
-        "RUN-016-TATE-AND-CONDUCTORS.md"
+        "RUN-016-TATE-AND-CONDUCTORS.md",
+        "RUN-051-CONSENSUS-AND-EXPERIMENT.md"
       ],
       "named_in_gates": [
         "src11_gate_drill.py",
         "src18_tate_algorithm.py",
         "src19_conductor_census.py",
-        "src36_kodaira_prefilters_nogo.py"
+        "src36_kodaira_prefilters_nogo.py",
+        "src53_consensus_and_experiment.py"
       ]
     },
     {
@@ -965,18 +983,26 @@
     {
       "subline": "phase2",
       "name": "06_Phase2_Agent_Experiment.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-051-CONSENSUS-AND-EXPERIMENT.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src53_consensus_and_experiment.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "06_Witness_Network_v03_Integration.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-052-COMPILER-TARGETS-AND-V03.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src54_compiler_targets_and_v03.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -995,10 +1021,13 @@
       "subject_of": [
         "RUN-043-CLAIM-LADDER-POSITION.md"
       ],
-      "cited_in": [],
+      "cited_in": [
+        "RUN-051-CONSENSUS-AND-EXPERIMENT.md"
+      ],
       "named_in_gates": [
         "src11_gate_drill.py",
-        "src45_claim_ladder_position.py"
+        "src45_claim_ladder_position.py",
+        "src53_consensus_and_experiment.py"
       ]
     },
     {
@@ -1015,7 +1044,8 @@
       ],
       "named_in_gates": [
         "src48_h2_chain_and_h3_dispute.py",
-        "src52_novelty_and_routes.py"
+        "src52_novelty_and_routes.py",
+        "src53_consensus_and_experiment.py"
       ]
     },
     {
@@ -1035,7 +1065,8 @@
         "src39_fw_h3_compiler.py",
         "src47_fw_hypothesis_compiler.py",
         "src48_h2_chain_and_h3_dispute.py",
-        "src52_novelty_and_routes.py"
+        "src52_novelty_and_routes.py",
+        "src53_consensus_and_experiment.py"
       ]
     },
     {

@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-050:
-  every gate is drilled — `src00`–`src10` and `src12`–`src52`, 200 defects, 200
-  caught by the named check, 39 controls undisturbed, over 78 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-052:
+  every gate is drilled — `src00`–`src10` and `src12`–`src54`, 212 defects, 212
+  caught by the named check, 41 controls undisturbed, over 80 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -153,6 +153,8 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [048](./reports/RUN-048-CANDIDATE-SCHEMA-AND-SIEVE.md) | `13`'s schema and `14`'s sieve, control included | `src50` | `14`'s odd local table recomputes exactly; the control is **found by conductor, not quoted**, and **has a nonsplit prime and still fails** — one reservoir, no distinct witness at `p = 29`, which is `14`'s whole point and RUN-033's lemma 2 returning nothing for the first time; `13`'s B1/B2 are RUN-033's lemma 1 and RUN-037's premise under other names; of its six obligations **1 cited, 3 partly, 2 open, none closed** |
 | [049](./reports/RUN-049-SOURCE-AUDITS.md) | the corpus's own source audits, audited | `src51` | **two of this arm's conclusions move**: `23` quotes the exact local condition RUN-046 said this arm did not hold, and its weight-2 specialisation `a_ℓ = −1` checks out (`a₂₉ = −1` nonsplit, `a₃ = +1` split) — so the derivation `02` asked for is in the corpus, and `18`'s first referee item is **addressed**, not open. And **`22` invokes maximality where Skinner C lists irreducibility** — the stronger premise is the one RUN-036 could not certify at 3, and `22`'s case C is `p = 3` |
 | [050](./reports/RUN-050-NOVELTY-AND-ROUTES.md) | `26`'s novelty rule and `01`'s route matrix | `src52` | `NO HIT ≠ NOVELTY PROOF` stands and **none of its four remaining steps is work this arm can do**; across 50 reports **21 novelty-term sentences, 11 refusals, 10 pinned quotations, 0 unaccounted** — including this round's own five, pinned rather than exempted; `01`'s PRIMARY GO route is best covered and its STOP route untouched, while **two rounds worked HOLD routes**, named rather than defended |
+| [051](./reports/RUN-051-CONSENSUS-AND-EXPERIMENT.md) | `00`'s enclosure consensus and `06`'s agent experiment | `src53` | `00` §6 forbids three substitutions for the unclosed `∀p > 2`, and **the third is about this arm's own RUN-036** — all three guards are fields in the archived logs, so with `05`'s three and `07`'s five that is **eleven prohibitions across three documents, audited in one place, all clear**; `06`'s success gate stands at **2 of 4** with both gaps marked open by the corpus's own documents; and **`06`'s step 4 wrote 「不得默認相同」 about H3 while `08` and `09` did exactly that** |
+| [052](./reports/RUN-052-COMPILER-TARGETS-AND-V03.md) | `02`'s next compiler targets and `06` v0.3's decision procedure | `src54` | v0.3 exists to close RUN-045's own `UNKNOWN`, so it was run per member and **stops at its first branch**: branch 1 never fires (every odd additive prime is potentially *good*), `H3` passes with witness `ℓ = 29` at all 19, `H1` is `UNKNOWN` beyond RUN-036's range, and the isogeny-kernel test that would settle `H2` is local data this tree does not compute — **2 of 5 decided**. And **`02`'s target 3 has an empty domain here**: `g_mult^odd = 1` has no odd prime divisor, which is *inapplicable*, not achieved |
 
 ## Layout
 

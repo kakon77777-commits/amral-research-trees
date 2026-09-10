@@ -1,0 +1,720 @@
+{
+  "gate": "src54 — 02's compiler targets and 06 v0.3's procedure",
+  "source": "02_Next_Compiler_Targets, 06_Witness_Network_v03_Integration",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "conductor": 696,
+  "v03_procedure": {
+    "members": 19,
+    "rows": [
+      {
+        "q": 241,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 313,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 457,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 673,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 937,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 1009,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 1153,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 1753,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 2017,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 2089,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 2113,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 2137,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 2617,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 2713,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 3049,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 3457,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 3529,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 3769,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      },
+      {
+        "q": 3793,
+        "GLOBAL_H1": {
+          "verdict": "UNKNOWN",
+          "why": "beyond RUN-036's certified range; irreducibility holds by RUN-031, absolute irreducibility is not certified here"
+        },
+        "LOCAL_H2": {
+          "branch_1_potentially_multiplicative": false,
+          "branch_1_verdict": "not taken",
+          "potential_reduction": "potentially good",
+          "branch_2_local_irreducible_over_Fp": "NOT COMPUTED HERE",
+          "branch_3_local_isogeny_kernel_test": "NOT COMPUTED HERE",
+          "verdict": "UNKNOWN"
+        },
+        "H3": {
+          "verdict": "PASS",
+          "witness_ell": 29,
+          "computed": true
+        },
+        "PERIOD": {
+          "verdict": "OPEN",
+          "why": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition"
+        },
+        "FINAL": "not reachable — LOCAL_H2 and PERIOD are not decided"
+      }
+    ],
+    "branch_1_never_fires": true,
+    "H3_passes_at_every_member": true,
+    "H1_unknown_at_every_member": true,
+    "steps_decided_here": 2,
+    "steps_partial": 1,
+    "steps_outside": 2,
+    "the_improvement_v03_claims": "A2 H2 UNKNOWN -> exact finite local isogeny test",
+    "reached_here": "the first branch only. The test that would settle H2 is local and this tree does not compute local Galois data"
+  },
+  "A_odd": {
+    "base_A_odd": [],
+    "base_size": 0,
+    "members": 19,
+    "rows": [
+      {
+        "q": 241,
+        "A_odd": [
+          241
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 313,
+        "A_odd": [
+          313
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 457,
+        "A_odd": [
+          457
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 673,
+        "A_odd": [
+          673
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 937,
+        "A_odd": [
+          937
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 1009,
+        "A_odd": [
+          1009
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 1153,
+        "A_odd": [
+          1153
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 1753,
+        "A_odd": [
+          1753
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 2017,
+        "A_odd": [
+          2017
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 2089,
+        "A_odd": [
+          2089
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 2113,
+        "A_odd": [
+          2113
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 2137,
+        "A_odd": [
+          2137
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 2617,
+        "A_odd": [
+          2617
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 2713,
+        "A_odd": [
+          2713
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 3049,
+        "A_odd": [
+          3049
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 3457,
+        "A_odd": [
+          3457
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 3529,
+        "A_odd": [
+          3529
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 3769,
+        "A_odd": [
+          3769
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      },
+      {
+        "q": 3793,
+        "A_odd": [
+          3793
+        ],
+        "size": 1,
+        "is_exactly_q": true
+      }
+    ],
+    "every_member_has_exactly_one": true,
+    "and_it_is_q": true,
+    "so_the_quantifier_does_not_reinflate": true,
+    "the_claim": "odd additive primes 依然只產生有限 table，因此 ∀p 沒有重新膨脹",
+    "measured": "one row per member, and the base curve has none at all — its only additive prime is 2"
+  },
+  "compiler_targets": {
+    "rows": [
+      {
+        "target": "1. Additive FW-H2 compiler",
+        "state": "`06` v0.3 is the design; its decisive branch is local and this arm cannot run it",
+        "this_arm": "H2 stays UNKNOWN at the additive prime (RUN-045)"
+      },
+      {
+        "target": "2. Period compiler",
+        "state": "RUN-039 left c_E = 1 open; RUN-040 ran `01`'s sufficient condition on all 19 members",
+        "this_arm": "PERIOD_SAFE not emitted; the weaker p ∤ c is checked"
+      },
+      {
+        "target": "3. Ordinary finite exception compiler for p | g_mult",
+        "state": "g_mult^odd = 1, whose odd prime divisors are []",
+        "this_arm": "the target's DOMAIN IS EMPTY for this curve — no odd prime divides 1, so there is no finite exception to compile. Inapplicable, not achieved"
+      },
+      {
+        "target": "4. Only then census",
+        "state": "no census exists in this tree",
+        "this_arm": "RUN-045 emits a per-prime certificate with 7 UNKNOWN rows kept visible"
+      }
+    ],
+    "g_mult_odd": 1,
+    "odd_divisors_of_g_mult": [],
+    "target_3_domain_is_empty": true,
+    "no_census_exists": true,
+    "unknown_rows_visible": 7
+  },
+  "discipline_lines": {
+    "rule_1": {
+      "text": "No database scaling until this is exact",
+      "target": "1. Additive FW-H2 compiler",
+      "obeyed_here": true,
+      "how": "no census over the search pool exists in this tree, and target 1 is not exact here"
+    },
+    "rule_2": {
+      "text": "The UNKNOWN rows must remain visible",
+      "obeyed_here": true,
+      "how": "RUN-045's certificate carries 7 UNKNOWN rows in its emitted output, not in a footnote"
+    },
+    "census_status_columns": [
+      "GENERIC_PASS",
+      "FINITE_EXCEPTION_PASS",
+      "ADDITIVE_LOCAL_UNKNOWN",
+      "PERIOD_UNKNOWN",
+      "TRUE_REJECT"
+    ],
+    "logs_carrying_that_census": [],
+    "why_not_a_filename_scan": "a scan for the word census matched src19's CONDUCTOR census, which is a different table. The five status columns are what `02` §4 specifies",
+    "this_gates_own_log_is_excluded": "src54-compiler-targets.json",
+    "why_it_must_be": "the five status names are written into this log, so the detector would match itself on every run after the first. The first run was green only because the log did not exist yet",
+    "both_obeyed": true
+  },
+  "headline": "`06` v0.3's procedure runs to its first branch and stops: every member's odd additive prime is potentially GOOD so the FAIL branch is not taken, H3 passes with witness 29 at all 19 members, H1 is UNKNOWN beyond RUN-036's range, and the branch that would settle H2 is local Galois data this tree does not compute — two of five steps decided. `𝒜_odd` is one prime per member and none for the base, so the quantifier does not reinflate. And `02`'s target 3 has an EMPTY DOMAIN here: g_mult^odd = 1 has no odd prime divisor, so there is no finite exception to compile",
+  "ok": true
+}

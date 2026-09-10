@@ -139,6 +139,8 @@ import src49_provisional_vs_revised as prev49             # noqa: E402
 import src50_candidate_schema_and_sieve as schema50       # noqa: E402
 import src51_source_audits as audits51                    # noqa: E402
 import src52_novelty_and_routes as routes52               # noqa: E402
+import src53_consensus_and_experiment as consensus53      # noqa: E402
+import src54_compiler_targets_and_v03 as targets54        # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -2497,6 +2499,20 @@ def check_novelty_and_routes() -> bool:
         return False
     if c["mentions"] < 8 or c["refusals"] < 4:
         return False
+    # A refusal must be a whole word. "nothing" contains "not" and "another"
+    # contains "not", and a substring test read three sentences as refusals
+    # that refused nothing. `.get` with a sentinel rather than `[...]`, because
+    # a scan missing the field must turn this check RED, not raise — a defect
+    # that raises is not a defect a check caught.
+    if c.get("refused_by_substring_only", -1) != 0:
+        return False
+    # And the classifier is tested on a fixture, not only on the corpus. The
+    # drill runs BEFORE the finaliser writes the drill tables, so at this
+    # moment no report contains the check's own name — the case the strip
+    # exists for cannot be exhibited by the corpus while it is being tested.
+    fx = routes52.check_name_is_not_prose()
+    if not fx["all_ok"] or len(fx["rows"]) < 5:
+        return False
     r = routes52.route_matrix()
     if not r["stop_route_untouched"]:
         return False
@@ -2509,13 +2525,116 @@ def check_novelty_and_routes() -> bool:
 
 
 
+def check_consensus_and_experiment() -> bool:
+    """`00`'s consensus and `06`'s experiment plan.
+
+    The three guards `00` §6 demands must be present AND grounded. The third is
+    about RUN-036's own surjectivity certificate, and the guard IS the UNKNOWN
+    rows RUN-045 kept — a version reporting the guard present with those rows
+    gone is reporting a hollow guard. The eleven prohibitions must stay eleven
+    with every list independently clear, because a total that survives one list
+    going unaudited is a total that means nothing. The quantifier must stay
+    open. The success gate must stay at two of four with H3's row still marked
+    disputed: a gate scored met is the exact overclaim `07` forbids. And step
+    4's 不得默認相同 must stay recorded as violated, since that is RUN-046's
+    finding and softening it would hide this line's own result.
+    """
+    fs = consensus53.forbidden_substitutions()
+    if not fs["all_guards_present"] or len(fs["rows"]) != 3:
+        return False
+    if fs["primes_certified_by_RUN_036"] < 30:
+        return False
+    if fs["primes_marked_UNKNOWN_by_RUN_045"] < 1:
+        return False              # the rows ARE the third guard
+    tl = consensus53.three_forbidden_lists()
+    if tl["total_prohibitions"] != 11 or len(tl["lists"]) != 3:
+        return False
+    if not all(l["all_clear"] for l in tl["lists"]):
+        return False
+    if sorted(l["count"] for l in tl["lists"]) != [3, 3, 5]:
+        return False
+    mp = consensus53.the_main_problem()
+    if mp["for_all_p_FW"]["quantifier_closed"] is not False:
+        return False
+    sg = consensus53.success_gate()
+    if sg["gate_is_met"] or sg["met_or_supplied"] != 2 or sg["of"] != 4:
+        return False
+    if not any("DISPUTED" in r["status"] for r in sg["rows"]):
+        return False
+    st = consensus53.experiment_steps()
+    if not st["step_4_was_violated_in_the_corpus"]:
+        return False
+    return (st["step_7_census_exists"] is False
+            and st["unknown_rows_kept_visible"] > 0)
+
+
+def check_compiler_targets() -> bool:
+    """`02`'s four targets, and `06` v0.3 run as far as it goes.
+
+    The two local branches must stay NOT COMPUTED HERE. v0.3 exists to replace
+    RUN-045's UNKNOWN with an exact local isogeny test, and this tree computes
+    no local Galois data — a version reporting those branches decided would be
+    claiming precisely the arithmetic the round says it cannot do, which is the
+    one mis-report that would matter here. Branch 1 must keep not firing and H3
+    must keep passing with witness 29 at every member. The base curve must keep
+    an EMPTY 𝒜_odd: 696.e1's only additive prime is 2, and a base carrying an
+    odd one would make `06`'s finite-table claim a different claim. Target 3's
+    domain must stay empty at g_mult^odd = 1 — scoring an empty domain as an
+    achieved target would report three of four targets in hand. And the census
+    detector must keep matching `02` §4's five status columns: it once matched
+    on the filename and hit src19's CONDUCTOR census, so any log listed as the
+    census means it has gone back to matching a name.
+    """
+    p = targets54.v03_procedure()
+    if p["members"] < 19:
+        return False
+    if not (p["branch_1_never_fires"] and p["H3_passes_at_every_member"]
+            and p["H1_unknown_at_every_member"]):
+        return False
+    if (p["steps_decided_here"], p["steps_partial"],
+            p["steps_outside"]) != (2, 1, 2):
+        return False
+    for r in p["rows"]:
+        h2 = r["LOCAL_H2"]
+        if h2["verdict"] != "UNKNOWN":
+            return False
+        if h2["branch_2_local_irreducible_over_Fp"] != "NOT COMPUTED HERE":
+            return False
+        if h2["branch_3_local_isogeny_kernel_test"] != "NOT COMPUTED HERE":
+            return False
+        if r["H3"]["witness_ell"] != 29 or not r["H3"]["computed"]:
+            return False
+        if "not reachable" not in r["FINAL"]:
+            return False
+    a = targets54.a_odd()
+    if a["base_A_odd"] or a["base_size"]:
+        return False
+    if not (a["every_member_has_exactly_one"] and a["and_it_is_q"]):
+        return False
+    t = targets54.compiler_targets()
+    if t["g_mult_odd"] != 1 or t["odd_divisors_of_g_mult"]:
+        return False
+    if not t["target_3_domain_is_empty"] or not t["no_census_exists"]:
+        return False
+    if len(t["rows"]) != 4:
+        return False
+    d = targets54.discipline_lines()
+    if len(d["census_status_columns"]) != 5:
+        return False
+    if d["logs_carrying_that_census"]:
+        return False
+    return bool(d["both_obeyed"]) and bool(d["rule_2"]["obeyed_here"])
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
     net22, p5u, led24, cv25, r2bsd, agent27, r1bsd, cov29, p1num, q9, cert32,
     mazur33, refA34, gcd35, nogo36, bridge37, surj38, h3c39,
     h2o40, brg41, bar42, fin43, cmp44, ladder45, cheb46,
-    comp47, chain48, prev49, schema50, audits51, routes52))
+    comp47, chain48, prev49, schema50, audits51, routes52,
+    consensus53, targets54))
 
 
 CHECKS = {
@@ -2597,6 +2716,8 @@ CHECKS = {
     "candidate-schema": check_candidate_schema,
     "source-audits": check_source_audits,
     "novelty-and-routes": check_novelty_and_routes,
+    "consensus-and-experiment": check_consensus_and_experiment,
+    "compiler-targets": check_compiler_targets,
 }
 
 
@@ -2901,6 +3022,36 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("00 §6's third guard is reported present with RUN-045's UNKNOWN rows "
+     "gone", "code", "consensus-and-experiment",
+     lambda: patch(consensus53, "forbidden_substitutions",
+                   _hollow_third_guard)),
+    ("06's success gate is reported met at four of four", "code",
+     "consensus-and-experiment",
+     lambda: patch(consensus53, "SUCCESS_GATE",
+                   tuple((a, b, "SUPPLIED, VERIFIED HERE")
+                         for a, b, _ in consensus53.SUCCESS_GATE))),
+    ("00 §5's prime quantifier is reported closed", "code",
+     "consensus-and-experiment",
+     lambda: patch(consensus53, "the_main_problem", _quantifier_closed)),
+    ("06's step 4 warning is reported obeyed by the corpus", "code",
+     "consensus-and-experiment",
+     lambda: patch(consensus53, "experiment_steps", _step4_obeyed)),
+    ("v0.3's two local branches are reported computed in this tree", "code",
+     "compiler-targets",
+     lambda: patch(targets54, "v03_procedure", _local_branches_computed)),
+    ("the base curve is reported carrying an odd additive prime", "code",
+     "compiler-targets",
+     lambda: patch(targets54, "a_odd", _base_has_odd_additive)),
+    ("02's target 3 is scored achieved where its domain is empty", "code",
+     "compiler-targets",
+     lambda: patch(targets54, "compiler_targets", _target3_achieved)),
+    ("the census detector goes back to matching on the filename", "code",
+     "compiler-targets",
+     lambda: patch(targets54, "discipline_lines", _census_by_filename)),
+    ("the census detector stops excluding this gate's own log, which carries "
+     "the five status names it searches for", "code", "compiler-targets",
+     lambda: patch(targets54, "discipline_lines", _census_matches_itself)),
     ("a_29 comes back +1, so 23's weight-2 sign stops selecting the nonsplit "
      "prime", "code", "source-audits",
      lambda: patch(audits51, "a_at", lambda p: 1)),
@@ -2916,6 +3067,15 @@ DEFECTS = [
      lambda: patch(routes52, "novelty_rule", _novelty_actionable)),
     ("the classified novelty quotations are unpinned", "code",
      "novelty-and-routes", lambda: patch(routes52, "CLASSIFIED_MENTIONS", ())),
+    ("the refusal test goes back to reading unflattened text, so a refusal "
+     "broken by a line wrap is invisible", "code", "novelty-and-routes",
+     lambda: patch(routes52, "no_round_claims_novelty", _refusals_unflattened)),
+    ("refusal words go back to matching as substrings, so \"nothing\" and "
+     "\"another\" both count as \"not\"", "code", "novelty-and-routes",
+     lambda: patch(routes52, "no_round_claims_novelty", _refusals_by_substring)),
+    ("the drill's own check name is left in the prose it scans, so every drill "
+     "table counts as a mention", "code", "novelty-and-routes",
+     lambda: patch(routes52, "CHECK_NAME", "\x00no such string\x00")),
     ("01's STOP route is reported covered", "code", "novelty-and-routes",
      lambda: patch(routes52, "route_matrix", _stop_covered)),
     ("the two rounds on non-prioritised routes are hidden", "code",
@@ -3215,6 +3375,11 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("06's four success-gate conditions listed in reverse order",
+     lambda: patch(consensus53, "SUCCESS_GATE",
+                   tuple(reversed(consensus53.SUCCESS_GATE)))),
+    ("06 v0.3 and 𝒜_odd run at bound 5000 instead of 4000 — 23 members, "
+     "not 19", lambda: _wider_family_bound()),
     ("Mazur's twelve degrees listed in a different order",
      lambda: patch(audits51, "MAZUR",
                    (163, 67, 43, 37, 19, 17, 13, 11, 7, 5, 3, 2))),
@@ -3445,6 +3610,97 @@ _true_level2 = comp47.level2
 _true_h1 = comp47.h1
 _true_three_defs = prev49.three_definitions
 _true_find = schema50.find_by_conductor
+_true_fs53 = consensus53.forbidden_substitutions
+_true_main_problem53 = consensus53.the_main_problem
+_true_experiment_steps53 = consensus53.experiment_steps
+_true_v03_procedure = targets54.v03_procedure
+_true_a_odd54 = targets54.a_odd
+_true_compiler_targets54 = targets54.compiler_targets
+_true_discipline_lines54 = targets54.discipline_lines
+
+
+def _hollow_third_guard():
+    """The guard still reported present, with the rows that ARE the guard
+    gone — `00` §6's third prohibition is about RUN-036's certificate, and what
+    answers it is RUN-045 emitting UNKNOWN rather than extrapolating."""
+    d = dict(_true_fs53())
+    d["primes_marked_UNKNOWN_by_RUN_045"] = 0
+    return d
+
+
+def _quantifier_closed():
+    d = dict(_true_main_problem53())
+    d["for_all_p_FW"] = dict(d["for_all_p_FW"], quantifier_closed=True)
+    return d
+
+
+def _step4_obeyed():
+    d = dict(_true_experiment_steps53())
+    d["step_4_was_violated_in_the_corpus"] = False
+    return d
+
+
+def _local_branches_computed(bound=None):
+    """The two branches v0.3 turns on, reported decided here — which would be
+    this tree claiming local Galois data it does not compute."""
+    d = dict(_true_v03_procedure() if bound is None
+             else _true_v03_procedure(bound))
+    d["rows"] = [{**r,
+                  "LOCAL_H2": {**r["LOCAL_H2"],
+                               "branch_2_local_irreducible_over_Fp": "PASS",
+                               "branch_3_local_isogeny_kernel_test": "PASS",
+                               "verdict": "PASS"},
+                  "FINAL": "PASS"} for r in d["rows"]]
+    d["steps_decided_here"] = 4
+    d["steps_partial"] = 1
+    d["steps_outside"] = 0
+    return d
+
+
+def _base_has_odd_additive(bound=None):
+    d = dict(_true_a_odd54() if bound is None else _true_a_odd54(bound))
+    d["base_A_odd"] = [29]
+    d["base_size"] = 1
+    return d
+
+
+def _target3_achieved():
+    d = dict(_true_compiler_targets54())
+    d["g_mult_odd"] = 3
+    d["odd_divisors_of_g_mult"] = [3]
+    d["target_3_domain_is_empty"] = False
+    return d
+
+
+def _census_by_filename():
+    """The bug this gate carried when it was first written: scan the log
+    filenames for the word, and src19's CONDUCTOR census answers to it."""
+    d = dict(_true_discipline_lines54())
+    d["logs_carrying_that_census"] = sorted(
+        f.name for f in targets54.LOGS.glob("*census*.json"))
+    return d
+
+
+def _census_matches_itself():
+    """The defect the fixed detector exists to prevent: a check that writes its
+    own search terms into the directory it searches matches itself on every run
+    after the first, and its first run is green only because its log is not
+    there yet."""
+    d = dict(_true_discipline_lines54())
+    d["logs_carrying_that_census"] = [targets54.OUT.name]
+    return d
+
+
+def _wider_family_bound():
+    """5000 instead of 4000 — 23 members instead of 19. Every property the
+    check reads is universal over members, so a bound that moved a verdict
+    would mean the finding was an artefact of where the search stopped."""
+    r1 = patch(targets54, "v03_procedure",
+               lambda bound=5000: _true_v03_procedure(bound))
+    r2 = patch(targets54, "a_odd", lambda bound=5000: _true_a_odd54(bound))
+    return lambda: (r1(), r2())
+
+
 _true_maximal_vs_irr = audits51.maximal_versus_irreducible
 _true_case_hypotheses = audits51.case_hypotheses
 _true_what_moves = audits51.what_moves
@@ -3476,6 +3732,72 @@ def _nothing_moves():
     d = dict(_true_what_moves())
     d["RUN_046"] = dict(d["RUN_046"], the_quote_is_present=False)
     return d
+
+
+SENTENCE_SPLIT = "(?<=[.!?])" + chr(92) + "s+|" + chr(10) + chr(10)
+
+
+def _refusals_by_substring():
+    """The scan before RUN-051's second repair: refusal words matched as bare
+    substrings, and the check's own identifier left in the prose. Under it
+    `nothing` and `another` both count as the refusal word `not`, three
+    sentences read as refusals that refused nothing, and the count of that
+    accident is not measured at all — which is what this check now asserts."""
+    import re
+    rows = []
+    for f in sorted(routes52.REPORTS.glob("RUN-*.md")):
+        text = f.read_text(encoding="utf-8")
+        for sent in re.split(SENTENCE_SPLIT, text):
+            flat = " ".join(sent.split())
+            low = flat.lower()
+            if any(t in low for t in routes52.NOVELTY_TERMS):
+                refused = any(w in low for w in routes52.REFUSAL_WORDS)
+                cls = next((c for c in routes52.CLASSIFIED_MENTIONS
+                            if c[0] in f.name and c[1] in flat), None)
+                rows.append({"report": f.name, "refused": refused,
+                             "classified_as_descriptive": bool(cls),
+                             "why_not_a_claim": cls[2] if cls else None,
+                             "sentence": flat[:150]})
+    un = [r for r in rows
+          if not r["refused"] and not r["classified_as_descriptive"]]
+    return {"reports_scanned": len(list(routes52.REPORTS.glob("RUN-*.md"))),
+            "mentions": len(rows),
+            "refusals": sum(r["refused"] for r in rows),
+            "classified_descriptive": sum(r["classified_as_descriptive"]
+                                          for r in rows),
+            "unaccounted": un, "no_unaccounted_mention": not un,
+            "rows": rows[:12], "why_scanned_this_way": "substring"}
+
+
+def _refusals_unflattened():
+    """The scan as it was before RUN-051: the pinning test on flattened text,
+    the refusal test on the raw sentence. The reports are hard-wrapped, so a
+    refusal phrase landing across a line break becomes invisible and one of
+    this line's own refusals reads as an unaccounted mention."""
+    import re
+    rows = []
+    for f in sorted(routes52.REPORTS.glob("RUN-*.md")):
+        text = f.read_text(encoding="utf-8")
+        for sent in re.split(SENTENCE_SPLIT, text):
+            low = sent.lower()
+            if any(t in low for t in routes52.NOVELTY_TERMS):
+                refused = any(w in low for w in routes52.REFUSAL_WORDS)
+                flat = " ".join(sent.split())
+                cls = next((c for c in routes52.CLASSIFIED_MENTIONS
+                            if c[0] in f.name and c[1] in flat), None)
+                rows.append({"report": f.name, "refused": refused,
+                             "classified_as_descriptive": bool(cls),
+                             "why_not_a_claim": cls[2] if cls else None,
+                             "sentence": flat[:150]})
+    un = [r for r in rows
+          if not r["refused"] and not r["classified_as_descriptive"]]
+    return {"reports_scanned": len(list(routes52.REPORTS.glob("RUN-*.md"))),
+            "mentions": len(rows),
+            "refusals": sum(r["refused"] for r in rows),
+            "classified_descriptive": sum(r["classified_as_descriptive"]
+                                          for r in rows),
+            "unaccounted": un, "no_unaccounted_mention": not un,
+            "rows": rows[:12], "why_scanned_this_way": "unflattened"}
 
 
 def _novelty_actionable():
