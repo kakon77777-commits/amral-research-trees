@@ -1,0 +1,146 @@
+{
+  "gate": "src53 — 00's consensus and 06's agent experiment",
+  "source": "00_Phase2_Global_Enclosure_Consensus, 06_Phase2_Agent_Experiment",
+  "forbidden_substitutions": {
+    "source": "00_Phase2_Global_Enclosure_Consensus section 6",
+    "rows": [
+      {
+        "forbidden": "most p are fine",
+        "guard": "no log states a majority as a closure; `src40` reports the ordinary H2 failure set by range with counts, never as a fraction",
+        "present": true
+      },
+      {
+        "forbidden": "all p <= B are fine",
+        "guard": "`src43` tags P_loc bounded_at 6000 with claim_is_universal False",
+        "present": true
+      },
+      {
+        "forbidden": "the residual representation is generically surjective",
+        "guard": "`src38` names the 38 primes it certified and marks ell = 3 partial; `src47` marks 7 primes above that range UNKNOWN rather than extrapolating",
+        "present": true
+      }
+    ],
+    "all_guards_present": true,
+    "the_third_is_about_RUN_036": true,
+    "primes_certified_by_RUN_036": 38,
+    "primes_marked_UNKNOWN_by_RUN_045": 7,
+    "why_logs_not_prose": "`00` forbids a substitution, which is a thing a report could do in a sentence. The guard has to be a field a gate wrote"
+  },
+  "three_forbidden_lists": {
+    "lists": [
+      {
+        "document": "05_Kodaira_Prefilters_and_NoGo",
+        "count": 3,
+        "audited_in": "RUN-034 (src36)",
+        "all_clear": true
+      },
+      {
+        "document": "07_Stop_Rules_and_Claim_Ladder",
+        "count": 5,
+        "audited_in": "RUN-043 (src45)",
+        "all_clear": true
+      },
+      {
+        "document": "00_Phase2_Global_Enclosure_Consensus",
+        "count": 3,
+        "audited_in": "RUN-051 (this gate)",
+        "all_clear": true
+      }
+    ],
+    "total_prohibitions": 11,
+    "all_three_lists_clear": true,
+    "reading": "three documents written at different times each forbid a way of overclaiming, and the three lists do not overlap: `05` forbids reading H2 off a Kodaira table, `07` forbids climbing the claim ladder on partial evidence, and `00` forbids substituting anything for the prime quantifier"
+  },
+  "the_main_problem": {
+    "statement": "BH2(E, d) + for all p > 2 FW(E_d, p) => BSD(E_d)",
+    "BH2": {
+      "what": "Theorem 2.14's 2-part / nonvanishing conditions",
+      "this_arm": "CITED — RUN-014 computed v2(L^alg) = 0, trivial torsion and Delta < 0, which are its arithmetic inputs; the theorem is not verified"
+    },
+    "for_all_p_FW": {
+      "what": "the unclosed quantifier",
+      "this_arm": "RUN-037/038/039/041/045 — the hypotheses have exact meaning and the certificate is emitted per prime",
+      "quantifier_closed": false,
+      "what_the_compiler_emits": "FW verified for tested primes"
+    },
+    "so": "the left half is cited and the right half is compiled but not closed. `00` says that is exactly the state in which the route may only give a fixed-finite-prime-set p-part theorem"
+  },
+  "success_gate": {
+    "source": "06_Phase2_Agent_Experiment, 成功 Gate",
+    "rows": [
+      {
+        "condition": "H2 exact specialisation",
+        "where": "10 + 03 + 08 supply it; RUN-046 verified the three are one statement over 22,140 character pairs and located 10's range",
+        "status": "SUPPLIED, VERIFIED HERE"
+      },
+      {
+        "condition": "H3 exact specialisation",
+        "where": "08 and 09 supply it, 02 forbids equating it with H3, 23 derives it. RUN-046 reported the disagreement and RUN-049 found the derivation",
+        "status": "SUPPLIED, DISPUTED WITHIN THE CORPUS"
+      },
+      {
+        "condition": "twist-invariance lemmas",
+        "where": "03's A, B, C. RUN-035 measured C on both sides and A's computable shadow; B is marked 候選 by the document itself",
+        "status": "INCOMPLETE — the document marks its own Lemma B open"
+      },
+      {
+        "condition": "finite-prime reduction on one nontrivial curve class",
+        "where": "04's criterion, evaluated at RUN-041: P_red and P_ram empty, P_loc non-empty and not known finite",
+        "status": "NOT ACHIEVED"
+      }
+    ],
+    "met_or_supplied": 2,
+    "of": 4,
+    "gate_is_met": false,
+    "the_documents_own_stake": "這已經是新的標準語言數學結果",
+    "reading": "two of the four are supplied by the corpus and checked here; the other two are marked open by the corpus's own documents — `03` calls its Lemma B a candidate and RUN-041 found `04`'s criterion unachieved. The gate is not met, and neither of the two gaps is this arm's to close"
+  },
+  "experiment_steps": {
+    "rows": [
+      {
+        "step": 1,
+        "asks": "do not scan the whole database; 20 + 20 + 20 curves for compiler correctness only",
+        "state": "no document of the corpus reports this run"
+      },
+      {
+        "step": 2,
+        "asks": "a local prime table per curve",
+        "state": "no document reports this run"
+      },
+      {
+        "step": 3,
+        "asks": "H2 symbolic derivation, lemma before code",
+        "state": "10_FW_H2_and_Ordinary_Obstruction, 03_FW_H2_Jordan_Holder_Lemma, 08_FW_Weight2_Exact_Translation — verified at RUN-038, RUN-046"
+      },
+      {
+        "step": 4,
+        "asks": "H3 symbolic derivation, compared with Banwait's p ∤ v_ell(Delta); 不得默認相同",
+        "state": "09_FW_H3_Exact_Compiler, 08, 23 — and the corpus DID default to the same in `08` and `09` while `02` forbade it. RUN-046 found the disagreement, RUN-049 found `23`'s derivation"
+      },
+      {
+        "step": 5,
+        "asks": "twist invariance, three bridge lemmas",
+        "state": "03_Quadratic_Twist_Invariance_Bridge — verified at RUN-035, Lemma B open"
+      },
+      {
+        "step": 6,
+        "asks": "finite exceptional prime theorem search; 若無 theorem 保證完整，不得標 complete",
+        "state": "04_Finite_Exceptional_Prime_Problem — evaluated at RUN-041, and P_loc is tagged non-universal exactly as this step requires"
+      },
+      {
+        "step": 7,
+        "asks": "only then a database census over ~895,988 curves; UNKNOWN 不可吞掉",
+        "state": "no census exists. RUN-045's certificate keeps its UNKNOWN rows visible"
+      }
+    ],
+    "steps_with_a_resulting_document_this_line_verified": 5,
+    "of": 7,
+    "step_4_warning": "不得默認相同",
+    "step_4_was_violated_in_the_corpus": true,
+    "step_7_census_exists": false,
+    "unknown_rows_kept_visible": 7,
+    "this_arm_did_not_run_the_experiment": "`06` is a plan for the corpus's own agents. This line verified documents that resulted from it. Scoring 'steps this line performed' would conflate two roles, so what is scored is what exists and who checked it"
+  },
+  "headline": "`00` forbids three substitutions for the prime quantifier and the third is about RUN-036's own surjectivity certificate; all three guards are present in the archived logs. With `05`'s three and `07`'s five that is 11 prohibitions across three documents, audited in one place. `06`'s four-condition success gate stands at 2 of 4 — the corpus's own documents mark the other two open — and its step 4 warning 不得默認相同 was violated inside the corpus, which is what RUN-046 found",
+  "ok": true
+}
