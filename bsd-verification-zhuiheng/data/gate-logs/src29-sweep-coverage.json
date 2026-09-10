@@ -1,8 +1,8 @@
 {
   "gate": "src29 — the sweep's own coverage",
   "documents": 85,
-  "reports_read": 40,
-  "gates_read": 43,
+  "reports_read": 50,
+  "gates_read": 53,
   "matching": "by filename stem and, for Phase 0, the `doc NN` form. Only 17 of the 85 are cited as markdown links, so a link scan would report a sweep four times smaller than it is",
   "bucket_order_strongest_first": [
     "subject of a report",
@@ -11,10 +11,10 @@
     "not mentioned"
   ],
   "counts": {
-    "subject of a report": 32,
-    "cited in a report": 5,
+    "subject of a report": 48,
+    "cited in a report": 4,
     "named in gate code": 1,
-    "not mentioned": 47
+    "not mentioned": 32
   },
   "per_subline": {
     "phase0": {
@@ -36,10 +36,10 @@
       "not mentioned": 22
     },
     "phase2": {
-      "subject of a report": 17,
-      "cited in a report": 3,
+      "subject of a report": 33,
+      "cited in a report": 2,
       "named in gate code": 1,
-      "not mentioned": 19
+      "not mentioned": 4
     }
   },
   "not_mentioned": [
@@ -72,29 +72,14 @@
     "phase1/15_Fresh_Algorithm2_Semantic_Replay.md",
     "phase1/16_Phase1_Closure_and_Phase2_Interface.md",
     "phase2/00_Phase2_Global_Enclosure_Consensus.md",
-    "phase2/01_Phase2_Route_Matrix.md",
-    "phase2/02_Fouquet_Wan_Hypothesis_Compiler.md",
     "phase2/02_Next_Compiler_Targets.md",
-    "phase2/03_FW_H2_Jordan_Holder_Lemma.md",
-    "phase2/04_Finite_Exceptional_Prime_Problem.md",
     "phase2/06_Phase2_Agent_Experiment.md",
-    "phase2/06_Witness_Network_v03_Integration.md",
-    "phase2/07_Stop_Rules_and_Claim_Ladder.md",
-    "phase2/08_FW_Weight2_Exact_Translation.md",
-    "phase2/13_Candidate_NonSemistable_Strong_BSD_Family.md",
-    "phase2/14_Candidate_Sieve.md",
-    "phase2/15_696e1_Base_Certificate.md",
-    "phase2/18_Provisional_Derived_Theorem.md",
-    "phase2/22_Odd_Prime_Source_Audit.md",
-    "phase2/23_FW_Supersingular_Source_Audit.md",
-    "phase2/25_Chebotarev_Referee_Audit.md",
-    "phase2/26_Novelty_Search_Log.md",
-    "phase2/27_Revised_Derived_Theorem_Candidate.md"
+    "phase2/06_Witness_Network_v03_Integration.md"
   ],
   "caveat": "a bucket is a measure of attention, not of correctness. Being the subject of a round says a round was aimed at the document; what that round actually settled is in its own 'what this round does not claim' section, every time",
   "second_axis_data_artefacts": {
-    "reports_naming_a_data_artefact": 40,
-    "distinct_artefacts_named": 46,
+    "reports_naming_a_data_artefact": 50,
+    "distinct_artefacts_named": 56,
     "artefacts": [
       "SHA256SUMS.json",
       "algorithm1_removed_census.csv",
@@ -296,6 +281,49 @@
       "RUN-040-ODD-ADDITIVE-BARRIER.md": [
         "src11-gate-drill.json",
         "src42-odd-additive-barrier.json"
+      ],
+      "RUN-041-FINITE-EXCEPTIONAL-PRIMES.md": [
+        "src11-gate-drill.json",
+        "src43-finite-exceptional.json"
+      ],
+      "RUN-042-BASE-CERTIFICATE-COMPARE.md": [
+        "src11-gate-drill.json",
+        "src44-base-certificate.json"
+      ],
+      "RUN-043-CLAIM-LADDER-POSITION.md": [
+        "src11-gate-drill.json",
+        "src42-odd-additive-barrier.json",
+        "src43-finite-exceptional.json",
+        "src44-base-certificate.json",
+        "src45-claim-ladder.json"
+      ],
+      "RUN-044-CHEBOTAREV-AUDIT.md": [
+        "src11-gate-drill.json",
+        "src46-chebotarev.json"
+      ],
+      "RUN-045-FW-HYPOTHESIS-COMPILER.md": [
+        "src11-gate-drill.json",
+        "src47-fw-compiler.json"
+      ],
+      "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md": [
+        "src11-gate-drill.json",
+        "src48-h2-chain.json"
+      ],
+      "RUN-047-PROVISIONAL-VS-REVISED.md": [
+        "src11-gate-drill.json",
+        "src49-provisional-vs-revised.json"
+      ],
+      "RUN-048-CANDIDATE-SCHEMA-AND-SIEVE.md": [
+        "src11-gate-drill.json",
+        "src50-candidate-schema.json"
+      ],
+      "RUN-049-SOURCE-AUDITS.md": [
+        "src11-gate-drill.json",
+        "src51-source-audits.json"
+      ],
+      "RUN-050-NOVELTY-AND-ROUTES.md": [
+        "src11-gate-drill.json",
+        "src52-novelty-and-routes.json"
       ]
     }
   },
@@ -777,7 +805,9 @@
         "RUN-033-GCD-WITNESS-LEMMAS.md"
       ],
       "cited_in": [
-        "RUN-037-FW-H3-COMPILER.md"
+        "RUN-037-FW-H3-COMPILER.md",
+        "RUN-047-PROVISIONAL-VS-REVISED.md",
+        "RUN-048-CANDIDATE-SCHEMA-AND-SIEVE.md"
       ],
       "named_in_gates": [
         "src11_gate_drill.py",
@@ -802,7 +832,8 @@
         "RUN-040-ODD-ADDITIVE-BARRIER.md"
       ],
       "cited_in": [
-        "RUN-016-TATE-AND-CONDUCTORS.md"
+        "RUN-016-TATE-AND-CONDUCTORS.md",
+        "RUN-043-CLAIM-LADDER-POSITION.md"
       ],
       "named_in_gates": [
         "src11_gate_drill.py",
@@ -814,18 +845,33 @@
     {
       "subline": "phase2",
       "name": "01_Phase2_Route_Matrix.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-050-NOVELTY-AND-ROUTES.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src52_novelty_and_routes.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "02_Fouquet_Wan_Hypothesis_Compiler.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-045-FW-HYPOTHESIS-COMPILER.md",
+        "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md"
+      ],
+      "cited_in": [
+        "RUN-037-FW-H3-COMPILER.md",
+        "RUN-039-DERIVED-SUPERSINGULAR-BRIDGE.md"
+      ],
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src47_fw_hypothesis_compiler.py",
+        "src48_h2_chain_and_h3_dispute.py",
+        "src52_novelty_and_routes.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -838,10 +884,15 @@
     {
       "subline": "phase2",
       "name": "03_FW_H2_Jordan_Holder_Lemma.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src48_h2_chain_and_h3_dispute.py",
+        "src52_novelty_and_routes.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -861,10 +912,18 @@
     {
       "subline": "phase2",
       "name": "04_Finite_Exceptional_Prime_Problem.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-041-FINITE-EXCEPTIONAL-PRIMES.md"
+      ],
+      "cited_in": [
+        "RUN-043-CLAIM-LADDER-POSITION.md"
+      ],
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src43_finite_exceptional_primes.py",
+        "src52_novelty_and_routes.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -932,18 +991,32 @@
     {
       "subline": "phase2",
       "name": "07_Stop_Rules_and_Claim_Ladder.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-043-CLAIM-LADDER-POSITION.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src45_claim_ladder_position.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "08_FW_Weight2_Exact_Translation.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md"
+      ],
+      "cited_in": [
+        "RUN-037-FW-H3-COMPILER.md",
+        "RUN-039-DERIVED-SUPERSINGULAR-BRIDGE.md",
+        "RUN-045-FW-HYPOTHESIS-COMPILER.md"
+      ],
+      "named_in_gates": [
+        "src48_h2_chain_and_h3_dispute.py",
+        "src52_novelty_and_routes.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -953,11 +1026,16 @@
         "RUN-037-FW-H3-COMPILER.md"
       ],
       "cited_in": [
-        "RUN-039-DERIVED-SUPERSINGULAR-BRIDGE.md"
+        "RUN-039-DERIVED-SUPERSINGULAR-BRIDGE.md",
+        "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md",
+        "RUN-048-CANDIDATE-SCHEMA-AND-SIEVE.md"
       ],
       "named_in_gates": [
         "src11_gate_drill.py",
-        "src39_fw_h3_compiler.py"
+        "src39_fw_h3_compiler.py",
+        "src47_fw_hypothesis_compiler.py",
+        "src48_h2_chain_and_h3_dispute.py",
+        "src52_novelty_and_routes.py"
       ]
     },
     {
@@ -965,13 +1043,19 @@
       "name": "10_FW_H2_and_Ordinary_Obstruction.md",
       "bucket": "subject of a report",
       "subject_of": [
-        "RUN-038-FW-H2-ORDINARY.md"
+        "RUN-038-FW-H2-ORDINARY.md",
+        "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md"
       ],
-      "cited_in": [],
+      "cited_in": [
+        "RUN-041-FINITE-EXCEPTIONAL-PRIMES.md"
+      ],
       "named_in_gates": [
         "src11_gate_drill.py",
         "src40_fw_h2_ordinary.py",
-        "src41_derived_supersingular_bridge.py"
+        "src41_derived_supersingular_bridge.py",
+        "src47_fw_hypothesis_compiler.py",
+        "src48_h2_chain_and_h3_dispute.py",
+        "src52_novelty_and_routes.py"
       ]
     },
     {
@@ -987,7 +1071,9 @@
       "named_in_gates": [
         "src11_gate_drill.py",
         "src41_derived_supersingular_bridge.py",
-        "src42_odd_additive_period_barrier.py"
+        "src42_odd_additive_period_barrier.py",
+        "src47_fw_hypothesis_compiler.py",
+        "src52_novelty_and_routes.py"
       ]
     },
     {
@@ -1000,36 +1086,53 @@
       "cited_in": [
         "RUN-034-KODAIRA-NOGO-DOMAIN.md",
         "RUN-037-FW-H3-COMPILER.md",
-        "RUN-040-ODD-ADDITIVE-BARRIER.md"
+        "RUN-040-ODD-ADDITIVE-BARRIER.md",
+        "RUN-041-FINITE-EXCEPTIONAL-PRIMES.md"
       ],
       "named_in_gates": [
         "src35_gcd_witness_lemmas.py",
-        "src39_fw_h3_compiler.py"
+        "src39_fw_h3_compiler.py",
+        "src52_novelty_and_routes.py"
       ]
     },
     {
       "subline": "phase2",
       "name": "13_Candidate_NonSemistable_Strong_BSD_Family.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-048-CANDIDATE-SCHEMA-AND-SIEVE.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src50_candidate_schema_and_sieve.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "14_Candidate_Sieve.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-048-CANDIDATE-SCHEMA-AND-SIEVE.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src50_candidate_schema_and_sieve.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "15_696e1_Base_Certificate.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-042-BASE-CERTIFICATE-COMPARE.md"
+      ],
+      "cited_in": [
+        "RUN-043-CLAIM-LADDER-POSITION.md"
+      ],
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src44_base_certificate_compare.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -1056,16 +1159,22 @@
       ],
       "named_in_gates": [
         "src17_family_prime_router.py",
-        "src35_gcd_witness_lemmas.py"
+        "src35_gcd_witness_lemmas.py",
+        "src52_novelty_and_routes.py"
       ]
     },
     {
       "subline": "phase2",
       "name": "18_Provisional_Derived_Theorem.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-047-PROVISIONAL-VS-REVISED.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src49_provisional_vs_revised.py",
+        "src52_novelty_and_routes.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -1082,12 +1191,16 @@
     {
       "subline": "phase2",
       "name": "20_Adversarial_Referee_Verdict.md",
-      "bucket": "cited in a report",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-047-PROVISIONAL-VS-REVISED.md"
+      ],
       "cited_in": [
         "RUN-009-PHASE2-DENSITY.md"
       ],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src49_provisional_vs_revised.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -1104,18 +1217,31 @@
     {
       "subline": "phase2",
       "name": "22_Odd_Prime_Source_Audit.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-049-SOURCE-AUDITS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src51_source_audits.py",
+        "src52_novelty_and_routes.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "23_FW_Supersingular_Source_Audit.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-049-SOURCE-AUDITS.md"
+      ],
+      "cited_in": [
+        "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md",
+        "RUN-047-PROVISIONAL-VS-REVISED.md"
+      ],
+      "named_in_gates": [
+        "src51_source_audits.py",
+        "src52_novelty_and_routes.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -1139,26 +1265,43 @@
     {
       "subline": "phase2",
       "name": "25_Chebotarev_Referee_Audit.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-044-CHEBOTAREV-AUDIT.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src46_chebotarev_audit.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "26_Novelty_Search_Log.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-050-NOVELTY-AND-ROUTES.md"
+      ],
+      "cited_in": [
+        "RUN-047-PROVISIONAL-VS-REVISED.md"
+      ],
+      "named_in_gates": [
+        "src49_provisional_vs_revised.py",
+        "src52_novelty_and_routes.py"
+      ]
     },
     {
       "subline": "phase2",
       "name": "27_Revised_Derived_Theorem_Candidate.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-047-PROVISIONAL-VS-REVISED.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src49_provisional_vs_revised.py",
+        "src52_novelty_and_routes.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -1167,9 +1310,12 @@
       "subject_of": [
         "RUN-030-696E1-CERTIFICATE.md"
       ],
-      "cited_in": [],
+      "cited_in": [
+        "RUN-050-NOVELTY-AND-ROUTES.md"
+      ],
       "named_in_gates": [
-        "src32_696e1_certificate.py"
+        "src32_696e1_certificate.py",
+        "src52_novelty_and_routes.py"
       ]
     },
     {
