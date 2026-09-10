@@ -9,6 +9,17 @@
 
 ---
 
+> **Correction note added at RUN-049.** This round said resolving the `02`/`08`
+> seam needs Fouquet–Wan Theorem 1.7's exact local condition, "an external
+> theorem this arm does not hold". **`23_FW_Supersingular_Source_Audit` quotes
+> it** — Assumption 3 as special Steinberg, a twist by an unramified character
+> sending `ℓ` to `(−1)ℓ^{k/2−1}`, and residual ramification — and specialises it
+> at weight 2 to `a_ℓ = −1`, which is nonsplit multiplicative. That is the
+> derivation `02` asked for, in a document neither `02` nor `08` references, and
+> this round had not read it. The disagreement between `02` and `08` **as
+> written** stands; the corpus is not silent about the convention. RUN-049 checks
+> the weight-2 arithmetic: `a₂₉ = −1` and nonsplit, `a₃ = +1` and split.
+
 ## Three statements of one hypothesis
 
 | document | level | statement |

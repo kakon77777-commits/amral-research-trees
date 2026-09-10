@@ -9,6 +9,14 @@
 
 ---
 
+> **Correction note added at RUN-049.** `18`'s first referee item — the exact
+> convention match at the nonsplit multiplicative witness — is scored **OPEN**
+> below. It is **addressed**, by `23_FW_Supersingular_Source_Audit`, whose H3
+> section is that convention match and which explicitly refuses to guess the
+> normalisation. The scoring was right about `27` and wrong about the corpus: the
+> corrected counts are **2 addressed, 1 deferred, 2 open**. The error was reading
+> `18` against `27` alone when a third document answers one of the items.
+
 ## Three definitions of the same set
 
 | | conditions | members below 4,000 |

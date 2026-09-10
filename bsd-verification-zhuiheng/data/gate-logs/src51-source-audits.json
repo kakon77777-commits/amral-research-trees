@@ -1,0 +1,280 @@
+{
+  "gate": "src51 — 22 and 23, the corpus's own source audits",
+  "source": "22_Odd_Prime_Source_Audit, 23_FW_Supersingular_Source_Audit",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "conductor": 696,
+  "case_hypotheses": {
+    "rows": [
+      {
+        "case": "A — p = q, additive twist (BSTW 9.21(c) via BH 2.9)",
+        "hypotheses": [
+          {
+            "h": "p >= 5",
+            "verdict": "computed",
+            "how": "every member is >= 241 (RUN-032/047)"
+          },
+          {
+            "h": "p does not divide 6N",
+            "verdict": "computed",
+            "how": "q = 1 (mod 24) and (q/29) = 1 force q coprime to 6N"
+          },
+          {
+            "h": "p good ordinary for the base",
+            "verdict": "computed",
+            "how": "RUN-018: inertness in the 2-division cubic makes a_q odd, so a_q != 0 and q is ordinary"
+          },
+          {
+            "h": "rho-bar_{E,p} irreducible",
+            "verdict": "computed",
+            "how": "RUN-031 refuted a rational p-isogeny at every Mazur degree; RUN-036 refuted the Borel at 38 primes"
+          },
+          {
+            "h": "(ramK): some ell || N, ell not dividing D_K, residually ramified",
+            "verdict": "computed",
+            "how": "ell = 29 with v_29(Delta) = 1, and 29 does not divide D_K = q for any member"
+          }
+        ]
+      },
+      {
+        "case": "B — good ordinary p (Skinner Theorem C)",
+        "hypotheses": [
+          {
+            "h": "p >= 3",
+            "verdict": "computed",
+            "how": "by branch"
+          },
+          {
+            "h": "good ordinary",
+            "verdict": "computed",
+            "how": "RUN-038 classified every good prime below 6,000"
+          },
+          {
+            "h": "E_q[p] irreducible",
+            "verdict": "computed",
+            "how": "RUN-031 + RUN-036's Borel refutations, and the twist tensors a character (RUN-035's lemma A shadow)"
+          },
+          {
+            "h": "another multiplicative ell residually ramified",
+            "verdict": "computed",
+            "how": "ell = 29, p != 29, p does not divide v_29(Delta) = 1"
+          },
+          {
+            "h": "L(E_q,1) != 0",
+            "verdict": "cited + computed for members",
+            "how": "Theorem 2.14 in general; RUN-015/016 computed it for the members it reached"
+          }
+        ]
+      },
+      {
+        "case": "C — multiplicative p = 3 (Skinner Theorem C)",
+        "hypotheses": [
+          {
+            "h": "Skinner C states p >= 3 explicitly",
+            "verdict": "cited",
+            "how": "a reading of the theorem's statement, not arithmetic"
+          },
+          {
+            "h": "witness ell = 29",
+            "verdict": "computed",
+            "how": "v_29(Delta) = 1, and 3 does not divide it"
+          }
+        ]
+      },
+      {
+        "case": "D — multiplicative p = 29 (Skinner Theorem C)",
+        "hypotheses": [
+          {
+            "h": "witness ell = 3",
+            "verdict": "computed",
+            "how": "v_3(Delta) = 1, and 29 does not divide it"
+          },
+          {
+            "h": "the witness must be distinct from p",
+            "verdict": "computed",
+            "how": "RUN-033's leave-one-out; the control at RUN-048 shows what a curve without a second reservoir does"
+          }
+        ]
+      }
+    ],
+    "verdict_counts": {
+      "computed": 12,
+      "cited + computed for members": 1,
+      "cited": 1
+    },
+    "total_hypotheses": 14
+  },
+  "maximal_versus_irreducible": {
+    "the_premise": "base curve mod-ell image maximal for all ell",
+    "what_Skinner_C_lists": "E_q[p] irreducible",
+    "irreducible_at_every_Mazur_degree": true,
+    "irreducibility_rows": [
+      {
+        "n": 2,
+        "irreducible": true,
+        "how": "X_0(2), RUN-007 (the sieve is vacuous at 2)"
+      },
+      {
+        "n": 3,
+        "irreducible": true,
+        "witness": 11,
+        "how": "reducibility sieve, RUN-031"
+      },
+      {
+        "n": 5,
+        "irreducible": true,
+        "witness": 7,
+        "how": "reducibility sieve, RUN-031"
+      },
+      {
+        "n": 7,
+        "irreducible": true,
+        "witness": 5,
+        "how": "reducibility sieve, RUN-031"
+      },
+      {
+        "n": 11,
+        "irreducible": true,
+        "witness": 7,
+        "how": "reducibility sieve, RUN-031"
+      },
+      {
+        "n": 13,
+        "irreducible": true,
+        "witness": 5,
+        "how": "reducibility sieve, RUN-031"
+      },
+      {
+        "n": 17,
+        "irreducible": true,
+        "witness": 5,
+        "how": "reducibility sieve, RUN-031"
+      },
+      {
+        "n": 19,
+        "irreducible": true,
+        "witness": 5,
+        "how": "reducibility sieve, RUN-031"
+      },
+      {
+        "n": 37,
+        "irreducible": true,
+        "witness": 17,
+        "how": "reducibility sieve, RUN-031"
+      },
+      {
+        "n": 43,
+        "irreducible": true,
+        "witness": 5,
+        "how": "reducibility sieve, RUN-031"
+      },
+      {
+        "n": 67,
+        "irreducible": true,
+        "witness": 11,
+        "how": "reducibility sieve, RUN-031"
+      },
+      {
+        "n": 163,
+        "irreducible": true,
+        "witness": 11,
+        "how": "reducibility sieve, RUN-031"
+      }
+    ],
+    "maximality_certified_at": [
+      2,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29,
+      31,
+      37,
+      41,
+      43,
+      47,
+      53,
+      59,
+      61,
+      67,
+      71,
+      73,
+      79,
+      83,
+      89,
+      97,
+      101,
+      103,
+      107,
+      109,
+      113,
+      127,
+      131,
+      137,
+      139,
+      149,
+      151,
+      157,
+      163,
+      167
+    ],
+    "maximality_certified_count": 38,
+    "maximality_NOT_certified_at_3": true,
+    "why_not_at_3": "two structural obstructions, not a short search: PGL₂(F₃) ≅ S₄, so 'projective image S₄' IS surjectivity and cannot be refuted; and the nonsplit-Cartan test is vacuous mod 3, proved by exhausting the four residue cases. A₄, A₅, the Borel and the split Cartan normaliser are all refuted. This ℓ is reported partially certified, not certified",
+    "borel_refuted_at_3": true,
+    "22_case_C_is_p_equals_3": true,
+    "reading": "the audit leans on maximality, which this tree cannot certify at 3, at the one case that IS 3. The weaker premise Skinner C actually lists — irreducibility — is certified there, by RUN-031's witness and RUN-036's Borel refutation. Nothing is wrong with the conclusion; the stated reason is stronger than the one available"
+  },
+  "h3_convention": {
+    "FW_assumption_3_as_23_states_it": [
+      "local automorphic representation special Steinberg",
+      "twist by an unramified character taking ell to (-1) ell^{k/2-1}",
+      "residual representation ramified"
+    ],
+    "weight_2_specialisation": "(-1) ell^0 = -1, so a_ell = -1",
+    "a_29": -1,
+    "a_3": 1,
+    "29_is_nonsplit": true,
+    "3_is_split": true,
+    "a_29_equals_minus_1": true,
+    "the_specialisation_checks_out": true,
+    "the_other_multiplicative_prime_has_a_plus_1": true,
+    "why_that_matters": "a_ell = -1 picks out exactly the nonsplit prime, and 3 with a_3 = +1 is the split one the criterion must exclude. The weight-2 sign is doing real work",
+    "residual_ramification": {
+      "v_29_Delta": 1,
+      "any_odd_p_not_29_keeps_it_ramified": true
+    },
+    "local_twist_trivial_at_29": "admissible q have 29 split in Q(sqrt q), which RUN-035 measured on 19 of 19 members",
+    "still_cited": "that FW's Assumption 3 IS that triple is `23`'s reading of the paper. This gate checks its weight-2 arithmetic, not the reading"
+  },
+  "what_moves_in_this_arms_own_conclusions": {
+    "RUN_046": {
+      "said": "the corpus disagrees about whether the divisibility criterion IS H3, and resolving it needs FW Theorem 1.7's exact local condition, which this arm does not hold",
+      "what_23_supplies": "the exact condition, quoted, with the weight-2 specialisation that produces the criterion",
+      "the_quote_is_present": true,
+      "so": "the derivation `02` asked for is IN the corpus, in a document neither `02` nor `08` references. The disagreement is between `02` and `08` as written; `23` is the missing link and RUN-046 did not have it",
+      "still_cited": "whether FW says what `23` says it says"
+    },
+    "RUN_047": {
+      "said": "`18`'s item 1 — exact convention match at the nonsplit multiplicative witness — is OPEN, because `27` does not address it",
+      "what_23_supplies": "`23`'s H3 section IS that convention match",
+      "so": "the item is ADDRESSED, by a document RUN-047 did not read. The scoring was right about `27` and wrong about the corpus",
+      "corrected_count": {
+        "addressed": 2,
+        "deferred": 1,
+        "open": 2
+      }
+    },
+    "both_corrections_are_from_reading_further": "neither is an arithmetic error; both are this arm scoring a corpus it had not finished reading"
+  },
+  "headline": "`23` quotes the exact local condition RUN-046 said this arm did not hold, and its weight-2 specialisation a_ell = -1 checks out — a_29 = -1 and nonsplit, a_3 = +1 and split. That resolves the `02`/`08` seam inside the corpus and addresses `18`'s first referee item, which RUN-047 scored open. And `22`'s Important simplification invokes maximality where Skinner C lists irreducibility — the stronger premise is the one this tree cannot certify at 3, and case C is p = 3",
+  "ok": true
+}
