@@ -1,0 +1,293 @@
+{
+  "gate": "src49 — 18 against 27, the derived theorem before and after",
+  "source": "18_Provisional_Derived_Theorem, 27_Revised_Derived_Theorem_Candidate",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "conductor": 696,
+  "three_definitions_of_P": {
+    "bound": 4000,
+    "per_18_and_27": [
+      241,
+      313,
+      457,
+      673,
+      937,
+      1009,
+      1153,
+      1753,
+      2017,
+      2089,
+      2113,
+      2137,
+      2617,
+      2713,
+      3049,
+      3457,
+      3529,
+      3769,
+      3793
+    ],
+    "per_this_tree": [
+      241,
+      313,
+      457,
+      673,
+      937,
+      1009,
+      1153,
+      1753,
+      2017,
+      2089,
+      2113,
+      2137,
+      2617,
+      2713,
+      3049,
+      3457,
+      3529,
+      3769,
+      3793
+    ],
+    "per_referee_A": [
+      241,
+      313,
+      457,
+      673,
+      937,
+      1009,
+      1153,
+      1753,
+      2017,
+      2089,
+      2113,
+      2137,
+      2617,
+      2713,
+      3049,
+      3457,
+      3529,
+      3769,
+      3793
+    ],
+    "counts": {
+      "18/27": 19,
+      "src16": 19,
+      "Referee A": 19
+    },
+    "all_three_agree": true,
+    "in_18_not_in_tree": [],
+    "in_tree_not_in_18": [],
+    "in_referee_not_in_18": [],
+    "why_they_should_agree": "q = 1 (mod 24) is 2 and 3 splitting in Q(sqrt q); (q/29) = 1 is 29 splitting; f_2 irreducible mod q is q inert in the 2-division cubic; and a prime is squarefree and coprime to 696 once it is 1 mod 24 with (q/29) = 1"
+  },
+  "the_redundant_condition": {
+    "bound": 4000,
+    "primes_with_q_1_mod_24_and_cubic_irreducible": 19,
+    "of_those_violating_legendre_q_29_is_1": [],
+    "the_condition_is_redundant_here": true,
+    "primes_with_q_1_mod_4_only_and_cubic_irreducible": 68,
+    "of_those_violating": [
+      17,
+      37,
+      41,
+      113,
+      157,
+      229,
+      449,
+      541
+    ],
+    "count_violating_without_mod_24": 44,
+    "the_implication_needs_the_mod_24_condition": true,
+    "the_reason": "q inert in the cubic puts Frob_q in A_3, so it is trivial on F_0 = Q(sqrt -174) and (-174/q) = 1; q = 1 (mod 24) gives (-6/q) = 1; and -174 = -6 x 29 leaves (29/q) = 1",
+    "same_redundancy_as": "RUN-018, which explained the density being 1/24 rather than 1/48 by exactly this overlap, and RUN-044, which computed the resolvent"
+  },
+  "the_five_audit_items": {
+    "rows": [
+      {
+        "item": "exact convention match between FW modular representation and elliptic E[p] at the nonsplit multiplicative witness",
+        "what_27_supplies": "27 names the witness per branch but not the convention",
+        "status": "OPEN",
+        "this_arm": "RUN-046 found the corpus disagreeing with itself about whether the divisibility criterion IS H3, which is the same seam"
+      },
+      {
+        "item": "period normalization statement for every twist E_q",
+        "what_27_supplies": "27 does not mention it",
+        "status": "OPEN, MEASURED HERE",
+        "this_arm": "RUN-039 left c_E = 1 open; RUN-040 checked `01`'s weaker sufficient condition for p not dividing c on all 19 members"
+      },
+      {
+        "item": "exact isogeny/optimality phrasing used in the period comparison",
+        "what_27_supplies": "27 does not mention it",
+        "status": "OPEN, PREMISE CLOSED HERE",
+        "this_arm": "RUN-031 closed the no-rational-isogeny premise and RUN-036 certified the mod-l images; optimality itself stays cited"
+      },
+      {
+        "item": "precise citation chain for all ordinary/additive/multiplicative p-part results",
+        "what_27_supplies": "27's proof router IS this chain",
+        "status": "ADDRESSED BY 27",
+        "this_arm": "each branch now names its theorem: Banwait-Huang 2.14, BSTW 9.21(c), Skinner Theorem C, Fouquet-Wan 1.7 + Cor 1.10"
+      },
+      {
+        "item": "novelty search",
+        "what_27_supplies": "27 defers it explicitly",
+        "status": "DEFERRED",
+        "this_arm": "27 says whether to call it a new theorem must be decided by a separate novelty audit; 26_Novelty_Search_Log is that file and is not a subject of any round here"
+      }
+    ],
+    "addressed_by_27": [
+      "precise citation chain for all ordinary/"
+    ],
+    "deferred": [
+      "novelty search"
+    ],
+    "still_open": [
+      "exact convention match between FW modula",
+      "period normalization statement for every",
+      "exact isogeny/optimality phrasing used i"
+    ],
+    "counts": {
+      "addressed": 1,
+      "deferred": 1,
+      "open": 3
+    },
+    "reading": "of the five things `18` asked a referee to check, `27` answers one, defers one, and leaves three. Two of the three are what RUN-039 and RUN-040 went at, and neither is closed"
+  },
+  "router_partition": [
+    {
+      "q": 241,
+      "primes_classified": 109,
+      "tally": {
+        "p=2 (Banwait-Huang 2.14)": 1,
+        "p=3 (Skinner C, witness 29)": 1,
+        "odd good ordinary (Skinner C, witness 29)": 103,
+        "odd good supersingular (FW 1.7)": 2,
+        "p=29 (Skinner C, witness 3)": 1,
+        "p=q (BSTW 9.21(c))": 1
+      },
+      "unrouted": [],
+      "every_prime_has_exactly_one_branch": true,
+      "branches_used": [
+        "odd good ordinary (Skinner C, witness 29)",
+        "odd good supersingular (FW 1.7)",
+        "p=2 (Banwait-Huang 2.14)",
+        "p=29 (Skinner C, witness 3)",
+        "p=3 (Skinner C, witness 29)",
+        "p=q (BSTW 9.21(c))"
+      ],
+      "bad_primes_of_the_twist": [
+        2,
+        3,
+        29,
+        241
+      ]
+    },
+    {
+      "q": 313,
+      "primes_classified": 109,
+      "tally": {
+        "p=2 (Banwait-Huang 2.14)": 1,
+        "p=3 (Skinner C, witness 29)": 1,
+        "odd good ordinary (Skinner C, witness 29)": 103,
+        "odd good supersingular (FW 1.7)": 2,
+        "p=29 (Skinner C, witness 3)": 1,
+        "p=q (BSTW 9.21(c))": 1
+      },
+      "unrouted": [],
+      "every_prime_has_exactly_one_branch": true,
+      "branches_used": [
+        "odd good ordinary (Skinner C, witness 29)",
+        "odd good supersingular (FW 1.7)",
+        "p=2 (Banwait-Huang 2.14)",
+        "p=29 (Skinner C, witness 3)",
+        "p=3 (Skinner C, witness 29)",
+        "p=q (BSTW 9.21(c))"
+      ],
+      "bad_primes_of_the_twist": [
+        2,
+        3,
+        29,
+        313
+      ]
+    },
+    {
+      "q": 457,
+      "primes_classified": 109,
+      "tally": {
+        "p=2 (Banwait-Huang 2.14)": 1,
+        "p=3 (Skinner C, witness 29)": 1,
+        "odd good ordinary (Skinner C, witness 29)": 103,
+        "odd good supersingular (FW 1.7)": 2,
+        "p=29 (Skinner C, witness 3)": 1,
+        "p=q (BSTW 9.21(c))": 1
+      },
+      "unrouted": [],
+      "every_prime_has_exactly_one_branch": true,
+      "branches_used": [
+        "odd good ordinary (Skinner C, witness 29)",
+        "odd good supersingular (FW 1.7)",
+        "p=2 (Banwait-Huang 2.14)",
+        "p=29 (Skinner C, witness 3)",
+        "p=3 (Skinner C, witness 29)",
+        "p=q (BSTW 9.21(c))"
+      ],
+      "bad_primes_of_the_twist": [
+        2,
+        3,
+        29,
+        457
+      ]
+    }
+  ],
+  "router_witnesses": {
+    "27_says": {
+      "p=3": 29,
+      "p=29": 3,
+      "odd good ordinary": 29,
+      "odd good supersingular": 29,
+      "p=q": 29
+    },
+    "this_tree_computed": {
+      "leave_one_out": {
+        "3": 29,
+        "29": 3
+      },
+      "W_minus": [
+        29
+      ]
+    },
+    "leave_one_out_matches": true,
+    "nonsplit_witness_matches": true,
+    "agree": true,
+    "reading": "the 3 <-> 29 swap is RUN-033's lemma 2 and the nonsplit Steinberg witness is RUN-037's W_-. The router and the lemmas were written independently and name the same primes"
+  },
+  "claim_labels": {
+    "18": {
+      "label": "Provisional Derived Theorem",
+      "present": true,
+      "refuses": "Established New Theorem",
+      "refusal_present": true
+    },
+    "20": {
+      "label": "DERIVED THEOREM CANDIDATE",
+      "present": true,
+      "refuses": "NEW THEOREM",
+      "refusal_present": true
+    },
+    "27": {
+      "label": "DERIVED THEOREM CANDIDATE",
+      "present": true,
+      "next_rung": "PREPRINT CANDIDATE",
+      "next_present": true
+    },
+    "20_and_27_agree": true,
+    "18_is_one_rung_lower": true,
+    "reading": "`20` upgraded the label from provisional to candidate and refused the further step to NEW THEOREM because novelty is a separate gate; `27` carries the upgraded label and names the same next rung. The three documents are consistent about how far the claim goes"
+  },
+  "headline": "`18`, `27`, this tree's membership test and Referee A's five conditions all pick out the same 19 primes below 4000. Of `18`'s five referee items `27` answers one, defers one and leaves three open, two of which RUN-039 and RUN-040 measured. `27`'s six-branch router is a partition of every prime for every member tested, and the witnesses it names are the ones RUN-033 and RUN-037 computed",
+  "ok": true
+}
