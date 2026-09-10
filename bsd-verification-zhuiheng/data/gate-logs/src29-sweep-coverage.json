@@ -1,8 +1,8 @@
 {
   "gate": "src29 — the sweep's own coverage",
   "documents": 85,
-  "reports_read": 52,
-  "gates_read": 55,
+  "reports_read": 54,
+  "gates_read": 57,
   "matching": "by filename stem and, for Phase 0, the `doc NN` form. Only 17 of the 85 are cited as markdown links, so a link scan would report a sweep four times smaller than it is",
   "bucket_order_strongest_first": [
     "subject of a report",
@@ -11,9 +11,9 @@
     "not mentioned"
   ],
   "counts": {
-    "subject of a report": 52,
-    "cited in a report": 4,
-    "named in gate code": 1,
+    "subject of a report": 55,
+    "cited in a report": 2,
+    "named in gate code": 0,
     "not mentioned": 28
   },
   "per_subline": {
@@ -36,9 +36,9 @@
       "not mentioned": 22
     },
     "phase2": {
-      "subject of a report": 37,
-      "cited in a report": 2,
-      "named in gate code": 1,
+      "subject of a report": 40,
+      "cited in a report": 0,
+      "named in gate code": 0,
       "not mentioned": 0
     }
   },
@@ -74,8 +74,8 @@
   ],
   "caveat": "a bucket is a measure of attention, not of correctness. Being the subject of a round says a round was aimed at the document; what that round actually settled is in its own 'what this round does not claim' section, every time",
   "second_axis_data_artefacts": {
-    "reports_naming_a_data_artefact": 52,
-    "distinct_artefacts_named": 58,
+    "reports_naming_a_data_artefact": 54,
+    "distinct_artefacts_named": 60,
     "artefacts": [
       "SHA256SUMS.json",
       "algorithm1_removed_census.csv",
@@ -329,6 +329,14 @@
         "src11-gate-drill.json",
         "src19-conductor-census.json",
         "src54-compiler-targets.json"
+      ],
+      "RUN-053-LOCAL-ISOGENY-KERNEL.md": [
+        "src11-gate-drill.json",
+        "src55-local-isogeny-kernel.json"
+      ],
+      "RUN-054-FAMILY-SCHEMA-AND-SPEC.md": [
+        "src11-gate-drill.json",
+        "src56-family-schema-and-spec.json"
       ]
     }
   },
@@ -828,7 +836,9 @@
       "subject_of": [
         "RUN-051-CONSENSUS-AND-EXPERIMENT.md"
       ],
-      "cited_in": [],
+      "cited_in": [
+        "RUN-054-FAMILY-SCHEMA-AND-SPEC.md"
+      ],
       "named_in_gates": [
         "src53_consensus_and_experiment.py"
       ]
@@ -944,12 +954,16 @@
     {
       "subline": "phase2",
       "name": "04_Local_p_Isogeny_Kernel_Criterion.md",
-      "bucket": "cited in a report",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-053-LOCAL-ISOGENY-KERNEL.md"
+      ],
       "cited_in": [
         "RUN-008-KEPT-CURVES.md"
       ],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src55_local_isogeny_kernel.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -960,7 +974,8 @@
       ],
       "cited_in": [
         "RUN-016-TATE-AND-CONDUCTORS.md",
-        "RUN-051-CONSENSUS-AND-EXPERIMENT.md"
+        "RUN-051-CONSENSUS-AND-EXPERIMENT.md",
+        "RUN-054-FAMILY-SCHEMA-AND-SPEC.md"
       ],
       "named_in_gates": [
         "src11_gate_drill.py",
@@ -973,11 +988,14 @@
     {
       "subline": "phase2",
       "name": "05_NonSemistable_Family_Theorem_Schema.md",
-      "bucket": "named in gate code",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-054-FAMILY-SCHEMA-AND-SPEC.md"
+      ],
       "cited_in": [],
       "named_in_gates": [
-        "src11_gate_drill.py"
+        "src11_gate_drill.py",
+        "src56_family_schema_and_spec.py"
       ]
     },
     {
@@ -1007,12 +1025,17 @@
     {
       "subline": "phase2",
       "name": "07_Local_Agent_Implementation_Spec.md",
-      "bucket": "cited in a report",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-054-FAMILY-SCHEMA-AND-SPEC.md"
+      ],
       "cited_in": [
         "RUN-001-CORPUS-IDENTITY.md"
       ],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src11_gate_drill.py",
+        "src56_family_schema_and_spec.py"
+      ]
     },
     {
       "subline": "phase2",
@@ -1022,7 +1045,8 @@
         "RUN-043-CLAIM-LADDER-POSITION.md"
       ],
       "cited_in": [
-        "RUN-051-CONSENSUS-AND-EXPERIMENT.md"
+        "RUN-051-CONSENSUS-AND-EXPERIMENT.md",
+        "RUN-054-FAMILY-SCHEMA-AND-SPEC.md"
       ],
       "named_in_gates": [
         "src11_gate_drill.py",
