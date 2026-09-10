@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-046:
-  every gate is drilled — `src00`–`src10` and `src12`–`src48`, 184 defects, 184
-  caught by the named check, 34 controls undisturbed, over 74 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-048:
+  every gate is drilled — `src00`–`src10` and `src12`–`src50`, 192 defects, 192
+  caught by the named check, 37 controls undisturbed, over 76 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -149,6 +149,8 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [044](./reports/RUN-044-CHEBOTAREV-AUDIT.md) | `25`'s density derivation, every field-theoretic step | `src46` | `disc(f₂) = −11136`, `F₀ = Q(√−174)`, `Q(√−6) ⊂ Q(ζ₂₄)` but `Q(√29)` not, `[K:Q] = 16`, `S₃`'s single nontrivial proper normal subgroup, `[LK:Q] = 48`, class size 2, **`δ = 1/24`** — and the compatibility is shown **against a transposition, where it fails and the density would be 0**. Three routes to `1/24`: this one, RUN-018's `e_E/(3[K_E:Q])`, RUN-009's measurement |
 | [045](./reports/RUN-045-FW-HYPOTHESIS-COMPILER.md) | `02`'s hypothesis compiler, Levels 1 and 2 | `src47` | the Level-1 certificate emitted **in the document's own keys** for 45 odd primes — 34 `FW_APPLICABLE`, 4 `FW_NOT_APPLICABLE`, 7 `UNKNOWN`, every deviation an earlier round arriving (`p = 3` H1, `p = 7, 113` H2, `p = 29` H2+H3); Level 2 **not achieved**, so the gate emits the mandated *FW verified for tested primes* and nothing more; and `02`'s third prohibition turns out **contested** by `08` |
 | [046](./reports/RUN-046-H2-CHAIN-AND-H3-DISPUTE.md) | the H2 chain's consistency, and the corpus's own H3 disagreement | `src48` | `03`'s Jordan–Hölder lemma and `08`'s ratio test verified **the same statement over 22,140 character pairs, 0 mismatches**; `10`'s single congruence is complete at every good ordinary `p ≥ 5` and **not at `p = 3`**, because `χ_cyc²` is unramified exactly when `p − 1 ∣ 2`; and **`02` forbids equating the divisibility criterion with H3 while `08` and `09` do exactly that** — reported, not resolved |
+| [047](./reports/RUN-047-PROVISIONAL-VS-REVISED.md) | the derived theorem before and after the referee | `src49` | **three definitions of `𝒫`, one set** — `18`/`27`'s three conditions, this tree's test and Referee A's five all give the same 19 primes below 4,000 and 23 below 5,000; **one of the document's conditions is implied by the other two** (RUN-018 knew, over a range fifty times wider — what is new is that it sits in the corpus's own definition); of `18`'s five referee items `27` answers one, defers one, leaves three; and `27`'s six-branch router is a **partition**, with the witnesses it names computed here from the other end |
+| [048](./reports/RUN-048-CANDIDATE-SCHEMA-AND-SIEVE.md) | `13`'s schema and `14`'s sieve, control included | `src50` | `14`'s odd local table recomputes exactly; the control is **found by conductor, not quoted**, and **has a nonsplit prime and still fails** — one reservoir, no distinct witness at `p = 29`, which is `14`'s whole point and RUN-033's lemma 2 returning nothing for the first time; `13`'s B1/B2 are RUN-033's lemma 1 and RUN-037's premise under other names; of its six obligations **1 cited, 3 partly, 2 open, none closed** |
 
 ## Layout
 

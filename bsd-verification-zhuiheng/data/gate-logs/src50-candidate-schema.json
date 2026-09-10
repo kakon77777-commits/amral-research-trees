@@ -1,0 +1,318 @@
+{
+  "gate": "src50 — 13's schema and 14's sieve, with the control run",
+  "source": "13_Candidate_NonSemistable_Strong_BSD_Family, 14_Candidate_Sieve",
+  "anchor": {
+    "ainvs": [
+      0,
+      1,
+      0,
+      8,
+      -16
+    ],
+    "conductor": 696,
+    "local_structure": {
+      "singular": false,
+      "rows": [
+        {
+          "p": 2,
+          "type": "additive",
+          "kodaira": "II*",
+          "v_disc": 11,
+          "split": null
+        },
+        {
+          "p": 3,
+          "type": "multiplicative",
+          "kodaira": "I1",
+          "v_disc": 1,
+          "split": true
+        },
+        {
+          "p": 29,
+          "type": "multiplicative",
+          "kodaira": "I1",
+          "v_disc": 1,
+          "split": false
+        }
+      ],
+      "W_mult_odd": [
+        3,
+        29
+      ],
+      "W_minus": [
+        29
+      ],
+      "valuations": {
+        "3": 1,
+        "29": 1
+      },
+      "g_mult_odd": 1,
+      "g_minus": 1
+    },
+    "criterion": {
+      "W_mult_odd": [
+        3,
+        29
+      ],
+      "W_minus": [
+        29
+      ],
+      "at_least_two_odd_multiplicative": true,
+      "at_least_one_nonsplit": true,
+      "boxed_criterion_met": true,
+      "B1_g_mult_odd": 1,
+      "B1_is_a_power_of_two": true,
+      "B2_g_minus": 1,
+      "B2_is_a_power_of_two": true,
+      "fixed_multiplicative_leave_one_out": [
+        {
+          "p": 3,
+          "witness": 29,
+          "has_a_distinct_witness": true
+        },
+        {
+          "p": 29,
+          "witness": 3,
+          "has_a_distinct_witness": true
+        }
+      ],
+      "every_fixed_multiplicative_p_has_a_witness": true
+    }
+  },
+  "the_control": {
+    "conductor": 116,
+    "search": {
+      "target_conductor": 116,
+      "models_scanned": 7479,
+      "found": [
+        [
+          0,
+          1,
+          0,
+          -4,
+          4
+        ]
+      ],
+      "count": 1,
+      "first": [
+        0,
+        1,
+        0,
+        -4,
+        4
+      ]
+    },
+    "ainvs": [
+      0,
+      1,
+      0,
+      -4,
+      4
+    ],
+    "local_structure": {
+      "singular": false,
+      "rows": [
+        {
+          "p": 2,
+          "type": "additive",
+          "kodaira": "IV*",
+          "v_disc": 8,
+          "split": null
+        },
+        {
+          "p": 29,
+          "type": "multiplicative",
+          "kodaira": "I1",
+          "v_disc": 1,
+          "split": false
+        }
+      ],
+      "W_mult_odd": [
+        29
+      ],
+      "W_minus": [
+        29
+      ],
+      "valuations": {
+        "29": 1
+      },
+      "g_mult_odd": 1,
+      "g_minus": 1
+    },
+    "criterion": {
+      "W_mult_odd": [
+        29
+      ],
+      "W_minus": [
+        29
+      ],
+      "at_least_two_odd_multiplicative": false,
+      "at_least_one_nonsplit": true,
+      "boxed_criterion_met": false,
+      "B1_g_mult_odd": 1,
+      "B1_is_a_power_of_two": true,
+      "B2_g_minus": 1,
+      "B2_is_a_power_of_two": true,
+      "fixed_multiplicative_leave_one_out": [
+        {
+          "p": 29,
+          "witness": null,
+          "has_a_distinct_witness": false
+        }
+      ],
+      "every_fixed_multiplicative_p_has_a_witness": false
+    },
+    "eliminated_as": "FAIL_FIXED_MULTIPLICATIVE_WITNESS",
+    "every_model_found": [
+      {
+        "ainvs": [
+          0,
+          1,
+          0,
+          -4,
+          4
+        ],
+        "rows": [
+          [
+            2,
+            "additive",
+            "IV*",
+            8,
+            null
+          ],
+          [
+            29,
+            "multiplicative",
+            "I1",
+            1,
+            false
+          ]
+        ],
+        "criterion": {
+          "W_mult_odd": [
+            29
+          ],
+          "W_minus": [
+            29
+          ],
+          "at_least_two_odd_multiplicative": false,
+          "at_least_one_nonsplit": true,
+          "boxed_criterion_met": false,
+          "B1_g_mult_odd": 1,
+          "B1_is_a_power_of_two": true,
+          "B2_g_minus": 1,
+          "B2_is_a_power_of_two": true,
+          "fixed_multiplicative_leave_one_out": [
+            {
+              "p": 29,
+              "witness": null,
+              "has_a_distinct_witness": false
+            }
+          ],
+          "every_fixed_multiplicative_p_has_a_witness": false
+        }
+      }
+    ],
+    "all_models_of_this_conductor_fail": true,
+    "why": "its odd bad structure is a single multiplicative prime, so the leave-one-out at that prime has no distinct candidate"
+  },
+  "the_boxed_criterion": "至少兩個 odd multiplicative reservoirs，其中至少一個 nonsplit",
+  "schema_B0_to_B5": {
+    "rows": [
+      {
+        "item": "B0",
+        "text": "2-part anchor: Banwait–Huang 2.14 branch, BSD(E,2), twist local/splitting conditions, 建議 c_E = 1",
+        "status": "PARTLY COMPUTED",
+        "where": "RUN-014/030 computed v2(L^alg) = 0, trivial torsion, Delta < 0; BSD(E,2) is cited; c_E = 1 is the open item RUN-039 named"
+      },
+      {
+        "item": "B1",
+        "text": "W_mult^odd non-empty and g_mult^odd a power of two",
+        "status": "COMPUTED",
+        "where": "RUN-033's lemma 1, under another name"
+      },
+      {
+        "item": "B2",
+        "text": "W_- non-empty and g_- a power of two",
+        "status": "COMPUTED",
+        "where": "RUN-037's premise, under another name"
+      },
+      {
+        "item": "B3",
+        "text": "fixed additive odd primes: exact FW-H1, FW-H2, period/Manin",
+        "status": "OPEN",
+        "where": "RUN-045 marks H2 UNKNOWN at the additive prime; RUN-040 checked `01`'s sufficient condition for p not dividing c"
+      },
+      {
+        "item": "B4",
+        "text": "fixed multiplicative odd primes: finite check per prime plus a distinct ramified witness",
+        "status": "COMPUTED",
+        "where": "RUN-033's leave-one-out gives 3 -> 29 and 29 -> 3"
+      },
+      {
+        "item": "B5",
+        "text": "twist support restrictions: avoid 3, good ordinary, avoid residual exceptions, keep 2.14's splitting/inertness",
+        "status": "COMPUTED",
+        "where": "RUN-032's five conditions on all 19 members; RUN-036 certified the residual images at 38 primes"
+      }
+    ],
+    "computed": [
+      "B1",
+      "B2",
+      "B4",
+      "B5"
+    ],
+    "partly": [
+      "B0"
+    ],
+    "open": [
+      "B3"
+    ],
+    "B1_holds": true,
+    "B2_holds": true
+  },
+  "the_six_obligations": {
+    "rows": [
+      {
+        "obligation": "fixed additive primes' exact H1 backend",
+        "status": "PARTLY",
+        "where": "RUN-036 certified surjectivity at 38 primes, which gives H1 there; the additive primes of E^(q) are 2 and q, and 2 is not certified"
+      },
+      {
+        "obligation": "fixed additive primes' exact H2 local residual backend",
+        "status": "OPEN",
+        "where": "RUN-034 found `05`'s no-go silent at the additive prime and RUN-045 marks it UNKNOWN. Silence is not a PASS"
+      },
+      {
+        "obligation": "fixed multiplicative branch formal theorem table",
+        "status": "CITED",
+        "where": "`27`'s proof router names Skinner Theorem C for p = 3 and p = 29"
+      },
+      {
+        "obligation": "Manin-period compatibility",
+        "status": "OPEN",
+        "where": "RUN-039 left c_E = 1 open; RUN-040 checked the weaker p not dividing c"
+      },
+      {
+        "obligation": "all support restrictions' Chebotarev / CRT simultaneous compatibility",
+        "status": "PARTLY",
+        "where": "RUN-044 computed the Chebotarev half — the 3-cycle and the identity on K agree on F_0, and a transposition would not"
+      },
+      {
+        "obligation": "final all-prime cover proof",
+        "status": "PARTLY",
+        "where": "RUN-047 ran `27`'s six-branch router as a partition; the branches' theorems are cited, not proved"
+      }
+    ],
+    "counts": {
+      "PARTLY": 3,
+      "OPEN": 2,
+      "CITED": 1
+    },
+    "none_are_closed": true,
+    "the_documents_own_rule": "六項完成前，不升級為 theorem",
+    "so": "none of the six is closed by this arm, and `13`'s own rule keeps the label where `20` and `27` put it"
+  },
+  "headline": "`14`'s odd local table for the anchor recomputes exactly — 2 additive, 3 split multiplicative, 29 nonsplit, all valuations 1 — and its boxed criterion is met. The control `116.b1`, found by conductor rather than quoted, has a nonsplit prime and still fails: one reservoir, no distinct witness at p = 29. `13`'s B1 and B2 are RUN-033's lemma 1 and RUN-037's premise under other names, and none of its six obligations is closed",
+  "ok": true
+}

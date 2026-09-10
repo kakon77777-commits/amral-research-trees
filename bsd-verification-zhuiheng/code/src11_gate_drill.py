@@ -135,6 +135,8 @@ import src45_claim_ladder_position as ladder45            # noqa: E402
 import src46_chebotarev_audit as cheb46                   # noqa: E402
 import src47_fw_hypothesis_compiler as comp47             # noqa: E402
 import src48_h2_chain_and_h3_dispute as chain48           # noqa: E402
+import src49_provisional_vs_revised as prev49             # noqa: E402
+import src50_candidate_schema_and_sieve as schema50       # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -2348,13 +2350,91 @@ def check_h2_chain() -> bool:
 
 
 
+def check_provisional_vs_revised() -> bool:
+    """`18` against `27`, and the set all three documents describe.
+
+    The three definitions must land on the same primes — `18`/`27`'s three
+    conditions, this tree's membership test, and Referee A's five. `18`'s five
+    referee items must stay scored honestly: one addressed by `27`, one
+    deferred, three open. A version that reported them all addressed would be
+    doing the corpus a favour it did not ask for. `27`'s six-branch router must
+    still be a partition with nothing unrouted, and the witnesses it names must
+    still match what RUN-033 and RUN-037 computed from the other end.
+    """
+    sets = prev49.three_definitions()
+    if not sets["all_three_agree"] or sets["counts"]["18/27"] < 15:
+        return False
+    if sets["in_18_not_in_tree"] or sets["in_tree_not_in_18"]:
+        return False
+    red = prev49.redundancy_of_the_29_condition()
+    if not red["the_condition_is_redundant_here"]:
+        return False
+    if not red["the_implication_needs_the_mod_24_condition"]:
+        return False      # a redundancy shown only one way is not measured
+    items = prev49.audit_items()
+    if items["counts"] != {"addressed": 1, "deferred": 1, "open": 3}:
+        return False
+    q = sets["per_this_tree"][0]
+    part = prev49.router_partition(q, 300)
+    if part["unrouted"] or not part["every_prime_has_exactly_one_branch"]:
+        return False
+    if len(part["branches_used"]) != 6:
+        return False
+    w = prev49.router_witnesses()
+    if not w["agree"] or not w["leave_one_out_matches"]:
+        return False
+    if not w["nonsplit_witness_matches"]:
+        return False
+    lab = prev49.claim_labels()
+    return (lab["18"]["present"] and lab["20"]["present"]
+            and lab["27"]["present"] and lab["27"]["next_present"])
+
+
+def check_candidate_schema() -> bool:
+    """`13`'s schema and `14`'s sieve, with the control that must FAIL.
+
+    The anchor must meet `14`'s boxed criterion and have a distinct witness at
+    each fixed multiplicative prime. The control matters more: a curve of
+    conductor 116 must be FOUND, must have a nonsplit multiplicative prime, and
+    must still fail — one reservoir, no distinct witness. A gate that could not
+    exhibit the failing side would be confirming a criterion it never watched
+    fail, which is the shape RUN-033, RUN-035 and RUN-040 each had to guard.
+    And none of `13`'s six obligations may be reported closed.
+    """
+    a = schema50.sieve_criterion(schema50.BASE)
+    if not a["boxed_criterion_met"]:
+        return False
+    if not (a["B1_is_a_power_of_two"] and a["B2_is_a_power_of_two"]):
+        return False
+    if not a["every_fixed_multiplicative_p_has_a_witness"]:
+        return False
+    if a["W_mult_odd"] != [3, 29] or a["W_minus"] != [29]:
+        return False
+    hunt = schema50.find_by_conductor(schema50.CONTROL_N)
+    if not hunt["found"]:
+        return False
+    for ai in hunt["found"]:
+        c = schema50.sieve_criterion(ai)
+        if not c["at_least_one_nonsplit"]:          # it must LOOK like a pass
+            return False
+        if c["at_least_two_odd_multiplicative"]:
+            return False
+        if c["boxed_criterion_met"]:
+            return False
+        if c["every_fixed_multiplicative_p_has_a_witness"]:
+            return False
+    obl = schema50.obligations()
+    return obl["none_are_closed"] and len(obl["rows"]) == 6
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
     net22, p5u, led24, cv25, r2bsd, agent27, r1bsd, cov29, p1num, q9, cert32,
     mazur33, refA34, gcd35, nogo36, bridge37, surj38, h3c39,
     h2o40, brg41, bar42, fin43, cmp44, ladder45, cheb46,
-    comp47, chain48))
+    comp47, chain48, prev49, schema50))
 
 
 CHECKS = {
@@ -2432,6 +2512,8 @@ CHECKS = {
     "chebotarev-audit": check_chebotarev_audit,
     "fw-compiler": check_fw_compiler,
     "h2-chain": check_h2_chain,
+    "provisional-vs-revised": check_provisional_vs_revised,
+    "candidate-schema": check_candidate_schema,
 }
 
 
@@ -2736,6 +2818,32 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("18's set definition drops the cubic-irreducibility condition", "code",
+     "provisional-vs-revised",
+     lambda: patch(prev49, "in_P_per_18", _in_P_without_cubic)),
+    ("the router loses its p = q branch, so q goes unrouted", "code",
+     "provisional-vs-revised",
+     lambda: patch(prev49, "router_partition", _router_without_pq)),
+    ("18's open referee items are reported addressed", "code",
+     "provisional-vs-revised",
+     lambda: patch(prev49, "audit_items", _all_items_addressed)),
+    ("the router's witnesses are reported matching without comparing", "code",
+     "provisional-vs-revised",
+     lambda: patch(prev49, "router_witnesses", _witnesses_unchecked)),
+    ("the control curve cannot be found, so the failing side is never shown",
+     "code", "candidate-schema",
+     lambda: patch(schema50, "find_by_conductor",
+                   lambda target, box=0: {"target_conductor": target,
+                                          "models_scanned": 0, "found": [],
+                                          "count": 0, "first": None})),
+    ("the sieve criterion drops the two-reservoir clause", "code",
+     "candidate-schema",
+     lambda: patch(schema50, "sieve_criterion", _criterion_nonsplit_only)),
+    ("additive primes are counted as multiplicative reservoirs", "code",
+     "candidate-schema",
+     lambda: patch(schema50, "odd_local_structure", _reservoirs_include_additive)),
+    ("one of 13's six obligations is reported closed", "code",
+     "candidate-schema", lambda: patch(schema50, "obligations", _one_closed)),
     ("Level 2 reports the quantifier compression achieved", "code",
      "fw-compiler", lambda: patch(comp47, "level2", _level2_achieved)),
     ("the H3 rows stop naming which formulation decided them", "code",
@@ -3004,6 +3112,17 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("18's (q/29) = 1 condition dropped, which the other two imply — "
+     "Frob_q in A_3 is trivial on Q(sqrt -174), and q = 1 mod 24 gives "
+     "(-6/q) = 1",
+     lambda: patch(prev49, "in_P_per_18", _in_P_without_29)),
+    ("the set enumeration bound raised from 4000 to 5000",
+     lambda: patch(prev49, "three_definitions",
+                   lambda bound=5000: _true_three_defs(5000))),
+    ("the control search box widened from 12 to 14, which finds a second "
+     "conductor-116 model that fails identically",
+     lambda: patch(schema50, "find_by_conductor",
+                   lambda target, box=14: _true_find(target, 14))),
     ("the Level-1 bound raised from 200 to 260",
      lambda: patch(comp47, "level1", lambda bound=260: _true_level1(260))),
     ("the character-group exhaustion widened from 40 to 55",
@@ -3215,6 +3334,97 @@ def _classify_body_first(doc, src):
 _true_level1 = comp47.level1
 _true_level2 = comp47.level2
 _true_h1 = comp47.h1
+_true_three_defs = prev49.three_definitions
+_true_find = schema50.find_by_conductor
+_true_in_P_per_18 = prev49.in_P_per_18
+_true_router_partition = prev49.router_partition
+_true_audit_items = prev49.audit_items
+_true_router_witnesses = prev49.router_witnesses
+_true_sieve_criterion = schema50.sieve_criterion
+_true_odd_local = schema50.odd_local_structure
+_true_obligations = schema50.obligations
+
+
+def _in_P_without_cubic(q):
+    """Membership without the irreducibility condition. That one is NOT implied
+    by the others, so the set grows and the three definitions part company."""
+    d = dict(_true_in_P_per_18(q))
+    d["in_P"] = (q % 24 == 1 and q != 29
+                 and prev49.ph2.legendre(q, 29) == 1)
+    return d
+
+
+def _in_P_without_29(q):
+    """Membership without the (q/29) = 1 condition. RUN-047 measured this to be
+    a GENUINE no-op: q inert in the cubic puts Frob_q in A_3, hence trivial on
+    the resolvent Q(sqrt -174), and q = 1 (mod 24) gives (-6/q) = 1, so
+    (29/q) = 1 follows. It lives in the controls with that reason, not among the
+    defects."""
+    d = dict(_true_in_P_per_18(q))
+    a, b, c = prev49.CUBIC[1:]
+    has_root = any((x ** 3 + a * x * x + b * x + c) % q == 0
+                   for x in range(q))
+    d["in_P"] = (q % 24 == 1 and q != 29 and not has_root)
+    return d
+
+
+def _router_without_pq(q, bound=prev49.BRANCH_BOUND):
+    """The p = q branch removed. q is additive for its own twist, so it lands
+    in no branch at all."""
+    d = dict(_true_router_partition(q, bound))
+    d["unrouted"] = [q]
+    d["every_prime_has_exactly_one_branch"] = False
+    return d
+
+
+def _all_items_addressed():
+    d = dict(_true_audit_items())
+    d["counts"] = {"addressed": 5, "deferred": 0, "open": 0}
+    return d
+
+
+def _witnesses_unchecked():
+    """Agreement asserted while the computed swap is wrong."""
+    d = dict(_true_router_witnesses())
+    d["this_tree_computed"] = {"leave_one_out": {3: 3, 29: 29}, "W_minus": []}
+    d["leave_one_out_matches"] = False
+    d["agree"] = True
+    return d
+
+
+def _criterion_nonsplit_only(ainvs):
+    """`14`'s criterion reduced to 'has a nonsplit prime', which is exactly the
+    reading the control was built to refute."""
+    d = dict(_true_sieve_criterion(ainvs))
+    if d.get("singular"):
+        return d
+    d["boxed_criterion_met"] = d["at_least_one_nonsplit"]
+    return d
+
+
+def _reservoirs_include_additive(ainvs):
+    """Additive primes counted as reservoirs, which gives the control a second
+    one it does not have."""
+    md = gcd35.multiplicative_data(ainvs)
+    if md.get("singular"):
+        return {"singular": True}
+    d = dict(_true_odd_local(ainvs))
+    extra = [r["p"] for r in md["additive"]]
+    d["W_mult_odd"] = sorted(set(d["W_mult_odd"]) | set(extra))
+    d["valuations"] = dict(d["valuations"])
+    for r in md["additive"]:
+        d["valuations"][str(r["p"])] = r["v_disc"]
+    return d
+
+
+def _one_closed():
+    d = dict(_true_obligations())
+    d["rows"] = [dict(r) for r in d["rows"]]
+    d["rows"][0]["status"] = "CLOSED"
+    d["none_are_closed"] = False
+    return d
+
+
 _true_comp47_h3 = comp47.h3
 _true_equivalence = chain48.equivalence_03_08
 _true_ordinary_complete = chain48.ordinary_case_completeness

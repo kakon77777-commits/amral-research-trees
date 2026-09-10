@@ -47,7 +47,9 @@
     "src45_claim_ladder_position",
     "src46_chebotarev_audit",
     "src47_fw_hypothesis_compiler",
-    "src48_h2_chain_and_h3_dispute"
+    "src48_h2_chain_and_h3_dispute",
+    "src49_provisional_vs_revised",
+    "src50_candidate_schema_and_sieve"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -129,7 +131,9 @@
     "claim-ladder": true,
     "chebotarev-audit": true,
     "fw-compiler": true,
-    "h2-chain": true
+    "h2-chain": true,
+    "provisional-vs-revised": true,
+    "candidate-schema": true
   },
   "defects": [
     {
@@ -368,7 +372,8 @@
         "kodaira-nogo",
         "twist-bridge",
         "fw-h3-compiler",
-        "odd-additive-barrier"
+        "odd-additive-barrier",
+        "provisional-vs-revised"
       ],
       "caught_by_the_named_check": true
     },
@@ -387,7 +392,8 @@
         "kodaira-nogo",
         "twist-bridge",
         "fw-h3-compiler",
-        "odd-additive-barrier"
+        "odd-additive-barrier",
+        "provisional-vs-revised"
       ],
       "caught_by_the_named_check": true
     },
@@ -399,7 +405,8 @@
         "density-1-over-24",
         "family-ordinary",
         "membership-in-P",
-        "referee-a-checklist"
+        "referee-a-checklist",
+        "provisional-vs-revised"
       ],
       "caught_by_the_named_check": true
     },
@@ -1046,6 +1053,78 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "18's set definition drops the cubic-irreducibility condition",
+      "kind": "code",
+      "named_check": "provisional-vs-revised",
+      "checks_that_went_red": [
+        "provisional-vs-revised"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the router loses its p = q branch, so q goes unrouted",
+      "kind": "code",
+      "named_check": "provisional-vs-revised",
+      "checks_that_went_red": [
+        "provisional-vs-revised"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "18's open referee items are reported addressed",
+      "kind": "code",
+      "named_check": "provisional-vs-revised",
+      "checks_that_went_red": [
+        "provisional-vs-revised"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the router's witnesses are reported matching without comparing",
+      "kind": "code",
+      "named_check": "provisional-vs-revised",
+      "checks_that_went_red": [
+        "provisional-vs-revised"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the control curve cannot be found, so the failing side is never shown",
+      "kind": "code",
+      "named_check": "candidate-schema",
+      "checks_that_went_red": [
+        "candidate-schema"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the sieve criterion drops the two-reservoir clause",
+      "kind": "code",
+      "named_check": "candidate-schema",
+      "checks_that_went_red": [
+        "candidate-schema"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "additive primes are counted as multiplicative reservoirs",
+      "kind": "code",
+      "named_check": "candidate-schema",
+      "checks_that_went_red": [
+        "candidate-schema"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "one of 13's six obligations is reported closed",
+      "kind": "code",
+      "named_check": "candidate-schema",
+      "checks_that_went_red": [
+        "candidate-schema"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "Level 2 reports the quantifier compression achieved",
       "kind": "code",
       "named_check": "fw-compiler",
@@ -1353,7 +1432,8 @@
         "fw-h3-compiler",
         "derived-bridge",
         "finite-exceptional",
-        "fw-compiler"
+        "fw-compiler",
+        "provisional-vs-revised"
       ],
       "caught_by_the_named_check": true
     },
@@ -1505,7 +1585,9 @@
         "fw-h2-ordinary",
         "derived-bridge",
         "finite-exceptional",
-        "fw-compiler"
+        "fw-compiler",
+        "provisional-vs-revised",
+        "candidate-schema"
       ],
       "caught_by_the_named_check": true
     },
@@ -1524,7 +1606,8 @@
       "kind": "code",
       "named_check": "gcd-witness-lemmas",
       "checks_that_went_red": [
-        "gcd-witness-lemmas"
+        "gcd-witness-lemmas",
+        "provisional-vs-revised"
       ],
       "caught_by_the_named_check": true
     },
@@ -1594,7 +1677,8 @@
       "kind": "code",
       "named_check": "referee-a-checklist",
       "checks_that_went_red": [
-        "referee-a-checklist"
+        "referee-a-checklist",
+        "provisional-vs-revised"
       ],
       "caught_by_the_named_check": true
     },
@@ -1949,6 +2033,21 @@
   ],
   "controls": [
     {
+      "control": "18's (q/29) = 1 condition dropped, which the other two imply — Frob_q in A_3 is trivial on Q(sqrt -174), and q = 1 mod 24 gives (-6/q) = 1",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the set enumeration bound raised from 4000 to 5000",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the control search box widened from 12 to 14, which finds a second conductor-116 model that fails identically",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
       "control": "the Level-1 bound raised from 200 to 260",
       "checks_that_went_red": [],
       "undisturbed": true
@@ -2120,11 +2219,11 @@
     }
   ],
   "totals": {
-    "defects": 184,
-    "caught_by_the_named_check": 184,
+    "defects": 192,
+    "caught_by_the_named_check": 192,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 34,
+    "controls": 37,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,
