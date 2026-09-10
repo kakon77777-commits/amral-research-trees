@@ -141,6 +141,8 @@ import src51_source_audits as audits51                    # noqa: E402
 import src52_novelty_and_routes as routes52               # noqa: E402
 import src53_consensus_and_experiment as consensus53      # noqa: E402
 import src54_compiler_targets_and_v03 as targets54        # noqa: E402
+import src55_local_isogeny_kernel as kern55               # noqa: E402
+import src56_family_schema_and_spec as schema56           # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -2627,6 +2629,110 @@ def check_compiler_targets() -> bool:
 
 
 
+def check_local_isogeny_kernel() -> bool:
+    """`04`'s local kernel criterion, and the consequence it does not state.
+
+    Step 2 must keep naming `p` odd: at p = 2 every point is its own negative,
+    the clause carries no Galois information, and a chain that dropped the
+    hypothesis would be reporting a criterion that always passes. The last step
+    must keep naming local REDUCIBILITY — that is the whole precondition, and
+    the round's headline is that it is undecided here. `omega^2 = 1` must keep
+    coming back at exactly {2, 3}, computed by brute force AND agreeing with
+    the closed form `(p-1)|2` — the first draft wrote that divisibility
+    backwards and the two columns disagreed at p = 2, so the agreement is the
+    thing being asserted, not either column alone. The two tests must stay
+    mutually exclusive above 3 and joint at 3. And the precondition must stay
+    undecided with the refusal recorded: reading RUN-036's GLOBAL surjectivity
+    as settling the LOCAL question is `00` §6's substitution one level down,
+    and `07` names it as a forbidden shortcut outright.
+    """
+    ch = kern55.derivation_chain()
+    if ch["steps_count"] != 5:
+        return False
+    if "odd" not in ch["steps"][1]["hypothesis"].lower():
+        return False
+    if "REDUCIBLE" not in ch["steps"][-1]["hypothesis"]:
+        return False
+    if not kern55.p_odd_is_load_bearing()["p_odd_is_load_bearing"]:
+        return False
+    co = kern55.cyclotomic_order()
+    if not co["agrees_with_the_divisibility"]:
+        return False
+    if co["omega_squared_trivial_at"] != [2, 3]:
+        return False
+    if co["primes_checked"] < 40:
+        return False
+    mx = kern55.mutual_exclusivity()
+    if mx["both_tests_can_fire_at"] != [3]:
+        return False
+    if not mx["mutually_exclusive_at_every_p_ge_5"]:
+        return False
+    pr = kern55.precondition_local_reducibility()
+    if pr["decided_here"] is not False:
+        return False
+    if not pr["global_surjectivity_does_not_settle_this"]:
+        return False
+    if kern55.p_minus_1_divides_2_appearances()["count_of_reports"] < 1:
+        return False
+    if kern55.three_cases()["count"] != 3:
+        return False
+    return kern55.what_it_would_cost()["members"] >= 19
+
+
+def check_family_schema_and_spec() -> bool:
+    """`05`'s proof obligations and `07`'s implementation spec.
+
+    `05` declines to be a theorem claim, so `all_five_proved` must stay False
+    and the boxed conclusion unreachable — scoring it as met would be this arm
+    inventing a claim the corpus refused to make. Both gaps must stay open:
+    they are where this line independently stopped, and closing one in the
+    report without closing it in the arithmetic is the failure `07_Stop_Rules`
+    forbids. The p = 3 reasons must stay counted FROM THE LOGS and stay at
+    four or more across three rounds — a count assembled from prose is RUN-029's
+    failure mode. `07`'s verdict key must stay unfillable and its fixtures
+    unrunnable, because that is the same gap RUN-052 measured from the other
+    end. All four forbidden inferences must keep their guards. And the
+    prohibition total must stay 15 over 4 documents: the two documents numbered
+    `07` are different documents, and a count that merged them by number would
+    silently lose four prohibitions.
+    """
+    bh = schema56.bridge_hypotheses()
+    if bh["count"] != 5:
+        return False
+    if bh["all_five_proved"] is not False:
+        return False
+    if bh["reachable_here"] is not False:
+        return False
+    gp = schema56.two_gaps()
+    if not gp["both_open"] or not gp["gap_A"]["still_open"]:
+        return False
+    if not gp["gap_B"]["still_open"] or not gp["gap_B"]["and_it_is_hypothesis_4"]:
+        return False
+    if schema56.hybrid_bands()["count"] != 3:
+        return False
+    p3 = schema56.p3_structural_reasons()
+    if p3["count"] < 4 or len(p3["distinct_rounds"]) < 3:
+        return False
+    sc = schema56.spec_schema_coverage()
+    if sc["the_verdict_key_is_fillable"] is not False:
+        return False
+    if sc["fillable_here"] >= sc["required_keys"]:
+        return False
+    if schema56.backend_rules()["count"] != 4:
+        return False
+    fi = schema56.forbidden_inferences()
+    if fi["count"] != 4 or not fi["all_clear"]:
+        return False
+    if not all(r["guard_present"] for r in fi["rows"]):
+        return False
+    pc = schema56.prohibition_count()
+    if pc["total"] != 15 or pc["documents"] != 4 or not pc["all_clear"]:
+        return False
+    rf = schema56.regression_fixtures()
+    return rf["count"] == 6 and rf["runnable_here"] == 0
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -2634,7 +2740,7 @@ COVERS = sorted(m.__name__ for m in (
     mazur33, refA34, gcd35, nogo36, bridge37, surj38, h3c39,
     h2o40, brg41, bar42, fin43, cmp44, ladder45, cheb46,
     comp47, chain48, prev49, schema50, audits51, routes52,
-    consensus53, targets54))
+    consensus53, targets54, kern55, schema56))
 
 
 CHECKS = {
@@ -2718,6 +2824,8 @@ CHECKS = {
     "novelty-and-routes": check_novelty_and_routes,
     "consensus-and-experiment": check_consensus_and_experiment,
     "compiler-targets": check_compiler_targets,
+    "local-isogeny-kernel": check_local_isogeny_kernel,
+    "family-schema-and-spec": check_family_schema_and_spec,
 }
 
 
@@ -3022,6 +3130,42 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("04's chain drops the `p` odd hypothesis from step 2, where p = 2 makes "
+     "the clause vacuous", "code", "local-isogeny-kernel",
+     lambda: patch(kern55, "CHAIN",
+                   tuple((a, b, "none") if i == 1 else (a, b, c)
+                         for i, (a, b, c) in enumerate(kern55.CHAIN)))),
+    ("the closed form goes back to (p-1) % 2, which is the divisibility "
+     "backwards", "code", "local-isogeny-kernel",
+     lambda: patch(kern55, "cyclotomic_order", _divisibility_backwards)),
+    ("omega squared is reported trivial at every prime", "code",
+     "local-isogeny-kernel",
+     lambda: patch(kern55, "cyclotomic_squares_trivial", lambda p: True)),
+    ("the two kernel tests are reported mutually exclusive at p = 3 too",
+     "code", "local-isogeny-kernel",
+     lambda: patch(kern55, "mutual_exclusivity", _exclusive_everywhere)),
+    ("the precondition is reported settled by RUN-036's global surjectivity",
+     "code", "local-isogeny-kernel",
+     lambda: patch(kern55, "precondition_local_reducibility", _local_settled)),
+    ("05's five bridge hypotheses are scored as all proved", "code",
+     "family-schema-and-spec",
+     lambda: patch(schema56, "bridge_hypotheses", _all_five_proved)),
+    ("05's Gap A is reported closed", "code", "family-schema-and-spec",
+     lambda: patch(schema56, "two_gaps", _gap_a_closed)),
+    ("the p = 3 reasons come back empty, so the count would be typed from "
+     "prose", "code", "family-schema-and-spec",
+     lambda: patch(schema56, "p3_structural_reasons", _no_p3_reasons)),
+    ("07's verdict key fw17_h2 is reported fillable in this tree", "code",
+     "family-schema-and-spec",
+     lambda: patch(schema56, "SCHEMA_KEYS",
+                   tuple((k, True, w) if k == "fw17_h2" else (k, f, w)
+                         for k, f, w in schema56.SCHEMA_KEYS))),
+    ("the prohibition count merges the two documents numbered 07, losing four",
+     "code", "family-schema-and-spec",
+     lambda: patch(schema56, "prohibition_count", _prohibitions_merged)),
+    ("07's six regression fixtures are scored runnable here", "code",
+     "family-schema-and-spec",
+     lambda: patch(schema56, "regression_fixtures", _fixtures_runnable)),
     ("00 §6's third guard is reported present with RUN-045's UNKNOWN rows "
      "gone", "code", "consensus-and-experiment",
      lambda: patch(consensus53, "forbidden_substitutions",
@@ -3375,6 +3519,10 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("05's five bridge hypotheses listed in reverse order",
+     lambda: patch(schema56, "BRIDGE", tuple(reversed(schema56.BRIDGE)))),
+    ("the cyclotomic check run to bound 500 instead of 200 — 95 primes, "
+     "not 46", lambda: _wider_cyclotomic_bound()),
     ("06's four success-gate conditions listed in reverse order",
      lambda: patch(consensus53, "SUCCESS_GATE",
                    tuple(reversed(consensus53.SUCCESS_GATE)))),
@@ -3610,6 +3758,93 @@ _true_level2 = comp47.level2
 _true_h1 = comp47.h1
 _true_three_defs = prev49.three_definitions
 _true_find = schema50.find_by_conductor
+_true_cyclo_order = kern55.cyclotomic_order
+_true_mutual55 = kern55.mutual_exclusivity
+_true_precond55 = kern55.precondition_local_reducibility
+_true_bridge56 = schema56.bridge_hypotheses
+_true_gaps56 = schema56.two_gaps
+_true_p3_56 = schema56.p3_structural_reasons
+_true_prohib56 = schema56.prohibition_count
+_true_fixtures56 = schema56.regression_fixtures
+
+
+def _divisibility_backwards(bound=None):
+    """`(p - 1) % 2 == 0 and (p - 1) <= 2` instead of `2 % (p - 1) == 0`.
+
+    The real first draft. It is "2 divides p - 1", not "p - 1 divides 2", and
+    it disagrees with the brute-force column at exactly p = 2 — where p - 1 = 1
+    divides 2 and 2 does not divide 1."""
+    d = dict(_true_cyclo_order() if bound is None else _true_cyclo_order(bound))
+    rows = [dict(r, p_minus_1_divides_2=((r["p"] - 1) % 2 == 0
+                                         and (r["p"] - 1) <= 2))
+            for r in d["rows"]]
+    d["rows"] = rows
+    d["agrees_with_the_divisibility"] = all(
+        r["omega_squared_trivial"] == r["p_minus_1_divides_2"] for r in rows)
+    return d
+
+
+def _exclusive_everywhere(bound=None):
+    d = dict(_true_mutual55() if bound is None else _true_mutual55(bound))
+    d["both_tests_can_fire_at"] = []
+    return d
+
+
+def _local_settled():
+    d = dict(_true_precond55())
+    d["decided_here"] = True
+    d["global_surjectivity_does_not_settle_this"] = False
+    return d
+
+
+def _all_five_proved():
+    d = dict(_true_bridge56())
+    d["all_five_proved"] = True
+    d["reachable_here"] = True
+    return d
+
+
+def _gap_a_closed():
+    d = dict(_true_gaps56())
+    d["gap_A"] = dict(d["gap_A"], still_open=False)
+    d["both_open"] = False
+    return d
+
+
+def _no_p3_reasons():
+    return {"rows": [], "count": 0, "distinct_rounds": [],
+            "counted_from": "nothing"}
+
+
+def _prohibitions_merged():
+    """The two documents numbered `07` merged into one row — which is how a
+    count keyed on the number rather than the name loses four prohibitions."""
+    d = dict(_true_prohib56())
+    d["lists"] = [x for x in d["lists"]
+                  if x["document"] != "07_Local_Agent_Implementation_Spec"]
+    d["documents"] = len(d["lists"])
+    d["total"] = sum(x["count"] for x in d["lists"])
+    return d
+
+
+def _fixtures_runnable():
+    d = dict(_true_fixtures56())
+    d["runnable_here"] = d["count"]
+    d["rows"] = [dict(r, runnable_here=True) for r in d["rows"]]
+    return d
+
+
+def _wider_cyclotomic_bound():
+    """500 instead of 200 — 95 primes instead of 46. `omega^2 = 1` at exactly
+    {2, 3} is a statement about every prime, so a bound that moved it would
+    mean the finding was an artefact of where the check stopped."""
+    r1 = patch(kern55, "cyclotomic_order",
+               lambda bound=500: _true_cyclo_order(bound))
+    r2 = patch(kern55, "mutual_exclusivity",
+               lambda bound=500: _true_mutual55(bound))
+    return lambda: (r1(), r2())
+
+
 _true_fs53 = consensus53.forbidden_substitutions
 _true_main_problem53 = consensus53.the_main_problem
 _true_experiment_steps53 = consensus53.experiment_steps

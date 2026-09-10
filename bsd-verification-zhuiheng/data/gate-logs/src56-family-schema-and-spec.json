@@ -1,0 +1,363 @@
+{
+  "gate": "src56 — 05's family theorem schema and 07's implementation spec",
+  "source": "05_NonSemistable_Family_Theorem_Schema, 07_Local_Agent_Implementation_Spec",
+  "documents_found": {
+    "05": true,
+    "07": true
+  },
+  "bridge_hypotheses": {
+    "rows": [
+      {
+        "n": 1,
+        "hypothesis": "FW-H1/H2/H3 hold for the base E",
+        "where": "RUN-045 emitted the Level-1 certificate: H2 UNKNOWN at the additive prime, H1 bounded by RUN-036's range, H3 computed",
+        "state": "PARTIAL — H3 yes, H1 bounded, H2 UNKNOWN"
+      },
+      {
+        "n": 2,
+        "hypothesis": "H1/H2 are preserved under quadratic twist",
+        "where": "RUN-035 measured `03`'s Lemma C on both sides and Lemma A's computable shadow; Lemma B is marked a candidate by `03` itself",
+        "state": "PARTIAL — the document marks its own Lemma B open"
+      },
+      {
+        "n": 3,
+        "hypothesis": "d's splitting conditions keep the H3 witness locally",
+        "where": "RUN-034 and RUN-040: 2/3/29 split is what keeps 29 nonsplit, and the witness ell = 29 passes at every member (RUN-052)",
+        "state": "MEASURED HERE"
+      },
+      {
+        "n": 4,
+        "hypothesis": "FW's period / Manin normalization is compatible with Banwait's BSD convention",
+        "where": "RUN-039 left c_E = 1 open; RUN-040 ran `01`'s weaker sufficient condition. This is Gap B by another name",
+        "state": "OPEN — same object as Gap B"
+      },
+      {
+        "n": 5,
+        "hypothesis": "L(E_d, 1) != 0 feeds the FW rank-zero corollary directly",
+        "where": "RUN-039 recorded the rank-zero corollary's quantifier ranges; RUN-016 computed the family L-values",
+        "state": "SUPPLIED"
+      }
+    ],
+    "count": 5,
+    "by_state": {
+      "PARTIAL": 2,
+      "MEASURED": 1,
+      "OPEN": 1,
+      "SUPPLIED": 1
+    },
+    "all_five_proved": false,
+    "the_boxed_conclusion": "for all d in D(E), BSD(E_d)",
+    "reachable_here": false,
+    "the_documents_own_framing": "本文件不是定理宣稱，而是列出完整 proof obligations",
+    "reading": "`05` refuses to be a theorem claim, and scoring it as one would be this arm inventing a claim the corpus declined to make"
+  },
+  "two_gaps": {
+    "gap_A": {
+      "text": "for all p > 2 is not yet finite-ized",
+      "measured_at": "RUN-041 (src43)",
+      "P_loc_non_empty": false,
+      "bounded_at": 6000,
+      "claim_is_universal": false,
+      "still_open": true,
+      "note": "this arm measured the gap the schema names, and found it open — the two agree"
+    },
+    "gap_B": {
+      "text": "the modular-form period to Neron period Manin-constant splicing at small p needs a clean join",
+      "measured_at": "RUN-039 (src41), RUN-040 (src42)",
+      "c_E_equals_1": "OPEN",
+      "barrier_present": false,
+      "still_open": true,
+      "and_it_is_hypothesis_4": true
+    },
+    "both_open": true,
+    "so": "the schema's two self-declared dangers are exactly the two places this line independently stopped. That is agreement, not progress"
+  },
+  "hybrid_bands": {
+    "rows": [
+      {
+        "band": "p = 2",
+        "instrument": "Banwait-Huang Theorem 2.14",
+        "this_arm": "CITED here since RUN-014"
+      },
+      {
+        "band": "p in {3, 5, 7}",
+        "instrument": "Banwait's existing small-prime theorems",
+        "this_arm": "CITED — this arm proves none of them"
+      },
+      {
+        "band": "large / generic odd p",
+        "instrument": "Fouquet-Wan",
+        "this_arm": "where RUN-037/038/039/041/045 went"
+      }
+    ],
+    "count": 3,
+    "p_3_is_routed_to": "Banwait's small-prime theorems, NOT FW",
+    "why_that_matters": "the corpus's own hybrid plan routes p = 3 away from the Fouquet-Wan machinery — and this line found p = 3 structurally out of reach four separate times, from four different directions, without consulting this plan"
+  },
+  "p3_structural_reasons": {
+    "rows": [
+      {
+        "round": "RUN-036",
+        "log": "src38",
+        "reason": "the nonsplit-Cartan test is vacuous mod 3 — no witness exists to record",
+        "field": "witnesses.nonsplit_cartan_normalizer is null"
+      },
+      {
+        "round": "RUN-036",
+        "log": "src38",
+        "reason": "PGL_2(F_3) = S_4, so the projective A4/S4/A5 tests cannot separate at 3",
+        "field": "ell_3.surjective is false"
+      },
+      {
+        "round": "RUN-046",
+        "log": "src48",
+        "reason": "chi_cyc^2 is trivial on inertia at 3, so `10`'s single congruence is not the whole criterion there — (p-1)|2",
+        "field": "10s_criterion_is_complete false at p = 3"
+      },
+      {
+        "round": "RUN-053",
+        "log": "src55",
+        "reason": "omega^2 = 1 at 3, so `04`'s two kernel tests can BOTH fire — the only odd prime where they are not mutually exclusive",
+        "field": "both_tests_can_fire_at contains 3"
+      },
+      {
+        "round": "RUN-034",
+        "log": "src36",
+        "reason": "`05_Kodaira` gives p = 3 its own character-structure section",
+        "field": "p_equals_3_character_structure present"
+      }
+    ],
+    "count": 5,
+    "distinct_rounds": [
+      "RUN-034",
+      "RUN-036",
+      "RUN-046",
+      "RUN-053"
+    ],
+    "counted_from": "the archived gate logs, not from the reports' prose",
+    "and_the_corpus_agrees": "`05`'s hybrid routes p = 3 to Banwait and `07`'s Fixture A is p = 3 reducible",
+    "not_claimed": "these are reasons the INSTRUMENTS fail at 3, not a statement that BSD is harder at 3"
+  },
+  "spec_schema_coverage": {
+    "rows": [
+      {
+        "key": "curve",
+        "fillable_here": true,
+        "why": "RUN-001 fixed the curve by content hash"
+      },
+      {
+        "key": "p",
+        "fillable_here": true,
+        "why": "the prime under test"
+      },
+      {
+        "key": "profile",
+        "fillable_here": true,
+        "why": "FW17_EXACT is a label, not a computation"
+      },
+      {
+        "key": "global_abs_irreducible",
+        "fillable_here": false,
+        "why": "RUN-036 certifies SURJECTIVE at 38 primes and IRREDUCIBLE at Mazur's degrees; absolute irreducibility beyond that range is UNKNOWN"
+      },
+      {
+        "key": "potential_reduction",
+        "fillable_here": true,
+        "why": "RUN-034 and RUN-052 compute it per member"
+      },
+      {
+        "key": "potentially_multiplicative",
+        "fillable_here": true,
+        "why": "same"
+      },
+      {
+        "key": "local_reducibility_Fp",
+        "fillable_here": false,
+        "why": "NOT COMPUTED HERE — local Galois data"
+      },
+      {
+        "key": "phi.defined_over_Qp",
+        "fillable_here": false,
+        "why": "NOT COMPUTED HERE"
+      },
+      {
+        "key": "phi.kernel_polynomial",
+        "fillable_here": false,
+        "why": "NOT COMPUTED HERE"
+      },
+      {
+        "key": "phi.kernel_linear_factor_Qp",
+        "fillable_here": false,
+        "why": "NOT COMPUTED HERE"
+      },
+      {
+        "key": "dual_phi.kernel_polynomial",
+        "fillable_here": false,
+        "why": "NOT COMPUTED HERE"
+      },
+      {
+        "key": "dual_phi.kernel_linear_factor_Qp",
+        "fillable_here": false,
+        "why": "NOT COMPUTED HERE"
+      },
+      {
+        "key": "fw17_h2",
+        "fillable_here": false,
+        "why": "UNKNOWN — RUN-045, unchanged by RUN-052"
+      },
+      {
+        "key": "evidence",
+        "fillable_here": true,
+        "why": "every gate here writes an archived log"
+      }
+    ],
+    "required_keys": 14,
+    "fillable_here": 6,
+    "not_fillable": 8,
+    "the_verdict_key_is_fillable": false,
+    "reading": "the spec demands a replayable record, not a boolean — and the keys this tree cannot fill are exactly the kernel-polynomial ones RUN-052 named. The shape of the gap is the same measured from either end"
+  },
+  "backend_rules": {
+    "rows": [
+      {
+        "n": 1,
+        "rule": "prefer certified local isogeny / local factorization machinery; do NOT decide a Q_p root by floating-point approximation",
+        "this_arm": "RUN-006 was bitten by exactly this failure mode on psi_3: a float scan for real roots gave a confidently wrong answer on the hard curve, and it would have been reported as a finding against the package"
+      },
+      {
+        "n": 2,
+        "rule": "a backend that can only decide THAT a local p-isogeny exists, without kernel character evidence, does not produce an H2 verdict",
+        "this_arm": "this arm produces no H2 verdict at all at the additive prime — UNKNOWN since RUN-045"
+      },
+      {
+        "n": 3,
+        "rule": "the kernel-polynomial linear factor must be an exact p-adic factorization / Hensel certificate",
+        "this_arm": "not attempted here"
+      },
+      {
+        "n": 4,
+        "rule": "if the local-irreducibility certificate is itself heuristic, emit UNKNOWN — do not upgrade to PASS",
+        "this_arm": "the same rule this line states as `unmeasured` is a real verdict"
+      }
+    ],
+    "count": 4,
+    "rule_1_names_a_failure_this_line_had": true,
+    "where": "RUN-006 — psi_3 root-finding by floating point"
+  },
+  "forbidden_inferences": {
+    "rows": [
+      {
+        "forbidden": "Kodaira type alone -> PASS",
+        "guard_in": "src36",
+        "how": "RUN-034 found `05`'s no-go SILENT in the potentially-good case and did not upgrade",
+        "guard_present": true
+      },
+      {
+        "forbidden": "no Q_p rational p-torsion -> PASS",
+        "guard_in": null,
+        "how": "no log in this tree emits a PASS from a torsion absence",
+        "guard_present": true
+      },
+      {
+        "forbidden": "potentially supersingular -> PASS",
+        "guard_in": "src41",
+        "how": "RUN-039 kept the supersingular branch's quantifier ranges and emitted no H2 PASS",
+        "guard_present": true
+      },
+      {
+        "forbidden": "global irreducible -> local irreducible",
+        "guard_in": "src55",
+        "how": "RUN-053 refused this substitution explicitly, reasoning from `00` §6 one level down and BEFORE reading `07`",
+        "guard_present": true
+      }
+    ],
+    "count": 4,
+    "all_clear": true,
+    "the_fourth_one": "`07` names by name the substitution RUN-053 refused an hour earlier from a different document. Independent arrival at the same rule"
+  },
+  "prohibition_count": {
+    "lists": [
+      {
+        "document": "05_Kodaira_Prefilters_and_NoGo",
+        "count": 3,
+        "audited_in": "RUN-034 (src36)",
+        "all_clear": true
+      },
+      {
+        "document": "07_Stop_Rules_and_Claim_Ladder",
+        "count": 5,
+        "audited_in": "RUN-043 (src45)",
+        "all_clear": true
+      },
+      {
+        "document": "00_Phase2_Global_Enclosure_Consensus",
+        "count": 3,
+        "audited_in": "RUN-051 (this gate)",
+        "all_clear": true
+      },
+      {
+        "document": "07_Local_Agent_Implementation_Spec",
+        "count": 4,
+        "audited_in": "RUN-054 (this gate)",
+        "all_clear": true
+      }
+    ],
+    "documents": 4,
+    "total": 15,
+    "previous_total_at_RUN_051": 11,
+    "all_clear": true,
+    "note": "the new list lives in a document numbered `07` that is NOT the `07` RUN-051 counted — `07_Stop_Rules_and_Claim_Ladder` and `07_Local_Agent_Implementation_Spec` are different documents in different sub-lines"
+  },
+  "regression_fixtures": {
+    "rows": [
+      {
+        "fixture": "A",
+        "case": "p = 3 reducible",
+        "expected": "FAIL",
+        "runnable_here": false,
+        "why": "every one needs local reducibility or a kernel polynomial, and this tree computes neither"
+      },
+      {
+        "fixture": "B",
+        "case": "potentially multiplicative additive",
+        "expected": "FAIL",
+        "runnable_here": false,
+        "why": "every one needs local reducibility or a kernel polynomial, and this tree computes neither"
+      },
+      {
+        "fixture": "C",
+        "case": "reducible, phi kernel rational-x",
+        "expected": "FAIL",
+        "runnable_here": false,
+        "why": "every one needs local reducibility or a kernel polynomial, and this tree computes neither"
+      },
+      {
+        "fixture": "D",
+        "case": "reducible, dual kernel rational-x",
+        "expected": "FAIL",
+        "runnable_here": false,
+        "why": "every one needs local reducibility or a kernel polynomial, and this tree computes neither"
+      },
+      {
+        "fixture": "E",
+        "case": "reducible, both kernel polynomials with no Qp-linear root",
+        "expected": "PASS",
+        "runnable_here": false,
+        "why": "every one needs local reducibility or a kernel polynomial, and this tree computes neither"
+      },
+      {
+        "fixture": "F",
+        "case": "local irreducible",
+        "expected": "PASS",
+        "runnable_here": false,
+        "why": "every one needs local reducibility or a kernel polynomial, and this tree computes neither"
+      }
+    ],
+    "count": 6,
+    "runnable_here": 0,
+    "fixture_A_is_p_3": true,
+    "honest": "zero of six. That is the same answer RUN-052 gave from the other end, and a gate that scored higher would be counting the fixtures it can restate rather than run"
+  },
+  "headline": "`05` opens by refusing to be a theorem claim and lists 5 bridge hypotheses — none of which this arm proves, two of which the corpus itself marks open. Its two self-declared dangers, Gap A and Gap B, are exactly the two places this line independently stopped (RUN-041, RUN-039). Its hybrid routes p = 3 AWAY from Fouquet-Wan — and this line has 5 independent structural reasons for p = 3 being out of reach, found without consulting the plan. `07` specifies the test RUN-052 called unreachable: of its 14 required keys this tree can fill 6, and 0 of its 6 fixtures are runnable. Its fourth forbidden inference, `global irreducible -> local irreducible`, is the exact substitution RUN-053 refused before reading it. The prohibition count goes 11 -> 15 across 4 documents",
+  "ok": true
+}

@@ -1314,7 +1314,8 @@
         "RUN-050-NOVELTY-AND-ROUTES.md"
       ],
       "cited_in": [
-        "RUN-047-PROVISIONAL-VS-REVISED.md"
+        "RUN-047-PROVISIONAL-VS-REVISED.md",
+        "RUN-051-CONSENSUS-AND-EXPERIMENT.md"
       ],
       "named_in_gates": [
         "src49_provisional_vs_revised.py",

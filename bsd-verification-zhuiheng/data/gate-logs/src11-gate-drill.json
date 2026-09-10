@@ -53,7 +53,9 @@
     "src51_source_audits",
     "src52_novelty_and_routes",
     "src53_consensus_and_experiment",
-    "src54_compiler_targets_and_v03"
+    "src54_compiler_targets_and_v03",
+    "src55_local_isogeny_kernel",
+    "src56_family_schema_and_spec"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -141,7 +143,9 @@
     "source-audits": true,
     "novelty-and-routes": true,
     "consensus-and-experiment": true,
-    "compiler-targets": true
+    "compiler-targets": true,
+    "local-isogeny-kernel": true,
+    "family-schema-and-spec": true
   },
   "defects": [
     {
@@ -382,7 +386,8 @@
         "fw-h3-compiler",
         "odd-additive-barrier",
         "provisional-vs-revised",
-        "compiler-targets"
+        "compiler-targets",
+        "local-isogeny-kernel"
       ],
       "caught_by_the_named_check": true
     },
@@ -403,7 +408,8 @@
         "fw-h3-compiler",
         "odd-additive-barrier",
         "provisional-vs-revised",
-        "compiler-targets"
+        "compiler-targets",
+        "local-isogeny-kernel"
       ],
       "caught_by_the_named_check": true
     },
@@ -1060,6 +1066,105 @@
       "named_check": "q9-census-closure",
       "checks_that_went_red": [
         "q9-census-closure"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "04's chain drops the `p` odd hypothesis from step 2, where p = 2 makes the clause vacuous",
+      "kind": "code",
+      "named_check": "local-isogeny-kernel",
+      "checks_that_went_red": [
+        "local-isogeny-kernel"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the closed form goes back to (p-1) % 2, which is the divisibility backwards",
+      "kind": "code",
+      "named_check": "local-isogeny-kernel",
+      "checks_that_went_red": [
+        "local-isogeny-kernel"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "omega squared is reported trivial at every prime",
+      "kind": "code",
+      "named_check": "local-isogeny-kernel",
+      "checks_that_went_red": [
+        "local-isogeny-kernel"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the two kernel tests are reported mutually exclusive at p = 3 too",
+      "kind": "code",
+      "named_check": "local-isogeny-kernel",
+      "checks_that_went_red": [
+        "local-isogeny-kernel"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the precondition is reported settled by RUN-036's global surjectivity",
+      "kind": "code",
+      "named_check": "local-isogeny-kernel",
+      "checks_that_went_red": [
+        "local-isogeny-kernel"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "05's five bridge hypotheses are scored as all proved",
+      "kind": "code",
+      "named_check": "family-schema-and-spec",
+      "checks_that_went_red": [
+        "family-schema-and-spec"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "05's Gap A is reported closed",
+      "kind": "code",
+      "named_check": "family-schema-and-spec",
+      "checks_that_went_red": [
+        "family-schema-and-spec"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the p = 3 reasons come back empty, so the count would be typed from prose",
+      "kind": "code",
+      "named_check": "family-schema-and-spec",
+      "checks_that_went_red": [
+        "family-schema-and-spec"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "07's verdict key fw17_h2 is reported fillable in this tree",
+      "kind": "code",
+      "named_check": "family-schema-and-spec",
+      "checks_that_went_red": [
+        "family-schema-and-spec"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the prohibition count merges the two documents numbered 07, losing four",
+      "kind": "code",
+      "named_check": "family-schema-and-spec",
+      "checks_that_went_red": [
+        "family-schema-and-spec"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "07's six regression fixtures are scored runnable here",
+      "kind": "code",
+      "named_check": "family-schema-and-spec",
+      "checks_that_went_red": [
+        "family-schema-and-spec"
       ],
       "caught_by_the_named_check": true
     },
@@ -2230,6 +2335,16 @@
   ],
   "controls": [
     {
+      "control": "05's five bridge hypotheses listed in reverse order",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the cyclotomic check run to bound 500 instead of 200 — 95 primes, not 46",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
       "control": "06's four success-gate conditions listed in reverse order",
       "checks_that_went_red": [],
       "undisturbed": true
@@ -2436,11 +2551,11 @@
     }
   ],
   "totals": {
-    "defects": 212,
-    "caught_by_the_named_check": 212,
+    "defects": 223,
+    "caught_by_the_named_check": 223,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 41,
+    "controls": 43,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,
