@@ -1,0 +1,239 @@
+{
+  "gate": "src52 — the novelty rule and the route matrix",
+  "source": "26_Novelty_Search_Log, 01_Phase2_Route_Matrix",
+  "novelty_rule": {
+    "document_found": true,
+    "the_box": "NO HIT != NOVELTY PROOF",
+    "box_present": true,
+    "searches_were_arXiv": true,
+    "remaining_steps": [
+      "MathSciNet / zbMATH / Google Scholar citation chaining",
+      "search Fouquet–Wan's citing papers",
+      "a number theorist referee checking whether it is a direct corollary of some general theorem",
+      "check the 2026 preprints"
+    ],
+    "steps_this_arm_can_do": [],
+    "why_none": "all four are literature work against external databases. This tree has no external access, and the standing rule on unpublished AMRAL research forbids sending it to a third-party provider while it lives only on GitHub",
+    "so": "`26`'s own box is the finding: a search that returned nothing is not a proof of novelty, and this arm can neither extend the search nor score the box as passed"
+  },
+  "no_round_claims_novelty": {
+    "reports_scanned": 50,
+    "mentions": 21,
+    "refusals": 11,
+    "classified_descriptive": 10,
+    "unaccounted": [],
+    "no_unaccounted_mention": true,
+    "rows": [
+      {
+        "report": "RUN-009-PHASE2-DENSITY.md",
+        "refused": true,
+        "classified_as_descriptive": false,
+        "why_not_a_claim": null,
+        "sentence": "* **It does not check the novelty question**, which [`20_Adversarial_Referee_Verdict`](../../../amral/public/bsd/phase2/files/20_Adversarial_Referee_V"
+      },
+      {
+        "report": "RUN-019-WITNESS-NETWORK.md",
+        "refused": false,
+        "classified_as_descriptive": true,
+        "why_not_a_claim": "quoting Phase 0's own freeze rule",
+        "sentence": "Phase 0's `00_BSD_Global_Enclosure_Consensus` §6 freezes any route that for three consecutive rounds only increases numerical precision, restates BSD,"
+      },
+      {
+        "report": "RUN-030-696E1-CERTIFICATE.md",
+        "refused": false,
+        "classified_as_descriptive": true,
+        "why_not_a_claim": "quoting `28_Submission_Gate`'s checklist, whose boxes this arm does not tick",
+        "sentence": "```text [ ] Independent expert referee reproduces all source mappings [ ] Check latest versions/publication status of BSTW and Fouquet–Wan [ ] MathSci"
+      },
+      {
+        "report": "RUN-030-696E1-CERTIFICATE.md",
+        "refused": true,
+        "classified_as_descriptive": false,
+        "why_not_a_claim": null,
+        "sentence": "| box | this arm | | --- | --- | | independent expert referee | **not ours.** A referee is a person | | BSTW / Fouquet–Wan publication status | **not "
+      },
+      {
+        "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
+        "refused": false,
+        "classified_as_descriptive": true,
+        "why_not_a_claim": "describing what `27` defers, not claiming the result is novel",
+        "sentence": "**Of the five items `18` hands to a referee, `27` answers one — its proof router *is* the citation chain `18` asked for — defers one to a novelty audi"
+      },
+      {
+        "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
+        "refused": false,
+        "classified_as_descriptive": true,
+        "why_not_a_claim": "reporting the labels the documents carry",
+        "sentence": "The claim label is consistent across all three documents: `18` says *Provisional Derived Theorem*, `20` upgrades to *DERIVED THEOREM CANDIDATE* while "
+      },
+      {
+        "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
+        "refused": true,
+        "classified_as_descriptive": false,
+        "why_not_a_claim": null,
+        "sentence": "| item | `27` | status | | --- | --- | --- | | exact convention match between FW's modular representation and elliptic `E[p]` at the nonsplit multipli"
+      },
+      {
+        "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
+        "refused": true,
+        "classified_as_descriptive": false,
+        "why_not_a_claim": null,
+        "sentence": "* `18`: **Provisional Derived Theorem**, explicitly not *Established New Theorem* — and it says why: not a visible mathematical gap, but the stage whe"
+      },
+      {
+        "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
+        "refused": true,
+        "classified_as_descriptive": false,
+        "why_not_a_claim": null,
+        "sentence": "* `20`: upgrades to **DERIVED THEOREM CANDIDATE**, refusing **NEW THEOREM** because novelty is a separate gate."
+      },
+      {
+        "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
+        "refused": false,
+        "classified_as_descriptive": true,
+        "why_not_a_claim": "quoting `27`'s own next rung",
+        "sentence": "* `27`: carries **DERIVED THEOREM CANDIDATE** and names **PREPRINT CANDIDATE** as what a novelty/citation referee could unlock."
+      },
+      {
+        "report": "RUN-047-PROVISIONAL-VS-REVISED.md",
+        "refused": true,
+        "classified_as_descriptive": false,
+        "why_not_a_claim": null,
+        "sentence": "* **Novelty is untouched.** `26_Novelty_Search_Log` is not a subject of any round in this tree, and whether the result is new is not a question this a"
+      },
+      {
+        "report": "RUN-050-NOVELTY-AND-ROUTES.md",
+        "refused": true,
+        "classified_as_descriptive": false,
+        "why_not_a_claim": null,
+        "sentence": "# RUN-050 — The novelty rule this arm cannot advance, and the route matrix it does not follow"
+      }
+    ],
+    "why_scanned_this_way": "a mention is not a claim, and a crude refusal-word test called five quotations assertions. Every sentence carrying a novelty term must be a refusal or one of the classified quotations; a new one is unaccounted and turns the check red"
+  },
+  "route_matrix": {
+    "rows": [
+      {
+        "route": "Higher 2-power descent",
+        "verdict": "STOP as mainline",
+        "documents_mapped": [],
+        "documents_this_line_made_a_subject": [],
+        "count": 0,
+        "of": 0
+      },
+      {
+        "route": "Non-semistable + existing odd-p patchwork",
+        "verdict": "GO as baseline",
+        "documents_mapped": [
+          "12_Hybrid_Odd_Prime_Router",
+          "17_696e1_All_Prime_Router",
+          "27_Revised_Derived_Theorem_Candidate",
+          "18_Provisional_Derived_Theorem"
+        ],
+        "documents_this_line_made_a_subject": [
+          "12_Hybrid_Odd_Prime_Router",
+          "17_696e1_All_Prime_Router",
+          "18_Provisional_Derived_Theorem",
+          "27_Revised_Derived_Theorem_Candidate"
+        ],
+        "count": 4,
+        "of": 4
+      },
+      {
+        "route": "Fouquet–Wan arbitrary reduction",
+        "verdict": "PRIMARY GO",
+        "documents_mapped": [
+          "02_Fouquet_Wan_Hypothesis_Compiler",
+          "03_FW_H2_Jordan_Holder_Lemma",
+          "08_FW_Weight2_Exact_Translation",
+          "09_FW_H3_Exact_Compiler",
+          "10_FW_H2_and_Ordinary_Obstruction",
+          "11_Derived_Supersingular_FW_Bridge",
+          "04_Finite_Exceptional_Prime_Problem",
+          "23_FW_Supersingular_Source_Audit"
+        ],
+        "documents_this_line_made_a_subject": [
+          "02_Fouquet_Wan_Hypothesis_Compiler",
+          "03_FW_H2_Jordan_Holder_Lemma",
+          "04_Finite_Exceptional_Prime_Problem",
+          "08_FW_Weight2_Exact_Translation",
+          "09_FW_H3_Exact_Compiler",
+          "10_FW_H2_and_Ordinary_Obstruction",
+          "11_Derived_Supersingular_FW_Bridge",
+          "23_FW_Supersingular_Source_Audit"
+        ],
+        "count": 8,
+        "of": 8
+      },
+      {
+        "route": "BCS ordinary non-semistable",
+        "verdict": "supporting route",
+        "documents_mapped": [
+          "22_Odd_Prime_Source_Audit"
+        ],
+        "documents_this_line_made_a_subject": [
+          "22_Odd_Prime_Source_Audit"
+        ],
+        "count": 1,
+        "of": 1
+      },
+      {
+        "route": "Full rational 2-torsion",
+        "verdict": "HOLD",
+        "documents_mapped": [],
+        "documents_this_line_made_a_subject": [],
+        "count": 0,
+        "of": 0
+      },
+      {
+        "route": "Analytic rank 1",
+        "verdict": "HOLD",
+        "documents_mapped": [],
+        "documents_this_line_made_a_subject": [],
+        "count": 0,
+        "of": 0
+      },
+      {
+        "route": "Prime conductor",
+        "verdict": "niche",
+        "documents_mapped": [],
+        "documents_this_line_made_a_subject": [],
+        "count": 0,
+        "of": 0
+      },
+      {
+        "route": "High rank 2+",
+        "verdict": "separate Phase later",
+        "documents_mapped": [],
+        "documents_this_line_made_a_subject": [],
+        "count": 0,
+        "of": 0
+      }
+    ],
+    "primary_go_coverage": "8 of 8",
+    "primary_go_is_the_most_covered": true,
+    "stop_route_untouched": true,
+    "the_mapping_is_a_judgement": "documents are assigned to routes by reading, not by a field in the corpus. What is computed is the count given that assignment",
+    "documents_subject_total": 26
+  },
+  "off_priority_rounds": {
+    "rows": [
+      {
+        "round": "RUN-026",
+        "route": "Analytic rank 1",
+        "verdict": "HOLD",
+        "why": "the rank-1 BSD identity at 37a1 and 43a1, closed with every term computed in this tree. It verified an identity, not an extension of the family theorem"
+      },
+      {
+        "round": "RUN-023",
+        "route": "High rank 2+",
+        "verdict": "separate Phase later",
+        "why": "the rank-2 identity at 389.a1, closing at ratio 1.0. Same shape: a document existed and was checkable"
+      }
+    ],
+    "count": 2,
+    "reading": "`01` orders routes by extensibility of the family theorem. A verification arm orders by what has been written down and is checkable. The two orderings are different and should be — but the difference is worth measuring rather than assuming, and these two rounds are where it shows"
+  },
+  "headline": "`26`'s box — NO HIT is not a novelty proof — stands, and none of the four steps it still requires is work this arm can do: all four are external literature searches, and the standing rule forbids routing unpublished work to a third party. 21 sentences across 50 reports carry a novelty term and every one is a refusal or a classified quotation. `01`'s PRIMARY GO route is the most covered at 8 of 8 and its STOP route is untouched — but two rounds worked routes marked HOLD and separate Phase later, which is named rather than defended",
+  "ok": true
+}

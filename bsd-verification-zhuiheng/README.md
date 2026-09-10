@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-048:
-  every gate is drilled — `src00`–`src10` and `src12`–`src50`, 192 defects, 192
-  caught by the named check, 37 controls undisturbed, over 76 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-050:
+  every gate is drilled — `src00`–`src10` and `src12`–`src52`, 200 defects, 200
+  caught by the named check, 39 controls undisturbed, over 78 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -151,6 +151,8 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [046](./reports/RUN-046-H2-CHAIN-AND-H3-DISPUTE.md) | the H2 chain's consistency, and the corpus's own H3 disagreement | `src48` | `03`'s Jordan–Hölder lemma and `08`'s ratio test verified **the same statement over 22,140 character pairs, 0 mismatches**; `10`'s single congruence is complete at every good ordinary `p ≥ 5` and **not at `p = 3`**, because `χ_cyc²` is unramified exactly when `p − 1 ∣ 2`; and **`02` forbids equating the divisibility criterion with H3 while `08` and `09` do exactly that** — reported, not resolved |
 | [047](./reports/RUN-047-PROVISIONAL-VS-REVISED.md) | the derived theorem before and after the referee | `src49` | **three definitions of `𝒫`, one set** — `18`/`27`'s three conditions, this tree's test and Referee A's five all give the same 19 primes below 4,000 and 23 below 5,000; **one of the document's conditions is implied by the other two** (RUN-018 knew, over a range fifty times wider — what is new is that it sits in the corpus's own definition); of `18`'s five referee items `27` answers one, defers one, leaves three; and `27`'s six-branch router is a **partition**, with the witnesses it names computed here from the other end |
 | [048](./reports/RUN-048-CANDIDATE-SCHEMA-AND-SIEVE.md) | `13`'s schema and `14`'s sieve, control included | `src50` | `14`'s odd local table recomputes exactly; the control is **found by conductor, not quoted**, and **has a nonsplit prime and still fails** — one reservoir, no distinct witness at `p = 29`, which is `14`'s whole point and RUN-033's lemma 2 returning nothing for the first time; `13`'s B1/B2 are RUN-033's lemma 1 and RUN-037's premise under other names; of its six obligations **1 cited, 3 partly, 2 open, none closed** |
+| [049](./reports/RUN-049-SOURCE-AUDITS.md) | the corpus's own source audits, audited | `src51` | **two of this arm's conclusions move**: `23` quotes the exact local condition RUN-046 said this arm did not hold, and its weight-2 specialisation `a_ℓ = −1` checks out (`a₂₉ = −1` nonsplit, `a₃ = +1` split) — so the derivation `02` asked for is in the corpus, and `18`'s first referee item is **addressed**, not open. And **`22` invokes maximality where Skinner C lists irreducibility** — the stronger premise is the one RUN-036 could not certify at 3, and `22`'s case C is `p = 3` |
+| [050](./reports/RUN-050-NOVELTY-AND-ROUTES.md) | `26`'s novelty rule and `01`'s route matrix | `src52` | `NO HIT ≠ NOVELTY PROOF` stands and **none of its four remaining steps is work this arm can do**; across 50 reports **21 novelty-term sentences, 11 refusals, 10 pinned quotations, 0 unaccounted** — including this round's own five, pinned rather than exempted; `01`'s PRIMARY GO route is best covered and its STOP route untouched, while **two rounds worked HOLD routes**, named rather than defended |
 
 ## Layout
 

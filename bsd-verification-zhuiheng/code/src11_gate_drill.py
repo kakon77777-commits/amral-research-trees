@@ -137,6 +137,8 @@ import src47_fw_hypothesis_compiler as comp47             # noqa: E402
 import src48_h2_chain_and_h3_dispute as chain48           # noqa: E402
 import src49_provisional_vs_revised as prev49             # noqa: E402
 import src50_candidate_schema_and_sieve as schema50       # noqa: E402
+import src51_source_audits as audits51                    # noqa: E402
+import src52_novelty_and_routes as routes52               # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -2428,13 +2430,92 @@ def check_candidate_schema() -> bool:
 
 
 
+def check_source_audits() -> bool:
+    """`22` and `23`, the corpus's own citation audits.
+
+    `23`'s weight-2 specialisation must keep checking out — a_29 = -1 with 29
+    nonsplit, a_3 = +1 with 3 split — because that arithmetic is the whole of
+    what this arm can verify about the convention. The cited hypotheses must
+    stay marked cited: `22`'s case C rests on reading a theorem statement, and a
+    version that scored it computed would be reporting a reading as arithmetic.
+    And the maximal-versus-irreducible finding must survive: irreducible at
+    every Mazur degree, maximality NOT certified at 3, Borel refuted there.
+    """
+    c = audits51.case_hypotheses()
+    if c["total_hypotheses"] < 12:
+        return False
+    if not c["verdict_counts"].get("cited"):
+        return False              # the reading must stay a reading
+    mvi = audits51.maximal_versus_irreducible()
+    if not mvi["irreducible_at_every_Mazur_degree"]:
+        return False
+    if not mvi["maximality_NOT_certified_at_3"]:
+        return False
+    if not mvi["borel_refuted_at_3"]:
+        return False
+    if mvi["maximality_certified_count"] < 30:
+        return False
+    h3 = audits51.h3_convention()
+    if h3["a_29"] != -1 or not h3["29_is_nonsplit"]:
+        return False
+    if h3["a_3"] != 1 or not h3["3_is_split"]:
+        return False
+    if not h3["the_specialisation_checks_out"]:
+        return False
+    if not h3["residual_ramification"]["any_odd_p_not_29_keeps_it_ramified"]:
+        return False
+    mv = audits51.what_moves()
+    if not mv["RUN_046"]["the_quote_is_present"]:
+        return False
+    return mv["RUN_047"]["corrected_count"] == {"addressed": 2, "deferred": 1,
+                                                "open": 2}
+
+
+def check_novelty_and_routes() -> bool:
+    """`26`'s box and `01`'s matrix, against what this line actually did.
+
+    The box must stay unscoreable: zero of its four steps are work this arm can
+    do, and a gate that claimed one would be claiming external access it does
+    not have. Every novelty-term sentence must be a refusal or a PINNED
+    quotation — unpinning them must turn this red, since the pins are the only
+    thing separating a quotation from a claim. `01`'s STOP route must stay
+    untouched and PRIMARY GO best covered. And the two rounds on non-prioritised
+    routes must stay named: hiding them would make the coverage look like
+    obedience to a plan this arm does not follow.
+    """
+    n = routes52.novelty_rule()
+    if not n["document_found"] or not n["box_present"]:
+        return False
+    if n["steps_this_arm_can_do"]:
+        return False
+    if len(n["remaining_steps"]) != 4:
+        return False
+    c = routes52.no_round_claims_novelty()
+    if c["unaccounted"] or not c["no_unaccounted_mention"]:
+        return False
+    if c["classified_descriptive"] != len(routes52.CLASSIFIED_MENTIONS):
+        return False
+    if c["mentions"] < 8 or c["refusals"] < 4:
+        return False
+    r = routes52.route_matrix()
+    if not r["stop_route_untouched"]:
+        return False
+    if not r["primary_go_is_the_most_covered"]:
+        return False
+    o = routes52.off_priority_rounds()
+    return o["count"] == 2 and all(x["verdict"] in ("HOLD",
+                                                    "separate Phase later")
+                                   for x in o["rows"])
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
     net22, p5u, led24, cv25, r2bsd, agent27, r1bsd, cov29, p1num, q9, cert32,
     mazur33, refA34, gcd35, nogo36, bridge37, surj38, h3c39,
     h2o40, brg41, bar42, fin43, cmp44, ladder45, cheb46,
-    comp47, chain48, prev49, schema50))
+    comp47, chain48, prev49, schema50, audits51, routes52))
 
 
 CHECKS = {
@@ -2514,6 +2595,8 @@ CHECKS = {
     "h2-chain": check_h2_chain,
     "provisional-vs-revised": check_provisional_vs_revised,
     "candidate-schema": check_candidate_schema,
+    "source-audits": check_source_audits,
+    "novelty-and-routes": check_novelty_and_routes,
 }
 
 
@@ -2818,6 +2901,26 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("a_29 comes back +1, so 23's weight-2 sign stops selecting the nonsplit "
+     "prime", "code", "source-audits",
+     lambda: patch(audits51, "a_at", lambda p: 1)),
+    ("maximality is reported certified at 3, where RUN-036 could not", "code",
+     "source-audits",
+     lambda: patch(audits51, "maximal_versus_irreducible", _maximal_at_3)),
+    ("22's cited hypotheses are scored as computed", "code", "source-audits",
+     lambda: patch(audits51, "case_hypotheses", _all_hypotheses_computed)),
+    ("23's quoted condition is reported absent, so nothing moves", "code",
+     "source-audits", lambda: patch(audits51, "what_moves", _nothing_moves)),
+    ("26's box is reported as a step this arm can take", "code",
+     "novelty-and-routes",
+     lambda: patch(routes52, "novelty_rule", _novelty_actionable)),
+    ("the classified novelty quotations are unpinned", "code",
+     "novelty-and-routes", lambda: patch(routes52, "CLASSIFIED_MENTIONS", ())),
+    ("01's STOP route is reported covered", "code", "novelty-and-routes",
+     lambda: patch(routes52, "route_matrix", _stop_covered)),
+    ("the two rounds on non-prioritised routes are hidden", "code",
+     "novelty-and-routes",
+     lambda: patch(routes52, "off_priority_rounds", _no_off_priority)),
     ("18's set definition drops the cubic-irreducibility condition", "code",
      "provisional-vs-revised",
      lambda: patch(prev49, "in_P_per_18", _in_P_without_cubic)),
@@ -3112,6 +3215,12 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("Mazur's twelve degrees listed in a different order",
+     lambda: patch(audits51, "MAZUR",
+                   (163, 67, 43, 37, 19, 17, 13, 11, 7, 5, 3, 2))),
+    ("the novelty term list extended with a synonym the corpus never uses",
+     lambda: patch(routes52, "NOVELTY_TERMS",
+                   routes52.NOVELTY_TERMS + ("hitherto unknown",))),
     ("18's (q/29) = 1 condition dropped, which the other two imply — "
      "Frob_q in A_3 is trivial on Q(sqrt -174), and q = 1 mod 24 gives "
      "(-6/q) = 1",
@@ -3336,6 +3445,55 @@ _true_level2 = comp47.level2
 _true_h1 = comp47.h1
 _true_three_defs = prev49.three_definitions
 _true_find = schema50.find_by_conductor
+_true_maximal_vs_irr = audits51.maximal_versus_irreducible
+_true_case_hypotheses = audits51.case_hypotheses
+_true_what_moves = audits51.what_moves
+_true_novelty_rule = routes52.novelty_rule
+_true_route_matrix = routes52.route_matrix
+_true_off_priority = routes52.off_priority_rounds
+
+
+def _maximal_at_3():
+    d = dict(_true_maximal_vs_irr())
+    d["maximality_NOT_certified_at_3"] = False
+    d["maximality_certified_at"] = sorted(
+        set(d["maximality_certified_at"]) | {3})
+    return d
+
+
+def _all_hypotheses_computed():
+    """Every hypothesis scored computed, citations included — which is the
+    distinction `22` itself keeps and RUN-032 had to make for Referee A."""
+    d = dict(_true_case_hypotheses())
+    d["rows"] = [{**r, "hypotheses": [{**h, "verdict": "computed"}
+                                      for h in r["hypotheses"]]}
+                 for r in d["rows"]]
+    d["verdict_counts"] = {"computed": d["total_hypotheses"]}
+    return d
+
+
+def _nothing_moves():
+    d = dict(_true_what_moves())
+    d["RUN_046"] = dict(d["RUN_046"], the_quote_is_present=False)
+    return d
+
+
+def _novelty_actionable():
+    d = dict(_true_novelty_rule())
+    d["steps_this_arm_can_do"] = [d["remaining_steps"][0]]
+    return d
+
+
+def _stop_covered():
+    d = dict(_true_route_matrix())
+    d["stop_route_untouched"] = False
+    return d
+
+
+def _no_off_priority():
+    return {"rows": [], "count": 0, "reading": "hidden"}
+
+
 _true_in_P_per_18 = prev49.in_P_per_18
 _true_router_partition = prev49.router_partition
 _true_audit_items = prev49.audit_items

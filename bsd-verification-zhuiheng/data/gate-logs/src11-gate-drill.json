@@ -49,7 +49,9 @@
     "src47_fw_hypothesis_compiler",
     "src48_h2_chain_and_h3_dispute",
     "src49_provisional_vs_revised",
-    "src50_candidate_schema_and_sieve"
+    "src50_candidate_schema_and_sieve",
+    "src51_source_audits",
+    "src52_novelty_and_routes"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -133,7 +135,9 @@
     "fw-compiler": true,
     "h2-chain": true,
     "provisional-vs-revised": true,
-    "candidate-schema": true
+    "candidate-schema": true,
+    "source-audits": true,
+    "novelty-and-routes": true
   },
   "defects": [
     {
@@ -1053,6 +1057,78 @@
       "caught_by_the_named_check": true
     },
     {
+      "defect": "a_29 comes back +1, so 23's weight-2 sign stops selecting the nonsplit prime",
+      "kind": "code",
+      "named_check": "source-audits",
+      "checks_that_went_red": [
+        "source-audits"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "maximality is reported certified at 3, where RUN-036 could not",
+      "kind": "code",
+      "named_check": "source-audits",
+      "checks_that_went_red": [
+        "source-audits"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "22's cited hypotheses are scored as computed",
+      "kind": "code",
+      "named_check": "source-audits",
+      "checks_that_went_red": [
+        "source-audits"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "23's quoted condition is reported absent, so nothing moves",
+      "kind": "code",
+      "named_check": "source-audits",
+      "checks_that_went_red": [
+        "source-audits"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "26's box is reported as a step this arm can take",
+      "kind": "code",
+      "named_check": "novelty-and-routes",
+      "checks_that_went_red": [
+        "novelty-and-routes"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the classified novelty quotations are unpinned",
+      "kind": "code",
+      "named_check": "novelty-and-routes",
+      "checks_that_went_red": [
+        "novelty-and-routes"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "01's STOP route is reported covered",
+      "kind": "code",
+      "named_check": "novelty-and-routes",
+      "checks_that_went_red": [
+        "novelty-and-routes"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the two rounds on non-prioritised routes are hidden",
+      "kind": "code",
+      "named_check": "novelty-and-routes",
+      "checks_that_went_red": [
+        "novelty-and-routes"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
       "defect": "18's set definition drops the cubic-irreducibility condition",
       "kind": "code",
       "named_check": "provisional-vs-revised",
@@ -1655,7 +1731,8 @@
         "reducibility-sieve",
         "mazur-degrees",
         "mod-ell-surjectivity",
-        "finite-exceptional"
+        "finite-exceptional",
+        "source-audits"
       ],
       "caught_by_the_named_check": true
     },
@@ -1892,7 +1969,8 @@
         "anchor-11a1",
         "bsd-sweep",
         "analytic-classification",
-        "base-certificate"
+        "base-certificate",
+        "source-audits"
       ],
       "caught_by_the_named_check": true
     },
@@ -2032,6 +2110,16 @@
     }
   ],
   "controls": [
+    {
+      "control": "Mazur's twelve degrees listed in a different order",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the novelty term list extended with a synonym the corpus never uses",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
     {
       "control": "18's (q/29) = 1 condition dropped, which the other two imply — Frob_q in A_3 is trivial on Q(sqrt -174), and q = 1 mod 24 gives (-6/q) = 1",
       "checks_that_went_red": [],
@@ -2219,11 +2307,11 @@
     }
   ],
   "totals": {
-    "defects": 192,
-    "caught_by_the_named_check": 192,
+    "defects": 200,
+    "caught_by_the_named_check": 200,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 37,
+    "controls": 39,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,
