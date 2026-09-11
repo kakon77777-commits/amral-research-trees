@@ -1,0 +1,123 @@
+{
+  "gate": "src58 — the rule behind each artefact, from the diffs, tested on the data",
+  "source": "02_Paper_vs_Current_Code_Audit",
+  "document_found": true,
+  "commits": {
+    "generator": "72867942accf94b9513857a2c0bae3895af8e9bc",
+    "old": "1a0489c3c3099dd0c248624e6621df73ae8f0d43",
+    "current": "31fae20c8df3f1f0383f41112b914d4995d5809d"
+  },
+  "three_rules": {
+    "generator_7286794": {
+      "rule": "non_isogeny_primes = set(bad_primes) and set([3,5,7])",
+      "found_as_removed_line_in_gen_to_old_diff": true,
+      "evaluates_to": "{3, 5, 7} unconditionally — see and_semantics()"
+    },
+    "old_1a0489c": {
+      "rule": "A := {3 if 3 | N or |a3| = 3} ∪ {5 if 5 | N} ∪ {7 if 7 | N}",
+      "found_as_added_line_in_gen_to_old_diff": true,
+      "found_as_removed_line_in_old_to_current_diff": true,
+      "character": "CONDITIONAL — weaker than both neighbours"
+    },
+    "current_31fae20": {
+      "rule": "for every p in {3, 5, 7}, E admits no rational p-isogeny; and separately a_3 != ±3",
+      "found_as_added_line_in_old_to_current_diff": true,
+      "a3_filter_added_in_old_to_current_diff": true,
+      "character": "unconditional again, plus E2 as its own filter"
+    },
+    "sequence": "strict -> relaxed -> strict + a_3",
+    "diffs_present": true
+  },
+  "and_semantics": {
+    "expression": "set(bad_primes) and set([3,5,7])",
+    "with_bad_primes_{2,7}": [
+      3,
+      5,
+      7
+    ],
+    "with_bad_primes_empty": [],
+    "base_curves_with_empty_bad_primes": 0,
+    "so_on_every_base_curve_it_is": [
+      3,
+      5,
+      7
+    ],
+    "what_this_is_not": "a claim about intent. `&` would have given bad_primes ∩ {3,5,7}, which is the OLD rule's shape; `and` gives {3,5,7}. Which was meant is not measurable here. What it evaluates to is"
+  },
+  "the_prediction": {
+    "isogeny_curves_in_removed_census": 1355,
+    "of_which_in_the_OLD_base": 1355,
+    "that_the_relaxed_rule_would_have_removed": 0,
+    "examples_tripped": [],
+    "that_the_strict_rule_removes": 1355,
+    "prediction_holds": true,
+    "reading": "every isogeny curve in the OLD base has its isogeny at a prime the relaxed rule does not inspect — 3 ∤ N with |a_3| != 3, or 5 ∤ N, or 7 ∤ N. That is why the OLD base kept them and the blob, frozen under the strict rule, never had them"
+  },
+  "the_three_artefacts": {
+    "blob_7286794": {
+      "keys": 39394,
+      "equals_base_minus_isogeny_set": true,
+      "rule": "strict {3,5,7}, no a_3"
+    },
+    "old_base_1a0489c": {
+      "curves": 40749,
+      "contains_all_isogeny_curves": true,
+      "contains_all_a3_curves": true,
+      "rule": "relaxed A-set"
+    },
+    "current_base_31fae20": {
+      "curves": 36687,
+      "equals_old_minus_iso_union_a3": true,
+      "removed": 4062,
+      "rule": "strict {3,5,7} + a_3 != ±3"
+    },
+    "all_three_consistent": true
+  },
+  "pins_02_demands": {
+    "pins": [
+      {
+        "pin": "paper version",
+        "state": "ABSENT",
+        "evidence": "no arXiv id or paper version string anywhere in the package"
+      },
+      {
+        "pin": "repository commit / file SHA",
+        "state": "PRESENT",
+        "evidence": "three commits, four blob SHA-1s, ecdata commit and shard SHA-256s in sources/PROVENANCE.md and run.log",
+        "check": true
+      },
+      {
+        "pin": "Sage version",
+        "state": "N/A BY SCOPE",
+        "evidence": "PROVENANCE.md: a Sage/LMFDB replay 'is intentionally not represented as completed here' — no Sage was run, so there is no version to pin",
+        "check": false
+      },
+      {
+        "pin": "LMFDB release",
+        "state": "PARTIAL",
+        "evidence": "no LMFDB release pinned; the ecdata commit 25cec5e is pinned instead, and ecdata is LMFDB's upstream for these tables"
+      },
+      {
+        "pin": "runtime flags",
+        "state": "N/A BY SCOPE",
+        "evidence": "skip_filter_S / skip_BSD_at_2_check appear only in the archived upstream source, never as recorded values — consistent with no Algorithm 2 run having happened"
+      }
+    ],
+    "present": 1,
+    "absent": 1,
+    "partial": 1,
+    "not_applicable_by_scope": 2,
+    "section_5_flags_recorded_in_metadata": false,
+    "section_7_rank_fields_demanded": [
+      "algebraic rank",
+      "analytic rank",
+      "special value nonvanishing",
+      "proof/evidence type"
+    ],
+    "section_7_rank_fields_in_base_record": [],
+    "section_7_count": "0 of 4",
+    "reading": "the package is an exact ARTEFACT census and says so; `02` §6's pins are for a REPRODUCTION. Two are N/A by that scope, one is present, one partial, and one — the paper version — is simply absent. §7's rank fields are 0 of 4, which matters because Theorem 2.18 is stated for analytic rank 0 and the package carries no rank evidence of either kind"
+  },
+  "headline": "Algorithm 1's isogeny condition went strict -> relaxed -> strict + a_3 across the three archived commits, and the twist blob was frozen at the first. The relaxed rule predicts that all 1,355 isogeny curves in the OLD base escape its trigger — 0 do not. Blob = base minus isogeny set, CURRENT = OLD minus (isogeny ∪ a_3): True. The generator's `set(bad_primes) and set([3,5,7])` evaluates to {3,5,7} on every curve, whatever was meant. Of `02` §6's five pins: 1 present, 1 partial, 1 absent, 2 N/A by the package's stated scope; §7's rank fields: 0 of 4",
+  "ok": true
+}

@@ -143,6 +143,8 @@ import src53_consensus_and_experiment as consensus53      # noqa: E402
 import src54_compiler_targets_and_v03 as targets54        # noqa: E402
 import src55_local_isogeny_kernel as kern55               # noqa: E402
 import src56_family_schema_and_spec as schema56           # noqa: E402
+import src57_theorem_2_18_condition_map as cmap57         # noqa: E402
+import src58_paper_vs_code_provenance as prov58           # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -2733,6 +2735,110 @@ def check_family_schema_and_spec() -> bool:
 
 
 
+def check_condition_map() -> bool:
+    """Theorem 2.18's condition map on the whole Phase 1 census.
+
+    E2 must agree with the census BY SET, not by count — a swapped pair of
+    curves keeps the count at 2,709 and is a different answer. E4 must be the
+    ∃-form: for every p | N SOME q ≠ p with p ∤ v_q(Δ); the ∀-form is a
+    different, stricter condition that this base does not satisfy. The 2-torsion
+    root finder must resolve every CLZ20 curve — the float version came back
+    unresolved on 2,154 of 3,747, and an unresolved 8b is not a checked 8b. The
+    twist conditions must stay green on a sample AND consistent with their own
+    failure table. And the base must be the 40,749 RUN-004 fixed: a gate that
+    ran on a different population would report numbers about something else.
+    """
+    base = cmap57.load_base()
+    removed = cmap57.load_removed()
+    if len(base) != 40749 or len(removed) != 4062:
+        return False
+    e1 = cmap57.e1_semistable(base)
+    if not e1["all_pass"] or e1["curves"] != 40749:
+        return False
+    e2 = cmap57.e2_small_trace(base, removed)
+    if not e2["agree_exactly"] or e2["only_mine"] or e2["only_census"]:
+        return False
+    if e2["abs_a3_eq_3_recomputed"] != 2709:
+        return False
+    e4 = cmap57.e4_ramification(base)
+    if not e4["all_pass"] or e4["curves"] != 40749:
+        return False
+    if e4["prime_conductor_curves"] != 0:
+        return False
+    br = cmap57.branches(base)
+    if not br["matches_RUN_008"]:
+        return False
+    if br["8b_two_torsion_unresolved"] != 0:
+        return False
+    if br["8b_more_than_one_rational_root"] != 0:
+        return False
+    if not br["8b_all_three_nonsquare_conditions_hold"]:
+        return False
+    tw = cmap57.twist_conditions(base, cmap57.load_new_map(), limit=150)
+    if not tw["all_pass"] or tw["failures_by_condition"]:
+        return False
+    if tw["entries_checked"] < 500 or tw["labels_not_in_base"]:
+        return False
+    return cmap57.output_semantics()["converse_holds"] is False
+
+
+def check_paper_vs_code() -> bool:
+    """The three rules behind the three census artefacts, from the diffs.
+
+    Each rule's text must be FOUND in the archived diff, as an added or removed
+    line — a gate that reported the rules without locating them would be
+    restating the audit from memory. The `and` semantics must come back {3,5,7}
+    on every curve with 0 empty bad-prime sets: that is a Python fact, and a
+    version reporting the intersection would be reporting what was perhaps
+    intended rather than what ran. The prediction must hold with 0 tripped and
+    1,355 strict removals, since one tripped curve falsifies the whole account.
+    And 02's pins must stay 1 present / 1 partial / 1 absent / 2 N-A with zero
+    rank fields — scoring the paper version present, or inventing a rank column,
+    is the overclaim 02 §6–§7 exist to prevent.
+    """
+    base = cmap57.load_base()
+    removed = cmap57.load_removed()
+    rules = prov58.three_rules()
+    if not rules["diffs_present"]:
+        return False
+    g = rules["generator_7286794"]
+    o = rules["old_1a0489c"]
+    c = rules["current_31fae20"]
+    if not (g["found_as_removed_line_in_gen_to_old_diff"]
+            and o["found_as_added_line_in_gen_to_old_diff"]
+            and o["found_as_removed_line_in_old_to_current_diff"]
+            and c["found_as_added_line_in_old_to_current_diff"]
+            and c["a3_filter_added_in_old_to_current_diff"]):
+        return False
+    sem = prov58.and_semantics(base)
+    if sem["so_on_every_base_curve_it_is"] != [3, 5, 7]:
+        return False
+    if sem["base_curves_with_empty_bad_primes"] != 0:
+        return False
+    if sem["with_bad_primes_{2,7}"] != [3, 5, 7] or sem["with_bad_primes_empty"]:
+        return False
+    pred = prov58.the_prediction(base, removed)
+    if not pred["prediction_holds"]:
+        return False
+    if pred["that_the_relaxed_rule_would_have_removed"] != 0:
+        return False
+    if pred["that_the_strict_rule_removes"] != 1355:
+        return False
+    art = prov58.the_three_artefacts(base, removed)
+    if not art["all_three_consistent"]:
+        return False
+    if art["current_base_31fae20"]["removed"] != 4062:
+        return False
+    pins = prov58.pins_02_demands()
+    if (pins["present"], pins["partial"], pins["absent"],
+            pins["not_applicable_by_scope"]) != (1, 1, 1, 2):
+        return False
+    if pins["section_7_rank_fields_in_base_record"] != []:
+        return False
+    return pins["section_5_flags_recorded_in_metadata"] is False
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -2740,7 +2846,7 @@ COVERS = sorted(m.__name__ for m in (
     mazur33, refA34, gcd35, nogo36, bridge37, surj38, h3c39,
     h2o40, brg41, bar42, fin43, cmp44, ladder45, cheb46,
     comp47, chain48, prev49, schema50, audits51, routes52,
-    consensus53, targets54, kern55, schema56))
+    consensus53, targets54, kern55, schema56, cmap57, prov58))
 
 
 CHECKS = {
@@ -2826,6 +2932,8 @@ CHECKS = {
     "compiler-targets": check_compiler_targets,
     "local-isogeny-kernel": check_local_isogeny_kernel,
     "family-schema-and-spec": check_family_schema_and_spec,
+    "condition-map": check_condition_map,
+    "paper-vs-code": check_paper_vs_code,
 }
 
 
@@ -3130,6 +3238,36 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("E2's agreement with the census is scored by count rather than by set, "
+     "so a swapped pair passes", "code", "condition-map",
+     lambda: patch(cmap57, "e2_small_trace", _e2_by_count)),
+    ("a_p comes back as p itself, so every curve is supersingular and every "
+     "a_3 is 3", "code", "condition-map",
+     lambda: patch(cmap57, "a_p", lambda ainvs, p: p)),
+    ("E4 is read in the ∀-form — every q | N must witness — instead of the "
+     "∃-form", "code", "condition-map",
+     lambda: patch(cmap57, "e4_ramification", _e4_for_all)),
+    ("the 2-torsion root finder goes back to float bracketing on a Cauchy "
+     "bound", "code", "condition-map",
+     lambda: patch(cmap57, "integer_roots_of_monic_cubic",
+                   _float_roots_of_monic_cubic)),
+    ("the twist-condition failures are counted but all_pass is reported True "
+     "regardless", "code", "condition-map",
+     lambda: patch(cmap57, "twist_conditions", _twist_inconsistent)),
+    ("the relaxed rule is applied as if it were the strict one", "code",
+     "paper-vs-code",
+     lambda: patch(prov58, "relaxed_rule_removes", _relaxed_as_strict)),
+    ("the `and` expression is reported as evaluating to the intersection",
+     "code", "paper-vs-code",
+     lambda: patch(prov58, "and_semantics", _and_as_intersection)),
+    ("the generator-to-old diff is missing from the package", "code",
+     "paper-vs-code",
+     lambda: patch(prov58, "DIFF_GEN_OLD",
+                   prov58.DIFF_GEN_OLD.with_name("no-such.diff"))),
+    ("02's paper-version pin is scored PRESENT", "code", "paper-vs-code",
+     lambda: patch(prov58, "pins_02_demands", _paper_version_present)),
+    ("a rank column is reported in the base record", "code", "paper-vs-code",
+     lambda: patch(prov58, "pins_02_demands", _rank_column_present)),
     ("04's chain drops the `p` odd hypothesis from step 2, where p = 2 makes "
      "the clause vacuous", "code", "local-isogeny-kernel",
      lambda: patch(kern55, "CHAIN",
@@ -3519,6 +3657,12 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("E1 tested by trial-division squarefree instead of N == prod(primes) — "
+     "same verdict, because every conductor_primes list is complete",
+     lambda: patch(cmap57, "e1_semistable", _e1_by_trial_division)),
+    ("the twist-condition sample taken from the tail of the label list "
+     "instead of the head", lambda: patch(cmap57, "twist_conditions",
+                                          _twist_from_the_tail)),
     ("05's five bridge hypotheses listed in reverse order",
      lambda: patch(schema56, "BRIDGE", tuple(reversed(schema56.BRIDGE)))),
     ("the cyclotomic check run to bound 500 instead of 200 — 95 primes, "
@@ -3758,6 +3902,130 @@ _true_level2 = comp47.level2
 _true_h1 = comp47.h1
 _true_three_defs = prev49.three_definitions
 _true_find = schema50.find_by_conductor
+_true_e2_57 = cmap57.e2_small_trace
+_true_e4_57 = cmap57.e4_ramification
+_true_e1_57 = cmap57.e1_semistable
+_true_twist_57 = cmap57.twist_conditions
+_true_and_sem58 = prov58.and_semantics
+_true_pins58 = prov58.pins_02_demands
+
+
+def _e2_by_count(base, removed):
+    """agree_exactly computed from the two counts, with one curve swapped out
+    of each side — the count still says 2,709 = 2,709."""
+    d = dict(_true_e2_57(base, removed))
+    d["only_mine"] = ["swapped-in"]
+    d["only_census"] = ["swapped-out"]
+    d["agree_exactly"] = d["abs_a3_eq_3_recomputed"] == d["abs_a3_eq_3_in_census"]
+    return d
+
+
+def _e4_for_all(base):
+    """E4 with ∀q in place of ∃q: every other conductor prime must witness."""
+    fails = []
+    for r in base:
+        ps = r["conductor_primes"]
+        vals = {int(k): v for k, v in r["discriminant_valuations"].items()}
+        for p in ps:
+            others = [q for q in ps if q != p]
+            if not others or not all(vals[q] % p != 0 for q in others):
+                fails.append(r["curve_label"])
+                break
+    d = dict(_true_e4_57(base))
+    d["fail"] = len(fails)
+    d["pass"] = len(base) - len(fails)
+    d["all_pass"] = not fails
+    return d
+
+
+def _float_roots_of_monic_cubic(c2, c1, c0):
+    """The first draft: a 4,000-step float scan on [-B, B] for the Cauchy bound
+    B, bisection on each sign change, round, then exact check. At B ~ 1e11 the
+    scan's step is ~5e7 and clustered roots sit inside one step."""
+    def gval(x):
+        return ((x + c2) * x + c1) * x + c0
+    B = 1 + max(abs(c2), abs(c1), abs(c0))
+    cands = set()
+    steps = 4000
+    lo, hi = -float(B), float(B)
+    prev_x, prev_v = lo, gval(lo)
+    for i in range(1, steps + 1):
+        x = lo + (hi - lo) * i / steps
+        v = gval(x)
+        if v == 0:
+            cands.add(round(x))
+        elif prev_v * v < 0:
+            a, b = prev_x, x
+            fa = prev_v
+            for _ in range(80):
+                m = (a + b) / 2
+                fm = gval(m)
+                if fa * fm <= 0:
+                    b = m
+                else:
+                    a, fa = m, fm
+            cands.add(round((a + b) / 2))
+        prev_x, prev_v = x, v
+    return sorted(X for X in cands if ((X + c2) * X + c1) * X + c0 == 0)
+
+
+def _twist_inconsistent(base, new_map, limit=None):
+    d = dict(_true_twist_57(base, new_map, limit))
+    d["failures_by_condition"] = {"D3_d_1_mod_4": 1}
+    d["all_pass"] = True
+    return d
+
+
+def _relaxed_as_strict(row):
+    return (row["has_isogeny_3"] == "True" or row["has_isogeny_5"] == "True"
+            or row["has_isogeny_7"] == "True")
+
+
+def _and_as_intersection(base):
+    d = dict(_true_and_sem58(base))
+    d["with_bad_primes_{2,7}"] = [7]
+    d["so_on_every_base_curve_it_is"] = "bad_primes ∩ {3,5,7}"
+    return d
+
+
+def _paper_version_present():
+    d = dict(_true_pins58())
+    d["pins"] = [dict(p, state="PRESENT") if p["pin"] == "paper version" else p
+                 for p in d["pins"]]
+    d["present"] = 2
+    d["absent"] = 0
+    return d
+
+
+def _rank_column_present():
+    d = dict(_true_pins58())
+    d["section_7_rank_fields_in_base_record"] = ["rank"]
+    d["section_7_count"] = "1 of 4"
+    return d
+
+
+def _e1_by_trial_division(base):
+    """Squarefree by trial division instead of N == prod(conductor_primes).
+    The same verdict on this base, because every conductor_primes list is the
+    complete factorisation — which the product identity is what certifies."""
+    d = dict(_true_e1_57(base))
+    fails = [r["curve_label"] for r in base if not cmap57.squarefree(r["conductor"])]
+    d["non_squarefree_conductor"] = len(fails)
+    d["all_pass"] = not fails and d["valuation_keys_not_the_conductor_primes"] == 0
+    return d
+
+
+def _twist_from_the_tail(base, new_map, limit=None):
+    """The sample taken from the END of the label list instead of the start.
+    Every one of the 247,391 pairs passes, so where the sample sits cannot
+    change the verdict — and if it did, the full-run zero would be suspect."""
+    if limit is None:
+        return _true_twist_57(base, new_map, None)
+    labels = sorted(new_map)[-limit:]
+    sub = {k: new_map[k] for k in labels}
+    return _true_twist_57(base, sub, None)
+
+
 _true_cyclo_order = kern55.cyclotomic_order
 _true_mutual55 = kern55.mutual_exclusivity
 _true_precond55 = kern55.precondition_local_reducibility

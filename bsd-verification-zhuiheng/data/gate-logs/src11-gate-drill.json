@@ -55,7 +55,9 @@
     "src53_consensus_and_experiment",
     "src54_compiler_targets_and_v03",
     "src55_local_isogeny_kernel",
-    "src56_family_schema_and_spec"
+    "src56_family_schema_and_spec",
+    "src57_theorem_2_18_condition_map",
+    "src58_paper_vs_code_provenance"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -145,7 +147,9 @@
     "consensus-and-experiment": true,
     "compiler-targets": true,
     "local-isogeny-kernel": true,
-    "family-schema-and-spec": true
+    "family-schema-and-spec": true,
+    "condition-map": true,
+    "paper-vs-code": true
   },
   "defects": [
     {
@@ -387,7 +391,8 @@
         "odd-additive-barrier",
         "provisional-vs-revised",
         "compiler-targets",
-        "local-isogeny-kernel"
+        "local-isogeny-kernel",
+        "condition-map"
       ],
       "caught_by_the_named_check": true
     },
@@ -1066,6 +1071,96 @@
       "named_check": "q9-census-closure",
       "checks_that_went_red": [
         "q9-census-closure"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "E2's agreement with the census is scored by count rather than by set, so a swapped pair passes",
+      "kind": "code",
+      "named_check": "condition-map",
+      "checks_that_went_red": [
+        "condition-map"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a_p comes back as p itself, so every curve is supersingular and every a_3 is 3",
+      "kind": "code",
+      "named_check": "condition-map",
+      "checks_that_went_red": [
+        "condition-map"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "E4 is read in the ∀-form — every q | N must witness — instead of the ∃-form",
+      "kind": "code",
+      "named_check": "condition-map",
+      "checks_that_went_red": [
+        "condition-map"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the 2-torsion root finder goes back to float bracketing on a Cauchy bound",
+      "kind": "code",
+      "named_check": "condition-map",
+      "checks_that_went_red": [
+        "condition-map"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the twist-condition failures are counted but all_pass is reported True regardless",
+      "kind": "code",
+      "named_check": "condition-map",
+      "checks_that_went_red": [
+        "condition-map"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the relaxed rule is applied as if it were the strict one",
+      "kind": "code",
+      "named_check": "paper-vs-code",
+      "checks_that_went_red": [
+        "paper-vs-code"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the `and` expression is reported as evaluating to the intersection",
+      "kind": "code",
+      "named_check": "paper-vs-code",
+      "checks_that_went_red": [
+        "paper-vs-code"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "the generator-to-old diff is missing from the package",
+      "kind": "code",
+      "named_check": "paper-vs-code",
+      "checks_that_went_red": [
+        "paper-vs-code"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "02's paper-version pin is scored PRESENT",
+      "kind": "code",
+      "named_check": "paper-vs-code",
+      "checks_that_went_red": [
+        "paper-vs-code"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "defect": "a rank column is reported in the base record",
+      "kind": "code",
+      "named_check": "paper-vs-code",
+      "checks_that_went_red": [
+        "paper-vs-code"
       ],
       "caught_by_the_named_check": true
     },
@@ -2223,7 +2318,8 @@
       "named_check": "kronecker",
       "checks_that_went_red": [
         "kronecker",
-        "family-root-number"
+        "family-root-number",
+        "condition-map"
       ],
       "caught_by_the_named_check": true
     },
@@ -2334,6 +2430,16 @@
     }
   ],
   "controls": [
+    {
+      "control": "E1 tested by trial-division squarefree instead of N == prod(primes) — same verdict, because every conductor_primes list is complete",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "control": "the twist-condition sample taken from the tail of the label list instead of the head",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
     {
       "control": "05's five bridge hypotheses listed in reverse order",
       "checks_that_went_red": [],
@@ -2551,11 +2657,11 @@
     }
   ],
   "totals": {
-    "defects": 223,
-    "caught_by_the_named_check": 223,
+    "defects": 233,
+    "caught_by_the_named_check": 233,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 43,
+    "controls": 45,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,
