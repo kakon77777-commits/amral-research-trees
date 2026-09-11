@@ -1,0 +1,114 @@
+{
+  "gate": "src62 — Algorithm 2 OLD -> CURRENT, replayed",
+  "source": "09_Algorithm2_Twist_Semantic_Diff, 15_Fresh_Algorithm2_Semantic_Replay",
+  "documents_found": {
+    "09_Algorithm2_Twist_Semantic_Diff.md": true,
+    "15_Fresh_Algorithm2_Semantic_Replay.md": true
+  },
+  "chronology_15": {
+    "diffs_present": true,
+    "G_to_O_adds_disc_valuation_condition": true,
+    "O_to_C_removes_disc_valuation_condition": true,
+    "O_to_C_tightens_gcd": true,
+    "matches_15_section_1": true
+  },
+  "replay": {
+    "stable_curves": 36687,
+    "cells": {
+      "D=1,G3=1": 247391,
+      "D=1,G3=0": 21306
+    },
+    "stated_15": {
+      "D=1,G3=1": 247391,
+      "D=1,G3=0": 21306,
+      "D=0,G3=1": 0,
+      "D=0,G3=0": 0
+    },
+    "cells_agree": true,
+    "T_O": 268697,
+    "T_C": 247391,
+    "T_O_stated": 268697,
+    "T_C_stated": 247391,
+    "T_C_equals_new_map": true,
+    "branches": {
+      "Zha16_no_2_tors": {
+        "D=1,G3=1": 241542,
+        "D=1,G3=0": 21306
+      },
+      "CLZ20": {
+        "D=1,G3=1": 5849
+      }
+    },
+    "branches_stated": {
+      "CLZ20": {
+        "pairs": 5849,
+        "all_common": true
+      },
+      "Zha16": {
+        "pairs": 262848,
+        "kept": 241542,
+        "removed": 21306
+      }
+    },
+    "CLZ20_has_no_3_dividing_d": true,
+    "curve_classes": {
+      "unchanged": 31250,
+      "shrink_only": 5437,
+      "expand_only": 0,
+      "mixed": 0
+    },
+    "curve_classes_stated": {
+      "unchanged": 31250,
+      "shrink_only": 5437,
+      "expand_only": 0,
+      "mixed": 0
+    },
+    "curves_failing_D_at_some_p_le_997": 0,
+    "why_no_additions": "D is vacuous on the kept base: no curve fails it at any prime ≤ 997, so deleting it can add nothing. 15 §7 observes that the expand mechanism did not fire; this is why"
+  },
+  "fixtures_09": {
+    "case_A": {
+      "N": 46,
+      "M": 3,
+      "gcd_M_N": 1,
+      "gcd_M_3N": 3,
+      "old_gate_passes": true,
+      "new_gate_passes": false,
+      "distinguishes_old_from_new": true
+    },
+    "case_B": {
+      "p": 3,
+      "conductor_primes": [
+        2,
+        5
+      ],
+      "valuations": {
+        "2": 3,
+        "5": 6
+      },
+      "D_passes": false,
+      "old_rejects": true,
+      "current_has_no_such_gate": true,
+      "shows_D_is_not_vacuous_in_principle": true
+    },
+    "both_branches_exercised": true,
+    "09s_point": "the <150 fixture matched exactly old/current on 12 curves, so it could not show either branch firing; the two synthetic cases do"
+  },
+  "correction_to_RUN_055": {
+    "15_section_8_states": "1,355 OLD base curves were added after the generator twist JSON and are all excluded by CURRENT's strict isogeny gate",
+    "present_in_15": true,
+    "RUN_055_presented_the_identity_as": "identified",
+    "what_RUN_055_actually_added": [
+      "the set equality, computed",
+      "that the 2,707 a_3 curves ARE in the blob"
+    ],
+    "what_RUN_056_added_that_15_lacks": [
+      "the generator's Algorithm 1 rule evaluates to strict {3,5,7}",
+      "OLD relaxed it; CURRENT re-tightened and added a_3",
+      "the relaxed-rule prediction, 1,355 of 1,355"
+    ],
+    "correction": "RUN-055 should have cited 15 §8 for the identity"
+  },
+  "headline": "15's 2×2 recomputed with this tree's own D and gcd: {'D=1,G3=1': 247391, 'D=1,G3=0': 21306} — agrees: True; |T_O| = 268,697, |T_C| = 247,391; curve census {'unchanged': 31250, 'shrink_only': 5437, 'expand_only': 0, 'mixed': 0}; CLZ20 never has 3 | d. And why 15's expand mechanism never fired: D is vacuous on the kept base, 0 curves fail it at any p ≤ 997. 09's Cases A and B both exercised. Correction: the 1,355 identity RUN-055 called identified is stated in 15 §8",
+  "ok": true
+}

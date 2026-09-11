@@ -119,6 +119,16 @@ from this tree.
 
 ## The twist blob was made under E3 and before E2
 
+> **Correction (RUN-060).** The identity below — the 1,355 base curves missing
+> from the upstream blob are exactly the isogeny curves — is stated in words in
+> `15_Fresh_Algorithm2_Semantic_Replay` §8, which was in the corpus before this
+> round: those curves "全部已被 CURRENT Algorithm1 strict isogeny gate 排除". This
+> round should have cited it rather than presenting the identity as identified.
+> What this round added was the set equality as a computation and the
+> complementary half — that the 2,707 `a₃` curves *are* in the blob; RUN-056
+> added the mechanism. The arithmetic stands; the framing is corrected.
+
+
 RUN-029 measured `1,355 = 40,749 − 39,394` base curves missing from the upstream
 twist blob, as a number. Identified:
 
