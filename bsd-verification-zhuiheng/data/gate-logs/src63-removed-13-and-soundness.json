@@ -1,0 +1,352 @@
+{
+  "gate": "src63 — 08's thirteen and 03's six",
+  "source": "08_Removed_13_First_Failure_Closure, 03_Algorithm1_Soundness_Gates",
+  "documents_found": {
+    "08_Removed_13_First_Failure_Closure.md": true,
+    "03_Algorithm1_Soundness_Gates.md": true
+  },
+  "table_08": {
+    "rows": [
+      {
+        "curve": "14a1",
+        "lmfdb_stated": "14.a6",
+        "lmfdb_census": "14.a6",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_3",
+        "census_first_failure": "P_ISOGENY_3",
+        "agrees": true,
+        "has_isogeny": {
+          "3": true,
+          "5": false,
+          "7": false
+        },
+        "a3": -2,
+        "abs_a3_eq_3": false,
+        "failure_class_500k": "ISOGENY_ONLY",
+        "source": "CLZ20"
+      },
+      {
+        "curve": "34a1",
+        "lmfdb_stated": "34.a4",
+        "lmfdb_census": "34.a4",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_3",
+        "census_first_failure": "P_ISOGENY_3",
+        "agrees": true,
+        "has_isogeny": {
+          "3": true,
+          "5": false,
+          "7": false
+        },
+        "a3": -2,
+        "abs_a3_eq_3": false,
+        "failure_class_500k": "ISOGENY_ONLY",
+        "source": "CLZ20"
+      },
+      {
+        "curve": "66c1",
+        "lmfdb_stated": "66.c3",
+        "lmfdb_census": "66.c3",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_5",
+        "census_first_failure": "P_ISOGENY_5",
+        "agrees": true,
+        "has_isogeny": {
+          "3": false,
+          "5": true,
+          "7": false
+        },
+        "a3": 1,
+        "abs_a3_eq_3": false,
+        "failure_class_500k": "ISOGENY_ONLY",
+        "source": "CLZ20"
+      },
+      {
+        "curve": "26a1",
+        "lmfdb_stated": "26.a2",
+        "lmfdb_census": "26.a2",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_3",
+        "census_first_failure": "P_ISOGENY_3",
+        "agrees": true,
+        "has_isogeny": {
+          "3": true,
+          "5": false,
+          "7": false
+        },
+        "a3": 1,
+        "abs_a3_eq_3": false,
+        "failure_class_500k": "ISOGENY_ONLY",
+        "source": "Zha16_no_2_tors"
+      },
+      {
+        "curve": "26b1",
+        "lmfdb_stated": "26.b2",
+        "lmfdb_census": "26.b2",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_7",
+        "census_first_failure": "P_ISOGENY_7",
+        "agrees": true,
+        "has_isogeny": {
+          "3": false,
+          "5": false,
+          "7": true
+        },
+        "a3": -3,
+        "abs_a3_eq_3": true,
+        "failure_class_500k": "BOTH",
+        "source": "Zha16_no_2_tors"
+      },
+      {
+        "curve": "35a1",
+        "lmfdb_stated": "35.a3",
+        "lmfdb_census": "35.a3",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_3",
+        "census_first_failure": "P_ISOGENY_3",
+        "agrees": true,
+        "has_isogeny": {
+          "3": true,
+          "5": false,
+          "7": false
+        },
+        "a3": 1,
+        "abs_a3_eq_3": false,
+        "failure_class_500k": "ISOGENY_ONLY",
+        "source": "Zha16_no_2_tors"
+      },
+      {
+        "curve": "38a1",
+        "lmfdb_stated": "38.a3",
+        "lmfdb_census": "38.a3",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_3",
+        "census_first_failure": "P_ISOGENY_3",
+        "agrees": true,
+        "has_isogeny": {
+          "3": true,
+          "5": false,
+          "7": false
+        },
+        "a3": 1,
+        "abs_a3_eq_3": false,
+        "failure_class_500k": "ISOGENY_ONLY",
+        "source": "Zha16_no_2_tors"
+      },
+      {
+        "curve": "38b1",
+        "lmfdb_stated": "38.b2",
+        "lmfdb_census": "38.b2",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_5",
+        "census_first_failure": "P_ISOGENY_5",
+        "agrees": true,
+        "has_isogeny": {
+          "3": false,
+          "5": true,
+          "7": false
+        },
+        "a3": -1,
+        "abs_a3_eq_3": false,
+        "failure_class_500k": "ISOGENY_ONLY",
+        "source": "Zha16_no_2_tors"
+      },
+      {
+        "curve": "106a1",
+        "lmfdb_stated": "106.c2",
+        "lmfdb_census": "106.c2",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_3",
+        "census_first_failure": "P_ISOGENY_3",
+        "agrees": true,
+        "has_isogeny": {
+          "3": true,
+          "5": false,
+          "7": false
+        },
+        "a3": -2,
+        "abs_a3_eq_3": false,
+        "failure_class_500k": "ISOGENY_ONLY",
+        "source": "Zha16_no_2_tors"
+      },
+      {
+        "curve": "110c1",
+        "lmfdb_stated": "110.a1",
+        "lmfdb_census": "110.a1",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_3",
+        "census_first_failure": "P_ISOGENY_3",
+        "agrees": true,
+        "has_isogeny": {
+          "3": true,
+          "5": false,
+          "7": false
+        },
+        "a3": 1,
+        "abs_a3_eq_3": false,
+        "failure_class_500k": "ISOGENY_ONLY",
+        "source": "Zha16_no_2_tors"
+      },
+      {
+        "curve": "110b1",
+        "lmfdb_stated": "110.c1",
+        "lmfdb_census": "110.c1",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_3",
+        "census_first_failure": "P_ISOGENY_3",
+        "agrees": true,
+        "has_isogeny": {
+          "3": true,
+          "5": false,
+          "7": false
+        },
+        "a3": 1,
+        "abs_a3_eq_3": false,
+        "failure_class_500k": "ISOGENY_ONLY",
+        "source": "Zha16_no_2_tors"
+      },
+      {
+        "curve": "142e1",
+        "lmfdb_stated": "142.c1",
+        "lmfdb_census": "142.c1",
+        "lmfdb_agrees": true,
+        "stated": "A3_ABS_3",
+        "census_first_failure": "A3_ABS_3",
+        "agrees": true,
+        "has_isogeny": {
+          "3": false,
+          "5": false,
+          "7": false
+        },
+        "a3": 3,
+        "abs_a3_eq_3": true,
+        "failure_class_500k": "A3_ONLY",
+        "source": "Zha16_no_2_tors"
+      },
+      {
+        "curve": "142d1",
+        "lmfdb_stated": "142.e2",
+        "lmfdb_census": "142.e2",
+        "lmfdb_agrees": true,
+        "stated": "P_ISOGENY_3",
+        "census_first_failure": "P_ISOGENY_3",
+        "agrees": true,
+        "has_isogeny": {
+          "3": true,
+          "5": false,
+          "7": false
+        },
+        "a3": 1,
+        "abs_a3_eq_3": false,
+        "failure_class_500k": "ISOGENY_ONLY",
+        "source": "Zha16_no_2_tors"
+      }
+    ],
+    "count": 13,
+    "mismatches": [],
+    "all_agree": true,
+    "histogram_stated": {
+      "P_ISOGENY_3": 9,
+      "P_ISOGENY_5": 2,
+      "P_ISOGENY_7": 1,
+      "A3_ABS_3": 1
+    },
+    "histogram_from_table": {
+      "P_ISOGENY_3": 9,
+      "P_ISOGENY_5": 2,
+      "P_ISOGENY_7": 1,
+      "A3_ABS_3": 1
+    },
+    "26b1_secondary_a3": -3,
+    "26b1_is_the_BOTH_class": true,
+    "26b1_first_failure_is_isogeny_7": true,
+    "142e1_has_no_357_isogeny": true,
+    "all_thirteen_in_the_500k_removed_census": true
+  },
+  "fixture_versus_500k": {
+    "fixture": {
+      "P_ISOGENY_3": 9,
+      "P_ISOGENY_5": 2,
+      "P_ISOGENY_7": 1,
+      "A3_ABS_3": 1
+    },
+    "five_hundred_k_first_failure": {
+      "P_ISOGENY_3": 1233,
+      "P_ISOGENY_5": 115,
+      "P_ISOGENY_7": 7,
+      "A3_ABS_3": 2707
+    },
+    "sum": 4062,
+    "fixture_a3_share": 0.0769,
+    "five_hundred_k_a3_share": 0.6664,
+    "reading": "under first-failure ordering, the 500K a_3 share is about two thirds against the fixture's one thirteenth. 11 §4 said not to extrapolate 9/2/1/1; 08's own table is that 9/2/1/1, and it is right about its 13 curves and wrong as a proxy for 4,062"
+  },
+  "soundness_03": {
+    "gates": [
+      {
+        "gate": "S1 analytic Sha must not impersonate actual Sha",
+        "state": "N/A BY SCOPE",
+        "why": "no Sha is computed or recorded in the package; no descent ran"
+      },
+      {
+        "gate": "S2 dim Sha[2] must not impersonate ord_2 #Sha",
+        "state": "N/A BY SCOPE",
+        "why": "same"
+      },
+      {
+        "gate": "S3 a timeout is UNKNOWN, not a failure",
+        "state": "N/A BY SCOPE",
+        "why": "no mwrank ran"
+      },
+      {
+        "gate": "S4 testing flags downgrade the whole run",
+        "state": "AUDITED AT RUN-056",
+        "why": "skip_filter_S / skip_BSD_at_2_check appear only in archived source, never as recorded values"
+      },
+      {
+        "gate": "S5 the S != ∅ production gate is deterministic",
+        "state": "N/A BY SCOPE",
+        "why": "Algorithm 2's certificate machinery is not run by the package or this tree"
+      },
+      {
+        "gate": "S6 every PASS carries seven provenance fields",
+        "state": "6 of 7 present in the per-curve evidence",
+        "why": {
+          "predicate": true,
+          "value": true,
+          "evidence_type": true,
+          "backend": true,
+          "semantic_version": true,
+          "file/commit SHA": true,
+          "timestamp": false
+        }
+      }
+    ],
+    "s6_fields": [
+      "predicate",
+      "value",
+      "evidence_type",
+      "backend",
+      "semantic_version",
+      "file/commit SHA",
+      "timestamp"
+    ],
+    "s6_present": {
+      "predicate": true,
+      "value": true,
+      "evidence_type": true,
+      "backend": true,
+      "semantic_version": true,
+      "file/commit SHA": true,
+      "timestamp": false
+    },
+    "s6_count": 6,
+    "s6_missing": [
+      "timestamp"
+    ],
+    "not_applicable_by_scope": 4,
+    "reading": "03 is a spec for the certificate pipeline. The package is an arithmetic census with no certificate pipeline in it, and says so; four of six gates have nothing to bind to. S6 is the one that does bind, and it binds field by field"
+  },
+  "headline": "08's thirteen rows, each checked against the 500K removed census's own columns: 13 of 13 agree on first failure and LMFDB label; 26b1 is the BOTH class with a_3 = -3 and a 7-isogeny, first failure P_ISOGENY_7 as 08 says; 142e1 has no 3/5/7 isogeny and |a_3| = 3. 08's 9/2/1/1 against 500K's {'P_ISOGENY_3': 1233, 'P_ISOGENY_5': 115, 'P_ISOGENY_7': 7, 'A3_ABS_3': 2707}: a_3 share 0.0769 vs 0.6664. 03: four of six gates N/A by the package's scope, S4 audited at RUN-056, S6's seven fields 6 of 7 present — missing ['timestamp']",
+  "ok": true
+}
