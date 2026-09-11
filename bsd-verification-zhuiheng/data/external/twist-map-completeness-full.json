@@ -1,0 +1,11 @@
+{
+  "bound": "d < 1000 (04_Algorithm1_Environment_and_Gaps: twists up to 1000)",
+  "curves": 36687,
+  "pairs_in_map": 247391,
+  "admissible_but_absent": 0,
+  "present_but_inadmissible": 0,
+  "curves_with_any_difference": 0,
+  "examples": [],
+  "exact": true,
+  "seconds": 1024
+}

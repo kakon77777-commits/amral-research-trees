@@ -1,0 +1,267 @@
+{
+  "gate": "src65 — Phase 1 closure, scored; the fixtures, reproduced; completeness",
+  "source": "16_Phase1_Closure_and_Phase2_Interface, 10_Phase1_Gate_v03, 01_Small_Fixture_Version_Regression, 00_Phase1_Consensus, 00_Phase1_v02_Consensus (bound from 04_Algorithm1_Environment_and_Gaps)",
+  "documents_found": {
+    "16_Phase1_Closure_and_Phase2_Interface.md": true,
+    "10_Phase1_Gate_v03.md": true,
+    "01_Small_Fixture_Version_Regression.md": true,
+    "00_Phase1_Consensus.md": true,
+    "00_Phase1_v02_Consensus.md": true
+  },
+  "fixture_150": {
+    "old": 25,
+    "current": 12,
+    "removed": 13,
+    "old_by_source": {
+      "CLZ20": 10,
+      "Zha16_no_2_tors": 15
+    },
+    "current_by_source": {
+      "CLZ20": 7,
+      "Zha16_no_2_tors": 5
+    },
+    "stated_01": {
+      "old": 25,
+      "current": 12,
+      "removed": 13,
+      "old_by_source": {
+        "CLZ20": 10,
+        "Zha16_no_2_tors": 15
+      },
+      "current_by_source": {
+        "CLZ20": 7,
+        "Zha16_no_2_tors": 5
+      }
+    },
+    "removed_is_08s_thirteen": true,
+    "current_is_subset_of_old_no_additions": true,
+    "the_twelve": [
+      "106d1",
+      "114b1",
+      "115a1",
+      "118c1",
+      "118d1",
+      "141b1",
+      "141e1",
+      "142c1",
+      "46a1",
+      "69a1",
+      "77c1",
+      "94a1"
+    ],
+    "agrees": true
+  },
+  "fixtures_00": {
+    "46a1": {
+      "ainvs": [
+        1,
+        -1,
+        0,
+        -10,
+        -12
+      ],
+      "source": "CLZ20",
+      "range": "1 ≤ d < 1000",
+      "stated_00": [
+        1,
+        185,
+        265,
+        305,
+        745,
+        785,
+        905
+      ],
+      "recomputed": [
+        1,
+        185,
+        265,
+        305,
+        745,
+        785,
+        905
+      ],
+      "in_map": [
+        1,
+        185,
+        265,
+        305,
+        745,
+        785,
+        905
+      ],
+      "agrees": true
+    },
+    "106d1": {
+      "ainvs": [
+        1,
+        1,
+        0,
+        -27,
+        -67
+      ],
+      "source": "Zha16_no_2_tors",
+      "range": "-1000 < d < 1000",
+      "stated_00": [
+        1,
+        17,
+        89,
+        97,
+        113,
+        241,
+        281,
+        409,
+        473,
+        505,
+        521,
+        545,
+        577,
+        649,
+        673,
+        713,
+        785,
+        857,
+        865,
+        929,
+        937
+      ],
+      "recomputed": [
+        1,
+        17,
+        89,
+        97,
+        113,
+        241,
+        281,
+        409,
+        473,
+        505,
+        521,
+        545,
+        577,
+        649,
+        673,
+        713,
+        785,
+        857,
+        865,
+        929,
+        937
+      ],
+      "in_map": [
+        1,
+        17,
+        89,
+        97,
+        113,
+        241,
+        281,
+        409,
+        473,
+        505,
+        521,
+        545,
+        577,
+        649,
+        673,
+        713,
+        785,
+        857,
+        865,
+        929,
+        937
+      ],
+      "negative_d_admissible": [],
+      "agrees": true
+    },
+    "both_agree": true
+  },
+  "negative_twists": {
+    "zha16_curves_with_negative_disc_tested": 200,
+    "with_an_admissible_negative_d": 0,
+    "map_has_negative_d": false,
+    "reading": "00 enumerates the Zha16 branch over a symmetric range and the map carries only positive d; on every curve tested no negative d passes the conditions, so the two are consistent. Why none passes is not established here"
+  },
+  "completeness": {
+    "bound": "d < 1000, from 04_Algorithm1_Environment_and_Gaps",
+    "sample_curves": 40,
+    "sample_admissible_but_absent": 0,
+    "sample_present_but_inadmissible": 0,
+    "sample_exact": true,
+    "full_run": {
+      "curves": 36687,
+      "pairs": 247391,
+      "admissible_but_absent": 0,
+      "present_but_inadmissible": 0,
+      "exact": true,
+      "seconds": 1024
+    },
+    "what_this_closes": "RUN-055 verified soundness (map ⊆ admissible). This is completeness (admissible ⊆ map). Both together, with the bound, are Algorithm 2's admissibility side reproduced from 01's text"
+  },
+  "checklist_16": {
+    "rows": [
+      {
+        "n": 1,
+        "item": "Theorem 2.18 predicate map",
+        "redone_by": "RUN-055",
+        "how": "recomputed on all 40,749 and 247,391"
+      },
+      {
+        "n": 2,
+        "item": "Algorithm 2 independent reproduction",
+        "redone_by": "RUN-055 + this round",
+        "how": "soundness at RUN-055; completeness here with 04's bound"
+      },
+      {
+        "n": 3,
+        "item": "paper / current-code soundness audit",
+        "redone_by": "RUN-056, RUN-061",
+        "how": "diffs read; 02 §6 pins; 03's gates"
+      },
+      {
+        "n": 4,
+        "item": "<150 version regression",
+        "redone_by": "this round",
+        "how": "not in the package as a fixture; recovered from the census by conductor: 25 → 12"
+      },
+      {
+        "n": 5,
+        "item": "13 removed curves first-failure closure",
+        "redone_by": "RUN-061",
+        "how": "13 of 13"
+      },
+      {
+        "n": 6,
+        "item": "500K exact artefact census",
+        "redone_by": "RUN-004 … RUN-008, RUN-055",
+        "how": "the data, then the map"
+      },
+      {
+        "n": 7,
+        "item": "Algorithm 1 4,062 removal-cause closure",
+        "redone_by": "RUN-059",
+        "how": "OLD − (isogeny ∪ a_3) = CURRENT"
+      },
+      {
+        "n": 8,
+        "item": "stable-domain OLD → CURRENT Algorithm 2 replay",
+        "redone_by": "RUN-060",
+        "how": "15's 2×2 to the pair"
+      }
+    ],
+    "count": 8,
+    "independently_redone": 8,
+    "boxed_claim_16": "Banwait–Huang Reproduction = COMPLETE",
+    "this_lines_reading": "every item on 16's list has an independent recomputation in this tree. What 16 calls COMPLETE is the corpus's Phase 1; the package itself refuses 'Full Algorithm 1 independently reproduced' (04), and so does this line"
+  },
+  "layers_10": {
+    "A_positive_12": "recovered from the census by conductor (this round)",
+    "B_removed_13_must_fail_at_the_predicate": "RUN-061, 13 of 13 under 08's ordering",
+    "C_discrepancy_four_must_stay_rejected": "RUN-062, f'(x0) square on 4 of 4; three other reasons cited",
+    "D_algorithm2_unit_fixtures": "RUN-060, 09's Case A (TWIST_GCD_3N) and Case B (TWIST_DISC_VAL_GATE_REMOVED)",
+    "label_rule": "REPRODUCTION-QUALIFIED only if A+B+C+D; else OUTPUT-MATCHED",
+    "label_awarded_here": null,
+    "why_none": "10's label is for a reproduction run; the package is an artefact census and says so. This line verified the four layers' content; it did not run the reproduction the label names"
+  },
+  "headline": "<150 fixture from the census: 25 → 12, {'CLZ20': 10, 'Zha16_no_2_tors': 15} → {'CLZ20': 7, 'Zha16_no_2_tors': 5}, the 13 removed are 08's — all as 01 states. 00's two hand fixtures reproduced exactly, 106d1's over the negative range with no negative d admissible; 200 Zha16 curves with Δ<0 admit none. Completeness with 04's bound d < 1000: sample 40 curves exact; full run True. 16's eight items: 8 of 8 independently redone here; 10's four layers all have this line's content; no label awarded",
+  "ok": true
+}
