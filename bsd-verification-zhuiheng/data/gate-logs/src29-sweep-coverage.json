@@ -1,8 +1,8 @@
 {
   "gate": "src29 — the sweep's own coverage",
   "documents": 85,
-  "reports_read": 54,
-  "gates_read": 57,
+  "reports_read": 65,
+  "gates_read": 68,
   "matching": "by filename stem and, for Phase 0, the `doc NN` form. Only 17 of the 85 are cited as markdown links, so a link scan would report a sweep four times smaller than it is",
   "bucket_order_strongest_first": [
     "subject of a report",
@@ -11,29 +11,29 @@
     "not mentioned"
   ],
   "counts": {
-    "subject of a report": 55,
-    "cited in a report": 2,
+    "subject of a report": 80,
+    "cited in a report": 5,
     "named in gate code": 0,
-    "not mentioned": 28
+    "not mentioned": 0
   },
   "per_subline": {
     "phase0": {
-      "subject of a report": 7,
+      "subject of a report": 10,
       "cited in a report": 0,
       "named in gate code": 0,
-      "not mentioned": 3
+      "not mentioned": 0
     },
     "p5": {
       "subject of a report": 7,
-      "cited in a report": 0,
+      "cited in a report": 3,
       "named in gate code": 0,
-      "not mentioned": 3
+      "not mentioned": 0
     },
     "phase1": {
-      "subject of a report": 1,
+      "subject of a report": 23,
       "cited in a report": 2,
       "named in gate code": 0,
-      "not mentioned": 22
+      "not mentioned": 0
     },
     "phase2": {
       "subject of a report": 40,
@@ -42,45 +42,25 @@
       "not mentioned": 0
     }
   },
-  "not_mentioned": [
-    "phase0/02_Known_Theorem_Closure_Map.md",
-    "phase0/04_External_Route_Matrix.md",
-    "phase0/08_Local_Agent_Handoff_Prompts.md",
-    "p5/BSD_P5_Anomalous_Norm_Localization_389a1_p11_v1.1.md",
-    "p5/BSD_P5_Determinantal_Kurihara_Semilocal_389a1_p11_v1.3.md",
-    "p5/BSD_RUGZPB_P2_P4_389a1_p11_v0.2.md",
-    "phase1/00_Phase1_Consensus.md",
-    "phase1/00_Phase1_v02_Consensus.md",
-    "phase1/01_Small_Fixture_Version_Regression.md",
-    "phase1/01_Theorem_2_18_Condition_Map.md",
-    "phase1/02_Official_Discrepancy_Corpus.md",
-    "phase1/02_Paper_vs_Current_Code_Audit.md",
-    "phase1/03_Algorithm1_Soundness_Gates.md",
-    "phase1/04_500K_Preflight.md",
-    "phase1/04_Algorithm1_Environment_and_Gaps.md",
-    "phase1/05_Agent_Regression_Protocol.md",
-    "phase1/05_Global_Enclosure_and_Stop_Rules.md",
-    "phase1/06_Local_Agent_Handoff.md",
-    "phase1/06_Semantic_Version_Changelog.md",
-    "phase1/07_One_Commit_Semantic_Autopsy.md",
-    "phase1/08_Removed_13_First_Failure_Closure.md",
-    "phase1/09_Algorithm2_Twist_Semantic_Diff.md",
-    "phase1/10_Phase1_Gate_v03.md",
-    "phase1/11_500K_One_Commit_Global_Impact.md",
-    "phase1/12_Delta_Only_Algorithm1_Verifier.md",
-    "phase1/14_Phase1_Next_Low_Cost_Gate.md",
-    "phase1/15_Fresh_Algorithm2_Semantic_Replay.md",
-    "phase1/16_Phase1_Closure_and_Phase2_Interface.md"
-  ],
+  "not_mentioned": [],
   "caveat": "a bucket is a measure of attention, not of correctness. Being the subject of a round says a round was aimed at the document; what that round actually settled is in its own 'what this round does not claim' section, every time",
   "second_axis_data_artefacts": {
-    "reports_naming_a_data_artefact": 54,
-    "distinct_artefacts_named": 60,
+    "reports_naming_a_data_artefact": 65,
+    "distinct_artefacts_named": 79,
     "artefacts": [
+      "ARTIFACT_MANIFEST.json",
       "SHA256SUMS.json",
       "algorithm1_removed_census.csv",
+      "data/external/twist-map-completeness-full.json",
+      "failed.csv",
+      "hashes.txt",
+      "passed.csv",
       "results/algorithm1_removed_census.csv",
+      "results/base_stable.csv",
+      "results/raw_file_manifest.json",
+      "results/results_sha256.json",
       "results/summary.json",
+      "run_manifest.json",
       "src00-corpus-identity.json",
       "src01-ladder-vocabulary.json",
       "src02-rejected-route.json",
@@ -107,16 +87,7 @@
       "src24-p5-status-ledger.json",
       "src25-p5-core-vertex.json",
       "src26-rank2-bsd-identity.json",
-      "src27-agent-experiment-audit.json",
-      "src28-rank1-bsd-identity.json",
-      "src29-sweep-coverage.json",
-      "src30-phase1-numeric-crosscheck.json",
-      "src31-q9-census-closure.json",
-      "src32-696e1-certificate.json",
-      "src33-mazur-degrees.json",
-      "src34-referee-a.json",
-      "src35-gcd-witness.json",
-      "src36-kodaira-nogo.json"
+      "src27-agent-experiment-audit.json"
     ],
     "by_report": {
       "RUN-001-CORPUS-IDENTITY.md": [
@@ -337,6 +308,60 @@
       "RUN-054-FAMILY-SCHEMA-AND-SPEC.md": [
         "src11-gate-drill.json",
         "src56-family-schema-and-spec.json"
+      ],
+      "RUN-055-THEOREM-2-18-CONDITION-MAP.md": [
+        "src11-gate-drill.json",
+        "src57-theorem-2-18-condition-map.json"
+      ],
+      "RUN-056-PAPER-VS-CODE-PROVENANCE.md": [
+        "src11-gate-drill.json",
+        "src58-paper-vs-code-provenance.json"
+      ],
+      "RUN-057-LEMMA-B-REDUCTION.md": [
+        "src11-gate-drill.json",
+        "src59-lemma-b-reduction.json"
+      ],
+      "RUN-058-CROSS-ROUND-JOINS.md": [
+        "src11-gate-drill.json",
+        "src60-cross-round-joins.json"
+      ],
+      "RUN-059-ONE-COMMIT-AND-DELTA.md": [
+        "src11-gate-drill.json",
+        "src61-one-commit-and-delta.json"
+      ],
+      "RUN-060-ALGORITHM2-REPLAY.md": [
+        "src11-gate-drill.json",
+        "src62-algorithm2-replay.json"
+      ],
+      "RUN-061-REMOVED-13-AND-SOUNDNESS.md": [
+        "src11-gate-drill.json",
+        "src63-removed-13-and-soundness.json"
+      ],
+      "RUN-062-DISCREPANCY-CORPUS.md": [
+        "src11-gate-drill.json",
+        "src64-discrepancy-corpus.json"
+      ],
+      "RUN-063-PHASE1-CLOSURE.md": [
+        "data/external/twist-map-completeness-full.json",
+        "src11-gate-drill.json",
+        "src65-phase1-closure.json"
+      ],
+      "RUN-064-PHASE1-PROTOCOLS.md": [
+        "ARTIFACT_MANIFEST.json",
+        "failed.csv",
+        "hashes.txt",
+        "passed.csv",
+        "results/algorithm1_removed_census.csv",
+        "results/base_stable.csv",
+        "results/raw_file_manifest.json",
+        "results/results_sha256.json",
+        "run_manifest.json",
+        "src11-gate-drill.json"
+      ],
+      "RUN-065-PHASE0-MAPS.md": [
+        "src11-gate-drill.json",
+        "src29-sweep-coverage.json",
+        "src67-phase0-maps.json"
       ]
     }
   },
@@ -406,10 +431,14 @@
     {
       "subline": "phase0",
       "name": "02_Known_Theorem_Closure_Map.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-065-PHASE0-MAPS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src67_phase0_maps.py"
+      ]
     },
     {
       "subline": "phase0",
@@ -429,10 +458,14 @@
     {
       "subline": "phase0",
       "name": "04_External_Route_Matrix.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-065-PHASE0-MAPS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src67_phase0_maps.py"
+      ]
     },
     {
       "subline": "phase0",
@@ -480,25 +513,33 @@
     {
       "subline": "phase0",
       "name": "08_Local_Agent_Handoff_Prompts.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-065-PHASE0-MAPS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src67_phase0_maps.py"
+      ]
     },
     {
       "subline": "p5",
       "name": "BSD_P5_Anomalous_Norm_Localization_389a1_p11_v1.1.md",
-      "bucket": "not mentioned",
+      "bucket": "cited in a report",
       "subject_of": [],
-      "cited_in": [],
+      "cited_in": [
+        "RUN-065-PHASE0-MAPS.md"
+      ],
       "named_in_gates": []
     },
     {
       "subline": "p5",
       "name": "BSD_P5_Determinantal_Kurihara_Semilocal_389a1_p11_v1.3.md",
-      "bucket": "not mentioned",
+      "bucket": "cited in a report",
       "subject_of": [],
-      "cited_in": [],
+      "cited_in": [
+        "RUN-065-PHASE0-MAPS.md"
+      ],
       "named_in_gates": []
     },
     {
@@ -576,9 +617,11 @@
     {
       "subline": "p5",
       "name": "BSD_RUGZPB_P2_P4_389a1_p11_v0.2.md",
-      "bucket": "not mentioned",
+      "bucket": "cited in a report",
       "subject_of": [],
-      "cited_in": [],
+      "cited_in": [
+        "RUN-065-PHASE0-MAPS.md"
+      ],
       "named_in_gates": []
     },
     {
@@ -596,58 +639,86 @@
     {
       "subline": "phase1",
       "name": "00_Phase1_Consensus.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-063-PHASE1-CLOSURE.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src65_phase1_closure.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "00_Phase1_v02_Consensus.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-063-PHASE1-CLOSURE.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src65_phase1_closure.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "01_Small_Fixture_Version_Regression.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-063-PHASE1-CLOSURE.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src65_phase1_closure.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "01_Theorem_2_18_Condition_Map.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-055-THEOREM-2-18-CONDITION-MAP.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src57_theorem_2_18_condition_map.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "02_Official_Discrepancy_Corpus.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-062-DISCREPANCY-CORPUS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src64_discrepancy_corpus.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "02_Paper_vs_Current_Code_Audit.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-056-PAPER-VS-CODE-PROVENANCE.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src58_paper_vs_code_provenance.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "03_Algorithm1_Soundness_Gates.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-061-REMOVED-13-AND-SOUNDNESS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src63_removed_13_and_soundness.py"
+      ]
     },
     {
       "subline": "phase1",
@@ -665,98 +736,149 @@
     {
       "subline": "phase1",
       "name": "04_500K_Preflight.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-064-PHASE1-PROTOCOLS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src66_phase1_protocols.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "04_Algorithm1_Environment_and_Gaps.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-064-PHASE1-PROTOCOLS.md"
+      ],
+      "cited_in": [
+        "RUN-063-PHASE1-CLOSURE.md"
+      ],
+      "named_in_gates": [
+        "src65_phase1_closure.py",
+        "src66_phase1_protocols.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "05_Agent_Regression_Protocol.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-064-PHASE1-PROTOCOLS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src66_phase1_protocols.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "05_Global_Enclosure_and_Stop_Rules.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-064-PHASE1-PROTOCOLS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src66_phase1_protocols.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "06_Local_Agent_Handoff.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-064-PHASE1-PROTOCOLS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src66_phase1_protocols.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "06_Semantic_Version_Changelog.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-064-PHASE1-PROTOCOLS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src66_phase1_protocols.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "07_One_Commit_Semantic_Autopsy.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-059-ONE-COMMIT-AND-DELTA.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src61_one_commit_and_delta.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "08_Removed_13_First_Failure_Closure.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-061-REMOVED-13-AND-SOUNDNESS.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src63_removed_13_and_soundness.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "09_Algorithm2_Twist_Semantic_Diff.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-060-ALGORITHM2-REPLAY.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src62_algorithm2_replay.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "10_Phase1_Gate_v03.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-063-PHASE1-CLOSURE.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src65_phase1_closure.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "11_500K_One_Commit_Global_Impact.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-059-ONE-COMMIT-AND-DELTA.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src61_one_commit_and_delta.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "12_Delta_Only_Algorithm1_Verifier.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-059-ONE-COMMIT-AND-DELTA.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src61_one_commit_and_delta.py"
+      ]
     },
     {
       "subline": "phase1",
@@ -773,26 +895,40 @@
     {
       "subline": "phase1",
       "name": "14_Phase1_Next_Low_Cost_Gate.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-059-ONE-COMMIT-AND-DELTA.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src61_one_commit_and_delta.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "15_Fresh_Algorithm2_Semantic_Replay.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
-      "cited_in": [],
-      "named_in_gates": []
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-060-ALGORITHM2-REPLAY.md"
+      ],
+      "cited_in": [
+        "RUN-055-THEOREM-2-18-CONDITION-MAP.md"
+      ],
+      "named_in_gates": [
+        "src62_algorithm2_replay.py"
+      ]
     },
     {
       "subline": "phase1",
       "name": "16_Phase1_Closure_and_Phase2_Interface.md",
-      "bucket": "not mentioned",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-063-PHASE1-CLOSURE.md"
+      ],
       "cited_in": [],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src65_phase1_closure.py"
+      ]
     },
     {
       "subline": "phase1",
@@ -889,7 +1025,8 @@
         "src11_gate_drill.py",
         "src47_fw_hypothesis_compiler.py",
         "src48_h2_chain_and_h3_dispute.py",
-        "src52_novelty_and_routes.py"
+        "src52_novelty_and_routes.py",
+        "src59_lemma_b_reduction.py"
       ]
     },
     {
@@ -923,7 +1060,8 @@
       "name": "03_Quadratic_Twist_Invariance_Bridge.md",
       "bucket": "subject of a report",
       "subject_of": [
-        "RUN-035-TWIST-INVARIANCE-BRIDGE.md"
+        "RUN-035-TWIST-INVARIANCE-BRIDGE.md",
+        "RUN-057-LEMMA-B-REDUCTION.md"
       ],
       "cited_in": [
         "RUN-008-KEPT-CURVES.md"
@@ -931,7 +1069,8 @@
       "named_in_gates": [
         "src11_gate_drill.py",
         "src37_twist_invariance_bridge.py",
-        "src53_consensus_and_experiment.py"
+        "src53_consensus_and_experiment.py",
+        "src59_lemma_b_reduction.py"
       ]
     },
     {
@@ -1019,7 +1158,8 @@
       ],
       "cited_in": [],
       "named_in_gates": [
-        "src54_compiler_targets_and_v03.py"
+        "src54_compiler_targets_and_v03.py",
+        "src59_lemma_b_reduction.py"
       ]
     },
     {
@@ -1099,7 +1239,8 @@
       "bucket": "subject of a report",
       "subject_of": [
         "RUN-038-FW-H2-ORDINARY.md",
-        "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md"
+        "RUN-046-H2-CHAIN-AND-H3-DISPUTE.md",
+        "RUN-057-LEMMA-B-REDUCTION.md"
       ],
       "cited_in": [
         "RUN-041-FINITE-EXCEPTIONAL-PRIMES.md"
@@ -1228,7 +1369,8 @@
       "cited_in": [],
       "named_in_gates": [
         "src49_provisional_vs_revised.py",
-        "src52_novelty_and_routes.py"
+        "src52_novelty_and_routes.py",
+        "src59_lemma_b_reduction.py"
       ]
     },
     {
@@ -1351,12 +1493,14 @@
       "name": "27_Revised_Derived_Theorem_Candidate.md",
       "bucket": "subject of a report",
       "subject_of": [
-        "RUN-047-PROVISIONAL-VS-REVISED.md"
+        "RUN-047-PROVISIONAL-VS-REVISED.md",
+        "RUN-057-LEMMA-B-REDUCTION.md"
       ],
       "cited_in": [],
       "named_in_gates": [
         "src49_provisional_vs_revised.py",
-        "src52_novelty_and_routes.py"
+        "src52_novelty_and_routes.py",
+        "src59_lemma_b_reduction.py"
       ]
     },
     {

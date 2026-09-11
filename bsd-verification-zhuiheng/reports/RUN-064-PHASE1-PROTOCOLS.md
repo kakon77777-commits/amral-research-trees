@@ -129,9 +129,11 @@ case to decide here.
 
 ## Phase 1, closed
 
-| sub-line | subject of a round | unmentioned |
-| --- | ---: | ---: |
-| Phase 1 | **25 of 25** | 0 |
+> **Correction (RUN-065).** The 25 of 25 below was typed, not measured. `src29` re-run at RUN-065 puts Phase 1 at **23 of 25 the subject of a round, 2 cited only** — `03_Algorithm2_Independent_Reproduction` and `13_500K_Twist_Output_NonMonotonicity`, both treated in RUN-012's body and on no round's subject line. Unmentioned is 0 either way; "closed" in the instrument's strongest sense it is not, until those two are a round's subject. The six documents of this round are unaffected.
+
+| sub-line | subject of a round | cited only | unmentioned |
+| --- | ---: | ---: | ---: |
+| Phase 1 | **23 of 25** (typed here as 25; see the correction) | 2 | 0 |
 
 RUN-055 through RUN-064, ten rounds, twelve gates. What this line did not do is
 what the corpus did not do and said so: Sage, descent, the LMFDB scan.

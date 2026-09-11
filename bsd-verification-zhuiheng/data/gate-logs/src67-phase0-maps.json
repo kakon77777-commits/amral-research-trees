@@ -1,0 +1,478 @@
+{
+  "gate": "src67 — Phase 0's three maps against 64 rounds",
+  "source": "02_Known_Theorem_Closure_Map.md, 04_External_Route_Matrix.md, 08_Local_Agent_Handoff_Prompts.md",
+  "closure_map_02": {
+    "document_found": true,
+    "table_present": true,
+    "rows": [
+      {
+        "row": "modularity and analytic continuation",
+        "status_02": "已關閉",
+        "rounds_here": [],
+        "open": false
+      },
+      {
+        "row": "weak BSD at analytic rank 0/1",
+        "status_02": "核心已關閉",
+        "rounds_here": [
+          "RUN-014",
+          "RUN-026"
+        ],
+        "open": false
+      },
+      {
+        "row": "p-parts at rank 0/1",
+        "status_02": "大量新閉包",
+        "rounds_here": [
+          "RUN-011",
+          "RUN-020",
+          "RUN-021",
+          "RUN-022"
+        ],
+        "open": false
+      },
+      {
+        "row": "infinite strong-BSD twist families",
+        "status_02": "已存在",
+        "rounds_here": [
+          "RUN-009",
+          "RUN-015",
+          "RUN-033",
+          "RUN-037",
+          "RUN-045",
+          "RUN-057"
+        ],
+        "open": false
+      },
+      {
+        "row": "weak BSD at rank >= 2",
+        "status_02": "開放",
+        "rounds_here": [
+          "RUN-023"
+        ],
+        "open": true
+      },
+      {
+        "row": "Sha finite in general",
+        "status_02": "開放",
+        "rounds_here": [],
+        "open": true
+      },
+      {
+        "row": "full leading coefficient",
+        "status_02": "開放",
+        "rounds_here": [
+          "RUN-014",
+          "RUN-017",
+          "RUN-023",
+          "RUN-026",
+          "RUN-030"
+        ],
+        "open": true
+      },
+      {
+        "row": "all E/Q",
+        "status_02": "開放",
+        "rounds_here": [],
+        "open": true
+      }
+    ],
+    "rounds_cited": [
+      "RUN-014",
+      "RUN-026",
+      "RUN-011",
+      "RUN-020",
+      "RUN-021",
+      "RUN-022",
+      "RUN-009",
+      "RUN-015",
+      "RUN-033",
+      "RUN-037",
+      "RUN-045",
+      "RUN-057",
+      "RUN-023",
+      "RUN-017",
+      "RUN-030"
+    ],
+    "rounds_cited_that_do_not_exist": [],
+    "open_rows": [
+      "weak BSD at rank >= 2",
+      "Sha finite in general",
+      "full leading coefficient",
+      "all E/Q"
+    ],
+    "reports_scanned_for_a_closure_claim": 64,
+    "open_rows_claimed_closed_by_any_report": [],
+    "no_open_row_claimed_closed": true,
+    "the_box": "完整 BSD 證書是可工程化的，但每個 component 都必須獨立閉合",
+    "box_present": true,
+    "seven_components_of_strong_BSD": [
+      {
+        "component": "actual Sha finite",
+        "state_here": "never",
+        "where": "never computed; RUN-023 records #Ш = 1 as BSD-inferred, i.e. as input"
+      },
+      {
+        "component": "actual order of Sha",
+        "state_here": "never",
+        "where": "not computed"
+      },
+      {
+        "component": "regulator on a saturated basis",
+        "state_here": "partial",
+        "where": "regulator computed at RUN-023 (rank 2) and RUN-026 (rank 1, heights here); saturation verified in neither"
+      },
+      {
+        "component": "local Tamagawa factors",
+        "state_here": "computed",
+        "where": "RUN-016 (c₂ closed on the base), RUN-023 (∏c_p = 1 at 389.a1)"
+      },
+      {
+        "component": "torsion",
+        "state_here": "computed",
+        "where": "RUN-023, RUN-026, RUN-030; RUN-031 (Mazur's twelve degrees closed for 696.e1)"
+      },
+      {
+        "component": "period convention",
+        "state_here": "computed",
+        "where": "RUN-017 (the real period wrong for three rounds, found by the identity), RUN-014, RUN-023, RUN-030"
+      },
+      {
+        "component": "exact leading term",
+        "state_here": "computed",
+        "where": "RUN-014 (L(E,1) = Ω), RUN-023 (L''(1)/2!), RUN-026 (L'(1))"
+      }
+    ],
+    "components_computed_here": 4,
+    "components_partial_here": 1,
+    "components_never_here": [
+      "actual Sha finite",
+      "actual order of Sha"
+    ],
+    "component_signatures_checked": 12,
+    "component_signatures_absent": [],
+    "reading": "this line's rounds sit on the closed-or-existing rows (the rank 0/1 identities; the P5 p-part chain; the twist family) and, as computations only, on two open rows: the rank-2 identity with Sha as input, and the leading-coefficient identities at finitely many curves. No report says an open row is closed"
+  },
+  "route_matrix_04": {
+    "document_found": true,
+    "rows": [
+      {
+        "route": "Gross–Zagier–Kolyvagin",
+        "verdict_04": "基線",
+        "rounds_here": [],
+        "count": 0
+      },
+      {
+        "route": "p-adic zeta / Iwasawa",
+        "verdict_04": "綠燈",
+        "rounds_here": [
+          "RUN-011",
+          "RUN-020",
+          "RUN-021",
+          "RUN-022"
+        ],
+        "count": 4
+      },
+      {
+        "route": "Strong-BSD twist families",
+        "verdict_04": "首選",
+        "rounds_here": [
+          "RUN-009",
+          "RUN-012",
+          "RUN-015",
+          "RUN-018",
+          "RUN-029",
+          "RUN-031",
+          "RUN-033",
+          "RUN-034",
+          "RUN-035",
+          "RUN-036",
+          "RUN-037",
+          "RUN-038",
+          "RUN-039",
+          "RUN-040",
+          "RUN-044",
+          "RUN-045",
+          "RUN-046",
+          "RUN-047",
+          "RUN-052",
+          "RUN-053",
+          "RUN-055",
+          "RUN-057",
+          "RUN-063"
+        ],
+        "count": 23
+      },
+      {
+        "route": "p-converse",
+        "verdict_04": "綠燈",
+        "rounds_here": [],
+        "count": 0
+      },
+      {
+        "route": "generalized Kato / higher GZ",
+        "verdict_04": "黃燈",
+        "rounds_here": [],
+        "count": 0
+      },
+      {
+        "route": "exact computational BSD",
+        "verdict_04": "綠燈",
+        "rounds_here": [
+          "RUN-014",
+          "RUN-017",
+          "RUN-023",
+          "RUN-026",
+          "RUN-030"
+        ],
+        "count": 5
+      },
+      {
+        "route": "Selmer arithmetic statistics",
+        "verdict_04": "輔助",
+        "rounds_here": [],
+        "count": 0
+      },
+      {
+        "route": "numerical BSD atlas",
+        "verdict_04": "僅作資料層",
+        "rounds_here": [
+          "RUN-004",
+          "RUN-005",
+          "RUN-006",
+          "RUN-007",
+          "RUN-008",
+          "RUN-016"
+        ],
+        "count": 6
+      },
+      {
+        "route": "lattice-point rank convergence (格點秩收斂)",
+        "verdict_04": "紅燈",
+        "rounds_here": [],
+        "count": 0
+      },
+      {
+        "route": "Faithful certificate frontier",
+        "verdict_04": "控制層",
+        "rounds_here": [
+          "RUN-002",
+          "RUN-010",
+          "RUN-013",
+          "RUN-024",
+          "RUN-027",
+          "RUN-032",
+          "RUN-043",
+          "RUN-048",
+          "RUN-058"
+        ],
+        "count": 9
+      }
+    ],
+    "rounds_cited": [
+      "RUN-011",
+      "RUN-020",
+      "RUN-021",
+      "RUN-022",
+      "RUN-009",
+      "RUN-012",
+      "RUN-015",
+      "RUN-018",
+      "RUN-029",
+      "RUN-031",
+      "RUN-033",
+      "RUN-034",
+      "RUN-035",
+      "RUN-036",
+      "RUN-037",
+      "RUN-038",
+      "RUN-039",
+      "RUN-040",
+      "RUN-044",
+      "RUN-045",
+      "RUN-046",
+      "RUN-047",
+      "RUN-052",
+      "RUN-053",
+      "RUN-055",
+      "RUN-057",
+      "RUN-063",
+      "RUN-014",
+      "RUN-017",
+      "RUN-023",
+      "RUN-026",
+      "RUN-030",
+      "RUN-004",
+      "RUN-005",
+      "RUN-006",
+      "RUN-007",
+      "RUN-008",
+      "RUN-016",
+      "RUN-002",
+      "RUN-010",
+      "RUN-013",
+      "RUN-024",
+      "RUN-027",
+      "RUN-032",
+      "RUN-043",
+      "RUN-048",
+      "RUN-058"
+    ],
+    "rounds_cited_that_do_not_exist": [],
+    "首選_route": "Strong-BSD twist families",
+    "most_worked_route_here": "Strong-BSD twist families",
+    "most_worked_count": 23,
+    "runner_up": "Faithful certificate frontier",
+    "runner_up_count": 9,
+    "首選_is_most_worked": true,
+    "red_routes": [
+      "lattice-point rank convergence (格點秩收斂)"
+    ],
+    "red_routes_worked_by_any_round": [],
+    "RUN_003_documents_scanned": 85,
+    "RUN_003_documents_claiming_the_red_routes_conditions_met": 0,
+    "red_route_claimed_met_nowhere": true,
+    "mcdm_line": "(G5, U3, X2–X3, P4–P5) — 04 calls it a routing estimate, not a theorem",
+    "mcdm_present": true,
+    "reading": "the mapping of rounds to routes is a reading, as at RUN-050; the computed facts are that every cited round exists, the 首選 route is the most worked by a wide margin, the 紅燈 route has no round here and no document in the corpus claims its conditions met"
+  },
+  "handoff_08": {
+    "document_found": true,
+    "rows": [
+      {
+        "agent": "A",
+        "brief": "Statement Auditor — BSD-W/F/S dependency DAG; never rank equality = full BSD; never analytic Sha = actual Sha",
+        "this_line": "RUN-004 (01 §6's arithmetic table recomputed), RUN-002 (the ladder's eleven rungs), RUN-043 (this line's position on the claim ladder), RUN-051 (eleven prohibitions in one place)",
+        "state": "fulfilled"
+      },
+      {
+        "agent": "B",
+        "brief": "Banwait–Huang Reproducer — samples, then conductor <= 500,000; unknown, never guessed",
+        "this_line": "RUN-055 … RUN-064 (Phase 1's census recomputed, no Sage run); 'unknown' kept visible: RUN-045's LOCAL_H2 = UNKNOWN",
+        "state": "fulfilled on the artefact side"
+      },
+      {
+        "agent": "C",
+        "brief": "Certificate Schema Engineer — numeric evidence / rigorous computation / external theorem / conditional theorem / actual proof kept apart",
+        "this_line": "RUN-030 (the 696.e1 certificate), RUN-032 (Referee A's checklist as a program), RUN-048 (the schema and the sieve)",
+        "state": "fulfilled"
+      },
+      {
+        "agent": "D",
+        "brief": "Rank-2 Wall Analyst — 389.a1: r_alg, r_an, Ω, Reg, c_p, E_tors, Sha, L''(1)/2!, each with value / how / rigorous? / theorem? / assumption? / missing certificate?",
+        "this_line": "RUN-023 (every term at 389.a1; #Ш BSD-inferred, i.e. an assumption), RUN-026 (rank 1 with every term computed here)",
+        "state": "fulfilled, with Sha the named assumption"
+      },
+      {
+        "agent": "E",
+        "brief": "Adversarial Referee — eight leaps to hunt; verdict PASS/FAIL/OPEN only",
+        "this_line": "RUN-010 (the drill, and every round after it); RUN-062 (the adversarial corpus); RUN-037 (a false box); RUN-046 (the corpus disagreeing with itself)",
+        "state": "fulfilled — this line is that referee"
+      },
+      {
+        "agent": "F",
+        "brief": "Internal Theory Quarantine — Neo.K's lattice/PRC drafts vs BSD: translatable / circular / new obligations; never into the external proof",
+        "this_line": "RUN-003 (the rejection holds and the corpus strengthened it), RUN-019 (the witness-network generalisation admits nothing new)",
+        "state": "fulfilled by measurement"
+      }
+    ],
+    "count": 6,
+    "briefs_named_in_08": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "rounds_cited": [
+      "RUN-004",
+      "RUN-002",
+      "RUN-043",
+      "RUN-051",
+      "RUN-055",
+      "RUN-064",
+      "RUN-045",
+      "RUN-030",
+      "RUN-032",
+      "RUN-048",
+      "RUN-023",
+      "RUN-026",
+      "RUN-010",
+      "RUN-062",
+      "RUN-037",
+      "RUN-046",
+      "RUN-003",
+      "RUN-019"
+    ],
+    "rounds_cited_that_do_not_exist": [],
+    "fulfilled": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "Es_eight_leaps": [
+      "circular BSD assumption",
+      "numerical-to-proof leap",
+      "finite-to-global leap",
+      "p-part-to-full leap",
+      "rank0/1-to-high-rank leap",
+      "isogeny double counting",
+      "database incompleteness",
+      "normalization mismatch"
+    ],
+    "leaps_named_in_08": [
+      "circular BSD assumption",
+      "numerical-to-proof leap",
+      "finite-to-global leap",
+      "p-part-to-full leap",
+      "rank0/1-to-high-rank leap",
+      "isogeny double counting",
+      "database incompleteness",
+      "normalization mismatch"
+    ],
+    "Es_leaps_caught_here": {
+      "circular BSD assumption": [
+        "RUN-023 (BSD-inferred)"
+      ],
+      "numerical-to-proof leap": [
+        "RUN-013 (float64)",
+        "RUN-017 (period)",
+        "RUN-055 (float)"
+      ],
+      "finite-to-global leap": [
+        "RUN-041 (P_loc)",
+        "RUN-051 (substitut)"
+      ],
+      "p-part-to-full leap": [
+        "RUN-043 (C1)",
+        "RUN-021 (ledger)"
+      ],
+      "rank0/1-to-high-rank leap": [
+        "RUN-050 (High rank 2+)",
+        "RUN-026 (rank-1)"
+      ],
+      "isogeny double counting": [
+        "RUN-008 (122,247)",
+        "RUN-031 (Mazur)"
+      ],
+      "database incompleteness": [
+        "RUN-063 (36,687)",
+        "RUN-055 (247,391)"
+      ],
+      "normalization mismatch": [
+        "RUN-042 (square class)",
+        "RUN-062 (CRLF)"
+      ]
+    },
+    "leap_signatures_checked": 16,
+    "leap_signatures_absent": [],
+    "leaps_covered": 8,
+    "reading": "08 was written before any round ran. Read after 64 rounds, every brief has rounds that did it, and every one of E's eight leaps has rounds that caught an instance — several of them in this line's own earlier work (RUN-017's period, RUN-055's float, RUN-026's rank-1 hold)"
+  },
+  "headline": "02's table: four open rows, and no report claims any of them closed; 4 of strong BSD's seven components computed here, the regulator without saturation, Sha never. 04's matrix: the 首選 route is the most worked (23 rounds to the runner-up's 9), the 紅燈 route has no round and RUN-003 found 0 of 85 documents claiming its conditions met. 08's six briefs all have rounds; E's eight leaps all have a caught instance, 16 attributions verified by signature phrase",
+  "ok": true
+}

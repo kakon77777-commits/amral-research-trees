@@ -154,6 +154,7 @@ import src63_removed_13_and_soundness as thirteen63       # noqa: E402
 import src64_discrepancy_corpus as corpus64               # noqa: E402
 import src65_phase1_closure as closure65                  # noqa: E402
 import src66_phase1_protocols as proto66                  # noqa: E402
+import src67_phase0_maps as maps67                        # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3138,6 +3139,41 @@ def check_phase1_protocols() -> bool:
 
 
 
+def check_phase0_maps() -> bool:
+    """Phase 0's three maps against this line's reports.
+
+    02's four open rows must stay four with no report claiming one closed, and
+    the seven-component tally must stay 4 computed / 1 partial / 2 never — a
+    version counting the regulator as fully computed would be claiming the
+    saturation nobody verified. Every round the reading cites must exist, and
+    every attribution's signature phrase must be found in the cited report: a
+    reading that cites a round for a finding it does not contain is RUN-060's
+    failure the other way round. The 首選 route must be the most worked, the
+    紅燈 route must have no round, and RUN-003's log must still say 0 of 85
+    documents claim its conditions met. E's eight leaps must all be named in
+    08 and all covered.
+    """
+    reports = maps67._reports()
+    c = maps67.closure_map_02(reports)
+    if len(c["open_rows"]) != 4 or not c["no_open_row_claimed_closed"]:
+        return False
+    if c["rounds_cited_that_do_not_exist"] or c["component_signatures_absent"]:
+        return False
+    if (c["components_computed_here"] != 4 or c["components_partial_here"] != 1
+            or len(c["components_never_here"]) != 2):
+        return False
+    r = maps67.route_matrix_04(reports)
+    if not r["首選_is_most_worked"] or r["red_routes_worked_by_any_round"]:
+        return False
+    if not r["red_route_claimed_met_nowhere"] or r["rounds_cited_that_do_not_exist"]:
+        return False
+    h = maps67.handoff_08(reports)
+    if h["count"] != 6 or len(h["leaps_named_in_08"]) != 8 or h["leaps_covered"] != 8:
+        return False
+    return not h["rounds_cited_that_do_not_exist"] and not h["leap_signatures_absent"]
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3147,7 +3183,7 @@ COVERS = sorted(m.__name__ for m in (
     comp47, chain48, prev49, schema50, audits51, routes52,
     consensus53, targets54, kern55, schema56, cmap57, prov58,
     lemb59, joins60, commit61, replay62, thirteen63, corpus64,
-    closure65, proto66))
+    closure65, proto66, maps67))
 
 
 CHECKS = {
@@ -3243,6 +3279,7 @@ CHECKS = {
     "discrepancy-corpus": check_discrepancy_corpus,
     "phase1-closure": check_phase1_closure,
     "phase1-protocols": check_phase1_protocols,
+    "phase0-maps": check_phase0_maps,
 }
 
 
@@ -3561,6 +3598,20 @@ DEFECTS = [
     ("10's label REPRODUCTION-QUALIFIED is awarded", "code", "phase1-closure",
      lambda: patch(closure65, "layers_10",
                    lambda: {**_true_layers65(), "label_awarded_here": "REPRODUCTION-QUALIFIED"})),
+    ("02's open row 'Sha finite in general' is read as 已關閉", "code",
+     "phase0-maps",
+     lambda: patch(maps67, "CLOSURE_ROWS", _sha_row_closed())),
+    ("the regulator is counted fully computed, saturation included", "code",
+     "phase0-maps", lambda: patch(maps67, "SEVEN", _regulator_computed())),
+    ("a leap's attribution points at a finding the cited round does not "
+     "contain: RUN-023 for 'Sha computed exactly'", "code", "phase0-maps",
+     lambda: patch(maps67, "CAUGHT", {**maps67.CAUGHT,
+                                       "circular BSD assumption": [("RUN-023", "Sha computed exactly")]})),
+    ("the 紅燈 route is given RUN-003 as a round on it", "code", "phase0-maps",
+     lambda: patch(maps67, "ROUTES", _red_route_worked())),
+    ("a round that does not exist is cited on the twist-family route: RUN-099",
+     "code", "phase0-maps",
+     lambda: patch(maps67, "ROUTES", _route_cites_099())),
     ("04's twist bound is reported absent from the document", "code",
      "phase1-protocols",
      lambda: patch(proto66, "environment_04",
@@ -4084,6 +4135,9 @@ CONTROLS = [
     ("106d1 enumerated over 1 ≤ d < 1000 instead of 00's symmetric range — "
      "the same twenty-one, because no negative d is admissible",
      lambda: patch(closure65, "fixtures_00", _fixtures00_positive_only)),
+    ("04's ten routes listed in reverse order — the 首選 route is the most "
+     "worked whichever row it is on",
+     lambda: patch(maps67, "ROUTES", tuple(reversed(maps67.ROUTES)))),
     ("the stop-rule window widened from 12 to 24 rounds — no three-round "
      "streak either way", lambda: patch(proto66, "stop_rule_on_this_line",
                                         _stop_rule_window_24)),
@@ -4358,6 +4412,31 @@ _true_env66 = proto66.environment_04
 _true_stop66 = proto66.stop_rule_on_this_line
 _true_regression66 = proto66.regression_05
 _true_handoff66 = proto66.handoff_06
+_true_rows67 = maps67.CLOSURE_ROWS
+_true_seven67 = maps67.SEVEN
+_true_routes67 = maps67.ROUTES
+
+
+def _sha_row_closed():
+    return tuple((n, "已關閉", r) if n == "Sha finite in general" else (n, st, r)
+                 for n, st, r in _true_rows67)
+
+
+def _regulator_computed():
+    return tuple((c, "computed", ss, w) if c == "regulator on a saturated basis"
+                 else (c, st, ss, w) for c, st, ss, w in _true_seven67)
+
+
+def _red_route_worked():
+    return tuple((a, b, ["RUN-003"]) if b == "紅燈" else (a, b, c)
+                 for a, b, c in _true_routes67)
+
+
+def _route_cites_099():
+    return tuple((a, b, c + ["RUN-099"]) if b == "首選" else (a, b, c)
+                 for a, b, c in _true_routes67)
+
+
 _true_preflight66 = proto66.preflight_04
 
 
