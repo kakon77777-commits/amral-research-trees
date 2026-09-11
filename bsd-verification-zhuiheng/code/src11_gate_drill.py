@@ -81,6 +81,7 @@ from __future__ import annotations
 import collections
 import copy
 import json
+import json as _json
 import math
 import pathlib
 import re
@@ -147,6 +148,10 @@ import src57_theorem_2_18_condition_map as cmap57         # noqa: E402
 import src58_paper_vs_code_provenance as prov58           # noqa: E402
 import src59_lemma_b_reduction as lemb59                  # noqa: E402
 import src60_cross_round_joins as joins60                 # noqa: E402
+import src61_one_commit_and_delta as commit61             # noqa: E402
+import src62_algorithm2_replay as replay62                # noqa: E402
+import src63_removed_13_and_soundness as thirteen63       # noqa: E402
+import src64_discrepancy_corpus as corpus64               # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -2922,6 +2927,150 @@ def check_cross_round_joins() -> bool:
 
 
 
+def check_one_commit_and_delta() -> bool:
+    """07, 11, 12 and 14 on the one commit RUN-056 measured.
+
+    The delta must be OLD minus (isogeny ∪ a_3) — a version that forgets the
+    a_3 column lands at 39,394 and is the OLD twist blob, not the CURRENT base.
+    11's figures must all recompute and its two pool percentages must imply one
+    pool. The histogram warning must stay JUSTIFIED: the 500K a_3 share is
+    two-thirds against the fixture's one-thirteenth, and a gate that scored the
+    warning unjustified would be endorsing the extrapolation 11 forbade. Gate
+    B's item 5 must stay 0 — that zero is what RUN-060 explains — and Gate C
+    must stay not done: the descent replay has been run by nobody.
+    """
+    base = cmap57.load_base()
+    removed = cmap57.load_removed()
+    new_map = cmap57.load_new_map()
+    a = commit61.autopsy_07()
+    if not (a["RUN_056_located_old_rule_in_diff"]
+            and a["RUN_056_located_new_rule_in_diff"]
+            and a["RUN_056_located_a3_filter_in_diff"]):
+        return False
+    i = commit61.impact_11(base, removed)
+    if not i["all_agree"] or not i["pre_candidate_pool_implied"]["agree_to_within_one"]:
+        return False
+    h = commit61.histogram_11_called_unknown(removed)
+    if h["sum"] != 4062 or not h["the_warning_was_justified"]:
+        return False
+    d = commit61.delta_verifier_12_and_gate_a_14(base, removed, new_map)
+    if not d["sets_equal"] or d["actual_current"] != 36687:
+        return False
+    if d["removed_by_columns"] != 4062:
+        return False
+    g = commit61.gate_b_14(base, removed, new_map)
+    if not g["4_equals_3"] or g["5_twists_added_after_deleting_old_disc_gate"] != 0:
+        return False
+    if g["3_stable_curves_with_twist_changes"] != 5437 or g["6_both_effect_curves"] != 0:
+        return False
+    return commit61.gate_c_14()["done_by_this_line"] is False
+
+
+def check_algorithm2_replay() -> bool:
+    """15's exact replay and 09's two branches.
+
+    The 2×2 must agree cell by cell and |T_O| must be 268,697 — one dropped
+    pair is a different replay. The deleted predicate must be transcribed with
+    ∃q, not ∀q: the ∀ form fails on real curves and moves pairs into D = 0
+    cells that 15 measured as empty. 09's Case B must REJECT under D, or the
+    predicate would be vacuous in principle and the round's explanation of
+    15's zero would be vacuous with it. And the correction to RUN-055 must
+    stay recorded: 15 §8 states the 1,355 identity, and a gate that lost that
+    would let RUN-055's framing stand.
+    """
+    base = cmap57.load_base()
+    old = _json.loads(cmap57.OLD_MAP.read_text(encoding="utf-8"))
+    new = cmap57.load_new_map()
+    c = replay62.chronology_15()
+    if not (c["diffs_present"] and c["G_to_O_adds_disc_valuation_condition"]
+            and c["O_to_C_removes_disc_valuation_condition"]
+            and c["O_to_C_tightens_gcd"]):
+        return False
+    r = replay62.replay(base, old, new)
+    if not r["cells_agree"] or r["T_O"] != 268697 or r["T_C"] != 247391:
+        return False
+    if not r["T_C_equals_new_map"]:
+        return False
+    if r["curve_classes"] != r["curve_classes_stated"]:
+        return False
+    if not r["CLZ20_has_no_3_dividing_d"]:
+        return False
+    if r["curves_failing_D_at_some_p_le_997"] != 0:
+        return False
+    f = replay62.fixtures_09()
+    if not f["both_branches_exercised"] or not f["case_B"]["old_rejects"]:
+        return False
+    return replay62.correction_to_RUN_055()["present_in_15"] is True
+
+
+def check_removed_13_and_soundness() -> bool:
+    """08's thirteen rows and 03's six gates.
+
+    All thirteen must agree under 08's ORDERING — strict isogeny first,
+    smallest prime first, then a_3. Applied a_3-first, 26b1 becomes A3_ABS_3
+    and the table breaks; that ordering is 08's own claim about the pipeline
+    and the check holds it. 26b1 must stay the BOTH class. S6 must stay at
+    exactly 6 of 7 with the timestamp missing: reporting seven would invent a
+    field the metadata does not carry. And the fixture-vs-500K sum must stay
+    4,062 — dropping the BOTH class loses two curves silently.
+    """
+    removed = cmap57.load_removed()
+    meta = _json.loads(cmap57.REMOVED_JSON.read_text(encoding="utf-8"))
+    t = thirteen63.table_08(removed)
+    if t["count"] != 13 or not t["all_agree"] or t["mismatches"]:
+        return False
+    if t["histogram_from_table"] != t["histogram_stated"]:
+        return False
+    if not (t["26b1_is_the_BOTH_class"] and t["26b1_secondary_a3"] == -3
+            and t["26b1_first_failure_is_isogeny_7"]):
+        return False
+    if not t["142e1_has_no_357_isogeny"]:
+        return False
+    f = thirteen63.fixture_versus_500k(removed)
+    if f["sum"] != 4062:
+        return False
+    s = thirteen63.soundness_03(meta)
+    if s["s6_count"] != 6 or s["s6_missing"] != ["timestamp"]:
+        return False
+    return s["not_applicable_by_scope"] == 4
+
+
+
+def check_discrepancy_corpus() -> bool:
+    """02's four adversarial curves against the 8b instrument — the negative
+    control RUN-055 never had.
+
+    All four must FAIL f'(x0) non-square. 02 says a version that accepts them
+    earns the label REGRESSION?; that is what this check enforces on this
+    line's own instrument, and it is the one place a defect in the square test
+    can be caught: on the accepted base every curve passes, so a square test
+    that always said "not a square" would have been green for two rounds. The
+    shard must be present with its CRLF hash matching the package and its LF
+    hash NOT matching — a version that reported the LF hash as matching would
+    be reporting a pin that does not exist. And the four must be read from the
+    shard: three of four typed from memory were wrong.
+    """
+    pin = corpus64.shard_pin()
+    if not pin["shard_present"]:
+        return False
+    if not pin["crlf_matches_package"] or pin["lf_matches_package"]:
+        return False
+    if not pin["byte_gap_equals_line_count"]:
+        return False
+    four = corpus64.the_four(cmap57.load_base())
+    if not four["all_found"] or not four["none_in_base"]:
+        return False
+    if not four["all_exactly_one_root"]:
+        return False
+    if four["f_prime_square_count"] != 4:
+        return False
+    if not four["the_other_two_nonsquare_conditions_hold"]:
+        return False
+    nc = corpus64.negative_control_for_RUN_055()
+    return nc["RUN_055_f_prime_squares_found"] == 0 and nc["RUN_055_checked"] == 3747
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -2930,7 +3079,7 @@ COVERS = sorted(m.__name__ for m in (
     h2o40, brg41, bar42, fin43, cmp44, ladder45, cheb46,
     comp47, chain48, prev49, schema50, audits51, routes52,
     consensus53, targets54, kern55, schema56, cmap57, prov58,
-    lemb59, joins60))
+    lemb59, joins60, commit61, replay62, thirteen63, corpus64))
 
 
 CHECKS = {
@@ -3020,6 +3169,10 @@ CHECKS = {
     "paper-vs-code": check_paper_vs_code,
     "lemma-b-reduction": check_lemma_b_reduction,
     "cross-round-joins": check_cross_round_joins,
+    "one-commit-and-delta": check_one_commit_and_delta,
+    "algorithm2-replay": check_algorithm2_replay,
+    "removed-13-and-soundness": check_removed_13_and_soundness,
+    "discrepancy-corpus": check_discrepancy_corpus,
 }
 
 
@@ -3324,6 +3477,57 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("the square test always answers 'not a square', which the accepted base "
+     "could never have exposed", "code", "discrepancy-corpus",
+     lambda: patch(cmap57, "is_square", lambda n: False)),
+    ("the four curves are read from memory instead of the shard: 66b1's "
+     "a-invariants as the first draft typed them", "code", "discrepancy-corpus",
+     lambda: patch(corpus64, "read_curve", _curves_from_memory)),
+    ("the shard's LF hash is reported as matching the package", "code",
+     "discrepancy-corpus",
+     lambda: patch(corpus64, "shard_pin", _lf_reported_matching)),
+    ("62a1 is reported as present in the 40,749 base", "code",
+     "discrepancy-corpus",
+     lambda: patch(corpus64, "the_four", _62a1_in_base)),
+    ("the delta is computed as OLD minus the isogeny set only, forgetting the "
+     "a_3 column", "code", "one-commit-and-delta",
+     lambda: patch(commit61, "delta_verifier_12_and_gate_a_14", _delta_forgets_a3)),
+    ("11's histogram warning is scored unjustified", "code",
+     "one-commit-and-delta",
+     lambda: patch(commit61, "histogram_11_called_unknown", _warning_unjustified)),
+    ("14's Gate B reports a twist added after the disc gate was deleted",
+     "code", "one-commit-and-delta",
+     lambda: patch(commit61, "gate_b_14", _gate_b_added_one)),
+    ("14's Gate C is reported done by this line", "code",
+     "one-commit-and-delta",
+     lambda: patch(commit61, "gate_c_14", lambda: {**_true_gate_c61(),
+                                                     "done_by_this_line": True})),
+    ("07's a_3 filter is reported unlocated in the diff", "code",
+     "one-commit-and-delta",
+     lambda: patch(commit61, "autopsy_07", _a3_filter_unlocated)),
+    ("the deleted predicate is transcribed with ∀q in place of ∃q", "code",
+     "algorithm2-replay",
+     lambda: patch(replay62, "disc_valuation_condition", _disc_forall)),
+    ("one OLD pair is dropped from the replay", "code", "algorithm2-replay",
+     lambda: patch(replay62, "replay", _replay_drops_one)),
+    ("09's Case B is reported as passing the deleted predicate", "code",
+     "algorithm2-replay",
+     lambda: patch(replay62, "fixtures_09", _case_b_passes)),
+    ("the correction to RUN-055 is dropped: 15 §8 reported absent", "code",
+     "algorithm2-replay",
+     lambda: patch(replay62, "correction_to_RUN_055",
+                   lambda: {**_true_correction62(), "present_in_15": False})),
+    ("08's ordering is applied a_3 first, so 26b1 becomes A3_ABS_3", "code",
+     "removed-13-and-soundness",
+     lambda: patch(thirteen63, "first_failure_from_census", _a3_first)),
+    ("26b1 is reported ISOGENY_ONLY, losing the BOTH class", "code",
+     "removed-13-and-soundness",
+     lambda: patch(thirteen63, "table_08", _26b1_not_both)),
+    ("S6's timestamp is reported present", "code", "removed-13-and-soundness",
+     lambda: patch(thirteen63, "soundness_03", _timestamp_present)),
+    ("the fixture-vs-500K sum drops the BOTH class", "code",
+     "removed-13-and-soundness",
+     lambda: patch(thirteen63, "fixture_versus_500k", _sum_drops_both)),
     ("the scaffolding filter is widened to every prime below 200,000, so no "
      "intersection survives", "code", "cross-round-joins",
      lambda: patch(joins60, "SCAFFOLDING", set(anchor15.sieve(200_000)))),
@@ -3775,6 +3979,13 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("the four adversarial curves listed in a different order",
+     lambda: patch(corpus64, "FOUR", tuple(reversed(corpus64.FOUR)))),
+    ("08's thirteen rows in reverse order",
+     lambda: patch(thirteen63, "TABLE_08", tuple(reversed(thirteen63.TABLE_08)))),
+    ("11's 3,064,705 denominator perturbed by one — every stated percentage "
+     "rounds the same at four decimals",
+     lambda: patch(commit61, "ALL_CURVES", 3064706)),
     ("the prime fraction lowered from 0.8 to 0.5 — more lists admitted, the "
      "known join still present", lambda: patch(joins60, "PRIME_FRACTION", 0.5)),
     ("the constants threshold raised from 4 to 100 — nothing was dropped at 4 "
@@ -4030,6 +4241,122 @@ _true_level2 = comp47.level2
 _true_h1 = comp47.h1
 _true_three_defs = prev49.three_definitions
 _true_find = schema50.find_by_conductor
+_true_read_curve64 = corpus64.read_curve
+_true_shard_pin64 = corpus64.shard_pin
+_true_four64 = corpus64.the_four
+
+
+def _curves_from_memory(label):
+    """The first draft's coefficients for 66b1, 105a1 and 141c1 — wrong — and
+    62a1's, right. On the wrong three the root finder finds no 2-torsion."""
+    memory = {"62a1": [1, -1, 1, -1, 1], "66b1": [1, 0, 1, -45, 81],
+              "105a1": [1, 0, 0, -1, 1], "141c1": [0, 1, 1, -12, 2]}
+    return memory.get(label, _true_read_curve64(label))
+
+
+def _lf_reported_matching():
+    d = dict(_true_shard_pin64())
+    d["lf_matches_package"] = True
+    return d
+
+
+def _62a1_in_base(base):
+    d = dict(_true_four64(base))
+    d["rows"] = [dict(r, in_the_40749_base=True) if r["curve"] == "62a1" else r
+                 for r in d["rows"]]
+    d["none_in_base"] = False
+    return d
+
+
+_true_delta61 = commit61.delta_verifier_12_and_gate_a_14
+_true_hist61 = commit61.histogram_11_called_unknown
+_true_gate_b61 = commit61.gate_b_14
+_true_gate_c61 = commit61.gate_c_14
+_true_autopsy61 = commit61.autopsy_07
+_true_replay62 = replay62.replay
+_true_fixtures62 = replay62.fixtures_09
+_true_correction62 = replay62.correction_to_RUN_055
+_true_first_failure63 = thirteen63.first_failure_from_census
+_true_table63 = thirteen63.table_08
+_true_soundness63 = thirteen63.soundness_03
+_true_fixture63 = thirteen63.fixture_versus_500k
+
+
+def _delta_forgets_a3(base, removed, new_map):
+    d = dict(_true_delta61(base, removed, new_map))
+    iso = {r["curve_label"] for r in removed
+           if r["isogeny_set_357"] not in ("", "NONE")}
+    labels = {r["curve_label"] for r in base}
+    pred = labels - iso
+    d["removed_by_columns"] = len(iso)
+    d["predicted_current"] = len(pred)
+    d["sets_equal"] = pred == set(new_map)
+    return d
+
+
+def _warning_unjustified(removed):
+    d = dict(_true_hist61(removed))
+    d["the_warning_was_justified"] = False
+    return d
+
+
+def _gate_b_added_one(base, removed, new_map):
+    d = dict(_true_gate_b61(base, removed, new_map))
+    d["5_twists_added_after_deleting_old_disc_gate"] = 1
+    return d
+
+
+def _a3_filter_unlocated():
+    d = dict(_true_autopsy61())
+    d["RUN_056_located_a3_filter_in_diff"] = False
+    return d
+
+
+def _disc_forall(primes_dividing_M, conductor_primes, disc_valuations):
+    """∀q instead of ∃q — every conductor prime must witness."""
+    return all(all(disc_valuations[q] % p != 0 for q in conductor_primes if q != p)
+               for p in primes_dividing_M)
+
+
+def _replay_drops_one(base, old, new):
+    d = dict(_true_replay62(base, old, new))
+    d["T_O"] = d["T_O"] - 1
+    return d
+
+
+def _case_b_passes():
+    d = dict(_true_fixtures62())
+    d["case_B"] = dict(d["case_B"], old_rejects=False, D_passes=True)
+    d["both_branches_exercised"] = False
+    return d
+
+
+def _a3_first(row):
+    if row["abs_a3_eq_3"] == "True":
+        return "A3_ABS_3"
+    return _true_first_failure63(row)
+
+
+def _26b1_not_both(removed):
+    d = dict(_true_table63(removed))
+    d["26b1_is_the_BOTH_class"] = False
+    return d
+
+
+def _timestamp_present(meta):
+    d = dict(_true_soundness63(meta))
+    d["s6_present"] = dict(d["s6_present"], timestamp=True)
+    d["s6_count"] = 7
+    d["s6_missing"] = []
+    return d
+
+
+def _sum_drops_both(removed):
+    d = dict(_true_fixture63(removed))
+    d["sum"] = d["sum"] - 2
+    return d
+
+
 _true_prime_sets60 = joins60.prime_sets
 _true_joins60 = joins60.joins
 

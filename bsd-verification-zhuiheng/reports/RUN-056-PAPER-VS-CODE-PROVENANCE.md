@@ -86,7 +86,7 @@ SHA, Sage version, LMFDB release, runtime flags.
 | pin | state | evidence |
 | --- | --- | --- |
 | paper version | **ABSENT** | no arXiv id or version string anywhere in the package |
-| repository commit / file SHA | **PRESENT** | three commits, four blob SHA-1s, ecdata commit `25cec5e`, per-shard SHA-256 |
+| repository commit / file SHA | **PRESENT** — *corrected at RUN-062: the ecdata per-shard SHA-256s reproduce only after CRLF conversion; the package hashed a Windows checkout, not the git blob* | three commits, four blob SHA-1s, ecdata commit `25cec5e`, per-shard SHA-256 |
 | Sage version | **N/A by scope** | `PROVENANCE.md`: a Sage/LMFDB replay "is intentionally not represented as completed here" — no Sage ran |
 | LMFDB release | **PARTIAL** | no release pinned; the ecdata commit is pinned, and ecdata is LMFDB's upstream for these tables |
 | runtime flags | **N/A by scope** | `skip_filter_S` / `skip_BSD_at_2_check` appear only in the archived upstream source, never as recorded values — no Algorithm 2 run happened |
