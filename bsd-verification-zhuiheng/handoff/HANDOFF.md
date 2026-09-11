@@ -5,7 +5,7 @@
 **State at handoff:** 69 rounds, RUN-001 … RUN-069; all 85 curated documents of the corpus have been a round's subject; 97 checks, 294 planted defects all caught by the check named for each, 60 controls undisturbed
 **Provenance of this copy:** see `MANIFEST.json` (git commit, SHA-256 of every file, the drill and sweep totals as read from the logs)
 
-> **給 Neo 的一段。** 這個包是這條線的全部：驗證樹（程式、69 份報告、每個閘門的存檔 log）、語料 85 份、25 個研究包的原始 zip、Phase 1 普查包（八個閘門要讀它）、見證那條線的 Kurihara 交叉驗證包、以及 git bundle（69 輪的 commit 訊息就是敘事）。第 5 節是「已驗證的」與「還開著的」，用語料自己的標籤；第 7 節是接手的人可以做什麼。任何人拿到這個包，不需要網路、不需要 Sage，Python 3.11 加 git 就能重跑每一個閘門與整個 drill。
+> **給 Neo 的一段。** 這個包是這條線的全部：驗證樹（程式、69 份報告、每個閘門的存檔 log）、語料 85 份、drop zone 裡 24 個研究包的原始 zip、Phase 1 普查包（八個閘門要讀它）、見證那條線的 Kurihara 交叉驗證包、以及 git bundle（69 輪的 commit 訊息就是敘事）。第 5 節是「已驗證的」與「還開著的」，用語料自己的標籤；第 7 節是接手的人可以做什麼。任何人拿到這個包，不需要網路、不需要 Sage，Python 3.11 加 git 就能重跑每一個閘門與整個 drill。
 
 ---
 
@@ -43,8 +43,9 @@ amral-research-trees/
 amral/public/bsd/{phase0,p5,phase1,phase2}/files/   THE CORPUS: 85 curated .md, exactly as the site serves them
 amral/public/bsd/stress-test/files/          the Witness line's stress-test audit incl. its Kurihara certificate package (cross-line reference, read-only)
 census/BSD_Phase1_Banwait_Huang_Exact_Census_v0.5_2026-08-12/   the Phase 1 census package (inputs, results, sources) that eight gates read
-research-packages/                           the 25 archived research packages (zips) + the RUGZPB v0.1 note, byte-exact from the drop zone
-git/bsd-verification-zhuiheng.bundle         git bundle of the branch — 69 rounds of commit messages, each a full account of its round
+research-packages/                           the drop zone byte-exact: 24 archived research-package zips + the RUGZPB v0.1 note
+git/bsd-verification-zhuiheng.bundle         git bundle of the branch (full history; the branch also carries the repository's other lines' snapshots)
+git/COMMITS.md                               this line's commits with their full messages — the round-by-round account, readable without git
 ```
 
 The relative layout matters: gates locate the corpus at
@@ -59,10 +60,14 @@ variable.
 python -c "import json,hashlib,pathlib;m=json.load(open('MANIFEST.json',encoding='utf-8'));bad=[f for f,h in m['files'].items() if hashlib.sha256(pathlib.Path(f).read_bytes()).hexdigest()!=h['sha256']];print('files',len(m['files']),'mismatches',bad)"
 ```
 
-The git bundle: `git bundle verify git/bsd-verification-zhuiheng.bundle`, then
-`git clone git/bsd-verification-zhuiheng.bundle -b agent/bsd-verification-zhuiheng`
-gives the full history. The tree in `amral-research-trees/` is that branch's
-HEAD (commit in `MANIFEST.json`), tracked files only.
+The git bundle: `git clone git/bsd-verification-zhuiheng.bundle -b agent/bsd-verification-zhuiheng <dir>`
+gives the full history (`git bundle verify` works from inside any repository).
+The branch also carries snapshots of the repository's other lines, some with
+long paths — on Windows clone into a short path or set `git config --global
+core.longpaths true`. Without git, `git/COMMITS.md` has every commit message
+of this line in full. The tree in `amral-research-trees/` is that branch's
+HEAD (commit in `MANIFEST.json`), tracked files only; the same branch is
+public at `https://github.com/kakon77777-commits/amral-research-trees`.
 
 ## 4. Run it
 

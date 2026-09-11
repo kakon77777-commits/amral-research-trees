@@ -86,6 +86,15 @@ def git_bundle() -> pathlib.Path:
     subprocess.run(["git", "bundle", "create", str(b), BRANCH], cwd=REPO, check=True,
                    capture_output=True)
     subprocess.run(["git", "bundle", "verify", str(b)], cwd=REPO, check=True, capture_output=True)
+    # this line's commits with their full messages — the round-by-round narrative, readable without git
+    log = sh("git", "log", "--date=iso-strict", "--format=%H%n%ad%n%s%n%n%b%n----", BRANCH, "--",
+             "bsd-verification-zhuiheng", cwd=REPO)
+    nl = chr(10)
+    n = log.count(nl + "----")
+    (OUT / "git" / "COMMITS.md").write_text(
+        "# Commits of bsd-verification-zhuiheng on " + BRANCH + nl + nl
+        + f"{n} commits, newest first; hash, date, subject, body. Remote: "
+        + "https://github.com/kakon77777-commits/amral-research-trees" + nl + nl + log, encoding="utf-8")
     return b
 
 
@@ -135,7 +144,7 @@ def manifest(counts: dict, smoke: dict) -> dict:
                   "caught_by_named_check": t["defects"] - len(t["UNCAUGHT_BY_ANY_CHECK"]) - len(t["CAUGHT_BY_THE_WRONG_CHECK"]),
                   "uncaught": len(t["UNCAUGHT_BY_ANY_CHECK"]), "caught_by_wrong_check": len(t["CAUGHT_BY_THE_WRONG_CHECK"]),
                   "controls": t["controls"], "controls_disturbed": len(t["controls_that_disturbed_a_check"])},
-        "sweep": {"documents": len(sweep["documents"]), "buckets": sweep["counts"], "per_subline": sweep["per_subline"]},
+        "sweep": {"documents": sweep["documents"], "buckets": sweep["counts"], "per_subline": sweep["per_subline"]},
         "contents": counts,
         "smoke_test_inside_the_bundle": smoke,
         "python_used_to_build": sys.version.split()[0],
