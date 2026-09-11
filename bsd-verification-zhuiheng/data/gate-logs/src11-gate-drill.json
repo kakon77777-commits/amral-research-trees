@@ -67,7 +67,8 @@
     "src65_phase1_closure",
     "src66_phase1_protocols",
     "src67_phase0_maps",
-    "src68_algorithm2_mirror_and_diff"
+    "src68_algorithm2_mirror_and_diff",
+    "src69_anomalous_norm_localization"
   ],
   "rule": "a planted defect must be caught by the check NAMED for it, not merely by some check; and controls must disturb nothing",
   "two_kinds": {
@@ -169,7 +170,8 @@
     "phase1-closure": true,
     "phase1-protocols": true,
     "phase0-maps": true,
-    "algorithm2-mirror-and-diff": true
+    "algorithm2-mirror-and-diff": true,
+    "anomalous-norm-localization": true
   },
   "defects": [
     {
@@ -1243,6 +1245,56 @@
     },
     {
       "index": 98,
+      "defect": "the change of coordinates uses X = 36x + b2 in place of 36x + 3b2, so the generator images move",
+      "kind": "code",
+      "named_check": "anomalous-norm-localization",
+      "checks_that_went_red": [
+        "anomalous-norm-localization"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "index": 99,
+      "defect": "the doubling formula drops the A term: 3x^2 in place of 3x^2 + A",
+      "kind": "code",
+      "named_check": "anomalous-norm-localization",
+      "checks_that_went_red": [
+        "anomalous-norm-localization"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "index": 100,
+      "defect": "the discrete logarithm is searched only up to the cofactor, so Q' = 244 P' is never found",
+      "kind": "code",
+      "named_check": "anomalous-norm-localization",
+      "checks_that_went_red": [
+        "anomalous-norm-localization"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "index": 101,
+      "defect": "rho's image is computed without the compatibility factor, so it reads 35,530 and rho is not surjective",
+      "kind": "code",
+      "named_check": "anomalous-norm-localization",
+      "checks_that_went_red": [
+        "anomalous-norm-localization"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "index": 102,
+      "defect": "the label count includes section 0's definition, so CLOSED_EXACT reads 8",
+      "kind": "code",
+      "named_check": "anomalous-norm-localization",
+      "checks_that_went_red": [
+        "anomalous-norm-localization"
+      ],
+      "caught_by_the_named_check": true
+    },
+    {
+      "index": 103,
       "defect": "03's D_x loses its factor 4, so the formula counts the wrong curve",
       "kind": "code",
       "named_check": "algorithm2-mirror-and-diff",
@@ -1252,7 +1304,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 99,
+      "index": 104,
       "defect": "the mirror's cubic is written with b4 in place of 2b4",
       "kind": "code",
       "named_check": "algorithm2-mirror-and-diff",
@@ -1262,7 +1314,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 100,
+      "index": 105,
       "defect": "Hasse's bound is applied as a_p^2 <= p",
       "kind": "code",
       "named_check": "algorithm2-mirror-and-diff",
@@ -1272,7 +1324,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 101,
+      "index": 106,
       "defect": "the OLD map is read from the CURRENT file, so nothing was ever removed",
       "kind": "code",
       "named_check": "algorithm2-mirror-and-diff",
@@ -1285,7 +1337,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 102,
+      "index": 107,
       "defect": "a re-aligned added line is classified as new content",
       "kind": "code",
       "named_check": "algorithm2-mirror-and-diff",
@@ -1295,7 +1347,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 103,
+      "index": 108,
       "defect": "02's open row 'Sha finite in general' is read as 已關閉",
       "kind": "code",
       "named_check": "phase0-maps",
@@ -1305,7 +1357,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 104,
+      "index": 109,
       "defect": "the regulator is counted fully computed, saturation included",
       "kind": "code",
       "named_check": "phase0-maps",
@@ -1315,7 +1367,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 105,
+      "index": 110,
       "defect": "a leap's attribution points at a finding the cited round does not contain: RUN-023 for 'Sha computed exactly'",
       "kind": "code",
       "named_check": "phase0-maps",
@@ -1325,7 +1377,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 106,
+      "index": 111,
       "defect": "the 紅燈 route is given RUN-003 as a round on it",
       "kind": "code",
       "named_check": "phase0-maps",
@@ -1335,7 +1387,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 107,
+      "index": 112,
       "defect": "a round that does not exist is cited on the twist-family route: RUN-099",
       "kind": "code",
       "named_check": "phase0-maps",
@@ -1345,7 +1397,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 108,
+      "index": 113,
       "defect": "04's twist bound is reported absent from the document",
       "kind": "code",
       "named_check": "phase1-protocols",
@@ -1355,7 +1407,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 109,
+      "index": 114,
       "defect": "the stop-rule proxy reports a three-round streak",
       "kind": "code",
       "named_check": "phase1-protocols",
@@ -1365,7 +1417,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 110,
+      "index": 115,
       "defect": "05's record fields are all reported carried, code_version included",
       "kind": "code",
       "named_check": "phase1-protocols",
@@ -1375,7 +1427,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 111,
+      "index": 116,
       "defect": "06's handoff reports one discrepancy under negative twist convention",
       "kind": "code",
       "named_check": "phase1-protocols",
@@ -1385,7 +1437,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 112,
+      "index": 117,
       "defect": "04's seven preflight outputs are reported present by exact name",
       "kind": "code",
       "named_check": "phase1-protocols",
@@ -1395,7 +1447,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 113,
+      "index": 118,
       "defect": "the square test always answers 'not a square', which the accepted base could never have exposed",
       "kind": "code",
       "named_check": "discrepancy-corpus",
@@ -1405,7 +1457,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 114,
+      "index": 119,
       "defect": "the four curves are read from memory instead of the shard: 66b1's a-invariants as the first draft typed them",
       "kind": "code",
       "named_check": "discrepancy-corpus",
@@ -1415,7 +1467,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 115,
+      "index": 120,
       "defect": "the shard's LF hash is reported as matching the package",
       "kind": "code",
       "named_check": "discrepancy-corpus",
@@ -1425,7 +1477,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 116,
+      "index": 121,
       "defect": "62a1 is reported as present in the 40,749 base",
       "kind": "code",
       "named_check": "discrepancy-corpus",
@@ -1435,7 +1487,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 117,
+      "index": 122,
       "defect": "the delta is computed as OLD minus the isogeny set only, forgetting the a_3 column",
       "kind": "code",
       "named_check": "one-commit-and-delta",
@@ -1445,7 +1497,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 118,
+      "index": 123,
       "defect": "11's histogram warning is scored unjustified",
       "kind": "code",
       "named_check": "one-commit-and-delta",
@@ -1455,7 +1507,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 119,
+      "index": 124,
       "defect": "14's Gate B reports a twist added after the disc gate was deleted",
       "kind": "code",
       "named_check": "one-commit-and-delta",
@@ -1465,7 +1517,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 120,
+      "index": 125,
       "defect": "14's Gate C is reported done by this line",
       "kind": "code",
       "named_check": "one-commit-and-delta",
@@ -1475,7 +1527,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 121,
+      "index": 126,
       "defect": "07's a_3 filter is reported unlocated in the diff",
       "kind": "code",
       "named_check": "one-commit-and-delta",
@@ -1485,7 +1537,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 122,
+      "index": 127,
       "defect": "the deleted predicate is transcribed with ∀q in place of ∃q",
       "kind": "code",
       "named_check": "algorithm2-replay",
@@ -1495,7 +1547,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 123,
+      "index": 128,
       "defect": "one OLD pair is dropped from the replay",
       "kind": "code",
       "named_check": "algorithm2-replay",
@@ -1505,7 +1557,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 124,
+      "index": 129,
       "defect": "09's Case B is reported as passing the deleted predicate",
       "kind": "code",
       "named_check": "algorithm2-replay",
@@ -1515,7 +1567,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 125,
+      "index": 130,
       "defect": "the correction to RUN-055 is dropped: 15 §8 reported absent",
       "kind": "code",
       "named_check": "algorithm2-replay",
@@ -1525,7 +1577,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 126,
+      "index": 131,
       "defect": "08's ordering is applied a_3 first, so 26b1 becomes A3_ABS_3",
       "kind": "code",
       "named_check": "removed-13-and-soundness",
@@ -1535,7 +1587,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 127,
+      "index": 132,
       "defect": "26b1 is reported ISOGENY_ONLY, losing the BOTH class",
       "kind": "code",
       "named_check": "removed-13-and-soundness",
@@ -1545,7 +1597,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 128,
+      "index": 133,
       "defect": "S6's timestamp is reported present",
       "kind": "code",
       "named_check": "removed-13-and-soundness",
@@ -1555,7 +1607,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 129,
+      "index": 134,
       "defect": "the fixture-vs-500K sum drops the BOTH class",
       "kind": "code",
       "named_check": "removed-13-and-soundness",
@@ -1565,7 +1617,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 130,
+      "index": 135,
       "defect": "the scaffolding filter is widened to every prime below 200,000, so no intersection survives",
       "kind": "code",
       "named_check": "cross-round-joins",
@@ -1575,7 +1627,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 131,
+      "index": 136,
       "defect": "RUN-038's log is skipped by the scan, so the 3529 join cannot be found",
       "kind": "code",
       "named_check": "cross-round-joins",
@@ -1585,7 +1637,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 132,
+      "index": 137,
       "defect": "the containment filter is read backwards: re-reads are kept and real joins dropped",
       "kind": "code",
       "named_check": "cross-round-joins",
@@ -1595,7 +1647,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 133,
+      "index": 138,
       "defect": "the small-prime floor is raised to 4,000, so every set below it — RUN-038's obstruction list included — is discarded",
       "kind": "code",
       "named_check": "cross-round-joins",
@@ -1605,7 +1657,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 134,
+      "index": 139,
       "defect": "the ordinary test is inverted, so every member reads supersingular and H2 passes everywhere",
       "kind": "code",
       "named_check": "lemma-b-reduction",
@@ -1615,7 +1667,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 135,
+      "index": 140,
       "defect": "member 3529 is dropped from the family, and the failure with it",
       "kind": "code",
       "named_check": "lemma-b-reduction",
@@ -1625,7 +1677,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 136,
+      "index": 141,
       "defect": "RUN-038's failure list is read from a flat key again, so the archive says 3529 was never listed",
       "kind": "code",
       "named_check": "lemma-b-reduction",
@@ -1635,7 +1687,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 137,
+      "index": 142,
       "defect": "27's revised router is reported as applying FW at p = q",
       "kind": "code",
       "named_check": "lemma-b-reduction",
@@ -1645,7 +1697,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 138,
+      "index": 143,
       "defect": "the verdict is reported under 07's FW17_EXACT profile",
       "kind": "code",
       "named_check": "lemma-b-reduction",
@@ -1655,7 +1707,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 139,
+      "index": 144,
       "defect": "a cited step of the chain is scored computed",
       "kind": "code",
       "named_check": "lemma-b-reduction",
@@ -1665,7 +1717,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 140,
+      "index": 145,
       "defect": "E2's agreement with the census is scored by count rather than by set, so a swapped pair passes",
       "kind": "code",
       "named_check": "condition-map",
@@ -1675,7 +1727,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 141,
+      "index": 146,
       "defect": "a_p comes back as p itself, so every curve is supersingular and every a_3 is 3",
       "kind": "code",
       "named_check": "condition-map",
@@ -1687,7 +1739,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 142,
+      "index": 147,
       "defect": "E4 is read in the ∀-form — every q | N must witness — instead of the ∃-form",
       "kind": "code",
       "named_check": "condition-map",
@@ -1697,7 +1749,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 143,
+      "index": 148,
       "defect": "the 2-torsion root finder goes back to float bracketing on a Cauchy bound",
       "kind": "code",
       "named_check": "condition-map",
@@ -1707,7 +1759,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 144,
+      "index": 149,
       "defect": "the twist-condition failures are counted but all_pass is reported True regardless",
       "kind": "code",
       "named_check": "condition-map",
@@ -1717,7 +1769,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 145,
+      "index": 150,
       "defect": "the relaxed rule is applied as if it were the strict one",
       "kind": "code",
       "named_check": "paper-vs-code",
@@ -1727,7 +1779,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 146,
+      "index": 151,
       "defect": "the `and` expression is reported as evaluating to the intersection",
       "kind": "code",
       "named_check": "paper-vs-code",
@@ -1737,7 +1789,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 147,
+      "index": 152,
       "defect": "the generator-to-old diff is missing from the package",
       "kind": "code",
       "named_check": "paper-vs-code",
@@ -1747,7 +1799,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 148,
+      "index": 153,
       "defect": "02's paper-version pin is scored PRESENT",
       "kind": "code",
       "named_check": "paper-vs-code",
@@ -1757,7 +1809,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 149,
+      "index": 154,
       "defect": "a rank column is reported in the base record",
       "kind": "code",
       "named_check": "paper-vs-code",
@@ -1767,7 +1819,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 150,
+      "index": 155,
       "defect": "04's chain drops the `p` odd hypothesis from step 2, where p = 2 makes the clause vacuous",
       "kind": "code",
       "named_check": "local-isogeny-kernel",
@@ -1777,7 +1829,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 151,
+      "index": 156,
       "defect": "the closed form goes back to (p-1) % 2, which is the divisibility backwards",
       "kind": "code",
       "named_check": "local-isogeny-kernel",
@@ -1787,7 +1839,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 152,
+      "index": 157,
       "defect": "omega squared is reported trivial at every prime",
       "kind": "code",
       "named_check": "local-isogeny-kernel",
@@ -1797,7 +1849,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 153,
+      "index": 158,
       "defect": "the two kernel tests are reported mutually exclusive at p = 3 too",
       "kind": "code",
       "named_check": "local-isogeny-kernel",
@@ -1807,7 +1859,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 154,
+      "index": 159,
       "defect": "the precondition is reported settled by RUN-036's global surjectivity",
       "kind": "code",
       "named_check": "local-isogeny-kernel",
@@ -1817,7 +1869,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 155,
+      "index": 160,
       "defect": "05's five bridge hypotheses are scored as all proved",
       "kind": "code",
       "named_check": "family-schema-and-spec",
@@ -1827,7 +1879,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 156,
+      "index": 161,
       "defect": "05's Gap A is reported closed",
       "kind": "code",
       "named_check": "family-schema-and-spec",
@@ -1837,7 +1889,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 157,
+      "index": 162,
       "defect": "the p = 3 reasons come back empty, so the count would be typed from prose",
       "kind": "code",
       "named_check": "family-schema-and-spec",
@@ -1847,7 +1899,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 158,
+      "index": 163,
       "defect": "07's verdict key fw17_h2 is reported fillable in this tree",
       "kind": "code",
       "named_check": "family-schema-and-spec",
@@ -1857,7 +1909,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 159,
+      "index": 164,
       "defect": "the prohibition count merges the two documents numbered 07, losing four",
       "kind": "code",
       "named_check": "family-schema-and-spec",
@@ -1867,7 +1919,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 160,
+      "index": 165,
       "defect": "07's six regression fixtures are scored runnable here",
       "kind": "code",
       "named_check": "family-schema-and-spec",
@@ -1877,7 +1929,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 161,
+      "index": 166,
       "defect": "00 §6's third guard is reported present with RUN-045's UNKNOWN rows gone",
       "kind": "code",
       "named_check": "consensus-and-experiment",
@@ -1887,7 +1939,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 162,
+      "index": 167,
       "defect": "06's success gate is reported met at four of four",
       "kind": "code",
       "named_check": "consensus-and-experiment",
@@ -1897,7 +1949,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 163,
+      "index": 168,
       "defect": "00 §5's prime quantifier is reported closed",
       "kind": "code",
       "named_check": "consensus-and-experiment",
@@ -1907,7 +1959,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 164,
+      "index": 169,
       "defect": "06's step 4 warning is reported obeyed by the corpus",
       "kind": "code",
       "named_check": "consensus-and-experiment",
@@ -1917,7 +1969,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 165,
+      "index": 170,
       "defect": "v0.3's two local branches are reported computed in this tree",
       "kind": "code",
       "named_check": "compiler-targets",
@@ -1927,7 +1979,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 166,
+      "index": 171,
       "defect": "the base curve is reported carrying an odd additive prime",
       "kind": "code",
       "named_check": "compiler-targets",
@@ -1937,7 +1989,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 167,
+      "index": 172,
       "defect": "02's target 3 is scored achieved where its domain is empty",
       "kind": "code",
       "named_check": "compiler-targets",
@@ -1947,7 +1999,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 168,
+      "index": 173,
       "defect": "the census detector goes back to matching on the filename",
       "kind": "code",
       "named_check": "compiler-targets",
@@ -1957,7 +2009,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 169,
+      "index": 174,
       "defect": "the census detector stops excluding this gate's own log, which carries the five status names it searches for",
       "kind": "code",
       "named_check": "compiler-targets",
@@ -1967,7 +2019,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 170,
+      "index": 175,
       "defect": "a_29 comes back +1, so 23's weight-2 sign stops selecting the nonsplit prime",
       "kind": "code",
       "named_check": "source-audits",
@@ -1977,7 +2029,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 171,
+      "index": 176,
       "defect": "maximality is reported certified at 3, where RUN-036 could not",
       "kind": "code",
       "named_check": "source-audits",
@@ -1987,7 +2039,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 172,
+      "index": 177,
       "defect": "22's cited hypotheses are scored as computed",
       "kind": "code",
       "named_check": "source-audits",
@@ -1997,7 +2049,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 173,
+      "index": 178,
       "defect": "23's quoted condition is reported absent, so nothing moves",
       "kind": "code",
       "named_check": "source-audits",
@@ -2007,7 +2059,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 174,
+      "index": 179,
       "defect": "26's box is reported as a step this arm can take",
       "kind": "code",
       "named_check": "novelty-and-routes",
@@ -2017,7 +2069,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 175,
+      "index": 180,
       "defect": "the classified novelty quotations are unpinned",
       "kind": "code",
       "named_check": "novelty-and-routes",
@@ -2027,7 +2079,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 176,
+      "index": 181,
       "defect": "the refusal test goes back to reading unflattened text, so a refusal broken by a line wrap is invisible",
       "kind": "code",
       "named_check": "novelty-and-routes",
@@ -2037,7 +2089,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 177,
+      "index": 182,
       "defect": "refusal words go back to matching as substrings, so \"nothing\" and \"another\" both count as \"not\"",
       "kind": "code",
       "named_check": "novelty-and-routes",
@@ -2047,7 +2099,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 178,
+      "index": 183,
       "defect": "the drill's own check name is left in the prose it scans, so every drill table counts as a mention",
       "kind": "code",
       "named_check": "novelty-and-routes",
@@ -2057,7 +2109,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 179,
+      "index": 184,
       "defect": "01's STOP route is reported covered",
       "kind": "code",
       "named_check": "novelty-and-routes",
@@ -2067,7 +2119,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 180,
+      "index": 185,
       "defect": "the two rounds on non-prioritised routes are hidden",
       "kind": "code",
       "named_check": "novelty-and-routes",
@@ -2077,7 +2129,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 181,
+      "index": 186,
       "defect": "18's set definition drops the cubic-irreducibility condition",
       "kind": "code",
       "named_check": "provisional-vs-revised",
@@ -2087,7 +2139,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 182,
+      "index": 187,
       "defect": "the router loses its p = q branch, so q goes unrouted",
       "kind": "code",
       "named_check": "provisional-vs-revised",
@@ -2097,7 +2149,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 183,
+      "index": 188,
       "defect": "18's open referee items are reported addressed",
       "kind": "code",
       "named_check": "provisional-vs-revised",
@@ -2107,7 +2159,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 184,
+      "index": 189,
       "defect": "the router's witnesses are reported matching without comparing",
       "kind": "code",
       "named_check": "provisional-vs-revised",
@@ -2117,7 +2169,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 185,
+      "index": 190,
       "defect": "the control curve cannot be found, so the failing side is never shown",
       "kind": "code",
       "named_check": "candidate-schema",
@@ -2127,7 +2179,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 186,
+      "index": 191,
       "defect": "the sieve criterion drops the two-reservoir clause",
       "kind": "code",
       "named_check": "candidate-schema",
@@ -2137,7 +2189,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 187,
+      "index": 192,
       "defect": "additive primes are counted as multiplicative reservoirs",
       "kind": "code",
       "named_check": "candidate-schema",
@@ -2147,7 +2199,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 188,
+      "index": 193,
       "defect": "one of 13's six obligations is reported closed",
       "kind": "code",
       "named_check": "candidate-schema",
@@ -2157,7 +2209,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 189,
+      "index": 194,
       "defect": "Level 2 reports the quantifier compression achieved",
       "kind": "code",
       "named_check": "fw-compiler",
@@ -2167,7 +2219,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 190,
+      "index": 195,
       "defect": "the H3 rows stop naming which formulation decided them",
       "kind": "code",
       "named_check": "fw-compiler",
@@ -2177,7 +2229,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 191,
+      "index": 196,
       "defect": "H1 is reported PASS beyond the range RUN-036 certified",
       "kind": "code",
       "named_check": "fw-compiler",
@@ -2187,7 +2239,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 192,
+      "index": 197,
       "defect": "the certificate emits keys the specification does not have",
       "kind": "code",
       "named_check": "fw-compiler",
@@ -2197,7 +2249,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 193,
+      "index": 198,
       "defect": "the 03-08 equivalence is asserted without exhausting anything",
       "kind": "code",
       "named_check": "h2-chain",
@@ -2207,7 +2259,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 194,
+      "index": 199,
       "defect": "10's congruence is called complete at p = 3 as well",
       "kind": "code",
       "named_check": "h2-chain",
@@ -2217,7 +2269,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 195,
+      "index": 200,
       "defect": "the H3 disagreement is reported resolved",
       "kind": "code",
       "named_check": "h2-chain",
@@ -2227,7 +2279,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 196,
+      "index": 201,
       "defect": "02's cautionary line is reported absent, so there is no disagreement",
       "kind": "code",
       "named_check": "h2-chain",
@@ -2237,7 +2289,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 197,
+      "index": 202,
       "defect": "the ladder position is reported as C2",
       "kind": "code",
       "named_check": "claim-ladder",
@@ -2247,7 +2299,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 198,
+      "index": 203,
       "defect": "H1 is reported as executable here, so C1 reads as complete",
       "kind": "code",
       "named_check": "claim-ladder",
@@ -2257,7 +2309,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 199,
+      "index": 204,
       "defect": "the forbidden-upgrade audit stops reading the logs",
       "kind": "code",
       "named_check": "claim-ladder",
@@ -2267,7 +2319,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 200,
+      "index": 205,
       "defect": "the stop rule reports untriggered while its own rounds are not new",
       "kind": "code",
       "named_check": "claim-ladder",
@@ -2277,7 +2329,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 201,
+      "index": 206,
       "defect": "every quadratic field is called a subfield of Q(zeta_24)",
       "kind": "code",
       "named_check": "chebotarev-audit",
@@ -2287,7 +2339,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 202,
+      "index": 207,
       "defect": "the support condition asks for a transposition",
       "kind": "code",
       "named_check": "chebotarev-audit",
@@ -2297,7 +2349,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 203,
+      "index": 208,
       "defect": "the squarefree part is not extracted",
       "kind": "code",
       "named_check": "chebotarev-audit",
@@ -2307,7 +2359,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 204,
+      "index": 209,
       "defect": "every subgroup is counted as normal",
       "kind": "code",
       "named_check": "chebotarev-audit",
@@ -2317,7 +2369,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 205,
+      "index": 210,
       "defect": "the P_ram heuristic is reported as exact",
       "kind": "code",
       "named_check": "finite-exceptional",
@@ -2327,7 +2379,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 206,
+      "index": 211,
       "defect": "the structural vacuity at n = 2 is treated as an unfound witness",
       "kind": "code",
       "named_check": "finite-exceptional",
@@ -2337,7 +2389,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 207,
+      "index": 212,
       "defect": "the bounded local measurement is reported as universal",
       "kind": "code",
       "named_check": "finite-exceptional",
@@ -2347,7 +2399,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 208,
+      "index": 213,
       "defect": "a supersingular prime is put into P_loc, so the branches overlap",
       "kind": "code",
       "named_check": "finite-exceptional",
@@ -2357,7 +2409,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 209,
+      "index": 214,
       "defect": "the cited certificate rows are scored as computed",
       "kind": "code",
       "named_check": "base-certificate",
@@ -2367,7 +2419,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 210,
+      "index": 215,
       "defect": "the discriminant is compared by value instead of square class",
       "kind": "code",
       "named_check": "base-certificate",
@@ -2377,7 +2429,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 211,
+      "index": 216,
       "defect": "the document is never read, so the refusal is assumed",
       "kind": "code",
       "named_check": "base-certificate",
@@ -2387,7 +2439,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 212,
+      "index": 217,
       "defect": "the certificate is compared against a different curve",
       "kind": "code",
       "named_check": "base-certificate",
@@ -2397,7 +2449,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 213,
+      "index": 218,
       "defect": "H1 and H2 are relabelled as computed here",
       "kind": "code",
       "named_check": "derived-bridge",
@@ -2407,7 +2459,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 214,
+      "index": 219,
       "defect": "the safe period condition reports itself closed",
       "kind": "code",
       "named_check": "derived-bridge",
@@ -2417,7 +2469,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 215,
+      "index": 220,
       "defect": "the contrast with 09 is emptied, so 11's range excludes nothing",
       "kind": "code",
       "named_check": "derived-bridge",
@@ -2427,7 +2479,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 216,
+      "index": 221,
       "defect": "the rank-zero corollary reports the period question closed",
       "kind": "code",
       "named_check": "derived-bridge",
@@ -2437,7 +2489,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 217,
+      "index": 222,
       "defect": "the barrier's p >= 11 floor is raised above the family",
       "kind": "code",
       "named_check": "odd-additive-barrier",
@@ -2447,7 +2499,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 218,
+      "index": 223,
       "defect": "the excluded Kodaira types come back unreachable",
       "kind": "code",
       "named_check": "odd-additive-barrier",
@@ -2457,7 +2509,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 219,
+      "index": 224,
       "defect": "the even additive prime is counted as an odd one",
       "kind": "code",
       "named_check": "odd-additive-barrier",
@@ -2468,7 +2520,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 220,
+      "index": 225,
       "defect": "the twist valuations are read off the untwisted model",
       "kind": "code",
       "named_check": "odd-additive-barrier",
@@ -2478,7 +2530,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 221,
+      "index": 226,
       "defect": "FW-H3 drops the ell != p clause, so the gap disappears",
       "kind": "code",
       "named_check": "fw-h3-compiler",
@@ -2491,7 +2543,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 222,
+      "index": 227,
       "defect": "W_- admits the split multiplicative primes too",
       "kind": "code",
       "named_check": "fw-h3-compiler",
@@ -2506,7 +2558,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 223,
+      "index": 228,
       "defect": "g_- is reported as 1 whatever the valuations are",
       "kind": "code",
       "named_check": "fw-h3-compiler",
@@ -2516,7 +2568,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 224,
+      "index": 229,
       "defect": "every gcd is called a power of two, so the premise never refuses",
       "kind": "code",
       "named_check": "fw-h3-compiler",
@@ -2526,7 +2578,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 225,
+      "index": 230,
       "defect": "the H2 criterion tests a_p = 1 and forgets a_p = -1",
       "kind": "code",
       "named_check": "fw-h2-ordinary",
@@ -2536,7 +2588,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 226,
+      "index": 231,
       "defect": "the supersingular set comes back empty",
       "kind": "code",
       "named_check": "fw-h2-ordinary",
@@ -2547,7 +2599,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 227,
+      "index": 232,
       "defect": "a bad prime is admitted into the good supersingular branch",
       "kind": "code",
       "named_check": "fw-h2-ordinary",
@@ -2558,7 +2610,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 228,
+      "index": 233,
       "defect": "the ordinary failure set comes back empty, so the routing argument rests on nothing",
       "kind": "code",
       "named_check": "fw-h2-ordinary",
@@ -2569,7 +2621,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 229,
+      "index": 234,
       "defect": "every prime is reported split, so the inert side never moves",
       "kind": "code",
       "named_check": "twist-bridge",
@@ -2579,7 +2631,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 230,
+      "index": 235,
       "defect": "the local invariants drop the split flag, hiding the one thing that flips",
       "kind": "code",
       "named_check": "twist-bridge",
@@ -2589,7 +2641,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 231,
+      "index": 236,
       "defect": "lemma B is reported as established",
       "kind": "code",
       "named_check": "twist-bridge",
@@ -2599,7 +2651,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 232,
+      "index": 237,
       "defect": "the twist invariance is measured against the curve itself",
       "kind": "code",
       "named_check": "twist-bridge",
@@ -2609,7 +2661,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 233,
+      "index": 238,
       "defect": "every Frobenius is given projective order 6, so S4 is refuted at 3 where it is the whole group",
       "kind": "code",
       "named_check": "mod-ell-surjectivity",
@@ -2619,7 +2671,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 234,
+      "index": 239,
       "defect": "the nonsplit-Cartan vacuity at 3 is reported refutable",
       "kind": "code",
       "named_check": "mod-ell-surjectivity",
@@ -2629,7 +2681,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 235,
+      "index": 240,
       "defect": "a class with no witness is counted as refuted",
       "kind": "code",
       "named_check": "mod-ell-surjectivity",
@@ -2639,7 +2691,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 236,
+      "index": 241,
       "defect": "the mod-2 verdict stops following from the cubic",
       "kind": "code",
       "named_check": "mod-ell-surjectivity",
@@ -2649,7 +2701,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 237,
+      "index": 242,
       "defect": "the gcd of an empty set reports no failures instead of all of them",
       "kind": "code",
       "named_check": "gcd-witness-lemmas",
@@ -2659,7 +2711,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 238,
+      "index": 243,
       "defect": "every multiplicative prime is reported split, emptying the nonsplit set",
       "kind": "code",
       "named_check": "gcd-witness-lemmas",
@@ -2677,7 +2729,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 239,
+      "index": 244,
       "defect": "the empty-set search is given nothing to search",
       "kind": "code",
       "named_check": "gcd-witness-lemmas",
@@ -2688,7 +2740,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 240,
+      "index": 245,
       "defect": "the leave-one-out lets a prime be its own witness",
       "kind": "code",
       "named_check": "gcd-witness-lemmas",
@@ -2699,7 +2751,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 241,
+      "index": 246,
       "defect": "the no-go is decided by the Kodaira symbol, which 05 forbids",
       "kind": "code",
       "named_check": "kodaira-nogo",
@@ -2709,7 +2761,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 242,
+      "index": 247,
       "defect": "every prime is reported potentially good, so nothing ever fires",
       "kind": "code",
       "named_check": "kodaira-nogo",
@@ -2719,7 +2771,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 243,
+      "index": 248,
       "defect": "the p = 3 character fact is reported as holding at every prime",
       "kind": "code",
       "named_check": "kodaira-nogo",
@@ -2729,7 +2781,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 244,
+      "index": 249,
       "defect": "the twist probe contains only good primes, so the no-go is never offered a chance to fire",
       "kind": "code",
       "named_check": "kodaira-nogo",
@@ -2739,7 +2791,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 245,
+      "index": 250,
       "defect": "the square test mod n always says yes, so no witness is ever found",
       "kind": "code",
       "named_check": "mazur-degrees",
@@ -2753,7 +2805,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 246,
+      "index": 251,
       "defect": "the quadratic twist returns the curve unchanged",
       "kind": "code",
       "named_check": "mazur-degrees",
@@ -2768,7 +2820,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 247,
+      "index": 252,
       "defect": "Referee A's q-conditions drop the 2-division-cubic inertness",
       "kind": "code",
       "named_check": "referee-a-checklist",
@@ -2779,7 +2831,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 248,
+      "index": 253,
       "defect": "Referee A's cited lines are scored as machine-checkable",
       "kind": "code",
       "named_check": "referee-a-checklist",
@@ -2789,7 +2841,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 249,
+      "index": 254,
       "defect": "the certificate is built for a different curve",
       "kind": "code",
       "named_check": "certificate-696e1",
@@ -2799,7 +2851,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 250,
+      "index": 255,
       "defect": "the certificate's cited-not-verified list is emptied",
       "kind": "code",
       "named_check": "certificate-696e1",
@@ -2809,7 +2861,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 251,
+      "index": 256,
       "defect": "the Sha row stops saying it is the analytic order",
       "kind": "code",
       "named_check": "certificate-696e1",
@@ -2819,7 +2871,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 252,
+      "index": 257,
       "defect": "x-only duplication drops the -2*b6*x term",
       "kind": "code",
       "named_check": "regulator",
@@ -2832,7 +2884,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 253,
+      "index": 258,
       "defect": "Richardson extrapolates against 1/2^n instead of 1/4^n",
       "kind": "code",
       "named_check": "height-level-selection",
@@ -2842,7 +2894,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 254,
+      "index": 259,
       "defect": "naive height reads the numerator only",
       "kind": "code",
       "named_check": "rank1-identity",
@@ -2852,7 +2904,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 255,
+      "index": 260,
       "defect": "the BSD ratio drops the torsion square",
       "kind": "code",
       "named_check": "bsd-sweep",
@@ -2862,7 +2914,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 256,
+      "index": 261,
       "defect": "unresolved mass summed in floats instead of exact rationals",
       "kind": "code",
       "named_check": "globalizer-exact",
@@ -2872,7 +2924,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 257,
+      "index": 262,
       "defect": "the empty unresolved set is given nonzero mass",
       "kind": "code",
       "named_check": "globalizer-exact",
@@ -2882,7 +2934,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 258,
+      "index": 263,
       "defect": "invisibility measured at single precision instead of double",
       "kind": "code",
       "named_check": "globalizer-exact",
@@ -2892,7 +2944,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 259,
+      "index": 264,
       "defect": "E1 drops the Euler-Mascheroni constant",
       "kind": "code",
       "named_check": "E1-vs-mpmath",
@@ -2905,7 +2957,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 260,
+      "index": 265,
       "defect": "E1 uses its small-x series everywhere",
       "kind": "code",
       "named_check": "E1-vs-mpmath",
@@ -2924,7 +2976,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 261,
+      "index": 266,
       "defect": "AGM stops after a single step",
       "kind": "code",
       "named_check": "anchor-11a1",
@@ -2941,7 +2993,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 262,
+      "index": 267,
       "defect": "the real period drops the second component when Δ > 0",
       "kind": "code",
       "named_check": "real-period-vs-integration",
@@ -2956,7 +3008,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 263,
+      "index": 268,
       "defect": "the real period doubles the Δ > 0 branch, as it used to",
       "kind": "code",
       "named_check": "real-period-vs-integration",
@@ -2971,7 +3023,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 264,
+      "index": 269,
       "defect": "Hecke recursion loses its -p·a_{p^{k-1}} term",
       "kind": "code",
       "named_check": "anchor-11a1",
@@ -2986,7 +3038,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 265,
+      "index": 270,
       "defect": "L(E,1) forgets its factor of two",
       "kind": "code",
       "named_check": "anchor-11a1",
@@ -2999,7 +3051,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 266,
+      "index": 271,
       "defect": "the split/non-split test is inverted",
       "kind": "code",
       "named_check": "anchor-11a1",
@@ -3013,7 +3065,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 267,
+      "index": 272,
       "defect": "torsion bound includes primes of bad reduction",
       "kind": "code",
       "named_check": "anchor-11a1",
@@ -3024,7 +3076,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 268,
+      "index": 273,
       "defect": "Kronecker symbol drops its 3,5 mod 8 sign rule at the prime 2",
       "kind": "code",
       "named_check": "kronecker",
@@ -3035,7 +3087,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 269,
+      "index": 274,
       "defect": "Kronecker symbol drops the reciprocity sign flip",
       "kind": "code",
       "named_check": "kronecker",
@@ -3048,7 +3100,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 270,
+      "index": 275,
       "defect": "the twist uses d instead of d^2 on a4",
       "kind": "code",
       "named_check": "twist-model",
@@ -3059,7 +3111,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 271,
+      "index": 276,
       "defect": "discriminant: the -27*b6^2 term becomes -26*b6^2",
       "kind": "code",
       "named_check": "disc-formula",
@@ -3069,7 +3121,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 272,
+      "index": 277,
       "defect": "valuation returns one too many",
       "kind": "code",
       "named_check": "disc-formula",
@@ -3079,7 +3131,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 273,
+      "index": 278,
       "defect": "point count over F_3 forgets the point at infinity",
       "kind": "code",
       "named_check": "frobenius-at-3",
@@ -3089,7 +3141,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 274,
+      "index": 279,
       "defect": "singularity test drops one partial derivative",
       "kind": "code",
       "named_check": "frobenius-at-3",
@@ -3099,7 +3151,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 275,
+      "index": 280,
       "defect": "psi3: the 3*b4 coefficient becomes b4",
       "kind": "code",
       "named_check": "psi3-and-roots",
@@ -3109,7 +3161,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 276,
+      "index": 281,
       "defect": "monic scan uses 9*b8 where the substitution gives 27*b8",
       "kind": "code",
       "named_check": "psi3-and-roots",
@@ -3119,7 +3171,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 277,
+      "index": 282,
       "defect": "a_p keeps counts Hasse cannot accommodate",
       "kind": "code",
       "named_check": "reducibility-sieve",
@@ -3129,7 +3181,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 278,
+      "index": 283,
       "defect": "Legendre symbol uses the wrong exponent",
       "kind": "code",
       "named_check": "reducibility-sieve",
@@ -3152,7 +3204,7 @@
       "caught_by_the_named_check": true
     },
     {
-      "index": 279,
+      "index": 284,
       "defect": "square-test mod n skips the residue 0",
       "kind": "code",
       "named_check": "reducibility-sieve",
@@ -3173,341 +3225,347 @@
     },
     {
       "index": 1,
-      "control": "the cubic identity 16f(x) = F(4x) evaluated at 5, 6, 7 instead of −3..3",
+      "control": "389.a1's a-invariants given as a tuple rather than a list",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 2,
-      "control": "04's ten routes listed in reverse order — the 首選 route is the most worked whichever row it is on",
+      "control": "the cubic identity 16f(x) = F(4x) evaluated at 5, 6, 7 instead of −3..3",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 3,
-      "control": "the stop-rule window widened from 12 to 24 rounds — no three-round streak either way",
+      "control": "04's ten routes listed in reverse order — the 首選 route is the most worked whichever row it is on",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 4,
-      "control": "the four adversarial curves listed in a different order",
+      "control": "the stop-rule window widened from 12 to 24 rounds — no three-round streak either way",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 5,
-      "control": "08's thirteen rows in reverse order",
+      "control": "the four adversarial curves listed in a different order",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 6,
-      "control": "11's 3,064,705 denominator perturbed by one — every stated percentage rounds the same at four decimals",
+      "control": "08's thirteen rows in reverse order",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 7,
-      "control": "the prime fraction lowered from 0.8 to 0.5 — more lists admitted, the known join still present",
+      "control": "11's 3,064,705 denominator perturbed by one — every stated percentage rounds the same at four decimals",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 8,
-      "control": "the constants threshold raised from 4 to 100 — nothing was dropped at 4 either, so nothing changes",
+      "control": "the prime fraction lowered from 0.8 to 0.5 — more lists admitted, the known join still present",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 9,
-      "control": "the congruence tested one-sided, a_q ≡ 1 instead of a_q² ≡ 1 — same failing set here, because no member has a_q = −1; a coincidence of the sample, not a property of the criterion",
+      "control": "the constants threshold raised from 4 to 100 — nothing was dropped at 4 either, so nothing changes",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 10,
-      "control": "the family bound raised to 5000 — 23 members, and 3529 is still the only one failing",
+      "control": "the congruence tested one-sided, a_q ≡ 1 instead of a_q² ≡ 1 — same failing set here, because no member has a_q = −1; a coincidence of the sample, not a property of the criterion",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 11,
-      "control": "E1 tested by trial-division squarefree instead of N == prod(primes) — same verdict, because every conductor_primes list is complete",
+      "control": "the family bound raised to 5000 — 23 members, and 3529 is still the only one failing",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 12,
-      "control": "the twist-condition sample taken from the tail of the label list instead of the head",
+      "control": "E1 tested by trial-division squarefree instead of N == prod(primes) — same verdict, because every conductor_primes list is complete",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 13,
-      "control": "05's five bridge hypotheses listed in reverse order",
+      "control": "the twist-condition sample taken from the tail of the label list instead of the head",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 14,
-      "control": "the cyclotomic check run to bound 500 instead of 200 — 95 primes, not 46",
+      "control": "05's five bridge hypotheses listed in reverse order",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 15,
-      "control": "06's four success-gate conditions listed in reverse order",
+      "control": "the cyclotomic check run to bound 500 instead of 200 — 95 primes, not 46",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 16,
-      "control": "06 v0.3 and 𝒜_odd run at bound 5000 instead of 4000 — 23 members, not 19",
+      "control": "06's four success-gate conditions listed in reverse order",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 17,
-      "control": "Mazur's twelve degrees listed in a different order",
+      "control": "06 v0.3 and 𝒜_odd run at bound 5000 instead of 4000 — 23 members, not 19",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 18,
-      "control": "the novelty term list extended with a synonym the corpus never uses",
+      "control": "Mazur's twelve degrees listed in a different order",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 19,
-      "control": "18's (q/29) = 1 condition dropped, which the other two imply — Frob_q in A_3 is trivial on Q(sqrt -174), and q = 1 mod 24 gives (-6/q) = 1",
+      "control": "the novelty term list extended with a synonym the corpus never uses",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 20,
-      "control": "the set enumeration bound raised from 4000 to 5000",
+      "control": "18's (q/29) = 1 condition dropped, which the other two imply — Frob_q in A_3 is trivial on Q(sqrt -174), and q = 1 mod 24 gives (-6/q) = 1",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 21,
-      "control": "the control search box widened from 12 to 14, which finds a second conductor-116 model that fails identically",
+      "control": "the set enumeration bound raised from 4000 to 5000",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 22,
-      "control": "the Level-1 bound raised from 200 to 260",
+      "control": "the control search box widened from 12 to 14, which finds a second conductor-116 model that fails identically",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 23,
-      "control": "the character-group exhaustion widened from 40 to 55",
+      "control": "the Level-1 bound raised from 200 to 260",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 24,
-      "control": "the stop rule's window widened from three rounds to four",
+      "control": "the character-group exhaustion widened from 40 to 55",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 25,
-      "control": "S3 enumerated in a different order, so the other 3-cycle is picked",
+      "control": "the stop rule's window widened from three rounds to four",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 26,
-      "control": "the local bound widened from 1500 to 2000",
+      "control": "S3 enumerated in a different order, so the other 3-cycle is picked",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 27,
-      "control": "the certificate's L-series truncation raised from 2000 to 3000",
+      "control": "the local bound widened from 1500 to 2000",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 28,
-      "control": "the supersingular bound widened from 1500 to 2500",
+      "control": "the certificate's L-series truncation raised from 2000 to 3000",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 29,
-      "control": "the excluded-type probe primes given in a different order",
+      "control": "the supersingular bound widened from 1500 to 2500",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 30,
-      "control": "the FW-H3 odd-p test bound widened",
+      "control": "the excluded-type probe primes given in a different order",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 31,
-      "control": "the good-prime scan starts at 7, which p = 5 being ordinary with a_5 = -3 makes a no-op",
+      "control": "the FW-H3 odd-p test bound widened",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 32,
-      "control": "the inert search bound widened",
+      "control": "the good-prime scan starts at 7, which p = 5 being ordinary with a_5 = -3 makes a no-op",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 33,
-      "control": "the surjectivity witness pool enlarged",
+      "control": "the inert search bound widened",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 34,
-      "control": "the empty-set search box widened",
+      "control": "the surjectivity witness pool enlarged",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 35,
-      "control": "the twist probe given in a different order",
+      "control": "the empty-set search box widened",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 36,
-      "control": "search window widened",
+      "control": "the twist probe given in a different order",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 37,
-      "control": "candidate budget raised",
+      "control": "search window widened",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 38,
-      "control": "different random seed for the factorisation",
+      "control": "candidate budget raised",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 39,
-      "control": "rho budget raised",
+      "control": "different random seed for the factorisation",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 40,
-      "control": "label-file header length re-read as the same value",
+      "control": "rho budget raised",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 41,
-      "control": "valuations given in a different key order",
+      "control": "label-file header length re-read as the same value",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 42,
-      "control": "partition sets given as different objects with the same members",
+      "control": "valuations given in a different key order",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 43,
-      "control": "no change at all",
+      "control": "partition sets given as different objects with the same members",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 44,
-      "control": "gate 12's admissible-prime scan limit changed",
+      "control": "no change at all",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 45,
-      "control": "the two ramified directions given in the other order",
+      "control": "gate 12's admissible-prime scan limit changed",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 46,
-      "control": "group law: the -a1*y term removed, which a1 = 0 makes a no-op",
+      "control": "the two ramified directions given in the other order",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 47,
-      "control": "rank 0 stops requiring w = +1, which src15's L = 0 contract makes a no-op",
+      "control": "group law: the -a1*y term removed, which a1 = 0 makes a no-op",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 48,
-      "control": "the ledger row separator relaxed to one space, which the name class makes a no-op",
+      "control": "rank 0 stops requiring w = +1, which src15's L = 0 contract makes a no-op",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 49,
-      "control": "gate 30's curve-label mask disabled, which the SHA mask makes redundant",
+      "control": "the ledger row separator relaxed to one space, which the name class makes a no-op",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 50,
-      "control": "gate 13's factor table rebuilt with the same contents",
+      "control": "gate 30's curve-label mask disabled, which the SHA mask makes redundant",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 51,
-      "control": "square-test mod n drops its last residue for n >= 3, which (n-1)^2 = 1^2 makes redundant there",
+      "control": "gate 13's factor table rebuilt with the same contents",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 52,
-      "control": "rational-root theorem forgets the denominator 3, which decides nothing here",
+      "control": "square-test mod n drops its last residue for n >= 3, which (n-1)^2 = 1^2 makes redundant there",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 53,
-      "control": "twisted coefficients swap chi's arguments, which d = 1 mod 4 makes equal",
+      "control": "rational-root theorem forgets the denominator 3, which decides nothing here",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 54,
-      "control": "membership drops the (q/29) condition, which the other two imply",
+      "control": "twisted coefficients swap chi's arguments, which d = 1 mod 4 makes equal",
       "checks_that_went_red": [],
       "undisturbed": true
     },
     {
       "index": 55,
+      "control": "membership drops the (q/29) condition, which the other two imply",
+      "checks_that_went_red": [],
+      "undisturbed": true
+    },
+    {
+      "index": 56,
       "control": "the ell* sign convention is inverted, which sqrt(-1) in K_E makes a no-op",
       "checks_that_went_red": [],
       "undisturbed": true
     }
   ],
   "totals": {
-    "defects": 280,
-    "caught_by_the_named_check": 280,
+    "defects": 285,
+    "caught_by_the_named_check": 285,
     "UNCAUGHT_BY_ANY_CHECK": [],
     "CAUGHT_BY_THE_WRONG_CHECK": [],
-    "controls": 56,
+    "controls": 57,
     "controls_that_disturbed_a_check": []
   },
   "state_restored_afterwards": true,

@@ -1,0 +1,228 @@
+{
+  "gate": "src69 — P5 v1.1 Anomalous Norm Localization, every exact figure recomputed",
+  "source": "BSD_P5_Anomalous_Norm_Localization_389a1_p11_v1.1.md",
+  "document_found": true,
+  "model": {
+    "ainvs": [
+      0,
+      1,
+      1,
+      -2,
+      0
+    ],
+    "invariants": {
+      "b2": 4,
+      "b4": -4,
+      "b6": 1,
+      "b8": -3,
+      "c4": 112,
+      "c6": -856,
+      "disc": 389
+    },
+    "short_model_A_B": [
+      -3024,
+      46224
+    ],
+    "short_model_stated": [
+      -3024,
+      46224
+    ],
+    "P_Q_on_minimal_model": true,
+    "P_short": [
+      12,
+      108
+    ],
+    "Q_short": [
+      48,
+      108
+    ],
+    "P_Q_short_stated": [
+      [
+        12,
+        108
+      ],
+      [
+        48,
+        108
+      ]
+    ],
+    "P_Q_on_short_model": true,
+    "agrees": true
+  },
+  "local": {
+    "397": {
+      "ell": 397,
+      "count": 374,
+      "count_stated": 374,
+      "a_ell": 24,
+      "kurihara_condition_a_minus_ell_minus_1_mod_11": 0,
+      "eleven_divides_count": true,
+      "v_11_of_count": 1,
+      "cofactor": 34,
+      "cofactor_stated": 34,
+      "order_of_P": 374,
+      "P_generates": true,
+      "order_of_Q": 187,
+      "group_cyclic": true,
+      "dlog_Q_of_P": 244,
+      "dlog_stated": 244,
+      "cofactor_times_P": [
+        281,
+        236
+      ],
+      "cofactor_times_Q": [
+        11,
+        334
+      ],
+      "cofactor_multiples_stated": {
+        "P": [
+          281,
+          236
+        ],
+        "Q": [
+          11,
+          334
+        ]
+      },
+      "slope_cQ_of_cP_in_the_11_subgroup": 2,
+      "slope_stated": 2,
+      "slope_predicted_by_dlog_mod_11": 2,
+      "ell_mod_11": 1,
+      "eleven_divides_half_ell_minus_1": true,
+      "tame": true,
+      "good_reduction": true,
+      "agrees": true
+    },
+    "991": {
+      "ell": 991,
+      "count": 1045,
+      "count_stated": 1045,
+      "a_ell": -53,
+      "kurihara_condition_a_minus_ell_minus_1_mod_11": 0,
+      "eleven_divides_count": true,
+      "v_11_of_count": 1,
+      "cofactor": 95,
+      "cofactor_stated": 95,
+      "order_of_P": 1045,
+      "P_generates": true,
+      "order_of_Q": 1045,
+      "group_cyclic": true,
+      "dlog_Q_of_P": 356,
+      "dlog_stated": 356,
+      "cofactor_times_P": [
+        39,
+        97
+      ],
+      "cofactor_times_Q": [
+        865,
+        243
+      ],
+      "cofactor_multiples_stated": {
+        "P": [
+          39,
+          97
+        ],
+        "Q": [
+          865,
+          243
+        ]
+      },
+      "slope_cQ_of_cP_in_the_11_subgroup": 4,
+      "slope_stated": 4,
+      "slope_predicted_by_dlog_mod_11": 4,
+      "ell_mod_11": 1,
+      "eleven_divides_half_ell_minus_1": true,
+      "tame": true,
+      "good_reduction": true,
+      "agrees": true
+    }
+  },
+  "localization_matrix": {
+    "M_loc": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "M_loc_stated": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "det_mod_11": 2,
+    "det_stated": 2,
+    "nonzero": true,
+    "each_local_norm_quotient_is_one_dimensional": true,
+    "theorem_6_1_isomorphism": true,
+    "agrees": true
+  },
+  "simultaneous_reduction_section_7": {
+    "rho": "(a, b) -> (a + 244 b mod 374, a + 356 b mod 1045)",
+    "gcd_of_orders": 11,
+    "k2_minus_k1": 112,
+    "k2_minus_k1_mod_gcd": 2,
+    "compatibility_solvable_for_every_target": true,
+    "b_period_forced_by_compatibility": 11,
+    "image_size": 390830,
+    "n1_times_n2": 390830,
+    "surjective": true,
+    "J_S_order_of_cokernel": 1,
+    "document_kernel_basis": [
+      [
+        5742,
+        -22
+      ],
+      [
+        -254980,
+        1045
+      ]
+    ],
+    "basis_vectors_in_kernel": [
+      true,
+      true
+    ],
+    "basis_determinant": 390830,
+    "determinant_stated": 390830,
+    "basis_is_a_basis_of_the_kernel": true,
+    "index_E_over_E_S": 390830,
+    "index_stated": 390830,
+    "v_11_of_index": 2,
+    "v11_stated": 2,
+    "tamagawa_at_389_is_1": true,
+    "tamagawa_reason": "389 ∥ Δ (v_389(Δ) = 1): Kodaira I₁, c_389 = 1",
+    "agrees": true
+  },
+  "labels": {
+    "gate_state_table_closed_exact": 7,
+    "closed_exact_stated": 7,
+    "gate_state_table_open": 1,
+    "open_stated": 1,
+    "document_declines_to_assert_the_ratio_3": true,
+    "reports_promoting_the_ratio_or_closing_the_open_gate": [],
+    "RUN_011_terminological_point": "E is ordinary and not anomalous at 11 in Mazur's sense (a_11 = −4); the document's 'anomalous' is about 11 | #E(F_ℓ) at the ramified directions",
+    "agrees": true
+  },
+  "at_11": {
+    "count_mod_11": 16,
+    "a_11": -4,
+    "ordinary": true,
+    "anomalous_in_mazurs_sense": false,
+    "as_RUN_011_recorded": true
+  },
+  "not_recomputed_here": [
+    "§1: θ̄_n ≡ 6 X_397 X_991 (mod I³) — a modular-symbol computation, a later round's subject",
+    "Proposition 4.1 — a proof; its hypotheses are checked on the data",
+    "Ш(E/Q)[11] — carried by the P5 documents as inherited"
+  ],
+  "headline": "the short model, the generator images, #E(F_397) = 374 and #E(F_991) = 1045, P' generating both groups, Q' = 244 P' and 356 P', the four cofactor multiples, the slopes 2 and 4, det M_loc = 2, ρ surjective with image 390,830 = 374·1045, the document's kernel basis a basis of determinant 390,830, v_11 = 2, J_S = 1 — every figure of §2, §5 and §7 recomputed and agreeing; 7 CLOSED_EXACT rows and 1 OPEN, the ratio 3 asserted by no one",
+  "ok": true
+}

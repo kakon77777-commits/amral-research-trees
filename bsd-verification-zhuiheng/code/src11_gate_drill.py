@@ -156,6 +156,7 @@ import src65_phase1_closure as closure65                  # noqa: E402
 import src66_phase1_protocols as proto66                  # noqa: E402
 import src67_phase0_maps as maps67                        # noqa: E402
 import src68_algorithm2_mirror_and_diff as mirror68       # noqa: E402
+import src69_anomalous_norm_localization as anom69        # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3216,6 +3217,45 @@ def check_algorithm2_mirror_and_diff() -> bool:
 
 
 
+def check_anomalous_norm_localization() -> bool:
+    """P5 v1.1's exact figures, recomputed with the gate's own group law.
+
+    The short model and generator images must derive from [0,1,1,−2,0]; the
+    two point counts, the orders of P', the discrete logarithms, the four
+    cofactor multiples and the two slopes must all agree with the document;
+    the slopes must equal the logarithms mod 11 — the consistency the document
+    does not state; ρ must be surjective with the document's kernel basis a
+    basis of determinant 390,830 and v_11 = 2; the label count must be seven
+    CLOSED_EXACT and one OPEN with no report of this line promoting the ratio.
+    """
+    A, B = anom69.short_model(anom69.AINVS)
+    Ps, Qs = anom69.to_short(anom69.AINVS, anom69.P_MIN), anom69.to_short(anom69.AINVS, anom69.Q_MIN)
+    if (A, B) != (-3024, 46224) or Ps != (12, 108) or Qs != (48, 108):
+        return False
+    local = {}
+    for ell in anom69.ELLS:
+        d = anom69.local_data(A, B, ell, Ps, Qs)
+        if not d["agrees"] or not d["P_generates"]:
+            return False
+        # the order is certified by multiplication, not read back from order_of
+        n = d["count"]
+        if anom69.ec_mul(A, ell, n, Ps) is not anom69.O:
+            return False
+        if any(anom69.ec_mul(A, ell, n // q, Ps) is anom69.O for q in (2, 5, 11, 17, 19) if n % q == 0):
+            return False
+        local[ell] = d
+    rho = anom69.simultaneous_reduction(local[397], local[991])
+    if not rho["agrees"] or rho["J_S_order_of_cokernel"] != 1:
+        return False
+    reports = {f.name[:7]: f.read_text(encoding="utf-8") for f in sorted(anom69.REPORTS.glob("RUN-*.md"))}
+    lab = anom69.label_discipline(reports)
+    if not lab["agrees"]:
+        return False
+    at11 = anom69.anomalous_at_11(A, B)
+    return at11["ordinary"] and not at11["anomalous_in_mazurs_sense"] and at11["a_11"] == -4
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3225,7 +3265,7 @@ COVERS = sorted(m.__name__ for m in (
     comp47, chain48, prev49, schema50, audits51, routes52,
     consensus53, targets54, kern55, schema56, cmap57, prov58,
     lemb59, joins60, commit61, replay62, thirteen63, corpus64,
-    closure65, proto66, maps67, mirror68))
+    closure65, proto66, maps67, mirror68, anom69))
 
 
 CHECKS = {
@@ -3323,6 +3363,7 @@ CHECKS = {
     "phase1-protocols": check_phase1_protocols,
     "phase0-maps": check_phase0_maps,
     "algorithm2-mirror-and-diff": check_algorithm2_mirror_and_diff,
+    "anomalous-norm-localization": check_anomalous_norm_localization,
 }
 
 
@@ -3641,6 +3682,20 @@ DEFECTS = [
     ("10's label REPRODUCTION-QUALIFIED is awarded", "code", "phase1-closure",
      lambda: patch(closure65, "layers_10",
                    lambda: {**_true_layers65(), "label_awarded_here": "REPRODUCTION-QUALIFIED"})),
+    ("the change of coordinates uses X = 36x + b2 in place of 36x + 3b2, so the "
+     "generator images move", "code", "anomalous-norm-localization",
+     lambda: patch(anom69, "to_short", _to_short_wrong_b2)),
+    ("the doubling formula drops the A term: 3x^2 in place of 3x^2 + A", "code",
+     "anomalous-norm-localization", lambda: patch(anom69, "ec_add", _ec_add_without_A)),
+    ("the discrete logarithm is searched only up to the cofactor, so Q' = 244 P' "
+     "is never found", "code", "anomalous-norm-localization",
+     lambda: patch(anom69, "dlog", _dlog_short)),
+    ("rho's image is computed without the compatibility factor, so it reads "
+     "35,530 and rho is not surjective", "code", "anomalous-norm-localization",
+     lambda: patch(anom69, "simultaneous_reduction", _rho_no_compatibility)),
+    ("the label count includes section 0's definition, so CLOSED_EXACT reads 8",
+     "code", "anomalous-norm-localization",
+     lambda: patch(anom69, "label_discipline", _labels_count_definition)),
     ("03's D_x loses its factor 4, so the formula counts the wrong curve",
      "code", "algorithm2-mirror-and-diff",
      lambda: patch(mirror68, "formula_count", _formula_without_the_4)),
@@ -4193,6 +4248,8 @@ CONTROLS = [
     ("106d1 enumerated over 1 ≤ d < 1000 instead of 00's symmetric range — "
      "the same twenty-one, because no negative d is admissible",
      lambda: patch(closure65, "fixtures_00", _fixtures00_positive_only)),
+    ("389.a1's a-invariants given as a tuple rather than a list",
+     lambda: patch(anom69, "AINVS", tuple(anom69.AINVS))),
     ("the cubic identity 16f(x) = F(4x) evaluated at 5, 6, 7 instead of −3..3",
      lambda: patch(mirror68, "cubic_forms_agree",
                    lambda base, xs=(5, 6, 7): _true_cubic_forms68(base, xs))),
@@ -4473,6 +4530,59 @@ _true_env66 = proto66.environment_04
 _true_stop66 = proto66.stop_rule_on_this_line
 _true_regression66 = proto66.regression_05
 _true_handoff66 = proto66.handoff_06
+_true_to_short69 = anom69.to_short
+_true_ec_add69 = anom69.ec_add
+_true_dlog69 = anom69.dlog
+_true_rho69 = anom69.simultaneous_reduction
+_true_labels69 = anom69.label_discipline
+
+
+def _to_short_wrong_b2(a, pt):
+    a1, a2, a3, a4, a6 = a
+    x, y = pt
+    b2 = a1 * a1 + 4 * a2
+    return 36 * x + b2, 108 * (2 * y + a1 * x + a3)
+
+
+def _ec_add_without_A(A, ell, R, S):
+    if R is anom69.O:
+        return S
+    if S is anom69.O:
+        return R
+    x1, y1 = R
+    x2, y2 = S
+    if x1 == x2 and (y1 + y2) % ell == 0:
+        return anom69.O
+    if R == S:
+        lam = (3 * x1 * x1) * pow(2 * y1, ell - 2, ell) % ell
+    else:
+        lam = (y2 - y1) * pow(x2 - x1, ell - 2, ell) % ell
+    x3 = (lam * lam - x1 - x2) % ell
+    y3 = (lam * (x1 - x3) - y1) % ell
+    return (x3, y3)
+
+
+def _dlog_short(A, ell, base, target, order):
+    return _true_dlog69(A, ell, base, target, min(order, order // 11 if order > 11 else order))
+
+
+def _rho_no_compatibility(d397, d991):
+    d = dict(_true_rho69(d397, d991))
+    n1, n2 = d397["count"], d991["count"]
+    d["image_size"] = n1 * n2 // d["gcd_of_orders"]
+    d["surjective"] = d["image_size"] == n1 * n2
+    d["J_S_order_of_cokernel"] = n1 * n2 // d["image_size"]
+    d["agrees"] = False
+    return d
+
+
+def _labels_count_definition(reports):
+    d = dict(_true_labels69(reports))
+    d["gate_state_table_closed_exact"] = d["gate_state_table_closed_exact"] + 1
+    d["agrees"] = False
+    return d
+
+
 _true_cubic_forms68 = mirror68.cubic_forms_agree
 _true_formula68 = mirror68.formula_count
 _true_cubic68 = mirror68.cubic_03
