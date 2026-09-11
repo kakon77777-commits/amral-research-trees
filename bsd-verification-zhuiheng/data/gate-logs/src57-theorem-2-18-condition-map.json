@@ -1,0 +1,144 @@
+{
+  "gate": "src57 — Theorem 2.18's condition map on the Phase 1 census",
+  "source": "01_Theorem_2_18_Condition_Map",
+  "document_found": true,
+  "base_curves": 40749,
+  "removed_curves": 4062,
+  "E1": {
+    "curves": 40749,
+    "non_squarefree_conductor": 0,
+    "valuation_keys_not_the_conductor_primes": 0,
+    "all_pass": true,
+    "examples": []
+  },
+  "E2": {
+    "curves": 40749,
+    "bad_reduction_at_3": 17811,
+    "good_at_3": 22938,
+    "a3_histogram_good_at_3": {
+      "-3": 910,
+      "-2": 3616,
+      "-1": 2779,
+      "0": 5182,
+      "1": 4051,
+      "2": 4601,
+      "3": 1799
+    },
+    "abs_a3_eq_3_recomputed": 2709,
+    "abs_a3_eq_3_in_census": 2709,
+    "agree_exactly": true,
+    "only_mine": [],
+    "only_census": []
+  },
+  "E3": {
+    "removed_with_a_3_5_7_isogeny": 1355,
+    "by_degree_set": {
+      "3": 1233,
+      "7": 7,
+      "5": 115
+    },
+    "this_lines_gates": {
+      "RUN-006": false,
+      "RUN-007": true,
+      "RUN-008": true
+    },
+    "closed_both_ways_at_RUN_008": "122,247 determinations, per RUN-008",
+    "note": "E3 is one of the census's two removal classes; this round re-reads the column and cites the three rounds that recomputed it rather than recomputing a fourth time"
+  },
+  "E4": {
+    "curves": 40749,
+    "prime_conductor_curves": 0,
+    "fail": 0,
+    "pass": 40749,
+    "failures_by_prime": {},
+    "examples": [],
+    "all_pass": true,
+    "is_a_census_removal_class": false,
+    "same_criterion_as": "FW-H3's p ∤ v_ell(Δ_min) with ell ≠ p (RUN-037), quantified over all multiplicative q instead of W_- only"
+  },
+  "E5_E6_E7": {
+    "state": "CITED — optimality, analytic rank 0, BSD(E,2) are how the base list was assembled, not computed here"
+  },
+  "branches": {
+    "population_8a_Zha16_no_2_tors": 37002,
+    "population_8b_CLZ20": 3747,
+    "matches_RUN_008": true,
+    "8b_checked": 3747,
+    "8b_two_torsion_unresolved": 0,
+    "8b_more_than_one_rational_root": 0,
+    "8b_f_prime_is_a_square": 0,
+    "8b_minus_f_prime_is_a_square": 0,
+    "8b_minus_disc_is_a_square": 0,
+    "8b_all_three_nonsquare_conditions_hold": true,
+    "examples": {
+      "f_prime_square": [],
+      "minus_f_prime_square": [],
+      "minus_disc_square": [],
+      "unresolved": [],
+      "multi_root": []
+    },
+    "not_computed": [
+      "ord_2 L^alg(E,1) — needs L-values for 40,749 curves",
+      "Sha(E')[2] = 0 for the 2-isogenous curve",
+      "E'(Q)[2] ≅ Z/2"
+    ],
+    "how_the_root_was_found": "exact integer bisection between the cubic's critical points; a float bracket on the first draft missed 2,154 of 3,747 — RUN-006's lesson, one step further: the float could not even propose"
+  },
+  "twist_conditions": {
+    "curves_checked": 36687,
+    "entries_checked": 247391,
+    "labels_not_in_base": 0,
+    "limit": null,
+    "failures_by_condition": {},
+    "examples": {},
+    "every_entry_satisfies_D": true,
+    "every_entry_satisfies_its_branch": true,
+    "all_pass": true,
+    "note": "this is the admissibility side of Algorithm 2 recomputed from the map's own conditions — not a re-run of the census script. Completeness (that no admissible d is MISSING from the map) is a different question and is not asked here"
+  },
+  "provenance_of_the_twist_map": {
+    "base": 40749,
+    "in_old_map": 39394,
+    "missing_from_old_map": 1355,
+    "isogeny_removed": 1355,
+    "a3_removed": 2709,
+    "missing_is_exactly_the_isogeny_set": true,
+    "a3_removed_present_in_old_map": 2707,
+    "a3_removed_present_in_new_map": 0,
+    "distinct_d_values_in_old_map": 200,
+    "max_d": 997,
+    "all_d_positive": true,
+    "so": "the upstream blob was generated with E3 (isogeny) already applied and E2 (a_3) NOT yet applied. The census README records that the upstream code later added `disc_valuation_condition` — which is E4 — without regenerating the blob; E4 removes nothing from this base (measured above), so that omission changed no membership",
+    "completeness_not_measurable_here": "the blob's enumeration rule for d is not in the package — only 200 distinct d appear, all positive, max 997 — so whether every admissible d is PRESENT cannot be checked from here. What is checked is that every d present is admissible"
+  },
+  "what_the_census_enforces": {
+    "removal_classes": {
+      "A3_ONLY": 2707,
+      "ISOGENY_ONLY": 1353,
+      "BOTH": 2
+    },
+    "removed_total": 4062,
+    "these_are": {
+      "A3_ONLY": "E2",
+      "ISOGENY_ONLY": "E3",
+      "BOTH": "E2 and E3"
+    },
+    "stated_but_not_a_removal_class": [
+      "E1",
+      "E4",
+      "E5",
+      "E6",
+      "E7",
+      "8b non-square conditions"
+    ],
+    "reading": "E1, E5, E6, E7 are properties of how the base list was assembled (semistable, optimal, rank 0, BSD_2 known), so they need no removal step. E4 and the 8b non-squares are arithmetic conditions the map states and the census does not test — which is why this round computes them on the whole base"
+  },
+  "output_semantics": {
+    "forward": "admissible => BSD follows from cited theorems",
+    "converse": "not admissible =/=> BSD false",
+    "converse_holds": false,
+    "what_this_means_for_RUN_008": "RUN-008 closed the isogeny CRITERION both ways — every kept curve has no 3/5/7-isogeny and every removed one does. That is a statement about the criterion, not about BSD, and §G says the two must not be confused: a curve outside the admissible family has simply not been reached by these theorems"
+  },
+  "headline": "E1 holds on all 40,749; E2 recomputed by point count mod 3 agrees EXACTLY with the census's a_3 column (2,709 with |a_3| = 3); E3's 1,355 isogeny removals re-read. E4 — stated by the map, NOT a census removal class — computed on all 40,749: 40,749 pass, 0 fail. Branches 8a/8b are RUN-008's two populations (37,002 / 3,747); 8b's three non-square conditions checked on every CLZ20 curve with the 2-torsion point decided exactly: f' square 0, -f' square 0, -Δ square 0. Twist conditions D/E/F recomputed on all 247,391 (curve, d) pairs of the new map: failures none",
+  "ok": true
+}
