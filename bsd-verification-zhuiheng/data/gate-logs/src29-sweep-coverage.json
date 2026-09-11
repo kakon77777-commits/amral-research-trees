@@ -1,8 +1,8 @@
 {
   "gate": "src29 — the sweep's own coverage",
   "documents": 85,
-  "reports_read": 66,
-  "gates_read": 69,
+  "reports_read": 69,
+  "gates_read": 72,
   "matching": "by filename stem and, for Phase 0, the `doc NN` form. Only 17 of the 85 are cited as markdown links, so a link scan would report a sweep four times smaller than it is",
   "bucket_order_strongest_first": [
     "subject of a report",
@@ -11,8 +11,8 @@
     "not mentioned"
   ],
   "counts": {
-    "subject of a report": 82,
-    "cited in a report": 3,
+    "subject of a report": 85,
+    "cited in a report": 0,
     "named in gate code": 0,
     "not mentioned": 0
   },
@@ -24,8 +24,8 @@
       "not mentioned": 0
     },
     "p5": {
-      "subject of a report": 7,
-      "cited in a report": 3,
+      "subject of a report": 10,
+      "cited in a report": 0,
       "named in gate code": 0,
       "not mentioned": 0
     },
@@ -45,8 +45,8 @@
   "not_mentioned": [],
   "caveat": "a bucket is a measure of attention, not of correctness. Being the subject of a round says a round was aimed at the document; what that round actually settled is in its own 'what this round does not claim' section, every time",
   "second_axis_data_artefacts": {
-    "reports_naming_a_data_artefact": 66,
-    "distinct_artefacts_named": 81,
+    "reports_naming_a_data_artefact": 69,
+    "distinct_artefacts_named": 84,
     "artefacts": [
       "ARTIFACT_MANIFEST.json",
       "SHA256SUMS.json",
@@ -368,6 +368,19 @@
         "src11-gate-drill.json",
         "src29-sweep-coverage.json",
         "src68-algorithm2-mirror-and-diff.json"
+      ],
+      "RUN-067-ANOMALOUS-NORM-LOCALIZATION.md": [
+        "src11-gate-drill.json",
+        "src69-anomalous-norm-localization.json"
+      ],
+      "RUN-068-KURIHARA-MODULAR-SYMBOLS.md": [
+        "src11-gate-drill.json",
+        "src70-kurihara-modular-symbols.json"
+      ],
+      "RUN-069-DETERMINANTAL-BOCKSTEIN.md": [
+        "src11-gate-drill.json",
+        "src29-sweep-coverage.json",
+        "src71-determinantal-bockstein.json"
       ]
     }
   },
@@ -531,22 +544,30 @@
     {
       "subline": "p5",
       "name": "BSD_P5_Anomalous_Norm_Localization_389a1_p11_v1.1.md",
-      "bucket": "cited in a report",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-067-ANOMALOUS-NORM-LOCALIZATION.md"
+      ],
       "cited_in": [
         "RUN-065-PHASE0-MAPS.md"
       ],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src69_anomalous_norm_localization.py"
+      ]
     },
     {
       "subline": "p5",
       "name": "BSD_P5_Determinantal_Kurihara_Semilocal_389a1_p11_v1.3.md",
-      "bucket": "cited in a report",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-069-DETERMINANTAL-BOCKSTEIN.md"
+      ],
       "cited_in": [
         "RUN-065-PHASE0-MAPS.md"
       ],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src71_determinantal_bockstein.py"
+      ]
     },
     {
       "subline": "p5",
@@ -623,12 +644,16 @@
     {
       "subline": "p5",
       "name": "BSD_RUGZPB_P2_P4_389a1_p11_v0.2.md",
-      "bucket": "cited in a report",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-068-KURIHARA-MODULAR-SYMBOLS.md"
+      ],
       "cited_in": [
         "RUN-065-PHASE0-MAPS.md"
       ],
-      "named_in_gates": []
+      "named_in_gates": [
+        "src70_kurihara_modular_symbols.py"
+      ]
     },
     {
       "subline": "p5",

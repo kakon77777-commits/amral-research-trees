@@ -157,6 +157,8 @@ import src66_phase1_protocols as proto66                  # noqa: E402
 import src67_phase0_maps as maps67                        # noqa: E402
 import src68_algorithm2_mirror_and_diff as mirror68       # noqa: E402
 import src69_anomalous_norm_localization as anom69        # noqa: E402
+import src70_kurihara_modular_symbols as kur70            # noqa: E402
+import src71_determinantal_bockstein as bock71            # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3256,6 +3258,124 @@ def check_anomalous_norm_localization() -> bool:
 
 
 
+def check_kurihara_modular_symbols() -> bool:
+    """The Kurihara certificate's computation, against this tree's own log.
+
+    The eigenline is rebuilt in full — relations, Hecke at 2, 3, 5, plus — and
+    must be the logged λ coordinate for coordinate, with the four eigenvalue
+    checks passing: a transposed Merel action or Stein's star in place of the
+    real-part plus condition would change it. Three of the forty blocks of the
+    392,040-term sum are recomputed and must match the log block by block —
+    terms, integer raw product sum and all six coefficients — so a path-sign
+    slip, a wrong primitive root or an unskipped non-unit goes red without
+    the full ten-second sum. The logged blocks must add to the logged totals,
+    δ must be 5 at λ(1,5) = 1 with the stress-test package's raw sum, and the
+    rank-1 number at 397 must be 0.
+    """
+    log = _json.loads(kur70.OUT.read_text(encoding="utf-8"))
+    e = kur70.eigenline()
+    if not e["agrees"] or e["lambda"] != log["lambda"]:
+        return False
+    if not all(v["agrees"] and v["is_eigenvector"] for v in e["eigenvalue_checks"].values()):
+        return False
+    sample = (0, 20, 39)
+    part = kur70.kurihara_sum(e["lambda"], block_ids=sample)
+    logged = {b["block"]: b for b in log["kurihara_blocks"]}
+    for blk in part["per_block"]:
+        want = logged.get(blk["block"])
+        if want is None or blk["terms"] != want["terms"] or blk["raw_product_sum"] != want["raw_product_sum"]:
+            return False
+        if blk["mod_11"] != want["mod_11"]:
+            return False
+    tot = {k: 0 for k in ("const", "X", "Y", "X2", "Y2", "XY")}
+    terms = raw = 0
+    for b in log["kurihara_blocks"]:
+        for k in tot:
+            tot[k] += b["mod_11"][k]
+        terms += b["terms"]
+        raw += b["raw_product_sum"]
+    k = log["kurihara"]
+    if terms != k["terms"] or terms != k["phi_n"] or raw != k["raw_product_sum"]:
+        return False
+    if any(tot[c] % 11 != k["theta_bar_mod_I3"][c] for c in tot):
+        return False
+    if k["delta_n_XY_coefficient"] != 5 or k["raw_product_sum"] != 43605160:
+        return False
+    if any(k["theta_bar_mod_I3"][c] != 0 for c in ("const", "X", "Y", "X2", "Y2")):
+        return False
+    tab = kur70.log_table(397, kur70.ROOTS[397])
+    r1 = sum((sum(e["lambda"][i] for i in kur70.path_indices(a, 397)) % 11) * tab[a] for a in range(1, 397)) % 11
+    return r1 == 0 and log["rank_one_kurihara_numbers"]["397"] == 0
+
+
+
+def check_determinantal_bockstein() -> bool:
+    """v1.3's determinant, the invariance, the ratio's scale law, Kim's hypotheses.
+
+    det(B_N) must come out of the ring as exactly 2·XY, with (1+X)^11 ≡ 1
+    there; the 100 generator changes must preserve the line and the order and
+    reach every unit. The scale law δ_{g',h'} = δ·log_{g'}(5)·log_{h'}(6) is
+    checked on one block of the sum against the logged block. Every Frobenius
+    witness is re-verified for the property it is cited for WITH THIS CHECK'S
+    OWN Legendre symbol and projective order — a gate whose residue test is
+    inverted would certify from a witness that certifies nothing, and a check
+    that reused the gate's test would agree with it. E(Q_11)[11] = 0, c_389 =
+    1 and trivial torsion must hold from the point counts. Labels 3 and 2.
+    """
+    bd = bock71.bockstein_determinant()
+    if not bd["agrees"] or not bd["relation_gamma_to_the_11_is_automatic_mod_I3"]:
+        return False
+    gi = bock71.generator_change_invariance()
+    if not (gi["ord_I_2_preserved"] and gi["line_F11_XY_preserved"] and gi["every_unit_reached"]):
+        return False
+    # the scale law on one block, against the logged block at roots (5, 6)
+    log70 = _json.loads(kur70.OUT.read_text(encoding="utf-8"))
+    lam = log70["lambda"]
+    g, h = 13, 7
+    u = kur70.log_table(397, g)[5]
+    v = kur70.log_table(991, h)[6]
+    old = dict(kur70.ROOTS)
+    kur70.ROOTS[397], kur70.ROOTS[991] = g, h
+    try:
+        part = kur70.kurihara_sum(lam, block_ids=(7,))["per_block"][0]
+    finally:
+        kur70.ROOTS.update(old)
+    logged = next(b for b in log70["kurihara_blocks"] if b["block"] == 7)
+    if part["terms"] != logged["terms"] or part["mod_11"]["XY"] != logged["mod_11"]["XY"] * u * v % 11:
+        return False
+    if bock71.ratio_under_primitive_roots(5, check_pairs=())["every_unit_is_a_reachable_ratio"] is not True:
+        return False
+    kim = bock71.kims_hypotheses()
+    if not kim["agrees"] or not kim["local_p_torsion"]["E_Q11_11_is_zero"]:
+        return False
+    if kim["local_p_torsion"]["count_F11"] % 11 == 0:
+        return False
+    w = kim["residual_surjectivity"]["witnesses"]
+    allowed = {"A4": (1, 2, 3), "S4": (1, 2, 3, 4), "A5": (1, 2, 3, 5)}
+    for name, wit in w.items():
+        if wit is None:
+            return False
+        q, a = wit["witness"], wit["a"]
+        if kur70.a_q(q) != a:
+            return False
+        disc = (a * a - 4 * q) % 11
+        sq = disc == 0 or pow(disc, 5, 11) == 1          # this check's own Legendre symbol
+        if name == "borel" and sq:
+            return False
+        if name == "split_cartan_normalizer" and (a % 11 == 0 or sq):
+            return False
+        if name == "nonsplit_cartan_normalizer" and (a % 11 == 0 or disc == 0 or not sq):
+            return False
+        if name in allowed:
+            uu = (a * a % 11) * pow(q % 11, 9, 11) % 11     # this check's own projective order
+            o = 1 if uu == 4 else 2 if uu == 0 else 3 if uu == 1 else 4 if uu == 2 else 5 if (uu * uu - 5 * uu + 5) % 11 == 0 else 6
+            if o in allowed[name]:
+                return False
+    reports = {f.name[:7]: f.read_text(encoding="utf-8") for f in sorted(bock71.REPORTS.glob("RUN-*.md"))}
+    return bock71.labels(reports)["agrees"]
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3265,7 +3385,7 @@ COVERS = sorted(m.__name__ for m in (
     comp47, chain48, prev49, schema50, audits51, routes52,
     consensus53, targets54, kern55, schema56, cmap57, prov58,
     lemb59, joins60, commit61, replay62, thirteen63, corpus64,
-    closure65, proto66, maps67, mirror68, anom69))
+    closure65, proto66, maps67, mirror68, anom69, kur70, bock71))
 
 
 CHECKS = {
@@ -3364,6 +3484,8 @@ CHECKS = {
     "phase0-maps": check_phase0_maps,
     "algorithm2-mirror-and-diff": check_algorithm2_mirror_and_diff,
     "anomalous-norm-localization": check_anomalous_norm_localization,
+    "kurihara-modular-symbols": check_kurihara_modular_symbols,
+    "determinantal-bockstein": check_determinantal_bockstein,
 }
 
 
@@ -3682,6 +3804,30 @@ DEFECTS = [
     ("10's label REPRODUCTION-QUALIFIED is awarded", "code", "phase1-closure",
      lambda: patch(closure65, "layers_10",
                    lambda: {**_true_layers65(), "label_awarded_here": "REPRODUCTION-QUALIFIED"})),
+    ("the 2x2 determinant is computed as ad + bc, the cross term's sign dropped",
+     "code", "determinantal-bockstein", lambda: patch(bock71, "det2", _det_plus)),
+    ("the ring is truncated at I^2 instead of I^3, so XY is killed and the "
+     "determinant reads 0", "code", "determinantal-bockstein",
+     lambda: patch(bock71, "ring_mul", _ring_mul_I2)),
+    ("the residue test is inverted, so the Borel refutation is certified by a "
+     "witness whose discriminant IS a residue", "code", "determinantal-bockstein",
+     lambda: patch(bock71, "_is_square_mod", lambda a, ell: not _true_is_square71(a, ell))),
+    ("the local 11-torsion test is inverted: E(Q_11)[11] reported 0 iff 11 "
+     "divides #E(F_11)", "code", "determinantal-bockstein",
+     lambda: patch(bock71, "local_p_torsion", _local_torsion_inverted)),
+    ("the torsion gcd is taken over q = 2 alone, so it reads #E(F_2) = 5",
+     "code", "determinantal-bockstein", lambda: patch(bock71, "TORSION_BOUND", 2)),
+    ("Merel's matrices act on the column instead of the bottom row — the "
+     "transposed Hecke action", "code", "kurihara-modular-symbols",
+     lambda: patch(kur70, "hecke_rows", _hecke_transposed)),
+    ("the plus condition is taken as Stein's star, lambda(c,d) = -lambda(-c,d)",
+     "code", "kurihara-modular-symbols", lambda: patch(kur70, "PLUS_SIGN", -1)),
+    ("the primitive root mod 991 is taken as 7 in place of 6, scaling the "
+     "logarithms by 7", "code", "kurihara-modular-symbols",
+     lambda: patch(kur70, "ROOTS", {397: 5, 991: 7})),
+    ("multiples of 397 are not skipped, so the sum runs over more than phi(n) "
+     "terms", "code", "kurihara-modular-symbols",
+     lambda: patch(kur70, "kurihara_sum", _sum_without_the_skip)),
     ("the change of coordinates uses X = 36x + b2 in place of 36x + 3b2, so the "
      "generator images move", "code", "anomalous-norm-localization",
      lambda: patch(anom69, "to_short", _to_short_wrong_b2)),
@@ -4248,6 +4394,14 @@ CONTROLS = [
     ("106d1 enumerated over 1 ≤ d < 1000 instead of 00's symmetric range — "
      "the same twenty-one, because no negative d is admissible",
      lambda: patch(closure65, "fixtures_00", _fixtures00_positive_only)),
+    ("the Frobenius-witness search bound raised from 300 to 500 — the same "
+     "witnesses, found first", lambda: patch(bock71, "SEARCH", 500)),
+    ("the path's sign alternates as (-1)^i in place of (-1)^(i-1) — invisible to "
+     "a plus functional, which is even in d since (-c:d) = (c:-d)",
+     lambda: patch(kur70, "path_indices", _path_wrong_sign)),
+    ("the 780 relation rows fed to the elimination in reverse order — the same "
+     "nullspace, the same normalised eigenline",
+     lambda: patch(kur70, "relation_rows", lambda: list(reversed(_true_relations70())))),
     ("389.a1's a-invariants given as a tuple rather than a list",
      lambda: patch(anom69, "AINVS", tuple(anom69.AINVS))),
     ("the cubic identity 16f(x) = F(4x) evaluated at 5, 6, 7 instead of −3..3",
@@ -4530,6 +4684,107 @@ _true_env66 = proto66.environment_04
 _true_stop66 = proto66.stop_rule_on_this_line
 _true_regression66 = proto66.regression_05
 _true_handoff66 = proto66.handoff_06
+_true_is_square71 = bock71._is_square_mod
+_true_ring_mul71 = bock71.ring_mul
+_true_local_torsion71 = bock71.local_p_torsion
+
+
+def _det_plus(m):
+    return bock71.ring_add(bock71.ring_mul(m[0][0], m[1][1]), bock71.ring_mul(m[0][1], m[1][0]), 1)
+
+
+def _ring_mul_I2(u, v):
+    out = {}
+    for (i, j), a in u.items():
+        for (k, l), b in v.items():
+            if i + k + j + l <= 1:
+                mnm = (i + k, j + l)
+                out[mnm] = (out.get(mnm, 0) + a * b) % 11
+    return {mnm: c for mnm, c in out.items() if c}
+
+
+def _local_torsion_inverted(n11):
+    d = dict(_true_local_torsion71(n11))
+    d["E_Q11_11_is_zero"] = n11 % 11 == 0
+    return d
+
+
+_true_hecke70 = kur70.hecke_rows
+_true_path70 = kur70.path_indices
+_true_sum70 = kur70.kurihara_sum
+_true_relations70 = kur70.relation_rows
+
+
+def _hecke_transposed(q):
+    ms = kur70.merel_matrices(q)
+    rows = []
+    for i in range(kur70.N + 1):
+        c, d = kur70.rep(i)
+        r = {}
+        for a, b, cc, dd in ms:
+            j = kur70.p1_index(a * c + b * d, cc * c + dd * d)
+            r[j] = r.get(j, 0) + 1
+        rows.append(r)
+    return rows
+
+
+def _path_wrong_sign(a, n):
+    out = [kur70.p1_index(1, 0)]
+    num, den = a, n
+    a0 = num // den
+    num -= a0 * den
+    p_prev2, q_prev2 = 1, 0
+    p_prev, q_prev = a0, 1
+    i = 1
+    while num:
+        k, r = divmod(den, num)
+        p_new, q_new = k * p_prev + p_prev2, k * q_prev + q_prev2
+        out.append(kur70.p1_index(q_new, (1 if i % 2 == 0 else -1) * q_prev))
+        p_prev2, q_prev2, p_prev, q_prev = p_prev, q_prev, p_new, q_new
+        den, num = num, r
+        i += 1
+    return out
+
+
+def _sum_without_the_skip(lam, blocks=kur70.BLOCKS, block_ids=None):
+    n = kur70.ELLS[0] * kur70.ELLS[1]
+    logs = {ell: kur70.log_table(ell, kur70.ROOTS[ell]) for ell in kur70.ELLS}
+    lo, hi = logs[kur70.ELLS[0]], logs[kur70.ELLS[1]]
+    size = (n + blocks - 1) // blocks
+    per_block = []
+    tot = {"const": 0, "X": 0, "Y": 0, "X2": 0, "Y2": 0, "XY": 0}
+    raw = terms = 0
+    for b in range(blocks):
+        if block_ids is not None and b not in block_ids:
+            continue
+        s = {k: 0 for k in tot}
+        braw = bterms = 0
+        for a in range(max(1, b * size), min(n, (b + 1) * size)):
+            if a % kur70.ELLS[1] == 0:
+                continue                      # only the 991-multiples are skipped
+            v = sum(lam[i] for i in kur70.path_indices(a, n)) % 11
+            bterms += 1
+            if not v:
+                continue
+            i, j = lo[a % kur70.ELLS[0]], hi[a % kur70.ELLS[1]]
+            s["const"] += v
+            s["X"] += v * i
+            s["Y"] += v * j
+            s["X2"] += v * (i * (i - 1) // 2)
+            s["Y2"] += v * (j * (j - 1) // 2)
+            s["XY"] += v * i * j
+            braw += v * i * j
+        per_block.append({"block": b, "terms": bterms, "raw_product_sum": braw,
+                          "mod_11": {k: val % 11 for k, val in s.items()}})
+        for k in s:
+            tot[k] += s[k]
+        raw += braw
+        terms += bterms
+    return {"n": n, "blocks": blocks, "terms": terms, "phi_n": (kur70.ELLS[0] - 1) * (kur70.ELLS[1] - 1),
+            "theta_bar_mod_I3": {k: v % 11 for k, v in tot.items()},
+            "delta_n_XY_coefficient": tot["XY"] % 11, "raw_product_sum": raw, "per_block": per_block}
+
+
 _true_to_short69 = anom69.to_short
 _true_ec_add69 = anom69.ec_add
 _true_dlog69 = anom69.dlog

@@ -1,0 +1,193 @@
+{
+  "gate": "src71 — P5 v1.3, the finite Bockstein determinant, the non-canonical ratio, Kim's hypotheses",
+  "source": "BSD_P5_Determinantal_Kurihara_Semilocal_389a1_p11_v1.3.md",
+  "document_found": true,
+  "bockstein_determinant": {
+    "matrix": [
+      [
+        "{(1, 0): 1}",
+        "{(1, 0): 2}"
+      ],
+      [
+        "{(0, 1): 1}",
+        "{(0, 1): 4}"
+      ]
+    ],
+    "det_in_A_mod_I3": {
+      "X^1Y^1": 2
+    },
+    "det_is_scalar_times_XY": true,
+    "scalar": 2,
+    "scalar_stated": 2,
+    "det_M_loc_mod_11": 2,
+    "one_plus_X_to_the_11_mod_I3": {
+      "X^0Y^0": 1
+    },
+    "relation_gamma_to_the_11_is_automatic_mod_I3": true,
+    "agrees": true
+  },
+  "generator_change": {
+    "pairs_tested": 100,
+    "ord_I_2_preserved": true,
+    "line_F11_XY_preserved": true,
+    "XY_coefficients_reached": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "every_unit_reached": true
+  },
+  "ratio": {
+    "delta_at_roots_5_6": 5,
+    "det_coefficient": 2,
+    "ratio_at_disclosed_scale": 8,
+    "ratio_manuscript_6_over_2": 3,
+    "primitive_roots_mod_397": 120,
+    "primitive_roots_mod_991": 240,
+    "log_scales_reached_mod_11_at_397": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "log_scales_reached_mod_11_at_991": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "ratios_reachable_by_primitive_root_choice": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "every_unit_is_a_reachable_ratio": true,
+    "identity_checked_on_the_full_sum": [
+      {
+        "roots": [
+          7,
+          11
+        ],
+        "log_scale_397": 10,
+        "log_scale_991": 10,
+        "predicted": 5,
+        "computed": 5,
+        "agrees": true
+      },
+      {
+        "roots": [
+          13,
+          7
+        ],
+        "log_scale_397": 6,
+        "log_scale_991": 7,
+        "predicted": 1,
+        "computed": 1,
+        "agrees": true
+      }
+    ],
+    "agrees": true
+  },
+  "kims_hypotheses": {
+    "p_at_least_5": true,
+    "good_at_p": true,
+    "ordinary": {
+      "count_mod_11": 16,
+      "a_11": -4,
+      "holds": true
+    },
+    "residual_surjectivity": {
+      "ell": 11,
+      "witnesses": {
+        "borel": {
+          "witness": 2,
+          "a": -2
+        },
+        "split_cartan_normalizer": {
+          "witness": 2,
+          "a": -2
+        },
+        "nonsplit_cartan_normalizer": {
+          "witness": 3,
+          "a": -2
+        },
+        "A4": {
+          "witness": 2,
+          "a": -2,
+          "projective_order": 4
+        },
+        "S4": {
+          "witness": 3,
+          "a": -2,
+          "projective_order": 6
+        },
+        "A5": {
+          "witness": 2,
+          "a": -2,
+          "projective_order": 4
+        }
+      },
+      "surjective": true
+    },
+    "local_p_torsion": {
+      "count_F11": 16,
+      "eleven_divides_count": false,
+      "formal_group_torsion_free": "e = 1 < p − 1 = 10, so E₁(ℚ₁₁) has no 11-torsion",
+      "E_Q11_11_is_zero": true
+    },
+    "tamagawa": {
+      "v_389_of_discriminant": 1,
+      "c_389": 1,
+      "holds": true
+    },
+    "torsion": {
+      "gcd_of_point_counts_good_p_below_60": 1,
+      "trivial": true
+    },
+    "manin_constant": {
+      "status": "EXTERNAL — LMFDB/Cremona record c = 1; not computed here"
+    },
+    "agrees": true
+  },
+  "labels": {
+    "closed_labels": 3,
+    "closed_stated": 3,
+    "open_labels": 2,
+    "open_stated": 2,
+    "open_gates": [
+      "P5-CANON-BocID",
+      "P5-CPLX-GPR"
+    ],
+    "reports_closing_an_open_gate": [],
+    "section_8_instruction": "Do not recompute the finite group law or Kurihara sum — this line did both anyway: a certificate that has never been recomputed is a claim",
+    "agrees": true
+  },
+  "headline": "det(B_N) = 2·XY in F₁₁[G]/I³ by the ring's own multiplication; under the 100 generator changes the line and ord_I = 2 are invariant and the coefficient reaches every unit; the ratio θ/det is 8 at the disclosed scale and 3 in the manuscript's, and primitive-root choice alone reaches all ten units — the document is right not to promote it; Kim's hypotheses hold where computable, ρ̄_11 surjective by witnesses, the Manin constant external; 3 closed labels, 2 open, none closed by this line",
+  "ok": true
+}
