@@ -1,0 +1,6076 @@
+{
+  "gate": "src60 — cross-round joins",
+  "parameters": {
+    "min_element": 50,
+    "prime_fraction": 0.8,
+    "noise_if_seen_in": 4
+  },
+  "prime_sets_found": 100,
+  "dropped_as_constants": 0,
+  "constants": [],
+  "sets_joined": 100,
+  "joins": 325,
+  "joins_made": 107,
+  "joins_unchecked_too_many_numbers": 0,
+  "joins_not_named_in_any_report": 218,
+  "table_unmentioned": [
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.directions",
+      "size_a": 87,
+      "size_b": 23,
+      "intersection": [
+        2113,
+        9769,
+        16633,
+        18217
+      ],
+      "size": 4,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[2].pair",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[4].pair",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[6].pair",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        16633
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[8].pair",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        9769
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.examples[2].pair",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[6].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        1153
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[7].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        1753
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[8].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2017
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[9].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2089
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[10].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[11].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2137
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[12].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2617
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[13].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2713
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[14].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3049
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[15].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[16].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[17].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3769
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[18].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3793
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[1].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[2].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[3].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[4].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        937
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[5].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        1009
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[6].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        1153
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[7].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        1753
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[8].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2017
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[9].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2089
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[10].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[11].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2137
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[12].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2617
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[13].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2713
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[14].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3049
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[15].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[16].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[17].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3769
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[18].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3793
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src40-fw-h2-ordinary.json :: no_finite_exception.buckets[2].failures",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-038",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src43-finite-exceptional.json :: P_loc.set_below_the_bound",
+      "size_a": 87,
+      "size_b": 8,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src43-finite-exceptional.json :: P_loc.buckets[2].failures",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src43-finite-exceptional.json :: the_routing_answer.P_loc_below_bound",
+      "size_a": 87,
+      "size_b": 8,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src59-lemma-b-reduction.json :: the_pieces_were_in_the_tree.RUN_038_failures_below_its_bound",
+      "size_a": 87,
+      "size_b": 8,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-057",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[4].bad_primes",
+      "b": "src49-provisional-vs-revised.json :: the_redundant_condition.of_those_violating",
+      "size_a": 3,
+      "size_b": 8,
+      "intersection": [
+        229
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-022"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[1].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[1].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[0].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[1].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[2].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[2].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[0].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[2].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[2].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[2].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[3].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[2].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[2].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[3].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    }
+  ],
+  "table_all": [
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.directions",
+      "size_a": 87,
+      "size_b": 23,
+      "intersection": [
+        2113,
+        9769,
+        16633,
+        18217
+      ],
+      "size": 4,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[2].pair",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[4].pair",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[6].pair",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        16633
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[8].pair",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        9769
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.examples[2].pair",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-022",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[1].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[2].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[3].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[4].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        937
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[5].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        1009
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[6].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        1153
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[7].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        1753
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[8].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2017
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[9].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2089
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[10].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[11].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2137
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[12].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2617
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[13].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2713
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[14].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3049
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[15].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[16].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[17].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3769
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src35-gcd-witness.json :: the_family.rows[18].additive",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3793
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[1].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[2].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[3].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[4].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        937
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[5].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        1009
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[6].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        1153
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[7].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        1753
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[8].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2017
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[9].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2089
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[10].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[11].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2137
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[12].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2617
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[13].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        2713
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[14].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3049
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[15].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[16].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[17].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3769
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[18].additive_primes",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3793
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src40-fw-h2-ordinary.json :: no_finite_exception.buckets[2].failures",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-038",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src43-finite-exceptional.json :: P_loc.set_below_the_bound",
+      "size_a": 87,
+      "size_b": 8,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src43-finite-exceptional.json :: P_loc.buckets[2].failures",
+      "size_a": 87,
+      "size_b": 2,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src43-finite-exceptional.json :: the_routing_answer.P_loc_below_bound",
+      "size_a": 87,
+      "size_b": 8,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src49-provisional-vs-revised.json :: router_partition[0].bad_primes_of_the_twist",
+      "size_a": 87,
+      "size_b": 4,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src49-provisional-vs-revised.json :: router_partition[1].bad_primes_of_the_twist",
+      "size_a": 87,
+      "size_b": 4,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src49-provisional-vs-revised.json :: router_partition[2].bad_primes_of_the_twist",
+      "size_a": 87,
+      "size_b": 4,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+      "b": "src59-lemma-b-reduction.json :: the_pieces_were_in_the_tree.RUN_038_failures_below_its_bound",
+      "size_a": 87,
+      "size_b": 8,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-015",
+        "round_b": "RUN-057",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[1].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[1].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[0].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[0].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[1].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[2].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[2].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[0].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[1].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[2].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[2].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[2].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[3].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[2].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[2].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[3].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[2].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[0].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[3].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[3].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[4].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        937
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[3].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[3].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[4].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        937
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[3].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[0].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[4].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[4].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[5].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        1009
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[4].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[4].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[5].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        1009
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[4].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[0].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[5].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[5].factors",
+      "b": "src35-gcd-witness.json :: the_family.rows[6].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        1153
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[5].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[5].factors",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[6].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        1153
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: section_5_squarefree_products.sample[5].factors",
+      "b": "src49-provisional-vs-revised.json :: router_partition[0].bad_primes_of_the_twist",
+      "size_a": 2,
+      "size_b": 4,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[3].bad_primes",
+      "b": "src38-mod-ell-surjectivity.json :: certified_surjective",
+      "size_a": 3,
+      "size_b": 38,
+      "intersection": [
+        2,
+        113
+      ],
+      "size": 2,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-036",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-007",
+          "RUN-026",
+          "RUN-038",
+          "RUN-041",
+          "RUN-045",
+          "RUN-047"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[3].bad_primes",
+      "b": "src40-fw-h2-ordinary.json :: no_finite_exception.buckets[0].failures",
+      "size_a": 3,
+      "size_b": 4,
+      "intersection": [
+        113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-038",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-007",
+          "RUN-026",
+          "RUN-038",
+          "RUN-041",
+          "RUN-045",
+          "RUN-047"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[3].bad_primes",
+      "b": "src43-finite-exceptional.json :: P_loc.set_below_the_bound",
+      "size_a": 3,
+      "size_b": 8,
+      "intersection": [
+        113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-007",
+          "RUN-026",
+          "RUN-038",
+          "RUN-041",
+          "RUN-045",
+          "RUN-047"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[3].bad_primes",
+      "b": "src43-finite-exceptional.json :: P_loc.buckets[0].failures",
+      "size_a": 3,
+      "size_b": 4,
+      "intersection": [
+        113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-007",
+          "RUN-026",
+          "RUN-038",
+          "RUN-041",
+          "RUN-045",
+          "RUN-047"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[3].bad_primes",
+      "b": "src43-finite-exceptional.json :: the_routing_answer.P_loc_below_bound",
+      "size_a": 3,
+      "size_b": 8,
+      "intersection": [
+        113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-007",
+          "RUN-026",
+          "RUN-038",
+          "RUN-041",
+          "RUN-045",
+          "RUN-047"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[3].bad_primes",
+      "b": "src47-fw-compiler.json :: level_1.not_applicable_primes",
+      "size_a": 3,
+      "size_b": 4,
+      "intersection": [
+        3,
+        113
+      ],
+      "size": 2,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-045",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-007",
+          "RUN-026",
+          "RUN-038",
+          "RUN-041",
+          "RUN-045",
+          "RUN-047"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[3].bad_primes",
+      "b": "src49-provisional-vs-revised.json :: the_redundant_condition.of_those_violating",
+      "size_a": 3,
+      "size_b": 8,
+      "intersection": [
+        113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-007",
+          "RUN-026",
+          "RUN-038",
+          "RUN-041",
+          "RUN-045",
+          "RUN-047"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[3].bad_primes",
+      "b": "src51-source-audits.json :: maximal_versus_irreducible.maximality_certified_at",
+      "size_a": 3,
+      "size_b": 38,
+      "intersection": [
+        2,
+        113
+      ],
+      "size": 2,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-049",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-007",
+          "RUN-026",
+          "RUN-038",
+          "RUN-041",
+          "RUN-045",
+          "RUN-047"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[3].bad_primes",
+      "b": "src59-lemma-b-reduction.json :: the_pieces_were_in_the_tree.RUN_038_failures_below_its_bound",
+      "size_a": 3,
+      "size_b": 8,
+      "intersection": [
+        113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-057",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-007",
+          "RUN-026",
+          "RUN-038",
+          "RUN-041",
+          "RUN-045",
+          "RUN-047"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[4].bad_primes",
+      "b": "src49-provisional-vs-revised.json :: the_redundant_condition.of_those_violating",
+      "size_a": 3,
+      "size_b": 8,
+      "intersection": [
+        229
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-022"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[7].bad_primes",
+      "b": "src38-mod-ell-surjectivity.json :: certified_surjective",
+      "size_a": 3,
+      "size_b": 38,
+      "intersection": [
+        2,
+        103
+      ],
+      "size": 2,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-036",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-017"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[7].bad_primes",
+      "b": "src47-fw-compiler.json :: level_1.applicable_primes",
+      "size_a": 3,
+      "size_b": 34,
+      "intersection": [
+        103
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-045",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-017"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src22-witness-network.json :: is_the_generalisation_non_empty.network_only_sample[7].bad_primes",
+      "b": "src51-source-audits.json :: maximal_versus_irreducible.maximality_certified_at",
+      "size_a": 3,
+      "size_b": 38,
+      "intersection": [
+        2,
+        103
+      ],
+      "size": 2,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-019",
+        "round_b": "RUN-049",
+        "reports_making_the_join": [
+          "RUN-058"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-017"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.directions",
+      "b": "src34-referee-a.json :: support_set.first_members",
+      "size_a": 23,
+      "size_b": 12,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-032",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.directions",
+      "b": "src35-gcd-witness.json :: the_family.rows[10].additive",
+      "size_a": 23,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.directions",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[10].additive_primes",
+      "size_a": 23,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.directions",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 23,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.directions",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 23,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.directions",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 23,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[2].pair",
+      "b": "src34-referee-a.json :: support_set.first_members",
+      "size_a": 2,
+      "size_b": 12,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-032",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[2].pair",
+      "b": "src35-gcd-witness.json :: the_family.rows[10].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[2].pair",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[10].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[2].pair",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[2].pair",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[2].pair",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[4].pair",
+      "b": "src34-referee-a.json :: support_set.first_members",
+      "size_a": 2,
+      "size_b": 12,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-032",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[4].pair",
+      "b": "src35-gcd-witness.json :: the_family.rows[10].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[4].pair",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[10].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[4].pair",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[4].pair",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.degenerate_pairs[4].pair",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.examples[2].pair",
+      "b": "src34-referee-a.json :: support_set.first_members",
+      "size_a": 2,
+      "size_b": 12,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-032",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.examples[2].pair",
+      "b": "src35-gcd-witness.json :: the_family.rows[10].additive",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.examples[2].pair",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[10].additive_primes",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.examples[2].pair",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.examples[2].pair",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src25-p5-core-vertex.json :: how_special_is_the_chosen_pair.examples[2].pair",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-022",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-035",
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-040"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[1].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-035",
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[2].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[3].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[4].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        937
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[5].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        1009
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[6].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        1153
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[7].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        1753
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[8].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        2017
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[9].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        2089
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[10].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src35-gcd-witness.json :: the_family.rows[11].additive",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        2137
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-033",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[0].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [
+          "RUN-034",
+          "RUN-035"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-040",
+          "RUN-047"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[1].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [
+          "RUN-034",
+          "RUN-035"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-047"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[2].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[3].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[4].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        937
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[5].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        1009
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-047",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[6].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        1153
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[7].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        1753
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[8].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        2017
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[9].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        2089
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[10].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src36-kodaira-nogo.json :: the_no_gos_domain_in_this_family.rows[11].additive_primes",
+      "size_a": 12,
+      "size_b": 2,
+      "intersection": [
+        2137
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-034",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src49-provisional-vs-revised.json :: router_partition[0].bad_primes_of_the_twist",
+      "size_a": 12,
+      "size_b": 4,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src49-provisional-vs-revised.json :: router_partition[1].bad_primes_of_the_twist",
+      "size_a": 12,
+      "size_b": 4,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src34-referee-a.json :: support_set.first_members",
+      "b": "src49-provisional-vs-revised.json :: router_partition[2].bad_primes_of_the_twist",
+      "size_a": 12,
+      "size_b": 4,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-032",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[0].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        241
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034",
+          "RUN-035"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[1].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[1].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[1].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        313
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-015",
+          "RUN-016",
+          "RUN-019",
+          "RUN-031",
+          "RUN-032",
+          "RUN-034"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[2].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[2].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[2].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-014",
+          "RUN-016",
+          "RUN-019",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[3].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[3].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[3].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        673
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[4].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        937
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[4].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        937
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[4].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        937
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[5].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        1009
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[5].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        1009
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[5].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        1009
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [
+          "RUN-047"
+        ],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": true
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[6].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        1153
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[6].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        1153
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[6].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        1153
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[7].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        1753
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[7].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        1753
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[7].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        1753
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-016",
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[8].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2017
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[8].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2017
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[8].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2017
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[9].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2089
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[9].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2089
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[9].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2089
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[10].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[10].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[10].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2113
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-011",
+          "RUN-032",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[11].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2137
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[11].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2137
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[11].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2137
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-032",
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[12].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2617
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[12].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2617
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[12].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2617
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[13].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2713
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[13].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2713
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[13].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        2713
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[14].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        3049
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[14].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        3049
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[14].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        3049
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[15].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        3457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[15].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        3457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[15].additive",
+      "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+      "size_a": 2,
+      "size_b": 19,
+      "intersection": [
+        3457
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-047",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-057"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[16].additive",
+      "b": "src40-fw-h2-ordinary.json :: no_finite_exception.buckets[2].failures",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-038",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[16].additive",
+      "b": "src43-finite-exceptional.json :: P_loc.set_below_the_bound",
+      "size_a": 2,
+      "size_b": 8,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[16].additive",
+      "b": "src43-finite-exceptional.json :: P_loc.buckets[2].failures",
+      "size_a": 2,
+      "size_b": 2,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    },
+    {
+      "a": "src35-gcd-witness.json :: the_family.rows[16].additive",
+      "b": "src43-finite-exceptional.json :: the_routing_answer.P_loc_below_bound",
+      "size_a": 2,
+      "size_b": 8,
+      "intersection": [
+        3529
+      ],
+      "size": 1,
+      "mentioned": {
+        "checked": true,
+        "round_a": "RUN-033",
+        "round_b": "RUN-041",
+        "reports_making_the_join": [],
+        "reports_naming_numbers_only": [
+          "RUN-038",
+          "RUN-041",
+          "RUN-057",
+          "RUN-058"
+        ],
+        "join_made": false
+      }
+    }
+  ],
+  "the_known_join_3529": {
+    "joins_containing_3529": 38,
+    "of_which_touch_RUN_038s_log": 6,
+    "of_which_meet_a_membership_list": 4,
+    "found": true,
+    "examples": [
+      {
+        "a": "src16-twist-family.json :: every_member_has_root_number_plus_one.members",
+        "b": "src40-fw-h2-ordinary.json :: no_finite_exception.buckets[2].failures",
+        "inter": [
+          3529
+        ]
+      },
+      {
+        "a": "src40-fw-h2-ordinary.json :: no_finite_exception.buckets[2].failures",
+        "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_18_and_27",
+        "inter": [
+          3529
+        ]
+      },
+      {
+        "a": "src40-fw-h2-ordinary.json :: no_finite_exception.buckets[2].failures",
+        "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_this_tree",
+        "inter": [
+          3529
+        ]
+      },
+      {
+        "a": "src40-fw-h2-ordinary.json :: no_finite_exception.buckets[2].failures",
+        "b": "src49-provisional-vs-revised.json :: three_definitions_of_P.per_referee_A",
+        "inter": [
+          3529
+        ]
+      }
+    ]
+  },
+  "reading": "a row is a CANDIDATE. Most are two gates reading the same upstream fact — the same witness primes, the same member list — and mean nothing. The ones worth a round are where two different COMPUTATIONS meet at a number neither round expected, the way RUN-038's obstruction list met RUN-047's membership list at 3529",
+  "ok": true
+}

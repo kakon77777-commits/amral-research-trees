@@ -145,9 +145,12 @@ import src55_local_isogeny_kernel as kern55               # noqa: E402
 import src56_family_schema_and_spec as schema56           # noqa: E402
 import src57_theorem_2_18_condition_map as cmap57         # noqa: E402
 import src58_paper_vs_code_provenance as prov58           # noqa: E402
+import src59_lemma_b_reduction as lemb59                  # noqa: E402
+import src60_cross_round_joins as joins60                 # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
+NEWLINE = chr(10)
 
 # Curves whose verdicts are fixed independently of any run of these gates:
 # the six of gate 08's own self-check plus the hard tail of the census, where
@@ -2839,6 +2842,86 @@ def check_paper_vs_code() -> bool:
 
 
 
+def check_lemma_b_reduction() -> bool:
+    """FW-H2 at the twisting prime by Lemma B, and member 3529.
+
+    The failing set must be exactly [3529]: an ordinary test read backwards
+    makes every member supersingular and H2 pass everywhere, and a family that
+    quietly loses 3529 loses the finding. a_3529 must be 1 by TWO code paths —
+    src15's Legendre count inside the gate and src57's square-table count
+    called here — because the whole round rests on one integer. The chain must
+    keep three cited steps and three computed ones, with S4 verified-in-corpus:
+    a version that scored a cited step computed would be the overclaim 07 Rule
+    4 forbids. RUN-038's bucketed failure list must be read as buckets — the
+    first draft read a flat key and reported this line's own archive wrongly.
+    The revised router must stay recorded as NOT using FW at p = q, and the
+    profile must stay LEMMA_B_REDUCTION, never 07's FW17_EXACT.
+    """
+    ch = lemb59.chain()
+    if len(ch["rows"]) != 7:
+        return False
+    if sorted(ch["computed_steps"]) != ["S5", "S6", "S7"]:
+        return False
+    if len(ch["cited_steps"]) != 3:
+        return False
+    mb = lemb59.members(brute_at=())
+    if mb["members"] < 19 or not mb["all_good"] or not mb["all_ordinary"]:
+        return False
+    if mb["failing_members"] != [3529]:
+        return False
+    r = next((x for x in mb["rows"] if x["q"] == 3529), None)
+    if r is None or r["a_q"] != 1 or r["FW_H2_at_q"] != "FAIL":
+        return False
+    if cmap57.a_p(lemb59.BASE, 3529) != r["a_q"]:
+        return False                      # two code paths, one integer
+    pt = lemb59.the_pieces_were_in_the_tree()
+    if not pt["RUN_038_listed_3529_as_an_a_p2_eq_1_failure"]:
+        return False
+    if not pt["RUN_047_confirmed_3529_in_P_by_all_three_definitions"]:
+        return False
+    wd = lemb59.which_design_it_breaks()
+    if wd["revised_design"]["applies_FW_at_p_equals_q"] is not False:
+        return False
+    if wd["provisional_design"]["applies_FW_at_p_equals_q"] is not True:
+        return False
+    if lemb59.membership_condition()["members_with_a_q2_eq_1"] != [3529]:
+        return False
+    pf = lemb59.the_profile()
+    if pf["is_07s_FW17_EXACT"] is not False:
+        return False
+    if pf["profile"] != "LEMMA_B_REDUCTION":
+        return False
+    return lemb59.consistency_with_RUN_053()[
+        "agrees_with_RUN_053_mutual_exclusivity"] is True
+
+
+
+def check_cross_round_joins() -> bool:
+    """The joins instrument must be able to find the one join already known.
+
+    A gate that intersects every prime set in every log is only measuring
+    something if the 3529 join — RUN-038's obstruction list meeting RUN-047's
+    membership list — survives its filters. A scaffolding filter wide enough to
+    swallow it, a small-prime floor above 3529, a scan that skips RUN-038's
+    log, or a containment filter read backwards would each leave a gate that
+    runs green over nothing. The check does not run the report scan and asserts
+    no count of unmade joins: that number is a measurement each new report is
+    meant to change.
+    """
+    sets = joins60.prime_sets()
+    if len(sets) < 20:
+        return False
+    kept, _dropped = joins60.drop_constants(sets)
+    all_joins = joins60.joins(kept)
+    if not all_joins:
+        return False
+    known = joins60.the_known_join(all_joins)
+    if not known["found"]:
+        return False
+    return known["of_which_touch_RUN_038s_log"] >= 1
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -2846,7 +2929,8 @@ COVERS = sorted(m.__name__ for m in (
     mazur33, refA34, gcd35, nogo36, bridge37, surj38, h3c39,
     h2o40, brg41, bar42, fin43, cmp44, ladder45, cheb46,
     comp47, chain48, prev49, schema50, audits51, routes52,
-    consensus53, targets54, kern55, schema56, cmap57, prov58))
+    consensus53, targets54, kern55, schema56, cmap57, prov58,
+    lemb59, joins60))
 
 
 CHECKS = {
@@ -2934,6 +3018,8 @@ CHECKS = {
     "family-schema-and-spec": check_family_schema_and_spec,
     "condition-map": check_condition_map,
     "paper-vs-code": check_paper_vs_code,
+    "lemma-b-reduction": check_lemma_b_reduction,
+    "cross-round-joins": check_cross_round_joins,
 }
 
 
@@ -3238,6 +3324,38 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("the scaffolding filter is widened to every prime below 200,000, so no "
+     "intersection survives", "code", "cross-round-joins",
+     lambda: patch(joins60, "SCAFFOLDING", set(anchor15.sieve(200_000)))),
+    ("RUN-038's log is skipped by the scan, so the 3529 join cannot be found",
+     "code", "cross-round-joins",
+     lambda: patch(joins60, "prime_sets", _sets_without_src40)),
+    ("the containment filter is read backwards: re-reads are kept and real "
+     "joins dropped", "code", "cross-round-joins",
+     lambda: patch(joins60, "joins", _joins_inverted_containment)),
+    ("the small-prime floor is raised to 4,000, so every set below it — "
+     "RUN-038's obstruction list included — is discarded", "code",
+     "cross-round-joins", lambda: patch(joins60, "MIN_ELEMENT", 4000)),
+    ("the ordinary test is inverted, so every member reads supersingular and "
+     "H2 passes everywhere", "code", "lemma-b-reduction",
+     lambda: patch(lemb59, "members", _members_inverted_ordinary)),
+    ("member 3529 is dropped from the family, and the failure with it", "code",
+     "lemma-b-reduction",
+     lambda: patch(lemb59, "members", _members_without_3529)),
+    ("RUN-038's failure list is read from a flat key again, so the archive "
+     "says 3529 was never listed", "code", "lemma-b-reduction",
+     lambda: patch(lemb59, "the_pieces_were_in_the_tree", _flat_key_read)),
+    ("27's revised router is reported as applying FW at p = q", "code",
+     "lemma-b-reduction",
+     lambda: patch(lemb59, "which_design_it_breaks", _revised_uses_fw)),
+    ("the verdict is reported under 07's FW17_EXACT profile", "code",
+     "lemma-b-reduction",
+     lambda: patch(lemb59, "the_profile", _profile_borrowed)),
+    ("a cited step of the chain is scored computed", "code",
+     "lemma-b-reduction",
+     lambda: patch(lemb59, "CHAIN",
+                   tuple((a, b, c, "COMPUTED") if a == "S3" else (a, b, c, d)
+                         for a, b, c, d in lemb59.CHAIN))),
     ("E2's agreement with the census is scored by count rather than by set, "
      "so a swapped pair passes", "code", "condition-map",
      lambda: patch(cmap57, "e2_small_trace", _e2_by_count)),
@@ -3657,6 +3775,16 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("the prime fraction lowered from 0.8 to 0.5 — more lists admitted, the "
+     "known join still present", lambda: patch(joins60, "PRIME_FRACTION", 0.5)),
+    ("the constants threshold raised from 4 to 100 — nothing was dropped at 4 "
+     "either, so nothing changes", lambda: patch(joins60, "NOISE_IF_SEEN_IN", 100)),
+    ("the congruence tested one-sided, a_q ≡ 1 instead of a_q² ≡ 1 — same "
+     "failing set here, because no member has a_q = −1; a coincidence of the "
+     "sample, not a property of the criterion",
+     lambda: patch(lemb59, "members", _one_sided_congruence)),
+    ("the family bound raised to 5000 — 23 members, and 3529 is still the "
+     "only one failing", lambda: patch(lemb59, "members", _wider_family_5000)),
     ("E1 tested by trial-division squarefree instead of N == prod(primes) — "
      "same verdict, because every conductor_primes list is complete",
      lambda: patch(cmap57, "e1_semistable", _e1_by_trial_division)),
@@ -3902,6 +4030,108 @@ _true_level2 = comp47.level2
 _true_h1 = comp47.h1
 _true_three_defs = prev49.three_definitions
 _true_find = schema50.find_by_conductor
+_true_prime_sets60 = joins60.prime_sets
+_true_joins60 = joins60.joins
+
+
+def _sets_without_src40():
+    return [x for x in _true_prime_sets60() if not x["log"].startswith("src40")]
+
+
+def _joins_inverted_containment(sets):
+    """Keep only pairs where one set contains the other — the re-reads — and
+    drop the genuine joins."""
+    import itertools as _it
+    out = []
+    for a, b in _it.combinations(sets, 2):
+        if a["log"] == b["log"]:
+            continue
+        inter = sorted(set(a["set"]) & set(b["set"]))
+        if not inter:
+            continue
+        if not (set(a["set"]) <= set(b["set"]) or set(b["set"]) <= set(a["set"])):
+            continue
+        out.append({"a": f"{a['log']} :: {a['path']}",
+                    "b": f"{b['log']} :: {b['path']}",
+                    "size_a": a["size"], "size_b": b["size"],
+                    "intersection": inter[:40], "size": len(inter)})
+    return out
+
+
+_true_members59 = lemb59.members
+_true_pieces59 = lemb59.the_pieces_were_in_the_tree
+_true_design59 = lemb59.which_design_it_breaks
+_true_profile59 = lemb59.the_profile
+
+
+def _members_inverted_ordinary(bound=None, brute_at=()):
+    d = dict(_true_members59(bound, brute_at) if bound is not None
+             else _true_members59(brute_at=brute_at))
+    rows = [dict(r, ordinary=not r["ordinary"], FW_H2_at_q="PASS")
+            for r in d["rows"]]
+    d["rows"] = rows
+    d["all_ordinary"] = all(r["ordinary"] for r in rows)
+    d["failing_members"] = []
+    d["failing"] = 0
+    d["passing"] = len(rows)
+    return d
+
+
+def _members_without_3529(bound=None, brute_at=()):
+    d = dict(_true_members59(bound, brute_at) if bound is not None
+             else _true_members59(brute_at=brute_at))
+    rows = [r for r in d["rows"] if r["q"] != 3529]
+    d["rows"] = rows
+    d["members"] = len(rows)
+    d["failing_members"] = [r["q"] for r in rows if r["FW_H2_at_q"] == "FAIL"]
+    d["failing"] = len(d["failing_members"])
+    d["passing"] = len(rows) - d["failing"]
+    return d
+
+
+def _flat_key_read():
+    d = dict(_true_pieces59())
+    d["RUN_038_listed_3529_as_an_a_p2_eq_1_failure"] = False
+    d["RUN_038_failures_below_its_bound"] = []
+    return d
+
+
+def _revised_uses_fw():
+    d = dict(_true_design59())
+    d["revised_design"] = dict(d["revised_design"], applies_FW_at_p_equals_q=True)
+    return d
+
+
+def _profile_borrowed():
+    d = dict(_true_profile59())
+    d["profile"] = "FW17_EXACT"
+    d["is_07s_FW17_EXACT"] = True
+    return d
+
+
+def _one_sided_congruence(bound=None, brute_at=()):
+    """a_q ≡ 1 in place of a_q² ≡ 1. On these members no a_q is −1, so the
+    one-sided test returns the same failing set — a coincidence of the sample,
+    not a property of the criterion, and recorded as such."""
+    d = dict(_true_members59(bound, brute_at) if bound is not None
+             else _true_members59(brute_at=brute_at))
+    rows = []
+    for r in d["rows"]:
+        cong = (r["a_q"] - 1) % r["q"] == 0
+        fails = r["good"] and r["ordinary"] and cong
+        rows.append(dict(r, a_q_squared_is_1_mod_q=cong,
+                         FW_H2_at_q="FAIL" if fails else "PASS"))
+    d["rows"] = rows
+    d["failing_members"] = [r["q"] for r in rows if r["FW_H2_at_q"] == "FAIL"]
+    d["failing"] = len(d["failing_members"])
+    d["passing"] = len(rows) - d["failing"]
+    return d
+
+
+def _wider_family_5000(bound=None, brute_at=()):
+    return _true_members59(5000, brute_at)
+
+
 _true_e2_57 = cmap57.e2_small_trace
 _true_e4_57 = cmap57.e4_ramification
 _true_e1_57 = cmap57.e1_semistable
@@ -5649,59 +5879,59 @@ def run_checks() -> dict[str, bool]:
     return out
 
 
-def main() -> int:
-    try:
-        sys.stdout.reconfigure(encoding="utf-8")
-    except AttributeError:                               # pragma: no cover
-        pass
-
-    helpers = _assert_no_shadowed_helpers()
-    print(f"  {len(helpers)} _true_* helpers, none shadowed")
-    baseline = run_checks()
-    if not all(baseline.values()):
-        raise SystemExit(f"the undisturbed gates are not green: {baseline}")
-    print(f"  baseline: all {len(baseline)} checks green")
-
-    results, uncaught, wrong_catcher = [], [], []
-    for name, kind, expected, make in DEFECTS:
+def _run_defects(indices: list[int]) -> list[dict]:
+    """Plant each listed defect in turn, run every check, restore."""
+    results = []
+    for i in indices:
+        name, kind, expected, make = DEFECTS[i]
         restore = make()
         try:
             got = run_checks()
         finally:
             restore()
         red = [k for k, v in got.items() if not v]
-        entry = {"defect": name, "kind": kind, "named_check": expected,
-                 "checks_that_went_red": red,
-                 "caught_by_the_named_check": expected in red}
-        results.append(entry)
-        if not red:
-            uncaught.append(name)
-        elif expected not in red:
-            wrong_catcher.append({"defect": name, "expected": expected,
-                                  "actually_caught_by": red})
+        results.append({"index": i, "defect": name, "kind": kind,
+                        "named_check": expected, "checks_that_went_red": red,
+                        "caught_by_the_named_check": expected in red})
         flag = ("OK " if expected in red else
                 "MISSED " if not red else "WRONG-CHECK ")
         print(f"    {flag:12s} [{kind}] {name}")
         print(f"                 red: {', '.join(red) if red else '(none)'}")
+    return results
 
-    print()
-    ctrl_results, disturbed = [], []
-    for name, make in CONTROLS:
+
+def _run_controls(indices: list[int]) -> list[dict]:
+    out = []
+    for i in indices:
+        name, make = CONTROLS[i]
         restore = make()
         try:
             got = run_checks()
         finally:
             restore()
         red = [k for k, v in got.items() if not v]
-        ctrl_results.append({"control": name, "checks_that_went_red": red,
-                             "undisturbed": not red})
-        if red:
-            disturbed.append({"control": name, "red": red})
+        out.append({"index": i, "control": name, "checks_that_went_red": red,
+                    "undisturbed": not red})
         print(f"    {'OK ' if not red else 'DISTURBED '}control: {name}"
               + (f"   red: {', '.join(red)}" if red else ""))
+    return out
 
-    after = run_checks()
-    log = {
+
+def _assemble(baseline: dict, results: list[dict], ctrl_results: list[dict],
+              after: dict) -> dict:
+    """The log, in the same shape whether built by one process or merged from
+    several. Entries carry their original index; totals are recomputed here."""
+    results = sorted(results, key=lambda r: r["index"])
+    ctrl_results = sorted(ctrl_results, key=lambda r: r["index"])
+    uncaught = [r["defect"] for r in results if not r["checks_that_went_red"]]
+    wrong_catcher = [{"defect": r["defect"], "expected": r["named_check"],
+                      "actually_caught_by": r["checks_that_went_red"]}
+                     for r in results
+                     if r["checks_that_went_red"]
+                     and r["named_check"] not in r["checks_that_went_red"]]
+    disturbed = [{"control": c["control"], "red": c["checks_that_went_red"]}
+                 for c in ctrl_results if not c["undisturbed"]]
+    return {
         "gate": "src11_gate_drill",
         "covers": COVERS,
         "rule": ("a planted defect must be caught by the check NAMED for it, "
@@ -5731,26 +5961,131 @@ def main() -> int:
         },
         "state_restored_afterwards": all(after.values()),
         "ok": (not uncaught and not wrong_catcher and not disturbed
-               and all(after.values())),
+               and all(after.values())
+               and len(results) == len(DEFECTS)
+               and len(ctrl_results) == len(CONTROLS)),
     }
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(log, indent=2, ensure_ascii=False) + "\n",
-                   encoding="utf-8", newline="\n")
 
+
+def _write_and_summarise(log: dict, out: pathlib.Path) -> int:
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(log, indent=2, ensure_ascii=False) + NEWLINE,
+                   encoding="utf-8", newline=NEWLINE)
     t = log["totals"]
+    uncaught = t["UNCAUGHT_BY_ANY_CHECK"]
     print()
     print(f"  {t['defects']} defects, {t['caught_by_the_named_check']} caught "
           f"by the check named for them")
     print(f"  uncaught by any check      : "
           f"{len(uncaught)}{'  ' + ', '.join(uncaught) if uncaught else ''}")
-    print(f"  caught by the wrong check  : {len(wrong_catcher)}")
+    print(f"  caught by the wrong check  : {len(t['CAUGHT_BY_THE_WRONG_CHECK'])}")
     print(f"  {t['controls']} controls, "
-          f"{len(disturbed)} disturbed a check")
+          f"{len(t['controls_that_disturbed_a_check'])} disturbed a check")
     print(f"  state restored afterwards  : {log['state_restored_afterwards']}")
     print()
-    print(f"wrote {OUT.name}")
+    print(f"wrote {out.name}")
     return 0 if log["ok"] else 1
 
 
+def main(shard: tuple[int, int] | None = None,
+         out: pathlib.Path | None = None) -> int:
+    """No arguments: the whole drill in this process, as always.
+
+    `shard=(k, n)`: every n-th defect and control starting at k, written as a
+    PARTIAL log to `out`. Each shard runs its own baseline and its own
+    restored-state check, so a shard that started from a red tree or left one
+    behind reports it itself. `merge()` reassembles partials in original order
+    into the standard log — the same shape, the same totals, the same rule.
+    The drill's semantics do not depend on which process planted a defect:
+    every defect is still planted alone, in a process whose other state is
+    pristine, and restored before the next.
+    """
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except AttributeError:                               # pragma: no cover
+        pass
+
+    helpers = _assert_no_shadowed_helpers()
+    print(f"  {len(helpers)} _true_* helpers, none shadowed")
+    baseline = run_checks()
+    if not all(baseline.values()):
+        raise SystemExit(f"the undisturbed gates are not green: {baseline}")
+    print(f"  baseline: all {len(baseline)} checks green")
+
+    if shard is None:
+        d_idx = list(range(len(DEFECTS)))
+        c_idx = list(range(len(CONTROLS)))
+    else:
+        k, n = shard
+        d_idx = list(range(k, len(DEFECTS), n))
+        c_idx = list(range(k, len(CONTROLS), n))
+        print(f"  shard {k}/{n}: {len(d_idx)} defects, {len(c_idx)} controls")
+
+    results = _run_defects(d_idx)
+    print()
+    ctrl_results = _run_controls(c_idx)
+    after = run_checks()
+
+    if shard is not None:
+        k, n = shard
+        partial = {"shard": [k, n], "defects_total": len(DEFECTS),
+                   "controls_total": len(CONTROLS),
+                   "baseline_all_green": baseline, "after": after,
+                   "defects": results, "controls": ctrl_results}
+        out = out or OUT.with_name(f"src11-gate-drill.shard{k}of{n}.json")
+        out.write_text(json.dumps(partial, indent=2, ensure_ascii=False) + NEWLINE,
+                       encoding="utf-8", newline=NEWLINE)
+        print(f"{NEWLINE}  shard {k}/{n} done, restored: {all(after.values())}; "
+              f"wrote {out.name}")
+        return 0 if all(after.values()) else 1
+
+    log = _assemble(baseline, results, ctrl_results, after)
+    return _write_and_summarise(log, OUT)
+
+
+def merge(paths: list[pathlib.Path]) -> int:
+    """Reassemble shard partials into the standard log."""
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except AttributeError:                               # pragma: no cover
+        pass
+    parts = [json.loads(p.read_text(encoding="utf-8")) for p in paths]
+    n_set = {p["shard"][1] for p in parts}
+    if len(n_set) != 1:
+        raise SystemExit(f"shards disagree on n: {n_set}")
+    n = n_set.pop()
+    ks = sorted(p["shard"][0] for p in parts)
+    if ks != list(range(n)):
+        raise SystemExit(f"shards present {ks}, expected 0..{n - 1}")
+    for p in parts:
+        if not all(p["baseline_all_green"].values()):
+            raise SystemExit(f"shard {p['shard']} started from a red baseline")
+        if p["defects_total"] != len(DEFECTS) or p["controls_total"] != len(CONTROLS):
+            raise SystemExit(f"shard {p['shard']} ran against a different "
+                             f"defect list ({p['defects_total']} vs "
+                             f"{len(DEFECTS)})")
+    results = [r for p in parts for r in p["defects"]]
+    ctrls = [c for p in parts for c in p["controls"]]
+    if sorted(r["index"] for r in results) != list(range(len(DEFECTS))):
+        raise SystemExit("merged defects do not cover 0..N-1 exactly once")
+    if sorted(c["index"] for c in ctrls) != list(range(len(CONTROLS))):
+        raise SystemExit("merged controls do not cover 0..M-1 exactly once")
+    baseline = parts[0]["baseline_all_green"]
+    # `after` for the merged run: every shard must have restored its own state
+    after = {k: all(p["after"][k] for p in parts) for k in baseline}
+    log = _assemble(baseline, results, ctrls, after)
+    log["merged_from"] = [str(p.name) for p in paths]
+    log["shards"] = n
+    print(f"  merged {n} shards: {len(results)} defects, {len(ctrls)} controls")
+    return _write_and_summarise(log, OUT)
+
+
 if __name__ == "__main__":
+    args = sys.argv[1:]
+    if args and args[0] == "--merge":
+        raise SystemExit(merge([pathlib.Path(a) for a in args[1:]]))
+    if args and args[0] == "--shard":
+        k, n = (int(x) for x in args[1].split("/"))
+        outp = pathlib.Path(args[3]) if len(args) > 3 and args[2] == "--out" else None
+        raise SystemExit(main(shard=(k, n), out=outp))
     raise SystemExit(main())
