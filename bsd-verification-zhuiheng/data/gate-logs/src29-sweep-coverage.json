@@ -1,8 +1,8 @@
 {
   "gate": "src29 — the sweep's own coverage",
   "documents": 85,
-  "reports_read": 65,
-  "gates_read": 68,
+  "reports_read": 66,
+  "gates_read": 69,
   "matching": "by filename stem and, for Phase 0, the `doc NN` form. Only 17 of the 85 are cited as markdown links, so a link scan would report a sweep four times smaller than it is",
   "bucket_order_strongest_first": [
     "subject of a report",
@@ -11,8 +11,8 @@
     "not mentioned"
   ],
   "counts": {
-    "subject of a report": 80,
-    "cited in a report": 5,
+    "subject of a report": 82,
+    "cited in a report": 3,
     "named in gate code": 0,
     "not mentioned": 0
   },
@@ -30,8 +30,8 @@
       "not mentioned": 0
     },
     "phase1": {
-      "subject of a report": 23,
-      "cited in a report": 2,
+      "subject of a report": 25,
+      "cited in a report": 0,
       "named in gate code": 0,
       "not mentioned": 0
     },
@@ -45,12 +45,13 @@
   "not_mentioned": [],
   "caveat": "a bucket is a measure of attention, not of correctness. Being the subject of a round says a round was aimed at the document; what that round actually settled is in its own 'what this round does not claim' section, every time",
   "second_axis_data_artefacts": {
-    "reports_naming_a_data_artefact": 65,
-    "distinct_artefacts_named": 79,
+    "reports_naming_a_data_artefact": 66,
+    "distinct_artefacts_named": 81,
     "artefacts": [
       "ARTIFACT_MANIFEST.json",
       "SHA256SUMS.json",
       "algorithm1_removed_census.csv",
+      "algorithm2_removed_twists.csv",
       "data/external/twist-map-completeness-full.json",
       "failed.csv",
       "hashes.txt",
@@ -86,8 +87,7 @@
       "src23-p5-local-units.json",
       "src24-p5-status-ledger.json",
       "src25-p5-core-vertex.json",
-      "src26-rank2-bsd-identity.json",
-      "src27-agent-experiment-audit.json"
+      "src26-rank2-bsd-identity.json"
     ],
     "by_report": {
       "RUN-001-CORPUS-IDENTITY.md": [
@@ -362,6 +362,12 @@
         "src11-gate-drill.json",
         "src29-sweep-coverage.json",
         "src67-phase0-maps.json"
+      ],
+      "RUN-066-ALGORITHM2-MIRROR-AND-DIFF.md": [
+        "algorithm2_removed_twists.csv",
+        "src11-gate-drill.json",
+        "src29-sweep-coverage.json",
+        "src68-algorithm2-mirror-and-diff.json"
       ]
     }
   },
@@ -723,14 +729,19 @@
     {
       "subline": "phase1",
       "name": "03_Algorithm2_Independent_Reproduction.md",
-      "bucket": "cited in a report",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-066-ALGORITHM2-MIRROR-AND-DIFF.md"
+      ],
       "cited_in": [
-        "RUN-012-ALGORITHM2-TWISTS.md"
+        "RUN-012-ALGORITHM2-TWISTS.md",
+        "RUN-064-PHASE1-PROTOCOLS.md",
+        "RUN-065-PHASE0-MAPS.md"
       ],
       "named_in_gates": [
         "src11_gate_drill.py",
-        "src13_algorithm2_twists.py"
+        "src13_algorithm2_twists.py",
+        "src68_algorithm2_mirror_and_diff.py"
       ]
     },
     {
@@ -883,13 +894,18 @@
     {
       "subline": "phase1",
       "name": "13_500K_Twist_Output_NonMonotonicity.md",
-      "bucket": "cited in a report",
-      "subject_of": [],
+      "bucket": "subject of a report",
+      "subject_of": [
+        "RUN-066-ALGORITHM2-MIRROR-AND-DIFF.md"
+      ],
       "cited_in": [
-        "RUN-012-ALGORITHM2-TWISTS.md"
+        "RUN-012-ALGORITHM2-TWISTS.md",
+        "RUN-064-PHASE1-PROTOCOLS.md",
+        "RUN-065-PHASE0-MAPS.md"
       ],
       "named_in_gates": [
-        "src13_algorithm2_twists.py"
+        "src13_algorithm2_twists.py",
+        "src68_algorithm2_mirror_and_diff.py"
       ]
     },
     {

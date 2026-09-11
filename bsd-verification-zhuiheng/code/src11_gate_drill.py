@@ -155,6 +155,7 @@ import src64_discrepancy_corpus as corpus64               # noqa: E402
 import src65_phase1_closure as closure65                  # noqa: E402
 import src66_phase1_protocols as proto66                  # noqa: E402
 import src67_phase0_maps as maps67                        # noqa: E402
+import src68_algorithm2_mirror_and_diff as mirror68       # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3174,6 +3175,47 @@ def check_phase0_maps() -> bool:
 
 
 
+def check_algorithm2_mirror_and_diff() -> bool:
+    """03's mirror and 13's diff, on a sample where the full run is a minute.
+
+    The point-count formula must agree with brute-force enumeration and with
+    Hasse on every sampled (curve, p); the cubic identity 16f(x) = F(4x) must
+    hold on the whole base; 03's inertness hypotheses must hold on every
+    sampled Zhai pair; 46a1 and 106d1 must read back. 13's +1899 / −53404 must
+    reproduce with git, the entry census must give 0 added and the package's
+    own row counts, every added line must be a comma drop or a re-alignment
+    with none new, the deleted lines must account exactly, and the twelve
+    <150 survivors must show 0 deltas.
+    """
+    base = cmap57.load_base()
+    new = cmap57.load_new_map()
+    old = json.loads(cmap57.OLD_MAP.read_text(encoding="utf-8"))
+    pc = mirror68.point_count_crosscheck(base, sample=200)
+    if not pc["agree"] or pc["pairs_checked"] < 1000:
+        return False
+    if not mirror68.cubic_forms_agree(base)["agree"]:
+        return False
+    ih = mirror68.inert_hypotheses(base, new, sample=300)
+    if not ih["agree"] or ih["pairs"] < 1000:
+        return False
+    fx = mirror68.fixtures_03(old, new, base)
+    if not fx["46a1_agrees"] or not fx["106d1_agrees"]:
+        return False
+    ld = mirror68.line_diff()
+    if not ld["agrees"]:
+        return False
+    cl = mirror68.classify_added_lines()
+    if not cl.get("every_added_line_is_a_comma_drop_or_realignment", False):
+        return False
+    ec = mirror68.entry_census(old, new)
+    if not ec["package_agrees"] or not ec["monotone_in_fact"] or not ec["RUN_060_agrees"]:
+        return False
+    if not mirror68.line_accounting(ld, ec, cl)["accounts_exactly"]:
+        return False
+    return mirror68.fixture_150_deltas(old, new, base)["agrees"]
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3183,7 +3225,7 @@ COVERS = sorted(m.__name__ for m in (
     comp47, chain48, prev49, schema50, audits51, routes52,
     consensus53, targets54, kern55, schema56, cmap57, prov58,
     lemb59, joins60, commit61, replay62, thirteen63, corpus64,
-    closure65, proto66, maps67))
+    closure65, proto66, maps67, mirror68))
 
 
 CHECKS = {
@@ -3280,6 +3322,7 @@ CHECKS = {
     "phase1-closure": check_phase1_closure,
     "phase1-protocols": check_phase1_protocols,
     "phase0-maps": check_phase0_maps,
+    "algorithm2-mirror-and-diff": check_algorithm2_mirror_and_diff,
 }
 
 
@@ -3598,6 +3641,21 @@ DEFECTS = [
     ("10's label REPRODUCTION-QUALIFIED is awarded", "code", "phase1-closure",
      lambda: patch(closure65, "layers_10",
                    lambda: {**_true_layers65(), "label_awarded_here": "REPRODUCTION-QUALIFIED"})),
+    ("03's D_x loses its factor 4, so the formula counts the wrong curve",
+     "code", "algorithm2-mirror-and-diff",
+     lambda: patch(mirror68, "formula_count", _formula_without_the_4)),
+    ("the mirror's cubic is written with b4 in place of 2b4", "code",
+     "algorithm2-mirror-and-diff",
+     lambda: patch(mirror68, "cubic_03", _cubic_with_b4)),
+    ("Hasse's bound is applied as a_p^2 <= p", "code",
+     "algorithm2-mirror-and-diff",
+     lambda: patch(mirror68, "point_count_crosscheck", _hasse_too_tight)),
+    ("the OLD map is read from the CURRENT file, so nothing was ever removed",
+     "code", "algorithm2-mirror-and-diff",
+     lambda: patch(cmap57, "OLD_MAP", cmap57.NEW_MAP)),
+    ("a re-aligned added line is classified as new content", "code",
+     "algorithm2-mirror-and-diff",
+     lambda: patch(mirror68, "classify_added_lines", _realigned_counted_as_new)),
     ("02's open row 'Sha finite in general' is read as 已關閉", "code",
      "phase0-maps",
      lambda: patch(maps67, "CLOSURE_ROWS", _sha_row_closed())),
@@ -4135,6 +4193,9 @@ CONTROLS = [
     ("106d1 enumerated over 1 ≤ d < 1000 instead of 00's symmetric range — "
      "the same twenty-one, because no negative d is admissible",
      lambda: patch(closure65, "fixtures_00", _fixtures00_positive_only)),
+    ("the cubic identity 16f(x) = F(4x) evaluated at 5, 6, 7 instead of −3..3",
+     lambda: patch(mirror68, "cubic_forms_agree",
+                   lambda base, xs=(5, 6, 7): _true_cubic_forms68(base, xs))),
     ("04's ten routes listed in reverse order — the 首選 route is the most "
      "worked whichever row it is on",
      lambda: patch(maps67, "ROUTES", tuple(reversed(maps67.ROUTES)))),
@@ -4412,6 +4473,54 @@ _true_env66 = proto66.environment_04
 _true_stop66 = proto66.stop_rule_on_this_line
 _true_regression66 = proto66.regression_05
 _true_handoff66 = proto66.handoff_06
+_true_cubic_forms68 = mirror68.cubic_forms_agree
+_true_formula68 = mirror68.formula_count
+_true_cubic68 = mirror68.cubic_03
+_true_crosscheck68 = mirror68.point_count_crosscheck
+_true_classify68 = mirror68.classify_added_lines
+
+
+def _formula_without_the_4(ainvs, p):
+    if p == 2:
+        raise ValueError("odd p")
+    a1, a2, a3, a4, a6 = (c % p for c in ainvs)
+    n = 1
+    for x in range(p):
+        dx = ((a1 * x + a3) ** 2 + (x ** 3 + a2 * x * x + a4 * x + a6)) % p
+        chi = 0 if dx == 0 else (1 if pow(dx, (p - 1) // 2, p) == 1 else -1)
+        n += 1 + chi
+    return n
+
+
+def _cubic_with_b4(ainvs):
+    c4, b2, two_b4, b6 = _true_cubic68(ainvs)
+    return (c4, b2, two_b4 // 2, b6)
+
+
+def _hasse_too_tight(base, primes=mirror68.ODD_PRIMES, sample=None):
+    d = dict(_true_crosscheck68(base, primes, sample))
+    rows = base if sample is None else base[::max(1, len(base) // sample)]
+    viol = 0
+    for r in rows:
+        for p in primes:
+            if p in r["conductor_primes"]:
+                continue
+            b = mirror68.brute_count(r["ainvs"], p)
+            if (p + 1 - b) ** 2 > p:
+                viol += 1
+    d["hasse_bound_violations"] = viol
+    d["agree"] = d["agree"] and viol == 0
+    return d
+
+
+def _realigned_counted_as_new():
+    d = dict(_true_classify68())
+    d["added_lines_with_new_content"] = d.get("added_lines_identical_to_a_deleted_line", 0)
+    d["added_lines_identical_to_a_deleted_line"] = 0
+    d["every_added_line_is_a_comma_drop_or_realignment"] = d["added_lines_with_new_content"] == 0
+    return d
+
+
 _true_rows67 = maps67.CLOSURE_ROWS
 _true_seven67 = maps67.SEVEN
 _true_routes67 = maps67.ROUTES

@@ -1,0 +1,171 @@
+{
+  "gate": "src68 — 03's Algorithm 2 mirror and 13's non-monotone diff, recomputed",
+  "source": "03_Algorithm2_Independent_Reproduction.md, 13_500K_Twist_Output_NonMonotonicity.md",
+  "docs_found": {
+    "03": true,
+    "13": true
+  },
+  "03_point_count_formula_vs_brute_force": {
+    "curves": 40749,
+    "primes": [
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23
+    ],
+    "pairs_checked": 269696,
+    "formula_vs_brute_disagreements": 0,
+    "hasse_bound_violations": 0,
+    "this_trees_point_count_vs_brute_disagreements": 0,
+    "formula_defined_at_2": false,
+    "agree": true
+  },
+  "03_cubic_vs_this_trees_monic_form": {
+    "curves": 40749,
+    "evaluation_points": [
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3
+    ],
+    "identity_16f_x_equals_F_4x_failures": 0,
+    "agree": true
+  },
+  "03_inertness_hypotheses_on_every_zhai_pair": {
+    "zhai_curves": 32944,
+    "pairs": 241542,
+    "prime_divisors_seen": 257959,
+    "d_even": 0,
+    "gcd_d_3N_not_1": 0,
+    "p_dividing_discriminant": 0,
+    "cubic_has_root_mod_p": 0,
+    "no_root_iff_irreducible_for_degree_3": true,
+    "agree": true
+  },
+  "03_fixtures": {
+    "46a1_new": [
+      1,
+      185,
+      265,
+      305,
+      745,
+      785,
+      905
+    ],
+    "46a1_old": [
+      1,
+      185,
+      265,
+      305,
+      745,
+      785,
+      905
+    ],
+    "46a1_stated_03": [
+      1,
+      185,
+      265,
+      305,
+      745,
+      785,
+      905
+    ],
+    "46a1_agrees": true,
+    "106d1_new_count": 21,
+    "106d1_old_count": 21,
+    "106d1_stated_03": 21,
+    "106d1_agrees": true,
+    "RUN_063_recomputation_agrees": true,
+    "RUN_063_fixtures_00": {
+      "both_agree": true
+    }
+  },
+  "13_line_diff": {
+    "added_lines": 1899,
+    "deleted_lines": 53404,
+    "how": "git diff --no-index --numstat",
+    "stated_13": {
+      "added_lines": 1899,
+      "deleted_lines": 53404
+    },
+    "agrees": true
+  },
+  "13_added_lines_classified": {
+    "classified": true,
+    "added_lines": 1899,
+    "deleted_lines": 53404,
+    "added_lines_that_are_a_deleted_line_minus_its_comma": 1851,
+    "added_lines_identical_to_a_deleted_line": 48,
+    "added_lines_with_new_content": 0,
+    "new_content_sample": [],
+    "every_added_line_is_a_comma_drop_or_realignment": true
+  },
+  "13_entry_census": {
+    "old_keys": 39394,
+    "new_keys": 36687,
+    "keys_removed": 2707,
+    "keys_added": 0,
+    "old_pairs": 293482,
+    "new_pairs": 247391,
+    "pairs_added": 0,
+    "pairs_removed": 46091,
+    "pairs_removed_with_their_base_curve": 24785,
+    "pairs_removed_on_the_stable_base": 21306,
+    "stable_curves_with_any_twist_removed": 5437,
+    "stable_curves_whose_last_listed_twist_was_removed": 1979,
+    "RUN_060_section_7_stable_curves_with_a_removal": 5437,
+    "package_csv_rows": {
+      "algorithm2_removed_twists": 21306,
+      "twists_removed_by_upstream_base_deletion": 24785,
+      "algorithm2_added_twists": 0
+    },
+    "package_agrees": true,
+    "monotone_in_fact": true,
+    "RUN_060_stable_base_figures": {
+      "T_O": 268697,
+      "T_C": 247391,
+      "removed": 21306
+    },
+    "RUN_060_agrees": true
+  },
+  "13_line_accounting": {
+    "removed_twist_lines": 46091,
+    "deleted_keys_x2_structural_lines": 5414,
+    "comma_drop_neighbours": 1851,
+    "realigned_lines": 48,
+    "predicted_deleted_lines": 53404,
+    "git_deleted_lines": 53404,
+    "predicted_added_lines": 1899,
+    "git_added_lines": 1899,
+    "accounts_exactly": true
+  },
+  "13_fixture_150_deltas": {
+    "the_twelve": [
+      "106d1",
+      "114b1",
+      "115a1",
+      "118c1",
+      "118d1",
+      "141b1",
+      "141e1",
+      "142c1",
+      "46a1",
+      "69a1",
+      "77c1",
+      "94a1"
+    ],
+    "lists_differ": [],
+    "output_deltas": 0,
+    "stated_13": 0,
+    "agrees": true
+  },
+  "headline": "03's formula agrees with brute force on 269,696 (curve, p) pairs, its cubic is this tree's monic form under X = 4x on all 40,749 curves, its inertness hypotheses hold on all 241,542 Zhai pairs, 46a1's seven and 106d1's 21 read back from both maps. 13's +1,899 / −53,404 reproduces with git to the line; at entry level 0 twists were added and 46,091 removed (21,306 on the stable base, 24,785 with their base curves); every one of the 1,899 added lines is a deleted line's neighbour losing its comma (1,851) or a line git re-aligned unchanged (48), none new content; the twelve <150 survivors show 0 deltas",
+  "ok": true
+}

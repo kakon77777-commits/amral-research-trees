@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-065:
-  every gate is drilled — `src00`–`src10` and `src12`–`src67`, 275 defects, 275
-  caught by the named check, 55 controls undisturbed, over 93 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-066:
+  every gate is drilled — `src00`–`src10` and `src12`–`src68`, 280 defects, 280
+  caught by the named check, 56 controls undisturbed, over 94 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -168,6 +168,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [063](./reports/RUN-063-PHASE1-CLOSURE.md) | `16`, `10`, `01`, `00`, `00_v02` — Phase 1's closure and fixtures | `src65` | **`16`'s eight items, 8 of 8 independently redone here**; the `<150` fixture recovered from the census — 25 → 12, 10/15 → 7/5, the 13 removed are `08`'s; `00`'s two hand fixtures reproduce exactly, no negative `d` ever admissible; and **the other half of RUN-055: with `04`'s bound `d < 1000`, completeness holds on all 36,687 stable curves — 0 absent, 0 extra** — Algorithm 2's admissibility side in both directions. `10`'s label not awarded |
 | [064](./reports/RUN-064-PHASE1-PROTOCOLS.md) | the six Phase 1 protocol documents — Phase 1 at 23 of 25 subject + 2 cited (typed as 25 of 25; corrected at RUN-065) | `src66` | `04`'s seven required outputs 0 of 7 by name, five with analogues; `04` refuses the full-reproduction claim and so does this line; `05`'s stop rule applied to this line's last twelve rounds — no freeze; `05`'s record fields 5 of 7 in RUN-061; `06`'s principle *code version ≠ theorem semantics version* with numbers; `06`'s six briefs — this line fulfils D, E, F, and D's six discrepancy classes come to 0 |
 | [065](./reports/RUN-065-PHASE0-MAPS.md) | `02`, `04`, `08` — Phase 0's three maps; Phase 0 at 10 of 10 | `src67` | `02`'s four open rows still open, no report claims one closed; 4 of 7 strong-BSD components computed here, the regulator without saturation, Ш never; `04`'s 首選 route the most worked at 23 to 9, the 紅燈 route with no round and 0 of 85 claimants (RUN-003); `08`'s six briefs and Referee E's eight leaps all covered, 28 attributions verified by signature phrase; **RUN-064's 25 of 25 was typed — the instrument says 23 + 2 cited, corrected** |
+| [066](./reports/RUN-066-ALGORITHM2-MIRROR-AND-DIFF.md) | `03`, `13` — the Algorithm 2 mirror and the non-monotone diff; **Phase 1 at 25 of 25 in the instrument's sense** | `src68` | `03`'s point-count formula held against brute-force enumeration on 269,696 (curve, p) pairs, 0 disagreements; its cubic is this tree's monic form under X = 4x on all 40,749 curves; its inertness hypotheses hold on all 241,542 Zhai pairs (257,959 prime divisors, none even / non-coprime / bad / with a root); `13`'s +1899 / −53404 reproduced with git exactly; at entry level 0 twists added, 46,091 removed (21,306 stable + 24,785 with their base curves); every added line a comma drop (1,851) or a re-alignment (48), 0 new content; deletions account to the line |
 
 ## Layout
 
