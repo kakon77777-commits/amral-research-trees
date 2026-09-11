@@ -152,6 +152,8 @@ import src61_one_commit_and_delta as commit61             # noqa: E402
 import src62_algorithm2_replay as replay62                # noqa: E402
 import src63_removed_13_and_soundness as thirteen63       # noqa: E402
 import src64_discrepancy_corpus as corpus64               # noqa: E402
+import src65_phase1_closure as closure65                  # noqa: E402
+import src66_phase1_protocols as proto66                  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3071,6 +3073,71 @@ def check_discrepancy_corpus() -> bool:
 
 
 
+def check_phase1_closure() -> bool:
+    """16's checklist, 01's fixture, 00's two hand fixtures, completeness.
+
+    The <150 fixture must come out 25 → 12 with the 13 removed being 08's, by
+    label. 00's two lists must reproduce exactly — they are the only Algorithm 2
+    outputs the corpus prints in full, and a predicate that drifted from 01's
+    text would show there first. Completeness must be exact on the sample with
+    04's bound: a predicate that dropped a condition admits d the map does not
+    carry, and a bound above 1000 does the same — both must read as
+    admissible-but-absent. 16 must stay at eight items and 10's label must stay
+    unawarded: the package is not the reproduction run the label names.
+    """
+    base = cmap57.load_base()
+    new = cmap57.load_new_map()
+    f = closure65.fixture_150(base, new)
+    if not f["agrees"] or not f["removed_is_08s_thirteen"]:
+        return False
+    if f["current"] != 12 or f["old"] != 25:
+        return False
+    z = closure65.fixtures_00(base, new)
+    if not z["both_agree"] or z["106d1"]["negative_d_admissible"]:
+        return False
+    n = closure65.negative_twists(base, new, limit=10)
+    if n["with_an_admissible_negative_d"] != 0 or n["map_has_negative_d"]:
+        return False
+    c = closure65.completeness(base, new, sample=6)
+    if not c["sample_exact"]:
+        return False
+    if closure65.checklist_16()["count"] != 8:
+        return False
+    return closure65.layers_10()["label_awarded_here"] is None
+
+
+def check_phase1_protocols() -> bool:
+    """The six protocol documents against the package and this line.
+
+    04 must be read as STATING the bound 1000 and REFUSING the full
+    reproduction claim — those two sentences are what the round rests on. The
+    stop-rule proxy must not fire on this line's own recent rounds. The
+    regression record must stay at 5 of 7 with exactly code_version and
+    semantic_version missing — a version reporting seven would be inventing
+    the two fields 06's changelog is about. The handoff's discrepancy count
+    must stay 0 with this line as the mirror, and 04's preflight outputs must
+    stay 0 of 7 by exact name: the package never claimed to be that run.
+    """
+    e = proto66.environment_04()
+    if not e["states_twist_bound_1000"] or not e["refuses_full_reproduction_claim"]:
+        return False
+    if not proto66.enclosure_05()["boxed_not_forall_E"]:
+        return False
+    if proto66.stop_rule_on_this_line()["freeze_triggered"]:
+        return False
+    r = proto66.regression_05()
+    if r["carried_count"] != 5 or r["missing"] != ["code_version", "semantic_version"]:
+        return False
+    c = proto66.changelog_06()
+    if c["count"] != 8 or c["measured_here"] != 4:
+        return False
+    h = proto66.handoff_06()
+    if h["count"] != 6 or h["Ds_discrepancies_found"] != 0:
+        return False
+    return proto66.preflight_04()["present_by_exact_name"] == 0
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3079,7 +3146,8 @@ COVERS = sorted(m.__name__ for m in (
     h2o40, brg41, bar42, fin43, cmp44, ladder45, cheb46,
     comp47, chain48, prev49, schema50, audits51, routes52,
     consensus53, targets54, kern55, schema56, cmap57, prov58,
-    lemb59, joins60, commit61, replay62, thirteen63, corpus64))
+    lemb59, joins60, commit61, replay62, thirteen63, corpus64,
+    closure65, proto66))
 
 
 CHECKS = {
@@ -3173,6 +3241,8 @@ CHECKS = {
     "algorithm2-replay": check_algorithm2_replay,
     "removed-13-and-soundness": check_removed_13_and_soundness,
     "discrepancy-corpus": check_discrepancy_corpus,
+    "phase1-closure": check_phase1_closure,
+    "phase1-protocols": check_phase1_protocols,
 }
 
 
@@ -3477,6 +3547,38 @@ DEFECTS = [
      "q9-census-closure", lambda: patch(q9, "decompose", _decompose_swapped)),
     ("the base-curve count gate 31 subtracts from is wrong", "code",
      "q9-census-closure", lambda: patch(q9, "BASE_CURVES", 40794)),
+    ("one of the twelve is reported still removed, so the current fixture "
+     "reads 13", "code", "phase1-closure",
+     lambda: patch(closure65, "fixture_150", _fixture_reads_13)),
+    ("the admissibility predicate drops the ordinary condition D4", "code",
+     "phase1-closure",
+     lambda: patch(closure65, "admissible", _admissible_without_ordinary)),
+    ("the twist bound is taken as 2,000, so admissible d above 1,000 read as "
+     "absent from the map", "code", "phase1-closure",
+     lambda: patch(closure65, "TWIST_BOUND", 2000)),
+    ("16's checklist is scored with a ninth item", "code", "phase1-closure",
+     lambda: patch(closure65, "checklist_16", _nine_items)),
+    ("10's label REPRODUCTION-QUALIFIED is awarded", "code", "phase1-closure",
+     lambda: patch(closure65, "layers_10",
+                   lambda: {**_true_layers65(), "label_awarded_here": "REPRODUCTION-QUALIFIED"})),
+    ("04's twist bound is reported absent from the document", "code",
+     "phase1-protocols",
+     lambda: patch(proto66, "environment_04",
+                   lambda: {**_true_env66(), "states_twist_bound_1000": False})),
+    ("the stop-rule proxy reports a three-round streak", "code",
+     "phase1-protocols",
+     lambda: patch(proto66, "stop_rule_on_this_line", _streak_of_three)),
+    ("05's record fields are all reported carried, code_version included",
+     "code", "phase1-protocols",
+     lambda: patch(proto66, "regression_05", _all_seven_carried)),
+    ("06's handoff reports one discrepancy under negative twist convention",
+     "code", "phase1-protocols",
+     lambda: patch(proto66, "handoff_06",
+                   lambda: {**_true_handoff66(), "Ds_discrepancies_found": 1})),
+    ("04's seven preflight outputs are reported present by exact name", "code",
+     "phase1-protocols",
+     lambda: patch(proto66, "preflight_04",
+                   lambda: {**_true_preflight66(), "present_by_exact_name": 7})),
     ("the square test always answers 'not a square', which the accepted base "
      "could never have exposed", "code", "discrepancy-corpus",
      lambda: patch(cmap57, "is_square", lambda n: False)),
@@ -3979,6 +4081,12 @@ DEFECTS = [
 ]
 
 CONTROLS = [
+    ("106d1 enumerated over 1 ≤ d < 1000 instead of 00's symmetric range — "
+     "the same twenty-one, because no negative d is admissible",
+     lambda: patch(closure65, "fixtures_00", _fixtures00_positive_only)),
+    ("the stop-rule window widened from 12 to 24 rounds — no three-round "
+     "streak either way", lambda: patch(proto66, "stop_rule_on_this_line",
+                                        _stop_rule_window_24)),
     ("the four adversarial curves listed in a different order",
      lambda: patch(corpus64, "FOUR", tuple(reversed(corpus64.FOUR)))),
     ("08's thirteen rows in reverse order",
@@ -4241,6 +4349,93 @@ _true_level2 = comp47.level2
 _true_h1 = comp47.h1
 _true_three_defs = prev49.three_definitions
 _true_find = schema50.find_by_conductor
+_true_fixture65 = closure65.fixture_150
+_true_admissible65 = closure65.admissible
+_true_checklist65 = closure65.checklist_16
+_true_layers65 = closure65.layers_10
+_true_fixtures00_65 = closure65.fixtures_00
+_true_env66 = proto66.environment_04
+_true_stop66 = proto66.stop_rule_on_this_line
+_true_regression66 = proto66.regression_05
+_true_handoff66 = proto66.handoff_06
+_true_preflight66 = proto66.preflight_04
+
+
+def _fixture_reads_13(base, new):
+    d = dict(_true_fixture65(base, new))
+    d["current"] = 13
+    d["agrees"] = False
+    return d
+
+
+def _admissible_without_ordinary(r, d):
+    """01's D4 — E ordinary at every p | d — dropped. Some d the map excludes
+    become admissible, and completeness reads them as absent."""
+    import math as _m
+    N, a = r["conductor"], r["ainvs"]
+    if not cmap57.squarefree(d) or _m.gcd(abs(d), 3 * N) != 1 or d % 4 != 1:
+        return False
+    ps = cmap57.prime_factors(d) if abs(d) != 1 else []
+    if r["source"] == "Zha16_no_2_tors":
+        cubic = cmap57.two_division_cubic(a)
+        if any(closure65.ph2.cubic_root_count(cubic, p) != 0 for p in ps):
+            return False
+        if any(closure65.fam.kronecker(d, q) != 1 for q in r["conductor_primes"]):
+            return False
+        if r["discriminant"] > 0 and d < 0:
+            return False
+    else:
+        if any(p % 4 != 1 for p in ps):
+            return False
+        if any(cmap57.point_count(a, p) % 4 != 2 for p in ps):
+            return False
+        if d % 8 != 1:
+            return False
+        if any(closure65.fam.kronecker(d, q) != 1 for q in r["conductor_primes"] if q != 2):
+            return False
+    return True
+
+
+def _nine_items():
+    d = dict(_true_checklist65())
+    d["rows"] = d["rows"] + [{"n": 9, "item": "invented", "redone_by": "-", "how": "-"}]
+    d["count"] = 9
+    return d
+
+
+def _streak_of_three(window=12):
+    d = dict(_true_stop66(window))
+    d["longest_only_rerunning_streak"] = 3
+    d["freeze_triggered"] = True
+    return d
+
+
+def _all_seven_carried():
+    d = dict(_true_regression66())
+    d["carried_by_RUN_061s_rows"] = {k: True for k in d["carried_by_RUN_061s_rows"]}
+    d["carried_count"] = 7
+    d["missing"] = []
+    return d
+
+
+def _fixtures00_positive_only(base, new):
+    """106d1 enumerated over 1 ≤ d < 1000 instead of the symmetric range —
+    the same twenty-one, because no negative d is admissible."""
+    d = dict(_true_fixtures00_65(base, new))
+    by = {r["curve_label"]: r for r in base}
+    r106 = by["106d1"]
+    adm = [x for x in range(1, closure65.TWIST_BOUND) if closure65.admissible(r106, x)]
+    d["106d1"] = dict(d["106d1"], range="1 ≤ d < 1000", recomputed=adm,
+                      negative_d_admissible=[],
+                      agrees=(adm == closure65.FIXTURE_106d1 == new["106d1"]))
+    d["both_agree"] = d["46a1"]["agrees"] and d["106d1"]["agrees"]
+    return d
+
+
+def _stop_rule_window_24(window=12):
+    return _true_stop66(24)
+
+
 _true_read_curve64 = corpus64.read_curve
 _true_shard_pin64 = corpus64.shard_pin
 _true_four64 = corpus64.the_four

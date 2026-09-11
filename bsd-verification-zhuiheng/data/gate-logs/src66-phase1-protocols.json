@@ -1,0 +1,358 @@
+{
+  "gate": "src66 — Phase 1's six protocol documents",
+  "source": "04_500K_Preflight.md, 04_Algorithm1_Environment_and_Gaps.md, 05_Global_Enclosure_and_Stop_Rules.md, 05_Agent_Regression_Protocol.md, 06_Semantic_Version_Changelog.md, 06_Local_Agent_Handoff.md",
+  "documents_found": {
+    "04_500K_Preflight.md": true,
+    "04_Algorithm1_Environment_and_Gaps.md": true,
+    "05_Global_Enclosure_and_Stop_Rules.md": true,
+    "05_Agent_Regression_Protocol.md": true,
+    "06_Semantic_Version_Changelog.md": true,
+    "06_Local_Agent_Handoff.md": true
+  },
+  "preflight_04": {
+    "required_outputs": {
+      "passed.csv": false,
+      "failed.csv": false,
+      "unknown.csv": false,
+      "predicate_trace.jsonl": false,
+      "descent_certificates/": false,
+      "run_manifest.json": false,
+      "hashes.txt": false
+    },
+    "present_by_exact_name": 0,
+    "nearest_analogue_in_package": {
+      "passed.csv": "results/base_stable.csv (36,687 kept)",
+      "failed.csv": "results/algorithm1_removed_census.csv (4,062, with classes)",
+      "unknown.csv": "none — but the package records 0 unresolved and no timeouts, because no descent ran",
+      "predicate_trace.jsonl": "inputs/metadata/*.json carries per-curve evidence lines, not a per-predicate trace",
+      "descent_certificates/": "none — no descent ran",
+      "run_manifest.json": "ARTIFACT_MANIFEST.json + results/raw_file_manifest.json",
+      "hashes.txt": "results/results_sha256.json"
+    },
+    "five_steps": [
+      {
+        "step": "1 lock Sage / LMFDB / Git SHA / descent backend",
+        "state": "Git SHAs and ecdata commit locked (RUN-056); Sage, LMFDB release, backend N/A — no run"
+      },
+      {
+        "step": "2 current <150 exact replay",
+        "state": "RUN-063-era: the 12 recovered from the census by conductor (src65)"
+      },
+      {
+        "step": "3 old-only 13 first-failure replay",
+        "state": "RUN-061, 13 of 13"
+      },
+      {
+        "step": "4 discrepancy four exact rejection replay",
+        "state": "RUN-062, f'(x0) on 4 of 4"
+      },
+      {
+        "step": "5 only then run conductor < 500,000",
+        "state": "not run by the package or this line"
+      }
+    ],
+    "success_criterion": {
+      "final set exact": "OLD − (isogeny ∪ a_3) = CURRENT, 36,687 (RUN-059)",
+      "stage counts reproducible": "4,062 = 2,707 + 1,353 + 2 recomputed (RUN-055)",
+      "adversarial corpus stable": "the four stay rejected on f' (RUN-062)",
+      "certificate semantics stable": "N/A — no certificates were produced"
+    },
+    "reading": "04 specifies the outputs of a 500K RUN. The package is not that run; it is the exact census of that run's archived outputs, and carries analogues of five of the seven under other names. The two it cannot carry — unknown.csv and descent_certificates/ — are exactly the artefacts of a descent that never happened"
+  },
+  "environment_04": {
+    "states_twist_bound_1000": true,
+    "refuses_full_reproduction_claim": true,
+    "lists_what_it_did_not_do": [
+      "connect to local LMFDB",
+      "run Sage",
+      "run 2-descent",
+      "rescan conductor < 500000",
+      "independently prove the 36,687 count"
+    ],
+    "this_line_did_none_of_those_either": true,
+    "this_line_did": [
+      "the 36,687 count from the columns (RUN-059) — a COLUMN identity, not an independent proof of the count, which would need the LMFDB scan"
+    ],
+    "expected_150_output": "twelve base curves — recovered as 12 (src65)",
+    "the_bound_closed_RUN_055s_gap": true
+  },
+  "enclosure_05": {
+    "what_it_proves": "a uniform infinite-family theorem",
+    "what_it_does_not": [
+      "all twists of the base satisfy BSD",
+      "a base that fails Algorithm 1 has no strong-BSD twists",
+      "every elliptic curve has such a family",
+      "full BSD for all E/Q"
+    ],
+    "boxed_not_forall_E": true,
+    "this_lines_position": "RUN-043 placed Phase 2 at C1 (partial); RUN-054 scored 05's schema as not a theorem; RUN-057 found one member the FW-everywhere design cannot reach. Nothing in this tree claims more than the uniform-family shape, and one round found it narrower than stated",
+    "stop_rule": "freeze after three consecutive rounds that only raise a bound, list more d, recompute the same curves, or tune runtime — with no new predicate or certificate",
+    "extenders": [
+      "new theorem family",
+      "new descent certificate",
+      "new eligibility criterion",
+      "discrepancy / bug with mathematical consequence",
+      "independent global reproduction of the authors' result",
+      "family coverage extended to new curve types"
+    ]
+  },
+  "stop_rule_on_this_line": {
+    "window": 12,
+    "rows": [
+      {
+        "report": "RUN-053",
+        "extender_markers": [
+          "criterion",
+          "fail",
+          "instrument"
+        ],
+        "only_rerunning": false
+      },
+      {
+        "report": "RUN-054",
+        "extender_markers": [
+          "instrument"
+        ],
+        "only_rerunning": false
+      },
+      {
+        "report": "RUN-055",
+        "extender_markers": [
+          "fail",
+          "instrument"
+        ],
+        "only_rerunning": false
+      },
+      {
+        "report": "RUN-056",
+        "extender_markers": [
+          "reproduc"
+        ],
+        "only_rerunning": false
+      },
+      {
+        "report": "RUN-057",
+        "extender_markers": [
+          "criterion",
+          "fail",
+          "identity"
+        ],
+        "only_rerunning": false
+      },
+      {
+        "report": "RUN-058",
+        "extender_markers": [
+          "instrument"
+        ],
+        "only_rerunning": false
+      },
+      {
+        "report": "RUN-059",
+        "extender_markers": [
+          "predicate"
+        ],
+        "only_rerunning": false
+      },
+      {
+        "report": "RUN-060",
+        "extender_markers": [
+          "predicate",
+          "fail",
+          "correction",
+          "vacuous",
+          "identity"
+        ],
+        "only_rerunning": false
+      },
+      {
+        "report": "RUN-061",
+        "extender_markers": [
+          "fail"
+        ],
+        "only_rerunning": false
+      },
+      {
+        "report": "RUN-062",
+        "extender_markers": [
+          "fail",
+          "instrument"
+        ],
+        "only_rerunning": false
+      },
+      {
+        "report": "RUN-063",
+        "extender_markers": [
+          "reproduc"
+        ],
+        "only_rerunning": false
+      },
+      {
+        "report": "RUN-064",
+        "extender_markers": [
+          "discrepanc",
+          "reproduc"
+        ],
+        "only_rerunning": false
+      }
+    ],
+    "longest_only_rerunning_streak": 0,
+    "freeze_triggered": false,
+    "reading": "a lexical proxy for 05's rule, not a judgement of merit — RUN-043 used the same shape against 07's stop rule"
+  },
+  "regression_05": {
+    "layers": {
+      "A": "12 positive — recovered (src65)",
+      "B": "13 removed — RUN-061",
+      "C": "discrepancy four — RUN-062"
+    },
+    "record_fields": [
+      "curve",
+      "decision",
+      "first_failure",
+      "all_failures",
+      "evidence",
+      "code_version",
+      "semantic_version"
+    ],
+    "carried_by_RUN_061s_rows": {
+      "curve": true,
+      "decision": true,
+      "first_failure": true,
+      "all_failures": true,
+      "evidence": true,
+      "code_version": false,
+      "semantic_version": false
+    },
+    "carried_count": 5,
+    "missing": [
+      "code_version",
+      "semantic_version"
+    ],
+    "firewall": [
+      {
+        "rule": "analytic Sha = 1 is not Sha trivial",
+        "here": "N/A — no Sha computed here"
+      },
+      {
+        "rule": "rank = 0 is not rigorous analytic rank 0",
+        "here": "RUN-056: 0 of 4 rank fields in the package; E6 cited"
+      },
+      {
+        "rule": "2-descent dimension = analytic valuation is not BSD(E,2) proved",
+        "here": "N/A — no descent"
+      },
+      {
+        "rule": "timeout must be UNKNOWN",
+        "here": "N/A — nothing timed out; and this line's own rule is that unmeasured is a verdict"
+      }
+    ],
+    "engineering_only_rule": "a version that only improves runtime / cache / batching / formatting is ENGINEERING ONLY — this line's sharded drill (RUN-058) is exactly that, and was labelled as infrastructure, not progress"
+  },
+  "changelog_06": {
+    "rows": [
+      {
+        "n": 1,
+        "item": "p-isogeny and a_3 gate",
+        "this_line": "RUN-056: three commits, three semantics — strict → relaxed → strict + a_3"
+      },
+      {
+        "n": 2,
+        "item": "gcd(d, 3N) = 1",
+        "this_line": "RUN-060: added at O → C; 21,306 pairs removed"
+      },
+      {
+        "n": 3,
+        "item": "BSD(E,2) as necessary condition or full certificate",
+        "this_line": "cited (E7)"
+      },
+      {
+        "n": 4,
+        "item": "E' Sha[2] verification",
+        "this_line": "not computed"
+      },
+      {
+        "n": 5,
+        "item": "S: deterministic criterion or bounded search",
+        "this_line": "cited (02 §4)"
+      },
+      {
+        "n": 6,
+        "item": "testing flags",
+        "this_line": "RUN-056: only in archived source"
+      },
+      {
+        "n": 7,
+        "item": "timeout as FAIL or UNKNOWN",
+        "this_line": "N/A — no run"
+      },
+      {
+        "n": 8,
+        "item": "algebraic vs analytic rank columns",
+        "this_line": "RUN-056: 0 of 4 rank fields"
+      }
+    ],
+    "count": 8,
+    "measured_here": 4,
+    "principle": "code version ≠ theorem semantics version",
+    "the_principle_with_numbers": "three code versions (7286794, 1a0489c, 31fae20) carry THREE Algorithm 1 semantics and TWO Algorithm 2 semantics, measured at RUN-056 and RUN-060"
+  },
+  "handoff_06": {
+    "rows": [
+      {
+        "agent": "A",
+        "brief": "Sage Environment Builder",
+        "this_line": "not this line — no Sage"
+      },
+      {
+        "agent": "B",
+        "brief": "Algorithm 1 Reproducer, per-filter row counts",
+        "this_line": "partly: the two enforced filters' counts (RUN-055/059); the rank/L-value, descent and BSD(E,2) filters are cited"
+      },
+      {
+        "agent": "C",
+        "brief": "2-Descent Referee",
+        "this_line": "not this line — no descent"
+      },
+      {
+        "agent": "D",
+        "brief": "Algorithm 2 Cross-Checker: official code vs pure-Python mirror",
+        "this_line": "this line IS a pure-Python mirror: soundness on 247,391 pairs (RUN-055), completeness on a sample (src65), 00's two fixtures exact; 0 discrepancies to classify"
+      },
+      {
+        "agent": "E",
+        "brief": "Paper/Code Version Auditor",
+        "this_line": "RUN-056: SHAs and diffs; arXiv version absent from the package"
+      },
+      {
+        "agent": "F",
+        "brief": "Global Enclosure Referee",
+        "this_line": "RUN-043, RUN-051, RUN-054: claim ladder, prohibitions, schema not a theorem"
+      }
+    ],
+    "count": 6,
+    "briefs_this_line_fulfils": [
+      "D",
+      "E",
+      "F"
+    ],
+    "briefs_this_line_partly_fulfils": [
+      "B"
+    ],
+    "briefs_outside_this_line": [
+      "A",
+      "C"
+    ],
+    "Ds_discrepancy_classes": [
+      "number-field index issue",
+      "Kronecker convention",
+      "negative twist convention",
+      "finite-field point count",
+      "source-branch mismatch",
+      "official code drift"
+    ],
+    "Ds_discrepancies_found": 0,
+    "note_on_negative_twist_convention": "D lists it as a discrepancy class; src65 measured that no negative d is admissible on any curve tested, so the convention never had a case to decide here"
+  },
+  "headline": "04's seven required outputs: 0 present by exact name, five with analogues — the two without are the artefacts of a descent that never ran. 04 states the twist bound 1000 and refuses the full-reproduction claim; so does this line. 05's stop rule on this line's last 12 rounds: longest only-rerunning streak 0, freeze False. 05's record fields: RUN-061 carries 5 of 7, missing ['code_version', 'semantic_version']. 06's changelog: 4 of 8 items measured here, and the principle with numbers — three commits, three Algorithm 1 semantics. 06's handoff: this line fulfils D, E, F, partly B; D's six discrepancy classes, 0 found",
+  "ok": true
+}

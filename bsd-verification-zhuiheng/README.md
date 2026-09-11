@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-062:
-  every gate is drilled — `src00`–`src10` and `src12`–`src64`, 260 defects, 260
-  caught by the named check, 52 controls undisturbed, over 90 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-064:
+  every gate is drilled — `src00`–`src10` and `src12`–`src66`, 270 defects, 270
+  caught by the named check, 54 controls undisturbed, over 92 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -165,6 +165,8 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [060](./reports/RUN-060-ALGORITHM2-REPLAY.md) | `09` and `15` — Algorithm 2 OLD → CURRENT | `src62` | **`15`'s 2×2 recomputed to the pair** (247,391 / 21,306 / 0 / 0, `|T_O|` = 268,697) with this tree's own transcription of the deleted predicate; §6 and §7 to the curve; **why the expand branch could never fire — the deleted predicate is vacuous on the kept base, 0 of 36,687**; `09`'s two synthetic cases run as claimed. **Correction to RUN-055**: the 1,355 identity is stated in `15` §8 and should have been cited |
 | [061](./reports/RUN-061-REMOVED-13-AND-SOUNDNESS.md) | `08` and `03` | `src63` | **`08`'s thirteen rows, 13 of 13** on first failure and LMFDB label against the 500K census under `08`'s own ordering; 26b1 is the `BOTH` class; the fixture's 9/2/1/1 is 1,233 / 115 / 7 / 2,707 at 500K; `03`'s six gates: four N/A by the package's scope, S4 audited at RUN-056, **S6's seven fields 6 of 7 — no timestamp** |
 | [062](./reports/RUN-062-DISCREPANCY-CORPUS.md) | `02_Official_Discrepancy_Corpus` — the adversarial four | `src64` | **the negative control RUN-055's 8b instrument never had**: 62a1, 66b1, 105a1, 141c1 read from the pinned ecdata shard, none in the base, each with one rational 2-torsion point and **`f'(x₀)` a perfect square — 4 of 4**, as `02` says; a dead square test is caught only here. Three of four `ainvs` typed from memory were wrong. And **the ecdata shard's pin reproduces only as CRLF** — the package hashed a Windows checkout, 64,687 bytes = one per line |
+| [063](./reports/RUN-063-PHASE1-CLOSURE.md) | `16`, `10`, `01`, `00`, `00_v02` — Phase 1's closure and fixtures | `src65` | **`16`'s eight items, 8 of 8 independently redone here**; the `<150` fixture recovered from the census — 25 → 12, 10/15 → 7/5, the 13 removed are `08`'s; `00`'s two hand fixtures reproduce exactly, no negative `d` ever admissible; and **the other half of RUN-055: with `04`'s bound `d < 1000`, completeness holds on all 36,687 stable curves — 0 absent, 0 extra** — Algorithm 2's admissibility side in both directions. `10`'s label not awarded |
+| [064](./reports/RUN-064-PHASE1-PROTOCOLS.md) | the six Phase 1 protocol documents — **Phase 1 closes at 25 of 25** | `src66` | `04`'s seven required outputs 0 of 7 by name, five with analogues; `04` refuses the full-reproduction claim and so does this line; `05`'s stop rule applied to this line's last twelve rounds — no freeze; `05`'s record fields 5 of 7 in RUN-061; `06`'s principle *code version ≠ theorem semantics version* with numbers; `06`'s six briefs — this line fulfils D, E, F, and D's six discrepancy classes come to 0 |
 
 ## Layout
 
