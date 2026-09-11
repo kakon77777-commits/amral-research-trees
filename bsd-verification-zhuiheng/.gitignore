@@ -1,3 +1,4 @@
 data/cache/
 handoff/build/
 handoff/*.zip
+handoff/web/
