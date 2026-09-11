@@ -1,0 +1,151 @@
+{
+  "gate": "src61 — the one commit, from four documents",
+  "source": "07_One_Commit_Semantic_Autopsy, 11_500K_One_Commit_Global_Impact, 12_Delta_Only_Algorithm1_Verifier, 14_Phase1_Next_Low_Cost_Gate",
+  "documents_found": {
+    "07_One_Commit_Semantic_Autopsy.md": true,
+    "11_500K_One_Commit_Global_Impact.md": true,
+    "12_Delta_Only_Algorithm1_Verifier.md": true,
+    "14_Phase1_Next_Low_Cost_Gate.md": true
+  },
+  "autopsy_07": {
+    "document_found": true,
+    "states_old_rule_A_conditional": true,
+    "states_new_rule_unconditional_plus_a3": true,
+    "calls_it_a_substantive_tightening": true,
+    "RUN_056_located_old_rule_in_diff": true,
+    "RUN_056_located_new_rule_in_diff": true,
+    "RUN_056_located_a3_filter_in_diff": true,
+    "07_also_states_algorithm_2_changes": true,
+    "agrees_with_RUN_056": true
+  },
+  "impact_11": {
+    "rows": [
+      {
+        "claim": "4064 - 2 = 4062 rows removed",
+        "stated": 4062,
+        "recomputed": 4062,
+        "agrees": true
+      },
+      {
+        "claim": "old accepted 40,749",
+        "stated": 40749,
+        "recomputed": 40749,
+        "agrees": true
+      },
+      {
+        "claim": "new accepted 36,687",
+        "stated": 36687,
+        "recomputed": 36687,
+        "agrees": true
+      },
+      {
+        "claim": "removed / old = 9.9683 %",
+        "stated": 9.9683,
+        "recomputed": 9.9683,
+        "agrees": true
+      },
+      {
+        "claim": "kept / old = 90.0317 %",
+        "stated": 90.0317,
+        "recomputed": 90.0317,
+        "agrees": true
+      },
+      {
+        "claim": "of 3,064,705: 1.3296 % -> 1.1971 %",
+        "stated": [
+          1.3296,
+          1.1971
+        ],
+        "recomputed": [
+          1.3296,
+          1.1971
+        ],
+        "agrees": true
+      },
+      {
+        "claim": "drop of 0.1325 points of the whole domain",
+        "stated": 0.1325,
+        "recomputed": 0.1325,
+        "agrees": true
+      },
+      {
+        "claim": "pre-candidate pool drop 2.2774 points",
+        "stated": 2.2774,
+        "recomputed": 2.2774,
+        "agrees": true
+      }
+    ],
+    "all_agree": true,
+    "pre_candidate_pool_implied": {
+      "implied_by_old_pct": 178364,
+      "implied_by_new_pct": 178364,
+      "agree_to_within_one": true
+    }
+  },
+  "histogram_11_called_unknown": {
+    "stated_unknown_in_11": true,
+    "measured_by_v05": {
+      "A3_ONLY": 2707,
+      "ISOGENY_ONLY": 1353,
+      "BOTH": 2
+    },
+    "sum": 4062,
+    "small_fixture_ratio_11_warned_against": {
+      "P_ISOGENY_3": 9,
+      "P_ISOGENY_5": 2,
+      "P_ISOGENY_7": 1,
+      "A3_ABS_3": 1
+    },
+    "small_fixture_isogeny_to_a3": "12:1",
+    "five_hundred_k_isogeny_to_a3": "1355:2709",
+    "the_warning_was_justified": true,
+    "reading": "in the <150 fixture isogeny failures outnumber a_3 failures 12 to 1; at 500K it is the other way round, 1,355 to 2,709. 11 said not to extrapolate, and the extrapolation would have been wrong in direction, not just in size"
+  },
+  "delta_12_gate_a_14": {
+    "old": 40749,
+    "removed_by_columns": 4062,
+    "predicted_current": 36687,
+    "actual_current": 36687,
+    "sets_equal": true,
+    "only_predicted": [],
+    "only_actual": [],
+    "inputs_used": [
+      "old accepted list",
+      "a_3 column",
+      "isogeny columns"
+    ],
+    "no_rerun": true,
+    "12s_failure_meaning": [
+      "semantic version differs",
+      "LMFDB release differs",
+      "old/current outputs are not one snapshot"
+    ],
+    "12s_failure_meaning_applies": false
+  },
+  "gate_b_14": {
+    "1_removed_base_keys": 2707,
+    "2_stable_base_keys": 36687,
+    "3_stable_curves_with_twist_changes": 5437,
+    "4_twists_removed_only_by_gcd_3N": 5437,
+    "4_equals_3": true,
+    "5_twists_added_after_deleting_old_disc_gate": 0,
+    "6_both_effect_curves": 0,
+    "census_summary_says": {
+      "expand_only": 0,
+      "mixed": 0,
+      "shrink_only": 5437,
+      "unchanged": 31250
+    },
+    "all_six_computed": true
+  },
+  "gate_c_14": {
+    "gate_c": "full Sage replay of every expensive descent",
+    "done_by_this_line": false,
+    "done_by_the_package": false,
+    "the_packages_own_words": "(PROVENANCE.md not found)",
+    "14s_ordering_respected": true,
+    "reading": "14 says C comes only after A and B agree with the repository's current outputs. A and B do; C has not been run by anyone, and this line does not run Sage"
+  },
+  "headline": "07's two predicates match the diff lines RUN-056 located. Every figure in 11 §2–§3 recomputes exactly, and the two pool percentages imply one pool size. 11 §4's histogram — 'still unknown, do not extrapolate 9/2/1/1' — is now {'A3_ONLY': 2707, 'ISOGENY_ONLY': 1353, 'BOTH': 2}, isogeny:a_3 = 1355:2709 against the fixture's 12:1: the warning was right in direction, not only size. 12's delta and 14's Gate A: OLD minus (isogeny ∪ a_3) IS the current base, 36,687, from the columns alone. 14's Gate B: all six items computed — 5,437 stable curves changed, every one by gcd(3N) alone, 0 added. Gate C: not run by anyone",
+  "ok": true
+}
