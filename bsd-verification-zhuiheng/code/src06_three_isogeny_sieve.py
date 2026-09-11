@@ -49,8 +49,9 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PKG = (pathlib.Path("D:/我的研究/學術討論/論文/數學/BSD")
-       / "BSD_Phase1_Banwait_Huang_Exact_Census_v0.5_2026-08-12")
+import census_pkg                                          # noqa: E402
+
+PKG = census_pkg.PKG
 CENSUS = PKG / "results" / "algorithm1_removed_census.csv"
 ARITH = PKG / "inputs" / "metadata" / "old_base_curve_arithmetic.json"
 OUT = ROOT / "data" / "gate-logs" / "src06-three-isogeny-sieve.json"

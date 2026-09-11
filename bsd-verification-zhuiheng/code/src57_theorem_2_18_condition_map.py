@@ -55,8 +55,9 @@ import src10_phase2_density_and_base as ph2               # noqa: E402
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LOGS = ROOT / "data" / "gate-logs"
 DOCS = ROOT.parent.parent / "amral" / "public" / "bsd" / "phase1" / "files"
-PKG = (pathlib.Path("D:/我的研究/學術討論/論文/數學/BSD")
-       / "BSD_Phase1_Banwait_Huang_Exact_Census_v0.5_2026-08-12")
+import census_pkg                                          # noqa: E402
+
+PKG = census_pkg.PKG
 BASE_JSON = PKG / "inputs" / "metadata" / "old_base_curve_arithmetic.json"
 REMOVED_CSV = PKG / "results" / "algorithm1_removed_census.csv"
 REMOVED_JSON = PKG / "inputs" / "metadata" / "algorithm1_removed_metadata.json"

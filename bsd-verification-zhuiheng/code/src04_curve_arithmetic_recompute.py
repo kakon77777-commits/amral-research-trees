@@ -47,9 +47,9 @@ import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-DATA = (pathlib.Path("D:/我的研究/學術討論/論文/數學/BSD")
-        / "BSD_Phase1_Banwait_Huang_Exact_Census_v0.5_2026-08-12"
-        / "inputs" / "metadata" / "old_base_curve_arithmetic.json")
+import census_pkg                                          # noqa: E402
+
+DATA = census_pkg.PKG / "inputs" / "metadata" / "old_base_curve_arithmetic.json"
 OUT = ROOT / "data" / "gate-logs" / "src04-curve-arithmetic.json"
 
 LABEL = re.compile(r"^(\d+)([a-z]+)(\d+)$")
