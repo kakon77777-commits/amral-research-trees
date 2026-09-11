@@ -1,0 +1,342 @@
+{
+  "gate": "src59 — FW-H2 at the twisting prime by Lemma B; member 3529",
+  "source": "03_Quadratic_Twist_Invariance_Bridge (§1, Lemma B); 10_FW_H2_and_Ordinary_Obstruction; 27's router",
+  "curve": [
+    0,
+    1,
+    0,
+    8,
+    -16
+  ],
+  "conductor": 696,
+  "profile": "LEMMA_B_REDUCTION",
+  "chain": {
+    "rows": [
+      {
+        "step": "S1",
+        "statement": "rho_bar_{E_q,q} ≅ rho_bar_{E,q} ⊗ chi_q for odd q",
+        "source": "03 §1",
+        "status": "CITED — standard"
+      },
+      {
+        "step": "S2",
+        "statement": "the FW-H2 forbidden shape is invariant under ⊗ by a character (Lemma B); in 08's ratio form the ratio of the two constituents is unchanged by a common twist",
+        "source": "03 §3 (Lemma B), 08",
+        "status": "CITED — Lemma B's 候選 status is about matching FW's exact H2 shape; 03/08/10 agree on it (RUN-046, 22,140 pairs)"
+      },
+      {
+        "step": "S3",
+        "statement": "at a good ordinary p ≥ 5: E[p]|G_{Q_p} has constituents ω·ε₁ and ε₂ with ε_i unramified and ε₂(Frob) ≡ a_p (mod p); at a good supersingular p: E[p]|G_{Q_p} is irreducible",
+        "source": "standard (Serre; Deligne)",
+        "status": "CITED"
+      },
+      {
+        "step": "S4",
+        "statement": "at good ordinary p ≥ 5 the forbidden shape is exactly a_p² ≡ 1 (mod p); the other case needs ω² trivial on inertia, i.e. p ≤ 3",
+        "source": "10; RUN-046",
+        "status": "VERIFIED within the corpus"
+      },
+      {
+        "step": "S5",
+        "statement": "E has good reduction at every q ∈ 𝒫",
+        "source": "src16.in_P",
+        "status": "COMPUTED"
+      },
+      {
+        "step": "S6",
+        "statement": "E is ordinary at every q ∈ 𝒫 (q ∤ a_q)",
+        "source": "this gate",
+        "status": "COMPUTED"
+      },
+      {
+        "step": "S7",
+        "statement": "a_q(E)² ≡ 1 (mod q) at each member",
+        "source": "this gate",
+        "status": "COMPUTED"
+      }
+    ],
+    "conclusion": "FW-H2(E_q, q) FAILS ⟺ E ordinary at q and a_q(E)² ≡ 1 (mod q); PASSES otherwise",
+    "cited_steps": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "computed_steps": [
+      "S5",
+      "S6",
+      "S7"
+    ],
+    "the_verdict_is_conditional_on": "S1, S2, S3 — three cited facts, and S4 as verified inside the corpus rather than against Fouquet–Wan's paper"
+  },
+  "members": {
+    "bound": 4000,
+    "members": 19,
+    "rows": [
+      {
+        "q": 241,
+        "a_q": -7,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 313,
+        "a_q": -21,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 457,
+        "a_q": 27,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 673,
+        "a_q": -5,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 937,
+        "a_q": 7,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 1009,
+        "a_q": 21,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 1153,
+        "a_q": 47,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 1753,
+        "a_q": 63,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 2017,
+        "a_q": 41,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 2089,
+        "a_q": 29,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 2113,
+        "a_q": -37,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 2137,
+        "a_q": 79,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 2617,
+        "a_q": 21,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 2713,
+        "a_q": -31,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 3049,
+        "a_q": 79,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 3457,
+        "a_q": 33,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 3529,
+        "a_q": 1,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": true,
+        "FW_H2_at_q": "FAIL",
+        "why": "a_q² ≡ 1 (mod q) at a good ordinary prime — 10's obstruction, carried to the twist by Lemma B",
+        "a_q_by_brute_xy_loop": 1,
+        "independent_counts_agree": true
+      },
+      {
+        "q": 3769,
+        "a_q": -91,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      },
+      {
+        "q": 3793,
+        "a_q": 45,
+        "good": true,
+        "ordinary": true,
+        "a_q_squared_is_1_mod_q": false,
+        "FW_H2_at_q": "PASS",
+        "why": "ordinary with a_q² ≢ 1 (mod q)"
+      }
+    ],
+    "all_good": true,
+    "all_ordinary": true,
+    "supersingular_members": [],
+    "failing_members": [
+      3529
+    ],
+    "passing": 18,
+    "failing": 1
+  },
+  "what_it_closes": {
+    "RUN_045_level_1_H2_at_the_additive_prime": "UNKNOWN (per RUN-045)",
+    "RUN_052_v03_branch_3": "NOT COMPUTED HERE",
+    "RUN_053_priced_the_kernel_route_at": "factoring the q-division polynomial, degree up to 7,193,424, over Q_q",
+    "after_this_gate": "the verdict at p = q is decided per member by a_q(E) mod q, conditional on S1–S4. The kernel polynomial is not needed for the VERDICT; it would still be needed for 07's replayable certificate",
+    "closed": "RUN-045's UNKNOWN at the additive prime, conditionally",
+    "not_closed": "07's FW17_EXACT certificate — no kernel polynomial is produced here"
+  },
+  "which_design_it_breaks": {
+    "provisional_design": {
+      "documents": [
+        "18_Provisional_Derived_Theorem",
+        "02_Fouquet_Wan_Hypothesis_Compiler",
+        "06_Witness_Network_v03_Integration"
+      ],
+      "applies_FW_at_p_equals_q": true,
+      "state_after_this_gate": "BROKEN at member 3529 — FW-H2 fails at its own twisting prime, so the FW route does not deliver BSD(E_3529, 3529)"
+    },
+    "revised_design": {
+      "document": "27_Revised_Derived_Theorem_Candidate",
+      "p_equals_q_routed_to": "p=q (BSTW 9.21(c))",
+      "applies_FW_at_p_equals_q": false,
+      "state_after_this_gate": "UNTOUCHED on its face — BSTW 9.21(c)'s quadratic-twist clause and rank-zero descent at (3529, 3529) are cited here, not verified",
+      "read_from": "RUN-047/048's router partition (src49)"
+    },
+    "so": "this gate decides a hypothesis the corpus's OWN revised router had already stopped depending on at p = q. What it changes is the provisional design's status, and the record: 18/02/06 have a member they cannot handle"
+  },
+  "the_pieces_were_in_the_tree": {
+    "RUN_038_listed_3529_as_an_a_p2_eq_1_failure": true,
+    "RUN_038_failures_below_its_bound": [
+      7,
+      113,
+      211,
+      1433,
+      1811,
+      2693,
+      3209,
+      3529
+    ],
+    "RUN_047_3529_in_each_of_the_three_definitions": {
+      "per_18_and_27": true,
+      "per_this_tree": true,
+      "per_referee_A": true
+    },
+    "RUN_047_confirmed_3529_in_P_by_all_three_definitions": true,
+    "RUN_035_measured_Lemma_C_and_A_and_marked_B_open": true,
+    "RUN_046_showed_10_is_the_whole_criterion_at_p_ge_5": true,
+    "what_no_round_did": "intersect RUN-038's failure list with 𝒫, and carry the result to the twist through 03 §1 + Lemma B",
+    "reading": "four rounds each held one ingredient. The join is one line. That it took until RUN-057 is a fact about how this line worked — document by document — not about the arithmetic"
+  },
+  "membership_condition": {
+    "bound": 5000,
+    "members_below_bound": 23,
+    "members_with_a_q2_eq_1": [
+      3529
+    ],
+    "the_three_existing_conditions": [
+      "q ≡ 1 (mod 24)",
+      "(q/29) = 1 (redundant, RUN-047)",
+      "f₂ irreducible mod q"
+    ],
+    "01s_D4_requires": "E ordinary at p | d — which 3529 satisfies",
+    "the_condition_none_of_them_state": "a_q(E)² ≢ 1 (mod q)",
+    "needed_by": "the provisional FW-at-every-odd-p design only",
+    "not_needed_by": "27's router, which does not use FW at p = q"
+  },
+  "consistency_with_RUN_053": {
+    "sub_character": "λ = ω·ε₁·χ_q — λ² restricted to inertia is ω², non-trivial for q ≥ 5, so the SUB's test never fires",
+    "quotient_character": "μ = ε₂·χ_q — μ² = ε₂², unramified, trivial iff ε₂(Frob)² ≡ a_q² ≡ 1 (mod q)",
+    "so_when_H2_fails_it_is_always": "the DUAL isogeny's kernel polynomial that has the Q_q-linear factor",
+    "agrees_with_RUN_053_mutual_exclusivity": true
+  },
+  "the_profile": {
+    "profile": "LEMMA_B_REDUCTION",
+    "is_07s_FW17_EXACT": false,
+    "why_not": "07 demands the kernel polynomials of φ and φ̂ and an exact p-adic factorisation certificate. This gate produces a verdict from a_q(E) mod q through a cited chain. 07 Rule 4 says a heuristic certificate must emit UNKNOWN; this is not heuristic, it is a theorem chain — but it is CITED, and the profile name says so rather than borrowing 07's",
+    "what_07_would_still_need": [
+      "local_reducibility_Fp — decided here by S3 + S6, not by computation on E_q",
+      "phi.kernel_polynomial — not produced",
+      "dual_phi.kernel_polynomial — not produced"
+    ]
+  },
+  "headline": "By 03 §1 and Lemma B, FW-H2(E_q, q) ⟺ FW-H2(E, q), and at a good ordinary prime that is 10's congruence. All 19 members are good and ordinary at q; exactly 1 has a_q² ≡ 1 (mod q): q = 3529, a_q = 1, confirmed by three independent counts. So the provisional FW-at-every-odd-p design FAILS H2 at member 3529's own twisting prime; 27's revised router does not use FW at p = q and is untouched on its face. RUN-038 had listed 3529 as an obstruction prime since RUN-038. The verdict is conditional on three cited facts and carries the profile LEMMA_B_REDUCTION, not 07's FW17_EXACT",
+  "ok": true
+}
