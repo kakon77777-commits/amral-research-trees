@@ -1,0 +1,158 @@
+{
+  "gate": "src76 — Attack 07's explicit geometry, every algebraic fact recomputed",
+  "source": "data/external/gpt6-proof-attacks/extracted/07/BSD_Proof_Attack_07_Explicit_Secondary_Geometry.md",
+  "model": {
+    "m_equals_d_plus_u_n": true,
+    "conic_vanishes_identically": true,
+    "f0_difference_factorisation_200_random_pairs": true,
+    "F6_descending": [
+      1,
+      27,
+      106,
+      87,
+      -14,
+      -21,
+      1
+    ],
+    "F8_descending": [
+      1,
+      28,
+      134,
+      220,
+      179,
+      52,
+      -34,
+      -20,
+      1
+    ],
+    "F6_agrees": true,
+    "F8_agrees": true,
+    "model_Y2_numerator_is_F6": true,
+    "bezout_S_F8_plus_T_F8prime_mod_11": [
+      1
+    ],
+    "bezout_is_one": true,
+    "gcd_F8_F8prime_over_Q_degree": 0,
+    "F8_squarefree_over_Q": true,
+    "degree_8_monic": true,
+    "genus": 3,
+    "agrees": true
+  },
+  "tangent_function": {
+    "g_numerator_2n_plus_3m_minus_3d": [
+      -4,
+      -12,
+      -9
+    ],
+    "equals_minus_3u_plus_2_squared": true,
+    "u0": "-2/3",
+    "d_u0": "7/9",
+    "x1_x2_at_u0": [
+      "0",
+      "1"
+    ],
+    "W_squared_at_u0": "2401/6561",
+    "W_stated_squared_matches": true,
+    "Y_at_u0": "1",
+    "points_over_u0": [
+      [
+        [
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ]
+      ],
+      [
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ]
+      ]
+    ],
+    "points_are_PQ_and_minusP_minusQ": true,
+    "on_E": true,
+    "F6_mod_d_equals_4n3_mod_d": true,
+    "gcd_n_d_is_1": true,
+    "g_at_infinity": "-9",
+    "agrees": true
+  },
+  "chains": {
+    "Gamma_PQ_boundary": {
+      "(P,Q)": 4,
+      "(O,O)": 4,
+      "(P,O)": -4,
+      "(O,Q)": -4
+    },
+    "equals_4_Z_PQ": true,
+    "diagonal_chains": {
+      "P": {
+        "boundary": {
+          "(P,P)": 2,
+          "(O,O)": 2,
+          "(P,O)": -2,
+          "(O,P)": -2
+        },
+        "is_2ZRR": true
+      },
+      "Q": {
+        "boundary": {
+          "(Q,Q)": 2,
+          "(O,O)": 2,
+          "(Q,O)": -2,
+          "(O,Q)": -2
+        },
+        "is_2ZRR": true
+      }
+    },
+    "zeros_of_x_on_E_among_the_points": [
+      "P",
+      "-P"
+    ],
+    "zeros_of_x_minus_1": [
+      "Q",
+      "-Q"
+    ],
+    "denominators_are_11_units": true,
+    "agrees": true
+  },
+  "shifted_points": {
+    "R_equals_P_plus_Q": [
+      "-2",
+      "-1"
+    ],
+    "P_plus_R": [
+      "5/4",
+      "-13/8"
+    ],
+    "Q_plus_R": [
+      "1/9",
+      "-19/27"
+    ],
+    "all_on_E": true,
+    "supports_disjoint_from_O_P_Q": true,
+    "agrees": true
+  },
+  "labels": {
+    "document_found": true,
+    "kato_comparison_not_constructed": true,
+    "not_full_bsd": true,
+    "s11_unknown": true,
+    "their_json_genus": 3,
+    "their_boundary_residual_empty": true,
+    "agrees": true
+  },
+  "not_computed_here": [
+    "the orders of g at the two poles over d = 0 (ord d = 2, ord W = 1, ord g = −2) — the local-parameter proof of §3, read; its polynomial premises are checked",
+    "the 1-motive and biextension of §7.2 — a definition, read",
+    "any comparison with Kato's class — the document says none is constructed"
+  ],
+  "headline": "F₆ and F₈ expand to the stated coefficients, the conic and the model identities hold exactly, S·F₈ + T·F₈′ ≡ 1 (mod 11) with the document's S and T, F₈ is squarefree over Q (genus 3); g = −(3u+2)²/d exactly and its zero u₀ = −2/3 lies over (P,Q) and (−P,−Q) with Y = ±1; the four-term chain's boundary is 4·Z_PQ and the diagonal chains give 2·Z_RR; P + Q = ['-2', '-1'], P + R = ['5/4', '-13/8'], Q + R = ['1/9', '-19/27']",
+  "ok": true
+}

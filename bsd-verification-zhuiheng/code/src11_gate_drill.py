@@ -159,6 +159,11 @@ import src68_algorithm2_mirror_and_diff as mirror68       # noqa: E402
 import src69_anomalous_norm_localization as anom69        # noqa: E402
 import src70_kurihara_modular_symbols as kur70            # noqa: E402
 import src71_determinantal_bockstein as bock71            # noqa: E402
+import src72_attack03_cyclotomic_divisibility as atk72    # noqa: E402
+import src73_attack04_padic_l_mod11 as atk73              # noqa: E402
+import src74_attack05_local_log as atk74                  # noqa: E402
+import src75_attack06_scalar_and_mellin as atk75          # noqa: E402
+import src76_attack07_explicit_geometry as atk76          # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3376,6 +3381,79 @@ def check_determinantal_bockstein() -> bool:
 
 
 
+def check_attack03_cyclotomic() -> bool:
+    """GPT-6's Attack 03: the adjugate identity in the actual ring and over Z,
+    the §5 constants, the §7 counterexample, and the document's own labels.
+    An adjugate without its off-diagonal signs fails A·z = 0; a wrong U_m
+    coefficient fails χ(U_m) = m/f_χ; u without its 11 in the denominator
+    fails h₀ = D₀u; a unit-root search that admits 0 returns two roots."""
+    r = atk72.adjugate_identity_in_the_ring()
+    z = atk72.adjugate_identity_over_Z(60)
+    c = atk72.constants()
+    ce = atk72.counterexample()
+    lab = atk72.labels()
+    return r["agrees"] and z["agrees"] and c["agrees"] and ce["agrees"] and lab["agrees"]
+
+
+def check_attack04_padic_l() -> bool:
+    """GPT-6's Attack 04: the mod-11 p-adic L-function from this tree's own
+    eigenline must reproduce the stated 11 group-basis coefficients, the
+    t-series, μ = 0, λ = 2, all 110 summands of the document's table, and the
+    Euler-factor arithmetic (s₃₉₇ = 3, s₉₉₁ = 2, leading terms 9t², 4t²)."""
+    ur = atk73.unit_root()
+    if not ur["agrees"]:
+        return False
+    lam = kur70.eigenline()["lambda"]
+    m = atk73.measure(lam)
+    if m["group_basis_coefficients"] != atk73.STATED["group_basis"] or m["t_basis_coefficients"] != atk73.STATED["t_basis"]:
+        return False
+    if m["mu"] != 0 or m["lambda"] != 2 or m["unclassified_units"] or m["summand_count"] != 110:
+        return False
+    if not atk73.compare_with_theirs(m).get("agrees", False):
+        return False
+    ef = atk73.euler_factors()
+    return ef["agrees"] and atk73.labels()["agrees"]
+
+
+def check_attack05_local_log() -> bool:
+    """GPT-6's Attack 05: [16]P and [16]Q exactly, s ≡ 99 and 66 (mod 121) of
+    valuation 1, ℓ̄ = (4, 10), ker ∋ P + 4Q, #E(F₁₁) = 16, the Euler constant
+    11² times a unit ≡ 7 — and identical to the document's exact output."""
+    from fractions import Fraction as _F
+    Pt, Qt = (_F(0), _F(0)), (_F(1), _F(0))
+    res = {"P": atk74.local_log("P", Pt), "Q": atk74.local_log("Q", Qt)}
+    for lab_, st in (("P", (99, 4)), ("Q", (66, 10))):
+        r = res[lab_]
+        if r["s_mod_121"] != st[0] or r["log_over_11_mod_11"] != st[1] or r["v11_of_s"] != 1:
+            return False
+    if (res["P"]["log_over_11_mod_11"] + 4 * res["Q"]["log_over_11_mod_11"]) % 11:
+        return False
+    pre = atk74.premises()
+    return pre["agrees"] and atk74.compare_with_theirs(res).get("agrees", False) and atk74.labels()["agrees"]
+
+
+def check_attack06_scalar_and_mellin() -> bool:
+    """GPT-6's Attack 06: e₁₁/θ = 16 exactly in Q(α) with the stated exact
+    values and 11-adic residues, the rank-one-update identities, the Sen
+    matrix, and the Mellin formula giving L''(E,1)/2 within 1e-9 of the
+    corpus's value with L(E,1) = 0."""
+    lm = atk75.local_multiplier()
+    ids = atk75.identities(120)
+    mel = atk75.mellin()
+    return (lm["agrees"] and ids["agrees"] and mel["agrees"]
+            and atk75.compare_with_theirs(lm).get("agrees", False) and atk75.labels()["agrees"])
+
+
+def check_attack07_geometry() -> bool:
+    """GPT-6's Attack 07: F₆, F₈ as stated, the conic and model identities,
+    the Bézout certificate mod 11, F₈ squarefree, g = −(3u+2)²/d with its
+    zero over (P,Q) and (−P,−Q), ∂Γ_PQ = 4·Z_PQ, the diagonal chains, and
+    the shifted points."""
+    return (atk76.the_model()["agrees"] and atk76.tangent_function()["agrees"]
+            and atk76.chains()["agrees"] and atk76.shifted_points()["agrees"] and atk76.labels()["agrees"])
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3385,7 +3463,8 @@ COVERS = sorted(m.__name__ for m in (
     comp47, chain48, prev49, schema50, audits51, routes52,
     consensus53, targets54, kern55, schema56, cmap57, prov58,
     lemb59, joins60, commit61, replay62, thirteen63, corpus64,
-    closure65, proto66, maps67, mirror68, anom69, kur70, bock71))
+    closure65, proto66, maps67, mirror68, anom69, kur70, bock71,
+    atk72, atk73, atk74, atk75, atk76))
 
 
 CHECKS = {
@@ -3486,6 +3565,11 @@ CHECKS = {
     "anomalous-norm-localization": check_anomalous_norm_localization,
     "kurihara-modular-symbols": check_kurihara_modular_symbols,
     "determinantal-bockstein": check_determinantal_bockstein,
+    "attack03-cyclotomic": check_attack03_cyclotomic,
+    "attack04-padic-l": check_attack04_padic_l,
+    "attack05-local-log": check_attack05_local_log,
+    "attack06-scalar-and-mellin": check_attack06_scalar_and_mellin,
+    "attack07-geometry": check_attack07_geometry,
 }
 
 
@@ -3804,6 +3888,55 @@ DEFECTS = [
     ("10's label REPRODUCTION-QUALIFIED is awarded", "code", "phase1-closure",
      lambda: patch(closure65, "layers_10",
                    lambda: {**_true_layers65(), "label_awarded_here": "REPRODUCTION-QUALIFIED"})),
+    ("the adjugate is written without its off-diagonal minus signs", "code",
+     "attack03-cyclotomic", lambda: patch(atk72, "adj2_ring", _adj_no_signs)),
+    ("U_m's second factor is given the coefficient 36 as well, so chi(U_m) is "
+     "wrong on the characters trivial at 991", "code", "attack03-cyclotomic",
+     lambda: patch(atk72, "U_COEFF", (36, 36))),
+    ("the counterexample's u is taken as 1 + N_0 with no 11 in the denominator, "
+     "so it is integral and the point is lost", "code", "attack03-cyclotomic",
+     lambda: patch(atk72, "U_DENOMINATOR", 1)),
+    ("the unit-root search admits the root 0, so two residues come back", "code",
+     "attack03-cyclotomic",
+     lambda: patch(atk72, "ordinary_unit_root",
+                   lambda a11: [x for x in range(11) if (x * x - a11 * x + 11) % 11 == 0])),
+    ("the Teichmuller lift is taken as a^10 instead of a^11", "code",
+     "attack04-padic-l", lambda: patch(atk73, "teichmuller", lambda a: pow(a, 10, 121))),
+    ("alpha^-3 is used for both terms of the measure", "code", "attack04-padic-l",
+     lambda: patch(atk73, "unit_root", _unit_root_inv3_twice)),
+    ("the cyclotomic generator is taken as 23 = 1 + 2*11 in place of 12", "code",
+     "attack04-padic-l", lambda: patch(atk73, "GAMMA", 23)),
+    ("s_ell is read from ell mod 11 instead of ell mod 121, so both exponents "
+     "come out 0", "code", "attack04-padic-l",
+     lambda: patch(atk73, "cyclotomic_exponent", lambda ell: atk73.gamma_exponent(ell % 11))),
+    ("the formal parameter is taken as x/y instead of -x/y", "code",
+     "attack05-local-log", lambda: patch(atk74, "formal_parameter", lambda x, y: x / y)),
+    ("the multiple is 15 instead of #E(F_11) = 16, so [15]R is not in the "
+     "formal group", "code", "attack05-local-log",
+     lambda: patch(atk74, "reduction_group_order", lambda: 15)),
+    ("ell is normalised by 16 alone, not 16*11", "code", "attack05-local-log",
+     lambda: patch(atk74, "normalise", lambda s_, n: s_ / n)),
+    ("the second Euler factor is inverted, 991/1045 for 1045/991", "code",
+     "attack05-local-log", lambda: patch(atk74, "EULER_PAIRS", ((374, 397), (991, 1045)))),
+    ("the minimal polynomial of alpha is taken as A^2 + 4A - 11", "code",
+     "attack06-scalar-and-mellin", lambda: patch(atk75, "REL", (-4, 11))),
+    ("beta is taken as 11*alpha instead of 11/alpha", "code",
+     "attack06-scalar-and-mellin",
+     lambda: patch(atk75, "beta_of", lambda alpha: atk75.QA(11) * alpha)),
+    ("the Hecke recursion at prime squares uses a_p^2 instead of a_p^2 - p",
+     "code", "attack06-scalar-and-mellin",
+     lambda: patch(atk75, "a_prime_power", _a_prime_power_no_p)),
+    ("the Mellin integrals are cut at y = 1 + 5/c instead of 1 + 60/c", "code",
+     "attack06-scalar-and-mellin", lambda: patch(atk75, "CUT", 5.0)),
+    ("F_6 is formed with +8nd^2 in place of -8nd^2", "code", "attack07-geometry",
+     lambda: patch(atk76, "F6_COEFFS", (1, 4, 4, 8))),
+    ("the Bezout certificate's T is multiplied by F_8 instead of F_8'", "code",
+     "attack07-geometry",
+     lambda: patch(atk76, "bezout_combination", lambda S, T, F8, F8p: _true_bezout76(S, T, F8, F8))),
+    ("the chain coefficients are (1, -2, 2, -2)", "code", "attack07-geometry",
+     lambda: patch(atk76, "CHAIN_COEFFS", (1, -2, 2, -2))),
+    ("the tangent line is written 2x_1 + 3x_2 + 3", "code", "attack07-geometry",
+     lambda: patch(atk76, "TANGENT", (2, 3, 3))),
     ("the 2x2 determinant is computed as ad + bc, the cross term's sign dropped",
      "code", "determinantal-bockstein", lambda: patch(bock71, "det2", _det_plus)),
     ("the ring is truncated at I^2 instead of I^3, so XY is killed and the "
@@ -4394,6 +4527,17 @@ CONTROLS = [
     ("106d1 enumerated over 1 ≤ d < 1000 instead of 00's symmetric range — "
      "the same twenty-one, because no negative d is admissible",
      lambda: patch(closure65, "fixtures_00", _fixtures00_positive_only)),
+    ("Attack 03's random c-vectors drawn from a different seed",
+     lambda: patch(atk72, "RANDOM_SEED", 11)),
+    ("[a/11]+ evaluated at a/11 unreduced instead of (a mod 11)/11 — the same "
+     "symbol, since modular symbols are 1-periodic",
+     lambda: patch(atk73, "symbol_at_level_p", lambda lam, a: atk73.symbol(lam, a, 11))),
+    ("the premise n - v_11(n) >= 2 checked from n = 3 instead of n = 2",
+     lambda: patch(atk74, "PREMISE_START", 3)),
+    ("the adaptive Simpson tolerance loosened from 1e-15 to 1e-13",
+     lambda: patch(atk75, "SIMPSON_EPS", 1e-13)),
+    ("the f_0 factorisation tested at a different random seed",
+     lambda: patch(atk76, "SEED", 19)),
     ("the Frobenius-witness search bound raised from 300 to 500 — the same "
      "witnesses, found first", lambda: patch(bock71, "SEARCH", 500)),
     ("the path's sign alternates as (-1)^i in place of (-1)^(i-1) — invisible to "
@@ -4684,6 +4828,27 @@ _true_env66 = proto66.environment_04
 _true_stop66 = proto66.stop_rule_on_this_line
 _true_regression66 = proto66.regression_05
 _true_handoff66 = proto66.handoff_06
+_true_unit_root73 = atk73.unit_root
+_true_a_prime_power75 = atk75.a_prime_power
+_true_bezout76 = atk76.bezout_combination
+
+
+def _adj_no_signs(B):
+    return [[B[1][1], B[0][1]], [B[1][0], B[0][0]]]
+
+
+def _unit_root_inv3_twice():
+    d = dict(_true_unit_root73())
+    d["alpha_inv2"] = d["alpha_inv3"]
+    return d
+
+
+def _a_prime_power_no_p(p, k, ap, prev, prev2):
+    if p == atk75.N:
+        return ap ** k
+    return ap * prev
+
+
 _true_is_square71 = bock71._is_square_mod
 _true_ring_mul71 = bock71.ring_mul
 _true_local_torsion71 = bock71.local_p_torsion
