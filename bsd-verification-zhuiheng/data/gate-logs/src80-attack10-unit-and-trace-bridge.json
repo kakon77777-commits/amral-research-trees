@@ -1,0 +1,383 @@
+{
+ "gate": "src80",
+ "round": "RUN-078",
+ "circular_unit": {
+  "r_squared": [
+   2,
+   0,
+   0,
+   0
+  ],
+  "numerator": [
+   2,
+   -1,
+   0,
+   1
+  ],
+  "denominator": [
+   2,
+   1,
+   0,
+   -1
+  ],
+  "numerator_is_2_minus_r": true,
+  "denominator_is_2_plus_r": true,
+  "u8": [
+   3,
+   -2
+  ],
+  "u8_is_num_over_den": true,
+  "u8_is_epsilon_minus_2": true,
+  "u_bot": [
+   17,
+   -12
+  ],
+  "u_bot_is_epsilon_minus_4": true,
+  "kummer_multiple_of_epsilon": -4,
+  "gauss_sum": [
+   0,
+   2,
+   0,
+   -2
+  ],
+  "gauss_is_2r": true,
+  "norms_epsilon_u8_ubot": [
+   -1,
+   1,
+   1
+  ],
+  "agrees": true
+ },
+ "real_regulator": {
+  "by_class_number_formula": 0.6232252401402304,
+  "by_gauss_sum_logs": 0.6232252401402303,
+  "by_series": 0.6232252401383915,
+  "series_blocks": 100000,
+  "log_u_bot_over_r": -2.4929009605609216,
+  "equals_minus_4_L": true,
+  "agrees": true
+ },
+ "padic_log": {
+  "u_bot_power_6": [
+   768398401,
+   -543339720
+  ],
+  "w_in_11O": true,
+  "terms_used": 19,
+  "first_omitted": 20,
+  "tail_valuation_bound_holds": true,
+  "log_u_bot_6_mod_11N": [
+   0,
+   101268904
+  ],
+  "log_u_bot_first_coordinate_zero": true,
+  "L_bot": 8662686351,
+  "L_eps": 17287396863,
+  "L_eps_valuation": 1,
+  "L_eps_over_11": 1571581533,
+  "Lp_std_1_chi8": 2353344559,
+  "q_bot": 2339535163,
+  "q_bot_is_4_Lp": true,
+  "Lp_mod_11": 5,
+  "q_bot_mod_11": 9,
+  "L_eps_mod_121": 55,
+  "series_terms": [
+   {
+    "m": 1,
+    "residues": [
+     768398400,
+     25394084881
+    ]
+   },
+   {
+    "m": 2,
+    "residues": [
+     7986158268,
+     5475820515
+    ]
+   },
+   {
+    "m": 3,
+    "residues": [
+     14906909842,
+     8102793919
+    ]
+   },
+   {
+    "m": 4,
+    "residues": [
+     12469520085,
+     13091513688
+    ]
+   },
+   {
+    "m": 5,
+    "residues": [
+     4645032942,
+     18678050776
+    ]
+   },
+   {
+    "m": 6,
+    "residues": [
+     2738833306,
+     18999991725
+    ]
+   },
+   {
+    "m": 7,
+    "residues": [
+     11146661812,
+     25898450259
+    ]
+   },
+   {
+    "m": 8,
+    "residues": [
+     23150759148,
+     7073843073
+    ]
+   },
+   {
+    "m": 9,
+    "residues": [
+     0,
+     7073843073
+    ]
+   },
+   {
+    "m": 10,
+    "residues": [
+     0,
+     0
+    ]
+   },
+   {
+    "m": 11,
+    "residues": [
+     0,
+     0
+    ]
+   },
+   {
+    "m": 12,
+    "residues": [
+     0,
+     0
+    ]
+   },
+   {
+    "m": 13,
+    "residues": [
+     0,
+     0
+    ]
+   },
+   {
+    "m": 14,
+    "residues": [
+     0,
+     0
+    ]
+   },
+   {
+    "m": 15,
+    "residues": [
+     0,
+     0
+    ]
+   },
+   {
+    "m": 16,
+    "residues": [
+     0,
+     0
+    ]
+   },
+   {
+    "m": 17,
+    "residues": [
+     0,
+     0
+    ]
+   },
+   {
+    "m": 18,
+    "residues": [
+     0,
+     0
+    ]
+   },
+   {
+    "m": 19,
+    "residues": [
+     0,
+     0
+    ]
+   }
+  ],
+  "agrees": true
+ },
+ "bernoulli": {
+  "n": 10,
+  "B_n_chi8": "28730410",
+  "B_2_chi8": "2",
+  "minus_B_n_over_n": "-2873041",
+  "euler_factor": 2357947692,
+  "Lp_1_minus_n_mod_11": 5,
+  "B_1_is_minus_half": true,
+  "agrees": true
+ },
+ "frobenius": {
+  "phi_sub": "-1/11",
+  "q": "-9450203292",
+  "q_is_minus_12_over_11_L": true,
+  "phi_minus_1_on_subline": "-12/11",
+  "invertible": true,
+  "agrees": true
+ },
+ "trace_algebra": {
+  "words": 26,
+  "pairs": 676,
+  "structure": true,
+  "identity_21": true,
+  "identity_22": true,
+  "identity_24": true,
+  "cocycle_b": true,
+  "cocycle_v": true,
+  "rank_le_1": true,
+  "reconstruction_from_both_pivots": true,
+  "Q_aa": "15",
+  "Q_ab": "21",
+  "v_a": "5",
+  "v_b": "7",
+  "b_eps_a": "3",
+  "b_eps_b": "2",
+  "beta": {
+   "1": "0",
+   "a": "5/2",
+   "A": "-5",
+   "b": "7/3",
+   "B": "-7",
+   "j": "0",
+   "aa": "15/4",
+   "ab": "11/3",
+   "aB": "-1",
+   "aj": "5/2",
+   "AA": "-15",
+   "Ab": "-1/3",
+   "AB": "-19",
+   "Aj": "-5",
+   "ba": "19/6",
+   "bA": "2/3",
+   "bb": "28/9",
+   "bj": "7/3",
+   "Ba": "1/2",
+   "BA": "-22",
+   "BB": "-28",
+   "Bj": "-7",
+   "ja": "-5/2",
+   "jA": "5",
+   "jb": "-7/3",
+   "jB": "7"
+  },
+  "A_over_xi": {
+   "1": "0",
+   "a": "7/2",
+   "A": "4",
+   "b": "17/3",
+   "B": "-1",
+   "j": "0",
+   "aa": "43/4",
+   "ab": "38/3",
+   "aB": "-8",
+   "aj": "7/2",
+   "AA": "23",
+   "Ab": "8/3",
+   "AB": "24",
+   "Aj": "4",
+   "ba": "65/6",
+   "bA": "19/3",
+   "bb": "116/9",
+   "bj": "17/3",
+   "Ba": "-5/2",
+   "BA": "13",
+   "BB": "12",
+   "Bj": "-1",
+   "ja": "7/2",
+   "jA": "4",
+   "jb": "17/3",
+   "jB": "-1"
+  },
+  "agrees": true
+ },
+ "alternative_model": {
+  "words": 26,
+  "pairs": 676,
+  "structure": true,
+  "identity_21": true,
+  "identity_22": true,
+  "identity_24": true,
+  "cocycle_b": true,
+  "cocycle_v": true,
+  "rank_le_1": true,
+  "reconstruction_from_both_pivots": true,
+  "Q_aa": "24",
+  "Q_ab": "27",
+  "v_a": "8",
+  "v_b": "9",
+  "b_eps_a": "3",
+  "b_eps_b": "2",
+  "agrees": true
+ },
+ "labels": {
+  "text": {
+   "no_trace_jet_no_C": true,
+   "model_is_not_galois_data": true,
+   "period_not_identified_with_C": true,
+   "shortcut_rejected": true,
+   "bsd_not_proved": true
+  },
+  "json": {
+   "trace_jets_null": true,
+   "n_null": true,
+   "C_null": true,
+   "B2_null": true,
+   "s11_null": true,
+   "BSD_proved_false": true,
+   "frontier_false": true,
+   "period_C_computed_false": true,
+   "model_labelled": true
+  },
+  "agrees": true
+ },
+ "comparison": {
+  "checks": {
+   "unit_quotient": true,
+   "u_chi": true,
+   "bottom": true,
+   "gauss": true,
+   "kummer_multiple": true,
+   "norms": true,
+   "bottom_power_6": true,
+   "series_terms_19": true,
+   "L_bot": true,
+   "L_eps": true,
+   "valuation": true,
+   "L_eps_over_11": true,
+   "Lp": true,
+   "q_bot": true,
+   "q_bot_mod_11": true,
+   "Lp_mod_11": true,
+   "B10": true,
+   "Lp_minus_9": true,
+   "words_pairs": true,
+   "Q_aa_ab": true,
+   "all_676_rows": true,
+   "reconstruction_26": true,
+   "alternative_model": true
+  },
+  "agrees": true
+ },
+ "agrees": true
+}
