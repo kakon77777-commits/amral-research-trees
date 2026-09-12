@@ -1,0 +1,107 @@
+{
+  "gate": "src75 — Attack 06: the multiplier 16, the identities, the Mellin formula for L''(E,1)/2",
+  "source": "data/external/gpt6-proof-attacks/extracted/06/BSD_Proof_Attack_06_Balanced_Determinant_Descent.md",
+  "local_multiplier": {
+    "a_11": -4,
+    "alpha_plus_beta": [
+      "-4",
+      "0"
+    ],
+    "alpha_times_beta": [
+      "11",
+      "0"
+    ],
+    "e11": [
+      "214/121",
+      "26/121"
+    ],
+    "c_alpha": [
+      "107/88",
+      "13/88"
+    ],
+    "theta": [
+      "107/968",
+      "13/968"
+    ],
+    "e11_over_theta": [
+      "16",
+      "0"
+    ],
+    "eleven_minus_a11_plus_1": 16,
+    "hensel_alpha_mod_11_8": 33341821,
+    "e11_mod_11_8": 58539629,
+    "theta_mod_11_8": 43851017,
+    "e11_mod_11": 5,
+    "theta_mod_11": 1,
+    "agrees": true
+  },
+  "identities": {
+    "trials": 500,
+    "adjugate_rank_one_update_failures": 0,
+    "determinant_rank_one_update_failures": 0,
+    "basis_change_det_failures": 0,
+    "sen_matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "sen_nonzero": true,
+    "sen_squared_zero": true,
+    "agrees": true
+  },
+  "mellin": {
+    "bound": 220,
+    "a_p_first": {
+      "2": -2,
+      "3": -2,
+      "5": -3,
+      "7": -5,
+      "11": -4,
+      "13": -3,
+      "17": -6,
+      "19": 5,
+      "23": -4,
+      "29": -6,
+      "31": 4,
+      "37": -8
+    },
+    "a_389": 1,
+    "a_389_is_plus_1_split_multiplicative": true,
+    "constant_2pi_over_sqrtN": 0.318570140966745,
+    "L_at_1": -2.5333187753896827e-16,
+    "L_at_1_is_zero_to": 2.5333187753896827e-16,
+    "L2_over_2_by_the_mellin_formula": 0.7593165002884076,
+    "corpus_value": 0.7593165002884268,
+    "difference": -1.9206858326015208e-14,
+    "relative_difference": 2.5294930794628423e-14,
+    "last_term_magnitude": 3.387782104132688e-36,
+    "agrees": true
+  },
+  "comparison_with_the_documents_output": {
+    "present": true,
+    "their_alpha_mod_11_8": 33341821,
+    "their_e11": 58539629,
+    "their_theta": 43851017,
+    "s11_left_null": true,
+    "agrees": true
+  },
+  "labels": {
+    "document_found": true,
+    "s11_not_computed": true,
+    "BD6_unproved": true,
+    "not_full_bsd": true,
+    "agrees": true
+  },
+  "not_computed_here": [
+    "Proposition 2.1 (h(x, κ†) = θ⁻¹a₂ℓ(x)) — Rubin's formula as cited in BKS I, read",
+    "Proposition 4.1's Hodge–Tate inference — the Sen matrix is checked, the theorem is cited",
+    "BD6 — the document says it is unproved; 𝔰₁₁ is left unknown, as the document leaves it"
+  ],
+  "headline": "e₁₁/θ = 16 = 11 − a₁₁ + 1 exactly in Q(α), residues e₁₁ ≡ 5, θ ≡ 1 to 11⁸ as the document's; both rank-one-update identities and the basis-change law hold on 500 random instances; the Sen matrix is nilpotent and nonzero; and the Mellin formula, evaluated with this tree's a_n (a₃₈₉ = 1), gives L(E,1) = -2.53e-16 and L''(E,1)/2 = 0.759316500288408 against the corpus's 0.759316500288427 (relative difference 2.5e-14) — the first computation of that value in this tree",
+  "ok": true
+}
