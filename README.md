@@ -10,6 +10,7 @@ A curated, human-readable presentation of a subset of this material lives at **[
 |---|---|---|
 | [`p-np-glc/`](./p-np-glc/) | P/NP dual-hypothesis rehearsal (24 rounds + prerequisite) and the GLC four-layer closure framework — the raw research documents | [amral.evemisslab.com/p-np-dual/](https://amral.evemisslab.com/p-np-dual/), [amral.evemisslab.com/glc-framework/](https://amral.evemisslab.com/glc-framework/) |
 | [`pnp-glc-verification/`](./pnp-glc-verification/) | A 7-role adversarial verification pipeline testing a GLC-related engineering candidate (integrator, red-team, formal/Lean, engineering, independent replay, two independent scholars) | [amral.evemisslab.com/glc-framework/verification/](https://amral.evemisslab.com/glc-framework/verification/) (status snapshot only, not the full trail) |
+| [`bsd-period-calibration/`](./bsd-period-calibration/) | Cross-curve calibration of the rank-2 BSD Eisenstein route: a conditional common-period cancellation identity and an exact rank-zero partner at level 19, p=11 | Research note and reproducible data; no BSD resolution claimed |
 
 More research-line trees get added here as they're produced; each new one gets its own top-level directory and a matching row in the table above.
 
