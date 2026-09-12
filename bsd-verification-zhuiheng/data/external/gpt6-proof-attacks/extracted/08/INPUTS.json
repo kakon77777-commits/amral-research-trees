@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-12",
+  "project": "BSD Proof Attack 08",
+  "curve_ainvs": [
+    0,
+    1,
+    1,
+    -2,
+    0
+  ],
+  "P": [
+    0,
+    0
+  ],
+  "Q": [
+    1,
+    0
+  ],
+  "R=P+Q": [
+    -2,
+    -1
+  ],
+  "accepted_geometric_input": {
+    "source": "BSD_Proof_Attack_07_Explicit_Secondary_Geometry.md",
+    "sha256": "d5db60984c944a45835bb69c0e350ddd6c2585fbd1d4976051e6f342879220cd",
+    "archive": "BSD_Proof_Attack_07.zip",
+    "archive_sha256": "84ce6c489d38d60450d204c98536c28e7059b99ce3de613cd898e952b755c6e2",
+    "used": [
+      "C is the smooth complete normalization of the off-diagonal same-y locus on E x E.",
+      "g=2*x1+3*x2-3.",
+      "Gamma=(C,g)-2(H_minus,x1)+2(V_P,x2-1)-4(V_O,x2-1).",
+      "Boundary(Gamma)=4*box(P,Q)."
+    ],
+    "replayed": false
+  },
+  "accepted_arithmetic_context_only": [
+    "P,Q are non-torsion and span E(Q) tensor Q, as accepted in prior work.",
+    "Attack 06 fixes kappa_dagger=16*s11*adj(H)*ell; s11 is unknown.",
+    "Rationality is sought for the determinant element eta11=s11*b, not for each coefficient of the p-adic Selmer vector.",
+    "No prior Kurihara certificate, modular-symbol computation, or height computation was replayed."
+  ],
+  "mathematical_inputs_not_computer_proved": [
+    "Elliptic group law and degree([2])=4 in characteristic zero.",
+    "Norm-divisor compatibility and proper pushforward for function chains.",
+    "Higher Chow localization, products, homotopy invariance and self-intersection.",
+    "CH^1(E,1)=Q^* and Pic^0(E)=E for this pointed elliptic curve.",
+    "Compatibility of cycle classes with localization and the Kummer map."
+  ],
+  "primary_sources": [
+    {
+      "authors": "P. Luis del Angel, C. Doran, M. Kerr, J. Lewis, J. Iyer, S. Muller-Stach, D. Patel",
+      "title": "Specialization of cycles and the K-theory elevator",
+      "url": "https://arxiv.org/html/1704.04779v2",
+      "sections": "3.1, localization sequence, specialization definition and Proposition 3.1.3",
+      "use": "Standard localization and product/pushforward formalism. The constant-family split and explicit cycles are derived in this manuscript."
+    },
+    {
+      "authors": "David Loeffler and Oscar Rivero",
+      "title": "Eisenstein degeneration of Euler systems",
+      "url": "https://arxiv.org/html/2201.02078v2",
+      "sections": "Proposition C1.12, Theorem C1.13, Remark C1.14",
+      "use": "A concrete direction for a family-level Kato comparison, with a remaining nonzero coefficient-field scalar. Not specialized to our example and not used as a proof of s11 rationality."
+    }
+  ],
+  "new_computation": {
+    "command": "python3 attack08_correspondence.py --output attack08_result.json",
+    "dependencies": "Python >=3.9 standard library only",
+    "exact_arithmetic": "Integer polynomials, reduced function field, and Fraction exponents",
+    "scope": "New norms, translation identities, closed correction exponents and localization divisor bookkeeping."
+  },
+  "new_results": [
+    "Full chain pushforwards: pi1=7, pi2=7, m=7*((x+2)/y)^4.",
+    "Closed Theta_c has coordinate pushes 1,1 and addition push c^2.",
+    "Gamma1=Gamma-Xi7+(1/2)*Theta7 keeps boundary 4*Z and has pushes 1,1,M^4.",
+    "Direct ordinary correspondence has the wrong higher-Chow index for a point Kummer class.",
+    "Explicit suspension boundaries recover P-O and Q-O.",
+    "The constant G_m model splits as CH^2(E,1) plus Pic(E); boundary alone does not select a closed part."
+  ],
+  "open_steps": [
+    "No comparison between a geometric boundary and the normalized cyclotomic Kato leading term has been constructed.",
+    "No applicable auxiliary Eisenstein family and its leading period factor have been fixed for this target.",
+    "No Kato-compatible choice of the relative closed part or height splitting has been made.",
+    "s11 is unknown; rational determinant descent and the complex L-second-derivative comparison remain open."
+  ],
+  "canonical_frontier_updated": false,
+  "format_policy": "Original UTF-8; dollar-delimited math only; no unicode_escape or LaTeX-to-Unicode conversion."
+}

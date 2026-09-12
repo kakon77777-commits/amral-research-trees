@@ -1,0 +1,74 @@
+{
+  "artifact": "BSD_Proof_Attack_08",
+  "date": "2026-09-12",
+  "files": [
+    {
+      "file": "BSD_Proof_Attack_08_Norms_Localization_and_Scale.md",
+      "size_bytes": 16731,
+      "sha256": "43bffdd31a9777462377a1cdb71999980061b64b9edb4df9ca5ce677aea21c1f"
+    },
+    {
+      "file": "INPUTS.json",
+      "size_bytes": 4080,
+      "sha256": "e164f32ff36e699a076d8bec351e58707a0cfc57959dc08f85e2acb079f06057"
+    },
+    {
+      "file": "README.md",
+      "size_bytes": 2300,
+      "sha256": "94b2ccead86a61e5961eb3b8056ded85c8ee7345748dd5332ade0eda33ba82b0"
+    },
+    {
+      "file": "attack08_correspondence.py",
+      "size_bytes": 10691,
+      "sha256": "3687fe6eab3c407fa14ea94005268adbf624cec33491272da832a2a727c8d8f5"
+    },
+    {
+      "file": "attack08_result.json",
+      "size_bytes": 3910,
+      "sha256": "cd8340e2e34e095cd8bf11c4a5004fecbbc19082f7a172b69b7a23ba3b813742"
+    }
+  ],
+  "source_validation": {
+    "BSD_Proof_Attack_08_Norms_Localization_and_Scale.md": {
+      "utf8": "valid",
+      "math_delimiters": "dollar_only_balanced",
+      "math_spans": 195,
+      "braces": "balanced",
+      "left_right": "balanced",
+      "code_fences": "balanced"
+    },
+    "README.md": {
+      "utf8": "valid",
+      "math_delimiters": "dollar_only_balanced",
+      "math_spans": 6,
+      "braces": "balanced",
+      "left_right": "balanced",
+      "code_fences": "balanced"
+    }
+  },
+  "execution": {
+    "command": "python3 attack08_correspondence.py --output attack08_result.json",
+    "exit_code": 0,
+    "m_identity_residual": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "Theta_c_push_exponents": [
+      0,
+      0,
+      2
+    ],
+    "rational_normalization_constant_exponents": [
+      "0",
+      "0",
+      "0"
+    ],
+    "scope": "New norms, function-field identities and finite divisor/degree bookkeeping only."
+  },
+  "proof_status": "Written mathematical derivations plus exact algebra; no independent formal or scholarly review claimed.",
+  "canonical_frontier_updated": false
+}

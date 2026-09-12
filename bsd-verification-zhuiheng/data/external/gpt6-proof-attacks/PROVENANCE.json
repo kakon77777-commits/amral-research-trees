@@ -132,6 +132,37 @@
           "sha256": "09418a290e0e34935b9d81e93da7d329c924f021f17b53b9a1b6b25fac90b6c7"
         }
       }
+    },
+    "BSD_Proof_Attack_08.zip": {
+      "received": "2026-09-12 (later the same day)",
+      "zip_bytes": 18454,
+      "zip_sha256": "f1427c2033825d282fee67ee01c7e0ca3c5d0460bdec0fe23f2dfafca49a5d79",
+      "members": {
+        "BSD_Proof_Attack_08/BSD_Proof_Attack_08_Norms_Localization_and_Scale.md": {
+          "bytes": 16731,
+          "sha256": "43bffdd31a9777462377a1cdb71999980061b64b9edb4df9ca5ce677aea21c1f"
+        },
+        "BSD_Proof_Attack_08/INPUTS.json": {
+          "bytes": 4080,
+          "sha256": "e164f32ff36e699a076d8bec351e58707a0cfc57959dc08f85e2acb079f06057"
+        },
+        "BSD_Proof_Attack_08/MANIFEST.json": {
+          "bytes": 2028,
+          "sha256": "319ab53d6b4d94850c3e479110be631c32de6a16786b8609be8275c039eb34ae"
+        },
+        "BSD_Proof_Attack_08/README.md": {
+          "bytes": 2300,
+          "sha256": "94b2ccead86a61e5961eb3b8056ded85c8ee7345748dd5332ade0eda33ba82b0"
+        },
+        "BSD_Proof_Attack_08/attack08_correspondence.py": {
+          "bytes": 10691,
+          "sha256": "3687fe6eab3c407fa14ea94005268adbf624cec33491272da832a2a727c8d8f5"
+        },
+        "BSD_Proof_Attack_08/attack08_result.json": {
+          "bytes": 3910,
+          "sha256": "cd8340e2e34e095cd8bf11c4a5004fecbbc19082f7a172b69b7a23ba3b813742"
+        }
+      }
     }
   }
 }

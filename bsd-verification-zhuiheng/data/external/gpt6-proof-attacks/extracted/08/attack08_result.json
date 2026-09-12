@@ -1,0 +1,185 @@
+{
+  "task": "BSD Proof Attack 08: norms, degree obstruction, and localization",
+  "new_calculations_only": true,
+  "norms_polynomials_ascending": {
+    "projection_1": [
+      0,
+      0,
+      7
+    ],
+    "projection_2": [
+      7,
+      -14,
+      7
+    ],
+    "addition": [
+      28,
+      28,
+      7
+    ]
+  },
+  "function_field": {
+    "equation": "y^2+y=x^3+x^2-2*x",
+    "representation": "a(x)+b(x)*y; cross-multiplied rational identities"
+  },
+  "translations": {
+    "A=x(T+Q)": {
+      "numerator": [
+        [
+          -2,
+          1,
+          1
+        ],
+        [
+          -1
+        ]
+      ],
+      "denominator": [
+        [
+          1,
+          -2,
+          1
+        ],
+        [
+          0
+        ]
+      ]
+    },
+    "B=x(T-P)-1": {
+      "numerator": [
+        [
+          1,
+          -2,
+          -1
+        ],
+        [
+          1
+        ]
+      ],
+      "denominator": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0
+        ]
+      ]
+    },
+    "B_over_A": "-(x+2)*(x-1)^2/y^2",
+    "identity_residual": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  },
+  "complete_pushforwards": {
+    "pi1_Gamma": "7",
+    "pi2_Gamma": "7",
+    "m_Gamma": "7*((x+2)/y)^4",
+    "m_identity_residual": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ],
+    "Miller_divisor": {
+      "P+Q": 1,
+      "O": 1,
+      "P": -1,
+      "Q": -1
+    },
+    "geometric_constant": 7,
+    "is_Kato_global_scalar": false
+  },
+  "coordinate_normalization": {
+    "closed_correction": "(E x O,7)+(O x E,7)",
+    "pi1_Gamma0": "1",
+    "pi2_Gamma0": "1",
+    "m_Gamma0": "((x+2)/y)^4/7",
+    "interpretation": "The constant 7 moves under explicit closed-chain corrections."
+  },
+  "residual_closed_ambiguity": {
+    "Theta_c": "(Delta,c)-(E x O,c)-(O x E,c)",
+    "map_order": [
+      "pi1",
+      "pi2",
+      "addition"
+    ],
+    "map_degrees_on_support": {
+      "diagonal": [
+        1,
+        1,
+        4
+      ],
+      "horizontal_axis": [
+        1,
+        0,
+        1
+      ],
+      "vertical_axis": [
+        0,
+        1,
+        1
+      ]
+    },
+    "Theta_c_push_exponents": [
+      0,
+      0,
+      2
+    ],
+    "rational_correction": "Gamma1=Gamma0+(1/2)*Theta_7",
+    "Gamma1_pushes": [
+      "1",
+      "1",
+      "((x+2)/y)^4"
+    ],
+    "Gamma1_constant_7_exponents": [
+      "0",
+      "0",
+      "0"
+    ],
+    "boundary": "4*Z_PQ, unchanged",
+    "coefficient_convention": "Rational coefficients; pushforwards are in Q(E)^* tensor Q. No square root of 7 is adjoined."
+  },
+  "degrees": {
+    "closed_input": "CH^2(E x E,1)=H_M^3(E x E,Q(2))",
+    "direct_push_target": "CH^1(E,1)=H_M^1(E,Q(1))=Q^* tensor Q",
+    "rational_point_target": "Pic^0(E)_Q subset CH^1(E,0)=H_M^2(E,Q(1))",
+    "obstruction": "Ordinary algebraic correspondences preserve higher-Chow index; direct push lands one motivic cohomological degree too low after codimension adjustment."
+  },
+  "localization": {
+    "space": "E x A^1_tau",
+    "open": "E x G_m_tau",
+    "class_P": "(P x G_m,tau)-(O x G_m,tau)",
+    "class_Q": "(Q x G_m,tau)-(O x G_m,tau)",
+    "residues": {
+      "P": {
+        "P": 1,
+        "O": -1
+      },
+      "Q": {
+        "Q": 1,
+        "O": -1
+      }
+    },
+    "boundary_map": "CH^2(E x G_m,1) -> CH^1(E,0)",
+    "formal_parameter_scaling": "tau -> c*tau leaves the residue unchanged; the difference is D x {c}",
+    "is_Iwasawa_augmentation_parameter": false,
+    "scope": "The code checks divisor bookkeeping. The localization theorem and regulator functoriality are mathematical input, cited in the manuscript."
+  },
+  "open": {
+    "comparison_between_geometric_residue_and_cyclotomic_derivative": "not constructed",
+    "rational_determinant_lift": "not proved",
+    "s11": null,
+    "complex_leading_term_comparison": "not proved",
+    "BSD_proved": false,
+    "canonical_frontier_updated": false
+  }
+}

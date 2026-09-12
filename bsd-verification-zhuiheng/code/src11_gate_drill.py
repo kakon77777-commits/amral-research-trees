@@ -164,6 +164,7 @@ import src73_attack04_padic_l_mod11 as atk73              # noqa: E402
 import src74_attack05_local_log as atk74                  # noqa: E402
 import src75_attack06_scalar_and_mellin as atk75          # noqa: E402
 import src76_attack07_explicit_geometry as atk76          # noqa: E402
+import src77_attack08_norms_and_pushforwards as atk77     # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3454,6 +3455,17 @@ def check_attack07_geometry() -> bool:
 
 
 
+def check_attack08_norms() -> bool:
+    """GPT-6's Attack 08: the three norms from Vieta, the translation
+    formulas, the sign identity and the full pushforward identity in the
+    function field, div M = m_*Z_PQ, the closed-correction exponents
+    (0,0,2), and the labels."""
+    return (atk77.norms()["agrees"] and atk77.translations()["agrees"] and atk77.divisors()["agrees"]
+            and atk77.closed_correction()["agrees"] and atk77.localisation()["agrees"]
+            and atk77.labels()["agrees"] and atk77.compare_with_theirs(atk77.norms()).get("agrees", False))
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3464,7 +3476,7 @@ COVERS = sorted(m.__name__ for m in (
     consensus53, targets54, kern55, schema56, cmap57, prov58,
     lemb59, joins60, commit61, replay62, thirteen63, corpus64,
     closure65, proto66, maps67, mirror68, anom69, kur70, bock71,
-    atk72, atk73, atk74, atk75, atk76))
+    atk72, atk73, atk74, atk75, atk76, atk77))
 
 
 CHECKS = {
@@ -3570,6 +3582,7 @@ CHECKS = {
     "attack05-local-log": check_attack05_local_log,
     "attack06-scalar-and-mellin": check_attack06_scalar_and_mellin,
     "attack07-geometry": check_attack07_geometry,
+    "attack08-norms": check_attack08_norms,
 }
 
 
@@ -3888,6 +3901,17 @@ DEFECTS = [
     ("10's label REPRODUCTION-QUALIFIED is awarded", "code", "phase1-closure",
      lambda: patch(closure65, "layers_10",
                    lambda: {**_true_layers65(), "label_awarded_here": "REPRODUCTION-QUALIFIED"})),
+    ("Vieta's product rs is taken as x^2 + x + 2", "code", "attack08-norms",
+     lambda: patch(atk77, "PROD_RS", [atk77.F(2), atk77.F(1), atk77.F(1)])),
+    ("the addition map's pair is written (-5 - 2x, -1)", "code", "attack08-norms",
+     lambda: patch(atk77, "NORM_PAIRS", {**atk77.NORM_PAIRS, "addition": ([atk77.F(-5), atk77.F(-2)], [atk77.F(-1)])})),
+    ("the curve relation is reduced as y^2 = f_0 + y instead of f_0 - y", "code",
+     "attack08-norms", lambda: patch(atk77, "Y2_LINEAR", 1)),
+    ("y is given a double pole at O, so div M gains an O term", "code",
+     "attack08-norms", lambda: patch(atk77, "POLE_ORDER_Y", 2)),
+    ("the diagonal's degree under addition is taken as 2, not 4", "code",
+     "attack08-norms",
+     lambda: patch(atk77, "DEGREE_TABLE", {**atk77.DEGREE_TABLE, "diagonal": (1, 1, 2)})),
     ("the adjugate is written without its off-diagonal minus signs", "code",
      "attack03-cyclotomic", lambda: patch(atk72, "adj2_ring", _adj_no_signs)),
     ("U_m's second factor is given the coefficient 36 as well, so chi(U_m) is "
@@ -4527,6 +4551,8 @@ CONTROLS = [
     ("106d1 enumerated over 1 ≤ d < 1000 instead of 00's symmetric range — "
      "the same twenty-one, because no negative d is admissible",
      lambda: patch(closure65, "fixtures_00", _fixtures00_positive_only)),
+    ("Attack 08's Vieta identity tested at a different random seed",
+     lambda: patch(atk77, "VIETA_SEED", 21)),
     ("Attack 03's random c-vectors drawn from a different seed",
      lambda: patch(atk72, "RANDOM_SEED", 11)),
     ("[a/11]+ evaluated at a/11 unreduced instead of (a mod 11)/11 — the same "
