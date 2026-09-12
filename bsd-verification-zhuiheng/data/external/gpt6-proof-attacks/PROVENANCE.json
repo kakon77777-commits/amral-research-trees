@@ -1,168 +1,238 @@
 {
-  "received": "2026-09-12",
-  "from": "Neo.K, downloaded from a ChatGPT (GPT-6, web) session that was given the handoff bundle BSD-verification-handoff-2026-09-11.zip (commit c0f421c) on 2026-09-11 and asked 「開始吧。我們認真把BSD猜想證出來。」",
-  "note": "packages 01 and 02 were not among the files handed over; 03–07 are here byte-exact. Extracted copies under extracted/ are for reading and linking; the zips are the record.",
-  "packages": {
-    "BSD_Proof_Attack_03.zip": {
-      "zip_bytes": 7743,
-      "zip_sha256": "333a565fb594930bf75a9920c6ed81153880fa36d45bb5a1b249f8231d22cf2c",
-      "members": {
-        "BSD_Proof_Attack_03/BSD_Proof_Attack_03_Cyclotomic_Divisibility.md": {
-          "bytes": 15806,
-          "sha256": "103bbc1b135d6144193e2c81e21783272d6589db74d7fb7734e6881db313f3cb"
-        }
-      }
-    },
-    "BSD_Proof_Attack_04.zip": {
-      "zip_bytes": 16108,
-      "zip_sha256": "e4c9afbd38bf2f2c1c433052d6ce7d26e11086026bee2a6ba61c0f2d851cb12e",
-      "members": {
-        "BSD_Proof_Attack_04/BSD_Proof_Attack_04_Mu_Zero_Descent.md": {
-          "bytes": 20623,
-          "sha256": "f05ff629a236fab86413c435fbe0ca8fff2c8454a7c7695b2de1c7dc218e2ef2"
-        },
-        "BSD_Proof_Attack_04/MANIFEST.json": {
-          "bytes": 1457,
-          "sha256": "4362269105b7c8e4f3f83ea042f62aae43c35fc53fbc3ac0f59efab87a37fad8"
-        },
-        "BSD_Proof_Attack_04/README.md": {
-          "bytes": 1429,
-          "sha256": "7817eb7d22a1faf00b79afa5f67c0533b9c0ab7365aa1daa87a84f81e858ab5a"
-        },
-        "BSD_Proof_Attack_04/cyclotomic_mu.py": {
-          "bytes": 4488,
-          "sha256": "b0704a7e97a87712344b760354188c622224c8e44f90b3bc1c1c60b30cc160cd"
-        },
-        "BSD_Proof_Attack_04/cyclotomic_result.json": {
-          "bytes": 13576,
-          "sha256": "180046cdd07c6625959769ba7009b0ff2178a59ad7d3574d62bc0fc3d1659a0f"
-        },
-        "BSD_Proof_Attack_04/eigenline_input.json": {
-          "bytes": 3324,
-          "sha256": "de189669e246d4384676707ab396b073ccc50fba4e5af0c0556f03220145aaa8"
-        }
-      }
-    },
-    "BSD_Proof_Attack_05.zip": {
-      "zip_bytes": 17479,
-      "zip_sha256": "6531079e2bda1c682ae50131fb18d4b2d7435afada8869f3f4e78b6dd4baa99e",
-      "members": {
-        "BSD_Proof_Attack_05/BSD_Proof_Attack_05_Rank_Two_Regulator.md": {
-          "bytes": 21407,
-          "sha256": "24f3297ad3dcc3c0920de77fb02aa042896a7765794f3151de3a2639075c6a90"
-        },
-        "BSD_Proof_Attack_05/INPUTS.json": {
-          "bytes": 4262,
-          "sha256": "7e67f42e02349699a2b6dab47e0071146873bbcdc5aba4785d13b6b1f8a3b0a3"
-        },
-        "BSD_Proof_Attack_05/MANIFEST.json": {
-          "bytes": 2653,
-          "sha256": "aca67048eb4da4828d73096de3fa313cdb3e1219c84388d2f771f318036c8d4d"
-        },
-        "BSD_Proof_Attack_05/README.md": {
-          "bytes": 2053,
-          "sha256": "a3faabfeb94cc1343693657a70879b4d22f305b5207bb96a29699b79fd80f17e"
-        },
-        "BSD_Proof_Attack_05/local_log.py": {
-          "bytes": 3745,
-          "sha256": "a69749c5f993abc688adec43b822b9ee20f7e4573b00f5b1bb1f6574cf93f473"
-        },
-        "BSD_Proof_Attack_05/local_log_result.json": {
-          "bytes": 1597,
-          "sha256": "e694b65cb1a22bc767904649bc72290186349e2759d677f95461c03c0d92179e"
-        }
-      }
-    },
-    "BSD_Proof_Attack_06.zip": {
-      "zip_bytes": 18516,
-      "zip_sha256": "d3cc6af0a084708a7affdfc10d09aae326287648d8e0fbc47e4eccf6d5e95a83",
-      "members": {
-        "BSD_Proof_Attack_06/BSD_Proof_Attack_06_Balanced_Determinant_Descent.md": {
-          "bytes": 21019,
-          "sha256": "ce8dfa165d1155e34cc065c7b1884caac5457345b5d88ec6383fc2c50879cc24"
-        },
-        "BSD_Proof_Attack_06/INPUTS.json": {
-          "bytes": 3628,
-          "sha256": "a1bbb1cfa2c977883b2b87e4075784fde0373710bba4cabd5e0f0a3d010697d4"
-        },
-        "BSD_Proof_Attack_06/MANIFEST.json": {
-          "bytes": 2671,
-          "sha256": "e13b1187c34d85b9dc3ea254b60dc0752cbfddce61c90f9492462e8e83ceb592"
-        },
-        "BSD_Proof_Attack_06/README.md": {
-          "bytes": 2253,
-          "sha256": "0f8473cf0aeec93d1e5518042cc9b5b024dae144dcf40db885561609acbb14b2"
-        },
-        "BSD_Proof_Attack_06/attack06_algebra.py": {
-          "bytes": 8080,
-          "sha256": "589b75c4030b74d2879f239a4f35a7d385d1fa53b6522fff88e63cfd39695ca6"
-        },
-        "BSD_Proof_Attack_06/attack06_result.json": {
-          "bytes": 1595,
-          "sha256": "544bdfafb71c75a561add8b60eda0593d576f7b4f644bec58a76b0f9eb73869f"
-        }
-      }
-    },
-    "BSD_Proof_Attack_07.zip": {
-      "zip_bytes": 18738,
-      "zip_sha256": "84ce6c489d38d60450d204c98536c28e7059b99ce3de613cd898e952b755c6e2",
-      "members": {
-        "BSD_Proof_Attack_07_Explicit_Secondary_Geometry.md": {
-          "bytes": 17585,
-          "sha256": "d5db60984c944a45835bb69c0e350ddd6c2585fbd1d4976051e6f342879220cd"
-        },
-        "INPUTS.json": {
-          "bytes": 3041,
-          "sha256": "ffd570838d6b27b542f68824b046e797efe5c16d3a8261d7008a51afdcd47d81"
-        },
-        "MANIFEST.json": {
-          "bytes": 1751,
-          "sha256": "c8cb4641c6444e56f22a333f00defd8bf70c02074b5b1338908c3d97990caebc"
-        },
-        "README.md": {
-          "bytes": 2017,
-          "sha256": "c10db608eccd945b671135271c2ec9393ad1bd4f455338bcec2bf9c2dad33ac1"
-        },
-        "attack07_cycle.py": {
-          "bytes": 11492,
-          "sha256": "a9474b3397c459894d76aa7be3e792bae536f7eabe09eda6ef34efdd6672b6ab"
-        },
-        "attack07_result.json": {
-          "bytes": 6646,
-          "sha256": "09418a290e0e34935b9d81e93da7d329c924f021f17b53b9a1b6b25fac90b6c7"
-        }
-      }
-    },
-    "BSD_Proof_Attack_08.zip": {
-      "received": "2026-09-12 (later the same day)",
-      "zip_bytes": 18454,
-      "zip_sha256": "f1427c2033825d282fee67ee01c7e0ca3c5d0460bdec0fe23f2dfafca49a5d79",
-      "members": {
-        "BSD_Proof_Attack_08/BSD_Proof_Attack_08_Norms_Localization_and_Scale.md": {
-          "bytes": 16731,
-          "sha256": "43bffdd31a9777462377a1cdb71999980061b64b9edb4df9ca5ce677aea21c1f"
-        },
-        "BSD_Proof_Attack_08/INPUTS.json": {
-          "bytes": 4080,
-          "sha256": "e164f32ff36e699a076d8bec351e58707a0cfc57959dc08f85e2acb079f06057"
-        },
-        "BSD_Proof_Attack_08/MANIFEST.json": {
-          "bytes": 2028,
-          "sha256": "319ab53d6b4d94850c3e479110be631c32de6a16786b8609be8275c039eb34ae"
-        },
-        "BSD_Proof_Attack_08/README.md": {
-          "bytes": 2300,
-          "sha256": "94b2ccead86a61e5961eb3b8056ded85c8ee7345748dd5332ade0eda33ba82b0"
-        },
-        "BSD_Proof_Attack_08/attack08_correspondence.py": {
-          "bytes": 10691,
-          "sha256": "3687fe6eab3c407fa14ea94005268adbf624cec33491272da832a2a727c8d8f5"
-        },
-        "BSD_Proof_Attack_08/attack08_result.json": {
-          "bytes": 3910,
-          "sha256": "cd8340e2e34e095cd8bf11c4a5004fecbbc19082f7a172b69b7a23ba3b813742"
-        }
-      }
+ "received": "2026-09-12",
+ "from": "Neo.K, downloaded from a ChatGPT (GPT-6, web) session that was given the handoff bundle BSD-verification-handoff-2026-09-11.zip (commit c0f421c) on 2026-09-11 and asked 「開始吧。我們認真把BSD猜想證出來。」",
+ "note": "packages 01 and 02 were not among the files handed over; 03–07 are here byte-exact. Extracted copies under extracted/ are for reading and linking; the zips are the record.",
+ "packages": {
+  "BSD_Proof_Attack_03.zip": {
+   "zip_bytes": 7743,
+   "zip_sha256": "333a565fb594930bf75a9920c6ed81153880fa36d45bb5a1b249f8231d22cf2c",
+   "members": {
+    "BSD_Proof_Attack_03/BSD_Proof_Attack_03_Cyclotomic_Divisibility.md": {
+     "bytes": 15806,
+     "sha256": "103bbc1b135d6144193e2c81e21783272d6589db74d7fb7734e6881db313f3cb"
     }
+   }
+  },
+  "BSD_Proof_Attack_04.zip": {
+   "zip_bytes": 16108,
+   "zip_sha256": "e4c9afbd38bf2f2c1c433052d6ce7d26e11086026bee2a6ba61c0f2d851cb12e",
+   "members": {
+    "BSD_Proof_Attack_04/BSD_Proof_Attack_04_Mu_Zero_Descent.md": {
+     "bytes": 20623,
+     "sha256": "f05ff629a236fab86413c435fbe0ca8fff2c8454a7c7695b2de1c7dc218e2ef2"
+    },
+    "BSD_Proof_Attack_04/MANIFEST.json": {
+     "bytes": 1457,
+     "sha256": "4362269105b7c8e4f3f83ea042f62aae43c35fc53fbc3ac0f59efab87a37fad8"
+    },
+    "BSD_Proof_Attack_04/README.md": {
+     "bytes": 1429,
+     "sha256": "7817eb7d22a1faf00b79afa5f67c0533b9c0ab7365aa1daa87a84f81e858ab5a"
+    },
+    "BSD_Proof_Attack_04/cyclotomic_mu.py": {
+     "bytes": 4488,
+     "sha256": "b0704a7e97a87712344b760354188c622224c8e44f90b3bc1c1c60b30cc160cd"
+    },
+    "BSD_Proof_Attack_04/cyclotomic_result.json": {
+     "bytes": 13576,
+     "sha256": "180046cdd07c6625959769ba7009b0ff2178a59ad7d3574d62bc0fc3d1659a0f"
+    },
+    "BSD_Proof_Attack_04/eigenline_input.json": {
+     "bytes": 3324,
+     "sha256": "de189669e246d4384676707ab396b073ccc50fba4e5af0c0556f03220145aaa8"
+    }
+   }
+  },
+  "BSD_Proof_Attack_05.zip": {
+   "zip_bytes": 17479,
+   "zip_sha256": "6531079e2bda1c682ae50131fb18d4b2d7435afada8869f3f4e78b6dd4baa99e",
+   "members": {
+    "BSD_Proof_Attack_05/BSD_Proof_Attack_05_Rank_Two_Regulator.md": {
+     "bytes": 21407,
+     "sha256": "24f3297ad3dcc3c0920de77fb02aa042896a7765794f3151de3a2639075c6a90"
+    },
+    "BSD_Proof_Attack_05/INPUTS.json": {
+     "bytes": 4262,
+     "sha256": "7e67f42e02349699a2b6dab47e0071146873bbcdc5aba4785d13b6b1f8a3b0a3"
+    },
+    "BSD_Proof_Attack_05/MANIFEST.json": {
+     "bytes": 2653,
+     "sha256": "aca67048eb4da4828d73096de3fa313cdb3e1219c84388d2f771f318036c8d4d"
+    },
+    "BSD_Proof_Attack_05/README.md": {
+     "bytes": 2053,
+     "sha256": "a3faabfeb94cc1343693657a70879b4d22f305b5207bb96a29699b79fd80f17e"
+    },
+    "BSD_Proof_Attack_05/local_log.py": {
+     "bytes": 3745,
+     "sha256": "a69749c5f993abc688adec43b822b9ee20f7e4573b00f5b1bb1f6574cf93f473"
+    },
+    "BSD_Proof_Attack_05/local_log_result.json": {
+     "bytes": 1597,
+     "sha256": "e694b65cb1a22bc767904649bc72290186349e2759d677f95461c03c0d92179e"
+    }
+   }
+  },
+  "BSD_Proof_Attack_06.zip": {
+   "zip_bytes": 18516,
+   "zip_sha256": "d3cc6af0a084708a7affdfc10d09aae326287648d8e0fbc47e4eccf6d5e95a83",
+   "members": {
+    "BSD_Proof_Attack_06/BSD_Proof_Attack_06_Balanced_Determinant_Descent.md": {
+     "bytes": 21019,
+     "sha256": "ce8dfa165d1155e34cc065c7b1884caac5457345b5d88ec6383fc2c50879cc24"
+    },
+    "BSD_Proof_Attack_06/INPUTS.json": {
+     "bytes": 3628,
+     "sha256": "a1bbb1cfa2c977883b2b87e4075784fde0373710bba4cabd5e0f0a3d010697d4"
+    },
+    "BSD_Proof_Attack_06/MANIFEST.json": {
+     "bytes": 2671,
+     "sha256": "e13b1187c34d85b9dc3ea254b60dc0752cbfddce61c90f9492462e8e83ceb592"
+    },
+    "BSD_Proof_Attack_06/README.md": {
+     "bytes": 2253,
+     "sha256": "0f8473cf0aeec93d1e5518042cc9b5b024dae144dcf40db885561609acbb14b2"
+    },
+    "BSD_Proof_Attack_06/attack06_algebra.py": {
+     "bytes": 8080,
+     "sha256": "589b75c4030b74d2879f239a4f35a7d385d1fa53b6522fff88e63cfd39695ca6"
+    },
+    "BSD_Proof_Attack_06/attack06_result.json": {
+     "bytes": 1595,
+     "sha256": "544bdfafb71c75a561add8b60eda0593d576f7b4f644bec58a76b0f9eb73869f"
+    }
+   }
+  },
+  "BSD_Proof_Attack_07.zip": {
+   "zip_bytes": 18738,
+   "zip_sha256": "84ce6c489d38d60450d204c98536c28e7059b99ce3de613cd898e952b755c6e2",
+   "members": {
+    "BSD_Proof_Attack_07_Explicit_Secondary_Geometry.md": {
+     "bytes": 17585,
+     "sha256": "d5db60984c944a45835bb69c0e350ddd6c2585fbd1d4976051e6f342879220cd"
+    },
+    "INPUTS.json": {
+     "bytes": 3041,
+     "sha256": "ffd570838d6b27b542f68824b046e797efe5c16d3a8261d7008a51afdcd47d81"
+    },
+    "MANIFEST.json": {
+     "bytes": 1751,
+     "sha256": "c8cb4641c6444e56f22a333f00defd8bf70c02074b5b1338908c3d97990caebc"
+    },
+    "README.md": {
+     "bytes": 2017,
+     "sha256": "c10db608eccd945b671135271c2ec9393ad1bd4f455338bcec2bf9c2dad33ac1"
+    },
+    "attack07_cycle.py": {
+     "bytes": 11492,
+     "sha256": "a9474b3397c459894d76aa7be3e792bae536f7eabe09eda6ef34efdd6672b6ab"
+    },
+    "attack07_result.json": {
+     "bytes": 6646,
+     "sha256": "09418a290e0e34935b9d81e93da7d329c924f021f17b53b9a1b6b25fac90b6c7"
+    }
+   }
+  },
+  "BSD_Proof_Attack_08.zip": {
+   "received": "2026-09-12 (later the same day)",
+   "zip_bytes": 18454,
+   "zip_sha256": "f1427c2033825d282fee67ee01c7e0ca3c5d0460bdec0fe23f2dfafca49a5d79",
+   "members": {
+    "BSD_Proof_Attack_08/BSD_Proof_Attack_08_Norms_Localization_and_Scale.md": {
+     "bytes": 16731,
+     "sha256": "43bffdd31a9777462377a1cdb71999980061b64b9edb4df9ca5ce677aea21c1f"
+    },
+    "BSD_Proof_Attack_08/INPUTS.json": {
+     "bytes": 4080,
+     "sha256": "e164f32ff36e699a076d8bec351e58707a0cfc57959dc08f85e2acb079f06057"
+    },
+    "BSD_Proof_Attack_08/MANIFEST.json": {
+     "bytes": 2028,
+     "sha256": "319ab53d6b4d94850c3e479110be631c32de6a16786b8609be8275c039eb34ae"
+    },
+    "BSD_Proof_Attack_08/README.md": {
+     "bytes": 2300,
+     "sha256": "94b2ccead86a61e5961eb3b8056ded85c8ee7345748dd5332ade0eda33ba82b0"
+    },
+    "BSD_Proof_Attack_08/attack08_correspondence.py": {
+     "bytes": 10691,
+     "sha256": "3687fe6eab3c407fa14ea94005268adbf624cec33491272da832a2a727c8d8f5"
+    },
+    "BSD_Proof_Attack_08/attack08_result.json": {
+     "bytes": 3910,
+     "sha256": "cd8340e2e34e095cd8bf11c4a5004fecbbc19082f7a172b69b7a23ba3b813742"
+    }
+   }
+  },
+  "BSD_Proof_Attack_09.zip": {
+   "zip_bytes": 23909,
+   "zip_sha256": "3eadb388caf24b7cc19bf3804a3a5ef1b45fc737430e420e24db6549d1a4b0de",
+   "members": {
+    "BSD_Proof_Attack_09/BSD_Proof_Attack_09_Eisenstein_Leading_Term.md": {
+     "bytes": 19639,
+     "sha256": "f8dea87af7d55314dbabf69c9fc57a84eb697317a16cf02bd5909b8eac157c83"
+    },
+    "BSD_Proof_Attack_09/INPUTS.json": {
+     "bytes": 18892,
+     "sha256": "88f413f839474bc62d0b4d5abcfc8148c2d6abac39fe996f25cba75696c48cd2"
+    },
+    "BSD_Proof_Attack_09/MANIFEST.json": {
+     "bytes": 2333,
+     "sha256": "8e2965b21a0954d5869d3ef3f544f581ba8e1b75f67647a699312dd6f3c03da0"
+    },
+    "BSD_Proof_Attack_09/README.md": {
+     "bytes": 2520,
+     "sha256": "3a21f5b56b6d67a7f414a3f94d5d2388cde3843e7155eb0e806fd352d4a54565"
+    },
+    "BSD_Proof_Attack_09/attack09_eisenstein.py": {
+     "bytes": 15319,
+     "sha256": "4ba9617461d1be6f7ca8b015e28b6701aeb6a51dce3cf65808b50992111d9bbe"
+    },
+    "BSD_Proof_Attack_09/attack09_result.json": {
+     "bytes": 22288,
+     "sha256": "f0d45e43d1980c928d1821825d814216f62b8a9f20f0465e3fd9e433a3d7354a"
+    }
+   }
+  },
+  "BSD_Proof_Attack_10.zip": {
+   "zip_bytes": 28057,
+   "zip_sha256": "17afb76701d8c1c53a119d108fb0ad27c292a3cf9b58e916b214c2a60d3dd546",
+   "members": {
+    "BSD_Proof_Attack_10/BSD_Proof_Attack_10_Unit_and_Trace_Bridge.md": {
+     "bytes": 21033,
+     "sha256": "8aa9aded5375cf56f309c74f6db815db6a3923e0e3949d2a15cdb0b0a5fa1b75"
+    },
+    "BSD_Proof_Attack_10/INPUTS.json": {
+     "bytes": 3281,
+     "sha256": "7d00070c1b4fd1e7c34a3919484173d9acb1c8b36d32d41d46fb098abd064193"
+    },
+    "BSD_Proof_Attack_10/MANIFEST.json": {
+     "bytes": 1622,
+     "sha256": "41655ec422ac09ac3f4d98bd3534052cabada58c5d3280c7620ba00a4f655cc4"
+    },
+    "BSD_Proof_Attack_10/README.md": {
+     "bytes": 2342,
+     "sha256": "c0bf0c749ce349b3ac02609b117ff976a910005e86696c68de496871dc6a6a28"
+    },
+    "BSD_Proof_Attack_10/attack10_result.json": {
+     "bytes": 97688,
+     "sha256": "9f8d60f162ff53f782d3b93c000a7271c568bfe47e3216811b716e42ad4bab50"
+    },
+    "BSD_Proof_Attack_10/attack10_unit_tangent.py": {
+     "bytes": 14451,
+     "sha256": "f1cbc7e6e63e724ca168a7c82e8326039789c3c848fa33f0d75d41cacecab257"
+    }
+   }
   }
+ },
+ "later_deliveries": [
+  {
+   "received": "2026-09-13",
+   "packages": [
+    "BSD_Proof_Attack_09.zip",
+    "BSD_Proof_Attack_10.zip"
+   ],
+   "note": "handed over by Neo on 2026-09-13 as the last two packages from the web GPT-6 session; 09's progress narration had been pasted on 2026-09-12 and answered by RUN-076 before the package arrived"
+  }
+ ]
 }

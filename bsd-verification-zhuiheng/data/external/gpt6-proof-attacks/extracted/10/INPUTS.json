@@ -1,0 +1,93 @@
+{
+  "project": "BSD Proof Attack 10",
+  "date": "2026-09-12",
+  "p": 11,
+  "user_report": "The user reports rerunning recent code and other local verification with no major errors. No logs were provided in this turn.",
+  "previous_handoff": {
+    "file": "BSD_Proof_Attack_09.zip",
+    "sha256": "3eadb388caf24b7cc19bf3804a3a5ef1b45fc737430e420e24db6549d1a4b0de",
+    "manuscript": "BSD_Proof_Attack_09_Eisenstein_Leading_Term.md",
+    "manuscript_sha256": "f8dea87af7d55314dbabf69c9fc57a84eb697317a16cf02bd5909b8eac157c83",
+    "replay_required": false
+  },
+  "accepted_inputs": {
+    "curve": "y^2+y=x^3+x^2-2x",
+    "level": 389,
+    "auxiliary_form": "f_beta=E_2(1,chi_8)(q)-E_2(1,chi_8)(q^11)",
+    "psi": "1",
+    "tau": "chi_8",
+    "xi": "chi_8*chi_cyc",
+    "X": "weight character at 12 minus 1, centered at weight 2",
+    "t": "cyclotomic gamma minus 1, chi_cyc(gamma)=12; separate from X",
+    "z_dagger": "t*kappa_dagger+O(t^2), with kappa_dagger nonzero",
+    "B2": "26*C*lambda8(0)/(D_E*log_11(12))*kappa_dagger",
+    "lambda8_mod_11": 5,
+    "D_E_nonzero": true,
+    "unknowns": [
+      "n",
+      "C",
+      "B2 coordinates",
+      "s11",
+      "rational determinant descent",
+      "archimedean BSD leading comparison"
+    ]
+  },
+  "new_arithmetic": {
+    "field": "Q(sqrt(2))",
+    "root2_in_Q_zeta8": "zeta8-zeta8^3",
+    "epsilon": [
+      1,
+      1
+    ],
+    "chi8": {
+      "1": 1,
+      "3": -1,
+      "5": -1,
+      "7": 1
+    },
+    "circle_product": "(1-zeta8)(1-zeta8^7)/((1-zeta8^3)(1-zeta8^5))",
+    "bottom_norm_exponent": 2,
+    "standard_KL_branch": "L_p^std(1-n,chi_8)=(1+11^(n-1))*(-B_(n,chi_8)/n), positive n divisible by 10",
+    "default_log_precision": 10
+  },
+  "theorem_inputs": [
+    {
+      "source": "https://arxiv.org/html/2201.02078v2",
+      "sections": [
+        "A5.2",
+        "A6.1-A6.4",
+        "A8.3",
+        "C1.10-C1.13"
+      ],
+      "use": "Actual de Rham and non-de Rham neighboring lattices, maximal reducibility ideal, and distinction from meromorphic ES leading period."
+    },
+    {
+      "source": "https://web.math.ucsb.edu/~castella/Durham.pdf",
+      "sections": [
+        "1.1",
+        "Theorem 1.1",
+        "equation (14)"
+      ],
+      "use": "Leopoldt formula and circular-unit bottom norm convention; not a computation of C."
+    },
+    {
+      "source": "https://www.math.mcgill.ca/darmon/pub/Articles/Research/70.DR3/DR3.pdf",
+      "sections": [
+        "Example 1.6"
+      ],
+      "use": "Local Bloch-Kato logarithm on unramified twists, compatible with ordinary unit logarithm."
+    },
+    {
+      "source": "https://arxiv.org/html/2501.01514v2",
+      "sections": [
+        "2.3",
+        "Assumption 1.2",
+        "5.12",
+        "5.18"
+      ],
+      "use": "The minus period is not automatically the plus period; the circular-unit degeneration has extra hypotheses not verified here."
+    }
+  ],
+  "trace_model_warning": "Q[X]/X^2 matrices on Free(a,b)*C2 are algebra examples. They are not Coleman-family Galois traces and do not establish arithmetic jet computation.",
+  "proof_boundary": "The trace reconstruction theorem is a written matrix/cochain proof applied structurally to the published family. Numerical trace jets of that family and its meromorphic ES comparison remain absent."
+}

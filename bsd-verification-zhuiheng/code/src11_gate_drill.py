@@ -166,6 +166,8 @@ import src75_attack06_scalar_and_mellin as atk75          # noqa: E402
 import src76_attack07_explicit_geometry as atk76          # noqa: E402
 import src77_attack08_norms_and_pushforwards as atk77     # noqa: E402
 import src78_attack09_auxiliary_character as atk78        # noqa: E402
+import src79_attack09_eisenstein_leading_term as atk79    # noqa: E402
+import src80_attack10_unit_and_trace_bridge as atk80      # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3482,6 +3484,46 @@ def check_attack09_auxiliary() -> bool:
 
 
 
+def check_attack09_leading_term() -> bool:
+    """GPT-6's Attack 09, the package: the minus eigenline identical to the
+    package's 390-vector, the forty cusp paths (indices and values), the ten
+    S_a and measures, the x^-1-weighted sum 9 and lambda_8(0) = 5, the Hecke
+    relation of the twisted symbols at level 121, the Eisenstein data (B_2,
+    constant term, f_beta, U_11), the Kummer unit's log mod 121, the smoothing
+    and adjoint factors, the formal leading-term coefficients, the (20)
+    algebra, the package's own criterion on the even D, and the labels."""
+    fp = atk79.forty_paths()
+    ed = atk79.eisenstein_data()
+    ku = atk79.kummer_unit()
+    fa = atk79.factors(fp["lambda8_at_zero"])
+    fo = atk79.formal_algebra()
+    return (atk79.minus_line()["agrees"] and atk79.alpha_twist()["agrees"] and fp["agrees"]
+            and atk79.hecke_measure_relation()["agrees"] and ed["agrees"] and ku["agrees"] and fa["agrees"]
+            and fo["agrees"] and atk79.scale_identities()["agrees"] and atk79.package_criterion()["agrees"]
+            and atk79.labels()["agrees"] and atk79.compare_with_theirs(fp, ed, ku, fa, fo)["agrees"])
+
+
+def check_attack10_unit_bridge() -> bool:
+    """GPT-6's Attack 10: the circular unit identities in Z[zeta_8], L(1, chi_8)
+    three ways, the 11-adic logarithm to 11^10 with all nineteen term residues
+    and the five stated values, B_10,chi_8, the framed Frobenius entry, the
+    trace algebra on 26 words / 676 pairs with both pivots and the alternative
+    model, and the labels."""
+    cu = atk80.circular_unit()
+    pl = atk80.padic_log()
+    bc = atk80.bernoulli_check()
+    ta = atk80.trace_algebra()
+    alt = atk80.trace_algebra((8, 9))
+    F = atk80.Fraction
+    return (cu["agrees"] and atk80.real_regulator()["agrees"] and pl["agrees"] and bc["agrees"]
+            and atk80.frobenius_matrix()["agrees"] and ta["agrees"]
+            and F(ta["Q_aa"]) == atk80.STATED["Q_aa"] and F(ta["Q_ab"]) == atk80.STATED["Q_ab"]
+            and F(ta["v_a"]) == atk80.STATED["v_a"] and F(ta["v_b"]) == atk80.STATED["v_b"]
+            and F(alt["Q_aa"]) == atk80.STATED["alt_Q_aa"] and F(alt["Q_ab"]) == atk80.STATED["alt_Q_ab"]
+            and atk80.labels()["agrees"] and atk80.compare_with_theirs(cu, pl, bc, ta, alt)["agrees"])
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3492,7 +3534,7 @@ COVERS = sorted(m.__name__ for m in (
     consensus53, targets54, kern55, schema56, cmap57, prov58,
     lemb59, joins60, commit61, replay62, thirteen63, corpus64,
     closure65, proto66, maps67, mirror68, anom69, kur70, bock71,
-    atk72, atk73, atk74, atk75, atk76, atk77, atk78))
+    atk72, atk73, atk74, atk75, atk76, atk77, atk78, atk79, atk80))
 
 
 CHECKS = {
@@ -3600,6 +3642,8 @@ CHECKS = {
     "attack07-geometry": check_attack07_geometry,
     "attack08-norms": check_attack08_norms,
     "attack09-auxiliary": check_attack09_auxiliary,
+    "attack09-leading-term": check_attack09_leading_term,
+    "attack10-unit-bridge": check_attack10_unit_bridge,
 }
 
 
@@ -3943,6 +3987,38 @@ DEFECTS = [
      lambda: patch(atk78, "TWIST_LEVEL_EXPONENT", 1)),
     ("the measure's second term alpha^-2 [a] is added instead of subtracted", "code", "attack09-auxiliary",
      lambda: patch(atk78, "MEASURE_SECOND_TERM_SIGN", 1)),
+    ("the path's sign alternates as (-1)^i in place of (-1)^(i-1) — invisible to a plus "
+     "functional (RUN-068's control), but it negates every minus symbol, and Attack 09's "
+     "forty values are signed", "code", "attack09-leading-term",
+     lambda: patch(kur70, "path_indices", _path_wrong_sign)),
+    ("Attack 09's chi_8 is replaced by the odd character (-8/.)", "code", "attack09-leading-term",
+     lambda: patch(atk79, "CHI8", {1: 1, 3: 1, 5: -1, 7: -1})),
+    ("the twisted unit root alpha_F is taken as alpha_E instead of chi_8(11) alpha_E", "code",
+     "attack09-leading-term", lambda: patch(atk79, "ALPHA_TWIST_SIGN", 1)),
+    ("the moment is taken against x instead of x^-1", "code", "attack09-leading-term",
+     lambda: patch(atk79, "CHARACTER_EXPONENT", 1)),
+    ("the Eisenstein refinement is taken at the eigenvalue 1 instead of -11", "code", "attack09-leading-term",
+     lambda: patch(atk79, "EISENSTEIN_REFINEMENT", 1)),
+    ("the unit's logarithm is read from epsilon^12, which is not 1 mod 11", "code", "attack09-leading-term",
+     lambda: patch(atk79, "UNIT_POWER", 12)),
+    ("the smoothing integer is taken as 7, giving 48 instead of 26", "code", "attack09-leading-term",
+     lambda: patch(atk79, "SMOOTHING_D", 7)),
+    ("sqrt 2 is written as zeta_8 + zeta_8^3, whose square is -2", "code", "attack10-unit-bridge",
+     lambda: patch(atk80, "ROOT2_IN_ZETA8", (0, 1, 0, 1))),
+    ("the circular unit's numerator and denominator are swapped", "code", "attack10-unit-bridge",
+     lambda: patch(atk80, "CIRCLE_EXPONENTS", ((3, 5), (1, 7)))),
+    ("the bottom norm factor 1 - chi_8(11) is taken as 1, so u_bot = u_8", "code", "attack10-unit-bridge",
+     lambda: patch(atk80, "BOTTOM_NORM_EXPONENT", 1)),
+    ("the logarithm series is started from u_bot^5, which is not 1 mod 11", "code", "attack10-unit-bridge",
+     lambda: patch(atk80, "BOTTOM_POWER", 5)),
+    ("phi on the subline is taken as +1/11", "code", "attack10-unit-bridge",
+     lambda: patch(atk80, "FROBENIUS_SUB_EIGENVALUE", atk80.Fraction(1, 11))),
+    ("Leopoldt's Euler factor is written 1 - 1/11 instead of 1 + 1/11", "code", "attack10-unit-bridge",
+     lambda: patch(atk80, "EULER_TWELVE_ELEVENTHS", atk80.Fraction(10, 11))),
+    ("the model's lower-left entry of rho(a) is 6X instead of 5X", "code", "attack10-unit-bridge",
+     lambda: patch(atk80, "MODEL_LOWER", (6, 7))),
+    ("the Bernoulli cross-check is run at n = 8 instead of n = 10", "code", "attack10-unit-bridge",
+     lambda: patch(atk80, "BERNOULLI_N", 8)),
     ("the adjugate is written without its off-diagonal minus signs", "code",
      "attack03-cyclotomic", lambda: patch(atk72, "adj2_ring", _adj_no_signs)),
     ("U_m's second factor is given the coefficient 36 as well, so chi(U_m) is "
@@ -4582,6 +4658,14 @@ CONTROLS = [
     ("106d1 enumerated over 1 ≤ d < 1000 instead of 00's symmetric range — "
      "the same twenty-one, because no negative d is admissible",
      lambda: patch(closure65, "fixtures_00", _fixtures00_positive_only)),
+    ("Attack 09's log series cut at one term - the same residue mod 121, since u^2/2 is in 121 O",
+     lambda: patch(atk79, "LOG_TERMS", 1)),
+    ("Attack 09's scale identities drawn from a different seed",
+     lambda: patch(atk79, "RANDOM_SEED", 4)),
+    ("Attack 10's Dirichlet series summed over 200000 blocks instead of 100000",
+     lambda: patch(atk80, "SERIES_BLOCKS", 200_000)),
+    ("Attack 10's 11-adic log taken to 25 terms instead of 19 - the same residues mod 11^10",
+     lambda: patch(atk80, "LOG_TERMS", 25)),
     ("Attack 09's eigenlines multiplied by the unit 3 - every identity is homogeneous and "
      "the analytic cross-check only asks for one unit per sign",
      lambda: patch(atk78, "SCALE_UNIT", 3)),
@@ -4604,9 +4688,6 @@ CONTROLS = [
      lambda: patch(atk76, "SEED", 19)),
     ("the Frobenius-witness search bound raised from 300 to 500 — the same "
      "witnesses, found first", lambda: patch(bock71, "SEARCH", 500)),
-    ("the path's sign alternates as (-1)^i in place of (-1)^(i-1) — invisible to "
-     "a plus functional, which is even in d since (-c:d) = (c:-d)",
-     lambda: patch(kur70, "path_indices", _path_wrong_sign)),
     ("the 780 relation rows fed to the elimination in reverse order — the same "
      "nullspace, the same normalised eigenline",
      lambda: patch(kur70, "relation_rows", lambda: list(reversed(_true_relations70())))),

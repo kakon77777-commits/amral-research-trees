@@ -1,0 +1,1249 @@
+{
+  "task": "BSD Proof Attack 09: a usable Eisenstein degeneration",
+  "prior_certificates_replayed": false,
+  "eisenstein": {
+    "form": "E_2(1,chi_8)",
+    "tame_level": 8,
+    "chi8_11": -1,
+    "chi8_5": -1,
+    "B2_chi8": "2",
+    "constant_term": "-1/2",
+    "critical_U11": -11,
+    "critical_q_coefficients_n_1_to_32": [
+      1,
+      1,
+      -2,
+      1,
+      -4,
+      -2,
+      8,
+      1,
+      7,
+      -4,
+      -11,
+      -2,
+      -12,
+      8,
+      8,
+      1,
+      18,
+      7,
+      -18,
+      -4,
+      -16,
+      -11,
+      24,
+      -2,
+      21,
+      -12,
+      -20,
+      8,
+      -28,
+      8,
+      32,
+      1
+    ],
+    "U11_residuals_n_1_to_12": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "p_decent_arithmetic_conditions": true,
+    "noncriticality_basis": "Nonzero localization of the chi8 Kummer unit; literature theorem required."
+  },
+  "unit_anchor": {
+    "epsilon": "1+sqrt(2)",
+    "norm": -1,
+    "epsilon_power": 24,
+    "epsilon_power_exact": [
+      768398401,
+      543339720
+    ],
+    "epsilon_power_mod_121": [
+      1,
+      110
+    ],
+    "log_epsilon_mod_121": [
+      0,
+      55
+    ],
+    "log_epsilon_over_11_sqrt2_mod_11": 5,
+    "scope": "Uses log(epsilon)=log(epsilon^24)/24 and a proved valuation bound for the discarded log terms.",
+    "is_the_unknown_Eichler_Shimura_period": false
+  },
+  "new_minus_line": {
+    "dimension": 1,
+    "coefficients_in_accepted_2D_basis": [
+      0,
+      10
+    ],
+    "normalization_index": 3,
+    "normalization_value": 1,
+    "vector_mod_11": [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      5,
+      6,
+      5,
+      0,
+      0,
+      5,
+      10,
+      6,
+      0,
+      5,
+      6,
+      5,
+      5,
+      0,
+      5,
+      0,
+      6,
+      5,
+      5,
+      0,
+      6,
+      5,
+      5,
+      10,
+      4,
+      5,
+      5,
+      0,
+      0,
+      6,
+      6,
+      6,
+      0,
+      0,
+      5,
+      5,
+      5,
+      5,
+      10,
+      4,
+      6,
+      6,
+      5,
+      6,
+      5,
+      6,
+      0,
+      5,
+      5,
+      6,
+      5,
+      5,
+      1,
+      1,
+      6,
+      1,
+      0,
+      0,
+      0,
+      6,
+      10,
+      10,
+      10,
+      5,
+      10,
+      5,
+      5,
+      10,
+      0,
+      10,
+      0,
+      0,
+      0,
+      0,
+      6,
+      1,
+      0,
+      1,
+      6,
+      1,
+      1,
+      1,
+      6,
+      7,
+      1,
+      2,
+      7,
+      6,
+      1,
+      0,
+      0,
+      1,
+      6,
+      0,
+      0,
+      6,
+      0,
+      0,
+      5,
+      0,
+      0,
+      6,
+      1,
+      1,
+      6,
+      6,
+      7,
+      6,
+      0,
+      6,
+      1,
+      5,
+      6,
+      5,
+      1,
+      6,
+      1,
+      0,
+      6,
+      1,
+      6,
+      1,
+      1,
+      1,
+      1,
+      6,
+      1,
+      7,
+      6,
+      1,
+      1,
+      7,
+      6,
+      6,
+      0,
+      0,
+      1,
+      0,
+      1,
+      6,
+      1,
+      2,
+      6,
+      0,
+      1,
+      1,
+      0,
+      6,
+      1,
+      0,
+      0,
+      6,
+      10,
+      0,
+      5,
+      6,
+      6,
+      6,
+      6,
+      0,
+      0,
+      5,
+      6,
+      5,
+      1,
+      10,
+      5,
+      5,
+      0,
+      5,
+      0,
+      10,
+      4,
+      10,
+      0,
+      10,
+      5,
+      10,
+      10,
+      5,
+      5,
+      10,
+      0,
+      5,
+      0,
+      0,
+      1,
+      0,
+      0,
+      10,
+      0,
+      0,
+      6,
+      0,
+      1,
+      6,
+      6,
+      1,
+      1,
+      6,
+      1,
+      0,
+      1,
+      7,
+      1,
+      0,
+      6,
+      0,
+      6,
+      6,
+      1,
+      10,
+      6,
+      5,
+      6,
+      0,
+      0,
+      5,
+      5,
+      5,
+      5,
+      6,
+      0,
+      1,
+      5,
+      0,
+      0,
+      10,
+      5,
+      0,
+      10,
+      10,
+      0,
+      5,
+      9,
+      10,
+      5,
+      10,
+      0,
+      10,
+      0,
+      0,
+      5,
+      5,
+      4,
+      10,
+      10,
+      5,
+      4,
+      10,
+      5,
+      10,
+      10,
+      10,
+      10,
+      5,
+      10,
+      5,
+      0,
+      10,
+      5,
+      10,
+      6,
+      5,
+      6,
+      10,
+      5,
+      0,
+      5,
+      4,
+      5,
+      5,
+      10,
+      10,
+      5,
+      0,
+      0,
+      6,
+      0,
+      0,
+      5,
+      0,
+      0,
+      5,
+      10,
+      0,
+      0,
+      10,
+      5,
+      4,
+      9,
+      10,
+      4,
+      5,
+      10,
+      10,
+      10,
+      5,
+      10,
+      0,
+      10,
+      5,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1,
+      6,
+      6,
+      1,
+      6,
+      1,
+      1,
+      1,
+      5,
+      0,
+      0,
+      0,
+      10,
+      5,
+      10,
+      10,
+      6,
+      6,
+      5,
+      6,
+      6,
+      0,
+      5,
+      6,
+      5,
+      6,
+      5,
+      5,
+      7,
+      1,
+      6,
+      6,
+      6,
+      6,
+      0,
+      0,
+      5,
+      5,
+      5,
+      0,
+      0,
+      6,
+      6,
+      7,
+      1,
+      6,
+      6,
+      5,
+      0,
+      6,
+      6,
+      5,
+      0,
+      6,
+      0,
+      6,
+      6,
+      5,
+      6,
+      0,
+      5,
+      1,
+      6,
+      0,
+      0,
+      6,
+      5,
+      6,
+      0,
+      0,
+      0,
+      10,
+      0,
+      0,
+      0
+    ],
+    "old_Hecke_eigenspace_accepted_without_replay": true
+  },
+  "shifted_twisted_moment": {
+    "character": "x -> x^(-1), including the odd Teichmuller component",
+    "period_convention": "Phi_chi(r)=sum_b chi8(b)*Phi_E^-(r+b/8); Omega_chi=Omega_minus/G(chi8).",
+    "alpha_twist_mod11": 4,
+    "twisted_symbol_at_zero": 0,
+    "new_cusp_path_count": 40,
+    "residue_terms": [
+      {
+        "a": 1,
+        "summands": [
+          {
+            "b": 1,
+            "chi8_b": 1,
+            "numerator": 19,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              292,
+              77,
+              87,
+              305,
+              95,
+              4
+            ],
+            "minus_symbol": 1
+          },
+          {
+            "b": 3,
+            "chi8_b": -1,
+            "numerator": 41,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              195,
+              329,
+              338,
+              296
+            ],
+            "minus_symbol": 9
+          },
+          {
+            "b": 5,
+            "chi8_b": -1,
+            "numerator": 63,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              259,
+              98,
+              55,
+              199
+            ],
+            "minus_symbol": 0
+          },
+          {
+            "b": 7,
+            "chi8_b": 1,
+            "numerator": 85,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              228,
+              102
+            ],
+            "minus_symbol": 1
+          }
+        ],
+        "twisted_symbol": 4,
+        "measure_on_residue": 1,
+        "inverse_a": 1,
+        "weighted_measure": 1
+      },
+      {
+        "a": 2,
+        "summands": [
+          {
+            "b": 1,
+            "chi8_b": 1,
+            "numerator": 27,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              130,
+              272,
+              300,
+              75
+            ],
+            "minus_symbol": 5
+          },
+          {
+            "b": 3,
+            "chi8_b": -1,
+            "numerator": 49,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              194,
+              167,
+              345,
+              367
+            ],
+            "minus_symbol": 6
+          },
+          {
+            "b": 5,
+            "chi8_b": -1,
+            "numerator": 71,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              311,
+              75,
+              87,
+              270
+            ],
+            "minus_symbol": 6
+          },
+          {
+            "b": 7,
+            "chi8_b": 1,
+            "numerator": 93,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              206,
+              280,
+              145,
+              172
+            ],
+            "minus_symbol": 5
+          }
+        ],
+        "twisted_symbol": 9,
+        "measure_on_residue": 5,
+        "inverse_a": 6,
+        "weighted_measure": 8
+      },
+      {
+        "a": 3,
+        "summands": [
+          {
+            "b": 1,
+            "chi8_b": 1,
+            "numerator": 35,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              195,
+              129,
+              234,
+              358
+            ],
+            "minus_symbol": 7
+          },
+          {
+            "b": 3,
+            "chi8_b": -1,
+            "numerator": 57,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              194,
+              260,
+              160,
+              261
+            ],
+            "minus_symbol": 9
+          },
+          {
+            "b": 5,
+            "chi8_b": -1,
+            "numerator": 79,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              216,
+              351,
+              289,
+              164
+            ],
+            "minus_symbol": 6
+          },
+          {
+            "b": 7,
+            "chi8_b": 1,
+            "numerator": 101,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              65,
+              277,
+              274,
+              66
+            ],
+            "minus_symbol": 0
+          }
+        ],
+        "twisted_symbol": 3,
+        "measure_on_residue": 9,
+        "inverse_a": 4,
+        "weighted_measure": 3
+      },
+      {
+        "a": 4,
+        "summands": [
+          {
+            "b": 1,
+            "chi8_b": 1,
+            "numerator": 43,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              195,
+              9,
+              111
+            ],
+            "minus_symbol": 0
+          },
+          {
+            "b": 3,
+            "chi8_b": -1,
+            "numerator": 65,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              259,
+              98,
+              225,
+              356,
+              13
+            ],
+            "minus_symbol": 10
+          },
+          {
+            "b": 5,
+            "chi8_b": -1,
+            "numerator": 87,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              305
+            ],
+            "minus_symbol": 10
+          },
+          {
+            "b": 7,
+            "chi8_b": 1,
+            "numerator": 109,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              292,
+              148,
+              208
+            ],
+            "minus_symbol": 2
+          }
+        ],
+        "twisted_symbol": 4,
+        "measure_on_residue": 1,
+        "inverse_a": 3,
+        "weighted_measure": 3
+      },
+      {
+        "a": 5,
+        "summands": [
+          {
+            "b": 1,
+            "chi8_b": 1,
+            "numerator": 51,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              194,
+              156,
+              166,
+              33,
+              286,
+              40
+            ],
+            "minus_symbol": 5
+          },
+          {
+            "b": 3,
+            "chi8_b": -1,
+            "numerator": 73,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              311,
+              325,
+              275,
+              332
+            ],
+            "minus_symbol": 0
+          },
+          {
+            "b": 5,
+            "chi8_b": -1,
+            "numerator": 95,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              227,
+              29,
+              125,
+              234
+            ],
+            "minus_symbol": 4
+          },
+          {
+            "b": 7,
+            "chi8_b": 1,
+            "numerator": 117,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              130,
+              137
+            ],
+            "minus_symbol": 2
+          }
+        ],
+        "twisted_symbol": 3,
+        "measure_on_residue": 9,
+        "inverse_a": 9,
+        "weighted_measure": 4
+      },
+      {
+        "a": 6,
+        "summands": [
+          {
+            "b": 1,
+            "chi8_b": 1,
+            "numerator": 59,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              259,
+              252
+            ],
+            "minus_symbol": 9
+          },
+          {
+            "b": 3,
+            "chi8_b": -1,
+            "numerator": 81,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              162,
+              360,
+              264,
+              155
+            ],
+            "minus_symbol": 7
+          },
+          {
+            "b": 5,
+            "chi8_b": -1,
+            "numerator": 103,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              78,
+              64,
+              114,
+              57
+            ],
+            "minus_symbol": 0
+          },
+          {
+            "b": 7,
+            "chi8_b": 1,
+            "numerator": 125,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              195,
+              233,
+              223,
+              356,
+              103,
+              349
+            ],
+            "minus_symbol": 6
+          }
+        ],
+        "twisted_symbol": 8,
+        "measure_on_residue": 2,
+        "inverse_a": 2,
+        "weighted_measure": 4
+      },
+      {
+        "a": 7,
+        "summands": [
+          {
+            "b": 1,
+            "chi8_b": 1,
+            "numerator": 67,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              97,
+              241,
+              181
+            ],
+            "minus_symbol": 9
+          },
+          {
+            "b": 3,
+            "chi8_b": -1,
+            "numerator": 89,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              84
+            ],
+            "minus_symbol": 1
+          },
+          {
+            "b": 5,
+            "chi8_b": -1,
+            "numerator": 111,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              130,
+              291,
+              164,
+              33,
+              376
+            ],
+            "minus_symbol": 1
+          },
+          {
+            "b": 7,
+            "chi8_b": 1,
+            "numerator": 133,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              194,
+              380,
+              278
+            ],
+            "minus_symbol": 0
+          }
+        ],
+        "twisted_symbol": 7,
+        "measure_on_residue": 10,
+        "inverse_a": 8,
+        "weighted_measure": 3
+      },
+      {
+        "a": 8,
+        "summands": [
+          {
+            "b": 1,
+            "chi8_b": 1,
+            "numerator": 75,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              324,
+              112,
+              115,
+              323
+            ],
+            "minus_symbol": 0
+          },
+          {
+            "b": 3,
+            "chi8_b": -1,
+            "numerator": 97,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              173,
+              38,
+              100,
+              225
+            ],
+            "minus_symbol": 5
+          },
+          {
+            "b": 5,
+            "chi8_b": -1,
+            "numerator": 119,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              195,
+              129,
+              229,
+              128
+            ],
+            "minus_symbol": 2
+          },
+          {
+            "b": 7,
+            "chi8_b": 1,
+            "numerator": 141,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              194,
+              260,
+              155,
+              31
+            ],
+            "minus_symbol": 4
+          }
+        ],
+        "twisted_symbol": 8,
+        "measure_on_residue": 2,
+        "inverse_a": 7,
+        "weighted_measure": 3
+      },
+      {
+        "a": 9,
+        "summands": [
+          {
+            "b": 1,
+            "chi8_b": 1,
+            "numerator": 83,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              183,
+              109,
+              244,
+              217
+            ],
+            "minus_symbol": 6
+          },
+          {
+            "b": 3,
+            "chi8_b": -1,
+            "numerator": 105,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              78,
+              314,
+              302,
+              119
+            ],
+            "minus_symbol": 5
+          },
+          {
+            "b": 5,
+            "chi8_b": -1,
+            "numerator": 127,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              195,
+              222,
+              44,
+              22
+            ],
+            "minus_symbol": 5
+          },
+          {
+            "b": 7,
+            "chi8_b": 1,
+            "numerator": 149,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              259,
+              117,
+              89,
+              314
+            ],
+            "minus_symbol": 6
+          }
+        ],
+        "twisted_symbol": 2,
+        "measure_on_residue": 6,
+        "inverse_a": 5,
+        "weighted_measure": 8
+      },
+      {
+        "a": 10,
+        "summands": [
+          {
+            "b": 1,
+            "chi8_b": 1,
+            "numerator": 91,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              161,
+              287
+            ],
+            "minus_symbol": 10
+          },
+          {
+            "b": 3,
+            "chi8_b": -1,
+            "numerator": 113,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              130,
+              291,
+              334,
+              190
+            ],
+            "minus_symbol": 0
+          },
+          {
+            "b": 5,
+            "chi8_b": -1,
+            "numerator": 135,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              194,
+              60,
+              51,
+              93
+            ],
+            "minus_symbol": 2
+          },
+          {
+            "b": 7,
+            "chi8_b": 1,
+            "numerator": 157,
+            "denominator": 88,
+            "path_indices": [
+              0,
+              1,
+              97,
+              312,
+              302,
+              84,
+              294,
+              385
+            ],
+            "minus_symbol": 10
+          }
+        ],
+        "twisted_symbol": 7,
+        "measure_on_residue": 10,
+        "inverse_a": 10,
+        "weighted_measure": 1
+      }
+    ],
+    "weighted_unstabilized_sum_mod11": 9,
+    "lambda8_at_zero_mod11": 5,
+    "nonzero": true,
+    "scope": "An integral ordinary measure moment at a noncritical character; not the central complex L-value."
+  },
+  "invertible_factors": {
+    "C5_at_zero": 26,
+    "C5_at_zero_mod11": 4,
+    "adjoint_Euler_factor_mod11": 3,
+    "A0_times_D_E_mod11": 9,
+    "D_E_value": null,
+    "A0_value": null,
+    "formal_t_order_A": 0,
+    "D_E_nonzero_reason": "Adjoint interpolation: nonzero Petersson ratio and nonzero Euler factors."
+  },
+  "formal_leading_calculation": {
+    "normalization": "scaled_B=log_11(12)*B_hat=C*A(t)*log(1+t)*z(t)",
+    "class_first_coefficient_degree": 2,
+    "class_degree_2": [
+      {
+        "coefficient": "1",
+        "monomial": [
+          "A0",
+          "C",
+          "kappa0"
+        ]
+      }
+    ],
+    "class_degree_3": [
+      {
+        "coefficient": "-1/2",
+        "monomial": [
+          "A0",
+          "C",
+          "kappa0"
+        ]
+      },
+      {
+        "coefficient": "1",
+        "monomial": [
+          "A0",
+          "C",
+          "kappa1"
+        ]
+      },
+      {
+        "coefficient": "1",
+        "monomial": [
+          "A1",
+          "C",
+          "kappa0"
+        ]
+      }
+    ],
+    "regulator_first_coefficient_degree": 3,
+    "regulator_degree_3": [
+      {
+        "coefficient": "1",
+        "monomial": [
+          "A0",
+          "C",
+          "a2"
+        ]
+      }
+    ],
+    "arithmetic_C_A0_kappa_a2_computed": false
+  },
+  "period_and_parameter_bookkeeping": {
+    "Eisenstein_uniformizer": "X, distinct from cyclotomic t=gamma-1 and Fontaine t_dR",
+    "period_order_n": null,
+    "leading_period_C": null,
+    "change_X_to_vX": "Both leading period and leading class coordinates multiply by v(0)^(-n).",
+    "common_frame_change": "Both line coordinates change by the same unit; their tensor quotient is unchanged.",
+    "rationality_consequence": "None without a rational realization comparison."
+  },
+  "derived_comparison": {
+    "definition": "B2=[t^2] B_hat after the Eisenstein leading-term operation",
+    "formula": "kappa_dagger=log_11(12)*D_E/(26*C*lambda8(0))*B2",
+    "s11_formula": "s11=log_11(12)*D_E/(416*C*lambda8(0))*h(x,B2)/(det(H)*ell(x))",
+    "basis": "Loeffler-Rivero C1.13 plus accepted Attack 06 inputs, compatible periods and the NEW nonzero moment.",
+    "actual_B2_computed": false
+  },
+  "open": {
+    "C_value": null,
+    "n_value": null,
+    "B2_coordinates": null,
+    "s11": null,
+    "comparison_with_Attack07_relative_cycle": "not constructed",
+    "rational_determinant_descent": "not proved",
+    "archimedean_leading_term_comparison": "not proved",
+    "BSD_proved": false,
+    "canonical_frontier_updated": false
+  },
+  "inputs_sha256": "88f413f839474bc62d0b4d5abcfc8148c2d6abac39fe996f25cba75696c48cd2"
+}

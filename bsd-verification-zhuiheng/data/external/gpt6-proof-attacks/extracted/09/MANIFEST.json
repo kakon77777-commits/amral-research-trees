@@ -1,0 +1,69 @@
+{
+  "artifact": "BSD_Proof_Attack_09",
+  "date": "2026-09-12",
+  "files": [
+    {
+      "file": "BSD_Proof_Attack_09_Eisenstein_Leading_Term.md",
+      "size_bytes": 19639,
+      "sha256": "f8dea87af7d55314dbabf69c9fc57a84eb697317a16cf02bd5909b8eac157c83"
+    },
+    {
+      "file": "INPUTS.json",
+      "size_bytes": 18892,
+      "sha256": "88f413f839474bc62d0b4d5abcfc8148c2d6abac39fe996f25cba75696c48cd2"
+    },
+    {
+      "file": "README.md",
+      "size_bytes": 2520,
+      "sha256": "3a21f5b56b6d67a7f414a3f94d5d2388cde3843e7155eb0e806fd352d4a54565"
+    },
+    {
+      "file": "attack09_eisenstein.py",
+      "size_bytes": 15319,
+      "sha256": "4ba9617461d1be6f7ca8b015e28b6701aeb6a51dce3cf65808b50992111d9bbe"
+    },
+    {
+      "file": "attack09_result.json",
+      "size_bytes": 22288,
+      "sha256": "f0d45e43d1980c928d1821825d814216f62b8a9f20f0465e3fd9e433a3d7354a"
+    }
+  ],
+  "source_validation": {
+    "BSD_Proof_Attack_09_Eisenstein_Leading_Term.md": {
+      "utf8": "valid",
+      "math_delimiters": "dollar_only_balanced",
+      "math_spans": 272,
+      "braces": "balanced",
+      "left_right": "balanced",
+      "code_fences": "balanced"
+    },
+    "README.md": {
+      "utf8": "valid",
+      "math_delimiters": "dollar_only_balanced",
+      "math_spans": 7,
+      "braces": "balanced",
+      "left_right": "balanced",
+      "code_fences": "balanced"
+    }
+  },
+  "execution": {
+    "command": "python3 attack09_eisenstein.py --output attack09_result.json",
+    "exit_code": 0,
+    "new_cusp_paths": 40,
+    "lambda8_at_zero_mod11": 5,
+    "unit_log_normalized_mod11": 5,
+    "smoothing_factor": 26,
+    "manuscript_table_matches_executed_output": true,
+    "scope": "New minus line, conductor-8 twisted moment, Eisenstein data, unit logarithm and formal leading coefficient algebra."
+  },
+  "accepted_old_input": "The two-dimensional mod-11 Hecke eigenspace was read from the accepted certificate; its producer and the old Kurihara sum were not rerun.",
+  "proof_status": "Written mathematical derivations under stated accepted inputs and cited theorems; no independent formal or scholarly review of Attack 09 claimed.",
+  "uncomputed": [
+    "Coleman family coefficients",
+    "weight order n",
+    "leading period C",
+    "B2 cohomology coordinates",
+    "s11"
+  ],
+  "canonical_frontier_updated": false
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "bsd-attack10-manifest-v1",
+  "date": "2026-09-12",
+  "title": "BSD Proof Attack 10: Unit calibration and trace nullhomotopy",
+  "payloads": [
+    {
+      "file": "BSD_Proof_Attack_10_Unit_and_Trace_Bridge.md",
+      "bytes": 21033,
+      "sha256": "8aa9aded5375cf56f309c74f6db815db6a3923e0e3949d2a15cdb0b0a5fa1b75"
+    },
+    {
+      "file": "INPUTS.json",
+      "bytes": 3281,
+      "sha256": "7d00070c1b4fd1e7c34a3919484173d9acb1c8b36d32d41d46fb098abd064193"
+    },
+    {
+      "file": "README.md",
+      "bytes": 2342,
+      "sha256": "c0bf0c749ce349b3ac02609b117ff976a910005e86696c68de496871dc6a6a28"
+    },
+    {
+      "file": "attack10_result.json",
+      "bytes": 97688,
+      "sha256": "9f8d60f162ff53f782d3b93c000a7271c568bfe47e3216811b716e42ad4bab50"
+    },
+    {
+      "file": "attack10_unit_tangent.py",
+      "bytes": 14451,
+      "sha256": "f1cbc7e6e63e724ca168a7c82e8326039789c3c848fa33f0d75d41cacecab257"
+    }
+  ],
+  "execution": {
+    "command": "python3 attack10_unit_tangent.py --output attack10_result.json",
+    "exit_code": 0,
+    "default_precision": 10,
+    "python_dependencies": "standard library only"
+  },
+  "validation": {
+    "UTF8_source_checked": true,
+    "Python_AST_and_JSON_parsed": true,
+    "dollar_math_delimiters_and_braces_checked": true,
+    "manuscript_numeric_table_matches_result": true
+  },
+  "boundaries": {
+    "model_trace_data_are_arithmetic": false,
+    "actual_Coleman_trace_jets_computed": false,
+    "C_computed": false,
+    "BSD_proved": false,
+    "canonical_frontier_updated": false
+  },
+  "manifest_self_hash": "excluded to avoid self-reference"
+}

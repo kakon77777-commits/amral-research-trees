@@ -1,0 +1,5287 @@
+{
+  "schema": "bsd-attack10-unit-tangent-v1",
+  "date": "2026-09-12",
+  "input_sha256": "7d00070c1b4fd1e7c34a3919484173d9acb1c8b36d32d41d46fb098abd064193",
+  "accepted_inputs_recomputed": false,
+  "circular_unit": {
+    "cyclotomic_ring": "Z[zeta]/(zeta^4+1)",
+    "root2": [
+      0,
+      1,
+      0,
+      -1
+    ],
+    "gauss_sum": [
+      0,
+      2,
+      0,
+      -2
+    ],
+    "numerator": [
+      2,
+      -1,
+      0,
+      1
+    ],
+    "denominator": [
+      2,
+      1,
+      0,
+      -1
+    ],
+    "unit_quotient": [
+      3,
+      -2,
+      0,
+      2
+    ],
+    "epsilon_in_Z_sqrt2": [
+      1,
+      1
+    ],
+    "u_chi_in_Z_sqrt2": [
+      3,
+      -2
+    ],
+    "bottom_unit_in_Z_sqrt2": [
+      17,
+      -12
+    ],
+    "bottom_Kummer_multiple_of_epsilon": -4,
+    "norms": {
+      "epsilon": -1,
+      "u_chi": 1,
+      "bottom": 1
+    },
+    "exact_identities_passed": true
+  },
+  "local_crystalline_calibration": {
+    "p": 11,
+    "precision_exponent_for_L": 10,
+    "modulus_for_L": 25937424601,
+    "bottom_power_6": [
+      768398401,
+      -543339720
+    ],
+    "principal_unit_minus_one": [
+      768398400,
+      -543339720
+    ],
+    "series_terms": [
+      {
+        "m": 1,
+        "valuation_lower_bound": 1,
+        "term_residues": [
+          768398400,
+          25394084881
+        ]
+      },
+      {
+        "m": 2,
+        "valuation_lower_bound": 2,
+        "term_residues": [
+          7986158268,
+          5475820515
+        ]
+      },
+      {
+        "m": 3,
+        "valuation_lower_bound": 3,
+        "term_residues": [
+          14906909842,
+          8102793919
+        ]
+      },
+      {
+        "m": 4,
+        "valuation_lower_bound": 4,
+        "term_residues": [
+          12469520085,
+          13091513688
+        ]
+      },
+      {
+        "m": 5,
+        "valuation_lower_bound": 5,
+        "term_residues": [
+          4645032942,
+          18678050776
+        ]
+      },
+      {
+        "m": 6,
+        "valuation_lower_bound": 6,
+        "term_residues": [
+          2738833306,
+          18999991725
+        ]
+      },
+      {
+        "m": 7,
+        "valuation_lower_bound": 7,
+        "term_residues": [
+          11146661812,
+          25898450259
+        ]
+      },
+      {
+        "m": 8,
+        "valuation_lower_bound": 8,
+        "term_residues": [
+          23150759148,
+          7073843073
+        ]
+      },
+      {
+        "m": 9,
+        "valuation_lower_bound": 9,
+        "term_residues": [
+          0,
+          7073843073
+        ]
+      },
+      {
+        "m": 10,
+        "valuation_lower_bound": 10,
+        "term_residues": [
+          0,
+          0
+        ]
+      },
+      {
+        "m": 11,
+        "valuation_lower_bound": 10,
+        "term_residues": [
+          0,
+          0
+        ]
+      },
+      {
+        "m": 12,
+        "valuation_lower_bound": 12,
+        "term_residues": [
+          0,
+          0
+        ]
+      },
+      {
+        "m": 13,
+        "valuation_lower_bound": 13,
+        "term_residues": [
+          0,
+          0
+        ]
+      },
+      {
+        "m": 14,
+        "valuation_lower_bound": 14,
+        "term_residues": [
+          0,
+          0
+        ]
+      },
+      {
+        "m": 15,
+        "valuation_lower_bound": 15,
+        "term_residues": [
+          0,
+          0
+        ]
+      },
+      {
+        "m": 16,
+        "valuation_lower_bound": 16,
+        "term_residues": [
+          0,
+          0
+        ]
+      },
+      {
+        "m": 17,
+        "valuation_lower_bound": 17,
+        "term_residues": [
+          0,
+          0
+        ]
+      },
+      {
+        "m": 18,
+        "valuation_lower_bound": 18,
+        "term_residues": [
+          0,
+          0
+        ]
+      },
+      {
+        "m": 19,
+        "valuation_lower_bound": 19,
+        "term_residues": [
+          0,
+          0
+        ]
+      }
+    ],
+    "first_omitted_term": 20,
+    "tail_proof": "For m>=2N, v_p(w^m/m)>=m-v_p(m)>=m/2>=N (p=11).",
+    "log_bottom_coefficients_mod_pN": [
+      0,
+      8662686351
+    ],
+    "L_bottom_mod_pN": 8662686351,
+    "L_epsilon_mod_pN": 17287396863,
+    "L_epsilon_exact_valuation": 1,
+    "modulus_for_normalized_quantities": 2357947691,
+    "L_epsilon_div_p_mod": 1571581533,
+    "L_epsilon_div_p_digits_low_to_high": [
+      5,
+      1,
+      5,
+      1,
+      3,
+      1,
+      7,
+      3,
+      7
+    ],
+    "Leopoldt_Lp_1_chi_mod": 2353344559,
+    "Leopoldt_Lp_digits_low_to_high": [
+      5,
+      6,
+      6,
+      6,
+      4,
+      4,
+      8,
+      10,
+      10
+    ],
+    "phi_offdiag_epsilon_mod": 4603132,
+    "phi_offdiag_bottom_mod": 2339535163,
+    "phi_offdiag_bottom_mod_p": 9,
+    "Leopoldt_Lp_mod_p": 5,
+    "period_C_computed": false
+  },
+  "new_Bernoulli_normalization_check": {
+    "n": 10,
+    "B_n_chi": "28730410",
+    "L_complex_1_minus_n": "-2873041",
+    "Euler_factor": 2357947692,
+    "Lp_1_minus_n_mod_p": 5,
+    "purpose": "Independent mod-11 sign/Gauss/Euler normalization check via integral KL measure."
+  },
+  "first_order_trace_algebra": {
+    "data_kind": "EXACT ALGEBRA MODEL; not arithmetic Galois or Hecke trace data",
+    "coefficient_ring": "Q[X]/(X^2)",
+    "group": "Free(a,b) * C2(j)",
+    "matrices": {
+      "a": [
+        [
+          [
+            "2",
+            "7"
+          ],
+          [
+            "3",
+            "13"
+          ]
+        ],
+        [
+          [
+            "0",
+            "5"
+          ],
+          [
+            "1",
+            "11"
+          ]
+        ]
+      ],
+      "b": [
+        [
+          [
+            "3",
+            "17"
+          ],
+          [
+            "2",
+            "19"
+          ]
+        ],
+        [
+          [
+            "0",
+            "7"
+          ],
+          [
+            "1",
+            "23"
+          ]
+        ]
+      ],
+      "j": [
+        [
+          [
+            "-1",
+            "0"
+          ],
+          [
+            "0",
+            "0"
+          ]
+        ],
+        [
+          [
+            "0",
+            "0"
+          ],
+          [
+            "1",
+            "0"
+          ]
+        ]
+      ]
+    },
+    "word_count": 26,
+    "pair_count": 676,
+    "trace_tensor_rows": [
+      {
+        "g": "1",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "a",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "A",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "b",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "B",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "aa",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "ab",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "aB",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "aj",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "AA",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "Ab",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "AB",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "Aj",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "ba",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "bA",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "bb",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "bj",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "Ba",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "BA",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "BB",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "Bj",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "ja",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "jA",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "jb",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "1",
+        "h": "jB",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "a",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "a",
+        "h": "a",
+        "Q": "15",
+        "cup": "15/4",
+        "minus_delta_F": "15/4"
+      },
+      {
+        "g": "a",
+        "h": "A",
+        "Q": "-15/2",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "a",
+        "h": "b",
+        "Q": "21",
+        "cup": "7/2",
+        "minus_delta_F": "7/2"
+      },
+      {
+        "g": "a",
+        "h": "B",
+        "Q": "-7",
+        "cup": "-21/2",
+        "minus_delta_F": "-21/2"
+      },
+      {
+        "g": "a",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "a",
+        "h": "aa",
+        "Q": "45",
+        "cup": "45/8",
+        "minus_delta_F": "45/8"
+      },
+      {
+        "g": "a",
+        "h": "ab",
+        "Q": "66",
+        "cup": "11/2",
+        "minus_delta_F": "11/2"
+      },
+      {
+        "g": "a",
+        "h": "aB",
+        "Q": "-2",
+        "cup": "-3/2",
+        "minus_delta_F": "-3/2"
+      },
+      {
+        "g": "a",
+        "h": "aj",
+        "Q": "-15",
+        "cup": "15/4",
+        "minus_delta_F": "15/4"
+      },
+      {
+        "g": "a",
+        "h": "AA",
+        "Q": "-45/4",
+        "cup": "-45/2",
+        "minus_delta_F": "-45/2"
+      },
+      {
+        "g": "a",
+        "h": "Ab",
+        "Q": "-3/2",
+        "cup": "-1/2",
+        "minus_delta_F": "-1/2"
+      },
+      {
+        "g": "a",
+        "h": "AB",
+        "Q": "-19/2",
+        "cup": "-57/2",
+        "minus_delta_F": "-57/2"
+      },
+      {
+        "g": "a",
+        "h": "Aj",
+        "Q": "15/2",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "a",
+        "h": "ba",
+        "Q": "57",
+        "cup": "19/4",
+        "minus_delta_F": "19/4"
+      },
+      {
+        "g": "a",
+        "h": "bA",
+        "Q": "3",
+        "cup": "1",
+        "minus_delta_F": "1"
+      },
+      {
+        "g": "a",
+        "h": "bb",
+        "Q": "84",
+        "cup": "14/3",
+        "minus_delta_F": "14/3"
+      },
+      {
+        "g": "a",
+        "h": "bj",
+        "Q": "-21",
+        "cup": "7/2",
+        "minus_delta_F": "7/2"
+      },
+      {
+        "g": "a",
+        "h": "Ba",
+        "Q": "1",
+        "cup": "3/4",
+        "minus_delta_F": "3/4"
+      },
+      {
+        "g": "a",
+        "h": "BA",
+        "Q": "-11",
+        "cup": "-33",
+        "minus_delta_F": "-33"
+      },
+      {
+        "g": "a",
+        "h": "BB",
+        "Q": "-28/3",
+        "cup": "-42",
+        "minus_delta_F": "-42"
+      },
+      {
+        "g": "a",
+        "h": "Bj",
+        "Q": "7",
+        "cup": "-21/2",
+        "minus_delta_F": "-21/2"
+      },
+      {
+        "g": "a",
+        "h": "ja",
+        "Q": "15",
+        "cup": "-15/4",
+        "minus_delta_F": "-15/4"
+      },
+      {
+        "g": "a",
+        "h": "jA",
+        "Q": "-15/2",
+        "cup": "15/2",
+        "minus_delta_F": "15/2"
+      },
+      {
+        "g": "a",
+        "h": "jb",
+        "Q": "21",
+        "cup": "-7/2",
+        "minus_delta_F": "-7/2"
+      },
+      {
+        "g": "a",
+        "h": "jB",
+        "Q": "-7",
+        "cup": "21/2",
+        "minus_delta_F": "21/2"
+      },
+      {
+        "g": "A",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "A",
+        "h": "a",
+        "Q": "-15/2",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "A",
+        "h": "A",
+        "Q": "15/4",
+        "cup": "15",
+        "minus_delta_F": "15"
+      },
+      {
+        "g": "A",
+        "h": "b",
+        "Q": "-21/2",
+        "cup": "-7",
+        "minus_delta_F": "-7"
+      },
+      {
+        "g": "A",
+        "h": "B",
+        "Q": "7/2",
+        "cup": "21",
+        "minus_delta_F": "21"
+      },
+      {
+        "g": "A",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "A",
+        "h": "aa",
+        "Q": "-45/2",
+        "cup": "-45/4",
+        "minus_delta_F": "-45/4"
+      },
+      {
+        "g": "A",
+        "h": "ab",
+        "Q": "-33",
+        "cup": "-11",
+        "minus_delta_F": "-11"
+      },
+      {
+        "g": "A",
+        "h": "aB",
+        "Q": "1",
+        "cup": "3",
+        "minus_delta_F": "3"
+      },
+      {
+        "g": "A",
+        "h": "aj",
+        "Q": "15/2",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "A",
+        "h": "AA",
+        "Q": "45/8",
+        "cup": "45",
+        "minus_delta_F": "45"
+      },
+      {
+        "g": "A",
+        "h": "Ab",
+        "Q": "3/4",
+        "cup": "1",
+        "minus_delta_F": "1"
+      },
+      {
+        "g": "A",
+        "h": "AB",
+        "Q": "19/4",
+        "cup": "57",
+        "minus_delta_F": "57"
+      },
+      {
+        "g": "A",
+        "h": "Aj",
+        "Q": "-15/4",
+        "cup": "15",
+        "minus_delta_F": "15"
+      },
+      {
+        "g": "A",
+        "h": "ba",
+        "Q": "-57/2",
+        "cup": "-19/2",
+        "minus_delta_F": "-19/2"
+      },
+      {
+        "g": "A",
+        "h": "bA",
+        "Q": "-3/2",
+        "cup": "-2",
+        "minus_delta_F": "-2"
+      },
+      {
+        "g": "A",
+        "h": "bb",
+        "Q": "-42",
+        "cup": "-28/3",
+        "minus_delta_F": "-28/3"
+      },
+      {
+        "g": "A",
+        "h": "bj",
+        "Q": "21/2",
+        "cup": "-7",
+        "minus_delta_F": "-7"
+      },
+      {
+        "g": "A",
+        "h": "Ba",
+        "Q": "-1/2",
+        "cup": "-3/2",
+        "minus_delta_F": "-3/2"
+      },
+      {
+        "g": "A",
+        "h": "BA",
+        "Q": "11/2",
+        "cup": "66",
+        "minus_delta_F": "66"
+      },
+      {
+        "g": "A",
+        "h": "BB",
+        "Q": "14/3",
+        "cup": "84",
+        "minus_delta_F": "84"
+      },
+      {
+        "g": "A",
+        "h": "Bj",
+        "Q": "-7/2",
+        "cup": "21",
+        "minus_delta_F": "21"
+      },
+      {
+        "g": "A",
+        "h": "ja",
+        "Q": "-15/2",
+        "cup": "15/2",
+        "minus_delta_F": "15/2"
+      },
+      {
+        "g": "A",
+        "h": "jA",
+        "Q": "15/4",
+        "cup": "-15",
+        "minus_delta_F": "-15"
+      },
+      {
+        "g": "A",
+        "h": "jb",
+        "Q": "-21/2",
+        "cup": "7",
+        "minus_delta_F": "7"
+      },
+      {
+        "g": "A",
+        "h": "jB",
+        "Q": "7/2",
+        "cup": "-21",
+        "minus_delta_F": "-21"
+      },
+      {
+        "g": "b",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "b",
+        "h": "a",
+        "Q": "10",
+        "cup": "5/3",
+        "minus_delta_F": "5/3"
+      },
+      {
+        "g": "b",
+        "h": "A",
+        "Q": "-5",
+        "cup": "-10/3",
+        "minus_delta_F": "-10/3"
+      },
+      {
+        "g": "b",
+        "h": "b",
+        "Q": "14",
+        "cup": "14/9",
+        "minus_delta_F": "14/9"
+      },
+      {
+        "g": "b",
+        "h": "B",
+        "Q": "-14/3",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "b",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "b",
+        "h": "aa",
+        "Q": "30",
+        "cup": "5/2",
+        "minus_delta_F": "5/2"
+      },
+      {
+        "g": "b",
+        "h": "ab",
+        "Q": "44",
+        "cup": "22/9",
+        "minus_delta_F": "22/9"
+      },
+      {
+        "g": "b",
+        "h": "aB",
+        "Q": "-4/3",
+        "cup": "-2/3",
+        "minus_delta_F": "-2/3"
+      },
+      {
+        "g": "b",
+        "h": "aj",
+        "Q": "-10",
+        "cup": "5/3",
+        "minus_delta_F": "5/3"
+      },
+      {
+        "g": "b",
+        "h": "AA",
+        "Q": "-15/2",
+        "cup": "-10",
+        "minus_delta_F": "-10"
+      },
+      {
+        "g": "b",
+        "h": "Ab",
+        "Q": "-1",
+        "cup": "-2/9",
+        "minus_delta_F": "-2/9"
+      },
+      {
+        "g": "b",
+        "h": "AB",
+        "Q": "-19/3",
+        "cup": "-38/3",
+        "minus_delta_F": "-38/3"
+      },
+      {
+        "g": "b",
+        "h": "Aj",
+        "Q": "5",
+        "cup": "-10/3",
+        "minus_delta_F": "-10/3"
+      },
+      {
+        "g": "b",
+        "h": "ba",
+        "Q": "38",
+        "cup": "19/9",
+        "minus_delta_F": "19/9"
+      },
+      {
+        "g": "b",
+        "h": "bA",
+        "Q": "2",
+        "cup": "4/9",
+        "minus_delta_F": "4/9"
+      },
+      {
+        "g": "b",
+        "h": "bb",
+        "Q": "56",
+        "cup": "56/27",
+        "minus_delta_F": "56/27"
+      },
+      {
+        "g": "b",
+        "h": "bj",
+        "Q": "-14",
+        "cup": "14/9",
+        "minus_delta_F": "14/9"
+      },
+      {
+        "g": "b",
+        "h": "Ba",
+        "Q": "2/3",
+        "cup": "1/3",
+        "minus_delta_F": "1/3"
+      },
+      {
+        "g": "b",
+        "h": "BA",
+        "Q": "-22/3",
+        "cup": "-44/3",
+        "minus_delta_F": "-44/3"
+      },
+      {
+        "g": "b",
+        "h": "BB",
+        "Q": "-56/9",
+        "cup": "-56/3",
+        "minus_delta_F": "-56/3"
+      },
+      {
+        "g": "b",
+        "h": "Bj",
+        "Q": "14/3",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "b",
+        "h": "ja",
+        "Q": "10",
+        "cup": "-5/3",
+        "minus_delta_F": "-5/3"
+      },
+      {
+        "g": "b",
+        "h": "jA",
+        "Q": "-5",
+        "cup": "10/3",
+        "minus_delta_F": "10/3"
+      },
+      {
+        "g": "b",
+        "h": "jb",
+        "Q": "14",
+        "cup": "-14/9",
+        "minus_delta_F": "-14/9"
+      },
+      {
+        "g": "b",
+        "h": "jB",
+        "Q": "-14/3",
+        "cup": "14/3",
+        "minus_delta_F": "14/3"
+      },
+      {
+        "g": "B",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "B",
+        "h": "a",
+        "Q": "-10/3",
+        "cup": "-5",
+        "minus_delta_F": "-5"
+      },
+      {
+        "g": "B",
+        "h": "A",
+        "Q": "5/3",
+        "cup": "10",
+        "minus_delta_F": "10"
+      },
+      {
+        "g": "B",
+        "h": "b",
+        "Q": "-14/3",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "B",
+        "h": "B",
+        "Q": "14/9",
+        "cup": "14",
+        "minus_delta_F": "14"
+      },
+      {
+        "g": "B",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "B",
+        "h": "aa",
+        "Q": "-10",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "B",
+        "h": "ab",
+        "Q": "-44/3",
+        "cup": "-22/3",
+        "minus_delta_F": "-22/3"
+      },
+      {
+        "g": "B",
+        "h": "aB",
+        "Q": "4/9",
+        "cup": "2",
+        "minus_delta_F": "2"
+      },
+      {
+        "g": "B",
+        "h": "aj",
+        "Q": "10/3",
+        "cup": "-5",
+        "minus_delta_F": "-5"
+      },
+      {
+        "g": "B",
+        "h": "AA",
+        "Q": "5/2",
+        "cup": "30",
+        "minus_delta_F": "30"
+      },
+      {
+        "g": "B",
+        "h": "Ab",
+        "Q": "1/3",
+        "cup": "2/3",
+        "minus_delta_F": "2/3"
+      },
+      {
+        "g": "B",
+        "h": "AB",
+        "Q": "19/9",
+        "cup": "38",
+        "minus_delta_F": "38"
+      },
+      {
+        "g": "B",
+        "h": "Aj",
+        "Q": "-5/3",
+        "cup": "10",
+        "minus_delta_F": "10"
+      },
+      {
+        "g": "B",
+        "h": "ba",
+        "Q": "-38/3",
+        "cup": "-19/3",
+        "minus_delta_F": "-19/3"
+      },
+      {
+        "g": "B",
+        "h": "bA",
+        "Q": "-2/3",
+        "cup": "-4/3",
+        "minus_delta_F": "-4/3"
+      },
+      {
+        "g": "B",
+        "h": "bb",
+        "Q": "-56/3",
+        "cup": "-56/9",
+        "minus_delta_F": "-56/9"
+      },
+      {
+        "g": "B",
+        "h": "bj",
+        "Q": "14/3",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "B",
+        "h": "Ba",
+        "Q": "-2/9",
+        "cup": "-1",
+        "minus_delta_F": "-1"
+      },
+      {
+        "g": "B",
+        "h": "BA",
+        "Q": "22/9",
+        "cup": "44",
+        "minus_delta_F": "44"
+      },
+      {
+        "g": "B",
+        "h": "BB",
+        "Q": "56/27",
+        "cup": "56",
+        "minus_delta_F": "56"
+      },
+      {
+        "g": "B",
+        "h": "Bj",
+        "Q": "-14/9",
+        "cup": "14",
+        "minus_delta_F": "14"
+      },
+      {
+        "g": "B",
+        "h": "ja",
+        "Q": "-10/3",
+        "cup": "5",
+        "minus_delta_F": "5"
+      },
+      {
+        "g": "B",
+        "h": "jA",
+        "Q": "5/3",
+        "cup": "-10",
+        "minus_delta_F": "-10"
+      },
+      {
+        "g": "B",
+        "h": "jb",
+        "Q": "-14/3",
+        "cup": "14/3",
+        "minus_delta_F": "14/3"
+      },
+      {
+        "g": "B",
+        "h": "jB",
+        "Q": "14/9",
+        "cup": "-14",
+        "minus_delta_F": "-14"
+      },
+      {
+        "g": "j",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "a",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "A",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "b",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "B",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "aa",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "ab",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "aB",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "aj",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "AA",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "Ab",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "AB",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "Aj",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "ba",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "bA",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "bb",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "bj",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "Ba",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "BA",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "BB",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "Bj",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "ja",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "jA",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "jb",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "j",
+        "h": "jB",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "aa",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "aa",
+        "h": "a",
+        "Q": "45",
+        "cup": "45/8",
+        "minus_delta_F": "45/8"
+      },
+      {
+        "g": "aa",
+        "h": "A",
+        "Q": "-45/2",
+        "cup": "-45/4",
+        "minus_delta_F": "-45/4"
+      },
+      {
+        "g": "aa",
+        "h": "b",
+        "Q": "63",
+        "cup": "21/4",
+        "minus_delta_F": "21/4"
+      },
+      {
+        "g": "aa",
+        "h": "B",
+        "Q": "-21",
+        "cup": "-63/4",
+        "minus_delta_F": "-63/4"
+      },
+      {
+        "g": "aa",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "aa",
+        "h": "aa",
+        "Q": "135",
+        "cup": "135/16",
+        "minus_delta_F": "135/16"
+      },
+      {
+        "g": "aa",
+        "h": "ab",
+        "Q": "198",
+        "cup": "33/4",
+        "minus_delta_F": "33/4"
+      },
+      {
+        "g": "aa",
+        "h": "aB",
+        "Q": "-6",
+        "cup": "-9/4",
+        "minus_delta_F": "-9/4"
+      },
+      {
+        "g": "aa",
+        "h": "aj",
+        "Q": "-45",
+        "cup": "45/8",
+        "minus_delta_F": "45/8"
+      },
+      {
+        "g": "aa",
+        "h": "AA",
+        "Q": "-135/4",
+        "cup": "-135/4",
+        "minus_delta_F": "-135/4"
+      },
+      {
+        "g": "aa",
+        "h": "Ab",
+        "Q": "-9/2",
+        "cup": "-3/4",
+        "minus_delta_F": "-3/4"
+      },
+      {
+        "g": "aa",
+        "h": "AB",
+        "Q": "-57/2",
+        "cup": "-171/4",
+        "minus_delta_F": "-171/4"
+      },
+      {
+        "g": "aa",
+        "h": "Aj",
+        "Q": "45/2",
+        "cup": "-45/4",
+        "minus_delta_F": "-45/4"
+      },
+      {
+        "g": "aa",
+        "h": "ba",
+        "Q": "171",
+        "cup": "57/8",
+        "minus_delta_F": "57/8"
+      },
+      {
+        "g": "aa",
+        "h": "bA",
+        "Q": "9",
+        "cup": "3/2",
+        "minus_delta_F": "3/2"
+      },
+      {
+        "g": "aa",
+        "h": "bb",
+        "Q": "252",
+        "cup": "7",
+        "minus_delta_F": "7"
+      },
+      {
+        "g": "aa",
+        "h": "bj",
+        "Q": "-63",
+        "cup": "21/4",
+        "minus_delta_F": "21/4"
+      },
+      {
+        "g": "aa",
+        "h": "Ba",
+        "Q": "3",
+        "cup": "9/8",
+        "minus_delta_F": "9/8"
+      },
+      {
+        "g": "aa",
+        "h": "BA",
+        "Q": "-33",
+        "cup": "-99/2",
+        "minus_delta_F": "-99/2"
+      },
+      {
+        "g": "aa",
+        "h": "BB",
+        "Q": "-28",
+        "cup": "-63",
+        "minus_delta_F": "-63"
+      },
+      {
+        "g": "aa",
+        "h": "Bj",
+        "Q": "21",
+        "cup": "-63/4",
+        "minus_delta_F": "-63/4"
+      },
+      {
+        "g": "aa",
+        "h": "ja",
+        "Q": "45",
+        "cup": "-45/8",
+        "minus_delta_F": "-45/8"
+      },
+      {
+        "g": "aa",
+        "h": "jA",
+        "Q": "-45/2",
+        "cup": "45/4",
+        "minus_delta_F": "45/4"
+      },
+      {
+        "g": "aa",
+        "h": "jb",
+        "Q": "63",
+        "cup": "-21/4",
+        "minus_delta_F": "-21/4"
+      },
+      {
+        "g": "aa",
+        "h": "jB",
+        "Q": "-21",
+        "cup": "63/4",
+        "minus_delta_F": "63/4"
+      },
+      {
+        "g": "ab",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "ab",
+        "h": "a",
+        "Q": "35",
+        "cup": "35/12",
+        "minus_delta_F": "35/12"
+      },
+      {
+        "g": "ab",
+        "h": "A",
+        "Q": "-35/2",
+        "cup": "-35/6",
+        "minus_delta_F": "-35/6"
+      },
+      {
+        "g": "ab",
+        "h": "b",
+        "Q": "49",
+        "cup": "49/18",
+        "minus_delta_F": "49/18"
+      },
+      {
+        "g": "ab",
+        "h": "B",
+        "Q": "-49/3",
+        "cup": "-49/6",
+        "minus_delta_F": "-49/6"
+      },
+      {
+        "g": "ab",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "ab",
+        "h": "aa",
+        "Q": "105",
+        "cup": "35/8",
+        "minus_delta_F": "35/8"
+      },
+      {
+        "g": "ab",
+        "h": "ab",
+        "Q": "154",
+        "cup": "77/18",
+        "minus_delta_F": "77/18"
+      },
+      {
+        "g": "ab",
+        "h": "aB",
+        "Q": "-14/3",
+        "cup": "-7/6",
+        "minus_delta_F": "-7/6"
+      },
+      {
+        "g": "ab",
+        "h": "aj",
+        "Q": "-35",
+        "cup": "35/12",
+        "minus_delta_F": "35/12"
+      },
+      {
+        "g": "ab",
+        "h": "AA",
+        "Q": "-105/4",
+        "cup": "-35/2",
+        "minus_delta_F": "-35/2"
+      },
+      {
+        "g": "ab",
+        "h": "Ab",
+        "Q": "-7/2",
+        "cup": "-7/18",
+        "minus_delta_F": "-7/18"
+      },
+      {
+        "g": "ab",
+        "h": "AB",
+        "Q": "-133/6",
+        "cup": "-133/6",
+        "minus_delta_F": "-133/6"
+      },
+      {
+        "g": "ab",
+        "h": "Aj",
+        "Q": "35/2",
+        "cup": "-35/6",
+        "minus_delta_F": "-35/6"
+      },
+      {
+        "g": "ab",
+        "h": "ba",
+        "Q": "133",
+        "cup": "133/36",
+        "minus_delta_F": "133/36"
+      },
+      {
+        "g": "ab",
+        "h": "bA",
+        "Q": "7",
+        "cup": "7/9",
+        "minus_delta_F": "7/9"
+      },
+      {
+        "g": "ab",
+        "h": "bb",
+        "Q": "196",
+        "cup": "98/27",
+        "minus_delta_F": "98/27"
+      },
+      {
+        "g": "ab",
+        "h": "bj",
+        "Q": "-49",
+        "cup": "49/18",
+        "minus_delta_F": "49/18"
+      },
+      {
+        "g": "ab",
+        "h": "Ba",
+        "Q": "7/3",
+        "cup": "7/12",
+        "minus_delta_F": "7/12"
+      },
+      {
+        "g": "ab",
+        "h": "BA",
+        "Q": "-77/3",
+        "cup": "-77/3",
+        "minus_delta_F": "-77/3"
+      },
+      {
+        "g": "ab",
+        "h": "BB",
+        "Q": "-196/9",
+        "cup": "-98/3",
+        "minus_delta_F": "-98/3"
+      },
+      {
+        "g": "ab",
+        "h": "Bj",
+        "Q": "49/3",
+        "cup": "-49/6",
+        "minus_delta_F": "-49/6"
+      },
+      {
+        "g": "ab",
+        "h": "ja",
+        "Q": "35",
+        "cup": "-35/12",
+        "minus_delta_F": "-35/12"
+      },
+      {
+        "g": "ab",
+        "h": "jA",
+        "Q": "-35/2",
+        "cup": "35/6",
+        "minus_delta_F": "35/6"
+      },
+      {
+        "g": "ab",
+        "h": "jb",
+        "Q": "49",
+        "cup": "-49/18",
+        "minus_delta_F": "-49/18"
+      },
+      {
+        "g": "ab",
+        "h": "jB",
+        "Q": "-49/3",
+        "cup": "49/6",
+        "minus_delta_F": "49/6"
+      },
+      {
+        "g": "aB",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "aB",
+        "h": "a",
+        "Q": "25/3",
+        "cup": "25/4",
+        "minus_delta_F": "25/4"
+      },
+      {
+        "g": "aB",
+        "h": "A",
+        "Q": "-25/6",
+        "cup": "-25/2",
+        "minus_delta_F": "-25/2"
+      },
+      {
+        "g": "aB",
+        "h": "b",
+        "Q": "35/3",
+        "cup": "35/6",
+        "minus_delta_F": "35/6"
+      },
+      {
+        "g": "aB",
+        "h": "B",
+        "Q": "-35/9",
+        "cup": "-35/2",
+        "minus_delta_F": "-35/2"
+      },
+      {
+        "g": "aB",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "aB",
+        "h": "aa",
+        "Q": "25",
+        "cup": "75/8",
+        "minus_delta_F": "75/8"
+      },
+      {
+        "g": "aB",
+        "h": "ab",
+        "Q": "110/3",
+        "cup": "55/6",
+        "minus_delta_F": "55/6"
+      },
+      {
+        "g": "aB",
+        "h": "aB",
+        "Q": "-10/9",
+        "cup": "-5/2",
+        "minus_delta_F": "-5/2"
+      },
+      {
+        "g": "aB",
+        "h": "aj",
+        "Q": "-25/3",
+        "cup": "25/4",
+        "minus_delta_F": "25/4"
+      },
+      {
+        "g": "aB",
+        "h": "AA",
+        "Q": "-25/4",
+        "cup": "-75/2",
+        "minus_delta_F": "-75/2"
+      },
+      {
+        "g": "aB",
+        "h": "Ab",
+        "Q": "-5/6",
+        "cup": "-5/6",
+        "minus_delta_F": "-5/6"
+      },
+      {
+        "g": "aB",
+        "h": "AB",
+        "Q": "-95/18",
+        "cup": "-95/2",
+        "minus_delta_F": "-95/2"
+      },
+      {
+        "g": "aB",
+        "h": "Aj",
+        "Q": "25/6",
+        "cup": "-25/2",
+        "minus_delta_F": "-25/2"
+      },
+      {
+        "g": "aB",
+        "h": "ba",
+        "Q": "95/3",
+        "cup": "95/12",
+        "minus_delta_F": "95/12"
+      },
+      {
+        "g": "aB",
+        "h": "bA",
+        "Q": "5/3",
+        "cup": "5/3",
+        "minus_delta_F": "5/3"
+      },
+      {
+        "g": "aB",
+        "h": "bb",
+        "Q": "140/3",
+        "cup": "70/9",
+        "minus_delta_F": "70/9"
+      },
+      {
+        "g": "aB",
+        "h": "bj",
+        "Q": "-35/3",
+        "cup": "35/6",
+        "minus_delta_F": "35/6"
+      },
+      {
+        "g": "aB",
+        "h": "Ba",
+        "Q": "5/9",
+        "cup": "5/4",
+        "minus_delta_F": "5/4"
+      },
+      {
+        "g": "aB",
+        "h": "BA",
+        "Q": "-55/9",
+        "cup": "-55",
+        "minus_delta_F": "-55"
+      },
+      {
+        "g": "aB",
+        "h": "BB",
+        "Q": "-140/27",
+        "cup": "-70",
+        "minus_delta_F": "-70"
+      },
+      {
+        "g": "aB",
+        "h": "Bj",
+        "Q": "35/9",
+        "cup": "-35/2",
+        "minus_delta_F": "-35/2"
+      },
+      {
+        "g": "aB",
+        "h": "ja",
+        "Q": "25/3",
+        "cup": "-25/4",
+        "minus_delta_F": "-25/4"
+      },
+      {
+        "g": "aB",
+        "h": "jA",
+        "Q": "-25/6",
+        "cup": "25/2",
+        "minus_delta_F": "25/2"
+      },
+      {
+        "g": "aB",
+        "h": "jb",
+        "Q": "35/3",
+        "cup": "-35/6",
+        "minus_delta_F": "-35/6"
+      },
+      {
+        "g": "aB",
+        "h": "jB",
+        "Q": "-35/9",
+        "cup": "35/2",
+        "minus_delta_F": "35/2"
+      },
+      {
+        "g": "aj",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "aj",
+        "h": "a",
+        "Q": "15",
+        "cup": "-15/4",
+        "minus_delta_F": "-15/4"
+      },
+      {
+        "g": "aj",
+        "h": "A",
+        "Q": "-15/2",
+        "cup": "15/2",
+        "minus_delta_F": "15/2"
+      },
+      {
+        "g": "aj",
+        "h": "b",
+        "Q": "21",
+        "cup": "-7/2",
+        "minus_delta_F": "-7/2"
+      },
+      {
+        "g": "aj",
+        "h": "B",
+        "Q": "-7",
+        "cup": "21/2",
+        "minus_delta_F": "21/2"
+      },
+      {
+        "g": "aj",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "aj",
+        "h": "aa",
+        "Q": "45",
+        "cup": "-45/8",
+        "minus_delta_F": "-45/8"
+      },
+      {
+        "g": "aj",
+        "h": "ab",
+        "Q": "66",
+        "cup": "-11/2",
+        "minus_delta_F": "-11/2"
+      },
+      {
+        "g": "aj",
+        "h": "aB",
+        "Q": "-2",
+        "cup": "3/2",
+        "minus_delta_F": "3/2"
+      },
+      {
+        "g": "aj",
+        "h": "aj",
+        "Q": "-15",
+        "cup": "-15/4",
+        "minus_delta_F": "-15/4"
+      },
+      {
+        "g": "aj",
+        "h": "AA",
+        "Q": "-45/4",
+        "cup": "45/2",
+        "minus_delta_F": "45/2"
+      },
+      {
+        "g": "aj",
+        "h": "Ab",
+        "Q": "-3/2",
+        "cup": "1/2",
+        "minus_delta_F": "1/2"
+      },
+      {
+        "g": "aj",
+        "h": "AB",
+        "Q": "-19/2",
+        "cup": "57/2",
+        "minus_delta_F": "57/2"
+      },
+      {
+        "g": "aj",
+        "h": "Aj",
+        "Q": "15/2",
+        "cup": "15/2",
+        "minus_delta_F": "15/2"
+      },
+      {
+        "g": "aj",
+        "h": "ba",
+        "Q": "57",
+        "cup": "-19/4",
+        "minus_delta_F": "-19/4"
+      },
+      {
+        "g": "aj",
+        "h": "bA",
+        "Q": "3",
+        "cup": "-1",
+        "minus_delta_F": "-1"
+      },
+      {
+        "g": "aj",
+        "h": "bb",
+        "Q": "84",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "aj",
+        "h": "bj",
+        "Q": "-21",
+        "cup": "-7/2",
+        "minus_delta_F": "-7/2"
+      },
+      {
+        "g": "aj",
+        "h": "Ba",
+        "Q": "1",
+        "cup": "-3/4",
+        "minus_delta_F": "-3/4"
+      },
+      {
+        "g": "aj",
+        "h": "BA",
+        "Q": "-11",
+        "cup": "33",
+        "minus_delta_F": "33"
+      },
+      {
+        "g": "aj",
+        "h": "BB",
+        "Q": "-28/3",
+        "cup": "42",
+        "minus_delta_F": "42"
+      },
+      {
+        "g": "aj",
+        "h": "Bj",
+        "Q": "7",
+        "cup": "21/2",
+        "minus_delta_F": "21/2"
+      },
+      {
+        "g": "aj",
+        "h": "ja",
+        "Q": "15",
+        "cup": "15/4",
+        "minus_delta_F": "15/4"
+      },
+      {
+        "g": "aj",
+        "h": "jA",
+        "Q": "-15/2",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "aj",
+        "h": "jb",
+        "Q": "21",
+        "cup": "7/2",
+        "minus_delta_F": "7/2"
+      },
+      {
+        "g": "aj",
+        "h": "jB",
+        "Q": "-7",
+        "cup": "-21/2",
+        "minus_delta_F": "-21/2"
+      },
+      {
+        "g": "AA",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "AA",
+        "h": "a",
+        "Q": "-45/4",
+        "cup": "-45/2",
+        "minus_delta_F": "-45/2"
+      },
+      {
+        "g": "AA",
+        "h": "A",
+        "Q": "45/8",
+        "cup": "45",
+        "minus_delta_F": "45"
+      },
+      {
+        "g": "AA",
+        "h": "b",
+        "Q": "-63/4",
+        "cup": "-21",
+        "minus_delta_F": "-21"
+      },
+      {
+        "g": "AA",
+        "h": "B",
+        "Q": "21/4",
+        "cup": "63",
+        "minus_delta_F": "63"
+      },
+      {
+        "g": "AA",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "AA",
+        "h": "aa",
+        "Q": "-135/4",
+        "cup": "-135/4",
+        "minus_delta_F": "-135/4"
+      },
+      {
+        "g": "AA",
+        "h": "ab",
+        "Q": "-99/2",
+        "cup": "-33",
+        "minus_delta_F": "-33"
+      },
+      {
+        "g": "AA",
+        "h": "aB",
+        "Q": "3/2",
+        "cup": "9",
+        "minus_delta_F": "9"
+      },
+      {
+        "g": "AA",
+        "h": "aj",
+        "Q": "45/4",
+        "cup": "-45/2",
+        "minus_delta_F": "-45/2"
+      },
+      {
+        "g": "AA",
+        "h": "AA",
+        "Q": "135/16",
+        "cup": "135",
+        "minus_delta_F": "135"
+      },
+      {
+        "g": "AA",
+        "h": "Ab",
+        "Q": "9/8",
+        "cup": "3",
+        "minus_delta_F": "3"
+      },
+      {
+        "g": "AA",
+        "h": "AB",
+        "Q": "57/8",
+        "cup": "171",
+        "minus_delta_F": "171"
+      },
+      {
+        "g": "AA",
+        "h": "Aj",
+        "Q": "-45/8",
+        "cup": "45",
+        "minus_delta_F": "45"
+      },
+      {
+        "g": "AA",
+        "h": "ba",
+        "Q": "-171/4",
+        "cup": "-57/2",
+        "minus_delta_F": "-57/2"
+      },
+      {
+        "g": "AA",
+        "h": "bA",
+        "Q": "-9/4",
+        "cup": "-6",
+        "minus_delta_F": "-6"
+      },
+      {
+        "g": "AA",
+        "h": "bb",
+        "Q": "-63",
+        "cup": "-28",
+        "minus_delta_F": "-28"
+      },
+      {
+        "g": "AA",
+        "h": "bj",
+        "Q": "63/4",
+        "cup": "-21",
+        "minus_delta_F": "-21"
+      },
+      {
+        "g": "AA",
+        "h": "Ba",
+        "Q": "-3/4",
+        "cup": "-9/2",
+        "minus_delta_F": "-9/2"
+      },
+      {
+        "g": "AA",
+        "h": "BA",
+        "Q": "33/4",
+        "cup": "198",
+        "minus_delta_F": "198"
+      },
+      {
+        "g": "AA",
+        "h": "BB",
+        "Q": "7",
+        "cup": "252",
+        "minus_delta_F": "252"
+      },
+      {
+        "g": "AA",
+        "h": "Bj",
+        "Q": "-21/4",
+        "cup": "63",
+        "minus_delta_F": "63"
+      },
+      {
+        "g": "AA",
+        "h": "ja",
+        "Q": "-45/4",
+        "cup": "45/2",
+        "minus_delta_F": "45/2"
+      },
+      {
+        "g": "AA",
+        "h": "jA",
+        "Q": "45/8",
+        "cup": "-45",
+        "minus_delta_F": "-45"
+      },
+      {
+        "g": "AA",
+        "h": "jb",
+        "Q": "-63/4",
+        "cup": "21",
+        "minus_delta_F": "21"
+      },
+      {
+        "g": "AA",
+        "h": "jB",
+        "Q": "21/4",
+        "cup": "-63",
+        "minus_delta_F": "-63"
+      },
+      {
+        "g": "Ab",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "Ab",
+        "h": "a",
+        "Q": "-5/2",
+        "cup": "-5/6",
+        "minus_delta_F": "-5/6"
+      },
+      {
+        "g": "Ab",
+        "h": "A",
+        "Q": "5/4",
+        "cup": "5/3",
+        "minus_delta_F": "5/3"
+      },
+      {
+        "g": "Ab",
+        "h": "b",
+        "Q": "-7/2",
+        "cup": "-7/9",
+        "minus_delta_F": "-7/9"
+      },
+      {
+        "g": "Ab",
+        "h": "B",
+        "Q": "7/6",
+        "cup": "7/3",
+        "minus_delta_F": "7/3"
+      },
+      {
+        "g": "Ab",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "Ab",
+        "h": "aa",
+        "Q": "-15/2",
+        "cup": "-5/4",
+        "minus_delta_F": "-5/4"
+      },
+      {
+        "g": "Ab",
+        "h": "ab",
+        "Q": "-11",
+        "cup": "-11/9",
+        "minus_delta_F": "-11/9"
+      },
+      {
+        "g": "Ab",
+        "h": "aB",
+        "Q": "1/3",
+        "cup": "1/3",
+        "minus_delta_F": "1/3"
+      },
+      {
+        "g": "Ab",
+        "h": "aj",
+        "Q": "5/2",
+        "cup": "-5/6",
+        "minus_delta_F": "-5/6"
+      },
+      {
+        "g": "Ab",
+        "h": "AA",
+        "Q": "15/8",
+        "cup": "5",
+        "minus_delta_F": "5"
+      },
+      {
+        "g": "Ab",
+        "h": "Ab",
+        "Q": "1/4",
+        "cup": "1/9",
+        "minus_delta_F": "1/9"
+      },
+      {
+        "g": "Ab",
+        "h": "AB",
+        "Q": "19/12",
+        "cup": "19/3",
+        "minus_delta_F": "19/3"
+      },
+      {
+        "g": "Ab",
+        "h": "Aj",
+        "Q": "-5/4",
+        "cup": "5/3",
+        "minus_delta_F": "5/3"
+      },
+      {
+        "g": "Ab",
+        "h": "ba",
+        "Q": "-19/2",
+        "cup": "-19/18",
+        "minus_delta_F": "-19/18"
+      },
+      {
+        "g": "Ab",
+        "h": "bA",
+        "Q": "-1/2",
+        "cup": "-2/9",
+        "minus_delta_F": "-2/9"
+      },
+      {
+        "g": "Ab",
+        "h": "bb",
+        "Q": "-14",
+        "cup": "-28/27",
+        "minus_delta_F": "-28/27"
+      },
+      {
+        "g": "Ab",
+        "h": "bj",
+        "Q": "7/2",
+        "cup": "-7/9",
+        "minus_delta_F": "-7/9"
+      },
+      {
+        "g": "Ab",
+        "h": "Ba",
+        "Q": "-1/6",
+        "cup": "-1/6",
+        "minus_delta_F": "-1/6"
+      },
+      {
+        "g": "Ab",
+        "h": "BA",
+        "Q": "11/6",
+        "cup": "22/3",
+        "minus_delta_F": "22/3"
+      },
+      {
+        "g": "Ab",
+        "h": "BB",
+        "Q": "14/9",
+        "cup": "28/3",
+        "minus_delta_F": "28/3"
+      },
+      {
+        "g": "Ab",
+        "h": "Bj",
+        "Q": "-7/6",
+        "cup": "7/3",
+        "minus_delta_F": "7/3"
+      },
+      {
+        "g": "Ab",
+        "h": "ja",
+        "Q": "-5/2",
+        "cup": "5/6",
+        "minus_delta_F": "5/6"
+      },
+      {
+        "g": "Ab",
+        "h": "jA",
+        "Q": "5/4",
+        "cup": "-5/3",
+        "minus_delta_F": "-5/3"
+      },
+      {
+        "g": "Ab",
+        "h": "jb",
+        "Q": "-7/2",
+        "cup": "7/9",
+        "minus_delta_F": "7/9"
+      },
+      {
+        "g": "Ab",
+        "h": "jB",
+        "Q": "7/6",
+        "cup": "-7/3",
+        "minus_delta_F": "-7/3"
+      },
+      {
+        "g": "AB",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "AB",
+        "h": "a",
+        "Q": "-55/6",
+        "cup": "-55/2",
+        "minus_delta_F": "-55/2"
+      },
+      {
+        "g": "AB",
+        "h": "A",
+        "Q": "55/12",
+        "cup": "55",
+        "minus_delta_F": "55"
+      },
+      {
+        "g": "AB",
+        "h": "b",
+        "Q": "-77/6",
+        "cup": "-77/3",
+        "minus_delta_F": "-77/3"
+      },
+      {
+        "g": "AB",
+        "h": "B",
+        "Q": "77/18",
+        "cup": "77",
+        "minus_delta_F": "77"
+      },
+      {
+        "g": "AB",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "AB",
+        "h": "aa",
+        "Q": "-55/2",
+        "cup": "-165/4",
+        "minus_delta_F": "-165/4"
+      },
+      {
+        "g": "AB",
+        "h": "ab",
+        "Q": "-121/3",
+        "cup": "-121/3",
+        "minus_delta_F": "-121/3"
+      },
+      {
+        "g": "AB",
+        "h": "aB",
+        "Q": "11/9",
+        "cup": "11",
+        "minus_delta_F": "11"
+      },
+      {
+        "g": "AB",
+        "h": "aj",
+        "Q": "55/6",
+        "cup": "-55/2",
+        "minus_delta_F": "-55/2"
+      },
+      {
+        "g": "AB",
+        "h": "AA",
+        "Q": "55/8",
+        "cup": "165",
+        "minus_delta_F": "165"
+      },
+      {
+        "g": "AB",
+        "h": "Ab",
+        "Q": "11/12",
+        "cup": "11/3",
+        "minus_delta_F": "11/3"
+      },
+      {
+        "g": "AB",
+        "h": "AB",
+        "Q": "209/36",
+        "cup": "209",
+        "minus_delta_F": "209"
+      },
+      {
+        "g": "AB",
+        "h": "Aj",
+        "Q": "-55/12",
+        "cup": "55",
+        "minus_delta_F": "55"
+      },
+      {
+        "g": "AB",
+        "h": "ba",
+        "Q": "-209/6",
+        "cup": "-209/6",
+        "minus_delta_F": "-209/6"
+      },
+      {
+        "g": "AB",
+        "h": "bA",
+        "Q": "-11/6",
+        "cup": "-22/3",
+        "minus_delta_F": "-22/3"
+      },
+      {
+        "g": "AB",
+        "h": "bb",
+        "Q": "-154/3",
+        "cup": "-308/9",
+        "minus_delta_F": "-308/9"
+      },
+      {
+        "g": "AB",
+        "h": "bj",
+        "Q": "77/6",
+        "cup": "-77/3",
+        "minus_delta_F": "-77/3"
+      },
+      {
+        "g": "AB",
+        "h": "Ba",
+        "Q": "-11/18",
+        "cup": "-11/2",
+        "minus_delta_F": "-11/2"
+      },
+      {
+        "g": "AB",
+        "h": "BA",
+        "Q": "121/18",
+        "cup": "242",
+        "minus_delta_F": "242"
+      },
+      {
+        "g": "AB",
+        "h": "BB",
+        "Q": "154/27",
+        "cup": "308",
+        "minus_delta_F": "308"
+      },
+      {
+        "g": "AB",
+        "h": "Bj",
+        "Q": "-77/18",
+        "cup": "77",
+        "minus_delta_F": "77"
+      },
+      {
+        "g": "AB",
+        "h": "ja",
+        "Q": "-55/6",
+        "cup": "55/2",
+        "minus_delta_F": "55/2"
+      },
+      {
+        "g": "AB",
+        "h": "jA",
+        "Q": "55/12",
+        "cup": "-55",
+        "minus_delta_F": "-55"
+      },
+      {
+        "g": "AB",
+        "h": "jb",
+        "Q": "-77/6",
+        "cup": "77/3",
+        "minus_delta_F": "77/3"
+      },
+      {
+        "g": "AB",
+        "h": "jB",
+        "Q": "77/18",
+        "cup": "-77",
+        "minus_delta_F": "-77"
+      },
+      {
+        "g": "Aj",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "Aj",
+        "h": "a",
+        "Q": "-15/2",
+        "cup": "15/2",
+        "minus_delta_F": "15/2"
+      },
+      {
+        "g": "Aj",
+        "h": "A",
+        "Q": "15/4",
+        "cup": "-15",
+        "minus_delta_F": "-15"
+      },
+      {
+        "g": "Aj",
+        "h": "b",
+        "Q": "-21/2",
+        "cup": "7",
+        "minus_delta_F": "7"
+      },
+      {
+        "g": "Aj",
+        "h": "B",
+        "Q": "7/2",
+        "cup": "-21",
+        "minus_delta_F": "-21"
+      },
+      {
+        "g": "Aj",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "Aj",
+        "h": "aa",
+        "Q": "-45/2",
+        "cup": "45/4",
+        "minus_delta_F": "45/4"
+      },
+      {
+        "g": "Aj",
+        "h": "ab",
+        "Q": "-33",
+        "cup": "11",
+        "minus_delta_F": "11"
+      },
+      {
+        "g": "Aj",
+        "h": "aB",
+        "Q": "1",
+        "cup": "-3",
+        "minus_delta_F": "-3"
+      },
+      {
+        "g": "Aj",
+        "h": "aj",
+        "Q": "15/2",
+        "cup": "15/2",
+        "minus_delta_F": "15/2"
+      },
+      {
+        "g": "Aj",
+        "h": "AA",
+        "Q": "45/8",
+        "cup": "-45",
+        "minus_delta_F": "-45"
+      },
+      {
+        "g": "Aj",
+        "h": "Ab",
+        "Q": "3/4",
+        "cup": "-1",
+        "minus_delta_F": "-1"
+      },
+      {
+        "g": "Aj",
+        "h": "AB",
+        "Q": "19/4",
+        "cup": "-57",
+        "minus_delta_F": "-57"
+      },
+      {
+        "g": "Aj",
+        "h": "Aj",
+        "Q": "-15/4",
+        "cup": "-15",
+        "minus_delta_F": "-15"
+      },
+      {
+        "g": "Aj",
+        "h": "ba",
+        "Q": "-57/2",
+        "cup": "19/2",
+        "minus_delta_F": "19/2"
+      },
+      {
+        "g": "Aj",
+        "h": "bA",
+        "Q": "-3/2",
+        "cup": "2",
+        "minus_delta_F": "2"
+      },
+      {
+        "g": "Aj",
+        "h": "bb",
+        "Q": "-42",
+        "cup": "28/3",
+        "minus_delta_F": "28/3"
+      },
+      {
+        "g": "Aj",
+        "h": "bj",
+        "Q": "21/2",
+        "cup": "7",
+        "minus_delta_F": "7"
+      },
+      {
+        "g": "Aj",
+        "h": "Ba",
+        "Q": "-1/2",
+        "cup": "3/2",
+        "minus_delta_F": "3/2"
+      },
+      {
+        "g": "Aj",
+        "h": "BA",
+        "Q": "11/2",
+        "cup": "-66",
+        "minus_delta_F": "-66"
+      },
+      {
+        "g": "Aj",
+        "h": "BB",
+        "Q": "14/3",
+        "cup": "-84",
+        "minus_delta_F": "-84"
+      },
+      {
+        "g": "Aj",
+        "h": "Bj",
+        "Q": "-7/2",
+        "cup": "-21",
+        "minus_delta_F": "-21"
+      },
+      {
+        "g": "Aj",
+        "h": "ja",
+        "Q": "-15/2",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "Aj",
+        "h": "jA",
+        "Q": "15/4",
+        "cup": "15",
+        "minus_delta_F": "15"
+      },
+      {
+        "g": "Aj",
+        "h": "jb",
+        "Q": "-21/2",
+        "cup": "-7",
+        "minus_delta_F": "-7"
+      },
+      {
+        "g": "Aj",
+        "h": "jB",
+        "Q": "7/2",
+        "cup": "21",
+        "minus_delta_F": "21"
+      },
+      {
+        "g": "ba",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "ba",
+        "h": "a",
+        "Q": "55",
+        "cup": "55/12",
+        "minus_delta_F": "55/12"
+      },
+      {
+        "g": "ba",
+        "h": "A",
+        "Q": "-55/2",
+        "cup": "-55/6",
+        "minus_delta_F": "-55/6"
+      },
+      {
+        "g": "ba",
+        "h": "b",
+        "Q": "77",
+        "cup": "77/18",
+        "minus_delta_F": "77/18"
+      },
+      {
+        "g": "ba",
+        "h": "B",
+        "Q": "-77/3",
+        "cup": "-77/6",
+        "minus_delta_F": "-77/6"
+      },
+      {
+        "g": "ba",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "ba",
+        "h": "aa",
+        "Q": "165",
+        "cup": "55/8",
+        "minus_delta_F": "55/8"
+      },
+      {
+        "g": "ba",
+        "h": "ab",
+        "Q": "242",
+        "cup": "121/18",
+        "minus_delta_F": "121/18"
+      },
+      {
+        "g": "ba",
+        "h": "aB",
+        "Q": "-22/3",
+        "cup": "-11/6",
+        "minus_delta_F": "-11/6"
+      },
+      {
+        "g": "ba",
+        "h": "aj",
+        "Q": "-55",
+        "cup": "55/12",
+        "minus_delta_F": "55/12"
+      },
+      {
+        "g": "ba",
+        "h": "AA",
+        "Q": "-165/4",
+        "cup": "-55/2",
+        "minus_delta_F": "-55/2"
+      },
+      {
+        "g": "ba",
+        "h": "Ab",
+        "Q": "-11/2",
+        "cup": "-11/18",
+        "minus_delta_F": "-11/18"
+      },
+      {
+        "g": "ba",
+        "h": "AB",
+        "Q": "-209/6",
+        "cup": "-209/6",
+        "minus_delta_F": "-209/6"
+      },
+      {
+        "g": "ba",
+        "h": "Aj",
+        "Q": "55/2",
+        "cup": "-55/6",
+        "minus_delta_F": "-55/6"
+      },
+      {
+        "g": "ba",
+        "h": "ba",
+        "Q": "209",
+        "cup": "209/36",
+        "minus_delta_F": "209/36"
+      },
+      {
+        "g": "ba",
+        "h": "bA",
+        "Q": "11",
+        "cup": "11/9",
+        "minus_delta_F": "11/9"
+      },
+      {
+        "g": "ba",
+        "h": "bb",
+        "Q": "308",
+        "cup": "154/27",
+        "minus_delta_F": "154/27"
+      },
+      {
+        "g": "ba",
+        "h": "bj",
+        "Q": "-77",
+        "cup": "77/18",
+        "minus_delta_F": "77/18"
+      },
+      {
+        "g": "ba",
+        "h": "Ba",
+        "Q": "11/3",
+        "cup": "11/12",
+        "minus_delta_F": "11/12"
+      },
+      {
+        "g": "ba",
+        "h": "BA",
+        "Q": "-121/3",
+        "cup": "-121/3",
+        "minus_delta_F": "-121/3"
+      },
+      {
+        "g": "ba",
+        "h": "BB",
+        "Q": "-308/9",
+        "cup": "-154/3",
+        "minus_delta_F": "-154/3"
+      },
+      {
+        "g": "ba",
+        "h": "Bj",
+        "Q": "77/3",
+        "cup": "-77/6",
+        "minus_delta_F": "-77/6"
+      },
+      {
+        "g": "ba",
+        "h": "ja",
+        "Q": "55",
+        "cup": "-55/12",
+        "minus_delta_F": "-55/12"
+      },
+      {
+        "g": "ba",
+        "h": "jA",
+        "Q": "-55/2",
+        "cup": "55/6",
+        "minus_delta_F": "55/6"
+      },
+      {
+        "g": "ba",
+        "h": "jb",
+        "Q": "77",
+        "cup": "-77/18",
+        "minus_delta_F": "-77/18"
+      },
+      {
+        "g": "ba",
+        "h": "jB",
+        "Q": "-77/3",
+        "cup": "77/6",
+        "minus_delta_F": "77/6"
+      },
+      {
+        "g": "bA",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "bA",
+        "h": "a",
+        "Q": "-25/2",
+        "cup": "-25/6",
+        "minus_delta_F": "-25/6"
+      },
+      {
+        "g": "bA",
+        "h": "A",
+        "Q": "25/4",
+        "cup": "25/3",
+        "minus_delta_F": "25/3"
+      },
+      {
+        "g": "bA",
+        "h": "b",
+        "Q": "-35/2",
+        "cup": "-35/9",
+        "minus_delta_F": "-35/9"
+      },
+      {
+        "g": "bA",
+        "h": "B",
+        "Q": "35/6",
+        "cup": "35/3",
+        "minus_delta_F": "35/3"
+      },
+      {
+        "g": "bA",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "bA",
+        "h": "aa",
+        "Q": "-75/2",
+        "cup": "-25/4",
+        "minus_delta_F": "-25/4"
+      },
+      {
+        "g": "bA",
+        "h": "ab",
+        "Q": "-55",
+        "cup": "-55/9",
+        "minus_delta_F": "-55/9"
+      },
+      {
+        "g": "bA",
+        "h": "aB",
+        "Q": "5/3",
+        "cup": "5/3",
+        "minus_delta_F": "5/3"
+      },
+      {
+        "g": "bA",
+        "h": "aj",
+        "Q": "25/2",
+        "cup": "-25/6",
+        "minus_delta_F": "-25/6"
+      },
+      {
+        "g": "bA",
+        "h": "AA",
+        "Q": "75/8",
+        "cup": "25",
+        "minus_delta_F": "25"
+      },
+      {
+        "g": "bA",
+        "h": "Ab",
+        "Q": "5/4",
+        "cup": "5/9",
+        "minus_delta_F": "5/9"
+      },
+      {
+        "g": "bA",
+        "h": "AB",
+        "Q": "95/12",
+        "cup": "95/3",
+        "minus_delta_F": "95/3"
+      },
+      {
+        "g": "bA",
+        "h": "Aj",
+        "Q": "-25/4",
+        "cup": "25/3",
+        "minus_delta_F": "25/3"
+      },
+      {
+        "g": "bA",
+        "h": "ba",
+        "Q": "-95/2",
+        "cup": "-95/18",
+        "minus_delta_F": "-95/18"
+      },
+      {
+        "g": "bA",
+        "h": "bA",
+        "Q": "-5/2",
+        "cup": "-10/9",
+        "minus_delta_F": "-10/9"
+      },
+      {
+        "g": "bA",
+        "h": "bb",
+        "Q": "-70",
+        "cup": "-140/27",
+        "minus_delta_F": "-140/27"
+      },
+      {
+        "g": "bA",
+        "h": "bj",
+        "Q": "35/2",
+        "cup": "-35/9",
+        "minus_delta_F": "-35/9"
+      },
+      {
+        "g": "bA",
+        "h": "Ba",
+        "Q": "-5/6",
+        "cup": "-5/6",
+        "minus_delta_F": "-5/6"
+      },
+      {
+        "g": "bA",
+        "h": "BA",
+        "Q": "55/6",
+        "cup": "110/3",
+        "minus_delta_F": "110/3"
+      },
+      {
+        "g": "bA",
+        "h": "BB",
+        "Q": "70/9",
+        "cup": "140/3",
+        "minus_delta_F": "140/3"
+      },
+      {
+        "g": "bA",
+        "h": "Bj",
+        "Q": "-35/6",
+        "cup": "35/3",
+        "minus_delta_F": "35/3"
+      },
+      {
+        "g": "bA",
+        "h": "ja",
+        "Q": "-25/2",
+        "cup": "25/6",
+        "minus_delta_F": "25/6"
+      },
+      {
+        "g": "bA",
+        "h": "jA",
+        "Q": "25/4",
+        "cup": "-25/3",
+        "minus_delta_F": "-25/3"
+      },
+      {
+        "g": "bA",
+        "h": "jb",
+        "Q": "-35/2",
+        "cup": "35/9",
+        "minus_delta_F": "35/9"
+      },
+      {
+        "g": "bA",
+        "h": "jB",
+        "Q": "35/6",
+        "cup": "-35/3",
+        "minus_delta_F": "-35/3"
+      },
+      {
+        "g": "bb",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "bb",
+        "h": "a",
+        "Q": "40",
+        "cup": "20/9",
+        "minus_delta_F": "20/9"
+      },
+      {
+        "g": "bb",
+        "h": "A",
+        "Q": "-20",
+        "cup": "-40/9",
+        "minus_delta_F": "-40/9"
+      },
+      {
+        "g": "bb",
+        "h": "b",
+        "Q": "56",
+        "cup": "56/27",
+        "minus_delta_F": "56/27"
+      },
+      {
+        "g": "bb",
+        "h": "B",
+        "Q": "-56/3",
+        "cup": "-56/9",
+        "minus_delta_F": "-56/9"
+      },
+      {
+        "g": "bb",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "bb",
+        "h": "aa",
+        "Q": "120",
+        "cup": "10/3",
+        "minus_delta_F": "10/3"
+      },
+      {
+        "g": "bb",
+        "h": "ab",
+        "Q": "176",
+        "cup": "88/27",
+        "minus_delta_F": "88/27"
+      },
+      {
+        "g": "bb",
+        "h": "aB",
+        "Q": "-16/3",
+        "cup": "-8/9",
+        "minus_delta_F": "-8/9"
+      },
+      {
+        "g": "bb",
+        "h": "aj",
+        "Q": "-40",
+        "cup": "20/9",
+        "minus_delta_F": "20/9"
+      },
+      {
+        "g": "bb",
+        "h": "AA",
+        "Q": "-30",
+        "cup": "-40/3",
+        "minus_delta_F": "-40/3"
+      },
+      {
+        "g": "bb",
+        "h": "Ab",
+        "Q": "-4",
+        "cup": "-8/27",
+        "minus_delta_F": "-8/27"
+      },
+      {
+        "g": "bb",
+        "h": "AB",
+        "Q": "-76/3",
+        "cup": "-152/9",
+        "minus_delta_F": "-152/9"
+      },
+      {
+        "g": "bb",
+        "h": "Aj",
+        "Q": "20",
+        "cup": "-40/9",
+        "minus_delta_F": "-40/9"
+      },
+      {
+        "g": "bb",
+        "h": "ba",
+        "Q": "152",
+        "cup": "76/27",
+        "minus_delta_F": "76/27"
+      },
+      {
+        "g": "bb",
+        "h": "bA",
+        "Q": "8",
+        "cup": "16/27",
+        "minus_delta_F": "16/27"
+      },
+      {
+        "g": "bb",
+        "h": "bb",
+        "Q": "224",
+        "cup": "224/81",
+        "minus_delta_F": "224/81"
+      },
+      {
+        "g": "bb",
+        "h": "bj",
+        "Q": "-56",
+        "cup": "56/27",
+        "minus_delta_F": "56/27"
+      },
+      {
+        "g": "bb",
+        "h": "Ba",
+        "Q": "8/3",
+        "cup": "4/9",
+        "minus_delta_F": "4/9"
+      },
+      {
+        "g": "bb",
+        "h": "BA",
+        "Q": "-88/3",
+        "cup": "-176/9",
+        "minus_delta_F": "-176/9"
+      },
+      {
+        "g": "bb",
+        "h": "BB",
+        "Q": "-224/9",
+        "cup": "-224/9",
+        "minus_delta_F": "-224/9"
+      },
+      {
+        "g": "bb",
+        "h": "Bj",
+        "Q": "56/3",
+        "cup": "-56/9",
+        "minus_delta_F": "-56/9"
+      },
+      {
+        "g": "bb",
+        "h": "ja",
+        "Q": "40",
+        "cup": "-20/9",
+        "minus_delta_F": "-20/9"
+      },
+      {
+        "g": "bb",
+        "h": "jA",
+        "Q": "-20",
+        "cup": "40/9",
+        "minus_delta_F": "40/9"
+      },
+      {
+        "g": "bb",
+        "h": "jb",
+        "Q": "56",
+        "cup": "-56/27",
+        "minus_delta_F": "-56/27"
+      },
+      {
+        "g": "bb",
+        "h": "jB",
+        "Q": "-56/3",
+        "cup": "56/9",
+        "minus_delta_F": "56/9"
+      },
+      {
+        "g": "bj",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "bj",
+        "h": "a",
+        "Q": "10",
+        "cup": "-5/3",
+        "minus_delta_F": "-5/3"
+      },
+      {
+        "g": "bj",
+        "h": "A",
+        "Q": "-5",
+        "cup": "10/3",
+        "minus_delta_F": "10/3"
+      },
+      {
+        "g": "bj",
+        "h": "b",
+        "Q": "14",
+        "cup": "-14/9",
+        "minus_delta_F": "-14/9"
+      },
+      {
+        "g": "bj",
+        "h": "B",
+        "Q": "-14/3",
+        "cup": "14/3",
+        "minus_delta_F": "14/3"
+      },
+      {
+        "g": "bj",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "bj",
+        "h": "aa",
+        "Q": "30",
+        "cup": "-5/2",
+        "minus_delta_F": "-5/2"
+      },
+      {
+        "g": "bj",
+        "h": "ab",
+        "Q": "44",
+        "cup": "-22/9",
+        "minus_delta_F": "-22/9"
+      },
+      {
+        "g": "bj",
+        "h": "aB",
+        "Q": "-4/3",
+        "cup": "2/3",
+        "minus_delta_F": "2/3"
+      },
+      {
+        "g": "bj",
+        "h": "aj",
+        "Q": "-10",
+        "cup": "-5/3",
+        "minus_delta_F": "-5/3"
+      },
+      {
+        "g": "bj",
+        "h": "AA",
+        "Q": "-15/2",
+        "cup": "10",
+        "minus_delta_F": "10"
+      },
+      {
+        "g": "bj",
+        "h": "Ab",
+        "Q": "-1",
+        "cup": "2/9",
+        "minus_delta_F": "2/9"
+      },
+      {
+        "g": "bj",
+        "h": "AB",
+        "Q": "-19/3",
+        "cup": "38/3",
+        "minus_delta_F": "38/3"
+      },
+      {
+        "g": "bj",
+        "h": "Aj",
+        "Q": "5",
+        "cup": "10/3",
+        "minus_delta_F": "10/3"
+      },
+      {
+        "g": "bj",
+        "h": "ba",
+        "Q": "38",
+        "cup": "-19/9",
+        "minus_delta_F": "-19/9"
+      },
+      {
+        "g": "bj",
+        "h": "bA",
+        "Q": "2",
+        "cup": "-4/9",
+        "minus_delta_F": "-4/9"
+      },
+      {
+        "g": "bj",
+        "h": "bb",
+        "Q": "56",
+        "cup": "-56/27",
+        "minus_delta_F": "-56/27"
+      },
+      {
+        "g": "bj",
+        "h": "bj",
+        "Q": "-14",
+        "cup": "-14/9",
+        "minus_delta_F": "-14/9"
+      },
+      {
+        "g": "bj",
+        "h": "Ba",
+        "Q": "2/3",
+        "cup": "-1/3",
+        "minus_delta_F": "-1/3"
+      },
+      {
+        "g": "bj",
+        "h": "BA",
+        "Q": "-22/3",
+        "cup": "44/3",
+        "minus_delta_F": "44/3"
+      },
+      {
+        "g": "bj",
+        "h": "BB",
+        "Q": "-56/9",
+        "cup": "56/3",
+        "minus_delta_F": "56/3"
+      },
+      {
+        "g": "bj",
+        "h": "Bj",
+        "Q": "14/3",
+        "cup": "14/3",
+        "minus_delta_F": "14/3"
+      },
+      {
+        "g": "bj",
+        "h": "ja",
+        "Q": "10",
+        "cup": "5/3",
+        "minus_delta_F": "5/3"
+      },
+      {
+        "g": "bj",
+        "h": "jA",
+        "Q": "-5",
+        "cup": "-10/3",
+        "minus_delta_F": "-10/3"
+      },
+      {
+        "g": "bj",
+        "h": "jb",
+        "Q": "14",
+        "cup": "14/9",
+        "minus_delta_F": "14/9"
+      },
+      {
+        "g": "bj",
+        "h": "jB",
+        "Q": "-14/3",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "Ba",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "Ba",
+        "h": "a",
+        "Q": "5/3",
+        "cup": "5/4",
+        "minus_delta_F": "5/4"
+      },
+      {
+        "g": "Ba",
+        "h": "A",
+        "Q": "-5/6",
+        "cup": "-5/2",
+        "minus_delta_F": "-5/2"
+      },
+      {
+        "g": "Ba",
+        "h": "b",
+        "Q": "7/3",
+        "cup": "7/6",
+        "minus_delta_F": "7/6"
+      },
+      {
+        "g": "Ba",
+        "h": "B",
+        "Q": "-7/9",
+        "cup": "-7/2",
+        "minus_delta_F": "-7/2"
+      },
+      {
+        "g": "Ba",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "Ba",
+        "h": "aa",
+        "Q": "5",
+        "cup": "15/8",
+        "minus_delta_F": "15/8"
+      },
+      {
+        "g": "Ba",
+        "h": "ab",
+        "Q": "22/3",
+        "cup": "11/6",
+        "minus_delta_F": "11/6"
+      },
+      {
+        "g": "Ba",
+        "h": "aB",
+        "Q": "-2/9",
+        "cup": "-1/2",
+        "minus_delta_F": "-1/2"
+      },
+      {
+        "g": "Ba",
+        "h": "aj",
+        "Q": "-5/3",
+        "cup": "5/4",
+        "minus_delta_F": "5/4"
+      },
+      {
+        "g": "Ba",
+        "h": "AA",
+        "Q": "-5/4",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "Ba",
+        "h": "Ab",
+        "Q": "-1/6",
+        "cup": "-1/6",
+        "minus_delta_F": "-1/6"
+      },
+      {
+        "g": "Ba",
+        "h": "AB",
+        "Q": "-19/18",
+        "cup": "-19/2",
+        "minus_delta_F": "-19/2"
+      },
+      {
+        "g": "Ba",
+        "h": "Aj",
+        "Q": "5/6",
+        "cup": "-5/2",
+        "minus_delta_F": "-5/2"
+      },
+      {
+        "g": "Ba",
+        "h": "ba",
+        "Q": "19/3",
+        "cup": "19/12",
+        "minus_delta_F": "19/12"
+      },
+      {
+        "g": "Ba",
+        "h": "bA",
+        "Q": "1/3",
+        "cup": "1/3",
+        "minus_delta_F": "1/3"
+      },
+      {
+        "g": "Ba",
+        "h": "bb",
+        "Q": "28/3",
+        "cup": "14/9",
+        "minus_delta_F": "14/9"
+      },
+      {
+        "g": "Ba",
+        "h": "bj",
+        "Q": "-7/3",
+        "cup": "7/6",
+        "minus_delta_F": "7/6"
+      },
+      {
+        "g": "Ba",
+        "h": "Ba",
+        "Q": "1/9",
+        "cup": "1/4",
+        "minus_delta_F": "1/4"
+      },
+      {
+        "g": "Ba",
+        "h": "BA",
+        "Q": "-11/9",
+        "cup": "-11",
+        "minus_delta_F": "-11"
+      },
+      {
+        "g": "Ba",
+        "h": "BB",
+        "Q": "-28/27",
+        "cup": "-14",
+        "minus_delta_F": "-14"
+      },
+      {
+        "g": "Ba",
+        "h": "Bj",
+        "Q": "7/9",
+        "cup": "-7/2",
+        "minus_delta_F": "-7/2"
+      },
+      {
+        "g": "Ba",
+        "h": "ja",
+        "Q": "5/3",
+        "cup": "-5/4",
+        "minus_delta_F": "-5/4"
+      },
+      {
+        "g": "Ba",
+        "h": "jA",
+        "Q": "-5/6",
+        "cup": "5/2",
+        "minus_delta_F": "5/2"
+      },
+      {
+        "g": "Ba",
+        "h": "jb",
+        "Q": "7/3",
+        "cup": "-7/6",
+        "minus_delta_F": "-7/6"
+      },
+      {
+        "g": "Ba",
+        "h": "jB",
+        "Q": "-7/9",
+        "cup": "7/2",
+        "minus_delta_F": "7/2"
+      },
+      {
+        "g": "BA",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "BA",
+        "h": "a",
+        "Q": "-35/6",
+        "cup": "-35/2",
+        "minus_delta_F": "-35/2"
+      },
+      {
+        "g": "BA",
+        "h": "A",
+        "Q": "35/12",
+        "cup": "35",
+        "minus_delta_F": "35"
+      },
+      {
+        "g": "BA",
+        "h": "b",
+        "Q": "-49/6",
+        "cup": "-49/3",
+        "minus_delta_F": "-49/3"
+      },
+      {
+        "g": "BA",
+        "h": "B",
+        "Q": "49/18",
+        "cup": "49",
+        "minus_delta_F": "49"
+      },
+      {
+        "g": "BA",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "BA",
+        "h": "aa",
+        "Q": "-35/2",
+        "cup": "-105/4",
+        "minus_delta_F": "-105/4"
+      },
+      {
+        "g": "BA",
+        "h": "ab",
+        "Q": "-77/3",
+        "cup": "-77/3",
+        "minus_delta_F": "-77/3"
+      },
+      {
+        "g": "BA",
+        "h": "aB",
+        "Q": "7/9",
+        "cup": "7",
+        "minus_delta_F": "7"
+      },
+      {
+        "g": "BA",
+        "h": "aj",
+        "Q": "35/6",
+        "cup": "-35/2",
+        "minus_delta_F": "-35/2"
+      },
+      {
+        "g": "BA",
+        "h": "AA",
+        "Q": "35/8",
+        "cup": "105",
+        "minus_delta_F": "105"
+      },
+      {
+        "g": "BA",
+        "h": "Ab",
+        "Q": "7/12",
+        "cup": "7/3",
+        "minus_delta_F": "7/3"
+      },
+      {
+        "g": "BA",
+        "h": "AB",
+        "Q": "133/36",
+        "cup": "133",
+        "minus_delta_F": "133"
+      },
+      {
+        "g": "BA",
+        "h": "Aj",
+        "Q": "-35/12",
+        "cup": "35",
+        "minus_delta_F": "35"
+      },
+      {
+        "g": "BA",
+        "h": "ba",
+        "Q": "-133/6",
+        "cup": "-133/6",
+        "minus_delta_F": "-133/6"
+      },
+      {
+        "g": "BA",
+        "h": "bA",
+        "Q": "-7/6",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "BA",
+        "h": "bb",
+        "Q": "-98/3",
+        "cup": "-196/9",
+        "minus_delta_F": "-196/9"
+      },
+      {
+        "g": "BA",
+        "h": "bj",
+        "Q": "49/6",
+        "cup": "-49/3",
+        "minus_delta_F": "-49/3"
+      },
+      {
+        "g": "BA",
+        "h": "Ba",
+        "Q": "-7/18",
+        "cup": "-7/2",
+        "minus_delta_F": "-7/2"
+      },
+      {
+        "g": "BA",
+        "h": "BA",
+        "Q": "77/18",
+        "cup": "154",
+        "minus_delta_F": "154"
+      },
+      {
+        "g": "BA",
+        "h": "BB",
+        "Q": "98/27",
+        "cup": "196",
+        "minus_delta_F": "196"
+      },
+      {
+        "g": "BA",
+        "h": "Bj",
+        "Q": "-49/18",
+        "cup": "49",
+        "minus_delta_F": "49"
+      },
+      {
+        "g": "BA",
+        "h": "ja",
+        "Q": "-35/6",
+        "cup": "35/2",
+        "minus_delta_F": "35/2"
+      },
+      {
+        "g": "BA",
+        "h": "jA",
+        "Q": "35/12",
+        "cup": "-35",
+        "minus_delta_F": "-35"
+      },
+      {
+        "g": "BA",
+        "h": "jb",
+        "Q": "-49/6",
+        "cup": "49/3",
+        "minus_delta_F": "49/3"
+      },
+      {
+        "g": "BA",
+        "h": "jB",
+        "Q": "49/18",
+        "cup": "-49",
+        "minus_delta_F": "-49"
+      },
+      {
+        "g": "BB",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "BB",
+        "h": "a",
+        "Q": "-40/9",
+        "cup": "-20",
+        "minus_delta_F": "-20"
+      },
+      {
+        "g": "BB",
+        "h": "A",
+        "Q": "20/9",
+        "cup": "40",
+        "minus_delta_F": "40"
+      },
+      {
+        "g": "BB",
+        "h": "b",
+        "Q": "-56/9",
+        "cup": "-56/3",
+        "minus_delta_F": "-56/3"
+      },
+      {
+        "g": "BB",
+        "h": "B",
+        "Q": "56/27",
+        "cup": "56",
+        "minus_delta_F": "56"
+      },
+      {
+        "g": "BB",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "BB",
+        "h": "aa",
+        "Q": "-40/3",
+        "cup": "-30",
+        "minus_delta_F": "-30"
+      },
+      {
+        "g": "BB",
+        "h": "ab",
+        "Q": "-176/9",
+        "cup": "-88/3",
+        "minus_delta_F": "-88/3"
+      },
+      {
+        "g": "BB",
+        "h": "aB",
+        "Q": "16/27",
+        "cup": "8",
+        "minus_delta_F": "8"
+      },
+      {
+        "g": "BB",
+        "h": "aj",
+        "Q": "40/9",
+        "cup": "-20",
+        "minus_delta_F": "-20"
+      },
+      {
+        "g": "BB",
+        "h": "AA",
+        "Q": "10/3",
+        "cup": "120",
+        "minus_delta_F": "120"
+      },
+      {
+        "g": "BB",
+        "h": "Ab",
+        "Q": "4/9",
+        "cup": "8/3",
+        "minus_delta_F": "8/3"
+      },
+      {
+        "g": "BB",
+        "h": "AB",
+        "Q": "76/27",
+        "cup": "152",
+        "minus_delta_F": "152"
+      },
+      {
+        "g": "BB",
+        "h": "Aj",
+        "Q": "-20/9",
+        "cup": "40",
+        "minus_delta_F": "40"
+      },
+      {
+        "g": "BB",
+        "h": "ba",
+        "Q": "-152/9",
+        "cup": "-76/3",
+        "minus_delta_F": "-76/3"
+      },
+      {
+        "g": "BB",
+        "h": "bA",
+        "Q": "-8/9",
+        "cup": "-16/3",
+        "minus_delta_F": "-16/3"
+      },
+      {
+        "g": "BB",
+        "h": "bb",
+        "Q": "-224/9",
+        "cup": "-224/9",
+        "minus_delta_F": "-224/9"
+      },
+      {
+        "g": "BB",
+        "h": "bj",
+        "Q": "56/9",
+        "cup": "-56/3",
+        "minus_delta_F": "-56/3"
+      },
+      {
+        "g": "BB",
+        "h": "Ba",
+        "Q": "-8/27",
+        "cup": "-4",
+        "minus_delta_F": "-4"
+      },
+      {
+        "g": "BB",
+        "h": "BA",
+        "Q": "88/27",
+        "cup": "176",
+        "minus_delta_F": "176"
+      },
+      {
+        "g": "BB",
+        "h": "BB",
+        "Q": "224/81",
+        "cup": "224",
+        "minus_delta_F": "224"
+      },
+      {
+        "g": "BB",
+        "h": "Bj",
+        "Q": "-56/27",
+        "cup": "56",
+        "minus_delta_F": "56"
+      },
+      {
+        "g": "BB",
+        "h": "ja",
+        "Q": "-40/9",
+        "cup": "20",
+        "minus_delta_F": "20"
+      },
+      {
+        "g": "BB",
+        "h": "jA",
+        "Q": "20/9",
+        "cup": "-40",
+        "minus_delta_F": "-40"
+      },
+      {
+        "g": "BB",
+        "h": "jb",
+        "Q": "-56/9",
+        "cup": "56/3",
+        "minus_delta_F": "56/3"
+      },
+      {
+        "g": "BB",
+        "h": "jB",
+        "Q": "56/27",
+        "cup": "-56",
+        "minus_delta_F": "-56"
+      },
+      {
+        "g": "Bj",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "Bj",
+        "h": "a",
+        "Q": "-10/3",
+        "cup": "5",
+        "minus_delta_F": "5"
+      },
+      {
+        "g": "Bj",
+        "h": "A",
+        "Q": "5/3",
+        "cup": "-10",
+        "minus_delta_F": "-10"
+      },
+      {
+        "g": "Bj",
+        "h": "b",
+        "Q": "-14/3",
+        "cup": "14/3",
+        "minus_delta_F": "14/3"
+      },
+      {
+        "g": "Bj",
+        "h": "B",
+        "Q": "14/9",
+        "cup": "-14",
+        "minus_delta_F": "-14"
+      },
+      {
+        "g": "Bj",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "Bj",
+        "h": "aa",
+        "Q": "-10",
+        "cup": "15/2",
+        "minus_delta_F": "15/2"
+      },
+      {
+        "g": "Bj",
+        "h": "ab",
+        "Q": "-44/3",
+        "cup": "22/3",
+        "minus_delta_F": "22/3"
+      },
+      {
+        "g": "Bj",
+        "h": "aB",
+        "Q": "4/9",
+        "cup": "-2",
+        "minus_delta_F": "-2"
+      },
+      {
+        "g": "Bj",
+        "h": "aj",
+        "Q": "10/3",
+        "cup": "5",
+        "minus_delta_F": "5"
+      },
+      {
+        "g": "Bj",
+        "h": "AA",
+        "Q": "5/2",
+        "cup": "-30",
+        "minus_delta_F": "-30"
+      },
+      {
+        "g": "Bj",
+        "h": "Ab",
+        "Q": "1/3",
+        "cup": "-2/3",
+        "minus_delta_F": "-2/3"
+      },
+      {
+        "g": "Bj",
+        "h": "AB",
+        "Q": "19/9",
+        "cup": "-38",
+        "minus_delta_F": "-38"
+      },
+      {
+        "g": "Bj",
+        "h": "Aj",
+        "Q": "-5/3",
+        "cup": "-10",
+        "minus_delta_F": "-10"
+      },
+      {
+        "g": "Bj",
+        "h": "ba",
+        "Q": "-38/3",
+        "cup": "19/3",
+        "minus_delta_F": "19/3"
+      },
+      {
+        "g": "Bj",
+        "h": "bA",
+        "Q": "-2/3",
+        "cup": "4/3",
+        "minus_delta_F": "4/3"
+      },
+      {
+        "g": "Bj",
+        "h": "bb",
+        "Q": "-56/3",
+        "cup": "56/9",
+        "minus_delta_F": "56/9"
+      },
+      {
+        "g": "Bj",
+        "h": "bj",
+        "Q": "14/3",
+        "cup": "14/3",
+        "minus_delta_F": "14/3"
+      },
+      {
+        "g": "Bj",
+        "h": "Ba",
+        "Q": "-2/9",
+        "cup": "1",
+        "minus_delta_F": "1"
+      },
+      {
+        "g": "Bj",
+        "h": "BA",
+        "Q": "22/9",
+        "cup": "-44",
+        "minus_delta_F": "-44"
+      },
+      {
+        "g": "Bj",
+        "h": "BB",
+        "Q": "56/27",
+        "cup": "-56",
+        "minus_delta_F": "-56"
+      },
+      {
+        "g": "Bj",
+        "h": "Bj",
+        "Q": "-14/9",
+        "cup": "-14",
+        "minus_delta_F": "-14"
+      },
+      {
+        "g": "Bj",
+        "h": "ja",
+        "Q": "-10/3",
+        "cup": "-5",
+        "minus_delta_F": "-5"
+      },
+      {
+        "g": "Bj",
+        "h": "jA",
+        "Q": "5/3",
+        "cup": "10",
+        "minus_delta_F": "10"
+      },
+      {
+        "g": "Bj",
+        "h": "jb",
+        "Q": "-14/3",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "Bj",
+        "h": "jB",
+        "Q": "14/9",
+        "cup": "14",
+        "minus_delta_F": "14"
+      },
+      {
+        "g": "ja",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "ja",
+        "h": "a",
+        "Q": "-15",
+        "cup": "15/4",
+        "minus_delta_F": "15/4"
+      },
+      {
+        "g": "ja",
+        "h": "A",
+        "Q": "15/2",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "ja",
+        "h": "b",
+        "Q": "-21",
+        "cup": "7/2",
+        "minus_delta_F": "7/2"
+      },
+      {
+        "g": "ja",
+        "h": "B",
+        "Q": "7",
+        "cup": "-21/2",
+        "minus_delta_F": "-21/2"
+      },
+      {
+        "g": "ja",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "ja",
+        "h": "aa",
+        "Q": "-45",
+        "cup": "45/8",
+        "minus_delta_F": "45/8"
+      },
+      {
+        "g": "ja",
+        "h": "ab",
+        "Q": "-66",
+        "cup": "11/2",
+        "minus_delta_F": "11/2"
+      },
+      {
+        "g": "ja",
+        "h": "aB",
+        "Q": "2",
+        "cup": "-3/2",
+        "minus_delta_F": "-3/2"
+      },
+      {
+        "g": "ja",
+        "h": "aj",
+        "Q": "15",
+        "cup": "15/4",
+        "minus_delta_F": "15/4"
+      },
+      {
+        "g": "ja",
+        "h": "AA",
+        "Q": "45/4",
+        "cup": "-45/2",
+        "minus_delta_F": "-45/2"
+      },
+      {
+        "g": "ja",
+        "h": "Ab",
+        "Q": "3/2",
+        "cup": "-1/2",
+        "minus_delta_F": "-1/2"
+      },
+      {
+        "g": "ja",
+        "h": "AB",
+        "Q": "19/2",
+        "cup": "-57/2",
+        "minus_delta_F": "-57/2"
+      },
+      {
+        "g": "ja",
+        "h": "Aj",
+        "Q": "-15/2",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "ja",
+        "h": "ba",
+        "Q": "-57",
+        "cup": "19/4",
+        "minus_delta_F": "19/4"
+      },
+      {
+        "g": "ja",
+        "h": "bA",
+        "Q": "-3",
+        "cup": "1",
+        "minus_delta_F": "1"
+      },
+      {
+        "g": "ja",
+        "h": "bb",
+        "Q": "-84",
+        "cup": "14/3",
+        "minus_delta_F": "14/3"
+      },
+      {
+        "g": "ja",
+        "h": "bj",
+        "Q": "21",
+        "cup": "7/2",
+        "minus_delta_F": "7/2"
+      },
+      {
+        "g": "ja",
+        "h": "Ba",
+        "Q": "-1",
+        "cup": "3/4",
+        "minus_delta_F": "3/4"
+      },
+      {
+        "g": "ja",
+        "h": "BA",
+        "Q": "11",
+        "cup": "-33",
+        "minus_delta_F": "-33"
+      },
+      {
+        "g": "ja",
+        "h": "BB",
+        "Q": "28/3",
+        "cup": "-42",
+        "minus_delta_F": "-42"
+      },
+      {
+        "g": "ja",
+        "h": "Bj",
+        "Q": "-7",
+        "cup": "-21/2",
+        "minus_delta_F": "-21/2"
+      },
+      {
+        "g": "ja",
+        "h": "ja",
+        "Q": "-15",
+        "cup": "-15/4",
+        "minus_delta_F": "-15/4"
+      },
+      {
+        "g": "ja",
+        "h": "jA",
+        "Q": "15/2",
+        "cup": "15/2",
+        "minus_delta_F": "15/2"
+      },
+      {
+        "g": "ja",
+        "h": "jb",
+        "Q": "-21",
+        "cup": "-7/2",
+        "minus_delta_F": "-7/2"
+      },
+      {
+        "g": "ja",
+        "h": "jB",
+        "Q": "7",
+        "cup": "21/2",
+        "minus_delta_F": "21/2"
+      },
+      {
+        "g": "jA",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "jA",
+        "h": "a",
+        "Q": "15/2",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "jA",
+        "h": "A",
+        "Q": "-15/4",
+        "cup": "15",
+        "minus_delta_F": "15"
+      },
+      {
+        "g": "jA",
+        "h": "b",
+        "Q": "21/2",
+        "cup": "-7",
+        "minus_delta_F": "-7"
+      },
+      {
+        "g": "jA",
+        "h": "B",
+        "Q": "-7/2",
+        "cup": "21",
+        "minus_delta_F": "21"
+      },
+      {
+        "g": "jA",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "jA",
+        "h": "aa",
+        "Q": "45/2",
+        "cup": "-45/4",
+        "minus_delta_F": "-45/4"
+      },
+      {
+        "g": "jA",
+        "h": "ab",
+        "Q": "33",
+        "cup": "-11",
+        "minus_delta_F": "-11"
+      },
+      {
+        "g": "jA",
+        "h": "aB",
+        "Q": "-1",
+        "cup": "3",
+        "minus_delta_F": "3"
+      },
+      {
+        "g": "jA",
+        "h": "aj",
+        "Q": "-15/2",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "jA",
+        "h": "AA",
+        "Q": "-45/8",
+        "cup": "45",
+        "minus_delta_F": "45"
+      },
+      {
+        "g": "jA",
+        "h": "Ab",
+        "Q": "-3/4",
+        "cup": "1",
+        "minus_delta_F": "1"
+      },
+      {
+        "g": "jA",
+        "h": "AB",
+        "Q": "-19/4",
+        "cup": "57",
+        "minus_delta_F": "57"
+      },
+      {
+        "g": "jA",
+        "h": "Aj",
+        "Q": "15/4",
+        "cup": "15",
+        "minus_delta_F": "15"
+      },
+      {
+        "g": "jA",
+        "h": "ba",
+        "Q": "57/2",
+        "cup": "-19/2",
+        "minus_delta_F": "-19/2"
+      },
+      {
+        "g": "jA",
+        "h": "bA",
+        "Q": "3/2",
+        "cup": "-2",
+        "minus_delta_F": "-2"
+      },
+      {
+        "g": "jA",
+        "h": "bb",
+        "Q": "42",
+        "cup": "-28/3",
+        "minus_delta_F": "-28/3"
+      },
+      {
+        "g": "jA",
+        "h": "bj",
+        "Q": "-21/2",
+        "cup": "-7",
+        "minus_delta_F": "-7"
+      },
+      {
+        "g": "jA",
+        "h": "Ba",
+        "Q": "1/2",
+        "cup": "-3/2",
+        "minus_delta_F": "-3/2"
+      },
+      {
+        "g": "jA",
+        "h": "BA",
+        "Q": "-11/2",
+        "cup": "66",
+        "minus_delta_F": "66"
+      },
+      {
+        "g": "jA",
+        "h": "BB",
+        "Q": "-14/3",
+        "cup": "84",
+        "minus_delta_F": "84"
+      },
+      {
+        "g": "jA",
+        "h": "Bj",
+        "Q": "7/2",
+        "cup": "21",
+        "minus_delta_F": "21"
+      },
+      {
+        "g": "jA",
+        "h": "ja",
+        "Q": "15/2",
+        "cup": "15/2",
+        "minus_delta_F": "15/2"
+      },
+      {
+        "g": "jA",
+        "h": "jA",
+        "Q": "-15/4",
+        "cup": "-15",
+        "minus_delta_F": "-15"
+      },
+      {
+        "g": "jA",
+        "h": "jb",
+        "Q": "21/2",
+        "cup": "7",
+        "minus_delta_F": "7"
+      },
+      {
+        "g": "jA",
+        "h": "jB",
+        "Q": "-7/2",
+        "cup": "-21",
+        "minus_delta_F": "-21"
+      },
+      {
+        "g": "jb",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "jb",
+        "h": "a",
+        "Q": "-10",
+        "cup": "5/3",
+        "minus_delta_F": "5/3"
+      },
+      {
+        "g": "jb",
+        "h": "A",
+        "Q": "5",
+        "cup": "-10/3",
+        "minus_delta_F": "-10/3"
+      },
+      {
+        "g": "jb",
+        "h": "b",
+        "Q": "-14",
+        "cup": "14/9",
+        "minus_delta_F": "14/9"
+      },
+      {
+        "g": "jb",
+        "h": "B",
+        "Q": "14/3",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "jb",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "jb",
+        "h": "aa",
+        "Q": "-30",
+        "cup": "5/2",
+        "minus_delta_F": "5/2"
+      },
+      {
+        "g": "jb",
+        "h": "ab",
+        "Q": "-44",
+        "cup": "22/9",
+        "minus_delta_F": "22/9"
+      },
+      {
+        "g": "jb",
+        "h": "aB",
+        "Q": "4/3",
+        "cup": "-2/3",
+        "minus_delta_F": "-2/3"
+      },
+      {
+        "g": "jb",
+        "h": "aj",
+        "Q": "10",
+        "cup": "5/3",
+        "minus_delta_F": "5/3"
+      },
+      {
+        "g": "jb",
+        "h": "AA",
+        "Q": "15/2",
+        "cup": "-10",
+        "minus_delta_F": "-10"
+      },
+      {
+        "g": "jb",
+        "h": "Ab",
+        "Q": "1",
+        "cup": "-2/9",
+        "minus_delta_F": "-2/9"
+      },
+      {
+        "g": "jb",
+        "h": "AB",
+        "Q": "19/3",
+        "cup": "-38/3",
+        "minus_delta_F": "-38/3"
+      },
+      {
+        "g": "jb",
+        "h": "Aj",
+        "Q": "-5",
+        "cup": "-10/3",
+        "minus_delta_F": "-10/3"
+      },
+      {
+        "g": "jb",
+        "h": "ba",
+        "Q": "-38",
+        "cup": "19/9",
+        "minus_delta_F": "19/9"
+      },
+      {
+        "g": "jb",
+        "h": "bA",
+        "Q": "-2",
+        "cup": "4/9",
+        "minus_delta_F": "4/9"
+      },
+      {
+        "g": "jb",
+        "h": "bb",
+        "Q": "-56",
+        "cup": "56/27",
+        "minus_delta_F": "56/27"
+      },
+      {
+        "g": "jb",
+        "h": "bj",
+        "Q": "14",
+        "cup": "14/9",
+        "minus_delta_F": "14/9"
+      },
+      {
+        "g": "jb",
+        "h": "Ba",
+        "Q": "-2/3",
+        "cup": "1/3",
+        "minus_delta_F": "1/3"
+      },
+      {
+        "g": "jb",
+        "h": "BA",
+        "Q": "22/3",
+        "cup": "-44/3",
+        "minus_delta_F": "-44/3"
+      },
+      {
+        "g": "jb",
+        "h": "BB",
+        "Q": "56/9",
+        "cup": "-56/3",
+        "minus_delta_F": "-56/3"
+      },
+      {
+        "g": "jb",
+        "h": "Bj",
+        "Q": "-14/3",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "jb",
+        "h": "ja",
+        "Q": "-10",
+        "cup": "-5/3",
+        "minus_delta_F": "-5/3"
+      },
+      {
+        "g": "jb",
+        "h": "jA",
+        "Q": "5",
+        "cup": "10/3",
+        "minus_delta_F": "10/3"
+      },
+      {
+        "g": "jb",
+        "h": "jb",
+        "Q": "-14",
+        "cup": "-14/9",
+        "minus_delta_F": "-14/9"
+      },
+      {
+        "g": "jb",
+        "h": "jB",
+        "Q": "14/3",
+        "cup": "14/3",
+        "minus_delta_F": "14/3"
+      },
+      {
+        "g": "jB",
+        "h": "1",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "jB",
+        "h": "a",
+        "Q": "10/3",
+        "cup": "-5",
+        "minus_delta_F": "-5"
+      },
+      {
+        "g": "jB",
+        "h": "A",
+        "Q": "-5/3",
+        "cup": "10",
+        "minus_delta_F": "10"
+      },
+      {
+        "g": "jB",
+        "h": "b",
+        "Q": "14/3",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "jB",
+        "h": "B",
+        "Q": "-14/9",
+        "cup": "14",
+        "minus_delta_F": "14"
+      },
+      {
+        "g": "jB",
+        "h": "j",
+        "Q": "0",
+        "cup": "0",
+        "minus_delta_F": "0"
+      },
+      {
+        "g": "jB",
+        "h": "aa",
+        "Q": "10",
+        "cup": "-15/2",
+        "minus_delta_F": "-15/2"
+      },
+      {
+        "g": "jB",
+        "h": "ab",
+        "Q": "44/3",
+        "cup": "-22/3",
+        "minus_delta_F": "-22/3"
+      },
+      {
+        "g": "jB",
+        "h": "aB",
+        "Q": "-4/9",
+        "cup": "2",
+        "minus_delta_F": "2"
+      },
+      {
+        "g": "jB",
+        "h": "aj",
+        "Q": "-10/3",
+        "cup": "-5",
+        "minus_delta_F": "-5"
+      },
+      {
+        "g": "jB",
+        "h": "AA",
+        "Q": "-5/2",
+        "cup": "30",
+        "minus_delta_F": "30"
+      },
+      {
+        "g": "jB",
+        "h": "Ab",
+        "Q": "-1/3",
+        "cup": "2/3",
+        "minus_delta_F": "2/3"
+      },
+      {
+        "g": "jB",
+        "h": "AB",
+        "Q": "-19/9",
+        "cup": "38",
+        "minus_delta_F": "38"
+      },
+      {
+        "g": "jB",
+        "h": "Aj",
+        "Q": "5/3",
+        "cup": "10",
+        "minus_delta_F": "10"
+      },
+      {
+        "g": "jB",
+        "h": "ba",
+        "Q": "38/3",
+        "cup": "-19/3",
+        "minus_delta_F": "-19/3"
+      },
+      {
+        "g": "jB",
+        "h": "bA",
+        "Q": "2/3",
+        "cup": "-4/3",
+        "minus_delta_F": "-4/3"
+      },
+      {
+        "g": "jB",
+        "h": "bb",
+        "Q": "56/3",
+        "cup": "-56/9",
+        "minus_delta_F": "-56/9"
+      },
+      {
+        "g": "jB",
+        "h": "bj",
+        "Q": "-14/3",
+        "cup": "-14/3",
+        "minus_delta_F": "-14/3"
+      },
+      {
+        "g": "jB",
+        "h": "Ba",
+        "Q": "2/9",
+        "cup": "-1",
+        "minus_delta_F": "-1"
+      },
+      {
+        "g": "jB",
+        "h": "BA",
+        "Q": "-22/9",
+        "cup": "44",
+        "minus_delta_F": "44"
+      },
+      {
+        "g": "jB",
+        "h": "BB",
+        "Q": "-56/27",
+        "cup": "56",
+        "minus_delta_F": "56"
+      },
+      {
+        "g": "jB",
+        "h": "Bj",
+        "Q": "14/9",
+        "cup": "14",
+        "minus_delta_F": "14"
+      },
+      {
+        "g": "jB",
+        "h": "ja",
+        "Q": "10/3",
+        "cup": "5",
+        "minus_delta_F": "5"
+      },
+      {
+        "g": "jB",
+        "h": "jA",
+        "Q": "-5/3",
+        "cup": "-10",
+        "minus_delta_F": "-10"
+      },
+      {
+        "g": "jB",
+        "h": "jb",
+        "Q": "14/3",
+        "cup": "14/3",
+        "minus_delta_F": "14/3"
+      },
+      {
+        "g": "jB",
+        "h": "jB",
+        "Q": "-14/9",
+        "cup": "-14",
+        "minus_delta_F": "-14"
+      }
+    ],
+    "opposite_reconstruction": [
+      {
+        "word": "1",
+        "v_from_a": "0",
+        "v_from_b": "0",
+        "beta": "0",
+        "A_over_xi": "0"
+      },
+      {
+        "word": "a",
+        "v_from_a": "5",
+        "v_from_b": "5",
+        "beta": "5/2",
+        "A_over_xi": "7/2"
+      },
+      {
+        "word": "A",
+        "v_from_a": "-5/2",
+        "v_from_b": "-5/2",
+        "beta": "-5",
+        "A_over_xi": "4"
+      },
+      {
+        "word": "b",
+        "v_from_a": "7",
+        "v_from_b": "7",
+        "beta": "7/3",
+        "A_over_xi": "17/3"
+      },
+      {
+        "word": "B",
+        "v_from_a": "-7/3",
+        "v_from_b": "-7/3",
+        "beta": "-7",
+        "A_over_xi": "-1"
+      },
+      {
+        "word": "j",
+        "v_from_a": "0",
+        "v_from_b": "0",
+        "beta": "0",
+        "A_over_xi": "0"
+      },
+      {
+        "word": "aa",
+        "v_from_a": "15",
+        "v_from_b": "15",
+        "beta": "15/4",
+        "A_over_xi": "43/4"
+      },
+      {
+        "word": "ab",
+        "v_from_a": "22",
+        "v_from_b": "22",
+        "beta": "11/3",
+        "A_over_xi": "38/3"
+      },
+      {
+        "word": "aB",
+        "v_from_a": "-2/3",
+        "v_from_b": "-2/3",
+        "beta": "-1",
+        "A_over_xi": "-8"
+      },
+      {
+        "word": "aj",
+        "v_from_a": "-5",
+        "v_from_b": "-5",
+        "beta": "5/2",
+        "A_over_xi": "7/2"
+      },
+      {
+        "word": "AA",
+        "v_from_a": "-15/4",
+        "v_from_b": "-15/4",
+        "beta": "-15",
+        "A_over_xi": "23"
+      },
+      {
+        "word": "Ab",
+        "v_from_a": "-1/2",
+        "v_from_b": "-1/2",
+        "beta": "-1/3",
+        "A_over_xi": "8/3"
+      },
+      {
+        "word": "AB",
+        "v_from_a": "-19/6",
+        "v_from_b": "-19/6",
+        "beta": "-19",
+        "A_over_xi": "24"
+      },
+      {
+        "word": "Aj",
+        "v_from_a": "5/2",
+        "v_from_b": "5/2",
+        "beta": "-5",
+        "A_over_xi": "4"
+      },
+      {
+        "word": "ba",
+        "v_from_a": "19",
+        "v_from_b": "19",
+        "beta": "19/6",
+        "A_over_xi": "65/6"
+      },
+      {
+        "word": "bA",
+        "v_from_a": "1",
+        "v_from_b": "1",
+        "beta": "2/3",
+        "A_over_xi": "19/3"
+      },
+      {
+        "word": "bb",
+        "v_from_a": "28",
+        "v_from_b": "28",
+        "beta": "28/9",
+        "A_over_xi": "116/9"
+      },
+      {
+        "word": "bj",
+        "v_from_a": "-7",
+        "v_from_b": "-7",
+        "beta": "7/3",
+        "A_over_xi": "17/3"
+      },
+      {
+        "word": "Ba",
+        "v_from_a": "1/3",
+        "v_from_b": "1/3",
+        "beta": "1/2",
+        "A_over_xi": "-5/2"
+      },
+      {
+        "word": "BA",
+        "v_from_a": "-11/3",
+        "v_from_b": "-11/3",
+        "beta": "-22",
+        "A_over_xi": "13"
+      },
+      {
+        "word": "BB",
+        "v_from_a": "-28/9",
+        "v_from_b": "-28/9",
+        "beta": "-28",
+        "A_over_xi": "12"
+      },
+      {
+        "word": "Bj",
+        "v_from_a": "7/3",
+        "v_from_b": "7/3",
+        "beta": "-7",
+        "A_over_xi": "-1"
+      },
+      {
+        "word": "ja",
+        "v_from_a": "5",
+        "v_from_b": "5",
+        "beta": "-5/2",
+        "A_over_xi": "7/2"
+      },
+      {
+        "word": "jA",
+        "v_from_a": "-5/2",
+        "v_from_b": "-5/2",
+        "beta": "5",
+        "A_over_xi": "4"
+      },
+      {
+        "word": "jb",
+        "v_from_a": "7",
+        "v_from_b": "7",
+        "beta": "-7/3",
+        "A_over_xi": "17/3"
+      },
+      {
+        "word": "jB",
+        "v_from_a": "-7/3",
+        "v_from_b": "-7/3",
+        "beta": "7",
+        "A_over_xi": "-1"
+      }
+    ],
+    "Q_a_a": "15",
+    "Q_a_b": "21",
+    "frame_and_coordinate_checks": true,
+    "all_pair_identities_passed": true
+  },
+  "alternative_algebra_model": {
+    "warning": "Illustrates insufficient abstract input only; not a second arithmetic Coleman family.",
+    "same_residual_matrices": true,
+    "Q_a_a": "24",
+    "Q_a_b": "27",
+    "all_pair_identities_passed": true
+  },
+  "status": {
+    "exact_arithmetic_and_model_checks_passed": true,
+    "new_written_proof": "Unit calibration; local filtered-phi description; conditional trace reconstruction and explicit cup nullhomotopy.",
+    "actual_Coleman_trace_jets": null,
+    "meromorphic_ES_order_n": null,
+    "period_C": null,
+    "Beilinson_Flach_B2_coordinates": null,
+    "s11": null,
+    "BSD_proved": false,
+    "canonical_frontier_updated": false
+  }
+}
