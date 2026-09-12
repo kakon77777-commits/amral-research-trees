@@ -1,0 +1,945 @@
+{
+  "gate": "src73 — Attack 04's mod-11 p-adic L-function, from this tree's modular symbols",
+  "source": "data/external/gpt6-proof-attacks/extracted/04/BSD_Proof_Attack_04_Mu_Zero_Descent.md",
+  "eigenline_scale": "λ(1,5) = 1, RUN-068's functional (first nonzero at index 5)",
+  "unit_root": {
+    "a_11": -4,
+    "roots_of_x2_minus_a11x_plus_11_mod_11": [
+      0,
+      7
+    ],
+    "alpha": 7,
+    "alpha_inv2": 9,
+    "alpha_inv3": 6,
+    "agrees": true
+  },
+  "measure": {
+    "summand_count": 110,
+    "unclassified_units": 0,
+    "group_basis_coefficients": [
+      4,
+      0,
+      7,
+      0,
+      4,
+      0,
+      7,
+      2,
+      2,
+      7,
+      0
+    ],
+    "t_basis_coefficients": [
+      0,
+      0,
+      2,
+      2,
+      2,
+      0,
+      5,
+      6,
+      10,
+      7,
+      0
+    ],
+    "mu": 0,
+    "lambda": 2,
+    "constant_term_zero": true,
+    "linear_term_zero": true
+  },
+  "summands": [
+    {
+      "a": 1,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 2,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 3,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 4,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 5,
+      "gamma_exponent": 4,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 6,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 7,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 8,
+      "gamma_exponent": 7,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 9,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 10,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 12,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 13,
+      "gamma_exponent": 1,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 14,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 15,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 16,
+      "gamma_exponent": 2,
+      "symbol_p2": 10,
+      "symbol_p": 1,
+      "mass": 7
+    },
+    {
+      "a": 17,
+      "gamma_exponent": 8,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 18,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 19,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 20,
+      "gamma_exponent": 5,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 21,
+      "gamma_exponent": 9,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 23,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 24,
+      "gamma_exponent": 7,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 25,
+      "gamma_exponent": 8,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 26,
+      "gamma_exponent": 7,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 27,
+      "gamma_exponent": 0,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 28,
+      "gamma_exponent": 10,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 29,
+      "gamma_exponent": 3,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 30,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 31,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 32,
+      "gamma_exponent": 8,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 34,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 35,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 36,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 37,
+      "gamma_exponent": 10,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 38,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 39,
+      "gamma_exponent": 1,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 40,
+      "gamma_exponent": 0,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 41,
+      "gamma_exponent": 6,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 42,
+      "gamma_exponent": 4,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 43,
+      "gamma_exponent": 7,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 45,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 46,
+      "gamma_exponent": 8,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 47,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 48,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 49,
+      "gamma_exponent": 7,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 50,
+      "gamma_exponent": 3,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 51,
+      "gamma_exponent": 8,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 52,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 53,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 54,
+      "gamma_exponent": 6,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 56,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 57,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 58,
+      "gamma_exponent": 9,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 59,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 60,
+      "gamma_exponent": 5,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 61,
+      "gamma_exponent": 5,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 62,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 63,
+      "gamma_exponent": 9,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 64,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 65,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 67,
+      "gamma_exponent": 6,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 68,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 69,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 70,
+      "gamma_exponent": 8,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 71,
+      "gamma_exponent": 3,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 72,
+      "gamma_exponent": 7,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 73,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 74,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 75,
+      "gamma_exponent": 8,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 76,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 78,
+      "gamma_exponent": 7,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 79,
+      "gamma_exponent": 4,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 80,
+      "gamma_exponent": 6,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 81,
+      "gamma_exponent": 0,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 82,
+      "gamma_exponent": 1,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 83,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 84,
+      "gamma_exponent": 10,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 85,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 86,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 87,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 89,
+      "gamma_exponent": 8,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 90,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 91,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 92,
+      "gamma_exponent": 3,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 93,
+      "gamma_exponent": 10,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 94,
+      "gamma_exponent": 0,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 95,
+      "gamma_exponent": 7,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 96,
+      "gamma_exponent": 8,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 97,
+      "gamma_exponent": 7,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 98,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 100,
+      "gamma_exponent": 9,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 101,
+      "gamma_exponent": 5,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 102,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 103,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 104,
+      "gamma_exponent": 8,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 105,
+      "gamma_exponent": 2,
+      "symbol_p2": 10,
+      "symbol_p": 1,
+      "mass": 7
+    },
+    {
+      "a": 106,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 107,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 108,
+      "gamma_exponent": 1,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 109,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 111,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 112,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 113,
+      "gamma_exponent": 7,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 114,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 115,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 116,
+      "gamma_exponent": 4,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 117,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 118,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 119,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 120,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    }
+  ],
+  "comparison_with_the_documents_table": {
+    "present": true,
+    "their_summands": 110,
+    "compared": 110,
+    "summands_that_differ": [],
+    "their_group_basis": [
+      4,
+      0,
+      7,
+      0,
+      4,
+      0,
+      7,
+      2,
+      2,
+      7,
+      0
+    ],
+    "their_t_basis": [
+      0,
+      0,
+      2,
+      2,
+      2,
+      0,
+      5,
+      6,
+      10,
+      7,
+      0
+    ],
+    "their_mu": 0,
+    "their_lambda": 2,
+    "agrees": true
+  },
+  "euler_factors": {
+    "397": {
+      "a_ell": 24,
+      "a_ell_mod_11": 2,
+      "s_ell": 3,
+      "E_ell_mod_11_to_t4": [
+        0,
+        0,
+        9,
+        8,
+        8
+      ],
+      "equals_(1-sigma_inv)^2": true,
+      "leading_coefficient": 9,
+      "predicted_s_squared": 9,
+      "mu_zero": true
+    },
+    "991": {
+      "a_ell": -53,
+      "a_ell_mod_11": 2,
+      "s_ell": 2,
+      "E_ell_mod_11_to_t4": [
+        0,
+        0,
+        4,
+        10,
+        3
+      ],
+      "equals_(1-sigma_inv)^2": true,
+      "leading_coefficient": 4,
+      "predicted_s_squared": 4,
+      "mu_zero": true
+    },
+    "389_factor_1_minus_389_inverse_mod_11": 9,
+    "lambda_of_h0_as_2_plus_2_plus_2": 6,
+    "attack03_counterexample_augmentation_of_11_plus_X0": 0,
+    "agrees": true
+  },
+  "labels": {
+    "document_found": true,
+    "says_not_full_BSD": true,
+    "says_R318_R319_open": false,
+    "says_unreviewed": true,
+    "theorem_7_1_rests_on_cited_theorems": true,
+    "agrees": true
+  },
+  "stated": {
+    "group_basis": [
+      4,
+      0,
+      7,
+      0,
+      4,
+      0,
+      7,
+      2,
+      2,
+      7,
+      0
+    ],
+    "t_basis": [
+      0,
+      0,
+      2,
+      2,
+      2,
+      0,
+      5,
+      6,
+      10,
+      7,
+      0
+    ],
+    "mu": 0,
+    "lambda": 2,
+    "alpha": 7,
+    "alpha_inv2": 9,
+    "alpha_inv3": 6,
+    "s_397": 3,
+    "s_991": 2
+  },
+  "not_computed_here": [
+    "Theorem 7.1 (Kato/cofactor comparison up to a unit) — conditional on Kato's bound and Kataoka's theorems as cited",
+    "Lemmas 2.1–2.2 — algebra, read; the counterexample's augmentation checked",
+    "the characteristic-zero order of vanishing — the document itself says mod-11 data does not give it"
+  ],
+  "headline": "110 summands, group-basis coefficients [4, 0, 7, 0, 4, 0, 7, 2, 2, 7, 0], L̄(t) coefficients [0, 0, 2, 2, 2, 0, 5, 6, 10, 7, 0], μ = 0, λ = 2 — the document's figures to the summand (0 of 110 differ); s₃₉₇ = 3, s₉₉₁ = 2, Euler leading terms 9t², 4t², 1 − 389⁻¹ ≡ 9",
+  "ok": true
+}
