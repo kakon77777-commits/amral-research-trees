@@ -82,9 +82,9 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
   shows the bundle is self-consistent, not that it is right.
 * **A gate gets a mutation drill**, and a planted defect must be caught by
   the check *named for it* — not merely by some check. A gate that has only ever
-  been green is indistinguishable from a comment. **Position as of RUN-075:
-  every gate is drilled — `src00`–`src10` and `src12`–`src77`, 319 defects, 319
-  caught by the named check, 66 controls undisturbed, over 103 checks.** RUN-026's
+  been green is indistinguishable from a comment. **Position as of RUN-076:
+  every gate is drilled — `src00`–`src10` and `src12`–`src78`, 326 defects, 326
+  caught by the named check, 69 controls undisturbed, over 104 checks.** RUN-026's
   first run went **red**, and the two things it found are in that round's report:
   a control whose stated reason had been a consequence of the defect that round
   repaired, and a defect the repaired computation had learned to route around. This
@@ -178,6 +178,7 @@ Carried over from the 73-item Collatz sweep, which closed 2026-09-03:
 | [073](./reports/RUN-073-ATTACK06-SCALAR-AND-MELLIN.md) | **GPT-6's Attack 06** — the multiplier 16 and the Mellin formula | `src75` | `e₁₁/θ = 16` exactly in `Q(α)` with the stated fractions and 11-adic residues to `11⁸`; both rank-one-update identities and the basis-change law on 500 instances; Sen matrix nilpotent; **the Mellin formula with this tree's own `a_n` gives `L''(E,1)/2 = 0.7593165002884` to 14 digits — the first computation of the corpus's value in this tree**; `𝔰₁₁` and BD6 open, as stated |
 | [074](./reports/RUN-074-ATTACK07-EXPLICIT-GEOMETRY.md) | **GPT-6's Attack 07** — explicit secondary geometry on E × E | `src76` | `F₆`, `F₈` as stated, the conic and model identities exact, `S·F₈ + T·F₈′ ≡ 1 (mod 11)`, `F₈` squarefree (genus 3); `g = −(3u+2)²/d` with its zero over `(P,Q)` and `(−P,−Q)`; `∂Γ_PQ = 4·Z_PQ`, the diagonal chains `2·Z_RR`; `P + Q = (−2,−1)`, `P + R = (5/4,−13/8)`, `Q + R = (1/9,−19/27)`; the Kato comparison not constructed, as the document says |
 | [075](./reports/RUN-075-ATTACK08-NORMS-AND-PUSHFORWARDS.md) | **GPT-6's Attack 08** — norms, pushforwards and the scale ambiguity | `src77` | the three norms `7x²`, `7(x−1)²`, `7(x+2)²` from Vieta exactly; `A = x(T+Q)`, `B = x(T−P) − 1`, the sign identity and `F_m(Γ) = 7((x+2)/y)⁴` with zero residual in the function field; `div M = [R] − [P] − [Q] + [O] = m_*Z_PQ`; the closed correction `Θ_c` with exponents `(0,0,2)` moving the 7 — "not Attack 06's `𝔰₁₁`", as the document says; `s11` null, BSD not proved |
+| [076](./reports/RUN-076-ATTACK09-AUXILIARY-CHARACTER.md) | **GPT-6's Attack 09, rewritten from this side** — the auxiliary character of an Eisenstein degeneration at 389.a1, p = 11 | `src78` | written from the narration, before the package: the central value of the narrated `E₂(1, χ₈)` twist is zero twice over — weight 2 forces `χ₈ = (8/·)` even, `w(E ⊗ χ₈) = (2/389) = −1` so `L(E, χ₈, 1) = 0`, and `L(E, χ₈ψ, 1) = 0` for the order-5 `ψ` of conductor 11 too (to `10⁻¹⁵`, and every `χ₈`-twisted plus symbol `[a/11]_{χ₈}⁺ ≡ 0` mod 11) — the whole even first layer vanishes; the package's "5 mod 11" turned out to be the minus-line value at `x⁻¹` (RUN-077), not any of this; **all 54 fundamental discriminants to 100 in absolute value, prime to 11**: root numbers, `S_D`, the level-`11D` Hecke identity, the MTT first-layer total `= (1 − χ_D(11)/α)²S_D`, forced vanishing 27/27, and `L(E, χ_D, 1)·√D/Ω^±` an exact integer (4, 16, 36, 0) tied to the mod-11 sums by one unit per sign (`λ⁺ = 10`, `λ⁻ = 6`); `χ₅` and `χ₋₃` the smallest whose central value survives, `χ₆₅`, `χ₉₃`, `χ₋₄₇` with a vanishing one; Loeffler–Rivero's factor not reproduced, `𝔰₁₁` untouched |
 
 ## Layout
 

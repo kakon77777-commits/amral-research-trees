@@ -165,6 +165,7 @@ import src74_attack05_local_log as atk74                  # noqa: E402
 import src75_attack06_scalar_and_mellin as atk75          # noqa: E402
 import src76_attack07_explicit_geometry as atk76          # noqa: E402
 import src77_attack08_norms_and_pushforwards as atk77     # noqa: E402
+import src78_attack09_auxiliary_character as atk78        # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3466,6 +3467,21 @@ def check_attack08_norms() -> bool:
 
 
 
+def check_attack09_auxiliary() -> bool:
+    """Attack 09 rewritten from this side: GPT-6's chi_8 has root number -1 and
+    a vanishing even first layer (every tame branch, every twisted symbol
+    [a/11]_chi8+, and L(E, chi_8 psi, 1) = 0 for the order-5 psi, against
+    nonzero controls); over all fundamental |D| <= 100 prime to 11 the Hecke
+    identity at level 11|D|, the first-layer total against (1 - chi(11)/alpha)^2
+    S_D, the root-number-forced vanishing, the archimedean values as integers,
+    and one unit per sign carrying them onto the mod-11 sums; chi_5 and chi_-3
+    the smallest admissible characters, chi_65, chi_93, chi_-47 unusable."""
+    po = atk78.parity_obstruction()
+    tab = atk78.table()
+    return po["agrees"] and tab["agrees"] and atk78.recommendation(tab)["agrees"]
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3476,7 +3492,7 @@ COVERS = sorted(m.__name__ for m in (
     consensus53, targets54, kern55, schema56, cmap57, prov58,
     lemb59, joins60, commit61, replay62, thirteen63, corpus64,
     closure65, proto66, maps67, mirror68, anom69, kur70, bock71,
-    atk72, atk73, atk74, atk75, atk76, atk77))
+    atk72, atk73, atk74, atk75, atk76, atk77, atk78))
 
 
 CHECKS = {
@@ -3583,6 +3599,7 @@ CHECKS = {
     "attack06-scalar-and-mellin": check_attack06_scalar_and_mellin,
     "attack07-geometry": check_attack07_geometry,
     "attack08-norms": check_attack08_norms,
+    "attack09-auxiliary": check_attack09_auxiliary,
 }
 
 
@@ -3912,6 +3929,20 @@ DEFECTS = [
     ("the diagonal's degree under addition is taken as 2, not 4", "code",
      "attack08-norms",
      lambda: patch(atk77, "DEGREE_TABLE", {**atk77.DEGREE_TABLE, "diagonal": (1, 1, 2)})),
+    ("the Kronecker symbol (D/2) is taken as +1 for D = +-3 mod 8", "code", "attack09-auxiliary",
+     lambda: patch(atk78, "KRONECKER_TWO_RULE", (3, 5))),
+    ("the twisted root number is written chi_D(N) w(E) without chi_D(-1)", "code", "attack09-auxiliary",
+     lambda: patch(atk78, "ROOT_NUMBER_USES_CHI_MINUS_ONE", False)),
+    ("the Euler factor (1 - chi(11)/alpha) enters to the first power, not squared", "code", "attack09-auxiliary",
+     lambda: patch(atk78, "EULER_EXPONENT", 1)),
+    ("the level-11D Hecke identity is written with a_11 - chi(11) instead of a_11 - 2 chi(11)", "code",
+     "attack09-auxiliary", lambda: patch(atk78, "HECKE_TWIST_CONSTANT", 1)),
+    ("the unit root is taken as 4 (a_11 read as +4)", "code", "attack09-auxiliary",
+     lambda: patch(atk78, "UNIT_ROOT_OVERRIDE", 4)),
+    ("the twisted conductor is taken as N |D| instead of N D^2", "code", "attack09-auxiliary",
+     lambda: patch(atk78, "TWIST_LEVEL_EXPONENT", 1)),
+    ("the measure's second term alpha^-2 [a] is added instead of subtracted", "code", "attack09-auxiliary",
+     lambda: patch(atk78, "MEASURE_SECOND_TERM_SIGN", 1)),
     ("the adjugate is written without its off-diagonal minus signs", "code",
      "attack03-cyclotomic", lambda: patch(atk72, "adj2_ring", _adj_no_signs)),
     ("U_m's second factor is given the coefficient 36 as well, so chi(U_m) is "
@@ -4551,6 +4582,13 @@ CONTROLS = [
     ("106d1 enumerated over 1 ≤ d < 1000 instead of 00's symmetric range — "
      "the same twenty-one, because no negative d is admissible",
      lambda: patch(closure65, "fixtures_00", _fixtures00_positive_only)),
+    ("Attack 09's eigenlines multiplied by the unit 3 - every identity is homogeneous and "
+     "the analytic cross-check only asks for one unit per sign",
+     lambda: patch(atk78, "SCALE_UNIT", 3)),
+    ("Attack 09's twisted L-series cut at e^-55 instead of e^-45",
+     lambda: patch(atk78, "TAIL_EXPONENT", 55.0)),
+    ("Attack 09's rational recognition allowed denominators to 128 - the values are integers",
+     lambda: patch(atk78, "DENOM_BOUND", 128)),
     ("Attack 08's Vieta identity tested at a different random seed",
      lambda: patch(atk77, "VIETA_SEED", 21)),
     ("Attack 03's random c-vectors drawn from a different seed",
