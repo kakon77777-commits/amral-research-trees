@@ -1,0 +1,75 @@
+{
+  "date": "2026-09-12",
+  "project": "BSD Proof Attack 07",
+  "main_construction_inputs": {
+    "curve_ainvs": [
+      0,
+      1,
+      1,
+      -2,
+      0
+    ],
+    "P": [
+      0,
+      0
+    ],
+    "Q": [
+      1,
+      0
+    ]
+  },
+  "main_boundary_theorem_depends_on_prior_arithmetic_certificates": false,
+  "accepted_inputs_used_only_for_arithmetic_extension_or_context": [
+    "P,Q span E(Q) tensor Q; they are an accepted Z_11 basis from prior work.",
+    "Attack 06 fixed-scale relation kappa_dagger=16*s11*adj(H)*ell; s11 is unknown."
+  ],
+  "previous_source": {
+    "file": "BSD_Proof_Attack_06_Balanced_Determinant_Descent.md",
+    "sha256": "ce8dfa165d1155e34cc065c7b1884caac5457345b5d88ec6383fc2c50879cc24",
+    "archive": "BSD_Proof_Attack_06.zip",
+    "archive_sha256": "d3cc6af0a084708a7affdfc10d09aae326287648d8e0fbc47e4eccf6d5e95a83",
+    "replayed": false
+  },
+  "primary_sources": [
+    {
+      "authors": "Evangelia Gazaki and Jonathan Love",
+      "title": "Hyperelliptic curves mapping to abelian varieties and applications to Beilinson’s conjecture for zero-cycles",
+      "url": "https://arxiv.org/html/2309.06361v3",
+      "sections": "2.1-2.2",
+      "use": "Context for the hyperelliptic method. The explicit integral Q-boundary is proved directly in Attack 07."
+    },
+    {
+      "author": "Netan Dogra",
+      "title": "Generalised height pairings and the Albanese kernel",
+      "url": "https://arxiv.org/html/2507.10111v3",
+      "sections": "3.1, Proposition 1",
+      "use": "Relative cycle / mixed-extension context; its coniveau quotient must not be confused with the Weil-contracted Tate part."
+    },
+    {
+      "author": "Carolina Rivera Arredondo",
+      "title": "Height pairings of 1-motives",
+      "url": "https://arxiv.org/pdf/2006.10362",
+      "sections": "2.1, 6",
+      "use": "Biextension and unit-root height framework. No numeric height or Kato comparison inferred from rational lifts."
+    }
+  ],
+  "new_computation": {
+    "command": "python3 attack07_cycle.py --output attack07_result.json",
+    "dependencies": "Python >=3.9 standard library",
+    "scope": "Explicit polynomial, point and cycle calculations for this new construction"
+  },
+  "completed_objects": [
+    "Genus 3 curve C and map C -> E x E",
+    "Four-function chain Gamma_PQ with boundary 4*box(P,Q)",
+    "Rational nullhomotopies for PP,PQ,QP,QQ",
+    "Explicit divisor and rational-lift model for a 1-motive"
+  ],
+  "open_steps": [
+    "No Kato-compatible correspondence or chain map to this relative-cycle construction has been given.",
+    "No comparison of the geometric models with all fixed Kummer cocycles, local splittings and normalizations has been completed.",
+    "No rationality or value of the canonical scalar s11 has been proved.",
+    "No archimedean regulator identification with L(E,s) second derivative has been proved."
+  ],
+  "canonical_frontier_updated": false,
+  "format_policy": "Original UTF-8; math delimited with dollar signs; no unicode_escape or LaTeX-to-Unicode conversion."
+}

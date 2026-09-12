@@ -1,0 +1,75 @@
+{
+  "package": "BSD Proof Attack 06",
+  "date": "2026-09-12",
+  "canonical_source": "BSD_Proof_Attack_06_Balanced_Determinant_Descent.md",
+  "proof_status": "Exploratory proof draft under the listed previous inputs and external theorems; no independent proof review",
+  "main_progress": [
+    "Exact local factor 16 and fixed-normalization scalar formula",
+    "Adjugate contraction invariance under a rank-one height update",
+    "A precise non-Hodge-Tate obstruction to the direct first-jet motivic lift",
+    "Balanced inverse twists cancel at the coefficient level",
+    "Choice-independent p-adic regulator-line element and explicit complex Mellin target"
+  ],
+  "unresolved": [
+    "The value and rationality of the canonical global scalar s_11",
+    "A rational secondary lift of eta_11^K",
+    "The secondary regulator/Mellin comparison BD6",
+    "Full BSD"
+  ],
+  "new_computation": {
+    "command": "python3 attack06_algebra.py",
+    "exit_code": 0,
+    "local_multiplier": 16,
+    "e11_mod11": 5,
+    "theta_mod11": 1,
+    "symbolic_identity_residuals": "zero polynomials",
+    "global_scalar": null,
+    "scope": "Exact local and symbolic algebra only; no computational proof of BD6"
+  },
+  "document_checks": [
+    {
+      "name": "BSD_Proof_Attack_06_Balanced_Determinant_Descent.md",
+      "strict_utf8": true,
+      "canonical_math_delimiters": true,
+      "math_spans": 211,
+      "balanced_braces": true
+    },
+    {
+      "name": "README.md",
+      "strict_utf8": true,
+      "canonical_math_delimiters": true,
+      "math_spans": 11,
+      "balanced_braces": true
+    }
+  ],
+  "validation_scope": "UTF-8, math delimiters and braces, JSON/Python syntax, and execution of the new arithmetic script. This does not certify the arithmetic deductions or the motivic bridge.",
+  "canonical_frontier_updated": false,
+  "old_certificates_replayed": false,
+  "files": [
+    {
+      "name": "BSD_Proof_Attack_06_Balanced_Determinant_Descent.md",
+      "bytes": 21019,
+      "sha256": "ce8dfa165d1155e34cc065c7b1884caac5457345b5d88ec6383fc2c50879cc24"
+    },
+    {
+      "name": "INPUTS.json",
+      "bytes": 3628,
+      "sha256": "a1bbb1cfa2c977883b2b87e4075784fde0373710bba4cabd5e0f0a3d010697d4"
+    },
+    {
+      "name": "README.md",
+      "bytes": 2253,
+      "sha256": "0f8473cf0aeec93d1e5518042cc9b5b024dae144dcf40db885561609acbb14b2"
+    },
+    {
+      "name": "attack06_algebra.py",
+      "bytes": 8080,
+      "sha256": "589b75c4030b74d2879f239a4f35a7d385d1fa53b6522fff88e63cfd39695ca6"
+    },
+    {
+      "name": "attack06_result.json",
+      "bytes": 1595,
+      "sha256": "544bdfafb71c75a561add8b60eda0593d576f7b4f644bec58a76b0f9eb73869f"
+    }
+  ]
+}

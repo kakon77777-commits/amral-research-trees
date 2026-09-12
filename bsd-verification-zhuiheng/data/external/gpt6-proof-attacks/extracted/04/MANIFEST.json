@@ -1,0 +1,45 @@
+{
+  "package": "BSD Proof Attack 04",
+  "date": "2026-09-12",
+  "status": "proof draft with accepted prior arithmetic inputs and cited external theorems; no independent review",
+  "new_claims": [
+    "p-saturated principal-ideal descent",
+    "primitive cyclotomic analytic mu=0, lambda=2 for E389a1 at p11",
+    "Kato/cofactor unit comparison for specified relaxed complex"
+  ],
+  "not_claimed": [
+    "full BSD",
+    "full R318 filtered regulator comparison",
+    "R319 complex leading-term identity",
+    "absolute canonical unit"
+  ],
+  "computation_executed": "python3 cyclotomic_mu.py; 110 summands; exit code 0",
+  "old_certificate_replayed": false,
+  "files": [
+    {
+      "name": "BSD_Proof_Attack_04_Mu_Zero_Descent.md",
+      "bytes": 20623,
+      "sha256": "f05ff629a236fab86413c435fbe0ca8fff2c8454a7c7695b2de1c7dc218e2ef2"
+    },
+    {
+      "name": "README.md",
+      "bytes": 1429,
+      "sha256": "7817eb7d22a1faf00b79afa5f67c0533b9c0ab7365aa1daa87a84f81e858ab5a"
+    },
+    {
+      "name": "cyclotomic_mu.py",
+      "bytes": 4488,
+      "sha256": "b0704a7e97a87712344b760354188c622224c8e44f90b3bc1c1c60b30cc160cd"
+    },
+    {
+      "name": "cyclotomic_result.json",
+      "bytes": 13576,
+      "sha256": "180046cdd07c6625959769ba7009b0ff2178a59ad7d3574d62bc0fc3d1659a0f"
+    },
+    {
+      "name": "eigenline_input.json",
+      "bytes": 3324,
+      "sha256": "de189669e246d4384676707ab396b073ccc50fba4e5af0c0556f03220145aaa8"
+    }
+  ]
+}

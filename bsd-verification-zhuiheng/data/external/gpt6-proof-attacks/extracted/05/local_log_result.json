@@ -1,0 +1,45 @@
+{
+  "curve": "389a1",
+  "equation": "y^2+y=x^3+x^2-2*x",
+  "differential": "omega=dx/(2*y+1)",
+  "p": 11,
+  "accepted_reduction_group_order": 16,
+  "method": "Exact rational multiplication; formal logarithm modulo p^2",
+  "points": {
+    "P": {
+      "input": [
+        0,
+        0
+      ],
+      "point16": [
+        "1899819766783352463986118087437529738/519423448500831088162843868066113801",
+        "-2969568155896345589287513053534876324876171598104545016/374353869746749668785754043299784786445626151834679451"
+      ],
+      "formal_t_exact": "205497141057035521582400306923056732089/445682830880797694925992865291250333348",
+      "formal_t_mod121": 99,
+      "v11_formal_t": 1,
+      "log_over_11_mod11": 4
+    },
+    "Q": {
+      "input": [
+        1,
+        0
+      ],
+      "point16": [
+        "73854569074849549238007351488224358615375436177992751/39390871117046508605276931846378647374479026128742401",
+        "-24003395580218144337297303951649379028399854534827248818014728881558297426273550/7817958807220012167170235112634453044123416322599051643100252458200446186726399"
+      ],
+      "formal_t_exact": "153361915381936998363332566491636457727279045240703757/251139511582897834947799963976092405250535332652680150",
+      "formal_t_mod121": 66,
+      "v11_formal_t": 1,
+      "log_over_11_mod11": 10
+    }
+  },
+  "normalized_log_vector_mod11": [
+    4,
+    10
+  ],
+  "normalized_log_is_surjective": true,
+  "height_matrix": "Not computed; see proof for determinant nonvanishing",
+  "global_torsion": "Not inferred by code; proved using Selmer triangles in the manuscript"
+}

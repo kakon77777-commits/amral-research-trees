@@ -1,0 +1,58 @@
+{
+  "artifact": "BSD_Proof_Attack_07",
+  "date": "2026-09-12",
+  "files": [
+    {
+      "file": "BSD_Proof_Attack_07_Explicit_Secondary_Geometry.md",
+      "size_bytes": 17585,
+      "sha256": "d5db60984c944a45835bb69c0e350ddd6c2585fbd1d4976051e6f342879220cd"
+    },
+    {
+      "file": "INPUTS.json",
+      "size_bytes": 3041,
+      "sha256": "ffd570838d6b27b542f68824b046e797efe5c16d3a8261d7008a51afdcd47d81"
+    },
+    {
+      "file": "README.md",
+      "size_bytes": 2017,
+      "sha256": "c10db608eccd945b671135271c2ec9393ad1bd4f455338bcec2bf9c2dad33ac1"
+    },
+    {
+      "file": "attack07_cycle.py",
+      "size_bytes": 11492,
+      "sha256": "a9474b3397c459894d76aa7be3e792bae536f7eabe09eda6ef34efdd6672b6ab"
+    },
+    {
+      "file": "attack07_result.json",
+      "size_bytes": 6646,
+      "sha256": "09418a290e0e34935b9d81e93da7d329c924f021f17b53b9a1b6b25fac90b6c7"
+    }
+  ],
+  "source_validation": {
+    "BSD_Proof_Attack_07_Explicit_Secondary_Geometry.md": {
+      "utf8": "valid",
+      "math_delimiters": "dollar_only_balanced",
+      "braces": "balanced",
+      "left_right": "balanced",
+      "math_spans": 224,
+      "code_fences": "balanced"
+    },
+    "README.md": {
+      "utf8": "valid",
+      "math_delimiters": "dollar_only_balanced",
+      "braces": "balanced",
+      "left_right": "balanced",
+      "math_spans": 6,
+      "code_fences": "balanced"
+    }
+  },
+  "execution": {
+    "command": "python3 attack07_cycle.py --output attack07_result.json",
+    "exit_code": 0,
+    "boundary_residual": [],
+    "squarefree_mod11": true,
+    "scope": "new construction only"
+  },
+  "proof_status": "Research derivations plus exact algebra; no independent formal or scholarly review claimed",
+  "canonical_frontier_updated": false
+}

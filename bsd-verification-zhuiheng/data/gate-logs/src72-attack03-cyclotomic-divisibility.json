@@ -1,0 +1,84 @@
+{
+  "gate": "src72 — Attack 03, the finite content recomputed",
+  "source": "data/external/gpt6-proof-attacks/extracted/03/BSD_Proof_Attack_03_Cyclotomic_Divisibility.md",
+  "adjugate_identity_in_F11_G_mod_I3": {
+    "B": "[[X, 2X], [Y, 4Y]]",
+    "det_B": {
+      "X^1Y^1": 2
+    },
+    "random_c_trials": 25,
+    "A_z_nonzero": 0,
+    "q_z_equals_D": true,
+    "agrees": true
+  },
+  "adjugate_identity_over_Z": {
+    "trials": 200,
+    "failures": 0,
+    "agrees": true
+  },
+  "constants_section_5": {
+    "a_11_point_counted": -4,
+    "eleven_minus_a11_plus_1": 16,
+    "is_unit_mod_11": true,
+    "U_m_character_values": {
+      "trivial_on_397=False,trivial_on_991=False": {
+        "chi_U_m": 1,
+        "m_over_f_chi": 1,
+        "agrees": true
+      },
+      "trivial_on_397=False,trivial_on_991=True": {
+        "chi_U_m": 991,
+        "m_over_f_chi": 991,
+        "agrees": true
+      },
+      "trivial_on_397=True,trivial_on_991=False": {
+        "chi_U_m": 397,
+        "m_over_f_chi": 397,
+        "agrees": true
+      },
+      "trivial_on_397=True,trivial_on_991=True": {
+        "chi_U_m": 393427,
+        "m_over_f_chi": 393427,
+        "agrees": true
+      }
+    },
+    "epsilon_U_m": 393427,
+    "epsilon_U_m_mod_11": 1,
+    "bad_prime_factor_388_over_389_mod_11": 9,
+    "kappa_9_times_5_mod_11": 1,
+    "ordinary_unit_root_mod_11": [
+      7
+    ],
+    "unit_root_is_7_not_1": true,
+    "agrees": true
+  },
+  "counterexample_section_7": {
+    "X0_N0_is_zero": true,
+    "h0_equals_D0_times_u": true,
+    "u_in_R0": false,
+    "u_trivial_branch": "2",
+    "u_nontrivial_branches": "1 (N₀ ↦ 0)",
+    "D0_trivial_branch": "11",
+    "D0_nontrivial_branch": "11 + (ζ − 1) ≠ 0",
+    "h0_in_D0_R0": false,
+    "epsilon_D0_mod_11": 0,
+    "reading": "branch-wise the quotient h₀/D₀ is a unit on every characteristic-zero branch, and it is not in R₀: the document's point, that character-wise divisibility does not glue, verified in the ring",
+    "agrees": true
+  },
+  "labels": {
+    "document_found": true,
+    "says_core_lemma_unproved": true,
+    "says_not_a_full_BSD_proof": true,
+    "theorem_6_1_labelled_conditional": true,
+    "candidate_core_lemma_labelled_unproved": true,
+    "claims_of_a_BSD_proof_found": [],
+    "agrees": true
+  },
+  "not_computed_here": [
+    "Proposition 2.1 (the shape of the Selmer complex, h¹ = 3, h² = 2) — a cohomological derivation, read",
+    "Theorem 6.1 — conditional on three hypotheses the document itself lists; hypothesis 3 is the unproved core lemma",
+    "the local Kato/tame-norm identification of §5 — cited to BKS II, read"
+  ],
+  "headline": "Lemma 3.1 holds in the actual ring with det B = 2XY and over Z; the constants of §5 all recompute (a₁₁ = -4, 16 a unit, χ(U_m) = m/f_χ on all four character types, ε(U_m) ≡ 1, 388/389 ≡ 9, 9·5 ≡ 1, unit root 7); the §7 counterexample is exactly as stated — h₀ = D₀u with u ∉ Z₁₁[C₁₁], every branch a unit; and the document labels its core lemma unproved and itself not a BSD proof",
+  "ok": true
+}

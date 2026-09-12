@@ -1,0 +1,97 @@
+{
+  "project": "BSD Proof Attack 05",
+  "date": "2026-09-12",
+  "scope": "E389a1 over Q, p=11; cyclotomic rank-two leading term",
+  "treatment": "Prior arithmetic and model statements are accepted inputs, not independently reverified in this package.",
+  "curve": {
+    "label": "389a1",
+    "ainvs": [0, 1, 1, -2, 0],
+    "p": 11,
+    "P": [0, 0],
+    "Q": [1, 0],
+    "O_basis_of_Mordell_Weil_completion": ["P", "Q"],
+    "Sha_p_primary": "0",
+    "residual_image": "Contains SL_2(F_11)",
+    "a11": -4,
+    "reduction_order_11": 16,
+    "tamagawa_389": 1,
+    "global_11_torsion": "0",
+    "bad_prime_local_correction": "11-adic unit"
+  },
+  "auxiliary_primes": {
+    "primes": [397, 991],
+    "reduction_orders": [374, 1045],
+    "p_primary_groups": ["F_11", "F_11"],
+    "localization_matrix_mod11": [[1, 2], [1, 4]]
+  },
+  "analytic_input": {
+    "branch": "Primitive ordinary cyclotomic branch through the trivial character",
+    "parameter": "t=gamma_cyc-1, gamma_cyc corresponding to 12",
+    "mu": 0,
+    "lambda": 2,
+    "t_coefficients_mod11_mod_t11_in_fixed_modular_symbol_scale": [0, 0, 2, 2, 2, 0, 5, 6, 10, 7, 0],
+    "canonical_period_scale": "An accepted nonzero 11-adic unit; absolute value not fixed by these residues"
+  },
+  "accepted_model_inputs": [
+    "The tame-augmented relaxed ordinary Selmer complex has H1=O^2 and H2=O^2 at t=0.",
+    "The finite tame relaxed model has q=(0,0,1), B in M_2(I), and c at augmentation in 11 O^2.",
+    "Attack 04 supplies the integral Kato/cofactor comparison up to a unit for the specified relaxed family.",
+    "Kato smoothing factors and the primitive modular-symbol lattice comparisons used previously are units."
+  ],
+  "prior_packages": [
+    {
+      "name": "BSD_389a1_p11_Replay_and_Local_Comparison_v1.zip",
+      "sha256": "cb395baf6a8716bb70ccf1eda253141fa52b4c80f18a0fe59b7f3984d149c130",
+      "used_for": "Arithmetic inputs and finite local comparison"
+    },
+    {
+      "name": "BSD_389a1_p11_Integral_Descent_and_Global_Bockstein_v2.zip",
+      "sha256": "0e9c6d91917dce3e72567b45f3639ff45a74570df9b01ca205646dcfdb681283",
+      "used_for": "Global torsion question and genuine ambient Bockstein model"
+    },
+    {
+      "name": "BSD_Proof_Attack_03.zip",
+      "used_for": "Relaxed finite and cyclotomic cone models"
+    },
+    {
+      "name": "BSD_Proof_Attack_04.zip",
+      "sha256": "e4c9afbd38bf2f2c1c433052d6ce7d26e11086026bee2a6ba61c0f2d851cb12e",
+      "used_for": "Analytic mu=0, lambda=2 and relaxed integral unit comparison",
+      "manuscript_sha256": "f05ff629a236fab86413c435fbe0ca8fff2c8454a7c7695b2de1c7dc218e2ef2",
+      "cyclotomic_result_sha256": "180046cdd07c6625959769ba7009b0ff2178a59ad7d3574d62bc0fc3d1659a0f"
+    }
+  ],
+  "external_theorems": [
+    {
+      "source": "Kim-Lee-Ponsinet, arXiv:1909.01764v5",
+      "url": "https://arxiv.org/pdf/1909.01764v5",
+      "locations": ["Assumption 1.2", "Theorems 1.5 and 1.11", "Corollaries 3.4 and 3.5", "Proposition 5.1"],
+      "use": "Kato ranks and one-sided bound; primitive/open local Euler comparison"
+    },
+    {
+      "source": "Kataoka, arXiv:2008.02422v1",
+      "url": "https://arxiv.org/html/2008.02422v1",
+      "locations": ["Proposition 3.9", "Theorems 4.7 and 6.4"],
+      "use": "Integral ordinary Coleman isomorphism and reciprocity at K=Q only"
+    },
+    {
+      "source": "Burns-Kurihara-Sano, arXiv:1910.07404v2",
+      "url": "https://arxiv.org/html/1910.07404v2",
+      "locations": ["Section 5.1.1", "Theorem 5.6", "Lemmas 5.7-5.9"],
+      "use": "Actual Selmer Bockstein, ordinary height, symmetry, and contraction comparison"
+    },
+    {
+      "source": "Milne, Arithmetic Duality Theorems",
+      "url": "https://www.jmilne.org/math/Books/ADTnot.pdf",
+      "locations": ["Chapter I, Section 6"],
+      "use": "Integral Selmer and local duality underlying the finite-level lattice identification"
+    }
+  ],
+  "new_computation": "local_log.py computes the normalized log vector (4,10) modulo 11 using exact rational arithmetic.",
+  "not_supplied": [
+    "Numerical entries of the height matrix",
+    "The absolute canonical comparison unit",
+    "An independent motivic or complex regulator comparison",
+    "Full BSD or closure of all finite-F canonical filtered comparisons"
+  ]
+}

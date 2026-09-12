@@ -1,0 +1,66 @@
+{
+  "project": "BSD Proof Attack 06",
+  "date": "2026-09-12",
+  "curve": "389a1",
+  "p": 11,
+  "prior_package": {
+    "name": "BSD_Proof_Attack_05.zip",
+    "sha256": "6531079e2bda1c682ae50131fb18d4b2d7435afada8869f3f4e78b6dd4baa99e",
+    "status": "Accepted previous proof draft and its explicitly listed inputs; not independently revalidated here"
+  },
+  "accepted_previous_inputs_and_deductions": [
+    "P=(0,0), Q=(1,0) form a Z_11-basis of E(Q) tensor Z_11.",
+    "Sha(E/Q)[11^infinity]=0; residual image contains SL_2(F_11).",
+    "a_11=-4; good ordinary and non-anomalous at 11.",
+    "Split multiplicative at 389, with local 11-adic correction a unit.",
+    "log_omega(P)/11=4 mod 11 and log_omega(Q)/11=10 mod 11.",
+    "The ordinary cyclotomic height matrix in the stated normalization has unit determinant.",
+    "The primitive ordinary p-adic L-function is t^2 times a Z_11[[t]] unit.",
+    "The primitive derived Kato class exists integrally and is primitive.",
+    "Prior modular-symbol period lattice and smoothing comparisons are units, with absolute canonical scale not numerically computed."
+  ],
+  "normalization": {
+    "height": "BKS negative Bockstein convention; negative of the positive-Bockstein matrix in Attack 05, with the same rank-two determinant",
+    "period": "Integral of the fixed positive rational Betti cycle; a period change must simultaneously rescale the p-adic L-function and Kato class",
+    "Kato": "Standard dagger class, with Coleman(z_dagger)=L_11 exactly in consistent involution convention",
+    "scalar": "s_11=a_2 / ((1-alpha^-1)^2 det H); unknown, not set to 1",
+    "precise_class_multiplier": "16*s_11, not 16 alone"
+  },
+  "external_sources": [
+    {
+      "title": "Burns-Kurihara-Sano, On derivatives of Kato's Euler system for elliptic curves",
+      "version": "arXiv:1910.07404v2",
+      "url": "https://arxiv.org/html/1910.07404v2",
+      "used": "Theorem 6.2 and Section 6.4: exact generalized Rubin formula; Hypothesis 2.2; compatible height and derivative conventions",
+      "not_assumed": "Generalized Perrin-Riou conjecture or the conjectural p-adic Beilinson equality"
+    },
+    {
+      "title": "Kataoka, Equivariant Iwasawa theory for elliptic curves",
+      "version": "arXiv:2008.02422v1",
+      "url": "https://arxiv.org/html/2008.02422v1",
+      "used": "Theorem 6.4 proof, equations (6.8)-(6.10), at K=Q: exact local Coleman multiplier"
+    },
+    {
+      "title": "Brinon-Conrad, CMI Summer School Notes on p-adic Hodge Theory",
+      "url": "https://math.stanford.edu/~conrad/papers/notes.pdf",
+      "used": "Section 15.1, Exercises 15.5.3-15.5.4: Sen operator and Hodge-Tate criterion"
+    },
+    {
+      "title": "Milne, Arithmetic Duality Theorems",
+      "url": "https://www.jmilne.org/math/Books/ADTnot.pdf",
+      "used": "I.4 and I.6: global/local duality and finite local conditions"
+    }
+  ],
+  "construction_status": {
+    "local_factor_16": "Derived exactly",
+    "rank_one_height_update_adjugate_invariance": "Proved as a polynomial identity",
+    "entire_first_jet_geometric_lift": "Excluded by its nonsemisimple Sen operator",
+    "balanced_coefficient_tensor": "Constructed; universal characters cancel at every finite order",
+    "ordinary_finite_Selmer_cup_product": "Zero, so it does not itself supply the needed regulator",
+    "choice_independent_p_adic_determinant_element": "Defined under the accepted inputs; stated invariances proved",
+    "rational_secondary_lift": "Not constructed",
+    "complex_Mellin_regulator_comparison": "Not proved"
+  },
+  "old_certificates_replayed": false,
+  "canonical_frontier_updated": false
+}

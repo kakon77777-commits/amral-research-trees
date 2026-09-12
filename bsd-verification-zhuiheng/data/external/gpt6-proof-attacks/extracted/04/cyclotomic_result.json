@@ -1,0 +1,816 @@
+{
+  "curve": "389a1",
+  "p": 11,
+  "level": 389,
+  "input_sha256": "de189669e246d4384676707ab396b073ccc50fba4e5af0c0556f03220145aaa8",
+  "accepted_input": "Hecke eigenline and p-unit canonical-period comparison",
+  "new_computation": "ordinary measure modulo (p,(1+t)^p-1)",
+  "generator": "gamma=1+p, t=gamma-1; pushforward through Teichmuller quotient",
+  "alpha_mod_p": 7,
+  "inverse_alpha_squared_mod_p": 9,
+  "inverse_alpha_cubed_mod_p": 6,
+  "group_basis_coefficients": [
+    4,
+    0,
+    7,
+    0,
+    4,
+    0,
+    7,
+    2,
+    2,
+    7,
+    0
+  ],
+  "t_basis_coefficients": [
+    0,
+    0,
+    2,
+    2,
+    2,
+    0,
+    5,
+    6,
+    10,
+    7,
+    0
+  ],
+  "summand_count": 110,
+  "mu": 0,
+  "lambda": 2,
+  "invariant_scope": "primitive ordinary p-adic L-function; conditional on accepted input",
+  "canonical_leading_coefficient": "not determined; fixed-scale coefficient times an unknown F_p unit",
+  "complex_analytic_rank": "not determined by this computation",
+  "summands": [
+    {
+      "a": 1,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 2,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 3,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 4,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 5,
+      "gamma_exponent": 4,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 6,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 7,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 8,
+      "gamma_exponent": 7,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 9,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 10,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 12,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 13,
+      "gamma_exponent": 1,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 14,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 15,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 16,
+      "gamma_exponent": 2,
+      "symbol_p2": 10,
+      "symbol_p": 1,
+      "mass": 7
+    },
+    {
+      "a": 17,
+      "gamma_exponent": 8,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 18,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 19,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 20,
+      "gamma_exponent": 5,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 21,
+      "gamma_exponent": 9,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 23,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 24,
+      "gamma_exponent": 7,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 25,
+      "gamma_exponent": 8,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 26,
+      "gamma_exponent": 7,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 27,
+      "gamma_exponent": 0,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 28,
+      "gamma_exponent": 10,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 29,
+      "gamma_exponent": 3,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 30,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 31,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 32,
+      "gamma_exponent": 8,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 34,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 35,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 36,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 37,
+      "gamma_exponent": 10,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 38,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 39,
+      "gamma_exponent": 1,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 40,
+      "gamma_exponent": 0,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 41,
+      "gamma_exponent": 6,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 42,
+      "gamma_exponent": 4,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 43,
+      "gamma_exponent": 7,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 45,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 46,
+      "gamma_exponent": 8,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 47,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 48,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 49,
+      "gamma_exponent": 7,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 50,
+      "gamma_exponent": 3,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 51,
+      "gamma_exponent": 8,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 52,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 53,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 54,
+      "gamma_exponent": 6,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 56,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 57,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 58,
+      "gamma_exponent": 9,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 59,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 60,
+      "gamma_exponent": 5,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 61,
+      "gamma_exponent": 5,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 62,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 63,
+      "gamma_exponent": 9,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 64,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 65,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 67,
+      "gamma_exponent": 6,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 68,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 69,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 70,
+      "gamma_exponent": 8,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 71,
+      "gamma_exponent": 3,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 72,
+      "gamma_exponent": 7,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 73,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 74,
+      "gamma_exponent": 5,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 75,
+      "gamma_exponent": 8,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 76,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 78,
+      "gamma_exponent": 7,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 79,
+      "gamma_exponent": 4,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 80,
+      "gamma_exponent": 6,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 81,
+      "gamma_exponent": 0,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 82,
+      "gamma_exponent": 1,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 83,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 84,
+      "gamma_exponent": 10,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 85,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 86,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 87,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 89,
+      "gamma_exponent": 8,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 90,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 91,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 92,
+      "gamma_exponent": 3,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 93,
+      "gamma_exponent": 10,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 94,
+      "gamma_exponent": 0,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 95,
+      "gamma_exponent": 7,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 96,
+      "gamma_exponent": 8,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 97,
+      "gamma_exponent": 7,
+      "symbol_p2": 5,
+      "symbol_p": 0,
+      "mass": 1
+    },
+    {
+      "a": 98,
+      "gamma_exponent": 2,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 100,
+      "gamma_exponent": 9,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 101,
+      "gamma_exponent": 5,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 102,
+      "gamma_exponent": 3,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 103,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 104,
+      "gamma_exponent": 8,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 105,
+      "gamma_exponent": 2,
+      "symbol_p2": 10,
+      "symbol_p": 1,
+      "mass": 7
+    },
+    {
+      "a": 106,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 107,
+      "gamma_exponent": 4,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 108,
+      "gamma_exponent": 1,
+      "symbol_p2": 6,
+      "symbol_p": 0,
+      "mass": 10
+    },
+    {
+      "a": 109,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 111,
+      "gamma_exponent": 10,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 112,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 113,
+      "gamma_exponent": 7,
+      "symbol_p2": 6,
+      "symbol_p": 5,
+      "mass": 2
+    },
+    {
+      "a": 114,
+      "gamma_exponent": 9,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 115,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 1,
+      "mass": 5
+    },
+    {
+      "a": 116,
+      "gamma_exponent": 4,
+      "symbol_p2": 5,
+      "symbol_p": 1,
+      "mass": 6
+    },
+    {
+      "a": 117,
+      "gamma_exponent": 1,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 118,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    },
+    {
+      "a": 119,
+      "gamma_exponent": 6,
+      "symbol_p2": 0,
+      "symbol_p": 0,
+      "mass": 0
+    },
+    {
+      "a": 120,
+      "gamma_exponent": 0,
+      "symbol_p2": 0,
+      "symbol_p": 5,
+      "mass": 3
+    }
+  ]
+}

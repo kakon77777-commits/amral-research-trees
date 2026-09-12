@@ -1,0 +1,76 @@
+{
+  "package": "BSD Proof Attack 05",
+  "date": "2026-09-12",
+  "status": "Proof draft under accepted prior arithmetic/model inputs and cited theorems; no independent proof review",
+  "canonical_source": "BSD_Proof_Attack_05_Rank_Two_Regulator.md",
+  "new_deductions": [
+    "The normalized local logarithm M -> Z_11 is surjective.",
+    "The primitive Selmer complex is equivalent to [Lambda^2 --tI_2--> Lambda^2].",
+    "The normalized cyclotomic height has unit determinant, and L_11(E,t)=t^2 times a Lambda unit.",
+    "The primitive derived Kato class is a unit multiple of adj(H_gamma) ell.",
+    "The relaxed global H2 is Z_11 direct sum Z/11; the two-prime lattice determinant has valuation 2."
+  ],
+  "computation": {
+    "command": "python3 local_log.py",
+    "exit_code": 0,
+    "method": "Exact Fraction arithmetic; formal logarithm congruence is proved in the manuscript.",
+    "formal_parameters_mod121": [
+      99,
+      66
+    ],
+    "normalized_logs_mod11": [
+      4,
+      10
+    ],
+    "scope": "Local-log calculation only; not a machine verification of the global proof."
+  },
+  "document_validation": [
+    {
+      "file": "BSD_Proof_Attack_05_Rank_Two_Regulator.md",
+      "strict_utf8": true,
+      "math_delimiters_and_braces": "balanced",
+      "math_spans": 289
+    },
+    {
+      "file": "README.md",
+      "strict_utf8": true,
+      "math_delimiters_and_braces": "balanced",
+      "math_spans": 14
+    }
+  ],
+  "validation_scope": "UTF-8 decoding, delimiter/brace checks, JSON parsing, and execution of the new arithmetic script; not independent theorem validation.",
+  "old_certificate_replayed": false,
+  "canonical_frontier_updated": false,
+  "remaining": [
+    "Independent motivic/complex realization and leading-term comparison",
+    "Absolute canonical unit",
+    "Full finite-F canonical filtered comparison and full BSD"
+  ],
+  "files": [
+    {
+      "name": "BSD_Proof_Attack_05_Rank_Two_Regulator.md",
+      "bytes": 21407,
+      "sha256": "24f3297ad3dcc3c0920de77fb02aa042896a7765794f3151de3a2639075c6a90"
+    },
+    {
+      "name": "INPUTS.json",
+      "bytes": 4262,
+      "sha256": "7e67f42e02349699a2b6dab47e0071146873bbcdc5aba4785d13b6b1f8a3b0a3"
+    },
+    {
+      "name": "README.md",
+      "bytes": 2053,
+      "sha256": "a3faabfeb94cc1343693657a70879b4d22f305b5207bb96a29699b79fd80f17e"
+    },
+    {
+      "name": "local_log.py",
+      "bytes": 3745,
+      "sha256": "a69749c5f993abc688adec43b822b9ee20f7e4573b00f5b1bb1f6574cf93f473"
+    },
+    {
+      "name": "local_log_result.json",
+      "bytes": 1597,
+      "sha256": "e694b65cb1a22bc767904649bc72290186349e2759d677f95461c03c0d92179e"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "package": "BSD Proof Attack 06",
+  "arithmetic": "Exact rational and multivariate polynomial arithmetic",
+  "quadratic_relation": "A^2+4*A+11=0; ordinary embedding A=7 mod 11",
+  "euler_e11": {
+    "constant": "214/121",
+    "coefficient_of_A": "26/121"
+  },
+  "coleman_log_c_alpha": {
+    "constant": "107/88",
+    "coefficient_of_A": "13/88"
+  },
+  "theta_c_alpha_over_11": {
+    "constant": "107/968",
+    "coefficient_of_A": "13/968"
+  },
+  "e11_over_theta_exact": {
+    "constant": "16",
+    "coefficient_of_A": "0"
+  },
+  "local_multiplier": 16,
+  "ordinary_residues": {
+    "modulus": 214358881,
+    "alpha": 33341821,
+    "e11": 58539629,
+    "theta": 43851017,
+    "e11_mod11": 5,
+    "theta_mod11": 1
+  },
+  "symbolic_variables": [
+    "a",
+    "b",
+    "d",
+    "c",
+    "x",
+    "y"
+  ],
+  "adjugate_rank_one_update_residual": [
+    [],
+    []
+  ],
+  "determinant_rank_one_update_residual": [],
+  "balanced_character_product_coefficients_through_epsilon4": [
+    [
+      {
+        "coefficient": "1",
+        "exponents": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    [],
+    [],
+    [],
+    []
+  ],
+  "normalized_first_jet_Sen_matrix": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "Sen_matrix_characteristic_polynomial": "X^2",
+  "Sen_matrix_minimal_polynomial": "X^2",
+  "canonical_global_scalar_s11": null,
+  "motivic_bridge_BD6": "Not constructed or proved",
+  "scope": "Local algebra only. The Hodge-Tate inference uses the cited Sen theorem; no global proof is machine-verified here."
+}
