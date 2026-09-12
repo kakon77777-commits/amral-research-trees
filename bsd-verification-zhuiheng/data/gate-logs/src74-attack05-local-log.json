@@ -1,0 +1,97 @@
+{
+  "gate": "src74 — Attack 05's local logarithm, exact",
+  "source": "data/external/gpt6-proof-attacks/extracted/05/BSD_Proof_Attack_05_Rank_Two_Regulator.md",
+  "local_log": {
+    "P": {
+      "point": "P",
+      "input": [
+        0,
+        0
+      ],
+      "multiple": 16,
+      "point16": [
+        "1899819766783352463986118087437529738/519423448500831088162843868066113801",
+        "-2969568155896345589287513053534876324876171598104545016/374353869746749668785754043299784786445626151834679451"
+      ],
+      "formal_parameter_s_exact": "205497141057035521582400306923056732089/445682830880797694925992865291250333348",
+      "v11_of_s": 1,
+      "s_mod_121": 99,
+      "log_over_11_mod_11": 4,
+      "x_is_11_adically_large": true,
+      "v11_x": -2,
+      "v11_y": -3
+    },
+    "Q": {
+      "point": "Q",
+      "input": [
+        1,
+        0
+      ],
+      "multiple": 16,
+      "point16": [
+        "73854569074849549238007351488224358615375436177992751/39390871117046508605276931846378647374479026128742401",
+        "-24003395580218144337297303951649379028399854534827248818014728881558297426273550/7817958807220012167170235112634453044123416322599051643100252458200446186726399"
+      ],
+      "formal_parameter_s_exact": "153361915381936998363332566491636457727279045240703757/251139511582897834947799963976092405250535332652680150",
+      "v11_of_s": 1,
+      "s_mod_121": 66,
+      "log_over_11_mod_11": 10,
+      "x_is_11_adically_large": true,
+      "v11_x": -2,
+      "v11_y": -3
+    }
+  },
+  "ell_of_P_plus_4Q_mod_11": 0,
+  "kernel_is_P_plus_4Q": true,
+  "premises": {
+    "count_F11": 16,
+    "a_11": -4,
+    "non_anomalous_a11_not_1_mod_11": true,
+    "n_minus_v11_n_at_least_2_for_n_2_to_399": true,
+    "euler_constant_374_1045_over_397_991": "390830/393427",
+    "its_v11": 2,
+    "unit_part": "3230/393427",
+    "unit_part_mod_11": 7,
+    "three_two_three_zero_check": true,
+    "agrees": true
+  },
+  "comparison_with_the_documents_output": {
+    "present": true,
+    "P": {
+      "point16_identical": true,
+      "formal_parameter_identical": true,
+      "their_s_mod_121": 99,
+      "their_ell": 4
+    },
+    "Q": {
+      "point16_identical": true,
+      "formal_parameter_identical": true,
+      "their_s_mod_121": 66,
+      "their_ell": 10
+    },
+    "agrees": true
+  },
+  "labels": {
+    "document_found": true,
+    "says_no_full_BSD": true,
+    "says_unreviewed": true,
+    "height_matrix_entries_not_computed": true,
+    "rests_on_cited_theorems": true,
+    "agrees": true
+  },
+  "stated": {
+    "s_P_mod_121": 99,
+    "s_Q_mod_121": 66,
+    "v11": 1,
+    "ell_P": 4,
+    "ell_Q": 10,
+    "count_F11": 16
+  },
+  "not_computed_here": [
+    "det H_γ ∈ O^× and L₁₁(E,t) = t²U(t) — derived from Kato's one-sided bound and the Coleman map, read",
+    "H²(G_{Q,Σ},T) ≅ O ⊕ O/11 and the index 11² — Selmer-complex derivations, read",
+    "Theorem 6.1 (κ_prim = u₀·adj(H_γ)ℓ) — read"
+  ],
+  "headline": "[16]P and [16]Q computed exactly and identical to the document's coordinates; s([16]P) ≡ 99, s([16]Q) ≡ 66 (mod 121), both of valuation 1; ℓ̄ = (4, 10), ker ℓ̄ ∋ P + 4Q; #E(F₁₁) = 16; the Euler constant is 11² times a unit ≡ 7",
+  "ok": true
+}
