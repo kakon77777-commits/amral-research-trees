@@ -1,0 +1,86 @@
+{
+ "gate": "src85",
+ "round": "RUN-083",
+ "round_005": {
+  "trials": 40,
+  "checks": {
+   "5.2": true,
+   "8.1": true,
+   "9.1": true,
+   "10": true,
+   "11.2": true,
+   "14.1": true,
+   "16.1": true,
+   "17.2": true,
+   "19.2": true,
+   "20.1": true,
+   "22.1": true,
+   "26.1": true
+  },
+  "agrees": true
+ },
+ "round_006": {
+  "trials": 40,
+  "checks": {
+   "3.1": true,
+   "4.1": true,
+   "7.2": true,
+   "8": true,
+   "9.1": true,
+   "10.1": true,
+   "12.1": true,
+   "13.1": true,
+   "14.1": true,
+   "15.1": true,
+   "17.1": true,
+   "18.1": true,
+   "20.1": true,
+   "22.1": true,
+   "23.1": true,
+   "24.1": true
+  },
+  "sqrt_3_mod_11_12": 2356328188186,
+  "agrees": true
+ },
+ "round_007": {
+  "trials": 40,
+  "checks": {
+   "4": true,
+   "6.1": true,
+   "7.1": true,
+   "8.2": true,
+   "9.2": true,
+   "10.3": true,
+   "11.1": true,
+   "12.1": true,
+   "14.2": true,
+   "15.1": true,
+   "16": true,
+   "17.1": true,
+   "18.1": true,
+   "25.1": true
+  },
+  "agrees": true
+ },
+ "labels": {
+  "documents": {
+   "005": {
+    "no_bsd": true,
+    "not_proved_list": true,
+    "bsd_last_unproved": true
+   },
+   "006": {
+    "no_bsd": true,
+    "not_proved_list": true,
+    "bsd_last_unproved": true
+   },
+   "007": {
+    "no_bsd": true,
+    "not_proved_list": true,
+    "bsd_last_unproved": true
+   }
+  },
+  "agrees": true
+ },
+ "agrees": true
+}

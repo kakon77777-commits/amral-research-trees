@@ -169,6 +169,10 @@ import src78_attack09_auxiliary_character as atk78        # noqa: E402
 import src79_attack09_eisenstein_leading_term as atk79    # noqa: E402
 import src80_attack10_unit_and_trace_bridge as atk80      # noqa: E402
 import src81_symbolic001_cross_rank_calibration as sym81  # noqa: E402
+import src82_pc001_calibrator_19a1 as pc82                # noqa: E402
+import src83_pc002_relative_regulator as pc83             # noqa: E402
+import src84_symbolic002_004_determinant_jets as sym84    # noqa: E402
+import src85_symbolic005_007_lattice_torsor_euler as sym85  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3537,6 +3541,59 @@ def check_symbolic001_calibration() -> bool:
 
 
 
+def check_pc001_calibrator() -> bool:
+    """PC-001 (the local GPT-6 line): the level-19 Manin space over Q, the
+    plus and minus rational eigenlines identical to the line's primitive
+    vectors, five Hecke checks against point counts, the first-layer
+    ordinary and chi_8-twisted measures with every stated residue and the
+    level-121 distribution relation, a_11(17.a1) = 0, the archimedean
+    alignment of both periods (one unit per sign), and the labels."""
+    lines = pc82.calibrator_lines()
+    if not lines["agrees"]:
+        return False
+    return (pc82.measures(lines)["agrees"] and pc82.level_17_remark()["agrees"]
+            and pc82.archimedean_alignment(lines)["agrees"] and pc82.labels()["agrees"])
+
+
+def check_pc002_relative_regulator() -> bool:
+    """PC-002 (the local GPT-6 line): the four 11-adic series of 389.a1 and
+    19.a1 from the level-1331 layer - 2420 summand rows, the group and t
+    coefficients, Q(t) to t^120 with Weierstrass degree 2 and leading 7 -
+    identical to the line's; the width-11 agreement of the level-121 layer
+    and the 121 -> 1331 refinement; the Farey cup pairing with ranks 64
+    and 2, the cusp-gauge radicals, J_E = 1, J_0 = 3, Q_cup and the
+    four-line invariance; and the labels."""
+    cv = pc83.curves()
+    rr = pc83.relative_regulator(cv)
+    return rr["agrees"] and pc83.cup_normalisation(cv, rr)["agrees"] and pc83.labels()["agrees"]
+
+
+
+def check_symbolic002_004_jets() -> bool:
+    """BSD Symbolic Rounds 002-004: every boxed identity of the determinant
+    lift, the anchored projective jet and the higher projective jets holds
+    on exact random instances (exterior algebra on K^2, one- and two-variable
+    formal families, unit renormalisations, coordinate changes, companions),
+    with the gauge weights 2 and 4 independent of the jet order, and the
+    documents' own labels."""
+    rng = sym84.random.Random(sym84.RANDOM_SEED)
+    return (sym84.round_002(rng)["agrees"] and sym84.round_003(rng)["agrees"] and sym84.round_004(rng)["agrees"]
+            and sym84.labels()["agrees"])
+
+
+def check_symbolic005_007_lattice() -> bool:
+    """BSD Symbolic Rounds 005-007: the determinant-lattice torsor, the
+    descent and support statements, and the derived Euler defect - sublattice
+    and index-square laws, Z_p invisibility of prime-to-p indices, sqrt 3 in
+    Q_11, Hilbert 90, Smith-invariant lengths, the sign calibration of the
+    Euler defect and the mapping-cone formula on cones computed from their
+    own differentials - all on explicit integer instances, and the labels."""
+    rng = sym85.random.Random(sym85.RANDOM_SEED)
+    return (sym85.round_005(rng)["agrees"] and sym85.round_006(rng)["agrees"] and sym85.round_007(rng)["agrees"]
+            and sym85.labels()["agrees"])
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3547,7 +3604,7 @@ COVERS = sorted(m.__name__ for m in (
     consensus53, targets54, kern55, schema56, cmap57, prov58,
     lemb59, joins60, commit61, replay62, thirteen63, corpus64,
     closure65, proto66, maps67, mirror68, anom69, kur70, bock71,
-    atk72, atk73, atk74, atk75, atk76, atk77, atk78, atk79, atk80, sym81))
+    atk72, atk73, atk74, atk75, atk76, atk77, atk78, atk79, atk80, sym81, pc82, pc83, sym84, sym85))
 
 
 CHECKS = {
@@ -3658,6 +3715,10 @@ CHECKS = {
     "attack09-leading-term": check_attack09_leading_term,
     "attack10-unit-bridge": check_attack10_unit_bridge,
     "symbolic001-calibration": check_symbolic001_calibration,
+    "pc001-calibrator": check_pc001_calibrator,
+    "pc002-relative-regulator": check_pc002_relative_regulator,
+    "symbolic002-004-jets": check_symbolic002_004_jets,
+    "symbolic005-007-lattice": check_symbolic005_007_lattice,
 }
 
 
@@ -4005,6 +4066,60 @@ DEFECTS = [
      "functional (RUN-068's control), but it negates every minus symbol, and Attack 09's "
      "forty values are signed", "code", "attack09-leading-term",
      lambda: patch(kur70, "path_indices", _path_wrong_sign)),
+    ("Symbolic 002-004's determinant gauge weight is taken as 1 instead of 2", "code", "symbolic002-004-jets",
+     lambda: patch(sym84, "GAUGE_WEIGHT_DETERMINANT", 1)),
+    ("Symbolic 002-004's regulator gauge weight is taken as 2 instead of 4", "code", "symbolic002-004-jets",
+     lambda: patch(sym84, "GAUGE_WEIGHT_REGULATOR", 2)),
+    ("the jet wedge law is written u^-2 instead of u^-3", "code", "symbolic002-004-jets",
+     lambda: patch(sym84, "JET_WEDGE_EXPONENT", -2)),
+    ("the anchored jet is replaced by Round 002's raw wedge u ^ v, which is not unit-invariant", "code",
+     "symbolic002-004-jets", lambda: patch(sym84, "ANCHOR_WITH_KAPPA", False)),
+    ("the order additivity is read as e + m + 1", "code", "symbolic002-004-jets",
+     lambda: patch(sym84, "ORDER_ADDITIVITY_OFFSET", 1)),
+    ("the covector law is applied with J instead of J^-1", "code", "symbolic002-004-jets",
+     lambda: patch(sym84, "COVECTOR_LAW_USES_INVERSE", False)),
+    ("the calibrator power is made to follow the jet order m instead of the exterior degree 2", "code",
+     "symbolic002-004-jets", lambda: patch(sym84, "CALIBRATOR_POWER_FOLLOWS_JET_ORDER", True)),
+    ("Symbolic 005's index enters the regulator to the first power, not squared", "code", "symbolic005-007-lattice",
+     lambda: patch(sym85, "INDEX_REGULATOR_EXPONENT", 1)),
+    ("a height rescaling h -> uh is given exponent 1 on a rank-2 regulator", "code", "symbolic005-007-lattice",
+     lambda: patch(sym85, "HEIGHT_RESCALING_EXPONENT", 1)),
+    ("the Euler defect's sign convention is flipped", "code", "symbolic005-007-lattice",
+     lambda: patch(sym85, "EULER_SIGN", -1)),
+    ("the mapping cone is built with d(x,y) = (+d_C x, f x + d_D y), which is not a complex", "code",
+     "symbolic005-007-lattice", lambda: patch(sym85, "CONE_SIGN_CONVENTION", 1)),
+    ("the Q_11-not-Q witness is sought as sqrt 2, which has no root mod 11", "code", "symbolic005-007-lattice",
+     lambda: patch(sym85, "HENSEL_SQUARE", 2)),
+    ("an isogeny of degree d is given exponent 1 on the Gram determinant", "code", "symbolic005-007-lattice",
+     lambda: patch(sym85, "ISOGENY_HEIGHT_EXPONENT", 1)),
+    ("PC-001's plus line is normalised at coordinate 2 instead of coordinate 0", "code", "pc001-calibrator",
+     lambda: patch(pc82, "PLUS_NORMALISATION_INDEX", 2)),
+    ("PC-001's twisted unit root is taken as alpha_0 instead of chi_8(11) alpha_0", "code", "pc001-calibrator",
+     lambda: patch(pc82, "TWIST_SIGN", 1)),
+    ("PC-001's moment is taken against x instead of x^-1", "code", "pc001-calibrator",
+     lambda: patch(pc82, "CHARACTER_EXPONENT", 1)),
+    ("PC-001's smoothing integer is taken as 3, giving 10 instead of 26", "code", "pc001-calibrator",
+     lambda: patch(pc82, "SMOOTHING_D", 3)),
+    ("the Eisenstein T_2 eigenvalue at level 19 is looked for at 2 instead of 3", "code", "pc001-calibrator",
+     lambda: patch(pc82, "EISENSTEIN_T2", 2)),
+    ("PC-001's measure has its second term added instead of subtracted", "code", "pc001-calibrator",
+     lambda: patch(pc82, "MEASURE_SECOND_TERM_SIGN", 1)),
+    ("the calibrator's twisted L-series are cut at e^-5, so no value is a rational", "code", "pc001-calibrator",
+     lambda: patch(pc82, "TAIL_EXPONENT", 5.0)),
+    ("PC-002's twisted unit roots are taken as alpha instead of chi_8(11) alpha", "code", "pc002-relative-regulator",
+     lambda: patch(pc83, "TWIST_SIGN", 1)),
+    ("PC-002's lambda series integrate x instead of x^-1", "code", "pc002-relative-regulator",
+     lambda: patch(pc83, "CHARACTER_EXPONENT", 1)),
+    ("the Teichmuller projection is taken as u^-121, so <u> is not a power of 12", "code", "pc002-relative-regulator",
+     lambda: patch(pc83, "TEICHMULLER_POWER", 121)),
+    ("the Farey cup pairing is divided by 2 instead of 6", "code", "pc002-relative-regulator",
+     lambda: patch(pc83, "CUP_DENOMINATOR", 2)),
+    ("the Farey cup pairing is taken with the opposite orientation R^-1", "code", "pc002-relative-regulator",
+     lambda: patch(pc83, "R_MAP", "other")),
+    ("PC-002's measures have their second term added instead of subtracted", "code", "pc002-relative-regulator",
+     lambda: patch(pc83, "MEASURE_SECOND_TERM_SIGN", 1)),
+    ("PC-002's series are produced from the level-121 layer, which certifies only 11 coefficients", "code",
+     "pc002-relative-regulator", lambda: patch(pc83, "LAYER", 2)),
     ("Symbolic 001's leading term is read one order too high, at t^(e+d+1)", "code", "symbolic001-calibration",
      lambda: patch(sym81, "LEADING_OFFSET", 1)),
     ("Theorem 4.1 is applied with the ratio A_i(0)/A_k(0) inverted", "code", "symbolic001-calibration",
@@ -4684,6 +4799,18 @@ CONTROLS = [
     ("106d1 enumerated over 1 ≤ d < 1000 instead of 00's symmetric range — "
      "the same twenty-one, because no negative d is admissible",
      lambda: patch(closure65, "fixtures_00", _fixtures00_positive_only)),
+    ("Symbolic 002-004's instances drawn from a different seed",
+     lambda: patch(sym84, "RANDOM_SEED", 9)),
+    ("Symbolic 002-004's two-variable families truncated at degree 7 instead of 5",
+     lambda: patch(sym84, "DEGREE", 7)),
+    ("Symbolic 005-007's instances drawn from a different seed",
+     lambda: patch(sym85, "RANDOM_SEED", 8)),
+    ("PC-001's a_n table taken to 6000 instead of 4000 - the same rationals",
+     lambda: patch(pc82, "BOUND", 6000)),
+    ("PC-001's discriminants taken to 80 instead of 100 - the same units",
+     lambda: patch(pc82, "D_LIMIT", 80)),
+    ("PC-002's four-line rescaling drawn from a different seed",
+     lambda: patch(pc83, "RESCALING_SEED", 5)),
     ("Symbolic 001's random instances drawn from a different seed",
      lambda: patch(sym81, "RANDOM_SEED", 7)),
     ("Symbolic 001's series truncated at t^12 instead of t^8",
