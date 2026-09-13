@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "exact_formal_cases": 288,
+  "named_tests": {
+    "shared_frame_control": true,
+    "independent_frame_error_detected": true,
+    "second_derivative_without_factorial_error_detected": true,
+    "omit_A_ratio_error_detected": true,
+    "zero_denominator_rejected": true,
+    "hidden_quotient_transport_detected": true,
+    "common_quotient_transport_cancels": true,
+    "diagonal_contamination_detected": true
+  },
+  "arithmetic_BF_data": false,
+  "proof_kind": "Formal identity proved in report; tests are finite witnesses only",
+  "BSD_proved": false
+}

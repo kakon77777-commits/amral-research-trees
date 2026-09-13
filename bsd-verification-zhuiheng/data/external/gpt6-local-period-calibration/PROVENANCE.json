@@ -1,0 +1,95 @@
+{
+ "received": "2026-09-13",
+ "from": "the local GPT-6 session's own line, published by it to GitHub: repository kakon77777-commits/amral-research-trees, branch agent/bsd-period-calibration, tree bsd-period-calibration/ (branched from this line at 02d34cf); read here with git archive at commit 85cf079f218209af4d87d000b9a8b649abb96ed1 (PC-002; PC-001 is 002e5d57399bc3d0f10fc8a683adc00077834301)",
+ "note": "Byte-exact copies of that tree at 85cf079 for reading and comparison. This line does not edit that branch and does not run its scripts; the commits on that branch are the record of record.",
+ "commits": {
+  "PC-001": "002e5d57399bc3d0f10fc8a683adc00077834301",
+  "PC-002": "85cf079f218209af4d87d000b9a8b649abb96ed1"
+ },
+ "files": {
+  "code/calibrator.py": {
+   "bytes": 10126,
+   "sha256": "1f5af6ec4e7761e27fb8a189e9e9351c1d5b0526939658900d3c23e363f3e6c2"
+  },
+  "code/cup_normalization.py": {
+   "bytes": 7266,
+   "sha256": "3ccf1c368f2ab76a3ffdabfc909e769a877a588e1d4646295a8f287cf10d0a41"
+  },
+  "code/pack_pc002.py": {
+   "bytes": 2072,
+   "sha256": "d02d086af02eca8cd650ec02634bfd703202179fd12fb738d712012276acd746"
+  },
+  "code/README.md": {
+   "bytes": 1278,
+   "sha256": "d3af71867a2d3e753d248acfed282e32c31ba83d7824e10a4e61ce48e2ad9055"
+  },
+  "code/relative_regulator.py": {
+   "bytes": 12406,
+   "sha256": "06b2ee24639fb884c87fb8ef829808edb2549a218c97aafc0cfcb1659cfdff30"
+  },
+  "code/verify_calibration.py": {
+   "bytes": 4071,
+   "sha256": "67a3197eadaca5078aad8397eaa7258335308f07f684da38106fde2bb162810b"
+  },
+  "data/calibrator-19a1.json": {
+   "bytes": 3305,
+   "sha256": "cfeb6a9e3cb94c3a0b910c35ad4f29f3b6f77643e991ae601f50b356b3f96acb"
+  },
+  "data/formal-calibration.json": {
+   "bytes": 578,
+   "sha256": "55c2bc812592f2d067097246fd48d873d54caae2862a0a2dc9e819ab41e68f27"
+  },
+  "data/pc002-cup-normalization.json": {
+   "bytes": 51299,
+   "sha256": "e897fd9ca498ed0ef3ff52ec120959eb5d544a90d99ee66f38a5db2c4ec6542a"
+  },
+  "data/pc002-inputs.json": {
+   "bytes": 9803,
+   "sha256": "7e5a634980f344b88a00633b20c71d1dbe427dfdc24d308a2999de18b5808379"
+  },
+  "data/pc002-provenance.json": {
+   "bytes": 7774,
+   "sha256": "d8b5e5e6cab077d30a8814d3930c47e08bb8991612703e92b544970ca3b51bc1"
+  },
+  "data/pc002-relative-regulator.json": {
+   "bytes": 706383,
+   "sha256": "c9de6668216b875a782e9fe5f9c97cf81d92304de8d13c3947ea801e26cb6b94"
+  },
+  "data/provenance.json": {
+   "bytes": 3425,
+   "sha256": "e11259e7bcb048966459a74db33b0cf53f2e73e812bf2f6f8c740bb9119a2e60"
+  },
+  "data/README.md": {
+   "bytes": 891,
+   "sha256": "f58a19111c0c1e2d33f0df7f69ffde4ab80e2543e4fd1bc5539c3c652cbb8963"
+  },
+  "handoff/PC-002-relative-regulator.zip": {
+   "bytes": 59462,
+   "sha256": "583d2847a3f3e2db800d9ae093870151fa6e2268d54c2f3eb068a0970b04be55"
+  },
+  "handoff/README.md": {
+   "bytes": 1183,
+   "sha256": "3ece2b9b72915a8af26fa528fdc83de96166212b6c94349e33494aac9bc03aea"
+  },
+  "README.md": {
+   "bytes": 2589,
+   "sha256": "e0ab9b7e2d492b496ff4fd9fbd2f51376960db8c323c959a3392626801c40a59"
+  },
+  "reports/PC-001-CROSS-CURVE-CALIBRATION.md": {
+   "bytes": 7735,
+   "sha256": "73e06e2442434dc7ae6d94ce4183a89a220d99527423ed3bdbb5b4fbac0017f7"
+  },
+  "reports/PC-001-REVIEW.md": {
+   "bytes": 1469,
+   "sha256": "a38d6f02332bd07553c36a2ee121231206bf90b1da4e490964624e4eb1fe6ed1"
+  },
+  "reports/PC-002-RELATIVE-REGULATOR.md": {
+   "bytes": 9319,
+   "sha256": "49b925fca95364f4c7bfd4763a63a81feb85a2ffe98e9e3087a2edf9546ccbe7"
+  },
+  "reports/README.md": {
+   "bytes": 507,
+   "sha256": "c7b0c7c6f4376a909519fac236d81d7d691ab79f80485d47b440292b92022b28"
+  }
+ }
+}

@@ -1,0 +1,233 @@
+{
+  "status": "EXACT_FINITE_CALIBRATOR_CHECK",
+  "curve": {
+    "label": "19.a1",
+    "cremona_label": "19a2",
+    "ainvs": [
+      0,
+      1,
+      1,
+      -769,
+      -8470
+    ],
+    "conductor_source": "https://www.lmfdb.org/EllipticCurve/Q/19/a/1",
+    "rank_zero_source": "https://www.lmfdb.org/EllipticCurve/Q/19/a/1"
+  },
+  "modulus": 11,
+  "manin_dimension_over_Q": 3,
+  "point_counted_traces": {
+    "2": 0,
+    "3": -2,
+    "5": 3,
+    "7": -1,
+    "11": 3,
+    "13": -4
+  },
+  "plus_line": {
+    "sign": 1,
+    "rational_dimension": 1,
+    "primitive_integer_vector": [
+      2,
+      0,
+      6,
+      6,
+      3,
+      -3,
+      -6,
+      0,
+      0,
+      -6,
+      -6,
+      0,
+      0,
+      -6,
+      -3,
+      3,
+      6,
+      6,
+      0,
+      -2
+    ],
+    "mod11_vector": [
+      1,
+      0,
+      3,
+      3,
+      7,
+      4,
+      8,
+      0,
+      0,
+      8,
+      8,
+      0,
+      0,
+      8,
+      4,
+      7,
+      3,
+      3,
+      0,
+      10
+    ],
+    "normalization_index": 0,
+    "hecke_checks_over_Q": {
+      "3": true,
+      "5": true,
+      "7": true,
+      "11": true,
+      "13": true
+    }
+  },
+  "minus_line": {
+    "sign": -1,
+    "rational_dimension": 1,
+    "primitive_integer_vector": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "mod11_vector": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      10,
+      10,
+      0,
+      0,
+      0,
+      0
+    ],
+    "normalization_index": 4,
+    "hecke_checks_over_Q": {
+      "3": true,
+      "5": true,
+      "7": true,
+      "11": true,
+      "13": true
+    }
+  },
+  "measurements": {
+    "a11": 3,
+    "alpha_mod11": 3,
+    "alpha_twist_mod11": 8,
+    "plus_symbol_at_zero_mod11": 1,
+    "ordinary_first_layer_measures": [
+      10,
+      6,
+      3,
+      10,
+      3,
+      3,
+      10,
+      3,
+      6,
+      10
+    ],
+    "ordinary_central_value_mod11": 9,
+    "twisted_cusp_sums": [
+      4,
+      4,
+      0,
+      2,
+      9,
+      2,
+      9,
+      0,
+      7,
+      7
+    ],
+    "twisted_weighted_sum": 10,
+    "twisted_x_inverse_value_mod11": 4,
+    "distribution_residuals": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "smoothing_d": 5,
+    "smoothing_mod11": 4,
+    "adjoint_euler_multiplier_mod11": 7,
+    "nonvanishing_product_mod11": 1
+  },
+  "independent_period_rescaling_controls": [
+    true,
+    true,
+    true
+  ],
+  "negative_checks": {
+    "altered_symbol_rejected_by_Manin_relations": true,
+    "zero_symbol_rejected_by_normalization": true,
+    "x_instead_of_x_inverse_changes_recorded_moment": true,
+    "wrong_twist_root_rejected_by_Hecke_polynomial": true
+  },
+  "wrong_x_moment_mod11": 8,
+  "actual_BF_family_computed": false,
+  "C_computed": false,
+  "s11_computed": false,
+  "BSD_proved": false
+}

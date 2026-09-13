@@ -1,0 +1,583 @@
+{
+ "gate": "src82",
+ "round": "RUN-080",
+ "lines": {
+  "dimension": 3,
+  "genus": 1,
+  "traces": {
+   "2": 0,
+   "3": -2,
+   "5": 3,
+   "7": -1,
+   "11": 3,
+   "13": -4
+  },
+  "cusp_dimension": 2,
+  "eisenstein_dimension": 1,
+  "plus_dimension": 1,
+  "minus_dimension": 1,
+  "plus_primitive": [
+   2,
+   0,
+   6,
+   6,
+   3,
+   -3,
+   -6,
+   0,
+   0,
+   -6,
+   -6,
+   0,
+   0,
+   -6,
+   -3,
+   3,
+   6,
+   6,
+   0,
+   -2
+  ],
+  "minus_primitive": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   -1,
+   -1,
+   0,
+   0,
+   0,
+   0
+  ],
+  "plus_mod11": [
+   1,
+   0,
+   3,
+   3,
+   7,
+   4,
+   8,
+   0,
+   0,
+   8,
+   8,
+   0,
+   0,
+   8,
+   4,
+   7,
+   3,
+   3,
+   0,
+   10
+  ],
+  "minus_mod11": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   10,
+   10,
+   0,
+   0,
+   0,
+   0
+  ],
+  "hecke_checks": {
+   "3": true,
+   "5": true,
+   "7": true,
+   "11": true,
+   "13": true
+  },
+  "plus_identical_to_theirs": true,
+  "minus_identical_to_theirs": true,
+  "plus_mod11_identical": true,
+  "minus_mod11_identical": true,
+  "agrees": true
+ },
+ "measures": {
+  "a_11": 3,
+  "alpha": 3,
+  "alpha_twist": 8,
+  "plus_at_zero": 1,
+  "ordinary_first_layer_measures": [
+   10,
+   6,
+   3,
+   10,
+   3,
+   3,
+   10,
+   3,
+   6,
+   10
+  ],
+  "ordinary_central_value": 9,
+  "central_by_euler_factor": 9,
+  "twisted_cusp_sums": [
+   4,
+   4,
+   0,
+   2,
+   9,
+   2,
+   9,
+   0,
+   7,
+   7
+  ],
+  "twisted_symbol_at_zero": 0,
+  "twisted_weighted_sum": 10,
+  "twisted_x_inverse_value": 4,
+  "wrong_x_moment": 8,
+  "distribution_residuals": [
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ],
+   [
+    0,
+    0
+   ]
+  ],
+  "smoothing": 26,
+  "smoothing_mod11": 4,
+  "adjoint_euler_multiplier": 7,
+  "nonvanishing_product": 1,
+  "agrees": true
+ },
+ "level_17": {
+  "a_11_of_17a1": 0,
+  "supersingular_at_11": true,
+  "agrees": true
+ },
+ "archimedean": {
+  "omega_plus": 0.4532532444961035,
+  "discriminant": -19,
+  "rows": [
+   {
+    "D": 1,
+    "w": 1,
+    "terms": 32,
+    "L": 0.45325324449610366,
+    "L_sqrtD": 0.45325324449610366,
+    "S": 1,
+    "A": 1.0000000000000004,
+    "A_rational": "1/1",
+    "recognised": true
+   },
+   {
+    "D": -87,
+    "w": 1,
+    "terms": 2716,
+    "L": 8.665146199959505e-17,
+    "L_sqrtD": 8.082310315745444e-16,
+    "S": 0,
+    "ratio_to_reference": "0/1",
+    "recognised": true
+   },
+   {
+    "D": -83,
+    "w": 1,
+    "terms": 2592,
+    "L": 9.987794832136358e-18,
+    "L_sqrtD": 9.099314142029897e-17,
+    "S": 0,
+    "ratio_to_reference": "0/1",
+    "recognised": true
+   },
+   {
+    "D": -68,
+    "w": 1,
+    "terms": 2123,
+    "L": 0.5004834664039179,
+    "L_sqrtD": 4.127092391717243,
+    "S": 2,
+    "ratio_to_reference": "1/1",
+    "recognised": true
+   },
+   {
+    "D": -47,
+    "w": 1,
+    "terms": 1468,
+    "L": 0.6019982966288606,
+    "L_sqrtD": 4.12709239171724,
+    "S": 2,
+    "ratio_to_reference": "1/1",
+    "recognised": true
+   },
+   {
+    "D": -43,
+    "w": 1,
+    "terms": 1343,
+    "L": 0.6293756893674494,
+    "L_sqrtD": 4.127092391717241,
+    "S": 2,
+    "ratio_to_reference": "1/1",
+    "recognised": true
+   },
+   {
+    "D": -39,
+    "w": 1,
+    "terms": 1218,
+    "L": 2.643454741074813,
+    "L_sqrtD": 16.50836956686896,
+    "S": 8,
+    "ratio_to_reference": "4/1",
+    "recognised": true
+   },
+   {
+    "D": -35,
+    "w": 1,
+    "terms": 1093,
+    "L": 0.6976059389035031,
+    "L_sqrtD": 4.12709239171724,
+    "S": 2,
+    "ratio_to_reference": "1/1",
+    "recognised": true
+   },
+   {
+    "D": -24,
+    "w": 1,
+    "terms": 750,
+    "L": 3.369756827009958,
+    "L_sqrtD": 16.50836956686896,
+    "S": 8,
+    "ratio_to_reference": "4/1",
+    "recognised": true
+   },
+   {
+    "D": -23,
+    "w": 1,
+    "terms": 719,
+    "L": -1.558028487334486e-16,
+    "L_sqrtD": -7.47204213377796e-16,
+    "S": 0,
+    "ratio_to_reference": "0/1",
+    "recognised": true
+   },
+   {
+    "D": -20,
+    "w": 1,
+    "terms": 625,
+    "L": 0.9228459137301939,
+    "L_sqrtD": 4.12709239171724,
+    "S": 2,
+    "ratio_to_reference": "1/1",
+    "recognised": true
+   },
+   {
+    "D": -7,
+    "w": 1,
+    "terms": 219,
+    "L": 1.559894300895798,
+    "L_sqrtD": 4.12709239171724,
+    "S": 2,
+    "ratio_to_reference": "1/1",
+    "recognised": true
+   },
+   {
+    "D": -4,
+    "w": 1,
+    "terms": 125,
+    "L": 2.0635461958586205,
+    "L_sqrtD": 4.127092391717241,
+    "S": 2,
+    "ratio_to_reference": "1/1",
+    "recognised": true
+   },
+   {
+    "D": 5,
+    "w": 1,
+    "terms": 157,
+    "L": 1.8243091182881161,
+    "L_sqrtD": 4.079279200464932,
+    "S": 9,
+    "A": 9.000000000000002,
+    "A_rational": "9/1",
+    "recognised": true
+   },
+   {
+    "D": 17,
+    "w": 1,
+    "terms": 531,
+    "L": 0.989370530582475,
+    "L_sqrtD": 4.079279200464932,
+    "S": 9,
+    "A": 9.000000000000002,
+    "A_rational": "9/1",
+    "recognised": true
+   },
+   {
+    "D": 24,
+    "w": 1,
+    "terms": 750,
+    "L": 3.3307175198292054,
+    "L_sqrtD": 16.31711680185973,
+    "S": 3,
+    "A": 36.00000000000001,
+    "A_rational": "36/1",
+    "recognised": true
+   },
+   {
+    "D": 28,
+    "w": 1,
+    "terms": 875,
+    "L": 0.770911306630615,
+    "L_sqrtD": 4.079279200464933,
+    "S": 9,
+    "A": 9.000000000000004,
+    "A_rational": "9/1",
+    "recognised": true
+   },
+   {
+    "D": 61,
+    "w": 1,
+    "terms": 1905,
+    "L": 0.5222981812026884,
+    "L_sqrtD": 4.079279200464932,
+    "S": 9,
+    "A": 9.000000000000002,
+    "A_rational": "9/1",
+    "recognised": true
+   },
+   {
+    "D": 73,
+    "w": 1,
+    "terms": 2279,
+    "L": 0.47744351735573,
+    "L_sqrtD": 4.079279200464932,
+    "S": 9,
+    "A": 9.000000000000002,
+    "A_rational": "9/1",
+    "recognised": true
+   },
+   {
+    "D": 85,
+    "w": 1,
+    "terms": 2654,
+    "L": 0.44245995226348983,
+    "L_sqrtD": 4.079279200464933,
+    "S": 9,
+    "A": 9.000000000000004,
+    "A_rational": "9/1",
+    "recognised": true
+   },
+   {
+    "D": 92,
+    "w": 1,
+    "terms": 2873,
+    "L": 1.7011770245203157,
+    "L_sqrtD": 16.31711680185973,
+    "S": 3,
+    "A": 36.00000000000001,
+    "A_rational": "36/1",
+    "recognised": true
+   },
+   {
+    "D": 93,
+    "w": 1,
+    "terms": 2904,
+    "L": 1.6920061920802743,
+    "L_sqrtD": 16.31711680185973,
+    "S": 3,
+    "A": 36.00000000000001,
+    "A_rational": "36/1",
+    "recognised": true
+   }
+  ],
+  "plus_unit": 1,
+  "plus_pairs": [
+   [
+    1,
+    1,
+    1
+   ],
+   [
+    5,
+    9,
+    9
+   ],
+   [
+    17,
+    9,
+    9
+   ],
+   [
+    24,
+    3,
+    3
+   ],
+   [
+    28,
+    9,
+    9
+   ],
+   [
+    61,
+    9,
+    9
+   ],
+   [
+    73,
+    9,
+    9
+   ],
+   [
+    85,
+    9,
+    9
+   ],
+   [
+    92,
+    3,
+    3
+   ],
+   [
+    93,
+    3,
+    3
+   ]
+  ],
+  "plus_consistent": true,
+  "minus_reference_D": -68,
+  "minus_pairs": [
+   [
+    -87,
+    0,
+    0
+   ],
+   [
+    -83,
+    0,
+    0
+   ],
+   [
+    -68,
+    1,
+    2
+   ],
+   [
+    -47,
+    1,
+    2
+   ],
+   [
+    -43,
+    1,
+    2
+   ],
+   [
+    -39,
+    4,
+    8
+   ],
+   [
+    -35,
+    1,
+    2
+   ],
+   [
+    -24,
+    4,
+    8
+   ],
+   [
+    -23,
+    0,
+    0
+   ],
+   [
+    -20,
+    1,
+    2
+   ],
+   [
+    -7,
+    1,
+    2
+   ],
+   [
+    -4,
+    1,
+    2
+   ]
+  ],
+  "minus_consistent": true,
+  "nonzero_plus": 10,
+  "nonzero_minus": 9,
+  "agrees": true
+ },
+ "labels": {
+  "text": {
+   "no_bsd": true,
+   "bf_not_constructed": true,
+   "not_identified_with_neron": true,
+   "alignment_still_needed": true,
+   "review_concur_challenge": true,
+   "not_circular": true
+  },
+  "json": {
+   "bf_false": true,
+   "C_false": true,
+   "s11_false": true,
+   "bsd_false": true
+  },
+  "agrees": true
+ },
+ "agrees": true
+}
