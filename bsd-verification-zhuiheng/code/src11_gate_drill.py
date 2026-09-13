@@ -168,6 +168,7 @@ import src77_attack08_norms_and_pushforwards as atk77     # noqa: E402
 import src78_attack09_auxiliary_character as atk78        # noqa: E402
 import src79_attack09_eisenstein_leading_term as atk79    # noqa: E402
 import src80_attack10_unit_and_trace_bridge as atk80      # noqa: E402
+import src81_symbolic001_cross_rank_calibration as sym81  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3524,6 +3525,18 @@ def check_attack10_unit_bridge() -> bool:
 
 
 
+def check_symbolic001_calibration() -> bool:
+    """BSD Symbolic Round 001: every boxed identity of the cross-rank
+    calibration document holds on exact random formal-series instances over
+    all (e, d) patterns, a partner-dependent C is detected by (10.1) and
+    (11.3), Theorem 4.1 is t-covariant with the rank-dependent ratio law,
+    the PC-001 specialisation reproduces Attack 09's (19), log_11(12) is
+    right to 11^12 with its cross-check, and the document's own labels."""
+    return (sym81.symbolic_identities()["agrees"] and sym81.specialisation()["agrees"]
+            and sym81.log_eleven_twelve()["agrees"] and sym81.labels()["agrees"])
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3534,7 +3547,7 @@ COVERS = sorted(m.__name__ for m in (
     consensus53, targets54, kern55, schema56, cmap57, prov58,
     lemb59, joins60, commit61, replay62, thirteen63, corpus64,
     closure65, proto66, maps67, mirror68, anom69, kur70, bock71,
-    atk72, atk73, atk74, atk75, atk76, atk77, atk78, atk79, atk80))
+    atk72, atk73, atk74, atk75, atk76, atk77, atk78, atk79, atk80, sym81))
 
 
 CHECKS = {
@@ -3644,6 +3657,7 @@ CHECKS = {
     "attack09-auxiliary": check_attack09_auxiliary,
     "attack09-leading-term": check_attack09_leading_term,
     "attack10-unit-bridge": check_attack10_unit_bridge,
+    "symbolic001-calibration": check_symbolic001_calibration,
 }
 
 
@@ -3991,6 +4005,18 @@ DEFECTS = [
      "functional (RUN-068's control), but it negates every minus symbol, and Attack 09's "
      "forty values are signed", "code", "attack09-leading-term",
      lambda: patch(kur70, "path_indices", _path_wrong_sign)),
+    ("Symbolic 001's leading term is read one order too high, at t^(e+d+1)", "code", "symbolic001-calibration",
+     lambda: patch(sym81, "LEADING_OFFSET", 1)),
+    ("Theorem 4.1 is applied with the ratio A_i(0)/A_k(0) inverted", "code", "symbolic001-calibration",
+     lambda: patch(sym81, "FORMULA_A_RATIO_INVERTED", True)),
+    ("the common factor j(t) is given a vanishing leading coefficient j_e = 0", "code", "symbolic001-calibration",
+     lambda: patch(sym81, "J_LEADING_ZERO", True)),
+    ("the calibration factor Gamma is formed without A_k(0)/A_i(0)", "code", "symbolic001-calibration",
+     lambda: patch(sym81, "GAMMA_WITHOUT_A_RATIO", True)),
+    ("the reparametrisation t = t'/u is applied with u^(+m) instead of u^(-m)", "code", "symbolic001-calibration",
+     lambda: patch(sym81, "REPARAM_EXPONENT_SIGN", 1)),
+    ("log_11(12) is summed with all plus signs, i.e. -log(1 - 11)", "code", "symbolic001-calibration",
+     lambda: patch(sym81, "LOG_SERIES_SIGN", 1)),
     ("Attack 09's chi_8 is replaced by the odd character (-8/.)", "code", "attack09-leading-term",
      lambda: patch(atk79, "CHI8", {1: 1, 3: 1, 5: -1, 7: -1})),
     ("the twisted unit root alpha_F is taken as alpha_E instead of chi_8(11) alpha_E", "code",
@@ -4658,6 +4684,12 @@ CONTROLS = [
     ("106d1 enumerated over 1 ≤ d < 1000 instead of 00's symmetric range — "
      "the same twenty-one, because no negative d is admissible",
      lambda: patch(closure65, "fixtures_00", _fixtures00_positive_only)),
+    ("Symbolic 001's random instances drawn from a different seed",
+     lambda: patch(sym81, "RANDOM_SEED", 7)),
+    ("Symbolic 001's series truncated at t^12 instead of t^8",
+     lambda: patch(sym81, "ORDER", 12)),
+    ("Symbolic 001's log_11(12) series taken to 90 terms - the same residues mod 11^12",
+     lambda: patch(sym81, "LOG_TERMS", 90)),
     ("Attack 09's log series cut at one term - the same residue mod 121, since u^2/2 is in 121 O",
      lambda: patch(atk79, "LOG_TERMS", 1)),
     ("Attack 09's scale identities drawn from a different seed",
