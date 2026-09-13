@@ -173,6 +173,7 @@ import src82_pc001_calibrator_19a1 as pc82                # noqa: E402
 import src83_pc002_relative_regulator as pc83             # noqa: E402
 import src84_symbolic002_004_determinant_jets as sym84    # noqa: E402
 import src85_symbolic005_007_lattice_torsor_euler as sym85  # noqa: E402
+import src86_symbolic010_012_architecture_reciprocity_adelic as sym86  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "gate-logs" / "src11-gate-drill.json"
@@ -3594,6 +3595,22 @@ def check_symbolic005_007_lattice() -> bool:
 
 
 
+def check_symbolic010_012_adelic() -> bool:
+    """BSD Symbolic Rounds 010-012: the architecture document read against
+    itself (the chain (5.1), the obligation matrix, the cuts) and against
+    this line's logs (S1-S8 green where instantiated), (24.1) on 389.a1 with
+    the tree's own numbers; the reciprocity round's statements on lines,
+    2x2 maps, binary forms and two-variable families including the
+    leading-term theorem and its directional failure; the adelic round's
+    statements on explicit ideles of Q, the rational-reconstruction
+    threshold exhaustively at 11^3 and on the formal parameters of [16]P and
+    [16]Q, Theorem 19.1 in its corrected form; and the labels."""
+    rng = sym86.random.Random(sym86.RANDOM_SEED)
+    return (sym86.round_010()["agrees"] and sym86.round_011(rng)["agrees"] and sym86.round_012(rng)["agrees"]
+            and sym86.labels()["agrees"])
+
+
+
 COVERS = sorted(m.__name__ for m in (
     corpus00, ladder01, route02, nogo03, arith4, frob5, iso6, red7, x0n, kept,
     ph2, p5, alg2, glob14, anchor15, fam16, route17, tate18, bsd20, tw21,
@@ -3604,7 +3621,7 @@ COVERS = sorted(m.__name__ for m in (
     consensus53, targets54, kern55, schema56, cmap57, prov58,
     lemb59, joins60, commit61, replay62, thirteen63, corpus64,
     closure65, proto66, maps67, mirror68, anom69, kur70, bock71,
-    atk72, atk73, atk74, atk75, atk76, atk77, atk78, atk79, atk80, sym81, pc82, pc83, sym84, sym85))
+    atk72, atk73, atk74, atk75, atk76, atk77, atk78, atk79, atk80, sym81, pc82, pc83, sym84, sym85, sym86))
 
 
 CHECKS = {
@@ -3719,6 +3736,7 @@ CHECKS = {
     "pc002-relative-regulator": check_pc002_relative_regulator,
     "symbolic002-004-jets": check_symbolic002_004_jets,
     "symbolic005-007-lattice": check_symbolic005_007_lattice,
+    "symbolic010-012-adelic": check_symbolic010_012_adelic,
 }
 
 
@@ -4092,6 +4110,22 @@ DEFECTS = [
      lambda: patch(sym85, "HENSEL_SQUARE", 2)),
     ("an isogeny of degree d is given exponent 1 on the Gram determinant", "code", "symbolic005-007-lattice",
      lambda: patch(sym85, "ISOGENY_HEIGHT_EXPONENT", 1)),
+    ("Symbolic 010's (24.1) is evaluated on 389.a1 with the finite factor doubled", "code", "symbolic010-012-adelic",
+     lambda: patch(sym86, "Q_FIN", 2)),
+    ("Symbolic 011's order theorem is read as e + m + 1", "code", "symbolic010-012-adelic",
+     lambda: patch(sym86, "ORDER_THEOREM_OFFSET", 1)),
+    ("the reciprocity kernel dichotomy is asserted for a two-dimensional transverse quotient", "code",
+     "symbolic010-012-adelic", lambda: patch(sym86, "KERNEL_DICHOTOMY_DIMENSION", 2)),
+    ("the leading coefficient (23.2) is taken without the analytic unit U(0)", "code", "symbolic010-012-adelic",
+     lambda: patch(sym86, "LEADING_TERM_INCLUDES_UNIT", False)),
+    ("the induced quotient map of an upper-triangular Phi is read off the (1,2) entry b instead of d", "code",
+     "symbolic010-012-adelic", lambda: patch(sym86, "QUOTIENT_ENTRY", "b")),
+    ("Symbolic 012's diagonal units are taken as {+1} only, so a negative rational is not principal", "code",
+     "symbolic010-012-adelic", lambda: patch(sym86, "PRINCIPAL_SIGN_SET", (1,))),
+    ("the p-adic absolute value is taken as p^(+v), so the idele norm is not |a_inf|/q_0", "code",
+     "symbolic010-012-adelic", lambda: patch(sym86, "PADIC_ABS_EXPONENT_SIGN", 1)),
+    ("rational reconstruction is claimed unique when 11^k > MN instead of 2MN", "code", "symbolic010-012-adelic",
+     lambda: patch(sym86, "RECONSTRUCTION_FACTOR", 1)),
     ("PC-001's plus line is normalised at coordinate 2 instead of coordinate 0", "code", "pc001-calibrator",
      lambda: patch(pc82, "PLUS_NORMALISATION_INDEX", 2)),
     ("PC-001's twisted unit root is taken as alpha_0 instead of chi_8(11) alpha_0", "code", "pc001-calibrator",
@@ -4805,6 +4839,14 @@ CONTROLS = [
      lambda: patch(sym84, "DEGREE", 7)),
     ("Symbolic 005-007's instances drawn from a different seed",
      lambda: patch(sym85, "RANDOM_SEED", 8)),
+    ("Symbolic 010-012's instances drawn from a different seed",
+     lambda: patch(sym86, "RANDOM_SEED", 7)),
+    ("Symbolic 010-012's trials raised from 40 to 60",
+     lambda: patch(sym86, "TRIALS", 60)),
+    ("Symbolic 011's two-variable families truncated at degree 7 instead of 6",
+     lambda: patch(sym86, "DEG", 7)),
+    ("Symbolic 012's ideles carry a seventh finite place, 17",
+     lambda: patch(sym86, "PRIMES", (2, 3, 5, 7, 11, 13, 17))),
     ("PC-001's a_n table taken to 6000 instead of 4000 - the same rationals",
      lambda: patch(pc82, "BOUND", 6000)),
     ("PC-001's discriminants taken to 80 instead of 100 - the same units",

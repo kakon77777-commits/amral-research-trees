@@ -1,0 +1,336 @@
+{
+ "gate": "src86",
+ "round": "RUN-084",
+ "round_010": {
+  "dag": {
+   "nodes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+   ],
+   "arrows": [
+    "T/C",
+    "S",
+    "S/C",
+    "T",
+    "T/C",
+    "T/C",
+    "T/C",
+    "T/C",
+    "T",
+    "S"
+   ],
+   "is_chain": true,
+   "alphabet_ok": true,
+   "pure_theorem_arrows": [
+    3,
+    8
+   ],
+   "pure_theorem_arrows_are_T1_and_T6": true,
+   "agrees": true
+  },
+  "matrix": {
+   "rows": 17,
+   "typing_consistent": true,
+   "theorem_rows": [
+    "global rational descent",
+    "finite-support theorem",
+    "arithmetic complex identification",
+    "fundamental-line placement",
+    "explicit reciprocity",
+    "complex-to-$p$-adic comparison"
+   ],
+   "theorem_list_25": [
+    [
+     "1",
+     "Global Rational Descent"
+    ],
+    [
+     "2",
+     "Finite Support / Integral Comparison"
+    ],
+    [
+     "3",
+     "Arithmetic Complex Identification"
+    ],
+    [
+     "4",
+     "Self-Dual Fundamental-Line Assembly"
+    ],
+    [
+     "5",
+     "Explicit Reciprocity / $p$-adic Leading-Line Theorem"
+    ],
+    [
+     "6",
+     "Complex-to-$p$-adic Leading-Line Comparison"
+    ]
+   ],
+   "theorem_rows_are_T1_to_T6": true,
+   "cuts_27_1": [
+    [
+     1
+    ],
+    [
+     2,
+     3,
+     4
+    ],
+    [
+     5
+    ],
+    [
+     6
+    ]
+   ],
+   "cuts_partition_T1_T6": true,
+   "agrees": true
+  },
+  "closed_invariants": {
+   "instantiated_here": {
+    "S1": {
+     "what": "common scalar cancellation",
+     "log": "src81-symbolic001-cross-rank-calibration.json",
+     "values": [
+      126,
+      true
+     ],
+     "green": true
+    },
+    "S2": {
+     "what": "rank-2 determinant gauge weight 2",
+     "log": "src84-symbolic002-004-determinant-jets.json",
+     "values": [
+      true,
+      true
+     ],
+     "green": true
+    },
+    "S3": {
+     "what": "paired regulator gauge weight 4",
+     "log": "src84-symbolic002-004-determinant-jets.json",
+     "values": [
+      true,
+      true
+     ],
+     "green": true
+    },
+    "S4": {
+     "what": "jet order does not change the determinant weight",
+     "log": "src84-symbolic002-004-determinant-jets.json",
+     "values": [
+      true,
+      true
+     ],
+     "green": true
+    },
+    "S5": {
+     "what": "projective jet unit invariance",
+     "log": "src84-symbolic002-004-determinant-jets.json",
+     "values": [
+      true,
+      true
+     ],
+     "green": true
+    },
+    "S6": {
+     "what": "Bockstein quotient sufficiency",
+     "log": "src84-symbolic002-004-determinant-jets.json",
+     "values": [
+      true,
+      true
+     ],
+     "green": true
+    },
+    "S7": {
+     "what": "lattice index n gives n² on the regulator",
+     "log": "src85-symbolic005-007-lattice-torsor-euler.json",
+     "values": [
+      true,
+      true
+     ],
+     "green": true
+    },
+    "S8": {
+     "what": "derived Euler additivity on cones and triangles",
+     "log": "src85-symbolic005-007-lattice-torsor-euler.json",
+     "values": [
+      true,
+      true,
+      true
+     ],
+     "green": true
+    },
+    "N1": {
+     "what": "the Q_11-not-Q no-go, sqrt 3 to 11^12",
+     "log": "src85-symbolic005-007-lattice-torsor-euler.json",
+     "values": [
+      true
+     ],
+     "green": true
+    }
+   },
+   "not_in_folder": {
+    "S9": "regulator multiplicity one on the primal-dual line — Round 008",
+    "S10": "e + m ≤ r_an under the factorisation — Round 009; its equality case is Round 011 (5.1), checked here"
+   },
+   "agrees": true
+  },
+  "instance_24_1": {
+   "curve": "389.a1",
+   "omega": 4.98042512171011,
+   "regulator": 0.15246017794314376,
+   "q_fin": "1",
+   "L2_over_2": 0.7593165002884268,
+   "omega_reg_qfin": 0.7593165002884268,
+   "ratio": 1.0,
+   "agrees": true
+  },
+  "agrees": true
+ },
+ "round_011": {
+  "trials": 40,
+  "zero_channel_trials": 10,
+  "checks": {
+   "3.1": true,
+   "3.2": true,
+   "4.1": true,
+   "5.1": true,
+   "7.1": true,
+   "8.2": true,
+   "9.1": true,
+   "10.1": true,
+   "11.3": true,
+   "12.1": true,
+   "14.1": true,
+   "15.1": true,
+   "15.2": true,
+   "17.1": true,
+   "19.2": true,
+   "20.1": true,
+   "23.1": true,
+   "23.2": true,
+   "25": true,
+   "26": true,
+   "30": true
+  },
+  "agrees": true
+ },
+ "round_012": {
+  "trials": 40,
+  "checks": {
+   "2.1": true,
+   "3.2": true,
+   "3.1-injective": true,
+   "6.4": true,
+   "7.1": true,
+   "7.3": true,
+   "8.1": true,
+   "9.2": true,
+   "9.3": true,
+   "9.4": true,
+   "10.1": true,
+   "12.1": true,
+   "14.1": true,
+   "18.1": true,
+   "19.1": true,
+   "19.1-literal-fails-at-minus-one": true,
+   "20.3": true,
+   "23.1": true,
+   "21": true
+  },
+  "reconstruction": {
+   "modulus_11_3": 1331,
+   "largest_M_equal_N_under_threshold": 25,
+   "exhaustively_unique_at_11_3": true,
+   "collision_at_11_3": null,
+   "all_recovered_at_11_3": true,
+   "unique_at_11_2": false,
+   "collision_at_11_2": [
+    "-25/21",
+    "-24/25",
+    91
+   ],
+   "random_at_11_6_M_N_40": true
+  },
+  "theorem_19_1_literal_counterexample": {
+   "u_on_S": {
+    "2": "-1",
+    "3": "-1",
+    "5": "-1"
+   },
+   "u_inf": "-1",
+   "u_outside_S": {
+    "7": "1",
+    "11": "1",
+    "13": "1"
+   },
+   "literal_19_1_says_principal": true,
+   "principal": false
+  },
+  "formal_parameters_of_16P_16Q": [
+   {
+    "point": "[16]P",
+    "v11_of_z": 1,
+    "z_mod_121": 99,
+    "numerator_digits": 39,
+    "denominator_digits": 39,
+    "height_bound_log10_MN": 78,
+    "threshold_k": 76,
+    "recovered_exactly": true,
+    "below_threshold": {
+     "k": 25,
+     "recovered": false,
+     "result": "57415932729344633319572004"
+    },
+    "agrees": true
+   },
+   {
+    "point": "[16]Q",
+    "v11_of_z": 1,
+    "z_mod_121": 66,
+    "numerator_digits": 54,
+    "denominator_digits": 54,
+    "height_bound_log10_MN": 108,
+    "threshold_k": 104,
+    "recovered_exactly": true,
+    "below_threshold": {
+     "k": 34,
+     "recovered": false,
+     "result": "10466532871853289301319330894189718"
+    },
+    "agrees": true
+   }
+  ],
+  "agrees": true
+ },
+ "labels": {
+  "documents": {
+   "010": {
+    "no_bsd_claim": true,
+    "not_proof_closure": true,
+    "no_go_list_N1_N6": true
+   },
+   "011": {
+    "no_bsd_claim": true,
+    "unproved_list": true,
+    "bsd_last_unproved": true
+   },
+   "012": {
+    "no_bsd_claim": true,
+    "unproved_list": true,
+    "bsd_last_unproved": true
+   }
+  },
+  "agrees": true
+ },
+ "agrees": true
+}

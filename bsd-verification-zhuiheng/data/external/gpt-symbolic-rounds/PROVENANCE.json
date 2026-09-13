@@ -1,0 +1,87 @@
+{
+ "received": "2026-09-13",
+ "from": "Neo.K, from a web ChatGPT session assigned to symbolic derivation only (no large computation); a separate local GPT-6 session does the computational frontier attack; this line verifies both and supplies computation to the symbolic side",
+ "note": "Symbolic rounds are Markdown only (no scripts, no result JSON). Byte-exact copies here are the record. Rounds 002-007 were dropped by Neo in one folder on 2026-09-13 afternoon; Round 001 had been handed over separately in the morning. The documents refer to a 'PC-001' calibration front that is the local GPT-6 line agent/bsd-period-calibration (verified at RUN-080/081). Rounds 010-012 arrived in the same folder later on 2026-09-13; 008 and 009 were not in the folder when 010-012 were copied.",
+ "documents": {
+  "BSD_Symbolic_Round_001_General_Cross_Rank_Projective_Calibration.md": {
+   "bytes": 15745,
+   "sha256": "e6319341ef238f0fd150b60a7265e131faf9f68826ab77107f431cfefb87a69c",
+   "round": "BSD Symbolic Round 001",
+   "title": "General Cross Rank Projective Calibration",
+   "received": "2026-09-13",
+   "drop_folder": "C:\\Users\\kakon\\Downloads\\BSD_Symbolic_Round (Neo: the location will change)"
+  },
+  "BSD_Symbolic_Round_002_Determinant_Line_Lift_of_Rank_2_Calibration.md": {
+   "bytes": 19756,
+   "sha256": "db1bfcba8e89bf948426aff32ffaa4f62c17c74311db3646cdaacad13e85ba62",
+   "round": "BSD Symbolic Round 002",
+   "title": "Determinant Line Lift of Rank 2 Calibration",
+   "received": "2026-09-13",
+   "drop_folder": "C:\\Users\\kakon\\Downloads\\BSD_Symbolic_Round (Neo: the location will change)"
+  },
+  "BSD_Symbolic_Round_003_Anchored_Projective_Jet_and_Bockstein_Bridge.md": {
+   "bytes": 20010,
+   "sha256": "a93cc50ac8feb2c3a3bd88665d07fdb6f5fa59fde5311adf7ea71a75e910a5e9",
+   "round": "BSD Symbolic Round 003",
+   "title": "Anchored Projective Jet and Bockstein Bridge",
+   "received": "2026-09-13",
+   "drop_folder": "C:\\Users\\kakon\\Downloads\\BSD_Symbolic_Round (Neo: the location will change)"
+  },
+  "BSD_Symbolic_Round_004_Higher_Projective_Jets_and_First_Nonzero_Determinant_Order.md": {
+   "bytes": 21370,
+   "sha256": "7c2594061057ba6e828cd679c03084d10b3737c94197abeb6a95ae05b25fab47",
+   "round": "BSD Symbolic Round 004",
+   "title": "Higher Projective Jets and First Nonzero Determinant Order",
+   "received": "2026-09-13",
+   "drop_folder": "C:\\Users\\kakon\\Downloads\\BSD_Symbolic_Round (Neo: the location will change)"
+  },
+  "BSD_Symbolic_Round_005_Determinant_Lattice_Torsor_and_Absolute_BSD_Anchor.md": {
+   "bytes": 22475,
+   "sha256": "18ce71e09db0fa8b2684717bc20ba624771af1dba6d9d51c92a6d768856d0915",
+   "round": "BSD Symbolic Round 005",
+   "title": "Determinant Lattice Torsor and Absolute BSD Anchor",
+   "received": "2026-09-13",
+   "drop_folder": "C:\\Users\\kakon\\Downloads\\BSD_Symbolic_Round (Neo: the location will change)"
+  },
+  "BSD_Symbolic_Round_006_Rational_Descent_Support_Control_and_Finite_Prime_Closure.md": {
+   "bytes": 22721,
+   "sha256": "3bb0dbec0700f35c1a0dda4e37772b2aaf5621f220358c849972e728c20735f1",
+   "round": "BSD Symbolic Round 006",
+   "title": "Rational Descent Support Control and Finite Prime Closure",
+   "received": "2026-09-13",
+   "drop_folder": "C:\\Users\\kakon\\Downloads\\BSD_Symbolic_Round (Neo: the location will change)"
+  },
+  "BSD_Symbolic_Round_007_Derived_Determinant_Complex_and_Euler_Characteristic_Closure.md": {
+   "bytes": 25102,
+   "sha256": "225a22e9013a8ed6217cddcf3bb3c4bc0fd0d6c1392d64eb64bf6f99ef6fc921",
+   "round": "BSD Symbolic Round 007",
+   "title": "Derived Determinant Complex and Euler Characteristic Closure",
+   "received": "2026-09-13",
+   "drop_folder": "C:\\Users\\kakon\\Downloads\\BSD_Symbolic_Round (Neo: the location will change)"
+  },
+  "BSD_Symbolic_Round_010_Four_Bridge_Closure_Diagram_and_Minimal_Missing_Theorems.md": {
+   "bytes": 26069,
+   "sha256": "b21bb62cfdaf0d2b0114f524d536c17b3da768f825f02d6344667e5b3135b850",
+   "round": "BSD Symbolic Round 010",
+   "title": "Four Bridge Closure Diagram and Minimal Missing Theorems",
+   "received": "2026-09-13",
+   "drop_folder": "C:\\Users\\kakon\\Downloads\\BSD_Symbolic_Round"
+  },
+  "BSD_Symbolic_Round_011_Reciprocity_Kernel_Nonannihilation_and_Minimal_Leading_Term_Theorem.md": {
+   "bytes": 23603,
+   "sha256": "c434b57088d5ad3d360f3d2ca85084f869c7adc556537bb43efcf8dace8ab69a",
+   "round": "BSD Symbolic Round 011",
+   "title": "Reciprocity Kernel Nonannihilation and Minimal Leading Term Theorem",
+   "received": "2026-09-13",
+   "drop_folder": "C:\\Users\\kakon\\Downloads\\BSD_Symbolic_Round"
+  },
+  "BSD_Symbolic_Round_012_Adelic_Descent_Principal_Idele_Obstruction_and_Rational_Reconstruction.md": {
+   "bytes": 26664,
+   "sha256": "330b9914cdb9608025a58011a2bfee4f333920ad81dbbb888942e94e58fee1e9",
+   "round": "BSD Symbolic Round 012",
+   "title": "Adelic Descent Principal Idele Obstruction and Rational Reconstruction",
+   "received": "2026-09-13",
+   "drop_folder": "C:\\Users\\kakon\\Downloads\\BSD_Symbolic_Round"
+  }
+ }
+}
